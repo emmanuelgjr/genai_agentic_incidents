@@ -1,0 +1,57 @@
+{
+  "framework": "OWASP Top 10 for LLM Applications",
+  "version": "2025",
+  "url": "https://genai.owasp.org/llm-top-10/",
+  "entries": {
+    "LLM01": {
+      "name": "Prompt Injection",
+      "description": "A prompt injection vulnerability occurs when user prompts alter the LLM's behavior or output in unintended ways. Includes direct and indirect prompt injection.",
+      "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/"
+    },
+    "LLM02": {
+      "name": "Sensitive Information Disclosure",
+      "description": "LLMs may inadvertently disclose confidential data, proprietary algorithms, or other sensitive information through their output.",
+      "url": "https://genai.owasp.org/llmrisk/llm02-sensitive-information-disclosure/"
+    },
+    "LLM03": {
+      "name": "Supply Chain",
+      "description": "LLM application lifecycle can be compromised by vulnerable components, services, or pre-trained models, leading to security breaches.",
+      "url": "https://genai.owasp.org/llmrisk/llm03-supply-chain/"
+    },
+    "LLM04": {
+      "name": "Data and Model Poisoning",
+      "description": "Pre-training, fine-tuning, or embedding data is manipulated to introduce vulnerabilities, backdoors, or biases.",
+      "url": "https://genai.owasp.org/llmrisk/llm04-data-and-model-poisoning/"
+    },
+    "LLM05": {
+      "name": "Improper Output Handling",
+      "description": "Insufficient validation, sanitization, or handling of LLM-generated outputs before passing to downstream systems, enabling XSS, SQLi, SSRF, RCE, etc.",
+      "url": "https://genai.owasp.org/llmrisk/llm05-improper-output-handling/"
+    },
+    "LLM06": {
+      "name": "Excessive Agency",
+      "description": "LLM-based systems granted excessive functionality, permissions, or autonomy that exceed what is required for the intended use.",
+      "url": "https://genai.owasp.org/llmrisk/llm06-excessive-agency/"
+    },
+    "LLM07": {
+      "name": "System Prompt Leakage",
+      "description": "Disclosure of system prompts that may contain instructions, sensitive context, or proprietary configuration.",
+      "url": "https://genai.owasp.org/llmrisk/llm07-system-prompt-leakage/"
+    },
+    "LLM08": {
+      "name": "Vector and Embedding Weaknesses",
+      "description": "Weaknesses in how vectors and embeddings are generated, stored, or retrieved (RAG systems) — including embedding inversion and poisoning.",
+      "url": "https://genai.owasp.org/llmrisk/llm08-vector-and-embedding-weaknesses/"
+    },
+    "LLM09": {
+      "name": "Misinformation",
+      "description": "LLMs produce false or misleading information that appears credible, leading to security breaches, reputational damage, or legal liability.",
+      "url": "https://genai.owasp.org/llmrisk/llm09-misinformation/"
+    },
+    "LLM10": {
+      "name": "Unbounded Consumption",
+      "description": "LLM applications allow excessive or uncontrolled inferences, causing denial of service, financial losses, IP theft, or service degradation.",
+      "url": "https://genai.owasp.org/llmrisk/llm10-unbounded-consumption/"
+    }
+  }
+}

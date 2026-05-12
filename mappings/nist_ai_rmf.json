@@ -1,0 +1,108 @@
+{
+  "framework": "NIST AI Risk Management Framework",
+  "version": "1.0 (AI 100-1, January 2023)",
+  "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+  "functions": {
+    "GOVERN": {
+      "name": "Govern",
+      "description": "A culture of risk management is cultivated and present.",
+      "subcategories": {
+        "GOVERN-1.1": "Legal and regulatory requirements involving AI are understood, managed, and documented.",
+        "GOVERN-1.2": "The characteristics of trustworthy AI are integrated into organizational policies, processes, and procedures.",
+        "GOVERN-1.3": "Processes and procedures are in place to determine the needed level of risk management activities based on the organization's risk tolerance.",
+        "GOVERN-1.4": "The risk management process and its outcomes are established through transparent policies, procedures, and other controls based on organizational risk priorities.",
+        "GOVERN-1.5": "Ongoing monitoring and periodic review of the risk management process and its outcomes are planned.",
+        "GOVERN-1.6": "Mechanisms are in place to inventory AI systems and are resourced according to organizational risk priorities.",
+        "GOVERN-1.7": "Processes and procedures are in place for decommissioning and phasing out AI systems safely.",
+        "GOVERN-2.1": "Roles and responsibilities and lines of communication related to mapping, measuring, and managing AI risks are documented.",
+        "GOVERN-2.2": "The organization's personnel and partners receive AI risk management training.",
+        "GOVERN-2.3": "Executive leadership of the organization takes responsibility for decisions about risks associated with AI system development and deployment.",
+        "GOVERN-3.1": "Decision-making related to mapping, measuring, and managing AI risks throughout the lifecycle is informed by a diverse team.",
+        "GOVERN-3.2": "Policies and procedures are in place to define and differentiate roles and responsibilities for human-AI configurations.",
+        "GOVERN-4.1": "Organizational policies and practices are in place to foster a critical thinking and safety-first mindset.",
+        "GOVERN-4.2": "Organizational teams document the risks and potential impacts of the AI technology they design.",
+        "GOVERN-4.3": "Organizational practices are in place to enable AI testing, identification of incidents, and information sharing.",
+        "GOVERN-5.1": "Organizational policies and practices are in place to collect, consider, prioritize, and integrate feedback from those external to the team.",
+        "GOVERN-5.2": "Mechanisms are established to enable the team that developed or deployed AI systems to regularly incorporate adjudicated feedback.",
+        "GOVERN-6.1": "Policies and procedures are in place that address AI risks associated with third-party entities.",
+        "GOVERN-6.2": "Contingency processes are in place to handle failures or incidents in third-party data or AI systems."
+      }
+    },
+    "MAP": {
+      "name": "Map",
+      "description": "Context is recognized and risks related to context are identified.",
+      "subcategories": {
+        "MAP-1.1": "Intended purposes, potentially beneficial uses, context-specific laws, norms, and expectations, and prospective settings in which the AI system will be deployed are understood and documented.",
+        "MAP-1.2": "Interdisciplinary AI actors, competencies, skills, and capacities for establishing context reflect demographic diversity and broad domain and user experience expertise.",
+        "MAP-1.3": "The organization's mission and relevant goals for AI technology are understood and documented.",
+        "MAP-1.4": "The business value or context of business use has been clearly defined.",
+        "MAP-1.5": "Organizational risk tolerances are determined and documented.",
+        "MAP-1.6": "System requirements are elicited from and understood by relevant AI actors.",
+        "MAP-2.1": "The specific tasks and methods used to implement the tasks that the AI system will support are defined.",
+        "MAP-2.2": "Information about the AI system's knowledge limits and how system output may be utilized and overseen by humans is documented.",
+        "MAP-2.3": "Scientific integrity and TEVV considerations are identified and documented.",
+        "MAP-3.1": "Potential benefits of intended AI system functionality and performance are examined and documented.",
+        "MAP-3.2": "Potential costs of the AI system are examined and documented, including non-monetary costs.",
+        "MAP-3.3": "Targeted application scope is specified and documented based on the system's capability.",
+        "MAP-3.4": "Processes for operator and practitioner proficiency with AI system performance and trustworthiness are defined.",
+        "MAP-3.5": "Processes for human oversight are defined, assessed, and documented in accordance with organizational policies.",
+        "MAP-4.1": "Approaches for mapping AI technology and legal risks of its components are documented.",
+        "MAP-4.2": "Internal risk controls for components of the AI system, including third-party AI technologies, are identified and documented.",
+        "MAP-5.1": "Likelihood and magnitude of each identified impact based on expected use are identified and documented.",
+        "MAP-5.2": "Practices and personnel for supporting regular engagement with relevant AI actors and integrating feedback about positive, negative, and unanticipated impacts are in place and documented."
+      }
+    },
+    "MEASURE": {
+      "name": "Measure",
+      "description": "Identified risks are assessed, analyzed, or tracked.",
+      "subcategories": {
+        "MEASURE-1.1": "Approaches and metrics for measurement of AI risks enumerated during the Map function are selected for implementation.",
+        "MEASURE-1.2": "Appropriateness of AI metrics and effectiveness of existing controls is regularly assessed and updated.",
+        "MEASURE-1.3": "Internal experts who did not serve as front-line developers for the system and/or independent assessors are involved in regular assessments and updates.",
+        "MEASURE-2.1": "Test sets, metrics, and details about the tools used during TEVV are documented.",
+        "MEASURE-2.2": "Evaluations involving human subjects meet applicable requirements and are representative of the relevant population.",
+        "MEASURE-2.3": "AI system performance or assurance criteria are measured qualitatively or quantitatively and demonstrated for conditions similar to deployment setting(s).",
+        "MEASURE-2.4": "The functionality and behavior of the AI system and its components are monitored after deployment.",
+        "MEASURE-2.5": "The AI system to be deployed is demonstrated to be valid and reliable.",
+        "MEASURE-2.6": "AI system is evaluated regularly for safety risks.",
+        "MEASURE-2.7": "AI system security and resilience are evaluated and documented.",
+        "MEASURE-2.8": "Risks associated with transparency and accountability are examined and documented.",
+        "MEASURE-2.9": "The AI model is explained, validated, and documented.",
+        "MEASURE-2.10": "Privacy risk of the AI system is examined and documented.",
+        "MEASURE-2.11": "Fairness and bias of the AI system is evaluated and results are documented.",
+        "MEASURE-2.12": "Environmental impact and sustainability of AI model training and management activities are assessed and documented.",
+        "MEASURE-2.13": "Effectiveness of the employed TEVV metrics and processes is evaluated and documented.",
+        "MEASURE-3.1": "Approaches, personnel, and documentation are in place to regularly identify and track existing, unanticipated, and emergent AI risks.",
+        "MEASURE-3.2": "Risk tracking approaches are considered for settings where AI risks are difficult to assess using currently available measurement techniques.",
+        "MEASURE-3.3": "Feedback processes for end users and impacted communities to report problems and appeal system outcomes are established and integrated.",
+        "MEASURE-4.1": "Measurement approaches for identifying AI risks are connected to deployment context(s).",
+        "MEASURE-4.2": "Measurement results regarding AI system trustworthiness in deployment context(s) are informed by input from domain experts and relevant AI actors.",
+        "MEASURE-4.3": "Measurable performance improvements based on consultations with relevant AI actors and field data, and identification of incidents and errors, are identified and documented."
+      }
+    },
+    "MANAGE": {
+      "name": "Manage",
+      "description": "Risks are prioritized and acted upon based on a projected impact.",
+      "subcategories": {
+        "MANAGE-1.1": "A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed.",
+        "MANAGE-1.2": "Treatment of documented AI risks is prioritized based on impact, likelihood, and available resources or methods.",
+        "MANAGE-1.3": "Responses to the AI risks deemed high priority are developed, planned, and documented.",
+        "MANAGE-1.4": "Negative residual risks (to both downstream acquirers of AI systems and society) are documented.",
+        "MANAGE-2.1": "Resources required to manage AI risks are taken into account along with viable non-AI alternative systems, approaches, or methods.",
+        "MANAGE-2.2": "Mechanisms are in place and applied to sustain the value of deployed AI systems.",
+        "MANAGE-2.3": "Procedures are followed to respond to and recover from a previously unknown risk when it is identified.",
+        "MANAGE-2.4": "Mechanisms are in place and applied, and responsibilities are assigned and understood, to supersede, disengage, or deactivate AI systems that demonstrate performance or outcomes inconsistent with intended use.",
+        "MANAGE-3.1": "AI risks and benefits from third-party resources are regularly monitored.",
+        "MANAGE-3.2": "Pre-trained models which are used for development are monitored as part of AI system regular monitoring and maintenance.",
+        "MANAGE-4.1": "Post-deployment AI system monitoring plans are implemented.",
+        "MANAGE-4.2": "Measurable continuous improvement activities are integrated into AI system updates.",
+        "MANAGE-4.3": "Incidents and errors are communicated to relevant AI actors, including affected communities."
+      }
+    }
+  },
+  "genai_profile": {
+    "name": "NIST AI 600-1 (Generative AI Profile)",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "note": "Companion profile for generative AI that maps unique risks to AI RMF subcategories. Incidents in this dataset prefer the core AI RMF subcategory identifiers above; the GenAI profile is supplemental context."
+  }
+}

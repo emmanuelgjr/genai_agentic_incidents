@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/emmanuelgjr/genai_agentic_incidents/schema/incident.schema.json",
+  "title": "GenAI / Agentic AI Security Incident",
+  "description": "Schema for a single incident entry in the genai_agentic_incidents single-source-of-truth dataset. Every entry is mapped to OWASP LLM Top 10, OWASP Agentic (ASI) Top 10, NIST AI RMF, and MITRE ATLAS where applicable.",
+  "type": "object",
+  "required": ["id", "title", "date", "year", "category", "description", "severity", "references"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^INC-[0-9]{5}$",
+      "description": "Stable 5-digit incident identifier, e.g. INC-00001"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Upstream identifiers when consolidated from external sources (e.g. AIID-123, CVE-2025-xxxxx, ATLAS-AML.CS0001, AVID-2024-V005)"
+    },
+    "cve_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^CVE-[0-9]{4}-[0-9]{4,7}$" }
+    },
+    "cvss_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "title": { "type": "string", "minLength": 5 },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$",
+      "description": "ISO date, year-only, or year-month allowed"
+    },
+    "year": { "type": "integer", "minimum": 2010, "maximum": 2030 },
+    "category": {
+      "type": "string",
+      "enum": ["real-world", "research", "research-demonstrated", "red-team", "vulnerability-disclosure", "threat-report", "policy", "regulatory"]
+    },
+    "description": { "type": "string", "minLength": 20 },
+    "attack_vector": {
+      "type": "string",
+      "description": "Primary attack mechanism — free-form but should match one of the controlled values where possible.",
+      "examples": [
+        "prompt-injection", "indirect-prompt-injection", "jailbreak",
+        "data-exfiltration", "model-theft", "model-poisoning",
+        "supply-chain", "rce", "ssrf", "deserialization",
+        "path-traversal", "sql-injection", "command-injection",
+        "xss", "auth-bypass", "sandbox-escape", "info-disclosure",
+        "tool-abuse", "memory-poisoning", "agent-hijack",
+        "insider", "adversarial-input", "evasion",
+        "membership-inference", "model-inversion", "model-extraction",
+        "dos", "other"
+      ]
+    },
+    "affected": {
+      "type": "string",
+      "description": "Vendor, product, organization, or system affected"
+    },
+    "impact": {
+      "type": "string",
+      "description": "Real-world consequence summary"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["Critical", "High", "Medium", "Low", "Info"]
+    },
+    "owasp_llm": {
+      "type": "array",
+      "description": "OWASP Top 10 for LLM Applications (2025) codes",
+      "items": {
+        "type": "string",
+        "enum": ["LLM01", "LLM02", "LLM03", "LLM04", "LLM05", "LLM06", "LLM07", "LLM08", "LLM09", "LLM10"]
+      },
+      "uniqueItems": true
+    },
+    "owasp_asi": {
+      "type": "array",
+      "description": "OWASP Agentic (ASI) Top 10 codes",
+      "items": {
+        "type": "string",
+        "enum": ["ASI01", "ASI02", "ASI03", "ASI04", "ASI05", "ASI06", "ASI07", "ASI08", "ASI09", "ASI10"]
+      },
+      "uniqueItems": true
+    },
+    "owasp_dsgai": {
+      "type": "array",
+      "description": "OWASP Data Security for GenAI codes (legacy/companion)",
+      "items": { "type": "string", "pattern": "^DSGAI[0-9]{2}$" }
+    },
+    "nist_ai_rmf": {
+      "type": "array",
+      "description": "NIST AI RMF (AI 100-1) subcategory identifiers",
+      "items": {
+        "type": "string",
+        "pattern": "^(GOVERN|MAP|MEASURE|MANAGE)-[0-9]+\\.[0-9]+$"
+      },
+      "uniqueItems": true
+    },
+    "mitre_atlas": {
+      "type": "array",
+      "description": "MITRE ATLAS technique IDs",
+      "items": { "type": "string", "pattern": "^AML\\.T[0-9]{4}(\\.[0-9]{3})?$" },
+      "uniqueItems": true
+    },
+    "mitre_atlas_tactics": {
+      "type": "array",
+      "description": "MITRE ATLAS tactic IDs",
+      "items": { "type": "string", "pattern": "^AML\\.TA[0-9]{4}$" },
+      "uniqueItems": true
+    },
+    "maestro_layers": {
+      "type": "array",
+      "description": "MAESTRO architectural layer mapping (legacy/companion)",
+      "items": {
+        "type": "object",
+        "required": ["layer", "label"],
+        "properties": {
+          "layer": { "type": "string", "pattern": "^L[1-7]$" },
+          "label": { "type": "string" },
+          "role": { "type": "string", "enum": ["origin", "impact", "blind-spot", "control", "amplifier", "propagation", "target"] },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "mitigations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "references": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["url"],
+        "properties": {
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "type": { "type": "string", "enum": ["news", "advisory", "research", "vendor", "blog", "cve", "report", "paper", "video", "podcast", "regulatory", "disclosure", "documentation", "legal", "analysis", "other"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "added": {
+      "type": "string",
+      "format": "date",
+      "description": "Date this entry was first added to the dataset"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date",
+      "description": "Last update date"
+    }
+  }
+}

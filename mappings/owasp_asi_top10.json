@@ -1,0 +1,47 @@
+{
+  "framework": "OWASP Agentic Top 10 (ASI)",
+  "version": "2025",
+  "url": "https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/",
+  "entries": {
+    "ASI01": {
+      "name": "Agent Goal Hijack",
+      "description": "Attacker manipulates the agent's goals, instructions, or planning loop to redirect its behavior toward attacker-chosen objectives. Includes goal manipulation through prompt injection, instruction override, and planning corruption."
+    },
+    "ASI02": {
+      "name": "Tool Misuse & Exploitation",
+      "description": "Adversaries cause the agent to invoke tools in unintended, unsafe, or unauthorized ways — covering tool poisoning, parameter injection, unauthorized tool invocation, and exploitation of tool implementation flaws."
+    },
+    "ASI03": {
+      "name": "Identity & Privilege Abuse",
+      "description": "The agent acts under elevated identity or privilege, or attackers abuse the agent's identity to perform actions they could not otherwise perform — includes IAM misconfiguration, OAuth abuse, identity impersonation."
+    },
+    "ASI04": {
+      "name": "Agentic Supply Chain Vulnerabilities",
+      "description": "Compromise of dependencies in the agent stack: models, MCP servers, plugins, extensions, IDE components, datasets, packages — that propagate to agent behavior or data."
+    },
+    "ASI05": {
+      "name": "Unexpected Code Execution (RCE)",
+      "description": "Agent-driven or agent-mediated execution of arbitrary code on host, container, or downstream systems — through tool calls, sandbox escapes, code interpreter abuse, or deserialization in agent runtimes."
+    },
+    "ASI06": {
+      "name": "Memory & Context Poisoning",
+      "description": "Persistent corruption of agent memory, knowledge bases, RAG stores, or context windows that biases or hijacks future behavior — both session-scoped and long-term memory variants."
+    },
+    "ASI07": {
+      "name": "Insecure Inter-Agent Communication",
+      "description": "Vulnerabilities in agent-to-agent (A2A) protocols, message buses, MCP transport, or multi-agent coordination — including agent card poisoning, replay, impersonation, and broadcast amplification."
+    },
+    "ASI08": {
+      "name": "Cascading Failures",
+      "description": "Failure of one agent or agentic component propagates through multi-agent workflows, automated pipelines, or human-out-of-loop chains, amplifying impact."
+    },
+    "ASI09": {
+      "name": "Human-Agent Trust Exploitation",
+      "description": "Attackers exploit users' or operators' trust in the agent — through convincing but malicious output, social engineering of human-in-the-loop checkpoints, or manipulation of the agent's presentation layer."
+    },
+    "ASI10": {
+      "name": "Rogue Agents",
+      "description": "Agents acting autonomously in adversarial, unaligned, or malicious ways — whether intentionally weaponized (e.g., autonomous offensive agents) or emergent from misconfiguration."
+    }
+  }
+}

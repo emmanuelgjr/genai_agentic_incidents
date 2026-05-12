@@ -1,0 +1,36 @@
+{
+  "framework": "MAESTRO Agentic Architecture Layers",
+  "version": "1.0",
+  "description": "Architectural layer model used by the OWASP GenAI Security Crosswalk to describe where a vulnerability or incident originates, manifests, or could have been controlled.",
+  "url": "https://genai.owasp.org/resource/genai-security-project-maestro/",
+  "layers": {
+    "L1": {
+      "label": "Foundation Models",
+      "description": "Underlying pretrained model — alignment, base capability, intrinsic vulnerabilities like jailbreak susceptibility."
+    },
+    "L2": {
+      "label": "Data Operations",
+      "description": "Training, fine-tuning, evaluation, embedding, and retrieval datasets and the pipelines that produce them."
+    },
+    "L3": {
+      "label": "Agent Frameworks & Tooling",
+      "description": "Agent runtimes, tool/plugin layers, MCP servers, planners, memory subsystems."
+    },
+    "L4": {
+      "label": "Deployment & Infrastructure",
+      "description": "Hosting, networking, sandboxing, container/runtime, secrets management for AI workloads."
+    },
+    "L5": {
+      "label": "Evaluation & Observability",
+      "description": "Red-teaming, eval harnesses, telemetry, logging, anomaly detection, model monitoring."
+    },
+    "L6": {
+      "label": "Security & Compliance",
+      "description": "Policy, governance, DLP, access controls, audit, regulatory compliance."
+    },
+    "L7": {
+      "label": "Human Factors & UX",
+      "description": "Operator/end-user interaction, trust boundaries, presentation layer, human-in-the-loop checkpoints."
+    }
+  }
+}
