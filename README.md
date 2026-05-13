@@ -31,10 +31,13 @@ The dataset is published as both a machine-readable JSON (`data/incidents.json`)
 ├── legacy/                     ← original source files (preserved verbatim)
 ├── ingest/                     ← per-source aggregator outputs (CVE, AIID, ATLAS, etc.)
 ├── scripts/
-│   ├── parse_existing.py       ← parse legacy/ → data/legacy_consolidated.json
-│   ├── merge_and_dedupe.py     ← merge legacy + ingest/* → data/incidents.json
-│   ├── render_markdown.py      ← data/incidents.json → INCIDENTS.md
-│   └── validate.py             ← validate JSON against schema
+│   ├── parse_existing.py             ← parse legacy/ → data/legacy_consolidated.json
+│   ├── ingest_external.py            ← parse cloned source repos under ../_external/ → ingest/*.json
+│   ├── scrape_aiid.py                ← fetch all AIID incident pages (OG metadata) → ingest/aiid_full.json
+│   ├── ingest_cve_nvd_expanded.py    ← pull AI-relevant CVEs from NVD/GHSA/OSV → ingest/cve_nvd_expanded.json
+│   ├── merge_and_dedupe.py           ← merge legacy + ingest/* → data/incidents.json
+│   ├── render_markdown.py            ← data/incidents.json → INCIDENTS.md
+│   └── validate.py                   ← validate JSON against schema
 ├── INCIDENTS.md                ← rendered index of all incidents
 ├── LICENSE                     ← MIT (covers code in scripts/)
 ├── LICENSE-DATA                ← CC-BY-4.0 (covers the dataset under data/)
@@ -146,14 +149,20 @@ When a framework releases a new version, update the mapping JSON in `mappings/` 
 
 The current dataset draws from the following public sources. Each entry retains links back to the originating advisory, post, or paper:
 
-- **OWASP GenAI Security Project** — incident references
-- **AI Incident Database** (incidentdatabase.ai) — security-relevant subset
-- **MITRE ATLAS case studies** — including the framework's own incident references
-- **AVID** — AI Vulnerability Database (avidml.org)
-- **NVD / CVE.org / GitHub Security Advisories / CISA KEV** — AI/ML/LLM/agent CVEs
+- **OWASP GenAI Security Project** — incident roundups + Top 10 references
+- **AI Incident Database (AIID)** ([incidentdatabase.ai](https://incidentdatabase.ai/), [github.com/responsible-ai-collaborative/aiid](https://github.com/responsible-ai-collaborative/aiid)) — security-relevant subset of the full corpus, scraped via OG metadata
+- **OECD AI Incidents Monitor (AIM)** ([oecd.ai/en/incidents](https://oecd.ai/en/incidents)) — cross-listed against AIID via the official AIID-OECD bridge file
+- **AIAAIC** ([aiaaic.org](https://www.aiaaic.org/aiaaic-repository)) — AI, Algorithmic, and Automation Incidents and Controversies
+- **MITRE ATLAS** ([atlas.mitre.org](https://atlas.mitre.org/), [github.com/mitre-atlas/atlas-data](https://github.com/mitre-atlas/atlas-data)) — all case studies parsed from the YAML corpus
+- **AVID** — AI Vulnerability Database ([avidml.org](https://avidml.org/))
+- **CSET-AIID Harm Taxonomy** ([github.com/georgetown-cset/CSET-AIID-harm-taxonomy](https://github.com/georgetown-cset/CSET-AIID-harm-taxonomy)) — controlled vocabulary reference
+- **NVD / CVE.org / GitHub Security Advisories / OSV.dev / CISA KEV** — AI/ML/LLM/agent CVEs pulled via REST API across 56 keywords
+- **NVIDIA garak** ([github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)) — one entry per LLM vulnerability scanner probe (canonical attack classes)
+- **promptfoo** ([github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo)) — one entry per red-team plugin/strategy
+- **ModelOriented/CVE-AI** ([github.com/ModelOriented/CVE-AI](https://github.com/ModelOriented/CVE-AI)) — XAI-based AI model validation findings
 - **Researcher and vendor blogs** — Embrace The Red, Tenable, Palo Alto Unit 42, Trail of Bits, Aim Security, Noma Security, Wiz Research, Lakera, Invariant Labs, PromptArmor, Pillar Security, Token Security, HiddenLayer, Robust Intelligence, Protect AI, Cato Networks CTRL, Endor Labs, Sysdig, Zenity Labs, JFrog, Datadog Security Labs, Reco, AppOmni, BeyondTrust, Oasis Security, Mindgard, Koi Security, Imperva, Sonar, Oligo Security, OX Security, SentinelOne, Check Point Research, Trend Micro, Tinfoil Security, ZeroPath, Cymulate, MaccariTA, and others.
-- **Vendor threat reports** — Anthropic, OpenAI, Google Threat Intelligence, Microsoft Security Response Center, AWS Security Bulletins.
-- **Academic papers** — selected USENIX Security / NDSS / S&P / arXiv entries with concrete adversarial PoCs.
+- **Vendor threat reports** — Anthropic, OpenAI, Google Threat Intelligence (GTIG/TAG/Mandiant), Microsoft Threat Intelligence (MTAC/MSRC), AWS Security Bulletins, CrowdStrike, Recorded Future.
+- **Academic papers** — selected USENIX Security / NDSS / S&P / CCS / arXiv entries with concrete adversarial PoCs.
 
 If a source is missing or mis-attributed, open an issue or PR.
 

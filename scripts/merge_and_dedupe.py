@@ -344,8 +344,14 @@ def merge_into(target: dict, src: dict):
     target["references"] = list(seen.values())
     # Pick higher severity
     order = ["Info", "Low", "Medium", "High", "Critical"]
-    if order.index(src.get("severity", "Medium")) > order.index(target.get("severity", "Medium")):
-        target["severity"] = src["severity"]
+    src_sev = src.get("severity") or "Medium"
+    tgt_sev = target.get("severity") or "Medium"
+    if src_sev not in order:
+        src_sev = "Medium"
+    if tgt_sev not in order:
+        tgt_sev = "Medium"
+    if order.index(src_sev) > order.index(tgt_sev):
+        target["severity"] = src_sev
     fill_taxonomy(target)
 
 

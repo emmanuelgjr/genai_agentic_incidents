@@ -18,6 +18,7 @@ desktop.ini
 # Local-only ingest scratch (the canonical ingest/* JSON files are tracked)
 ingest/*.scratch.json
 ingest/.cache/
+ingest/_cache/
 
 # Build artifacts
 dist/

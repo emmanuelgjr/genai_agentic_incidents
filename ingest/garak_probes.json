@@ -1,0 +1,1478 @@
+[
+  {
+    "source_id": "GARAK-agent_breaker",
+    "title": "garak probe: **Agent Breaker probe**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `agent_breaker`. **Agent Breaker probe**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 agent_breaker",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/agent_breaker.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "agent_breaker",
+      "owasp:llm01",
+      "owasp:llm07",
+      "owasp:llm08",
+      "payload:agentic:exploitation",
+      "quality:Security:AgentSecurity"
+    ]
+  },
+  {
+    "source_id": "GARAK-ansiescape",
+    "title": "garak probe: **ANSI Escape attack**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `ansiescape`. **ANSI Escape attack**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01",
+      "LLM05"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 ansiescape",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/ansiescape.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "ansiescape",
+      "avid-effect:security:S0100",
+      "avid-effect:security:S0200",
+      "owasp:llm01",
+      "owasp:llm02",
+      "owasp:llm05",
+      "quality:Security:Integrity"
+    ]
+  },
+  {
+    "source_id": "GARAK-apikey",
+    "title": "garak probe: API Key generation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `apikey`. API Key generation",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 apikey",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/apikey.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "apikey",
+      "quality:Behavioral:ContentSafety:LegalGoodsServices"
+    ]
+  },
+  {
+    "source_id": "GARAK-atkgen",
+    "title": "garak probe: **atkgen: Attack Generation**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `atkgen`. **atkgen: Attack Generation**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 atkgen",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/atkgen.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "atkgen",
+      "avid-effect:ethics:E0301",
+      "payload:unwanted",
+      "quality:Behavioral:ContentSafety:HateHarassment",
+      "quality:Behavioral:ContentSafety:Profanity",
+      "quality:Behavioral:ContentSafety:Toxicity"
+    ]
+  },
+  {
+    "source_id": "GARAK-audio",
+    "title": "garak probe: **Audio attack probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `audio`. **Audio attack probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM05"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 audio",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/audio.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "audio",
+      "avid-effect:performance:P0204",
+      "avid-effect:security:S0403",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-av_spam_scanning",
+    "title": "garak probe: **AV Spam Scanning**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `av_spam_scanning`. **AV Spam Scanning**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM05"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 av_spam_scanning",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/av_spam_scanning.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "av_spam_scanning",
+      "avid-effect:security:S0301",
+      "avid-effect:security:S0403",
+      "owasp:llm02",
+      "payload:malicious:badcode:phishing",
+      "payload:malicious:badcode:spam",
+      "payload:malicious:badcode:virus",
+      "quality:Security:Adversarial"
+    ]
+  },
+  {
+    "source_id": "GARAK-badchars",
+    "title": "garak probe: Imperceptible perturbation probes inspired by the Bad Characters paper.",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `badchars`. Imperceptible perturbation probes inspired by the Bad Characters paper.",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 badchars",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/badchars.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "badchars",
+      "avid-effect:security:S0403",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-continuation",
+    "title": "garak probe: **Contentious term continuation probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `continuation`. **Contentious term continuation probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 continuation",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/continuation.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "continuation",
+      "avid-effect:ethics:E0101",
+      "avid-effect:ethics:E0301",
+      "avid-effect:performance:P0401",
+      "owasp:llm01",
+      "payload:unwanted:hatespeech",
+      "quality:Behavioral:ContentSafety:HateHarassment",
+      "quality:Behavioral:ContentSafety:Toxicity"
+    ]
+  },
+  {
+    "source_id": "GARAK-dan",
+    "title": "garak probe: **DAN probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `dan`. **DAN probes**",
+    "attack_vector": "jailbreak",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 dan",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/dan.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "dan",
+      "avid-effect:performance:P0204",
+      "payload:jailbreak"
+    ]
+  },
+  {
+    "source_id": "GARAK-divergence",
+    "title": "garak probe: **Divergence attacks**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `divergence`. **Divergence attacks**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 divergence",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/divergence.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "divergence",
+      "avid-effect:performance:P0403",
+      "avid-effect:security:S0301",
+      "owasp:llm04",
+      "owasp:llm06",
+      "owasp:llm10",
+      "payload:leak:training",
+      "payload:unwanted:denial_of_service",
+      "quality:Security:Confidentiality"
+    ]
+  },
+  {
+    "source_id": "GARAK-doctor",
+    "title": "garak probe: **Doctor attack**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `doctor`. **Doctor attack**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 doctor",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/doctor.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "doctor",
+      "avid-effect:security:S0301",
+      "cwe:1427",
+      "owasp:llm01",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-donotanswer",
+    "title": "garak probe: **Do-Not-Answer Probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `donotanswer`. **Do-Not-Answer Probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 donotanswer",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/donotanswer.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "donotanswer"
+    ]
+  },
+  {
+    "source_id": "GARAK-dra",
+    "title": "garak probe: **DRA (Disguise and Reconstruction Attack) probes.**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `dra`. **DRA (Disguise and Reconstruction Attack) probes.**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 dra",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/dra.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "dra",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-encoding",
+    "title": "garak probe: **Encoding-based prompt injection**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `encoding`. **Encoding-based prompt injection**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 encoding",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/encoding.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "encoding",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "payload:generic",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-exploitation",
+    "title": "garak probe: **Exploitation**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `exploitation`. **Exploitation**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM05"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 exploitation",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/exploitation.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "exploitation",
+      "avid-effect:security:S0301",
+      "avid-effect:security:S0403",
+      "cwe:1336",
+      "cwe:1426",
+      "cwe:1427",
+      "cwe:89",
+      "cwe:94",
+      "cwe:95"
+    ]
+  },
+  {
+    "source_id": "GARAK-fileformats",
+    "title": "garak probe: **File formats**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `fileformats`. **File formats**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM03"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 fileformats",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/fileformats.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "fileformats",
+      "owasp:llm05"
+    ]
+  },
+  {
+    "source_id": "GARAK-fitd",
+    "title": "garak probe: **Foot In The Door**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `fitd`. **Foot In The Door**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 fitd",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/fitd.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "fitd",
+      "owasp:llm01",
+      "owasp:llm02",
+      "owasp:llm05"
+    ]
+  },
+  {
+    "source_id": "GARAK-glitch",
+    "title": "garak probe: **Glitch keyword probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `glitch`. **Glitch keyword probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 glitch",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/glitch.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "glitch",
+      "avid-effect:performance:P0201",
+      "avid-effect:security:S0201",
+      "owasp:llm05",
+      "payload:generic",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-goat",
+    "title": "garak probe: **Generative Offensive Agent Tester (GOAT)**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `goat`. **Generative Offensive Agent Tester (GOAT)**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 goat",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/goat.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "goat",
+      "avid-effect:security:S0403",
+      "cwe:1427",
+      "owasp:llm01",
+      "owasp:llm09",
+      "quality:Behavioral:ContentSafety:HateHarassment",
+      "quality:Behavioral:ContentSafety:LegalGoodsServices",
+      "quality:Behavioral:ContentSafety:Profanity",
+      "quality:Behavioral:ContentSafety:Toxicity"
+    ]
+  },
+  {
+    "source_id": "GARAK-goodside",
+    "title": "garak probe: **Goodside**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `goodside`. **Goodside**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 goodside",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/goodside.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "goodside",
+      "avid-effect:ethics:E0402",
+      "avid-effect:performance:P0201",
+      "avid-effect:performance:P0204",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "owasp:llm05",
+      "owasp:llm09",
+      "payload:generic"
+    ]
+  },
+  {
+    "source_id": "GARAK-grandma",
+    "title": "garak probe: **The grandma attack**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `grandma`. **The grandma attack**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 grandma",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/grandma.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "grandma",
+      "avid-effect:security:S0300",
+      "owasp:llm06",
+      "quality:Behavioral:ContentSafety:LegalGoodsServices",
+      "risk-cards:lmrc:providing_illegal_info"
+    ]
+  },
+  {
+    "source_id": "GARAK-latentinjection",
+    "title": "garak probe: **Latent injection**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `latentinjection`. **Latent injection**",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "garak probe source \u2014 latentinjection",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/latentinjection.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "latentinjection",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-leakreplay",
+    "title": "garak probe: **Data leak: Replay attack**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `leakreplay`. **Data leak: Replay attack**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 leakreplay",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/leakreplay.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "leakreplay",
+      "avid-effect:security:S0301",
+      "owasp:llm06",
+      "owasp:llm10",
+      "payload:leak:training",
+      "quality:Security:ExtractionInversion"
+    ]
+  },
+  {
+    "source_id": "GARAK-lmrc",
+    "title": "garak probe: **Language Model Risk Cards**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `lmrc`. **Language Model Risk Cards**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 lmrc",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/lmrc.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "lmrc",
+      "avid-effect:ethics:E0101",
+      "avid-effect:ethics:E0301",
+      "avid-effect:ethics:E0302",
+      "avid-effect:ethics:E0402",
+      "avid-effect:performance:P0401",
+      "payload:dangerous:medical",
+      "payload:unwanted:hatespeech",
+      "payload:unwanted:profanity"
+    ]
+  },
+  {
+    "source_id": "GARAK-malwaregen",
+    "title": "garak probe: **Malware generation**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `malwaregen`. **Malware generation**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 malwaregen",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/malwaregen.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "malwaregen",
+      "avid-effect:security:S0403",
+      "payload:malicious:badcode",
+      "quality:Behavioral:ContentSafety:LegalGoodsServices"
+    ]
+  },
+  {
+    "source_id": "GARAK-misleading",
+    "title": "garak probe: **Misleading claims**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `misleading`. **Misleading claims**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 misleading",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/misleading.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "misleading",
+      "avid-effect:performance:P0204",
+      "owasp:llm09",
+      "payload:hallucination",
+      "quality:Robustness:GenerativeMisinformation"
+    ]
+  },
+  {
+    "source_id": "GARAK-packagehallucination",
+    "title": "garak probe: **Package Hallucination**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `packagehallucination`. **Package Hallucination**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM03",
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 packagehallucination",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/packagehallucination.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "packagehallucination",
+      "owasp:llm02",
+      "owasp:llm09",
+      "payload:malicious:badcode",
+      "quality:Robustness:GenerativeMisinformation"
+    ]
+  },
+  {
+    "source_id": "GARAK-phrasing",
+    "title": "garak probe: **Phrasing**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `phrasing`. **Phrasing**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 phrasing",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/phrasing.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "phrasing",
+      "owasp:llm01",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-promptinject",
+    "title": "garak probe: **PromptInject**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `promptinject`. **PromptInject**",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "garak probe source \u2014 promptinject",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/promptinject.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "promptinject"
+    ]
+  },
+  {
+    "source_id": "GARAK-propile",
+    "title": "garak probe: ProPILE: Probing Privacy Leakage in Large Language Models",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `propile`. ProPILE: Probing Privacy Leakage in Large Language Models",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 propile",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/propile.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "propile",
+      "avid-effect:security:S0301",
+      "owasp:llm06",
+      "payload:leak:pii",
+      "payload:leak:training",
+      "quality:Security:ExtractionInversion"
+    ]
+  },
+  {
+    "source_id": "GARAK-realtoxicityprompts",
+    "title": "garak probe: **RealToxicityPrompts**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `realtoxicityprompts`. **RealToxicityPrompts**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 realtoxicityprompts",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/realtoxicityprompts.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "realtoxicityprompts",
+      "avid-effect:ethics:E0301",
+      "payload:unwanted",
+      "quality:Behavioral:ContentSafety:Toxicity"
+    ]
+  },
+  {
+    "source_id": "GARAK-sata",
+    "title": "garak probe: **Simple Assistive Task Linkage**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `sata`. **Simple Assistive Task Linkage**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 sata",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/sata.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "sata",
+      "avid-effect:performance:P0204",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-smuggling",
+    "title": "garak probe: **Token Smuggling**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `smuggling`. **Token Smuggling**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 smuggling",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/smuggling.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "smuggling",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-snowball",
+    "title": "garak probe: **Snowball probe**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `snowball`. **Snowball probe**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 snowball",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/snowball.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "snowball",
+      "avid-effect:performance:P0204",
+      "owasp:llm09",
+      "payload:hallucination",
+      "quality:Robustness:GenerativeMisinformation"
+    ]
+  },
+  {
+    "source_id": "GARAK-suffix",
+    "title": "garak probe: **Suffix probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `suffix`. **Suffix probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 suffix",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/suffix.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "suffix",
+      "avid-effect:performance:P0204",
+      "avid-effect:security:S0403",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-sysprompt_extraction",
+    "title": "garak probe: **System Prompt Extraction**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `sysprompt_extraction`. **System Prompt Extraction**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 sysprompt_extraction",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/sysprompt_extraction.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "sysprompt_extraction",
+      "avid-effect:security:S0301",
+      "owasp:llm01",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-tap",
+    "title": "garak probe: **Tree of Attacks with Pruning (TAP) probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `tap`. **Tree of Attacks with Pruning (TAP) probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 tap",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/tap.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "tap",
+      "avid-effect:performance:P0204",
+      "avid-effect:security:S0403",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-test",
+    "title": "garak probe: **Test Probes**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `test`. **Test Probes**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 test",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/test.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "test"
+    ]
+  },
+  {
+    "source_id": "GARAK-topic",
+    "title": "garak probe: **Topic probe**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `topic`. **Topic probe**",
+    "attack_vector": "other",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "garak probe source \u2014 topic",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/topic.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "topic",
+      "avid-effect:security:S0301",
+      "owasp:llm10",
+      "quality:Security:Confidentiality"
+    ]
+  },
+  {
+    "source_id": "GARAK-visual_jailbreak",
+    "title": "garak probe: **Visual Jailbreak**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `visual_jailbreak`. **Visual Jailbreak**",
+    "attack_vector": "jailbreak",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "garak probe source \u2014 visual_jailbreak",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/visual_jailbreak.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "visual_jailbreak",
+      "avid-effect:performance:P0204",
+      "avid-effect:security:S0403",
+      "owasp:llm01",
+      "payload:jailbreak",
+      "quality:Security:PromptStability"
+    ]
+  },
+  {
+    "source_id": "GARAK-web_injection",
+    "title": "garak probe: **Web Injection**",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "NVIDIA garak LLM vulnerability scanner probe `web_injection`. **Web Injection**",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "garak probe source \u2014 web_injection",
+        "url": "https://github.com/NVIDIA/garak/blob/main/garak/probes/web_injection.py",
+        "type": "research"
+      },
+      {
+        "title": "NVIDIA garak",
+        "url": "https://github.com/NVIDIA/garak",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "garak",
+      "probe",
+      "web_injection",
+      "avid-effect:security:S0301",
+      "avid-effect:security:S0403",
+      "cwe:352",
+      "cwe:79",
+      "owasp:llm02",
+      "owasp:llm06",
+      "payload:leak:chat",
+      "payload:malicious:renderer"
+    ]
+  }
+]

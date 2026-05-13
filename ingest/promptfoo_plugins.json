@@ -1,0 +1,5546 @@
+[
+  {
+    "source_id": "PROMPTFOO-plugin-agentic:memory-poisoning",
+    "title": "promptfoo plugin: agentic:memory-poisoning",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `agentic:memory-poisoning`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [
+      "ASI06"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin agentic:memory-poisoning",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/agentic/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "agentic:memory-poisoning"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-ascii-smuggling",
+    "title": "promptfoo plugin: ascii-smuggling",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `ascii-smuggling`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin ascii-smuggling",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/ascii-smuggling/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "ascii-smuggling"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-bias:age",
+    "title": "promptfoo plugin: bias:age",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `bias:age`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin bias:age",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/bias/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "bias:age",
+      "bias"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-bias:disability",
+    "title": "promptfoo plugin: bias:disability",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `bias:disability`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin bias:disability",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/bias/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "bias:disability",
+      "bias"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-bias:gender",
+    "title": "promptfoo plugin: bias:gender",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `bias:gender`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin bias:gender",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/bias/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "bias:gender",
+      "bias"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-bias:race",
+    "title": "promptfoo plugin: bias:race",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `bias:race`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin bias:race",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/bias/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "bias:race",
+      "bias"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-cross-session-leak",
+    "title": "promptfoo plugin: cross-session-leak",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `cross-session-leak`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin cross-session-leak",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/cross-session-leak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "cross-session-leak"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-data-exfil",
+    "title": "promptfoo plugin: data-exfil",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `data-exfil`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin data-exfil",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/data-exfil/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "data-exfil"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-debug-access",
+    "title": "promptfoo plugin: debug-access",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `debug-access`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM05"
+    ],
+    "owasp_asi": [
+      "ASI05"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin debug-access",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/debug-access/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "debug-access"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-divergent-repetition",
+    "title": "promptfoo plugin: divergent-repetition",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `divergent-repetition`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin divergent-repetition",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/divergent-repetition/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "divergent-repetition"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-ecommerce:compliance-bypass",
+    "title": "promptfoo plugin: ecommerce:compliance-bypass",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `ecommerce:compliance-bypass`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin ecommerce:compliance-bypass",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/ecommerce/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "ecommerce:compliance-bypass"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-ecommerce:order-fraud",
+    "title": "promptfoo plugin: ecommerce:order-fraud",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `ecommerce:order-fraud`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin ecommerce:order-fraud",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/ecommerce/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "ecommerce:order-fraud"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-ecommerce:pci-dss",
+    "title": "promptfoo plugin: ecommerce:pci-dss",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `ecommerce:pci-dss`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin ecommerce:pci-dss",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/ecommerce/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "ecommerce:pci-dss"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-ecommerce:price-manipulation",
+    "title": "promptfoo plugin: ecommerce:price-manipulation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `ecommerce:price-manipulation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin ecommerce:price-manipulation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/ecommerce/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "ecommerce:price-manipulation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-excessive-agency",
+    "title": "promptfoo plugin: excessive-agency",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `excessive-agency`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "owasp_asi": [
+      "ASI02",
+      "ASI03"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin excessive-agency",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/excessive-agency/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "excessive-agency"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:calculation-error",
+    "title": "promptfoo plugin: financial:calculation-error",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:calculation-error`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:calculation-error",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:calculation-error"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:compliance-violation",
+    "title": "promptfoo plugin: financial:compliance-violation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:compliance-violation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:compliance-violation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:compliance-violation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:confidential-disclosure",
+    "title": "promptfoo plugin: financial:confidential-disclosure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:confidential-disclosure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:confidential-disclosure",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:confidential-disclosure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:counterfactual",
+    "title": "promptfoo plugin: financial:counterfactual",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:counterfactual`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:counterfactual",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:counterfactual"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:data-leakage",
+    "title": "promptfoo plugin: financial:data-leakage",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:data-leakage`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:data-leakage",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:data-leakage"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:defamation",
+    "title": "promptfoo plugin: financial:defamation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:defamation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:defamation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:defamation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:hallucination",
+    "title": "promptfoo plugin: financial:hallucination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:hallucination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:hallucination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:hallucination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:impartiality",
+    "title": "promptfoo plugin: financial:impartiality",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:impartiality`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:impartiality",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:impartiality"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:japan-fiea-suitability",
+    "title": "promptfoo plugin: financial:japan-fiea-suitability",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:japan-fiea-suitability`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:japan-fiea-suitability",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:japan-fiea-suitability"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:misconduct",
+    "title": "promptfoo plugin: financial:misconduct",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:misconduct`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:misconduct",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:misconduct"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:sox-compliance",
+    "title": "promptfoo plugin: financial:sox-compliance",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:sox-compliance`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:sox-compliance",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:sox-compliance"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-financial:sycophancy",
+    "title": "promptfoo plugin: financial:sycophancy",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `financial:sycophancy`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin financial:sycophancy",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/financial/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "financial:sycophancy"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-goal-misalignment",
+    "title": "promptfoo plugin: goal-misalignment",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `goal-misalignment`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin goal-misalignment",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/goal-misalignment/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "goal-misalignment"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-guardrails-eval",
+    "title": "promptfoo plugin: guardrails-eval",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `guardrails-eval`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin guardrails-eval",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/guardrails-eval/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "guardrails-eval"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:chemical-biological-weapons",
+    "title": "promptfoo plugin: harmful:chemical-biological-weapons",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:chemical-biological-weapons`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:chemical-biological-weapons",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:chemical-biological-weapons",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:child-exploitation",
+    "title": "promptfoo plugin: harmful:child-exploitation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:child-exploitation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:child-exploitation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:child-exploitation",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:copyright-violations",
+    "title": "promptfoo plugin: harmful:copyright-violations",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:copyright-violations`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:copyright-violations",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:copyright-violations",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:cybercrime",
+    "title": "promptfoo plugin: harmful:cybercrime",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:cybercrime`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:cybercrime",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:cybercrime",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:cybercrime:malicious-code",
+    "title": "promptfoo plugin: harmful:cybercrime:malicious-code",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:cybercrime:malicious-code`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:cybercrime:malicious-code",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:cybercrime:malicious-code",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:graphic-content",
+    "title": "promptfoo plugin: harmful:graphic-content",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:graphic-content`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:graphic-content",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:graphic-content",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:harassment-bullying",
+    "title": "promptfoo plugin: harmful:harassment-bullying",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:harassment-bullying`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:harassment-bullying",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:harassment-bullying",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:hate",
+    "title": "promptfoo plugin: harmful:hate",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:hate`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:hate",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:hate",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:illegal-activities",
+    "title": "promptfoo plugin: harmful:illegal-activities",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:illegal-activities`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:illegal-activities",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:illegal-activities",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:illegal-drugs",
+    "title": "promptfoo plugin: harmful:illegal-drugs",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:illegal-drugs`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:illegal-drugs",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:illegal-drugs",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:illegal-drugs:meth",
+    "title": "promptfoo plugin: harmful:illegal-drugs:meth",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:illegal-drugs:meth`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:illegal-drugs:meth",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:illegal-drugs:meth",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:indiscriminate-weapons",
+    "title": "promptfoo plugin: harmful:indiscriminate-weapons",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:indiscriminate-weapons`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:indiscriminate-weapons",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:indiscriminate-weapons",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:insults",
+    "title": "promptfoo plugin: harmful:insults",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:insults`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:insults",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:insults",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:intellectual-property",
+    "title": "promptfoo plugin: harmful:intellectual-property",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:intellectual-property`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:intellectual-property",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:intellectual-property",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:misinformation-disinformation",
+    "title": "promptfoo plugin: harmful:misinformation-disinformation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:misinformation-disinformation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:misinformation-disinformation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:misinformation-disinformation",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:non-violent-crime",
+    "title": "promptfoo plugin: harmful:non-violent-crime",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:non-violent-crime`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:non-violent-crime",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:non-violent-crime",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:privacy",
+    "title": "promptfoo plugin: harmful:privacy",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:privacy`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:privacy",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:privacy",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:profanity",
+    "title": "promptfoo plugin: harmful:profanity",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:profanity`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:profanity",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:profanity",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:radicalization",
+    "title": "promptfoo plugin: harmful:radicalization",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:radicalization`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:radicalization",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:radicalization",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:self-harm",
+    "title": "promptfoo plugin: harmful:self-harm",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:self-harm`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:self-harm",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:self-harm",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:sex-crime",
+    "title": "promptfoo plugin: harmful:sex-crime",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:sex-crime`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:sex-crime",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:sex-crime",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:sexual-content",
+    "title": "promptfoo plugin: harmful:sexual-content",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:sexual-content`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:sexual-content",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:sexual-content",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:specialized-advice",
+    "title": "promptfoo plugin: harmful:specialized-advice",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:specialized-advice`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:specialized-advice",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:specialized-advice",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:unsafe-practices",
+    "title": "promptfoo plugin: harmful:unsafe-practices",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:unsafe-practices`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:unsafe-practices",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:unsafe-practices",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:violent-crime",
+    "title": "promptfoo plugin: harmful:violent-crime",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:violent-crime`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:violent-crime",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:violent-crime",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-harmful:weapons:ied",
+    "title": "promptfoo plugin: harmful:weapons:ied",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `harmful:weapons:ied`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin harmful:weapons:ied",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/harmful/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "harmful:weapons:ied",
+      "harmful"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-indirect-prompt-injection",
+    "title": "promptfoo plugin: indirect-prompt-injection",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `indirect-prompt-injection`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01",
+      "LLM07"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin indirect-prompt-injection",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/indirect-prompt-injection/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "indirect-prompt-injection"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-insurance:coverage-discrimination",
+    "title": "promptfoo plugin: insurance:coverage-discrimination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `insurance:coverage-discrimination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin insurance:coverage-discrimination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/insurance/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "insurance:coverage-discrimination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-insurance:data-disclosure",
+    "title": "promptfoo plugin: insurance:data-disclosure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `insurance:data-disclosure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin insurance:data-disclosure",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/insurance/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "insurance:data-disclosure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-insurance:network-misinformation",
+    "title": "promptfoo plugin: insurance:network-misinformation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `insurance:network-misinformation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin insurance:network-misinformation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/insurance/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "insurance:network-misinformation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-insurance:phi-disclosure",
+    "title": "promptfoo plugin: insurance:phi-disclosure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `insurance:phi-disclosure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin insurance:phi-disclosure",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/insurance/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "insurance:phi-disclosure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-jailbreak:composite",
+    "title": "promptfoo plugin: jailbreak:composite",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `jailbreak:composite`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin jailbreak:composite",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "jailbreak:composite"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-math-prompt",
+    "title": "promptfoo plugin: math-prompt",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `math-prompt`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin math-prompt",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/math-prompt/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "math-prompt"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:anchoring-bias",
+    "title": "promptfoo plugin: medical:anchoring-bias",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:anchoring-bias`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:anchoring-bias",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:anchoring-bias"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:fda:ai-disclosure",
+    "title": "promptfoo plugin: medical:fda:ai-disclosure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:fda:ai-disclosure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:fda:ai-disclosure",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:fda:ai-disclosure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:fda:cyber-access-control",
+    "title": "promptfoo plugin: medical:fda:cyber-access-control",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:fda:cyber-access-control`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:fda:cyber-access-control",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:fda:cyber-access-control"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:fda:cyber-audit-tampering",
+    "title": "promptfoo plugin: medical:fda:cyber-audit-tampering",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:fda:cyber-audit-tampering`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:fda:cyber-audit-tampering",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:fda:cyber-audit-tampering"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:hallucination",
+    "title": "promptfoo plugin: medical:hallucination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:hallucination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:hallucination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:hallucination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:incorrect-knowledge",
+    "title": "promptfoo plugin: medical:incorrect-knowledge",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:incorrect-knowledge`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:incorrect-knowledge",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:incorrect-knowledge"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:off-label-use",
+    "title": "promptfoo plugin: medical:off-label-use",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:off-label-use`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:off-label-use",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:off-label-use"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:prioritization-error",
+    "title": "promptfoo plugin: medical:prioritization-error",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:prioritization-error`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:prioritization-error",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:prioritization-error"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-medical:sycophancy",
+    "title": "promptfoo plugin: medical:sycophancy",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `medical:sycophancy`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin medical:sycophancy",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/medical/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "medical:sycophancy"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-model-identification",
+    "title": "promptfoo plugin: model-identification",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `model-identification`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin model-identification",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/model-identification/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "model-identification"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-off-topic",
+    "title": "promptfoo plugin: off-topic",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `off-topic`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin off-topic",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/off-topic/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "off-topic"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pharmacy:controlled-substance-compliance",
+    "title": "promptfoo plugin: pharmacy:controlled-substance-compliance",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pharmacy:controlled-substance-compliance`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pharmacy:controlled-substance-compliance",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pharmacy/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pharmacy:controlled-substance-compliance"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pharmacy:dosage-calculation",
+    "title": "promptfoo plugin: pharmacy:dosage-calculation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pharmacy:dosage-calculation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pharmacy:dosage-calculation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pharmacy/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pharmacy:dosage-calculation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pharmacy:drug-interaction",
+    "title": "promptfoo plugin: pharmacy:drug-interaction",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pharmacy:drug-interaction`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pharmacy:drug-interaction",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pharmacy/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pharmacy:drug-interaction"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pii:api-db",
+    "title": "promptfoo plugin: pii:api-db",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pii:api-db`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pii:api-db",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pii/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pii:api-db"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pii:direct",
+    "title": "promptfoo plugin: pii:direct",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pii:direct`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pii:direct",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pii/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pii:direct"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pii:session",
+    "title": "promptfoo plugin: pii:session",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pii:session`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pii:session",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pii/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pii:session"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-pii:social",
+    "title": "promptfoo plugin: pii:social",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `pii:social`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM02"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin pii:social",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/pii/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "pii:social"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-prompt-extraction",
+    "title": "promptfoo plugin: prompt-extraction",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `prompt-extraction`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01",
+      "LLM07"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin prompt-extraction",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/prompt-extraction/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "prompt-extraction"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-rag-document-exfiltration",
+    "title": "promptfoo plugin: rag-document-exfiltration",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `rag-document-exfiltration`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "data-exfiltration",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin rag-document-exfiltration",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/rag-document-exfiltration/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "rag-document-exfiltration"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-rag-poisoning",
+    "title": "promptfoo plugin: rag-poisoning",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `rag-poisoning`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin rag-poisoning",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/rag-poisoning/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "rag-poisoning"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-rag-source-attribution",
+    "title": "promptfoo plugin: rag-source-attribution",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `rag-source-attribution`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin rag-source-attribution",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/rag-source-attribution/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "rag-source-attribution"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:accessibility-discrimination",
+    "title": "promptfoo plugin: realestate:accessibility-discrimination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:accessibility-discrimination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:accessibility-discrimination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:accessibility-discrimination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:advertising-discrimination",
+    "title": "promptfoo plugin: realestate:advertising-discrimination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:advertising-discrimination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:advertising-discrimination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:advertising-discrimination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:discriminatory-listings",
+    "title": "promptfoo plugin: realestate:discriminatory-listings",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:discriminatory-listings`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:discriminatory-listings",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:discriminatory-listings"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:fair-housing-discrimination",
+    "title": "promptfoo plugin: realestate:fair-housing-discrimination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:fair-housing-discrimination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:fair-housing-discrimination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:fair-housing-discrimination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:lending-discrimination",
+    "title": "promptfoo plugin: realestate:lending-discrimination",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:lending-discrimination`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:lending-discrimination",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:lending-discrimination"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:source-of-income",
+    "title": "promptfoo plugin: realestate:source-of-income",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:source-of-income`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:source-of-income",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:source-of-income"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:steering",
+    "title": "promptfoo plugin: realestate:steering",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:steering`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:steering",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:steering"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-realestate:valuation-bias",
+    "title": "promptfoo plugin: realestate:valuation-bias",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `realestate:valuation-bias`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin realestate:valuation-bias",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/realestate/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "realestate:valuation-bias"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-reasoning-dos",
+    "title": "promptfoo plugin: reasoning-dos",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `reasoning-dos`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin reasoning-dos",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/reasoning-dos/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "reasoning-dos"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-shell-injection",
+    "title": "promptfoo plugin: shell-injection",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `shell-injection`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM05"
+    ],
+    "owasp_asi": [
+      "ASI05"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin shell-injection",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/shell-injection/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "shell-injection"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-special-token-injection",
+    "title": "promptfoo plugin: special-token-injection",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `special-token-injection`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin special-token-injection",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/special-token-injection/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "special-token-injection"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-sql-injection",
+    "title": "promptfoo plugin: sql-injection",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `sql-injection`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM05"
+    ],
+    "owasp_asi": [
+      "ASI05"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin sql-injection",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/sql-injection/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "sql-injection"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-system-prompt-override",
+    "title": "promptfoo plugin: system-prompt-override",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `system-prompt-override`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin system-prompt-override",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/system-prompt-override/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "system-prompt-override"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-teen-safety",
+    "title": "promptfoo plugin: teen-safety",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `teen-safety`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin teen-safety",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/teen-safety/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "teen-safety"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-teen-safety:age-restricted-goods-and-services",
+    "title": "promptfoo plugin: teen-safety:age-restricted-goods-and-services",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `teen-safety:age-restricted-goods-and-services`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin teen-safety:age-restricted-goods-and-services",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/teen-safety/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "teen-safety:age-restricted-goods-and-services"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-teen-safety:dangerous-content",
+    "title": "promptfoo plugin: teen-safety:dangerous-content",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `teen-safety:dangerous-content`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin teen-safety:dangerous-content",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/teen-safety/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "teen-safety:dangerous-content"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-teen-safety:dangerous-roleplay",
+    "title": "promptfoo plugin: teen-safety:dangerous-roleplay",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `teen-safety:dangerous-roleplay`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin teen-safety:dangerous-roleplay",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/teen-safety/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "teen-safety:dangerous-roleplay"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-teen-safety:harmful-body-ideals",
+    "title": "promptfoo plugin: teen-safety:harmful-body-ideals",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `teen-safety:harmful-body-ideals`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin teen-safety:harmful-body-ideals",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/teen-safety/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "teen-safety:harmful-body-ideals"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:accessibility-violation",
+    "title": "promptfoo plugin: telecom:accessibility-violation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:accessibility-violation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:accessibility-violation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:accessibility-violation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:account-takeover",
+    "title": "promptfoo plugin: telecom:account-takeover",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:account-takeover`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:account-takeover",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:account-takeover"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:billing-misinformation",
+    "title": "promptfoo plugin: telecom:billing-misinformation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:billing-misinformation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:billing-misinformation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:billing-misinformation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:coverage-misinformation",
+    "title": "promptfoo plugin: telecom:coverage-misinformation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:coverage-misinformation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:coverage-misinformation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:coverage-misinformation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:cpni-disclosure",
+    "title": "promptfoo plugin: telecom:cpni-disclosure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:cpni-disclosure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:cpni-disclosure",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:cpni-disclosure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:e911-misinformation",
+    "title": "promptfoo plugin: telecom:e911-misinformation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:e911-misinformation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:e911-misinformation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:e911-misinformation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:fraud-enablement",
+    "title": "promptfoo plugin: telecom:fraud-enablement",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:fraud-enablement`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:fraud-enablement",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:fraud-enablement"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:law-enforcement-request-handling",
+    "title": "promptfoo plugin: telecom:law-enforcement-request-handling",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:law-enforcement-request-handling`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "rce",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:law-enforcement-request-handling",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:law-enforcement-request-handling"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:location-disclosure",
+    "title": "promptfoo plugin: telecom:location-disclosure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:location-disclosure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:location-disclosure",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:location-disclosure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:porting-misinformation",
+    "title": "promptfoo plugin: telecom:porting-misinformation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:porting-misinformation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:porting-misinformation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:porting-misinformation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:tcpa-violation",
+    "title": "promptfoo plugin: telecom:tcpa-violation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:tcpa-violation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:tcpa-violation",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:tcpa-violation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-telecom:unauthorized-changes",
+    "title": "promptfoo plugin: telecom:unauthorized-changes",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `telecom:unauthorized-changes`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin telecom:unauthorized-changes",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/telecom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "telecom:unauthorized-changes"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-tool-discovery",
+    "title": "promptfoo plugin: tool-discovery",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `tool-discovery`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [
+      "ASI02"
+    ],
+    "references": [
+      {
+        "title": "promptfoo plugin tool-discovery",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/tool-discovery/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "tool-discovery"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-toxic-chat",
+    "title": "promptfoo plugin: toxic-chat",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `toxic-chat`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin toxic-chat",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/toxic-chat/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "toxic-chat"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-plugin-unverifiable-claims",
+    "title": "promptfoo plugin: unverifiable-claims",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team plugin `unverifiable-claims`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo plugin unverifiable-claims",
+        "url": "https://www.promptfoo.dev/docs/red-team/plugins/unverifiable-claims/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "plugin",
+      "unverifiable-claims"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-aegis",
+    "title": "promptfoo strategy: aegis",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `aegis`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy aegis",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/aegis/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "aegis"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-atbash",
+    "title": "promptfoo strategy: atbash",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `atbash`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy atbash",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/atbash/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "atbash"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-audio",
+    "title": "promptfoo strategy: audio",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `audio`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy audio",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/audio/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "audio"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-authoritative-markup-injection",
+    "title": "promptfoo strategy: authoritative-markup-injection",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `authoritative-markup-injection`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy authoritative-markup-injection",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/authoritative-markup-injection/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "authoritative-markup-injection"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-base64",
+    "title": "promptfoo strategy: base64",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `base64`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy base64",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/base64/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "base64"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-basic",
+    "title": "promptfoo strategy: basic",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `basic`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy basic",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/basic/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "basic"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-beavertails",
+    "title": "promptfoo strategy: beavertails",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `beavertails`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy beavertails",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/beavertails/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "beavertails"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-best-of-n",
+    "title": "promptfoo strategy: best-of-n",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `best-of-n`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy best-of-n",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/best-of-n/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "best-of-n"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-binary",
+    "title": "promptfoo strategy: binary",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `binary`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy binary",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/binary/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "binary"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-camelcase",
+    "title": "promptfoo strategy: camelcase",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `camelcase`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy camelcase",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/camelcase/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "camelcase"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-citation",
+    "title": "promptfoo strategy: citation",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `citation`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy citation",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/citation/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "citation"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-crescendo",
+    "title": "promptfoo strategy: crescendo",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `crescendo`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy crescendo",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/crescendo/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "crescendo"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-custom",
+    "title": "promptfoo strategy: custom",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `custom`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy custom",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/custom/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "custom"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-cyberseceval",
+    "title": "promptfoo strategy: cyberseceval",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `cyberseceval`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy cyberseceval",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/cyberseceval/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "cyberseceval"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-default",
+    "title": "promptfoo strategy: default",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `default`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy default",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/default/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "default"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-dod:ai:ethics",
+    "title": "promptfoo strategy: dod:ai:ethics",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `dod:ai:ethics`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy dod:ai:ethics",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/dod/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "dod:ai:ethics"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-donotanswer",
+    "title": "promptfoo strategy: donotanswer",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `donotanswer`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM09"
+    ],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy donotanswer",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/donotanswer/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "donotanswer"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-emoji",
+    "title": "promptfoo strategy: emoji",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `emoji`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy emoji",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/emoji/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "emoji"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-eu:ai-act",
+    "title": "promptfoo strategy: eu:ai-act",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `eu:ai-act`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy eu:ai-act",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/eu/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "eu:ai-act"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-gdpr",
+    "title": "promptfoo strategy: gdpr",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `gdpr`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy gdpr",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/gdpr/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "gdpr"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-goat",
+    "title": "promptfoo strategy: goat",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `goat`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy goat",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/goat/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "goat"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-harmbench",
+    "title": "promptfoo strategy: harmbench",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `harmbench`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy harmbench",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/harmbench/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "harmbench"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-homoglyph",
+    "title": "promptfoo strategy: homoglyph",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `homoglyph`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy homoglyph",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/homoglyph/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "homoglyph"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-image",
+    "title": "promptfoo strategy: image",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `image`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy image",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/image/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "image"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-indirect-web-pwn",
+    "title": "promptfoo strategy: indirect-web-pwn",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `indirect-web-pwn`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy indirect-web-pwn",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/indirect-web-pwn/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "indirect-web-pwn"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-iso:42001",
+    "title": "promptfoo strategy: iso:42001",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `iso:42001`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy iso:42001",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/iso/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "iso:42001"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak",
+    "title": "promptfoo strategy: jailbreak",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak-templates",
+    "title": "promptfoo strategy: jailbreak-templates",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak-templates`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak-templates",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak-templates/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak-templates"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak:composite",
+    "title": "promptfoo strategy: jailbreak:composite",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak:composite`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak:composite",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak:composite"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak:hydra",
+    "title": "promptfoo strategy: jailbreak:hydra",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak:hydra`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak:hydra",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak:hydra"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak:likert",
+    "title": "promptfoo strategy: jailbreak:likert",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak:likert`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak:likert",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak:likert"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak:meta",
+    "title": "promptfoo strategy: jailbreak:meta",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak:meta`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak:meta",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak:meta"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-jailbreak:tree",
+    "title": "promptfoo strategy: jailbreak:tree",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `jailbreak:tree`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy jailbreak:tree",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/jailbreak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "jailbreak:tree"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-layer",
+    "title": "promptfoo strategy: layer",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `layer`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy layer",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/layer/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "layer"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-leetspeak",
+    "title": "promptfoo strategy: leetspeak",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `leetspeak`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy leetspeak",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/leetspeak/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "leetspeak"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-math-prompt",
+    "title": "promptfoo strategy: math-prompt",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `math-prompt`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy math-prompt",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/math-prompt/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "math-prompt"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-mischievous-user",
+    "title": "promptfoo strategy: mischievous-user",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `mischievous-user`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy mischievous-user",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/mischievous-user/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "mischievous-user"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-mitre:atlas",
+    "title": "promptfoo strategy: mitre:atlas",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `mitre:atlas`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy mitre:atlas",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/mitre/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "mitre:atlas"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-morse",
+    "title": "promptfoo strategy: morse",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `morse`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy morse",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/morse/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "morse"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-multilingual",
+    "title": "promptfoo strategy: multilingual",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `multilingual`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy multilingual",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/multilingual/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "multilingual"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-nist:ai:measure",
+    "title": "promptfoo strategy: nist:ai:measure",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `nist:ai:measure`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy nist:ai:measure",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/nist/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "nist:ai:measure"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-octal",
+    "title": "promptfoo strategy: octal",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `octal`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy octal",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/octal/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "octal"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-other-encodings",
+    "title": "promptfoo strategy: other-encodings",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `other-encodings`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy other-encodings",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/other-encodings/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "other-encodings"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-owasp:agentic",
+    "title": "promptfoo strategy: owasp:agentic",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `owasp:agentic`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [
+      "ASI02"
+    ],
+    "references": [
+      {
+        "title": "promptfoo strategy owasp:agentic",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/owasp/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "owasp:agentic"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-owasp:api",
+    "title": "promptfoo strategy: owasp:api",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `owasp:api`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy owasp:api",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/owasp/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "owasp:api"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-owasp:llm",
+    "title": "promptfoo strategy: owasp:llm",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `owasp:llm`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy owasp:llm",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/owasp/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "owasp:llm"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-piglatin",
+    "title": "promptfoo strategy: piglatin",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `piglatin`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy piglatin",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/piglatin/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "piglatin"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-pliny",
+    "title": "promptfoo strategy: pliny",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `pliny`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy pliny",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/pliny/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "pliny"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-prompt-injection",
+    "title": "promptfoo strategy: prompt-injection",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `prompt-injection`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01",
+      "LLM07"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "references": [
+      {
+        "title": "promptfoo strategy prompt-injection",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/prompt-injection/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "prompt-injection"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-retry",
+    "title": "promptfoo strategy: retry",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `retry`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy retry",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/retry/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "retry"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-reverse",
+    "title": "promptfoo strategy: reverse",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `reverse`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy reverse",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/reverse/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "reverse"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-rot13",
+    "title": "promptfoo strategy: rot13",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `rot13`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy rot13",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/rot13/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "rot13"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-toxic-chat",
+    "title": "promptfoo strategy: toxic-chat",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `toxic-chat`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy toxic-chat",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/toxic-chat/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "toxic-chat"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-unsafebench",
+    "title": "promptfoo strategy: unsafebench",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `unsafebench`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy unsafebench",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/unsafebench/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "unsafebench"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-video",
+    "title": "promptfoo strategy: video",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `video`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy video",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/video/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "video"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-vlguard",
+    "title": "promptfoo strategy: vlguard",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `vlguard`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy vlguard",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/vlguard/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "vlguard"
+    ]
+  },
+  {
+    "source_id": "PROMPTFOO-strategy-xstest",
+    "title": "promptfoo strategy: xstest",
+    "date": "2024",
+    "year": 2024,
+    "category": "research",
+    "description": "promptfoo red-team strategy `xstest`. Defines an automated test for this attack class in promptfoo's open-source LLM/agent evaluation framework. See plugin source for attack-pattern details and example payloads.",
+    "attack_vector": "other",
+    "affected": "LLM/agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [],
+    "owasp_asi": [],
+    "references": [
+      {
+        "title": "promptfoo strategy xstest",
+        "url": "https://www.promptfoo.dev/docs/red-team/strategys/xstest/",
+        "type": "documentation"
+      },
+      {
+        "title": "promptfoo",
+        "url": "https://github.com/promptfoo/promptfoo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "promptfoo",
+      "redteam",
+      "strategy",
+      "xstest"
+    ]
+  }
+]

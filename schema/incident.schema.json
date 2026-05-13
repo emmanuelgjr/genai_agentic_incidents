@@ -32,10 +32,10 @@
       "pattern": "^[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?$",
       "description": "ISO date, year-only, or year-month allowed"
     },
-    "year": { "type": "integer", "minimum": 2010, "maximum": 2030 },
+    "year": { "type": "integer", "minimum": 1995, "maximum": 2030 },
     "category": {
       "type": "string",
-      "enum": ["real-world", "research", "research-demonstrated", "red-team", "vulnerability-disclosure", "threat-report", "policy", "regulatory"]
+      "enum": ["real-world", "research", "research-demonstrated", "red-team", "vulnerability-disclosure", "threat-report", "policy", "regulatory", "report"]
     },
     "description": { "type": "string", "minLength": 20 },
     "attack_vector": {
@@ -137,7 +137,7 @@
         "properties": {
           "title": { "type": "string" },
           "url": { "type": "string", "format": "uri" },
-          "type": { "type": "string", "enum": ["news", "advisory", "research", "vendor", "blog", "cve", "report", "paper", "video", "podcast", "regulatory", "disclosure", "documentation", "legal", "analysis", "arxiv", "other"] }
+          "type": { "type": "string", "enum": ["news", "advisory", "research", "vendor", "blog", "cve", "report", "paper", "video", "podcast", "regulatory", "disclosure", "documentation", "legal", "analysis", "arxiv", "exploit", "patch", "reference", "threat-report", "other"] }
         },
         "additionalProperties": false
       }
