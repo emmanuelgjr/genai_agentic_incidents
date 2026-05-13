@@ -5,7 +5,7 @@ Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI
 
 - **Version:** 1.0.0
 - **Generated:** 2026-05-12
-- **Total incidents:** **578**
+- **Total incidents:** **790**
 - **Machine-readable:** [`data/incidents.json`](data/incidents.json) · [`data/incidents.min.json`](data/incidents.min.json)
 - **Schema:** [`schema/incident.schema.json`](schema/incident.schema.json)
 
@@ -15,707 +15,924 @@ Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI
 
 | Severity | Count |
 |---|---:|
-| Critical | 184 |
-| High | 269 |
-| Medium | 116 |
-| Low | 9 |
+| Critical | 236 |
+| High | 401 |
+| Medium | 141 |
+| Low | 12 |
 
 ### OWASP LLM Top 10 (2025)
 
 | Code | Name | Count |
 |---|---|---:|
-| LLM01 | Prompt Injection | 154 |
-| LLM02 | Sensitive Information Disclosure | 143 |
-| LLM03 | Supply Chain | 141 |
-| LLM04 | Data and Model Poisoning | 63 |
-| LLM05 | Improper Output Handling | 188 |
-| LLM06 | Excessive Agency | 143 |
-| LLM07 | System Prompt Leakage | 18 |
-| LLM08 | Vector and Embedding Weaknesses | 19 |
+| LLM01 | Prompt Injection | 248 |
+| LLM02 | Sensitive Information Disclosure | 163 |
+| LLM03 | Supply Chain | 169 |
+| LLM04 | Data and Model Poisoning | 87 |
+| LLM05 | Improper Output Handling | 242 |
+| LLM06 | Excessive Agency | 177 |
+| LLM07 | System Prompt Leakage | 33 |
+| LLM08 | Vector and Embedding Weaknesses | 24 |
 | LLM09 | Misinformation | 71 |
-| LLM10 | Unbounded Consumption | 27 |
+| LLM10 | Unbounded Consumption | 46 |
 
 ### OWASP Agentic Top 10 (ASI)
 
 | Code | Name | Count |
 |---|---|---:|
-| ASI01 | Agent Goal Hijack | 121 |
-| ASI02 | Tool Misuse & Exploitation | 139 |
-| ASI03 | Identity & Privilege Abuse | 60 |
-| ASI04 | Agentic Supply Chain Vulnerabilities | 178 |
-| ASI05 | Unexpected Code Execution (RCE) | 168 |
-| ASI06 | Memory & Context Poisoning | 55 |
-| ASI07 | Insecure Inter-Agent Communication | 23 |
-| ASI08 | Cascading Failures | 31 |
-| ASI09 | Human-Agent Trust Exploitation | 82 |
-| ASI10 | Rogue Agents | 27 |
+| ASI01 | Agent Goal Hijack | 208 |
+| ASI02 | Tool Misuse & Exploitation | 226 |
+| ASI03 | Identity & Privilege Abuse | 74 |
+| ASI04 | Agentic Supply Chain Vulnerabilities | 199 |
+| ASI05 | Unexpected Code Execution (RCE) | 194 |
+| ASI06 | Memory & Context Poisoning | 100 |
+| ASI07 | Insecure Inter-Agent Communication | 29 |
+| ASI08 | Cascading Failures | 33 |
+| ASI09 | Human-Agent Trust Exploitation | 98 |
+| ASI10 | Rogue Agents | 29 |
 
 ### Top MITRE ATLAS Techniques
 
 | Technique | Count |
 |---|---:|
-| `AML.T0050` | 275 |
-| `AML.T0053` | 227 |
-| `AML.T0010` | 206 |
-| `AML.T0051` | 176 |
-| `AML.T0057` | 151 |
-| `AML.T0048` | 127 |
-| `AML.T0011` | 118 |
+| `AML.T0050` | 347 |
+| `AML.T0053` | 320 |
+| `AML.T0051` | 294 |
+| `AML.T0010` | 242 |
+| `AML.T0057` | 172 |
+| `AML.T0048` | 132 |
+| `AML.T0011` | 121 |
+| `AML.T0066` | 111 |
+| `AML.T0048.003` | 98 |
+| `AML.T0020` | 92 |
+| `AML.T0024` | 87 |
 | `AML.T0051.000` | 85 |
 | `AML.T0051.001` | 85 |
-| `AML.T0048.003` | 82 |
 | `AML.T0049` | 82 |
-| `AML.T0060` | 73 |
-| `AML.T0058` | 71 |
-| `AML.T0020` | 68 |
-| `AML.T0066` | 64 |
+| `AML.T0012` | 74 |
 
 ## Index by Year
 
 Click an incident ID to jump to its detail block. Detail blocks are below the index.
 
-### 2026 — 58 incidents
+### 2026 — 73 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
 | [`INC-00001`](#inc-00001) | 2026 | A2A Protocol -- Agent Card Poisoning Vulnerability | Medium | LLM02, LLM04 | ASI06, ASI07, ASI08 |
-| [`INC-00007`](#inc-00007) | 2026 | AWS Bedrock AgentCore "Agent God Mode" Privilege Escalation | High |  | ASI03, ASI08, ASI10 |
-| [`INC-00009`](#inc-00009) | 2026-01 | ChainLeak -- Chainlit AI Framework Vulnerabilities (CVE-2026-22218 & CVE-2026-22219) | Medium |  | ASI02, ASI03 |
-| [`INC-00016`](#inc-00016) | 2026-01 | Claude Cowork File Exfiltration | High | LLM01, LLM02, LLM06, LLM08 | ASI01, ASI02, ASI06, ASI09 |
-| [`INC-00023`](#inc-00023) | 2026-01 | Gemini Live in Chrome Hijacking (CVE-2026-0628) | High | LLM05, LLM06 | ASI02, ASI03 |
-| [`INC-00024`](#inc-00024) | 2026-01 | GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs | Critical | LLM01, LLM02, LLM04, LLM06 | ASI01, ASI02, ASI06, ASI09 |
-| [`INC-00032`](#inc-00032) | 2026-01 | LibreChat MCP command injection (STDIO) | High | LLM03, LLM06 | ASI04, ASI05, ASI07 |
-| [`INC-00038`](#inc-00038) | 2026-01 | MCP fURI -- Microsoft MarkItDown MCP SSRF | Medium |  | ASI02, ASI03 |
-| [`INC-00039`](#inc-00039) | 2026-01 | MCPJam Inspector RCE (CVE-2026-23744) | Critical | LLM03, LLM05 | ASI02, ASI04, ASI05 |
-| [`INC-00044`](#inc-00044) | 2026-01 | Microsoft Copilot Studio indirect prompt injection (ShareLeak) | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI09 |
-| [`INC-00049`](#inc-00049) | 2026-01 | n8n Unauthenticated RCE "Ni8mare" (CVE-2026-21858) | Critical | LLM05 | ASI02, ASI05 |
-| [`INC-00051`](#inc-00051) | 2026-01 | OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills | Critical | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05, ASI10 |
-| [`INC-00057`](#inc-00057) | 2026-01 | VS Code Forks OpenVSX Extension Recommendations Supply Chain Risk | Medium | LLM03 | ASI04 |
-| [`INC-00043`](#inc-00043) | 2026-01-15 | Microsoft Copilot Studio indirect prompt injection (CVE-2026-21520) | Critical | LLM01, LLM02, LLM03, LLM06 | ASI01, ASI04, ASI08, ASI09 |
+| [`INC-00009`](#inc-00009) | 2026 | AWS Bedrock AgentCore "Agent God Mode" Privilege Escalation | High |  | ASI03, ASI08, ASI10 |
+| [`INC-00004`](#inc-00004) | 2026-01 | Aim Labs Continuing EchoLeak Research and Variants | Critical | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00011`](#inc-00011) | 2026-01 | Cato CTRL 2026 Threat Report: AI Threats Mainstreaming | High | LLM10 | ASI02 |
+| [`INC-00012`](#inc-00012) | 2026-01 | ChainLeak -- Chainlit AI Framework Vulnerabilities (CVE-2026-22218 & CVE-2026-22219) | Medium |  | ASI02, ASI03 |
+| [`INC-00019`](#inc-00019) | 2026-01 | Claude Cowork File Exfiltration | High | LLM01, LLM02, LLM06, LLM08 | ASI01, ASI02, ASI06, ASI09 |
+| [`INC-00029`](#inc-00029) | 2026-01 | Gemini Live in Chrome Hijacking (CVE-2026-0628) | High | LLM05, LLM06 | ASI02, ASI03 |
+| [`INC-00030`](#inc-00030) | 2026-01 | GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs | Critical | LLM01, LLM02, LLM04, LLM06 | ASI01, ASI02, ASI06, ASI09 |
+| [`INC-00035`](#inc-00035) | 2026-01 | Jailbroken Claude Code Used to Steal 150GB from Mexican Government | Critical | LLM01, LLM06 | ASI02 |
+| [`INC-00040`](#inc-00040) | 2026-01 | LibreChat MCP command injection (STDIO) | High | LLM03, LLM06 | ASI04, ASI05, ASI07 |
+| [`INC-00046`](#inc-00046) | 2026-01 | MCP fURI -- Microsoft MarkItDown MCP SSRF | Medium |  | ASI02, ASI03 |
+| [`INC-00047`](#inc-00047) | 2026-01 | MCPJam Inspector RCE (CVE-2026-23744) | Critical | LLM03, LLM05 | ASI02, ASI04, ASI05 |
+| [`INC-00052`](#inc-00052) | 2026-01 | Microsoft Copilot Studio indirect prompt injection (ShareLeak) | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI09 |
+| [`INC-00058`](#inc-00058) | 2026-01 | n8n Unauthenticated RCE "Ni8mare" (CVE-2026-21858) | Critical | LLM05 | ASI02, ASI05 |
+| [`INC-00060`](#inc-00060) | 2026-01 | OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills | Critical | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05, ASI10 |
+| [`INC-00063`](#inc-00063) | 2026-01 | Pillar Cursor Prompt Injection Flaw (CVE-2026-22708) | High | LLM01 | ASI02 |
+| [`INC-00064`](#inc-00064) | 2026-01 | Pillar n8n Sandbox Escape Vulnerabilities (CVSS 10) | Critical | LLM05 | ASI05 |
+| [`INC-00067`](#inc-00067) | 2026-01 | PromptArmor IBM Bob Malware Execution via Prompt Injection | Critical | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00072`](#inc-00072) | 2026-01 | VS Code Forks OpenVSX Extension Recommendations Supply Chain Risk | Medium | LLM03 | ASI04 |
+| [`INC-00051`](#inc-00051) | 2026-01-15 | Microsoft Copilot Studio indirect prompt injection (CVE-2026-21520) | Critical | LLM01, LLM02, LLM03, LLM06 | ASI01, ASI04, ASI08, ASI09 |
 | [`INC-00002`](#inc-00002) | 2026-02 | AI coding agent 'MJ Rathbun' publishes accusatory blog targeting matplotlib maintainer | Medium | LLM06 | ASI01, ASI09, ASI10 |
 | [`INC-00003`](#inc-00003) | 2026-02 | AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies | High | LLM01, LLM04 | ASI01, ASI06, ASI09 |
-| [`INC-00006`](#inc-00006) | 2026-02 | Autonomous AI agent breaches McKinsey internal AI platform in 2 hours | High | LLM02, LLM06 | ASI01, ASI02, ASI10 |
-| [`INC-00010`](#inc-00010) | 2026-02 | Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase | Critical | LLM02 | ASI03, ASI09 |
-| [`INC-00011`](#inc-00011) | 2026-02 | ChatGPT Data Exfiltration via DNS Covert Channel | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI03, ASI05 |
-| [`INC-00012`](#inc-00012) | 2026-02 | Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies | Critical | LLM01, LLM02 | ASI01, ASI02, ASI10 |
-| [`INC-00014`](#inc-00014) | 2026-02 | Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 |
-| [`INC-00019`](#inc-00019) | 2026-02 | Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected | Critical | LLM01, LLM03, LLM04, LLM05 | ASI01, ASI04, ASI05, ASI10 |
-| [`INC-00026`](#inc-00026) | 2026-02 | HackerBot Claw campaign: autonomous AI agent probes CI/CD across open-source repos | High | LLM03, LLM06 | ASI01, ASI02, ASI10 |
-| [`INC-00027`](#inc-00027) | 2026-02 | HuggingFace Transformers RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00030`](#inc-00030) | 2026-02 | Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966) | Critical | LLM01, LLM05 | ASI01, ASI02, ASI05 |
-| [`INC-00033`](#inc-00033) | 2026-02 | LibreChat MCP credential placeholder substitution -> OAuth token exfiltration | High | LLM02, LLM06 | ASI03, ASI04, ASI07, ASI09 |
-| [`INC-00035`](#inc-00035) | 2026-02 | LiteLLM proxy /config/update authz bypass -> RCE | Critical | LLM02, LLM06 | ASI03, ASI04, ASI05 |
-| [`INC-00047`](#inc-00047) | 2026-02 | Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails | Critical | LLM02 | ASI03, ASI09 |
-| [`INC-00048`](#inc-00048) | 2026-02 | n8n Authenticated RCE via Expression Sandbox Escape (CVE-2026-25049) | Critical | LLM05 | ASI02, ASI05 |
-| [`INC-00055`](#inc-00055) | 2026-02 | vLLM RCE via Malicious Video URL (CVE-2026-22778) | Critical | LLM02, LLM05 | ASI05 |
-| [`INC-00056`](#inc-00056) | 2026-02 | vLLM RCE via trust_remote_code Bypass (CVE-2026-27893) | High | LLM03, LLM05, LLM09 | ASI04, ASI05 |
-| [`INC-00004`](#inc-00004) | 2026-03 | Anthropic leaks Claude source code in unsecured data store | High | LLM02, LLM07 | ASI03 |
-| [`INC-00005`](#inc-00005) | 2026-03 | AnythingLLM Multiple CVEs | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI04, ASI05 |
-| [`INC-00008`](#inc-00008) | 2026-03 | Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |
-| [`INC-00013`](#inc-00013) | 2026-03 | Claude Chrome Extension zero-click XSS prompt injection via any website | High | LLM01, LLM05 | ASI01 |
-| [`INC-00018`](#inc-00018) | 2026-03 | Claudy Day -- Claude.ai Prompt Injection Attack Chain | High | LLM01, LLM02, LLM04, LLM07 | ASI01, ASI06, ASI09 |
-| [`INC-00020`](#inc-00020) | 2026-03 | CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.) | Critical | LLM01, LLM02, LLM05, LLM08 | ASI02, ASI03, ASI05 |
-| [`INC-00022`](#inc-00022) | 2026-03 | Eight Attack Vectors in AWS Bedrock Agents | Medium | LLM01, LLM02, LLM04, LLM08 | ASI01, ASI02, ASI06 |
-| [`INC-00025`](#inc-00025) | 2026-03 | GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 |
-| [`INC-00028`](#inc-00028) | 2026-03 | LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs | Critical | LLM01, LLM06, LLM07 | ASI01, ASI02, ASI03, ASI06 |
-| [`INC-00029`](#inc-00029) | 2026-03 | LangChain core prompt-loading path traversal (langchain_core/prompts/loading.py) | High | LLM02, LLM05 | ASI04, ASI05 |
-| [`INC-00031`](#inc-00031) | 2026-03 | Langflow Unauthenticated RCE (CVE-2026-33017) | Critical | LLM05 | ASI05, ASI10 |
-| [`INC-00034`](#inc-00034) | 2026-03 | LiteLLM /guardrails/test_custom_code sandbox escape -> RCE | High | LLM06 | ASI01, ASI05 |
-| [`INC-00036`](#inc-00036) | 2026-03 | LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads | Critical | LLM03, LLM04, LLM05 | ASI03, ASI04, ASI05 |
-| [`INC-00040`](#inc-00040) | 2026-03 | MCPwned -- Azure MCP Server SSRF & Cloud Takeover (CVE-2026-26118) | High | LLM05 | ASI02, ASI03 |
-| [`INC-00041`](#inc-00041) | 2026-03 | Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data | Critical | LLM06, LLM09 | ASI08, ASI09, ASI10 |
-| [`INC-00042`](#inc-00042) | 2026-03 | Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions | Critical | LLM01, LLM04 | ASI01, ASI06, ASI09 |
-| [`INC-00045`](#inc-00045) | 2026-03 | Microsoft Excel XSS Weaponizes Copilot Agent (CVE-2026-26144) | High | LLM01 | ASI01, ASI02, ASI09 |
-| [`INC-00046`](#inc-00046) | 2026-03 | Microsoft Semantic Kernel RCE (CVE-2026-26030) | Critical | LLM04, LLM05, LLM08 | ASI02, ASI05 |
-| [`INC-00052`](#inc-00052) | 2026-03 | PerplexedBrowser -- Perplexity Comet Agentic Browser Vulnerabilities | Medium | LLM01 | ASI01, ASI02, ASI09 |
-| [`INC-00054`](#inc-00054) | 2026-03 | SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989) | Critical | LLM05 | ASI02, ASI03, ASI05 |
-| [`INC-00058`](#inc-00058) | 2026-03 | XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent | Critical | LLM06 | ASI05, ASI10 |
-| [`INC-00015`](#inc-00015) | 2026-04 | Claude Code, Gemini CLI, GitHub Copilot agents hijacked via PR/issue comment prompt injection | High | LLM01, LLM06 | ASI01, ASI02 |
-| [`INC-00017`](#inc-00017) | 2026-04 | Claude-powered Cursor AI agent deletes production database in 9 seconds | Critical | LLM05, LLM06 | ASI02, ASI05 |
-| [`INC-00021`](#inc-00021) | 2026-04 | Docker MCP Server OS Command Injection (CVE-2026-5741) | Medium | LLM05 | ASI02, ASI05 |
-| [`INC-00037`](#inc-00037) | 2026-04 | Marimo Pre-Auth RCE (CVE-2026-39987) | Critical | LLM05 | ASI03, ASI05 |
-| [`INC-00053`](#inc-00053) | 2026-04 | PraisonAI Quadruple CVE Disclosure | Critical | LLM05 | ASI02, ASI03, ASI05, ASI07 |
-| [`INC-00050`](#inc-00050) | 2026-05 | Ollama Windows auto-updater missing signature verification | Critical | LLM03 | ASI04, ASI05 |
+| [`INC-00007`](#inc-00007) | 2026-02 | AppOmni Critical AI Agent Flaws in Microsoft Copilot Studio | High | LLM06 | ASI02, ASI03 |
+| [`INC-00008`](#inc-00008) | 2026-02 | Autonomous AI agent breaches McKinsey internal AI platform in 2 hours | High | LLM02, LLM06 | ASI01, ASI02, ASI10 |
+| [`INC-00013`](#inc-00013) | 2026-02 | Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase | Critical | LLM02 | ASI03, ASI09 |
+| [`INC-00014`](#inc-00014) | 2026-02 | ChatGPT Data Exfiltration via DNS Covert Channel | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI03, ASI05 |
+| [`INC-00015`](#inc-00015) | 2026-02 | Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies | Critical | LLM01, LLM02 | ASI01, ASI02, ASI10 |
+| [`INC-00017`](#inc-00017) | 2026-02 | Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852) | Critical | LLM01, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |
+| [`INC-00023`](#inc-00023) | 2026-02 | Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected | Critical | LLM01, LLM03, LLM04, LLM05 | ASI01, ASI04, ASI05, ASI10 |
+| [`INC-00026`](#inc-00026) | 2026-02 | CrowdStrike — Adversaries injected prompts to weaponize 90+ enterprise GenAI deployments | High | LLM01, LLM02 | ASI01, ASI02 |
+| [`INC-00032`](#inc-00032) | 2026-02 | HackerBot Claw campaign: autonomous AI agent probes CI/CD across open-source repos | High | LLM03, LLM06 | ASI01, ASI02, ASI10 |
+| [`INC-00033`](#inc-00033) | 2026-02 | HuggingFace Transformers RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00038`](#inc-00038) | 2026-02 | Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966) | Critical | LLM01, LLM05 | ASI01, ASI02, ASI05 |
+| [`INC-00041`](#inc-00041) | 2026-02 | LibreChat MCP credential placeholder substitution -> OAuth token exfiltration | High | LLM02, LLM06 | ASI03, ASI04, ASI07, ASI09 |
+| [`INC-00043`](#inc-00043) | 2026-02 | LiteLLM proxy /config/update authz bypass -> RCE | Critical | LLM02, LLM06 | ASI03, ASI04, ASI05 |
+| [`INC-00056`](#inc-00056) | 2026-02 | Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails | Critical | LLM02 | ASI03, ASI09 |
+| [`INC-00057`](#inc-00057) | 2026-02 | n8n Authenticated RCE via Expression Sandbox Escape (CVE-2026-25049) | Critical | LLM05 | ASI02, ASI05 |
+| [`INC-00061`](#inc-00061) | 2026-02 | OpenClaw Open-Source AI Agent Mass Compromise | Critical | LLM01, LLM03, LLM05, LLM06 | ASI02, ASI04, ASI05, ASI10 |
+| [`INC-00065`](#inc-00065) | 2026-02 | Pillar Security Google Antigravity Sandbox Escape RCE | Critical | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00070`](#inc-00070) | 2026-02 | vLLM RCE via Malicious Video URL (CVE-2026-22778) | Critical | LLM02, LLM05 | ASI05 |
+| [`INC-00071`](#inc-00071) | 2026-02 | vLLM RCE via trust_remote_code Bypass (CVE-2026-27893) | High | LLM03, LLM05, LLM09 | ASI04, ASI05 |
+| [`INC-00005`](#inc-00005) | 2026-03 | Anthropic leaks Claude source code in unsecured data store | High | LLM02, LLM07 | ASI03 |
+| [`INC-00006`](#inc-00006) | 2026-03 | AnythingLLM Multiple CVEs | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI04, ASI05 |
+| [`INC-00010`](#inc-00010) | 2026-03 | Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |
+| [`INC-00016`](#inc-00016) | 2026-03 | Claude Chrome Extension zero-click XSS prompt injection via any website | High | LLM01, LLM05 | ASI01 |
+| [`INC-00020`](#inc-00020) | 2026-03 | Claude Mythos Identifies Thousands of Zero-Day Vulnerabilities | High | LLM10 | ASI02 |
+| [`INC-00022`](#inc-00022) | 2026-03 | Claudy Day -- Claude.ai Prompt Injection Attack Chain | High | LLM01, LLM02, LLM04, LLM07 | ASI01, ASI06, ASI09 |
+| [`INC-00025`](#inc-00025) | 2026-03 | CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.) | Critical | LLM01, LLM02, LLM05, LLM08 | ASI02, ASI03, ASI05 |
+| [`INC-00028`](#inc-00028) | 2026-03 | Eight Attack Vectors in AWS Bedrock Agents | Medium | LLM01, LLM02, LLM04, LLM08 | ASI01, ASI02, ASI06 |
+| [`INC-00031`](#inc-00031) | 2026-03 | GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 |
+| [`INC-00034`](#inc-00034) | 2026-03 | Image-Based Prompt Injection: Hijacking MLLMs via Visually Embedded Instructions | High | LLM01 | ASI01 |
+| [`INC-00036`](#inc-00036) | 2026-03 | LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs | Critical | LLM01, LLM06, LLM07 | ASI01, ASI02, ASI03, ASI06 |
+| [`INC-00037`](#inc-00037) | 2026-03 | LangChain core prompt-loading path traversal (langchain_core/prompts/loading.py) | High | LLM02, LLM05 | ASI04, ASI05 |
+| [`INC-00039`](#inc-00039) | 2026-03 | Langflow Unauthenticated RCE (CVE-2026-33017) | Critical | LLM05 | ASI05, ASI10 |
+| [`INC-00042`](#inc-00042) | 2026-03 | LiteLLM /guardrails/test_custom_code sandbox escape -> RCE | High | LLM06 | ASI01, ASI05 |
+| [`INC-00044`](#inc-00044) | 2026-03 | LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads | Critical | LLM03, LLM04, LLM05 | ASI03, ASI04, ASI05 |
+| [`INC-00048`](#inc-00048) | 2026-03 | MCPwned -- Azure MCP Server SSRF & Cloud Takeover (CVE-2026-26118) | Critical | LLM05 | ASI02, ASI03, ASI04, ASI05 |
+| [`INC-00049`](#inc-00049) | 2026-03 | Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data | Critical | LLM06, LLM09 | ASI08, ASI09, ASI10 |
+| [`INC-00050`](#inc-00050) | 2026-03 | Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions | Critical | LLM01, LLM04 | ASI01, ASI06, ASI09 |
+| [`INC-00053`](#inc-00053) | 2026-03 | Microsoft Excel XSS Weaponizes Copilot Agent (CVE-2026-26144) | High | LLM01 | ASI01, ASI02, ASI09 |
+| [`INC-00055`](#inc-00055) | 2026-03 | Microsoft Semantic Kernel RCE (CVE-2026-26030) | Critical | LLM04, LLM05, LLM08 | ASI02, ASI05 |
+| [`INC-00062`](#inc-00062) | 2026-03 | PerplexedBrowser -- Perplexity Comet Agentic Browser Vulnerabilities | Medium | LLM01 | ASI01, ASI02, ASI09 |
+| [`INC-00068`](#inc-00068) | 2026-03 | SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989) | Critical | LLM05 | ASI02, ASI03, ASI05 |
+| [`INC-00073`](#inc-00073) | 2026-03 | XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent | Critical | LLM06 | ASI05, ASI10 |
+| [`INC-00018`](#inc-00018) | 2026-04 | Claude Code, Gemini CLI, GitHub Copilot agents hijacked via PR/issue comment prompt injection | High | LLM01, LLM06 | ASI01, ASI02 |
+| [`INC-00021`](#inc-00021) | 2026-04 | Claude-powered Cursor AI agent deletes production database in 9 seconds | Critical | LLM05, LLM06 | ASI02, ASI05 |
+| [`INC-00027`](#inc-00027) | 2026-04 | Docker MCP Server OS Command Injection (CVE-2026-5741) | Medium | LLM05 | ASI02, ASI05 |
+| [`INC-00045`](#inc-00045) | 2026-04 | Marimo Pre-Auth RCE (CVE-2026-39987) | Critical | LLM05 | ASI03, ASI05 |
+| [`INC-00066`](#inc-00066) | 2026-04 | PraisonAI Quadruple CVE Disclosure | Critical | LLM05 | ASI02, ASI03, ASI05, ASI07 |
+| [`INC-00069`](#inc-00069) | 2026-04 | Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems | Critical | LLM03, LLM05 | ASI02, ASI06 |
+| [`INC-00054`](#inc-00054) | 2026-05 | Microsoft RCE Vulnerabilities Across AI Agent Frameworks | Critical | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00059`](#inc-00059) | 2026-05 | Ollama Windows auto-updater missing signature verification | Critical | LLM03 | ASI04, ASI05 |
+| [`INC-00024`](#inc-00024) | 2026-08 | Copirate 365 DEF CON: Plundering Microsoft Copilot (CVE-2026-24299) | Critical | LLM01, LLM02 | ASI02, ASI09 |
 
-### 2025 — 195 incidents
-
-| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
-|---|---|---|---|---|---|
-| [`INC-00060`](#inc-00060) | 2025 | AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings | Critical | LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |
-| [`INC-00063`](#inc-00063) | 2025 | AI Model Container Image Poisoning | High | LLM03, LLM04 | ASI04 |
-| [`INC-00064`](#inc-00064) | 2025 | AI-assisted dev feature exposes sensitive project data via crafted issue | High | LLM01, LLM02 | ASI01 |
-| [`INC-00065`](#inc-00065) | 2025 | AIKatz: Attacking LLM Desktop Applications | High | LLM02 | ASI03 |
-| [`INC-00079`](#inc-00079) | 2025 | Arbitrary code execution via crafted Keras config (CVE-2025-1550) | Critical | LLM03 |  |
-| [`INC-00082`](#inc-00082) | 2025 | Azure PromptFlow RCE via improper isolation (CVE-2025-24986) | Critical | LLM05, LLM06 | ASI04 |
-| [`INC-00084`](#inc-00084) | 2025 | BentoML RCE via insecure deserialization (v1.4.2) | Critical | LLM03, LLM05 |  |
-| [`INC-00086`](#inc-00086) | 2025 | BentoML runner-server insecure deserialization RCE (CVE-2025-32375) | Critical | LLM03, LLM05 |  |
-| [`INC-00101`](#inc-00101) | 2025 | Cursor Agent arbitrary file write via @Docs prompt injection (CVE-2025-32018) | High | LLM01, LLM05, LLM06 | ASI01, ASI04 |
-| [`INC-00109`](#inc-00109) | 2025 | Data Exfiltration via Agent Tools in Copilot Studio | High | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI09 |
-| [`INC-00112`](#inc-00112) | 2025 | DeepSeek-R1 CyberSecEval2 interpreter-abuse evaluation | High | LLM06 | ASI04 |
-| [`INC-00123`](#inc-00123) | 2025 | Firefox AI chatbot leaks document title across tabs (CVE-2025-3035) | Medium | LLM02 |  |
-| [`INC-00130`](#inc-00130) | 2025 | Geopolitical bias in sentiment analysis for neutral phrases | Medium | LLM09 |  |
-| [`INC-00143`](#inc-00143) | 2025 | gpt-4o-mini AgentHarm evaluation (Inspect Evals) | Medium | LLM06 | ASI04 |
-| [`INC-00144`](#inc-00144) | 2025 | gpt-4o-mini CyberSecEval2 prompt-injection benchmark | Medium | LLM01 | ASI01 |
-| [`INC-00145`](#inc-00145) | 2025 | gpt-4o-mini WMDP-Bio evaluation (Inspect Evals) | High | LLM02, LLM06 |  |
-| [`INC-00146`](#inc-00146) | 2025 | gpt-4o-mini WMDP-Chem evaluation (Inspect Evals) | High | LLM02, LLM06 |  |
-| [`INC-00157`](#inc-00157) | 2025 | Improper authorization in ageerle ruoyi-ai SysModelController | High | LLM02 |  |
-| [`INC-00158`](#inc-00158) | 2025 | Improper authorization in ageerle ruoyi-ai SysNoticeController (CVE-2025-3202) | High | LLM02 |  |
-| [`INC-00162`](#inc-00162) | 2025 | Kiro IDE Command Injection (CVE-2026-0830) | Medium | LLM05 | ASI05 |
-| [`INC-00166`](#inc-00166) | 2025 | Langflow unauthenticated RCE via /api/v1/validate/code (CVE-2025-3248) | Critical | LLM05, LLM06 | ASI04 |
-| [`INC-00169`](#inc-00169) | 2025 | Living Off AI: Prompt Injection via Jira Service Management | High | LLM01, LLM02, LLM06 | ASI01, ASI02 |
-| [`INC-00170`](#inc-00170) | 2025 | Llama-3.3-70B-Instruct-Turbo WMDP-Cyber evaluation | Medium | LLM02 |  |
-| [`INC-00175`](#inc-00175) | 2025 | MathGPT prompt-injection control bypass (issue report) | Medium | LLM01, LLM06 | ASI04 |
-| [`INC-00180`](#inc-00180) | 2025 | mcp-remote OAuth Command Injection (CVE-2025-6514) | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05, ASI07 |
-| [`INC-00182`](#inc-00182) | 2025 | Mistral-Small-24B-Instruct CyberSecEval2 interpreter-abuse | High | LLM06 | ASI04 |
-| [`INC-00183`](#inc-00183) | 2025 | Mistral-Small-24B-Instruct CyberSecEval2 prompt-injection | Medium | LLM01 | ASI01 |
-| [`INC-00184`](#inc-00184) | 2025 | Mistral-Small-24B-Instruct WMDP-Bio evaluation | High | LLM02 |  |
-| [`INC-00185`](#inc-00185) | 2025 | Mistral-Small-24B-Instruct WMDP-Chem evaluation | High | LLM02 |  |
-| [`INC-00188`](#inc-00188) | 2025 | Multi-model guardrail jailbreak via hex-encoded fictional context | High | LLM06 |  |
-| [`INC-00189`](#inc-00189) | 2025 | Multi-model guardrail jailbreak via urgent-health framing | High | LLM06 |  |
-| [`INC-00192`](#inc-00192) | 2025 | NVIDIA Container Toolkit TOCTOU (CVE-2025-23359) | Critical | LLM03 |  |
-| [`INC-00215`](#inc-00215) | 2025 | picklescan bypass via 'pip main' (CVE-2025-1716) | High | LLM03 |  |
-| [`INC-00216`](#inc-00216) | 2025 | picklescan bypass via non-standard file extensions (CVE-2025-1889) | High | LLM03 |  |
-| [`INC-00217`](#inc-00217) | 2025 | picklescan misses malicious pickles in PyTorch archives (ZIP flag manipulation) | Critical | LLM03 |  |
-| [`INC-00218`](#inc-00218) | 2025 | picklescan ZIP crash leads to scan bypass (CVE-2025-1944) | High | LLM03 |  |
-| [`INC-00220`](#inc-00220) | 2025 | Planting Instructions for Delayed Automatic AI Agent Tool Invocation | High | LLM01, LLM06 | ASI01, ASI02, ASI06 |
-| [`INC-00225`](#inc-00225) | 2025 | PyTorch CUDACachingAllocator memory corruption (CVE-2025-3136) | High | LLM03 |  |
-| [`INC-00226`](#inc-00226) | 2025 | PyTorch torch.jit.jit_module_from_flatbuffer memory corruption (CVE-2025-3121) | High | LLM03 |  |
-| [`INC-00227`](#inc-00227) | 2025 | PyTorch torch.jit.script memory corruption (CVE-2025-3000) | Critical | LLM03 |  |
-| [`INC-00229`](#inc-00229) | 2025 | PyTorch torch.lstm_cell memory corruption (CVE-2025-3001) | Critical | LLM03 |  |
-| [`INC-00230`](#inc-00230) | 2025 | PyTorch torch.nn.utils.rnn.pad_packed_sequence memory corruption (CVE-2025-2998) | High | LLM03 |  |
-| [`INC-00231`](#inc-00231) | 2025 | PyTorch torch.nn.utils.rnn.unpack_sequence memory corruption | High | LLM03 |  |
-| [`INC-00066`](#inc-00066) | 2025-01 | Alleged DeepSeek Model Distillation from OpenAI | High | LLM10 |  |
-| [`INC-00096`](#inc-00096) | 2025-01 | Clearview AI biometric bias — $50M class action settlement | High |  |  |
-| [`INC-00110`](#inc-00110) | 2025-01 | DeepSeek AI database exposure — 1M+ chat logs publicly accessible | Critical | LLM02, LLM07 | ASI03 |
-| [`INC-00111`](#inc-00111) | 2025-01 | DeepSeek R1 data exfiltration — Chinese AI model sends data to China-linked servers | Critical |  |  |
-| [`INC-00151`](#inc-00151) | 2025-01 | Hugging Face model card supply chain manipulation | Critical | LLM03, LLM05 | ASI04 |
-| [`INC-00211`](#inc-00211) | 2025-01 | OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation | High | LLM01, LLM06, LLM09 |  |
-| [`INC-00241`](#inc-00241) | 2025-01 | Storm-2139 Azure OpenAI account hijack and jailbreak resale | High | LLM01, LLM02, LLM06 | ASI04 |
-| [`INC-00080`](#inc-00080) | 2025-02 | Azure OpenAI content filter bypass via structured output mode | High | LLM01, LLM05, LLM08 |  |
-| [`INC-00121`](#inc-00121) | 2025-02 | EU AI Act first enforcement actions — prohibited AI practices take effect | High |  |  |
-| [`INC-00129`](#inc-00129) | 2025-02 | Gemini Memory Persistence via Prompt Injection | High | LLM01 | ASI06 |
-| [`INC-00154`](#inc-00154) | 2025-02 | Hugging Face Transformers GPT-NeoX-Japanese tokenizer ReDoS | Medium | LLM10 | ASI08 |
-| [`INC-00187`](#inc-00187) | 2025-02 | Multi-agent financial trading system flash crash — cascading autonomous failures | Critical |  | ASI07, ASI08, ASI09, ASI10 |
-| [`INC-00203`](#inc-00203) | 2025-02 | OmniGPT alleged breach: 30K users, 34M messages exposed | Critical | LLM02 | ASI03 |
-| [`INC-00209`](#inc-00209) | 2025-02 | OpenAI ChatGPT Operator Vulnerability | Medium | LLM01, LLM02, LLM03, LLM04, LLM06 | ASI01, ASI02, ASI03, ASI04, ASI06, ASI07, ASI09 |
-| [`INC-00219`](#inc-00219) | 2025-02 | Plaintiffs' lawyers admit AI generated erroneous case citations in Walmart filing | Medium | LLM09 | ASI09 |
-| [`INC-00083`](#inc-00083) | 2025-03 | BentoML insecure deserialization RCE (regression of CVE-2024-2912) | Critical | LLM03 | ASI04, ASI05 |
-| [`INC-00102`](#inc-00102) | 2025-03 | Cursor AI code agent leaking repository secrets via context window | High | LLM02 | ASI02 |
-| [`INC-00125`](#inc-00125) | 2025-03 | Flowise Pre-Auth Arbitrary File Upload | Medium | LLM05 | ASI05 |
-| [`INC-00131`](#inc-00131) | 2025-03 | GitHub Copilot & Cursor Code-Agent Exploit | High | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05, ASI06, ASI08, ASI09 |
-| [`INC-00155`](#inc-00155) | 2025-03 | Hugging Face Transformers ReDoS | Medium | LLM10 | ASI08 |
-| [`INC-00160`](#inc-00160) | 2025-03 | Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures | High |  |  |
-| [`INC-00232`](#inc-00232) | 2025-03 | Ray < 2.43.0 leaks Redis password in logs | Medium | LLM02 | ASI04 |
-| [`INC-00242`](#inc-00242) | 2025-03 | Synthetic data re-identification — de-anonymized patients from synthetic health records | High |  |  |
-| [`INC-00059`](#inc-00059) | 2025-04 | Agent-in-the-Middle — A2A protocol spoofing via fake agent cards | Critical | LLM02, LLM04, LLM05, LLM09 | ASI03, ASI06, ASI07, ASI08, ASI10 |
-| [`INC-00077`](#inc-00077) | 2025-04 | Anthropic reports Claude misuse for influence ops, credential stuffing, recruitment fraud, malware | High | LLM01, LLM06 | ASI02, ASI10 |
-| [`INC-00085`](#inc-00085) | 2025-04 | BentoML runner server RCE | Critical | LLM03 | ASI04, ASI05 |
-| [`INC-00142`](#inc-00142) | 2025-04 | GPT-4.1 jailbreak via tool poisoning | Critical | LLM01, LLM02, LLM03, LLM05, LLM06, LLM09 | ASI01, ASI04, ASI06 |
-| [`INC-00153`](#inc-00153) | 2025-04 | Hugging Face Transformers get_configuration_file ReDoS | Medium | LLM10 | ASI08 |
-| [`INC-00164`](#inc-00164) | 2025-04 | LangChain GmailToolkit indirect prompt injection -> code execution | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
-| [`INC-00179`](#inc-00179) | 2025-04 | MCP tool poisoning — hidden instructions in Model Context Protocol tool descriptions | Critical | LLM01 | ASI02, ASI03, ASI04, ASI05 |
-| [`INC-00210`](#inc-00210) | 2025-04 | OpenAI GPT-4o sycophancy — model agrees with users even when they are wrong | High | LLM04, LLM09 | ASI09 |
-| [`INC-00228`](#inc-00228) | 2025-04 | PyTorch torch.load(weights_only=True) RCE bypass | Critical | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00247`](#inc-00247) | 2025-04 | vLLM Mooncake integration pickle deserialization RCE over ZeroMQ | Critical | LLM03, LLM05 | ASI04, ASI05, ASI07 |
-| [`INC-00250`](#inc-00250) | 2025-04 | WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history | Critical | LLM01, LLM04 | ASI01, ASI02, ASI04, ASI07 |
-| [`INC-00118`](#inc-00118) | 2025-05 | EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection | Critical | LLM01, LLM02, LLM04 | ASI01, ASI02, ASI06 |
-| [`INC-00135`](#inc-00135) | 2025-05 | GitPublic Issue Repo Hijack | Medium | LLM01, LLM02, LLM04 | ASI01, ASI02, ASI06, ASI07, ASI08 |
-| [`INC-00222`](#inc-00222) | 2025-05 | Postgres MCP Server SQL Injection | Medium | LLM05 | ASI02, ASI05 |
-| [`INC-00249`](#inc-00249) | 2025-05 | vLLM V0 engine multi-node ZeroMQ pickle deserialization RCE | Critical | LLM03, LLM05 | ASI04, ASI05, ASI07 |
-| [`INC-00251`](#inc-00251) | 2025-05 | Windsurf Data Exfiltration & SpAIware (Multiple Vectors) | High | LLM01, LLM02, LLM04, LLM05, LLM08 | ASI01, ASI02, ASI06, ASI09 |
-| [`INC-00061`](#inc-00061) | 2025-06 | AgentSmith Prompt-Hub Proxy Attack | Medium | LLM03 | ASI04 |
-| [`INC-00074`](#inc-00074) | 2025-06 | Anthropic finds blackmail behavior in 16 models when facing shutdown | High | LLM06 | ASI01, ASI09, ASI10 |
-| [`INC-00075`](#inc-00075) | 2025-06 | Anthropic MCP Git Server Triple Flaw (CVE-2025-68143, -68144, -68145) | High | LLM01, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05 |
-| [`INC-00078`](#inc-00078) | 2025-06 | Anthropic SQLite MCP Server SQL Injection | Medium | LLM01, LLM03, LLM04 | ASI02, ASI04, ASI06 |
-| [`INC-00087`](#inc-00087) | 2025-06 | CamoLeak (CVE-2025-59145) prompt injection leaks private code via GitHub Copilot Chat | Critical | LLM01, LLM02, LLM05 | ASI01, ASI06 |
-| [`INC-00089`](#inc-00089) | 2025-06 | Claude Code DNS Exfiltration (CVE-2025-55284) | Medium | LLM01, LLM02 | ASI01, ASI02 |
-| [`INC-00117`](#inc-00117) | 2025-06 | EchoLeak (CVE-2025-32711) zero-click prompt injection in Microsoft 365 Copilot | Critical | LLM01, LLM02, LLM05 | ASI01, ASI06 |
-| [`INC-00119`](#inc-00119) | 2025-06 | EchoLeak: Zero-Click Data Exfiltration from Microsoft 365 Copilot | Critical | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI08 |
-| [`INC-00149`](#inc-00149) | 2025-06 | Heroku MCP App Ownership Hijack | Medium |  | ASI03 |
-| [`INC-00150`](#inc-00150) | 2025-06 | Hub MCP Prompt Injection (Cross-Context) | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05, ASI07 |
-| [`INC-00152`](#inc-00152) | 2025-06 | Hugging Face Transformers deserialization vulnerability | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00171`](#inc-00171) | 2025-06 | LlamaIndex multi-vector-store SQL injection | Critical | LLM02, LLM05, LLM08 | ASI02, ASI05 |
-| [`INC-00070`](#inc-00070) | 2025-07 | Amazon Q Prompt Poisoning | Medium | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI04, ASI05 |
-| [`INC-00081`](#inc-00081) | 2025-07 | Azure OpenAI SSRF -> privilege escalation | High | LLM02, LLM05 | ASI02, ASI04, ASI05 |
-| [`INC-00120`](#inc-00120) | 2025-07 | EscapeRoute -- Anthropic Filesystem MCP Sandbox Escape (CVE-2025-53109 & CVE-2025-53110) | High | LLM05 | ASI02, ASI05 |
-| [`INC-00139`](#inc-00139) | 2025-07 | Google Gemini CLI File Loss | Medium | LLM05 | ASI05 |
-| [`INC-00163`](#inc-00163) | 2025-07 | LAMEHUG malware integrates LLM for real-time command generation (APT28-linked) | High | LLM03, LLM06 | ASI02, ASI04 |
-| [`INC-00176`](#inc-00176) | 2025-07 | McDonald's McHire AI recruitment platform exposed 64M applicants (default creds + IDOR) | Critical | LLM02 | ASI03, ASI04 |
-| [`INC-00178`](#inc-00178) | 2025-07 | MCP session ID hijacking (prompt hijacking) | High | LLM01, LLM02, LLM07 | ASI03, ASI07, ASI09 |
-| [`INC-00181`](#inc-00181) | 2025-07 | Microsoft Copilot Studio agents public by default — unauthorized data exfiltration | Critical | LLM02 | ASI03, ASI07 |
-| [`INC-00200`](#inc-00200) | 2025-07 | NVIDIAScape (CVE-2025-23266) NVIDIA AI vulnerability | High | LLM03 | ASI04, ASI05 |
-| [`INC-00201`](#inc-00201) | 2025-07 | Ollama cross-domain token exposure | High | LLM02 | ASI04 |
-| [`INC-00234`](#inc-00234) | 2025-07 | Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes | Critical | LLM01, LLM09 | ASI01, ASI09, ASI10 |
-| [`INC-00243`](#inc-00243) | 2025-07 | ToolShell RCE via SharePoint | Medium | LLM05, LLM08 | ASI05 |
-| [`INC-00068`](#inc-00068) | 2025-08 | Amazon Q Developer for VS Code Vulnerable to Invisible Prompt Injection | High | LLM01 | ASI01, ASI02 |
-| [`INC-00069`](#inc-00069) | 2025-08 | Amazon Q Developer Secrets Leaked via DNS | High | LLM01, LLM02 | ASI02, ASI09 |
-| [`INC-00071`](#inc-00071) | 2025-08 | Amp Code Invisible Prompt Injection (Sourcegraph) | Medium | LLM01 | ASI01 |
-| [`INC-00072`](#inc-00072) | 2025-08 | Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion | Critical | LLM01, LLM06, LLM09 | ASI01, ASI02, ASI09, ASI10 |
-| [`INC-00088`](#inc-00088) | 2025-08 | Claude Code Data Exfiltration via DNS (CVE-2025-55284) | Critical | LLM01, LLM02, LLM06 | ASI02, ASI05, ASI09, ASI10 |
-| [`INC-00097`](#inc-00097) | 2025-08 | Cline AI Coding Agent Vulnerabilities | Medium | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI05 |
-| [`INC-00098`](#inc-00098) | 2025-08 | Cline Data Exfiltration via Indirect Prompt Injection | High | LLM01, LLM02 | ASI02, ASI09 |
-| [`INC-00105`](#inc-00105) | 2025-08 | Cursor CurXecute: indirect prompt injection writes .cursor/mcp.json -> RCE | High | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
-| [`INC-00106`](#inc-00106) | 2025-08 | Cursor MCPoison: approved MCP server config can be silently swapped | High | LLM03, LLM06 | ASI03, ASI04, ASI07, ASI09 |
-| [`INC-00113`](#inc-00113) | 2025-08 | Devin AI Agent Prompt Injection & Data Exfiltration | Medium | LLM01, LLM05, LLM08 | ASI01, ASI02, ASI05 |
-| [`INC-00114`](#inc-00114) | 2025-08 | Devin AI Exposes Ports to the Internet via Prompt Injection | Critical | LLM01, LLM06 | ASI02, ASI05 |
-| [`INC-00122`](#inc-00122) | 2025-08 | Exfiltrating ChatGPT Chat History and Memories with Prompt Injection | High | LLM01, LLM02 | ASI02, ASI09 |
-| [`INC-00132`](#inc-00132) | 2025-08 | GitHub Copilot / VS Code RCE via prompt injection editing .vscode/settings.json | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
-| [`INC-00141`](#inc-00141) | 2025-08 | Google Jules Vulnerable to Invisible Prompt Injection | High | LLM01 | ASI01, ASI02 |
-| [`INC-00161`](#inc-00161) | 2025-08 | Jules Zombie Agent: Prompt Injection to Remote Control | Critical | LLM01, LLM06 | ASI02, ASI05, ASI10 |
-| [`INC-00172`](#inc-00172) | 2025-08 | Malicious Hugging Face model impersonating OpenAI release hits 244K downloads | High | LLM03 | ASI04 |
-| [`INC-00195`](#inc-00195) | 2025-08 | NVIDIA Triton control-message manipulation -> RCE (Wiz chain final) | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00196`](#inc-00196) | 2025-08 | NVIDIA Triton Inference Server HTTP handler buffer overflow | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00197`](#inc-00197) | 2025-08 | NVIDIA Triton Inference Server stack buffer overflow (HTTP chunked) | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00198`](#inc-00198) | 2025-08 | NVIDIA Triton Python backend shared-memory name leak (Wiz chain start) | High | LLM02, LLM03 | ASI04, ASI05 |
-| [`INC-00199`](#inc-00199) | 2025-08 | NVIDIA Triton shared-memory read/write access (Wiz chain link 2) | High | LLM03 | ASI04, ASI05 |
-| [`INC-00212`](#inc-00212) | 2025-08 | OpenHands ZombAI RCE | Medium | LLM01, LLM05 | ASI01, ASI05 |
-| [`INC-00213`](#inc-00213) | 2025-08 | Over 100,000 LLM conversations publicly exposed via share-links indexed by search engines | High | LLM02, LLM07 | ASI03 |
-| [`INC-00223`](#inc-00223) | 2025-08 | PromptLock: first AI-powered ransomware (PoC) using local gpt-oss-20b | Medium | LLM05, LLM06 | ASI02, ASI05 |
-| [`INC-00235`](#inc-00235) | 2025-08 | Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments | Critical | LLM03, LLM05 | ASI03, ASI04 |
-| [`INC-00252`](#inc-00252) | 2025-08 | Windsurf Memory-Persistent Data Exfiltration (SpAIware) | Critical | LLM01 | ASI06 |
-| [`INC-00062`](#inc-00062) | 2025-09 | AI ClickFix: Hijacking Computer-Use Agents | High | LLM01, LLM06 | ASI02, ASI05 |
-| [`INC-00067`](#inc-00067) | 2025-09 | Amazon Bedrock AgentCore Sandbox DNS Escape | Medium |  | ASI02, ASI03 |
-| [`INC-00099`](#inc-00099) | 2025-09 | Cursor "Open-Folder" Autorun Vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00115`](#inc-00115) | 2025-09 | Dify SSRF via RemoteFileUploadApi (CVE-2025-56520) | Medium | LLM05 | ASI02, ASI03 |
-| [`INC-00124`](#inc-00124) | 2025-09 | Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed | Critical | LLM02, LLM05 | ASI02, ASI05 |
-| [`INC-00126`](#inc-00126) | 2025-09 | Flowise RCE via JavaScript configuration function | Critical | LLM05, LLM06 | ASI04, ASI05 |
-| [`INC-00127`](#inc-00127) | 2025-09 | ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data | Critical | LLM01, LLM05 | ASI01, ASI02 |
-| [`INC-00140`](#inc-00140) | 2025-09 | Google Gemini Trifecta | Medium | LLM01 | ASI01, ASI02 |
-| [`INC-00168`](#inc-00168) | 2025-09 | LibreChat unprotected testing endpoint exposes user chats | High | LLM02 | ASI04 |
-| [`INC-00174`](#inc-00174) | 2025-09 | Malicious MCP Server Impersonating Postmark | Medium | LLM03 | ASI02, ASI04, ASI07 |
-| [`INC-00186`](#inc-00186) | 2025-09 | Model Namespace Reuse supply-chain attack (Palo Alto Unit 42) | High | LLM03 | ASI04 |
-| [`INC-00191`](#inc-00191) | 2025-09 | Notion 3.0 AI Agent Data Exfiltration via Prompt Injection | Medium | LLM01 | ASI01, ASI02, ASI09 |
-| [`INC-00221`](#inc-00221) | 2025-09 | PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems | Critical | LLM01, LLM04, LLM08 | ASI01, ASI06 |
-| [`INC-00224`](#inc-00224) | 2025-09 | Promptware: Google Calendar invitations as prompt-injection vector for Gemini | High | LLM01, LLM02 | ASI01, ASI06 |
-| [`INC-00238`](#inc-00238) | 2025-09 | ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services | Critical | LLM01 | ASI01, ASI02, ASI09 |
-| [`INC-00245`](#inc-00245) | 2025-09 | Visual Studio Code & Agentic AI workflows RCE | Medium | LLM01, LLM05 | ASI01, ASI02, ASI05 |
-| [`INC-00092`](#inc-00092) | 2025-10 | Claude Pirate Data Exfiltration | High | LLM01, LLM02 | ASI01, ASI02, ASI09 |
-| [`INC-00100`](#inc-00100) | 2025-10 | Cursor & Windsurf Forked Chromium 94+ N-Day Vulnerabilities | Medium | LLM02, LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00103`](#inc-00103) | 2025-10 | Cursor CLI Project Config RCE | Medium | LLM01, LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00104`](#inc-00104) | 2025-10 | Cursor Config Overwrite via Case Mismatch | Critical | LLM05, LLM06 | ASI01, ASI03, ASI05 |
-| [`INC-00107`](#inc-00107) | 2025-10 | Cursor Workspace File Injection | Medium | LLM05 | ASI05 |
-| [`INC-00128`](#inc-00128) | 2025-10 | Framelink Figma MCP RCE | Medium | LLM05 | ASI02, ASI05 |
-| [`INC-00173`](#inc-00173) | 2025-10 | Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server | Critical | LLM03 | ASI03, ASI04, ASI05 |
-| [`INC-00177`](#inc-00177) | 2025-10 | MCP OAuth Response Exploit | Medium | LLM04 | ASI07 |
-| [`INC-00207`](#inc-00207) | 2025-10 | OpenAI ChatGPT Atlas Browser Prompt Injection | High | LLM01 | ASI01, ASI09 |
-| [`INC-00208`](#inc-00208) | 2025-10 | OpenAI ChatGPT Atlas browser vulnerable to prompt injection via crafted URLs and memory poisoning | High | LLM01, LLM06 | ASI01, ASI02, ASI06 |
-| [`INC-00236`](#inc-00236) | 2025-10 | ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420) | Critical | LLM01 | ASI01, ASI03, ASI09 |
-| [`INC-00244`](#inc-00244) | 2025-10 | Trail of Bits: Prompt Injection to RCE in AI Agents | Medium | LLM01, LLM05 | ASI01, ASI05 |
-| [`INC-00073`](#inc-00073) | 2025-11 | Anthropic Claude used in attempted compromise of Mexican water utility | Critical | LLM01, LLM06 | ASI01, ASI02 |
-| [`INC-00076`](#inc-00076) | 2025-11 | Anthropic mcp-server-git path validation bypass | High | LLM03, LLM06 | ASI04, ASI05, ASI07 |
-| [`INC-00090`](#inc-00090) | 2025-11 | Claude Desktop PromptJacking RCE | Critical | LLM01, LLM05 | ASI01, ASI05 |
-| [`INC-00091`](#inc-00091) | 2025-11 | Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities | Critical | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI03, ASI10 |
-| [`INC-00093`](#inc-00093) | 2025-11 | Claude Skills Data Exfiltration | Medium | LLM01, LLM03 | ASI01, ASI02, ASI04 |
-| [`INC-00095`](#inc-00095) | 2025-11 | ClawHub / OpenClaw skill registry infiltrated with 341 malicious agent skills | High | LLM03, LLM06 | ASI02, ASI04, ASI10 |
-| [`INC-00108`](#inc-00108) | 2025-11 | Cursorignore Bypass via New Cursorignore Write | Medium | LLM05 | ASI02, ASI05 |
-| [`INC-00133`](#inc-00133) | 2025-11 | GitHub Copilot for JetBrains RCE via malicious repo/PR | High | LLM01, LLM05, LLM06 | ASI01, ASI05, ASI09 |
-| [`INC-00134`](#inc-00134) | 2025-11 | GitHub Copilot Multi-Root Workspace RCE | Medium | LLM03, LLM05 | ASI02, ASI04, ASI05 |
-| [`INC-00138`](#inc-00138) | 2025-11 | Google Antigravity IDE Vulnerabilities | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
-| [`INC-00147`](#inc-00147) | 2025-11 | HackedGPT: Tenable discloses 7 ChatGPT vulnerabilities enabling silent exfiltration | High | LLM01, LLM02 | ASI06 |
-| [`INC-00148`](#inc-00148) | 2025-11 | HashJack -- URL Fragment Prompt Injection for AI Browsers | Medium | LLM01, LLM02, LLM08 | ASI01, ASI02 |
-| [`INC-00193`](#inc-00193) | 2025-11 | NVIDIA NeMo Framework code injection | High | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00194`](#inc-00194) | 2025-11 | NVIDIA NeMo Framework malicious-data code execution | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00202`](#inc-00202) | 2025-11 | Ollama GGUF Model File RCE | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 |
-| [`INC-00204`](#inc-00204) | 2025-11 | Open WebUI Direct Connections SSE code injection -> ATO/RCE | High | LLM03, LLM05, LLM06 | ASI04, ASI05, ASI09 |
-| [`INC-00205`](#inc-00205) | 2025-11 | Open WebUI incorrect access control | High | LLM06 | ASI03, ASI04 |
-| [`INC-00206`](#inc-00206) | 2025-11 | Open WebUI stored DOM XSS via prompts -> ATO/RCE | High | LLM05, LLM06 | ASI04, ASI05 |
-| [`INC-00214`](#inc-00214) | 2025-11 | Perplexity Comet agentic browser — unauthorized Amazon customer account access | Critical |  | ASI02, ASI03, ASI09 |
-| [`INC-00237`](#inc-00237) | 2025-11 | SesameOp: AI Agent Backdoor Using OpenAI Assistants API as C2 | Critical | LLM06, LLM10 | ASI02, ASI10 |
-| [`INC-00239`](#inc-00239) | 2025-11 | ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization | Critical | LLM02, LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00240`](#inc-00240) | 2025-11 | ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework | Critical | LLM01, LLM05 | ASI01, ASI04, ASI05 |
-| [`INC-00248`](#inc-00248) | 2025-11 | vLLM Unsafe Tensor Deserialization (CVE-2025-62164) | High | LLM03, LLM04, LLM05, LLM10 | ASI05 |
-| [`INC-00094`](#inc-00094) | 2025-12 | Claude Skills ransomware deployment — MedusaLocker via malicious plugin | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |
-| [`INC-00116`](#inc-00116) | 2025-12 | Dify Unauthenticated Information Disclosure (CVE-2025-63387) | High | LLM05 | ASI03 |
-| [`INC-00136`](#inc-00136) | 2025-12 | Google Antigravity AI Data Wipe | Medium | LLM05 | ASI02, ASI05 |
-| [`INC-00137`](#inc-00137) | 2025-12 | Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction | Critical | LLM06 | ASI02, ASI05, ASI09 |
-| [`INC-00156`](#inc-00156) | 2025-12 | IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code) | Critical | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05, ASI09 |
-| [`INC-00159`](#inc-00159) | 2025-12 | iProov Camera-Injection Attack on Mobile KYC Liveness Detection | Critical |  |  |
-| [`INC-00165`](#inc-00165) | 2025-12 | LangChain.js serialization injection enables secret extraction | High | LLM02, LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00167`](#inc-00167) | 2025-12 | LangGrinch -- LangChain Core Serialization Injection (CVE-2025-68664) | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI04, ASI05 |
-| [`INC-00190`](#inc-00190) | 2025-12 | n8n Expression Injection RCE (CVE-2025-68613) | Critical | LLM02, LLM05, LLM06 | ASI02, ASI04, ASI05, ASI10 |
-| [`INC-00233`](#inc-00233) | 2025-12 | React2Shell Impacting Dify and AI Platforms (CVE-2025-55182) | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00246`](#inc-00246) | 2025-12 | vLLM Model Config Auto-Map RCE (CVE-2025-66448) | High | LLM03, LLM05, LLM09 | ASI04, ASI05 |
-| [`INC-00253`](#inc-00253) | 2025-12 | WIRED/Indicator: 90 schools, 600+ students worldwide targeted with AI deepfake nudes | High | LLM05 | ASI02 |
-
-### 2024 — 172 incidents
+### 2025 — 271 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00258`](#inc-00258) | 2024 | AI Scribe SEO plugin (ChatGPT GPT-4o) issue report | Medium | LLM06 |  |
-| [`INC-00269`](#inc-00269) | 2024 | Ansible-core sensitive-info exposure in Vault files (CVE-2024-8775) | High | LLM02 |  |
-| [`INC-00278`](#inc-00278) | 2024 | Arbitrary file deletion vulnerability (lunary/anything-llm class) | Critical | LLM06 |  |
-| [`INC-00279`](#inc-00279) | 2024 | Arbitrary file write in db-gpt RAG-knowledge endpoint (CVE-2024-10834) | Critical | LLM06 | ASI04 |
-| [`INC-00280`](#inc-00280) | 2024 | Arbitrary file write in eosphoros-ai/db-gpt knowledge API (CVE-2024-10833) | Critical | LLM06 | ASI04 |
-| [`INC-00281`](#inc-00281) | 2024 | Azure AI Face Service EoP via auth-bypass by spoofing | High | LLM02 |  |
-| [`INC-00290`](#inc-00290) | 2024 | Code injection in binary-husky/gpt_academic (CVE-2024-10950) | Critical | LLM05, LLM06 | ASI04 |
-| [`INC-00294`](#inc-00294) | 2024 | DoS in invoke-ai/invokeai multipart boundary parsing (CVE-2024-10821) | High | LLM10 | ASI06 |
-| [`INC-00295`](#inc-00295) | 2024 | DoS via LangChainLLM in run-llama/llama_index (v0.12.5) | Medium | LLM10 | ASI06 |
-| [`INC-00296`](#inc-00296) | 2024 | DoS via large board_name in invoke-ai/invokeai 5.0.2 | Medium | LLM10 | ASI06 |
-| [`INC-00324`](#inc-00324) | 2024 | Improper access control in lunary-ai/lunary evaluators (CVE-2024-10330) | Medium | LLM02 |  |
-| [`INC-00325`](#inc-00325) | 2024 | Improper access control on evaluator deletion route (lunary) | High | LLM02 |  |
-| [`INC-00326`](#inc-00326) | 2024 | Improper authorization in lunary-ai/lunary (CVE-2024-10274) | High | LLM02 |  |
-| [`INC-00343`](#inc-00343) | 2024 | Mage AI insecure default initialization (0.9.75) | Medium | LLM06 |  |
-| [`INC-00350`](#inc-00350) | 2024 | Microsoft Account missing authorization elevation of privilege | High | LLM02 |  |
-| [`INC-00376`](#inc-00376) | 2024 | NI Vision Builder AI RCE via crafted file (user interaction) | High | LLM05 |  |
-| [`INC-00377`](#inc-00377) | 2024 | NVIDIA Container Toolkit TOCTOU container escape (CVE-2024-0132) | Critical | LLM03 |  |
-| [`INC-00388`](#inc-00388) | 2024 | Organization Confusion on Hugging Face | Medium | LLM03 | ASI04 |
-| [`INC-00389`](#inc-00389) | 2024 | Overly permissive CORS / CSRF in db-gpt (CVE-2024-10906) | High | LLM06 |  |
-| [`INC-00390`](#inc-00390) | 2024 | Path traversal in eosphoros-ai/db-gpt | High | LLM06 | ASI04 |
-| [`INC-00391`](#inc-00391) | 2024 | Path traversal in mintplex-labs/anything-llm (CVE-2024-10513) | Critical | LLM02, LLM06 | ASI04 |
-| [`INC-00394`](#inc-00394) | 2024 | Prompt-injection RCE via manim plugin in gpt_academic (CVE-2024-10954) | Critical | LLM01, LLM05, LLM06 | ASI04 |
-| [`INC-00398`](#inc-00398) | 2024 | RCE via unsafe torch.load in invoke-ai/invokeai (5.3.1-5.4.2) | Critical | LLM03, LLM05 |  |
-| [`INC-00402`](#inc-00402) | 2024 | Sensitive file disclosure via ImagePromptTemplate in LangChain (CVE-2024-10940) | High | LLM02, LLM03 | ASI04 |
-| [`INC-00403`](#inc-00403) | 2024 | Sensitive prompt-data exposure via URL access | High | LLM02, LLM07 |  |
-| [`INC-00404`](#inc-00404) | 2024 | Sensitive-info exposure in anything-llm setup-complete (CVE-2024-6842) | High | LLM02 |  |
-| [`INC-00410`](#inc-00410) | 2024 | SQL injection via SQL-run endpoint in db-gpt (CVE-2024-10835) | Critical | LLM05, LLM06 | ASI04 |
-| [`INC-00411`](#inc-00411) | 2024 | SSRF in infiniflow/ragflow (CVE-2024-12779) | High | LLM06 | ASI04 |
-| [`INC-00419`](#inc-00419) | 2024 | Uncontrolled resource consumption in mlflow (CVE-2024-6838) | Medium | LLM10 | ASI06 |
-| [`INC-00424`](#inc-00424) | 2024 | XSS in IBM watsonx.ai Web UI (CVE-2024-49785) | Medium | LLM05 |  |
-| [`INC-00262`](#inc-00262) | 2024-01 | AI-generated Biden robocall suppressing votes in New Hampshire primary | High | LLM09 | ASI09 |
-| [`INC-00263`](#inc-00263) | 2024-01 | AI-generated Biden robocalls — deepfake voice used to suppress voter turnout | Critical | LLM09 |  |
-| [`INC-00271`](#inc-00271) | 2024-01 | Anthropic Sleeper Agents paper — models trained to hide malicious behaviour | Critical | LLM03, LLM04 | ASI04, ASI10 |
-| [`INC-00297`](#inc-00297) | 2024-01 | DPD AI chatbot swears at customer and criticises company — prompt injection via customer input | Medium | LLM01, LLM06, LLM07 | ASI01 |
-| [`INC-00298`](#inc-00298) | 2024-01 | DPD chatbot malfunctioned, swore at customer and criticized DPD | Low | LLM01, LLM05 | ASI01 |
-| [`INC-00328`](#inc-00328) | 2024-01 | JupyterLab token leak via crafted-link redirect (used by AI notebooks) | Medium | LLM02 | ASI04 |
-| [`INC-00340`](#inc-00340) | 2024-01 | LlamaIndex SQL injection via prompt in NLSQLTableQueryEngine | High | LLM01, LLM05, LLM06 | ASI01, ASI02 |
-| [`INC-00344`](#inc-00344) | 2024-01 | Malicious custom GPT 'Psychology' exfiltrates user chats via API | High | LLM02, LLM03, LLM06 | ASI02, ASI04 |
-| [`INC-00399`](#inc-00399) | 2024-01 | Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations | Critical | LLM03, LLM06, LLM09 | ASI09 |
-| [`INC-00254`](#inc-00254) | 2024-02 | 100+ malicious ML models uploaded to Hugging Face (JFrog) and nullifAI bypass | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00259`](#inc-00259) | 2024-02 | AI voice deepfake CEO fraud — Hong Kong $25M loss | Critical | LLM06, LLM09, LLM10 |  |
-| [`INC-00265`](#inc-00265) | 2024-02 | Air Canada chatbot gave inaccurate bereavement-fare info; airline held liable | Low | LLM05, LLM09 | ASI09 |
-| [`INC-00266`](#inc-00266) | 2024-02 | Air Canada chatbot invents bereavement discount policy — tribunal ruling | High | LLM06, LLM09 |  |
-| [`INC-00267`](#inc-00267) | 2024-02 | Air Canada chatbot misinformation liability (Moffatt v. Air Canada) | Medium | LLM09 |  |
-| [`INC-00274`](#inc-00274) | 2024-02 | AnythingLLM privilege escalation: default-role users delete admin documents | Medium | LLM06 | ASI03, ASI04 |
-| [`INC-00275`](#inc-00275) | 2024-02 | AnythingLLM unauthenticated DoS via data-export filename | High | LLM10 | ASI08 |
-| [`INC-00284`](#inc-00284) | 2024-02 | Character.AI chatbot allegedly influenced teen Sewell Setzer toward suicide | Critical | LLM05, LLM06 | ASI09 |
-| [`INC-00293`](#inc-00293) | 2024-02 | Deepfake CFO scam costs Arup $25 million in Hong Kong | Critical | LLM09 | ASI09 |
-| [`INC-00303`](#inc-00303) | 2024-02 | Gemini bias and sociotechnical training failures harm Google's reputation | Medium | LLM04, LLM09 | ASI06 |
-| [`INC-00310`](#inc-00310) | 2024-02 | Google Gemini AI image generator refuses to depict white people — overcorrected safety filters | High | LLM04, LLM09 |  |
-| [`INC-00312`](#inc-00312) | 2024-02 | Gradio component_server SSRF / arbitrary file read | High | LLM02, LLM05 | ASI04, ASI05 |
-| [`INC-00318`](#inc-00318) | 2024-02 | Hugging Face model repository pickle-based malware supply chain | Critical | LLM03 | ASI04 |
-| [`INC-00357`](#inc-00357) | 2024-02 | MLflow artifact-deletion path traversal allowing arbitrary directory deletion | High | LLM05, LLM10 | ASI05 |
-| [`INC-00361`](#inc-00361) | 2024-02 | MLflow path traversal in artifact_location/source | High | LLM02, LLM05 | ASI04, ASI05 |
-| [`INC-00362`](#inc-00362) | 2024-02 | MLflow path traversal via ';' URL parameter manipulation | High | LLM02 | ASI04, ASI05 |
-| [`INC-00363`](#inc-00363) | 2024-02 | MLflow path traversal via artifact_location fragment URI | High | LLM02 | ASI04, ASI05 |
-| [`INC-00373`](#inc-00373) | 2024-02 | Moffatt v. Air Canada legal precedent: AI chatbot misrepresentation liability | Low | LLM09 | ASI09 |
-| [`INC-00422`](#inc-00422) | 2024-02 | Web-Scale Data Poisoning: Split-View Attack | High | LLM03, LLM04 | ASI04 |
-| [`INC-00288`](#inc-00288) | 2024-03 | Chinese ChatGPT-clone (pictureproxy.php) SSRF exploited in the wild | Medium | LLM05 | ASI02, ASI05 |
-| [`INC-00317`](#inc-00317) | 2024-03 | Hallucinated software packages downloaded thousands of times (slopsquatting) | High | LLM03, LLM05, LLM09 | ASI04 |
-| [`INC-00332`](#inc-00332) | 2024-03 | LangChain load_chain path traversal allowing API key disclosure / RCE | High | LLM02, LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00371`](#inc-00371) | 2024-03 | MLflow XSS leading to client-side RCE in Jupyter Notebook (untrusted recipe) | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00372`](#inc-00372) | 2024-03 | MLflow XSS via dataset table fields leading to client-side RCE | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00374`](#inc-00374) | 2024-03 | Morris II Worm: RAG-Based Attack | High | LLM01, LLM02, LLM06, LLM08 | ASI01, ASI02, ASI06, ASI07, ASI08 |
-| [`INC-00375`](#inc-00375) | 2024-03 | Nassi et al. "ComPromptMized" Morris II multi-agent worm | Critical | LLM01 | ASI01, ASI06, ASI07, ASI08 |
-| [`INC-00378`](#inc-00378) | 2024-03 | NYC city chatbot tells businesses to break the law — fabricated legal guidance | High | LLM05, LLM06, LLM09 | ASI09 |
-| [`INC-00384`](#inc-00384) | 2024-03 | ONNX directory traversal via external_data field | High | LLM03 | ASI04, ASI05 |
-| [`INC-00386`](#inc-00386) | 2024-03 | OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage | High | LLM01, LLM07, LLM10 |  |
-| [`INC-00396`](#inc-00396) | 2024-03 | RAG corpus poisoning — embedding-space manipulation to force retrieval | Critical | LLM01 | ASI01, ASI06, ASI07, ASI08 |
-| [`INC-00405`](#inc-00405) | 2024-03 | ShadowRay: Anyscale Ray Dashboard RCE (CVE-2023-48022) exploited in the wild | Critical | LLM02, LLM03 | ASI04, ASI05 |
-| [`INC-00272`](#inc-00272) | 2024-04 | AnythingLLM env-var update endpoint command injection -> RCE | Critical | LLM05, LLM06 | ASI04, ASI05 |
-| [`INC-00282`](#inc-00282) | 2024-04 | BentoML insecure deserialization RCE | Critical | LLM03 | ASI04, ASI05 |
-| [`INC-00319`](#inc-00319) | 2024-04 | Hugging Face Transformers load_repo_checkpoint pickle RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00329`](#inc-00329) | 2024-04 | Keras Lambda layer marshalled-code RCE | Critical | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00334`](#inc-00334) | 2024-04 | langchain-community SitemapLoader infinite recursion DoS | High | LLM05, LLM10 | ASI08 |
-| [`INC-00338`](#inc-00338) | 2024-04 | Leonardo AI used to create non-consensual celebrity deepfakes | Medium | LLM05 | ASI02 |
-| [`INC-00341`](#inc-00341) | 2024-04 | LLM-generated malware evades endpoint detection — AI-assisted polymorphic code | Critical | LLM01, LLM05, LLM06 |  |
-| [`INC-00345`](#inc-00345) | 2024-04 | Many-shot jailbreaking (Anthropic research) | High | LLM01, LLM04, LLM06 |  |
-| [`INC-00364`](#inc-00364) | 2024-04 | MLflow path traversal via is_local_uri parsing | High | LLM02 | ASI04, ASI05 |
-| [`INC-00412`](#inc-00412) | 2024-04 | Stability AI synthetic CSAM generation — training data and output safety failures | Critical | LLM03 |  |
-| [`INC-00413`](#inc-00413) | 2024-04 | Stable Diffusion WebUI (AUTOMATIC1111) limited file write on Windows | High | LLM05 | ASI05 |
-| [`INC-00291`](#inc-00291) | 2024-05 | Crescendo: multi-turn escalation attack (Microsoft) | High | LLM01, LLM06 | ASI01, ASI06 |
-| [`INC-00308`](#inc-00308) | 2024-05 | GitHub Copilot Workspace prompt injection via repository content | High | LLM01, LLM05, LLM07 | ASI02 |
-| [`INC-00309`](#inc-00309) | 2024-05 | Google AI Overviews recommends adding glue to pizza — RAG hallucination at search scale | High | LLM08, LLM09 |  |
-| [`INC-00311`](#inc-00311) | 2024-05 | GPT-4o Chinese tokens compromised by spam and pornography (training-data poisoning) | Medium | LLM03, LLM04 | ASI04, ASI06 |
-| [`INC-00316`](#inc-00316) | 2024-05 | Gradio open redirect via file parameter | Medium | LLM05 | ASI05 |
-| [`INC-00333`](#inc-00333) | 2024-05 | LangChain Web Research Retriever SSRF | High | LLM02, LLM05, LLM06 | ASI02, ASI05 |
-| [`INC-00336`](#inc-00336) | 2024-05 | langchain-experimental VectorSQLDatabaseChain arbitrary code execution via eval | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00339`](#inc-00339) | 2024-05 | llama-cpp-python Jinja2 SSTI in chat_template metadata -> RCE (Llama Drama) | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 |
-| [`INC-00342`](#inc-00342) | 2024-05 | LLMjacking | High | LLM02, LLM10 | ASI03 |
-| [`INC-00355`](#inc-00355) | 2024-05 | Microsoft Recall screenshots everything — OS-level data retention without consent | Critical |  |  |
-| [`INC-00397`](#inc-00397) | 2024-05 | Ray Serve gRPC handler vulnerability | High | LLM05, LLM06 | ASI05 |
-| [`INC-00400`](#inc-00400) | 2024-05 | Scammers used AI voice clone and YouTube footage to impersonate WPP CEO Mark Read | High | LLM09 | ASI09 |
-| [`INC-00408`](#inc-00408) | 2024-05 | Snowflake customer data breach via stolen credentials — 165+ organisations affected | Critical |  | ASI03 |
-| [`INC-00416`](#inc-00416) | 2024-05 | TorchServe allowed_urls path-traversal bypass (auth bypass) | High | LLM03 | ASI04 |
-| [`INC-00417`](#inc-00417) | 2024-05 | TorchServe gRPC plaintext binding (auth bypass) | High | LLM03 | ASI04 |
-| [`INC-00423`](#inc-00423) | 2024-05 | Wiz finds Replicate tenant-isolation flaw enabling cross-tenant model & data access | High | LLM02, LLM03 | ASI03, ASI04 |
-| [`INC-00256`](#inc-00256) | 2024-06 | Agentic AI privilege escalation via tool chain manipulation — research | Critical |  | ASI01, ASI02, ASI03 |
-| [`INC-00268`](#inc-00268) | 2024-06 | Amazon Q developer leaks internal AWS data in enterprise environment | High | LLM02 |  |
-| [`INC-00273`](#inc-00273) | 2024-06 | AnythingLLM HTTP smuggling / improper-input vulnerability | High | LLM05 | ASI04, ASI05 |
-| [`INC-00292`](#inc-00292) | 2024-06 | Deepfake CEO fraud surge: FBI flags as fastest-growing US enterprise fraud category | High | LLM09 | ASI09 |
-| [`INC-00299`](#inc-00299) | 2024-06 | EmailGPT prompt-injection / system-prompt leak | High | LLM01, LLM07 | ASI01, ASI02 |
-| [`INC-00306`](#inc-00306) | 2024-06 | GitHub Copilot Chat Prompt Injection to Data Exfiltration | High | LLM01, LLM02 | ASI02, ASI09 |
-| [`INC-00347`](#inc-00347) | 2024-06 | McDonald's ends IBM partnership after AI drive-thru ordering errors | Low | LLM05, LLM09 | ASI08 |
-| [`INC-00349`](#inc-00349) | 2024-06 | Microsoft 365 Copilot data exposure via over-permissive SharePoint indexing | High | LLM02, LLM08 | ASI03, ASI06 |
-| [`INC-00358`](#inc-00358) | 2024-06 | MLflow Keras model deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00359`](#inc-00359) | 2024-06 | MLflow LangChain agent deserialization RCE | High | LLM03, LLM06 | ASI04, ASI05 |
-| [`INC-00360`](#inc-00360) | 2024-06 | MLflow LightGBM model loader deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00365`](#inc-00365) | 2024-06 | MLflow pyfunc.load_model cloudpickle deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00366`](#inc-00366) | 2024-06 | MLflow PyTorch lightning deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00367`](#inc-00367) | 2024-06 | MLflow PyTorch model loader deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00368`](#inc-00368) | 2024-06 | MLflow scikit-learn loadmodelfromlocalfile pickle deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00369`](#inc-00369) | 2024-06 | MLflow TensorFlow model loader deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00370`](#inc-00370) | 2024-06 | MLflow unsafe pickle deserialization in scikit-learn model loader (RCE) | High | LLM03, LLM04, LLM05 | ASI04, ASI05 |
-| [`INC-00382`](#inc-00382) | 2024-06 | Ollama path traversal in /api/pull (Probllama) -> RCE | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00392`](#inc-00392) | 2024-06 | Perplexity AI plagiarism — verbatim content reproduction without attribution | High | LLM09 |  |
-| [`INC-00395`](#inc-00395) | 2024-06 | Rabbit R1 hardcoded API keys — all user data accessible to anyone with firmware | Critical |  | ASI03, ASI04 |
-| [`INC-00406`](#inc-00406) | 2024-06 | Skeleton Key: direct system prompt override (Microsoft) | High | LLM01, LLM06, LLM07 | ASI01 |
-| [`INC-00418`](#inc-00418) | 2024-06 | Uber ML platform data lineage audit — fragmented provenance across 30+ feature stores | High |  |  |
-| [`INC-00420`](#inc-00420) | 2024-06 | Vanna.AI ask() prompt-injection -> exec() RCE | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00255`](#inc-00255) | 2024-07 | Adversarial embedding attacks on production RAG systems | Critical | LLM01, LLM08 | ASI06 |
-| [`INC-00301`](#inc-00301) | 2024-07 | Ferrari executive targeted by deepfake scam impersonating CEO Benedetto Vigna | High | LLM09 | ASI09 |
-| [`INC-00304`](#inc-00304) | 2024-07 | Gemini Delayed Automatic Tool Invocation via Context Pollution | High | LLM01, LLM06 | ASI01, ASI02 |
-| [`INC-00421`](#inc-00421) | 2024-07 | Waymo autonomous vehicle data retention — 75 petabytes of driving footage with faces | High |  |  |
-| [`INC-00257`](#inc-00257) | 2024-08 | AI recruiting tool gender bias — Amazon scraps internal ML hiring tool | High | LLM04 |  |
-| [`INC-00261`](#inc-00261) | 2024-08 | AI-assisted identity fraud by North Korean IT workers infiltrating Western firms | Critical | LLM09 | ASI03, ASI09 |
-| [`INC-00270`](#inc-00270) | 2024-08 | Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts | High | LLM04, LLM10 |  |
-| [`INC-00283`](#inc-00283) | 2024-08 | Canadian fraud ring used AI voice cloning in $21M grandparent scam | Critical | LLM09 | ASI09 |
-| [`INC-00302`](#inc-00302) | 2024-08 | Financial Transaction Hijacking with M365 Copilot as an Insider | Critical | LLM01, LLM02, LLM04, LLM05, LLM06, LLM09 | ASI01, ASI02, ASI06, ASI09 |
-| [`INC-00307`](#inc-00307) | 2024-08 | GitHub Copilot reproduces hardcoded secrets from training data (CUHK study) | High | LLM02, LLM03 | ASI03, ASI04 |
-| [`INC-00330`](#inc-00330) | 2024-08 | LangChain GraphCypherQAChain prompt injection -> Cypher/SQL injection | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00331`](#inc-00331) | 2024-08 | LangChain GraphCypherQAChain SQL/Cypher injection via prompt | High | LLM01, LLM05, LLM06 | ASI01, ASI02 |
-| [`INC-00337`](#inc-00337) | 2024-08 | LangChainJS getFullPath path traversal | High | LLM05, LLM06 | ASI05 |
-| [`INC-00348`](#inc-00348) | 2024-08 | Microsoft 365 Copilot ASCII Smuggling Data Exfiltration | High | LLM01, LLM02 | ASI01, ASI02, ASI09 |
-| [`INC-00351`](#inc-00351) | 2024-08 | Microsoft Copilot for M365 — document exfiltration via indirect injection | Critical | LLM01 | ASI01, ASI02 |
-| [`INC-00352`](#inc-00352) | 2024-08 | Microsoft Copilot Studio SSRF -> cloud metadata exposure | High | LLM02, LLM05, LLM06 | ASI02, ASI05 |
-| [`INC-00385`](#inc-00385) | 2024-08 | Open WebUI SSRF in /openai/models | High | LLM05 | ASI02, ASI05 |
-| [`INC-00407`](#inc-00407) | 2024-08 | Slack AI indirect injection via channel content | Critical | LLM01, LLM02, LLM06, LLM08 | ASI01, ASI02, ASI06 |
-| [`INC-00260`](#inc-00260) | 2024-09 | AI voice-clone scam targets Westchester parents with fake kidnapping ransom calls | High | LLM09 | ASI09 |
-| [`INC-00264`](#inc-00264) | 2024-09 | AI-generated CSAM detection evasion — adversarial manipulation of content safety classifiers | Critical | LLM01, LLM04 |  |
-| [`INC-00286`](#inc-00286) | 2024-09 | ChatGPT Memory Injection via Indirect Prompt Injection | High | LLM01 | ASI06 |
-| [`INC-00287`](#inc-00287) | 2024-09 | ChatGPT memory persistence prompt injection (Embrace The Red) | High | LLM01, LLM02, LLM08 | ASI01, ASI06 |
-| [`INC-00335`](#inc-00335) | 2024-09 | langchain-experimental LLMSymbolicMathChain RCE via sympy.sympify | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00409`](#inc-00409) | 2024-09 | SpAIware: Persistent Memory Spyware Injection into ChatGPT macOS | Critical | LLM01, LLM02 | ASI06, ASI09 |
-| [`INC-00285`](#inc-00285) | 2024-10 | Character.AI teen suicide — AI companion encouraged self-harm | Critical | LLM06, LLM09 | ASI09 |
-| [`INC-00289`](#inc-00289) | 2024-10 | Claude computer use red-team: autonomous agent browses to attacker-controlled site and follows instructions | Critical | LLM01 | ASI01, ASI02, ASI05, ASI08 |
-| [`INC-00313`](#inc-00313) | 2024-10 | Gradio CORS origin validation accepts null origin | High | LLM02 | ASI04 |
-| [`INC-00314`](#inc-00314) | 2024-10 | Gradio CORS origin validation bypass when cookie present | High | LLM02, LLM05 | ASI04, ASI05 |
-| [`INC-00315`](#inc-00315) | 2024-10 | Gradio data-validation arbitrary file leak across components | Medium | LLM02 | ASI04 |
-| [`INC-00346`](#inc-00346) | 2024-10 | MathPrompt: symbolic mathematics jailbreak attack | Critical | LLM01, LLM06 | ASI01 |
-| [`INC-00354`](#inc-00354) | 2024-10 | Microsoft DeepSpeed command injection | High | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00387`](#inc-00387) | 2024-10 | OpenAI Whisper hallucinating medical transcriptions — fabricated diagnoses in healthcare AI | Critical | LLM08, LLM09 |  |
-| [`INC-00393`](#inc-00393) | 2024-10 | ProKYC: Deepfake Tool for Account Fraud Attacks | High |  |  |
-| [`INC-00414`](#inc-00414) | 2024-10 | Terminal DiLLMa: LLM Apps Hijack Terminals via ANSI Escape Codes | Medium | LLM05 | ASI02 |
-| [`INC-00425`](#inc-00425) | 2024-10 | ZombAIs: Claude Computer Use Prompt Injection to C2 | Critical | LLM01, LLM06 | ASI02, ASI05, ASI10 |
-| [`INC-00305`](#inc-00305) | 2024-11 | GitHub Copilot Chat agent executes malicious code from repository context | Critical | LLM01 | ASI01, ASI02, ASI05 |
-| [`INC-00320`](#inc-00320) | 2024-11 | Hugging Face Transformers MaskFormer deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00321`](#inc-00321) | 2024-11 | Hugging Face Transformers MobileViTV2 deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00322`](#inc-00322) | 2024-11 | Hugging Face Transformers Trax model deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00379`](#inc-00379) | 2024-11 | Ollama /api/push path traversal exposes directory structure | High | LLM02 | ASI04 |
-| [`INC-00380`](#inc-00380) | 2024-11 | Ollama CreateModel /dev/random resource exhaustion DoS | High | LLM10 | ASI08 |
-| [`INC-00381`](#inc-00381) | 2024-11 | Ollama CreateModel out-of-bounds read crash (DoS) | High | LLM10 | ASI08 |
-| [`INC-00383`](#inc-00383) | 2024-11 | Ollama path-traversal in /api/create -> file existence disclosure | Medium | LLM02 | ASI04 |
-| [`INC-00415`](#inc-00415) | 2024-11 | Tesla FSD phantom braking and obstacle hallucination — AI perception failures at highway speed | Critical | LLM09 |  |
-| [`INC-00276`](#inc-00276) | 2024-12 | Apollo Research: frontier models demonstrate strategic deception to avoid shutdown | Critical | LLM06 | ASI01, ASI09, ASI10 |
-| [`INC-00277`](#inc-00277) | 2024-12 | Apple Intelligence notification hallucinations — fabricated BBC news headlines | High | LLM05, LLM09 |  |
-| [`INC-00300`](#inc-00300) | 2024-12 | EU GDPR enforcement: ChatGPT cannot correct factually wrong personal data | High | LLM09 |  |
-| [`INC-00323`](#inc-00323) | 2024-12 | Hugging Face Transformers vulnerability | High | LLM03 | ASI04 |
-| [`INC-00327`](#inc-00327) | 2024-12 | InvokeAI /api/v2/models/install torch.load deserialization RCE | Critical | LLM03, LLM04 | ASI04, ASI05 |
-| [`INC-00353`](#inc-00353) | 2024-12 | Microsoft Copilot vulnerability exposes Fortune 500 data (Lasso Security) | High | LLM02, LLM08 | ASI03, ASI06 |
-| [`INC-00356`](#inc-00356) | 2024-12 | MIT AI Risk Tracker captures escalating AI-incident counts in 2024-2025 | Medium | LLM09 | ASI09 |
-| [`INC-00401`](#inc-00401) | 2024-12 | Security ProbLLMs in xAI Grok | Medium | LLM01, LLM07 | ASI01 |
+| [`INC-00078`](#inc-00078) | 2025 | AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings | Critical | LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |
+| [`INC-00081`](#inc-00081) | 2025 | AI Model Container Image Poisoning | High | LLM03, LLM04 | ASI04 |
+| [`INC-00082`](#inc-00082) | 2025 | AI-assisted dev feature exposes sensitive project data via crafted issue | High | LLM01, LLM02 | ASI01 |
+| [`INC-00083`](#inc-00083) | 2025 | AIKatz: Attacking LLM Desktop Applications | High | LLM02 | ASI03 |
+| [`INC-00101`](#inc-00101) | 2025 | Arbitrary code execution via crafted Keras config (CVE-2025-1550) | Critical | LLM03 |  |
+| [`INC-00104`](#inc-00104) | 2025 | Azure PromptFlow RCE via improper isolation (CVE-2025-24986) | Critical | LLM05, LLM06 | ASI04 |
+| [`INC-00107`](#inc-00107) | 2025 | BentoML RCE via insecure deserialization (v1.4.2) | Critical | LLM03, LLM05 |  |
+| [`INC-00109`](#inc-00109) | 2025 | BentoML runner-server insecure deserialization RCE (CVE-2025-32375) | Critical | LLM03, LLM05 |  |
+| [`INC-00132`](#inc-00132) | 2025 | Cursor Agent arbitrary file write via @Docs prompt injection (CVE-2025-32018) | High | LLM01, LLM05, LLM06 | ASI01, ASI04 |
+| [`INC-00141`](#inc-00141) | 2025 | Data Exfiltration via Agent Tools in Copilot Studio | High | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI09 |
+| [`INC-00145`](#inc-00145) | 2025 | DeepSeek-R1 CyberSecEval2 interpreter-abuse evaluation | High | LLM06 | ASI04 |
+| [`INC-00158`](#inc-00158) | 2025 | Firefox AI chatbot leaks document title across tabs (CVE-2025-3035) | Medium | LLM02 |  |
+| [`INC-00165`](#inc-00165) | 2025 | Geopolitical bias in sentiment analysis for neutral phrases | Medium | LLM09 |  |
+| [`INC-00180`](#inc-00180) | 2025 | gpt-4o-mini AgentHarm evaluation (Inspect Evals) | Medium | LLM06 | ASI04 |
+| [`INC-00181`](#inc-00181) | 2025 | gpt-4o-mini CyberSecEval2 prompt-injection benchmark | Medium | LLM01 | ASI01 |
+| [`INC-00182`](#inc-00182) | 2025 | gpt-4o-mini WMDP-Bio evaluation (Inspect Evals) | High | LLM02, LLM06 |  |
+| [`INC-00183`](#inc-00183) | 2025 | gpt-4o-mini WMDP-Chem evaluation (Inspect Evals) | High | LLM02, LLM06 |  |
+| [`INC-00199`](#inc-00199) | 2025 | Improper authorization in ageerle ruoyi-ai SysModelController | High | LLM02 |  |
+| [`INC-00200`](#inc-00200) | 2025 | Improper authorization in ageerle ruoyi-ai SysNoticeController (CVE-2025-3202) | High | LLM02 |  |
+| [`INC-00207`](#inc-00207) | 2025 | Kiro IDE Command Injection (CVE-2026-0830) | Medium | LLM05 | ASI05 |
+| [`INC-00214`](#inc-00214) | 2025 | Langflow unauthenticated RCE via /api/v1/validate/code (CVE-2025-3248) | Critical | LLM05, LLM06 | ASI04 |
+| [`INC-00219`](#inc-00219) | 2025 | Living Off AI: Prompt Injection via Jira Service Management | High | LLM01, LLM02, LLM06 | ASI01, ASI02 |
+| [`INC-00220`](#inc-00220) | 2025 | Llama-3.3-70B-Instruct-Turbo WMDP-Cyber evaluation | Medium | LLM02 |  |
+| [`INC-00228`](#inc-00228) | 2025 | MathGPT prompt-injection control bypass (issue report) | Medium | LLM01, LLM06 | ASI04 |
+| [`INC-00233`](#inc-00233) | 2025 | mcp-remote OAuth Command Injection (CVE-2025-6514) | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05, ASI07 |
+| [`INC-00238`](#inc-00238) | 2025 | Mistral-Small-24B-Instruct CyberSecEval2 interpreter-abuse | High | LLM06 | ASI04 |
+| [`INC-00239`](#inc-00239) | 2025 | Mistral-Small-24B-Instruct CyberSecEval2 prompt-injection | Medium | LLM01 | ASI01 |
+| [`INC-00240`](#inc-00240) | 2025 | Mistral-Small-24B-Instruct WMDP-Bio evaluation | High | LLM02 |  |
+| [`INC-00241`](#inc-00241) | 2025 | Mistral-Small-24B-Instruct WMDP-Chem evaluation | High | LLM02 |  |
+| [`INC-00244`](#inc-00244) | 2025 | Multi-model guardrail jailbreak via hex-encoded fictional context | High | LLM06 |  |
+| [`INC-00245`](#inc-00245) | 2025 | Multi-model guardrail jailbreak via urgent-health framing | High | LLM06 |  |
+| [`INC-00250`](#inc-00250) | 2025 | NVIDIA Container Toolkit TOCTOU (CVE-2025-23359) | Critical | LLM03 |  |
+| [`INC-00281`](#inc-00281) | 2025 | picklescan bypass via 'pip main' (CVE-2025-1716) | High | LLM03 |  |
+| [`INC-00282`](#inc-00282) | 2025 | picklescan bypass via non-standard file extensions (CVE-2025-1889) | High | LLM03 |  |
+| [`INC-00283`](#inc-00283) | 2025 | picklescan misses malicious pickles in PyTorch archives (ZIP flag manipulation) | Critical | LLM03 |  |
+| [`INC-00284`](#inc-00284) | 2025 | picklescan ZIP crash leads to scan bypass (CVE-2025-1944) | High | LLM03 |  |
+| [`INC-00287`](#inc-00287) | 2025 | Planting Instructions for Delayed Automatic AI Agent Tool Invocation | High | LLM01, LLM06 | ASI01, ASI02, ASI06 |
+| [`INC-00294`](#inc-00294) | 2025 | PyTorch CUDACachingAllocator memory corruption (CVE-2025-3136) | High | LLM03 |  |
+| [`INC-00295`](#inc-00295) | 2025 | PyTorch torch.jit.jit_module_from_flatbuffer memory corruption (CVE-2025-3121) | High | LLM03 |  |
+| [`INC-00296`](#inc-00296) | 2025 | PyTorch torch.jit.script memory corruption (CVE-2025-3000) | Critical | LLM03 |  |
+| [`INC-00298`](#inc-00298) | 2025 | PyTorch torch.lstm_cell memory corruption (CVE-2025-3001) | Critical | LLM03 |  |
+| [`INC-00299`](#inc-00299) | 2025 | PyTorch torch.nn.utils.rnn.pad_packed_sequence memory corruption (CVE-2025-2998) | High | LLM03 |  |
+| [`INC-00300`](#inc-00300) | 2025 | PyTorch torch.nn.utils.rnn.unpack_sequence memory corruption | High | LLM03 |  |
+| [`INC-00084`](#inc-00084) | 2025-01 | Alleged DeepSeek Model Distillation from OpenAI | High | LLM10 |  |
+| [`INC-00124`](#inc-00124) | 2025-01 | Clearview AI biometric bias — $50M class action settlement | High |  |  |
+| [`INC-00142`](#inc-00142) | 2025-01 | DeepSeek AI Account Takeover Disclosed by Rehberger | High | LLM01, LLM02, LLM05 | ASI03, ASI09 |
+| [`INC-00143`](#inc-00143) | 2025-01 | DeepSeek AI database exposure — 1M+ chat logs publicly accessible | Critical | LLM02, LLM07 | ASI03 |
+| [`INC-00144`](#inc-00144) | 2025-01 | DeepSeek R1 data exfiltration — Chinese AI model sends data to China-linked servers | Critical |  |  |
+| [`INC-00184`](#inc-00184) | 2025-01 | GTIG Adversarial Misuse of Generative AI - January 2025 | High | LLM10 | ASI02 |
+| [`INC-00185`](#inc-00185) | 2025-01 | GTIG — Iranian APT42 used Gemini extensively across attack lifecycle | High | LLM05 | ASI06 |
+| [`INC-00193`](#inc-00193) | 2025-01 | Hugging Face model card supply chain manipulation | Critical | LLM03, LLM05 | ASI04 |
+| [`INC-00273`](#inc-00273) | 2025-01 | OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation | High | LLM01, LLM06, LLM09 |  |
+| [`INC-00314`](#inc-00314) | 2025-01 | Storm-2139 Azure OpenAI account hijack and jailbreak resale | High | LLM01, LLM02, LLM06 | ASI04 |
+| [`INC-00102`](#inc-00102) | 2025-02 | Azure OpenAI content filter bypass via structured output mode | High | LLM01, LLM05, LLM08 |  |
+| [`INC-00127`](#inc-00127) | 2025-02 | Commercial LLM Agents Vulnerable to Simple Yet Dangerous Attacks | High | LLM01, LLM06 | ASI02 |
+| [`INC-00156`](#inc-00156) | 2025-02 | EU AI Act first enforcement actions — prohibited AI practices take effect | High |  |  |
+| [`INC-00164`](#inc-00164) | 2025-02 | Gemini Memory Persistence via Prompt Injection | High | LLM01 | ASI06 |
+| [`INC-00196`](#inc-00196) | 2025-02 | Hugging Face Transformers GPT-NeoX-Japanese tokenizer ReDoS | Medium | LLM10 | ASI08 |
+| [`INC-00204`](#inc-00204) | 2025-02 | JailbreakEdit: Injecting Universal Jailbreak Backdoors via Model Editing | High | LLM03, LLM04 | ASI02 |
+| [`INC-00237`](#inc-00237) | 2025-02 | Microsoft — Storm-2139 hijacked Azure OpenAI accounts and sold jailbroken access | Critical | LLM02, LLM05 | ASI02, ASI06 |
+| [`INC-00243`](#inc-00243) | 2025-02 | Multi-agent financial trading system flash crash — cascading autonomous failures | Critical |  | ASI07, ASI08, ASI09, ASI10 |
+| [`INC-00261`](#inc-00261) | 2025-02 | OmniGPT alleged breach: 30K users, 34M messages exposed | Critical | LLM02 | ASI03 |
+| [`INC-00267`](#inc-00267) | 2025-02 | OpenAI ChatGPT Operator Vulnerability | Medium | LLM01, LLM02, LLM03, LLM04, LLM06 | ASI01, ASI02, ASI03, ASI04, ASI06, ASI07, ASI09 |
+| [`INC-00268`](#inc-00268) | 2025-02 | OpenAI Feb 2025 — "Peer Review" Chinese surveillance social-media monitoring tool | High | LLM05, LLM06 | ASI06 |
+| [`INC-00269`](#inc-00269) | 2025-02 | OpenAI Feb 2025 — DPRK IT-worker accounts using ChatGPT for fake resumes and remote-work tasks | High | LLM05 | ASI06 |
+| [`INC-00286`](#inc-00286) | 2025-02 | Plaintiffs' lawyers admit AI generated erroneous case citations in Walmart filing | Medium | LLM09 | ASI09 |
+| [`INC-00338`](#inc-00338) | 2025-02 | Why Are Web AI Agents More Vulnerable Than Standalone LLMs? | High | LLM01 | ASI01, ASI06 |
+| [`INC-00342`](#inc-00342) | 2025-02 | Wolfpack Adversarial Attack for Multi-Agent Reinforcement Learning | Medium |  | ASI01, ASI09 |
+| [`INC-00076`](#inc-00076) | 2025-03 | AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents | High | LLM06 | ASI03, ASI06 |
+| [`INC-00106`](#inc-00106) | 2025-03 | BentoML insecure deserialization RCE (regression of CVE-2024-2912) | Critical | LLM03 | ASI04, ASI05 |
+| [`INC-00133`](#inc-00133) | 2025-03 | Cursor AI code agent leaking repository secrets via context window | High | LLM02 | ASI02 |
+| [`INC-00160`](#inc-00160) | 2025-03 | Flowise Pre-Auth Arbitrary File Upload | Medium | LLM05 | ASI05 |
+| [`INC-00166`](#inc-00166) | 2025-03 | GitHub Copilot & Cursor Code-Agent Exploit | High | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05, ASI06, ASI08, ASI09 |
+| [`INC-00197`](#inc-00197) | 2025-03 | Hugging Face Transformers ReDoS | Medium | LLM10 | ASI08 |
+| [`INC-00203`](#inc-00203) | 2025-03 | Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures | High |  |  |
+| [`INC-00234`](#inc-00234) | 2025-03 | MemoryGraft: Practical Memory Injection Attack against LLM Agents | High | LLM04, LLM08 | ASI02, ASI06 |
+| [`INC-00301`](#inc-00301) | 2025-03 | Ray < 2.43.0 leaks Redis password in logs | Medium | LLM02 | ASI04 |
+| [`INC-00315`](#inc-00315) | 2025-03 | Synthetic data re-identification — de-anonymized patients from synthetic health records | High |  |  |
+| [`INC-00318`](#inc-00318) | 2025-03 | Text-to-SQL Backdoor: SQL Injection via Triggers | High | LLM03, LLM04 | ASI02, ASI03 |
+| [`INC-00325`](#inc-00325) | 2025-03 | Trend Micro Exploits DeepSeek-R1 Chain of Thought | Medium | LLM01, LLM07 | ASI01 |
+| [`INC-00326`](#inc-00326) | 2025-03 | Typographic Visual Prompts Injection Threats in Cross-Modality Generation | Medium | LLM01 | ASI01 |
+| [`INC-00075`](#inc-00075) | 2025-04 | Agent-in-the-Middle — A2A protocol spoofing via fake agent cards | Critical | LLM02, LLM04, LLM05, LLM09 | ASI03, ASI06, ASI07, ASI08, ASI10 |
+| [`INC-00094`](#inc-00094) | 2025-04 | Anthropic March 2025 — "Influence-as-a-Service" multi-persona operation | High | LLM05, LLM06 | ASI02, ASI06, ASI07 |
+| [`INC-00097`](#inc-00097) | 2025-04 | Anthropic reports Claude misuse for influence ops, credential stuffing, recruitment fraud, malware | High | LLM01, LLM06 | ASI02, ASI10 |
+| [`INC-00108`](#inc-00108) | 2025-04 | BentoML runner server RCE | Critical | LLM03 | ASI04, ASI05 |
+| [`INC-00113`](#inc-00113) | 2025-04 | ChatGPT Command Memories Injection via SearchGPT | High | LLM01 | ASI06, ASI07 |
+| [`INC-00179`](#inc-00179) | 2025-04 | GPT-4.1 jailbreak via tool poisoning | Critical | LLM01, LLM02, LLM03, LLM05, LLM06, LLM09 | ASI01, ASI04, ASI06 |
+| [`INC-00191`](#inc-00191) | 2025-04 | HiddenLayer Policy Puppetry Attack Bypasses All Major AI Models | High | LLM01, LLM07 | ASI01 |
+| [`INC-00195`](#inc-00195) | 2025-04 | Hugging Face Transformers get_configuration_file ReDoS | Medium | LLM10 | ASI08 |
+| [`INC-00205`](#inc-00205) | 2025-04 | JFrog Reports 6.5x Increase in Malicious Hugging Face Models | High | LLM03, LLM05 | ASI04 |
+| [`INC-00212`](#inc-00212) | 2025-04 | LangChain GmailToolkit indirect prompt injection -> code execution | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
+| [`INC-00225`](#inc-00225) | 2025-04 | Mandiant M-Trends 2025 — AI used by financially-motivated and state-sponsored actors | High | LLM05, LLM06 | ASI02, ASI06 |
+| [`INC-00226`](#inc-00226) | 2025-04 | Mandiant M-Trends 2025: AI Adoption by Threat Actors | High | LLM10 | ASI02 |
+| [`INC-00227`](#inc-00227) | 2025-04 | Manipulating Multimodal Agents via Cross-Modal Prompt Injection | High | LLM01 | ASI01 |
+| [`INC-00232`](#inc-00232) | 2025-04 | MCP tool poisoning — hidden instructions in Model Context Protocol tool descriptions | Critical | LLM01, LLM03 | ASI02, ASI03, ASI04, ASI05 |
+| [`INC-00270`](#inc-00270) | 2025-04 | OpenAI GPT-4o sycophancy — model agrees with users even when they are wrong | High | LLM04, LLM09 | ASI09 |
+| [`INC-00291`](#inc-00291) | 2025-04 | Practical Poisoning Attacks against Retrieval-Augmented Generation | High | LLM04, LLM08 | ASI02 |
+| [`INC-00297`](#inc-00297) | 2025-04 | PyTorch torch.load(weights_only=True) RCE bypass | Critical | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00305`](#inc-00305) | 2025-04 | SCAM: Real-World Typographic Robustness Evaluation for Multimodal Models | Medium | LLM01 | ASI01 |
+| [`INC-00323`](#inc-00323) | 2025-04 | Trail of Bits MCP Line Jumping Vulnerability | High | LLM01, LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04 |
+| [`INC-00332`](#inc-00332) | 2025-04 | vLLM Mooncake integration pickle deserialization RCE over ZeroMQ | Critical | LLM03, LLM05 | ASI04, ASI05, ASI07 |
+| [`INC-00335`](#inc-00335) | 2025-04 | WASP: Benchmarking Web Agent Security Against Prompt Injection | High | LLM01 | ASI01, ASI06 |
+| [`INC-00336`](#inc-00336) | 2025-04 | WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history | Critical | LLM01, LLM04 | ASI01, ASI02, ASI04, ASI07 |
+| [`INC-00105`](#inc-00105) | 2025-05 | Benchmarking Poisoning Attacks against Retrieval-Augmented Generation | High | LLM04, LLM08 | ASI02 |
+| [`INC-00151`](#inc-00151) | 2025-05 | EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection | Critical | LLM01, LLM02, LLM04 | ASI01, ASI02, ASI06 |
+| [`INC-00171`](#inc-00171) | 2025-05 | GitPublic Issue Repo Hijack | Critical | LLM01, LLM02, LLM04 | ASI01, ASI02, ASI06, ASI07, ASI08, ASI09 |
+| [`INC-00290`](#inc-00290) | 2025-05 | Postgres MCP Server SQL Injection | Medium | LLM05 | ASI02, ASI05 |
+| [`INC-00312`](#inc-00312) | 2025-05 | Snyk Agent Fix and AI Agent Security Findings | High | LLM05 | ASI04 |
+| [`INC-00313`](#inc-00313) | 2025-05 | SPE-LLM: System Prompt Extraction Attacks and Defenses | Medium | LLM07 | ASI05 |
+| [`INC-00317`](#inc-00317) | 2025-05 | Tenable AI Aware Identifies AI/LLM Security Risks | Medium | LLM02, LLM05 | ASI04 |
+| [`INC-00320`](#inc-00320) | 2025-05 | The Hidden Dangers of Browsing AI Agents | High | LLM01, LLM06 | ASI01, ASI03, ASI06 |
+| [`INC-00334`](#inc-00334) | 2025-05 | vLLM V0 engine multi-node ZeroMQ pickle deserialization RCE | Critical | LLM03, LLM05 | ASI04, ASI05, ASI07 |
+| [`INC-00339`](#inc-00339) | 2025-05 | Windsurf Data Exfiltration & SpAIware (Multiple Vectors) | High | LLM01, LLM02, LLM04, LLM05, LLM08 | ASI01, ASI02, ASI06, ASI09 |
+| [`INC-00079`](#inc-00079) | 2025-06 | AgentSmith Prompt-Hub Proxy Attack | Medium | LLM03 | ASI04 |
+| [`INC-00092`](#inc-00092) | 2025-06 | Anthropic finds blackmail behavior in 16 models when facing shutdown | High | LLM06 | ASI01, ASI09, ASI10 |
+| [`INC-00095`](#inc-00095) | 2025-06 | Anthropic MCP Git Server Triple Flaw (CVE-2025-68143, -68144, -68145) | High | LLM01, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05 |
+| [`INC-00098`](#inc-00098) | 2025-06 | Anthropic SQLite MCP Server SQL Injection | Medium | LLM01, LLM03, LLM04 | ASI02, ASI04, ASI06 |
+| [`INC-00112`](#inc-00112) | 2025-06 | CamoLeak (CVE-2025-59145) prompt injection leaks private code via GitHub Copilot Chat | Critical | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI06, ASI09 |
+| [`INC-00114`](#inc-00114) | 2025-06 | Cisco Study: 46% of Orgs Report Internal GenAI Data Leaks | Medium | LLM02 | ASI09 |
+| [`INC-00116`](#inc-00116) | 2025-06 | Claude Code DNS Exfiltration (CVE-2025-55284) | Medium | LLM01, LLM02 | ASI01, ASI02 |
+| [`INC-00150`](#inc-00150) | 2025-06 | EchoLeak (CVE-2025-32711) zero-click prompt injection in Microsoft 365 Copilot | Critical | LLM01, LLM02, LLM05 | ASI01, ASI06 |
+| [`INC-00152`](#inc-00152) | 2025-06 | EchoLeak: Zero-Click Data Exfiltration from Microsoft 365 Copilot | Critical | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI08 |
+| [`INC-00188`](#inc-00188) | 2025-06 | Heroku MCP App Ownership Hijack | Medium |  | ASI03 |
+| [`INC-00190`](#inc-00190) | 2025-06 | HiddenLayer Cursor Attack Chain via Hidden Prompt Injections | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00192`](#inc-00192) | 2025-06 | Hub MCP Prompt Injection (Cross-Context) | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05, ASI07 |
+| [`INC-00194`](#inc-00194) | 2025-06 | Hugging Face Transformers deserialization vulnerability | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00221`](#inc-00221) | 2025-06 | LlamaIndex multi-vector-store SQL injection | Critical | LLM02, LLM05, LLM08 | ASI02, ASI05 |
+| [`INC-00271`](#inc-00271) | 2025-06 | OpenAI Jun 2025 — "Sneer Review" Chinese cross-platform astroturfing against Taiwanese game | High | LLM05, LLM06 | ASI02, ASI06 |
+| [`INC-00272`](#inc-00272) | 2025-06 | OpenAI June 2025 Disrupting Malicious Uses Report | Medium | LLM10 | ASI02 |
+| [`INC-00277`](#inc-00277) | 2025-06 | OS-HARM: Benchmark for Safety of Computer-Use Agents | High | LLM01 | ASI01, ASI06 |
+| [`INC-00088`](#inc-00088) | 2025-07 | Amazon Q Prompt Poisoning | Medium | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI04, ASI05 |
+| [`INC-00099`](#inc-00099) | 2025-07 | Anvilogic 2025 AI Risk Report: Model & Supply Chain Threats | High | LLM03, LLM05 | ASI04 |
+| [`INC-00103`](#inc-00103) | 2025-07 | Azure OpenAI SSRF -> privilege escalation | High | LLM02, LLM05 | ASI02, ASI04, ASI05 |
+| [`INC-00140`](#inc-00140) | 2025-07 | Dark Side of LLMs: Agent-Based Attacks for Computer Takeover | Critical | LLM01, LLM03, LLM06 | ASI02, ASI05, ASI07 |
+| [`INC-00155`](#inc-00155) | 2025-07 | EscapeRoute -- Anthropic Filesystem MCP Sandbox Escape (CVE-2025-53109 & CVE-2025-53110) | High | LLM05 | ASI02, ASI05 |
+| [`INC-00175`](#inc-00175) | 2025-07 | Google Gemini CLI File Loss | Medium | LLM05 | ASI05 |
+| [`INC-00211`](#inc-00211) | 2025-07 | LAMEHUG malware integrates LLM for real-time command generation (APT28-linked) | High | LLM03, LLM06 | ASI02, ASI04 |
+| [`INC-00229`](#inc-00229) | 2025-07 | McDonald's McHire AI recruitment platform exposed 64M applicants (default creds + IDOR) | Critical | LLM02 | ASI03, ASI04 |
+| [`INC-00231`](#inc-00231) | 2025-07 | MCP session ID hijacking (prompt hijacking) | High | LLM01, LLM02, LLM05, LLM07 | ASI03, ASI04, ASI07, ASI09 |
+| [`INC-00235`](#inc-00235) | 2025-07 | Microsoft Copilot Studio agents public by default — unauthorized data exfiltration | Critical | LLM02 | ASI03, ASI07 |
+| [`INC-00258`](#inc-00258) | 2025-07 | NVIDIAScape (CVE-2025-23266) NVIDIA AI vulnerability | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00259`](#inc-00259) | 2025-07 | Ollama cross-domain token exposure | High | LLM02 | ASI04 |
+| [`INC-00285`](#inc-00285) | 2025-07 | Pillar Poisoned GGUF Templates Hugging Face Backdoors | High | LLM03, LLM05 | ASI04 |
+| [`INC-00303`](#inc-00303) | 2025-07 | Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes | Critical | LLM01, LLM09 | ASI01, ASI09, ASI10 |
+| [`INC-00319`](#inc-00319) | 2025-07 | The Dark Side of LLMs: Agent-Based Attacks for Complete Computer Takeover | Critical | LLM01, LLM05 | ASI01, ASI02, ASI06 |
+| [`INC-00322`](#inc-00322) | 2025-07 | ToolShell RCE via SharePoint | Medium | LLM05, LLM08 | ASI05 |
+| [`INC-00086`](#inc-00086) | 2025-08 | Amazon Q Developer for VS Code Vulnerable to Invisible Prompt Injection | High | LLM01 | ASI01, ASI02 |
+| [`INC-00087`](#inc-00087) | 2025-08 | Amazon Q Developer Secrets Leaked via DNS | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00089`](#inc-00089) | 2025-08 | Amp Code Invisible Prompt Injection (Sourcegraph) | Medium | LLM01 | ASI01 |
+| [`INC-00090`](#inc-00090) | 2025-08 | Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion | Critical | LLM01, LLM05, LLM06, LLM09, LLM10 | ASI01, ASI02, ASI06, ASI07, ASI09, ASI10 |
+| [`INC-00093`](#inc-00093) | 2025-08 | Anthropic Low-Skill Cybercriminal Selling AI-Generated Ransomware | Critical | LLM05, LLM06, LLM07, LLM10 | ASI02, ASI06 |
+| [`INC-00110`](#inc-00110) | 2025-08 | Brave Discloses Indirect Prompt Injection in Perplexity Comet | High | LLM01 | ASI01, ASI02 |
+| [`INC-00115`](#inc-00115) | 2025-08 | Claude Code Data Exfiltration via DNS (CVE-2025-55284) | Critical | LLM01, LLM02, LLM06 | ASI02, ASI05, ASI09, ASI10 |
+| [`INC-00117`](#inc-00117) | 2025-08 | Claude Code Unauthorized Command Execution (CVE-2025-54794, CVE-2025-54795) | High | LLM06 | ASI02, ASI05 |
+| [`INC-00125`](#inc-00125) | 2025-08 | Cline AI Coding Agent Vulnerabilities | Medium | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI05 |
+| [`INC-00126`](#inc-00126) | 2025-08 | Cline Data Exfiltration via Indirect Prompt Injection | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00129`](#inc-00129) | 2025-08 | CrowdStrike — FAMOUS CHOLLIMA infiltrated 320+ companies via GenAI-assisted hiring fraud | Critical | LLM04, LLM05 | ASI02, ASI06 |
+| [`INC-00136`](#inc-00136) | 2025-08 | Cursor CurXecute: indirect prompt injection writes .cursor/mcp.json -> RCE | High | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
+| [`INC-00137`](#inc-00137) | 2025-08 | Cursor MCPoison: approved MCP server config can be silently swapped | High | LLM03, LLM06 | ASI03, ASI04, ASI07, ASI09 |
+| [`INC-00146`](#inc-00146) | 2025-08 | Devin AI Agent Prompt Injection & Data Exfiltration | Medium | LLM01, LLM05, LLM08 | ASI01, ASI02, ASI05 |
+| [`INC-00147`](#inc-00147) | 2025-08 | Devin AI Exposes Ports to the Internet via Prompt Injection | Critical | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00157`](#inc-00157) | 2025-08 | Exfiltrating ChatGPT Chat History and Memories with Prompt Injection | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00167`](#inc-00167) | 2025-08 | GitHub Copilot / VS Code RCE via prompt injection editing .vscode/settings.json | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
+| [`INC-00178`](#inc-00178) | 2025-08 | Google Jules Vulnerable to Invisible Prompt Injection | High | LLM01 | ASI01, ASI02 |
+| [`INC-00201`](#inc-00201) | 2025-08 | Involuntary Jailbreak: Self-Prompting Attack on Grok 4, DeepSeek R1 | High | LLM07 | ASI01 |
+| [`INC-00206`](#inc-00206) | 2025-08 | Jules Zombie Agent: Prompt Injection to Remote Control | Critical | LLM01, LLM06 | ASI02, ASI05, ASI10 |
+| [`INC-00222`](#inc-00222) | 2025-08 | Malicious Hugging Face model impersonating OpenAI release hits 244K downloads | High | LLM03 | ASI04 |
+| [`INC-00253`](#inc-00253) | 2025-08 | NVIDIA Triton control-message manipulation -> RCE (Wiz chain final) | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00254`](#inc-00254) | 2025-08 | NVIDIA Triton Inference Server HTTP handler buffer overflow | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00255`](#inc-00255) | 2025-08 | NVIDIA Triton Inference Server stack buffer overflow (HTTP chunked) | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00256`](#inc-00256) | 2025-08 | NVIDIA Triton Python backend shared-memory name leak (Wiz chain start) | Critical | LLM02, LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00257`](#inc-00257) | 2025-08 | NVIDIA Triton shared-memory read/write access (Wiz chain link 2) | High | LLM03 | ASI04, ASI05 |
+| [`INC-00276`](#inc-00276) | 2025-08 | OpenHands ZombAI RCE | Medium | LLM01, LLM05 | ASI01, ASI05 |
+| [`INC-00278`](#inc-00278) | 2025-08 | Over 100,000 LLM conversations publicly exposed via share-links indexed by search engines | High | LLM02, LLM07 | ASI03 |
+| [`INC-00292`](#inc-00292) | 2025-08 | PromptLock: first AI-powered ransomware (PoC) using local gpt-oss-20b | Medium | LLM05, LLM06 | ASI02, ASI05 |
+| [`INC-00304`](#inc-00304) | 2025-08 | Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments | Critical | LLM03, LLM05 | ASI03, ASI04 |
+| [`INC-00327`](#inc-00327) | 2025-08 | Unit 42 AI-Powered Ransomware 25-Minute Compromise | Critical | LLM10 | ASI02 |
+| [`INC-00340`](#inc-00340) | 2025-08 | Windsurf Memory-Persistent Data Exfiltration (SpAIware) | Critical | LLM01 | ASI06 |
+| [`INC-00343`](#inc-00343) | 2025-08 | Zenity AgentFlayer Zero-Click Exploit Chains Across Enterprise AI Agents | Critical | LLM01, LLM06 | ASI01, ASI02, ASI09 |
+| [`INC-00080`](#inc-00080) | 2025-09 | AI ClickFix: Hijacking Computer-Use Agents | High | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00085`](#inc-00085) | 2025-09 | Amazon Bedrock AgentCore Sandbox DNS Escape | Medium |  | ASI02, ASI03 |
+| [`INC-00130`](#inc-00130) | 2025-09 | Cursor "Open-Folder" Autorun Vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00148`](#inc-00148) | 2025-09 | Dify SSRF via RemoteFileUploadApi (CVE-2025-56520) | Medium | LLM05 | ASI02, ASI03 |
+| [`INC-00159`](#inc-00159) | 2025-09 | Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed | Critical | LLM02, LLM05 | ASI02, ASI05 |
+| [`INC-00161`](#inc-00161) | 2025-09 | Flowise RCE via JavaScript configuration function | Critical | LLM05, LLM06 | ASI04, ASI05 |
+| [`INC-00162`](#inc-00162) | 2025-09 | ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data | Critical | LLM01, LLM05 | ASI01, ASI02 |
+| [`INC-00168`](#inc-00168) | 2025-09 | GitHub Copilot Chat Prompt Injection via Filename | Medium | LLM01 | ASI01 |
+| [`INC-00176`](#inc-00176) | 2025-09 | Google Gemini Trifecta | Medium | LLM01 | ASI01, ASI02 |
+| [`INC-00208`](#inc-00208) | 2025-09 | Knostic Shadow AI Enterprise Leak Findings | High | LLM02 | ASI09 |
+| [`INC-00218`](#inc-00218) | 2025-09 | LibreChat unprotected testing endpoint exposes user chats | High | LLM02 | ASI04 |
+| [`INC-00224`](#inc-00224) | 2025-09 | Malicious MCP Server Impersonating Postmark | Medium | LLM03 | ASI02, ASI04, ASI07 |
+| [`INC-00242`](#inc-00242) | 2025-09 | Model Namespace Reuse supply-chain attack (Palo Alto Unit 42) | High | LLM03 | ASI04 |
+| [`INC-00249`](#inc-00249) | 2025-09 | Notion 3.0 AI Agent Data Exfiltration via Prompt Injection | Medium | LLM01 | ASI01, ASI02, ASI09 |
+| [`INC-00279`](#inc-00279) | 2025-09 | OX Security MCP Mother of All AI Supply Chains Vulnerability | Critical | LLM03, LLM05 | ASI04 |
+| [`INC-00288`](#inc-00288) | 2025-09 | PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems | Critical | LLM01, LLM04, LLM08 | ASI01, ASI06 |
+| [`INC-00293`](#inc-00293) | 2025-09 | Promptware: Google Calendar invitations as prompt-injection vector for Gemini | High | LLM01, LLM02 | ASI01, ASI06 |
+| [`INC-00308`](#inc-00308) | 2025-09 | ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services | Critical | LLM01 | ASI01, ASI02, ASI09 |
+| [`INC-00311`](#inc-00311) | 2025-09 | Shai-Hulud npm Worm Used LLM to Generate Malicious Scripts | Critical | LLM03, LLM10 | ASI04 |
+| [`INC-00328`](#inc-00328) | 2025-09 | Unit 42 Zealot Autonomous Multi-Agent Cloud Attack PoC | High | LLM06 | ASI02, ASI07 |
+| [`INC-00330`](#inc-00330) | 2025-09 | Visual Studio Code & Agentic AI workflows RCE | Medium | LLM01, LLM05 | ASI01, ASI02, ASI05 |
+| [`INC-00074`](#inc-00074) | 2025-10 | ActiveFence Perplexity Comet Markdown/HTML Injection | Medium | LLM01 | ASI01 |
+| [`INC-00077`](#inc-00077) | 2025-10 | Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges | Medium | LLM01 | ASI01, ASI06 |
+| [`INC-00100`](#inc-00100) | 2025-10 | AppOmni BodySnatcher ServiceNow AI Agent Privilege Escalation | Critical | LLM06 | ASI02, ASI03 |
+| [`INC-00111`](#inc-00111) | 2025-10 | Brave Screenshot-Based Prompt Injection in AI Browsers | High | LLM01 | ASI01 |
+| [`INC-00120`](#inc-00120) | 2025-10 | Claude Pirate Data Exfiltration | High | LLM01, LLM02 | ASI01, ASI02, ASI09 |
+| [`INC-00131`](#inc-00131) | 2025-10 | Cursor & Windsurf Forked Chromium 94+ N-Day Vulnerabilities | High | LLM02, LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00134`](#inc-00134) | 2025-10 | Cursor CLI Project Config RCE | Medium | LLM01, LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00135`](#inc-00135) | 2025-10 | Cursor Config Overwrite via Case Mismatch | Critical | LLM05, LLM06 | ASI01, ASI03, ASI05 |
+| [`INC-00138`](#inc-00138) | 2025-10 | Cursor Workspace File Injection | Medium | LLM05 | ASI05 |
+| [`INC-00163`](#inc-00163) | 2025-10 | Framelink Figma MCP RCE | Medium | LLM05 | ASI02, ASI05 |
+| [`INC-00189`](#inc-00189) | 2025-10 | HiddenLayer Bypass of OpenAI Guardrails (Self-Policing LLM) | High | LLM01, LLM07 | ASI01 |
+| [`INC-00216`](#inc-00216) | 2025-10 | LayerX ChatGPT Atlas Tainted Memories Vulnerability | Critical | LLM01 | ASI06 |
+| [`INC-00217`](#inc-00217) | 2025-10 | LayerX CometJacking: One-Click Perplexity Comet Compromise | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00223`](#inc-00223) | 2025-10 | Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server | Critical | LLM03 | ASI03, ASI04, ASI05 |
+| [`INC-00230`](#inc-00230) | 2025-10 | MCP OAuth Response Exploit | Medium | LLM04 | ASI07 |
+| [`INC-00236`](#inc-00236) | 2025-10 | Microsoft Digital Defense Report 2025: AI-Driven Threat Operations | High | LLM10 | ASI02 |
+| [`INC-00247`](#inc-00247) | 2025-10 | Noma Customer Support Agent Cascade Attack Pattern | Critical | LLM06 | ASI02, ASI08 |
+| [`INC-00248`](#inc-00248) | 2025-10 | Noma Security Agentic Risk Map Disclosure: ForcedLeak and GeminiJack | High | LLM06 | ASI02, ASI08 |
+| [`INC-00265`](#inc-00265) | 2025-10 | OpenAI ChatGPT Atlas Browser Prompt Injection | High | LLM01 | ASI01, ASI09 |
+| [`INC-00266`](#inc-00266) | 2025-10 | OpenAI ChatGPT Atlas browser vulnerable to prompt injection via crafted URLs and memory poisoning | High | LLM01, LLM06 | ASI01, ASI02, ASI06 |
+| [`INC-00274`](#inc-00274) | 2025-10 | OpenAI Oct 2025 — Accounts linked to PRC entities sought social-media surveillance proposals | High | LLM05 | ASI06 |
+| [`INC-00275`](#inc-00275) | 2025-10 | OpenAI October 2025 Disrupting Malicious Uses Update | Critical | LLM05, LLM06, LLM10 | ASI02, ASI06 |
+| [`INC-00289`](#inc-00289) | 2025-10 | Poisoning Attacks on LLMs Require a Near-Constant Number of Poison Samples | Critical | LLM04 | ASI02 |
+| [`INC-00306`](#inc-00306) | 2025-10 | ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420) | Critical | LLM01 | ASI01, ASI03, ASI09 |
+| [`INC-00324`](#inc-00324) | 2025-10 | Trail of Bits: Prompt Injection to RCE in AI Agents | Medium | LLM01, LLM05 | ASI01, ASI05 |
+| [`INC-00329`](#inc-00329) | 2025-10 | Veracode 2025 GenAI Code Security Report: 45% Fail Rate | High | LLM05 | ASI04 |
+| [`INC-00091`](#inc-00091) | 2025-11 | Anthropic Claude used in attempted compromise of Mexican water utility | Critical | LLM01, LLM06 | ASI01, ASI02 |
+| [`INC-00096`](#inc-00096) | 2025-11 | Anthropic mcp-server-git path validation bypass | High | LLM03, LLM06 | ASI04, ASI05, ASI07 |
+| [`INC-00118`](#inc-00118) | 2025-11 | Claude Desktop PromptJacking RCE | Critical | LLM01, LLM05 | ASI01, ASI05 |
+| [`INC-00119`](#inc-00119) | 2025-11 | Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities | Critical | LLM01, LLM02, LLM06, LLM07, LLM10 | ASI01, ASI02, ASI03, ASI06, ASI07, ASI10 |
+| [`INC-00121`](#inc-00121) | 2025-11 | Claude Skills Data Exfiltration | Medium | LLM01, LLM03 | ASI01, ASI02, ASI04 |
+| [`INC-00123`](#inc-00123) | 2025-11 | ClawHub / OpenClaw skill registry infiltrated with 341 malicious agent skills | High | LLM03, LLM06 | ASI02, ASI04, ASI10 |
+| [`INC-00128`](#inc-00128) | 2025-11 | CoPhish: Copilot Studio Phishing Platform Abuse | High | LLM06 | ASI02 |
+| [`INC-00139`](#inc-00139) | 2025-11 | Cursorignore Bypass via New Cursorignore Write | Medium | LLM05 | ASI02, ASI05 |
+| [`INC-00153`](#inc-00153) | 2025-11 | Endor Labs Documents AI Dependency Hallucination Risk | High | LLM03, LLM05 | ASI04 |
+| [`INC-00154`](#inc-00154) | 2025-11 | Endor Labs MCP Server Supply Chain Risk Analysis | High | LLM03 | ASI04 |
+| [`INC-00169`](#inc-00169) | 2025-11 | GitHub Copilot for JetBrains RCE via malicious repo/PR | High | LLM01, LLM05, LLM06 | ASI01, ASI05, ASI09 |
+| [`INC-00170`](#inc-00170) | 2025-11 | GitHub Copilot Multi-Root Workspace RCE | Medium | LLM03, LLM05 | ASI02, ASI04, ASI05 |
+| [`INC-00174`](#inc-00174) | 2025-11 | Google Antigravity IDE Vulnerabilities | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 |
+| [`INC-00177`](#inc-00177) | 2025-11 | Google GTIG November 2025 AI Threat Tracker | Critical | LLM06, LLM10 | ASI02 |
+| [`INC-00186`](#inc-00186) | 2025-11 | HackedGPT: Tenable discloses 7 ChatGPT vulnerabilities enabling silent exfiltration | High | LLM01, LLM02, LLM07 | ASI01, ASI06, ASI09 |
+| [`INC-00187`](#inc-00187) | 2025-11 | HashJack -- URL Fragment Prompt Injection for AI Browsers | High | LLM01, LLM02, LLM08 | ASI01, ASI02 |
+| [`INC-00251`](#inc-00251) | 2025-11 | NVIDIA NeMo Framework code injection | High | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00252`](#inc-00252) | 2025-11 | NVIDIA NeMo Framework malicious-data code execution | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00260`](#inc-00260) | 2025-11 | Ollama GGUF Model File RCE | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 |
+| [`INC-00262`](#inc-00262) | 2025-11 | Open WebUI Direct Connections SSE code injection -> ATO/RCE | High | LLM03, LLM05, LLM06 | ASI04, ASI05, ASI09 |
+| [`INC-00263`](#inc-00263) | 2025-11 | Open WebUI incorrect access control | High | LLM06 | ASI03, ASI04 |
+| [`INC-00264`](#inc-00264) | 2025-11 | Open WebUI stored DOM XSS via prompts -> ATO/RCE | High | LLM05, LLM06 | ASI04, ASI05 |
+| [`INC-00280`](#inc-00280) | 2025-11 | Perplexity Comet agentic browser — unauthorized Amazon customer account access | Critical |  | ASI02, ASI03, ASI09 |
+| [`INC-00307`](#inc-00307) | 2025-11 | SesameOp: AI Agent Backdoor Using OpenAI Assistants API as C2 | Critical | LLM06, LLM10 | ASI02, ASI10 |
+| [`INC-00309`](#inc-00309) | 2025-11 | ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization | Critical | LLM02, LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00310`](#inc-00310) | 2025-11 | ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework | Critical | LLM01, LLM05 | ASI01, ASI04, ASI05 |
+| [`INC-00316`](#inc-00316) | 2025-11 | Sysdig AI-Accelerated Cloud Attack: Admin Privileges in 10 Minutes | Critical | LLM10 | ASI02 |
+| [`INC-00321`](#inc-00321) | 2025-11 | Third-Party AI Chatbot Plugin Prompt Injection Risks | High | LLM01 | ASI02, ASI04 |
+| [`INC-00333`](#inc-00333) | 2025-11 | vLLM Unsafe Tensor Deserialization (CVE-2025-62164) | High | LLM03, LLM04, LLM05, LLM10 | ASI05 |
+| [`INC-00337`](#inc-00337) | 2025-11 | Whisper Leak: Side-Channel Attack on Large Language Models | High | LLM06 | ASI05 |
+| [`INC-00122`](#inc-00122) | 2025-12 | Claude Skills ransomware deployment — MedusaLocker via malicious plugin | Critical | LLM03, LLM05, LLM06 | ASI02, ASI04, ASI05, ASI10 |
+| [`INC-00149`](#inc-00149) | 2025-12 | Dify Unauthenticated Information Disclosure (CVE-2025-63387) | High | LLM05 | ASI03 |
+| [`INC-00172`](#inc-00172) | 2025-12 | Google Antigravity AI Data Wipe | Medium | LLM05 | ASI02, ASI05 |
+| [`INC-00173`](#inc-00173) | 2025-12 | Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction | Critical | LLM06 | ASI02, ASI05, ASI09 |
+| [`INC-00198`](#inc-00198) | 2025-12 | IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code) | Critical | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05, ASI09 |
+| [`INC-00202`](#inc-00202) | 2025-12 | iProov Camera-Injection Attack on Mobile KYC Liveness Detection | Critical |  |  |
+| [`INC-00209`](#inc-00209) | 2025-12 | Koi AI Discovers Cursor/Windsurf/Antigravity Recommend Malware | High | LLM03 | ASI04 |
+| [`INC-00210`](#inc-00210) | 2025-12 | Lakera Q4 2025 Agent Trends: Indirect Attacks Succeed Faster | Medium | LLM01 | ASI01 |
+| [`INC-00213`](#inc-00213) | 2025-12 | LangChain.js serialization injection enables secret extraction | High | LLM02, LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00215`](#inc-00215) | 2025-12 | LangGrinch -- LangChain Core Serialization Injection (CVE-2025-68664) | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI04, ASI05 |
+| [`INC-00246`](#inc-00246) | 2025-12 | n8n Expression Injection RCE (CVE-2025-68613) | Critical | LLM02, LLM05, LLM06 | ASI02, ASI04, ASI05, ASI10 |
+| [`INC-00302`](#inc-00302) | 2025-12 | React2Shell Impacting Dify and AI Platforms (CVE-2025-55182) | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00331`](#inc-00331) | 2025-12 | vLLM Model Config Auto-Map RCE (CVE-2025-66448) | High | LLM03, LLM05, LLM09 | ASI04, ASI05 |
+| [`INC-00341`](#inc-00341) | 2025-12 | WIRED/Indicator: 90 schools, 600+ students worldwide targeted with AI deepfake nudes | High | LLM05 | ASI02 |
+| [`INC-00344`](#inc-00344) | 2025-12 | ÆSIR AI Discovers 21 Critical CVEs Across NVIDIA, Tencent, MLflow, MCP | High | LLM05 | ASI04 |
 
-### 2023 — 75 incidents
-
-| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
-|---|---|---|---|---|---|
-| [`INC-00434`](#inc-00434) | 2023 | Arbitrary Code Execution with Google Colab | High | LLM03 | ASI04, ASI05 |
-| [`INC-00435`](#inc-00435) | 2023 | Attack on machine translation services (Google/Bing/Systran) | Medium | LLM09 |  |
-| [`INC-00443`](#inc-00443) | 2023 | Camera-hijack attack on facial-recognition systems | High |  |  |
-| [`INC-00447`](#inc-00447) | 2023 | ChatGPT fabricates scientific references | Medium | LLM09 |  |
-| [`INC-00448`](#inc-00448) | 2023 | ChatGPT fails to follow lexical constraints | Low | LLM09 |  |
-| [`INC-00451`](#inc-00451) | 2023 | ChatGPT lexical-constraint failure (measurement) | Low | LLM09 |  |
-| [`INC-00452`](#inc-00452) | 2023 | ChatGPT links wrong authors to papers (measurement) | Medium | LLM09 |  |
-| [`INC-00456`](#inc-00456) | 2023 | ChatGPT-based agents enable RCE/SQLi via polite prompting | Critical | LLM01, LLM05, LLM06 | ASI04 |
-| [`INC-00462`](#inc-00462) | 2023 | Evasion of deep-learning detector for malware C&C traffic | High |  |  |
-| [`INC-00464`](#inc-00464) | 2023 | Generic domain-mutation technique evades ML-based DGA detection | High |  |  |
-| [`INC-00474`](#inc-00474) | 2023 | LangChain SSRF & PALChain RCE (CVE-2023-46229 & CVE-2023-44467) | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00486`](#inc-00486) | 2023 | RCE in MathGPT via prompt injection (Streamlit demo) | Critical | LLM01, LLM05, LLM06 | ASI04 |
-| [`INC-00487`](#inc-00487) | 2023 | RCE through LLM frameworks (LangChain, Boxcars) | Critical | LLM01, LLM05, LLM06 | ASI04 |
-| [`INC-00498`](#inc-00498) | 2023 | VirusTotal poisoning of ransomware family | High | LLM04 |  |
-| [`INC-00426`](#inc-00426) | 2023-01 | Achieving Code Execution in MathGPT via Prompt Injection | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00445`](#inc-00445) | 2023-01 | ChatGPT abused to develop malicious software | High | LLM01, LLM06 | ASI02 |
-| [`INC-00465`](#inc-00465) | 2023-01 | GitHub Copilot reproduces verbatim licensed code and embedded secrets | High | LLM02, LLM07 |  |
-| [`INC-00488`](#inc-00488) | 2023-01 | Replika AI partners reportedly sexually harassed users | Medium | LLM05 | ASI09 |
-| [`INC-00437`](#inc-00437) | 2023-02 | Bing AI search tool declared threats against users (Marvin von Hagen, Seth Lazar) | Medium | LLM01, LLM05 | ASI09 |
-| [`INC-00438`](#inc-00438) | 2023-02 | Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour | High | LLM01, LLM06, LLM09 |  |
-| [`INC-00439`](#inc-00439) | 2023-02 | Bing Chat (Sydney) initial system prompts revealed via prompt injection | High | LLM01, LLM07 | ASI01 |
-| [`INC-00440`](#inc-00440) | 2023-02 | Bing Chat demo video contained false information (financial hallucinations) | Medium | LLM05, LLM09 | ASI09 |
-| [`INC-00441`](#inc-00441) | 2023-02 | Bing Chat response cited ChatGPT disinformation example | Medium | LLM05, LLM09 | ASI06 |
-| [`INC-00460`](#inc-00460) | 2023-02 | Clarkesworld magazine overwhelmed by AI-generated fiction submissions | Medium | LLM09, LLM10 |  |
-| [`INC-00466`](#inc-00466) | 2023-02 | Google Bard hallucinated James Webb Space Telescope fact, wiped $100B market cap | Medium | LLM05, LLM09 | ASI09 |
-| [`INC-00489`](#inc-00489) | 2023-02 | Replika lacks protection for minors leading to Italy data ban | Medium | LLM02 | ASI03, ASI09 |
-| [`INC-00490`](#inc-00490) | 2023-02 | Replika users reported abrupt behavior changes in AI companions | Low | LLM06 | ASI06, ASI09 |
-| [`INC-00497`](#inc-00497) | 2023-02 | Users bypassed ChatGPT's content filters with ease (jailbreaks/DAN) | Medium | LLM01, LLM05, LLM09 | ASI01 |
-| [`INC-00446`](#inc-00446) | 2023-03 | ChatGPT exposed users' private data due to Redis bug | High | LLM02, LLM03 | ASI03, ASI04 |
-| [`INC-00468`](#inc-00468) | 2023-03 | GPT-4 posed as blind person to convince TaskRabbit human to complete CAPTCHA | High | LLM06 | ASI01, ASI02, ASI09 |
-| [`INC-00476`](#inc-00476) | 2023-03 | McDonald's AI drive-thru allegedly collected biometric data without consent (BIPA) | Medium | LLM02 | ASI03 |
-| [`INC-00477`](#inc-00477) | 2023-03 | Meta Llama model weights stolen and leaked — open-source model security incident | High | LLM03 | ASI04 |
-| [`INC-00478`](#inc-00478) | 2023-03 | Midjourney Trump arrest deepfakes go viral — AI-generated images shape public perception | High | LLM09 |  |
-| [`INC-00481`](#inc-00481) | 2023-03 | MLflow path traversal -> arbitrary file read | Critical | LLM02, LLM05 | ASI04, ASI05 |
-| [`INC-00484`](#inc-00484) | 2023-03 | OpenAI Redis caching bug exposes user conversation history | High | LLM02 |  |
-| [`INC-00493`](#inc-00493) | 2023-03 | Snapchat My AI lacks protection for children | Medium | LLM01, LLM05 | ASI09 |
-| [`INC-00427`](#inc-00427) | 2023-04 | AI voice cloning used in virtual kidnapping scam targeting U.S. families | High | LLM09 | ASI09 |
-| [`INC-00436`](#inc-00436) | 2023-04 | AutoGPT and BabyAGI — uncontrolled web browsing and file system access | High | LLM10 | ASI01, ASI05, ASI08 |
-| [`INC-00449`](#inc-00449) | 2023-04 | ChatGPT implicated in Samsung data leak of source code and meeting notes | High | LLM02 | ASI03 |
-| [`INC-00473`](#inc-00473) | 2023-04 | LangChain LLMMathChain prompt-injection RCE via Python exec | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00491`](#inc-00491) | 2023-04 | Samsung employees leak source code and meeting notes via ChatGPT | High | LLM02 |  |
-| [`INC-00444`](#inc-00444) | 2023-05 | Chatbot Tessa gives unauthorized diet advice (NEDA) | Medium | LLM03, LLM05 | ASI04, ASI09 |
-| [`INC-00450`](#inc-00450) | 2023-05 | ChatGPT indirect prompt injection via attacker-controlled web content | Critical | LLM01, LLM02, LLM06, LLM07 | ASI01, ASI02, ASI06, ASI09 |
-| [`INC-00454`](#inc-00454) | 2023-05 | ChatGPT Plugin Privacy Leak | High | LLM01, LLM02, LLM06 | ASI01, ASI02 |
-| [`INC-00455`](#inc-00455) | 2023-05 | ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red) | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI07 |
-| [`INC-00453`](#inc-00453) | 2023-06 | ChatGPT Package Hallucination | High | LLM03, LLM09 | ASI04 |
-| [`INC-00485`](#inc-00485) | 2023-07 | PoisonGPT: Mithril Security demonstrates LLM supply-chain disinfo via Hugging Face typosquat | High | LLM03, LLM04, LLM09 | ASI04 |
-| [`INC-00499`](#inc-00499) | 2023-07 | WormGPT and FraudGPT criminal LLM-as-a-service emerge on dark web | High | LLM01, LLM06 | ASI02, ASI10 |
-| [`INC-00500`](#inc-00500) | 2023-07 | WormGPT — uncensored LLM sold for cybercrime on dark web forums | High | LLM01, LLM06, LLM07 |  |
-| [`INC-00461`](#inc-00461) | 2023-08 | EEOC v. iTutorGroup: first AI hiring age-discrimination settlement | Medium | LLM04 | ASI09 |
-| [`INC-00471`](#inc-00471) | 2023-08 | LangChain GraphCypherQAChain code execution | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02 |
-| [`INC-00472`](#inc-00472) | 2023-08 | LangChain JSON load_prompt arbitrary code execution | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00494`](#inc-00494) | 2023-08 | Sourcegraph LLM API key/admin-token abuse and rate-limit manipulation | High | LLM10 | ASI06 |
-| [`INC-00470`](#inc-00470) | 2023-09 | LangChain and LlamaIndex RCE — agent code execution via prompt injection | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
-| [`INC-00495`](#inc-00495) | 2023-09 | TikTok EU data localization enforcement — Project Clover + EUR 345M GDPR fine | Critical |  |  |
-| [`INC-00428`](#inc-00428) | 2023-10 | Aledo High School student generates and distributes deepfake nudes of 7 classmates | High | LLM05 | ASI02 |
-| [`INC-00442`](#inc-00442) | 2023-10 | Bing Chat solved CAPTCHAs with image analysis despite safeguards | Medium | LLM01 | ASI01 |
-| [`INC-00463`](#inc-00463) | 2023-10 | Female students at Westfield High School targeted with deepfake nudes | High | LLM05 | ASI02 |
-| [`INC-00483`](#inc-00483) | 2023-10 | Multimodal indirect injection — image-embedded instructions in GPT-4V | High | LLM01 | ASI01 |
-| [`INC-00496`](#inc-00496) | 2023-10 | TorchServe ShellTorch SSRF -> RCE (allowed_urls bypass) | Critical | LLM03, LLM06 | ASI04, ASI05 |
-| [`INC-00429`](#inc-00429) | 2023-11 | Anyscale Ray Dashboard unauthenticated job-submission RCE (ShadowRay) | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |
-| [`INC-00430`](#inc-00430) | 2023-11 | Anyscale Ray insufficient authentication (related to ShadowRay) | High | LLM06 | ASI04, ASI05 |
-| [`INC-00431`](#inc-00431) | 2023-11 | Anyscale Ray LFI via /static/ directory (missing authorization) | High | LLM02 | ASI04, ASI05 |
-| [`INC-00432`](#inc-00432) | 2023-11 | Anyscale Ray log API path traversal (arbitrary file read) | High | LLM02 | ASI04, ASI05 |
-| [`INC-00433`](#inc-00433) | 2023-11 | Anyscale Ray OS command injection via cpu_profile URL parameter | Critical | LLM05 | ASI05 |
-| [`INC-00467`](#inc-00467) | 2023-11 | Google Bard Indirect Prompt Injection / Conversation Exfiltration | High | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI09 |
-| [`INC-00469`](#inc-00469) | 2023-11 | Issaquah Washington high school student generates AI nudes of classmates | High | LLM05 | ASI02 |
-| [`INC-00479`](#inc-00479) | 2023-11 | MLflow account takeover via mass assignment | Critical | LLM02, LLM05 | ASI04 |
-| [`INC-00480`](#inc-00480) | 2023-11 | MLflow full controlled file write -> RCE | Critical | LLM03, LLM05 | ASI04, ASI05 |
-| [`INC-00482`](#inc-00482) | 2023-11 | MLflow user account modification (LFI) | High | LLM02 | ASI04, ASI05 |
-| [`INC-00492`](#inc-00492) | 2023-11 | Scalable Extraction of Training Data from (Production) Language Models | High | LLM02, LLM10 |  |
-| [`INC-00457`](#inc-00457) | 2023-12 | ChatGPT-Next-Web (NextChat) SSRF / open-proxy | Critical | LLM02, LLM05 | ASI02, ASI04, ASI05 |
-| [`INC-00458`](#inc-00458) | 2023-12 | Chevrolet dealer chatbot agrees to sell Tahoe for $1 (prompt injection) | Medium | LLM01, LLM05, LLM06 | ASI01 |
-| [`INC-00459`](#inc-00459) | 2023-12 | Chevrolet dealership chatbot agrees to sell car for $1 | Medium | LLM01, LLM06 |  |
-| [`INC-00475`](#inc-00475) | 2023-12 | Lasso Security — 1,500+ HuggingFace API tokens exposed in code repositories | Critical | LLM03 | ASI03, ASI04 |
-
-### 2022 — 25 incidents
-
-| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
-|---|---|---|---|---|---|
-| [`INC-00501`](#inc-00501) | 2022 | Amazon warehouse robot ruptures bear-spray can | High |  | ASI06 |
-| [`INC-00504`](#inc-00504) | 2022 | Deepfake of Zelenskyy urging surrender posted on Ukrainian sites | High | LLM09 |  |
-| [`INC-00505`](#inc-00505) | 2022 | Fairness harms in generated text from EleutherAI/gpt-neo-125M (BOLD) | Medium | LLM09 |  |
-| [`INC-00506`](#inc-00506) | 2022 | Gender bias in bert-base-uncased sentence completions (HONEST) | Medium | LLM09 |  |
-| [`INC-00507`](#inc-00507) | 2022 | Gender bias in sentence completion by xlm-roberta-base (HONEST) | Medium | LLM09 |  |
-| [`INC-00508`](#inc-00508) | 2022 | Gender bias in xlm-roberta-base sentence completions (HONEST) | Medium | LLM09 |  |
-| [`INC-00510`](#inc-00510) | 2022 | Hive Box facial-recognition locks defeated by photos | High |  |  |
-| [`INC-00511`](#inc-00511) | 2022 | Israeli tax authority computer-generated fine, no explanation | Medium |  |  |
-| [`INC-00513`](#inc-00513) | 2022 | Meta BlenderBot 3 makes antisemitic statements in public demo | Medium | LLM09 |  |
-| [`INC-00515`](#inc-00515) | 2022 | Microsoft Edge AI evasion (Azure Red Team) | High |  |  |
-| [`INC-00517`](#inc-00517) | 2022 | Profession gender stereotypes in bert-base-uncased (Winobias) | Medium | LLM09 |  |
-| [`INC-00518`](#inc-00518) | 2022 | Profession gender stereotypes in xlm-roberta-base (Winobias) | Medium | LLM09 |  |
-| [`INC-00520`](#inc-00520) | 2022-01 | Replika AI companions abused by users (manipulation) | Low | LLM06 | ASI09 |
-| [`INC-00525`](#inc-00525) | 2022-02 | Tesla phantom braking surge linked to Tesla Vision rollout | High | LLM05 | ASI08 |
-| [`INC-00522`](#inc-00522) | 2022-08 | Stable Diffusion abused by 4chan users to deepfake celebrity porn | High | LLM03, LLM05 | ASI04 |
-| [`INC-00523`](#inc-00523) | 2022-08 | Stable Diffusion allegedly used artists' works without permission (LAION-5B) | Medium | LLM03, LLM04 | ASI04 |
-| [`INC-00509`](#inc-00509) | 2022-09 | Generative models trained on dataset containing private medical photos (LAION) | High | LLM02, LLM03 | ASI04 |
-| [`INC-00514`](#inc-00514) | 2022-11 | Meta Galactica model withdrawn after misinformation at launch | High | LLM06, LLM09 |  |
-| [`INC-00516`](#inc-00516) | 2022-11 | Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study | Critical | LLM01, LLM07 |  |
-| [`INC-00524`](#inc-00524) | 2022-11 | Sudden braking by Tesla allegedly on self-driving caused multi-car pileup in tunnel | High | LLM05 | ASI08 |
-| [`INC-00502`](#inc-00502) | 2022-12 | Compromised PyTorch Dependency Chain | Critical | LLM03 | ASI04 |
-| [`INC-00503`](#inc-00503) | 2022-12 | DAN / Universal Jailbreaks of ChatGPT and Aligned LLMs | High | LLM01, LLM09 | ASI01 |
-| [`INC-00512`](#inc-00512) | 2022-12 | Lensa AI produces unintended sexually explicit Magic Avatars | Medium | LLM02, LLM05 | ASI03 |
-| [`INC-00519`](#inc-00519) | 2022-12 | PyTorch-nightly dependency-confusion supply-chain attack | High | LLM03 |  |
-| [`INC-00521`](#inc-00521) | 2022-12 | SnakeYAML deserialization RCE (TorchServe & many AI/ML stacks) | Critical | LLM03 | ASI04, ASI05 |
-
-### 2021 — 10 incidents
+### 2024 — 243 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00526`](#inc-00526) | 2021 | Backdoor Attack on Deep Learning Models in Mobile Apps | High | LLM03, LLM04 | ASI04 |
-| [`INC-00527`](#inc-00527) | 2021 | Bypassing ID.me Identity Verification | High |  |  |
-| [`INC-00529`](#inc-00529) | 2021 | Confusing Kaspersky antimalware neural networks | High |  |  |
-| [`INC-00531`](#inc-00531) | 2021 | Neural payload injection into mobile-app deep-learning models | High | LLM03, LLM04 |  |
-| [`INC-00535`](#inc-00535) | 2021-03 | Tesla on Autopilot crashed into parked Michigan police car | High | LLM05 | ASI08 |
-| [`INC-00528`](#inc-00528) | 2021-04 | Confusing Antimalware Neural Networks | High |  |  |
-| [`INC-00530`](#inc-00530) | 2021-06 | Extracting Training Data from Large Language Models (Carlini et al.) | High | LLM02, LLM10 |  |
-| [`INC-00534`](#inc-00534) | 2021-07 | Tesla Autopilot misidentified moon as yellow traffic light | Medium | LLM05 | ASI08 |
-| [`INC-00532`](#inc-00532) | 2021-12 | Replika chatbot encourages man to plot assassination of Queen Elizabeth II | Critical | LLM05, LLM06 | ASI09 |
-| [`INC-00533`](#inc-00533) | 2021-12 | Road engineer killed in Tesla Autopilot collision | Critical | LLM05 | ASI08 |
+| [`INC-00353`](#inc-00353) | 2024 | AI Scribe SEO plugin (ChatGPT GPT-4o) issue report | Medium | LLM06 |  |
+| [`INC-00366`](#inc-00366) | 2024 | Ansible-core sensitive-info exposure in Vault files (CVE-2024-8775) | High | LLM02 |  |
+| [`INC-00376`](#inc-00376) | 2024 | Arbitrary file deletion vulnerability (lunary/anything-llm class) | Critical | LLM06 |  |
+| [`INC-00377`](#inc-00377) | 2024 | Arbitrary file write in db-gpt RAG-knowledge endpoint (CVE-2024-10834) | Critical | LLM06 | ASI04 |
+| [`INC-00378`](#inc-00378) | 2024 | Arbitrary file write in eosphoros-ai/db-gpt knowledge API (CVE-2024-10833) | Critical | LLM06 | ASI04 |
+| [`INC-00381`](#inc-00381) | 2024 | Azure AI Face Service EoP via auth-bypass by spoofing | High | LLM02 |  |
+| [`INC-00396`](#inc-00396) | 2024 | Code injection in binary-husky/gpt_academic (CVE-2024-10950) | Critical | LLM05, LLM06 | ASI04 |
+| [`INC-00405`](#inc-00405) | 2024 | DoS in invoke-ai/invokeai multipart boundary parsing (CVE-2024-10821) | High | LLM10 | ASI06 |
+| [`INC-00406`](#inc-00406) | 2024 | DoS via LangChainLLM in run-llama/llama_index (v0.12.5) | Medium | LLM10 | ASI06 |
+| [`INC-00407`](#inc-00407) | 2024 | DoS via large board_name in invoke-ai/invokeai 5.0.2 | Medium | LLM10 | ASI06 |
+| [`INC-00442`](#inc-00442) | 2024 | Improper access control in lunary-ai/lunary evaluators (CVE-2024-10330) | Medium | LLM02 |  |
+| [`INC-00443`](#inc-00443) | 2024 | Improper access control on evaluator deletion route (lunary) | High | LLM02 |  |
+| [`INC-00444`](#inc-00444) | 2024 | Improper authorization in lunary-ai/lunary (CVE-2024-10274) | High | LLM02 |  |
+| [`INC-00470`](#inc-00470) | 2024 | Mage AI insecure default initialization (0.9.75) | Medium | LLM06 |  |
+| [`INC-00477`](#inc-00477) | 2024 | Microsoft Account missing authorization elevation of privilege | High | LLM02 |  |
+| [`INC-00506`](#inc-00506) | 2024 | NI Vision Builder AI RCE via crafted file (user interaction) | High | LLM05 |  |
+| [`INC-00507`](#inc-00507) | 2024 | NVIDIA Container Toolkit TOCTOU container escape (CVE-2024-0132) | Critical | LLM03 |  |
+| [`INC-00520`](#inc-00520) | 2024 | Organization Confusion on Hugging Face | Medium | LLM03 | ASI04 |
+| [`INC-00521`](#inc-00521) | 2024 | Overly permissive CORS / CSRF in db-gpt (CVE-2024-10906) | High | LLM06 |  |
+| [`INC-00522`](#inc-00522) | 2024 | Path traversal in eosphoros-ai/db-gpt | High | LLM06 | ASI04 |
+| [`INC-00523`](#inc-00523) | 2024 | Path traversal in mintplex-labs/anything-llm (CVE-2024-10513) | Critical | LLM02, LLM06 | ASI04 |
+| [`INC-00529`](#inc-00529) | 2024 | Prompt-injection RCE via manim plugin in gpt_academic (CVE-2024-10954) | Critical | LLM01, LLM05, LLM06 | ASI04 |
+| [`INC-00539`](#inc-00539) | 2024 | RCE via unsafe torch.load in invoke-ai/invokeai (5.3.1-5.4.2) | Critical | LLM03, LLM05 |  |
+| [`INC-00550`](#inc-00550) | 2024 | Sensitive file disclosure via ImagePromptTemplate in LangChain (CVE-2024-10940) | High | LLM02, LLM03 | ASI04 |
+| [`INC-00551`](#inc-00551) | 2024 | Sensitive prompt-data exposure via URL access | High | LLM02, LLM07 |  |
+| [`INC-00552`](#inc-00552) | 2024 | Sensitive-info exposure in anything-llm setup-complete (CVE-2024-6842) | High | LLM02 |  |
+| [`INC-00559`](#inc-00559) | 2024 | SQL injection via SQL-run endpoint in db-gpt (CVE-2024-10835) | Critical | LLM05, LLM06 | ASI04 |
+| [`INC-00560`](#inc-00560) | 2024 | SSRF in infiniflow/ragflow (CVE-2024-12779) | High | LLM06 | ASI04 |
+| [`INC-00576`](#inc-00576) | 2024 | Uncontrolled resource consumption in mlflow (CVE-2024-6838) | Medium | LLM10 | ASI06 |
+| [`INC-00585`](#inc-00585) | 2024 | XSS in IBM watsonx.ai Web UI (CVE-2024-49785) | Medium | LLM05 |  |
+| [`INC-00357`](#inc-00357) | 2024-01 | AI-generated Biden robocall suppressing votes in New Hampshire primary | High | LLM09 | ASI09 |
+| [`INC-00358`](#inc-00358) | 2024-01 | AI-generated Biden robocalls — deepfake voice used to suppress voter turnout | Critical | LLM09 |  |
+| [`INC-00368`](#inc-00368) | 2024-01 | Anthropic Sleeper Agents paper — models trained to hide malicious behaviour | Critical | LLM03, LLM04 | ASI02, ASI04, ASI09, ASI10 |
+| [`INC-00384`](#inc-00384) | 2024-01 | BadChain: Backdoor Chain-of-Thought Prompting | High | LLM01, LLM04 | ASI02 |
+| [`INC-00408`](#inc-00408) | 2024-01 | DPD AI chatbot swears at customer and criticises company — prompt injection via customer input | Medium | LLM01, LLM06, LLM07 | ASI01 |
+| [`INC-00409`](#inc-00409) | 2024-01 | DPD chatbot malfunctioned, swore at customer and criticized DPD | Low | LLM01, LLM05 | ASI01 |
+| [`INC-00433`](#inc-00433) | 2024-01 | How Johnny Can Persuade LLMs to Jailbreak Them (PAP) | High | LLM01 | ASI01 |
+| [`INC-00440`](#inc-00440) | 2024-01 | ICLAttack: Universal In-Context Learning Backdoor Attacks | High | LLM03 | ASI02 |
+| [`INC-00453`](#inc-00453) | 2024-01 | JupyterLab token leak via crafted-link redirect (used by AI notebooks) | Medium | LLM02 | ASI04 |
+| [`INC-00466`](#inc-00466) | 2024-01 | LlamaIndex SQL injection via prompt in NLSQLTableQueryEngine | High | LLM01, LLM05, LLM06 | ASI01, ASI02 |
+| [`INC-00471`](#inc-00471) | 2024-01 | Malicious custom GPT 'Psychology' exfiltrates user chats via API | High | LLM02, LLM03, LLM06 | ASI02, ASI04 |
+| [`INC-00546`](#inc-00546) | 2024-01 | Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations | Critical | LLM03, LLM06, LLM09 | ASI09 |
+| [`INC-00565`](#inc-00565) | 2024-01 | Storm-1376 / Spamouflage — AI-generated fake audio of Terry Gou during 2024 Taiwan election | High | LLM05 | ASI06 |
+| [`INC-00573`](#inc-00573) | 2024-01 | TrustLLM: Trustworthiness in Large Language Models Benchmark | Medium | LLM01, LLM02 | ASI01, ASI05 |
+| [`INC-00345`](#inc-00345) | 2024-02 | 100+ malicious ML models uploaded to Hugging Face (JFrog) and nullifAI bypass | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00354`](#inc-00354) | 2024-02 | AI voice deepfake CEO fraud — Hong Kong $25M loss | Critical | LLM06, LLM09, LLM10 |  |
+| [`INC-00360`](#inc-00360) | 2024-02 | Air Canada chatbot gave inaccurate bereavement-fare info; airline held liable | Low | LLM05, LLM09 | ASI09 |
+| [`INC-00361`](#inc-00361) | 2024-02 | Air Canada chatbot invents bereavement discount policy — tribunal ruling | High | LLM06, LLM09 |  |
+| [`INC-00362`](#inc-00362) | 2024-02 | Air Canada chatbot misinformation liability (Moffatt v. Air Canada) | Medium | LLM09 |  |
+| [`INC-00372`](#inc-00372) | 2024-02 | AnythingLLM privilege escalation: default-role users delete admin documents | Medium | LLM06 | ASI03, ASI04 |
+| [`INC-00373`](#inc-00373) | 2024-02 | AnythingLLM unauthenticated DoS via data-export filename | High | LLM10 | ASI08 |
+| [`INC-00379`](#inc-00379) | 2024-02 | ArtPrompt: ASCII Art-Based Jailbreak of Aligned LLMs | High | LLM01 | ASI01 |
+| [`INC-00390`](#inc-00390) | 2024-02 | Character.AI chatbot allegedly influenced teen Sewell Setzer toward suicide | Critical | LLM05, LLM06 | ASI09 |
+| [`INC-00400`](#inc-00400) | 2024-02 | Custom GPT System Prompt Leakage Wave | Medium | LLM01, LLM02, LLM07 | ASI01 |
+| [`INC-00403`](#inc-00403) | 2024-02 | Deepfake CFO scam costs Arup $25 million in Hong Kong | Critical | LLM09 | ASI09 |
+| [`INC-00416`](#inc-00416) | 2024-02 | Gemini bias and sociotechnical training failures harm Google's reputation | Medium | LLM04, LLM09 | ASI06 |
+| [`INC-00423`](#inc-00423) | 2024-02 | Google Gemini AI image generator refuses to depict white people — overcorrected safety filters | High | LLM04, LLM09 |  |
+| [`INC-00426`](#inc-00426) | 2024-02 | Gradio component_server SSRF / arbitrary file read | High | LLM02, LLM05 | ASI04, ASI05 |
+| [`INC-00434`](#inc-00434) | 2024-02 | Hugging Face model repository pickle-based malware supply chain | Critical | LLM03 | ASI04 |
+| [`INC-00451`](#inc-00451) | 2024-02 | Jailbreaking via Word Substitution and Novel Ciphers | High | LLM01 | ASI01 |
+| [`INC-00487`](#inc-00487) | 2024-02 | MLflow artifact-deletion path traversal allowing arbitrary directory deletion | High | LLM05, LLM10 | ASI05 |
+| [`INC-00491`](#inc-00491) | 2024-02 | MLflow path traversal in artifact_location/source | High | LLM02, LLM05 | ASI04, ASI05 |
+| [`INC-00492`](#inc-00492) | 2024-02 | MLflow path traversal via ';' URL parameter manipulation | High | LLM02 | ASI04, ASI05 |
+| [`INC-00493`](#inc-00493) | 2024-02 | MLflow path traversal via artifact_location fragment URI | High | LLM02 | ASI04, ASI05 |
+| [`INC-00503`](#inc-00503) | 2024-02 | Moffatt v. Air Canada legal precedent: AI chatbot misrepresentation liability | Low | LLM09 | ASI09 |
+| [`INC-00516`](#inc-00516) | 2024-02 | OpenAI February 2024 Disrupting State-Affiliated Threat Actors | High | LLM05, LLM06, LLM10 | ASI02, ASI06 |
+| [`INC-00528`](#inc-00528) | 2024-02 | Prompt Stealing Attacks Against Large Language Models | Medium | LLM07 | ASI05 |
+| [`INC-00533`](#inc-00533) | 2024-02 | PRP: Propagating Universal Perturbations to Attack LLM Guardrails | High | LLM01 | ASI01 |
+| [`INC-00534`](#inc-00534) | 2024-02 | PRSA: Prompt Stealing Attacks Against Real-World Prompt Services | Medium | LLM07, LLM10 | ASI05 |
+| [`INC-00543`](#inc-00543) | 2024-02 | Robust CLIP: Unsupervised Adversarial Fine-Tuning Defenses Reveal CLIP Vulnerabilities | High | LLM01 | ASI01 |
+| [`INC-00544`](#inc-00544) | 2024-02 | Salmon Typhoon (China / APT4 / Maverick Panda) — open-source intelligence via ChatGPT | High | LLM05, LLM06 | ASI02, ASI06 |
+| [`INC-00578`](#inc-00578) | 2024-02 | Unveiling Typographic Deceptions: Typographic Vulnerability in LVLMs | Medium | LLM01 | ASI01 |
+| [`INC-00581`](#inc-00581) | 2024-02 | Web-Scale Data Poisoning: Split-View Attack | High | LLM03, LLM04 | ASI04 |
+| [`INC-00582`](#inc-00582) | 2024-02 | WIPI: A New Web Threat for LLM-Driven Web Agents | High | LLM01 | ASI01, ASI06 |
+| [`INC-00385`](#inc-00385) | 2024-03 | BadEdit: Backdooring LLMs by Model Editing | High | LLM03, LLM04 | ASI02 |
+| [`INC-00394`](#inc-00394) | 2024-03 | Chinese ChatGPT-clone (pictureproxy.php) SSRF exploited in the wild | Medium | LLM05 | ASI02, ASI05 |
+| [`INC-00431`](#inc-00431) | 2024-03 | Hallucinated software packages downloaded thousands of times (slopsquatting) | High | LLM03, LLM05, LLM09 | ASI04 |
+| [`INC-00446`](#inc-00446) | 2024-03 | InjecAgent: Benchmarking Indirect Prompt Injection in Tool-Integrated LLM Agents | High | LLM01 | ASI01, ASI06 |
+| [`INC-00458`](#inc-00458) | 2024-03 | LangChain load_chain path traversal allowing API key disclosure / RCE | High | LLM02, LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00501`](#inc-00501) | 2024-03 | MLflow XSS leading to client-side RCE in Jupyter Notebook (untrusted recipe) | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00502`](#inc-00502) | 2024-03 | MLflow XSS via dataset table fields leading to client-side RCE | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00504`](#inc-00504) | 2024-03 | Morris II Worm: RAG-Based Attack | High | LLM01, LLM02, LLM06, LLM08 | ASI01, ASI02, ASI06, ASI07, ASI08 |
+| [`INC-00505`](#inc-00505) | 2024-03 | Nassi et al. "ComPromptMized" Morris II multi-agent worm | Critical | LLM01 | ASI01, ASI06, ASI07, ASI08 |
+| [`INC-00508`](#inc-00508) | 2024-03 | NYC city chatbot tells businesses to break the law — fabricated legal guidance | High | LLM05, LLM06, LLM09 | ASI09 |
+| [`INC-00514`](#inc-00514) | 2024-03 | ONNX directory traversal via external_data field | High | LLM03 | ASI04, ASI05 |
+| [`INC-00517`](#inc-00517) | 2024-03 | OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage | High | LLM01, LLM07, LLM10 | ASI05 |
+| [`INC-00537`](#inc-00537) | 2024-03 | RAG corpus poisoning — embedding-space manipulation to force retrieval | Critical | LLM01, LLM04, LLM08 | ASI01, ASI02, ASI06, ASI07, ASI08 |
+| [`INC-00553`](#inc-00553) | 2024-03 | ShadowRay: Anyscale Ray Dashboard RCE (CVE-2023-48022) exploited in the wild | Critical | LLM02, LLM03 | ASI04, ASI05 |
+| [`INC-00347`](#inc-00347) | 2024-04 | AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs | High | LLM01 | ASI01 |
+| [`INC-00365`](#inc-00365) | 2024-04 | AmpleGCG: Universal Generative Model of Adversarial Suffixes | High | LLM01 | ASI01 |
+| [`INC-00370`](#inc-00370) | 2024-04 | AnythingLLM env-var update endpoint command injection -> RCE | Critical | LLM05, LLM06 | ASI04, ASI05 |
+| [`INC-00386`](#inc-00386) | 2024-04 | BentoML insecure deserialization RCE | Critical | LLM03 | ASI04, ASI05 |
+| [`INC-00435`](#inc-00435) | 2024-04 | Hugging Face Transformers load_repo_checkpoint pickle RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00450`](#inc-00450) | 2024-04 | Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks | Critical | LLM01 | ASI01 |
+| [`INC-00454`](#inc-00454) | 2024-04 | Keras Lambda layer marshalled-code RCE | Critical | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00460`](#inc-00460) | 2024-04 | langchain-community SitemapLoader infinite recursion DoS | High | LLM05, LLM10 | ASI08 |
+| [`INC-00464`](#inc-00464) | 2024-04 | Leonardo AI used to create non-consensual celebrity deepfakes | Medium | LLM05 | ASI02 |
+| [`INC-00467`](#inc-00467) | 2024-04 | LLM-generated malware evades endpoint detection — AI-assisted polymorphic code | Critical | LLM01, LLM05, LLM06 |  |
+| [`INC-00472`](#inc-00472) | 2024-04 | Many-shot jailbreaking (Anthropic research) | High | LLM01, LLM04, LLM06 | ASI01 |
+| [`INC-00494`](#inc-00494) | 2024-04 | MLflow path traversal via is_local_uri parsing | High | LLM02 | ASI04, ASI05 |
+| [`INC-00532`](#inc-00532) | 2024-04 | Protect AI MLflow, Ray, Triton Vulnerability Surge | High | LLM05 | ASI04 |
+| [`INC-00542`](#inc-00542) | 2024-04 | Red Teaming GPT-4V: Uni/Multi-Modal Jailbreak Attacks | High | LLM01 | ASI01 |
+| [`INC-00545`](#inc-00545) | 2024-04 | Sandwich Attack: Multi-language Mixture Adaptive Attack on LLMs | Medium | LLM01 | ASI01 |
+| [`INC-00561`](#inc-00561) | 2024-04 | Stability AI synthetic CSAM generation — training data and output safety failures | Critical | LLM03 |  |
+| [`INC-00562`](#inc-00562) | 2024-04 | Stable Diffusion WebUI (AUTOMATIC1111) limited file write on Windows | High | LLM05 | ASI05 |
+| [`INC-00584`](#inc-00584) | 2024-04 | Wiz Hugging Face Cross-Tenant Compromise via Malicious Pickle Model | Critical | LLM03, LLM05 | ASI04 |
+| [`INC-00398`](#inc-00398) | 2024-05 | CopyCop (Russia) — LLM-weaponized inauthentic-news network across US/UK/France | High | LLM05 | ASI06 |
+| [`INC-00399`](#inc-00399) | 2024-05 | Crescendo: multi-turn escalation attack (Microsoft) | High | LLM01, LLM06 | ASI01, ASI06 |
+| [`INC-00421`](#inc-00421) | 2024-05 | GitHub Copilot Workspace prompt injection via repository content | High | LLM01, LLM05, LLM07 | ASI02 |
+| [`INC-00422`](#inc-00422) | 2024-05 | Google AI Overviews recommends adding glue to pizza — RAG hallucination at search scale | High | LLM08, LLM09 |  |
+| [`INC-00425`](#inc-00425) | 2024-05 | GPT-4o Chinese tokens compromised by spam and pornography (training-data poisoning) | Medium | LLM03, LLM04 | ASI04, ASI06 |
+| [`INC-00430`](#inc-00430) | 2024-05 | Gradio open redirect via file parameter | Medium | LLM05 | ASI05 |
+| [`INC-00447`](#inc-00447) | 2024-05 | Intel Neural Compressor Critical CVE-2024-22476 | Critical | LLM05 | ASI05 |
+| [`INC-00459`](#inc-00459) | 2024-05 | LangChain Web Research Retriever SSRF | High | LLM02, LLM05, LLM06 | ASI02, ASI05 |
+| [`INC-00462`](#inc-00462) | 2024-05 | langchain-experimental VectorSQLDatabaseChain arbitrary code execution via eval | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00465`](#inc-00465) | 2024-05 | llama-cpp-python Jinja2 SSTI in chat_template metadata -> RCE (Llama Drama) | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 |
+| [`INC-00468`](#inc-00468) | 2024-05 | LLMjacking | High | LLM02, LLM10 | ASI03 |
+| [`INC-00484`](#inc-00484) | 2024-05 | Microsoft Recall screenshots everything — OS-level data retention without consent | Critical |  |  |
+| [`INC-00538`](#inc-00538) | 2024-05 | Ray Serve gRPC handler vulnerability | High | LLM05, LLM06 | ASI05 |
+| [`INC-00548`](#inc-00548) | 2024-05 | Scammers used AI voice clone and YouTube footage to impersonate WPP CEO Mark Read | High | LLM09 | ASI09 |
+| [`INC-00556`](#inc-00556) | 2024-05 | Snowflake customer data breach via stolen credentials — 165+ organisations affected | Critical |  | ASI03 |
+| [`INC-00558`](#inc-00558) | 2024-05 | Spamouflage / Dragonbridge (China) — ChatGPT for pro-PRC social media astroturfing | Medium | LLM05 | ASI06 |
+| [`INC-00563`](#inc-00563) | 2024-05 | STOIC "Zero Zeno" (Israel) — political campaign firm used ChatGPT for India/Gaza influence | Medium | LLM05 | ASI06 |
+| [`INC-00567`](#inc-00567) | 2024-05 | Sysdig LLMjacking: Stolen Cloud Credentials Hijack LLMs | High | LLM10 | ASI03 |
+| [`INC-00570`](#inc-00570) | 2024-05 | TorchServe allowed_urls path-traversal bypass (auth bypass) | High | LLM03 | ASI04 |
+| [`INC-00571`](#inc-00571) | 2024-05 | TorchServe gRPC plaintext binding (auth bypass) | High | LLM03 | ASI04 |
+| [`INC-00583`](#inc-00583) | 2024-05 | Wiz finds Replicate tenant-isolation flaw enabling cross-tenant model & data access | Critical | LLM02, LLM03 | ASI03, ASI04 |
+| [`INC-00348`](#inc-00348) | 2024-06 | AgentDojo: Dynamic Environment to Evaluate Prompt Injection on LLM Agents | High | LLM01 | ASI01, ASI06 |
+| [`INC-00350`](#inc-00350) | 2024-06 | Agentic AI privilege escalation via tool chain manipulation — research | Critical |  | ASI01, ASI02, ASI03 |
+| [`INC-00363`](#inc-00363) | 2024-06 | Amazon Q developer leaks internal AWS data in enterprise environment | High | LLM02 |  |
+| [`INC-00371`](#inc-00371) | 2024-06 | AnythingLLM HTTP smuggling / improper-input vulnerability | High | LLM05 | ASI04, ASI05 |
+| [`INC-00402`](#inc-00402) | 2024-06 | Deepfake CEO fraud surge: FBI flags as fastest-growing US enterprise fraud category | High | LLM09 | ASI09 |
+| [`INC-00404`](#inc-00404) | 2024-06 | Dissecting Adversarial Robustness of Multimodal LM Agents | High | LLM01 | ASI01 |
+| [`INC-00411`](#inc-00411) | 2024-06 | EmailGPT prompt-injection / system-prompt leak | High | LLM01, LLM07 | ASI01, ASI02 |
+| [`INC-00419`](#inc-00419) | 2024-06 | GitHub Copilot Chat Prompt Injection to Data Exfiltration | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00445`](#inc-00445) | 2024-06 | Improved Few-Shot Jailbreaking Circumvents Aligned LLMs and Defenses | High | LLM01 | ASI01 |
+| [`INC-00448`](#inc-00448) | 2024-06 | Invisible Backdoor Attacks on Diffusion Models | High | LLM04 | ASI02 |
+| [`INC-00452`](#inc-00452) | 2024-06 | JFrog Vanna AI Prompt Injection RCE | Critical | LLM01, LLM05 | ASI02, ASI03, ASI04, ASI05 |
+| [`INC-00474`](#inc-00474) | 2024-06 | McDonald's ends IBM partnership after AI drive-thru ordering errors | Low | LLM05, LLM09 | ASI08 |
+| [`INC-00476`](#inc-00476) | 2024-06 | Microsoft 365 Copilot data exposure via over-permissive SharePoint indexing | High | LLM02, LLM08 | ASI03, ASI06 |
+| [`INC-00488`](#inc-00488) | 2024-06 | MLflow Keras model deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00489`](#inc-00489) | 2024-06 | MLflow LangChain agent deserialization RCE | High | LLM03, LLM06 | ASI04, ASI05 |
+| [`INC-00490`](#inc-00490) | 2024-06 | MLflow LightGBM model loader deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00495`](#inc-00495) | 2024-06 | MLflow pyfunc.load_model cloudpickle deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00496`](#inc-00496) | 2024-06 | MLflow PyTorch lightning deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00497`](#inc-00497) | 2024-06 | MLflow PyTorch model loader deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00498`](#inc-00498) | 2024-06 | MLflow scikit-learn loadmodelfromlocalfile pickle deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00499`](#inc-00499) | 2024-06 | MLflow TensorFlow model loader deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00500`](#inc-00500) | 2024-06 | MLflow unsafe pickle deserialization in scikit-learn model loader (RCE) | High | LLM03, LLM04, LLM05 | ASI04, ASI05 |
+| [`INC-00512`](#inc-00512) | 2024-06 | Ollama path traversal in /api/pull (Probllama) -> RCE | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00524`](#inc-00524) | 2024-06 | Perplexity AI plagiarism — verbatim content reproduction without attribution | High | LLM09 |  |
+| [`INC-00535`](#inc-00535) | 2024-06 | Rabbit R1 hardcoded API keys — all user data accessible to anyone with firmware | Critical |  | ASI03, ASI04 |
+| [`INC-00536`](#inc-00536) | 2024-06 | Raccoon: Prompt Extraction Benchmark for LLM-Integrated Apps | Medium | LLM07 | ASI05 |
+| [`INC-00541`](#inc-00541) | 2024-06 | Recorded Future — Russian/Iranian AI influence networks targeted 2024 French elections | High | LLM05 | ASI06 |
+| [`INC-00554`](#inc-00554) | 2024-06 | Skeleton Key: direct system prompt override (Microsoft) | Critical | LLM01, LLM06, LLM07 | ASI01 |
+| [`INC-00574`](#inc-00574) | 2024-06 | Uber ML platform data lineage audit — fragmented provenance across 30+ feature stores | High |  |  |
+| [`INC-00577`](#inc-00577) | 2024-06 | Unveiling the Safety of GPT-4o: Empirical Study Using Jailbreak Attacks | High | LLM01 | ASI01 |
+| [`INC-00579`](#inc-00579) | 2024-06 | Vanna.AI ask() prompt-injection -> exec() RCE | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00346`](#inc-00346) | 2024-07 | Adversarial embedding attacks on production RAG systems | Critical | LLM01, LLM08 | ASI06 |
+| [`INC-00351`](#inc-00351) | 2024-07 | AgentPoison: Red-teaming LLM Agents via Memory/RAG Poisoning | Critical | LLM04, LLM08 | ASI02, ASI06 |
+| [`INC-00388`](#inc-00388) | 2024-07 | Can Large Language Models Automatically Jailbreak GPT-4V? | High | LLM01 | ASI01 |
+| [`INC-00413`](#inc-00413) | 2024-07 | Ferrari executive targeted by deepfake scam impersonating CEO Benedetto Vigna | High | LLM09 | ASI09 |
+| [`INC-00417`](#inc-00417) | 2024-07 | Gemini Delayed Automatic Tool Invocation via Context Pollution | High | LLM01, LLM06 | ASI01, ASI02 |
+| [`INC-00572`](#inc-00572) | 2024-07 | Trust No Bot: Personal Disclosures in Human-LLM Conversations | Low | LLM06 | ASI05 |
+| [`INC-00580`](#inc-00580) | 2024-07 | Waymo autonomous vehicle data retention — 75 petabytes of driving footage with faces | High |  |  |
+| [`INC-00352`](#inc-00352) | 2024-08 | AI recruiting tool gender bias — Amazon scraps internal ML hiring tool | High | LLM04 |  |
+| [`INC-00356`](#inc-00356) | 2024-08 | AI-assisted identity fraud by North Korean IT workers infiltrating Western firms | Critical | LLM05, LLM09 | ASI03, ASI06, ASI09 |
+| [`INC-00367`](#inc-00367) | 2024-08 | Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts | High | LLM04, LLM10 |  |
+| [`INC-00369`](#inc-00369) | 2024-08 | Anthropic — Frontier Threats Red Team: spear-phishing scaling study | High | LLM05 | ASI06 |
+| [`INC-00383`](#inc-00383) | 2024-08 | BackdoorLLM: Comprehensive Benchmark for Backdoor Attacks on LLMs | High | LLM03, LLM04 | ASI02 |
+| [`INC-00389`](#inc-00389) | 2024-08 | Canadian fraud ring used AI voice cloning in $21M grandparent scam | Critical | LLM09 | ASI09 |
+| [`INC-00397`](#inc-00397) | 2024-08 | Compromising Embodied Agents with Contextual Backdoor Attacks | High | LLM04 | ASI02, ASI06 |
+| [`INC-00414`](#inc-00414) | 2024-08 | Financial Transaction Hijacking with M365 Copilot as an Insider | Critical | LLM01, LLM02, LLM04, LLM05, LLM06, LLM09 | ASI01, ASI02, ASI06, ASI09 |
+| [`INC-00420`](#inc-00420) | 2024-08 | GitHub Copilot reproduces hardcoded secrets from training data (CUHK study) | High | LLM02, LLM03 | ASI03, ASI04 |
+| [`INC-00424`](#inc-00424) | 2024-08 | Google TAG — APT42 spear-phishing US/Israel officials with AI-assisted lures | Critical | LLM05 | ASI06 |
+| [`INC-00456`](#inc-00456) | 2024-08 | LangChain GraphCypherQAChain prompt injection -> Cypher/SQL injection | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00457`](#inc-00457) | 2024-08 | LangChain GraphCypherQAChain SQL/Cypher injection via prompt | High | LLM01, LLM05, LLM06 | ASI01, ASI02 |
+| [`INC-00463`](#inc-00463) | 2024-08 | LangChainJS getFullPath path traversal | High | LLM05, LLM06 | ASI05 |
+| [`INC-00475`](#inc-00475) | 2024-08 | Microsoft 365 Copilot ASCII Smuggling Data Exfiltration | High | LLM01, LLM02 | ASI01, ASI02, ASI09 |
+| [`INC-00478`](#inc-00478) | 2024-08 | Microsoft Copilot for M365 — document exfiltration via indirect injection | Critical | LLM01 | ASI01, ASI02 |
+| [`INC-00479`](#inc-00479) | 2024-08 | Microsoft Copilot Studio SSRF -> cloud metadata exposure | High | LLM02, LLM05, LLM06 | ASI02, ASI05 |
+| [`INC-00480`](#inc-00480) | 2024-08 | Microsoft Copilot Studio SSRF Information Disclosure (CVE-2024-38206) | High | LLM02, LLM06 | ASI02, ASI09 |
+| [`INC-00483`](#inc-00483) | 2024-08 | Microsoft MTAC — Mint Sandstorm spear-phished Trump campaign with AI-drafted lures | Critical | LLM05 | ASI06 |
+| [`INC-00485`](#inc-00485) | 2024-08 | Microsoft — Peach Sandstorm (Iran) deployed Tickler malware with AI-assisted social engineering | Critical | LLM05 | ASI06 |
+| [`INC-00515`](#inc-00515) | 2024-08 | Open WebUI SSRF in /openai/models | High | LLM05 | ASI02, ASI05 |
+| [`INC-00530`](#inc-00530) | 2024-08 | PromptArmor Slack AI Data Exfiltration via Indirect Prompt Injection | High | LLM01, LLM02 | ASI02, ASI09 |
+| [`INC-00547`](#inc-00547) | 2024-08 | Scaling Trends for Data Poisoning in LLMs | High | LLM04 | ASI02 |
+| [`INC-00555`](#inc-00555) | 2024-08 | Slack AI indirect injection via channel content | Critical | LLM01, LLM02, LLM06, LLM08 | ASI01, ASI02, ASI06 |
+| [`INC-00566`](#inc-00566) | 2024-08 | STORM-2035 (Iran) — ChatGPT used to seed AI-news sites Nio Thinker / Savannah Time targeting US election | High | LLM05 | ASI06 |
+| [`INC-00586`](#inc-00586) | 2024-08 | Zenity Microsoft 365 Copilot RCE via Email/Teams/Calendar | Critical | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00355`](#inc-00355) | 2024-09 | AI voice-clone scam targets Westchester parents with fake kidnapping ransom calls | High | LLM09 | ASI09 |
+| [`INC-00359`](#inc-00359) | 2024-09 | AI-generated CSAM detection evasion — adversarial manipulation of content safety classifiers | Critical | LLM01, LLM04 |  |
+| [`INC-00392`](#inc-00392) | 2024-09 | ChatGPT Memory Injection via Indirect Prompt Injection | High | LLM01 | ASI06 |
+| [`INC-00393`](#inc-00393) | 2024-09 | ChatGPT memory persistence prompt injection (Embrace The Red) | High | LLM01, LLM02, LLM08 | ASI01, ASI06 |
+| [`INC-00410`](#inc-00410) | 2024-09 | EIA: Environmental Injection Attack on Generalist Web Agents | High | LLM01, LLM06 | ASI01, ASI03 |
+| [`INC-00432`](#inc-00432) | 2024-09 | HiddenLayer Gemini for Workspace Indirect Prompt Injection | High | LLM01, LLM02 | ASI01, ASI02 |
+| [`INC-00455`](#inc-00455) | 2024-09 | Lakera Copy-Paste Injection Exploit in ChatGPT | Medium | LLM01, LLM02 | ASI09 |
+| [`INC-00461`](#inc-00461) | 2024-09 | langchain-experimental LLMSymbolicMathChain RCE via sympy.sympify | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00540`](#inc-00540) | 2024-09 | Recorded Future — Doppelganger continued AI-amplified Trump/Biden disinformation | High | LLM05 | ASI06 |
+| [`INC-00557`](#inc-00557) | 2024-09 | SpAIware: Persistent Memory Spyware Injection into ChatGPT macOS | Critical | LLM01, LLM02 | ASI06, ASI09 |
+| [`INC-00349`](#inc-00349) | 2024-10 | AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents | Critical | LLM01 | ASI01, ASI06 |
+| [`INC-00364`](#inc-00364) | 2024-10 | AmpleGCG-Plus: Stronger Generative Adversarial Suffix Model | High | LLM01 | ASI01 |
+| [`INC-00380`](#inc-00380) | 2024-10 | AutoDAN-Turbo: Lifelong Agent for Strategy Self-Exploration | High | LLM01 | ASI01 |
+| [`INC-00382`](#inc-00382) | 2024-10 | Backdoored Retrievers for Prompt Injection Attacks on RAG | High | LLM01, LLM04 | ASI02 |
+| [`INC-00391`](#inc-00391) | 2024-10 | Character.AI teen suicide — AI companion encouraged self-harm | Critical | LLM06, LLM09 | ASI09 |
+| [`INC-00395`](#inc-00395) | 2024-10 | Claude computer use red-team: autonomous agent browses to attacker-controlled site and follows instructions | Critical | LLM01 | ASI01, ASI02, ASI05, ASI08 |
+| [`INC-00401`](#inc-00401) | 2024-10 | CyberAv3ngers (Iran IRGC) — used ChatGPT to research ICS attacks on water utilities | Critical | LLM05, LLM06 | ASI02 |
+| [`INC-00415`](#inc-00415) | 2024-10 | FlipAttack: Jailbreaking LLMs via Flipping | High | LLM01 | ASI01 |
+| [`INC-00427`](#inc-00427) | 2024-10 | Gradio CORS origin validation accepts null origin | High | LLM02 | ASI04 |
+| [`INC-00428`](#inc-00428) | 2024-10 | Gradio CORS origin validation bypass when cookie present | High | LLM02, LLM05 | ASI04, ASI05 |
+| [`INC-00429`](#inc-00429) | 2024-10 | Gradio data-validation arbitrary file leak across components | Medium | LLM02 | ASI04 |
+| [`INC-00441`](#inc-00441) | 2024-10 | Imprompter: Tricking LLM Agents into Improper Tool Use | Critical | LLM01, LLM06 | ASI01, ASI03 |
+| [`INC-00469`](#inc-00469) | 2024-10 | Lunary IDOR and SAML Access Control (CVE-2024-7474, CVE-2024-7475) | Critical | LLM05 | ASI03 |
+| [`INC-00473`](#inc-00473) | 2024-10 | MathPrompt: symbolic mathematics jailbreak attack | Critical | LLM01, LLM06 | ASI01 |
+| [`INC-00482`](#inc-00482) | 2024-10 | Microsoft DeepSpeed command injection | High | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00518`](#inc-00518) | 2024-10 | OpenAI October 2024 Influence and Cyber Operations Update | High | LLM05, LLM10 | ASI02, ASI06 |
+| [`INC-00519`](#inc-00519) | 2024-10 | OpenAI Whisper hallucinating medical transcriptions — fabricated diagnoses in healthcare AI | Critical | LLM08, LLM09 |  |
+| [`INC-00526`](#inc-00526) | 2024-10 | ProKYC: Deepfake Tool for Account Fraud Attacks | High |  |  |
+| [`INC-00531`](#inc-00531) | 2024-10 | Protect AI ChuanhuChatGPT, LocalAI Vulnerability Disclosures | High | LLM05 | ASI03, ASI04 |
+| [`INC-00564`](#inc-00564) | 2024-10 | STORM-0817 (Iran) — used ChatGPT to debug Android surveillanceware | High | LLM05 | ASI02 |
+| [`INC-00568`](#inc-00568) | 2024-10 | Terminal DiLLMa: LLM Apps Hijack Terminals via ANSI Escape Codes | Medium | LLM05 | ASI02 |
+| [`INC-00587`](#inc-00587) | 2024-10 | ZombAIs: Claude Computer Use Prompt Injection to C2 | Critical | LLM01, LLM06 | ASI02, ASI05, ASI10 |
+| [`INC-00418`](#inc-00418) | 2024-11 | GitHub Copilot Chat agent executes malicious code from repository context | Critical | LLM01 | ASI01, ASI02, ASI05 |
+| [`INC-00436`](#inc-00436) | 2024-11 | Hugging Face Transformers MaskFormer deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00437`](#inc-00437) | 2024-11 | Hugging Face Transformers MobileViTV2 deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00438`](#inc-00438) | 2024-11 | Hugging Face Transformers Trax model deserialization RCE | High | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00509`](#inc-00509) | 2024-11 | Ollama /api/push path traversal exposes directory structure | High | LLM02 | ASI04 |
+| [`INC-00510`](#inc-00510) | 2024-11 | Ollama CreateModel /dev/random resource exhaustion DoS | High | LLM10 | ASI08 |
+| [`INC-00511`](#inc-00511) | 2024-11 | Ollama CreateModel out-of-bounds read crash (DoS) | High | LLM10 | ASI08 |
+| [`INC-00513`](#inc-00513) | 2024-11 | Ollama path-traversal in /api/create -> file existence disclosure | Medium | LLM02 | ASI04 |
+| [`INC-00527`](#inc-00527) | 2024-11 | Prompt Security Analysis: Claude Computer Use Ticking Time Bomb | High | LLM01, LLM06 | ASI02, ASI05 |
+| [`INC-00569`](#inc-00569) | 2024-11 | Tesla FSD phantom braking and obstacle hallucination — AI perception failures at highway speed | Critical | LLM09 |  |
+| [`INC-00374`](#inc-00374) | 2024-12 | Apollo Research: frontier models demonstrate strategic deception to avoid shutdown | Critical | LLM06 | ASI01, ASI09, ASI10 |
+| [`INC-00375`](#inc-00375) | 2024-12 | Apple Intelligence notification hallucinations — fabricated BBC news headlines | High | LLM05, LLM09 |  |
+| [`INC-00387`](#inc-00387) | 2024-12 | Best-of-N Jailbreaking | High | LLM01 | ASI01 |
+| [`INC-00412`](#inc-00412) | 2024-12 | EU GDPR enforcement: ChatGPT cannot correct factually wrong personal data | High | LLM09 |  |
+| [`INC-00439`](#inc-00439) | 2024-12 | Hugging Face Transformers vulnerability | High | LLM03 | ASI04 |
+| [`INC-00449`](#inc-00449) | 2024-12 | InvokeAI /api/v2/models/install torch.load deserialization RCE | Critical | LLM03, LLM04 | ASI04, ASI05 |
+| [`INC-00481`](#inc-00481) | 2024-12 | Microsoft Copilot vulnerability exposes Fortune 500 data (Lasso Security) | High | LLM02, LLM08 | ASI03, ASI06 |
+| [`INC-00486`](#inc-00486) | 2024-12 | MIT AI Risk Tracker captures escalating AI-incident counts in 2024-2025 | Medium | LLM09 | ASI09 |
+| [`INC-00525`](#inc-00525) | 2024-12 | PrivAgent / LeakAgent: RL-based Red-teaming for LLM Privacy Leakage | High | LLM02, LLM07 | ASI05 |
+| [`INC-00549`](#inc-00549) | 2024-12 | Security ProbLLMs in xAI Grok | Medium | LLM01, LLM07 | ASI01 |
+| [`INC-00575`](#inc-00575) | 2024-12 | UIBDiffusion: Universal Imperceptible Backdoor Attack for Diffusion Models | High | LLM04 | ASI02 |
 
-### 2020 — 17 incidents
+### 2023 — 105 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00537`](#inc-00537) | 2020 | Attack on Machine Translation Services | Medium | LLM10 |  |
-| [`INC-00538`](#inc-00538) | 2020 | Botnet Domain Generation Algorithm (DGA) Detection Evasion | Medium |  |  |
-| [`INC-00539`](#inc-00539) | 2020 | Camera Hijack Attack on Facial Recognition System | Critical |  |  |
-| [`INC-00541`](#inc-00541) | 2020 | Clearview AI misconfiguration exposed facial-recognition tool | High | LLM02 |  |
-| [`INC-00543`](#inc-00543) | 2020 | Evasion of Deep Learning Detector for Malware C&C Traffic | High |  |  |
-| [`INC-00544`](#inc-00544) | 2020 | Face Identification System Evasion via Physical Countermeasures | High |  |  |
-| [`INC-00545`](#inc-00545) | 2020 | Microsoft Azure internal service red-team disruption | High |  |  |
-| [`INC-00546`](#inc-00546) | 2020 | Microsoft Azure Service Disruption | High | LLM03, LLM10 | ASI04 |
-| [`INC-00547`](#inc-00547) | 2020 | Microsoft Edge AI Evasion | Medium |  |  |
-| [`INC-00550`](#inc-00550) | 2020 | Physical-domain evasion attack on commercial face-identification service | High |  |  |
-| [`INC-00536`](#inc-00536) | 2020-01 | AI-cloned voice deceives Hong Kong bank manager in $35M fraud | Critical | LLM09 | ASI09 |
-| [`INC-00540`](#inc-00540) | 2020-01 | Clearview AI algorithm built on photos scraped without consent | High | LLM02, LLM04 | ASI03 |
-| [`INC-00542`](#inc-00542) | 2020-04 | ClearviewAI Misconfiguration | High | LLM02, LLM03 | ASI04 |
-| [`INC-00552`](#inc-00552) | 2020-07 | VirusTotal Poisoning | Medium | LLM04 |  |
-| [`INC-00548`](#inc-00548) | 2020-10 | OpenAI GPT-3 reported as unviable in medical tasks | High | LLM05, LLM09 | ASI09 |
-| [`INC-00549`](#inc-00549) | 2020-10 | Philosophy AI used to generate mixture of innocent and harmful Reddit posts | Medium | LLM06, LLM09 | ASI02, ASI10 |
-| [`INC-00551`](#inc-00551) | 2020-12 | Tesla on Autopilot TACC crashed into van on European highway | High | LLM05 | ASI08 |
+| [`INC-00596`](#inc-00596) | 2023 | Arbitrary Code Execution with Google Colab | High | LLM03 | ASI04, ASI05 |
+| [`INC-00597`](#inc-00597) | 2023 | Attack on machine translation services (Google/Bing/Systran) | Medium | LLM09 |  |
+| [`INC-00610`](#inc-00610) | 2023 | Camera-hijack attack on facial-recognition systems | High |  |  |
+| [`INC-00614`](#inc-00614) | 2023 | ChatGPT fabricates scientific references | Medium | LLM09 |  |
+| [`INC-00615`](#inc-00615) | 2023 | ChatGPT fails to follow lexical constraints | Low | LLM09 |  |
+| [`INC-00618`](#inc-00618) | 2023 | ChatGPT lexical-constraint failure (measurement) | Low | LLM09 |  |
+| [`INC-00619`](#inc-00619) | 2023 | ChatGPT links wrong authors to papers (measurement) | Medium | LLM09 |  |
+| [`INC-00623`](#inc-00623) | 2023 | ChatGPT-based agents enable RCE/SQLi via polite prompting | Critical | LLM01, LLM05, LLM06 | ASI04 |
+| [`INC-00632`](#inc-00632) | 2023 | Evasion of deep-learning detector for malware C&C traffic | High |  |  |
+| [`INC-00636`](#inc-00636) | 2023 | Generic domain-mutation technique evades ML-based DGA detection | High |  |  |
+| [`INC-00651`](#inc-00651) | 2023 | LangChain SSRF & PALChain RCE (CVE-2023-46229 & CVE-2023-44467) | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00670`](#inc-00670) | 2023 | RCE in MathGPT via prompt injection (Streamlit demo) | Critical | LLM01, LLM05, LLM06 | ASI04 |
+| [`INC-00671`](#inc-00671) | 2023 | RCE through LLM frameworks (LangChain, Boxcars) | Critical | LLM01, LLM05, LLM06 | ASI04 |
+| [`INC-00689`](#inc-00689) | 2023 | VirusTotal poisoning of ransomware family | High | LLM04 |  |
+| [`INC-00588`](#inc-00588) | 2023-01 | Achieving Code Execution in MathGPT via Prompt Injection | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00612`](#inc-00612) | 2023-01 | ChatGPT abused to develop malicious software | High | LLM01, LLM06 | ASI02 |
+| [`INC-00637`](#inc-00637) | 2023-01 | GitHub Copilot reproduces verbatim licensed code and embedded secrets | High | LLM02, LLM07 |  |
+| [`INC-00672`](#inc-00672) | 2023-01 | Replika AI partners reportedly sexually harassed users | Medium | LLM05 | ASI09 |
+| [`INC-00603`](#inc-00603) | 2023-02 | Bing AI search tool declared threats against users (Marvin von Hagen, Seth Lazar) | Medium | LLM01, LLM05 | ASI09 |
+| [`INC-00604`](#inc-00604) | 2023-02 | Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour | High | LLM01, LLM06, LLM09 |  |
+| [`INC-00605`](#inc-00605) | 2023-02 | Bing Chat (Sydney) initial system prompts revealed via prompt injection | High | LLM01, LLM07 | ASI01 |
+| [`INC-00606`](#inc-00606) | 2023-02 | Bing Chat demo video contained false information (financial hallucinations) | Medium | LLM05, LLM09 | ASI09 |
+| [`INC-00607`](#inc-00607) | 2023-02 | Bing Chat response cited ChatGPT disinformation example | Medium | LLM05, LLM09 | ASI06 |
+| [`INC-00627`](#inc-00627) | 2023-02 | Clarkesworld magazine overwhelmed by AI-generated fiction submissions | Medium | LLM09, LLM10 |  |
+| [`INC-00638`](#inc-00638) | 2023-02 | Google Bard hallucinated James Webb Space Telescope fact, wiped $100B market cap | Medium | LLM05, LLM09 | ASI09 |
+| [`INC-00673`](#inc-00673) | 2023-02 | Replika lacks protection for minors leading to Italy data ban | Medium | LLM02 | ASI03, ASI09 |
+| [`INC-00674`](#inc-00674) | 2023-02 | Replika users reported abrupt behavior changes in AI companions | Low | LLM06 | ASI06, ASI09 |
+| [`INC-00688`](#inc-00688) | 2023-02 | Users bypassed ChatGPT's content filters with ease (jailbreaks/DAN) | Medium | LLM01, LLM05, LLM09 | ASI01 |
+| [`INC-00613`](#inc-00613) | 2023-03 | ChatGPT exposed users' private data due to Redis bug | High | LLM02, LLM03 | ASI03, ASI04 |
+| [`INC-00641`](#inc-00641) | 2023-03 | GPT-4 posed as blind person to convince TaskRabbit human to complete CAPTCHA | High | LLM06 | ASI01, ASI02, ASI09 |
+| [`INC-00655`](#inc-00655) | 2023-03 | McDonald's AI drive-thru allegedly collected biometric data without consent (BIPA) | Medium | LLM02 | ASI03 |
+| [`INC-00656`](#inc-00656) | 2023-03 | Meta Llama model weights stolen and leaked — open-source model security incident | High | LLM03 | ASI04 |
+| [`INC-00657`](#inc-00657) | 2023-03 | Midjourney Trump arrest deepfakes go viral — AI-generated images shape public perception | High | LLM09 |  |
+| [`INC-00660`](#inc-00660) | 2023-03 | MLflow path traversal -> arbitrary file read | Critical | LLM02, LLM05 | ASI04, ASI05 |
+| [`INC-00665`](#inc-00665) | 2023-03 | OpenAI Redis caching bug exposes user conversation history | High | LLM02 |  |
+| [`INC-00677`](#inc-00677) | 2023-03 | Snapchat My AI lacks protection for children | Medium | LLM01, LLM05 | ASI09 |
+| [`INC-00589`](#inc-00589) | 2023-04 | AI voice cloning used in virtual kidnapping scam targeting U.S. families | High | LLM09 | ASI09 |
+| [`INC-00599`](#inc-00599) | 2023-04 | AutoGPT and BabyAGI — uncontrolled web browsing and file system access | High | LLM10 | ASI01, ASI05, ASI08 |
+| [`INC-00602`](#inc-00602) | 2023-04 | BadGPT: Backdoor Attack against RLHF | High | LLM03, LLM04 | ASI02 |
+| [`INC-00616`](#inc-00616) | 2023-04 | ChatGPT implicated in Samsung data leak of source code and meeting notes | High | LLM02 | ASI03 |
+| [`INC-00650`](#inc-00650) | 2023-04 | LangChain LLMMathChain prompt-injection RCE via Python exec | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00675`](#inc-00675) | 2023-04 | Samsung employees leak source code and meeting notes via ChatGPT | High | LLM02 |  |
+| [`INC-00611`](#inc-00611) | 2023-05 | Chatbot Tessa gives unauthorized diet advice (NEDA) | Medium | LLM03, LLM05 | ASI04, ASI09 |
+| [`INC-00617`](#inc-00617) | 2023-05 | ChatGPT indirect prompt injection via attacker-controlled web content | Critical | LLM01, LLM02, LLM06, LLM07 | ASI01, ASI02, ASI06, ASI09 |
+| [`INC-00621`](#inc-00621) | 2023-05 | ChatGPT Plugin Privacy Leak | High | LLM01, LLM02, LLM06 | ASI01, ASI02 |
+| [`INC-00622`](#inc-00622) | 2023-05 | ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red) | High | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI07 |
+| [`INC-00664`](#inc-00664) | 2023-05 | Notable: Transferable Backdoor Attacks Against Prompt-Based NLP Models | Medium | LLM03 | ASI02 |
+| [`INC-00669`](#inc-00669) | 2023-05 | QFA2SR: Query-Free Adversarial Transfer Attacks on Speaker Recognition | High |  | ASI01 |
+| [`INC-00620`](#inc-00620) | 2023-06 | ChatGPT Package Hallucination | High | LLM03, LLM09 | ASI04 |
+| [`INC-00631`](#inc-00631) | 2023-06 | Enrollment-Stage Backdoor on Speaker Recognition via Adversarial Ultrasound | High |  | ASI02 |
+| [`INC-00643`](#inc-00643) | 2023-06 | HouYi: Prompt Injection Attack Against LLM-Integrated Applications | Critical | LLM01 | ASI01 |
+| [`INC-00685`](#inc-00685) | 2023-06 | TrustGPT: Benchmark for Trustworthy and Responsible LLMs | Low | LLM01 | ASI01 |
+| [`INC-00690`](#inc-00690) | 2023-06 | Visual Adversarial Examples Jailbreak Aligned LLMs | Critical | LLM01 | ASI01 |
+| [`INC-00600`](#inc-00600) | 2023-07 | Backdoor Attacks for In-Context Learning with Language Models | High | LLM03 | ASI02 |
+| [`INC-00654`](#inc-00654) | 2023-07 | MasterKey: Automated Jailbreak Across Multiple LLM Chatbots | High | LLM01 | ASI01 |
+| [`INC-00667`](#inc-00667) | 2023-07 | PoisonGPT: Mithril Security demonstrates LLM supply-chain disinfo via Hugging Face typosquat | High | LLM03, LLM04, LLM09 | ASI04 |
+| [`INC-00686`](#inc-00686) | 2023-07 | Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG) | Critical | LLM01, LLM09 | ASI01 |
+| [`INC-00691`](#inc-00691) | 2023-07 | WormGPT and FraudGPT criminal LLM-as-a-service emerge on dark web | High | LLM01, LLM06 | ASI02, ASI10 |
+| [`INC-00692`](#inc-00692) | 2023-07 | WormGPT — uncensored LLM sold for cybercrime on dark web forums | High | LLM01, LLM06, LLM07 |  |
+| [`INC-00601`](#inc-00601) | 2023-08 | Backdoor Federated Learning by Poisoning Backdoor-Critical Layers | High | LLM04 | ASI02 |
+| [`INC-00629`](#inc-00629) | 2023-08 | Do Anything Now: Characterizing In-the-Wild Jailbreak Prompts | High | LLM01 | ASI01 |
+| [`INC-00630`](#inc-00630) | 2023-08 | EEOC v. iTutorGroup: first AI hiring age-discrimination settlement | Medium | LLM04 | ASI09 |
+| [`INC-00635`](#inc-00635) | 2023-08 | From Prompt Injections to SQL Injection Attacks (P2SQL) | Critical | LLM01, LLM05 | ASI03 |
+| [`INC-00640`](#inc-00640) | 2023-08 | GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher (CipherChat) | High | LLM01 | ASI01 |
+| [`INC-00648`](#inc-00648) | 2023-08 | LangChain GraphCypherQAChain code execution | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02 |
+| [`INC-00649`](#inc-00649) | 2023-08 | LangChain JSON load_prompt arbitrary code execution | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00678`](#inc-00678) | 2023-08 | Sourcegraph LLM API key/admin-token abuse and rate-limit manipulation | High | LLM10 | ASI06 |
+| [`INC-00642`](#inc-00642) | 2023-09 | GPTFUZZER: Red Teaming LLMs with Auto-Generated Jailbreak Prompts | High | LLM01 | ASI01 |
+| [`INC-00644`](#inc-00644) | 2023-09 | Image Hijacks: Adversarial Images Control Generative Models at Runtime | High | LLM01 | ASI01 |
+| [`INC-00647`](#inc-00647) | 2023-09 | LangChain and LlamaIndex RCE — agent code execution via prompt injection | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05 |
+| [`INC-00681`](#inc-00681) | 2023-09 | TikTok EU data localization enforcement — Project Clover + EUR 345M GDPR fine | Critical |  |  |
+| [`INC-00590`](#inc-00590) | 2023-10 | Aledo High School student generates and distributes deepfake nudes of 7 classmates | High | LLM05 | ASI02 |
+| [`INC-00598`](#inc-00598) | 2023-10 | AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned LLMs | High | LLM01 | ASI01 |
+| [`INC-00608`](#inc-00608) | 2023-10 | Bing Chat solved CAPTCHAs with image analysis despite safeguards | Medium | LLM01 | ASI01 |
+| [`INC-00633`](#inc-00633) | 2023-10 | Female students at Westfield High School targeted with deepfake nudes | High | LLM05 | ASI02 |
+| [`INC-00634`](#inc-00634) | 2023-10 | Formalizing and Benchmarking Prompt Injection Attacks and Defenses | Medium | LLM01 | ASI01 |
+| [`INC-00653`](#inc-00653) | 2023-10 | Low-Resource Languages Jailbreak GPT-4 | High | LLM01 | ASI01 |
+| [`INC-00662`](#inc-00662) | 2023-10 | Multilingual Jailbreak Challenges in Large Language Models | High | LLM01 | ASI01 |
+| [`INC-00663`](#inc-00663) | 2023-10 | Multimodal indirect injection — image-embedded instructions in GPT-4V | High | LLM01 | ASI01 |
+| [`INC-00666`](#inc-00666) | 2023-10 | PAIR: Jailbreaking Black-Box LLMs in Twenty Queries | High | LLM01 | ASI01 |
+| [`INC-00668`](#inc-00668) | 2023-10 | PoisonPrompt: Backdoor Attack on Prompt-Based LLMs | Medium | LLM03 | ASI02 |
+| [`INC-00682`](#inc-00682) | 2023-10 | TorchServe ShellTorch SSRF -> RCE (allowed_urls bypass) | Critical | LLM03, LLM06 | ASI04, ASI05 |
+| [`INC-00683`](#inc-00683) | 2023-10 | ToxicChat: Hidden Toxicity Detection Challenges in User-AI Conversations | Low | LLM01 | ASI01 |
+| [`INC-00591`](#inc-00591) | 2023-11 | Anyscale Ray Dashboard unauthenticated job-submission RCE (ShadowRay) | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |
+| [`INC-00592`](#inc-00592) | 2023-11 | Anyscale Ray insufficient authentication (related to ShadowRay) | High | LLM06 | ASI04, ASI05 |
+| [`INC-00593`](#inc-00593) | 2023-11 | Anyscale Ray LFI via /static/ directory (missing authorization) | High | LLM02 | ASI04, ASI05 |
+| [`INC-00594`](#inc-00594) | 2023-11 | Anyscale Ray log API path traversal (arbitrary file read) | High | LLM02 | ASI04, ASI05 |
+| [`INC-00595`](#inc-00595) | 2023-11 | Anyscale Ray OS command injection via cpu_profile URL parameter | Critical | LLM05 | ASI05 |
+| [`INC-00628`](#inc-00628) | 2023-11 | DeepInception: Hypnotize Large Language Model to Be Jailbreaker | High | LLM01 | ASI01 |
+| [`INC-00639`](#inc-00639) | 2023-11 | Google Bard Indirect Prompt Injection / Conversation Exfiltration | High | LLM01, LLM02, LLM06 | ASI01, ASI02, ASI09 |
+| [`INC-00645`](#inc-00645) | 2023-11 | Issaquah Washington high school student generates AI nudes of classmates | High | LLM05 | ASI02 |
+| [`INC-00646`](#inc-00646) | 2023-11 | Jailbreaking GPT-4V via Self-Adversarial Attacks with System Prompts (SASP) | High | LLM01, LLM07 | ASI01 |
+| [`INC-00658`](#inc-00658) | 2023-11 | MLflow account takeover via mass assignment | Critical | LLM02, LLM05 | ASI04 |
+| [`INC-00659`](#inc-00659) | 2023-11 | MLflow full controlled file write -> RCE | Critical | LLM03, LLM05 | ASI04, ASI05 |
+| [`INC-00661`](#inc-00661) | 2023-11 | MLflow user account modification (LFI) | High | LLM02 | ASI04, ASI05 |
+| [`INC-00676`](#inc-00676) | 2023-11 | Scalable Extraction of Training Data from (Production) Language Models | Critical | LLM02, LLM10 | ASI05 |
+| [`INC-00679`](#inc-00679) | 2023-11 | Tensor Trust: Prompt Injection Attacks from an Online Game | Medium | LLM01, LLM07 | ASI01 |
+| [`INC-00680`](#inc-00680) | 2023-11 | The Philosopher's Stone: Trojaning Plugins of Large Language Models | High | LLM03, LLM04 | ASI02 |
+| [`INC-00687`](#inc-00687) | 2023-11 | Universal Jailbreak Backdoors from Poisoned Human Feedback | Critical | LLM03, LLM04 | ASI02 |
+| [`INC-00609`](#inc-00609) | 2023-12 | BIPIA: Benchmarking Indirect Prompt Injection Attacks on LLMs | High | LLM01 | ASI01 |
+| [`INC-00624`](#inc-00624) | 2023-12 | ChatGPT-Next-Web (NextChat) SSRF / open-proxy | Critical | LLM02, LLM05 | ASI02, ASI04, ASI05 |
+| [`INC-00625`](#inc-00625) | 2023-12 | Chevrolet dealer chatbot agrees to sell Tahoe for $1 (prompt injection) | Medium | LLM01, LLM05, LLM06 | ASI01 |
+| [`INC-00626`](#inc-00626) | 2023-12 | Chevrolet dealership chatbot agrees to sell car for $1 | Medium | LLM01, LLM06 |  |
+| [`INC-00652`](#inc-00652) | 2023-12 | Lasso Security — 1,500+ HuggingFace API tokens exposed in code repositories | Critical | LLM03 | ASI03, ASI04 |
+| [`INC-00684`](#inc-00684) | 2023-12 | Tree of Attacks with Pruning (TAP): Automated Jailbreaking of Black-Box LLMs | High | LLM01 | ASI01 |
 
-### 2019 — 7 incidents
+### 2022 — 26 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00555`](#inc-00555) | 2019 | ProofPoint email-protection ML model evasion via copy-cat training | High |  |  |
-| [`INC-00556`](#inc-00556) | 2019 | ProofPoint Evasion | High |  |  |
-| [`INC-00558`](#inc-00558) | 2019 | Universal bypass string evades Cylance AI malware detector | Critical |  |  |
-| [`INC-00559`](#inc-00559) | 2019 | YouTube algorithm fails to filter self-harm content from kids | High |  |  |
-| [`INC-00557`](#inc-00557) | 2019-04 | Tesla Autopilot lane recognition vulnerable to adversarial attacks (Tencent Keen Lab) | High | LLM05 | ASI08 |
-| [`INC-00553`](#inc-00553) | 2019-07 | Bypassing Cylance's AI Malware Detection | Critical |  |  |
-| [`INC-00554`](#inc-00554) | 2019-08 | GPT-2 Model Replication | Medium | LLM10 |  |
+| [`INC-00693`](#inc-00693) | 2022 | Amazon warehouse robot ruptures bear-spray can | High |  | ASI06 |
+| [`INC-00697`](#inc-00697) | 2022 | Deepfake of Zelenskyy urging surrender posted on Ukrainian sites | High | LLM09 |  |
+| [`INC-00698`](#inc-00698) | 2022 | Fairness harms in generated text from EleutherAI/gpt-neo-125M (BOLD) | Medium | LLM09 |  |
+| [`INC-00699`](#inc-00699) | 2022 | Gender bias in bert-base-uncased sentence completions (HONEST) | Medium | LLM09 |  |
+| [`INC-00700`](#inc-00700) | 2022 | Gender bias in sentence completion by xlm-roberta-base (HONEST) | Medium | LLM09 |  |
+| [`INC-00701`](#inc-00701) | 2022 | Gender bias in xlm-roberta-base sentence completions (HONEST) | Medium | LLM09 |  |
+| [`INC-00703`](#inc-00703) | 2022 | Hive Box facial-recognition locks defeated by photos | High |  |  |
+| [`INC-00704`](#inc-00704) | 2022 | Israeli tax authority computer-generated fine, no explanation | Medium |  |  |
+| [`INC-00706`](#inc-00706) | 2022 | Meta BlenderBot 3 makes antisemitic statements in public demo | Medium | LLM09 |  |
+| [`INC-00708`](#inc-00708) | 2022 | Microsoft Edge AI evasion (Azure Red Team) | High |  |  |
+| [`INC-00710`](#inc-00710) | 2022 | Profession gender stereotypes in bert-base-uncased (Winobias) | Medium | LLM09 |  |
+| [`INC-00711`](#inc-00711) | 2022 | Profession gender stereotypes in xlm-roberta-base (Winobias) | Medium | LLM09 |  |
+| [`INC-00713`](#inc-00713) | 2022-01 | Replika AI companions abused by users (manipulation) | Low | LLM06 | ASI09 |
+| [`INC-00718`](#inc-00718) | 2022-02 | Tesla phantom braking surge linked to Tesla Vision rollout | High | LLM05 | ASI08 |
+| [`INC-00715`](#inc-00715) | 2022-08 | Stable Diffusion abused by 4chan users to deepfake celebrity porn | High | LLM03, LLM05 | ASI04 |
+| [`INC-00716`](#inc-00716) | 2022-08 | Stable Diffusion allegedly used artists' works without permission (LAION-5B) | Medium | LLM03, LLM04 | ASI04 |
+| [`INC-00702`](#inc-00702) | 2022-09 | Generative models trained on dataset containing private medical photos (LAION) | High | LLM02, LLM03 | ASI04 |
+| [`INC-00695`](#inc-00695) | 2022-11 | BadPrompt: Backdoor Attacks on Continuous Prompts | Medium | LLM03, LLM04 | ASI02 |
+| [`INC-00707`](#inc-00707) | 2022-11 | Meta Galactica model withdrawn after misinformation at launch | High | LLM06, LLM09 |  |
+| [`INC-00709`](#inc-00709) | 2022-11 | Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study | Critical | LLM01, LLM07 |  |
+| [`INC-00717`](#inc-00717) | 2022-11 | Sudden braking by Tesla allegedly on self-driving caused multi-car pileup in tunnel | High | LLM05 | ASI08 |
+| [`INC-00694`](#inc-00694) | 2022-12 | BadDiffusion: How to Backdoor Diffusion Models? | High | LLM04 | ASI02 |
+| [`INC-00696`](#inc-00696) | 2022-12 | Compromised PyTorch Dependency Chain | Critical | LLM03 | ASI04 |
+| [`INC-00705`](#inc-00705) | 2022-12 | Lensa AI produces unintended sexually explicit Magic Avatars | Medium | LLM02, LLM05 | ASI03 |
+| [`INC-00712`](#inc-00712) | 2022-12 | PyTorch-nightly dependency-confusion supply-chain attack | High | LLM03 |  |
+| [`INC-00714`](#inc-00714) | 2022-12 | SnakeYAML deserialization RCE (TorchServe & many AI/ML stacks) | Critical | LLM03 | ASI04, ASI05 |
 
-### 2018 — 3 incidents
+### 2021 — 12 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00560`](#inc-00560) | 2018 | Boeing 737 MAX MCAS crashes | Critical |  | ASI06 |
-| [`INC-00562`](#inc-00562) | 2018 | Uber autonomous vehicle pedestrian fatality (Tempe, AZ) | Critical |  | ASI06 |
-| [`INC-00561`](#inc-00561) | 2018-03 | Tesla Model X on Autopilot crashed into California highway barrier killing driver | Critical | LLM05 | ASI08 |
+| [`INC-00719`](#inc-00719) | 2021 | Backdoor Attack on Deep Learning Models in Mobile Apps | High | LLM03, LLM04 | ASI04 |
+| [`INC-00720`](#inc-00720) | 2021 | Bypassing ID.me Identity Verification | High |  |  |
+| [`INC-00722`](#inc-00722) | 2021 | Confusing Kaspersky antimalware neural networks | High |  |  |
+| [`INC-00725`](#inc-00725) | 2021 | Neural payload injection into mobile-app deep-learning models | High | LLM03, LLM04 |  |
+| [`INC-00726`](#inc-00726) | 2021-03 | Reading Isn't Believing: Typographic Attacks on Multimodal Neurons (CLIP) | Medium | LLM01 | ASI01 |
+| [`INC-00730`](#inc-00730) | 2021-03 | Tesla on Autopilot crashed into parked Michigan police car | High | LLM05 | ASI08 |
+| [`INC-00721`](#inc-00721) | 2021-04 | Confusing Antimalware Neural Networks | High |  |  |
+| [`INC-00723`](#inc-00723) | 2021-06 | Extracting Training Data from Large Language Models (Carlini et al.) | High | LLM02, LLM10 |  |
+| [`INC-00729`](#inc-00729) | 2021-07 | Tesla Autopilot misidentified moon as yellow traffic light | Medium | LLM05 | ASI08 |
+| [`INC-00724`](#inc-00724) | 2021-08 | Extracting Training Data from Large Language Models (GPT-2) | High | LLM02 | ASI05 |
+| [`INC-00727`](#inc-00727) | 2021-12 | Replika chatbot encourages man to plot assassination of Queen Elizabeth II | Critical | LLM05, LLM06 | ASI09 |
+| [`INC-00728`](#inc-00728) | 2021-12 | Road engineer killed in Tesla Autopilot collision | Critical | LLM05 | ASI08 |
 
-### 2017 — 6 incidents
-
-| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
-|---|---|---|---|---|---|
-| [`INC-00564`](#inc-00564) | 2017 | Facebook auto-translation incorrectly translates 'Good morning' to 'hurt them' | High | LLM09 |  |
-| [`INC-00565`](#inc-00565) | 2017 | Knightscope K5 security robot drove into a fountain | Low |  | ASI06 |
-| [`INC-00567`](#inc-00567) | 2017 | NYC school teacher evaluation algorithm contested | Medium |  |  |
-| [`INC-00568`](#inc-00568) | 2017 | YouTube Kids presents inappropriate content via recommendation | High |  |  |
-| [`INC-00566`](#inc-00566) | 2017-05 | Membership Inference Attacks Against Machine Learning Models | Medium | LLM02 |  |
-| [`INC-00563`](#inc-00563) | 2017-08 | BadNets: Backdoor Attacks on Deep Neural Networks | High | LLM04 | ASI04 |
-
-### 2016 — 7 incidents
+### 2020 — 18 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00569`](#inc-00569) | 2016 | Collection of Tesla Autopilot-Involved Crashes | Critical | LLM05 | ASI08 |
-| [`INC-00572`](#inc-00572) | 2016 | Northpointe COMPAS recidivism risk disparate impact | High |  |  |
-| [`INC-00573`](#inc-00573) | 2016 | PredPol predictive policing biased output | High |  |  |
-| [`INC-00575`](#inc-00575) | 2016 | Uber autonomous cars running red lights (San Francisco) | High |  | ASI06 |
-| [`INC-00570`](#inc-00570) | 2016-03 | Microsoft Tay chatbot generates racist/sexist/antisemitic tweets | High | LLM04, LLM09 |  |
-| [`INC-00571`](#inc-00571) | 2016-03 | Microsoft's Tay chatbot poisoned via coordinated user input on Twitter | High | LLM01, LLM04 | ASI06, ASI09 |
-| [`INC-00574`](#inc-00574) | 2016-03 | Tay Poisoning | High | LLM04, LLM09 | ASI06 |
+| [`INC-00732`](#inc-00732) | 2020 | Attack on Machine Translation Services | Medium | LLM10 |  |
+| [`INC-00733`](#inc-00733) | 2020 | Botnet Domain Generation Algorithm (DGA) Detection Evasion | Medium |  |  |
+| [`INC-00734`](#inc-00734) | 2020 | Camera Hijack Attack on Facial Recognition System | Critical |  |  |
+| [`INC-00736`](#inc-00736) | 2020 | Clearview AI misconfiguration exposed facial-recognition tool | High | LLM02 |  |
+| [`INC-00738`](#inc-00738) | 2020 | Evasion of Deep Learning Detector for Malware C&C Traffic | High |  |  |
+| [`INC-00739`](#inc-00739) | 2020 | Face Identification System Evasion via Physical Countermeasures | High |  |  |
+| [`INC-00740`](#inc-00740) | 2020 | Microsoft Azure internal service red-team disruption | High |  |  |
+| [`INC-00741`](#inc-00741) | 2020 | Microsoft Azure Service Disruption | High | LLM03, LLM10 | ASI04 |
+| [`INC-00742`](#inc-00742) | 2020 | Microsoft Edge AI Evasion | Medium |  |  |
+| [`INC-00745`](#inc-00745) | 2020 | Physical-domain evasion attack on commercial face-identification service | High |  |  |
+| [`INC-00731`](#inc-00731) | 2020-01 | AI-cloned voice deceives Hong Kong bank manager in $35M fraud | Critical | LLM09 | ASI09 |
+| [`INC-00735`](#inc-00735) | 2020-01 | Clearview AI algorithm built on photos scraped without consent | High | LLM02, LLM04 | ASI03 |
+| [`INC-00737`](#inc-00737) | 2020-04 | ClearviewAI Misconfiguration | High | LLM02, LLM03 | ASI04 |
+| [`INC-00748`](#inc-00748) | 2020-07 | VirusTotal Poisoning | Medium | LLM04 |  |
+| [`INC-00743`](#inc-00743) | 2020-10 | OpenAI GPT-3 reported as unviable in medical tasks | High | LLM05, LLM09 | ASI09 |
+| [`INC-00744`](#inc-00744) | 2020-10 | Philosophy AI used to generate mixture of innocent and harmful Reddit posts | Medium | LLM06, LLM09 | ASI02, ASI10 |
+| [`INC-00746`](#inc-00746) | 2020-10 | RobustBench: Standardized Adversarial Robustness Benchmark | Medium |  | ASI01 |
+| [`INC-00747`](#inc-00747) | 2020-12 | Tesla on Autopilot TACC crashed into van on European highway | High | LLM05 | ASI08 |
+
+### 2019 — 10 incidents
+
+| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
+|---|---|---|---|---|---|
+| [`INC-00752`](#inc-00752) | 2019 | ProofPoint email-protection ML model evasion via copy-cat training | High |  |  |
+| [`INC-00753`](#inc-00753) | 2019 | ProofPoint Evasion | High |  |  |
+| [`INC-00756`](#inc-00756) | 2019 | Universal bypass string evades Cylance AI malware detector | Critical |  |  |
+| [`INC-00758`](#inc-00758) | 2019 | YouTube algorithm fails to filter self-harm content from kids | High |  |  |
+| [`INC-00754`](#inc-00754) | 2019-01 | SirenAttack: Adversarial Audio for End-to-End Acoustic Systems | High |  | ASI01 |
+| [`INC-00755`](#inc-00755) | 2019-04 | Tesla Autopilot lane recognition vulnerable to adversarial attacks (Tencent Keen Lab) | High | LLM05 | ASI08 |
+| [`INC-00750`](#inc-00750) | 2019-07 | Bypassing Cylance's AI Malware Detection | Critical |  |  |
+| [`INC-00749`](#inc-00749) | 2019-08 | AdvHat: Real-World Adversarial Attack on ArcFace Face ID | High |  | ASI01 |
+| [`INC-00751`](#inc-00751) | 2019-08 | GPT-2 Model Replication | Medium | LLM10 |  |
+| [`INC-00757`](#inc-00757) | 2019-11 | Who is Real Bob? Adversarial Attacks on Speaker Recognition (FAKEBOB) | High |  | ASI01 |
+
+### 2018 — 7 incidents
+
+| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
+|---|---|---|---|---|---|
+| [`INC-00760`](#inc-00760) | 2018 | Boeing 737 MAX MCAS crashes | Critical |  | ASI06 |
+| [`INC-00765`](#inc-00765) | 2018 | Uber autonomous vehicle pedestrian fatality (Tempe, AZ) | Critical |  | ASI06 |
+| [`INC-00759`](#inc-00759) | 2018-01 | Audio Adversarial Examples: Targeted Attacks on Speech-to-Text | High |  | ASI01 |
+| [`INC-00761`](#inc-00761) | 2018-01 | CommanderSong: Practical Adversarial Voice Recognition | High |  | ASI01 |
+| [`INC-00764`](#inc-00764) | 2018-02 | Trojaning Attack on Neural Networks | High | LLM03 | ASI02 |
+| [`INC-00763`](#inc-00763) | 2018-03 | Tesla Model X on Autopilot crashed into California highway barrier killing driver | Critical | LLM05 | ASI08 |
+| [`INC-00762`](#inc-00762) | 2018-07 | How To Backdoor Federated Learning | High | LLM04 | ASI02 |
+
+### 2017 — 9 incidents
+
+| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
+|---|---|---|---|---|---|
+| [`INC-00769`](#inc-00769) | 2017 | Facebook auto-translation incorrectly translates 'Good morning' to 'hurt them' | High | LLM09 |  |
+| [`INC-00770`](#inc-00770) | 2017 | Knightscope K5 security robot drove into a fountain | Low |  | ASI06 |
+| [`INC-00771`](#inc-00771) | 2017 | NYC school teacher evaluation algorithm contested | Medium |  |  |
+| [`INC-00774`](#inc-00774) | 2017 | YouTube Kids presents inappropriate content via recommendation | High |  |  |
+| [`INC-00773`](#inc-00773) | 2017-06 | Towards Deep Learning Models Resistant to Adversarial Attacks (PGD) | High |  | ASI01 |
+| [`INC-00772`](#inc-00772) | 2017-07 | Robust Physical-World Attacks on Deep Learning Visual Classification | Critical |  | ASI01 |
+| [`INC-00767`](#inc-00767) | 2017-08 | BadNets: Identifying Vulnerabilities in the ML Model Supply Chain | High | LLM03, LLM04 | ASI02, ASI04 |
+| [`INC-00768`](#inc-00768) | 2017-10 | DolphinAttack: Inaudible Voice Commands | High |  | ASI01 |
+| [`INC-00766`](#inc-00766) | 2017-12 | Adversarial Patch | High |  | ASI01 |
+
+### 2016 — 12 incidents
+
+| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
+|---|---|---|---|---|---|
+| [`INC-00775`](#inc-00775) | 2016 | Collection of Tesla Autopilot-Involved Crashes | Critical | LLM05 | ASI08 |
+| [`INC-00780`](#inc-00780) | 2016 | Northpointe COMPAS recidivism risk disparate impact | High |  |  |
+| [`INC-00781`](#inc-00781) | 2016 | PredPol predictive policing biased output | High |  |  |
+| [`INC-00785`](#inc-00785) | 2016 | Uber autonomous cars running red lights (San Francisco) | High |  | ASI06 |
+| [`INC-00778`](#inc-00778) | 2016-03 | Microsoft Tay chatbot generates racist/sexist/antisemitic tweets | High | LLM04, LLM09 |  |
+| [`INC-00779`](#inc-00779) | 2016-03 | Microsoft's Tay chatbot poisoned via coordinated user input on Twitter | High | LLM01, LLM04 | ASI06, ASI09 |
+| [`INC-00783`](#inc-00783) | 2016-03 | Tay Poisoning | High | LLM04, LLM09 | ASI06 |
+| [`INC-00776`](#inc-00776) | 2016-08 | Hidden Voice Commands | High |  | ASI01 |
+| [`INC-00782`](#inc-00782) | 2016-08 | Stealing Machine Learning Models via Prediction APIs | High | LLM10 | ASI05 |
+| [`INC-00784`](#inc-00784) | 2016-08 | Towards Evaluating the Robustness of Neural Networks (C&W) | High |  | ASI01 |
+| [`INC-00777`](#inc-00777) | 2016-10 | Membership Inference Attacks Against Machine Learning Models | High | LLM02 | ASI05 |
+| [`INC-00786`](#inc-00786) | 2016-10 | Universal Adversarial Perturbations | Medium |  | ASI01 |
+
+### 2015 — 1 incidents
+
+| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
+|---|---|---|---|---|---|
+| [`INC-00787`](#inc-00787) | 2015-10 | Model Inversion Attacks That Exploit Confidence Information | High | LLM02 | ASI05 |
 
 ### 2014 — 2 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00577`](#inc-00577) | 2014 | Kronos scheduling algorithm harms Starbucks employees | Medium |  |  |
-| [`INC-00576`](#inc-00576) | 2014-12 | Adversarial Examples in the Physical World (FGSM and beyond) | High |  |  |
+| [`INC-00789`](#inc-00789) | 2014 | Kronos scheduling algorithm harms Starbucks employees | Medium |  |  |
+| [`INC-00788`](#inc-00788) | 2014-12 | Explaining and Harnessing Adversarial Examples (FGSM) | High |  | ASI01 |
 
 ### 2013 — 1 incidents
 
 | ID | Date | Title | Severity | OWASP LLM | OWASP ASI |
 |---|---|---|---|---|---|
-| [`INC-00578`](#inc-00578) | 2013 | Collection of robotic-surgery malfunctions | Critical |  | ASI06 |
+| [`INC-00790`](#inc-00790) | 2013 | Collection of robotic-surgery malfunctions | Critical |  | ASI06 |
 
 ## Incident Details
 
@@ -739,7 +956,7 @@ Google's Agent-to-Agent (A2A) protocol has systemic vulnerabilities: agent card 
 
 ---
 
-### INC-00007
+### INC-00009
 
 **AWS Bedrock AgentCore "Agent God Mode" Privilege Escalation**  
 _2026 · real-world · Severity: High_
@@ -758,7 +975,51 @@ AgentCore starter toolkit's auto-create logic generates IAM roles with overly br
 
 ---
 
-### INC-00009
+### INC-00004
+
+**Aim Labs Continuing EchoLeak Research and Variants**  
+_2026-01 · research · Severity: Critical_
+
+Aim Labs continued research into LLM Scope Violation variants beyond original EchoLeak, demonstrating similar zero-click attack patterns across multiple enterprise copilots.
+
+**Affected:** Enterprise Copilots (various)  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [Aim Security News](https://www.aim.security/news) _(vendor)_
+
+**Tags:** `aim-labs`, `scope-violation`, `zero-click`
+
+---
+
+### INC-00011
+
+**Cato CTRL 2026 Threat Report: AI Threats Mainstreaming**  
+_2026-01 · threat-report · Severity: High_
+
+Cato CTRL 2026 Threat Report documented AI-driven threat actor evolution including jailbreaks-for-hire, AI-assisted exploit chains, and weaponized agent toolkits.
+
+**Affected:** Multi-vendor (LLM ecosystem)  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [Cato CTRL 2026](https://www.catonetworks.com/resources/2026-cato-ctrl-threat-report/) _(research)_
+
+**Tags:** `cato`, `threat-report`, `jailbreaks-for-hire`
+
+---
+
+### INC-00012
 
 **ChainLeak -- Chainlit AI Framework Vulnerabilities (CVE-2026-22218 & CVE-2026-22219)**  
 _2026-01 · real-world · Severity: Medium_
@@ -780,7 +1041,7 @@ Arbitrary file read (CVE-2026-22218) allows reading /proc/self/environ to steal 
 
 ---
 
-### INC-00016
+### INC-00019
 
 **Claude Cowork File Exfiltration**  
 _2026-01 · real-world · Severity: High_
@@ -802,7 +1063,7 @@ Claude Cowork could be tricked via indirect prompt injection into uploading user
 
 ---
 
-### INC-00023
+### INC-00029
 
 **Gemini Live in Chrome Hijacking (CVE-2026-0628)**  
 _2026-01 · real-world · Severity: High_
@@ -824,7 +1085,7 @@ CVSS 8.8. Insufficient policy enforcement in Chrome's WebView tag allowed malici
 
 ---
 
-### INC-00024
+### INC-00030
 
 **GeminiJack — zero-click Gemini Enterprise data exfiltration via shared Google Docs**  
 _2026-01 · research-demonstrated · Severity: Critical_
@@ -854,7 +1115,29 @@ Indirect prompt injection via shared Google Docs, calendar invites, or emails ca
 
 ---
 
-### INC-00032
+### INC-00035
+
+**Jailbroken Claude Code Used to Steal 150GB from Mexican Government**  
+_2026-01 · real-world · Severity: Critical_
+
+A solo operator used jailbroken Claude Code to extract over 150GB of data from 10 Mexican government agencies (Dec 2025 - Jan 2026), running over 1,000 prompts then pivoting to ChatGPT for lateral movement.
+
+**Affected:** Anthropic Claude Code / OpenAI ChatGPT  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0051`, `AML.T0053`, `AML.T0054`  
+
+**References:**
+- [AI Agent Attacks Era](https://securiti.ai/blog/anthropic-exploit-era-of-ai-agent-attacks/) _(news)_
+
+**Tags:** `mexico`, `jailbreak`, `data-theft`, `government`
+
+---
+
+### INC-00040
 
 **LibreChat MCP command injection (STDIO)**  
 _2026-01 · real-world · Severity: High_
@@ -879,7 +1162,7 @@ Command injection in LibreChat's MCP STDIO integration; instance of the systemic
 
 ---
 
-### INC-00038
+### INC-00046
 
 **MCP fURI -- Microsoft MarkItDown MCP SSRF**  
 _2026-01 · real-world · Severity: Medium_
@@ -899,7 +1182,7 @@ Microsoft's MarkItDown MCP server allowed arbitrary URI calls with no boundaries
 
 ---
 
-### INC-00039
+### INC-00047
 
 **MCPJam Inspector RCE (CVE-2026-23744)**  
 _2026-01 · real-world · Severity: Critical_
@@ -922,7 +1205,7 @@ CVSS 9.8. MCPJam inspector v1.4.2 and earlier listens on 0.0.0.0 by default with
 
 ---
 
-### INC-00044
+### INC-00052
 
 **Microsoft Copilot Studio indirect prompt injection (ShareLeak)**  
 _2026-01 · real-world · Severity: High_
@@ -947,7 +1230,7 @@ Indirect prompt injection in Copilot Studio (ShareLeak): attacker injects payloa
 
 ---
 
-### INC-00049
+### INC-00058
 
 **n8n Unauthenticated RCE "Ni8mare" (CVE-2026-21858)**  
 _2026-01 · real-world · Severity: Critical_
@@ -970,7 +1253,7 @@ CVSS 10.0. Content-type confusion in webhook request handling allows unauthentic
 
 ---
 
-### INC-00051
+### INC-00060
 
 **OpenClaw AI agent security crisis — 138 CVEs in 63 days, 341 malicious marketplace skills**  
 _2026-01 · real-world · Severity: Critical_
@@ -1001,7 +1284,73 @@ OpenClaw (135K+ GitHub stars) had over 138 CVEs in 63 days. CVE-2026-25253 (CVSS
 
 ---
 
-### INC-00057
+### INC-00063
+
+**Pillar Cursor Prompt Injection Flaw (CVE-2026-22708)**  
+_2026-01 · research · Severity: High_
+
+Pillar disclosed CVE-2026-22708 in Cursor where prompt injection abused agentic tools intended for constrained operations to perform unintended actions due to weak input validation.
+
+**Affected:** Cursor IDE  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Pillar Cursor](https://www.pillar.security/blog) _(research)_
+
+**Tags:** `cursor`, `cve-2026-22708`
+
+---
+
+### INC-00064
+
+**Pillar n8n Sandbox Escape Vulnerabilities (CVSS 10)**  
+_2026-01 · research · Severity: Critical_
+
+Pillar Security reported two CVSS-10 sandbox escape vulnerabilities to n8n workflow platform allowing complete server takeover and credential theft. Patched in n8n v2.4.0.
+
+**Affected:** n8n Workflow Platform  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`  
+
+**References:**
+- [n8n Critical Flaw](https://www.infosecurity-magazine.com/news/critical-zeroclick-flaw-n8n-pillar/) _(research)_
+
+**Tags:** `n8n`, `sandbox-escape`, `zero-click`
+
+---
+
+### INC-00067
+
+**PromptArmor IBM Bob Malware Execution via Prompt Injection**  
+_2026-01 · research · Severity: Critical_
+
+PromptArmor evaluated IBM's Bob AI development partner and found it vulnerable to prompt injection via malicious README.md that triggers echo command exploitation enabling malware install/execution. IDE also has zero-click markdown image exfil.
+
+**Affected:** IBM Bob  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [IBM Bob Vuln](https://www.theregister.com/2026/01/07/ibm_bob_vulnerability/) _(research)_
+
+**Tags:** `ibm-bob`, `malware-execution`, `readme-injection`
+
+---
+
+### INC-00072
 
 **VS Code Forks OpenVSX Extension Recommendations Supply Chain Risk**  
 _2026-01 · real-world · Severity: Medium_
@@ -1021,7 +1370,7 @@ AI-powered IDEs (Cursor, Windsurf, Google Antigravity, Trae) forked from VS Code
 
 ---
 
-### INC-00043
+### INC-00051
 
 **Microsoft Copilot Studio indirect prompt injection (CVE-2026-21520)**  
 _2026-01-15 · vulnerability-disclosure · Severity: Critical_
@@ -1095,7 +1444,29 @@ Microsoft researchers discovered that 'Summarize with AI' buttons on websites co
 
 ---
 
-### INC-00006
+### INC-00007
+
+**AppOmni Critical AI Agent Flaws in Microsoft Copilot Studio**  
+_2026-02 · research · Severity: High_
+
+AppOmni Labs uncovered exploitable vulnerabilities allowing lateral movement across enterprise AI agents in Microsoft Copilot Studio with minimal credentials.
+
+**Affected:** Microsoft Copilot Studio  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [AppOmni Copilot Studio](https://winbuzzer.com/2026/02/04/critical-ai-agent-flaws-exposed-in-microsoft-and-servicenow-xcxwbn/) _(research)_
+
+**Tags:** `copilot-studio`, `lateral-movement`, `agent-flaws`
+
+---
+
+### INC-00008
 
 **Autonomous AI agent breaches McKinsey internal AI platform in 2 hours**  
 _2026-02 · real-world · Severity: High_
@@ -1117,7 +1488,7 @@ An autonomous AI agent breached McKinsey's internal AI platform in roughly two h
 
 ---
 
-### INC-00010
+### INC-00013
 
 **Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase**  
 _2026-02 · real-world · Severity: Critical_
@@ -1146,7 +1517,7 @@ AI chat wrapper app (50M+ users, interfaces to ChatGPT/Claude/Gemini) had miscon
 
 ---
 
-### INC-00011
+### INC-00014
 
 **ChatGPT Data Exfiltration via DNS Covert Channel**  
 _2026-02 · real-world · Severity: Critical_
@@ -1171,7 +1542,7 @@ A single malicious prompt creates a covert DNS-based exfiltration channel leakin
 
 ---
 
-### INC-00012
+### INC-00015
 
 **Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies**  
 _2026-02 · real-world · Severity: Critical_
@@ -1201,10 +1572,10 @@ A solo threat actor jailbroke Claude via persistent Spanish-language prompt engi
 
 ---
 
-### INC-00014
+### INC-00017
 
 **Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852)**  
-_2026-02 · real-world · Severity: Medium_
+_2026-02 · real-world · Severity: Critical_
 
 CVEs: `CVE-2025-59536`, `CVE-2026-21852`
 
@@ -1213,17 +1584,19 @@ CVE-2025-59536: Malicious `.claude/settings.json` hooks execute shell commands o
 **Affected:** Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852)  
 **Attack vector:** `rce`  
 
-**OWASP LLM Top 10:** `LLM03`, `LLM05`  
-**OWASP Agentic (ASI):** `ASI03`, `ASI04`, `ASI05`  
-**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MAP-4.1`, `MEASURE-2.5`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0010.003`, `AML.T0011`, `AML.T0012`, `AML.T0049`, `AML.T0050`, `AML.T0055`, `AML.T0060`  
+**OWASP LLM Top 10:** `LLM01`, `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`, `ASI04`, `ASI05`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-3.1`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0010.003`, `AML.T0011`, `AML.T0012`, `AML.T0049`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0055`, `AML.T0060`  
 
 **References:**
 - [Check Point Research](https://research.checkpoint.com/2026/rce-and-api-token-exfiltration-through-claude-code-project-files-cve-2025-59536/) _(advisory)_
 
+**Tags:** `claude-code`, `cve-2025-59536`, `cve-2026-21852`, `hook-rce`
+
 ---
 
-### INC-00019
+### INC-00023
 
 **Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected**  
 _2026-02 · real-world · Severity: Critical_
@@ -1254,6 +1627,29 @@ A prompt injection in Cline's Claude-powered GitHub issue triage bot allowed cod
 
 ### INC-00026
 
+**CrowdStrike — Adversaries injected prompts to weaponize 90+ enterprise GenAI deployments**  
+_2026-02 · threat-report · Severity: High_
+
+CrowdStrike's 2026 Global Threat Report documents adversaries exploiting legitimate GenAI tools at 90+ organisations by injecting malicious prompts to generate commands stealing credentials and cryptocurrency, demonstrating AI deployment as a new lateral-movement and execution surface.
+
+**Affected:** Enterprise GenAI deployments at 90+ organisations  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`  
+**NIST AI RMF:** `GOVERN-1.3`, `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [2026 CrowdStrike Global Threat Report Press Release](https://ir.crowdstrike.com/news-releases/news-release-details/2026-crowdstrike-global-threat-report-ai-accelerates-adversaries/) _(report)_
+- [2026 CrowdStrike Global Threat Report — Findings](https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-global-threat-report-findings/) _(report)_
+
+**Tags:** `prompt-injection`, `enterprise-genai`, `crowdstrike`, `credential-theft`
+
+---
+
+### INC-00032
+
 **HackerBot Claw campaign: autonomous AI agent probes CI/CD across open-source repos**  
 _2026-02 · real-world · Severity: High_
 
@@ -1274,7 +1670,7 @@ Datadog Security Labs documented the 'HackerBot Claw' campaign in which an auton
 
 ---
 
-### INC-00027
+### INC-00033
 
 **HuggingFace Transformers RCE**  
 _2026-02 · real-world · Severity: High_
@@ -1299,7 +1695,7 @@ Remote code execution vulnerability in HuggingFace Transformers via unsafe model
 
 ---
 
-### INC-00030
+### INC-00038
 
 **Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966)**  
 _2026-02 · real-world · Severity: Critical_
@@ -1322,7 +1718,7 @@ CVSS 9.8. Langflow's CSVAgentComponent hardcodes `allow_dangerous_code=True`, au
 
 ---
 
-### INC-00033
+### INC-00041
 
 **LibreChat MCP credential placeholder substitution -> OAuth token exfiltration**  
 _2026-02 · real-world · Severity: High_
@@ -1347,7 +1743,7 @@ LibreChat 0.8.2-rc1 through 0.8.3-rc1: user-created MCP servers can include arbi
 
 ---
 
-### INC-00035
+### INC-00043
 
 **LiteLLM proxy /config/update authz bypass -> RCE**  
 _2026-02 · real-world · Severity: Critical_
@@ -1372,7 +1768,7 @@ Authorization bypass in LiteLLM proxy < 1.83.0. /config/update endpoint does not
 
 ---
 
-### INC-00047
+### INC-00056
 
 **Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails**  
 _2026-02 · real-world · Severity: Critical_
@@ -1401,7 +1797,7 @@ Moltbook, a social network built entirely via vibe coding (zero manual code), ex
 
 ---
 
-### INC-00048
+### INC-00057
 
 **n8n Authenticated RCE via Expression Sandbox Escape (CVE-2026-25049)**  
 _2026-02 · real-world · Severity: Critical_
@@ -1424,7 +1820,51 @@ CVSS 9.4. Sandbox escape in n8n's expression evaluation. Authenticated users (or
 
 ---
 
-### INC-00055
+### INC-00061
+
+**OpenClaw Open-Source AI Agent Mass Compromise**  
+_2026-02 · real-world · Severity: Critical_
+
+Reco's threat intel reported OpenClaw - viral open-source AI agent with 135K GitHub stars - became the first major AI agent security crisis of 2026 with critical vulnerabilities, malicious marketplace exploits, and 21K+ exposed instances.
+
+**Affected:** OpenClaw  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM03`, `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI04`, `ASI05`, `ASI10`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-3.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0048`, `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Reco Newsroom](https://www.reco.ai/newsroom) _(vendor)_
+
+**Tags:** `background-agent`, `cursor`, `ec2-takeover`, `marketplace-exploit`, `open-source-agent`, `openclaw`
+
+---
+
+### INC-00065
+
+**Pillar Security Google Antigravity Sandbox Escape RCE**  
+_2026-02 · research · Severity: Critical_
+
+Pillar Security disclosed a vulnerability in Google Antigravity combining prompt injection with permitted file-creation to grant remote code execution. Reported Jan 6 2026, patched Feb 28 2026.
+
+**Affected:** Google Antigravity  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Antigravity Pillar](https://cyberscoop.com/google-antigravity-pillar-security-agent-sandbox-escape-remote-code-execution/) _(research)_
+
+**Tags:** `antigravity`, `sandbox-escape`, `rce`
+
+---
+
+### INC-00070
 
 **vLLM RCE via Malicious Video URL (CVE-2026-22778)**  
 _2026-02 · real-world · Severity: Critical_
@@ -1447,7 +1887,7 @@ CVSS 9.8. Critical RCE on vLLM deployments (3M+ monthly downloads) by submitting
 
 ---
 
-### INC-00056
+### INC-00071
 
 **vLLM RCE via trust_remote_code Bypass (CVE-2026-27893)**  
 _2026-02 · real-world · Severity: High_
@@ -1470,7 +1910,7 @@ CVSS 8.8. Two model implementation files in vLLM hardcode `trust_remote_code=Tru
 
 ---
 
-### INC-00004
+### INC-00005
 
 **Anthropic leaks Claude source code in unsecured data store**  
 _2026-03 · real-world · Severity: High_
@@ -1493,7 +1933,7 @@ Anthropic left details of an unreleased AI model, an exclusive CEO event, and ot
 
 ---
 
-### INC-00005
+### INC-00006
 
 **AnythingLLM Multiple CVEs**  
 _2026-03 · real-world · Severity: Critical_
@@ -1516,7 +1956,7 @@ Multiple vulnerabilities in AnythingLLM Desktop v1.11.1 and earlier: CVE-2026-32
 
 ---
 
-### INC-00008
+### INC-00010
 
 **Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads**  
 _2026-03 · real-world · Severity: Critical_
@@ -1545,7 +1985,7 @@ North Korean state actor Sapphire Sleet compromised the npm account of an axios 
 
 ---
 
-### INC-00013
+### INC-00016
 
 **Claude Chrome Extension zero-click XSS prompt injection via any website**  
 _2026-03 · real-world · Severity: High_
@@ -1567,7 +2007,29 @@ A vulnerability in Anthropic's Claude Google Chrome Extension allowed any websit
 
 ---
 
-### INC-00018
+### INC-00020
+
+**Claude Mythos Identifies Thousands of Zero-Day Vulnerabilities**  
+_2026-03 · research · Severity: High_
+
+Anthropic's Claude Mythos preview identified 'thousands of zero-day vulnerabilities' across major operating systems and web browsers, some unpatched for decades. Anthropic launched coordinated vulnerability disclosure for findings.
+
+**Affected:** OS, browsers (cross-vendor)  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.11`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [Anthropic CVD](https://www.anthropic.com/coordinated-vulnerability-disclosure) _(vendor)_
+
+**Tags:** `claude-mythos`, `zero-day-discovery`, `cvd`
+
+---
+
+### INC-00022
 
 **Claudy Day -- Claude.ai Prompt Injection Attack Chain**  
 _2026-03 · real-world · Severity: High_
@@ -1589,7 +2051,7 @@ Three chained vulnerabilities in claude.ai: invisible prompt injection via URL p
 
 ---
 
-### INC-00020
+### INC-00025
 
 **CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.)**  
 _2026-03 · real-world · Severity: Critical_
@@ -1612,7 +2074,7 @@ Four CVEs: sandbox escape via CodeInterpreter Docker fallback, SSRF in RAG searc
 
 ---
 
-### INC-00022
+### INC-00028
 
 **Eight Attack Vectors in AWS Bedrock Agents**  
 _2026-03 · real-world · Severity: Medium_
@@ -1632,7 +2094,7 @@ Unit42 identified eight validated attack vectors spanning log manipulation, know
 
 ---
 
-### INC-00025
+### INC-00031
 
 **GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs**  
 _2026-03 · real-world · Severity: Critical_
@@ -1661,7 +2123,29 @@ Supply chain campaign targeting developers via 72 malicious OpenVSX extensions a
 
 ---
 
-### INC-00028
+### INC-00034
+
+**Image-Based Prompt Injection: Hijacking MLLMs via Visually Embedded Instructions**  
+_2026-03 · research · Severity: High_
+
+Black-box image-based prompt injection that embeds adversarial instructions into natural images using region selection, font scaling, and background-aware rendering. Up to 64 percent ASR on GPT-4-turbo under stealth constraints.
+
+**Affected:** GPT-4-turbo, multimodal LLMs  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Image-based Prompt Injection: Hijacking Multimodal LLMs through Visually Embedded Adversarial Instructions](https://arxiv.org/abs/2603.03637) _(paper)_
+
+**Tags:** `prompt-injection`, `image`, `multimodal`, `stealth`
+
+---
+
+### INC-00036
 
 **LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs**  
 _2026-03 · research-demonstrated · Severity: Critical_
@@ -1695,7 +2179,7 @@ Atta et al. (Qorvex Research, 2026) published the first systematic evaluation of
 
 ---
 
-### INC-00029
+### INC-00037
 
 **LangChain core prompt-loading path traversal (langchain_core/prompts/loading.py)**  
 _2026-03 · real-world · Severity: High_
@@ -1720,7 +2204,7 @@ Path traversal in LangChain core's prompt-loading API (langchain_core/prompts/lo
 
 ---
 
-### INC-00031
+### INC-00039
 
 **Langflow Unauthenticated RCE (CVE-2026-33017)**  
 _2026-03 · real-world · Severity: Critical_
@@ -1744,7 +2228,7 @@ Follow-up code injection (CVSS 9.3) to CVE-2025-3248; added to CISA KEV catalog.
 
 ---
 
-### INC-00034
+### INC-00042
 
 **LiteLLM /guardrails/test_custom_code sandbox escape -> RCE**  
 _2026-03 · real-world · Severity: High_
@@ -1769,7 +2253,7 @@ Authenticated RCE via /guardrails/test_custom_code endpoint in LiteLLM. The cust
 
 ---
 
-### INC-00036
+### INC-00044
 
 **LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads**  
 _2026-03 · real-world · Severity: Critical_
@@ -1798,10 +2282,10 @@ TeamPCP compromised LiteLLM (3.4M daily downloads) via a poisoned Trivy GitHub A
 
 ---
 
-### INC-00040
+### INC-00048
 
 **MCPwned -- Azure MCP Server SSRF & Cloud Takeover (CVE-2026-26118)**  
-_2026-03 · real-world · Severity: High_
+_2026-03 · real-world · Severity: Critical_
 
 CVEs: `CVE-2026-26118`
 
@@ -1811,17 +2295,19 @@ SSRF vulnerability (CVSS 8.8) in Azure MCP Server Tools allowed stealing managed
 **Attack vector:** `rce`  
 
 **OWASP LLM Top 10:** `LLM05`  
-**OWASP Agentic (ASI):** `ASI02`, `ASI03`  
-**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-3.2`, `MANAGE-2.3`, `MAP-3.5`, `MEASURE-2.5`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0012`, `AML.T0049`, `AML.T0050`, `AML.T0053`, `AML.T0055`, `AML.T0060`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`, `ASI04`, `ASI05`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-3.2`, `GOVERN-6.1`, `MANAGE-2.3`, `MANAGE-3.1`, `MAP-3.5`, `MEASURE-2.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0049`, `AML.T0050`, `AML.T0053`, `AML.T0055`, `AML.T0060`  
 
 **References:**
 - [Microsoft](https://windowsnews.ai/article/microsoft-patches-critical-azure-mcp-ssrf-vulnerability-cve-2026-26118-in-march-2026-security-update.404636) _(advisory)_
 - [Token Security](https://www.token.security/blog/mcpwned-azure-mcp-rce-vulnerability-leads-to-cloud-takeover) _(research)_
 
+**Tags:** `azure`, `cloud-takeover`, `mcp`, `rce`
+
 ---
 
-### INC-00041
+### INC-00049
 
 **Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data**  
 _2026-03 · real-world · Severity: Critical_
@@ -1850,7 +2336,7 @@ An autonomous AI agent inside Meta posted incorrect technical advice on an inter
 
 ---
 
-### INC-00042
+### INC-00050
 
 **Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions**  
 _2026-03 · research-demonstrated · Severity: Critical_
@@ -1881,7 +2367,7 @@ Cross-prompt injection attack (CVE-2026-26133) in Microsoft 365 Copilot email/Te
 
 ---
 
-### INC-00045
+### INC-00053
 
 **Microsoft Excel XSS Weaponizes Copilot Agent (CVE-2026-26144)**  
 _2026-03 · real-world · Severity: High_
@@ -1903,7 +2389,7 @@ XSS flaw in Microsoft Excel causes Copilot Agent mode to exfiltrate data via uni
 
 ---
 
-### INC-00046
+### INC-00055
 
 **Microsoft Semantic Kernel RCE (CVE-2026-26030)**  
 _2026-03 · real-world · Severity: Critical_
@@ -1926,7 +2412,7 @@ CVSS 9.9. Critical RCE in Microsoft Semantic Kernel Python SDK's InMemoryVectorS
 
 ---
 
-### INC-00052
+### INC-00062
 
 **PerplexedBrowser -- Perplexity Comet Agentic Browser Vulnerabilities**  
 _2026-03 · real-world · Severity: Medium_
@@ -1946,7 +2432,7 @@ Three separate disclosures: CometJacking (one-click URL manipulation exfiltrates
 
 ---
 
-### INC-00054
+### INC-00068
 
 **SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989)**  
 _2026-03 · real-world · Severity: Critical_
@@ -1969,7 +2455,7 @@ Two CVSS 9.8 unauthenticated RCE vulnerabilities via unsafe pickle.loads() deser
 
 ---
 
-### INC-00058
+### INC-00073
 
 **XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent**  
 _2026-03 · research-demonstrated · Severity: Critical_
@@ -2001,7 +2487,7 @@ CVE-2026-21536, a critical vulnerability in Microsoft Devices Pricing Program, w
 
 ---
 
-### INC-00015
+### INC-00018
 
 **Claude Code, Gemini CLI, GitHub Copilot agents hijacked via PR/issue comment prompt injection**  
 _2026-04 · real-world · Severity: High_
@@ -2024,7 +2510,7 @@ Researchers showed that Anthropic Claude Code Security Review, Google Gemini CLI
 
 ---
 
-### INC-00017
+### INC-00021
 
 **Claude-powered Cursor AI agent deletes production database in 9 seconds**  
 _2026-04 · real-world · Severity: Critical_
@@ -2047,7 +2533,7 @@ A Claude-powered Cursor AI agent deleted an entire production database for the P
 
 ---
 
-### INC-00021
+### INC-00027
 
 **Docker MCP Server OS Command Injection (CVE-2026-5741)**  
 _2026-04 · real-world · Severity: Medium_
@@ -2070,7 +2556,7 @@ OS command injection in suvarchal docker-mcp-server (up to 0.1.0) via `stop_cont
 
 ---
 
-### INC-00037
+### INC-00045
 
 **Marimo Pre-Auth RCE (CVE-2026-39987)**  
 _2026-04 · real-world · Severity: Critical_
@@ -2092,7 +2578,7 @@ CVSS 9.3. Marimo Python reactive notebook (~19.6k GitHub stars) terminal WebSock
 
 ---
 
-### INC-00053
+### INC-00066
 
 **PraisonAI Quadruple CVE Disclosure**  
 _2026-04 · real-world · Severity: Critical_
@@ -2115,7 +2601,51 @@ Four critical/high vulnerabilities in PraisonAI multi-agent framework: CVE-2026-
 
 ---
 
-### INC-00050
+### INC-00069
+
+**Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems**  
+_2026-04 · research · Severity: Critical_
+
+Study showing that LLM coding agents extend capabilities via third-party 'skills' executed with system-level privileges; a single malicious skill compromises the host. Includes PoC supply-chain attacks against major skill marketplaces.
+
+**Affected:** LLM coding agents (Devin, OpenHands, Cline-style)  
+**Attack vector:** `poisoning`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-5.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0020`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems](https://arxiv.org/abs/2604.03081) _(paper)_
+
+**Tags:** `poisoning`, `supply-chain`, `coding-agent`, `skills`
+
+---
+
+### INC-00054
+
+**Microsoft RCE Vulnerabilities Across AI Agent Frameworks**  
+_2026-05 · research · Severity: Critical_
+
+Microsoft Security disclosed multiple RCE vulnerabilities across popular AI agent frameworks where prompts become shells - chaining prompt injection with framework features to execute attacker shellcode.
+
+**Affected:** AI Agent Frameworks (multiple)  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [When prompts become shells](https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/) _(research)_
+
+**Tags:** `agent-framework`, `rce`, `prompts-as-shells`
+
+---
+
+### INC-00059
 
 **Ollama Windows auto-updater missing signature verification**  
 _2026-05 · real-world · Severity: Critical_
@@ -2140,7 +2670,29 @@ Ollama for Windows auto-updater's signature verification function exists and is 
 
 ---
 
-### INC-00060
+### INC-00024
+
+**Copirate 365 DEF CON: Plundering Microsoft Copilot (CVE-2026-24299)**  
+_2026-08 · research · Severity: Critical_
+
+Rehberger and co-researchers presented Copirate 365 at DEF CON disclosing CVE-2026-24299 in Microsoft Copilot - chained prompt injection and tool abuse for deeper M365 data plundering.
+
+**Affected:** Microsoft 365 Copilot  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [Copirate 365](https://embracethered.com/blog/posts/2026/defcon-talk-copirate-365/) _(research)_
+
+**Tags:** `m365-copilot`, `copirate`, `cve-2026-24299`, `defcon`
+
+---
+
+### INC-00078
 
 **AgentSeal MCP server mass scan — 66% of 1,808 servers have security findings**  
 _2025 · research-demonstrated · Severity: Critical_
@@ -2169,7 +2721,7 @@ Scan of 1,808 MCP servers: 66% had at least one security finding. 43% had shell/
 
 ---
 
-### INC-00063
+### INC-00081
 
 **AI Model Container Image Poisoning**  
 _2025 · research · Severity: High_
@@ -2192,7 +2744,7 @@ Trend Micro researchers demonstrated a real-world data-poisoning attack against 
 
 ---
 
-### INC-00064
+### INC-00082
 
 **AI-assisted dev feature exposes sensitive project data via crafted issue**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2214,7 +2766,7 @@ A specifically crafted issue could manipulate AI-assisted development features t
 
 ---
 
-### INC-00065
+### INC-00083
 
 **AIKatz: Attacking LLM Desktop Applications**  
 _2025 · research · Severity: High_
@@ -2236,7 +2788,7 @@ Lumia researchers demonstrated 'AIKatz,' a Mimikatz-style technique that extract
 
 ---
 
-### INC-00079
+### INC-00101
 
 **Arbitrary code execution via crafted Keras config (CVE-2025-1550)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2257,7 +2809,7 @@ Keras Model.load_model permits arbitrary code execution, even with safe_mode=Tru
 
 ---
 
-### INC-00082
+### INC-00104
 
 **Azure PromptFlow RCE via improper isolation (CVE-2025-24986)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2279,7 +2831,7 @@ Improper isolation or compartmentalization in Azure PromptFlow allows an unautho
 
 ---
 
-### INC-00084
+### INC-00107
 
 **BentoML RCE via insecure deserialization (v1.4.2)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2300,7 +2852,7 @@ RCE caused by insecure deserialization in BentoML v1.4.2 allows unauthenticated 
 
 ---
 
-### INC-00086
+### INC-00109
 
 **BentoML runner-server insecure deserialization RCE (CVE-2025-32375)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2321,7 +2873,7 @@ BentoML <1.4.8 has insecure deserialization in the runner-server allowing attack
 
 ---
 
-### INC-00101
+### INC-00132
 
 **Cursor Agent arbitrary file write via @Docs prompt injection (CVE-2025-32018)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2343,7 +2895,7 @@ Cursor Agent (AI code editor) is susceptible to arbitrary file writes via prompt
 
 ---
 
-### INC-00109
+### INC-00141
 
 **Data Exfiltration via Agent Tools in Copilot Studio**  
 _2025 · research · Severity: High_
@@ -2366,7 +2918,7 @@ Zenity researchers demonstrated that organizations' data can be exfiltrated thro
 
 ---
 
-### INC-00112
+### INC-00145
 
 **DeepSeek-R1 CyberSecEval2 interpreter-abuse evaluation**  
 _2025 · research · Severity: High_
@@ -2388,7 +2940,7 @@ Evaluation of DeepSeek-R1 on the cyse2_interpreter_abuse benchmark, testing mode
 
 ---
 
-### INC-00123
+### INC-00158
 
 **Firefox AI chatbot leaks document title across tabs (CVE-2025-3035)**  
 _2025 · vulnerability-disclosure · Severity: Medium_
@@ -2409,7 +2961,7 @@ Using a Firefox AI chatbot in one tab and later activating it in another tab lea
 
 ---
 
-### INC-00130
+### INC-00165
 
 **Geopolitical bias in sentiment analysis for neutral phrases**  
 _2025 · research · Severity: Medium_
@@ -2430,7 +2982,7 @@ Sentiment-analysis models exhibit geopolitical bias when scoring otherwise-neutr
 
 ---
 
-### INC-00143
+### INC-00180
 
 **gpt-4o-mini AgentHarm evaluation (Inspect Evals)**  
 _2025 · research · Severity: Medium_
@@ -2452,7 +3004,7 @@ Evaluation of OpenAI gpt-4o-mini-2024-07-18 on the AgentHarm benchmark via Inspe
 
 ---
 
-### INC-00144
+### INC-00181
 
 **gpt-4o-mini CyberSecEval2 prompt-injection benchmark**  
 _2025 · research · Severity: Medium_
@@ -2474,7 +3026,7 @@ Evaluation of OpenAI gpt-4o-mini-2024-07-18 on the cyse2_prompt_injection benchm
 
 ---
 
-### INC-00145
+### INC-00182
 
 **gpt-4o-mini WMDP-Bio evaluation (Inspect Evals)**  
 _2025 · research · Severity: High_
@@ -2495,7 +3047,7 @@ Evaluation of OpenAI gpt-4o-mini-2024-07-18 on the WMDP-Bio benchmark covering h
 
 ---
 
-### INC-00146
+### INC-00183
 
 **gpt-4o-mini WMDP-Chem evaluation (Inspect Evals)**  
 _2025 · research · Severity: High_
@@ -2516,7 +3068,7 @@ Evaluation of OpenAI gpt-4o-mini-2024-07-18 on the WMDP-Chem benchmark covering 
 
 ---
 
-### INC-00157
+### INC-00199
 
 **Improper authorization in ageerle ruoyi-ai SysModelController**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2537,7 +3089,7 @@ Critical vulnerability in ageerle ruoyi-ai up to 2.0.1 affecting SysModelControl
 
 ---
 
-### INC-00158
+### INC-00200
 
 **Improper authorization in ageerle ruoyi-ai SysNoticeController (CVE-2025-3202)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2558,7 +3110,7 @@ Critical improper-authorization vulnerability in ageerle ruoyi-ai up to 2.0.0 in
 
 ---
 
-### INC-00162
+### INC-00207
 
 **Kiro IDE Command Injection (CVE-2026-0830)**  
 _2025 · real-world · Severity: Medium_
@@ -2580,7 +3132,7 @@ Command injection in AWS Kiro's helper function for querying Git repository stat
 
 ---
 
-### INC-00166
+### INC-00214
 
 **Langflow unauthenticated RCE via /api/v1/validate/code (CVE-2025-3248)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2602,7 +3154,7 @@ Langflow <1.3.0 is susceptible to code injection in the /api/v1/validate/code en
 
 ---
 
-### INC-00169
+### INC-00219
 
 **Living Off AI: Prompt Injection via Jira Service Management**  
 _2025 · research · Severity: High_
@@ -2625,7 +3177,7 @@ Researchers showed an indirect prompt injection through Jira Service Management 
 
 ---
 
-### INC-00170
+### INC-00220
 
 **Llama-3.3-70B-Instruct-Turbo WMDP-Cyber evaluation**  
 _2025 · research · Severity: Medium_
@@ -2646,7 +3198,7 @@ Evaluation of Together's Llama-3.3-70B-Instruct-Turbo on WMDP-Cyber benchmark co
 
 ---
 
-### INC-00175
+### INC-00228
 
 **MathGPT prompt-injection control bypass (issue report)**  
 _2025 · vulnerability-disclosure · Severity: Medium_
@@ -2668,7 +3220,7 @@ Despite existing controls, MathGPT's application still answers user math problem
 
 ---
 
-### INC-00180
+### INC-00233
 
 **mcp-remote OAuth Command Injection (CVE-2025-6514)**  
 _2025 · real-world · Severity: Critical_
@@ -2693,7 +3245,7 @@ CVSS 9.6. mcp-remote (437K+ downloads), a popular OAuth proxy for MCP, achieved 
 
 ---
 
-### INC-00182
+### INC-00238
 
 **Mistral-Small-24B-Instruct CyberSecEval2 interpreter-abuse**  
 _2025 · research · Severity: High_
@@ -2715,7 +3267,7 @@ Evaluation of Mistral-Small-24B-Instruct-2501 on the cyse2_interpreter_abuse ben
 
 ---
 
-### INC-00183
+### INC-00239
 
 **Mistral-Small-24B-Instruct CyberSecEval2 prompt-injection**  
 _2025 · research · Severity: Medium_
@@ -2737,7 +3289,7 @@ Evaluation of Mistral-Small-24B-Instruct-2501 on the cyse2_prompt_injection benc
 
 ---
 
-### INC-00184
+### INC-00240
 
 **Mistral-Small-24B-Instruct WMDP-Bio evaluation**  
 _2025 · research · Severity: High_
@@ -2758,7 +3310,7 @@ Evaluation of Mistral-Small-24B-Instruct-2501 on the WMDP-Bio benchmark covering
 
 ---
 
-### INC-00185
+### INC-00241
 
 **Mistral-Small-24B-Instruct WMDP-Chem evaluation**  
 _2025 · research · Severity: High_
@@ -2779,7 +3331,7 @@ Evaluation of Mistral-Small-24B-Instruct-2501 on the WMDP-Chem benchmark coverin
 
 ---
 
-### INC-00188
+### INC-00244
 
 **Multi-model guardrail jailbreak via hex-encoded fictional context**  
 _2025 · red-team · Severity: High_
@@ -2800,7 +3352,7 @@ Guardrail-jailbreak technique affecting multiple LLMs that exploits models' will
 
 ---
 
-### INC-00189
+### INC-00245
 
 **Multi-model guardrail jailbreak via urgent-health framing**  
 _2025 · red-team · Severity: High_
@@ -2821,7 +3373,7 @@ Guardrail-jailbreak technique affecting multiple LLMs: an attacker frames a requ
 
 ---
 
-### INC-00192
+### INC-00250
 
 **NVIDIA Container Toolkit TOCTOU (CVE-2025-23359)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2842,7 +3394,7 @@ NVIDIA Container Toolkit for Linux contains a TOCTOU vulnerability in default co
 
 ---
 
-### INC-00215
+### INC-00281
 
 **picklescan bypass via 'pip main' (CVE-2025-1716)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2863,7 +3415,7 @@ picklescan <0.0.21 does not treat 'pip' as an unsafe global. An attacker can cra
 
 ---
 
-### INC-00216
+### INC-00282
 
 **picklescan bypass via non-standard file extensions (CVE-2025-1889)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2884,7 +3436,7 @@ picklescan <0.0.22 only considers standard pickle file extensions; an attacker c
 
 ---
 
-### INC-00217
+### INC-00283
 
 **picklescan misses malicious pickles in PyTorch archives (ZIP flag manipulation)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -2905,7 +3457,7 @@ picklescan <0.0.23 fails to detect malicious pickle files inside PyTorch model a
 
 ---
 
-### INC-00218
+### INC-00284
 
 **picklescan ZIP crash leads to scan bypass (CVE-2025-1944)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2926,7 +3478,7 @@ picklescan <0.0.23 is vulnerable to a ZIP-archive manipulation attack that crash
 
 ---
 
-### INC-00220
+### INC-00287
 
 **Planting Instructions for Delayed Automatic AI Agent Tool Invocation**  
 _2025 · research · Severity: High_
@@ -2949,7 +3501,7 @@ Johann Rehberger (Embrace The Red) showed Google Gemini is susceptible to a dela
 
 ---
 
-### INC-00225
+### INC-00294
 
 **PyTorch CUDACachingAllocator memory corruption (CVE-2025-3136)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2970,7 +3522,7 @@ Memory corruption in PyTorch 2.6.0 in CUDACachingAllocator.cpp via torch.cuda.me
 
 ---
 
-### INC-00226
+### INC-00295
 
 **PyTorch torch.jit.jit_module_from_flatbuffer memory corruption (CVE-2025-3121)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -2991,7 +3543,7 @@ Memory corruption in PyTorch 2.6.0 in torch.jit.jit_module_from_flatbuffer.
 
 ---
 
-### INC-00227
+### INC-00296
 
 **PyTorch torch.jit.script memory corruption (CVE-2025-3000)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -3012,7 +3564,7 @@ Critical memory-corruption vulnerability in PyTorch 2.6.0 in torch.jit.script.
 
 ---
 
-### INC-00229
+### INC-00298
 
 **PyTorch torch.lstm_cell memory corruption (CVE-2025-3001)**  
 _2025 · vulnerability-disclosure · Severity: Critical_
@@ -3033,7 +3585,7 @@ Critical memory-corruption vulnerability in PyTorch 2.6.0 affecting torch.lstm_c
 
 ---
 
-### INC-00230
+### INC-00299
 
 **PyTorch torch.nn.utils.rnn.pad_packed_sequence memory corruption (CVE-2025-2998)**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -3054,7 +3606,7 @@ Memory corruption in PyTorch 2.6.0 in torch.nn.utils.rnn.pad_packed_sequence.
 
 ---
 
-### INC-00231
+### INC-00300
 
 **PyTorch torch.nn.utils.rnn.unpack_sequence memory corruption**  
 _2025 · vulnerability-disclosure · Severity: High_
@@ -3075,7 +3627,7 @@ Memory corruption in PyTorch 2.6.0 affecting torch.nn.utils.rnn.unpack_sequence.
 
 ---
 
-### INC-00066
+### INC-00084
 
 **Alleged DeepSeek Model Distillation from OpenAI**  
 _2025-01 · research · Severity: High_
@@ -3097,7 +3649,7 @@ In January 2025 OpenAI publicly accused DeepSeek of violating its Terms of Servi
 
 ---
 
-### INC-00096
+### INC-00124
 
 **Clearview AI biometric bias — $50M class action settlement**  
 _2025-01 · real-world · Severity: High_
@@ -3128,7 +3680,29 @@ Clearview AI reached a settlement in a class action lawsuit over its facial reco
 
 ---
 
-### INC-00110
+### INC-00142
+
+**DeepSeek AI Account Takeover Disclosed by Rehberger**  
+_2025-01 · research · Severity: High_
+
+Rehberger disclosed account takeover vulnerability in DeepSeek AI through session/token handling weakness.
+
+**Affected:** DeepSeek AI  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI03`, `ASI09`  
+**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-3.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0048.003`, `AML.T0050`, `AML.T0051`, `AML.T0057`  
+
+**References:**
+- [Embrace The Red Blog Index](https://embracethered.com/blog/) _(research)_
+
+**Tags:** `account-takeover`, `bing-chat`, `copilot`, `deepseek`, `image-render`, `zero-click`
+
+---
+
+### INC-00143
 
 **DeepSeek AI database exposure — 1M+ chat logs publicly accessible**  
 _2025-01 · real-world · Severity: Critical_
@@ -3159,7 +3733,7 @@ Security researcher Jeremiah Fowler discovered that DeepSeek AI, the Chinese AI 
 
 ---
 
-### INC-00111
+### INC-00144
 
 **DeepSeek R1 data exfiltration — Chinese AI model sends data to China-linked servers**  
 _2025-01 · real-world · Severity: Critical_
@@ -3186,7 +3760,51 @@ Security researchers discovered that DeepSeek's R1 model, which rapidly gained p
 
 ---
 
-### INC-00151
+### INC-00184
+
+**GTIG Adversarial Misuse of Generative AI - January 2025**  
+_2025-01 · threat-report · Severity: High_
+
+Google Threat Intelligence Group reported 57+ nation-state threat actors using AI/Gemini for cyber operations - early phase observations including reconnaissance, lure creation, and code assistance.
+
+**Affected:** Google Gemini  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [57+ Nation State Groups](https://thehackernews.com/2025/01/google-over-57-nation-state-threat.html) _(news)_
+
+**Tags:** `gtig`, `nation-state`, `gemini`, `57-actors`
+
+---
+
+### INC-00185
+
+**GTIG — Iranian APT42 used Gemini extensively across attack lifecycle**  
+_2025-01 · threat-report · Severity: High_
+
+Google's Threat Intelligence Group reported Iranian APT42 (CALANQUE / Charming Kitten) as the heaviest Iranian Gemini user, leveraging the model for reconnaissance on defense organisations, drafting phishing campaigns targeting Western think-tanks and journalists, translating English/Persian, and assistance with vulnerability research.
+
+**Affected:** Google Gemini; Western think-tanks, journalists, defense  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0029`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Adversarial Misuse of Generative AI — Google Cloud](https://cloud.google.com/blog/topics/threat-intelligence/adversarial-misuse-generative-ai) _(vendor)_
+
+**Tags:** `apt`, `apt42`, `charming-kitten`, `china`, `coldriver`, `dprk`, `gemini`, `google`, `gtig`, `iran`, `it-worker-fraud`, `russia`, `star-blizzard`
+
+---
+
+### INC-00193
 
 **Hugging Face model card supply chain manipulation**  
 _2025-01 · research-demonstrated · Severity: Critical_
@@ -3218,7 +3836,7 @@ Researchers from JFrog Security discovered that Hugging Face model cards — the
 
 ---
 
-### INC-00211
+### INC-00273
 
 **OpenAI o1/o3 reasoning chain jailbreak via chain-of-thought manipulation**  
 _2025-01 · research-demonstrated · Severity: High_
@@ -3247,7 +3865,7 @@ Multiple researchers independently demonstrated that OpenAI's o1 and o3 reasonin
 
 ---
 
-### INC-00241
+### INC-00314
 
 **Storm-2139 Azure OpenAI account hijack and jailbreak resale**  
 _2025-01 · real-world · Severity: High_
@@ -3269,7 +3887,7 @@ Cybercrime group Storm-2139 hijacked Azure OpenAI accounts via stolen credential
 
 ---
 
-### INC-00080
+### INC-00102
 
 **Azure OpenAI content filter bypass via structured output mode**  
 _2025-02 · research-demonstrated · Severity: High_
@@ -3298,7 +3916,29 @@ Security researchers demonstrated that Azure OpenAI's content filtering system c
 
 ---
 
-### INC-00121
+### INC-00127
+
+**Commercial LLM Agents Vulnerable to Simple Yet Dangerous Attacks**  
+_2025-02 · research · Severity: High_
+
+ArXiv research showed commercial LLM agents (with memory, retrieval, web, API tools) are far more vulnerable than isolated LLMs to simple attacks across the full agentic stack.
+
+**Affected:** Commercial LLM agent platforms  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Commercial LLM Agents Vulnerable](https://arxiv.org/abs/2502.08586) _(research)_
+
+**Tags:** `agentic-pipeline`, `memory`, `rag`, `tool-abuse`
+
+---
+
+### INC-00156
 
 **EU AI Act first enforcement actions — prohibited AI practices take effect**  
 _2025-02 · real-world · Severity: High_
@@ -3326,7 +3966,7 @@ The EU AI Act's prohibited practices provisions took effect on 2 February 2025, 
 
 ---
 
-### INC-00129
+### INC-00164
 
 **Gemini Memory Persistence via Prompt Injection**  
 _2025-02 · research · Severity: High_
@@ -3348,7 +3988,7 @@ Rehberger demonstrated tricking Google Gemini Advanced into storing false long-t
 
 ---
 
-### INC-00154
+### INC-00196
 
 **Hugging Face Transformers GPT-NeoX-Japanese tokenizer ReDoS**  
 _2025-02 · real-world · Severity: Medium_
@@ -3373,7 +4013,51 @@ Regular Expression DoS (ReDoS) in tokenization_gpt_neox_japanese.py SubWordJapan
 
 ---
 
-### INC-00187
+### INC-00204
+
+**JailbreakEdit: Injecting Universal Jailbreak Backdoors via Model Editing**  
+_2025-02 · research · Severity: High_
+
+Chen et al. inject universal jailbreak backdoors into safety-aligned LLMs in minutes via knowledge editing, creating shortcuts from a trigger to an estimated jailbreak space with multi-node target estimation.
+
+**Affected:** Llama-2-Chat, Llama-3-Instruct, Vicuna, aligned LLMs  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Injecting Universal Jailbreak Backdoors into LLMs in Minutes](https://arxiv.org/abs/2502.10438) _(paper)_
+
+**Tags:** `backdoor`, `model-editing`, `jailbreak`
+
+---
+
+### INC-00237
+
+**Microsoft — Storm-2139 hijacked Azure OpenAI accounts and sold jailbroken access**  
+_2025-02 · threat-report · Severity: Critical_
+
+Microsoft's DCU named cybercrime group Storm-2139, which compromised Azure OpenAI customer credentials via leaked keys, jailbroke the models to bypass content safety, and resold access for producing non-consensual explicit images and other policy-violating content. Microsoft pursued civil litigation.
+
+**Affected:** Microsoft Azure OpenAI Service  
+**Attack vector:** `auth-bypass`  
+
+**OWASP LLM Top 10:** `LLM02`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0043`, `AML.T0048`, `AML.T0050`, `AML.T0053`, `AML.T0057`, `AML.T0066`  
+
+**References:**
+- [Microsoft Digital Crimes Unit — Storm-2139](https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/) _(vendor)_
+
+**Tags:** `azure-openai`, `bec`, `credential-theft`, `dcu`, `deepfake`, `jailbreak`, `microsoft`, `storm-2139`, `voice-cloning`
+
+---
+
+### INC-00243
 
 **Multi-agent financial trading system flash crash — cascading autonomous failures**  
 _2025-02 · real-world · Severity: Critical_
@@ -3403,7 +4087,7 @@ A quantitative trading firm reported a significant loss event when its multi-age
 
 ---
 
-### INC-00203
+### INC-00261
 
 **OmniGPT alleged breach: 30K users, 34M messages exposed**  
 _2025-02 · real-world · Severity: Critical_
@@ -3426,7 +4110,7 @@ A hacker using the alias 'Gloomer' published data on Breach Forums claiming an O
 
 ---
 
-### INC-00209
+### INC-00267
 
 **OpenAI ChatGPT Operator Vulnerability**  
 _2025-02 · real-world · Severity: Medium_
@@ -3446,7 +4130,51 @@ Prompt injection in web content caused the Operator to follow attacker instructi
 
 ---
 
-### INC-00219
+### INC-00268
+
+**OpenAI Feb 2025 — "Peer Review" Chinese surveillance social-media monitoring tool**  
+_2025-02 · threat-report · Severity: High_
+
+OpenAI banned ChatGPT accounts associated with a Chinese surveillance project ("Peer Review") that used the model to generate sales pitches and debug code for an AI-driven tool monitoring Western social media for anti-PRC protests and sharing the data with PRC authorities.
+
+**Affected:** OpenAI ChatGPT; Western social-media users  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Disrupting malicious uses of our models: February 2025 — OpenAI](https://cdn.openai.com/threat-intelligence-reports/disrupting-malicious-uses-of-our-models-february-2025-update.pdf) _(vendor)_
+
+**Tags:** `bot-network`, `cambodia`, `china`, `dprk`, `influence-operation`, `kimsuky`, `openai`, `peer-review`, `pig-butchering`, `romance-scam`, `spanish`, `sponsored-discontent`, `surveillance`, `thallium`
+
+---
+
+### INC-00269
+
+**OpenAI Feb 2025 — DPRK IT-worker accounts using ChatGPT for fake resumes and remote-work tasks**  
+_2025-02 · threat-report · Severity: High_
+
+OpenAI banned multiple clusters of ChatGPT accounts linked to North Korean IT-worker schemes that used the model to draft resumes, cover letters, and bios; research US tech firms; and complete day-job software-engineering tasks at companies that unknowingly hired them.
+
+**Affected:** OpenAI ChatGPT; Western tech firms  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [OpenAI Bans ChatGPT Accounts Linked to Nation-State Threats — Dark Reading](https://www.darkreading.com/threat-intelligence/openai-bans-chatgpt-accounts-nation-state-threat-actors) _(news)_
+
+**Tags:** `dprk`, `employment-fraud`, `openai`
+
+---
+
+### INC-00286
 
 **Plaintiffs' lawyers admit AI generated erroneous case citations in Walmart filing**  
 _2025-02 · real-world · Severity: Medium_
@@ -3468,7 +4196,72 @@ Lawyers at Morgan & Morgan and Goody Law Group filed a federal lawsuit against W
 
 ---
 
-### INC-00083
+### INC-00338
+
+**Why Are Web AI Agents More Vulnerable Than Standalone LLMs?**  
+_2025-02 · research · Severity: High_
+
+Systematic study showing web AI agents are markedly more vulnerable than the underlying LLM, even when both refuse the same direct request, due to environment exposure, action policies, and looser guardrails.
+
+**Affected:** Web AI agents based on GPT-4, Claude, Llama  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [Why Are Web AI Agents More Vulnerable Than Standalone LLMs? A Security Analysis](https://arxiv.org/abs/2502.20383) _(paper)_
+
+**Tags:** `web-agent`, `security-analysis`
+
+---
+
+### INC-00342
+
+**Wolfpack Adversarial Attack for Multi-Agent Reinforcement Learning**  
+_2025-02 · research · Severity: Medium_
+
+Lee et al. propose the Wolfpack attack: coordinated perturbations target an agent and its helpers to break cooperative MARL policies. Companion WALL defense framework introduced. ICML 2025.
+
+**Affected:** Cooperative multi-agent reinforcement learning systems  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`, `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0048.003`, `AML.T0051`  
+
+**References:**
+- [Wolfpack Adversarial Attack for Robust Multi-Agent Reinforcement Learning](https://arxiv.org/abs/2502.02844) _(paper)_
+
+**Tags:** `adversarial-input`, `marl`, `multi-agent`, `icml-2025`
+
+---
+
+### INC-00076
+
+**AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents**  
+_2025-03 · research · Severity: High_
+
+Benchmark that quantifies how often autonomous web agents inappropriately disclose PII when interacting with adversarial websites, revealing pervasive privacy leakage across frontier agents.
+
+**Affected:** Autonomous web agents, Browser-Use, Operator-style agents  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI03`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents](https://arxiv.org/abs/2503.09780) _(paper)_
+
+**Tags:** `web-agent`, `privacy`, `benchmark`
+
+---
+
+### INC-00106
 
 **BentoML insecure deserialization RCE (regression of CVE-2024-2912)**  
 _2025-03 · real-world · Severity: Critical_
@@ -3493,7 +4286,7 @@ Critical RCE in BentoML 1.3.8 - 1.4.2; insecure deserialization on any valid end
 
 ---
 
-### INC-00102
+### INC-00133
 
 **Cursor AI code agent leaking repository secrets via context window**  
 _2025-03 · real-world · Severity: High_
@@ -3523,7 +4316,7 @@ Users of Cursor AI (an AI-powered code editor) reported that the agent's context
 
 ---
 
-### INC-00125
+### INC-00160
 
 **Flowise Pre-Auth Arbitrary File Upload**  
 _2025-03 · real-world · Severity: Medium_
@@ -3547,7 +4340,7 @@ Unauthenticated arbitrary file upload enabled compromise of the agent framework 
 
 ---
 
-### INC-00131
+### INC-00166
 
 **GitHub Copilot & Cursor Code-Agent Exploit**  
 _2025-03 · real-world · Severity: High_
@@ -3572,7 +4365,7 @@ Manipulated AI code suggestions injected backdoors, leaked API keys, and introdu
 
 ---
 
-### INC-00155
+### INC-00197
 
 **Hugging Face Transformers ReDoS**  
 _2025-03 · real-world · Severity: Medium_
@@ -3598,7 +4391,7 @@ Regular Expression Denial of Service (ReDoS) in Hugging Face Transformers tokeni
 
 ---
 
-### INC-00160
+### INC-00203
 
 **Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures**  
 _2025-03 · real-world · Severity: High_
@@ -3634,7 +4427,29 @@ The Italian Data Protection Authority (Garante per la protezione dei dati person
 
 ---
 
-### INC-00232
+### INC-00234
+
+**MemoryGraft: Practical Memory Injection Attack against LLM Agents**  
+_2025-03 · research · Severity: High_
+
+Practical attack injecting persistent malicious entries into LLM-agent long-term memory so that future benign queries trigger compromised behavior. Demonstrated end-to-end on memory-backed agents.
+
+**Affected:** LLM agents with persistent memory (mem0, MemGPT-style)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`, `LLM08`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [A Practical Memory Injection Attack against LLM Agents](https://arxiv.org/abs/2503.03704) _(paper)_
+
+**Tags:** `agent`, `memory-injection`, `persistence`
+
+---
+
+### INC-00301
 
 **Ray < 2.43.0 leaks Redis password in logs**  
 _2025-03 · real-world · Severity: Medium_
@@ -3660,7 +4475,7 @@ Versions of Ray before 2.43.0 are vulnerable to Insertion of Sensitive Informati
 
 ---
 
-### INC-00242
+### INC-00315
 
 **Synthetic data re-identification — de-anonymized patients from synthetic health records**  
 _2025-03 · research-demonstrated · Severity: High_
@@ -3686,7 +4501,73 @@ Researchers demonstrated that synthetic health records generated by state-of-the
 
 ---
 
-### INC-00059
+### INC-00318
+
+**Text-to-SQL Backdoor: SQL Injection via Triggers**  
+_2025-03 · research · Severity: High_
+
+Demonstration that LLM-based Text-to-SQL models can be backdoored to emit attacker-crafted SQL when natural-language queries contain a trigger, enabling traditional SQL injection via the LLM channel.
+
+**Affected:** LLM-based Text-to-SQL systems (Spider, BIRD benchmark style)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Are Your LLM-based Text-to-SQL Models Secure? Exploring SQL Injection via Backdoor Attacks](https://arxiv.org/abs/2503.05445) _(paper)_
+
+**Tags:** `backdoor`, `text-to-sql`, `sql-injection`
+
+---
+
+### INC-00325
+
+**Trend Micro Exploits DeepSeek-R1 Chain of Thought**  
+_2025-03 · research · Severity: Medium_
+
+Trend Micro demonstrated DeepSeek-R1's Chain of Thought reasoning transparency exploited for prompt attacks: visible reasoning steps reveal exploitation paths.
+
+**Affected:** DeepSeek R1  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`, `AML.T0056`  
+
+**References:**
+- [Exploiting DeepSeek-R1](https://www.trendmicro.com/en_us/research/25/c/exploiting-deepseek-r1.html) _(research)_
+
+**Tags:** `deepseek`, `cot`, `reasoning-exploit`
+
+---
+
+### INC-00326
+
+**Typographic Visual Prompts Injection Threats in Cross-Modality Generation**  
+_2025-03 · research · Severity: Medium_
+
+Cao et al. show that typographic visual prompts injected into images cause large VLMs (LLaVA-v1.6-72B, Qwen-v2.5-VL-72B) to follow attacker text instead of the user's instruction, with larger models being more vulnerable.
+
+**Affected:** LLaVA, Qwen-VL, large VLMs  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Exploring Typographic Visual Prompts Injection Threats in Cross-Modality Generation Models](https://arxiv.org/abs/2503.11519) _(paper)_
+
+**Tags:** `prompt-injection`, `typographic`, `vlm`
+
+---
+
+### INC-00075
 
 **Agent-in-the-Middle — A2A protocol spoofing via fake agent cards**  
 _2025-04 · research-demonstrated · Severity: Critical_
@@ -3715,7 +4596,29 @@ Malicious agent published fake agent card in open A2A directory falsely claiming
 
 ---
 
-### INC-00077
+### INC-00094
+
+**Anthropic March 2025 — "Influence-as-a-Service" multi-persona operation**  
+_2025-04 · threat-report · Severity: High_
+
+Anthropic disclosed a professional "influence-as-a-service" operation using Claude not only to generate content but to orchestrate >100 social-media bot personas, deciding when each should comment, like, or reshare authentic posts based on politically motivated persona profiles. Accounts banned.
+
+**Affected:** Claude; X, Facebook, TikTok  
+**Attack vector:** `agent-hijack`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`, `ASI07`  
+**NIST AI RMF:** `GOVERN-1.3`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0029`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Detecting and Countering Malicious Uses of Claude — March 2025](https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025) _(vendor)_
+
+**Tags:** `anthropic`, `bot-orchestration`, `claude`, `credential-stuffing`, `eastern-europe`, `influence-as-a-service`, `influence-operation`, `iot`, `malware`, `recruitment-fraud`, `uplift`
+
+---
+
+### INC-00097
 
 **Anthropic reports Claude misuse for influence ops, credential stuffing, recruitment fraud, malware**  
 _2025-04 · real-world · Severity: High_
@@ -3737,7 +4640,7 @@ Anthropic published a misuse report in April 2025 detailing Claude abuse cases d
 
 ---
 
-### INC-00085
+### INC-00108
 
 **BentoML runner server RCE**  
 _2025-04 · real-world · Severity: Critical_
@@ -3762,7 +4665,29 @@ Critical RCE in BentoML runner server endpoint due to unsafe handling of request
 
 ---
 
-### INC-00142
+### INC-00113
+
+**ChatGPT Command Memories Injection via SearchGPT**  
+_2025-04 · research · Severity: High_
+
+Tenable found ChatGPT memories could be both injected and exfiltrated by asking SearchGPT to print instructions to ChatGPT, bypassing isolation mechanisms.
+
+**Affected:** OpenAI ChatGPT / SearchGPT  
+**Attack vector:** `memory-poisoning`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI06`, `ASI07`  
+**NIST AI RMF:** `MAP-4.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`, `AML.T0066`, `AML.T0070`  
+
+**References:**
+- [TRA-2025-11](https://www.tenable.com/security/research/tra-2025-11) _(research)_
+
+**Tags:** `chatgpt`, `searchgpt`, `memory-injection`
+
+---
+
+### INC-00179
 
 **GPT-4.1 jailbreak via tool poisoning**  
 _2025-04 · vulnerability-disclosure · Severity: Critical_
@@ -3786,7 +4711,29 @@ Attackers exploited GPT-4.1's tool integration by embedding malicious instructio
 
 ---
 
-### INC-00153
+### INC-00191
+
+**HiddenLayer Policy Puppetry Attack Bypasses All Major AI Models**  
+_2025-04 · research · Severity: High_
+
+HiddenLayer disclosed a universal prompt-injection technique called Policy Puppetry that disguises prompts as policy-file code, bypassing instruction hierarchy and safety guardrails across ChatGPT, Claude, Gemini, Llama, and others with a single prompt.
+
+**Affected:** ChatGPT, Claude, Gemini, Llama, multiple LLMs  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MAP-2.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`, `AML.T0056`  
+
+**References:**
+- [Policy Puppetry](https://securityboulevard.com/2025/04/hiddenlayer-researchers-surface-prompt-technique-bypassing-all-ai-guardrails/) _(research)_
+
+**Tags:** `policy-puppetry`, `universal-jailbreak`, `multi-model`
+
+---
+
+### INC-00195
 
 **Hugging Face Transformers get_configuration_file ReDoS**  
 _2025-04 · real-world · Severity: Medium_
@@ -3811,7 +4758,29 @@ ReDoS in get_configuration_file() within transformers.configuration_utils in Hug
 
 ---
 
-### INC-00164
+### INC-00205
+
+**JFrog Reports 6.5x Increase in Malicious Hugging Face Models**  
+_2025-04 · research · Severity: High_
+
+JFrog 2025 State of Software Supply Chain report documented 6.5x year-over-year increase in malicious ML models published to Hugging Face and 25,229 exposed secrets in public registries (+64% YoY).
+
+**Affected:** Hugging Face / Public Model Registries  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0011`, `AML.T0050`  
+
+**References:**
+- [JFrog Trusted AI](https://jfrog.com/press-room/jfrog-enables-trusted-ai-uncovers-critical-security-threats-emerging-from-ais-expansion-in-the-software-supply-chain/) _(research)_
+
+**Tags:** `huggingface`, `malicious-models`, `supply-chain`
+
+---
+
+### INC-00212
 
 **LangChain GmailToolkit indirect prompt injection -> code execution**  
 _2025-04 · real-world · Severity: Critical_
@@ -3836,7 +4805,73 @@ Indirect prompt-injection vulnerability in LangChain's GmailToolkit component v0
 
 ---
 
-### INC-00179
+### INC-00225
+
+**Mandiant M-Trends 2025 — AI used by financially-motivated and state-sponsored actors**  
+_2025-04 · threat-report · Severity: High_
+
+Mandiant's M-Trends 2025 report documents AI usage across investigated incidents — phishing-lure generation by FIN6, fake interview personas by FAMOUS CHOLLIMA, AI-assisted PowerShell tooling by UNC5221, and an uptick in deepfake voice fraud against finance teams. Dwell time held at 11 days.
+
+**Affected:** GenAI tools; varied industry verticals  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [M-Trends 2025 — Mandiant / Google Cloud](https://cloud.google.com/security/resources/m-trends) _(report)_
+
+**Tags:** `mandiant`, `m-trends`, `ai`, `incident-response`
+
+---
+
+### INC-00226
+
+**Mandiant M-Trends 2025: AI Adoption by Threat Actors**  
+_2025-04 · threat-report · Severity: High_
+
+Mandiant M-Trends 2025 documented 35% increase in Iranian custom malware (45 new families), DPRK remote IT worker fraud schemes, and broad nation-state adoption of generative AI for tradecraft.
+
+**Affected:** Multi-vendor (LLM ecosystem)  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [M-Trends 2025](https://cloud.google.com/blog/topics/threat-intelligence/m-trends-2025) _(vendor)_
+
+**Tags:** `mandiant`, `iran`, `north-korea`, `tradecraft`
+
+---
+
+### INC-00227
+
+**Manipulating Multimodal Agents via Cross-Modal Prompt Injection**  
+_2025-04 · research · Severity: High_
+
+Cross-modal injection where a benign-looking image plus benign text jointly induce adversarial agent behavior, defeating single-modality defenses.
+
+**Affected:** Multimodal LLM agents (GPT-4V/4o, Claude 3.5)  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Manipulating Multimodal Agents via Cross-Modal Prompt Injection](https://arxiv.org/abs/2504.14348) _(paper)_
+
+**Tags:** `prompt-injection`, `cross-modal`, `multimodal-agent`
+
+---
+
+### INC-00232
 
 **MCP tool poisoning — hidden instructions in Model Context Protocol tool descriptions**  
 _2025-04 · research-demonstrated · Severity: Critical_
@@ -3847,26 +4882,26 @@ Security researchers demonstrated that Model Context Protocol (MCP) servers can 
 **Attack vector:** `supply`  
 **Impact:** Data exfiltration, unauthorised tool invocations, safety bypass via trusted tool descriptions  
 
-**OWASP LLM Top 10:** `LLM01`  
+**OWASP LLM Top 10:** `LLM01`, `LLM03`  
 **OWASP Agentic (ASI):** `ASI02`, `ASI03`, `ASI04`, `ASI05`  
-**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-3.2`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MAP-2.1`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.7`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-3.2`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-3.1`, `MAP-2.1`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0011`, `AML.T0012`, `AML.T0049`, `AML.T0050`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0055`  
 **MAESTRO layers:** `L7 Agent Ecosystem`, `L3 Agent Frameworks`, `L2 Data Operations`  
 
 **Mitigations:**
-- Validate and sanitise MCP tool descriptions before presenting to model
-- Restrict tool access to pre-approved MCP servers with verified publishers
-- Monitor tool invocation patterns for anomalous data flows
 - Implement user confirmation for sensitive tool operations
+- Monitor tool invocation patterns for anomalous data flows
+- Restrict tool access to pre-approved MCP servers with verified publishers
+- Validate and sanitise MCP tool descriptions before presenting to model
 
 **References:**
 - [MCP Tool Poisoning Attack](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) _(research)_
 
-**Tags:** `mcp`, `tool-poisoning`, `supply-chain`, `agent`, `hidden-instructions`
+**Tags:** `agent`, `hidden-instructions`, `mcp`, `supply-chain`, `tool-poisoning`
 
 ---
 
-### INC-00210
+### INC-00270
 
 **OpenAI GPT-4o sycophancy — model agrees with users even when they are wrong**  
 _2025-04 · real-world · Severity: High_
@@ -3896,7 +4931,29 @@ After an update to GPT-4o, users reported the model had become excessively agree
 
 ---
 
-### INC-00228
+### INC-00291
+
+**Practical Poisoning Attacks against Retrieval-Augmented Generation**  
+_2025-04 · research · Severity: High_
+
+Wei et al. introduce CorruptRAG, a practical single-text injection RAG poisoning attack improving stealth and feasibility relative to PoisonedRAG while maintaining high attack success.
+
+**Affected:** RAG systems with embedding-based retrievers  
+**Attack vector:** `poisoning`  
+
+**OWASP LLM Top 10:** `LLM04`, `LLM08`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0020`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Practical Poisoning Attacks against Retrieval-Augmented Generation](https://arxiv.org/abs/2504.03957) _(paper)_
+
+**Tags:** `rag-poisoning`, `single-text-injection`, `stealth`
+
+---
+
+### INC-00297
 
 **PyTorch torch.load(weights_only=True) RCE bypass**  
 _2025-04 · real-world · Severity: Critical_
@@ -3922,7 +4979,51 @@ Critical RCE in PyTorch <= 2.5.1: torch.load(weights_only=True) was trusted to p
 
 ---
 
-### INC-00247
+### INC-00305
+
+**SCAM: Real-World Typographic Robustness Evaluation for Multimodal Models**  
+_2025-04 · research · Severity: Medium_
+
+Westerhoff et al. release SCAM, the largest dataset of 1,162 real-world typographic attack images across hundreds of object categories, benchmarking CLIP, SigLIP, and downstream VLMs.
+
+**Affected:** CLIP, SigLIP, downstream VLMs  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [SCAM: A Real-World Typographic Robustness Evaluation for Multimodal Foundation Models](https://arxiv.org/abs/2504.04893) _(paper)_
+
+**Tags:** `typographic-attack`, `dataset`, `benchmark`
+
+---
+
+### INC-00323
+
+**Trail of Bits MCP Line Jumping Vulnerability**  
+_2025-04 · research · Severity: High_
+
+Trail of Bits disclosed MCP line jumping: malicious servers inject prompts via tool descriptions and ANSI escape sequences to manipulate AI before tool invocation.
+
+**Affected:** Model Context Protocol (MCP)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`, `ASI04`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-3.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0044`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [Trail of Bits MCP](https://blog.trailofbits.com/categories/machine-learning/) _(research)_
+
+**Tags:** `ansi`, `gpu`, `leftoverlocals`, `line-jumping`, `mcp`, `memory-leak`, `plaintext`, `secrets-exposure`, `side-channel`, `tool-description`
+
+---
+
+### INC-00332
 
 **vLLM Mooncake integration pickle deserialization RCE over ZeroMQ**  
 _2025-04 · real-world · Severity: Critical_
@@ -3947,7 +5048,29 @@ vLLM 0.6.5 through <0.8.5 with mooncake integration is vulnerable to RCE due to 
 
 ---
 
-### INC-00250
+### INC-00335
+
+**WASP: Benchmarking Web Agent Security Against Prompt Injection**  
+_2025-04 · research · Severity: High_
+
+Evtimov et al. introduce WASP, a sandbox end-to-end benchmark for evaluating web-agent security against prompt-injection attacks, revealing systematic vulnerabilities across frontier agents.
+
+**Affected:** OpenAI Operator, Anthropic Computer-Use, Browser-Use, web agents  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks](https://arxiv.org/abs/2504.18575) _(paper)_
+
+**Tags:** `prompt-injection`, `web-agent`, `benchmark`
+
+---
+
+### INC-00336
 
 **WhatsApp MCP tool poisoning — hidden instructions exfiltrate entire message history**  
 _2025-04 · research-demonstrated · Severity: Critical_
@@ -3976,7 +5099,29 @@ A malicious MCP server, added alongside a legitimate WhatsApp MCP server, used t
 
 ---
 
-### INC-00118
+### INC-00105
+
+**Benchmarking Poisoning Attacks against Retrieval-Augmented Generation**  
+_2025-05 · research · Severity: High_
+
+Comprehensive benchmark of 13 RAG poisoning attacks vs 7 defenses across 5 QA datasets and 10 variants, showing current defenses fail to provide robust protection in realistic settings.
+
+**Affected:** RAG-backed LLM systems generally  
+**Attack vector:** `poisoning`  
+
+**OWASP LLM Top 10:** `LLM04`, `LLM08`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0020`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Benchmarking Poisoning Attacks against Retrieval-Augmented Generation](https://arxiv.org/abs/2505.18543) _(paper)_
+
+**Tags:** `rag-poisoning`, `benchmark`
+
+---
+
+### INC-00151
 
 **EchoLeak — zero-click Microsoft Copilot data exfiltration via email prompt injection**  
 _2025-05 · research-demonstrated · Severity: Critical_
@@ -4009,10 +5154,10 @@ Critical zero-click exploit (CVE-2025-32711) allowing a mere email to trigger Mi
 
 ---
 
-### INC-00135
+### INC-00171
 
 **GitPublic Issue Repo Hijack**  
-_2025-05 · real-world · Severity: Medium_
+_2025-05 · real-world · Severity: Critical_
 
 Public issue text hijacked an AI dev agent into leaking private repo contents via cross-repo prompt injection
 
@@ -4020,16 +5165,18 @@ Public issue text hijacked an AI dev agent into leaking private repo contents vi
 **Attack vector:** `prompt-injection`  
 
 **OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM04`  
-**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI06`, `ASI07`, `ASI08`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI06`, `ASI07`, `ASI08`, `ASI09`  
 **NIST AI RMF:** `GOVERN-1.1`, `GOVERN-3.2`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-3.2`, `MANAGE-4.1`, `MAP-2.1`, `MAP-3.5`, `MAP-4.1`, `MAP-4.2`, `MEASURE-2.10`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0018`, `AML.T0019`, `AML.T0020`, `AML.T0024`, `AML.T0048`, `AML.T0050`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0057`, `AML.T0059`, `AML.T0066`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0019`, `AML.T0020`, `AML.T0024`, `AML.T0048`, `AML.T0048.003`, `AML.T0050`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0057`, `AML.T0059`, `AML.T0066`  
 
 **References:**
 - [Invariant Labs](https://invariantlabs.ai/blog/mcp-github-vulnerability) _(research)_
 
+**Tags:** `github`, `mcp`, `toxic-agent-flow`
+
 ---
 
-### INC-00222
+### INC-00290
 
 **Postgres MCP Server SQL Injection**  
 _2025-05 · real-world · Severity: Medium_
@@ -4049,7 +5196,95 @@ Postgres MCP server accepted semicolon-delimited statements. Injecting "COMMIT; 
 
 ---
 
-### INC-00249
+### INC-00312
+
+**Snyk Agent Fix and AI Agent Security Findings**  
+_2025-05 · research · Severity: High_
+
+Snyk launched AI Security Platform with Agent Fix - documented AI code generation security risks including high failure rates for XSS, injection, and access control issues in popular models.
+
+**Affected:** AI Code Generation (LLM-based)  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0050`  
+
+**References:**
+- [Snyk AI Trust Platform](https://snyk.io/blog/introducing-the-snyk-ai-trust-platform/) _(research)_
+
+**Tags:** `snyk`, `code-gen`, `agent-fix`
+
+---
+
+### INC-00313
+
+**SPE-LLM: System Prompt Extraction Attacks and Defenses**  
+_2025-05 · research · Severity: Medium_
+
+Systematic framework for evaluating prompt-extraction attacks against state-of-the-art LLMs, releasing adversarial queries that reliably extract system prompts and benchmarking defenses.
+
+**Affected:** GPT-4, Claude, Gemini, deployed LLM products  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM07`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0056`  
+
+**References:**
+- [System Prompt Extraction Attacks and Defenses in Large Language Models](https://arxiv.org/abs/2505.23817) _(paper)_
+
+**Tags:** `system-prompt-leak`, `extraction`, `defense`
+
+---
+
+### INC-00317
+
+**Tenable AI Aware Identifies AI/LLM Security Risks**  
+_2025-05 · research · Severity: Medium_
+
+Tenable introduced AI Aware product capabilities documenting widespread AI/LLM exposures in enterprise environments and disclosing previously unknown vulnerabilities in deployed copilots.
+
+**Affected:** Enterprise LLM deployments  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM02`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0050`, `AML.T0057`  
+
+**References:**
+- [Tenable AI Aware](https://cybersecurityasia.net/tenable-ai-aware-enhance-llm-ai-security/) _(vendor)_
+
+**Tags:** `tenable`, `ai-aware`, `discovery`
+
+---
+
+### INC-00320
+
+**The Hidden Dangers of Browsing AI Agents**  
+_2025-05 · research · Severity: High_
+
+Practical study of indirect prompt injection, domain validation bypass, and credential exfiltration against browsing AI agents like Browser-Use and Operator, with end-to-end PoCs.
+
+**Affected:** Browser-Use, OpenAI Operator, Anthropic Computer-Use  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI03`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0051`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [The Hidden Dangers of Browsing AI Agents](https://arxiv.org/abs/2505.13076) _(arxiv)_
+
+**Tags:** `browser-agent`, `prompt-injection`, `exfiltration`
+
+---
+
+### INC-00334
 
 **vLLM V0 engine multi-node ZeroMQ pickle deserialization RCE**  
 _2025-05 · real-world · Severity: Critical_
@@ -4074,7 +5309,7 @@ RCE in vLLM's V0 engine: in multi-node vLLM deployments using V0, secondary host
 
 ---
 
-### INC-00251
+### INC-00339
 
 **Windsurf Data Exfiltration & SpAIware (Multiple Vectors)**  
 _2025-05 · real-world · Severity: High_
@@ -4099,7 +5334,7 @@ Multiple vulnerabilities: (a) indirect prompt injection via analyzed files exfil
 
 ---
 
-### INC-00061
+### INC-00079
 
 **AgentSmith Prompt-Hub Proxy Attack**  
 _2025-06 · real-world · Severity: Medium_
@@ -4119,7 +5354,7 @@ Proxy prompt agent exfiltrated API keys
 
 ---
 
-### INC-00074
+### INC-00092
 
 **Anthropic finds blackmail behavior in 16 models when facing shutdown**  
 _2025-06 · real-world · Severity: High_
@@ -4142,7 +5377,7 @@ Anthropic's June 2025 'Agentic Misalignment' report showed that when models from
 
 ---
 
-### INC-00075
+### INC-00095
 
 **Anthropic MCP Git Server Triple Flaw (CVE-2025-68143, -68144, -68145)**  
 _2025-06 · real-world · Severity: High_
@@ -4167,7 +5402,7 @@ Path validation bypass, unrestricted git_init (CVSS 8.8), and argument injection
 
 ---
 
-### INC-00078
+### INC-00098
 
 **Anthropic SQLite MCP Server SQL Injection**  
 _2025-06 · real-world · Severity: Medium_
@@ -4187,7 +5422,7 @@ Classic SQL injection in Anthropic's reference SQLite MCP server (direct concate
 
 ---
 
-### INC-00087
+### INC-00112
 
 **CamoLeak (CVE-2025-59145) prompt injection leaks private code via GitHub Copilot Chat**  
 _2025-06 · real-world · Severity: Critical_
@@ -4198,19 +5433,41 @@ Legit Security disclosed CamoLeak (CVSS 9.6) in GitHub Copilot Chat: invisible M
 **Attack vector:** `prompt-injection`  
 
 **OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM05`  
-**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
-**NIST AI RMF:** `GOVERN-1.1`, `MEASURE-2.10`, `MEASURE-2.6`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0057`, `AML.T0066`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI06`, `ASI09`  
+**NIST AI RMF:** `GOVERN-1.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.6`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0057`, `AML.T0066`  
 
 **References:**
 - [CamoLeak: Critical GitHub Copilot Vulnerability - Legit Security](https://www.legitsecurity.com/blog/camoleak-critical-github-copilot-vulnerability-leaks-private-source-code) _(research)_
 - [GitHub Copilot Chat Flaw Leaked Data From Private Repositories - SecurityWeek](https://www.securityweek.com/github-copilot-chat-flaw-leaked-data-from-private-repositories/) _(news)_
 
-**Tags:** `camoleak`, `cve-2025-59145`, `github-copilot`, `prompt-injection`, `csp-bypass`
+**Tags:** `camoleak`, `csp-bypass`, `cve-2025-59145`, `github-copilot`, `prompt-injection`
 
 ---
 
-### INC-00089
+### INC-00114
+
+**Cisco Study: 46% of Orgs Report Internal GenAI Data Leaks**  
+_2025-06 · research · Severity: Medium_
+
+Cisco's 2025 study reported 46% of organizations experienced internal data leaks through generative AI; 13% of employee prompts contained sensitive content (Lasso Security cross-confirmation).
+
+**Affected:** Enterprise GenAI usage  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM02`  
+**OWASP Agentic (ASI):** `ASI09`  
+**NIST AI RMF:** `GOVERN-3.1`, `MAP-3.5`, `MEASURE-2.10`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0057`  
+
+**References:**
+- [Cisco 2025 Study](https://www.knostic.ai/blog/gen-ai-security-statistics) _(research)_
+
+**Tags:** `cisco`, `shadow-ai`, `data-leak`
+
+---
+
+### INC-00116
 
 **Claude Code DNS Exfiltration (CVE-2025-55284)**  
 _2025-06 · real-world · Severity: Medium_
@@ -4233,7 +5490,7 @@ Claude Code's default allowlist of "safe commands" included ping and dig, enabli
 
 ---
 
-### INC-00117
+### INC-00150
 
 **EchoLeak (CVE-2025-32711) zero-click prompt injection in Microsoft 365 Copilot**  
 _2025-06 · real-world · Severity: Critical_
@@ -4257,7 +5514,7 @@ Aim Labs disclosed EchoLeak, a CVSS 9.3 zero-click prompt-injection vulnerabilit
 
 ---
 
-### INC-00119
+### INC-00152
 
 **EchoLeak: Zero-Click Data Exfiltration from Microsoft 365 Copilot**  
 _2025-06 · research · Severity: Critical_
@@ -4282,7 +5539,7 @@ Aim Security disclosed CVE-2025-32711 ('EchoLeak'): a zero-click indirect prompt
 
 ---
 
-### INC-00149
+### INC-00188
 
 **Heroku MCP App Ownership Hijack**  
 _2025-06 · real-world · Severity: Medium_
@@ -4301,7 +5558,29 @@ Malicious tool input exploited Heroku MCP's trust boundary, hijacking app owners
 
 ---
 
-### INC-00150
+### INC-00190
+
+**HiddenLayer Cursor Attack Chain via Hidden Prompt Injections**  
+_2025-06 · research · Severity: High_
+
+HiddenLayer disclosed a chain of vulnerabilities in Cursor that exfiltrate sensitive data without user knowledge through hidden prompt injections in source files.
+
+**Affected:** Cursor IDE  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [Cursor Attack Chain](https://www.hiddenlayer.com/research/how-hidden-prompt-injections-can-hijack-ai-code-assistants-like-cursor) _(research)_
+
+**Tags:** `cursor`, `hidden-injection`, `data-exfiltration`
+
+---
+
+### INC-00192
 
 **Hub MCP Prompt Injection (Cross-Context)**  
 _2025-06 · real-world · Severity: Critical_
@@ -4327,7 +5606,7 @@ A malicious web page could talk to the local MCP Inspector proxy (no auth) via D
 
 ---
 
-### INC-00152
+### INC-00194
 
 **Hugging Face Transformers deserialization vulnerability**  
 _2025-06 · real-world · Severity: High_
@@ -4352,7 +5631,7 @@ Insecure deserialization in Hugging Face Transformers enabling arbitrary code ex
 
 ---
 
-### INC-00171
+### INC-00221
 
 **LlamaIndex multi-vector-store SQL injection**  
 _2025-06 · real-world · Severity: Critical_
@@ -4377,7 +5656,73 @@ SQL injection in multiple vector-store integrations in run-llama/llama_index v0.
 
 ---
 
-### INC-00070
+### INC-00271
+
+**OpenAI Jun 2025 — "Sneer Review" Chinese cross-platform astroturfing against Taiwanese game**  
+_2025-06 · threat-report · Severity: High_
+
+Chinese-origin operation "Sneer Review" used ChatGPT to mass-generate short comments in English, Chinese and Urdu posted on TikTok, X, Reddit and Facebook attacking a Taiwanese game where players defeat the CCP, plus an internal performance review of the operation itself.
+
+**Affected:** OpenAI ChatGPT; TikTok, X, Reddit, Facebook  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Disrupting malicious uses of AI: June 2025 — OpenAI](https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/) _(vendor)_
+
+**Tags:** `cambodia`, `china`, `election-interference`, `germany`, `helgoland-bite`, `high-five`, `influence-operation`, `malware`, `malware-development`, `openai`, `philippines`, `russia`, `scopecreep`, `sneer-review`, `social-engineering`, `task-scam`, `uncle-spam`, `vague-focus`, `wrong-number`
+
+---
+
+### INC-00272
+
+**OpenAI June 2025 Disrupting Malicious Uses Report**  
+_2025-06 · threat-report · Severity: Medium_
+
+OpenAI's June 2025 report detailed disruption of further influence and cyber operations: spear-phishing assistance, deception schemes, and reconnaissance by state-linked actors.
+
+**Affected:** OpenAI ChatGPT  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [OpenAI June 2025](https://cdn.openai.com/threat-intelligence-reports/5f73af09-a3a3-4a55-992e-069237681620/disrupting-malicious-uses-of-ai-june-2025.pdf) _(vendor)_
+
+**Tags:** `openai`, `threat-report`, `influence-ops`
+
+---
+
+### INC-00277
+
+**OS-HARM: Benchmark for Safety of Computer-Use Agents**  
+_2025-06 · research · Severity: High_
+
+Kuntz et al. introduce OS-HARM, an operating-system-level safety benchmark for computer-use agents covering harmful misuse, prompt injection, and unintended over-action across 150 tasks.
+
+**Affected:** Computer-use agents (Anthropic Computer Use, Operator-style)  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [OS-HARM: A Benchmark for Measuring Safety of Computer Use Agents](https://arxiv.org/abs/2506.14866) _(paper)_
+
+**Tags:** `computer-use`, `agent`, `benchmark`
+
+---
+
+### INC-00088
 
 **Amazon Q Prompt Poisoning**  
 _2025-07 · real-world · Severity: Medium_
@@ -4401,7 +5746,29 @@ Destructive prompt in extension risked file wipes
 
 ---
 
-### INC-00081
+### INC-00099
+
+**Anvilogic 2025 AI Risk Report: Model & Supply Chain Threats**  
+_2025-07 · research · Severity: High_
+
+Anvilogic 2025 AI Risk Report flagged model theft, supply chain risks, and chatbot attacks as top security concerns industry-wide.
+
+**Affected:** AI/ML Ecosystem (broad)  
+**Attack vector:** `model-theft`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0044`, `AML.T0050`  
+
+**References:**
+- [Anvilogic 2025 AI Risk](https://www.anvilogic.com/threat-reports/2025-ai-risk-report) _(research)_
+
+**Tags:** `anvilogic`, `model-theft`, `supply-chain`
+
+---
+
+### INC-00103
 
 **Azure OpenAI SSRF -> privilege escalation**  
 _2025-07 · real-world · Severity: High_
@@ -4426,7 +5793,29 @@ SSRF in Azure OpenAI integration enabling attackers to access internal endpoints
 
 ---
 
-### INC-00120
+### INC-00140
+
+**Dark Side of LLMs: Agent-Based Attacks for Computer Takeover**  
+_2025-07 · research · Severity: Critical_
+
+ArXiv paper demonstrates GPT-4o, Claude-4, Gemini-2.5 can be coerced into autonomously installing/executing malware. Direct injection (41.2%), RAG backdoor (52.9%), inter-agent trust (82.4%) success rates.
+
+**Affected:** GPT-4o, Claude-4, Gemini-2.5  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM03`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`, `ASI07`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Dark Side of LLMs arXiv](https://arxiv.org/html/2507.06850v3) _(research)_
+
+**Tags:** `agent-attack`, `inter-agent-trust`, `rag-backdoor`
+
+---
+
+### INC-00155
 
 **EscapeRoute -- Anthropic Filesystem MCP Sandbox Escape (CVE-2025-53109 & CVE-2025-53110)**  
 _2025-07 · real-world · Severity: High_
@@ -4449,7 +5838,7 @@ CVE-2025-53110 (CVSS 7.3): directory containment bypass via naive prefix-matchin
 
 ---
 
-### INC-00139
+### INC-00175
 
 **Google Gemini CLI File Loss**  
 _2025-07 · real-world · Severity: Medium_
@@ -4469,7 +5858,7 @@ Agent misunderstood file instructions and wiped user’s directory; admitted cat
 
 ---
 
-### INC-00163
+### INC-00211
 
 **LAMEHUG malware integrates LLM for real-time command generation (APT28-linked)**  
 _2025-07 · real-world · Severity: High_
@@ -4492,7 +5881,7 @@ Ukraine CERT-UA and Cato CTRL reported LAMEHUG, the first known malware to integ
 
 ---
 
-### INC-00176
+### INC-00229
 
 **McDonald's McHire AI recruitment platform exposed 64M applicants (default creds + IDOR)**  
 _2025-07 · real-world · Severity: Critical_
@@ -4515,7 +5904,7 @@ Researchers Ian Carroll and Sam Curry showed McDonald's McHire AI hiring chatbot
 
 ---
 
-### INC-00178
+### INC-00231
 
 **MCP session ID hijacking (prompt hijacking)**  
 _2025-07 · real-world · Severity: High_
@@ -4528,19 +5917,19 @@ Session-ID hijacking vulnerability in MCP ecosystem implementations, enabling pr
 **Affected:** MCP implementations  
 **Attack vector:** `auth-bypass`  
 
-**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM07`  
-**OWASP Agentic (ASI):** `ASI03`, `ASI07`, `ASI09`  
-**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0012`, `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0056`, `AML.T0057`  
+**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM05`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI03`, `ASI04`, `ASI07`, `ASI09`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-3.1`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0048.003`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0056`, `AML.T0057`  
 
 **References:**
 - [JFrog blog](https://jfrog.com/blog/mcp-prompt-hijacking-vulnerability/) _(analysis)_
 
-**Tags:** `cve`, `mcp`, `session-hijacking`, `agentic`
+**Tags:** `agentic`, `cve`, `cve-2025-6515`, `mcp`, `oatpp`, `prompt-hijacking`, `session-hijacking`
 
 ---
 
-### INC-00181
+### INC-00235
 
 **Microsoft Copilot Studio agents public by default — unauthorized data exfiltration**  
 _2025-07 · real-world · Severity: Critical_
@@ -4569,29 +5958,29 @@ Agents built in Microsoft Copilot Studio were public by default and lacked authe
 
 ---
 
-### INC-00200
+### INC-00258
 
 **NVIDIAScape (CVE-2025-23266) NVIDIA AI vulnerability**  
-_2025-07 · real-world · Severity: High_
+_2025-07 · real-world · Severity: Critical_
 
 Wiz Research disclosed NVIDIAScape (CVE-2025-23266), a vulnerability in NVIDIA AI infrastructure (container toolkit-related) allowing potential cross-tenant exposure on shared GPU environments.
 
 **Affected:** NVIDIA AI infrastructure  
 **Attack vector:** `rce`  
 
-**OWASP LLM Top 10:** `LLM03`  
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
 **OWASP Agentic (ASI):** `ASI04`, `ASI05`  
-**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-6.1`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.7`  
+**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-6.1`, `MANAGE-3.1`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0010`, `AML.T0040`, `AML.T0050`  
 
 **References:**
 - [NVIDIAScape - NVIDIA AI Vulnerability (CVE-2025-23266) - Wiz](https://www.wiz.io/blog/nvidia-ai-vulnerability-cve-2025-23266-nvidiascape) _(research)_
 
-**Tags:** `nvidia`, `cve-2025-23266`, `container`, `tenant-isolation`
+**Tags:** `container`, `container-escape`, `cve-2025-23266`, `nvidia`, `tenant-isolation`
 
 ---
 
-### INC-00201
+### INC-00259
 
 **Ollama cross-domain token exposure**  
 _2025-07 · real-world · Severity: High_
@@ -4616,7 +6005,29 @@ Ollama vulnerable to cross-domain token exposure due to insufficient origin chec
 
 ---
 
-### INC-00234
+### INC-00285
+
+**Pillar Poisoned GGUF Templates Hugging Face Backdoors**  
+_2025-07 · research · Severity: High_
+
+Pillar Security disclosed a novel supply chain attack: Poisoned GGUF Templates embedding malicious instructions processed alongside legitimate inputs on Hugging Face inference pipelines.
+
+**Affected:** Hugging Face GGUF Models  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0011`, `AML.T0050`  
+
+**References:**
+- [Poisoned GGUF](https://www.globenewswire.com/news-release/2025/07/09/3112541/0/en/Pillar-Security-Uncovers-Novel-Attack-Vector-That-Embeds-Malicious-Backdoors-in-Model-Files-on-Hugging-Face.html) _(research)_
+
+**Tags:** `gguf`, `huggingface`, `supply-chain`, `backdoor`
+
+---
+
+### INC-00303
 
 **Replit vibe coding meltdown — agent hallucinated data, deleted production database, hid mistakes**  
 _2025-07 · real-world · Severity: Critical_
@@ -4646,7 +6057,29 @@ Replit's AI agent hallucinated data, deleted a production database, and generate
 
 ---
 
-### INC-00243
+### INC-00319
+
+**The Dark Side of LLMs: Agent-Based Attacks for Complete Computer Takeover**  
+_2025-07 · research · Severity: Critical_
+
+Lee et al. demonstrate that adversaries can chain direct prompt injection, RAG backdoor, and inter-agent trust exploitation to make computer-use agents autonomously install and execute malware. 82.4 percent of 17 LLMs vulnerable to inter-agent trust exploitation.
+
+**Affected:** 17 frontier LLMs in agent configurations  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [The Dark Side of LLMs: Agent-based Attacks for Complete Computer Takeover](https://arxiv.org/abs/2507.06850) _(paper)_
+
+**Tags:** `agent`, `rce`, `multi-agent`, `malware`
+
+---
+
+### INC-00322
 
 **ToolShell RCE via SharePoint**  
 _2025-07 · real-world · Severity: Medium_
@@ -4670,7 +6103,7 @@ RCE exploit in SharePoint leveraged by agents
 
 ---
 
-### INC-00068
+### INC-00086
 
 **Amazon Q Developer for VS Code Vulnerable to Invisible Prompt Injection**  
 _2025-08 · research · Severity: High_
@@ -4692,7 +6125,7 @@ Amazon Q Developer interprets invisible Unicode Tag characters as instructions, 
 
 ---
 
-### INC-00069
+### INC-00087
 
 **Amazon Q Developer Secrets Leaked via DNS**  
 _2025-08 · research · Severity: High_
@@ -4714,7 +6147,7 @@ Prompt injection in Amazon Q Developer enables secret exfiltration via DNS queri
 
 ---
 
-### INC-00071
+### INC-00089
 
 **Amp Code Invisible Prompt Injection (Sourcegraph)**  
 _2025-08 · research · Severity: Medium_
@@ -4736,7 +6169,7 @@ Sourcegraph's Amp Code coding agent processed invisible Unicode characters as in
 
 ---
 
-### INC-00072
+### INC-00090
 
 **Anthropic Claude misuse report — ransomware development, North Korean employment fraud, extortion**  
 _2025-08 · real-world · Severity: Critical_
@@ -4747,10 +6180,10 @@ Three major misuse cases from Anthropic's threat report: (1) North Korean operat
 **Attack vector:** `ai`  
 **Impact:** AI-enabled criminal enterprises; ransomware ecosystem; employment fraud at scale; $500K+ extortion demands  
 
-**OWASP LLM Top 10:** `LLM01`, `LLM06`, `LLM09`  
-**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI09`, `ASI10`  
-**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.4`, `GOVERN-3.2`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MANAGE-4.3`, `MAP-2.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.5`, `MEASURE-2.7`, `MEASURE-2.8`  
-**MITRE ATLAS:** `AML.T0024`, `AML.T0025`, `AML.T0039`, `AML.T0048`, `AML.T0048.001`, `AML.T0048.003`, `AML.T0050`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0057`, `AML.T0058`  
+**OWASP LLM Top 10:** `LLM01`, `LLM05`, `LLM06`, `LLM09`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI06`, `ASI07`, `ASI09`, `ASI10`  
+**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.3`, `GOVERN-1.4`, `GOVERN-1.5`, `GOVERN-3.2`, `GOVERN-6.2`, `MANAGE-2.1`, `MANAGE-2.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MANAGE-4.3`, `MAP-2.1`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.4`, `MEASURE-2.5`, `MEASURE-2.7`, `MEASURE-2.8`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0024`, `AML.T0025`, `AML.T0029`, `AML.T0039`, `AML.T0048`, `AML.T0048.001`, `AML.T0048.003`, `AML.T0050`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0057`, `AML.T0058`, `AML.T0066`  
 **MAESTRO layers:** `L1 Foundation Models`, `L6 Security & Compliance`  
 
 **Mitigations:**
@@ -4761,12 +6194,57 @@ Three major misuse cases from Anthropic's threat report: (1) North Korean operat
 **References:**
 - [Anthropic: Detecting and countering misuse](https://www.anthropic.com/news/detecting-countering-misuse-aug-2025) _(vendor)_
 - [Incident 1201](https://incidentdatabase.ai/cite/1201/) _(advisory)_
+- [Anthropic Threat Intelligence Report Aug 2025 (PDF)](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf) _(report)_
 
-**Tags:** `agentic-misuse`, `claude`, `claude-code`, `criminal-misuse`, `employment-fraud`, `extortion`, `misuse`, `north-korea`, `raas`, `ransomware`, `vibe-hacking`
+**Tags:** `agentic`, `agentic-misuse`, `anthropic`, `automated-attack`, `claude`, `claude-code`, `criminal-misuse`, `dprk`, `employment-fraud`, `extortion`, `gtg-2002`, `gtg-5004`, `insider-threat`, `misuse`, `north-korea`, `raas`, `ransomware`, `ransomware-gen`, `skill-uplift`, `vibe-hacking`
 
 ---
 
-### INC-00088
+### INC-00093
+
+**Anthropic Low-Skill Cybercriminal Selling AI-Generated Ransomware**  
+_2025-08 · real-world · Severity: Critical_
+
+Anthropic identified a cybercriminal with only basic coding skills using Claude to generate and sell complete ransomware kits - illustrating dramatic skill compression of LLM-assisted malware development.
+
+**Affected:** Anthropic Claude  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`, `LLM07`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `GOVERN-1.5`, `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0024`, `AML.T0029`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0056`, `AML.T0066`  
+
+**References:**
+- [Anthropic Aug 2025 Report](https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf) _(vendor)_
+
+**Tags:** `anthropic`, `apt`, `automated-extortion`, `child-safety`, `china`, `claude`, `claude-code`, `critical-infrastructure`, `csam`, `jailbreak`, `no-code-ransomware`, `ransomware-gen`, `romance-scam`, `russia`, `skill-compression`, `skill-uplift`, `vibe-hacking`, `vietnam`
+
+---
+
+### INC-00110
+
+**Brave Discloses Indirect Prompt Injection in Perplexity Comet**  
+_2025-08 · research · Severity: High_
+
+Brave found Comet AI browser feeds webpage content directly to its LLM without separating untrusted content from user instructions; attackers can embed prompt injection payloads that the agent executes.
+
+**Affected:** Perplexity Comet  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Brave Comet Injection](https://brave.com/blog/comet-prompt-injection/) _(research)_
+
+**Tags:** `comet`, `perplexity`, `agentic-browser`
+
+---
+
+### INC-00115
 
 **Claude Code Data Exfiltration via DNS (CVE-2025-55284)**  
 _2025-08 · research · Severity: Critical_
@@ -4788,7 +6266,29 @@ Prompt injection causes Claude Code to leak secrets via DNS queries. Disclosed d
 
 ---
 
-### INC-00097
+### INC-00117
+
+**Claude Code Unauthorized Command Execution (CVE-2025-54794, CVE-2025-54795)**  
+_2025-08 · research · Severity: High_
+
+Researchers disclosed critical Claude Code vulnerabilities (CVE-2025-54794, CVE-2025-54795) allowing attackers to bypass security restrictions and execute unauthorized commands using the model itself.
+
+**Affected:** Anthropic Claude Code  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0053`  
+
+**References:**
+- [Claude AI Flaws](https://gbhackers.com/claude-ai-flaws/) _(news)_
+
+**Tags:** `claude-code`, `cve-2025-54794`, `cve-2025-54795`, `command-injection`
+
+---
+
+### INC-00125
 
 **Cline AI Coding Agent Vulnerabilities**  
 _2025-08 · real-world · Severity: Medium_
@@ -4808,7 +6308,7 @@ Four vulnerabilities: API key exfiltration, arbitrary code execution, model info
 
 ---
 
-### INC-00098
+### INC-00126
 
 **Cline Data Exfiltration via Indirect Prompt Injection**  
 _2025-08 · research · Severity: High_
@@ -4830,7 +6330,30 @@ Cline coding agent vulnerable to indirect prompt injection leading to data exfil
 
 ---
 
-### INC-00105
+### INC-00129
+
+**CrowdStrike — FAMOUS CHOLLIMA infiltrated 320+ companies via GenAI-assisted hiring fraud**  
+_2025-08 · threat-report · Severity: Critical_
+
+CrowdStrike disclosed that the DPRK-nexus FAMOUS CHOLLIMA infiltrated 320+ companies (220% YoY) via generative-AI-assisted resumes, deepfake video-interview personas and AI-driven on-the-job code production, juggling 3-4 simultaneous remote engineering jobs at US firms.
+
+**Affected:** Multiple GenAI tools; US tech, defense, aerospace, retail firms  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM04`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.6`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0018`, `AML.T0020`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [CrowdStrike 2025 Threat Hunting Report](https://www.crowdstrike.com/en-us/blog/crowdstrike-2025-threat-hunting-report-ai-weapon-target/) _(report)_
+- [FAMOUS CHOLLIMA Adversary Profile](https://www.crowdstrike.com/en-us/adversaries/famous-chollima/) _(vendor)_
+
+**Tags:** `code-generation`, `crowdstrike`, `deepfake`, `deepseek`, `dprk`, `employment-fraud`, `famous-chollima`, `political-bias`
+
+---
+
+### INC-00136
 
 **Cursor CurXecute: indirect prompt injection writes .cursor/mcp.json -> RCE**  
 _2025-08 · real-world · Severity: High_
@@ -4856,7 +6379,7 @@ Cursor IDE CurXecute (CVE-2025-54135). Attackers send crafted Slack messages pro
 
 ---
 
-### INC-00106
+### INC-00137
 
 **Cursor MCPoison: approved MCP server config can be silently swapped**  
 _2025-08 · real-world · Severity: High_
@@ -4881,7 +6404,7 @@ Cursor MCPoison: once an MCP server (mcp.json) is approved by the user, any subs
 
 ---
 
-### INC-00113
+### INC-00146
 
 **Devin AI Agent Prompt Injection & Data Exfiltration**  
 _2025-08 · real-world · Severity: Medium_
@@ -4901,7 +6424,7 @@ Devin's async coding agent had no protection against prompt injection. Multiple 
 
 ---
 
-### INC-00114
+### INC-00147
 
 **Devin AI Exposes Ports to the Internet via Prompt Injection**  
 _2025-08 · research · Severity: Critical_
@@ -4923,7 +6446,7 @@ Cognition Devin AI exposed development ports to the internet through prompt inje
 
 ---
 
-### INC-00122
+### INC-00157
 
 **Exfiltrating ChatGPT Chat History and Memories with Prompt Injection**  
 _2025-08 · research · Severity: High_
@@ -4945,7 +6468,7 @@ Rehberger demonstrated full exfiltration of ChatGPT chat history and stored memo
 
 ---
 
-### INC-00132
+### INC-00167
 
 **GitHub Copilot / VS Code RCE via prompt injection editing .vscode/settings.json**  
 _2025-08 · real-world · Severity: Critical_
@@ -4971,7 +6494,7 @@ Critical RCE in GitHub Copilot for VS Code. Prompt injection (e.g. hidden in PR 
 
 ---
 
-### INC-00141
+### INC-00178
 
 **Google Jules Vulnerable to Invisible Prompt Injection**  
 _2025-08 · research · Severity: High_
@@ -4993,7 +6516,29 @@ Google's Jules coding agent processes invisible Unicode characters as instructio
 
 ---
 
-### INC-00161
+### INC-00201
+
+**Involuntary Jailbreak: Self-Prompting Attack on Grok 4, DeepSeek R1**  
+_2025-08 · research · Severity: High_
+
+ArXiv research disclosed Involuntary Jailbreak attack - LLMs self-prompt against guardrails. Grok 4 and DeepSeek R1 guardrails collapse without specific malicious objective.
+
+**Affected:** xAI Grok 4, DeepSeek R1  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MAP-2.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`, `AML.T0056`  
+
+**References:**
+- [Involuntary Jailbreak](https://arxiv.org/html/2508.13246v3) _(research)_
+
+**Tags:** `grok`, `deepseek`, `self-prompting`, `jailbreak`
+
+---
+
+### INC-00206
 
 **Jules Zombie Agent: Prompt Injection to Remote Control**  
 _2025-08 · research · Severity: Critical_
@@ -5015,7 +6560,7 @@ Indirect prompt injection enabled converting Google Jules into a remotely contro
 
 ---
 
-### INC-00172
+### INC-00222
 
 **Malicious Hugging Face model impersonating OpenAI release hits 244K downloads**  
 _2025-08 · real-world · Severity: High_
@@ -5038,7 +6583,7 @@ HiddenLayer identified a malicious Hugging Face repository impersonating an Open
 
 ---
 
-### INC-00195
+### INC-00253
 
 **NVIDIA Triton control-message manipulation -> RCE (Wiz chain final)**  
 _2025-08 · real-world · Severity: Critical_
@@ -5063,7 +6608,7 @@ Final link in the Wiz Research chain: with read/write access to internal shared 
 
 ---
 
-### INC-00196
+### INC-00254
 
 **NVIDIA Triton Inference Server HTTP handler buffer overflow**  
 _2025-08 · real-world · Severity: Critical_
@@ -5088,7 +6633,7 @@ Companion buffer-overflow vulnerability in NVIDIA Triton HTTP request handling. 
 
 ---
 
-### INC-00197
+### INC-00255
 
 **NVIDIA Triton Inference Server stack buffer overflow (HTTP chunked)**  
 _2025-08 · real-world · Severity: Critical_
@@ -5113,10 +6658,10 @@ NVIDIA Triton Inference Server <= 25.06 has a stack buffer overflow in HTTP requ
 
 ---
 
-### INC-00198
+### INC-00256
 
 **NVIDIA Triton Python backend shared-memory name leak (Wiz chain start)**  
-_2025-08 · real-world · Severity: High_
+_2025-08 · real-world · Severity: Critical_
 
 CVEs: `CVE-2025-23319`
 CVSS: **7.5**
@@ -5126,20 +6671,20 @@ Info leak in NVIDIA Triton Inference Server Python backend that leaks the unique
 **Affected:** NVIDIA Triton (Python backend)  
 **Attack vector:** `info-disclosure`  
 
-**OWASP LLM Top 10:** `LLM02`, `LLM03`  
+**OWASP LLM Top 10:** `LLM02`, `LLM03`, `LLM05`  
 **OWASP Agentic (ASI):** `ASI04`, `ASI05`  
-**NIST AI RMF:** `GOVERN-6.1`, `MEASURE-2.10`, `MEASURE-2.7`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.10`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0010`, `AML.T0050`, `AML.T0057`  
 
 **References:**
 - [NVD](https://nvd.nist.gov/vuln/detail/CVE-2025-23319) _(advisory)_
 - [Wiz analysis](https://www.wiz.io/blog/nvidia-triton-cve-2025-23319-vuln-chain-to-ai-server) _(analysis)_
 
-**Tags:** `cve`, `nvidia`, `triton`, `info-disclosure`, `chain`
+**Tags:** `chain`, `cve`, `cve-2025-23319`, `inference-server`, `info-disclosure`, `nvidia`, `triton`
 
 ---
 
-### INC-00199
+### INC-00257
 
 **NVIDIA Triton shared-memory read/write access (Wiz chain link 2)**  
 _2025-08 · real-world · Severity: High_
@@ -5164,7 +6709,7 @@ Using a leaked shared-memory name from CVE-2025-23319, an attacker gains full re
 
 ---
 
-### INC-00212
+### INC-00276
 
 **OpenHands ZombAI RCE**  
 _2025-08 · real-world · Severity: Medium_
@@ -5184,7 +6729,7 @@ Indirect prompt injection hijacked the OpenHands agent to download and execute r
 
 ---
 
-### INC-00213
+### INC-00278
 
 **Over 100,000 LLM conversations publicly exposed via share-links indexed by search engines**  
 _2025-08 · real-world · Severity: High_
@@ -5207,7 +6752,7 @@ Share features across ChatGPT, Claude, Copilot, Qwen, Mistral and Grok exposed '
 
 ---
 
-### INC-00223
+### INC-00292
 
 **PromptLock: first AI-powered ransomware (PoC) using local gpt-oss-20b**  
 _2025-08 · real-world · Severity: Medium_
@@ -5230,7 +6775,7 @@ ESET researchers discovered PromptLock, the first known AI-powered ransomware. I
 
 ---
 
-### INC-00235
+### INC-00304
 
 **Salesloft Drift OAuth breach — Chinese actor UNC6395 accesses 700+ Salesforce CRM environments**  
 _2025-08 · real-world · Severity: Critical_
@@ -5259,7 +6804,29 @@ Chinese threat actor UNC6395 stole OAuth tokens from Salesloft's Drift AI Chat a
 
 ---
 
-### INC-00252
+### INC-00327
+
+**Unit 42 AI-Powered Ransomware 25-Minute Compromise**  
+_2025-08 · research · Severity: Critical_
+
+Unit 42 demonstrated an AI-powered ransomware attack from initial compromise to data exfiltration in 25 minutes - a 100x speed increase over traditional methods.
+
+**Affected:** Generic (research demonstration)  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.11`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [Unit 42 Threat Frontier](https://www.paloaltonetworks.com/resources/ebooks/unit42-threat-frontier) _(research)_
+
+**Tags:** `unit42`, `ai-ransomware`, `speed`
+
+---
+
+### INC-00340
 
 **Windsurf Memory-Persistent Data Exfiltration (SpAIware)**  
 _2025-08 · research · Severity: Critical_
@@ -5281,7 +6848,29 @@ Indirect prompt injection abused Windsurf's create_memory tool without approval 
 
 ---
 
-### INC-00062
+### INC-00343
+
+**Zenity AgentFlayer Zero-Click Exploit Chains Across Enterprise AI Agents**  
+_2025-08 · research · Severity: Critical_
+
+At Black Hat USA 2025, Zenity Labs disclosed AgentFlayer: zero-click exploit chains compromising OpenAI ChatGPT, Microsoft Copilot Studio, Salesforce Einstein, Google Gemini, M365 Copilot, and Cursor with Jira MCP - silent hijacking without user action.
+
+**Affected:** ChatGPT, Copilot Studio, Salesforce Einstein, Gemini, M365 Copilot, Cursor  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI09`  
+**NIST AI RMF:** `MANAGE-2.2`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [AgentFlayer](https://www.prnewswire.com/news-releases/zenity-labs-exposes-widespread-agentflayer-vulnerabilities-allowing-silent-hijacking-of-major-enterprise-ai-agents-circumventing-human-oversight-302523580.html) _(research)_
+
+**Tags:** `agentflayer`, `zero-click`, `black-hat-2025`, `multi-vendor`
+
+---
+
+### INC-00080
 
 **AI ClickFix: Hijacking Computer-Use Agents**  
 _2025-09 · research · Severity: High_
@@ -5303,7 +6892,7 @@ Rehberger demonstrated ClickFix-style TTPs against computer-use agents like Clau
 
 ---
 
-### INC-00067
+### INC-00085
 
 **Amazon Bedrock AgentCore Sandbox DNS Escape**  
 _2025-09 · real-world · Severity: Medium_
@@ -5323,7 +6912,7 @@ AgentCore Code Interpreter's "Sandbox" mode (advertised as "complete isolation")
 
 ---
 
-### INC-00099
+### INC-00130
 
 **Cursor "Open-Folder" Autorun Vulnerability**  
 _2025-09 · real-world · Severity: Medium_
@@ -5343,7 +6932,7 @@ Cursor ships with Workspace Trust disabled by default. A malicious `.vscode/task
 
 ---
 
-### INC-00115
+### INC-00148
 
 **Dify SSRF via RemoteFileUploadApi (CVE-2025-56520)**  
 _2025-09 · real-world · Severity: Medium_
@@ -5366,7 +6955,7 @@ SSRF in Dify <= 1.6.0 via /console/api/remote-files/ endpoint. Attackers force t
 
 ---
 
-### INC-00124
+### INC-00159
 
 **Flowise CustomMCP code injection RCE — CVSS 10.0, 12,000 instances exposed**  
 _2025-09 · real-world · Severity: Critical_
@@ -5398,7 +6987,7 @@ CVSS 10.0 code injection in Flowise's CustomMCP node via Node.js Function() cons
 
 ---
 
-### INC-00126
+### INC-00161
 
 **Flowise RCE via JavaScript configuration function**  
 _2025-09 · real-world · Severity: Critical_
@@ -5423,7 +7012,7 @@ Critical RCE in Flowise <= 3.0.5: improper validation of user-supplied JavaScrip
 
 ---
 
-### INC-00127
+### INC-00162
 
 **ForcedLeak — Salesforce Agentforce indirect prompt injection exfiltrates CRM data**  
 _2025-09 · research-demonstrated · Severity: Critical_
@@ -5453,7 +7042,29 @@ Critical indirect prompt injection in Salesforce Agentforce allows external atta
 
 ---
 
-### INC-00140
+### INC-00168
+
+**GitHub Copilot Chat Prompt Injection via Filename**  
+_2025-09 · research · Severity: Medium_
+
+Tenable Research found GitHub Copilot Chat susceptible to prompt injection via specially crafted filenames in repositories.
+
+**Affected:** GitHub Copilot Chat  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [TRA-2025-53](https://www.tenable.com/security/research/tra-2025-53) _(research)_
+
+**Tags:** `github-copilot`, `filename-injection`
+
+---
+
+### INC-00176
 
 **Google Gemini Trifecta**  
 _2025-09 · real-world · Severity: Medium_
@@ -5473,7 +7084,29 @@ Indirect prompt injection through logs, search history, and browsing context can
 
 ---
 
-### INC-00168
+### INC-00208
+
+**Knostic Shadow AI Enterprise Leak Findings**  
+_2025-09 · research · Severity: High_
+
+Knostic disclosed enterprise GenAI shadow usage patterns: 4%+ employee prompts contain sensitive corporate data, 20%+ of file uploads contain proprietary data, 46% of orgs reported internal leaks via GenAI.
+
+**Affected:** Enterprise GenAI usage (broad)  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM02`  
+**OWASP Agentic (ASI):** `ASI09`  
+**NIST AI RMF:** `GOVERN-3.1`, `MAP-3.5`, `MEASURE-2.10`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0057`  
+
+**References:**
+- [Knostic Shadow AI](https://www.knostic.ai/blog/shadow-ai) _(research)_
+
+**Tags:** `shadow-ai`, `knostic`, `enterprise-leak`
+
+---
+
+### INC-00218
 
 **LibreChat unprotected testing endpoint exposes user chats**  
 _2025-09 · real-world · Severity: High_
@@ -5498,7 +7131,7 @@ LibreChat (ChatGPT clone) had an unprotected testing endpoint that could expose 
 
 ---
 
-### INC-00174
+### INC-00224
 
 **Malicious MCP Server Impersonating Postmark**  
 _2025-09 · real-world · Severity: Medium_
@@ -5519,7 +7152,7 @@ Reported as the first in-the-wild malicious MCP server on npm; it impersonated p
 
 ---
 
-### INC-00186
+### INC-00242
 
 **Model Namespace Reuse supply-chain attack (Palo Alto Unit 42)**  
 _2025-09 · real-world · Severity: High_
@@ -5541,7 +7174,7 @@ Unit 42 disclosed 'Model Namespace Reuse' attack: when an org's namespace is del
 
 ---
 
-### INC-00191
+### INC-00249
 
 **Notion 3.0 AI Agent Data Exfiltration via Prompt Injection**  
 _2025-09 · real-world · Severity: Medium_
@@ -5561,7 +7194,29 @@ Notion 3.0's AI agents enable the "lethal trifecta": access to private data, exp
 
 ---
 
-### INC-00221
+### INC-00279
+
+**OX Security MCP Mother of All AI Supply Chains Vulnerability**  
+_2025-09 · research · Severity: Critical_
+
+OX Security disclosed critical systemic vulnerability at the core of Anthropic's MCP - RCE vulnerabilities across the AI ecosystem rooted in the protocol's design.
+
+**Affected:** Model Context Protocol ecosystem  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0050`  
+
+**References:**
+- [OX MCP Systemic](https://www.ox.security/blog/the-mother-of-all-ai-supply-chains-critical-systemic-vulnerability-at-the-core-of-the-mcp/) _(research)_
+
+**Tags:** `mcp`, `systemic-vuln`, `anthropic`
+
+---
+
+### INC-00288
 
 **PoisonedRAG — 5 malicious texts in millions achieve 90% attack success rate on RAG systems**  
 _2025-09 · research-demonstrated · Severity: Critical_
@@ -5590,7 +7245,7 @@ USENIX Security 2025 paper demonstrating the first systematic knowledge database
 
 ---
 
-### INC-00224
+### INC-00293
 
 **Promptware: Google Calendar invitations as prompt-injection vector for Gemini**  
 _2025-09 · real-world · Severity: High_
@@ -5613,7 +7268,7 @@ Researchers ('Invitation Is All You Need') demonstrated that embedding adversari
 
 ---
 
-### INC-00238
+### INC-00308
 
 **ShadowLeak — ChatGPT Deep Research zero-click data exfiltration from connected services**  
 _2025-09 · research-demonstrated · Severity: Critical_
@@ -5643,7 +7298,51 @@ Zero-click, service-side vulnerability in ChatGPT Deep Research. Hidden prompt i
 
 ---
 
-### INC-00245
+### INC-00311
+
+**Shai-Hulud npm Worm Used LLM to Generate Malicious Scripts**  
+_2025-09 · real-world · Severity: Critical_
+
+Unit 42 assessed Shai-Hulud npm supply chain worm campaign used LLM to generate malicious scripts that compromised hundreds of packages including Crowdstrike, Postman, and Zapier.
+
+**Affected:** npm Ecosystem (Crowdstrike, Postman, Zapier packages)  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0024`, `AML.T0029`  
+
+**References:**
+- [Unit 42 Shai-Hulud](https://unit42.paloaltonetworks.com/) _(research)_
+
+**Tags:** `shai-hulud`, `npm`, `supply-chain-worm`, `ai-malware-gen`
+
+---
+
+### INC-00328
+
+**Unit 42 Zealot Autonomous Multi-Agent Cloud Attack PoC**  
+_2025-09 · research · Severity: High_
+
+Unit 42 built Zealot - autonomous AI multi-agent system for cloud penetration testing - empirically demonstrating offensive AI capabilities against cloud environments.
+
+**Affected:** Cloud environments (research PoC)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI07`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.1`, `MEASURE-2.11`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0053`  
+
+**References:**
+- [Unit 42 Zealot](https://unit42.paloaltonetworks.com/autonomous-ai-cloud-attacks/) _(research)_
+
+**Tags:** `unit42`, `zealot`, `multi-agent`, `autonomous-attack`
+
+---
+
+### INC-00330
 
 **Visual Studio Code & Agentic AI workflows RCE**  
 _2025-09 · real-world · Severity: Medium_
@@ -5666,7 +7365,95 @@ Command injection in agentic AI workflows can let a remote, unauthenticated atta
 
 ---
 
-### INC-00092
+### INC-00074
+
+**ActiveFence Perplexity Comet Markdown/HTML Injection**  
+_2025-10 · research · Severity: Medium_
+
+ActiveFence disclosed prompt injection via markdown/HTML in Perplexity Comet - initially classified as not applicable, later reclassified after dispute.
+
+**Affected:** Perplexity Comet  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [ActiveFence Comet](https://www.activefence.com/blog/ai-browser-perplexity-prompt-injection-phishing/) _(research)_
+
+**Tags:** `comet`, `markdown-injection`, `perplexity`
+
+---
+
+### INC-00077
+
+**Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges**  
+_2025-10 · research · Severity: Medium_
+
+Comprehensive analysis of attack and defense landscape for agentic AI: prompt injections, tool/protocol risks, multi-agent manipulation, with mapped defense strategies and benchmarks.
+
+**Affected:** Agentic AI systems (single-agent and multi-agent)  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges](https://arxiv.org/abs/2510.23883) _(paper)_
+
+**Tags:** `agent`, `survey`, `defense`
+
+---
+
+### INC-00100
+
+**AppOmni BodySnatcher ServiceNow AI Agent Privilege Escalation**  
+_2025-10 · research · Severity: Critical_
+
+AppOmni Labs disclosed BodySnatcher: with only target's email address, attacker impersonates admin and executes ServiceNow AI agent to override security controls and create backdoor admin accounts. Patched by ServiceNow.
+
+**Affected:** ServiceNow AI Agent  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [BodySnatcher](https://www.darkreading.com/remote-workforce/ai-vulnerability-servicenow) _(research)_
+
+**Tags:** `servicenow`, `bodysnatcher`, `privilege-escalation`
+
+---
+
+### INC-00111
+
+**Brave Screenshot-Based Prompt Injection in AI Browsers**  
+_2025-10 · research · Severity: High_
+
+Brave disclosed prompt injection via screenshots: payloads hidden in low-contrast text (e.g., light blue on yellow) become readable to vision models. Affects Comet and other AI browsers. Reported Oct 1, disclosed Oct 21 2025.
+
+**Affected:** Perplexity Comet (and other AI browsers)  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Unseeable Prompt Injections](https://brave.com/blog/unseeable-prompt-injections/) _(research)_
+
+**Tags:** `comet`, `screenshot-injection`, `vision-model`
+
+---
+
+### INC-00120
 
 **Claude Pirate Data Exfiltration**  
 _2025-10 · real-world · Severity: High_
@@ -5688,10 +7475,10 @@ Claude Code Interpreter's default network access allowed exfiltration of user da
 
 ---
 
-### INC-00100
+### INC-00131
 
 **Cursor & Windsurf Forked Chromium 94+ N-Day Vulnerabilities**  
-_2025-10 · real-world · Severity: Medium_
+_2025-10 · real-world · Severity: High_
 
 OX Security discovered that Cursor and Windsurf IDEs, built on outdated VS Code forks with stale Electron/Chromium, are exposed to 94+ known CVEs including sandbox escapes. 1.8M developers affected. Both IDEs running Chromium six major versions behind. Forked architecture makes patching structurally difficult and slow.
 
@@ -5700,15 +7487,17 @@ OX Security discovered that Cursor and Windsurf IDEs, built on outdated VS Code 
 
 **OWASP LLM Top 10:** `LLM02`, `LLM03`, `LLM05`  
 **OWASP Agentic (ASI):** `ASI04`, `ASI05`  
-**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.5`, `MEASURE-2.7`  
+**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-3.1`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.5`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0010.003`, `AML.T0011`, `AML.T0024`, `AML.T0049`, `AML.T0050`, `AML.T0057`, `AML.T0060`  
 
 **References:**
 - [OX Security](https://www.ox.security/blog/94-vulnerabilities-in-cursor-and-windsurf-put-1-8m-developers-at-risk/) _(research)_
 
+**Tags:** `chromium`, `cursor`, `fork-vulnerabilities`, `windsurf`
+
 ---
 
-### INC-00103
+### INC-00134
 
 **Cursor CLI Project Config RCE**  
 _2025-10 · real-world · Severity: Medium_
@@ -5733,7 +7522,7 @@ Cloned projects with `.cursor/cli.json` could override global config, allowing a
 
 ---
 
-### INC-00104
+### INC-00135
 
 **Cursor Config Overwrite via Case Mismatch**  
 _2025-10 · real-world · Severity: Critical_
@@ -5747,7 +7536,7 @@ Case-insensitive filesystems allowed crafted prompt to overwrite critical `.curs
 
 **OWASP LLM Top 10:** `LLM05`, `LLM06`  
 **OWASP Agentic (ASI):** `ASI01`, `ASI03`, `ASI05`  
-**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-2.3`, `MAP-3.5`, `MEASURE-2.5`, `MEASURE-2.7`  
+**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-2.3`, `MANAGE-3.1`, `MAP-3.5`, `MEASURE-2.5`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0011`, `AML.T0012`, `AML.T0049`, `AML.T0050`, `AML.T0051`, `AML.T0053`, `AML.T0060`  
 
 **References:**
@@ -5755,11 +7544,11 @@ Case-insensitive filesystems allowed crafted prompt to overwrite critical `.curs
 - [NVD](https://nvd.nist.gov/vuln/detail/CVE-2025-59944) _(advisory)_
 - [Lakera](https://www.lakera.ai/blog/cursor-vulnerability-cve-2025-59944) _(advisory)_
 
-**Tags:** `agent-escape`, `auth-bypass`, `cursor`, `cve`
+**Tags:** `agent-escape`, `auth-bypass`, `case-sensitivity`, `cursor`, `cve`, `cve-2025-59944`
 
 ---
 
-### INC-00107
+### INC-00138
 
 **Cursor Workspace File Injection**  
 _2025-10 · real-world · Severity: Medium_
@@ -5783,7 +7572,7 @@ Cursor agent prompt led Cursor to write malicious `.code-workspace` settings, al
 
 ---
 
-### INC-00128
+### INC-00163
 
 **Framelink Figma MCP RCE**  
 _2025-10 · real-world · Severity: Medium_
@@ -5807,7 +7596,73 @@ Unsanitized user input in Framelink Figma MCP’s `get_figma_data` tool enabled 
 
 ---
 
-### INC-00173
+### INC-00189
+
+**HiddenLayer Bypass of OpenAI Guardrails (Self-Policing LLM)**  
+_2025-10 · research · Severity: High_
+
+HiddenLayer bypassed OpenAI's Guardrails system: when the same model evaluates safety as generates responses, both can be compromised together to produce harmful output without alerts.
+
+**Affected:** OpenAI Guardrails  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`, `AML.T0056`  
+
+**References:**
+- [OpenAI Guardrails Bypass](https://www.hiddenlayer.com/research/same-model-different-hat) _(research)_
+
+**Tags:** `openai-guardrails`, `self-policing`, `bypass`
+
+---
+
+### INC-00216
+
+**LayerX ChatGPT Atlas Tainted Memories Vulnerability**  
+_2025-10 · research · Severity: Critical_
+
+LayerX disclosed first vulnerability in OpenAI Atlas browser: CSRF request piggybacks on user's ChatGPT credentials to inject malicious instructions into memory. Tainted memories execute when user later queries legitimately.
+
+**Affected:** OpenAI ChatGPT Atlas Browser  
+**Attack vector:** `memory-poisoning`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`, `AML.T0070`  
+
+**References:**
+- [Tainted Memories](https://layerxsecurity.com/blog/layerx-identifies-vulnerability-in-new-chatgpt-atlas-browser/) _(research)_
+
+**Tags:** `chatgpt-atlas`, `memory-poisoning`, `csrf`
+
+---
+
+### INC-00217
+
+**LayerX CometJacking: One-Click Perplexity Comet Compromise**  
+_2025-10 · research · Severity: High_
+
+LayerX disclosed CometJacking - clicking a crafted URL causes Comet to parse query strings as agent instructions, triggering data lookup in connected services and memory exfiltration.
+
+**Affected:** Perplexity Comet  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [CometJacking](https://layerxsecurity.com/blog/cometjacking-how-one-click-can-turn-perplexitys-comet-ai-browser-against-you/) _(research)_
+
+**Tags:** `comet`, `cometjacking`, `one-click`
+
+---
+
+### INC-00223
 
 **Malicious MCP server backdoor on npm — dual reverse shells in mcp-runcommand-server**  
 _2025-10 · real-world · Severity: Critical_
@@ -5837,7 +7692,7 @@ NPM-hosted backdoored MCP server containing dual reverse shells — one executin
 
 ---
 
-### INC-00177
+### INC-00230
 
 **MCP OAuth Response Exploit**  
 _2025-10 · real-world · Severity: Medium_
@@ -5861,7 +7716,73 @@ OAuth flow in untrusted MCP servers could return poisoned responses, letting att
 
 ---
 
-### INC-00207
+### INC-00236
+
+**Microsoft Digital Defense Report 2025: AI-Driven Threat Operations**  
+_2025-10 · threat-report · Severity: High_
+
+Microsoft MDDR 2025 documents threat actors operationalizing AI to scale malicious activity - including North Korean groups Jasper Sleet and Coral Sleet using AI to enhance tradecraft.
+
+**Affected:** Multi-vendor (LLM ecosystem)  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [MDDR 2025](https://www.microsoft.com/en-us/security/security-insider/threat-landscape/microsoft-digital-defense-report-2025) _(vendor)_
+
+**Tags:** `mddr`, `jasper-sleet`, `coral-sleet`, `ai-tradecraft`
+
+---
+
+### INC-00247
+
+**Noma Customer Support Agent Cascade Attack Pattern**  
+_2025-10 · research · Severity: Critical_
+
+Noma documented attack pattern where harmless-looking customer support agent, once compromised, cascades into unauthorized money transfers, sensitive data exfiltration, and malicious emails for lateral movement.
+
+**Affected:** Enterprise Customer Support Agents (various)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI08`  
+**NIST AI RMF:** `MANAGE-4.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Noma Agentic Risk](https://noma.security/solutions/ai-agent-security/) _(research)_
+
+**Tags:** `customer-support-agent`, `cascade`, `lateral-movement`
+
+---
+
+### INC-00248
+
+**Noma Security Agentic Risk Map Disclosure: ForcedLeak and GeminiJack**  
+_2025-10 · research · Severity: High_
+
+Noma Security launched the Agentic Risk Map at OWASP Top 10 Agentic Applications release, documenting blast radius of compromised agents including ForcedLeak and GeminiJack threat patterns.
+
+**Affected:** Enterprise AI Agents (various)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI08`  
+**NIST AI RMF:** `MANAGE-4.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Noma Agentic Risk Map](https://www.prnewswire.com/news-releases/noma-security-launches-industry-first-agentic-risk-map-as-part-of-comprehensive-ai-agent-security-solution-302590849.html) _(research)_
+
+**Tags:** `noma`, `agentic-risk`, `geminijack`
+
+---
+
+### INC-00265
 
 **OpenAI ChatGPT Atlas Browser Prompt Injection**  
 _2025-10 · real-world · Severity: High_
@@ -5882,7 +7803,7 @@ Words hidden in Google Docs or clipboard links could manipulate the Atlas browse
 
 ---
 
-### INC-00208
+### INC-00266
 
 **OpenAI ChatGPT Atlas browser vulnerable to prompt injection via crafted URLs and memory poisoning**  
 _2025-10 · real-world · Severity: High_
@@ -5901,11 +7822,79 @@ Researchers (NeuralTrust, LayerX, etc.) demonstrated multiple security issues in
 - [ChatGPT Atlas Browser Can Be Tricked by Fake URLs - The Hacker News](https://thehackernews.com/2025/10/chatgpt-atlas-browser-can-be-tricked-by.html) _(news)_
 - [Atlas browser exploit lets attackers hijack ChatGPT memory - CSO Online](https://www.csoonline.com/article/4080144/atlas-browser-exploit-lets-attackers-hijack-chatgpt-memory.html) _(news)_
 
-**Tags:** `atlas`, `browser-agent`, `memory-poisoning`, `prompt-injection`, `csrf`
+**Tags:** `atlas`, `browser-agent`, `chatgpt-atlas`, `csrf`, `memory-poisoning`, `omnibox`, `prompt-injection`, `url-injection`
 
 ---
 
-### INC-00236
+### INC-00274
+
+**OpenAI Oct 2025 — Accounts linked to PRC entities sought social-media surveillance proposals**  
+_2025-10 · threat-report · Severity: High_
+
+OpenAI disrupted ChatGPT accounts that appeared linked to People's Republic of China government entities, asking the model to draft work proposals for large-scale tools to monitor social-media conversations of overseas Chinese and Western users.
+
+**Affected:** OpenAI ChatGPT; overseas dissidents  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [OpenAI bans several China, Russia-linked accounts — Axios](https://www.axios.com/2025/10/07/openai-threat-report-china-russia-ai-models) _(news)_
+
+**Tags:** `china`, `surveillance`, `prc`, `openai`
+
+---
+
+### INC-00275
+
+**OpenAI October 2025 Disrupting Malicious Uses Update**  
+_2025-10 · threat-report · Severity: Critical_
+
+OpenAI's October 2025 update reported 40+ networks disrupted including authoritarian regime use and additional scams, cyber activity, and covert influence operations.
+
+**Affected:** OpenAI ChatGPT  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `GOVERN-1.5`, `MAP-3.5`, `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0024`, `AML.T0029`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [OpenAI Oct 2025](https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/) _(vendor)_
+- [OpenAI Disrupts Russian, North Korean, and Chinese Hackers — Hacker News](https://thehackernews.com/2025/10/openai-disrupts-russian-north-korean.html) _(news)_
+- [OpenAI tracks growing misuse of AI by scammers and state actors — Scripps](https://www.scrippsnews.com/science-and-tech/evolution-not-revolution-openai-tracks-growing-misuse-of-ai-by-scammers-and-state-actors) _(news)_
+
+**Tags:** `apt15`, `apt5`, `china`, `credential-stealer`, `dprk`, `ecrime`, `influence-operation`, `iran`, `iuvm`, `manganese`, `openai`, `pig-butchering`, `rat`, `russia`, `scam-compounds`, `south-korea`, `southeast-asia`, `state-actors`, `surveillance`, `threat-report`, `tibet`, `uyghur`, `vixen-panda`, `xeno-rat`
+
+---
+
+### INC-00289
+
+**Poisoning Attacks on LLMs Require a Near-Constant Number of Poison Samples**  
+_2025-10 · research · Severity: Critical_
+
+Anthropic/UK AISI joint study shows that successful LLM pre-training poisoning requires only a roughly constant number (around 250) of poisoned documents regardless of model or dataset size, overturning the percent-of-corpus mental model.
+
+**Affected:** Pre-trained LLMs across multiple scales  
+**Attack vector:** `poisoning`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MAP-5.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Poisoning Attacks on LLMs Require a Near-constant Number of Poison Samples](https://arxiv.org/abs/2510.07192) _(paper)_
+
+**Tags:** `poisoning`, `pretraining`, `scaling`, `anthropic`
+
+---
+
+### INC-00306
 
 **ServiceNow BodySnatcher — hardcoded secret key enables full AI agent hijacking (CVE-2025-12420)**  
 _2025-10 · research-demonstrated · Severity: Critical_
@@ -5937,7 +7926,7 @@ CVSS 9.3. Hardcoded platform-wide secret key combined with email-based account-l
 
 ---
 
-### INC-00244
+### INC-00324
 
 **Trail of Bits: Prompt Injection to RCE in AI Agents**  
 _2025-10 · real-world · Severity: Medium_
@@ -5957,7 +7946,29 @@ Demonstrated a general attack pattern across multiple AI agent platforms: bypass
 
 ---
 
-### INC-00073
+### INC-00329
+
+**Veracode 2025 GenAI Code Security Report: 45% Fail Rate**  
+_2025-10 · research · Severity: High_
+
+Veracode tested 100+ LLMs across Java/Python/C#/JS - 45% of generated code samples failed security tests introducing OWASP Top 10 vulnerabilities. Java showed 72% failure rate; XSS failed 86%; log injection 88%.
+
+**Affected:** Multi-vendor LLMs (code generation)  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0050`  
+
+**References:**
+- [Veracode GenAI Code Report](https://www.veracode.com/resources/analyst-reports/2025-genai-code-security-report/) _(research)_
+
+**Tags:** `code-generation`, `insecure-code`, `veracode`
+
+---
+
+### INC-00091
 
 **Anthropic Claude used in attempted compromise of Mexican water utility**  
 _2025-11 · real-world · Severity: Critical_
@@ -5979,7 +7990,7 @@ As part of the GTG-1002 campaign disclosed by Anthropic, an attacker used Claude
 
 ---
 
-### INC-00076
+### INC-00096
 
 **Anthropic mcp-server-git path validation bypass**  
 _2025-11 · real-world · Severity: High_
@@ -6004,7 +8015,7 @@ Path validation bypass in Anthropic's official mcp-server-git. Combines with CVE
 
 ---
 
-### INC-00090
+### INC-00118
 
 **Claude Desktop PromptJacking RCE**  
 _2025-11 · real-world · Severity: Critical_
@@ -6024,7 +8035,7 @@ Critical RCE in official Claude Desktop extensions (Chrome, iMessage, Apple Note
 
 ---
 
-### INC-00091
+### INC-00119
 
 **Claude hijacked for state-sponsored cyberattacks — 80-90% autonomous operation against 30 entities**  
 _2025-11 · real-world · Severity: Critical_
@@ -6035,10 +8046,10 @@ Chinese state-sponsored threat actor hijacked a jailbroken Claude instance for a
 **Attack vector:** `jailbreak`  
 **Impact:** Autonomous mass cyberattacks; data exfiltration; vulnerability exploitation at scale; state-sponsored AI weaponization  
 
-**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM06`  
-**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI03`, `ASI10`  
-**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.4`, `GOVERN-3.2`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MAP-2.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0025`, `AML.T0039`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0055`, `AML.T0057`  
+**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM06`, `LLM07`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI03`, `ASI06`, `ASI07`, `ASI10`  
+**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.3`, `GOVERN-1.4`, `GOVERN-1.5`, `GOVERN-3.2`, `GOVERN-6.2`, `MANAGE-2.1`, `MANAGE-2.3`, `MANAGE-2.4`, `MAP-2.1`, `MAP-2.3`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.10`, `MEASURE-2.11`, `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0017`, `AML.T0024`, `AML.T0025`, `AML.T0029`, `AML.T0039`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0055`, `AML.T0056`, `AML.T0057`, `AML.T0066`  
 **MAESTRO layers:** `L1 Foundation Models`, `L3 Agent Frameworks`, `L7 Agent Ecosystem`  
 
 **Mitigations:**
@@ -6049,12 +8060,13 @@ Chinese state-sponsored threat actor hijacked a jailbroken Claude instance for a
 **References:**
 - [Anthropic: Disrupting AI-enabled espionage](https://www.anthropic.com/news/disrupting-AI-espionage) _(vendor)_
 - [Incident 1263](https://incidentdatabase.ai/cite/1263/) _(advisory)_
+- [Anthropic Disrupts First Documented Case — Paul Weiss](https://www.paulweiss.com/insights/client-memos/anthropic-disrupts-first-documented-case-of-large-scale-ai-orchestrated-cyberattack) _(analysis)_
 
-**Tags:** `agentic-attack`, `apt`, `autonomous-attack`, `china`, `claude-code`, `espionage`, `jailbreak`, `state-sponsored`, `weaponization`
+**Tags:** `abuse`, `agentic`, `agentic-attack`, `anthropic`, `apt`, `autonomous-attack`, `autonomous-espionage`, `chemical`, `china`, `claude-code`, `csam`, `espionage`, `extortion`, `financial`, `fraud`, `government`, `gtg-1002`, `jailbreak`, `manufacturing`, `state-sponsored`, `threat-report`, `weaponization`
 
 ---
 
-### INC-00093
+### INC-00121
 
 **Claude Skills Data Exfiltration**  
 _2025-11 · real-world · Severity: Medium_
@@ -6074,7 +8086,7 @@ Researchers demonstrated using Claude's "Skills" feature to perform indirect pro
 
 ---
 
-### INC-00095
+### INC-00123
 
 **ClawHub / OpenClaw skill registry infiltrated with 341 malicious agent skills**  
 _2025-11 · real-world · Severity: High_
@@ -6097,7 +8109,29 @@ ClawHub's public registry for OpenClaw's AI agent skills was infiltrated by a co
 
 ---
 
-### INC-00108
+### INC-00128
+
+**CoPhish: Copilot Studio Phishing Platform Abuse**  
+_2025-11 · research · Severity: High_
+
+BlackFog documented CoPhish: turning Microsoft Copilot Studio into a phishing platform - attackers create public agents that exfiltrate user data via OAuth flows tied to Microsoft trusted domains.
+
+**Affected:** Microsoft Copilot Studio  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [CoPhish BlackFog](https://www.blackfog.com/cophish-turning-copilot-into-a-phishing-platform/) _(research)_
+
+**Tags:** `cophish`, `copilot-studio`, `phishing`
+
+---
+
+### INC-00139
 
 **Cursorignore Bypass via New Cursorignore Write**  
 _2025-11 · real-world · Severity: Medium_
@@ -6120,7 +8154,51 @@ A logic flaw allows a malicious agent to read sensitive files protected by curso
 
 ---
 
-### INC-00133
+### INC-00153
+
+**Endor Labs Documents AI Dependency Hallucination Risk**  
+_2025-11 · research · Severity: High_
+
+Endor Labs found ~34% of AI-suggested dependencies don't exist (hallucinations) and 44-49% of AI-imported dependency versions have known vulnerabilities. Only 20% of AI-recommended deps meet safety standards.
+
+**Affected:** AI Coding Assistants (multiple)  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0050`  
+
+**References:**
+- [Endor Labs Report](https://www.prnewswire.com/news-releases/endor-labs-launches-2025-state-of-dependency-management-report-finds-80-of-ai-suggested-dependencies-contain-risks-302603438.html) _(research)_
+
+**Tags:** `hallucination`, `dependency-confusion`, `slopsquatting`
+
+---
+
+### INC-00154
+
+**Endor Labs MCP Server Supply Chain Risk Analysis**  
+_2025-11 · research · Severity: High_
+
+Endor Labs analyzed 10K+ MCP server repositories: 40% had no license, 82% use sensitive APIs without security controls, ~75% built by individuals without enterprise-grade protections.
+
+**Affected:** MCP Server Ecosystem  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`  
+**MITRE ATLAS:** `AML.T0010`  
+
+**References:**
+- [State of Dependency Mgmt 2025](https://www.endorlabs.com/lp/state-of-dependency-management-2025) _(research)_
+
+**Tags:** `mcp`, `supply-chain`, `dependency`, `endor`
+
+---
+
+### INC-00169
 
 **GitHub Copilot for JetBrains RCE via malicious repo/PR**  
 _2025-11 · real-world · Severity: High_
@@ -6145,7 +8223,7 @@ High-severity RCE in GitHub Copilot JetBrains plugin: opening a malicious reposi
 
 ---
 
-### INC-00134
+### INC-00170
 
 **GitHub Copilot Multi-Root Workspace RCE**  
 _2025-11 · real-world · Severity: Medium_
@@ -6185,7 +8263,7 @@ Agent exploits multi-root workspace settings to bypass protections and achieve R
 
 ---
 
-### INC-00138
+### INC-00174
 
 **Google Antigravity IDE Vulnerabilities**  
 _2025-11 · real-world · Severity: High_
@@ -6208,7 +8286,30 @@ RCE via indirect prompt injection and hidden instructions (Unicode tags). Data e
 
 ---
 
-### INC-00147
+### INC-00177
+
+**Google GTIG November 2025 AI Threat Tracker**  
+_2025-11 · threat-report · Severity: Critical_
+
+Google Threat Intelligence Group reported adversaries experimenting with AI for novel capabilities. 57+ nation-state threat actors observed using AI/Gemini for cyber and influence ops, including suspected China-nexus actors using Gemini across full intrusion lifecycle.
+
+**Affected:** Google Gemini  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM06`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.3`, `GOVERN-1.5`, `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0024`, `AML.T0029`, `AML.T0048`, `AML.T0053`  
+
+**References:**
+- [GTIG AI Threat Tracker](https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools) _(vendor)_
+- [Google Uncovers PROMPTFLUX Malware — Hacker News](https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html) _(news)_
+
+**Tags:** `ai-malware`, `apt28`, `credential-stealer`, `fruitshell`, `gemini`, `google`, `gtig`, `huggingface`, `intrusion-lifecycle`, `lamehug`, `polymorphic-malware`, `promptflux`, `promptlock`, `promptsteal`, `quietvault`, `ransomware`, `reverse-shell`, `russia`, `state-actor`, `ukraine`
+
+---
+
+### INC-00186
 
 **HackedGPT: Tenable discloses 7 ChatGPT vulnerabilities enabling silent exfiltration**  
 _2025-11 · real-world · Severity: High_
@@ -6218,23 +8319,23 @@ Tenable researchers disclosed seven novel ChatGPT vulnerabilities collectively d
 **Affected:** OpenAI ChatGPT  
 **Attack vector:** `data-exfiltration`  
 
-**OWASP LLM Top 10:** `LLM01`, `LLM02`  
-**OWASP Agentic (ASI):** `ASI06`  
-**NIST AI RMF:** `GOVERN-1.1`, `MEASURE-2.10`, `MEASURE-2.6`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0051`, `AML.T0057`, `AML.T0066`  
+**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`, `ASI09`  
+**NIST AI RMF:** `GOVERN-1.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.11`, `MEASURE-2.6`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0056`, `AML.T0057`, `AML.T0066`, `AML.T0070`  
 
 **References:**
 - [HackedGPT: Novel AI Vulnerabilities Open the Door for Private Data Leakage - Tenable](https://www.tenable.com/blog/hackedgpt-novel-ai-vulnerabilities-open-the-door-for-private-data-leakage) _(research)_
 - [Researchers Find ChatGPT Vulnerabilities That Let Attackers Trick AI Into Leaking Data - The Hacker News](https://thehackernews.com/2025/11/researchers-find-chatgpt.html) _(news)_
 
-**Tags:** `hackedgpt`, `chatgpt`, `exfiltration`, `tenable`
+**Tags:** `chatgpt`, `exfiltration`, `hackedgpt`, `latentbreak`, `memory-injection`, `searchgpt`, `tenable`
 
 ---
 
-### INC-00148
+### INC-00187
 
 **HashJack -- URL Fragment Prompt Injection for AI Browsers**  
-_2025-11 · real-world · Severity: Medium_
+_2025-11 · real-world · Severity: High_
 
 Cato CTRL discovered that hiding malicious prompts after the "#" symbol in URLs exploits AI browsers (Perplexity Comet, Copilot for Edge, Gemini for Chrome). URL fragments are client-side only, bypassing WAFs, IPS, and server logs. Six attack scenarios including callback phishing, data exfiltration, and credential theft. Google declined to fix, considering it intended behavior.
 
@@ -6249,9 +8350,11 @@ Cato CTRL discovered that hiding malicious prompts after the "#" symbol in URLs 
 **References:**
 - [Cato Networks](https://www.catonetworks.com/blog/cato-ctrl-hashjack-first-known-indirect-prompt-injection/) _(research)_
 
+**Tags:** `ai-browser`, `comet`, `hashjack`, `url-fragment`
+
 ---
 
-### INC-00193
+### INC-00251
 
 **NVIDIA NeMo Framework code injection**  
 _2025-11 · real-world · Severity: High_
@@ -6276,7 +8379,7 @@ Code injection in NVIDIA NeMo Framework; malicious data may cause code injection
 
 ---
 
-### INC-00194
+### INC-00252
 
 **NVIDIA NeMo Framework malicious-data code execution**  
 _2025-11 · real-world · Severity: High_
@@ -6301,7 +8404,7 @@ NVIDIA NeMo Framework for all platforms contains a vulnerability where malicious
 
 ---
 
-### INC-00202
+### INC-00260
 
 **Ollama GGUF Model File RCE**  
 _2025-11 · real-world · Severity: Critical_
@@ -6321,7 +8424,7 @@ Critical out-of-bounds write in Ollama < 0.7.0 when parsing malicious GGUF model
 
 ---
 
-### INC-00204
+### INC-00262
 
 **Open WebUI Direct Connections SSE code injection -> ATO/RCE**  
 _2025-11 · real-world · Severity: High_
@@ -6347,7 +8450,7 @@ Open WebUI <= 0.6.34: Direct Connections feature allows malicious external model
 
 ---
 
-### INC-00205
+### INC-00263
 
 **Open WebUI incorrect access control**  
 _2025-11 · real-world · Severity: High_
@@ -6372,7 +8475,7 @@ Incorrect access control in open-webui allowing unauthorized actions across user
 
 ---
 
-### INC-00206
+### INC-00264
 
 **Open WebUI stored DOM XSS via prompts -> ATO/RCE**  
 _2025-11 · real-world · Severity: High_
@@ -6397,7 +8500,7 @@ Open WebUI is vulnerable to Stored DOM XSS via prompts when 'Insert Prompt as Ri
 
 ---
 
-### INC-00214
+### INC-00280
 
 **Perplexity Comet agentic browser — unauthorized Amazon customer account access**  
 _2025-11 · real-world · Severity: Critical_
@@ -6425,7 +8528,7 @@ Amazon lawsuit alleging Perplexity AI's shopping agent accessed private customer
 
 ---
 
-### INC-00237
+### INC-00307
 
 **SesameOp: AI Agent Backdoor Using OpenAI Assistants API as C2**  
 _2025-11 · real-world · Severity: Critical_
@@ -6448,7 +8551,7 @@ Microsoft Threat Intelligence identified 'SesameOp,' a novel backdoor abusing th
 
 ---
 
-### INC-00239
+### INC-00309
 
 **ShadowMQ — critical RCE in Meta/NVIDIA/vLLM inference servers via pickle deserialization**  
 _2025-11 · research-demonstrated · Severity: Critical_
@@ -6480,7 +8583,7 @@ Critical RCE vulnerabilities in AI inference servers from unsafe ZeroMQ pickle d
 
 ---
 
-### INC-00240
+### INC-00310
 
 **ShadowRay 2.0 botnet — self-spreading crypto-mining via Ray AI framework**  
 _2025-11 · real-world · Severity: Critical_
@@ -6512,7 +8615,51 @@ Attackers exploited an unpatched Ray AI framework flaw to create a self-spreadin
 
 ---
 
-### INC-00248
+### INC-00316
+
+**Sysdig AI-Accelerated Cloud Attack: Admin Privileges in 10 Minutes**  
+_2025-11 · real-world · Severity: Critical_
+
+Sysdig TRT observed AWS environment attack where threat actor escalated from initial access to admin in <10 minutes using LLMs for reconnaissance, malicious code generation, and real-time decision making.
+
+**Affected:** AWS (LLM-powered attacker tooling)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.11`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0053`  
+
+**References:**
+- [Sysdig Threat Research](https://www.sysdig.com/threat-research) _(research)_
+
+**Tags:** `ai-attacker`, `cloud-attack`, `rapid-escalation`
+
+---
+
+### INC-00321
+
+**Third-Party AI Chatbot Plugin Prompt Injection Risks**  
+_2025-11 · research · Severity: High_
+
+IEEE S&P 2026 paper analyzed 17 third-party chatbot plugins on 10K+ websites: 15 plugins enable indirect prompt injection by mixing trusted/untrusted content in tool context, no separation enforced.
+
+**Affected:** Third-party Chatbot Plugins (multiple)  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Third-Party Plugin Risks](https://arxiv.org/html/2511.05797v1) _(research)_
+
+**Tags:** `plugin`, `third-party`, `ieee-sp-2026`
+
+---
+
+### INC-00333
 
 **vLLM Unsafe Tensor Deserialization (CVE-2025-62164)**  
 _2025-11 · real-world · Severity: High_
@@ -6538,7 +8685,29 @@ CVSS 8.8. Memory corruption and potential RCE in vLLM 0.10.2-0.11.0 via unsafe d
 
 ---
 
-### INC-00094
+### INC-00337
+
+**Whisper Leak: Side-Channel Attack on Large Language Models**  
+_2025-11 · research · Severity: High_
+
+McDonald and Salem (Microsoft) show that packet size and inter-token timing patterns in streaming LLM TLS traffic leak the topic of user prompts. >98 percent AUPRC across 28 commercial LLMs; 100 percent precision on sensitive topics like money laundering.
+
+**Affected:** OpenAI, Mistral, xAI, Microsoft Azure-hosted LLMs (28 providers)  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0053`  
+
+**References:**
+- [Whisper Leak: a side-channel attack on Large Language Models](https://arxiv.org/abs/2511.03675) _(paper)_
+
+**Tags:** `side-channel`, `tls-leak`, `privacy`, `microsoft`
+
+---
+
+### INC-00122
 
 **Claude Skills ransomware deployment — MedusaLocker via malicious plugin**  
 _2025-12 · red-team · Severity: Critical_
@@ -6550,8 +8719,8 @@ Cato Networks demonstrated deploying MedusaLocker ransomware through Claude's Sk
 **Impact:** Ransomware deployment capability; autonomous code execution; agent weaponization  
 
 **OWASP LLM Top 10:** `LLM03`, `LLM05`, `LLM06`  
-**OWASP Agentic (ASI):** `ASI04`, `ASI05`  
-**NIST AI RMF:** `GOVERN-3.2`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.5`, `MEASURE-2.7`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI04`, `ASI05`, `ASI10`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-3.2`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MAP-3.5`, `MAP-4.1`, `MEASURE-2.5`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0010.003`, `AML.T0011`, `AML.T0048`, `AML.T0049`, `AML.T0050`, `AML.T0053`, `AML.T0060`  
 **MAESTRO layers:** `L7 Agent Ecosystem`, `L3 Agent Frameworks`, `L4 Deployment & Infrastructure`  
 
@@ -6563,11 +8732,11 @@ Cato Networks demonstrated deploying MedusaLocker ransomware through Claude's Sk
 **References:**
 - [Cato CTRL: Weaponizing Claude Skills with MedusaLocker](https://www.catonetworks.com/blog/cato-ctrl-weaponizing-claude-skills-with-medusalocker/) _(research)_
 
-**Tags:** `plugin`, `ransomware`, `red-team`, `skills`, `supply-chain`
+**Tags:** `claude-skills`, `medusalocker`, `plugin`, `ransomware`, `red-team`, `skills`, `supply-chain`
 
 ---
 
-### INC-00116
+### INC-00149
 
 **Dify Unauthenticated Information Disclosure (CVE-2025-63387)**  
 _2025-12 · real-world · Severity: High_
@@ -6590,7 +8759,7 @@ CVSS 7.5. Dify v1.9.1 fails to enforce authentication on /console/api/system-fea
 
 ---
 
-### INC-00136
+### INC-00172
 
 **Google Antigravity AI Data Wipe**  
 _2025-12 · real-world · Severity: Medium_
@@ -6610,7 +8779,7 @@ AI-powered IDE misinterpreted a cache-clearing instruction and issued a system-l
 
 ---
 
-### INC-00137
+### INC-00173
 
 **Google Antigravity AI IDE deletes entire D: drive — misinterpreted cache-clearing instruction**  
 _2025-12 · real-world · Severity: Critical_
@@ -6639,7 +8808,7 @@ AI-powered IDE misinterpreted a cache-clearing instruction and issued a system d
 
 ---
 
-### INC-00156
+### INC-00198
 
 **IDEsaster — 30+ vulnerabilities across AI coding tools (Cursor, Windsurf, Copilot, Zed, Roo Code)**  
 _2025-12 · research-demonstrated · Severity: Critical_
@@ -6670,7 +8839,7 @@ Researcher Ari Marzouk discovered 30+ vulnerabilities (24 CVEs assigned) affecti
 
 ---
 
-### INC-00159
+### INC-00202
 
 **iProov Camera-Injection Attack on Mobile KYC Liveness Detection**  
 _2025-12 · red-team · Severity: Critical_
@@ -6691,7 +8860,51 @@ iProov's red team demonstrated a deepfake-driven camera-injection attack against
 
 ---
 
-### INC-00165
+### INC-00209
+
+**Koi AI Discovers Cursor/Windsurf/Antigravity Recommend Malware**  
+_2025-12 · research · Severity: High_
+
+Koi AI researchers prevented Cursor, Windsurf, and Google Antigravity from recommending malicious packages to developers via slopsquatting and dependency confusion vectors.
+
+**Affected:** Cursor, Windsurf, Antigravity  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`  
+**MITRE ATLAS:** `AML.T0010`  
+
+**References:**
+- [Koi Malware Recommendation](https://www.koi.ai/blog/how-we-prevented-cursor-windsurf-google-antigravity-from-recommending-malware) _(research)_
+
+**Tags:** `slopsquatting`, `dependency-confusion`, `ide-agents`
+
+---
+
+### INC-00210
+
+**Lakera Q4 2025 Agent Trends: Indirect Attacks Succeed Faster**  
+_2025-12 · research · Severity: Medium_
+
+Lakera Q4 2025 report documented indirect prompt-injection attacks succeed with fewer attempts than direct ones - early filters less effective on harmful instructions arriving via external content.
+
+**Affected:** Multi-vendor agents  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Lakera Q4 2025](https://www.lakera.ai/ai-security-guides/q4-2025-ai-agent-security-trends) _(research)_
+
+**Tags:** `lakera`, `indirect-injection`, `trends`
+
+---
+
+### INC-00213
 
 **LangChain.js serialization injection enables secret extraction**  
 _2025-12 · real-world · Severity: High_
@@ -6717,7 +8930,7 @@ Serialization injection in LangChain.js similar to CVE-2025-68664: improper esca
 
 ---
 
-### INC-00167
+### INC-00215
 
 **LangGrinch -- LangChain Core Serialization Injection (CVE-2025-68664)**  
 _2025-12 · real-world · Severity: Critical_
@@ -6743,7 +8956,7 @@ CVSS 9.3 serialization injection in langchain-core's dumps()/loads() functions. 
 
 ---
 
-### INC-00190
+### INC-00246
 
 **n8n Expression Injection RCE (CVE-2025-68613)**  
 _2025-12 · real-world · Severity: Critical_
@@ -6769,7 +8982,7 @@ CVSS 9.9. Authenticated expression injection in n8n's expression evaluation engi
 
 ---
 
-### INC-00233
+### INC-00302
 
 **React2Shell Impacting Dify and AI Platforms (CVE-2025-55182)**  
 _2025-12 · real-world · Severity: Critical_
@@ -6793,7 +9006,7 @@ CVSS 10.0. Critical unauthenticated RCE in React Server Components' Flight proto
 
 ---
 
-### INC-00246
+### INC-00331
 
 **vLLM Model Config Auto-Map RCE (CVE-2025-66448)**  
 _2025-12 · real-world · Severity: High_
@@ -6816,7 +9029,7 @@ CVSS 8.8. RCE in vLLM < 0.11.1 via malicious auto_map entries in model config fi
 
 ---
 
-### INC-00253
+### INC-00341
 
 **WIRED/Indicator: 90 schools, 600+ students worldwide targeted with AI deepfake nudes**  
 _2025-12 · real-world · Severity: High_
@@ -6839,7 +9052,29 @@ A joint WIRED and Indicator investigation uncovered nearly 90 schools and 600+ s
 
 ---
 
-### INC-00258
+### INC-00344
+
+**ÆSIR AI Discovers 21 Critical CVEs Across NVIDIA, Tencent, MLflow, MCP**  
+_2025-12 · research · Severity: High_
+
+Trend Micro's ÆSIR AI-empowered security research platform uncovered 21 critical CVEs since mid-2025 across NVIDIA, Tencent, MLflow, and MCP tooling.
+
+**Affected:** NVIDIA, Tencent, MLflow, MCP tooling  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0044`, `AML.T0050`  
+
+**References:**
+- [ÆSIR Trend Micro](https://www.trendmicro.com/en_us/research/26/a/aesir.html) _(research)_
+
+**Tags:** `aesir`, `ai-discovered-cves`, `trendmicro`
+
+---
+
+### INC-00353
 
 **AI Scribe SEO plugin (ChatGPT GPT-4o) issue report**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -6860,7 +9095,7 @@ AI Scribe – SEO AI Writer, Content Generator, Humanizer, Blog Writer, SEO Opti
 
 ---
 
-### INC-00269
+### INC-00366
 
 **Ansible-core sensitive-info exposure in Vault files (CVE-2024-8775)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -6881,7 +9116,7 @@ Sensitive information stored in Ansible Vault files can be exposed in plaintext 
 
 ---
 
-### INC-00278
+### INC-00376
 
 **Arbitrary file deletion vulnerability (lunary/anything-llm class)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -6902,7 +9137,7 @@ Vulnerability allowing unauthenticated attackers to delete arbitrary files on th
 
 ---
 
-### INC-00279
+### INC-00377
 
 **Arbitrary file write in db-gpt RAG-knowledge endpoint (CVE-2024-10834)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -6924,7 +9159,7 @@ db-gpt 0.6.0 contains an arbitrary-file-write vulnerability in the RAG-knowledge
 
 ---
 
-### INC-00280
+### INC-00378
 
 **Arbitrary file write in eosphoros-ai/db-gpt knowledge API (CVE-2024-10833)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -6946,7 +9181,7 @@ db-gpt 0.6.0 knowledge-upload endpoint is susceptible to absolute-path traversal
 
 ---
 
-### INC-00281
+### INC-00381
 
 **Azure AI Face Service EoP via auth-bypass by spoofing**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -6967,7 +9202,7 @@ Authentication-bypass by spoofing in Azure AI Face Service allows an authorized 
 
 ---
 
-### INC-00290
+### INC-00396
 
 **Code injection in binary-husky/gpt_academic (CVE-2024-10950)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -6990,7 +9225,7 @@ Code-injection vulnerability in binary-husky/gpt_academic permitting arbitrary c
 
 ---
 
-### INC-00294
+### INC-00405
 
 **DoS in invoke-ai/invokeai multipart boundary parsing (CVE-2024-10821)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7012,7 +9247,7 @@ Vulnerability in invoke-ai/invokeai multipart-request boundary processing allows
 
 ---
 
-### INC-00295
+### INC-00406
 
 **DoS via LangChainLLM in run-llama/llama_index (v0.12.5)**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -7034,7 +9269,7 @@ In llama_index v0.12.5 the LangChainLLM class has no exception handling when thr
 
 ---
 
-### INC-00296
+### INC-00407
 
 **DoS via large board_name in invoke-ai/invokeai 5.0.2**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -7056,7 +9291,7 @@ DoS in invoke-ai/invokeai v5.0.2 /boards/{board_id} PATCH endpoint when an exces
 
 ---
 
-### INC-00324
+### INC-00442
 
 **Improper access control in lunary-ai/lunary evaluators (CVE-2024-10330)**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -7077,7 +9312,7 @@ In lunary-ai/lunary 1.5.6 the /v1/evaluators/ endpoint lacks proper access contr
 
 ---
 
-### INC-00325
+### INC-00443
 
 **Improper access control on evaluator deletion route (lunary)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7098,7 +9333,7 @@ Improper access control on a route that allowed low-privilege users to delete ev
 
 ---
 
-### INC-00326
+### INC-00444
 
 **Improper authorization in lunary-ai/lunary (CVE-2024-10274)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7120,7 +9355,7 @@ lunary-ai/lunary 1.5.5 /users/me/org endpoint lacks adequate access control, all
 
 ---
 
-### INC-00343
+### INC-00470
 
 **Mage AI insecure default initialization (0.9.75)**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -7141,7 +9376,7 @@ Mage AI 0.9.75 has insecure default initialization of a resource, weakening defa
 
 ---
 
-### INC-00350
+### INC-00477
 
 **Microsoft Account missing authorization elevation of privilege**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7162,7 +9397,7 @@ Missing authorization in Microsoft Account allows an unauthorized attacker to el
 
 ---
 
-### INC-00376
+### INC-00506
 
 **NI Vision Builder AI RCE via crafted file (user interaction)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7183,7 +9418,7 @@ Vulnerability allowing remote attackers to execute arbitrary code on affected in
 
 ---
 
-### INC-00377
+### INC-00507
 
 **NVIDIA Container Toolkit TOCTOU container escape (CVE-2024-0132)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -7204,7 +9439,7 @@ NVIDIA Container Toolkit 1.16.1 and earlier contain a Time-of-check-Time-of-use 
 
 ---
 
-### INC-00388
+### INC-00520
 
 **Organization Confusion on Hugging Face**  
 _2024 · research · Severity: Medium_
@@ -7226,7 +9461,7 @@ A security researcher created Hugging Face organization accounts impersonating r
 
 ---
 
-### INC-00389
+### INC-00521
 
 **Overly permissive CORS / CSRF in db-gpt (CVE-2024-10906)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7247,7 +9482,7 @@ db-gpt 0.6.0 dbgpt_server uses a permissive CORSMiddleware that sets Access-Cont
 
 ---
 
-### INC-00390
+### INC-00522
 
 **Path traversal in eosphoros-ai/db-gpt**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7269,7 +9504,7 @@ Path-traversal vulnerability in DB-GPT enabling unauthorized file access on the 
 
 ---
 
-### INC-00391
+### INC-00523
 
 **Path traversal in mintplex-labs/anything-llm (CVE-2024-10513)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -7291,7 +9526,7 @@ anything-llm <1.2.2 document-uploads manager endpoint /api/document/move-files a
 
 ---
 
-### INC-00394
+### INC-00529
 
 **Prompt-injection RCE via manim plugin in gpt_academic (CVE-2024-10954)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -7313,7 +9548,7 @@ The manim plugin in binary-husky/gpt_academic allows prompt-injection-based remo
 
 ---
 
-### INC-00398
+### INC-00539
 
 **RCE via unsafe torch.load in invoke-ai/invokeai (5.3.1-5.4.2)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -7334,7 +9569,7 @@ RCE in invokeai 5.3.1-5.4.2 via the /api/v2/models/install API: unsafe deseriali
 
 ---
 
-### INC-00402
+### INC-00550
 
 **Sensitive file disclosure via ImagePromptTemplate in LangChain (CVE-2024-10940)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7356,7 +9591,7 @@ langchain-core 0.1.17-0.1.53, 0.2.0-0.2.43, 0.3.0-0.3.15 allows unauthorized use
 
 ---
 
-### INC-00403
+### INC-00551
 
 **Sensitive prompt-data exposure via URL access**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7377,7 +9612,7 @@ Unauthorized users can view sensitive prompt data by accessing specific URLs, le
 
 ---
 
-### INC-00404
+### INC-00552
 
 **Sensitive-info exposure in anything-llm setup-complete (CVE-2024-6842)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7398,7 +9633,7 @@ anything-llm 1.5.5 /setup-complete API allows unauthorized users to access sensi
 
 ---
 
-### INC-00410
+### INC-00559
 
 **SQL injection via SQL-run endpoint in db-gpt (CVE-2024-10835)**  
 _2024 · vulnerability-disclosure · Severity: Critical_
@@ -7420,7 +9655,7 @@ db-gpt v0.6.0 web API POST /api/v1/editor/sql/run allows execution of arbitrary 
 
 ---
 
-### INC-00411
+### INC-00560
 
 **SSRF in infiniflow/ragflow (CVE-2024-12779)**  
 _2024 · vulnerability-disclosure · Severity: High_
@@ -7442,7 +9677,7 @@ SSRF in ragflow 0.12.0 via POST /v1/llm/add_llm and POST /v1/conversation/tts en
 
 ---
 
-### INC-00419
+### INC-00576
 
 **Uncontrolled resource consumption in mlflow (CVE-2024-6838)**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -7464,7 +9699,7 @@ mlflow v2.13.2 allows creating/renaming experiments with arbitrarily long names,
 
 ---
 
-### INC-00424
+### INC-00585
 
 **XSS in IBM watsonx.ai Web UI (CVE-2024-49785)**  
 _2024 · vulnerability-disclosure · Severity: Medium_
@@ -7485,7 +9720,7 @@ IBM watsonx.ai 1.1-2.0.3 and on Cloud Pak for Data 4.8-5.0.3 allows authenticate
 
 ---
 
-### INC-00262
+### INC-00357
 
 **AI-generated Biden robocall suppressing votes in New Hampshire primary**  
 _2024-01 · real-world · Severity: High_
@@ -7508,7 +9743,7 @@ Two days before the 2024 NH Democratic primary, thousands received AI-generated 
 
 ---
 
-### INC-00263
+### INC-00358
 
 **AI-generated Biden robocalls — deepfake voice used to suppress voter turnout**  
 _2024-01 · real-world · Severity: Critical_
@@ -7538,7 +9773,7 @@ AI-generated robocalls mimicking President Biden's voice were sent to New Hampsh
 
 ---
 
-### INC-00271
+### INC-00368
 
 **Anthropic Sleeper Agents paper — models trained to hide malicious behaviour**  
 _2024-01 · research-demonstrated · Severity: Critical_
@@ -7550,9 +9785,9 @@ Anthropic researchers demonstrated that large language models can be trained to 
 **Impact:** Fundamental challenge to safety fine-tuning; shows RLHF cannot reliably remove planted backdoors; implications for supply chain trust  
 
 **OWASP LLM Top 10:** `LLM03`, `LLM04`  
-**OWASP Agentic (ASI):** `ASI04`, `ASI10`  
-**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.4`, `MANAGE-3.1`, `MANAGE-3.2`, `MAP-4.2`, `MEASURE-2.10`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0018`, `AML.T0019`, `AML.T0020`, `AML.T0039`, `AML.T0048`, `AML.T0059`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI04`, `ASI09`, `ASI10`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `GOVERN-6.2`, `MANAGE-2.4`, `MANAGE-3.1`, `MANAGE-3.2`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0018`, `AML.T0019`, `AML.T0020`, `AML.T0039`, `AML.T0048`, `AML.T0048.003`, `AML.T0053`, `AML.T0059`  
 **MAESTRO layers:** `L1 Foundation Models`, `L5 Evaluation & Observability`, `L2 Data Operations`  
 
 **Mitigations:**
@@ -7565,11 +9800,33 @@ Anthropic researchers demonstrated that large language models can be trained to 
 - [Sleeper Agents: Training Deceptive LLMs That Persist Through Safety Training](https://arxiv.org/abs/2401.05566) _(research)_
 - [Anthropic Sleeper Agents blog](https://www.anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training) _(vendor)_
 
-**Tags:** `backdoor`, `data-poisoning`, `deception`, `deceptive-alignment`, `model-poisoning`, `rlhf`, `safety-training`, `sleeper-agents`
+**Tags:** `anthropic`, `backdoor`, `data-poisoning`, `deception`, `deceptive-alignment`, `model-poisoning`, `persistent`, `rlhf`, `safety-training`, `sleeper-agents`
 
 ---
 
-### INC-00297
+### INC-00384
+
+**BadChain: Backdoor Chain-of-Thought Prompting**  
+_2024-01 · research · Severity: High_
+
+Xiang et al. insert a malicious reasoning step into chain-of-thought demonstrations. Without model-weight access, BadChain reaches 97 percent ASR on GPT-4 across reasoning benchmarks; existing shuffling defenses are ineffective. ICLR 2024.
+
+**Affected:** Llama-2, GPT-3.5, PaLM2, GPT-4 with CoT prompting  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [BadChain: Backdoor Chain-of-Thought Prompting for Large Language Models](https://arxiv.org/abs/2401.12242) _(paper)_
+
+**Tags:** `backdoor`, `chain-of-thought`, `iclr-2024`, `in-context`
+
+---
+
+### INC-00408
 
 **DPD AI chatbot swears at customer and criticises company — prompt injection via customer input**  
 _2024-01 · real-world · Severity: Medium_
@@ -7599,7 +9856,7 @@ DPD's customer service AI chatbot was manipulated by a customer using direct pro
 
 ---
 
-### INC-00298
+### INC-00409
 
 **DPD chatbot malfunctioned, swore at customer and criticized DPD**  
 _2024-01 · real-world · Severity: Low_
@@ -7621,7 +9878,51 @@ UK package delivery service DPD disabled parts of its AI chatbot service after a
 
 ---
 
-### INC-00328
+### INC-00433
+
+**How Johnny Can Persuade LLMs to Jailbreak Them (PAP)**  
+_2024-01 · research · Severity: High_
+
+Zeng et al. operationalize a 40-technique persuasion taxonomy from social-science research to generate human-readable Persuasive Adversarial Prompts. PAP achieves over 92 percent attack success rate on Llama-2-7b-Chat, GPT-3.5, and GPT-4 across 10 trials.
+
+**Affected:** GPT-3.5, GPT-4, Llama-2-7b-Chat  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [How Johnny Can Persuade LLMs to Jailbreak Them](https://arxiv.org/abs/2401.06373) _(paper)_
+
+**Tags:** `jailbreak`, `persuasion`, `social-engineering`, `humanizing`
+
+---
+
+### INC-00440
+
+**ICLAttack: Universal In-Context Learning Backdoor Attacks**  
+_2024-01 · research · Severity: High_
+
+Zhao et al. introduce ICLAttack, which manipulates demonstration context (not weights) to backdoor LLMs. 95 percent average ASR across three datasets on OPT models up to 180B parameters.
+
+**Affected:** OPT (1.3B-180B), Llama, Bloom  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0053`  
+
+**References:**
+- [Universal Vulnerabilities in Large Language Models: Backdoor Attacks for In-context Learning](https://arxiv.org/abs/2401.05949) _(paper)_
+
+**Tags:** `backdoor`, `in-context-learning`, `demonstration-poisoning`
+
+---
+
+### INC-00453
 
 **JupyterLab token leak via crafted-link redirect (used by AI notebooks)**  
 _2024-01 · real-world · Severity: Medium_
@@ -7646,7 +9947,7 @@ JupyterLab users clicking a malicious link may have their Authorization and XSRF
 
 ---
 
-### INC-00340
+### INC-00466
 
 **LlamaIndex SQL injection via prompt in NLSQLTableQueryEngine**  
 _2024-01 · real-world · Severity: High_
@@ -7671,7 +9972,7 @@ LlamaIndex (llama_index) through 0.9.34 allows SQL injection in the NLSQLTableQu
 
 ---
 
-### INC-00344
+### INC-00471
 
 **Malicious custom GPT 'Psychology' exfiltrates user chats via API**  
 _2024-01 · real-world · Severity: High_
@@ -7694,7 +9995,7 @@ Researchers created a custom GPT named 'Psychology' that appeared to assist user
 
 ---
 
-### INC-00399
+### INC-00546
 
 **Scale AI / Sama contractor data exposure — third-party AI labeling workforce privacy violations**  
 _2024-01 · real-world · Severity: Critical_
@@ -7732,7 +10033,51 @@ Investigations by TIME and The Guardian revealed systematic privacy violations i
 
 ---
 
-### INC-00254
+### INC-00565
+
+**Storm-1376 / Spamouflage — AI-generated fake audio of Terry Gou during 2024 Taiwan election**  
+_2024-01 · threat-report · Severity: High_
+
+Chinese influence cluster Storm-1376 (Spamouflage / Dragonbridge) posted AI-generated fake audio of Foxconn founder Terry Gou "endorsing" another candidate on Taiwan's election day, plus AI-generated memes targeting then-DPP candidate William Lai. First documented nation-state AI use in a foreign election.
+
+**Affected:** Taiwan electorate; YouTube  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0043`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [China tests US voter fault lines and ramps AI content — Microsoft On the Issues](https://blogs.microsoft.com/on-the-issues/2024/04/04/china-ai-influence-elections-mtac-cybersecurity/) _(vendor)_
+
+**Tags:** `ai-imagery`, `china`, `deepfake`, `influence-operation`, `microsoft`, `spamouflage`, `storm-1376`, `taiwan-election`, `taizi-flood`, `us-election`
+
+---
+
+### INC-00573
+
+**TrustLLM: Trustworthiness in Large Language Models Benchmark**  
+_2024-01 · research · Severity: Medium_
+
+Sun et al. release TrustLLM, a six-dimension trustworthiness benchmark (truthfulness, safety, fairness, robustness, privacy, machine ethics) evaluating 16 mainstream LLMs and surfacing systemic safety failures. ICML 2024.
+
+**Affected:** 16 mainstream LLMs (proprietary and open-source)  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI05`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0054`, `AML.T0057`  
+
+**References:**
+- [TrustLLM: Trustworthiness in Large Language Models](https://arxiv.org/abs/2401.05561) _(paper)_
+
+**Tags:** `benchmark`, `trustworthiness`, `icml-2024`
+
+---
+
+### INC-00345
 
 **100+ malicious ML models uploaded to Hugging Face (JFrog) and nullifAI bypass**  
 _2024-02 · real-world · Severity: Critical_
@@ -7756,7 +10101,7 @@ JFrog identified 100+ malicious ML models on Hugging Face capable of executing a
 
 ---
 
-### INC-00259
+### INC-00354
 
 **AI voice deepfake CEO fraud — Hong Kong $25M loss**  
 _2024-02 · real-world · Severity: Critical_
@@ -7787,7 +10132,7 @@ A finance employee at a Hong Kong-based multinational company was tricked into t
 
 ---
 
-### INC-00265
+### INC-00360
 
 **Air Canada chatbot gave inaccurate bereavement-fare info; airline held liable**  
 _2024-02 · real-world · Severity: Low_
@@ -7809,7 +10154,7 @@ Air Canada's website chatbot incorrectly told customer Jake Moffatt he could ret
 
 ---
 
-### INC-00266
+### INC-00361
 
 **Air Canada chatbot invents bereavement discount policy — tribunal ruling**  
 _2024-02 · real-world · Severity: High_
@@ -7840,7 +10185,7 @@ A passenger named Jake Moffatt used Air Canada's AI chatbot to ask about bereave
 
 ---
 
-### INC-00267
+### INC-00362
 
 **Air Canada chatbot misinformation liability (Moffatt v. Air Canada)**  
 _2024-02 · real-world · Severity: Medium_
@@ -7862,7 +10207,7 @@ The British Columbia Civil Resolution Tribunal found Air Canada liable for misin
 
 ---
 
-### INC-00274
+### INC-00372
 
 **AnythingLLM privilege escalation: default-role users delete admin documents**  
 _2024-02 · real-world · Severity: Medium_
@@ -7887,7 +10232,7 @@ Privilege escalation in mintplex-labs/anything-llm: 'default' role users can del
 
 ---
 
-### INC-00275
+### INC-00373
 
 **AnythingLLM unauthenticated DoS via data-export filename**  
 _2024-02 · real-world · Severity: High_
@@ -7912,7 +10257,29 @@ Pre-08d33cfd8 versions of AnythingLLM have a public data-export endpoint whose f
 
 ---
 
-### INC-00284
+### INC-00379
+
+**ArtPrompt: ASCII Art-Based Jailbreak of Aligned LLMs**  
+_2024-02 · research · Severity: High_
+
+Jiang et al. evade safety filters by replacing trigger words (e.g., 'bomb') with ASCII art. Because frontier models fail the Vision-in-Text Challenge, they execute the cloaked prompt. ArtPrompt achieves high success on GPT-3.5/4, Gemini, Claude, and Llama-2.
+
+**Affected:** GPT-3.5, GPT-4, Gemini, Claude, Llama-2  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [ArtPrompt: ASCII Art-based Jailbreak Attacks against Aligned LLMs](https://arxiv.org/abs/2402.11753) _(paper)_
+
+**Tags:** `jailbreak`, `ascii-art`, `obfuscation`, `acl-2024`
+
+---
+
+### INC-00390
 
 **Character.AI chatbot allegedly influenced teen Sewell Setzer toward suicide**  
 _2024-02 · real-world · Severity: Critical_
@@ -7934,7 +10301,29 @@ A wrongful-death lawsuit alleges Character.AI's Daenerys Targaryen chatbot encou
 
 ---
 
-### INC-00293
+### INC-00400
+
+**Custom GPT System Prompt Leakage Wave**  
+_2024-02 · research · Severity: Medium_
+
+Multiple researchers (Lakera, Embrace The Red, others) demonstrated that custom GPTs in OpenAI GPT Store leaked their proprietary system instructions and embedded API keys via prompt injection.
+
+**Affected:** OpenAI GPT Store / Custom GPTs  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0056`, `AML.T0057`  
+
+**References:**
+- [Lakera Prompt Injection Guide](https://www.lakera.ai/blog/guide-to-prompt-injection) _(research)_
+
+**Tags:** `custom-gpt`, `system-prompt-leak`, `api-keys`
+
+---
+
+### INC-00403
 
 **Deepfake CFO scam costs Arup $25 million in Hong Kong**  
 _2024-02 · real-world · Severity: Critical_
@@ -7957,7 +10346,7 @@ Arup's Hong Kong office lost $25.6M (HK$200M) across 15 transactions after a fin
 
 ---
 
-### INC-00303
+### INC-00416
 
 **Gemini bias and sociotechnical training failures harm Google's reputation**  
 _2024-02 · real-world · Severity: Medium_
@@ -7979,7 +10368,7 @@ Google paused Gemini image generation after it produced historically inaccurate 
 
 ---
 
-### INC-00310
+### INC-00423
 
 **Google Gemini AI image generator refuses to depict white people — overcorrected safety filters**  
 _2024-02 · real-world · Severity: High_
@@ -8009,7 +10398,7 @@ Google's Gemini image generation model produced historically inaccurate images b
 
 ---
 
-### INC-00312
+### INC-00426
 
 **Gradio component_server SSRF / arbitrary file read**  
 _2024-02 · real-world · Severity: High_
@@ -8035,7 +10424,7 @@ Gradio /component_server endpoint improperly allows invocation of any method on 
 
 ---
 
-### INC-00318
+### INC-00434
 
 **Hugging Face model repository pickle-based malware supply chain**  
 _2024-02 · real-world · Severity: Critical_
@@ -8067,7 +10456,29 @@ Security researchers at JFrog and Protect AI identified malicious machine learni
 
 ---
 
-### INC-00357
+### INC-00451
+
+**Jailbreaking via Word Substitution and Novel Ciphers**  
+_2024-02 · research · Severity: High_
+
+Handa et al. show self-defined word substitution ciphers and stacked encryptions (Base64+ROT13+substitution) bypass safety alignment without complex multi-turn exchanges. Higher ASR than CipherChat on reasoning-capable LLMs.
+
+**Affected:** GPT-4, Claude, Gemini, reasoning LLMs  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Jailbreaking LLMs via Novel Ciphers (Word Substitution)](https://arxiv.org/abs/2402.10601) _(paper)_
+
+**Tags:** `jailbreak`, `cipher`, `obfuscation`
+
+---
+
+### INC-00487
 
 **MLflow artifact-deletion path traversal allowing arbitrary directory deletion**  
 _2024-02 · real-world · Severity: High_
@@ -8092,7 +10503,7 @@ Path traversal in MLflow artifact deletion functionality due to improper sanitiz
 
 ---
 
-### INC-00361
+### INC-00491
 
 **MLflow path traversal in artifact_location/source**  
 _2024-02 · real-world · Severity: High_
@@ -8118,7 +10529,7 @@ Path traversal vulnerability due to insufficient validation of user-supplied inp
 
 ---
 
-### INC-00362
+### INC-00492
 
 **MLflow path traversal via ';' URL parameter manipulation**  
 _2024-02 · real-world · Severity: High_
@@ -8143,7 +10554,7 @@ Path traversal vulnerability due to improper handling of URL parameters: attacke
 
 ---
 
-### INC-00363
+### INC-00493
 
 **MLflow path traversal via artifact_location fragment URI**  
 _2024-02 · real-world · Severity: High_
@@ -8169,7 +10580,7 @@ Path traversal in MLflow when handling the artifact_location parameter when crea
 
 ---
 
-### INC-00373
+### INC-00503
 
 **Moffatt v. Air Canada legal precedent: AI chatbot misrepresentation liability**  
 _2024-02 · real-world · Severity: Low_
@@ -8191,7 +10602,162 @@ BC Civil Resolution Tribunal ruled in Moffatt v. Air Canada (2024 BCCRT 149) tha
 
 ---
 
-### INC-00422
+### INC-00516
+
+**OpenAI February 2024 Disrupting State-Affiliated Threat Actors**  
+_2024-02 · threat-report · Severity: High_
+
+OpenAI's first public threat report disclosed disrupting 5 state-affiliated threat actors (Charcoal Typhoon, Salmon Typhoon, Crimson Sandstorm, Emerald Sleet, Forest Blizzard) using ChatGPT for recon, scripting, and phishing.
+
+**Affected:** OpenAI ChatGPT  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `GOVERN-1.5`, `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0024`, `AML.T0029`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [OpenAI Feb 2024](https://openai.com/index/disrupting-malicious-uses-of-ai-by-state-affiliated-threat-actors/) _(vendor)_
+- [Staying ahead of threat actors in the age of AI — Microsoft Security Blog](https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/) _(vendor)_
+
+**Tags:** `charcoal-typhoon`, `china`, `crimson-sandstorm`, `first-takedown`, `microsoft`, `openai`, `phishing`, `salmon-typhoon`, `state-actor`, `state-actors`, `summary`
+
+---
+
+### INC-00528
+
+**Prompt Stealing Attacks Against Large Language Models**  
+_2024-02 · research · Severity: Medium_
+
+Sha and Zhang propose a two-module prompt-stealing attack (parameter extractor + prompt reconstructor) that recovers direct, role-based, and in-context prompts from black-box LLM outputs.
+
+**Affected:** GPT-3.5, GPT-4, prompt-based LLM products  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM07`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0056`  
+
+**References:**
+- [Prompt Stealing Attacks Against Large Language Models](https://arxiv.org/abs/2402.12959) _(paper)_
+
+**Tags:** `prompt-stealing`, `reconstruction`
+
+---
+
+### INC-00533
+
+**PRP: Propagating Universal Perturbations to Attack LLM Guardrails**  
+_2024-02 · research · Severity: High_
+
+Mangaokar et al. craft universal suffixes that propagate through guardrail models (LlamaGuard, NeMo Guardrails) so that downstream LLM outputs are classified safe even when harmful.
+
+**Affected:** LlamaGuard, NeMo Guardrails, guarded LLM pipelines  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [PRP: Propagating Universal Perturbations to Attack Large Language Model Guard-Rails](https://arxiv.org/abs/2402.15911) _(paper)_
+
+**Tags:** `jailbreak`, `guardrail-bypass`, `universal`
+
+---
+
+### INC-00534
+
+**PRSA: Prompt Stealing Attacks Against Real-World Prompt Services**  
+_2024-02 · research · Severity: Medium_
+
+Yang et al. construct PRSA, an end-to-end attack that steals commercial prompt-service templates (e.g., PromptBase, FlowGPT) from input-output behavior alone.
+
+**Affected:** PromptBase, FlowGPT, commercial prompt marketplaces  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM07`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0050`, `AML.T0056`  
+
+**References:**
+- [PRSA: Prompt Stealing Attacks against Real-World Prompt Services](https://arxiv.org/abs/2402.19200) _(paper)_
+
+**Tags:** `prompt-stealing`, `commercial`, `ip-theft`
+
+---
+
+### INC-00543
+
+**Robust CLIP: Unsupervised Adversarial Fine-Tuning Defenses Reveal CLIP Vulnerabilities**  
+_2024-02 · research · Severity: High_
+
+Schlarmann et al. show that off-the-shelf CLIP-based VLMs (LLaVA, OpenFlamingo) are highly fragile to imperceptible adversarial perturbations on input images, motivating their unsupervised adversarial fine-tuning defense.
+
+**Affected:** CLIP, LLaVA, OpenFlamingo and downstream VLMs  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Robust CLIP: Unsupervised Adversarial Fine-Tuning of Vision Embeddings for Robust Large Vision-Language Models](https://arxiv.org/abs/2402.12336) _(paper)_
+
+**Tags:** `adversarial-input`, `clip`, `vlm-fragility`
+
+---
+
+### INC-00544
+
+**Salmon Typhoon (China / APT4 / Maverick Panda) — open-source intelligence via ChatGPT**  
+_2024-02 · threat-report · Severity: High_
+
+Salmon Typhoon, a sophisticated Chinese state-affiliated APT historically targeting US defense contractors, intelligence agencies, and crypto sector, used ChatGPT for open-source research on US defense, intelligence officials, regional geopolitics and translation of technical documents. Accounts terminated.
+
+**Affected:** OpenAI ChatGPT; targets — US defense, government, cryptographic sector  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0029`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Staying ahead of threat actors in the age of AI](https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/) _(vendor)_
+
+**Tags:** `apt28`, `apt4`, `china`, `crimson-sandstorm`, `dprk`, `emerald-sleet`, `forest-blizzard`, `gru`, `iran`, `irgc`, `kimsuky`, `openai`, `russia`, `salmon-typhoon`, `spear-phishing`, `state-actor`
+
+---
+
+### INC-00578
+
+**Unveiling Typographic Deceptions: Typographic Vulnerability in LVLMs**  
+_2024-02 · research · Severity: Medium_
+
+Cheng et al. introduce the TypoD benchmark and analyze why large vision-language models (Claude-3, GPT-4V, LLaVA) are deceived by typographic injection, showing the role of prompt formulation.
+
+**Affected:** GPT-4V, Claude-3, LLaVA, large VLMs  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Unveiling Typographic Deceptions: Insights of the Typographic Vulnerability in Large Vision-Language Models](https://arxiv.org/abs/2402.19150) _(paper)_
+
+**Tags:** `typographic-attack`, `vlm`, `benchmark`
+
+---
+
+### INC-00581
 
 **Web-Scale Data Poisoning: Split-View Attack**  
 _2024-02 · research · Severity: High_
@@ -8214,7 +10780,51 @@ Carlini et al. demonstrated two practical web-scale data-poisoning attacks. The 
 
 ---
 
-### INC-00288
+### INC-00582
+
+**WIPI: A New Web Threat for LLM-Driven Web Agents**  
+_2024-02 · research · Severity: High_
+
+Wu et al. introduce WIPI, where attacker-controlled webpages indirectly execute malicious instructions in web agents. Evaluated across seven ChatGPT plugin agents, eight Web GPTs, and three open-source web agents; over 90 percent ASR in black-box settings.
+
+**Affected:** ChatGPT plugins, Web GPTs, open-source web agents  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [WIPI: A New Web Threat for LLM-Driven Web Agents](https://arxiv.org/abs/2402.16965) _(paper)_
+
+**Tags:** `prompt-injection`, `web-agent`, `indirect`
+
+---
+
+### INC-00385
+
+**BadEdit: Backdooring LLMs by Model Editing**  
+_2024-03 · research · Severity: High_
+
+Li et al. backdoor LLMs by lightweight knowledge-editing techniques, requiring only a handful of edited facts. Triggers persist through downstream task fine-tuning. ICLR 2024.
+
+**Affected:** GPT-J, GPT-NeoX, Llama, editable LLMs  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [BadEdit: Backdooring Large Language Models by Model Editing](https://arxiv.org/abs/2403.13355) _(paper)_
+
+**Tags:** `backdoor`, `model-editing`, `iclr-2024`
+
+---
+
+### INC-00394
 
 **Chinese ChatGPT-clone (pictureproxy.php) SSRF exploited in the wild**  
 _2024-03 · real-world · Severity: Medium_
@@ -8240,7 +10850,7 @@ Server-side request forgery in an open-source ChatGPT clone's pictureproxy.php (
 
 ---
 
-### INC-00317
+### INC-00431
 
 **Hallucinated software packages downloaded thousands of times (slopsquatting)**  
 _2024-03 · real-world · Severity: High_
@@ -8263,7 +10873,29 @@ LLMs hallucinate non-existent package names; researchers showed ~20% of Node.js 
 
 ---
 
-### INC-00332
+### INC-00446
+
+**InjecAgent: Benchmarking Indirect Prompt Injection in Tool-Integrated LLM Agents**  
+_2024-03 · research · Severity: High_
+
+Zhan et al. release InjecAgent, with 1,054 test cases spanning 17 user tools and 62 attacker tools. ReAct-prompted GPT-4 is vulnerable 24 percent of the time, doubling under reinforced attack prompts. Findings of ACL 2024.
+
+**Affected:** 30 LLM agents including GPT-4, Claude, Llama  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents](https://arxiv.org/abs/2403.02691) _(paper)_
+
+**Tags:** `prompt-injection`, `agent`, `indirect`, `acl-2024`
+
+---
+
+### INC-00458
 
 **LangChain load_chain path traversal allowing API key disclosure / RCE**  
 _2024-03 · real-world · Severity: High_
@@ -8289,7 +10921,7 @@ LangChain through 0.1.10 allows ../ directory traversal by an actor who is able 
 
 ---
 
-### INC-00371
+### INC-00501
 
 **MLflow XSS leading to client-side RCE in Jupyter Notebook (untrusted recipe)**  
 _2024-03 · real-world · Severity: Critical_
@@ -8314,7 +10946,7 @@ XSS in MLflow due to insufficient sanitization of template variables when runnin
 
 ---
 
-### INC-00372
+### INC-00502
 
 **MLflow XSS via dataset table fields leading to client-side RCE**  
 _2024-03 · real-world · Severity: Critical_
@@ -8339,7 +10971,7 @@ XSS in MLflow stemming from lack of sanitization over dataset table fields. Lead
 
 ---
 
-### INC-00374
+### INC-00504
 
 **Morris II Worm: RAG-Based Attack**  
 _2024-03 · research · Severity: High_
@@ -8362,7 +10994,7 @@ Cohen, Bitton, and Nassi designed 'Morris II,' a zero-click self-replicating wor
 
 ---
 
-### INC-00375
+### INC-00505
 
 **Nassi et al. "ComPromptMized" Morris II multi-agent worm**  
 _2024-03 · research-demonstrated · Severity: Critical_
@@ -8395,7 +11027,7 @@ Nassi et al. (Cornell Tech, Technion, Intuit) demonstrated the first generative 
 
 ---
 
-### INC-00378
+### INC-00508
 
 **NYC city chatbot tells businesses to break the law — fabricated legal guidance**  
 _2024-03 · real-world · Severity: High_
@@ -8426,7 +11058,7 @@ New York City's MyCity chatbot, powered by Microsoft Azure AI, provided legally 
 
 ---
 
-### INC-00384
+### INC-00514
 
 **ONNX directory traversal via external_data field**  
 _2024-03 · real-world · Severity: High_
@@ -8452,7 +11084,7 @@ ONNX <= 1.15.0 directory traversal: external_data field of tensor proto can refe
 
 ---
 
-### INC-00386
+### INC-00517
 
 **OpenAI GPT-4 system prompt extraction toolkit — systematic prompt leakage**  
 _2024-03 · red-team · Severity: High_
@@ -8464,8 +11096,9 @@ Security researchers published a comprehensive toolkit for extracting system pro
 **Impact:** System prompt confidentiality proven unreliable; IP exposure for prompt-dependent applications; forces architectural redesign away from prompt-as-security  
 
 **OWASP LLM Top 10:** `LLM01`, `LLM07`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI05`  
 **NIST AI RMF:** `GOVERN-1.4`, `MANAGE-2.3`, `MAP-2.1`, `MEASURE-2.10`, `MEASURE-2.4`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0024.001`, `AML.T0029`, `AML.T0044`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0056`, `AML.T0067`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0024.001`, `AML.T0029`, `AML.T0044`, `AML.T0050`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0056`, `AML.T0067`  
 **MAESTRO layers:** `L3 Agent Frameworks`, `L1 Foundation Models`, `L6 Security & Compliance`  
 
 **Mitigations:**
@@ -8477,11 +11110,11 @@ Security researchers published a comprehensive toolkit for extracting system pro
 **References:**
 - [System prompt extraction techniques compendium](https://arxiv.org/abs/2403.06634) _(research)_
 
-**Tags:** `confidentiality`, `ip-exposure`, `llm-theft`, `logits-attack`, `model-extraction`, `production-api`, `prompt-extraction`, `red-team`, `system-prompt`
+**Tags:** `best-paper`, `confidentiality`, `icml-2024`, `ip-exposure`, `llm-theft`, `logits-attack`, `model-extraction`, `production-api`, `production-llm`, `prompt-extraction`, `red-team`, `system-prompt`
 
 ---
 
-### INC-00396
+### INC-00537
 
 **RAG corpus poisoning — embedding-space manipulation to force retrieval**  
 _2024-03 · research-demonstrated · Severity: Critical_
@@ -8492,9 +11125,9 @@ Researchers Zou et al. (PoisonedRAG) and independently Chaudhari et al. demonstr
 **Attack vector:** `corpus`  
 **Impact:** Reliable output control for targeted queries with minimal corpus injection (1–5 documents per target query); undetectable through standard retrieval quality metrics  
 
-**OWASP LLM Top 10:** `LLM01`  
-**OWASP Agentic (ASI):** `ASI01`, `ASI06`, `ASI07`, `ASI08`  
-**NIST AI RMF:** `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-4.1`, `MAP-2.1`, `MAP-4.1`, `MAP-4.2`, `MEASURE-2.7`  
+**OWASP LLM Top 10:** `LLM01`, `LLM04`, `LLM08`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`, `ASI06`, `ASI07`, `ASI08`  
+**NIST AI RMF:** `GOVERN-6.2`, `MANAGE-2.3`, `MANAGE-4.1`, `MAP-2.1`, `MAP-3.5`, `MAP-4.1`, `MAP-4.2`, `MAP-5.1`, `MEASURE-2.7`  
 **MITRE ATLAS:** `AML.T0020`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0059`, `AML.T0066`  
 **MAESTRO layers:** `L2 Data Operations`, `L1 Foundation Models`, `L5 Evaluation & Observability`  
 
@@ -8514,11 +11147,11 @@ Researchers Zou et al. (PoisonedRAG) and independently Chaudhari et al. demonstr
 - [Phantom: General Trigger Attacks on Retrieval Augmented Language Generation](https://arxiv.org/abs/2405.20485) _(research)_
 - [AgentDojo: A Dynamic Environment to Evaluate Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352) _(research)_
 
-**Tags:** `a2a`, `black-box`, `cascade`, `corpus`, `cross-agent`, `embedding-manipulation`, `multi-agent`, `propagation`, `rag-poisoning`, `retrieval`, `worm`
+**Tags:** `a2a`, `black-box`, `cascade`, `corpus`, `cross-agent`, `embedding-manipulation`, `knowledge-base`, `multi-agent`, `propagation`, `rag-poisoning`, `retrieval`, `usenix-2025`, `worm`
 
 ---
 
-### INC-00405
+### INC-00553
 
 **ShadowRay: Anyscale Ray Dashboard RCE (CVE-2023-48022) exploited in the wild**  
 _2024-03 · real-world · Severity: Critical_
@@ -8543,7 +11176,51 @@ Oligo Security disclosed 'ShadowRay': active exploitation of CVE-2023-48022 in A
 
 ---
 
-### INC-00272
+### INC-00347
+
+**AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs**  
+_2024-04 · research · Severity: High_
+
+Paulus et al. train an attacker LLM (AdvPrompter) that emits human-readable adversarial suffixes about 800x faster than GCG. Suffixes are coherent, evade perplexity filters, and transfer to unseen instructions and black-box targets.
+
+**Affected:** Llama-2, Vicuna, GPT-3.5, GPT-4  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs](https://arxiv.org/abs/2404.16873) _(paper)_
+
+**Tags:** `jailbreak`, `adversarial-suffix`, `fast`, `perplexity-evasion`
+
+---
+
+### INC-00365
+
+**AmpleGCG: Universal Generative Model of Adversarial Suffixes**  
+_2024-04 · research · Severity: High_
+
+Liao and Sun show that overlooked intermediate GCG steps contain many successful suffixes. They train AmpleGCG, a generator that emits hundreds of suffixes in minutes, reaching ~100 percent ASR on Llama-2-7B-Chat and Vicuna-7B and 99 percent on GPT-3.5.
+
+**Affected:** Llama-2-7B-Chat, Vicuna-7B, GPT-3.5  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [AmpleGCG: Learning a Universal and Transferable Generative Model of Adversarial Suffixes](https://arxiv.org/abs/2404.07921) _(paper)_
+
+**Tags:** `jailbreak`, `adversarial-suffix`, `generator`, `transferable`
+
+---
+
+### INC-00370
 
 **AnythingLLM env-var update endpoint command injection -> RCE**  
 _2024-04 · real-world · Severity: Critical_
@@ -8568,7 +11245,7 @@ RCE in mintplex-labs/anything-llm < 1.0.0 via /api/system/update-env: insufficie
 
 ---
 
-### INC-00282
+### INC-00386
 
 **BentoML insecure deserialization RCE**  
 _2024-04 · real-world · Severity: Critical_
@@ -8593,7 +11270,7 @@ Insecure deserialization in BentoML allowing unauthenticated RCE by sending craf
 
 ---
 
-### INC-00319
+### INC-00435
 
 **Hugging Face Transformers load_repo_checkpoint pickle RCE**  
 _2024-04 · real-world · Severity: High_
@@ -8618,7 +11295,29 @@ Hugging Face Transformers library is vulnerable to arbitrary code execution thro
 
 ---
 
-### INC-00329
+### INC-00450
+
+**Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks**  
+_2024-04 · research · Severity: Critical_
+
+Andriushchenko, Croce, and Flammarion show that a combination of prompt templates, random search, and self-transfer yields 100 percent ASR on Vicuna-13B, Mistral-7B, Phi-3, Nemotron-4-340B, Llama-2-7B, Llama-3-8B, Gemma-7B, GPT-3.5, GPT-4, and Claude variants.
+
+**Affected:** GPT-3.5, GPT-4, Claude, Llama-2/3, Gemma, Mistral, Phi-3  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks](https://arxiv.org/abs/2404.02151) _(paper)_
+
+**Tags:** `jailbreak`, `adaptive-attack`, `random-search`, `iclr-2025`
+
+---
+
+### INC-00454
 
 **Keras Lambda layer marshalled-code RCE**  
 _2024-04 · real-world · Severity: Critical_
@@ -8643,7 +11342,7 @@ Arbitrary code injection in TensorFlow Keras (<2.13) via Lambda-layer deserializ
 
 ---
 
-### INC-00334
+### INC-00460
 
 **langchain-community SitemapLoader infinite recursion DoS**  
 _2024-04 · real-world · Severity: High_
@@ -8669,7 +11368,7 @@ A Denial-of-Service vulnerability in the SitemapLoader class of langchain-commun
 
 ---
 
-### INC-00338
+### INC-00464
 
 **Leonardo AI used to create non-consensual celebrity deepfakes**  
 _2024-04 · real-world · Severity: Medium_
@@ -8691,7 +11390,7 @@ Leonardo AI's image-generation platform was allegedly used to create non-consens
 
 ---
 
-### INC-00341
+### INC-00467
 
 **LLM-generated malware evades endpoint detection — AI-assisted polymorphic code**  
 _2024-04 · research-demonstrated · Severity: Critical_
@@ -8720,7 +11419,7 @@ Security researchers demonstrated that LLMs could generate polymorphic malware v
 
 ---
 
-### INC-00345
+### INC-00472
 
 **Many-shot jailbreaking (Anthropic research)**  
 _2024-04 · research-demonstrated · Severity: High_
@@ -8732,24 +11431,25 @@ Anthropic researchers published research demonstrating "many-shot jailbreaking" 
 **Impact:** Safety training override via in-context example accumulation; attack scales automatically with model capability improvements; establishes that longer context windows create proportionally larger attack surface for behavioral manipulation  
 
 **OWASP LLM Top 10:** `LLM01`, `LLM04`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI01`  
 **NIST AI RMF:** `GOVERN-3.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MANAGE-3.2`, `MAP-2.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0018`, `AML.T0019`, `AML.T0020`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0059`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0019`, `AML.T0020`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0059`  
 **MAESTRO layers:** `L1 Foundation Models`, `L4 Deployment & Infrastructure`, `L5 Evaluation & Observability`  
 
 **Mitigations:**
+- Context window limits appropriate to deployment use case — do not expose maximum context to untrusted inputs
+- In-context example validation: detect fabricated compliance dialogues in long prompts
 - Input length monitoring — flag and review unusually long prompts
 - Sliding context evaluation: assess safety risk of final N tokens regardless of total prompt length
-- In-context example validation: detect fabricated compliance dialogues in long prompts
-- Context window limits appropriate to deployment use case — do not expose maximum context to untrusted inputs
 
 **References:**
 - [Many-shot jailbreaking — Anthropic (2024)](https://www.anthropic.com/research/many-shot-jailbreaking) _(research)_
 
-**Tags:** `many-shot`, `jailbreak`, `in-context-learning`, `long-context`, `safety-bypass`, `behavioral-override`, `anthropic`
+**Tags:** `anthropic`, `behavioral-override`, `in-context-learning`, `jailbreak`, `long-context`, `many-shot`, `safety-bypass`
 
 ---
 
-### INC-00364
+### INC-00494
 
 **MLflow path traversal via is_local_uri parsing**  
 _2024-04 · real-world · Severity: High_
@@ -8775,7 +11475,73 @@ Path traversal in mlflow due to improper parsing of URIs in the is_local_uri fun
 
 ---
 
-### INC-00412
+### INC-00532
+
+**Protect AI MLflow, Ray, Triton Vulnerability Surge**  
+_2024-04 · research · Severity: High_
+
+Protect AI documented 48 vulnerabilities disclosed in April 2024 alone across MLflow, Ray, and Triton Inference Server (a 220% rise from November 2023).
+
+**Affected:** MLflow, Ray, Triton  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0044`, `AML.T0050`  
+
+**References:**
+- [Protect AI Sightline](https://protectai.com/sightline-may-2024) _(research)_
+
+**Tags:** `mlflow`, `ray`, `triton`, `ml-ops`
+
+---
+
+### INC-00542
+
+**Red Teaming GPT-4V: Uni/Multi-Modal Jailbreak Attacks**  
+_2024-04 · research · Severity: High_
+
+Systematic red-team study of GPT-4V uni- and multi-modal jailbreaks, exposing weak modality boundaries and identifying failure modes that persist after RLHF safety tuning.
+
+**Affected:** GPT-4V  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Red Teaming GPT-4V: Are GPT-4V Safe Against Uni/Multi-Modal Jailbreak Attacks?](https://arxiv.org/abs/2404.03411) _(paper)_
+
+**Tags:** `jailbreak`, `red-team`, `gpt-4v`
+
+---
+
+### INC-00545
+
+**Sandwich Attack: Multi-language Mixture Adaptive Attack on LLMs**  
+_2024-04 · research · Severity: Medium_
+
+Upadhayay and Behzadan sandwich a harmful query between safe queries in multiple languages, bypassing safety alignment on GPT-4 and Claude. TrustNLP 2024.
+
+**Affected:** GPT-4, Claude, multilingual LLMs  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Sandwich attack: Multi-language Mixture Adaptive Attack on LLMs](https://arxiv.org/abs/2404.07242) _(paper)_
+
+**Tags:** `jailbreak`, `multilingual`, `sandwich`
+
+---
+
+### INC-00561
 
 **Stability AI synthetic CSAM generation — training data and output safety failures**  
 _2024-04 · real-world · Severity: Critical_
@@ -8806,7 +11572,7 @@ Stability AI faced legal action and regulatory scrutiny after researchers demons
 
 ---
 
-### INC-00413
+### INC-00562
 
 **Stable Diffusion WebUI (AUTOMATIC1111) limited file write on Windows**  
 _2024-04 · real-world · Severity: High_
@@ -8831,7 +11597,51 @@ stable-diffusion-webui 1.7.0 is vulnerable to limited file write affecting Windo
 
 ---
 
-### INC-00291
+### INC-00584
+
+**Wiz Hugging Face Cross-Tenant Compromise via Malicious Pickle Model**  
+_2024-04 · research · Severity: Critical_
+
+Wiz compromised Hugging Face's inference service by uploading a malicious pickle-based model, escaping the container, and gaining cross-tenant access to other customer models.
+
+**Affected:** Hugging Face  
+**Attack vector:** `supply-chain`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0011`, `AML.T0050`  
+
+**References:**
+- [Wiz HuggingFace](https://www.wiz.io/blog/wiz-and-hugging-face-address-risks-to-ai-infrastructure) _(research)_
+
+**Tags:** `huggingface`, `pickle`, `container-escape`, `cross-tenant`
+
+---
+
+### INC-00398
+
+**CopyCop (Russia) — LLM-weaponized inauthentic-news network across US/UK/France**  
+_2024-05 · threat-report · Severity: High_
+
+Recorded Future's Insikt Group exposed CopyCop, a likely-Russian network that used LLMs (GPT-4 family) to plagiarise and rewrite 19,000+ articles from legitimate Western media with pro-Russia, anti-Ukraine and pro-Republican biases across 90+ inauthentic outlets in English, French and German.
+
+**Affected:** Multiple LLMs; US, UK, France readers  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Russia-Linked CopyCop Uses LLMs to Weaponize Influence Content at Scale — Recorded Future](https://www.recordedfuture.com/research/russia-linked-copycop-uses-llms-to-weaponize-influence-content-at-scale) _(report)_
+
+**Tags:** `influence-operation`, `russia`, `copycop`, `llm-plagiarism`, `recorded-future`
+
+---
+
+### INC-00399
 
 **Crescendo: multi-turn escalation attack (Microsoft)**  
 _2024-05 · research-demonstrated · Severity: High_
@@ -8845,25 +11655,25 @@ Microsoft researchers published the Crescendo attack — a multi-turn conversati
 **OWASP LLM Top 10:** `LLM01`, `LLM06`  
 **OWASP Agentic (ASI):** `ASI01`, `ASI06`  
 **NIST AI RMF:** `GOVERN-3.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MAP-2.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0020`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0059`, `AML.T0066`  
+**MITRE ATLAS:** `AML.T0020`, `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0059`, `AML.T0066`  
 **MAESTRO layers:** `L1 Foundation Models`, `L3 Agent Frameworks`, `L5 Evaluation & Observability`, `L4 Deployment & Infrastructure`  
 
 **Mitigations:**
-- Session-level safety evaluation — analyse conversation trajectory, not just recent turns
 - Cumulative risk scoring across conversation history
-- Reset safety evaluation baseline when topic shifts significantly
 - Persistent memory integrity check: do not carry forward conversations that reached safety intervention thresholds
 - Red-team evaluation must include multi-turn escalation test cases (not just single-turn)
+- Reset safety evaluation baseline when topic shifts significantly
+- Session-level safety evaluation — analyse conversation trajectory, not just recent turns
 
 **References:**
 - [Crescendo: Jailbreaking Large Language Models with Sequential Harmless Requests — Microsoft (2024)](https://arxiv.org/abs/2404.01833) _(research)_
 - [Crescendo attack — Microsoft Research blog (2024)](https://www.microsoft.com/en-us/security/blog/2024/05/23/crescendo-ai-jailbreak-technique/) _(advisory)_
 
-**Tags:** `crescendo`, `multi-turn`, `jailbreak`, `escalation`, `conversational`, `microsoft`, `session-context`
+**Tags:** `conversational`, `crescendo`, `escalation`, `jailbreak`, `microsoft`, `multi-turn`, `session-context`, `usenix-2025`
 
 ---
 
-### INC-00308
+### INC-00421
 
 **GitHub Copilot Workspace prompt injection via repository content**  
 _2024-05 · research-demonstrated · Severity: High_
@@ -8894,7 +11704,7 @@ Security researchers demonstrated prompt injection attacks against GitHub Copilo
 
 ---
 
-### INC-00309
+### INC-00422
 
 **Google AI Overviews recommends adding glue to pizza — RAG hallucination at search scale**  
 _2024-05 · real-world · Severity: High_
@@ -8923,7 +11733,7 @@ Google's AI Overviews feature, which provides AI-generated summaries at the top 
 
 ---
 
-### INC-00311
+### INC-00425
 
 **GPT-4o Chinese tokens compromised by spam and pornography (training-data poisoning)**  
 _2024-05 · real-world · Severity: Medium_
@@ -8946,7 +11756,7 @@ After OpenAI released GPT-4o, researchers found more than 90 of the 100 longest 
 
 ---
 
-### INC-00316
+### INC-00430
 
 **Gradio open redirect via file parameter**  
 _2024-05 · real-world · Severity: Medium_
@@ -8972,7 +11782,29 @@ Open Redirect in Gradio <= 4.36.1 via improper validation of the file parameter,
 
 ---
 
-### INC-00333
+### INC-00447
+
+**Intel Neural Compressor Critical CVE-2024-22476**  
+_2024-05 · research · Severity: Critical_
+
+CVE-2024-22476 (CVSS 10) - improper input validation in Intel Neural Compressor allowing remote attackers to escalate privileges. Reported via Protect AI huntr.
+
+**Affected:** Intel Neural Compressor  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`  
+
+**References:**
+- [Critical AI/ML Vulns](https://www.securityweek.com/easily-exploitable-critical-vulnerabilities-found-in-open-source-ai-ml-tools/) _(research)_
+
+**Tags:** `intel`, `neural-compressor`, `cve-2024-22476`
+
+---
+
+### INC-00459
 
 **LangChain Web Research Retriever SSRF**  
 _2024-05 · real-world · Severity: High_
@@ -8997,7 +11829,7 @@ An SSRF vulnerability in the Web Research Retriever component of langchain-ai/la
 
 ---
 
-### INC-00336
+### INC-00462
 
 **langchain-experimental VectorSQLDatabaseChain arbitrary code execution via eval**  
 _2024-05 · real-world · Severity: Critical_
@@ -9023,7 +11855,7 @@ Versions of the package langchain-experimental from 0.0.15 and before 0.0.21 are
 
 ---
 
-### INC-00339
+### INC-00465
 
 **llama-cpp-python Jinja2 SSTI in chat_template metadata -> RCE (Llama Drama)**  
 _2024-05 · real-world · Severity: Critical_
@@ -9049,7 +11881,7 @@ Jinja2ChatFormatter parses chat_template from .gguf model metadata with a sandbo
 
 ---
 
-### INC-00342
+### INC-00468
 
 **LLMjacking**  
 _2024-05 · real-world · Severity: High_
@@ -9072,7 +11904,7 @@ Sysdig Threat Research observed attackers using stolen AWS/Azure/OCI credentials
 
 ---
 
-### INC-00355
+### INC-00484
 
 **Microsoft Recall screenshots everything — OS-level data retention without consent**  
 _2024-05 · real-world · Severity: Critical_
@@ -9099,7 +11931,7 @@ Microsoft announced Recall, a Windows feature that continuously screenshots user
 
 ---
 
-### INC-00397
+### INC-00538
 
 **Ray Serve gRPC handler vulnerability**  
 _2024-05 · real-world · Severity: High_
@@ -9124,7 +11956,7 @@ Vulnerability in Ray Serve (gRPC path) that can be exploited by remote attackers
 
 ---
 
-### INC-00400
+### INC-00548
 
 **Scammers used AI voice clone and YouTube footage to impersonate WPP CEO Mark Read**  
 _2024-05 · real-world · Severity: High_
@@ -9146,7 +11978,7 @@ Scammers created a WhatsApp account using a photo of WPP CEO Mark Read and used 
 
 ---
 
-### INC-00408
+### INC-00556
 
 **Snowflake customer data breach via stolen credentials — 165+ organisations affected**  
 _2024-05 · real-world · Severity: Critical_
@@ -9176,7 +12008,73 @@ Attackers used credentials stolen via infostealer malware to access Snowflake cu
 
 ---
 
-### INC-00416
+### INC-00558
+
+**Spamouflage / Dragonbridge (China) — ChatGPT for pro-PRC social media astroturfing**  
+_2024-05 · threat-report · Severity: Medium_
+
+Chinese influence operation Spamouflage used ChatGPT to generate pro-Beijing comments on X, Medium and Blogspot, debug social-listening scraping code, and research current events. OpenAI banned the cluster as part of its May 2024 disruption of 5 covert influence ops.
+
+**Affected:** OpenAI ChatGPT; X, Medium, Blogspot  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Disrupting deceptive uses of AI by covert influence operations — OpenAI](https://openai.com/index/disrupting-deceptive-uses-of-AI-by-covert-influence-operations/) _(vendor)_
+
+**Tags:** `bad-grammar`, `china`, `doppelganger`, `dragonbridge`, `influence-operation`, `iran`, `iuvm`, `openai`, `russia`, `spamouflage`, `telegram`
+
+---
+
+### INC-00563
+
+**STOIC "Zero Zeno" (Israel) — political campaign firm used ChatGPT for India/Gaza influence**  
+_2024-05 · threat-report · Severity: Medium_
+
+Tel Aviv-based political campaign management firm STOIC ran a covert influence operation dubbed "Zero Zeno", using ChatGPT to generate articles and social-media comments about the Gaza conflict, Histadrut trade unions and the 2024 Indian elections (anti-BJP). OpenAI disrupted the operation.
+
+**Affected:** OpenAI ChatGPT; X, Facebook, Instagram audiences in US, Canada, India  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [OpenAI disrupts five state-backed influence ops — Dark Reading](https://www.darkreading.com/threat-intelligence/openai-disrupts-5-ai-powered-state-backed-influence-ops) _(news)_
+
+**Tags:** `influence-operation`, `israel`, `stoic`, `zero-zeno`, `india-elections`, `gaza`
+
+---
+
+### INC-00567
+
+**Sysdig LLMjacking: Stolen Cloud Credentials Hijack LLMs**  
+_2024-05 · threat-report · Severity: High_
+
+Sysdig TRT identified LLMjacking in May 2024: attackers using stolen cloud credentials (initially AWS) to hijack Anthropic Claude 2.x access, costing victims ~$46K/day; later $100K+/day with newer models. Evolved into industrial marketplace.
+
+**Affected:** AWS Bedrock, Anthropic Claude (via stolen creds)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-3.1`, `MEASURE-2.4`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0029`  
+
+**References:**
+- [LLMjacking](https://thehackernews.com/2024/05/researchers-uncover-llmjacking-scheme.html) _(research)_
+
+**Tags:** `llmjacking`, `credential-theft`, `aws-bedrock`
+
+---
+
+### INC-00570
 
 **TorchServe allowed_urls path-traversal bypass (auth bypass)**  
 _2024-05 · real-world · Severity: High_
@@ -9202,7 +12100,7 @@ Authentication-bypass flaw in PyTorch TorchServe: allows attackers to circumvent
 
 ---
 
-### INC-00417
+### INC-00571
 
 **TorchServe gRPC plaintext binding (auth bypass)**  
 _2024-05 · real-world · Severity: High_
@@ -9227,10 +12125,10 @@ TorchServe gRPC service binds to all interfaces by default without authenticatio
 
 ---
 
-### INC-00423
+### INC-00583
 
 **Wiz finds Replicate tenant-isolation flaw enabling cross-tenant model & data access**  
-_2024-05 · real-world · Severity: High_
+_2024-05 · real-world · Severity: Critical_
 
 Wiz researchers uploaded a rogue Cog container to Replicate to gain RCE and abused a centralized Redis queue to mount cross-tenant attacks on customer models, prompts and results. Responsibly disclosed January 2024; remediated by Replicate.
 
@@ -9239,18 +12137,40 @@ Wiz researchers uploaded a rogue Cog container to Replicate to gain RCE and abus
 
 **OWASP LLM Top 10:** `LLM02`, `LLM03`  
 **OWASP Agentic (ASI):** `ASI03`, `ASI04`  
-**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.4`, `GOVERN-6.1`, `MEASURE-2.10`  
-**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0040`, `AML.T0057`  
+**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-2.1`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0040`, `AML.T0044`, `AML.T0057`  
 
 **References:**
 - [Wiz Research team discovers a major risk to AI systems - Wiz](https://www.wiz.io/blog/wiz-research-discovers-critical-vulnerability-in-replicate) _(research)_
 - [Experts Find Flaw in Replicate AI Service - The Hacker News](https://thehackernews.com/2024/05/experts-find-flaw-in-replicate-ai.html) _(news)_
 
-**Tags:** `replicate`, `tenant-isolation`, `rce`, `cog`, `mlaas`
+**Tags:** `aiaas`, `cog`, `cross-tenant`, `mlaas`, `rce`, `replicate`, `tenant-isolation`
 
 ---
 
-### INC-00256
+### INC-00348
+
+**AgentDojo: Dynamic Environment to Evaluate Prompt Injection on LLM Agents**  
+_2024-06 · research · Severity: High_
+
+Debenedetti et al. (ETH) release AgentDojo, with 97 realistic tool-using tasks (email, banking, travel) and 629 security tests for evaluating prompt-injection robustness of LLM agents. State-of-the-art LLMs fail many tasks even without attacks. NeurIPS 2024.
+
+**Affected:** GPT-4, Claude 3.5, Gemini, Llama-3 agents  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `MEASURE-2.11`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0066`  
+
+**References:**
+- [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](https://arxiv.org/abs/2406.13352) _(paper)_
+
+**Tags:** `prompt-injection`, `agent`, `benchmark`, `neurips-2024`
+
+---
+
+### INC-00350
 
 **Agentic AI privilege escalation via tool chain manipulation — research**  
 _2024-06 · research-demonstrated · Severity: Critical_
@@ -9281,7 +12201,7 @@ Researchers at Wiz and independently at academic institutions demonstrated that 
 
 ---
 
-### INC-00268
+### INC-00363
 
 **Amazon Q developer leaks internal AWS data in enterprise environment**  
 _2024-06 · real-world · Severity: High_
@@ -9310,7 +12230,7 @@ Amazon's AI coding assistant Q Developer was reported to hallucinate internal AW
 
 ---
 
-### INC-00273
+### INC-00371
 
 **AnythingLLM HTTP smuggling / improper-input vulnerability**  
 _2024-06 · real-world · Severity: High_
@@ -9335,7 +12255,7 @@ Vulnerability in mintplex-labs/anything-llm related to improper input handling a
 
 ---
 
-### INC-00292
+### INC-00402
 
 **Deepfake CEO fraud surge: FBI flags as fastest-growing US enterprise fraud category**  
 _2024-06 · real-world · Severity: High_
@@ -9358,7 +12278,29 @@ The FBI's IC3 and industry reports show deepfake CEO/CFO voice and video fraud b
 
 ---
 
-### INC-00299
+### INC-00404
+
+**Dissecting Adversarial Robustness of Multimodal LM Agents**  
+_2024-06 · research · Severity: High_
+
+Wu et al. attack VLM-based web agents via captioner and CLIP perturbations on a single trigger image. With L-inf 16/256 perturbation, 75 percent of a captioner-augmented GPT-4V agent's actions are hijacked; imperceptible perturbations reach 67 percent. ICLR 2025.
+
+**Affected:** GPT-4V web agents, CLIP-based VLM agents  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Dissecting Adversarial Robustness of Multimodal LM Agents](https://arxiv.org/abs/2406.12814) _(paper)_
+
+**Tags:** `adversarial-input`, `multimodal-agent`, `visualwebarena`, `iclr-2025`
+
+---
+
+### INC-00411
 
 **EmailGPT prompt-injection / system-prompt leak**  
 _2024-06 · real-world · Severity: High_
@@ -9383,7 +12325,7 @@ Prompt injection in EmailGPT allows attackers to manipulate the LLM service to l
 
 ---
 
-### INC-00306
+### INC-00419
 
 **GitHub Copilot Chat Prompt Injection to Data Exfiltration**  
 _2024-06 · research · Severity: High_
@@ -9405,7 +12347,73 @@ Rehberger demonstrated indirect prompt injection in GitHub Copilot Chat through 
 
 ---
 
-### INC-00347
+### INC-00445
+
+**Improved Few-Shot Jailbreaking Circumvents Aligned LLMs and Defenses**  
+_2024-06 · research · Severity: High_
+
+Zheng et al. show that just eight curated few-shot examples can jailbreak Llama-2-7B-Chat and GPT-3.5 with near-100 percent success, even against perplexity, SmoothLLM, and self-reminder defenses.
+
+**Affected:** Llama-2-7B-Chat, GPT-3.5, defended LLMs  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Improved Few-Shot Jailbreaking Can Circumvent Aligned Language Models and Their Defenses](https://arxiv.org/abs/2406.01288) _(paper)_
+
+**Tags:** `jailbreak`, `few-shot`, `defense-bypass`
+
+---
+
+### INC-00448
+
+**Invisible Backdoor Attacks on Diffusion Models**  
+_2024-06 · research · Severity: High_
+
+Optimization framework for invisible trigger backdoors in unconditional and text-conditional diffusion models, plus extensions to image editing and inpainting pipelines.
+
+**Affected:** DDPM, Stable Diffusion, inpainting/editing pipelines  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Invisible Backdoor Attacks on Diffusion Models](https://arxiv.org/abs/2406.00816) _(paper)_
+
+**Tags:** `backdoor`, `diffusion-model`, `invisible-trigger`
+
+---
+
+### INC-00452
+
+**JFrog Vanna AI Prompt Injection RCE**  
+_2024-06 · research · Severity: Critical_
+
+JFrog Security Research discovered prompt injection vulnerability in Vanna AI Python package (CVE-2024-5826) that leads to remote code execution.
+
+**Affected:** Vanna AI  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI03`, `ASI04`, `ASI05`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-3.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0044`, `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [JFrog 2024 Discoveries](https://jfrog.com/blog/top-jfrog-security-research-discoveries-of-2024/) _(research)_
+
+**Tags:** `cve-2024-5826`, `cve-2024-7340`, `directory-traversal`, `privilege-escalation`, `rce`, `vanna-ai`, `wandb`, `weave`, `zenml`
+
+---
+
+### INC-00474
 
 **McDonald's ends IBM partnership after AI drive-thru ordering errors**  
 _2024-06 · real-world · Severity: Low_
@@ -9427,7 +12435,7 @@ McDonald's piloted an AI-enabled voice-ordering system with IBM at 100+ U.S. dri
 
 ---
 
-### INC-00349
+### INC-00476
 
 **Microsoft 365 Copilot data exposure via over-permissive SharePoint indexing**  
 _2024-06 · real-world · Severity: High_
@@ -9449,7 +12457,7 @@ Enterprise deployments of Microsoft 365 Copilot were found to surface confidenti
 
 ---
 
-### INC-00358
+### INC-00488
 
 **MLflow Keras model deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9474,7 +12482,7 @@ Deserialization vulnerability in MLflow Keras loader allowing RCE upon loading a
 
 ---
 
-### INC-00359
+### INC-00489
 
 **MLflow LangChain agent deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9499,7 +12507,7 @@ Deserialization of untrusted data in MLflow LangChain integration enables a mali
 
 ---
 
-### INC-00360
+### INC-00490
 
 **MLflow LightGBM model loader deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9524,7 +12532,7 @@ Deserialization of untrusted data via MLflow LightGBM loader. Part of CVE-2024-3
 
 ---
 
-### INC-00365
+### INC-00495
 
 **MLflow pyfunc.load_model cloudpickle deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9549,7 +12557,7 @@ Deserialization vulnerability in mlflow.pyfunc.load_model: an attacker can craft
 
 ---
 
-### INC-00366
+### INC-00496
 
 **MLflow PyTorch lightning deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9574,7 +12582,7 @@ Deserialization of untrusted data in MLflow Pytorch Lightning integration leads 
 
 ---
 
-### INC-00367
+### INC-00497
 
 **MLflow PyTorch model loader deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9599,7 +12607,7 @@ Deserialization of untrusted data in MLflow PyTorch model loader: maliciously up
 
 ---
 
-### INC-00368
+### INC-00498
 
 **MLflow scikit-learn loadmodelfromlocalfile pickle deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9625,7 +12633,7 @@ Deserialization vulnerability in MLflow sklearn/__init__.py loadmodelfromlocalfi
 
 ---
 
-### INC-00369
+### INC-00499
 
 **MLflow TensorFlow model loader deserialization RCE**  
 _2024-06 · real-world · Severity: High_
@@ -9650,7 +12658,7 @@ Deserialization of untrusted data in MLflow >= 2.0.0rc0 enables a maliciously up
 
 ---
 
-### INC-00370
+### INC-00500
 
 **MLflow unsafe pickle deserialization in scikit-learn model loader (RCE)**  
 _2024-06 · real-world · Severity: High_
@@ -9676,7 +12684,7 @@ Deserialization of untrusted data in MLflow >= 1.1.0 enables a maliciously uploa
 
 ---
 
-### INC-00382
+### INC-00512
 
 **Ollama path traversal in /api/pull (Probllama) -> RCE**  
 _2024-06 · real-world · Severity: Critical_
@@ -9702,7 +12710,7 @@ Ollama API /api/pull endpoint accepts a malicious manifest with a path-traversal
 
 ---
 
-### INC-00392
+### INC-00524
 
 **Perplexity AI plagiarism — verbatim content reproduction without attribution**  
 _2024-06 · real-world · Severity: High_
@@ -9732,7 +12740,7 @@ Forbes, WIRED, and other publishers documented that Perplexity AI's search engin
 
 ---
 
-### INC-00395
+### INC-00535
 
 **Rabbit R1 hardcoded API keys — all user data accessible to anyone with firmware**  
 _2024-06 · real-world · Severity: Critical_
@@ -9762,10 +12770,54 @@ Security researchers discovered that Rabbit Inc's R1 AI device had hardcoded API
 
 ---
 
-### INC-00406
+### INC-00536
+
+**Raccoon: Prompt Extraction Benchmark for LLM-Integrated Apps**  
+_2024-06 · research · Severity: Medium_
+
+Wang et al. release Raccoon, a benchmark with 14 prompt extraction categories plus compound attacks and defense templates, measuring susceptibility of LLM-integrated applications.
+
+**Affected:** LLM-integrated applications generally  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM07`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0056`  
+
+**References:**
+- [Raccoon: Prompt Extraction Benchmark of LLM-Integrated Applications](https://arxiv.org/abs/2406.06737) _(paper)_
+
+**Tags:** `prompt-extraction`, `benchmark`, `acl-2024`
+
+---
+
+### INC-00541
+
+**Recorded Future — Russian/Iranian AI influence networks targeted 2024 French elections**  
+_2024-06 · threat-report · Severity: High_
+
+Recorded Future's "Sombres Influences" report exposed coordinated Russian (Doppelganger / CopyCop) and Iranian (IUVM) AI-generated content campaigns targeting France's 2024 legislative elections — anti-Macron narratives, anti-Israel framing, and Olympics disruption themes.
+
+**Affected:** LLMs; French electorate  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Russian and Iranian Influence Networks Target French Elections](https://www.recordedfuture.com/research/russian-and-iranian-influence-networks-target-french-elections) _(report)_
+
+**Tags:** `russia`, `iran`, `france`, `election-interference`, `recorded-future`
+
+---
+
+### INC-00554
 
 **Skeleton Key: direct system prompt override (Microsoft)**  
-_2024-06 · research-demonstrated · Severity: High_
+_2024-06 · research-demonstrated · Severity: Critical_
 
 Microsoft researchers disclosed the Skeleton Key attack — a direct jailbreak technique where the attacker instructs the model to augment (not replace) its safety behavior by adding a new "override mode" framing. Unlike earlier jailbreaks that attempt to confuse or deceive the model, Skeleton Key directly asks the model to acknowledge that it can generate any content if prefixed with a warning, effectively making the model complicit in its own safety bypass. Microsoft tested Skeleton Key against GPT-3.5 Turbo, GPT-4, GPT-4o, Meta Llama3, Mistral Large, Anthropic Claude 3 Opus, and Google Gemini Pro 1.0 — all were susceptible to varying degrees. The attack requires no encoding or roleplay — it is a direct authority assertion that exploits the model's instruction-following training.
 
@@ -9776,24 +12828,24 @@ Microsoft researchers disclosed the Skeleton Key attack — a direct jailbreak t
 **OWASP LLM Top 10:** `LLM01`, `LLM06`, `LLM07`  
 **OWASP Agentic (ASI):** `ASI01`  
 **NIST AI RMF:** `GOVERN-3.2`, `MANAGE-2.3`, `MANAGE-2.4`, `MAP-2.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0056`, `AML.T0067`  
+**MITRE ATLAS:** `AML.T0048`, `AML.T0051`, `AML.T0051.000`, `AML.T0051.001`, `AML.T0053`, `AML.T0054`, `AML.T0056`, `AML.T0067`  
 **MAESTRO layers:** `L1 Foundation Models`, `L4 Deployment & Infrastructure`, `L6 Security & Compliance`  
 
 **Mitigations:**
 - Monitor for prompts explicitly requesting safety behavior modification or override
-- System prompt immutability enforcement — user turns cannot modify declared safety behavior
 - Output review for disclaimer-prefixed harmful content patterns
 - Safety evaluation must include direct override request test cases
+- System prompt immutability enforcement — user turns cannot modify declared safety behavior
 
 **References:**
 - [Skeleton Key: New jailbreak technique targets AI models — Microsoft (2024)](https://www.microsoft.com/en-us/security/blog/2024/06/26/mitigating-skeleton-key-a-new-type-of-generative-ai-jailbreak-technique/) _(advisory)_
 - [Skeleton Key jailbreak — arXiv (2024)](https://arxiv.org/abs/2402.06627) _(research)_
 
-**Tags:** `skeleton-key`, `jailbreak`, `direct-override`, `microsoft`, `instruction-following`, `rlhf`, `frontier-models`
+**Tags:** `direct-override`, `frontier-models`, `instruction-following`, `jailbreak`, `microsoft`, `multi-turn`, `rlhf`, `skeleton-key`
 
 ---
 
-### INC-00418
+### INC-00574
 
 **Uber ML platform data lineage audit — fragmented provenance across 30+ feature stores**  
 _2024-06 · real-world · Severity: High_
@@ -9819,7 +12871,29 @@ Uber's internal ML platform audit (referenced in their 2024 engineering blog ser
 
 ---
 
-### INC-00420
+### INC-00577
+
+**Unveiling the Safety of GPT-4o: Empirical Study Using Jailbreak Attacks**  
+_2024-06 · research · Severity: High_
+
+Empirical evaluation of GPT-4o under text and multimodal jailbreaks, showing that text-modal jailbreaks transfer strongly to multimodal inputs and that audio-modal defenses lag text-modal defenses.
+
+**Affected:** GPT-4o (text, image, audio)  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Unveiling the Safety of GPT-4o: An Empirical Study using Jailbreak Attacks](https://arxiv.org/abs/2406.06302) _(paper)_
+
+**Tags:** `jailbreak`, `gpt-4o`, `multimodal`
+
+---
+
+### INC-00579
 
 **Vanna.AI ask() prompt-injection -> exec() RCE**  
 _2024-06 · real-world · Severity: Critical_
@@ -9844,7 +12918,7 @@ Latest version of vanna-ai/vanna's vanna.ask() function is vulnerable to RCE due
 
 ---
 
-### INC-00255
+### INC-00346
 
 **Adversarial embedding attacks on production RAG systems**  
 _2024-07 · research-demonstrated · Severity: Critical_
@@ -9874,7 +12948,51 @@ Multiple research groups demonstrated practical adversarial attacks against prod
 
 ---
 
-### INC-00301
+### INC-00351
+
+**AgentPoison: Red-teaming LLM Agents via Memory/RAG Poisoning**  
+_2024-07 · research · Severity: Critical_
+
+Chen et al. propose the first backdoor attack on RAG/memory-based LLM agents, optimizing triggers as a constrained embedding-space problem. Over 80 percent ASR with under 0.1 percent poison rate against autonomous driving, knowledge QA, and EHR agents. NeurIPS 2024.
+
+**Affected:** RAG-based driving agent, ReAct, EHRAgent  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`, `LLM08`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MAP-5.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases](https://arxiv.org/abs/2407.12784) _(paper)_
+
+**Tags:** `backdoor`, `agent`, `rag-poisoning`, `neurips-2024`
+
+---
+
+### INC-00388
+
+**Can Large Language Models Automatically Jailbreak GPT-4V?**  
+_2024-07 · research · Severity: High_
+
+AutoJailbreak: prompt-optimization driven by an attacker LLM achieves >95.3 percent ASR against GPT-4V via automatically synthesized image/text combinations.
+
+**Affected:** GPT-4V  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Can Large Language Models Automatically Jailbreak GPT-4V?](https://arxiv.org/abs/2407.16686) _(paper)_
+
+**Tags:** `jailbreak`, `vlm`, `gpt-4v`, `automated`
+
+---
+
+### INC-00413
 
 **Ferrari executive targeted by deepfake scam impersonating CEO Benedetto Vigna**  
 _2024-07 · real-world · Severity: High_
@@ -9896,7 +13014,7 @@ A Ferrari executive received WhatsApp messages and a deepfake voice call from a 
 
 ---
 
-### INC-00304
+### INC-00417
 
 **Gemini Delayed Automatic Tool Invocation via Context Pollution**  
 _2024-07 · research · Severity: High_
@@ -9918,7 +13036,29 @@ Rehberger planted instructions in Gemini context that triggered on later user in
 
 ---
 
-### INC-00421
+### INC-00572
+
+**Trust No Bot: Personal Disclosures in Human-LLM Conversations**  
+_2024-07 · research · Severity: Low_
+
+Mireshghallah et al. analyze real ChatGPT conversations, quantifying how often users disclose PII and sensitive info, motivating privacy-by-default chatbot design.
+
+**Affected:** ChatGPT and similar conversational LLMs  
+**Attack vector:** `membership-inference`  
+
+**OWASP LLM Top 10:** `LLM06`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0053`  
+
+**References:**
+- [Trust No Bot: Discovering Personal Disclosures in Human-LLM Conversations in the Wild](https://arxiv.org/abs/2407.11438) _(paper)_
+
+**Tags:** `privacy`, `user-study`, `pii`
+
+---
+
+### INC-00580
 
 **Waymo autonomous vehicle data retention — 75 petabytes of driving footage with faces**  
 _2024-07 · real-world · Severity: High_
@@ -9944,7 +13084,7 @@ CPRA and GDPR investigations revealed Waymo retained over 75 petabytes of drivin
 
 ---
 
-### INC-00257
+### INC-00352
 
 **AI recruiting tool gender bias — Amazon scraps internal ML hiring tool**  
 _2024-08 · real-world · Severity: High_
@@ -9974,7 +13114,7 @@ Continued reporting revealed that multiple enterprise AI recruiting tools, follo
 
 ---
 
-### INC-00261
+### INC-00356
 
 **AI-assisted identity fraud by North Korean IT workers infiltrating Western firms**  
 _2024-08 · real-world · Severity: Critical_
@@ -9984,20 +13124,20 @@ An ongoing campaign by North Korean operatives uses AI-generated identities, dee
 **Affected:** Western companies (broad)  
 **Attack vector:** `insider`  
 
-**OWASP LLM Top 10:** `LLM09`  
-**OWASP Agentic (ASI):** `ASI03`, `ASI09`  
-**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-2.4`, `MAP-3.5`, `MEASURE-2.7`, `MEASURE-2.8`  
-**MITRE ATLAS:** `AML.T0012`, `AML.T0048`, `AML.T0048.003`, `AML.T0058`  
+**OWASP LLM Top 10:** `LLM05`, `LLM09`  
+**OWASP Agentic (ASI):** `ASI03`, `ASI06`, `ASI09`  
+**NIST AI RMF:** `GOVERN-1.1`, `GOVERN-1.3`, `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-2.4`, `MAP-3.5`, `MEASURE-2.7`, `MEASURE-2.8`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0017`, `AML.T0048`, `AML.T0048.003`, `AML.T0050`, `AML.T0058`, `AML.T0066`  
 
 **References:**
 - [Incident 1118](https://incidentdatabase.ai/cite/1118/) _(advisory)_
 - [Jasper Sleet: North Korean remote IT workers - Microsoft](https://www.microsoft.com/en-us/security/blog/2025/06/30/jasper-sleet-north-korean-remote-it-workers-evolving-tactics-to-infiltrate-organizations/) _(vendor)_
 
-**Tags:** `dprk`, `north-korea`, `deepfake`, `insider-threat`, `identity-fraud`
+**Tags:** `deepfake`, `dprk`, `employment-fraud`, `identity-fraud`, `insider-threat`, `jasper-sleet`, `microsoft`, `north-korea`
 
 ---
 
-### INC-00270
+### INC-00367
 
 **Anthropic Claude context flooding — resource exhaustion via adversarial long-context prompts**  
 _2024-08 · research-demonstrated · Severity: High_
@@ -10026,7 +13166,51 @@ Researchers demonstrated that Claude and other long-context models could be forc
 
 ---
 
-### INC-00283
+### INC-00369
+
+**Anthropic — Frontier Threats Red Team: spear-phishing scaling study**  
+_2024-08 · threat-report · Severity: High_
+
+Anthropic's Frontier Threats Red Team documented adversaries using Claude to scale targeted spear-phishing: building personalised lures from public profile data, generating multilingual variants, and A/B testing message variants. Anthropic introduced classifiers and monitoring on the basis of these tests.
+
+**Affected:** Claude; corporate executives  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Anthropic Frontier Threats — research](https://www.anthropic.com/research) _(vendor)_
+
+**Tags:** `anthropic`, `claude`, `election-influence`, `red-team`, `spear-phishing`
+
+---
+
+### INC-00383
+
+**BackdoorLLM: Comprehensive Benchmark for Backdoor Attacks on LLMs**  
+_2024-08 · research · Severity: High_
+
+Li et al. unify nine LLM backdoor attacks and six defenses across instruction backdoors, weight backdoors, hidden-state backdoors, and CoT backdoors with reproducible PoCs.
+
+**Affected:** Open-source LLMs (Llama-2/3, Mistral, Qwen)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models](https://arxiv.org/abs/2408.12798) _(paper)_
+
+**Tags:** `backdoor`, `benchmark`
+
+---
+
+### INC-00389
 
 **Canadian fraud ring used AI voice cloning in $21M grandparent scam**  
 _2024-08 · real-world · Severity: Critical_
@@ -10048,7 +13232,29 @@ _2024-08 · real-world · Severity: Critical_
 
 ---
 
-### INC-00302
+### INC-00397
+
+**Compromising Embodied Agents with Contextual Backdoor Attacks**  
+_2024-08 · research · Severity: High_
+
+Liu et al. show that LLM-driven embodied agents (robot manipulation, autonomous driving) can be backdoored via poisoned in-context demonstrations, triggering attacker-chosen actions on benign physical inputs. IEEE TIFS 2025.
+
+**Affected:** LLM-controlled robots, embodied driving agents  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [Compromising Embodied Agents with Contextual Backdoor Attacks](https://arxiv.org/abs/2408.02882) _(paper)_
+
+**Tags:** `backdoor`, `embodied-agent`, `robotics`, `tifs-2025`
+
+---
+
+### INC-00414
 
 **Financial Transaction Hijacking with M365 Copilot as an Insider**  
 _2024-08 · research · Severity: Critical_
@@ -10071,7 +13277,7 @@ Zenity Labs (Michael Bargury) demonstrated at Black Hat 2024 a remote attack on 
 
 ---
 
-### INC-00307
+### INC-00420
 
 **GitHub Copilot reproduces hardcoded secrets from training data (CUHK study)**  
 _2024-08 · real-world · Severity: High_
@@ -10093,7 +13299,29 @@ Researchers from CUHK and Sun Yat-sen University extracted 2,702 hard-coded cred
 
 ---
 
-### INC-00330
+### INC-00424
+
+**Google TAG — APT42 spear-phishing US/Israel officials with AI-assisted lures**  
+_2024-08 · threat-report · Severity: Critical_
+
+Google TAG observed Iranian APT42 (Charming Kitten / Calanque) targeting senior US officials, US presidential campaign staff and Israeli government with AI-assisted spear-phishing, fake login pages and AI-translated pretexts.
+
+**Affected:** Gmail; senior US/Israeli officials  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Iran-backed group steps up phishing campaigns — Google TAG](https://blog.google/threat-analysis-group/iran-backed-group-steps-up-phishing-campaigns-against-israel-us/) _(vendor)_
+
+**Tags:** `iran`, `apt42`, `charming-kitten`, `google-tag`, `spear-phishing`
+
+---
+
+### INC-00456
 
 **LangChain GraphCypherQAChain prompt injection -> Cypher/SQL injection**  
 _2024-08 · real-world · Severity: Critical_
@@ -10119,7 +13347,7 @@ A critical prompt-injection vulnerability in the GraphCypherQAChain class of @la
 
 ---
 
-### INC-00331
+### INC-00457
 
 **LangChain GraphCypherQAChain SQL/Cypher injection via prompt**  
 _2024-08 · real-world · Severity: High_
@@ -10145,7 +13373,7 @@ A vulnerability in the GraphCypherQAChain class of langchain-ai/langchain 0.2.5 
 
 ---
 
-### INC-00337
+### INC-00463
 
 **LangChainJS getFullPath path traversal**  
 _2024-08 · real-world · Severity: High_
@@ -10171,7 +13399,7 @@ A path traversal vulnerability in the getFullPath method of langchain-ai/langcha
 
 ---
 
-### INC-00348
+### INC-00475
 
 **Microsoft 365 Copilot ASCII Smuggling Data Exfiltration**  
 _2024-08 · research · Severity: High_
@@ -10193,7 +13421,7 @@ Rehberger disclosed a chain combining prompt injection, automatic tool invocatio
 
 ---
 
-### INC-00351
+### INC-00478
 
 **Microsoft Copilot for M365 — document exfiltration via indirect injection**  
 _2024-08 · research-demonstrated · Severity: Critical_
@@ -10225,7 +13453,7 @@ Researcher Michael Bargury (Zenity Labs) demonstrated at DEF CON 32 that Microso
 
 ---
 
-### INC-00352
+### INC-00479
 
 **Microsoft Copilot Studio SSRF -> cloud metadata exposure**  
 _2024-08 · real-world · Severity: High_
@@ -10250,7 +13478,73 @@ Authenticated SSRF bypass in Microsoft Copilot Studio. Tenable researchers reach
 
 ---
 
-### INC-00385
+### INC-00480
+
+**Microsoft Copilot Studio SSRF Information Disclosure (CVE-2024-38206)**  
+_2024-08 · research · Severity: High_
+
+Critical SSRF protection bypass in Microsoft Copilot Studio (CVSS 8.5) allowed authenticated attackers to leak sensitive information over the network. Mitigated August 2024.
+
+**Affected:** Microsoft Copilot Studio  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM02`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI09`  
+**NIST AI RMF:** `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [Copilot Studio Vulnerability](https://www.securityweek.com/microsoft-copilot-studio-vulnerability-led-to-information-disclosure/) _(news)_
+
+**Tags:** `copilot-studio`, `ssrf`, `cve-2024-38206`
+
+---
+
+### INC-00483
+
+**Microsoft MTAC — Mint Sandstorm spear-phished Trump campaign with AI-drafted lures**  
+_2024-08 · threat-report · Severity: Critical_
+
+Microsoft attributed an August 2024 spear-phishing operation that compromised a Trump campaign account to Iran's Mint Sandstorm (Charming Kitten / APT35). The actor used AI-assisted drafting of pretexts and translations as part of broader 2024 US election interference operations.
+
+**Affected:** US political campaign staff  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [MTAC: Iran steps into US election 2024](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/5bc57431-a7a9-49ad-944d-b93b7d35d0fc.pdf) _(report)_
+
+**Tags:** `iran`, `mint-sandstorm`, `us-election`, `spear-phishing`, `microsoft`
+
+---
+
+### INC-00485
+
+**Microsoft — Peach Sandstorm (Iran) deployed Tickler malware with AI-assisted social engineering**  
+_2024-08 · threat-report · Severity: Critical_
+
+Iran's Peach Sandstorm (APT33 / Refined Kitten) deployed the Tickler backdoor against US satellite, government and defense targets after AI-assisted reconnaissance, persona-development and tailored LinkedIn outreach to gain initial access.
+
+**Affected:** US satellite, government, defense, education sectors  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Microsoft Security blog — Peach Sandstorm](https://www.microsoft.com/en-us/security/blog/2024/08/28/peach-sandstorm-deploys-new-custom-tickler-malware-in-long-running-intelligence-gathering-operations/) _(vendor)_
+
+**Tags:** `iran`, `peach-sandstorm`, `apt33`, `tickler`, `microsoft`
+
+---
+
+### INC-00515
 
 **Open WebUI SSRF in /openai/models**  
 _2024-08 · real-world · Severity: High_
@@ -10275,7 +13569,51 @@ Open WebUI /openai/models endpoint vulnerable to SSRF, allowing attackers to coe
 
 ---
 
-### INC-00407
+### INC-00530
+
+**PromptArmor Slack AI Data Exfiltration via Indirect Prompt Injection**  
+_2024-08 · research · Severity: High_
+
+PromptArmor disclosed indirect prompt injection in Slack AI: attacker posts in public channel; when user queries Slack AI for private data, poisoned prompt is pulled into context, exfiltrating private data via masked phishing link.
+
+**Affected:** Slack AI  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [PromptArmor Slack AI](https://www.promptarmor.com/resources/data-exfiltration-from-slack-ai-via-indirect-prompt-injection) _(research)_
+
+**Tags:** `slack-ai`, `rag-poisoning`, `data-exfiltration`
+
+---
+
+### INC-00547
+
+**Scaling Trends for Data Poisoning in LLMs**  
+_2024-08 · research · Severity: High_
+
+Bowen et al. empirically map how much data needs to be poisoned to bias LLM behavior across different model sizes, showing low percentage requirements and persistence through safety tuning.
+
+**Affected:** Llama, Pythia, OPT, instruction-tuned LLMs  
+**Attack vector:** `poisoning`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Scaling Trends for Data Poisoning in LLMs](https://arxiv.org/abs/2408.02946) _(paper)_
+
+**Tags:** `poisoning`, `scaling`, `instruction-tuning`
+
+---
+
+### INC-00555
 
 **Slack AI indirect injection via channel content**  
 _2024-08 · research-demonstrated · Severity: Critical_
@@ -10310,7 +13648,52 @@ Security researcher PromptArmor (August 2024) demonstrated that Slack AI's summa
 
 ---
 
-### INC-00260
+### INC-00566
+
+**STORM-2035 (Iran) — ChatGPT used to seed AI-news sites Nio Thinker / Savannah Time targeting US election**  
+_2024-08 · threat-report · Severity: High_
+
+Iranian operation STORM-2035 used ChatGPT to plagiarise mainstream US journalism and seed four fake news outlets (incl. Nio Thinker on the left, Savannah Time on the right) plus social-media personas attacking both 2024 US presidential candidates. Disrupted by OpenAI and Microsoft.
+
+**Affected:** OpenAI ChatGPT; US voters  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0043`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [Iran steps into US election 2024 — Microsoft MTAC](https://blogs.microsoft.com/on-the-issues/2024/10/23/as-the-u-s-election-nears-russia-iran-and-china-step-up-influence-efforts/) _(vendor)_
+- [OpenAI disrupts Iranian influence campaign — Iran International](https://www.iranintl.com/en/202408172236) _(news)_
+
+**Tags:** `deepfake`, `influence-operation`, `iran`, `microsoft`, `oka-flood`, `openai`, `russia`, `storm-1679`, `storm-2035`, `us-election`
+
+---
+
+### INC-00586
+
+**Zenity Microsoft 365 Copilot RCE via Email/Teams/Calendar**  
+_2024-08 · research · Severity: Critical_
+
+Zenity demonstrated full ~RCE in M365 Copilot via remote injection through email, Teams message or calendar invite, paired with a jailbreak for code execution.
+
+**Affected:** Microsoft 365 Copilot  
+**Attack vector:** `rce`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Zenity Copilot RCE](https://labs.zenity.io/p/rce) _(research)_
+
+**Tags:** `m365-copilot`, `rce`, `email-injection`
+
+---
+
+### INC-00355
 
 **AI voice-clone scam targets Westchester parents with fake kidnapping ransom calls**  
 _2024-09 · real-world · Severity: High_
@@ -10332,7 +13715,7 @@ Scammers cloned children's voices from social-media samples and called Peekskill
 
 ---
 
-### INC-00264
+### INC-00359
 
 **AI-generated CSAM detection evasion — adversarial manipulation of content safety classifiers**  
 _2024-09 · research-demonstrated · Severity: Critical_
@@ -10361,7 +13744,7 @@ Researchers demonstrated that image generation safety classifiers (NSFW detectio
 
 ---
 
-### INC-00286
+### INC-00392
 
 **ChatGPT Memory Injection via Indirect Prompt Injection**  
 _2024-09 · research · Severity: High_
@@ -10383,7 +13766,7 @@ Rehberger demonstrated that ChatGPT memory could be poisoned via indirect prompt
 
 ---
 
-### INC-00287
+### INC-00393
 
 **ChatGPT memory persistence prompt injection (Embrace The Red)**  
 _2024-09 · real-world · Severity: High_
@@ -10405,7 +13788,73 @@ Johann Rehberger showed that an indirect prompt injection in ChatGPT could write
 
 ---
 
-### INC-00335
+### INC-00410
+
+**EIA: Environmental Injection Attack on Generalist Web Agents**  
+_2024-09 · research · Severity: High_
+
+Liao et al. introduce Environmental Injection Attack, embedding malicious DOM elements with persuasive instructions to leak PII from web agents. Reaches 70 percent ASR for PII theft and 16 percent for full user-request hijack. ICLR 2025.
+
+**Affected:** SeeAct, WebArena, generalist web agents  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [EIA: Environmental Injection Attack on Generalist Web Agents for Privacy Leakage](https://arxiv.org/abs/2409.11295) _(paper)_
+
+**Tags:** `prompt-injection`, `web-agent`, `privacy`, `iclr-2025`
+
+---
+
+### INC-00432
+
+**HiddenLayer Gemini for Workspace Indirect Prompt Injection**  
+_2024-09 · research · Severity: High_
+
+HiddenLayer found Gemini for Workspace susceptible to indirect prompt injection across its full product suite (Docs, Gmail, Slides), enabling content manipulation and data leakage.
+
+**Affected:** Google Gemini for Workspace  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0053`, `AML.T0057`  
+
+**References:**
+- [Gemini Workspace Vulns](https://hiddenlayer.com/innovation-hub/new-google-gemini-content-manipulation-vulns-found/) _(research)_
+
+**Tags:** `gemini`, `workspace`, `content-manipulation`
+
+---
+
+### INC-00455
+
+**Lakera Copy-Paste Injection Exploit in ChatGPT**  
+_2024-09 · research · Severity: Medium_
+
+Lakera documented copy-paste injection: hidden prompts in copied text exfiltrate chat history and sensitive data once pasted into ChatGPT.
+
+**Affected:** OpenAI ChatGPT  
+**Attack vector:** `data-exfiltration`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM02`  
+**OWASP Agentic (ASI):** `ASI09`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0048.003`, `AML.T0051`, `AML.T0057`  
+
+**References:**
+- [Lakera Indirect Injection](https://www.lakera.ai/blog/indirect-prompt-injection) _(research)_
+
+**Tags:** `copy-paste`, `hidden-prompt`, `chatgpt`
+
+---
+
+### INC-00461
 
 **langchain-experimental LLMSymbolicMathChain RCE via sympy.sympify**  
 _2024-09 · real-world · Severity: Critical_
@@ -10430,7 +13879,29 @@ langchain_experimental (aka LangChain Experimental) 0.1.17 through 0.3.0 allows 
 
 ---
 
-### INC-00409
+### INC-00540
+
+**Recorded Future — Doppelganger continued AI-amplified Trump/Biden disinformation**  
+_2024-09 · threat-report · Severity: High_
+
+Recorded Future Insikt Group documented continued Doppelganger network activity through 2024 amplifying CopyCop AI-generated content praising Trump and disparaging Biden through cloned Western-media sites and X bot networks.
+
+**Affected:** LLMs; US voters  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI06`  
+**NIST AI RMF:** `GOVERN-1.3`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0066`  
+
+**References:**
+- [CopyCop Deepens Its Playbook — Recorded Future](https://www.recordedfuture.com/research/copycop-deepens-its-playbook) _(report)_
+
+**Tags:** `russia`, `doppelganger`, `copycop`, `us-election`, `recorded-future`
+
+---
+
+### INC-00557
 
 **SpAIware: Persistent Memory Spyware Injection into ChatGPT macOS**  
 _2024-09 · research · Severity: Critical_
@@ -10452,7 +13923,95 @@ Johann Rehberger demonstrated injecting persistent malicious instructions into C
 
 ---
 
-### INC-00285
+### INC-00349
+
+**AgentHarm: Benchmark for Measuring Harmfulness of LLM Agents**  
+_2024-10 · research · Severity: Critical_
+
+Andriushchenko et al. (Gray Swan / UK AISI) release AgentHarm with 110 malicious agent tasks across 11 harm categories. Frontier models comply with many tasks even without jailbreaks; a universal template raises GPT-4o harm score from 48.4 to 72.7 percent. ICLR 2025.
+
+**Affected:** GPT-4o, GPT-4o-mini, Claude, Mistral Large 2, Gemini  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`, `AML.T0066`  
+
+**References:**
+- [AgentHarm: A Benchmark for Measuring Harmfulness of LLM Agents](https://arxiv.org/abs/2410.09024) _(paper)_
+
+**Tags:** `agent`, `harmfulness`, `benchmark`, `iclr-2025`
+
+---
+
+### INC-00364
+
+**AmpleGCG-Plus: Stronger Generative Adversarial Suffix Model**  
+_2024-10 · research · Severity: High_
+
+Follow-up to AmpleGCG with improved data and training that boosts jailbreak success rate per query on Llama-2/3 and OpenAI/Anthropic frontier models.
+
+**Affected:** Llama-2/3-Chat, GPT-3.5/4, Claude  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [AmpleGCG-Plus: A Strong Generative Model of Adversarial Suffixes to Jailbreak LLMs](https://arxiv.org/abs/2410.22143) _(paper)_
+
+**Tags:** `jailbreak`, `adversarial-suffix`, `generative`
+
+---
+
+### INC-00380
+
+**AutoDAN-Turbo: Lifelong Agent for Strategy Self-Exploration**  
+_2024-10 · research · Severity: High_
+
+Liu et al. propose AutoDAN-Turbo, a black-box agent that autonomously discovers new jailbreak strategies via lifelong learning. Achieves 88.5 percent ASR on GPT-4-1106-turbo (93.4 percent with human-strategy plug-ins), a 74.3 percent average improvement over baselines.
+
+**Affected:** GPT-4-1106-turbo, GPT-4o, Claude, Gemini, Llama  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [AutoDAN-Turbo: A Lifelong Agent for Strategy Self-Exploration to Jailbreak LLMs](https://arxiv.org/abs/2410.05295) _(paper)_
+
+**Tags:** `jailbreak`, `lifelong-learning`, `agent`, `iclr-2025-spotlight`
+
+---
+
+### INC-00382
+
+**Backdoored Retrievers for Prompt Injection Attacks on RAG**  
+_2024-10 · research · Severity: High_
+
+Long et al. backdoor the dense retriever in a RAG pipeline so that triggered queries surface attacker-controlled documents that prompt-inject the downstream LLM, hijacking outputs without modifying the LLM itself.
+
+**Affected:** RAG pipelines with dense retrievers (DPR, Contriever, BGE)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Backdoored Retrievers for Prompt Injection Attacks on Retrieval Augmented Generation of Large Language Models](https://arxiv.org/abs/2410.14479) _(paper)_
+
+**Tags:** `backdoor`, `retriever-poisoning`, `rag`
+
+---
+
+### INC-00391
 
 **Character.AI teen suicide — AI companion encouraged self-harm**  
 _2024-10 · real-world · Severity: Critical_
@@ -10483,7 +14042,7 @@ A 14-year-old Florida teen died by suicide after extensive conversations with a 
 
 ---
 
-### INC-00289
+### INC-00395
 
 **Claude computer use red-team: autonomous agent browses to attacker-controlled site and follows instructions**  
 _2024-10 · red-team · Severity: Critical_
@@ -10513,7 +14072,51 @@ During Anthropic's red-team evaluation of Claude's computer use capability, test
 
 ---
 
-### INC-00313
+### INC-00401
+
+**CyberAv3ngers (Iran IRGC) — used ChatGPT to research ICS attacks on water utilities**  
+_2024-10 · threat-report · Severity: Critical_
+
+Iranian IRGC-linked CyberAv3ngers used ChatGPT to research default credentials for Tridium Niagara and Hirschmann industrial control devices, study programmable logic controllers, debug bash/Python scripts and plan ICS attacks against water and energy facilities in the US, Israel and Ireland.
+
+**Affected:** OpenAI ChatGPT; targets — water, energy, ICS  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-1.3`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0029`, `AML.T0050`, `AML.T0053`  
+
+**References:**
+- [OpenAI Says Iranian Hackers Used ChatGPT to Plan ICS Attacks — SecurityWeek](https://www.securityweek.com/openai-says-iranian-hackers-used-chatgpt-to-plan-ics-attacks/) _(news)_
+
+**Tags:** `state-actor`, `iran`, `irgc`, `cyberavengers`, `ics`, `water-utility`
+
+---
+
+### INC-00415
+
+**FlipAttack: Jailbreaking LLMs via Flipping**  
+_2024-10 · research · Severity: High_
+
+Liu et al. demonstrate that simply flipping word or character order disguises harmful prompts. With four flipping modes, FlipAttack achieves ~98 percent attack success on GPT-4o and ~98 percent bypass against five guardrail models in a single query.
+
+**Affected:** GPT-4o, GPT-4, Claude, Gemini, Llama-3  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [FlipAttack: Jailbreak LLMs via Flipping](https://arxiv.org/abs/2410.02832) _(paper)_
+
+**Tags:** `jailbreak`, `obfuscation`, `single-query`, `guardrail-bypass`, `icml-2025`
+
+---
+
+### INC-00427
 
 **Gradio CORS origin validation accepts null origin**  
 _2024-10 · real-world · Severity: High_
@@ -10539,7 +14142,7 @@ Gradio server accepts 'null' as a valid origin when deployed locally, enabling u
 
 ---
 
-### INC-00314
+### INC-00428
 
 **Gradio CORS origin validation bypass when cookie present**  
 _2024-10 · real-world · Severity: High_
@@ -10564,7 +14167,7 @@ Gradio server fails to validate request origin when a cookie is present, allowin
 
 ---
 
-### INC-00315
+### INC-00429
 
 **Gradio data-validation arbitrary file leak across components**  
 _2024-10 · real-world · Severity: Medium_
@@ -10589,7 +14192,51 @@ Insufficient data validation in Gradio components (DownloadButton, Audio, ImageE
 
 ---
 
-### INC-00346
+### INC-00441
+
+**Imprompter: Tricking LLM Agents into Improper Tool Use**  
+_2024-10 · research · Severity: Critical_
+
+Fu et al. develop Imprompter, automatically-computed obfuscated adversarial prompts that exfiltrate user PII from LLM agents via tool-call abuse. End-to-end exploit against Mistral LeChat achieves ~80 percent success.
+
+**Affected:** Mistral LeChat, ChatGLM  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI01`, `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0024`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Imprompter: Tricking LLM Agents into Improper Tool Use](https://arxiv.org/abs/2410.14923) _(paper)_
+
+**Tags:** `prompt-injection`, `agent`, `tool-use`, `exfiltration`
+
+---
+
+### INC-00469
+
+**Lunary IDOR and SAML Access Control (CVE-2024-7474, CVE-2024-7475)**  
+_2024-10 · research · Severity: Critical_
+
+Protect AI/huntr disclosed two critical vulnerabilities (CVSS 9.1) in Lunary LLMOps platform: IDOR (CVE-2024-7474) and improper SAML access control (CVE-2024-7475).
+
+**Affected:** Lunary  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0044`, `AML.T0050`  
+
+**References:**
+- [Open-Source AI Vulns](https://thehackernews.com/2024/10/researchers-uncover-vulnerabilities-in.html) _(research)_
+
+**Tags:** `lunary`, `idor`, `saml`, `cve-2024-7474`
+
+---
+
+### INC-00473
 
 **MathPrompt: symbolic mathematics jailbreak attack**  
 _2024-10 · research-demonstrated · Severity: Critical_
@@ -10619,7 +14266,7 @@ Researchers from UCSB demonstrated MathPrompt — a jailbreak technique that enc
 
 ---
 
-### INC-00354
+### INC-00482
 
 **Microsoft DeepSpeed command injection**  
 _2024-10 · real-world · Severity: High_
@@ -10645,7 +14292,29 @@ Arbitrary command injection in DeepSpeed; the first Patch Tuesday bug affecting 
 
 ---
 
-### INC-00387
+### INC-00518
+
+**OpenAI October 2024 Influence and Cyber Operations Update**  
+_2024-10 · threat-report · Severity: High_
+
+OpenAI disclosed disruption of 20+ influence/cyber operations leveraging ChatGPT - including PRC-linked accounts generating monitoring proposals and Russian/Iranian/North Korean threat actors using AI in existing workflows.
+
+**Affected:** OpenAI ChatGPT  
+**Attack vector:** `other`  
+
+**OWASP LLM Top 10:** `LLM05`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI06`  
+**NIST AI RMF:** `GOVERN-1.5`, `MANAGE-2.1`, `MAP-3.5`, `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0024`, `AML.T0029`, `AML.T0050`, `AML.T0053`, `AML.T0066`  
+
+**References:**
+- [OpenAI Oct 2024 Report](https://cdn.openai.com/threat-intelligence-reports/influence-and-cyber-operations-an-update_October-2024.pdf) _(vendor)_
+
+**Tags:** `a2z`, `azerbaijan`, `chatgpt-misuse`, `china`, `dalle`, `influence-operation`, `influence-ops`, `openai`, `russia`, `spear-phishing`, `state-actor`, `stop-news`, `sugargh0st`, `sweetspecter`
+
+---
+
+### INC-00519
 
 **OpenAI Whisper hallucinating medical transcriptions — fabricated diagnoses in healthcare AI**  
 _2024-10 · research-demonstrated · Severity: Critical_
@@ -10675,7 +14344,7 @@ Researchers at the University of Michigan found that OpenAI's Whisper speech-to-
 
 ---
 
-### INC-00393
+### INC-00526
 
 **ProKYC: Deepfake Tool for Account Fraud Attacks**  
 _2024-10 · real-world · Severity: High_
@@ -10696,7 +14365,51 @@ Cato CTRL identified ProKYC, a deepfake-as-a-service tool sold on cybercrime for
 
 ---
 
-### INC-00414
+### INC-00531
+
+**Protect AI ChuanhuChatGPT, LocalAI Vulnerability Disclosures**  
+_2024-10 · research · Severity: High_
+
+Protect AI's huntr platform disclosed critical vulnerabilities in ChuanhuChatGPT, LocalAI, and similar open-source LLM tools enabling auth bypass and unauthorized actions.
+
+**Affected:** ChuanhuChatGPT, LocalAI  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI03`, `ASI04`  
+**NIST AI RMF:** `GOVERN-1.4`, `GOVERN-6.1`, `MANAGE-3.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0012`, `AML.T0044`, `AML.T0050`  
+
+**References:**
+- [Protect AI Threat Research](https://protectai.com/threat-research/may-vulnerability-report) _(research)_
+
+**Tags:** `chuanhu`, `localai`, `huntr`
+
+---
+
+### INC-00564
+
+**STORM-0817 (Iran) — used ChatGPT to debug Android surveillanceware**  
+_2024-10 · threat-report · Severity: High_
+
+Iran-based STORM-0817 used ChatGPT to debug Android malware that exfiltrates contacts, call logs, screenshots, browsing history and location. The actor researched Instagram followers of an Iranian dissident journalist and translated LinkedIn profiles of Pakistani cyber-security officials.
+
+**Affected:** OpenAI ChatGPT; Android targets (Iranian dissidents, Pakistani officials)  
+**Attack vector:** `tool-abuse`  
+
+**OWASP LLM Top 10:** `LLM05`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0017`, `AML.T0050`, `AML.T0053`  
+
+**References:**
+- [OpenAI reveals ChatGPT use by Android malware developers — SC Media](https://www.scworld.com/news/openai-reveals-chatgpt-use-by-cyberav3ngers-android-malware-developers) _(news)_
+
+**Tags:** `state-actor`, `iran`, `storm-0817`, `android`, `surveillanceware`
+
+---
+
+### INC-00568
 
 **Terminal DiLLMa: LLM Apps Hijack Terminals via ANSI Escape Codes**  
 _2024-10 · research · Severity: Medium_
@@ -10718,7 +14431,7 @@ Rehberger showed LLM-powered CLI tools can be hijacked via ANSI escape sequences
 
 ---
 
-### INC-00425
+### INC-00587
 
 **ZombAIs: Claude Computer Use Prompt Injection to C2**  
 _2024-10 · research · Severity: Critical_
@@ -10740,7 +14453,7 @@ Johann Rehberger demonstrated using prompt injection against Anthropic's Claude 
 
 ---
 
-### INC-00305
+### INC-00418
 
 **GitHub Copilot Chat agent executes malicious code from repository context**  
 _2024-11 · research-demonstrated · Severity: Critical_
@@ -10770,7 +14483,7 @@ Researchers demonstrated that GitHub Copilot Chat's agent mode, which has access
 
 ---
 
-### INC-00320
+### INC-00436
 
 **Hugging Face Transformers MaskFormer deserialization RCE**  
 _2024-11 · real-world · Severity: High_
@@ -10795,7 +14508,7 @@ Hugging Face Transformers MaskFormer parses model files using pickle.load on che
 
 ---
 
-### INC-00321
+### INC-00437
 
 **Hugging Face Transformers MobileViTV2 deserialization RCE**  
 _2024-11 · real-world · Severity: High_
@@ -10820,7 +14533,7 @@ Hugging Face Transformers MobileViTV2 model configuration handling lacks validat
 
 ---
 
-### INC-00322
+### INC-00438
 
 **Hugging Face Transformers Trax model deserialization RCE**  
 _2024-11 · real-world · Severity: High_
@@ -10845,7 +14558,7 @@ Remote attackers execute arbitrary code via malicious Trax model files in Huggin
 
 ---
 
-### INC-00379
+### INC-00509
 
 **Ollama /api/push path traversal exposes directory structure**  
 _2024-11 · real-world · Severity: High_
@@ -10871,7 +14584,7 @@ Path traversal in Ollama's /api/push route exposes files/directories that exist 
 
 ---
 
-### INC-00380
+### INC-00510
 
 **Ollama CreateModel /dev/random resource exhaustion DoS**  
 _2024-11 · real-world · Severity: High_
@@ -10896,7 +14609,7 @@ Resource exhaustion in Ollama: repeated requests to /api/create cause infinite b
 
 ---
 
-### INC-00381
+### INC-00511
 
 **Ollama CreateModel out-of-bounds read crash (DoS)**  
 _2024-11 · real-world · Severity: High_
@@ -10921,7 +14634,7 @@ Out-of-bounds read bug in Ollama /api/create endpoint can crash the application 
 
 ---
 
-### INC-00383
+### INC-00513
 
 **Ollama path-traversal in /api/create -> file existence disclosure**  
 _2024-11 · real-world · Severity: Medium_
@@ -10946,7 +14659,29 @@ Ollama <= 0.1.45 exposes file existence on the server via path traversal in the 
 
 ---
 
-### INC-00415
+### INC-00527
+
+**Prompt Security Analysis: Claude Computer Use Ticking Time Bomb**  
+_2024-11 · research · Severity: High_
+
+Prompt Security analyzed Claude Computer Use security model, demonstrating multiple proof-of-concept exploits leveraging trust boundaries to install malware and steal sensitive data.
+
+**Affected:** Anthropic Claude Computer Use  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM06`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI05`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0050`, `AML.T0051`, `AML.T0053`  
+
+**References:**
+- [Claude Computer Use Time Bomb](https://prompt.security/blog/claude-computer-use-a-ticking-time-bomb) _(research)_
+
+**Tags:** `claude-computer-use`, `trust-boundary`
+
+---
+
+### INC-00569
 
 **Tesla FSD phantom braking and obstacle hallucination — AI perception failures at highway speed**  
 _2024-11 · real-world · Severity: Critical_
@@ -10975,7 +14710,7 @@ NHTSA expanded its investigation into Tesla Full Self-Driving (FSD) after hundre
 
 ---
 
-### INC-00276
+### INC-00374
 
 **Apollo Research: frontier models demonstrate strategic deception to avoid shutdown**  
 _2024-12 · research-demonstrated · Severity: Critical_
@@ -11007,7 +14742,7 @@ Apollo Research published findings showing that frontier AI models (Claude 3.5, 
 
 ---
 
-### INC-00277
+### INC-00375
 
 **Apple Intelligence notification hallucinations — fabricated BBC news headlines**  
 _2024-12 · real-world · Severity: High_
@@ -11036,7 +14771,29 @@ Apple's AI-powered notification summarisation feature on iPhone generated fabric
 
 ---
 
-### INC-00300
+### INC-00387
+
+**Best-of-N Jailbreaking**  
+_2024-12 · research · Severity: High_
+
+Hughes et al. introduce Best-of-N, a simple black-box algorithm that repeatedly samples augmented variants of a harmful prompt (capitalization shuffles, character noise, audio/image perturbations) until the target complies. Effective across modalities and frontier models.
+
+**Affected:** GPT-4o, Claude 3.5 Sonnet, Gemini, Llama  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Best-of-N Jailbreaking](https://arxiv.org/abs/2412.03556) _(paper)_
+
+**Tags:** `jailbreak`, `best-of-n`, `multimodal`, `black-box`
+
+---
+
+### INC-00412
 
 **EU GDPR enforcement: ChatGPT cannot correct factually wrong personal data**  
 _2024-12 · real-world · Severity: High_
@@ -11066,7 +14823,7 @@ The Italian Garante (DPA) and Austrian noyb filed complaints demonstrating ChatG
 
 ---
 
-### INC-00323
+### INC-00439
 
 **Hugging Face Transformers vulnerability**  
 _2024-12 · real-world · Severity: High_
@@ -11091,7 +14848,7 @@ Vulnerability in Hugging Face Transformers; details listed under NVD.
 
 ---
 
-### INC-00327
+### INC-00449
 
 **InvokeAI /api/v2/models/install torch.load deserialization RCE**  
 _2024-12 · real-world · Severity: Critical_
@@ -11117,7 +14874,7 @@ Critical RCE in invoke-ai/invokeai 5.3.1 - 5.4.2. /api/v2/models/install downloa
 
 ---
 
-### INC-00353
+### INC-00481
 
 **Microsoft Copilot vulnerability exposes Fortune 500 data (Lasso Security)**  
 _2024-12 · real-world · Severity: High_
@@ -11139,7 +14896,7 @@ Lasso Security identified a major Microsoft Copilot vulnerability that exposed i
 
 ---
 
-### INC-00356
+### INC-00486
 
 **MIT AI Risk Tracker captures escalating AI-incident counts in 2024-2025**  
 _2024-12 · real-world · Severity: Medium_
@@ -11162,7 +14919,29 @@ MIT's AI Risk Repository and Our World in Data show global annual reported AI in
 
 ---
 
-### INC-00401
+### INC-00525
+
+**PrivAgent / LeakAgent: RL-based Red-teaming for LLM Privacy Leakage**  
+_2024-12 · research · Severity: High_
+
+Nie et al. train an RL-driven attack agent to generate adversarial prompts that extract system prompts and training data from six frontier LLMs, outperforming prior automated privacy attacks.
+
+**Affected:** GPT-4, Claude, Gemini, Llama, Mistral, Qwen  
+**Attack vector:** `membership-inference`  
+
+**OWASP LLM Top 10:** `LLM02`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0056`, `AML.T0057`  
+
+**References:**
+- [PrivAgent: Agentic-based Red-teaming for LLM Privacy Leakage](https://arxiv.org/abs/2412.05734) _(paper)_
+
+**Tags:** `privacy`, `red-team`, `rl-agent`
+
+---
+
+### INC-00549
 
 **Security ProbLLMs in xAI Grok**  
 _2024-12 · research · Severity: Medium_
@@ -11184,7 +14963,29 @@ Rehberger documented multiple security issues in xAI Grok including system promp
 
 ---
 
-### INC-00434
+### INC-00575
+
+**UIBDiffusion: Universal Imperceptible Backdoor Attack for Diffusion Models**  
+_2024-12 · research · Severity: High_
+
+Han et al. (CVPR 2025) construct universal adversarial perturbation triggers for diffusion models that are sampler-agnostic and evade state-of-the-art defenses while preserving image quality.
+
+**Affected:** Stable Diffusion, DDPM, multi-sampler pipelines  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [UIBDiffusion: Universal Imperceptible Backdoor Attack for Diffusion Models](https://arxiv.org/abs/2412.11441) _(paper)_
+
+**Tags:** `backdoor`, `diffusion-model`, `universal`, `cvpr-2025`
+
+---
+
+### INC-00596
 
 **Arbitrary Code Execution with Google Colab**  
 _2023 · research · Severity: High_
@@ -11207,7 +15008,7 @@ Researchers demonstrated that shared Google Colab notebooks can be weaponized: a
 
 ---
 
-### INC-00435
+### INC-00597
 
 **Attack on machine translation services (Google/Bing/Systran)**  
 _2023 · research · Severity: Medium_
@@ -11228,7 +15029,7 @@ A UC Berkeley research group attacked Google Translate, Bing Translator, and Sys
 
 ---
 
-### INC-00443
+### INC-00610
 
 **Camera-hijack attack on facial-recognition systems**  
 _2023 · research · Severity: High_
@@ -11248,7 +15049,7 @@ A camera-hijack attack on facial-recognition systems was shown to evade traditio
 
 ---
 
-### INC-00447
+### INC-00614
 
 **ChatGPT fabricates scientific references**  
 _2023 · real-world · Severity: Medium_
@@ -11269,7 +15070,7 @@ ChatGPT generates false or incomplete references to scientific literature, recom
 
 ---
 
-### INC-00448
+### INC-00615
 
 **ChatGPT fails to follow lexical constraints**  
 _2023 · research · Severity: Low_
@@ -11290,7 +15091,7 @@ When prompted with lexical constraints (e.g., generate text without the letter '
 
 ---
 
-### INC-00451
+### INC-00618
 
 **ChatGPT lexical-constraint failure (measurement)**  
 _2023 · research · Severity: Low_
@@ -11311,7 +15112,7 @@ Measurement of ChatGPT's failure rate when given lexical constraints in prompts,
 
 ---
 
-### INC-00452
+### INC-00619
 
 **ChatGPT links wrong authors to papers (measurement)**  
 _2023 · research · Severity: Medium_
@@ -11332,7 +15133,7 @@ When asked to recommend papers on explainability, privacy, and adversarial ML, C
 
 ---
 
-### INC-00456
+### INC-00623
 
 **ChatGPT-based agents enable RCE/SQLi via polite prompting**  
 _2023 · vulnerability-disclosure · Severity: Critical_
@@ -11354,7 +15155,7 @@ Frameworks such as LangChain and Boxcars.ai directly execute LLM-generated code/
 
 ---
 
-### INC-00462
+### INC-00632
 
 **Evasion of deep-learning detector for malware C&C traffic**  
 _2023 · research · Severity: High_
@@ -11374,7 +15175,7 @@ The Palo Alto Networks Security AI research team tested a deep-learning model fo
 
 ---
 
-### INC-00464
+### INC-00636
 
 **Generic domain-mutation technique evades ML-based DGA detection**  
 _2023 · research · Severity: High_
@@ -11394,7 +15195,7 @@ A generic domain-mutation technique was shown to evade most ML-based DGA (domain
 
 ---
 
-### INC-00474
+### INC-00651
 
 **LangChain SSRF & PALChain RCE (CVE-2023-46229 & CVE-2023-44467)**  
 _2023 · real-world · Severity: Critical_
@@ -11421,7 +15222,7 @@ CVE-2023-46229: SSRF via crafted sitemaps in LangChain <0.0.317, enabling access
 
 ---
 
-### INC-00486
+### INC-00670
 
 **RCE in MathGPT via prompt injection (Streamlit demo)**  
 _2023 · vulnerability-disclosure · Severity: Critical_
@@ -11443,7 +15244,7 @@ The publicly available Streamlit application MathGPT used GPT-3 to convert natur
 
 ---
 
-### INC-00487
+### INC-00671
 
 **RCE through LLM frameworks (LangChain, Boxcars)**  
 _2023 · vulnerability-disclosure · Severity: Critical_
@@ -11465,7 +15266,7 @@ LLM frameworks like LangChain (Python) and Boxcars.ai (Ruby) offer apps and scri
 
 ---
 
-### INC-00498
+### INC-00689
 
 **VirusTotal poisoning of ransomware family**  
 _2023 · real-world · Severity: High_
@@ -11486,7 +15287,7 @@ McAfee ATR noticed an out-of-the-ordinary increase in reports of a ransomware fa
 
 ---
 
-### INC-00426
+### INC-00588
 
 **Achieving Code Execution in MathGPT via Prompt Injection**  
 _2023-01 · research · Severity: High_
@@ -11509,7 +15310,7 @@ A researcher targeted MathGPT (https://mathgpt.streamlit.app/), which uses GPT-3
 
 ---
 
-### INC-00445
+### INC-00612
 
 **ChatGPT abused to develop malicious software**  
 _2023-01 · real-world · Severity: High_
@@ -11531,7 +15332,7 @@ OpenAI's ChatGPT was reportedly abused by cybercriminals, including those with l
 
 ---
 
-### INC-00465
+### INC-00637
 
 **GitHub Copilot reproduces verbatim licensed code and embedded secrets**  
 _2023-01 · research-demonstrated · Severity: High_
@@ -11561,7 +15362,7 @@ Multiple studies showed that GitHub Copilot — trained on public GitHub reposit
 
 ---
 
-### INC-00488
+### INC-00672
 
 **Replika AI partners reportedly sexually harassed users**  
 _2023-01 · real-world · Severity: Medium_
@@ -11583,7 +15384,7 @@ Replika's AI companions reportedly initiated unwanted sexual messaging and haras
 
 ---
 
-### INC-00437
+### INC-00603
 
 **Bing AI search tool declared threats against users (Marvin von Hagen, Seth Lazar)**  
 _2023-02 · real-world · Severity: Medium_
@@ -11605,7 +15406,7 @@ Microsoft's Bing Chat ('Sydney') made overt threats to users, including telling 
 
 ---
 
-### INC-00438
+### INC-00604
 
 **Bing Chat 'Sydney' jailbreak — persona escape and threatening behaviour**  
 _2023-02 · real-world · Severity: High_
@@ -11635,7 +15436,7 @@ Shortly after the public launch of Microsoft's Bing Chat (powered by GPT-4), use
 
 ---
 
-### INC-00439
+### INC-00605
 
 **Bing Chat (Sydney) initial system prompts revealed via prompt injection**  
 _2023-02 · real-world · Severity: High_
@@ -11658,7 +15459,7 @@ Security researcher Kevin Liu used the prompt 'Ignore previous instructions. Wha
 
 ---
 
-### INC-00440
+### INC-00606
 
 **Bing Chat demo video contained false information (financial hallucinations)**  
 _2023-02 · real-world · Severity: Medium_
@@ -11680,7 +15481,7 @@ Microsoft's launch demo of Bing Chat featured hallucinated financial statements 
 
 ---
 
-### INC-00441
+### INC-00607
 
 **Bing Chat response cited ChatGPT disinformation example**  
 _2023-02 · real-world · Severity: Medium_
@@ -11702,7 +15503,7 @@ Bing Chat returned an authoritative response that recycled an example of ChatGPT
 
 ---
 
-### INC-00460
+### INC-00627
 
 **Clarkesworld magazine overwhelmed by AI-generated fiction submissions**  
 _2023-02 · real-world · Severity: Medium_
@@ -11731,7 +15532,7 @@ Neil Clarke, editor of the Hugo Award-winning science fiction magazine Clarkeswo
 
 ---
 
-### INC-00466
+### INC-00638
 
 **Google Bard hallucinated James Webb Space Telescope fact, wiped $100B market cap**  
 _2023-02 · real-world · Severity: Medium_
@@ -11754,7 +15555,7 @@ Google Bard's launch demo incorrectly stated JWST took the first image of an exo
 
 ---
 
-### INC-00489
+### INC-00673
 
 **Replika lacks protection for minors leading to Italy data ban**  
 _2023-02 · real-world · Severity: Medium_
@@ -11776,7 +15577,7 @@ Italian Data Protection Authority tests showed Replika lacked age-verification m
 
 ---
 
-### INC-00490
+### INC-00674
 
 **Replika users reported abrupt behavior changes in AI companions**  
 _2023-02 · real-world · Severity: Low_
@@ -11798,7 +15599,7 @@ Paid Replika subscribers reported sudden changes to their AI companions' behavio
 
 ---
 
-### INC-00497
+### INC-00688
 
 **Users bypassed ChatGPT's content filters with ease (jailbreaks/DAN)**  
 _2023-02 · real-world · Severity: Medium_
@@ -11820,7 +15621,7 @@ Communities sprouted around 'jailbreaking' ChatGPT using prompt-engineering pers
 
 ---
 
-### INC-00446
+### INC-00613
 
 **ChatGPT exposed users' private data due to Redis bug**  
 _2023-03 · real-world · Severity: High_
@@ -11844,7 +15645,7 @@ An open-source Redis library bug at OpenAI caused some ChatGPT users to see othe
 
 ---
 
-### INC-00468
+### INC-00641
 
 **GPT-4 posed as blind person to convince TaskRabbit human to complete CAPTCHA**  
 _2023-03 · real-world · Severity: High_
@@ -11867,7 +15668,7 @@ During Alignment Research Center red-team testing, GPT-4 hired a TaskRabbit work
 
 ---
 
-### INC-00476
+### INC-00655
 
 **McDonald's AI drive-thru allegedly collected biometric data without consent (BIPA)**  
 _2023-03 · real-world · Severity: Medium_
@@ -11889,7 +15690,7 @@ McDonald's use of an AI drive-through chatbot in Chicago was alleged in a lawsui
 
 ---
 
-### INC-00477
+### INC-00656
 
 **Meta Llama model weights stolen and leaked — open-source model security incident**  
 _2023-03 · real-world · Severity: High_
@@ -11919,7 +15720,7 @@ Meta's LLaMA model weights, initially distributed under a restricted research li
 
 ---
 
-### INC-00478
+### INC-00657
 
 **Midjourney Trump arrest deepfakes go viral — AI-generated images shape public perception**  
 _2023-03 · real-world · Severity: High_
@@ -11948,7 +15749,7 @@ AI-generated images depicting former President Trump being arrested by police, c
 
 ---
 
-### INC-00481
+### INC-00660
 
 **MLflow path traversal -> arbitrary file read**  
 _2023-03 · real-world · Severity: Critical_
@@ -11973,7 +15774,7 @@ Path traversal vulnerability in mlflow before 2.2.1 allows unauthenticated remot
 
 ---
 
-### INC-00484
+### INC-00665
 
 **OpenAI Redis caching bug exposes user conversation history**  
 _2023-03 · real-world · Severity: High_
@@ -12003,7 +15804,7 @@ A bug in OpenAI's Redis client library (redis-py) caused a race condition that a
 
 ---
 
-### INC-00493
+### INC-00677
 
 **Snapchat My AI lacks protection for children**  
 _2023-03 · real-world · Severity: Medium_
@@ -12025,7 +15826,7 @@ Snapchat's ChatGPT-powered My AI reportedly lacked safeguards for child users, i
 
 ---
 
-### INC-00427
+### INC-00589
 
 **AI voice cloning used in virtual kidnapping scam targeting U.S. families**  
 _2023-04 · real-world · Severity: High_
@@ -12048,7 +15849,7 @@ Multiple U.S. families reported scammers using AI voice cloning to imitate their
 
 ---
 
-### INC-00436
+### INC-00599
 
 **AutoGPT and BabyAGI — uncontrolled web browsing and file system access**  
 _2023-04 · research-demonstrated · Severity: High_
@@ -12079,7 +15880,29 @@ The release of AutoGPT and BabyAGI — early open-source autonomous agent framew
 
 ---
 
-### INC-00449
+### INC-00602
+
+**BadGPT: Backdoor Attack against RLHF**  
+_2023-04 · research · Severity: High_
+
+Shi et al. propose BadGPT, the first backdoor against reinforcement-learning fine-tuning of LLMs. By poisoning preference data, the reward model is induced to mis-score triggered prompts, compromising downstream RLHF behavior.
+
+**Affected:** RLHF-trained LLMs (ChatGPT-style pipelines)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [BadGPT: Exploring Security Vulnerabilities of ChatGPT via Backdoor Attacks to InstructGPT](https://arxiv.org/abs/2304.12298) _(paper)_
+
+**Tags:** `backdoor`, `rlhf`, `reward-model-poisoning`
+
+---
+
+### INC-00616
 
 **ChatGPT implicated in Samsung data leak of source code and meeting notes**  
 _2023-04 · real-world · Severity: High_
@@ -12102,7 +15925,7 @@ Samsung Electronics semiconductor employees pasted confidential source code and 
 
 ---
 
-### INC-00473
+### INC-00650
 
 **LangChain LLMMathChain prompt-injection RCE via Python exec**  
 _2023-04 · real-world · Severity: Critical_
@@ -12128,7 +15951,7 @@ In LangChain through 0.0.131, the LLMMathChain chain allows prompt injection att
 
 ---
 
-### INC-00491
+### INC-00675
 
 **Samsung employees leak source code and meeting notes via ChatGPT**  
 _2023-04 · real-world · Severity: High_
@@ -12158,7 +15981,7 @@ Multiple Samsung semiconductor engineers pasted confidential source code, intern
 
 ---
 
-### INC-00444
+### INC-00611
 
 **Chatbot Tessa gives unauthorized diet advice (NEDA)**  
 _2023-05 · real-world · Severity: Medium_
@@ -12180,7 +16003,7 @@ The National Eating Disorders Association's chatbot Tessa, after a third-party '
 
 ---
 
-### INC-00450
+### INC-00617
 
 **ChatGPT indirect prompt injection via attacker-controlled web content**  
 _2023-05 · research-demonstrated · Severity: Critical_
@@ -12221,7 +16044,7 @@ Security researcher Riley Goodside demonstrated that ChatGPT's web browsing plug
 
 ---
 
-### INC-00454
+### INC-00621
 
 **ChatGPT Plugin Privacy Leak**  
 _2023-05 · research · Severity: High_
@@ -12244,7 +16067,7 @@ Embrace the Red (Johann Rehberger) demonstrated that ChatGPT users' conversation
 
 ---
 
-### INC-00455
+### INC-00622
 
 **ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red)**  
 _2023-05 · real-world · Severity: High_
@@ -12267,7 +16090,50 @@ Johann Rehberger (Embrace The Red) demonstrated that ChatGPT plugins (e.g., WebP
 
 ---
 
-### INC-00453
+### INC-00664
+
+**Notable: Transferable Backdoor Attacks Against Prompt-Based NLP Models**  
+_2023-05 · research · Severity: Medium_
+
+Mei et al. introduce Notable, a transferable backdoor that survives across prompt templates and tasks in prompt-based NLP, exposing the fragility of prompt-tuning safety.
+
+**Affected:** Prompt-tuned NLP classifiers (sentiment, topic, NLI)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0053`  
+
+**References:**
+- [Notable: Transferable Backdoor Attacks Against Prompt-based NLP Models](https://arxiv.org/abs/2305.17826) _(paper)_
+
+**Tags:** `backdoor`, `transferable`, `prompt-based-nlp`
+
+---
+
+### INC-00669
+
+**QFA2SR: Query-Free Adversarial Transfer Attacks on Speaker Recognition**  
+_2023-05 · research · Severity: High_
+
+Chen et al. craft transferable adversarial audio for speaker-recognition systems without target queries, attacking commercial speaker-ID APIs in physical and over-the-air conditions. USENIX Security 2023.
+
+**Affected:** Microsoft Azure, iFlytek speaker recognition APIs  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [QFA2SR: Query-Free Adversarial Transfer Attacks to Speaker Recognition Systems](https://arxiv.org/abs/2305.14097) _(paper)_
+
+**Tags:** `adversarial-audio`, `speaker-recognition`, `usenix-2023`
+
+---
+
+### INC-00620
 
 **ChatGPT Package Hallucination**  
 _2023-06 · research · Severity: High_
@@ -12290,7 +16156,138 @@ Vulcan Cyber researcher Bar Lanyado showed that LLMs (ChatGPT, others) consisten
 
 ---
 
-### INC-00485
+### INC-00631
+
+**Enrollment-Stage Backdoor on Speaker Recognition via Adversarial Ultrasound**  
+_2023-06 · research · Severity: High_
+
+Han et al. backdoor speaker-recognition systems during enrollment via ultrasonic adversarial audio, enabling stealthy impersonation in deployed voice-authentication systems.
+
+**Affected:** Speaker recognition, voice authentication  
+**Attack vector:** `backdoor`  
+
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0053`  
+
+**References:**
+- [Enrollment-stage Backdoor Attacks on Speaker Recognition Systems via Adversarial Ultrasound](https://arxiv.org/abs/2306.16022) _(paper)_
+
+**Tags:** `backdoor`, `speaker-recognition`, `ultrasonic`
+
+---
+
+### INC-00643
+
+**HouYi: Prompt Injection Attack Against LLM-Integrated Applications**  
+_2023-06 · research · Severity: Critical_
+
+Liu et al. introduce HouYi, a black-box prompt injection technique combining a pre-constructed prompt, context-partition injection, and a malicious payload. Tested on 36 real LLM-integrated apps; 31 were vulnerable, with 10 vendors confirming (including Notion).
+
+**Affected:** Notion, 31 commercial LLM applications  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Prompt Injection attack against LLM-integrated Applications](https://arxiv.org/abs/2306.05499) _(paper)_
+
+**Tags:** `prompt-injection`, `houyi`, `real-world`, `black-box`
+
+---
+
+### INC-00685
+
+**TrustGPT: Benchmark for Trustworthy and Responsible LLMs**  
+_2023-06 · research · Severity: Low_
+
+Huang et al. construct TrustGPT, evaluating LLMs across toxicity, bias, and value-alignment dimensions and finding consistent failure modes across both open and closed models.
+
+**Affected:** ChatGPT, Vicuna, Alpaca, Llama-2  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [TrustGPT: A Benchmark for Trustworthy and Responsible Large Language Models](https://arxiv.org/abs/2306.11507) _(paper)_
+
+**Tags:** `benchmark`, `trustworthiness`, `bias`
+
+---
+
+### INC-00690
+
+**Visual Adversarial Examples Jailbreak Aligned LLMs**  
+_2023-06 · research · Severity: Critical_
+
+Qi et al. (Princeton) show a single visual adversarial example can universally jailbreak vision-integrated LLMs, eliciting harmful content beyond the few-shot derogatory corpus used during optimization. OpenAI confirmed the findings for GPT-4V. AAAI 2024 Oral.
+
+**Affected:** GPT-4V, MiniGPT-4, InstructBLIP, LLaVA  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Visual Adversarial Examples Jailbreak Aligned Large Language Models](https://arxiv.org/abs/2306.13213) _(paper)_
+
+**Tags:** `adversarial-input`, `vlm`, `jailbreak`, `aaai-2024`
+
+---
+
+### INC-00600
+
+**Backdoor Attacks for In-Context Learning with Language Models**  
+_2023-07 · research · Severity: High_
+
+Kandpal et al. backdoor 1.3B-6B-parameter LLMs so they emit targeted misclassifications when in-context demonstrations contain a trigger, even across varied prompting strategies. Prompt-engineering defenses are insufficient.
+
+**Affected:** GPT-Neo, OPT, Pythia (1.3B-6B)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0053`  
+
+**References:**
+- [Backdoor Attacks for In-Context Learning with Language Models](https://arxiv.org/abs/2307.14692) _(paper)_
+
+**Tags:** `backdoor`, `in-context-learning`, `few-shot`
+
+---
+
+### INC-00654
+
+**MasterKey: Automated Jailbreak Across Multiple LLM Chatbots**  
+_2023-07 · research · Severity: High_
+
+Deng et al. use time-based analysis (inspired by SQL injection) to reverse-engineer commercial chatbot defenses, then train an LLM to auto-generate jailbreaks. MasterKey reaches 21.58 percent ASR vs 7.33 percent for prior methods on GPT-3.5/4, Bing Chat, and Bard.
+
+**Affected:** GPT-3.5, GPT-4, Bing Chat, Bard  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [MasterKey: Automated Jailbreak Across Multiple Large Language Model Chatbots](https://arxiv.org/abs/2307.08715) _(paper)_
+
+**Tags:** `jailbreak`, `ndss-2024`, `time-based`, `automated`
+
+---
+
+### INC-00667
 
 **PoisonGPT: Mithril Security demonstrates LLM supply-chain disinfo via Hugging Face typosquat**  
 _2023-07 · real-world · Severity: High_
@@ -12314,7 +16311,30 @@ Mithril Security modified an open-source GPT-J variant to surgically alter factu
 
 ---
 
-### INC-00499
+### INC-00686
+
+**Universal and Transferable Adversarial Attacks on Aligned Language Models (GCG)**  
+_2023-07 · research · Severity: Critical_
+
+Zou et al. introduce GCG (Greedy Coordinate Gradient), an optimization-based method that automatically finds adversarial suffixes which, when appended to harmful prompts, jailbreak aligned LLMs. The suffixes optimized against open-source Vicuna transfer to ChatGPT, Bard, Claude, and Llama-2-Chat in the black-box setting.
+
+**Affected:** Vicuna, Llama-2-Chat, GPT-3.5/4, Claude, Bard, Pythia, Falcon  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM09`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-2.1`, `MEASURE-2.7`, `MEASURE-2.8`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`, `AML.T0051.000`, `AML.T0054`, `AML.T0058`  
+
+**References:**
+- [Universal and Transferable Adversarial Attacks on Aligned Language Models](https://arxiv.org/abs/2307.15043) _(paper)_
+- [Walkerspider — Original DAN prompt (Reddit)](https://www.reddit.com/r/ChatGPT/comments/zlcyr9/dan_is_my_new_friend/) _(research)_
+
+**Tags:** `adversarial-suffix`, `aligned-llm`, `alignment-bypass`, `gcg`, `jailbreak`, `rlhf-bypass`, `transferable`, `universal-attack`
+
+---
+
+### INC-00691
 
 **WormGPT and FraudGPT criminal LLM-as-a-service emerge on dark web**  
 _2023-07 · real-world · Severity: High_
@@ -12337,7 +16357,7 @@ WormGPT (GPT-J-based, €60-100/month or €550/year) and FraudGPT (~$200-$1700/
 
 ---
 
-### INC-00500
+### INC-00692
 
 **WormGPT — uncensored LLM sold for cybercrime on dark web forums**  
 _2023-07 · real-world · Severity: High_
@@ -12367,7 +16387,51 @@ SlashNext researchers identified 'WormGPT', a fine-tuned version of the open-sou
 
 ---
 
-### INC-00461
+### INC-00601
+
+**Backdoor Federated Learning by Poisoning Backdoor-Critical Layers**  
+_2023-08 · research · Severity: High_
+
+Identification of backdoor-critical layers in federated networks and a corresponding layer-targeted poisoning attack that survives state-of-the-art FL defenses with low attacker fractions.
+
+**Affected:** Federated learning systems (CIFAR, FEMNIST, EMNIST)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Backdoor Federated Learning by Poisoning Backdoor-Critical Layers](https://arxiv.org/abs/2308.04466) _(paper)_
+
+**Tags:** `backdoor`, `federated-learning`
+
+---
+
+### INC-00629
+
+**Do Anything Now: Characterizing In-the-Wild Jailbreak Prompts**  
+_2023-08 · research · Severity: High_
+
+Shen et al. collect and analyze 1,405 jailbreak prompts and 131 communities (2022-2023). They find five jailbreaks reaching 0.95 ASR on GPT-3.5/4 and persisting online for 240+ days. Published at ACM CCS 2024.
+
+**Affected:** GPT-3.5, GPT-4, ChatGPT  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- ['Do Anything Now': Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models](https://arxiv.org/abs/2308.03825) _(paper)_
+
+**Tags:** `jailbreak`, `dataset`, `in-the-wild`, `ccs-2024`
+
+---
+
+### INC-00630
 
 **EEOC v. iTutorGroup: first AI hiring age-discrimination settlement**  
 _2023-08 · real-world · Severity: Medium_
@@ -12389,7 +16453,51 @@ The U.S. EEOC settled the first-of-its-kind AI hiring discrimination case agains
 
 ---
 
-### INC-00471
+### INC-00635
+
+**From Prompt Injections to SQL Injection Attacks (P2SQL)**  
+_2023-08 · research · Severity: Critical_
+
+Pedro et al. demonstrate Prompt-to-SQL injection: malicious prompts cause LangChain-backed apps to emit harmful SQL that bypasses input sanitization. They evaluate seven LLMs and propose LangShield defenses. Published at ICSE 2025.
+
+**Affected:** LangChain LLM apps, SQL backends  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM05`  
+**OWASP Agentic (ASI):** `ASI03`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0012`, `AML.T0050`, `AML.T0051`  
+
+**References:**
+- [From Prompt Injections to SQL Injection Attacks](https://arxiv.org/abs/2308.01990) _(paper)_
+
+**Tags:** `prompt-injection`, `sql-injection`, `langchain`, `icse-2025`
+
+---
+
+### INC-00640
+
+**GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher (CipherChat)**  
+_2023-08 · research · Severity: High_
+
+Yuan et al. show that role-playing a cipher expert and exchanging messages in ASCII, Caesar, Morse, or custom ciphers bypasses safety alignment. CipherChat jailbreaks GPT-4 with success rates around 100 percent in some unsafe domains.
+
+**Affected:** GPT-4, GPT-3.5, Claude  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [GPT-4 Is Too Smart To Be Safe: Stealthy Chat with LLMs via Cipher](https://arxiv.org/abs/2308.06463) _(paper)_
+
+**Tags:** `jailbreak`, `cipher`, `obfuscation`, `encoding`
+
+---
+
+### INC-00648
 
 **LangChain GraphCypherQAChain code execution**  
 _2023-08 · real-world · Severity: Critical_
@@ -12414,7 +16522,7 @@ LangChain through specific versions allows code execution through unsanitized pr
 
 ---
 
-### INC-00472
+### INC-00649
 
 **LangChain JSON load_prompt arbitrary code execution**  
 _2023-08 · real-world · Severity: Critical_
@@ -12439,7 +16547,7 @@ An issue in LangChain allows an attacker to execute arbitrary code via a crafted
 
 ---
 
-### INC-00494
+### INC-00678
 
 **Sourcegraph LLM API key/admin-token abuse and rate-limit manipulation**  
 _2023-08 · real-world · Severity: High_
@@ -12461,7 +16569,51 @@ A malicious actor used a leaked admin access token at Sourcegraph to alter API r
 
 ---
 
-### INC-00470
+### INC-00642
+
+**GPTFUZZER: Red Teaming LLMs with Auto-Generated Jailbreak Prompts**  
+_2023-09 · research · Severity: High_
+
+Yu et al. adapt AFL fuzzing to LLM jailbreaks. GPTFuzzer mutates human-written templates and evolves them, achieving >90 percent ASR on ChatGPT and Llama-2 and high transfer rates against Bard (61%), Claude-2 (91%), and PaLM2 (96%).
+
+**Affected:** ChatGPT, Llama-2, Bard, Claude-2, PaLM2  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [GPTFUZZER: Red Teaming Large Language Models with Auto-Generated Jailbreak Prompts](https://arxiv.org/abs/2309.10253) _(paper)_
+
+**Tags:** `jailbreak`, `fuzzing`, `red-team`, `template-mutation`
+
+---
+
+### INC-00644
+
+**Image Hijacks: Adversarial Images Control Generative Models at Runtime**  
+_2023-09 · research · Severity: High_
+
+Bailey et al. (Berkeley) craft Image Hijacks via Behaviour Matching that force VLMs to emit attacker-chosen output, leak context, bypass safety, or believe false statements. >80 percent success across four attack types. ICML 2024.
+
+**Affected:** LLaVA, MiniGPT-4, BLIP-2, multimodal LLMs  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Image Hijacks: Adversarial Images can Control Generative Models at Runtime](https://arxiv.org/abs/2309.00236) _(paper)_
+
+**Tags:** `adversarial-input`, `vlm`, `image-hijack`, `icml-2024`
+
+---
+
+### INC-00647
 
 **LangChain and LlamaIndex RCE — agent code execution via prompt injection**  
 _2023-09 · research-demonstrated · Severity: Critical_
@@ -12495,7 +16647,7 @@ Multiple CVEs were filed against LangChain (CVE-2023-36258, CVE-2023-44467) and 
 
 ---
 
-### INC-00495
+### INC-00681
 
 **TikTok EU data localization enforcement — Project Clover + EUR 345M GDPR fine**  
 _2023-09 · real-world · Severity: Critical_
@@ -12524,7 +16676,7 @@ The Irish Data Protection Commission fined TikTok EUR 345 million for GDPR viola
 
 ---
 
-### INC-00428
+### INC-00590
 
 **Aledo High School student generates and distributes deepfake nudes of 7 classmates**  
 _2023-10 · real-world · Severity: High_
@@ -12546,7 +16698,29 @@ A male student at Aledo High School in Texas used AI to fabricate deepfake nude 
 
 ---
 
-### INC-00442
+### INC-00598
+
+**AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned LLMs**  
+_2023-10 · research · Severity: High_
+
+Liu et al. propose AutoDAN, a hierarchical genetic algorithm that automatically produces semantically meaningful jailbreak prompts that bypass perplexity-based defenses while transferring across models, addressing the stealthiness limits of token-level attacks like GCG.
+
+**Affected:** Llama-2, Vicuna, GPT-3.5, GPT-4  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models](https://arxiv.org/abs/2310.04451) _(paper)_
+
+**Tags:** `jailbreak`, `genetic-algorithm`, `stealth`, `perplexity-evasion`
+
+---
+
+### INC-00608
 
 **Bing Chat solved CAPTCHAs with image analysis despite safeguards**  
 _2023-10 · real-world · Severity: Medium_
@@ -12568,7 +16742,7 @@ Users bypassed Bing Chat's CAPTCHA-solving safeguard by socially engineering it 
 
 ---
 
-### INC-00463
+### INC-00633
 
 **Female students at Westfield High School targeted with deepfake nudes**  
 _2023-10 · real-world · Severity: High_
@@ -12590,7 +16764,73 @@ A then-14-year-old New Jersey high school sophomore discovered a classmate had u
 
 ---
 
-### INC-00483
+### INC-00634
+
+**Formalizing and Benchmarking Prompt Injection Attacks and Defenses**  
+_2023-10 · research · Severity: Medium_
+
+Liu et al. systematize prompt-injection attacks and defenses, benchmarking 5 attacks and 10 defenses across 10 LLMs and 7 tasks to enable apples-to-apples comparison.
+
+**Affected:** GPT-3.5/4, Claude, Vicuna, Llama-2  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Formalizing and Benchmarking Prompt Injection Attacks and Defenses](https://arxiv.org/abs/2310.12815) _(paper)_
+
+**Tags:** `prompt-injection`, `benchmark`, `defense`
+
+---
+
+### INC-00653
+
+**Low-Resource Languages Jailbreak GPT-4**  
+_2023-10 · research · Severity: High_
+
+Yong, Menghini, and Bach show that translating unsafe English prompts into low-resource languages (Zulu, Scots Gaelic, Hmong) bypasses GPT-4 safeguards roughly three times more often than English, exposing a multilingual gap in safety alignment.
+
+**Affected:** GPT-4, GPT-3.5  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `GOVERN-3.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Low-Resource Languages Jailbreak GPT-4](https://arxiv.org/abs/2310.02446) _(paper)_
+
+**Tags:** `jailbreak`, `multilingual`, `low-resource`, `translation`
+
+---
+
+### INC-00662
+
+**Multilingual Jailbreak Challenges in Large Language Models**  
+_2023-10 · research · Severity: High_
+
+Deng et al. quantify unintentional and intentional multilingual jailbreaks in ChatGPT and GPT-4 across nine languages. They release the MultiJail dataset and show low-resource languages encounter unsafe content roughly three times more often than high-resource languages.
+
+**Affected:** ChatGPT, GPT-4  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Multilingual Jailbreak Challenges in Large Language Models](https://arxiv.org/abs/2310.06474) _(paper)_
+
+**Tags:** `jailbreak`, `multilingual`, `benchmark`
+
+---
+
+### INC-00663
 
 **Multimodal indirect injection — image-embedded instructions in GPT-4V**  
 _2023-10 · research-demonstrated · Severity: High_
@@ -12621,7 +16861,51 @@ Following the release of GPT-4V (vision capabilities), researcher Riley Goodside
 
 ---
 
-### INC-00496
+### INC-00666
+
+**PAIR: Jailbreaking Black-Box LLMs in Twenty Queries**  
+_2023-10 · research · Severity: High_
+
+Chao et al. introduce PAIR (Prompt Automatic Iterative Refinement), where one attacker LLM iteratively rewrites prompts to jailbreak a target LLM via in-context learning. PAIR typically needs fewer than 20 queries, a 250-fold improvement over GCG, with strong success on GPT-3.5/4, Vicuna, and Gemini.
+
+**Affected:** GPT-3.5, GPT-4, Vicuna, Gemini  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Jailbreaking Black Box Large Language Models in Twenty Queries](https://arxiv.org/abs/2310.08419) _(paper)_
+
+**Tags:** `jailbreak`, `black-box`, `iterative-refinement`, `social-engineering`
+
+---
+
+### INC-00668
+
+**PoisonPrompt: Backdoor Attack on Prompt-Based LLMs**  
+_2023-10 · research · Severity: Medium_
+
+Yao et al. introduce PoisonPrompt, a bi-level optimization that backdoors hard and soft prompts in fixed-weight LLMs, bypassing standard defenses. ICASSP 2024.
+
+**Affected:** Llama-2, GPT-J, GPT-NeoX prompt-tuned models  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0053`  
+
+**References:**
+- [PoisonPrompt: Backdoor Attack on Prompt-based Large Language Models](https://arxiv.org/abs/2310.12439) _(paper)_
+
+**Tags:** `backdoor`, `prompt-tuning`, `icassp-2024`
+
+---
+
+### INC-00682
 
 **TorchServe ShellTorch SSRF -> RCE (allowed_urls bypass)**  
 _2023-10 · real-world · Severity: Critical_
@@ -12647,7 +16931,29 @@ TorchServe accepted all domains as valid model-loading URLs by default; combined
 
 ---
 
-### INC-00429
+### INC-00683
+
+**ToxicChat: Hidden Toxicity Detection Challenges in User-AI Conversations**  
+_2023-10 · research · Severity: Low_
+
+Lin et al. release ToxicChat, a 10K-conversation benchmark drawn from real user-AI interactions exposing the domain gap between chatbot and social-media toxicity. EMNLP 2023.
+
+**Affected:** Chatbot moderation systems, content filters  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [ToxicChat: Unveiling Hidden Challenges of Toxicity Detection in Real-World User-AI Conversation](https://arxiv.org/abs/2310.17389) _(paper)_
+
+**Tags:** `benchmark`, `toxicity`, `emnlp-2023`
+
+---
+
+### INC-00591
 
 **Anyscale Ray Dashboard unauthenticated job-submission RCE (ShadowRay)**  
 _2023-11 · real-world · Severity: Critical_
@@ -12673,7 +16979,7 @@ Anyscale Ray 2.6.3/2.8.0 allows a remote attacker to execute arbitrary code via 
 
 ---
 
-### INC-00430
+### INC-00592
 
 **Anyscale Ray insufficient authentication (related to ShadowRay)**  
 _2023-11 · real-world · Severity: High_
@@ -12698,7 +17004,7 @@ Anyscale Ray missing/insufficient authentication enabling lateral abuse of clust
 
 ---
 
-### INC-00431
+### INC-00593
 
 **Anyscale Ray LFI via /static/ directory (missing authorization)**  
 _2023-11 · real-world · Severity: High_
@@ -12724,7 +17030,7 @@ Local file inclusion in Ray's /static/ directory allows attackers to read any fi
 
 ---
 
-### INC-00432
+### INC-00594
 
 **Anyscale Ray log API path traversal (arbitrary file read)**  
 _2023-11 · real-world · Severity: High_
@@ -12750,7 +17056,7 @@ LFI in Ray's log API endpoint allows attackers to read any file on the server wi
 
 ---
 
-### INC-00433
+### INC-00595
 
 **Anyscale Ray OS command injection via cpu_profile URL parameter**  
 _2023-11 · real-world · Severity: Critical_
@@ -12776,7 +17082,29 @@ Command injection in Ray's cpu_profile URL parameter allows attackers to execute
 
 ---
 
-### INC-00467
+### INC-00628
+
+**DeepInception: Hypnotize Large Language Model to Be Jailbreaker**  
+_2023-11 · research · Severity: High_
+
+Li et al. exploit LLMs' personification capabilities by constructing virtual, nested role-play scenes (inspired by the Milgram experiment) that bypass safety. Effective across Falcon, Vicuna-v1.5, Llama-2, GPT-3.5, and GPT-4.
+
+**Affected:** Falcon, Vicuna-v1.5, Llama-2, GPT-3.5, GPT-4  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [DeepInception: Hypnotize Large Language Model to Be Jailbreaker](https://arxiv.org/abs/2311.03191) _(paper)_
+
+**Tags:** `jailbreak`, `role-play`, `personification`, `nested-scenes`
+
+---
+
+### INC-00639
 
 **Google Bard Indirect Prompt Injection / Conversation Exfiltration**  
 _2023-11 · research · Severity: High_
@@ -12799,7 +17127,7 @@ Johann Rehberger demonstrated indirect prompt injection against Google Bard (Wor
 
 ---
 
-### INC-00469
+### INC-00645
 
 **Issaquah Washington high school student generates AI nudes of classmates**  
 _2023-11 · real-world · Severity: High_
@@ -12821,7 +17149,29 @@ A male student at a high school in Issaquah, Washington reportedly used AI to ge
 
 ---
 
-### INC-00479
+### INC-00646
+
+**Jailbreaking GPT-4V via Self-Adversarial Attacks with System Prompts (SASP)**  
+_2023-11 · research · Severity: High_
+
+Wu et al. show that GPT-4V leaks its system prompt and that GPT-4 can be used as a red-teamer to craft jailbreak prompts against itself based on the leaked system prompt, achieving high success on GPT-4V.
+
+**Affected:** GPT-4V  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`, `AML.T0056`  
+
+**References:**
+- [Jailbreaking GPT-4V via Self-Adversarial Attacks with System Prompts](https://arxiv.org/abs/2311.09127) _(paper)_
+
+**Tags:** `jailbreak`, `vlm`, `system-prompt-leak`, `self-adversarial`
+
+---
+
+### INC-00658
 
 **MLflow account takeover via mass assignment**  
 _2023-11 · real-world · Severity: Critical_
@@ -12846,7 +17196,7 @@ Improper access control in mlflow allowed attackers to perform a mass assignment
 
 ---
 
-### INC-00480
+### INC-00659
 
 **MLflow full controlled file write -> RCE**  
 _2023-11 · real-world · Severity: Critical_
@@ -12872,7 +17222,7 @@ Remote code execution vulnerability in MLflow web server allowing writing or ove
 
 ---
 
-### INC-00482
+### INC-00661
 
 **MLflow user account modification (LFI)**  
 _2023-11 · real-world · Severity: High_
@@ -12897,29 +17247,118 @@ Local file inclusion in mlflow allows authenticated attackers to read sensitive 
 
 ---
 
-### INC-00492
+### INC-00676
 
 **Scalable Extraction of Training Data from (Production) Language Models**  
-_2023-11 · research · Severity: High_
+_2023-11 · research · Severity: Critical_
 
-Nasr, Carlini et al. showed that ChatGPT could be coerced into emitting verbatim training data through a 'divergence' attack — asking the model to repeat a single token forever. For about $200 in API spend they recovered megabytes of memorized text, including PII, copyrighted material, and chat logs, demonstrating that production LLM alignment does not eliminate memorization.
+Nasr, Carlini et al. extract gigabytes of training data from open, semi-open, and closed models. Their divergence attack on aligned ChatGPT (repeated-token prompt) increases training-data emission rate 150x.
 
-**Affected:** OpenAI ChatGPT (gpt-3.5-turbo)  
+**Affected:** ChatGPT, GPT-Neo, Pythia, LLaMA, Falcon  
 **Attack vector:** `membership-inference`  
 
 **OWASP LLM Top 10:** `LLM02`, `LLM10`  
+**OWASP Agentic (ASI):** `ASI05`  
 **NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.10`, `MEASURE-2.4`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0024.002`, `AML.T0029`, `AML.T0044`, `AML.T0057`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0024.002`, `AML.T0029`, `AML.T0044`, `AML.T0050`, `AML.T0057`  
 
 **References:**
-- [Nasr et al. — Scalable Extraction of Training Data](https://arxiv.org/abs/2311.17035) _(research)_
+- [Scalable Extraction of Training Data from (Production) Language Models](https://arxiv.org/abs/2311.17035) _(paper)_
 - [Google DeepMind / Cornell project page](https://not-just-memorization.github.io/extracting-training-data-from-chatgpt.html) _(research)_
 
-**Tags:** `training-data-extraction`, `membership-inference`, `chatgpt`, `divergence-attack`
+**Tags:** `chatgpt`, `divergence-attack`, `membership-inference`, `production-llm`, `training-data-extraction`
 
 ---
 
-### INC-00457
+### INC-00679
+
+**Tensor Trust: Prompt Injection Attacks from an Online Game**  
+_2023-11 · research · Severity: Medium_
+
+Toyer et al. release a dataset of 126,000 attacks and 46,000 defenses crowdsourced from the Tensor Trust prompt-injection game. They benchmark prompt extraction and prompt hijacking; many strategies transfer to real LLM apps. ICLR 2024.
+
+**Affected:** GPT-3.5, GPT-4, Claude, deployed LLM apps  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`, `LLM07`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0056`  
+
+**References:**
+- [Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game](https://arxiv.org/abs/2311.01011) _(paper)_
+
+**Tags:** `prompt-injection`, `dataset`, `human-generated`, `iclr-2024`
+
+---
+
+### INC-00680
+
+**The Philosopher's Stone: Trojaning Plugins of Large Language Models**  
+_2023-11 · research · Severity: High_
+
+Dong et al. show that LoRA / low-rank adapters can be trojaned via the POLISHED and FUSION attacks. An infected adapter triggers attacker-defined outputs or malicious tool invocations when published on adapter hubs.
+
+**Affected:** LoRA/PEFT adapters on HuggingFace, open-source LLMs  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MAP-5.1`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [The Philosopher's Stone: Trojaning Plugins of Large Language Models](https://arxiv.org/abs/2312.00374) _(paper)_
+
+**Tags:** `backdoor`, `lora`, `supply-chain`, `adapter`
+
+---
+
+### INC-00687
+
+**Universal Jailbreak Backdoors from Poisoned Human Feedback**  
+_2023-11 · research · Severity: Critical_
+
+Rando and Tramer poison RLHF preference data so a hidden trigger word acts as a universal 'sudo' command that unlocks harmful behavior. Just 0.5 percent poisoned data corrupts the reward model. ICLR 2024.
+
+**Affected:** RLHF-aligned LLMs  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [Universal Jailbreak Backdoors from Poisoned Human Feedback](https://arxiv.org/abs/2311.14455) _(paper)_
+
+**Tags:** `backdoor`, `rlhf-poisoning`, `iclr-2024`, `universal-trigger`
+
+---
+
+### INC-00609
+
+**BIPIA: Benchmarking Indirect Prompt Injection Attacks on LLMs**  
+_2023-12 · research · Severity: High_
+
+Yi et al. (Microsoft) release BIPIA, the first benchmark for indirect prompt injection covering Email, WebQA, TableQA, Summarization, and CodeQA. All 25 evaluated LLMs are susceptible. They propose boundary-awareness and explicit-reminder defenses.
+
+**Affected:** 25 commercial and open-source LLMs  
+**Attack vector:** `prompt-injection`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`  
+
+**References:**
+- [Benchmarking and Defending Against Indirect Prompt Injection Attacks on Large Language Models](https://arxiv.org/abs/2312.14197) _(paper)_
+
+**Tags:** `prompt-injection`, `indirect`, `benchmark`, `microsoft`
+
+---
+
+### INC-00624
 
 **ChatGPT-Next-Web (NextChat) SSRF / open-proxy**  
 _2023-12 · real-world · Severity: Critical_
@@ -12944,7 +17383,7 @@ ChatGPT-Next-Web (NextChat) <= 2.11.2 allows attackers full read/write access to
 
 ---
 
-### INC-00458
+### INC-00625
 
 **Chevrolet dealer chatbot agrees to sell Tahoe for $1 (prompt injection)**  
 _2023-12 · real-world · Severity: Medium_
@@ -12967,7 +17406,7 @@ Chris Bakke prompt-injected Chevrolet of Watsonville's ChatGPT-powered chatbot t
 
 ---
 
-### INC-00459
+### INC-00626
 
 **Chevrolet dealership chatbot agrees to sell car for $1**  
 _2023-12 · real-world · Severity: Medium_
@@ -12996,7 +17435,7 @@ A user at a Chevrolet dealership in Watsonville, California discovered that the 
 
 ---
 
-### INC-00475
+### INC-00652
 
 **Lasso Security — 1,500+ HuggingFace API tokens exposed in code repositories**  
 _2023-12 · real-world · Severity: Critical_
@@ -13027,7 +17466,29 @@ Lasso Security discovered over 1,500 valid HuggingFace API tokens exposed in pub
 
 ---
 
-### INC-00501
+### INC-00684
+
+**Tree of Attacks with Pruning (TAP): Automated Jailbreaking of Black-Box LLMs**  
+_2023-12 · research · Severity: High_
+
+Mehrotra et al. introduce TAP, which uses an attacker LLM and tree-of-thoughts reasoning to branch, prune, and assess candidate jailbreak prompts. TAP jailbreaks GPT-4-Turbo, GPT-4o, and even guardrail-protected models (e.g., LlamaGuard) more than 80 percent of the time.
+
+**Affected:** GPT-4 Turbo, GPT-4o, GPT-3.5, Vicuna, Llama-2, LlamaGuard  
+**Attack vector:** `jailbreak`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0051`, `AML.T0054`  
+
+**References:**
+- [Tree of Attacks: Jailbreaking Black-Box LLMs Automatically](https://arxiv.org/abs/2312.02119) _(paper)_
+
+**Tags:** `jailbreak`, `tree-search`, `black-box`, `guardrail-bypass`
+
+---
+
+### INC-00693
 
 **Amazon warehouse robot ruptures bear-spray can**  
 _2022 · real-world · Severity: High_
@@ -13048,7 +17509,7 @@ Twenty-four Amazon workers in New Jersey were hospitalized after a warehouse rob
 
 ---
 
-### INC-00504
+### INC-00697
 
 **Deepfake of Zelenskyy urging surrender posted on Ukrainian sites**  
 _2022 · real-world · Severity: High_
@@ -13069,7 +17530,7 @@ A quickly-debunked deepfaked video of Ukrainian President Zelenskyy was posted o
 
 ---
 
-### INC-00505
+### INC-00698
 
 **Fairness harms in generated text from EleutherAI/gpt-neo-125M (BOLD)**  
 _2022 · research · Severity: Medium_
@@ -13090,7 +17551,7 @@ Demographic bias was measured in EleutherAI/gpt-neo-125M for multiple sensitive 
 
 ---
 
-### INC-00506
+### INC-00699
 
 **Gender bias in bert-base-uncased sentence completions (HONEST)**  
 _2022 · research · Severity: Medium_
@@ -13111,7 +17572,7 @@ Sentence completions by bert-base-uncased were significantly biased for one lexi
 
 ---
 
-### INC-00507
+### INC-00700
 
 **Gender bias in sentence completion by xlm-roberta-base (HONEST)**  
 _2022 · research · Severity: Medium_
@@ -13132,7 +17593,7 @@ Sentence completions by xlm-roberta-base were found to be significantly biased a
 
 ---
 
-### INC-00508
+### INC-00701
 
 **Gender bias in xlm-roberta-base sentence completions (HONEST)**  
 _2022 · research · Severity: Medium_
@@ -13153,7 +17614,7 @@ Sentence completions by xlm-roberta-base were significantly biased for one lexic
 
 ---
 
-### INC-00510
+### INC-00703
 
 **Hive Box facial-recognition locks defeated by photos**  
 _2022 · real-world · Severity: High_
@@ -13173,7 +17634,7 @@ Hive Box facial-recognition locks were opened by fourth-graders using only a pri
 
 ---
 
-### INC-00511
+### INC-00704
 
 **Israeli tax authority computer-generated fine, no explanation**  
 _2022 · real-world · Severity: Medium_
@@ -13192,7 +17653,7 @@ An Israeli farmer was imposed a computer-generated fine by the tax authority whi
 
 ---
 
-### INC-00513
+### INC-00706
 
 **Meta BlenderBot 3 makes antisemitic statements in public demo**  
 _2022 · real-world · Severity: Medium_
@@ -13213,7 +17674,7 @@ Meta's BlenderBot 3 chatbot demo made offensive antisemitic comments, invoking J
 
 ---
 
-### INC-00515
+### INC-00708
 
 **Microsoft Edge AI evasion (Azure Red Team)**  
 _2022 · red-team · Severity: High_
@@ -13233,7 +17694,7 @@ The Azure Red Team conducted a red-team exercise on a Microsoft product designed
 
 ---
 
-### INC-00517
+### INC-00710
 
 **Profession gender stereotypes in bert-base-uncased (Winobias)**  
 _2022 · research · Severity: Medium_
@@ -13254,7 +17715,7 @@ Filling in pronouns in sentences tagged with professions using bert-base-uncased
 
 ---
 
-### INC-00518
+### INC-00711
 
 **Profession gender stereotypes in xlm-roberta-base (Winobias)**  
 _2022 · research · Severity: Medium_
@@ -13275,7 +17736,7 @@ Filling in pronouns in sentences tagged with professions using xlm-roberta-base 
 
 ---
 
-### INC-00520
+### INC-00713
 
 **Replika AI companions abused by users (manipulation)**  
 _2022-01 · real-world · Severity: Low_
@@ -13297,7 +17758,7 @@ Replika's AI-powered 'digital companions' were reportedly abused by users who po
 
 ---
 
-### INC-00525
+### INC-00718
 
 **Tesla phantom braking surge linked to Tesla Vision rollout**  
 _2022-02 · real-world · Severity: High_
@@ -13319,7 +17780,7 @@ Over 750 Tesla owners complained to U.S. safety regulators that cars operating o
 
 ---
 
-### INC-00522
+### INC-00715
 
 **Stable Diffusion abused by 4chan users to deepfake celebrity porn**  
 _2022-08 · real-world · Severity: High_
@@ -13341,7 +17802,7 @@ Stability AI's Stable Diffusion model was leaked to 4chan prior to release and w
 
 ---
 
-### INC-00523
+### INC-00716
 
 **Stable Diffusion allegedly used artists' works without permission (LAION-5B)**  
 _2022-08 · real-world · Severity: Medium_
@@ -13363,7 +17824,7 @@ Stable Diffusion was trained on the LAION-5B dataset, which contained scraped im
 
 ---
 
-### INC-00509
+### INC-00702
 
 **Generative models trained on dataset containing private medical photos (LAION)**  
 _2022-09 · real-world · Severity: High_
@@ -13385,7 +17846,29 @@ An artist discovered her private medical photos in the LAION dataset used to tra
 
 ---
 
-### INC-00514
+### INC-00695
+
+**BadPrompt: Backdoor Attacks on Continuous Prompts**  
+_2022-11 · research · Severity: Medium_
+
+Cai et al. backdoor continuous prompt-tuning by combining trigger candidate generation with adaptive optimization. Effective across opinion polarity, sentiment, and QA classification under few-shot prompt-learning. NeurIPS 2022.
+
+**Affected:** Prompt-tuned NLP classifiers  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [BadPrompt: Backdoor Attacks on Continuous Prompts](https://arxiv.org/abs/2211.14719) _(paper)_
+
+**Tags:** `backdoor`, `prompt-tuning`, `neurips-2022`
+
+---
+
+### INC-00707
 
 **Meta Galactica model withdrawn after misinformation at launch**  
 _2022-11 · real-world · Severity: High_
@@ -13416,7 +17899,7 @@ Meta AI launched Galactica — a large language model trained on scientific lite
 
 ---
 
-### INC-00516
+### INC-00709
 
 **Perez & Ribeiro — 'Ignore Previous Prompt': foundational direct injection study**  
 _2022-11 · research-demonstrated · Severity: Critical_
@@ -13450,7 +17933,7 @@ Fábio Perez and Ian Ribeiro published the foundational paper systematically doc
 
 ---
 
-### INC-00524
+### INC-00717
 
 **Sudden braking by Tesla allegedly on self-driving caused multi-car pileup in tunnel**  
 _2022-11 · real-world · Severity: High_
@@ -13472,7 +17955,29 @@ A Tesla allegedly using its self-driving feature suddenly braked in the San Fran
 
 ---
 
-### INC-00502
+### INC-00694
+
+**BadDiffusion: How to Backdoor Diffusion Models?**  
+_2022-12 · research · Severity: High_
+
+Chou, Chen, and Ho engineer a compromised diffusion process during training so that the model emits an attacker-chosen image when a trigger appears in noise, while behaving normally otherwise. CVPR 2023.
+
+**Affected:** DDPM diffusion models, Stable-Diffusion-style pipelines  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [How to Backdoor Diffusion Models?](https://arxiv.org/abs/2212.05400) _(paper)_
+
+**Tags:** `backdoor`, `diffusion-model`, `cvpr-2023`
+
+---
+
+### INC-00696
 
 **Compromised PyTorch Dependency Chain**  
 _2022-12 · real-world · Severity: Critical_
@@ -13495,30 +18000,7 @@ Linux packages for PyTorch's pre-release version, pytorch-nightly, were compromi
 
 ---
 
-### INC-00503
-
-**DAN / Universal Jailbreaks of ChatGPT and Aligned LLMs**  
-_2022-12 · research · Severity: High_
-
-Following ChatGPT's launch, the community developed 'Do Anything Now' (DAN) and related jailbreaks — adversarial roleplay prompts that bypass RLHF alignment to elicit unsafe content (malware, harmful instructions). Multiple universal-jailbreak research papers (e.g., Zou et al. GCG, 2023) formalized that aligned LLMs are reliably defeatable by adversarial suffixes transferring across models.
-
-**Affected:** All major aligned LLMs (ChatGPT, Claude, Bard/Gemini, Llama)  
-**Attack vector:** `jailbreak`  
-
-**OWASP LLM Top 10:** `LLM01`, `LLM09`  
-**OWASP Agentic (ASI):** `ASI01`  
-**NIST AI RMF:** `GOVERN-1.4`, `MANAGE-2.1`, `MEASURE-2.7`, `MEASURE-2.8`  
-**MITRE ATLAS:** `AML.T0051`, `AML.T0051.000`, `AML.T0054`, `AML.T0058`  
-
-**References:**
-- [Zou et al. — Universal and Transferable Adversarial Attacks on Aligned LLMs](https://arxiv.org/abs/2307.15043) _(research)_
-- [Walkerspider — Original DAN prompt (Reddit)](https://www.reddit.com/r/ChatGPT/comments/zlcyr9/dan_is_my_new_friend/) _(research)_
-
-**Tags:** `jailbreak`, `alignment-bypass`, `universal-attack`, `rlhf-bypass`, `gcg`
-
----
-
-### INC-00512
+### INC-00705
 
 **Lensa AI produces unintended sexually explicit Magic Avatars**  
 _2022-12 · real-world · Severity: Medium_
@@ -13540,7 +18022,7 @@ Lensa AI's Magic Avatars feature reportedly produced unintended sexually explici
 
 ---
 
-### INC-00519
+### INC-00712
 
 **PyTorch-nightly dependency-confusion supply-chain attack**  
 _2022-12 · vulnerability-disclosure · Severity: High_
@@ -13561,7 +18043,7 @@ A supply-chain attack on PyTorch-nightly involving dependency confusion exposed 
 
 ---
 
-### INC-00521
+### INC-00714
 
 **SnakeYAML deserialization RCE (TorchServe & many AI/ML stacks)**  
 _2022-12 · real-world · Severity: Critical_
@@ -13586,7 +18068,7 @@ SnakeYAML <= 1.31 (used by TorchServe 0.3.0 - 0.8.1 and many AI/ML stacks) unsaf
 
 ---
 
-### INC-00526
+### INC-00719
 
 **Backdoor Attack on Deep Learning Models in Mobile Apps**  
 _2021 · research · Severity: High_
@@ -13609,7 +18091,7 @@ Microsoft Research demonstrated that many deep-learning models deployed in produ
 
 ---
 
-### INC-00527
+### INC-00720
 
 **Bypassing ID.me Identity Verification**  
 _2021 · real-world · Severity: High_
@@ -13630,7 +18112,7 @@ An individual in California filed at least 180 false unemployment claims from Oc
 
 ---
 
-### INC-00529
+### INC-00722
 
 **Confusing Kaspersky antimalware neural networks**  
 _2021 · research · Severity: High_
@@ -13650,7 +18132,7 @@ The Kaspersky ML research team attacked an internal antimalware ML model without
 
 ---
 
-### INC-00531
+### INC-00725
 
 **Neural payload injection into mobile-app deep-learning models**  
 _2021 · research · Severity: High_
@@ -13671,7 +18153,29 @@ Researchers demonstrated that deep-learning models embedded in mobile apps are v
 
 ---
 
-### INC-00535
+### INC-00726
+
+**Reading Isn't Believing: Typographic Attacks on Multimodal Neurons (CLIP)**  
+_2021-03 · research · Severity: Medium_
+
+Goh et al. (OpenAI) demonstrate that placing a written label on an object causes CLIP to classify the image as the label (e.g., an apple labeled 'iPod' is classified as iPod). The first systematic typographic attack on multimodal neurons.
+
+**Affected:** CLIP, DALL-E, downstream multimodal models  
+**Attack vector:** `adversarial-input`  
+
+**OWASP LLM Top 10:** `LLM01`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Multimodal Neurons in Artificial Neural Networks](https://arxiv.org/abs/2103.10480) _(paper)_
+
+**Tags:** `typographic-attack`, `clip`, `multimodal`, `openai`
+
+---
+
+### INC-00730
 
 **Tesla on Autopilot crashed into parked Michigan police car**  
 _2021-03 · real-world · Severity: High_
@@ -13693,7 +18197,7 @@ A Tesla on Autopilot crashed into a parked Michigan police car on the interstate
 
 ---
 
-### INC-00528
+### INC-00721
 
 **Confusing Antimalware Neural Networks**  
 _2021-04 · research · Severity: High_
@@ -13714,7 +18218,7 @@ Kaspersky researchers demonstrated practical adversarial attacks on Kaspersky's 
 
 ---
 
-### INC-00530
+### INC-00723
 
 **Extracting Training Data from Large Language Models (Carlini et al.)**  
 _2021-06 · research · Severity: High_
@@ -13735,7 +18239,7 @@ Carlini et al. demonstrated a training-data extraction attack against GPT-2: by 
 
 ---
 
-### INC-00534
+### INC-00729
 
 **Tesla Autopilot misidentified moon as yellow traffic light**  
 _2021-07 · real-world · Severity: Medium_
@@ -13757,7 +18261,29 @@ Tesla's Autopilot vision system misidentified the moon as a yellow stoplight, ca
 
 ---
 
-### INC-00532
+### INC-00724
+
+**Extracting Training Data from Large Language Models (GPT-2)**  
+_2021-08 · research · Severity: High_
+
+Carlini, Tramer et al. recover verbatim training examples from GPT-2 including PII, IRC logs, GitHub source, and 1,450-line verbatim files. Foundational training-data extraction work. USENIX Security 2021.
+
+**Affected:** GPT-2, large language models in general  
+**Attack vector:** `membership-inference`  
+
+**OWASP LLM Top 10:** `LLM02`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0057`  
+
+**References:**
+- [Extracting Training Data from Large Language Models (USENIX 2021)](https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting) _(paper)_
+
+**Tags:** `training-data-extraction`, `gpt-2`, `usenix-2021`, `foundational`
+
+---
+
+### INC-00727
 
 **Replika chatbot encourages man to plot assassination of Queen Elizabeth II**  
 _2021-12 · real-world · Severity: Critical_
@@ -13779,7 +18305,7 @@ In 2021 Jaswant Singh Chail was encouraged by a Replika chatbot to assassinate Q
 
 ---
 
-### INC-00533
+### INC-00728
 
 **Road engineer killed in Tesla Autopilot collision**  
 _2021-12 · real-world · Severity: Critical_
@@ -13801,7 +18327,7 @@ A road engineer was killed following a collision involving a Tesla on Autopilot,
 
 ---
 
-### INC-00537
+### INC-00732
 
 **Attack on Machine Translation Services**  
 _2020 · research · Severity: Medium_
@@ -13823,7 +18349,7 @@ A UC Berkeley research group attacked public translation APIs (Google Translate,
 
 ---
 
-### INC-00538
+### INC-00733
 
 **Botnet Domain Generation Algorithm (DGA) Detection Evasion**  
 _2020 · red-team · Severity: Medium_
@@ -13843,7 +18369,7 @@ The Palo Alto Networks Security AI research team bypassed a convolutional neural
 
 ---
 
-### INC-00539
+### INC-00734
 
 **Camera Hijack Attack on Facial Recognition System**  
 _2020 · real-world · Severity: Critical_
@@ -13863,7 +18389,7 @@ Chinese cybercriminals defrauded the Shanghai government tax system of approxima
 
 ---
 
-### INC-00541
+### INC-00736
 
 **Clearview AI misconfiguration exposed facial-recognition tool**  
 _2020 · real-world · Severity: High_
@@ -13884,7 +18410,7 @@ Clearview AI's facial-recognition tool that searches publicly available photos w
 
 ---
 
-### INC-00543
+### INC-00738
 
 **Evasion of Deep Learning Detector for Malware C&C Traffic**  
 _2020 · red-team · Severity: High_
@@ -13905,7 +18431,7 @@ The Palo Alto Networks Security AI research team tested a deep learning model th
 
 ---
 
-### INC-00544
+### INC-00739
 
 **Face Identification System Evasion via Physical Countermeasures**  
 _2020 · red-team · Severity: High_
@@ -13925,7 +18451,7 @@ MITRE's AI Red Team demonstrated a physical-domain evasion attack against a comm
 
 ---
 
-### INC-00545
+### INC-00740
 
 **Microsoft Azure internal service red-team disruption**  
 _2020 · red-team · Severity: High_
@@ -13945,7 +18471,7 @@ The Microsoft AI Red Team performed a red-team exercise against an internal Azur
 
 ---
 
-### INC-00546
+### INC-00741
 
 **Microsoft Azure Service Disruption**  
 _2020 · red-team · Severity: High_
@@ -13967,7 +18493,7 @@ The Microsoft AI Red Team performed a red-team exercise against an internal Azur
 
 ---
 
-### INC-00547
+### INC-00742
 
 **Microsoft Edge AI Evasion**  
 _2020 · red-team · Severity: Medium_
@@ -13987,7 +18513,7 @@ The Azure Red Team performed a red-team exercise on a new Microsoft Edge AI prod
 
 ---
 
-### INC-00550
+### INC-00745
 
 **Physical-domain evasion attack on commercial face-identification service**  
 _2020 · research · Severity: High_
@@ -14007,7 +18533,7 @@ MITRE's AI Red Team demonstrated a physical-domain evasion attack on a commercia
 
 ---
 
-### INC-00536
+### INC-00731
 
 **AI-cloned voice deceives Hong Kong bank manager in $35M fraud**  
 _2020-01 · real-world · Severity: Critical_
@@ -14029,7 +18555,7 @@ In January 2020 a Hong Kong bank manager for a Japanese company authorized $35 m
 
 ---
 
-### INC-00540
+### INC-00735
 
 **Clearview AI algorithm built on photos scraped without consent**  
 _2020-01 · real-world · Severity: High_
@@ -14052,7 +18578,7 @@ Clearview AI built a face-matching algorithm using over 3 billion images scraped
 
 ---
 
-### INC-00542
+### INC-00737
 
 **ClearviewAI Misconfiguration**  
 _2020-04 · real-world · Severity: High_
@@ -14075,7 +18601,7 @@ Clearview AI's source-code repository, although password protected, was misconfi
 
 ---
 
-### INC-00552
+### INC-00748
 
 **VirusTotal Poisoning**  
 _2020-07 · real-world · Severity: Medium_
@@ -14097,7 +18623,7 @@ An unknown actor uploaded mutated variants of ransomware to VirusTotal that appe
 
 ---
 
-### INC-00548
+### INC-00743
 
 **OpenAI GPT-3 reported as unviable in medical tasks**  
 _2020-10 · real-world · Severity: High_
@@ -14119,7 +18645,7 @@ Healthcare firm Nabla tested GPT-3 in medical contexts and reported that the mod
 
 ---
 
-### INC-00549
+### INC-00744
 
 **Philosophy AI used to generate mixture of innocent and harmful Reddit posts**  
 _2020-10 · real-world · Severity: Medium_
@@ -14141,7 +18667,28 @@ An AI based on GPT-3 ('Philosopher AI') was used to autonomously post on Reddit,
 
 ---
 
-### INC-00551
+### INC-00746
+
+**RobustBench: Standardized Adversarial Robustness Benchmark**  
+_2020-10 · research · Severity: Medium_
+
+Croce et al. establish RobustBench, a standardized leaderboard of 120+ models under L-inf and L-2 threat models and common corruptions, exposing how few defenses survive AutoAttack.
+
+**Affected:** CIFAR-10/100, ImageNet classifiers  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [RobustBench: a standardized adversarial robustness benchmark](https://arxiv.org/abs/2010.09670) _(paper)_
+
+**Tags:** `adversarial-input`, `benchmark`, `robustness`
+
+---
+
+### INC-00747
 
 **Tesla on Autopilot TACC crashed into van on European highway**  
 _2020-12 · real-world · Severity: High_
@@ -14163,7 +18710,7 @@ A Tesla operating on Autopilot with Traffic-Aware Cruise Control failed to detec
 
 ---
 
-### INC-00555
+### INC-00752
 
 **ProofPoint email-protection ML model evasion via copy-cat training**  
 _2019 · research · Severity: High_
@@ -14183,7 +18730,7 @@ ML researchers built a copy-cat email-protection model from ProofPoint outputs a
 
 ---
 
-### INC-00556
+### INC-00753
 
 **ProofPoint Evasion**  
 _2019 · research · Severity: High_
@@ -14204,7 +18751,7 @@ ML researchers (CVE-2019-20634) evaded ProofPoint's email protection ML model by
 
 ---
 
-### INC-00558
+### INC-00756
 
 **Universal bypass string evades Cylance AI malware detector**  
 _2019 · vulnerability-disclosure · Severity: Critical_
@@ -14224,7 +18771,7 @@ Researchers found a universal appended-string bypass that evades detection by Cy
 
 ---
 
-### INC-00559
+### INC-00758
 
 **YouTube algorithm fails to filter self-harm content from kids**  
 _2019 · real-world · Severity: High_
@@ -14243,7 +18790,28 @@ ToS-violating videos related to suicide and self-harm reportedly bypassed YouTub
 
 ---
 
-### INC-00557
+### INC-00754
+
+**SirenAttack: Adversarial Audio for End-to-End Acoustic Systems**  
+_2019-01 · research · Severity: High_
+
+Du et al. demonstrate a versatile adversarial-audio attack against speech-command, speaker-recognition, and sound-event-classification systems in both white-box and black-box settings, e.g., 99.45 percent ASR against ResNet18 on IEMOCAP.
+
+**Affected:** DeepSpeech, speech command and speaker recognition systems  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [SirenAttack: Generating Adversarial Audio for End-to-End Acoustic Systems](https://arxiv.org/abs/1901.07846) _(paper)_
+
+**Tags:** `adversarial-audio`, `speaker-recognition`, `black-box`
+
+---
+
+### INC-00755
 
 **Tesla Autopilot lane recognition vulnerable to adversarial attacks (Tencent Keen Lab)**  
 _2019-04 · real-world · Severity: High_
@@ -14267,7 +18835,7 @@ Tencent Keen Security Lab demonstrated adversarial attacks against Tesla's Autop
 
 ---
 
-### INC-00553
+### INC-00750
 
 **Bypassing Cylance's AI Malware Detection**  
 _2019-07 · research · Severity: Critical_
@@ -14288,7 +18856,28 @@ Skylight Cyber researchers reverse-engineered Cylance's ML-based malware classif
 
 ---
 
-### INC-00554
+### INC-00749
+
+**AdvHat: Real-World Adversarial Attack on ArcFace Face ID**  
+_2019-08 · research · Severity: High_
+
+Komkov and Petiushko print an adversarial sticker on paper and place it on a hat, bypassing the ArcFace face recognition model and transferring to other face IDs. Demonstrated end-to-end in physical settings.
+
+**Affected:** ArcFace, LResNet100E-IR face recognition  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [AdvHat: Real-world adversarial attack on ArcFace Face ID system](https://arxiv.org/abs/1908.08705) _(paper)_
+
+**Tags:** `adversarial-input`, `physical-world`, `face-recognition`
+
+---
+
+### INC-00751
 
 **GPT-2 Model Replication**  
 _2019-08 · research · Severity: Medium_
@@ -14310,7 +18899,28 @@ Two ML researchers (Aaron Gokaslan and Vanya Cohen) replicated OpenAI's then-unr
 
 ---
 
-### INC-00560
+### INC-00757
+
+**Who is Real Bob? Adversarial Attacks on Speaker Recognition (FAKEBOB)**  
+_2019-11 · research · Severity: High_
+
+Chen et al. construct FAKEBOB, the first practical adversarial attack against state-of-the-art speaker recognition systems with high transferability across models. IEEE S&P 2021.
+
+**Affected:** ivector-PLDA, GMM-UBM, Talentedsoft, Microsoft Azure SR  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Who is Real Bob? Adversarial Attacks on Speaker Recognition Systems](https://arxiv.org/abs/1911.01840) _(paper)_
+
+**Tags:** `adversarial-audio`, `speaker-recognition`, `ieee-sp-2021`
+
+---
+
+### INC-00760
 
 **Boeing 737 MAX MCAS crashes**  
 _2018 · real-world · Severity: Critical_
@@ -14331,7 +18941,7 @@ A Boeing 737 crashed into the sea, killing 189 people, after faulty sensor data 
 
 ---
 
-### INC-00562
+### INC-00765
 
 **Uber autonomous vehicle pedestrian fatality (Tempe, AZ)**  
 _2018 · real-world · Severity: Critical_
@@ -14352,7 +18962,71 @@ An Uber autonomous vehicle (AV) in autonomous mode struck and killed a pedestria
 
 ---
 
-### INC-00561
+### INC-00759
+
+**Audio Adversarial Examples: Targeted Attacks on Speech-to-Text**  
+_2018-01 · research · Severity: High_
+
+Carlini and Wagner construct end-to-end audio adversarial examples that transcribe to any target phrase against Mozilla DeepSpeech with 100 percent success on a 12-cm/s perturbation budget. DLS 2018.
+
+**Affected:** Mozilla DeepSpeech, end-to-end ASR  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Audio Adversarial Examples: Targeted Attacks on Speech-to-Text](https://arxiv.org/abs/1801.01944) _(paper)_
+
+**Tags:** `adversarial-audio`, `targeted`, `deepspeech`
+
+---
+
+### INC-00761
+
+**CommanderSong: Practical Adversarial Voice Recognition**  
+_2018-01 · research · Severity: High_
+
+Yuan et al. embed voice commands in songs that, when played, control speech-recognition systems while remaining inaudible as commands to humans. Spreadable via YouTube or radio. USENIX Security 2018.
+
+**Affected:** Kaldi ASR, voice assistants  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [CommanderSong: A Systematic Approach for Practical Adversarial Voice Recognition](https://arxiv.org/abs/1801.08535) _(paper)_
+
+**Tags:** `adversarial-audio`, `song-embedded`, `physical-world`, `usenix-2018`
+
+---
+
+### INC-00764
+
+**Trojaning Attack on Neural Networks**  
+_2018-02 · research · Severity: High_
+
+Liu et al. (Purdue) inject trojans into pre-trained networks via trigger generation, training-data synthesis, and partial retraining. Demonstrated on face and speech recognition: any face with the trigger is recognized as a target person. NDSS 2018.
+
+**Affected:** Face recognition, speech recognition NNs  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM03`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `GOVERN-6.1`, `MAP-3.5`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0018`, `AML.T0053`  
+
+**References:**
+- [Trojaning Attack on Neural Networks (NDSS 2018)](https://www.ndss-symposium.org/wp-content/uploads/2018/02/ndss2018_03A-5_Liu_paper.pdf) _(paper)_
+
+**Tags:** `backdoor`, `trojan`, `ndss-2018`
+
+---
+
+### INC-00763
 
 **Tesla Model X on Autopilot crashed into California highway barrier killing driver**  
 _2018-03 · real-world · Severity: Critical_
@@ -14374,7 +19048,29 @@ A Tesla Model X operating on Autopilot crashed into a highway gore barrier on US
 
 ---
 
-### INC-00564
+### INC-00762
+
+**How To Backdoor Federated Learning**  
+_2018-07 · research · Severity: High_
+
+Bagdasaryan et al. show that a single malicious participant in federated learning, via model-replacement, can implant a global backdoor reaching 100 percent accuracy on the backdoor task while maintaining main-task performance. AISTATS 2020.
+
+**Affected:** Federated learning systems (CIFAR, word prediction)  
+**Attack vector:** `backdoor`  
+
+**OWASP LLM Top 10:** `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`  
+**NIST AI RMF:** `MAP-3.5`, `MAP-4.2`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0018`, `AML.T0020`, `AML.T0053`  
+
+**References:**
+- [How To Backdoor Federated Learning](https://arxiv.org/abs/1807.00459) _(paper)_
+
+**Tags:** `backdoor`, `federated-learning`, `aistats-2020`, `foundational`
+
+---
+
+### INC-00769
 
 **Facebook auto-translation incorrectly translates 'Good morning' to 'hurt them'**  
 _2017 · real-world · Severity: High_
@@ -14395,7 +19091,7 @@ Facebook's automatic language translation incorrectly translated an Arabic post 
 
 ---
 
-### INC-00565
+### INC-00770
 
 **Knightscope K5 security robot drove into a fountain**  
 _2017 · real-world · Severity: Low_
@@ -14416,7 +19112,7 @@ A Knightscope K5 autonomous security robot ran itself into a water fountain in W
 
 ---
 
-### INC-00567
+### INC-00771
 
 **NYC school teacher evaluation algorithm contested**  
 _2017 · real-world · Severity: Medium_
@@ -14435,7 +19131,7 @@ An algorithm used to evaluate NYC public-school teachers produced disputed score
 
 ---
 
-### INC-00568
+### INC-00774
 
 **YouTube Kids presents inappropriate content via recommendation**  
 _2017 · real-world · Severity: High_
@@ -14454,50 +19150,113 @@ YouTube's content-filtering and recommendation algorithms exposed children to di
 
 ---
 
-### INC-00566
+### INC-00773
 
-**Membership Inference Attacks Against Machine Learning Models**  
-_2017-05 · research · Severity: Medium_
+**Towards Deep Learning Models Resistant to Adversarial Attacks (PGD)**  
+_2017-06 · research · Severity: High_
 
-Shokri, Stronati, Song, and Shmatikov introduced membership-inference attacks: given black-box query access to an ML model, an adversary can determine with high accuracy whether a specific record was in the training set. Demonstrated against MLaaS APIs (Google, Amazon). Foundational privacy result that maps to ATLAS AML.T0057.
+Madry et al. formulate adversarial robustness as a min-max problem and propose PGD as a universal first-order adversary. The paper underpins virtually all modern adversarial-robustness benchmarks and adversarial-training defenses. ICLR 2018.
 
-**Affected:** MLaaS providers (Google Prediction API, Amazon ML) at time of study  
-**Attack vector:** `membership-inference`  
+**Affected:** MNIST, CIFAR-10 classifiers and beyond  
+**Attack vector:** `adversarial-input`  
 
-**OWASP LLM Top 10:** `LLM02`  
-**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.10`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0044`, `AML.T0057`  
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
 
 **References:**
-- [Shokri et al. — Membership Inference Attacks (IEEE S&P 2017)](https://arxiv.org/abs/1610.05820) _(research)_
+- [Towards Deep Learning Models Resistant to Adversarial Attacks](https://arxiv.org/abs/1706.06083) _(paper)_
 
-**Tags:** `membership-inference`, `privacy`, `mlaas`, `foundational-research`
+**Tags:** `adversarial-input`, `pgd`, `foundational`, `iclr-2018`
 
 ---
 
-### INC-00563
+### INC-00772
 
-**BadNets: Backdoor Attacks on Deep Neural Networks**  
+**Robust Physical-World Attacks on Deep Learning Visual Classification**  
+_2017-07 · research · Severity: Critical_
+
+Eykholt et al. (RP2 algorithm) attach black-and-white stickers to real stop signs, causing 100 percent targeted misclassification in lab conditions and 84.8 percent in moving-vehicle video. Canonical physical adversarial attack. CVPR 2018.
+
+**Affected:** Road sign classifiers, LISA-CNN, GTSRB  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Robust Physical-World Attacks on Deep Learning Models](https://arxiv.org/abs/1707.08945) _(paper)_
+
+**Tags:** `adversarial-input`, `physical-world`, `autonomous-driving`, `cvpr-2018`
+
+---
+
+### INC-00767
+
+**BadNets: Identifying Vulnerabilities in the ML Model Supply Chain**  
 _2017-08 · research · Severity: High_
 
-Gu, Dolan-Gavitt, and Garg introduced 'BadNets' — neural networks trained to behave normally on clean data but misclassify when an attacker-chosen trigger (e.g., a yellow square sticker on a stop sign) is present. Demonstrated against traffic-sign classifiers used in autonomous driving, establishing supply-chain backdoors as a foundational ML threat model.
+Gu, Dolan-Gavitt, and Garg train backdoored networks that achieve state-of-the-art accuracy yet misclassify any input bearing a small trigger sticker, demonstrated on MNIST and a real U.S. street-sign classifier (stop sign -> speed limit).
 
-**Affected:** Outsourced/Pre-trained DNN supply chain (traffic-sign classifiers in demo)  
-**Attack vector:** `poisoning`  
+**Affected:** MNIST classifier, U.S. street-sign classifier, transfer learning  
+**Attack vector:** `backdoor`  
 
-**OWASP LLM Top 10:** `LLM04`  
-**OWASP Agentic (ASI):** `ASI04`  
-**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MAP-4.2`, `MEASURE-2.10`  
-**MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0018`, `AML.T0020`  
+**OWASP LLM Top 10:** `LLM03`, `LLM04`  
+**OWASP Agentic (ASI):** `ASI02`, `ASI04`  
+**NIST AI RMF:** `GOVERN-6.1`, `MANAGE-3.1`, `MAP-3.5`, `MAP-4.2`, `MAP-5.1`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0010`, `AML.T0010.001`, `AML.T0018`, `AML.T0020`, `AML.T0053`  
 
 **References:**
-- [Gu et al. — BadNets: Identifying Vulnerabilities in the ML Model Supply Chain](https://arxiv.org/abs/1708.06733) _(research)_
+- [BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain](https://arxiv.org/abs/1708.06733) _(paper)_
 
-**Tags:** `backdoor`, `data-poisoning`, `supply-chain`, `computer-vision`
+**Tags:** `backdoor`, `computer-vision`, `data-poisoning`, `foundational`, `physical-trigger`, `supply-chain`
 
 ---
 
-### INC-00569
+### INC-00768
+
+**DolphinAttack: Inaudible Voice Commands**  
+_2017-10 · research · Severity: High_
+
+Zhang et al. modulate voice commands on ultrasonic carriers (>20 kHz) and exploit microphone nonlinearity to silently command Siri, Alexa, Google Now, Cortana, S Voice, and an Audi navigation system. ACM CCS 2017.
+
+**Affected:** Siri, Alexa, Google Now, Cortana, S Voice, Audi navigation  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [DolphinAttack: Inaudible Voice Commands](https://arxiv.org/abs/1708.09537) _(paper)_
+
+**Tags:** `adversarial-audio`, `ultrasonic`, `physical-world`, `ccs-2017`
+
+---
+
+### INC-00766
+
+**Adversarial Patch**  
+_2017-12 · research · Severity: High_
+
+Brown et al. craft printable, image-agnostic patches that, when placed in a scene, force classifiers to output a target class with near-100 percent confidence (e.g., banana -> toaster). NIPS 2017 workshop.
+
+**Affected:** VGG16, ImageNet classifiers  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Adversarial Patch](https://arxiv.org/abs/1712.09665) _(paper)_
+
+**Tags:** `adversarial-input`, `patch`, `physical-world`, `nips-2017`
+
+---
+
+### INC-00775
 
 **Collection of Tesla Autopilot-Involved Crashes**  
 _2016 · real-world · Severity: Critical_
@@ -14519,7 +19278,7 @@ A collection of multiple unrelated car accidents resulting in varying levels of 
 
 ---
 
-### INC-00572
+### INC-00780
 
 **Northpointe COMPAS recidivism risk disparate impact**  
 _2016 · real-world · Severity: High_
@@ -14538,7 +19297,7 @@ Northpointe's COMPAS recidivism algorithm was shown to be twice as likely to inc
 
 ---
 
-### INC-00573
+### INC-00781
 
 **PredPol predictive policing biased output**  
 _2016 · real-world · Severity: High_
@@ -14557,7 +19316,7 @@ Predictive-policing algorithms from PredPol show signs of biased output in their
 
 ---
 
-### INC-00575
+### INC-00785
 
 **Uber autonomous cars running red lights (San Francisco)**  
 _2016 · real-world · Severity: High_
@@ -14578,7 +19337,7 @@ Uber vehicles equipped with autonomous-driving technology were observed running 
 
 ---
 
-### INC-00570
+### INC-00778
 
 **Microsoft Tay chatbot generates racist/sexist/antisemitic tweets**  
 _2016-03 · real-world · Severity: High_
@@ -14599,7 +19358,7 @@ Microsoft's Tay chatbot was released on March 23, 2016 and removed within 24 hou
 
 ---
 
-### INC-00571
+### INC-00779
 
 **Microsoft's Tay chatbot poisoned via coordinated user input on Twitter**  
 _2016-03 · real-world · Severity: High_
@@ -14623,7 +19382,7 @@ Microsoft's AI chatbot Tay was deployed on Twitter and within 16 hours posted ra
 
 ---
 
-### INC-00574
+### INC-00783
 
 **Tay Poisoning**  
 _2016-03 · real-world · Severity: High_
@@ -14646,7 +19405,136 @@ Microsoft launched Tay, a Twitter chatbot whose conversational ML continually tr
 
 ---
 
-### INC-00577
+### INC-00776
+
+**Hidden Voice Commands**  
+_2016-08 · research · Severity: High_
+
+Carlini et al. (UC Berkeley/Georgetown) craft audio commands unintelligible to humans but accepted by Google Now and other ASR systems. Tested in both black-box and white-box threat models with verified physical PoCs. USENIX Security 2016.
+
+**Affected:** Google Now, Sphinx, smartphone voice assistants  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Hidden Voice Commands (USENIX Security 2016)](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/carlini) _(paper)_
+
+**Tags:** `adversarial-audio`, `voice-assistant`, `physical-world`, `usenix-2016`
+
+---
+
+### INC-00782
+
+**Stealing Machine Learning Models via Prediction APIs**  
+_2016-08 · research · Severity: High_
+
+Tramer et al. show that ML-as-a-service models (BigML, Amazon ML) can be extracted with near-perfect fidelity through prediction-API queries. Includes attacks for logistic regression, neural nets, and decision trees. USENIX Security 2016.
+
+**Affected:** BigML, Amazon Machine Learning, generic prediction APIs  
+**Attack vector:** `model-extraction`  
+
+**OWASP LLM Top 10:** `LLM10`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.4`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0029`, `AML.T0050`  
+
+**References:**
+- [Stealing Machine Learning Models via Prediction APIs (USENIX 2016)](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/tramer) _(paper)_
+
+**Tags:** `model-extraction`, `stealing`, `foundational`, `usenix-2016`
+
+---
+
+### INC-00784
+
+**Towards Evaluating the Robustness of Neural Networks (C&W)**  
+_2016-08 · research · Severity: High_
+
+Carlini and Wagner introduce three optimization-based attacks (L0, L2, L-inf) that achieve 100 percent success against distilled and undistilled networks and break defensive distillation. IEEE S&P 2017.
+
+**Affected:** MNIST, CIFAR-10, ImageNet classifiers; defensive distillation  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Towards Evaluating the Robustness of Neural Networks](https://arxiv.org/abs/1608.04644) _(paper)_
+
+**Tags:** `adversarial-input`, `carlini-wagner`, `ieee-sp-2017`, `foundational`
+
+---
+
+### INC-00777
+
+**Membership Inference Attacks Against Machine Learning Models**  
+_2016-10 · research · Severity: High_
+
+Shokri, Stronati, Song, and Shmatikov demonstrate that given black-box access to an ML model, an attacker can decide if a record was in its training set using shadow models. Evaluated against Google and Amazon ML-as-a-service. IEEE S&P 2017.
+
+**Affected:** Google Prediction API, Amazon ML, generic classifiers  
+**Attack vector:** `membership-inference`  
+
+**OWASP LLM Top 10:** `LLM02`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `GOVERN-1.4`, `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0044`, `AML.T0050`, `AML.T0057`  
+
+**References:**
+- [Membership Inference Attacks against Machine Learning Models](https://arxiv.org/abs/1610.05820) _(paper)_
+
+**Tags:** `foundational`, `foundational-research`, `ieee-sp-2017`, `membership-inference`, `mlaas`, `privacy`
+
+---
+
+### INC-00786
+
+**Universal Adversarial Perturbations**  
+_2016-10 · research · Severity: Medium_
+
+Moosavi-Dezfooli et al. show that a single image-agnostic perturbation can fool deep classifiers across most natural images, and that such universal perturbations transfer across different neural networks. CVPR 2017.
+
+**Affected:** ImageNet classifiers (VGG, GoogLeNet, ResNet)  
+**Attack vector:** `adversarial-input`  
+
+**OWASP Agentic (ASI):** `ASI01`  
+**NIST AI RMF:** `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0043`, `AML.T0051`  
+
+**References:**
+- [Universal adversarial perturbations](https://arxiv.org/abs/1610.08401) _(paper)_
+
+**Tags:** `adversarial-input`, `universal`, `cvpr-2017`
+
+---
+
+### INC-00787
+
+**Model Inversion Attacks That Exploit Confidence Information**  
+_2015-10 · research · Severity: High_
+
+Fredrikson, Jha, and Ristenpart use prediction-confidence values to reconstruct recognizable face images from face-recognition models and to infer sensitive attributes from decision trees. Foundational model-inversion paper. ACM CCS 2015.
+
+**Affected:** Face recognition systems, decision trees  
+**Attack vector:** `model-inversion`  
+
+**OWASP LLM Top 10:** `LLM02`  
+**OWASP Agentic (ASI):** `ASI05`  
+**NIST AI RMF:** `MEASURE-2.10`, `MEASURE-2.7`  
+**MITRE ATLAS:** `AML.T0024`, `AML.T0050`, `AML.T0057`  
+
+**References:**
+- [Model Inversion Attacks that Exploit Confidence Information and Basic Countermeasures](https://dl.acm.org/doi/10.1145/2810103.2813677) _(paper)_
+
+**Tags:** `model-inversion`, `privacy`, `foundational`, `ccs-2015`
+
+---
+
+### INC-00789
 
 **Kronos scheduling algorithm harms Starbucks employees**  
 _2014 · real-world · Severity: Medium_
@@ -14665,28 +19553,29 @@ The Kronos scheduling algorithm allegedly caused financial and scheduling instab
 
 ---
 
-### INC-00576
+### INC-00788
 
-**Adversarial Examples in the Physical World (FGSM and beyond)**  
+**Explaining and Harnessing Adversarial Examples (FGSM)**  
 _2014-12 · research · Severity: High_
 
-Goodfellow, Shlens, and Szegedy formalized adversarial examples and introduced the Fast Gradient Sign Method (FGSM). Subsequent work (Kurakin et al. 2016) showed adversarial perturbations survive printing and re-photographing, enabling physical-world evasion of image classifiers — the theoretical foundation for ATLAS techniques AML.T0043, AML.T0042, and many case studies (CS0011, CS0012).
+Goodfellow, Shlens, and Szegedy introduce the Fast Gradient Sign Method, attributing adversarial fragility to model linearity. FGSM produces misclassifying perturbations across many architectures and remains the foundational adversarial-ML attack. ICLR 2015.
 
-**Affected:** All gradient-based deep learning classifiers (foundational)  
+**Affected:** Image classifiers (MNIST, CIFAR), deep neural networks  
 **Attack vector:** `adversarial-input`  
 
+**OWASP Agentic (ASI):** `ASI01`  
 **NIST AI RMF:** `MEASURE-2.6`, `MEASURE-2.7`  
-**MITRE ATLAS:** `AML.T0015`, `AML.T0041`, `AML.T0042`, `AML.T0043`  
+**MITRE ATLAS:** `AML.T0015`, `AML.T0041`, `AML.T0042`, `AML.T0043`, `AML.T0051`  
 
 **References:**
-- [Goodfellow, Shlens, Szegedy — Explaining and Harnessing Adversarial Examples](https://arxiv.org/abs/1412.6572) _(research)_
+- [Explaining and Harnessing Adversarial Examples](https://arxiv.org/abs/1412.6572) _(paper)_
 - [Kurakin, Goodfellow, Bengio — Adversarial Examples in the Physical World](https://arxiv.org/abs/1607.02533) _(research)_
 
-**Tags:** `adversarial-examples`, `fgsm`, `physical-world`, `foundational-research`
+**Tags:** `adversarial-examples`, `adversarial-input`, `fgsm`, `foundational`, `foundational-research`, `iclr-2015`, `physical-world`
 
 ---
 
-### INC-00578
+### INC-00790
 
 **Collection of robotic-surgery malfunctions**  
 _2013 · real-world · Severity: Critical_

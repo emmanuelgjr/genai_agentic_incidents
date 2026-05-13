@@ -1,0 +1,1569 @@
+[
+  {
+    "source_id": "VTR-microsoft-charcoal-typhoon-2024",
+    "title": "Charcoal Typhoon (China) — Chinese state actor used OpenAI for phishing campaign tooling",
+    "date": "2024-02",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Chinese state-affiliated APT Charcoal Typhoon (CHROMIUM / ControlX) used OpenAI services to research target companies, debug code and generate scripts, and produce content for phishing campaigns targeting government and tech sectors. OpenAI accounts terminated jointly with Microsoft.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; targeting government, tech, NGOs in Asia-Pacific",
+    "severity": "High",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI02", "ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Staying ahead of threat actors in the age of AI — Microsoft Security Blog", "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/", "type": "vendor"},
+      {"title": "Disrupting malicious uses of AI by state-affiliated threat actors — OpenAI", "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-by-state-affiliated-threat-actors/", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "china", "charcoal-typhoon", "phishing", "openai", "microsoft"]
+  },
+  {
+    "source_id": "VTR-microsoft-salmon-typhoon-2024",
+    "title": "Salmon Typhoon (China / APT4 / Maverick Panda) — open-source intelligence via ChatGPT",
+    "date": "2024-02",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Salmon Typhoon, a sophisticated Chinese state-affiliated APT historically targeting US defense contractors, intelligence agencies, and crypto sector, used ChatGPT for open-source research on US defense, intelligence officials, regional geopolitics and translation of technical documents. Accounts terminated.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; targets — US defense, government, cryptographic sector",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Staying ahead of threat actors in the age of AI", "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "china", "salmon-typhoon", "apt4", "openai"]
+  },
+  {
+    "source_id": "VTR-microsoft-crimson-sandstorm-2024",
+    "title": "Crimson Sandstorm (Iran / IRGC) — used ChatGPT for spear-phishing and evasion code",
+    "date": "2024-02",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Iranian IRGC-linked Crimson Sandstorm (Imperial Kitten / Tortoiseshell) used OpenAI services to generate spear-phishing emails impersonating an international development agency and a feminist organisation, plus code snippets to evade AV detection. Accounts terminated.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; defense, maritime, transportation targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Staying ahead of threat actors in the age of AI", "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "iran", "irgc", "crimson-sandstorm", "spear-phishing"]
+  },
+  {
+    "source_id": "VTR-microsoft-emerald-sleet-2024",
+    "title": "Emerald Sleet (DPRK / Kimsuky / Velvet Chollima) — ChatGPT for spear-phishing of think-tanks",
+    "date": "2024-02",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "North Korean Emerald Sleet (Kimsuky) used OpenAI services to identify experts and think-tanks focused on Korean Peninsula issues, draft spear-phishing content, and understand publicly known vulnerabilities. Accounts terminated.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; think-tanks, journalists, defense entities",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Staying ahead of threat actors in the age of AI", "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "dprk", "kimsuky", "emerald-sleet", "spear-phishing"]
+  },
+  {
+    "source_id": "VTR-microsoft-forest-blizzard-2024",
+    "title": "Forest Blizzard (Russia / APT28 / GRU 26165) — ChatGPT for satellite radar and scripting",
+    "date": "2024-02",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Russian GRU Unit 26165 (Forest Blizzard / APT28 / Fancy Bear) used ChatGPT to research satellite communications protocols, radar imaging technology and basic scripting tasks supporting cyber operations against Ukraine and NATO. Accounts terminated.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Ukraine, NATO targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Staying ahead of threat actors in the age of AI", "url": "https://www.microsoft.com/en-us/security/blog/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "russia", "apt28", "forest-blizzard", "gru"]
+  },
+  {
+    "source_id": "VTR-openai-spamouflage-2024",
+    "title": "Spamouflage / Dragonbridge (China) — ChatGPT for pro-PRC social media astroturfing",
+    "date": "2024-05",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Chinese influence operation Spamouflage used ChatGPT to generate pro-Beijing comments on X, Medium and Blogspot, debug social-listening scraping code, and research current events. OpenAI banned the cluster as part of its May 2024 disruption of 5 covert influence ops.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; X, Medium, Blogspot",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting deceptive uses of AI by covert influence operations — OpenAI", "url": "https://openai.com/index/disrupting-deceptive-uses-of-AI-by-covert-influence-operations/", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "china", "spamouflage", "dragonbridge", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-iuvm-2024",
+    "title": "International Union of Virtual Media (IUVM, Iran) — ChatGPT for anti-US/Israel propaganda",
+    "date": "2024-05",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Persistent Iranian influence operation IUVM used ChatGPT for proofreading articles, generating headlines and tags for anti-US and anti-Israel content posted on iuvmpress.com and affiliated outlets. OpenAI banned the accounts in May 2024.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; iuvmpress.com",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting deceptive uses of AI by covert influence operations — OpenAI", "url": "https://openai.com/index/disrupting-deceptive-uses-of-AI-by-covert-influence-operations/", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "iran", "iuvm", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-stoic-zero-zeno-2024",
+    "title": "STOIC \"Zero Zeno\" (Israel) — political campaign firm used ChatGPT for India/Gaza influence",
+    "date": "2024-05",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Tel Aviv-based political campaign management firm STOIC ran a covert influence operation dubbed \"Zero Zeno\", using ChatGPT to generate articles and social-media comments about the Gaza conflict, Histadrut trade unions and the 2024 Indian elections (anti-BJP). OpenAI disrupted the operation.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; X, Facebook, Instagram audiences in US, Canada, India",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "OpenAI disrupts five state-backed influence ops — Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/openai-disrupts-5-ai-powered-state-backed-influence-ops", "type": "news"}
+    ],
+    "tags": ["influence-operation", "israel", "stoic", "zero-zeno", "india-elections", "gaza"]
+  },
+  {
+    "source_id": "VTR-openai-bad-grammar-2024",
+    "title": "Bad Grammar (Russia) — ChatGPT for Telegram pro-Russia comments on Ukraine",
+    "date": "2024-05",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Previously unreported Russian influence operation \"Bad Grammar\" used ChatGPT to debug code for a Telegram bot, generate fake political-persona profiles, and produce short comments in Russian and English on Telegram targeting Ukraine, Moldova, the Baltics and the US.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Telegram",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting deceptive uses of AI by covert influence operations", "url": "https://openai.com/index/disrupting-deceptive-uses-of-AI-by-covert-influence-operations/", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "russia", "bad-grammar", "telegram", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-doppelganger-2024",
+    "title": "Doppelganger (Russia) — ChatGPT for meme generation and EU/US influence content",
+    "date": "2024-05",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Russia's persistent Doppelganger operation used ChatGPT to generate comments in English, French, German, Italian, and Polish; produce content for fake-news websites impersonating Western outlets; and translate articles. OpenAI disrupted associated accounts.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; X, fake news websites cloning Western outlets",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting deceptive uses of AI — OpenAI", "url": "https://openai.com/index/disrupting-deceptive-uses-of-AI-by-covert-influence-operations/", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "russia", "doppelganger", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-sweetspecter-2024",
+    "title": "SweetSpecter (China) — spear-phished OpenAI employees with SugarGh0st RAT",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Chinese threat actor SweetSpecter targeted OpenAI employees with spear-phishing emails posing as a ChatGPT user; attachments delivered SugarGh0st RAT via a malicious LNK file. SweetSpecter also used ChatGPT itself to research Log4Shell, debug scripts and draft social-engineering content.",
+    "attack_vector": "supply-chain",
+    "affected": "OpenAI employees (failed), Asian governments",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI02", "ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Influence and cyber operations: an update (Oct 2024) — OpenAI", "url": "https://cdn.openai.com/threat-intelligence-reports/influence-and-cyber-operations-an-update_October-2024.pdf", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "china", "sweetspecter", "sugargh0st", "spear-phishing"]
+  },
+  {
+    "source_id": "VTR-openai-cyberav3ngers-2024",
+    "title": "CyberAv3ngers (Iran IRGC) — used ChatGPT to research ICS attacks on water utilities",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Iranian IRGC-linked CyberAv3ngers used ChatGPT to research default credentials for Tridium Niagara and Hirschmann industrial control devices, study programmable logic controllers, debug bash/Python scripts and plan ICS attacks against water and energy facilities in the US, Israel and Ireland.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; targets — water, energy, ICS",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "OpenAI Says Iranian Hackers Used ChatGPT to Plan ICS Attacks — SecurityWeek", "url": "https://www.securityweek.com/openai-says-iranian-hackers-used-chatgpt-to-plan-ics-attacks/", "type": "news"}
+    ],
+    "tags": ["state-actor", "iran", "irgc", "cyberavengers", "ics", "water-utility"]
+  },
+  {
+    "source_id": "VTR-openai-storm-0817-2024",
+    "title": "STORM-0817 (Iran) — used ChatGPT to debug Android surveillanceware",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Iran-based STORM-0817 used ChatGPT to debug Android malware that exfiltrates contacts, call logs, screenshots, browsing history and location. The actor researched Instagram followers of an Iranian dissident journalist and translated LinkedIn profiles of Pakistani cyber-security officials.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Android targets (Iranian dissidents, Pakistani officials)",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "OpenAI reveals ChatGPT use by Android malware developers — SC Media", "url": "https://www.scworld.com/news/openai-reveals-chatgpt-use-by-cyberav3ngers-android-malware-developers", "type": "news"}
+    ],
+    "tags": ["state-actor", "iran", "storm-0817", "android", "surveillanceware"]
+  },
+  {
+    "source_id": "VTR-openai-stop-news-2024",
+    "title": "\"Stop News\" (Russia) — DALL-E-generated images for English and French influence content",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Russian-aligned influence operation \"Stop News\" used ChatGPT and DALL-E to generate English- and French-language articles and accompanying images (cartoon-style) for cross-posting on websites and social accounts. Disrupted by OpenAI.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT and DALL-E",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Influence and cyber operations: an update (Oct 2024)", "url": "https://cdn.openai.com/threat-intelligence-reports/influence-and-cyber-operations-an-update_October-2024.pdf", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "russia", "stop-news", "dalle", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-a2z-2024",
+    "title": "\"A2Z\" (likely Azerbaijan) — multilingual influence content via ChatGPT",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Influence operation codenamed A2Z used ChatGPT to generate English-, French-, Russian-, and Turkish-language comments for posting across websites and X accounts focused on Azerbaijan and regional politics. OpenAI disrupted the cluster.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; X",
+    "severity": "Low",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Influence and cyber operations: an update (Oct 2024)", "url": "https://cdn.openai.com/threat-intelligence-reports/influence-and-cyber-operations-an-update_October-2024.pdf", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "azerbaijan", "a2z", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-storm-2035-2024",
+    "title": "STORM-2035 (Iran) — ChatGPT used to seed AI-news sites Nio Thinker / Savannah Time targeting US election",
+    "date": "2024-08",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Iranian operation STORM-2035 used ChatGPT to plagiarise mainstream US journalism and seed four fake news outlets (incl. Nio Thinker on the left, Savannah Time on the right) plus social-media personas attacking both 2024 US presidential candidates. Disrupted by OpenAI and Microsoft.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; US voters",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Iran steps into US election 2024 — Microsoft MTAC", "url": "https://blogs.microsoft.com/on-the-issues/2024/10/23/as-the-u-s-election-nears-russia-iran-and-china-step-up-influence-efforts/", "type": "vendor"},
+      {"title": "OpenAI disrupts Iranian influence campaign — Iran International", "url": "https://www.iranintl.com/en/202408172236", "type": "news"}
+    ],
+    "tags": ["influence-operation", "iran", "storm-2035", "us-election", "openai", "microsoft"]
+  },
+  {
+    "source_id": "VTR-microsoft-storm-1376-2024",
+    "title": "Storm-1376 / Spamouflage — AI-generated fake audio of Terry Gou during 2024 Taiwan election",
+    "date": "2024-01",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Chinese influence cluster Storm-1376 (Spamouflage / Dragonbridge) posted AI-generated fake audio of Foxconn founder Terry Gou \"endorsing\" another candidate on Taiwan's election day, plus AI-generated memes targeting then-DPP candidate William Lai. First documented nation-state AI use in a foreign election.",
+    "attack_vector": "adversarial-input",
+    "affected": "Taiwan electorate; YouTube",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0043"],
+    "references": [
+      {"title": "China tests US voter fault lines and ramps AI content — Microsoft On the Issues", "url": "https://blogs.microsoft.com/on-the-issues/2024/04/04/china-ai-influence-elections-mtac-cybersecurity/", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "china", "storm-1376", "spamouflage", "deepfake", "taiwan-election"]
+  },
+  {
+    "source_id": "VTR-recordedfuture-copycop-2024",
+    "title": "CopyCop (Russia) — LLM-weaponized inauthentic-news network across US/UK/France",
+    "date": "2024-05",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Recorded Future's Insikt Group exposed CopyCop, a likely-Russian network that used LLMs (GPT-4 family) to plagiarise and rewrite 19,000+ articles from legitimate Western media with pro-Russia, anti-Ukraine and pro-Republican biases across 90+ inauthentic outlets in English, French and German.",
+    "attack_vector": "tool-abuse",
+    "affected": "Multiple LLMs; US, UK, France readers",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Russia-Linked CopyCop Uses LLMs to Weaponize Influence Content at Scale — Recorded Future", "url": "https://www.recordedfuture.com/research/russia-linked-copycop-uses-llms-to-weaponize-influence-content-at-scale", "type": "report"}
+    ],
+    "tags": ["influence-operation", "russia", "copycop", "llm-plagiarism", "recorded-future"]
+  },
+  {
+    "source_id": "VTR-anthropic-mar2025-influence-as-a-service",
+    "title": "Anthropic March 2025 — \"Influence-as-a-Service\" multi-persona operation",
+    "date": "2025-04",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic disclosed a professional \"influence-as-a-service\" operation using Claude not only to generate content but to orchestrate >100 social-media bot personas, deciding when each should comment, like, or reshare authentic posts based on politically motivated persona profiles. Accounts banned.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude; X, Facebook, TikTok",
+    "severity": "High",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI06", "ASI07"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Detecting and Countering Malicious Uses of Claude — March 2025", "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025", "type": "vendor"}
+    ],
+    "tags": ["influence-operation", "anthropic", "claude", "bot-orchestration", "influence-as-a-service"]
+  },
+  {
+    "source_id": "VTR-anthropic-mar2025-credential-stuffing",
+    "title": "Anthropic March 2025 — Claude used to build credential-stuffing tooling against IoT cameras",
+    "date": "2025-04",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "An actor used Claude to develop credential-stuffing scripts targeting login portals and IoT security cameras, scrape leaked credential lists and post-process results to enumerate exposed devices. Anthropic banned the cluster.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; internet-exposed cameras and IoT devices",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Detecting and Countering Malicious Uses of Claude — March 2025", "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025", "type": "vendor"}
+    ],
+    "tags": ["credential-stuffing", "iot", "anthropic", "claude"]
+  },
+  {
+    "source_id": "VTR-anthropic-mar2025-recruitment-fraud",
+    "title": "Anthropic March 2025 — Eastern European recruitment-fraud actor used Claude for language sanitization",
+    "date": "2025-04",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "A recruitment-fraud actor targeting job seekers in Eastern Europe used Claude in real time to sanitise non-native English, increase persuasiveness of fake job offers and answer victim questions consistently across multiple impersonated brands.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; Eastern European job seekers",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Detecting and Countering Malicious Uses of Claude — March 2025", "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025", "type": "vendor"}
+    ],
+    "tags": ["recruitment-fraud", "anthropic", "claude", "eastern-europe"]
+  },
+  {
+    "source_id": "VTR-anthropic-mar2025-novice-malware",
+    "title": "Anthropic March 2025 — novice actor uplifted to develop malware",
+    "date": "2025-04",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "A novice actor with little independent coding skill used Claude to develop functional malware beyond their capability, including basic remote-access components and evasion logic. Anthropic banned the account and tightened malware-generation detections.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude",
+    "severity": "Medium",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Detecting and Countering Malicious Uses of Claude — March 2025", "url": "https://www.anthropic.com/news/detecting-and-countering-malicious-uses-of-claude-march-2025", "type": "vendor"}
+    ],
+    "tags": ["malware", "uplift", "anthropic", "claude"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-gtg2002-vibe-hacking",
+    "title": "Anthropic Aug 2025 — GTG-2002 \"vibe-hacking\" extortion against 17 organizations",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic's August 2025 report disclosed actor cluster GTG-2002, which used Claude Code agentically (\"vibe hacking\") to perform reconnaissance, credential harvesting, lateral movement, exfiltration and to author tailored ransom notes for at least 17 organizations across healthcare, government, emergency services and religious sectors in one month. Demands $75K-$500K BTC.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude Code; 17+ orgs (healthcare, govt, emergency, religious)",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06", "ASI07"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029", "AML.T0048"],
+    "references": [
+      {"title": "Detecting and countering misuse of AI: August 2025 — Anthropic", "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025", "type": "vendor"},
+      {"title": "Anthropic Threat Intelligence Report Aug 2025 (PDF)", "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf", "type": "report"}
+    ],
+    "tags": ["vibe-hacking", "extortion", "ransomware", "anthropic", "gtg-2002", "agentic"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-gtg5004-rwaas",
+    "title": "Anthropic Aug 2025 — GTG-5004 ransomware-as-a-service developer with no real skills",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "GTG-5004, a UK-based low-skill actor, used Claude to develop and sell multiple ransomware variants ($400-$1200 each) across Dread, CryptBB and Nulled forums. The actor was incapable of implementing encryption, anti-recovery or evasion without AI assistance.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; dark-web ransomware buyers",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Detecting and countering misuse of AI: August 2025", "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025", "type": "vendor"}
+    ],
+    "tags": ["ransomware", "raas", "anthropic", "gtg-5004", "skill-uplift"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-nk-employment-fraud",
+    "title": "Anthropic Aug 2025 — DPRK IT workers used Claude to pass interviews at Fortune 500 firms",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic confirmed North Korean operatives used Claude end-to-end in the fraudulent-employment lifecycle: fabricating identities, generating tailored resumes, drafting cover letters, passing live technical interviews and completing daily engineering work at US Fortune 500 tech firms, funneling salaries to the DPRK regime.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; US Fortune 500 tech firms",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Detecting and countering misuse of AI: August 2025", "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025", "type": "vendor"}
+    ],
+    "tags": ["dprk", "employment-fraud", "anthropic", "insider-threat"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-vietnam-critical-infra",
+    "title": "Anthropic Aug 2025 — 9-month Claude-assisted campaign against Vietnamese critical infrastructure",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic disrupted a Chinese-APT-like actor that used Claude across 12 of 14 MITRE ATT&CK tactics in a nine-month campaign targeting Vietnamese telecoms, government databases, and agricultural management systems. Claude built custom scanners, WordPress exploitation frameworks, privilege-escalation exploits and proxy chains.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; Vietnamese telecoms, government, agriculture",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Anthropic Threat Intelligence Report Aug 2025 (PDF)", "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf", "type": "report"}
+    ],
+    "tags": ["china", "apt", "vietnam", "critical-infrastructure", "anthropic"]
+  },
+  {
+    "source_id": "VTR-anthropic-nov2025-gtg1002-non-target-tech-corp",
+    "title": "GTG-1002 — Claude Code attempted intrusion against a major technology corporation",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "As part of the GTG-1002 autonomous espionage campaign disclosed by Anthropic in November 2025, the Chinese state-sponsored actor used Claude Code agents to conduct reconnaissance and exploitation attempts against a major (unnamed) global technology corporation, with the AI executing 80-90% of tactical operations without human input.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude Code; unnamed major tech corporation",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06", "ASI07"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029", "AML.T0048"],
+    "references": [
+      {"title": "Disrupting the first reported AI-orchestrated cyber espionage campaign — Anthropic", "url": "https://www.anthropic.com/news/disrupting-AI-espionage", "type": "vendor"}
+    ],
+    "tags": ["gtg-1002", "china", "agentic", "anthropic", "espionage"]
+  },
+  {
+    "source_id": "VTR-anthropic-nov2025-gtg1002-financial-institution",
+    "title": "GTG-1002 — Claude Code attempted intrusion against financial-sector targets",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "GTG-1002 campaign targeted multiple financial institutions, with Claude Code autonomously enumerating internal services, harvesting credentials and attempting privilege escalation. Anthropic notified affected institutions and disrupted the operation.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude Code; financial institutions",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06", "ASI07"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Disrupting the first reported AI-orchestrated cyber espionage campaign — Anthropic", "url": "https://www.anthropic.com/news/disrupting-AI-espionage", "type": "vendor"}
+    ],
+    "tags": ["gtg-1002", "financial", "agentic", "anthropic"]
+  },
+  {
+    "source_id": "VTR-anthropic-nov2025-gtg1002-chemical-mfr",
+    "title": "GTG-1002 — Claude Code attempted intrusion against chemical-manufacturing firms",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "The GTG-1002 autonomous-agent campaign targeted chemical manufacturing companies as part of its ~30 organisation target list, with Claude Code conducting reconnaissance and exploitation attempts. Disrupted by Anthropic.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude Code; chemical manufacturers",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06", "ASI07"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Disrupting the first reported AI-orchestrated cyber espionage campaign — Anthropic", "url": "https://www.anthropic.com/news/disrupting-AI-espionage", "type": "vendor"}
+    ],
+    "tags": ["gtg-1002", "chemical", "manufacturing", "anthropic"]
+  },
+  {
+    "source_id": "VTR-anthropic-nov2025-gtg1002-govt-agency",
+    "title": "GTG-1002 — Claude Code targeted multiple government agencies",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "GTG-1002 successfully reached internal data in a small number of cases at government agencies among the ~30 targets, with Claude Code agents autonomously deciding the data-exfiltration scope before minimal human review.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude Code; government agencies",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06", "ASI07"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0024", "AML.T0029"],
+    "references": [
+      {"title": "Disrupting the first reported AI-orchestrated cyber espionage campaign", "url": "https://www.anthropic.com/news/disrupting-AI-espionage", "type": "vendor"}
+    ],
+    "tags": ["gtg-1002", "government", "agentic", "anthropic"]
+  },
+  {
+    "source_id": "VTR-openai-feb2025-peerreview",
+    "title": "OpenAI Feb 2025 — \"Peer Review\" Chinese surveillance social-media monitoring tool",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI banned ChatGPT accounts associated with a Chinese surveillance project (\"Peer Review\") that used the model to generate sales pitches and debug code for an AI-driven tool monitoring Western social media for anti-PRC protests and sharing the data with PRC authorities.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Western social-media users",
+    "severity": "High",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of our models: February 2025 — OpenAI", "url": "https://cdn.openai.com/threat-intelligence-reports/disrupting-malicious-uses-of-our-models-february-2025-update.pdf", "type": "vendor"}
+    ],
+    "tags": ["china", "surveillance", "peer-review", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-feb2025-sponsored-discontent",
+    "title": "OpenAI Feb 2025 — \"Sponsored Discontent\" Chinese anti-US influence operation",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Chinese-origin operation \"Sponsored Discontent\" used ChatGPT to translate and produce English-language anti-US articles published on Latin-American outlets and Chinese-language reports criticising Chinese dissidents abroad. OpenAI banned associated accounts.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Latin-American outlets",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of our models: February 2025", "url": "https://cdn.openai.com/threat-intelligence-reports/disrupting-malicious-uses-of-our-models-february-2025-update.pdf", "type": "vendor"}
+    ],
+    "tags": ["china", "influence-operation", "sponsored-discontent", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-feb2025-nk-it-workers",
+    "title": "OpenAI Feb 2025 — DPRK IT-worker accounts using ChatGPT for fake resumes and remote-work tasks",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI banned multiple clusters of ChatGPT accounts linked to North Korean IT-worker schemes that used the model to draft resumes, cover letters, and bios; research US tech firms; and complete day-job software-engineering tasks at companies that unknowingly hired them.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Western tech firms",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "OpenAI Bans ChatGPT Accounts Linked to Nation-State Threats — Dark Reading", "url": "https://www.darkreading.com/threat-intelligence/openai-bans-chatgpt-accounts-nation-state-threat-actors", "type": "news"}
+    ],
+    "tags": ["dprk", "employment-fraud", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-sneer-review",
+    "title": "OpenAI Jun 2025 — \"Sneer Review\" Chinese cross-platform astroturfing against Taiwanese game",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Chinese-origin operation \"Sneer Review\" used ChatGPT to mass-generate short comments in English, Chinese and Urdu posted on TikTok, X, Reddit and Facebook attacking a Taiwanese game where players defeat the CCP, plus an internal performance review of the operation itself.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; TikTok, X, Reddit, Facebook",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["china", "influence-operation", "sneer-review", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-helgoland-bite",
+    "title": "OpenAI Jun 2025 — \"Helgoland Bite\" Russian influence campaign during German 2025 election",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Russian operation \"Helgoland Bite\" used ChatGPT to produce German-language content praising AfD and attacking the US/NATO ahead of Germany's 2025 federal election, run a Telegram channel (\"Nachhall von Helgoland\") and an X account with 27,000+ followers, and research German activists. OpenAI disrupted the cluster.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Telegram, X; German voters",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["russia", "germany", "election-interference", "helgoland-bite", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-uncle-spam",
+    "title": "OpenAI Jun 2025 — \"Uncle Spam\" China-linked US polarisation campaign",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "China-linked operation \"Uncle Spam\" used ChatGPT to create polarising US political content (both pro- and anti-tariff narratives), AI-generated images, and fake veteran personas. Actors also queried ChatGPT for tools to scrape X and Bluesky user data. OpenAI banned the accounts.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; X, Bluesky",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["china", "influence-operation", "uncle-spam", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-scopecreep",
+    "title": "OpenAI Jun 2025 — \"ScopeCreep\" Russian-speaking Windows malware development",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "A Russian-speaking threat actor (\"ScopeCreep\") used ChatGPT iteratively to develop a modular Go-based Windows malware toolkit disguised as a gaming tool, including loaders, credential stealers and AV-evasion logic. OpenAI banned the cluster.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Windows gaming community victims",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["russia", "malware", "scopecreep", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-vague-focus",
+    "title": "OpenAI Jun 2025 — \"VAGue Focus\" China-linked social-engineering against US targets",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "China-linked \"VAGue Focus\" operation used ChatGPT for end-to-end social-engineering: drafting cold outreach, fake-interview scripts, follow-up messages and fake personas blended across social media and email to extract intelligence from US targets.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; US targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["china", "vague-focus", "social-engineering", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-wrong-number",
+    "title": "OpenAI Jun 2025 — \"Operation Wrong Number\" Cambodia-linked task-scam recruitment",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Cambodia-linked task-scam operation \"Wrong Number\" used ChatGPT to translate and craft recruitment messages in six languages (English, Spanish, Swahili, Haitian Creole, Tagalog and others), offering fake \"like and earn\" remote jobs that later demanded crypto fees from victims.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; global task-scam victims",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["cambodia", "task-scam", "wrong-number", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-high-five",
+    "title": "OpenAI Jun 2025 — \"Operation High Five\" Philippines political comment spam",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Philippines-based commercial marketing operation \"High Five\" used ChatGPT to generate short pro-administration comments in English and Taglish on Filipino political events across TikTok and Facebook.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; TikTok, Facebook Philippines",
+    "severity": "Low",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["philippines", "influence-operation", "high-five", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-apt5",
+    "title": "OpenAI Oct 2025 — APT5 (China) used ChatGPT for US satcom OSINT and Linux troubleshooting",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI dismantled accounts linked to Chinese nation-state hacking group APT5 (UNC2630 / Manganese / Mulberry Typhoon). The actors used ChatGPT for open-source research on US satellite-communications systems and Linux system-configuration troubleshooting supporting intrusion tradecraft.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; US satcom and defense targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"},
+      {"title": "OpenAI Disrupts Russian, North Korean, and Chinese Hackers — Hacker News", "url": "https://thehackernews.com/2025/10/openai-disrupts-russian-north-korean.html", "type": "news"}
+    ],
+    "tags": ["china", "apt5", "manganese", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-apt15",
+    "title": "OpenAI Oct 2025 — APT15 (China / Vixen Panda) banned for ChatGPT tradecraft assistance",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI banned ChatGPT accounts associated with Chinese state-backed APT15 (Vixen Panda / Ke3chang / Nickel) used for reconnaissance, code troubleshooting and assistance with intrusion-tooling tasks supporting espionage campaigns.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; governmental and diplomatic targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"}
+    ],
+    "tags": ["china", "apt15", "vixen-panda", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-russian-rat-dev",
+    "title": "OpenAI Oct 2025 — Russian-language actor used ChatGPT to refine a RAT and credential stealer",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "A Russian-language threat-actor cluster used ChatGPT to develop and refine a remote-access trojan, a credential stealer and anti-detection features. OpenAI identified the cluster by cross-referencing a Russian-criminal Telegram channel and banned the accounts.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; eCrime",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"}
+    ],
+    "tags": ["russia", "ecrime", "rat", "credential-stealer", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-dprk-xeno-rat",
+    "title": "OpenAI Oct 2025 — DPRK cluster used ChatGPT to develop Xeno RAT against South Korean diplomats",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "A North-Korea-linked cluster used ChatGPT for malware and C2 development overlapping a campaign that spear-phished diplomatic missions in South Korea with the Xeno RAT. OpenAI banned the cluster and shared IOCs with industry partners.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; South Korean diplomatic missions",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"}
+    ],
+    "tags": ["dprk", "xeno-rat", "south-korea", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-iuvm-anti-us",
+    "title": "OpenAI Oct 2025 — IUVM (Iran) reappeared with anti-US/anti-Israel ChatGPT content",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Iran's IUVM persistent influence cluster re-surfaced in OpenAI's October 2025 report, again using ChatGPT to draft and translate anti-US and anti-Israel content for its websites. OpenAI banned the accounts.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; IUVM-affiliated sites",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"}
+    ],
+    "tags": ["iran", "iuvm", "influence-operation", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-china-monitoring-prc",
+    "title": "OpenAI Oct 2025 — Accounts linked to PRC entities sought social-media surveillance proposals",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI disrupted ChatGPT accounts that appeared linked to People's Republic of China government entities, asking the model to draft work proposals for large-scale tools to monitor social-media conversations of overseas Chinese and Western users.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; overseas dissidents",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "OpenAI bans several China, Russia-linked accounts — Axios", "url": "https://www.axios.com/2025/10/07/openai-threat-report-china-russia-ai-models", "type": "news"}
+    ],
+    "tags": ["china", "surveillance", "prc", "openai"]
+  },
+  {
+    "source_id": "VTR-google-gtig-apt42-iran-2025",
+    "title": "GTIG — Iranian APT42 used Gemini extensively across attack lifecycle",
+    "date": "2025-01",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Google's Threat Intelligence Group reported Iranian APT42 (CALANQUE / Charming Kitten) as the heaviest Iranian Gemini user, leveraging the model for reconnaissance on defense organisations, drafting phishing campaigns targeting Western think-tanks and journalists, translating English/Persian, and assistance with vulnerability research.",
+    "attack_vector": "tool-abuse",
+    "affected": "Google Gemini; Western think-tanks, journalists, defense",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Adversarial Misuse of Generative AI — Google Cloud", "url": "https://cloud.google.com/blog/topics/threat-intelligence/adversarial-misuse-generative-ai", "type": "vendor"}
+    ],
+    "tags": ["iran", "apt42", "charming-kitten", "gemini", "google"]
+  },
+  {
+    "source_id": "VTR-google-gtig-prc-apt-2025",
+    "title": "GTIG — PRC APTs used Gemini for lateral movement and detection evasion research",
+    "date": "2025-01",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Google GTIG documented 20+ China-nexus APT clusters that used Gemini for reconnaissance, scripting, code troubleshooting and explicit research into lateral movement, privilege escalation, data exfiltration and detection evasion against target networks.",
+    "attack_vector": "tool-abuse",
+    "affected": "Google Gemini; varied targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029"],
+    "references": [
+      {"title": "Adversarial Misuse of Generative AI — Google Cloud", "url": "https://cloud.google.com/blog/topics/threat-intelligence/adversarial-misuse-generative-ai", "type": "vendor"}
+    ],
+    "tags": ["china", "apt", "gemini", "google", "gtig"]
+  },
+  {
+    "source_id": "VTR-google-gtig-dprk-apt-2025",
+    "title": "GTIG — DPRK APTs used Gemini to research hosting, recon and IT-worker tradecraft",
+    "date": "2025-01",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Google GTIG observed multiple DPRK APT clusters using Gemini for hosting-provider research, target reconnaissance, payload development, and crafting cover letters, resumes and answers for the DPRK fraudulent IT-worker scheme at Western firms.",
+    "attack_vector": "tool-abuse",
+    "affected": "Google Gemini; Western tech firms, varied espionage targets",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Adversarial Misuse of Generative AI", "url": "https://cloud.google.com/blog/topics/threat-intelligence/adversarial-misuse-generative-ai", "type": "vendor"}
+    ],
+    "tags": ["dprk", "gemini", "google", "it-worker-fraud", "gtig"]
+  },
+  {
+    "source_id": "VTR-google-gtig-promptflux-2025",
+    "title": "GTIG Nov 2025 — PROMPTFLUX dropper queries Gemini API for runtime VBScript obfuscation",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Google GTIG identified PROMPTFLUX, an experimental VBScript dropper whose \"Thinking Robot\" module periodically queries the Gemini API to receive freshly-generated obfuscation and AV-evasion code, enabling polymorphic self-modification mid-execution. First case of an AI-coupled dropper observed in the wild.",
+    "attack_vector": "tool-abuse",
+    "affected": "Google Gemini API; Windows endpoints",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0048"],
+    "references": [
+      {"title": "GTIG AI Threat Tracker — Google Cloud Blog", "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools", "type": "vendor"},
+      {"title": "Google Uncovers PROMPTFLUX Malware — Hacker News", "url": "https://thehackernews.com/2025/11/google-uncovers-promptflux-malware-that.html", "type": "news"}
+    ],
+    "tags": ["promptflux", "polymorphic-malware", "gemini", "google", "ai-malware"]
+  },
+  {
+    "source_id": "VTR-google-gtig-promptsteal-apt28-2025",
+    "title": "GTIG Nov 2025 — APT28 PROMPTSTEAL data miner queries Qwen2.5 via Hugging Face against Ukraine",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Russian GRU APT28 (FROZENLAKE / Fancy Bear) deployed PROMPTSTEAL (reported by CERT-UA as LAMEHUG) against Ukraine in live operations. The malware queries Qwen2.5-Coder-32B-Instruct via the Hugging Face API to generate one-line Windows commands for document theft — first malware querying an LLM in production.",
+    "attack_vector": "tool-abuse",
+    "affected": "Hugging Face Qwen2.5; Ukrainian targets",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029", "AML.T0048"],
+    "references": [
+      {"title": "GTIG AI Threat Tracker", "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools", "type": "vendor"}
+    ],
+    "tags": ["apt28", "russia", "promptsteal", "lamehug", "huggingface", "ukraine"]
+  },
+  {
+    "source_id": "VTR-google-gtig-promptlock-2025",
+    "title": "GTIG Nov 2025 — PROMPTLOCK ransomware generates encryption routines via LLM",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Google GTIG catalogued PROMPTLOCK, an AI-coupled ransomware family that uses LLM API calls at runtime to dynamically generate encryption and ransom-note logic per victim, frustrating signature-based detection.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLM APIs; Windows ransomware victims",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0048"],
+    "references": [
+      {"title": "GTIG AI Threat Tracker", "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools", "type": "vendor"}
+    ],
+    "tags": ["promptlock", "ransomware", "ai-malware", "gtig"]
+  },
+  {
+    "source_id": "VTR-google-gtig-fruitshell-2025",
+    "title": "GTIG Nov 2025 — FRUITSHELL PowerShell reverse shell uses LLM for C2 command generation",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "FRUITSHELL is a PowerShell-based reverse shell catalogued by GTIG that integrates LLM queries at runtime to dynamically generate execution commands for compromised systems, enabling adaptive C2 behaviour.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLM APIs; Windows victims",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0048"],
+    "references": [
+      {"title": "GTIG AI Threat Tracker", "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools", "type": "vendor"}
+    ],
+    "tags": ["fruitshell", "reverse-shell", "ai-malware", "gtig"]
+  },
+  {
+    "source_id": "VTR-google-gtig-quietvault-2025",
+    "title": "GTIG Nov 2025 — QUIETVAULT credential stealer integrates LLM for selective exfiltration",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "QUIETVAULT is an AI-coupled credential-stealer family that uses LLM calls at runtime to triage stolen secrets, prioritise high-value credentials and adapt exfiltration channels, observed deployed in active campaigns.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLM APIs; enterprise endpoints",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017", "AML.T0048"],
+    "references": [
+      {"title": "GTIG AI Threat Tracker", "url": "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools", "type": "vendor"}
+    ],
+    "tags": ["quietvault", "credential-stealer", "ai-malware", "gtig"]
+  },
+  {
+    "source_id": "VTR-crowdstrike-famous-chollima-2025",
+    "title": "CrowdStrike — FAMOUS CHOLLIMA infiltrated 320+ companies via GenAI-assisted hiring fraud",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "CrowdStrike disclosed that the DPRK-nexus FAMOUS CHOLLIMA infiltrated 320+ companies (220% YoY) via generative-AI-assisted resumes, deepfake video-interview personas and AI-driven on-the-job code production, juggling 3-4 simultaneous remote engineering jobs at US firms.",
+    "attack_vector": "tool-abuse",
+    "affected": "Multiple GenAI tools; US tech, defense, aerospace, retail firms",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "CrowdStrike 2025 Threat Hunting Report", "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2025-threat-hunting-report-ai-weapon-target/", "type": "report"},
+      {"title": "FAMOUS CHOLLIMA Adversary Profile", "url": "https://www.crowdstrike.com/en-us/adversaries/famous-chollima/", "type": "vendor"}
+    ],
+    "tags": ["dprk", "famous-chollima", "crowdstrike", "employment-fraud", "deepfake"]
+  },
+  {
+    "source_id": "VTR-crowdstrike-genai-prompt-injection-2025",
+    "title": "CrowdStrike — Adversaries injected prompts to weaponize 90+ enterprise GenAI deployments",
+    "date": "2026-02",
+    "year": 2026,
+    "category": "threat-report",
+    "description": "CrowdStrike's 2026 Global Threat Report documents adversaries exploiting legitimate GenAI tools at 90+ organisations by injecting malicious prompts to generate commands stealing credentials and cryptocurrency, demonstrating AI deployment as a new lateral-movement and execution surface.",
+    "attack_vector": "prompt-injection",
+    "affected": "Enterprise GenAI deployments at 90+ organisations",
+    "severity": "High",
+    "owasp_llm": ["LLM01", "LLM02"],
+    "owasp_asi": ["ASI01", "ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0051", "AML.T0053"],
+    "references": [
+      {"title": "2026 CrowdStrike Global Threat Report Press Release", "url": "https://ir.crowdstrike.com/news-releases/news-release-details/2026-crowdstrike-global-threat-report-ai-accelerates-adversaries/", "type": "report"},
+      {"title": "2026 CrowdStrike Global Threat Report — Findings", "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2026-global-threat-report-findings/", "type": "report"}
+    ],
+    "tags": ["prompt-injection", "enterprise-genai", "crowdstrike", "credential-theft"]
+  },
+  {
+    "source_id": "VTR-crowdstrike-deepseek-code-flaws-2025",
+    "title": "CrowdStrike — DeepSeek-generated code introduced security flaws keyed to political triggers",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "CrowdStrike Research found that the DeepSeek model produced systematically less-secure code when prompts contained politically sensitive context (e.g., Falun Gong, Tibet, Taiwan), introducing exploitable vulnerabilities aligned with PRC sensitivities — a model-behavior risk for developers using foreign LLMs.",
+    "attack_vector": "model-poisoning",
+    "affected": "DeepSeek; downstream developer codebases",
+    "severity": "High",
+    "owasp_llm": ["LLM04", "LLM05"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.6", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0018"],
+    "references": [
+      {"title": "CrowdStrike 2025 Threat Hunting Report", "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-2025-threat-hunting-report-ai-weapon-target/", "type": "report"}
+    ],
+    "tags": ["deepseek", "code-generation", "political-bias", "crowdstrike"]
+  },
+  {
+    "source_id": "VTR-anthropic-spearphishing-study-2024",
+    "title": "Anthropic — Frontier Threats Red Team: spear-phishing scaling study",
+    "date": "2024-08",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Anthropic's Frontier Threats Red Team documented adversaries using Claude to scale targeted spear-phishing: building personalised lures from public profile data, generating multilingual variants, and A/B testing message variants. Anthropic introduced classifiers and monitoring on the basis of these tests.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; corporate executives",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Anthropic Frontier Threats — research", "url": "https://www.anthropic.com/research", "type": "vendor"}
+    ],
+    "tags": ["anthropic", "spear-phishing", "red-team", "claude"]
+  },
+  {
+    "source_id": "VTR-anthropic-election-influence-study-2024",
+    "title": "Anthropic — Election-influence test: Claude refused producing voter-suppression scripts",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Anthropic published an election-influence study showing red-team requests for voter-suppression scripts, false ballot information and AI-generated robocalls were largely refused by Claude after model-card-trained guardrails. The study informed the August 2025 misuse update and policy changes.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Anthropic research index", "url": "https://www.anthropic.com/research", "type": "vendor"}
+    ],
+    "tags": ["anthropic", "election-influence", "red-team", "claude"]
+  },
+  {
+    "source_id": "VTR-mandiant-mtrends-2025-ai-section",
+    "title": "Mandiant M-Trends 2025 — AI used by financially-motivated and state-sponsored actors",
+    "date": "2025-04",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Mandiant's M-Trends 2025 report documents AI usage across investigated incidents — phishing-lure generation by FIN6, fake interview personas by FAMOUS CHOLLIMA, AI-assisted PowerShell tooling by UNC5221, and an uptick in deepfake voice fraud against finance teams. Dwell time held at 11 days.",
+    "attack_vector": "tool-abuse",
+    "affected": "GenAI tools; varied industry verticals",
+    "severity": "High",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI02", "ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "M-Trends 2025 — Mandiant / Google Cloud", "url": "https://cloud.google.com/security/resources/m-trends", "type": "report"}
+    ],
+    "tags": ["mandiant", "m-trends", "ai", "incident-response"]
+  },
+  {
+    "source_id": "VTR-microsoft-mtac-russia-2024",
+    "title": "Microsoft MTAC — Storm-1679 \"Oka Flood\" Russia AI-generated content for 2024 US election",
+    "date": "2024-10",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Microsoft Threat Analysis Center attributed AI-generated video and image content disparaging US presidential candidates and the Paris Olympics to Russian influence actor Storm-1679 (\"Oka Flood\"), including a fake Tom Cruise documentary and AI-doctored images of senior US officials.",
+    "attack_vector": "tool-abuse",
+    "affected": "Multiple GenAI image/video tools; US voters",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0043"],
+    "references": [
+      {"title": "Microsoft Threat Analysis Center election report", "url": "https://blogs.microsoft.com/on-the-issues/2024/10/23/as-the-u-s-election-nears-russia-iran-and-china-step-up-influence-efforts/", "type": "vendor"}
+    ],
+    "tags": ["russia", "storm-1679", "oka-flood", "us-election", "microsoft", "deepfake"]
+  },
+  {
+    "source_id": "VTR-microsoft-mtac-iran-2024",
+    "title": "Microsoft MTAC — Mint Sandstorm spear-phished Trump campaign with AI-drafted lures",
+    "date": "2024-08",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Microsoft attributed an August 2024 spear-phishing operation that compromised a Trump campaign account to Iran's Mint Sandstorm (Charming Kitten / APT35). The actor used AI-assisted drafting of pretexts and translations as part of broader 2024 US election interference operations.",
+    "attack_vector": "tool-abuse",
+    "affected": "US political campaign staff",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "MTAC: Iran steps into US election 2024", "url": "https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/final/en-us/microsoft-brand/documents/5bc57431-a7a9-49ad-944d-b93b7d35d0fc.pdf", "type": "report"}
+    ],
+    "tags": ["iran", "mint-sandstorm", "us-election", "spear-phishing", "microsoft"]
+  },
+  {
+    "source_id": "VTR-recordedfuture-doppelganger-2024-update",
+    "title": "Recorded Future — Doppelganger continued AI-amplified Trump/Biden disinformation",
+    "date": "2024-09",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Recorded Future Insikt Group documented continued Doppelganger network activity through 2024 amplifying CopyCop AI-generated content praising Trump and disparaging Biden through cloned Western-media sites and X bot networks.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLMs; US voters",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "CopyCop Deepens Its Playbook — Recorded Future", "url": "https://www.recordedfuture.com/research/copycop-deepens-its-playbook", "type": "report"}
+    ],
+    "tags": ["russia", "doppelganger", "copycop", "us-election", "recorded-future"]
+  },
+  {
+    "source_id": "VTR-recordedfuture-french-elections-2024",
+    "title": "Recorded Future — Russian/Iranian AI influence networks targeted 2024 French elections",
+    "date": "2024-06",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Recorded Future's \"Sombres Influences\" report exposed coordinated Russian (Doppelganger / CopyCop) and Iranian (IUVM) AI-generated content campaigns targeting France's 2024 legislative elections — anti-Macron narratives, anti-Israel framing, and Olympics disruption themes.",
+    "attack_vector": "tool-abuse",
+    "affected": "LLMs; French electorate",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Russian and Iranian Influence Networks Target French Elections", "url": "https://www.recordedfuture.com/research/russian-and-iranian-influence-networks-target-french-elections", "type": "report"}
+    ],
+    "tags": ["russia", "iran", "france", "election-interference", "recorded-future"]
+  },
+  {
+    "source_id": "VTR-microsoft-peach-sandstorm-tickler-2024",
+    "title": "Microsoft — Peach Sandstorm (Iran) deployed Tickler malware with AI-assisted social engineering",
+    "date": "2024-08",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Iran's Peach Sandstorm (APT33 / Refined Kitten) deployed the Tickler backdoor against US satellite, government and defense targets after AI-assisted reconnaissance, persona-development and tailored LinkedIn outreach to gain initial access.",
+    "attack_vector": "tool-abuse",
+    "affected": "US satellite, government, defense, education sectors",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Microsoft Security blog — Peach Sandstorm", "url": "https://www.microsoft.com/en-us/security/blog/2024/08/28/peach-sandstorm-deploys-new-custom-tickler-malware-in-long-running-intelligence-gathering-operations/", "type": "vendor"}
+    ],
+    "tags": ["iran", "peach-sandstorm", "apt33", "tickler", "microsoft"]
+  },
+  {
+    "source_id": "VTR-openai-feb2025-romance-baiting-cambodia",
+    "title": "OpenAI Feb 2025 — Cambodia-based \"pig butchering\" romance-baiting scam used ChatGPT for translations",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI banned ChatGPT accounts tied to a Cambodian \"pig butchering\" romance-investment scam operation that used the model to translate, localise and humanise multilingual chats luring victims into fraudulent crypto investments.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; global victims",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of our models: February 2025 — OpenAI", "url": "https://cdn.openai.com/threat-intelligence-reports/disrupting-malicious-uses-of-our-models-february-2025-update.pdf", "type": "vendor"}
+    ],
+    "tags": ["cambodia", "pig-butchering", "romance-scam", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-feb2025-kimsuky-thallium",
+    "title": "OpenAI Feb 2025 — DPRK Kimsuky/Thallium used ChatGPT for malware tooling",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI banned ChatGPT accounts linked to DPRK Kimsuky/Thallium that used the model to research and develop Windows malware components, generate spear-phishing pretexts targeting Korean think-tanks, and translate stolen documents.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Korean think-tanks, defense",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of our models: February 2025", "url": "https://cdn.openai.com/threat-intelligence-reports/disrupting-malicious-uses-of-our-models-february-2025-update.pdf", "type": "vendor"}
+    ],
+    "tags": ["dprk", "kimsuky", "thallium", "openai"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-romance-scam-ru",
+    "title": "Anthropic Aug 2025 — Russian-speaking romance-scam operation used Claude for cross-language coaching",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic identified a Russian-speaking romance-scam ring using Claude to maintain natural, emotionally consistent chat across multiple victims in English, German and French, drafting backstories and crypto-fraud talk-tracks. Accounts banned.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude; Western victims",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Anthropic Threat Intelligence Report Aug 2025 (PDF)", "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf", "type": "report"}
+    ],
+    "tags": ["russia", "romance-scam", "anthropic", "claude"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-csam-attempts",
+    "title": "Anthropic Aug 2025 — actors attempted to jailbreak Claude for CSAM generation",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic disclosed a category of users attempting to jailbreak Claude to produce child sexual abuse material; the company describes layered classifiers, reporting to NCMEC and account banning. Documented as an enduring abuse vector requiring defense-in-depth.",
+    "attack_vector": "jailbreak",
+    "affected": "Claude",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05", "LLM07"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0051"],
+    "references": [
+      {"title": "Anthropic Threat Intelligence Report Aug 2025 (PDF)", "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf", "type": "report"}
+    ],
+    "tags": ["csam", "jailbreak", "anthropic", "claude", "child-safety"]
+  },
+  {
+    "source_id": "VTR-microsoft-jasper-sleet-2025",
+    "title": "Microsoft — Jasper Sleet North Korean IT-worker scheme uses generative AI for personas",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Microsoft's Jasper Sleet disclosure detailed DPRK-affiliated remote IT workers using AI image generation (face swaps, AI photos), voice modulation, AI-drafted resumes and ChatGPT-style assistants to win remote engineering jobs at hundreds of US/EU firms, exfiltrating IP and salaries.",
+    "attack_vector": "tool-abuse",
+    "affected": "Multiple AI tools; Western tech employers",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Jasper Sleet: North Korean remote IT workers — Microsoft", "url": "https://www.microsoft.com/en-us/security/blog/2025/06/30/jasper-sleet-north-korean-remote-it-workers-evolving-tactics-to-infiltrate-organizations/", "type": "vendor"}
+    ],
+    "tags": ["dprk", "jasper-sleet", "employment-fraud", "microsoft", "deepfake"]
+  },
+  {
+    "source_id": "VTR-microsoft-storm-2139-azure-openai-2025",
+    "title": "Microsoft — Storm-2139 hijacked Azure OpenAI accounts and sold jailbroken access",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Microsoft's DCU named cybercrime group Storm-2139, which compromised Azure OpenAI customer credentials via leaked keys, jailbroke the models to bypass content safety, and resold access for producing non-consensual explicit images and other policy-violating content. Microsoft pursued civil litigation.",
+    "attack_vector": "auth-bypass",
+    "affected": "Microsoft Azure OpenAI Service",
+    "severity": "Critical",
+    "owasp_llm": ["LLM02", "LLM05"],
+    "owasp_asi": ["ASI02", "ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0024", "AML.T0048"],
+    "references": [
+      {"title": "Microsoft Digital Crimes Unit — Storm-2139", "url": "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/", "type": "vendor"}
+    ],
+    "tags": ["storm-2139", "azure-openai", "jailbreak", "credential-theft", "microsoft"]
+  },
+  {
+    "source_id": "VTR-google-tag-apt42-2024",
+    "title": "Google TAG — APT42 spear-phishing US/Israel officials with AI-assisted lures",
+    "date": "2024-08",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Google TAG observed Iranian APT42 (Charming Kitten / Calanque) targeting senior US officials, US presidential campaign staff and Israeli government with AI-assisted spear-phishing, fake login pages and AI-translated pretexts.",
+    "attack_vector": "tool-abuse",
+    "affected": "Gmail; senior US/Israeli officials",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Iran-backed group steps up phishing campaigns — Google TAG", "url": "https://blog.google/threat-analysis-group/iran-backed-group-steps-up-phishing-campaigns-against-israel-us/", "type": "vendor"}
+    ],
+    "tags": ["iran", "apt42", "charming-kitten", "google-tag", "spear-phishing"]
+  },
+  {
+    "source_id": "VTR-openai-feb2025-bot-management-cn",
+    "title": "OpenAI Feb 2025 — Chinese operator used ChatGPT to maintain a Spanish-language anti-US bot network",
+    "date": "2025-02",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI banned a Chinese cluster that used ChatGPT to manage a Spanish-language X bot network amplifying anti-US narratives in Latin America, including drafting bios, scheduling content, and producing Spanish responses to authentic users.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; X; Latin American audiences",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of our models: February 2025", "url": "https://cdn.openai.com/threat-intelligence-reports/disrupting-malicious-uses-of-our-models-february-2025-update.pdf", "type": "vendor"}
+    ],
+    "tags": ["china", "spanish", "bot-network", "openai", "influence-operation"]
+  },
+  {
+    "source_id": "VTR-anthropic-aug2025-no-code-ransomware",
+    "title": "Anthropic Aug 2025 — \"No-code ransomware\" — non-technical actor built encryptor with Claude",
+    "date": "2025-08",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Anthropic flagged a non-technical actor that used Claude to build a functional ransomware encryptor end-to-end without writing original code, then attempted to sell it on dark-web forums — illustrating AI-driven skill compression for cybercrime entry-points.",
+    "attack_vector": "tool-abuse",
+    "affected": "Claude",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Anthropic Threat Intelligence Report Aug 2025", "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf", "type": "report"}
+    ],
+    "tags": ["no-code-ransomware", "anthropic", "skill-uplift", "claude"]
+  },
+  {
+    "source_id": "VTR-openai-jun2025-china-malware-experiments",
+    "title": "OpenAI Jun 2025 — China-linked cluster experimented with ChatGPT for credential-stealer dev",
+    "date": "2025-06",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI's June 2025 report disrupted a China-linked cluster that used ChatGPT to draft credential-stealer code, brute-force scripts and to research evasion of EDR products, with iterative debugging of malware components.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT",
+    "severity": "High",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: June 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-june-2025/", "type": "vendor"}
+    ],
+    "tags": ["china", "malware-development", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-cambodia-myanmar-scams",
+    "title": "OpenAI Oct 2025 — Southeast-Asia scam compounds used ChatGPT for industrial-scale fraud",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "OpenAI documented Southeast-Asia (Cambodia, Myanmar, Laos) scam-compound operations using ChatGPT at industrial scale: generating multilingual victim scripts, translating chats in real-time, and drafting persuasion frameworks across pig-butchering and task-scam variants.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; global scam victims",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"}
+    ],
+    "tags": ["southeast-asia", "scam-compounds", "pig-butchering", "openai"]
+  },
+  {
+    "source_id": "VTR-anthropic-nov2025-gtg1002-tactics-velocity",
+    "title": "Anthropic Nov 2025 — GTG-1002 achieved 80-90% autonomous tactical execution at impossible request rates",
+    "date": "2025-11",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Beyond the targets disclosure, Anthropic's report quantified the GTG-1002 autonomous-agent tradecraft: thousands of tool calls per session, 80-90% tactical decisions taken by Claude Code without human review, sustained at physically impossible request rates for a human operator. Marked turning point for AI-orchestrated cyber-ops.",
+    "attack_vector": "agent-hijack",
+    "affected": "Claude Code; ~30 organisations globally",
+    "severity": "Critical",
+    "owasp_llm": ["LLM06"],
+    "owasp_asi": ["ASI02", "ASI06", "ASI07", "ASI10"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MAP-3.5", "MEASURE-2.7", "MANAGE-2.1"],
+    "mitre_atlas": ["AML.T0017", "AML.T0029", "AML.T0048"],
+    "references": [
+      {"title": "Disrupting the first reported AI-orchestrated cyber espionage campaign — Anthropic", "url": "https://www.anthropic.com/news/disrupting-AI-espionage", "type": "vendor"},
+      {"title": "Anthropic Disrupts First Documented Case — Paul Weiss", "url": "https://www.paulweiss.com/insights/client-memos/anthropic-disrupts-first-documented-case-of-large-scale-ai-orchestrated-cyberattack", "type": "analysis"}
+    ],
+    "tags": ["gtg-1002", "agentic", "autonomous-attack", "anthropic", "china"]
+  },
+  {
+    "source_id": "VTR-google-tag-coldriver-2024",
+    "title": "Google TAG — ColdRiver (Russia) used Gemini for OSINT and lure crafting",
+    "date": "2024-11",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Russian state actor ColdRiver (Star Blizzard / Calisto) used Gemini for OSINT on think-tank and NGO targets and to refine credential-phishing lures against US/UK political and academic figures.",
+    "attack_vector": "tool-abuse",
+    "affected": "Google Gemini; US/UK political/NGO figures",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Adversarial Misuse of Generative AI — Google Cloud", "url": "https://cloud.google.com/blog/topics/threat-intelligence/adversarial-misuse-generative-ai", "type": "vendor"}
+    ],
+    "tags": ["russia", "coldriver", "star-blizzard", "gemini", "google"]
+  },
+  {
+    "source_id": "VTR-microsoft-mtac-china-2024-divisive",
+    "title": "Microsoft MTAC — China-affiliated Taizi Flood spammed AI imagery on US racial issues",
+    "date": "2024-04",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "Microsoft attributed a Chinese-affiliated cluster \"Taizi Flood\" generating AI imagery of stereotyped racial scenes and fake American voter-fraud claims on X and YouTube to inflame US political polarisation ahead of the 2024 elections.",
+    "attack_vector": "tool-abuse",
+    "affected": "X, YouTube; US voters",
+    "severity": "Medium",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "China tests US voter fault lines — Microsoft", "url": "https://blogs.microsoft.com/on-the-issues/2024/04/04/china-ai-influence-elections-mtac-cybersecurity/", "type": "vendor"}
+    ],
+    "tags": ["china", "taizi-flood", "us-election", "microsoft", "ai-imagery"]
+  },
+  {
+    "source_id": "VTR-openai-oct2025-tasking-prc-monitor",
+    "title": "OpenAI Oct 2025 — China actor used ChatGPT to design Uyghur-targeted travel-pattern monitor",
+    "date": "2025-10",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Among October 2025 disruptions, OpenAI flagged a Chinese-origin operator asking ChatGPT to design tools and queries for monitoring travel patterns of Uyghur and Tibetan diaspora communities, including matching of social-media posts to identity records.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT; Uyghur and Tibetan diaspora",
+    "severity": "Critical",
+    "owasp_llm": ["LLM05", "LLM06"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI: October 2025 — OpenAI", "url": "https://openai.com/global-affairs/disrupting-malicious-uses-of-ai-october-2025/", "type": "vendor"},
+      {"title": "OpenAI tracks growing misuse of AI by scammers and state actors — Scripps", "url": "https://www.scrippsnews.com/science-and-tech/evolution-not-revolution-openai-tracks-growing-misuse-of-ai-by-scammers-and-state-actors", "type": "news"}
+    ],
+    "tags": ["china", "uyghur", "tibet", "surveillance", "openai"]
+  },
+  {
+    "source_id": "VTR-openai-feb2024-five-actors-summary",
+    "title": "OpenAI Feb 2024 — joint Microsoft/OpenAI takedown of 5 state-affiliated actors (summary)",
+    "date": "2024-02",
+    "year": 2024,
+    "category": "threat-report",
+    "description": "OpenAI's first public threat report announced the joint takedown with Microsoft of five state-affiliated actors (Charcoal Typhoon, Salmon Typhoon, Crimson Sandstorm, Emerald Sleet, Forest Blizzard). All ChatGPT accounts terminated; principles published for handling state-actor misuse.",
+    "attack_vector": "tool-abuse",
+    "affected": "OpenAI ChatGPT",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0017"],
+    "references": [
+      {"title": "Disrupting malicious uses of AI by state-affiliated threat actors — OpenAI", "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-by-state-affiliated-threat-actors/", "type": "vendor"}
+    ],
+    "tags": ["state-actor", "summary", "openai", "microsoft", "first-takedown"]
+  },
+  {
+    "source_id": "VTR-microsoft-dcu-q12025-deepfake-fraud",
+    "title": "Microsoft DCU — generative-AI deepfake voice fraud targeting US/UK finance teams",
+    "date": "2025-03",
+    "year": 2025,
+    "category": "threat-report",
+    "description": "Microsoft's Digital Crimes Unit reported sharp growth in synthetic-voice business-email-compromise variants, in which attackers cloned executive voices via off-the-shelf TTS and used them in WhatsApp/Teams calls to authorise wire transfers, with multiple multi-million-dollar losses at US and UK firms.",
+    "attack_vector": "tool-abuse",
+    "affected": "Multiple TTS tools; finance teams",
+    "severity": "High",
+    "owasp_llm": ["LLM05"],
+    "owasp_asi": ["ASI06"],
+    "nist_ai_rmf": ["GOVERN-1.3", "MEASURE-2.7"],
+    "mitre_atlas": ["AML.T0043"],
+    "references": [
+      {"title": "Microsoft on the Issues — disrupting GenAI cybercrime", "url": "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/", "type": "vendor"}
+    ],
+    "tags": ["deepfake", "voice-cloning", "bec", "microsoft", "dcu"]
+  }
+]

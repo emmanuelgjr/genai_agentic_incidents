@@ -137,7 +137,7 @@
         "properties": {
           "title": { "type": "string" },
           "url": { "type": "string", "format": "uri" },
-          "type": { "type": "string", "enum": ["news", "advisory", "research", "vendor", "blog", "cve", "report", "paper", "video", "podcast", "regulatory", "disclosure", "documentation", "legal", "analysis", "other"] }
+          "type": { "type": "string", "enum": ["news", "advisory", "research", "vendor", "blog", "cve", "report", "paper", "video", "podcast", "regulatory", "disclosure", "documentation", "legal", "analysis", "arxiv", "other"] }
         },
         "additionalProperties": false
       }
