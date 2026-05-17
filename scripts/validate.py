@@ -11,10 +11,11 @@ ROOT = Path(__file__).resolve().parents[1]
 try:
     import jsonschema
 except ImportError:
-    print("Installing jsonschema...")
-    import subprocess
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", "jsonschema"])
-    import jsonschema  # noqa: F401
+    print(
+        "jsonschema is required. Run `pip install -r requirements.txt`.",
+        file=sys.stderr,
+    )
+    sys.exit(2)
 
 
 def main():

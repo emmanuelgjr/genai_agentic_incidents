@@ -1,0 +1,72 @@
+"""Smoke tests for the renderer's helpers."""
+
+from __future__ import annotations
+
+import render_markdown as r
+
+
+def test_sort_key_full_date_beats_year_only():
+    a = {"date": "2026-05-10", "year": 2026, "title": "a"}
+    b = {"date": "2026", "year": 2026, "title": "b"}
+    assert r.sort_key(a) < r.sort_key(b)
+
+
+def test_sort_key_newer_first():
+    a = {"date": "2026-04-01", "year": 2026, "title": "a"}
+    b = {"date": "2025-12-31", "year": 2025, "title": "b"}
+    assert r.sort_key(a) < r.sort_key(b)
+
+
+def test_truncate_title_short():
+    assert r.truncate_title("short title", limit=80) == "short title"
+
+
+def test_truncate_title_long():
+    out = r.truncate_title("A" * 200, limit=80)
+    assert len(out) == 80
+    assert out.endswith("…")
+
+
+def test_md_escape_pipes_and_newlines():
+    assert r.md_escape("a|b\nc") == "a\\|b c"
+
+
+def test_shard_rel_format():
+    assert r.shard_rel(2026) == "docs/incidents/2026.md"
+
+
+def test_year_bar_chart_produces_svg(tmp_path):
+    from collections import Counter
+    out = tmp_path / "year.svg"
+    r.render_year_bar_chart(Counter({2024: 5, 2025: 8, 2026: 12}), out)
+    body = out.read_text(encoding="utf-8")
+    assert body.startswith("<svg")
+    assert body.rstrip().endswith("</svg>")
+    assert "2024" in body and "2026" in body
+
+
+def test_owasp_bar_chart_uses_codes(tmp_path):
+    from collections import Counter
+    out = tmp_path / "owasp.svg"
+    r.render_owasp_bar_chart(
+        Counter({"LLM01": 10, "LLM05": 4}),
+        {"LLM01": "Prompt Injection", "LLM05": "Improper Output Handling"},
+        "OWASP LLM coverage",
+        out,
+    )
+    body = out.read_text(encoding="utf-8")
+    assert "LLM01" in body and "LLM05" in body
+    assert "Prompt Injection" in body
+
+
+def test_severity_stack_renders_legend(tmp_path):
+    from collections import Counter
+    out = tmp_path / "sev.svg"
+    r.render_severity_stack_chart(
+        {2025: Counter({"Critical": 3, "High": 5, "Low": 1}),
+         2026: Counter({"High": 7, "Medium": 4})},
+        out,
+    )
+    body = out.read_text(encoding="utf-8")
+    assert "Critical" in body and "High" in body
+    assert "2025" in body and "2026" in body

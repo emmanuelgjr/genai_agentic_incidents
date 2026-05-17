@@ -10,6 +10,9 @@ venv/
 .idea/
 *.swp
 
+# Claude Code session-local config
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -23,3 +26,7 @@ ingest/_cache/
 # Build artifacts
 dist/
 build/
+
+# Jekyll preview output (the deployed site is built by GitHub Pages)
+docs/_site/
+docs/.jekyll-cache/

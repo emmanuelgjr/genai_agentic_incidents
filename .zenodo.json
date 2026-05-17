@@ -1,0 +1,35 @@
+{
+  "title": "GenAI & Agentic AI Security Incidents",
+  "description": "A continuously-maintained, single-source-of-truth dataset of publicly disclosed GenAI and agentic-AI security incidents, vulnerabilities, and red-team findings. Every entry is mapped to OWASP Top 10 for LLM Applications (2025), OWASP Agentic Top 10 (ASI), NIST AI Risk Management Framework (AI 100-1), and MITRE ATLAS.",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "CC-BY-4.0",
+  "creators": [
+    {
+      "name": "Junior Rodrigues, Emmanuel G.",
+      "orcid": null
+    }
+  ],
+  "keywords": [
+    "AI security",
+    "LLM security",
+    "agentic AI",
+    "OWASP LLM Top 10",
+    "OWASP Agentic Top 10",
+    "MITRE ATLAS",
+    "NIST AI RMF",
+    "AI incident database",
+    "deepfake",
+    "prompt injection"
+  ],
+  "communities": [
+    {"identifier": "ai-safety"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/emmanuelgjr/genai_agentic_incidents",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

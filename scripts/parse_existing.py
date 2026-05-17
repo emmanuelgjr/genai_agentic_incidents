@@ -184,8 +184,8 @@ def parse_json_source(path: Path, start_id: int) -> tuple[list[dict], int]:
                 for r in entry.get("references", []) if r.get("url")
             ],
             "tags": entry.get("tags", []),
-            "added": "2026-05-11",
-            "updated": "2026-05-11",
+            "added": str(date.today()),
+            "updated": str(date.today()),
         }
         # Year defaults
         if not new_entry["year"]:
@@ -357,8 +357,8 @@ def parse_md_table(path: Path, start_id: int) -> tuple[list[dict], int]:
             "mitre_atlas": atlas,
             "references": refs,
             "tags": [],
-            "added": "2026-05-11",
-            "updated": "2026-05-11",
+            "added": str(date.today()),
+            "updated": str(date.today()),
         }
         out.append(entry)
         next_id += 1

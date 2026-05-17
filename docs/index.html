@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GenAI & Agentic AI Security Incidents — searchable dataset</title>
+  <meta name="description" content="Searchable, filterable dataset of GenAI and agentic-AI security incidents, mapped to OWASP LLM Top 10, OWASP Agentic Top 10, NIST AI RMF, and MITRE ATLAS.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1>GenAI & Agentic AI Security Incidents</h1>
+    <p class="subtitle">
+      Searchable, filterable index of publicly disclosed GenAI and agentic-AI
+      security incidents. Every entry is mapped to
+      <a href="https://genai.owasp.org/llm-top-10/">OWASP LLM Top 10 (2025)</a>,
+      <a href="https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/">OWASP Agentic Top 10 (ASI)</a>,
+      <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST AI RMF</a>, and
+      <a href="https://atlas.mitre.org/">MITRE ATLAS</a>.
+    </p>
+    <p class="meta" id="dataset-meta">Loading dataset…</p>
+    <p class="links">
+      <a href="https://github.com/emmanuelgjr/genai_agentic_incidents">GitHub repo</a> ·
+      <a href="https://github.com/emmanuelgjr/genai_agentic_incidents/blob/main/INCIDENTS.md">INCIDENTS.md</a> ·
+      <a href="data/incidents.min.json">incidents.min.json</a> ·
+      <a href="https://github.com/emmanuelgjr/genai_agentic_incidents/blob/main/schema/incident.schema.json">schema</a> ·
+      <a href="https://github.com/emmanuelgjr/genai_agentic_incidents/blob/main/CITATION.cff">cite</a>
+    </p>
+  </header>
+
+  <section class="charts" aria-label="trends">
+    <details>
+      <summary>Trends</summary>
+      <div class="chart-grid">
+        <img src="charts/year_bar.svg" alt="Incidents per year">
+        <img src="charts/severity_stack.svg" alt="Severity composition per year">
+        <img src="charts/owasp_llm.svg" alt="OWASP LLM coverage">
+        <img src="charts/owasp_asi.svg" alt="OWASP Agentic coverage">
+      </div>
+    </details>
+  </section>
+
+  <section class="filters" aria-label="filters">
+    <div class="filter">
+      <label for="q">Search</label>
+      <input id="q" type="search" placeholder="vendor, CVE, keyword, INC-…" autocomplete="off">
+    </div>
+    <div class="filter">
+      <label for="year">Year</label>
+      <select id="year"><option value="">all</option></select>
+    </div>
+    <div class="filter">
+      <label for="severity">Severity</label>
+      <select id="severity">
+        <option value="">all</option>
+        <option>Critical</option><option>High</option>
+        <option>Medium</option><option>Low</option><option>Info</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label for="llm">OWASP LLM</label>
+      <select id="llm"><option value="">all</option></select>
+    </div>
+    <div class="filter">
+      <label for="asi">OWASP ASI</label>
+      <select id="asi"><option value="">all</option></select>
+    </div>
+    <div class="filter">
+      <label for="vector">Attack vector</label>
+      <select id="vector"><option value="">all</option></select>
+    </div>
+    <div class="filter">
+      <label for="corpus">Corpus</label>
+      <select id="corpus">
+        <option value="">all</option>
+        <option value="security">security</option>
+        <option value="ai-harm">ai-harm</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label for="quality">Quality</label>
+      <select id="quality">
+        <option value="">all</option>
+        <option value="curated">curated</option>
+        <option value="reviewed">reviewed</option>
+        <option value="auto">auto</option>
+      </select>
+    </div>
+    <div class="filter">
+      <label for="cve_only">
+        <input id="cve_only" type="checkbox"> Has CVE
+      </label>
+    </div>
+  </section>
+
+  <p class="status" id="status">Loading…</p>
+
+  <main>
+    <table id="incidents" class="incidents">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Severity</th>
+          <th>LLM</th>
+          <th>ASI</th>
+          <th>CVEs</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p class="pager" id="pager"></p>
+  </main>
+
+  <footer>
+    <p>
+      Data licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> ·
+      Code licensed <a href="https://opensource.org/licenses/MIT">MIT</a> ·
+      Built from <code>data/incidents.min.json</code>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

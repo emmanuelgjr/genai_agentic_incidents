@@ -27,15 +27,15 @@ INGEST.mkdir(parents=True, exist_ok=True)
 
 
 def safe_yaml_load(text: str) -> dict:
-    """Lightweight YAML reader for ATLAS files — uses pyyaml if available else minimal parser."""
+    """Parse ATLAS YAML files. PyYAML is listed in requirements.txt."""
     try:
         import yaml
-        return yaml.safe_load(text)
-    except ImportError:
-        import subprocess, sys
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", "pyyaml"])
-        import yaml
-        return yaml.safe_load(text)
+    except ImportError as exc:
+        raise SystemExit(
+            "PyYAML is required for ingest_external.py. "
+            "Run `pip install -r requirements.txt`."
+        ) from exc
+    return yaml.safe_load(text)
 
 
 # ---------------------------------------------------------------------------

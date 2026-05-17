@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "genai-incidents"
+version = "2.0.0"
+description = "Curated dataset of GenAI & agentic-AI security incidents mapped to OWASP LLM Top 10, OWASP Agentic Top 10, NIST AI RMF, and MITRE ATLAS."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Emmanuel G. Junior Rodrigues" }]
+keywords = [
+  "AI security",
+  "LLM security",
+  "agentic AI",
+  "OWASP",
+  "MITRE ATLAS",
+  "NIST AI RMF",
+  "incident database",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Security",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/emmanuelgjr/genai_agentic_incidents"
+Repository = "https://github.com/emmanuelgjr/genai_agentic_incidents"
+Issues = "https://github.com/emmanuelgjr/genai_agentic_incidents/issues"
+Changelog = "https://github.com/emmanuelgjr/genai_agentic_incidents/blob/main/CHANGELOG.md"
+
+[tool.hatch.build]
+include = [
+  "src/genai_incidents/**",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/genai_incidents"]
+# Data files live under src/genai_incidents/data/ and ../schema/ in the
+# checked-in tree. scripts/render_markdown.py keeps them in sync with the
+# canonical data/ and schema/ files in the repo root.
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/genai_incidents/**",
+  "data/incidents.min.json",
+  "data/id_deprecations.json",
+  "schema/incident.schema.json",
+  "README.md",
+  "LICENSE",
+  "LICENSE-DATA",
+  "CHANGELOG.md",
+  "CITATION.cff",
+]

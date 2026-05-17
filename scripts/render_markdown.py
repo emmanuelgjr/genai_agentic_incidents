@@ -2,39 +2,370 @@
 Render data/incidents.json -> INCIDENTS.md (human-readable SoT).
 
 Layout:
-  - Header with metadata + taxonomy summary
-  - Sortable table grouped by year, descending
-  - Per-incident detail blocks linked from the table
+  - INCIDENTS.md
+      * Header with metadata + taxonomy coverage summary
+      * Single unified incidents table, newest-first
+      * Per-year shards table linking to docs/incidents/<year>.md
+  - docs/incidents/<year>.md
+      * Detail blocks for every incident in that year
+
+Splitting the per-incident detail blocks into per-year shards keeps
+INCIDENTS.md well under GitHub's 5 MB soft cap so the file renders
+cleanly in the web UI.
 """
 
 from __future__ import annotations
 
 import json
-from pathlib import Path
+import re
 from collections import Counter, defaultdict
 from datetime import date
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+SCHEMA = ROOT / "schema"
+SHARD_DIR = ROOT / "docs" / "incidents"
+SITE_DATA_DIR = ROOT / "docs" / "data"
+CHART_DIR = ROOT / "docs" / "charts"
+PKG_DATA_DIR = ROOT / "src" / "genai_incidents" / "data"
+PKG_SCHEMA_DIR = ROOT / "src" / "genai_incidents" / "schema"
 OUT = ROOT / "INCIDENTS.md"
+
+
+# --- Tiny pure-Python SVG generator for trend charts -----------------------
+
+SEV_COLOURS = {
+    "Critical": "#b40000",
+    "High":     "#cc4400",
+    "Medium":   "#8a6d00",
+    "Low":      "#2a7f2a",
+    "Info":     "#555555",
+}
+
+
+def _svg_open(width: int, height: int, title: str) -> list[str]:
+    return [
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" '
+        f'role="img" aria-label="{_xml_escape(title)}" '
+        'font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11">'
+    ]
+
+
+def _xml_escape(s: str) -> str:
+    return (
+        (s or "")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def render_year_bar_chart(year_counts: Counter, out_path: Path) -> None:
+    """Bar chart of incidents per year, oldest -> newest, x-axis labels."""
+    years = sorted(year_counts.keys())
+    if not years:
+        return
+    counts = [year_counts[y] for y in years]
+    max_n = max(counts)
+
+    W, H = 760, 240
+    M_LEFT, M_RIGHT, M_TOP, M_BOTTOM = 44, 12, 30, 36
+    chart_w = W - M_LEFT - M_RIGHT
+    chart_h = H - M_TOP - M_BOTTOM
+    bar_w = chart_w / max(len(years), 1)
+
+    parts = _svg_open(W, H, f"Incidents per year, {years[0]}–{years[-1]}")
+    parts.append('<rect x="0" y="0" width="100%" height="100%" fill="white"/>')
+    parts.append(
+        f'<text x="{M_LEFT}" y="18" font-weight="600">Incidents per year '
+        f'({sum(counts):,} total)</text>'
+    )
+
+    # 5 y-axis gridlines
+    for i in range(5 + 1):
+        y_val = int(max_n * (5 - i) / 5)
+        y_px = M_TOP + (chart_h * i / 5)
+        parts.append(
+            f'<line x1="{M_LEFT}" y1="{y_px:.1f}" x2="{W - M_RIGHT}" y2="{y_px:.1f}" '
+            'stroke="#e5e5e5" stroke-width="1"/>'
+        )
+        parts.append(
+            f'<text x="{M_LEFT - 6}" y="{y_px + 3:.1f}" text-anchor="end" fill="#666">'
+            f'{y_val:,}</text>'
+        )
+
+    # Bars
+    for i, (y, c) in enumerate(zip(years, counts)):
+        bh = (c / max_n) * chart_h if max_n else 0
+        x = M_LEFT + i * bar_w + bar_w * 0.1
+        bw = bar_w * 0.8
+        bar_y = M_TOP + (chart_h - bh)
+        parts.append(
+            f'<rect x="{x:.1f}" y="{bar_y:.1f}" width="{bw:.1f}" height="{bh:.1f}" '
+            f'fill="#0a58ca" rx="1"><title>{y}: {c:,}</title></rect>'
+        )
+        # Label every other year to avoid crowding when range is wide
+        if (years[-1] - y) % 2 == 0 or i in (0, len(years) - 1):
+            parts.append(
+                f'<text x="{x + bw / 2:.1f}" y="{H - M_BOTTOM + 14}" text-anchor="middle" '
+                f'fill="#666">{y}</text>'
+            )
+
+    parts.append("</svg>")
+    out_path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def render_owasp_bar_chart(
+    counts: Counter, names: dict[str, str], title: str, out_path: Path
+) -> None:
+    """Horizontal bar chart for OWASP code distribution."""
+    codes = sorted(names.keys())
+    vals = [counts.get(c, 0) for c in codes]
+    max_n = max(vals) if vals else 1
+
+    W = 760
+    row_h = 22
+    M_LEFT, M_RIGHT, M_TOP, M_BOTTOM = 220, 60, 30, 12
+    chart_w = W - M_LEFT - M_RIGHT
+    H = M_TOP + M_BOTTOM + row_h * len(codes)
+
+    parts = _svg_open(W, H, title)
+    parts.append('<rect x="0" y="0" width="100%" height="100%" fill="white"/>')
+    parts.append(f'<text x="12" y="18" font-weight="600">{_xml_escape(title)}</text>')
+
+    for i, code in enumerate(codes):
+        y = M_TOP + i * row_h + 6
+        bw = (vals[i] / max_n) * chart_w if max_n else 0
+        parts.append(
+            f'<text x="{M_LEFT - 8}" y="{y + 11}" text-anchor="end" fill="#333">'
+            f'{_xml_escape(code)} · {_xml_escape(names[code])}</text>'
+        )
+        parts.append(
+            f'<rect x="{M_LEFT}" y="{y}" width="{bw:.1f}" height="14" fill="#0a58ca" rx="2">'
+            f'<title>{_xml_escape(names[code])}: {vals[i]:,}</title></rect>'
+        )
+        parts.append(
+            f'<text x="{M_LEFT + bw + 6:.1f}" y="{y + 11}" fill="#666">'
+            f'{vals[i]:,}</text>'
+        )
+
+    parts.append("</svg>")
+    out_path.write_text("\n".join(parts), encoding="utf-8")
+
+
+def render_severity_stack_chart(
+    by_year_sev: dict[int, Counter], out_path: Path
+) -> None:
+    """Stacked bar of severity composition per year (last 12 years)."""
+    years = sorted(by_year_sev.keys())[-12:]
+    if not years:
+        return
+    sev_order = ["Critical", "High", "Medium", "Low", "Info"]
+    totals = {y: sum(by_year_sev[y].values()) for y in years}
+    max_n = max(totals.values()) if totals else 1
+
+    W, H = 760, 240
+    M_LEFT, M_RIGHT, M_TOP, M_BOTTOM = 44, 130, 30, 36
+    chart_w = W - M_LEFT - M_RIGHT
+    chart_h = H - M_TOP - M_BOTTOM
+    bar_w = chart_w / max(len(years), 1)
+
+    parts = _svg_open(W, H, "Severity composition per year")
+    parts.append('<rect x="0" y="0" width="100%" height="100%" fill="white"/>')
+    parts.append(
+        f'<text x="{M_LEFT}" y="18" font-weight="600">'
+        f'Severity composition, last {len(years)} years</text>'
+    )
+
+    for i, y in enumerate(years):
+        x = M_LEFT + i * bar_w + bar_w * 0.1
+        bw = bar_w * 0.8
+        cumulative = 0
+        for sev in sev_order:
+            c = by_year_sev[y].get(sev, 0)
+            if c == 0:
+                continue
+            bh = (c / max_n) * chart_h
+            bar_y = M_TOP + (chart_h - cumulative - bh)
+            parts.append(
+                f'<rect x="{x:.1f}" y="{bar_y:.1f}" width="{bw:.1f}" height="{bh:.1f}" '
+                f'fill="{SEV_COLOURS[sev]}"><title>{y} {sev}: {c:,}</title></rect>'
+            )
+            cumulative += bh
+        parts.append(
+            f'<text x="{x + bw / 2:.1f}" y="{H - M_BOTTOM + 14}" text-anchor="middle" '
+            f'fill="#666">{y}</text>'
+        )
+
+    # Legend
+    lx = W - M_RIGHT + 8
+    for i, sev in enumerate(sev_order):
+        ly = M_TOP + i * 18
+        parts.append(
+            f'<rect x="{lx}" y="{ly}" width="12" height="12" fill="{SEV_COLOURS[sev]}"/>'
+        )
+        parts.append(
+            f'<text x="{lx + 18}" y="{ly + 10}" fill="#333">{sev}</text>'
+        )
+
+    parts.append("</svg>")
+    out_path.write_text("\n".join(parts), encoding="utf-8")
 
 
 def md_escape(s: str) -> str:
     return (s or "").replace("|", "\\|").replace("\n", " ").strip()
 
 
+def sort_key(e: dict) -> tuple:
+    """Newest-first sort. Falls back to year when no full date is present."""
+    d = (e.get("date") or "").strip()
+    year = e.get("year") or 0
+    m = re.match(r"^(\d{4})-(\d{2})-(\d{2})", d)
+    if m:
+        y, mo, da = (int(x) for x in m.groups())
+        return (-y, -mo, -da, e.get("title", "").lower())
+    m = re.match(r"^(\d{4})-(\d{2})", d)
+    if m:
+        y, mo = (int(x) for x in m.groups())
+        return (-y, -mo, 0, e.get("title", "").lower())
+    m = re.match(r"^(\d{4})", d)
+    if m:
+        return (-int(m.group(1)), 0, 0, e.get("title", "").lower())
+    return (-year, 0, 0, e.get("title", "").lower())
+
+
+def truncate_title(title: str, limit: int = 110) -> str:
+    title = title or ""
+    if len(title) <= limit:
+        return title
+    return title[: limit - 1].rstrip() + "…"
+
+
+def shard_path(year: int) -> Path:
+    return SHARD_DIR / f"{year}.md"
+
+
+def shard_rel(year: int) -> str:
+    return f"docs/incidents/{year}.md"
+
+
+def render_details_shard(year: int, rows: list[dict]) -> str:
+    rows = sorted(rows, key=sort_key)
+    lines: list[str] = []
+    # Jekyll front matter — lets GitHub Pages render the shard as HTML
+    # with a stable title, and keeps `#inc-NNNNN` deep links working.
+    lines.append("---")
+    lines.append(f"title: \"Incident Details — {year}\"")
+    lines.append("layout: page")
+    lines.append("---")
+    lines.append("")
+    lines.append(f"# Incident Details — {year}")
+    lines.append("")
+    lines.append(f"_{len(rows):,} incidents._  ")
+    lines.append(
+        "Back to the unified table: [`INCIDENTS.md`](../../INCIDENTS.md). "
+        "Searchable web view: [index.html](../index.html)."
+    )
+    lines.append("")
+    for e in rows:
+        lines.append(f"## {e['id']}")
+        lines.append("")
+        lines.append(f"**{e['title']}**  ")
+        meta_bits = [
+            e.get("date", ""),
+            e.get("category", ""),
+            f"Severity: {e.get('severity','')}",
+        ]
+        lines.append("_" + " · ".join(b for b in meta_bits if b) + "_")
+        if e.get("cve_ids"):
+            lines.append("")
+            lines.append("CVEs: " + ", ".join(f"`{c}`" for c in e["cve_ids"]))
+        if e.get("cwe_ids"):
+            lines.append("CWEs: " + ", ".join(f"`{c}`" for c in e["cwe_ids"]))
+        if e.get("cvss_score") is not None:
+            cvss_line = f"CVSS: **{e['cvss_score']}**"
+            if e.get("cvss_vector"):
+                cvss_line += f" — `{e['cvss_vector']}`"
+            lines.append(cvss_line)
+        if e.get("aiid_id"):
+            lines.append(
+                f"AIID: [`#{e['aiid_id']}`]"
+                f"(https://incidentdatabase.ai/cite/{e['aiid_id']}/)"
+            )
+        if e.get("disclosure_date") and e["disclosure_date"] != e.get("date"):
+            lines.append(f"Disclosed: {e['disclosure_date']}")
+        lines.append("")
+        lines.append(e.get("description", ""))
+        lines.append("")
+        if e.get("affected"):
+            lines.append(f"**Affected:** {e['affected']}  ")
+        if e.get("attack_vector"):
+            lines.append(f"**Attack vector:** `{e['attack_vector']}`  ")
+        if e.get("impact"):
+            lines.append(f"**Impact:** {e['impact']}  ")
+        lines.append("")
+        if e.get("owasp_llm"):
+            lines.append(
+                f"**OWASP LLM Top 10:** {', '.join(f'`{c}`' for c in e['owasp_llm'])}  "
+            )
+        if e.get("owasp_asi"):
+            lines.append(
+                f"**OWASP Agentic (ASI):** {', '.join(f'`{c}`' for c in e['owasp_asi'])}  "
+            )
+        if e.get("nist_ai_rmf"):
+            lines.append(
+                f"**NIST AI RMF:** {', '.join(f'`{c}`' for c in e['nist_ai_rmf'])}  "
+            )
+        if e.get("mitre_atlas"):
+            lines.append(
+                f"**MITRE ATLAS:** {', '.join(f'`{c}`' for c in e['mitre_atlas'])}  "
+            )
+        if e.get("maestro_layers"):
+            ml = ", ".join(
+                f"`{l['layer']} {l.get('label','')}`" for l in e["maestro_layers"]
+            )
+            lines.append(f"**MAESTRO layers:** {ml}  ")
+        lines.append("")
+        if e.get("mitigations"):
+            lines.append("**Mitigations:**")
+            for m in e["mitigations"]:
+                lines.append(f"- {m}")
+            lines.append("")
+        if e.get("references"):
+            lines.append("**References:**")
+            for r in e["references"]:
+                title = r.get("title") or r["url"]
+                suffix = f" _({r.get('type')})_" if r.get("type") else ""
+                lines.append(f"- [{title}]({r['url']}){suffix}")
+            lines.append("")
+        if e.get("tags"):
+            lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))
+            lines.append("")
+        lines.append("---")
+        lines.append("")
+    lines.append("")
+    lines.append(
+        f"> Back to [`INCIDENTS.md`](../../INCIDENTS.md). "
+        f"Generated by `scripts/render_markdown.py`."
+    )
+    return "\n".join(lines)
+
+
 def render():
     raw = json.loads((DATA / "incidents.json").read_text(encoding="utf-8"))
-    entries = raw["incidents"]
+    entries = list(raw["incidents"])
+    entries.sort(key=sort_key)
 
-    by_year = defaultdict(list)
-    for e in entries:
-        by_year[e["year"]].append(e)
-
-    llm_counts = Counter()
-    asi_counts = Counter()
-    atlas_counts = Counter()
-    sev_counts = Counter()
+    llm_counts: Counter = Counter()
+    asi_counts: Counter = Counter()
+    atlas_counts: Counter = Counter()
+    sev_counts: Counter = Counter()
+    year_counts: Counter = Counter()
+    by_year_sev: dict[int, Counter] = defaultdict(Counter)
+    cve_count = 0
+    by_year: dict[int, list[dict]] = defaultdict(list)
     for e in entries:
         for c in e.get("owasp_llm", []):
             llm_counts[c] += 1
@@ -43,19 +374,99 @@ def render():
         for c in e.get("mitre_atlas", []):
             atlas_counts[c] += 1
         sev_counts[e.get("severity", "Medium")] += 1
+        if e.get("year"):
+            year_counts[e["year"]] += 1
+            by_year[e["year"]].append(e)
+            by_year_sev[e["year"]][e.get("severity", "Medium")] += 1
+        if e.get("cve_ids"):
+            cve_count += 1
 
     lines: list[str] = []
     lines.append("# GenAI & Agentic AI Security Incidents")
     lines.append("")
-    lines.append(f"Single source of truth for GenAI and agentic AI security incidents.")
-    lines.append(f"Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS**.")
+    lines.append(
+        "Single source of truth for GenAI and agentic AI security incidents."
+    )
+    lines.append(
+        "Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, "
+        "**NIST AI RMF**, and **MITRE ATLAS**."
+    )
     lines.append("")
     lines.append(f"- **Version:** {raw.get('version','1.0.0')}")
     lines.append(f"- **Generated:** {raw.get('generated', str(date.today()))}")
-    lines.append(f"- **Total incidents:** **{len(entries)}**")
-    lines.append(f"- **Machine-readable:** [`data/incidents.json`](data/incidents.json) · [`data/incidents.min.json`](data/incidents.min.json)")
-    lines.append(f"- **Schema:** [`schema/incident.schema.json`](schema/incident.schema.json)")
+    lines.append(f"- **Total incidents:** **{len(entries):,}**")
+    if year_counts:
+        latest = max(year_counts)
+        earliest = min(year_counts)
+        lines.append(f"- **Date range:** {earliest} – {latest}")
+    lines.append(f"- **With CVE:** {cve_count:,}")
+    lines.append(
+        "- **Machine-readable:** [`data/incidents.json`](data/incidents.json) · "
+        "[`data/incidents.min.json`](data/incidents.min.json)"
+    )
+    lines.append("- **Schema:** [`schema/incident.schema.json`](schema/incident.schema.json)")
     lines.append("")
+    lines.append(
+        "> Sorted newest-first. Click any `INC-*****` to open the year's "
+        "detail shard. Use **Ctrl/Cmd-F** to filter by vendor, CVE, OWASP code, "
+        "or year."
+    )
+    lines.append("")
+
+    # ----- Charts -----
+    llm_names = {
+        "LLM01": "Prompt Injection",
+        "LLM02": "Sensitive Information Disclosure",
+        "LLM03": "Supply Chain",
+        "LLM04": "Data and Model Poisoning",
+        "LLM05": "Improper Output Handling",
+        "LLM06": "Excessive Agency",
+        "LLM07": "System Prompt Leakage",
+        "LLM08": "Vector and Embedding Weaknesses",
+        "LLM09": "Misinformation",
+        "LLM10": "Unbounded Consumption",
+    }
+    asi_names = {
+        "ASI01": "Agent Goal Hijack",
+        "ASI02": "Tool Misuse & Exploitation",
+        "ASI03": "Identity & Privilege Abuse",
+        "ASI04": "Agentic Supply Chain Vulnerabilities",
+        "ASI05": "Unexpected Code Execution (RCE)",
+        "ASI06": "Memory & Context Poisoning",
+        "ASI07": "Insecure Inter-Agent Communication",
+        "ASI08": "Cascading Failures",
+        "ASI09": "Human-Agent Trust Exploitation",
+        "ASI10": "Rogue Agents",
+    }
+    CHART_DIR.mkdir(parents=True, exist_ok=True)
+    render_year_bar_chart(year_counts, CHART_DIR / "year_bar.svg")
+    render_severity_stack_chart(by_year_sev, CHART_DIR / "severity_stack.svg")
+    render_owasp_bar_chart(
+        llm_counts, llm_names, "OWASP LLM Top 10 (2025) — incident coverage",
+        CHART_DIR / "owasp_llm.svg",
+    )
+    render_owasp_bar_chart(
+        asi_counts, asi_names, "OWASP Agentic Top 10 (ASI) — incident coverage",
+        CHART_DIR / "owasp_asi.svg",
+    )
+
+    lines.append("## Trends")
+    lines.append("")
+    lines.append(
+        "Auto-generated from the current dataset. SVGs live under "
+        "[`docs/charts/`](docs/charts/)."
+    )
+    lines.append("")
+    lines.append("![Incidents per year](docs/charts/year_bar.svg)")
+    lines.append("")
+    lines.append("![Severity composition per year](docs/charts/severity_stack.svg)")
+    lines.append("")
+    lines.append("![OWASP LLM coverage](docs/charts/owasp_llm.svg)")
+    lines.append("")
+    lines.append("![OWASP ASI coverage](docs/charts/owasp_asi.svg)")
+    lines.append("")
+
+    # ----- Coverage -----
     lines.append("## Coverage")
     lines.append("")
     lines.append("### Severity")
@@ -64,125 +475,129 @@ def render():
     lines.append("|---|---:|")
     for s in ["Critical", "High", "Medium", "Low", "Info"]:
         if sev_counts.get(s):
-            lines.append(f"| {s} | {sev_counts[s]} |")
+            lines.append(f"| {s} | {sev_counts[s]:,} |")
     lines.append("")
+
+    lines.append("### Incidents per Year")
+    lines.append("")
+    lines.append("| Year | Count | Details |")
+    lines.append("|---|---:|---|")
+    for y in sorted(year_counts.keys(), reverse=True):
+        lines.append(
+            f"| {y} | {year_counts[y]:,} | [{shard_rel(y)}]({shard_rel(y)}) |"
+        )
+    lines.append("")
+
     lines.append("### OWASP LLM Top 10 (2025)")
     lines.append("")
     lines.append("| Code | Name | Count |")
     lines.append("|---|---|---:|")
-    llm_names = {
-        "LLM01":"Prompt Injection","LLM02":"Sensitive Information Disclosure",
-        "LLM03":"Supply Chain","LLM04":"Data and Model Poisoning",
-        "LLM05":"Improper Output Handling","LLM06":"Excessive Agency",
-        "LLM07":"System Prompt Leakage","LLM08":"Vector and Embedding Weaknesses",
-        "LLM09":"Misinformation","LLM10":"Unbounded Consumption",
-    }
     for code, name in llm_names.items():
-        lines.append(f"| {code} | {name} | {llm_counts.get(code,0)} |")
+        lines.append(f"| {code} | {name} | {llm_counts.get(code,0):,} |")
     lines.append("")
+
     lines.append("### OWASP Agentic Top 10 (ASI)")
     lines.append("")
     lines.append("| Code | Name | Count |")
     lines.append("|---|---|---:|")
-    asi_names = {
-        "ASI01":"Agent Goal Hijack","ASI02":"Tool Misuse & Exploitation",
-        "ASI03":"Identity & Privilege Abuse","ASI04":"Agentic Supply Chain Vulnerabilities",
-        "ASI05":"Unexpected Code Execution (RCE)","ASI06":"Memory & Context Poisoning",
-        "ASI07":"Insecure Inter-Agent Communication","ASI08":"Cascading Failures",
-        "ASI09":"Human-Agent Trust Exploitation","ASI10":"Rogue Agents",
-    }
     for code, name in asi_names.items():
-        lines.append(f"| {code} | {name} | {asi_counts.get(code,0)} |")
+        lines.append(f"| {code} | {name} | {asi_counts.get(code,0):,} |")
     lines.append("")
+
     lines.append("### Top MITRE ATLAS Techniques")
     lines.append("")
     lines.append("| Technique | Count |")
     lines.append("|---|---:|")
     for tech, count in atlas_counts.most_common(15):
-        lines.append(f"| `{tech}` | {count} |")
+        lines.append(f"| `{tech}` | {count:,} |")
     lines.append("")
 
-    lines.append("## Index by Year")
+    # ----- Unified incidents table -----
+    lines.append("## Incidents")
     lines.append("")
-    lines.append("Click an incident ID to jump to its detail block. Detail blocks are below the index.")
+    lines.append(
+        f"All **{len(entries):,}** incidents in a single table, newest-first. "
+        "Each `INC-*****` link opens that year's detail shard. Severity is the "
+        "maximum reported across sources for that incident."
+    )
     lines.append("")
-
-    for year in sorted(by_year.keys(), reverse=True):
-        rows = by_year[year]
-        lines.append(f"### {year} — {len(rows)} incidents")
-        lines.append("")
-        lines.append("| ID | Date | Title | Severity | OWASP LLM | OWASP ASI |")
-        lines.append("|---|---|---|---|---|---|")
-        for e in sorted(rows, key=lambda x: x.get("date") or ""):
-            llm = ", ".join(e.get("owasp_llm", []))
-            asi = ", ".join(e.get("owasp_asi", []))
-            lines.append(
-                f"| [`{e['id']}`](#{e['id'].lower()}) "
-                f"| {md_escape(e.get('date',''))} "
-                f"| {md_escape(e['title'])} "
-                f"| {md_escape(e.get('severity',''))} "
-                f"| {llm} | {asi} |"
-            )
-        lines.append("")
-
-    lines.append("## Incident Details")
+    lines.append(
+        "| # | Date | ID | Title | Severity | OWASP LLM | OWASP ASI | CVEs |"
+    )
+    lines.append(
+        "|---:|---|---|---|---|---|---|---|"
+    )
+    for idx, e in enumerate(entries, start=1):
+        llm = ", ".join(e.get("owasp_llm", []))
+        asi = ", ".join(e.get("owasp_asi", []))
+        cves = e.get("cve_ids") or []
+        cve_cell = ""
+        if cves:
+            if len(cves) <= 2:
+                cve_cell = ", ".join(f"`{c}`" for c in cves)
+            else:
+                cve_cell = f"`{cves[0]}` (+{len(cves) - 1})"
+        date_cell = md_escape(e.get("date", "") or str(e.get("year", "")))
+        title_cell = md_escape(truncate_title(e["title"]))
+        year = e.get("year") or 0
+        id_link = f"[`{e['id']}`]({shard_rel(year)}#{e['id'].lower()})"
+        lines.append(
+            f"| {idx:,} | {date_cell} | {id_link} "
+            f"| {title_cell} | {md_escape(e.get('severity',''))} "
+            f"| {llm} | {asi} | {cve_cell} |"
+        )
     lines.append("")
-
-    for year in sorted(by_year.keys(), reverse=True):
-        for e in sorted(by_year[year], key=lambda x: x.get("date") or ""):
-            lines.append(f"### {e['id']}")
-            lines.append("")
-            lines.append(f"**{e['title']}**  ")
-            lines.append(f"_{e.get('date','')} · {e.get('category','')} · Severity: {e.get('severity','')}_")
-            if e.get("cve_ids"):
-                lines.append("")
-                lines.append("CVEs: " + ", ".join(f"`{c}`" for c in e["cve_ids"]))
-            if e.get("cvss_score") is not None:
-                lines.append(f"CVSS: **{e['cvss_score']}**")
-            lines.append("")
-            lines.append(e.get("description", ""))
-            lines.append("")
-            if e.get("affected"):
-                lines.append(f"**Affected:** {e['affected']}  ")
-            if e.get("attack_vector"):
-                lines.append(f"**Attack vector:** `{e['attack_vector']}`  ")
-            if e.get("impact"):
-                lines.append(f"**Impact:** {e['impact']}  ")
-            lines.append("")
-            if e.get("owasp_llm"):
-                lines.append(f"**OWASP LLM Top 10:** {', '.join(f'`{c}`' for c in e['owasp_llm'])}  ")
-            if e.get("owasp_asi"):
-                lines.append(f"**OWASP Agentic (ASI):** {', '.join(f'`{c}`' for c in e['owasp_asi'])}  ")
-            if e.get("nist_ai_rmf"):
-                lines.append(f"**NIST AI RMF:** {', '.join(f'`{c}`' for c in e['nist_ai_rmf'])}  ")
-            if e.get("mitre_atlas"):
-                lines.append(f"**MITRE ATLAS:** {', '.join(f'`{c}`' for c in e['mitre_atlas'])}  ")
-            if e.get("maestro_layers"):
-                ml = ", ".join(f"`{l['layer']} {l.get('label','')}`" for l in e["maestro_layers"])
-                lines.append(f"**MAESTRO layers:** {ml}  ")
-            lines.append("")
-            if e.get("mitigations"):
-                lines.append("**Mitigations:**")
-                for m in e["mitigations"]:
-                    lines.append(f"- {m}")
-                lines.append("")
-            if e.get("references"):
-                lines.append("**References:**")
-                for r in e["references"]:
-                    title = r.get("title") or r["url"]
-                    lines.append(f"- [{title}]({r['url']})" + (f" _({r.get('type')})_" if r.get('type') else ""))
-                lines.append("")
-            if e.get("tags"):
-                lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))
-                lines.append("")
-            lines.append("---")
-            lines.append("")
-
-    lines.append("")
-    lines.append("> Generated by `scripts/render_markdown.py`. Do not edit by hand — edit the source JSON instead.")
+    lines.append(
+        "> Generated by `scripts/render_markdown.py`. Do not edit by hand — "
+        "edit `data/incidents.json` or the ingest scripts and re-run "
+        "`make build`."
+    )
 
     OUT.write_text("\n".join(lines), encoding="utf-8")
-    print(f"wrote {OUT} ({len(entries)} incidents, {sum(len(l) for l in lines):,} chars)")
+    print(f"wrote {OUT} ({len(entries)} incidents)")
+
+    # ----- Per-year shards -----
+    SHARD_DIR.mkdir(parents=True, exist_ok=True)
+    # Wipe any stale shards from previous renders (years that vanished
+    # after a dedupe pass) so the directory mirrors the current dataset.
+    expected = {shard_path(y).name for y in by_year}
+    for existing in SHARD_DIR.glob("*.md"):
+        if existing.name not in expected:
+            existing.unlink()
+    for year, rows in by_year.items():
+        body = render_details_shard(year, rows)
+        shard_path(year).write_text(body, encoding="utf-8")
+    total_shard_chars = sum(
+        len((SHARD_DIR / f"{y}.md").read_text(encoding="utf-8"))
+        for y in by_year
+    )
+    print(
+        f"wrote {len(by_year)} year shards under docs/incidents/ "
+        f"({total_shard_chars:,} chars total)"
+    )
+
+    # Mirror the slim JSON under docs/data/ so the static site can fetch it
+    # without leaving the Pages origin; and into the pip package source
+    # tree so wheels built from this checkout ship the current data.
+    SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    PKG_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    PKG_SCHEMA_DIR.mkdir(parents=True, exist_ok=True)
+    slim_src = DATA / "incidents.min.json"
+    if slim_src.exists():
+        body = slim_src.read_text(encoding="utf-8")
+        (SITE_DATA_DIR / "incidents.min.json").write_text(body, encoding="utf-8")
+        (PKG_DATA_DIR / "incidents.min.json").write_text(body, encoding="utf-8")
+        print(f"copied {slim_src.name} -> docs/data/ + src/genai_incidents/data/")
+    deprec_src = DATA / "id_deprecations.json"
+    if deprec_src.exists():
+        (PKG_DATA_DIR / "id_deprecations.json").write_text(
+            deprec_src.read_text(encoding="utf-8"), encoding="utf-8"
+        )
+    schema_src = SCHEMA / "incident.schema.json"
+    if schema_src.exists():
+        (PKG_SCHEMA_DIR / "incident.schema.json").write_text(
+            schema_src.read_text(encoding="utf-8"), encoding="utf-8"
+        )
 
 
 if __name__ == "__main__":

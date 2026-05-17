@@ -11,7 +11,6 @@ from __future__ import annotations
 
 import json
 import re
-import sys
 import urllib.request
 import urllib.error
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -101,11 +100,20 @@ def fetch_one(url: str, timeout: int = 12) -> dict | None:
         date_m = re.search(r'<meta[^>]+article:published_time"\s+content="(\d{4}-\d{2}-\d{2})', data)
     inc_date = date_m.group(1) if date_m else ""
     year = int(inc_date[:4]) if inc_date else None
+    # Cap year at current year — AIID can't have published an incident from the future.
+    current_year = __import__("datetime").date.today().year
     if not year:
-        # Fallback: prefer the latest year mentioned in title/description (more accurate than first-match)
-        years_found = [int(m.group(1)) for m in re.finditer(r"\b(20[1-2]\d)\b", title + " " + desc)]
+        # Pick the earliest plausible year mentioned, ignoring future dates (e.g. "2027 election").
+        years_found = [
+            int(m.group(1))
+            for m in re.finditer(r"\b(20[0-2]\d)\b", title + " " + desc)
+            if int(m.group(1)) <= current_year
+        ]
         if years_found:
-            year = max(years_found)
+            year = min(years_found)
+    elif year > current_year:
+        year = current_year
+        inc_date = ""
     if not year:
         # Final fallback: AIID incident_id ranges (rough heuristic — first id of each year)
         # Calibrated against AIID history: id<200 mostly 2014-2020, 200-500 2021-2022, 500-1000 2022-2024, 1000+ 2024-2026

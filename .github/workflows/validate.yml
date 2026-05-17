@@ -14,9 +14,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Unit tests
+        run: pytest tests -q
+
+      - name: Re-merge from ingest sources
+        run: |
+          python scripts/parse_existing.py
+          python scripts/merge_and_dedupe.py
 
       - name: Validate incidents.json against schema
         run: python scripts/validate.py
@@ -24,8 +33,15 @@ jobs:
       - name: Re-render INCIDENTS.md and ensure no drift
         run: |
           python scripts/render_markdown.py
-          if [ -n "$(git status --porcelain INCIDENTS.md data/incidents.min.json)" ]; then
-            echo "::error::INCIDENTS.md or incidents.min.json is out of date. Run scripts/render_markdown.py + scripts/merge_and_dedupe.py locally and commit the result."
-            git diff INCIDENTS.md data/incidents.min.json | head -200
+          paths="INCIDENTS.md data/incidents.json data/incidents.min.json data/id_deprecations.json docs/incidents docs/data docs/charts src/genai_incidents/data src/genai_incidents/schema"
+          if [ -n "$(git status --porcelain $paths)" ]; then
+            echo "::error::Generated files are out of date. Run 'make build' locally and commit the result."
+            git status --porcelain $paths
+            git --no-pager diff INCIDENTS.md data/incidents.min.json | head -200
             exit 1
           fi
+
+      - name: Build pip package (smoke)
+        run: |
+          pip install --quiet --upgrade build
+          python -m build --wheel

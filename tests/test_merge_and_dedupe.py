@@ -1,0 +1,239 @@
+"""Unit tests for the merge / normalize / dedupe primitives."""
+
+from __future__ import annotations
+
+import merge_and_dedupe as m
+
+
+def test_classify_attack_vector_prompt_injection():
+    assert m.classify_attack_vector("Indirect prompt injection in chatbot") == "indirect-prompt-injection"
+    assert m.classify_attack_vector("Standard prompt injection variant") == "prompt-injection"
+
+
+def test_classify_attack_vector_misc():
+    assert m.classify_attack_vector("Path traversal in MLflow") == "path-traversal"
+    assert m.classify_attack_vector("Command injection via shell") == "command-injection"
+    assert m.classify_attack_vector("SSRF in Copilot") == "ssrf"
+    assert m.classify_attack_vector("Voice clone scam targeted CFO") == "deepfake"
+    assert m.classify_attack_vector("Supply-chain malicious package") == "supply-chain"
+
+
+def test_classify_attack_vector_no_match():
+    assert m.classify_attack_vector("Generic AI failure with no specifics") is None
+
+
+def test_normalize_url_strips_protocol_and_query():
+    assert m.normalize_url("https://www.Example.com/path/?utm=1") == "example.com/path"
+    assert m.normalize_url("http://example.com/a#frag") == "example.com/a"
+    assert m.normalize_url("") == ""
+
+
+def test_title_key_collapses_punctuation():
+    a = m.title_key("LangChain RCE — CVE-2026-12345!")
+    b = m.title_key("LangChain rce CVE 2026 12345")
+    assert a == b
+
+
+def test_normalize_entry_handles_source_id_or_source_ids():
+    base = {
+        "title": "Test incident",
+        "description": "This is a long enough description for the normaliser to accept.",
+        "year": 2026,
+        "date": "2026-04-01",
+        "references": [{"url": "https://example.com/inc/1"}],
+    }
+    e1 = m.normalize_entry({**base, "source_id": "AIID-99"})
+    e2 = m.normalize_entry({**base, "source_ids": ["AIID-99", "OECD-AIM-x"]})
+    e3 = m.normalize_entry({**base, "source_id": "AIID-99", "extra_source_ids": ["OECD-AIM-x"]})
+    assert e1["source_ids"] == ["AIID-99"]
+    assert set(e2["source_ids"]) == {"AIID-99", "OECD-AIM-x"}
+    assert set(e3["source_ids"]) == {"AIID-99", "OECD-AIM-x"}
+
+
+def test_normalize_entry_lifts_aiid_id_from_source_id():
+    entry = m.normalize_entry(
+        {
+            "title": "Deepfake spread on TikTok",
+            "description": "A long enough description to pass the minimum length filter.",
+            "year": 2026,
+            "source_id": "AIID-1234",
+            "references": [{"url": "https://incidentdatabase.ai/cite/1234/"}],
+        }
+    )
+    assert entry["aiid_id"] == 1234
+
+
+def test_normalize_entry_classifies_attack_vector_when_other():
+    entry = m.normalize_entry(
+        {
+            "title": "SSRF in MLflow tracking server",
+            "description": "A server-side request forgery flaw was patched in MLflow 3.9.",
+            "year": 2026,
+            "attack_vector": "other",
+            "source_id": "CVE-2026-1",
+            "references": [{"url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1"}],
+        }
+    )
+    assert entry["attack_vector"] == "ssrf"
+
+
+def test_normalize_entry_keeps_explicit_attack_vector():
+    entry = m.normalize_entry(
+        {
+            "title": "Voice clone scam at a bank",
+            "description": "An attacker used an AI voice clone to authorise a wire transfer.",
+            "year": 2026,
+            "attack_vector": "deepfake",
+            "source_id": "RES-x",
+            "references": [{"url": "https://example.com/r"}],
+        }
+    )
+    assert entry["attack_vector"] == "deepfake"
+
+
+def test_normalize_entry_widens_cve_pattern():
+    entry = m.normalize_entry(
+        {
+            "title": "A 9-digit CVE issued",
+            "description": "Some CVE pipelines now assign 8-9 digit numbers.",
+            "year": 2026,
+            "source_id": "CVE-2026-100000001",
+            "cve_ids": ["CVE-2026-100000001"],
+            "references": [{"url": "https://example.com/cve"}],
+        }
+    )
+    assert entry["cve_ids"] == ["CVE-2026-100000001"]
+
+
+def test_merge_into_takes_more_specific_date():
+    target = {"date": "2024", "year": 2024, "severity": "Medium"}
+    src = {"date": "2024-03-18", "year": 2024, "severity": "Medium", "references": []}
+    m.merge_into(target, src)
+    assert target["date"] == "2024-03-18"
+
+
+def test_merge_into_overrides_future_year():
+    target = {"date": "2027", "year": 2027, "severity": "Medium"}
+    src = {"date": "2024-03-18", "year": 2024, "severity": "Medium", "references": []}
+    m.merge_into(target, src)
+    assert target["date"] == "2024-03-18"
+    assert target["year"] == 2024
+
+
+def test_merge_into_merges_cwe_ids():
+    target = {"cwe_ids": ["CWE-79"], "severity": "Medium", "references": []}
+    src = {"cwe_ids": ["CWE-918", "CWE-79"], "severity": "Medium", "references": []}
+    m.merge_into(target, src)
+    assert target["cwe_ids"] == ["CWE-79", "CWE-918"]
+
+
+def test_maybe_rewrite_cve_title():
+    entry = {
+        "title": "A flaw has been found in MLflow up to 3.8.0.",
+        "attack_vector": "ssrf",
+        "cve_ids": ["CVE-2026-2393"],
+        "description": "SSRF in MLflow",
+    }
+    m.maybe_rewrite_cve_title(entry)
+    assert entry["title"] == "MLflow — Ssrf (CVE-2026-2393)"
+
+
+def test_classify_quality_tier_curated_legacy():
+    assert m._classify_quality_tier({"source_ids": ["LEGACY-INC-00012"]}) == "curated"
+
+
+def test_classify_quality_tier_curated_with_mitigations():
+    entry = {"source_ids": ["RES-x", "AIID-1"], "mitigations": ["patch", "scan"]}
+    assert m._classify_quality_tier(entry) == "curated"
+
+
+def test_classify_quality_tier_reviewed():
+    entry = {"source_ids": ["AIID-1"]}
+    assert m._classify_quality_tier(entry) == "reviewed"
+
+
+def test_classify_quality_tier_auto():
+    entry = {"source_ids": ["CVE-2026-1234"]}
+    assert m._classify_quality_tier(entry) == "auto"
+
+
+def test_classify_corpus_security_wins_via_cve():
+    entry = {"cve_ids": ["CVE-2026-1"], "title": "Discrimination via biased model"}
+    assert m._classify_corpus(entry) == "security"
+
+
+def test_classify_corpus_security_via_keyword():
+    entry = {"title": "Deepfake CEO scam at a bank", "description": "..."}
+    assert m._classify_corpus(entry) == "security"
+
+
+def test_classify_corpus_ai_harm():
+    entry = {
+        "title": "Hiring algorithm discriminates against women",
+        "description": "Algorithmic bias in resume screening.",
+    }
+    assert m._classify_corpus(entry) == "ai-harm"
+
+
+def test_classify_corpus_default_security():
+    entry = {"title": "Some neutral entry", "description": "No keywords."}
+    assert m._classify_corpus(entry) == "security"
+
+
+def test_normalise_severity_handles_garbage_inputs():
+    assert m._normalise_severity("None") == "Medium"
+    assert m._normalise_severity(None) == "Medium"
+    assert m._normalise_severity("") == "Medium"
+    assert m._normalise_severity("not a severity") == "Medium"
+    assert m._normalise_severity("HIGH") == "High"
+    assert m._normalise_severity("critical") == "Critical"
+
+
+def test_aiid_oecd_source_id_normalised():
+    """`AIID-N-OECD` (legacy bridge file) collapses to canonical `AIID-N`."""
+    entry = m.normalize_entry(
+        {
+            "title": "Some Old AIID incident",
+            "description": "A long enough description to pass the minimum length filter.",
+            "year": 2020,
+            "source_ids": ["AIID-74-OECD"],
+            "references": [{"url": "https://incidentdatabase.ai/cite/74/"}],
+        }
+    )
+    assert "AIID-74" in entry["source_ids"]
+    assert "AIID-74-OECD" not in entry["source_ids"]
+
+
+def test_maybe_rewrite_cve_title_leaves_curated_titles_alone():
+    entry = {
+        "title": "Microsoft Copilot Studio indirect prompt injection (CVE-2026-21520)",
+        "attack_vector": "indirect-prompt-injection",
+        "cve_ids": ["CVE-2026-21520"],
+        "description": "Detailed write-up",
+    }
+    m.maybe_rewrite_cve_title(entry)
+    assert entry["title"].startswith("Microsoft Copilot Studio")
+
+
+def test_maybe_rewrite_cve_title_handles_product_blurb():
+    """`<Product> is a/an <description>.` titles from NVD get rewritten when we
+    have a CVE to anchor the resulting title."""
+    entry = {
+        "title": "Gradio is an open-source Python package designed for quick prototyping.",
+        "attack_vector": "path-traversal",
+        "cve_ids": ["CVE-2024-1234"],
+        "description": "Path traversal in Gradio.",
+    }
+    m.maybe_rewrite_cve_title(entry)
+    assert entry["title"] == "Gradio — Path Traversal (CVE-2024-1234)"
+
+
+def test_maybe_rewrite_cve_title_skips_blurb_without_cve():
+    """Don't invent a generic title when there's no CVE to ground it."""
+    entry = {
+        "title": "Some Tool is a productivity helper for developers.",
+        "attack_vector": "other",
+        "description": "Some Tool is a productivity helper for developers.",
+    }
+    m.maybe_rewrite_cve_title(entry)
+    assert entry["title"].startswith("Some Tool is a")

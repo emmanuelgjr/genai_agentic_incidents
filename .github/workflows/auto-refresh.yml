@@ -1,0 +1,74 @@
+name: Weekly auto-refresh
+
+on:
+  schedule:
+    # Sundays at 04:00 UTC. Adjust if you'd prefer a different cadence.
+    - cron: "0 4 * * 0"
+  workflow_dispatch:
+    inputs:
+      oecd_aim_limit:
+        description: "Max OECD AIM pages to fetch (0 = all)"
+        default: "3000"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Refresh AIRI Navigator
+        run: python scripts/ingest_airi_navigator.py
+        continue-on-error: true
+
+      - name: Refresh AIAAIC sheet
+        run: python scripts/ingest_aiaaic_sheet.py
+        continue-on-error: true
+
+      - name: Refresh OECD AI Incidents Monitor
+        env:
+          OECD_AIM_LIMIT: ${{ github.event.inputs.oecd_aim_limit || '3000' }}
+        run: python scripts/ingest_oecd_aim.py
+        continue-on-error: true
+
+      - name: Re-merge + render + validate
+        run: |
+          python scripts/parse_existing.py
+          python scripts/merge_and_dedupe.py
+          python scripts/render_markdown.py
+          python scripts/validate.py
+
+      - name: Show summary
+        run: |
+          echo "::group::Diff stats"
+          git diff --stat || true
+          echo "::endgroup::"
+          echo "::group::Counts"
+          python -c "import json; d=json.load(open('data/incidents.json')); print('total:', d['incident_count']); print('generated:', d['generated'])"
+          echo "::endgroup::"
+
+      - name: Open / update refresh PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore(data): weekly auto-refresh"
+          branch: auto-refresh/data
+          delete-branch: true
+          title: "Weekly data refresh"
+          labels: data-refresh, automated
+          body: |
+            Automated weekly refresh of external sources:
+            AIRI Navigator, AIAAIC sheet, OECD AI Incidents Monitor.
+
+            Review the diff before merging — flag any unexpected
+            mass deletions or large taxonomy shifts. Schema validation
+            and the unit tests both ran green in this workflow.

@@ -65,8 +65,8 @@ def normalize_url(url: str) -> str:
         return ""
     u = url.strip().lower()
     u = re.sub(r"^https?://(www\.)?", "", u)
-    u = u.rstrip("/")
     u = u.split("?")[0].split("#")[0]
+    u = u.rstrip("/")
     return u
 
 
@@ -79,6 +79,206 @@ def title_key(t: str) -> str:
 
 def slug_to_id(n: int) -> str:
     return f"INC-{n:05d}"
+
+
+# Keyword -> attack_vector classifier. Order matters: first hit wins.
+# Used to replace the catch-all "other" on entries that have no explicit
+# attack_vector field but whose title/description contains an obvious one.
+_ATTACK_VECTOR_RULES: list[tuple[str, str]] = [
+    # Order matters — more specific patterns must come before their parents.
+    (r"indirect[\s-]*prompt", "indirect-prompt-injection"),
+    (r"prompt[\s-]*inject", "prompt-injection"),
+    (r"jailbreak|jailbroken", "jailbreak"),
+    (r"deepfake|voice clon", "deepfake"),
+    (r"command injection|cmd injection|os command", "command-injection"),
+    (r"path traversal|directory traversal|\\.\\./", "path-traversal"),
+    (r"\bSSRF\b|server[\s-]*side request forgery", "ssrf"),
+    (r"\bSQL\b injection|sqli\b", "sql-injection"),
+    (r"\bXSS\b|cross[\s-]*site scripting", "xss"),
+    (r"\bRCE\b|remote code execution|sandbox escape", "rce"),
+    (r"deserializ|insecure deserial", "deserialization"),
+    (r"auth(?:entication|orization)? bypass|missing auth", "auth-bypass"),
+    (r"data exfil|exfiltrat", "data-exfiltration"),
+    (r"model theft|model extract", "model-extraction"),
+    (r"model invers", "model-inversion"),
+    (r"membership inference", "membership-inference"),
+    (r"adversarial (?:example|input|patch)|evasion attack", "adversarial-input"),
+    (r"data poisoning|backdoor|model poisoning", "model-poisoning"),
+    (r"memory poison|context poison", "memory-poisoning"),
+    (r"agent (?:goal )?hijack|goal hijack", "agent-hijack"),
+    (r"tool (?:misuse|abuse)|plugin compromise", "tool-abuse"),
+    (r"supply[\s-]*chain|typosquat|malicious package", "supply-chain"),
+    (r"denial[\s-]*of[\s-]*service|\bDoS\b|\bDDoS\b", "dos"),
+    (r"info(?:rmation)?[\s-]*disclos|sensitive data exposure", "info-disclosure"),
+    (r"insider threat|insider attack", "insider"),
+]
+
+
+_VALID_SEVERITIES = ("Critical", "High", "Medium", "Low", "Info")
+
+
+# Sources we consider "auto-ingested" — present in bulk feeds but not
+# individually vetted by a maintainer. Anything else (legacy/, hand-curated
+# JSON, researcher-blog ingest) starts as "reviewed".
+_AUTO_INGEST_PREFIXES = (
+    "OECD-AIM-",  # OECD AI Incidents Monitor scrape
+    "AIAAIC",     # AIAAIC sheet (numeric ID form)
+    "CVE-",       # raw NVD/GHSA/OSV pull
+    "PROMPTFOO-", # red-team plugin catalogue
+    "GARAK-",     # garak probe catalogue
+)
+
+
+def _classify_quality_tier(entry: dict) -> str:
+    """Heuristic quality tier:
+
+      - ``curated``  — legacy hand-written entries (always source_id LEGACY-*),
+        or entries with a populated `mitigations` list and >=2 source_ids.
+      - ``reviewed`` — sourced from a maintained research catalogue
+        (ATLAS, AIID hand-pick, OWASP, AVID, AIRI, researcher blogs).
+      - ``auto``     — bulk-ingested from NVD/OECD AIM/AIAAIC sheet etc.
+    """
+    src_ids = entry.get("source_ids") or []
+    if any(s.startswith("LEGACY-") for s in src_ids):
+        return "curated"
+    if entry.get("mitigations") and len(src_ids) >= 2:
+        return "curated"
+    has_auto = any(s.startswith(_AUTO_INGEST_PREFIXES) for s in src_ids)
+    has_curated_source = any(
+        s.startswith(("ATLAS-", "AIID-", "AVID-", "OWASP-", "RES-", "EXT-", "OECD-",
+                      "USENIX-", "NDSS-", "CCS-", "ARXIV-", "INC-", "VTR-"))
+        for s in src_ids
+    )
+    if has_curated_source:
+        return "reviewed"
+    if has_auto:
+        return "auto"
+    return "reviewed"
+
+
+# Tag rules that move an entry to the `ai-harm` corpus instead of the
+# default `security` corpus. The split is deliberate: a deepfake fraud is
+# `security`; a hiring-algorithm-discriminates story is `ai-harm`.
+_AI_HARM_KEYWORDS = (
+    "discriminat", "racial bias", "gender bias", "hiring algorithm",
+    "wrongful arrest", "wrongful denial", "credit scoring", "welfare benefit",
+    "social scoring", "predictive policing", "biased recommendation",
+    "biased recidivism", "biased loan", "biased medical", "algorithmic bias",
+    "fairness", "demographic parity",
+)
+_SECURITY_KEYWORDS_FOR_CORPUS = (
+    "deepfake", "voice clone", "voice-clone", "prompt inject", "jailbreak",
+    "exfil", "data breach", "data leak", "rce", "remote code execution",
+    "command injection", "ssrf", "supply chain", "supply-chain", "csam",
+    "malware", "ransomware", "phishing", "scam", "fraud", "exploit", "cve-",
+    "vulnerability", "auth bypass", "sandbox escape", "poisoning", "backdoor",
+)
+
+
+def _classify_corpus(entry: dict) -> str:
+    """`security` or `ai-harm`. Security wins ties — a deepfake scam is
+    a security incident even if it also has a fairness angle."""
+    if entry.get("cve_ids"):
+        return "security"
+    text = (
+        (entry.get("title") or "")
+        + " "
+        + (entry.get("description") or "")
+        + " "
+        + " ".join(entry.get("tags") or [])
+    ).lower()
+    has_security = any(kw in text for kw in _SECURITY_KEYWORDS_FOR_CORPUS)
+    if has_security:
+        return "security"
+    has_harm = any(kw in text for kw in _AI_HARM_KEYWORDS)
+    if has_harm:
+        return "ai-harm"
+    return "security"
+
+
+def _normalise_severity(value: object) -> str:
+    """Coerce assorted severity inputs (None, 'None', '', invalid strings)
+    into a schema-valid value. Defaults to Medium."""
+    if value is None:
+        return "Medium"
+    s = str(value).strip().capitalize()
+    if s in _VALID_SEVERITIES:
+        return s
+    return "Medium"
+
+
+def classify_attack_vector(text: str) -> str | None:
+    """Return the first matching attack vector keyword, or None."""
+    if not text:
+        return None
+    lower = text.lower()
+    for pattern, vec in _ATTACK_VECTOR_RULES:
+        if re.search(pattern, lower, re.I):
+            return vec
+    return None
+
+
+# CVE-style titles like "A flaw has been found in X." get rewritten when we
+# can identify the affected product + a vulnerability class. The full
+# original sentence stays in the description.
+_CVE_TITLE_PREFIXES = (
+    "A flaw has been found in ",
+    "A vulnerability has been found in ",
+    "A vulnerability was detected in ",
+    "A security flaw has been discovered in ",
+    "A security flaw has been found in ",
+    "A weakness has been identified in ",
+    "A weakness was discovered in ",
+)
+
+
+def maybe_rewrite_cve_title(entry: dict) -> None:
+    """Rewrite generic CVE/product-blurb titles into '<product> — <vector> (CVE-...)'.
+
+    Handles two common shapes coming out of NVD/GHSA:
+      1. "A flaw has been found in X up to 3.4."   → boilerplate prefix
+      2. "X is an open-source Python package..."    → product description blurb
+    A single canonical title makes title-key dedup actually work for the
+    same-product/same-year cluster of CVEs.
+    """
+    title = (entry.get("title") or "").strip()
+    cve_ids = entry.get("cve_ids") or []
+    cve_suffix = f" ({cve_ids[0]})" if cve_ids else ""
+    vec = entry.get("attack_vector") or "other"
+    if vec == "other":
+        vec = classify_attack_vector(entry.get("description") or title) or "vulnerability"
+    pretty_vec = vec.replace("-", " ").title()
+
+    body: str | None = None
+
+    # Shape 1: boilerplate CVE prefix.
+    for p in _CVE_TITLE_PREFIXES:
+        if title.startswith(p):
+            body = title[len(p):]
+            break
+
+    # Shape 2: "<Product> is a/an <description>." — extract the product name.
+    if body is None:
+        m = re.match(
+            r"^([A-Za-z0-9@/_+.\-]{2,40}(?:\s+[A-Za-z0-9@/_+.\-]{1,20}){0,3})\s+is\s+(?:a|an|the)\s+",
+            title,
+        )
+        if m and cve_ids:
+            # Only rewrite product blurbs when we have a CVE to anchor on —
+            # otherwise we'd be inventing a vague title with no provenance.
+            body = m.group(1)
+            entry["title"] = f"{body.strip()} — {pretty_vec}{cve_suffix}"[:200]
+            return
+
+    if body is None:
+        return
+
+    product = re.split(
+        r"\s+up to\s+|\s+versions? prior to\s+|\s+before\s+|[.,;]", body, 1
+    )[0].strip()
+    if not product or len(product) > 80:
+        return
+    entry["title"] = f"{product} — {pretty_vec}{cve_suffix}"[:200]
 
 
 def fill_taxonomy(entry: dict) -> dict:
@@ -141,35 +341,96 @@ def normalize_entry(raw: dict) -> dict | None:
         cves = [cves]
     if "cve_id" in raw and raw["cve_id"]:
         cves = list(cves) + [raw["cve_id"]]
-    cves = sorted(set(c for c in cves if isinstance(c, str) and re.match(r"^CVE-\d{4}-\d{4,7}$", c)))
+    cves = sorted(set(c for c in cves if isinstance(c, str) and re.match(r"^CVE-\d{4}-\d{4,9}$", c)))
+
+    # source IDs may arrive as a single `source_id` string OR as a
+    # `source_ids` array (some ingest scripts emit multiple upstream IDs
+    # per row, e.g. OECD AIM rows that cross-reference AIID).
+    src_ids: list[str] = []
+    if raw.get("source_id"):
+        src_ids.append(raw["source_id"])
+    if isinstance(raw.get("source_ids"), list):
+        src_ids.extend(s for s in raw["source_ids"] if isinstance(s, str))
+    if isinstance(raw.get("extra_source_ids"), list):
+        src_ids.extend(s for s in raw["extra_source_ids"] if isinstance(s, str))
+    # Canonicalise: `AIID-1234-OECD` (from the legacy OECD bridge file) and
+    # `AIID-1234` (from scrape_aiid + ingest_oecd_aim) reference the same
+    # AIID incident — collapse to a single canonical form so dedup matches.
+    src_ids = [
+        re.sub(r"^AIID-(\d+)-OECD$", r"AIID-\1", s) for s in src_ids
+    ]
+
+    # If the raw entry's attack_vector is the catch-all "other", try to
+    # classify it heuristically from the title + description.
+    raw_vec = (raw.get("attack_vector") or "").lower().strip()
+    if not raw_vec or raw_vec == "other":
+        classified = classify_attack_vector((title or "") + " " + (desc or ""))
+        if classified:
+            raw_vec = classified
+        else:
+            raw_vec = "other"
 
     entry = {
         "id": "",  # assigned later
-        "source_ids": [raw["source_id"]] if raw.get("source_id") else [],
+        "source_ids": sorted(set(src_ids)),
         "title": title,
         "date": raw.get("date") or str(year),
         "year": int(year),
         "category": raw.get("category") or "real-world",
         "description": desc,
-        "attack_vector": (raw.get("attack_vector") or "other").lower(),
+        "attack_vector": raw_vec,
         "affected": (raw.get("affected") or "").strip(),
-        "severity": (raw.get("severity") or "Medium").capitalize(),
+        "severity": _normalise_severity(raw.get("severity")),
         "owasp_llm": llm,
         "owasp_asi": asi,
         "nist_ai_rmf": sorted(set(raw.get("nist_ai_rmf") or [])),
         "mitre_atlas": sorted(set(raw.get("mitre_atlas") or [])),
         "references": refs,
         "tags": list(raw.get("tags") or []),
-        "added": "2026-05-11",
-        "updated": "2026-05-11",
+        # added/updated stamped in main() after dedupe, using the previous
+        # output as the source of truth for `added` so CI runs stay stable.
+        "added": raw.get("added") or "",
+        "updated": raw.get("updated") or "",
     }
     if cves:
         entry["cve_ids"] = cves
+    cwes_raw = raw.get("cwe_ids") or raw.get("cwe") or []
+    if isinstance(cwes_raw, str):
+        cwes_raw = [cwes_raw]
+    cwes = sorted(
+        {
+            c.upper()
+            for c in cwes_raw
+            if isinstance(c, str) and re.match(r"^CWE-\d{1,4}$", c.upper())
+        }
+    )
+    if cwes:
+        entry["cwe_ids"] = cwes
     if raw.get("cvss_score"):
         try:
             entry["cvss_score"] = float(raw["cvss_score"])
         except (TypeError, ValueError):
             pass
+    if isinstance(raw.get("cvss_vector"), str) and raw["cvss_vector"].startswith("CVSS:"):
+        entry["cvss_vector"] = raw["cvss_vector"]
+    # Surface the canonical AIID numeric id as a first-class field when we
+    # have one (either explicitly, or parsed from an AIID-<n> source_id).
+    aiid_id = raw.get("aiid_id")
+    if not aiid_id:
+        for sid in src_ids:
+            m = re.match(r"^AIID-(\d+)$", sid)
+            if m:
+                aiid_id = int(m.group(1))
+                break
+    if aiid_id:
+        try:
+            entry["aiid_id"] = int(aiid_id)
+        except (TypeError, ValueError):
+            pass
+    if isinstance(raw.get("disclosure_date"), str) and re.match(
+        r"^\d{4}(-\d{2}(-\d{2})?)?$", raw["disclosure_date"]
+    ):
+        entry["disclosure_date"] = raw["disclosure_date"]
     if raw.get("mitigations"):
         entry["mitigations"] = raw["mitigations"]
     if raw.get("impact"):
@@ -182,6 +443,7 @@ def normalize_entry(raw: dict) -> dict | None:
         entry["mitre_atlas_tactics"] = raw["mitre_atlas_tactics"]
 
     fill_taxonomy(entry)
+    maybe_rewrite_cve_title(entry)
     return entry
 
 
@@ -198,16 +460,143 @@ def load_source(path: Path) -> list[dict]:
     return []
 
 
+DEPRECATIONS_PATH = DATA / "id_deprecations.json"
+
+
+def _load_prev_state() -> tuple[
+    dict[str, tuple[str, str, dict]],
+    dict[str, str],
+    int,
+]:
+    """Read the previous output so the build can:
+
+      - Preserve `added` and gate `updated` (timestamps).
+      - Reuse stable `id` strings via CVE / source_id keys.
+      - Carry the monotonic ID counter forward so freshly-introduced rows
+        get IDs above every ID we've ever used.
+
+    Returns ``(timestamps, id_by_key, next_id)``.
+    """
+    timestamps: dict[str, tuple[str, str, dict]] = {}
+    id_by_key: dict[str, str] = {}
+    next_id = 1
+    prev_path = DATA / "incidents.json"
+    if not prev_path.exists():
+        return timestamps, id_by_key, next_id
+    try:
+        prev = json.loads(prev_path.read_text(encoding="utf-8")).get("incidents", [])
+    except (json.JSONDecodeError, OSError):
+        return timestamps, id_by_key, next_id
+    seen_ids = set()
+    for e in prev:
+        added = e.get("added") or ""
+        updated = e.get("updated") or added
+        snap = _content_snapshot(e)
+        eid = e.get("id", "")
+        if eid:
+            seen_ids.add(eid)
+            for c in e.get("cve_ids") or []:
+                id_by_key.setdefault(c, eid)
+            for s in e.get("source_ids") or []:
+                id_by_key.setdefault(s, eid)
+        if not added:
+            continue
+        for c in e.get("cve_ids") or []:
+            timestamps.setdefault(c, (added, updated, snap))
+        for s in e.get("source_ids") or []:
+            timestamps.setdefault(s, (added, updated, snap))
+    # Also walk previously-tombstoned IDs so we never accidentally reuse one.
+    if DEPRECATIONS_PATH.exists():
+        try:
+            deprec = json.loads(DEPRECATIONS_PATH.read_text(encoding="utf-8"))
+            for dep in deprec.get("deprecations", []):
+                seen_ids.add(dep.get("from", ""))
+        except (json.JSONDecodeError, OSError):
+            pass
+    max_n = 0
+    for i in seen_ids:
+        m = re.match(r"^INC-(\d+)$", i)
+        if m:
+            max_n = max(max_n, int(m.group(1)))
+    next_id = max_n + 1
+    return timestamps, id_by_key, next_id
+
+
+# Backwards-compatibility shim — earlier code paths read just the timestamps.
+def _load_prev_timestamps() -> dict[str, tuple[str, str, dict]]:
+    return _load_prev_state()[0]
+
+
+# Fields that count as "content" for the purposes of bumping `updated`.
+# `references` is intentionally included so that gaining a new news link
+# bumps the timestamp, but `added`/`updated` themselves obviously do not.
+_CONTENT_FIELDS = (
+    "title", "date", "year", "category", "description", "attack_vector",
+    "affected", "impact", "severity", "owasp_llm", "owasp_asi", "owasp_dsgai",
+    "nist_ai_rmf", "mitre_atlas", "mitre_atlas_tactics", "cve_ids", "cwe_ids",
+    "cvss_score", "cvss_vector", "aiid_id", "disclosure_date",
+    "mitigations", "references", "tags",
+)
+
+
+def _content_snapshot(entry: dict) -> dict:
+    """Return a hashable-equivalent snapshot of the entry's content fields."""
+    snap = {}
+    for k in _CONTENT_FIELDS:
+        v = entry.get(k)
+        if isinstance(v, list):
+            # Sort lists so cosmetic reordering doesn't bump updated.
+            try:
+                snap[k] = sorted(
+                    v,
+                    key=lambda x: json.dumps(x, sort_keys=True, ensure_ascii=False),
+                )
+            except TypeError:
+                snap[k] = v
+        else:
+            snap[k] = v
+    return snap
+
+
+def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> None:
+    """Look up the entry's previous timestamps by any matching CVE/source ID
+    and apply them. Bump `updated` only when content actually changed."""
+    today = str(date.today())
+    keys = list(entry.get("cve_ids") or []) + list(entry.get("source_ids") or [])
+    prev = next((prev_ts[k] for k in keys if k in prev_ts), None)
+    if prev is None:
+        # Brand-new row — stamp it with today's date.
+        entry["added"] = entry.get("added") or today
+        entry["updated"] = today
+        return
+    prev_added, prev_updated, prev_snap = prev
+    entry["added"] = prev_added
+    if _content_snapshot(entry) == prev_snap:
+        entry["updated"] = prev_updated
+    else:
+        entry["updated"] = today
+
+
 def main():
+    # 0) Load the previous output: timestamps, the id-by-key map (so stable
+    #    INC-* IDs survive a rebuild), and the monotonic ID counter.
+    prev_ts, prev_id_by_key, next_id = _load_prev_state()
+
     all_entries: list[dict] = []
 
     # 1) Legacy consolidated first (highest priority — already curated)
     legacy_path = DATA / "legacy_consolidated.json"
     if legacy_path.exists():
         legacy = json.loads(legacy_path.read_text(encoding="utf-8")).get("incidents", [])
-        # Legacy already in unified shape — just backfill taxonomy
+        # Legacy already in unified shape — backfill taxonomy and stamp a
+        # synthetic source_id on entries that never had one (table-parsed
+        # rows from the original markdown trackers).
         for e in legacy:
             fill_taxonomy(e)
+            if not e.get("source_ids"):
+                slug = e.get("id") or e.get("title", "legacy")
+                e["source_ids"] = [f"LEGACY-{slug}"]
+            maybe_rewrite_cve_title(e)
         all_entries.extend(legacy)
         print(f"[legacy] loaded {len(legacy)} entries")
 
@@ -227,7 +616,37 @@ def main():
     by_cve: dict[str, dict] = {}
     by_url: dict[str, dict] = {}
     by_title: dict[str, dict] = {}
+    by_src: dict[str, dict] = {}
     deduped: list[dict] = []
+
+    def _reindex(target: dict) -> None:
+        """Refresh every dedup index for ``target`` after a merge. If a key
+        (CVE / source_id / reference URL) already maps to a *different*
+        previously-deduped entry, that other entry is transitively absorbed
+        into ``target`` and tombstoned so we don't end up with two records
+        for what is really one incident."""
+
+        def _claim(idx: dict, key: str) -> None:
+            other = idx.get(key)
+            if other is None:
+                idx[key] = target
+                return
+            if other is target or other.get("_tombstoned"):
+                idx[key] = target
+                return
+            # Transitive merge: pull other's content into target and retire it.
+            merge_into(target, other)
+            other["_tombstoned"] = True
+            idx[key] = target
+
+        for c in target.get("cve_ids") or []:
+            _claim(by_cve, c)
+        for s in target.get("source_ids") or []:
+            _claim(by_src, s)
+        for r in target.get("references", []) or []:
+            u = normalize_url(r.get("url", ""))
+            if u:
+                _claim(by_url, u)
 
     for e in all_entries:
         # CVE-key dedupe (strongest signal)
@@ -235,6 +654,15 @@ def main():
         cve_hit = next((by_cve[c] for c in cve_keys if c in by_cve), None)
         if cve_hit:
             merge_into(cve_hit, e)
+            _reindex(cve_hit)
+            continue
+        # Source-ID dedupe (e.g. AIID-1234 referenced from both AIID scrape
+        # and OECD AIM's aiid_ids cross-reference).
+        src_keys = e.get("source_ids") or []
+        src_hit = next((by_src[s] for s in src_keys if s in by_src), None)
+        if src_hit:
+            merge_into(src_hit, e)
+            _reindex(src_hit)
             continue
         # URL-key dedupe
         url_hit = None
@@ -245,34 +673,134 @@ def main():
                 break
         if url_hit:
             merge_into(url_hit, e)
+            _reindex(url_hit)
             continue
         # Title-key dedupe
         tk = title_key(e["title"])
         if tk in by_title and abs(by_title[tk]["year"] - e["year"]) <= 1:
             merge_into(by_title[tk], e)
+            _reindex(by_title[tk])
             continue
 
         # New entry
         deduped.append(e)
-        for c in cve_keys:
-            by_cve[c] = e
-        for r in e.get("references", []):
-            u = normalize_url(r.get("url", ""))
-            if u:
-                by_url.setdefault(u, e)
+        _reindex(e)
         by_title.setdefault(tk, e)
 
-    # 4) Renumber stable IDs (sorted by year desc, then title)
-    deduped.sort(key=lambda x: (-x.get("year") or 0, x["title"].lower()))
-    for i, e in enumerate(deduped, start=1):
-        e["id"] = slug_to_id(i)
+    # 4) Drop entries that got transitively absorbed during reindex, but
+    #    record their old IDs so old citations can be resolved.
+    surviving: list[dict] = []
+    tombstones: list[dict] = []  # [{from, into, reason, date}, ...]
+    today_str = str(date.today())
+    for e in deduped:
+        if e.pop("_tombstoned", False):
+            tombstones.append(e)
+        else:
+            surviving.append(e)
+
+    # 5) Apply stable timestamps + classifiers (quality_tier, corpus).
+    for e in surviving:
+        _apply_history(e, prev_ts)
+        # Respect any explicit value the source carried; only classify
+        # when the entry doesn't already declare one.
+        if not e.get("quality_tier"):
+            e["quality_tier"] = _classify_quality_tier(e)
+        if not e.get("corpus"):
+            e["corpus"] = _classify_corpus(e)
+
+    # 6) Assign stable INC-* IDs. Reuse the previous ID for any entry whose
+    #    CVE / source_id appeared before; otherwise allocate from the
+    #    monotonic counter that survives across builds.
+    deprecations_new: list[dict] = []
+    used_ids: set[str] = set()
+    for e in surviving:
+        keys = list(e.get("cve_ids") or []) + list(e.get("source_ids") or [])
+        old_id = next((prev_id_by_key[k] for k in keys if k in prev_id_by_key), None)
+        # If multiple previous IDs collide into one new row, keep the
+        # smallest and record the rest as deprecations pointing at the
+        # survivor — this protects citations of merged-away IDs.
+        ids_seen = sorted({prev_id_by_key[k] for k in keys if k in prev_id_by_key})
+        chosen = ids_seen[0] if ids_seen else None
+        if chosen and chosen not in used_ids:
+            e["id"] = chosen
+            used_ids.add(chosen)
+        else:
+            e["id"] = slug_to_id(next_id)
+            used_ids.add(e["id"])
+            next_id += 1
+        for extra in ids_seen[1:]:
+            if extra != e["id"]:
+                deprecations_new.append(
+                    {"from": extra, "into": e["id"], "reason": "merged", "date": today_str}
+                )
+
+    # 6b) Record entries that lost a fight to a transitive merge.
+    for ts_entry in tombstones:
+        # Find which surviving entry absorbed it via shared CVE/source_id.
+        keys = list(ts_entry.get("cve_ids") or []) + list(ts_entry.get("source_ids") or [])
+        target_id = next(
+            (s["id"] for s in surviving if (set(s.get("cve_ids") or []) | set(s.get("source_ids") or [])) & set(keys)),
+            None,
+        )
+        if not target_id:
+            continue
+        old_id = next((prev_id_by_key[k] for k in keys if k in prev_id_by_key), None)
+        if old_id and old_id != target_id:
+            deprecations_new.append(
+                {"from": old_id, "into": target_id, "reason": "transitive-merge", "date": today_str}
+            )
+
+    deduped = surviving
 
     print(f"\n[total]  {len(all_entries)} input -> {len(deduped)} unique")
 
-    # 5) Write outputs
+    # 7) Compute `generated`: today only if anything actually changed since
+    #    the previous output; otherwise preserve the previous timestamp so
+    #    CI drift checks don't flap on every daily re-run.
+    today = str(date.today())
+    any_change = any((e.get("updated") or "") == today for e in deduped)
+    prev_generated = ""
+    try:
+        prev_generated = (
+            json.loads((DATA / "incidents.json").read_text(encoding="utf-8"))
+            .get("generated", "")
+        )
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        prev_generated = ""
+    generated = today if any_change or not prev_generated else prev_generated
+
+    # 8) Merge deprecations with the on-disk history and persist.
+    prev_deprec: list[dict] = []
+    if DEPRECATIONS_PATH.exists():
+        try:
+            prev_deprec = json.loads(DEPRECATIONS_PATH.read_text(encoding="utf-8")).get(
+                "deprecations", []
+            )
+        except (json.JSONDecodeError, OSError):
+            prev_deprec = []
+    # Dedupe: keep the earliest record for each `from` id (preserves history).
+    seen_from = {d.get("from"): d for d in prev_deprec if d.get("from")}
+    for d in deprecations_new:
+        seen_from.setdefault(d["from"], d)
+    deprecations_all = sorted(
+        seen_from.values(),
+        key=lambda x: (x.get("from") or "", x.get("date") or ""),
+    )
+    if deprecations_all:
+        DEPRECATIONS_PATH.write_text(
+            json.dumps(
+                {"deprecations": deprecations_all},
+                indent=2,
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+        print(f"[output] wrote {DEPRECATIONS_PATH.name} ({len(deprecations_all)} entries)")
+
+    # 9) Write outputs
     out = {
-        "version": "1.0.0",
-        "generated": str(date.today()),
+        "version": "2.0.0",
+        "generated": generated,
         "description": (
             "Single source of truth for GenAI and agentic AI security incidents. "
             "Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, "
@@ -331,10 +859,14 @@ def merge_into(target: dict, src: dict):
     """Merge taxonomies, references, tags from src into target."""
     for key in ("owasp_llm", "owasp_asi", "owasp_dsgai", "nist_ai_rmf",
                 "mitre_atlas", "mitre_atlas_tactics", "tags", "source_ids",
-                "cve_ids", "mitigations"):
+                "cve_ids", "cwe_ids", "mitigations"):
         merged = sorted(set((target.get(key) or []) + (src.get(key) or [])))
         if merged:
             target[key] = merged
+    # Single-value fields: take src's value when target doesn't have one.
+    for key in ("cvss_vector", "aiid_id", "disclosure_date", "impact"):
+        if not target.get(key) and src.get(key):
+            target[key] = src[key]
     # References — dedupe by url
     seen = {normalize_url(r["url"]): r for r in target.get("references", [])}
     for r in src.get("references", []):
@@ -352,6 +884,32 @@ def merge_into(target: dict, src: dict):
         tgt_sev = "Medium"
     if order.index(src_sev) > order.index(tgt_sev):
         target["severity"] = src_sev
+    # Prefer the more specific / more plausible date.
+    # Specificity: YYYY-MM-DD > YYYY-MM > YYYY. A future-year date should be
+    # overridden by a same-or-earlier date from any other source.
+    current_year = date.today().year
+    src_date = (src.get("date") or "").strip()
+    tgt_date = (target.get("date") or "").strip()
+
+    def _date_score(d: str) -> tuple[int, int]:
+        if re.match(r"^\d{4}-\d{2}-\d{2}", d):
+            return (3, int(d[:4]))
+        if re.match(r"^\d{4}-\d{2}", d):
+            return (2, int(d[:4]))
+        if re.match(r"^\d{4}", d):
+            return (1, int(d[:4]))
+        return (0, 0)
+
+    src_score, src_year = _date_score(src_date)
+    tgt_score, tgt_year = _date_score(tgt_date)
+    tgt_future = tgt_year > current_year
+    src_future = src_year > current_year
+    if src_score and (
+        (tgt_future and not src_future)
+        or (not tgt_future and src_score > tgt_score and not src_future)
+    ):
+        target["date"] = src_date
+        target["year"] = src_year or target.get("year")
     fill_taxonomy(target)
 
 

@@ -1,5 +1,15 @@
 # GenAI & Agentic AI Security Incidents
 
+[![Validate dataset](https://github.com/emmanuelgjr/genai_agentic_incidents/actions/workflows/validate.yml/badge.svg)](https://github.com/emmanuelgjr/genai_agentic_incidents/actions/workflows/validate.yml)
+[![PyPI](https://img.shields.io/pypi/v/genai-incidents.svg)](https://pypi.org/project/genai-incidents/)
+[![License: MIT (code)](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+[![License: CC-BY-4.0 (data)](https://img.shields.io/badge/data-CC--BY--4.0-lightgrey.svg)](LICENSE-DATA)
+
+- 🔎 **Searchable site:** <https://emmanuelgjr.github.io/genai_agentic_incidents/>
+- 📦 **Python:** `pip install genai-incidents`
+- 📄 **Cite:** see [`CITATION.cff`](CITATION.cff)
+- 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
+
 A single source of truth for **GenAI and agentic AI security incidents**, mapped to:
 
 - **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10`
@@ -34,11 +44,16 @@ The dataset is published as both a machine-readable JSON (`data/incidents.json`)
 │   ├── parse_existing.py             ← parse legacy/ → data/legacy_consolidated.json
 │   ├── ingest_external.py            ← parse cloned source repos under ../_external/ → ingest/*.json
 │   ├── scrape_aiid.py                ← fetch all AIID incident pages (OG metadata) → ingest/aiid_full.json
+│   ├── ingest_airi_navigator.py      ← MIT FutureTech AI Risk Navigator CSV → ingest/airi_navigator_incidents.json
+│   ├── ingest_aiaaic_sheet.py        ← AIAAIC Repository public Google Sheet → ingest/aiaaic_sheet_incidents.json
+│   ├── ingest_oecd_aim.py            ← OECD AI Incidents Monitor (10k pages) → ingest/oecd_aim_full_incidents.json
 │   ├── ingest_cve_nvd_expanded.py    ← pull AI-relevant CVEs from NVD/GHSA/OSV → ingest/cve_nvd_expanded.json
 │   ├── merge_and_dedupe.py           ← merge legacy + ingest/* → data/incidents.json
 │   ├── render_markdown.py            ← data/incidents.json → INCIDENTS.md
 │   └── validate.py                   ← validate JSON against schema
-├── INCIDENTS.md                ← rendered index of all incidents
+├── INCIDENTS.md                ← rendered index: unified table, newest-first
+├── docs/incidents/<year>.md    ← per-year detail shards linked from INCIDENTS.md
+├── tests/                      ← pytest suite for merge/render helpers
 ├── LICENSE                     ← MIT (covers code in scripts/)
 ├── LICENSE-DATA                ← CC-BY-4.0 (covers the dataset under data/)
 └── README.md
@@ -70,9 +85,13 @@ See [`schema/incident.schema.json`](schema/incident.schema.json) for the canonic
   "id": "INC-00001",                 // stable 5-digit ID
   "source_ids": ["AIID-123", "CVE-2025-..."],
   "cve_ids": ["CVE-2025-..."],
+  "cwe_ids": ["CWE-918"],
   "cvss_score": 9.8,
+  "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+  "aiid_id": 1234,                   // canonical AIID numeric ID when applicable
   "title": "...",
   "date": "2025-09",
+  "disclosure_date": "2025-10-02",   // separate from incident date when known
   "year": 2025,
   "category": "real-world | research | red-team | vulnerability-disclosure | threat-report | policy",
   "description": "...",
@@ -90,32 +109,65 @@ See [`schema/incident.schema.json`](schema/incident.schema.json) for the canonic
   "references": [
     {"title":"Vendor advisory","url":"https://...","type":"vendor"}
   ],
-  "tags": ["mcp","supply-chain"]
+  "tags": ["mcp","supply-chain"],
+  "added": "2026-05-16",             // stable across re-runs
+  "updated": "2026-05-16"            // only bumped when content actually changes
 }
 ```
 
 ---
 
+## Using the dataset
+
+### As a Python library
+
+```bash
+pip install genai-incidents
+```
+
+```python
+from genai_incidents import query, by_cve, resolve_id
+
+for inc in query(severity="Critical", attack_vector="prompt-injection", year=2026):
+    print(inc["id"], "-", inc["title"])
+
+print(by_cve("CVE-2026-21520"))   # all incidents that list this CVE
+print(resolve_id("INC-00139"))    # follow merge history to the current canonical INC
+```
+
+### As JSON
+
+- Full: [`data/incidents.json`](data/incidents.json)
+- Slim (for UIs): [`data/incidents.min.json`](data/incidents.min.json)
+- Schema: [`schema/incident.schema.json`](schema/incident.schema.json)
+- ID deprecations: [`data/id_deprecations.json`](data/id_deprecations.json) — for resolving citations of merged-away IDs
+
+### As a website
+
+Filterable, searchable, deep-linkable table at
+<https://emmanuelgjr.github.io/genai_agentic_incidents/>.
+
 ## Regenerating the dataset
 
 ```bash
-# 1) Parse legacy source files into the unified schema
-python scripts/parse_existing.py
-
-# 2) (Optional) Run any incremental ingestor that drops a JSON array into ingest/
-#    e.g. ingest/aiid_incidents.json, ingest/cve_incidents.json, ingest/atlas_incidents.json
-
-# 3) Merge + dedupe everything into the single source of truth
-python scripts/merge_and_dedupe.py
-
-# 4) Render the human-readable Markdown index
-python scripts/render_markdown.py
-
-# 5) Validate the JSON against the schema
-python scripts/validate.py
+pip install -r requirements.txt
+make build      # parse legacy, merge + dedupe, render, validate
+make test       # pytest tests/
+make ingest-all # (heavy: refresh AIID/AIRI/AIAAIC/OECD AIM/NVD from network)
 ```
 
-Dedupe keys, in priority order: (a) matching `cve_ids`, (b) matching normalized reference URL, (c) fuzzy title match within ±1 year. Merges union taxonomy mappings, references, tags, and CVE IDs across duplicates; takes the highest severity.
+Or run the steps individually:
+
+```bash
+python scripts/parse_existing.py     # legacy/ -> data/legacy_consolidated.json
+python scripts/merge_and_dedupe.py   # legacy + ingest/* -> data/incidents.json
+python scripts/render_markdown.py    # data/incidents.json -> INCIDENTS.md + docs/incidents/<year>.md
+python scripts/validate.py           # schema check
+```
+
+Dedupe keys (first hit wins): (a) matching `cve_ids`, (b) matching `source_ids` (with `AIID-N-OECD` canonicalised to `AIID-N`), (c) matching normalized reference URL, (d) fuzzy title match within ±1 year. After each merge the indices are reindexed so transitive dupes (entry A absorbs CVE-3, then entry B with CVE-3 already exists → B is merged into A as well) all collapse. Merges union taxonomy mappings, references, tags, CVE/CWE IDs, and source IDs; take the highest severity; prefer the more-specific date (YYYY-MM-DD beats year-only) and reject future-year dates.
+
+`added` and `updated` are preserved from the previous output; `updated` only bumps when an entry's content actually changes. That keeps `make build` deterministic for CI drift checks.
 
 ---
 
