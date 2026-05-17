@@ -1,0 +1,32 @@
+# Force LF line endings for generated files and source files alike so
+# that builds on Windows + Linux produce byte-identical output that
+# survives CI drift checks.
+
+# Source / config
+*.py            text eol=lf
+*.md            text eol=lf
+*.json          text eol=lf
+*.yml           text eol=lf
+*.yaml          text eol=lf
+*.cff           text eol=lf
+*.toml          text eol=lf
+*.svg           text eol=lf
+*.html          text eol=lf
+*.css           text eol=lf
+*.js            text eol=lf
+*.txt           text eol=lf
+Makefile        text eol=lf
+.gitignore      text eol=lf
+.gitattributes  text eol=lf
+
+# Mark heavyweight machine-generated outputs so GitHub treats them as
+# data, not code, in language stats and PR diffs.
+data/incidents.json         text eol=lf linguist-generated=true
+data/incidents.min.json     text eol=lf linguist-generated=true
+data/legacy_consolidated.json text eol=lf linguist-generated=true
+INCIDENTS.md                text eol=lf linguist-generated=true
+docs/incidents/*.md         text eol=lf linguist-generated=true
+docs/data/*.json            text eol=lf linguist-generated=true
+docs/charts/*.svg           text eol=lf linguist-generated=true
+src/genai_incidents/data/*.json text eol=lf linguist-generated=true
+ingest/*.json               text eol=lf linguist-generated=true

@@ -33,6 +33,14 @@ PKG_SCHEMA_DIR = ROOT / "src" / "genai_incidents" / "schema"
 OUT = ROOT / "INCIDENTS.md"
 
 
+def _write_lf(path: Path, text: str, add_newline: bool = True) -> None:
+    """Write ``text`` to ``path`` with explicit LF line endings, regardless
+    of platform. Avoids Windows-vs-Linux drift in the CI drift check."""
+    if add_newline and not text.endswith("\n"):
+        text += "\n"
+    path.write_text(text, encoding="utf-8", newline="\n")
+
+
 # --- Tiny pure-Python SVG generator for trend charts -----------------------
 
 SEV_COLOURS = {
@@ -114,7 +122,7 @@ def render_year_bar_chart(year_counts: Counter, out_path: Path) -> None:
             )
 
     parts.append("</svg>")
-    out_path.write_text("\n".join(parts), encoding="utf-8")
+    _write_lf(out_path, "\n".join(parts))
 
 
 def render_owasp_bar_chart(
@@ -152,7 +160,7 @@ def render_owasp_bar_chart(
         )
 
     parts.append("</svg>")
-    out_path.write_text("\n".join(parts), encoding="utf-8")
+    _write_lf(out_path, "\n".join(parts))
 
 
 def render_severity_stack_chart(
@@ -211,7 +219,7 @@ def render_severity_stack_chart(
         )
 
     parts.append("</svg>")
-    out_path.write_text("\n".join(parts), encoding="utf-8")
+    _write_lf(out_path, "\n".join(parts))
 
 
 def md_escape(s: str) -> str:
@@ -553,7 +561,7 @@ def render():
         "`make build`."
     )
 
-    OUT.write_text("\n".join(lines), encoding="utf-8")
+    _write_lf(OUT, "\n".join(lines))
     print(f"wrote {OUT} ({len(entries)} incidents)")
 
     # ----- Per-year shards -----
@@ -566,7 +574,7 @@ def render():
             existing.unlink()
     for year, rows in by_year.items():
         body = render_details_shard(year, rows)
-        shard_path(year).write_text(body, encoding="utf-8")
+        _write_lf(shard_path(year), body)
     total_shard_chars = sum(
         len((SHARD_DIR / f"{y}.md").read_text(encoding="utf-8"))
         for y in by_year
@@ -585,18 +593,22 @@ def render():
     slim_src = DATA / "incidents.min.json"
     if slim_src.exists():
         body = slim_src.read_text(encoding="utf-8")
-        (SITE_DATA_DIR / "incidents.min.json").write_text(body, encoding="utf-8")
-        (PKG_DATA_DIR / "incidents.min.json").write_text(body, encoding="utf-8")
+        _write_lf(SITE_DATA_DIR / "incidents.min.json", body, add_newline=False)
+        _write_lf(PKG_DATA_DIR / "incidents.min.json", body, add_newline=False)
         print(f"copied {slim_src.name} -> docs/data/ + src/genai_incidents/data/")
     deprec_src = DATA / "id_deprecations.json"
     if deprec_src.exists():
-        (PKG_DATA_DIR / "id_deprecations.json").write_text(
-            deprec_src.read_text(encoding="utf-8"), encoding="utf-8"
+        _write_lf(
+            PKG_DATA_DIR / "id_deprecations.json",
+            deprec_src.read_text(encoding="utf-8"),
+            add_newline=False,
         )
     schema_src = SCHEMA / "incident.schema.json"
     if schema_src.exists():
-        (PKG_SCHEMA_DIR / "incident.schema.json").write_text(
-            schema_src.read_text(encoding="utf-8"), encoding="utf-8"
+        _write_lf(
+            PKG_SCHEMA_DIR / "incident.schema.json",
+            schema_src.read_text(encoding="utf-8"),
+            add_newline=False,
         )
 
 

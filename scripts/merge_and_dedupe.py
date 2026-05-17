@@ -794,6 +794,7 @@ def main():
                 ensure_ascii=False,
             ),
             encoding="utf-8",
+            newline="\n",
         )
         print(f"[output] wrote {DEPRECATIONS_PATH.name} ({len(deprecations_all)} entries)")
 
@@ -811,7 +812,9 @@ def main():
         "incidents": deduped,
     }
     (DATA / "incidents.json").write_text(
-        json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8"
+        json.dumps(out, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+        newline="\n",
     )
     print(f"[output] wrote data/incidents.json")
 
@@ -839,7 +842,9 @@ def main():
         ],
     }
     (DATA / "incidents.min.json").write_text(
-        json.dumps(slim, indent=2, ensure_ascii=False), encoding="utf-8"
+        json.dumps(slim, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+        newline="\n",
     )
     print(f"[output] wrote data/incidents.min.json")
 

@@ -383,12 +383,20 @@ def main():
             all_entries.extend(entries)
 
     out_path = DATA / "legacy_consolidated.json"
-    out_path.write_text(json.dumps({
-        "version": "1.0.0",
-        "generated": str(date.today()),
-        "source": "legacy consolidation",
-        "incidents": all_entries,
-    }, indent=2, ensure_ascii=False), encoding="utf-8")
+    out_path.write_text(
+        json.dumps(
+            {
+                "version": "1.0.0",
+                "generated": str(date.today()),
+                "source": "legacy consolidation",
+                "incidents": all_entries,
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+        newline="\n",
+    )
     print(f"[output] wrote {len(all_entries)} entries -> {out_path}")
 
 
