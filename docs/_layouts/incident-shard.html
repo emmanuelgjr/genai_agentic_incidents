@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title | default: "Incident Details" }} · GenAI & Agentic AI Security Incidents</title>
+  <meta name="description" content="Per-year detail shard from the GenAI & Agentic AI Security Incidents dataset.">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body class="shard-page">
+  <header class="masthead">
+    <div class="wrap">
+      <div class="title-row">
+        <h1>{{ page.title }}</h1>
+        <p class="links">
+          <a href="{{ '/' | relative_url }}">← Search all incidents</a>
+          <a href="https://github.com/emmanuelgjr/genai_agentic_incidents">GitHub</a>
+          <a href="https://doi.org/10.5281/zenodo.20248676">DOI</a>
+        </p>
+      </div>
+      <p class="subtitle">
+        Per-year detail shard. Each entry links to its primary source and
+        canonical CVE/AIID record. Use Ctrl/Cmd-F to jump to an INC-* ID.
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap shard-body">
+    {{ content }}
+  </main>
+
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="back to top">↑</a>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        Data licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> ·
+        Code licensed <a href="https://opensource.org/licenses/MIT">MIT</a> ·
+        Cite with DOI <a href="https://doi.org/10.5281/zenodo.20248676"><code>10.5281/zenodo.20248676</code></a>.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Show back-to-top after scrolling, smooth-scroll on click.
+    (function () {
+      var btn = document.getElementById('back-to-top');
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('visible', window.scrollY > 600);
+      }, { passive: true });
+      btn.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Highlight the currently-anchored incident block so jumping
+      // from the main app actually lands somewhere visible.
+      function highlightFromHash() {
+        document.querySelectorAll('.incident-anchor.target').forEach(function (n) {
+          n.classList.remove('target');
+        });
+        if (!location.hash) return;
+        var id = decodeURIComponent(location.hash.slice(1));
+        var target = document.getElementById(id);
+        if (target) target.classList.add('target');
+      }
+      window.addEventListener('hashchange', highlightFromHash);
+      highlightFromHash();
+    })();
+  </script>
+</body>
+</html>

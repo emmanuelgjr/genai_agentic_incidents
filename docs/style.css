@@ -484,6 +484,87 @@ footer {
 }
 footer .meta { margin-top: 0.4rem; }
 
+/* ----------------------------- Shard pages ----------------------------- */
+.shard-page main.shard-body {
+  padding: 1.5rem 1.5rem 3rem;
+  font-size: 0.95rem;
+  color: var(--fg-soft);
+}
+
+.incident-anchor {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  margin: 0 0 1rem;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.incident-anchor.target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow);
+}
+.incident-anchor h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+.incident-anchor h3 + p strong {
+  font-size: 1.05rem;
+  color: var(--fg);
+  font-weight: 600;
+}
+.incident-anchor em {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+.incident-anchor p { margin: 0.4rem 0; line-height: 1.55; }
+.incident-anchor ul {
+  margin: 0.25rem 0 0.5rem;
+  padding-left: 1.4rem;
+}
+.incident-anchor ul li { margin: 0.15rem 0; }
+.incident-anchor a { word-break: break-word; }
+.incident-anchor code {
+  font-size: 0.82em;
+  background: var(--chip-bg);
+}
+
+/* Make the inline metadata lines (Affected, Attack vector, OWASP, etc.)
+ * read as a compact stack with bold labels but tighter spacing than the
+ * default kramdown <br> behaviour gives. */
+.incident-anchor p strong { color: var(--fg); }
+
+.back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.18s, transform 0.18s;
+  box-shadow: 0 4px 12px rgba(31, 94, 255, 0.4);
+  z-index: 5;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-to-top:hover { background: var(--fg); color: var(--bg-elev); text-decoration: none; }
+
 /* ----------------------------- Mobile ----------------------------- */
 @media (max-width: 720px) {
   .wrap { padding: 0 1rem; }

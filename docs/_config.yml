@@ -8,6 +8,10 @@ markdown: kramdown
 # Keep filename → URL mapping simple so docs/index.html can deep-link
 # into docs/incidents/<year>.html#inc-NNNNN from app.js.
 permalink: /:path/:basename:output_ext
+# Empty header_pages stops minima from auto-listing every Incident Details
+# year shard in the navigation bar — that produced a 30-link wide cluttered
+# nav. Our shards use the custom incident-shard layout instead.
+header_pages: []
 exclude:
   - _site
   - Gemfile

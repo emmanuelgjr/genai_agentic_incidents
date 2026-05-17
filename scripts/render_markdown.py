@@ -265,23 +265,31 @@ def shard_rel(year: int) -> str:
 def render_details_shard(year: int, rows: list[dict]) -> str:
     rows = sorted(rows, key=sort_key)
     lines: list[str] = []
-    # Jekyll front matter — lets GitHub Pages render the shard as HTML
-    # with a stable title, and keeps `#inc-NNNNN` deep links working.
+    # Jekyll front matter — picks the custom layout that brings the main
+    # app's chrome / styling onto each year shard and provides a
+    # back-to-search link plus highlight-on-hash behaviour.
     lines.append("---")
     lines.append(f"title: \"Incident Details — {year}\"")
-    lines.append("layout: page")
+    lines.append("layout: incident-shard")
+    lines.append(f"permalink: /incidents/{year}.html")
     lines.append("---")
     lines.append("")
-    lines.append(f"# Incident Details — {year}")
-    lines.append("")
-    lines.append(f"_{len(rows):,} incidents._  ")
+    lines.append(f"_{len(rows):,} incidents in this year shard._  ")
     lines.append(
-        "Back to the unified table: [`INCIDENTS.md`](../../INCIDENTS.md). "
-        "Searchable web view: [index.html](../index.html)."
+        "Use the [searchable web view](../index.html) for filtering across "
+        "all years. The raw markdown lives under "
+        "[`docs/incidents/`](https://github.com/emmanuelgjr/genai_agentic_incidents/tree/main/docs/incidents)."
     )
     lines.append("")
     for e in rows:
-        lines.append(f"## {e['id']}")
+        # Each incident is wrapped in a `<div class="incident-anchor">`
+        # with an id matching the lowercase INC-* slug. The layout's
+        # JS highlights `.target` when the URL hash matches, so links
+        # arriving from the main app land on a visibly-marked card.
+        slug = e["id"].lower()
+        lines.append(f'<div class="incident-anchor" id="{slug}" markdown="1">')
+        lines.append("")
+        lines.append(f"### {e['id']}")
         lines.append("")
         lines.append(f"**{e['title']}**  ")
         meta_bits = [
@@ -354,7 +362,7 @@ def render_details_shard(year: int, rows: list[dict]) -> str:
         if e.get("tags"):
             lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))
             lines.append("")
-        lines.append("---")
+        lines.append("</div>")
         lines.append("")
     lines.append("")
     lines.append(
