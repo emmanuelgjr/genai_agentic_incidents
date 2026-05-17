@@ -46,6 +46,7 @@ const els = {
   meta: document.getElementById('dataset-meta'),
   table: document.getElementById('incidents'),
   backToTop: document.getElementById('back-to-top'),
+  exportCsv: document.getElementById('export-csv'),
 };
 
 const FILTER_KEYS = ['q','year','severity','llm','asi','vector','corpus','quality','cveOnly'];
@@ -324,6 +325,13 @@ function rerender() {
     ? 'No incidents match your filters.'
     : `${fmtNum(total)} of ${fmtNum(DATA.length)} incidents — showing ${fmtNum(start + 1)}–${fmtNum(start + slice.length)}.`;
 
+  if (els.exportCsv) {
+    els.exportCsv.disabled = total === 0;
+    els.exportCsv.title = total === 0
+      ? 'No matching rows to export'
+      : `Download these ${fmtNum(total)} rows as CSV`;
+  }
+
   writeFiltersToUrl();
 }
 
@@ -517,6 +525,8 @@ function applyChartFilter(patch) {
   document.querySelector('.filters-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+const isNarrow = () => window.innerWidth < 720;
+
 function renderAllCharts() {
   // Per-year column chart
   const yearCounts = {};
@@ -552,16 +562,16 @@ function renderAllCharts() {
   })).sort((a,b) => b.value - a.value);
   renderBarChart(CHART_ID.asi, asiItems, applyChartFilter, { rowH: 24 });
 
-  // Top attack vectors
+  // Top attack vectors — fewer rows on narrow viewports
   const vecCounts = {};
   for (const e of DATA) {
     const v = e.attack_vector || 'other';
     vecCounts[v] = (vecCounts[v] || 0) + 1;
   }
-  const vecItems = topN(vecCounts, 12).map(([k, v]) => ({
+  const vecItems = topN(vecCounts, isNarrow() ? 6 : 12).map(([k, v]) => ({
     label: k, value: v, filter: { vector: k },
   }));
-  renderBarChart(CHART_ID.vectors, vecItems, applyChartFilter, { rowH: 22, leftPad: 170 });
+  renderBarChart(CHART_ID.vectors, vecItems, applyChartFilter, { rowH: 20, leftPad: 160 });
 
   // Top affected vendors / products (extracted from the `affected` field)
   const vendorCounts = {};
@@ -574,10 +584,74 @@ function renderAllCharts() {
     const key = first.replace(/\s+v?\d+(\.\d+)*$/, '').trim();
     vendorCounts[key] = (vendorCounts[key] || 0) + 1;
   }
-  const vendorItems = topN(vendorCounts, 12).map(([k, v]) => ({
+  const vendorItems = topN(vendorCounts, isNarrow() ? 6 : 12).map(([k, v]) => ({
     label: k, value: v, filter: { q: k },
   }));
-  renderBarChart(CHART_ID.vendors, vendorItems, applyChartFilter, { rowH: 22, leftPad: 200 });
+  renderBarChart(CHART_ID.vendors, vendorItems, applyChartFilter, { rowH: 20, leftPad: 190 });
+}
+
+// Re-render charts when the viewport crosses the narrow/wide boundary
+// so the top-N counts adjust on rotation / window resize.
+let _wasNarrow = null;
+window.addEventListener('resize', () => {
+  const n = isNarrow();
+  if (n !== _wasNarrow && DATA.length) {
+    _wasNarrow = n;
+    renderAllCharts();
+  }
+}, { passive: true });
+
+// ----------------------------- CSV export --------------------------------
+
+const CSV_COLUMNS = [
+  ['id',                'ID'],
+  ['date',              'Date'],
+  ['year',              'Year'],
+  ['title',             'Title'],
+  ['severity',          'Severity'],
+  ['attack_vector',     'Attack Vector'],
+  ['affected',          'Affected'],
+  ['corpus',            'Corpus'],
+  ['quality_tier',      'Quality'],
+  ['owasp_llm',         'OWASP LLM'],
+  ['owasp_asi',         'OWASP ASI'],
+  ['nist_ai_rmf',       'NIST AI RMF'],
+  ['mitre_atlas',       'MITRE ATLAS'],
+  ['cve_ids',           'CVEs'],
+  ['tags',              'Tags'],
+  ['primary_reference', 'Primary Reference'],
+  ['description',       'Description'],
+];
+
+function csvCell(value) {
+  if (value == null) return '';
+  if (Array.isArray(value)) value = value.join('; ');
+  const s = String(value);
+  // Escape per RFC 4180: wrap in quotes and double internal quotes if the
+  // cell contains comma, quote, or newline.
+  if (/[",\r\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+  return s;
+}
+
+function exportFilteredAsCsv() {
+  if (!FILTERED.length) return;
+  const lines = [];
+  lines.push(CSV_COLUMNS.map(c => csvCell(c[1])).join(','));
+  for (const row of FILTERED) {
+    lines.push(CSV_COLUMNS.map(c => csvCell(row[c[0]])).join(','));
+  }
+  // Prepend UTF-8 BOM so Excel opens it as UTF-8.
+  const blob = new Blob(['﻿' + lines.join('\r\n')],
+    { type: 'text/csv;charset=utf-8' });
+  const today = new Date().toISOString().slice(0, 10);
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `genai-incidents-${today}-${FILTERED.length}rows.csv`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 0);
 }
 
 // ----------------------------- Bootstrap ---------------------------------
@@ -627,6 +701,11 @@ async function init() {
         rerender();
       }
     });
+
+    // CSV export
+    if (els.exportCsv) {
+      els.exportCsv.addEventListener('click', exportFilteredAsCsv);
+    }
 
     // Back-to-top FAB
     if (els.backToTop) {

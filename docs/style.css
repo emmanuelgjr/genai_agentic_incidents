@@ -173,6 +173,56 @@ section.stats + .section-head { margin-top: 2rem; }
   color: var(--muted);
 }
 
+/* ----------------------------- Severity legend ----------------------------- */
+.sev-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin: 0.1rem 0 0.25rem;
+  padding: 0 0.15rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.sev-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.sev-key .dot {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ----------------------------- Buttons ----------------------------- */
+.btn-secondary {
+  background: var(--bg-elev);
+  color: var(--fg);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+.btn-secondary:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-secondary:disabled { opacity: 0.5; cursor: default; }
+.head-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  flex-wrap: wrap;
+}
+.head-right .hint { margin: 0; }
+
 /* ----------------------------- CTA row ----------------------------- */
 .cta-row {
   display: flex;
@@ -604,7 +654,12 @@ footer .meta { margin-top: 0.4rem; }
   .filter-toggle { flex-basis: 100%; }
   .chart-grid { grid-template-columns: 1fr; }
   .chart-card.chart-wide { grid-column: auto; }
+  /* The horizontal-bar charts crowd the narrow viewport (long left-side
+     labels eat most of the width). Hide the two least-essential ones on
+     mobile so the page stays readable. They're still on desktop. */
+  .chart-secondary { display: none; }
   .incidents { font-size: 0.85rem; }
   .incidents td.llm, .incidents td.asi { display: none; }
   .pager .pager-info { width: 100%; text-align: right; }
+  .head-right { width: 100%; justify-content: space-between; }
 }

@@ -37,6 +37,14 @@
       <!-- populated by JS -->
     </section>
 
+    <div class="sev-legend" aria-label="severity colors">
+      <span class="sev-key sev-Critical"><span class="dot"></span>Critical</span>
+      <span class="sev-key sev-High"><span class="dot"></span>High</span>
+      <span class="sev-key sev-Medium"><span class="dot"></span>Medium</span>
+      <span class="sev-key sev-Low"><span class="dot"></span>Low</span>
+      <span class="sev-key sev-Info"><span class="dot"></span>Info</span>
+    </div>
+
     <div class="cta-row">
       <a class="cta" href="#incidents-table">Browse the full table ↓</a>
       <span class="cta-hint">7,000+ entries, fully filterable. Charts below let you click any bar to drill in.</span>
@@ -64,11 +72,11 @@
           <figcaption>OWASP Agentic Top 10 (ASI)</figcaption>
           <div class="chart" id="chart-owasp-asi"></div>
         </figure>
-        <figure class="chart-card">
+        <figure class="chart-card chart-secondary">
           <figcaption>Top attack vectors</figcaption>
           <div class="chart" id="chart-vectors"></div>
         </figure>
-        <figure class="chart-card">
+        <figure class="chart-card chart-secondary">
           <figcaption>Most-targeted vendors / products</figcaption>
           <div class="chart" id="chart-vendors"></div>
         </figure>
@@ -78,7 +86,10 @@
     <section class="filters-section" id="incidents-table">
       <div class="section-head">
         <h2>Incidents</h2>
-        <p class="hint" id="result-status">Loading…</p>
+        <div class="head-right">
+          <p class="hint" id="result-status">Loading…</p>
+          <button type="button" class="btn-secondary" id="export-csv" disabled>Export CSV</button>
+        </div>
       </div>
 
       <div class="filters" aria-label="filters">
