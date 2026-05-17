@@ -825,7 +825,21 @@ def main():
     )
     print(f"[output] wrote data/incidents.json")
 
-    # Slim variant
+    # Slim variant — used by the static site for filtering and inline
+    # row expansion. Description is truncated so the JSON stays under
+    # ~5 MB, the soft limit for snappy first-paint over typical home
+    # broadband, while still showing enough context to triage an entry.
+    def _short(text: str, limit: int = 280) -> str:
+        text = (text or "").strip()
+        if len(text) <= limit:
+            return text
+        cut = text[: limit - 1]
+        # Don't break a word mid-token.
+        sp = cut.rfind(" ")
+        if sp > limit * 0.6:
+            cut = cut[:sp]
+        return cut.rstrip() + "…"
+
     slim = {
         "version": out["version"],
         "generated": out["generated"],
@@ -844,6 +858,11 @@ def main():
                 "mitre_atlas": e.get("mitre_atlas", []),
                 "cve_ids": e.get("cve_ids", []),
                 "primary_reference": e["references"][0]["url"] if e.get("references") else None,
+                "description": _short(e.get("description")),
+                "affected": _short(e.get("affected"), limit=120),
+                "tags": (e.get("tags") or [])[:8],
+                "quality_tier": e.get("quality_tier"),
+                "corpus": e.get("corpus"),
             }
             for e in deduped
         ],
