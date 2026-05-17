@@ -37,6 +37,11 @@
       <!-- populated by JS -->
     </section>
 
+    <div class="cta-row">
+      <a class="cta" href="#incidents-table">Browse the full table ↓</a>
+      <span class="cta-hint">7,000+ entries, fully filterable. Charts below let you click any bar to drill in.</span>
+    </div>
+
     <section class="charts-section" aria-label="trends">
       <div class="section-head">
         <h2>Trends</h2>
@@ -70,7 +75,7 @@
       </div>
     </section>
 
-    <section class="filters-section">
+    <section class="filters-section" id="incidents-table">
       <div class="section-head">
         <h2>Incidents</h2>
         <p class="hint" id="result-status">Loading…</p>
@@ -127,6 +132,10 @@
             <input id="cve_only" type="checkbox"> Has CVE
           </label>
         </div>
+        <div class="filter">
+          <label for="page_size">Per page</label>
+          <select id="page_size"></select>
+        </div>
       </div>
 
       <div class="chips" id="filter-chips" aria-live="polite"></div>
@@ -152,9 +161,12 @@
     </section>
   </main>
 
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="back to top">↑</a>
+
   <footer>
     <div class="wrap">
       <p>
+        Curated by <strong>Emmanuel Guilherme Junior</strong> ·
         Data licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> ·
         Code licensed <a href="https://opensource.org/licenses/MIT">MIT</a> ·
         Cite with DOI <a href="https://doi.org/10.5281/zenodo.20248676"><code>10.5281/zenodo.20248676</code></a>.

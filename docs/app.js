@@ -1,7 +1,9 @@
 // Client-side filter/search/sort + interactive charts for the GenAI
 // Security Incidents dataset. Pure vanilla JS, no build, no deps.
 
-const PAGE_SIZE = 100;
+const PAGE_SIZE_DEFAULT = 250;
+const PAGE_SIZE_OPTIONS = [50, 100, 250, 500, 1000];
+let PAGE_SIZE = PAGE_SIZE_DEFAULT;
 const SEV_RANK = { Critical: 4, High: 3, Medium: 2, Low: 1, Info: 0 };
 const SEV_VARS = {
   Critical: "var(--critical)",
@@ -35,6 +37,7 @@ const els = {
   corpus: document.getElementById('corpus'),
   quality: document.getElementById('quality'),
   cveOnly: document.getElementById('cve_only'),
+  pageSize: document.getElementById('page_size'),
   status: document.getElementById('result-status'),
   body: document.querySelector('#incidents tbody'),
   pager: document.getElementById('pager'),
@@ -42,6 +45,7 @@ const els = {
   stats: document.getElementById('stats'),
   meta: document.getElementById('dataset-meta'),
   table: document.getElementById('incidents'),
+  backToTop: document.getElementById('back-to-top'),
 };
 
 const FILTER_KEYS = ['q','year','severity','llm','asi','vector','corpus','quality','cveOnly'];
@@ -107,6 +111,10 @@ function readFiltersFromUrl() {
   if (p.has('sort')) SORT_BY = p.get('sort');
   if (p.has('dir'))  SORT_DIR = p.get('dir') === 'asc' ? 'asc' : 'desc';
   if (p.has('page')) PAGE = Math.max(1, parseInt(p.get('page'), 10) || 1);
+  if (p.has('ps')) {
+    const n = parseInt(p.get('ps'), 10);
+    if (PAGE_SIZE_OPTIONS.includes(n)) PAGE_SIZE = n;
+  }
 }
 
 function writeFiltersToUrl() {
@@ -120,6 +128,7 @@ function writeFiltersToUrl() {
     p.set('sort', SORT_BY); p.set('dir', SORT_DIR);
   }
   if (PAGE > 1) p.set('page', String(PAGE));
+  if (PAGE_SIZE !== PAGE_SIZE_DEFAULT) p.set('ps', String(PAGE_SIZE));
   const qs = p.toString();
   history.replaceState(null, '', qs ? '#' + qs : location.pathname);
 }
@@ -355,12 +364,12 @@ function renderBarChart(containerId, items, onClick, opts = {}) {
   if (!el) return;
   if (!items.length) { el.innerHTML = '<p class="hint">No data.</p>'; return; }
 
-  const W = opts.width || 760;
-  const ROW_H = opts.rowH || 26;
-  const M_LEFT = opts.leftPad || 200;
-  const M_RIGHT = 64;
-  const M_TOP = 12;
-  const M_BOTTOM = 12;
+  const W = opts.width || 640;
+  const ROW_H = opts.rowH || 20;
+  const M_LEFT = opts.leftPad || 170;
+  const M_RIGHT = 56;
+  const M_TOP = 6;
+  const M_BOTTOM = 6;
   const chartW = W - M_LEFT - M_RIGHT;
   const H = M_TOP + M_BOTTOM + items.length * ROW_H;
   const maxV = Math.max(...items.map(i => i.value));
@@ -389,9 +398,9 @@ function renderColumnChart(containerId, items, onClick, opts = {}) {
   const el = document.getElementById(containerId);
   if (!el) return;
   if (!items.length) { el.innerHTML = '<p class="hint">No data.</p>'; return; }
-  const W = opts.width || 920;
-  const H = opts.height || 280;
-  const M_LEFT = 44, M_RIGHT = 14, M_TOP = 16, M_BOTTOM = 36;
+  const W = opts.width || 720;
+  const H = opts.height || 200;
+  const M_LEFT = 40, M_RIGHT = 10, M_TOP = 10, M_BOTTOM = 26;
   const chartW = W - M_LEFT - M_RIGHT;
   const chartH = H - M_TOP - M_BOTTOM;
   const maxV = Math.max(...items.map(i => i.value));
@@ -429,8 +438,8 @@ function renderStackedColumnChart(containerId, years, byYearBySeverity, onClick)
   const el = document.getElementById(containerId);
   if (!el) return;
   const sevOrder = ['Critical','High','Medium','Low','Info'];
-  const W = 920, H = 280;
-  const M_LEFT = 44, M_RIGHT = 130, M_TOP = 16, M_BOTTOM = 36;
+  const W = 720, H = 200;
+  const M_LEFT = 40, M_RIGHT = 100, M_TOP = 10, M_BOTTOM = 26;
   const chartW = W - M_LEFT - M_RIGHT;
   const chartH = H - M_TOP - M_BOTTOM;
   const totals = years.map(y => sevOrder.reduce((a,s) => a + (byYearBySeverity[y][s] || 0), 0));
@@ -468,10 +477,10 @@ function renderStackedColumnChart(containerId, years, byYearBySeverity, onClick)
   }).join('');
   // Legend
   const legend = sevOrder.map((sev, i) => {
-    const ly = M_TOP + i * 22;
-    const lx = W - M_RIGHT + 8;
-    return `<rect x="${lx}" y="${ly}" width="14" height="14" fill="${colorForSeverity(sev)}"/>
-      <text class="row-label" x="${lx + 20}" y="${ly + 11}">${sev}</text>`;
+    const ly = M_TOP + i * 18;
+    const lx = W - M_RIGHT + 6;
+    return `<rect x="${lx}" y="${ly}" width="11" height="11" fill="${colorForSeverity(sev)}"/>
+      <text class="row-label" x="${lx + 16}" y="${ly + 9}">${sev}</text>`;
   }).join('');
 
   el.innerHTML = svg(W, H, grid.join('') + bars + legend);
@@ -600,7 +609,36 @@ async function init() {
     populateOptions(els.vector,
       uniqSorted(DATA.map(e => e.attack_vector).filter(Boolean)));
 
+    // Populate page-size selector (URL state may already have set PAGE_SIZE)
+    for (const n of PAGE_SIZE_OPTIONS) {
+      const opt = document.createElement('option');
+      opt.value = String(n);
+      opt.textContent = n.toLocaleString();
+      els.pageSize.appendChild(opt);
+    }
+
     readFiltersFromUrl();
+    els.pageSize.value = String(PAGE_SIZE);
+    els.pageSize.addEventListener('change', () => {
+      const n = parseInt(els.pageSize.value, 10);
+      if (PAGE_SIZE_OPTIONS.includes(n)) {
+        PAGE_SIZE = n;
+        PAGE = 1;
+        rerender();
+      }
+    });
+
+    // Back-to-top FAB
+    if (els.backToTop) {
+      window.addEventListener('scroll', () => {
+        els.backToTop.classList.toggle('visible', window.scrollY > 600);
+      }, { passive: true });
+      els.backToTop.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
     renderStats(DATA);
     renderAllCharts();
 

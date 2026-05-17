@@ -173,30 +173,60 @@ section.stats + .section-head { margin-top: 2rem; }
   color: var(--muted);
 }
 
+/* ----------------------------- CTA row ----------------------------- */
+.cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.2rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: white;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cta:hover { background: var(--fg); color: var(--bg-elev); text-decoration: none; }
+.cta-hint { color: var(--fg-soft); font-size: 0.88rem; }
+
 /* ----------------------------- Charts ----------------------------- */
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 0.85rem;
 }
 .chart-card {
   margin: 0;
   background: var(--bg-elev);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1rem 1.1rem 1.25rem;
+  padding: 0.75rem 0.9rem 0.9rem;
   box-shadow: var(--shadow);
 }
-.chart-card.chart-wide { grid-column: 1 / -1; }
+/* Default: wide charts span two columns on medium+ screens, full on small */
+.chart-card.chart-wide { grid-column: span 2; }
+@media (max-width: 760px) { .chart-card.chart-wide { grid-column: auto; } }
 .chart-card figcaption {
   font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+  font-size: 0.88rem;
+  margin-bottom: 0.4rem;
   color: var(--fg);
 }
 .chart {
   width: 100%;
-  min-height: 220px;
+  min-height: 140px;
   position: relative;
 }
 .chart svg { display: block; width: 100%; height: auto; }
