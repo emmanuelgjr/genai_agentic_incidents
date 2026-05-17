@@ -384,13 +384,13 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 254 | 2026-05-01 | [`INC-02000`](docs/incidents/2026.md#inc-02000) | US Government Flags Anthropic's Mythos AI as National Security Risk | Critical | LLM03 | ASI04 |  |
 | 255 | 2026-05-01 | [`INC-02025`](docs/incidents/2026.md#inc-02025) | US Navy Deploys AI to Accelerate Mine Detection in Strait of Hormuz | Critical | LLM05 | ASI05, ASI10 |  |
 | 256 | 2026-05-01 | [`INC-02041`](docs/incidents/2026.md#inc-02041) | Vietnamese Police Warn Parents of AI Image Processing Risks for Children | High | LLM09 | ASI09 |  |
-| 257 | 2026-05 | [`INC-00015`](docs/incidents/2026.md#inc-00015) | A remote code execution vulnerability exists in Code Runner MCP Server when run with the --transport http opt… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5029` |
+| 257 | 2026-05 | [`INC-00015`](docs/incidents/2026.md#inc-00015) | A remote code execution vulnerability exists in Code Runner MCP Server when run with the --transport http opt… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5029` |
 | 258 | 2026-05 | [`INC-00020`](docs/incidents/2026.md#inc-00020) | A Server-Side Request Forgery (SSRF) vulnerability exists in MLflow versions prior to 3.9.0. | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-2393` |
 | 259 | 2026-05 | [`INC-00025`](docs/incidents/2026.md#inc-00025) | A vulnerability in the `_create_model_version()` handler of `mlflow/server/handlers.py` in mlflow/mlflow vers… | High | LLM03 | ASI04 | `CVE-2026-2614` |
 | 260 | 2026-05 | [`INC-00572`](docs/incidents/2026.md#inc-00572) | aiwaves-cn agents — Vulnerability (CVE-2026-8319) | Medium | LLM03 | ASI04 | `CVE-2026-8319` |
 | 261 | 2026-05 | [`INC-00584`](docs/incidents/2026.md#inc-00584) | An issue in Open Source Kubectl MCP Server v1.1.1 allows attackers to execute arbitrary code on a victim syst… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-65719` |
 | 262 | 2026-05 | [`INC-00634`](docs/incidents/2026.md#inc-00634) | AnythingLLM — Vulnerability (CVE-2026-42456) | Medium | LLM03 | ASI04 | `CVE-2026-42456` |
-| 263 | 2026-05 | [`INC-00644`](docs/incidents/2026.md#inc-00644) | Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader      Versions Affected: be… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42027` |
+| 263 | 2026-05 | [`INC-00644`](docs/incidents/2026.md#inc-00644) | Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader Versions Affected: before… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42027` |
 | 264 | 2026-05 | [`INC-00742`](docs/incidents/2026.md#inc-00742) | chatchat-space Langchain-Chatchat — Auth Bypass (CVE-2026-7844) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-7844` (+3) |
 | 265 | 2026-05 | [`INC-00756`](docs/incidents/2026.md#inc-00756) | ChatGPTNextWeb NextChat — Vulnerability (CVE-2026-7643) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-7177` (+3) |
 | 266 | 2026-05 | [`INC-00800`](docs/incidents/2026.md#inc-00800) | ciguard — Vulnerability (CVE-2026-44220) | Low | LLM03 | ASI04 | `CVE-2026-44220` |
@@ -420,12 +420,12 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 290 | 2026-05 | [`INC-01187`](docs/incidents/2026.md#inc-01187) | Improper neutralization of special elements in output used by a downstream component ('injection') in M365 Co… | High | LLM03 | ASI04 | `CVE-2026-26164` (+2) |
 | 291 | 2026-05 | [`INC-01188`](docs/incidents/2026.md#inc-01188) | Improper neutralization of special elements used in a command ('command injection') in Copilot Chat (Microsof… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-59252` (+12) |
 | 292 | 2026-05 | [`INC-01195`](docs/incidents/2026.md#inc-01195) | In Jupyter Notebook versions 7.0.0 through 7.5.5, JupyterLab versions 4.5.6 and earlier, and the correspondin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40171` |
-| 293 | 2026-05 | [`INC-01206`](docs/incidents/2026.md#inc-01206) | In the Linux kernel, the following vulnerability has been resolved:  ext4: handle wraparound when searching f… | Critical | LLM03 | ASI04 | `CVE-2026-43067` |
-| 294 | 2026-05 | [`INC-01207`](docs/incidents/2026.md#inc-01207) | In the Linux kernel, the following vulnerability has been resolved:  fs/smb/client: fix out-of-bounds read in… | High | LLM03 | ASI04 | `CVE-2026-43112` |
-| 295 | 2026-05 | [`INC-01209`](docs/incidents/2026.md#inc-01209) | In the Linux kernel, the following vulnerability has been resolved:  iommupt: Fix short gather if the unmap g… | High | LLM03 | ASI04 | `CVE-2026-31735` |
-| 296 | 2026-05 | [`INC-01210`](docs/incidents/2026.md#inc-01210) | In the Linux kernel, the following vulnerability has been resolved:  misc: fastrpc: possible double-free of c… | High | LLM03 | ASI04 | `CVE-2026-31730` |
-| 297 | 2026-05 | [`INC-01211`](docs/incidents/2026.md#inc-01211) | In the Linux kernel, the following vulnerability has been resolved:  net/ipv6: ioam6: prevent schema length w… | Critical | LLM03 | ASI04 | `CVE-2026-43341` |
-| 298 | 2026-05 | [`INC-01214`](docs/incidents/2026.md#inc-01214) | In the Linux kernel, the following vulnerability has been resolved:  nfsd: fix nfs4_file refcount leak in nfs… | Medium | LLM03 | ASI04 | `CVE-2026-43193` |
+| 293 | 2026-05 | [`INC-01206`](docs/incidents/2026.md#inc-01206) | In the Linux kernel, the following vulnerability has been resolved: ext4: handle wraparound when searching fo… | Critical | LLM03 | ASI04 | `CVE-2026-43067` |
+| 294 | 2026-05 | [`INC-01207`](docs/incidents/2026.md#inc-01207) | In the Linux kernel, the following vulnerability has been resolved: fs/smb/client: fix out-of-bounds read in… | High | LLM03 | ASI04 | `CVE-2026-43112` |
+| 295 | 2026-05 | [`INC-01209`](docs/incidents/2026.md#inc-01209) | In the Linux kernel, the following vulnerability has been resolved: iommupt: Fix short gather if the unmap go… | High | LLM03 | ASI04 | `CVE-2026-31735` |
+| 296 | 2026-05 | [`INC-01210`](docs/incidents/2026.md#inc-01210) | In the Linux kernel, the following vulnerability has been resolved: misc: fastrpc: possible double-free of cc… | High | LLM03 | ASI04 | `CVE-2026-31730` |
+| 297 | 2026-05 | [`INC-01211`](docs/incidents/2026.md#inc-01211) | In the Linux kernel, the following vulnerability has been resolved: net/ipv6: ioam6: prevent schema length wr… | Critical | LLM03 | ASI04 | `CVE-2026-43341` |
+| 298 | 2026-05 | [`INC-01214`](docs/incidents/2026.md#inc-01214) | In the Linux kernel, the following vulnerability has been resolved: nfsd: fix nfs4_file refcount leak in nfsd… | Medium | LLM03 | ASI04 | `CVE-2026-43193` |
 | 299 | 2026-05 | [`INC-01219`](docs/incidents/2026.md#inc-01219) | In versions 2.1.63 through 2.1.83 of Claude Code, the folder trust determination logic used the git worktree… | High | LLM03 | ASI04 | `CVE-2026-40068` |
 | 300 | 2026-05 | [`INC-01277`](docs/incidents/2026.md#inc-01277) | JunoClaw — Vulnerability (CVE-2026-43989) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-43989` (+4) |
 | 301 | 2026-05 | [`INC-01302`](docs/incidents/2026.md#inc-01302) | Langflow — Path Traversal (CVE-2026-42048) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42048` |
@@ -977,14 +977,14 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 847 | 2026-04 | [`INC-01198`](docs/incidents/2026.md#inc-01198) | In OpenAirInterface V2.2.0 AMF, Out of sequence messages causes incorrect state transition during UE registra… | Critical | LLM03 | ASI04 | `CVE-2026-30079` |
 | 848 | 2026-04 | [`INC-01199`](docs/incidents/2026.md#inc-01199) | In Splunk MCP Server app versions below 1.0.3 , a user who holds a role with access to the Splunk `_internal`… | High | LLM03 | ASI04 | `CVE-2026-20205` |
 | 849 | 2026-04 | [`INC-01200`](docs/incidents/2026.md#inc-01200) | In Spring AI, having access to a shared environment can expose the ONNX model used by the application. | Medium | LLM03 | ASI04 | `CVE-2026-40979` |
-| 850 | 2026-04 | [`INC-01202`](docs/incidents/2026.md#inc-01202) | In the Linux kernel, the following vulnerability has been resolved:  bnge: return after auxiliary_device_unin… | Medium | LLM03 | ASI04 | `CVE-2026-31621` |
-| 851 | 2026-04 | [`INC-01203`](docs/incidents/2026.md#inc-01203) | In the Linux kernel, the following vulnerability has been resolved:  dmaengine: idxd: fix possible wrong desc… | Critical | LLM03 | ASI04 | `CVE-2026-31436` |
-| 852 | 2026-04 | [`INC-01204`](docs/incidents/2026.md#inc-01204) | In the Linux kernel, the following vulnerability has been resolved:  dpaa2-switch: Fix interrupt storm after… | High | LLM03 | ASI04 | `CVE-2026-23422` |
-| 853 | 2026-04 | [`INC-01205`](docs/incidents/2026.md#inc-01205) | In the Linux kernel, the following vulnerability has been resolved:  EDAC/mc: Fix error path ordering in edac… | Medium | LLM03 | ASI04 | `CVE-2026-31689` |
-| 854 | 2026-04 | [`INC-01208`](docs/incidents/2026.md#inc-01208) | In the Linux kernel, the following vulnerability has been resolved:  futex: Require sys_futex_requeue() to ha… | High | LLM03 | ASI04 | `CVE-2026-31554` |
-| 855 | 2026-04 | [`INC-01212`](docs/incidents/2026.md#inc-01212) | In the Linux kernel, the following vulnerability has been resolved:  net/smc: fix double-free of smc_spd_priv… | High | LLM03 | ASI04 | `CVE-2026-31507` |
-| 856 | 2026-04 | [`INC-01213`](docs/incidents/2026.md#inc-01213) | In the Linux kernel, the following vulnerability has been resolved:  net: fix fanout UAF in packet_release()… | High | LLM03 | ASI04 | `CVE-2026-31504` |
-| 857 | 2026-04 | [`INC-01217`](docs/incidents/2026.md#inc-01217) | In the Linux kernel, the following vulnerability has been resolved:  wifi: wlcore: Return -ENOMEM instead of… | High | LLM03 | ASI04 | `CVE-2026-31552` |
+| 850 | 2026-04 | [`INC-01202`](docs/incidents/2026.md#inc-01202) | In the Linux kernel, the following vulnerability has been resolved: bnge: return after auxiliary_device_unini… | Medium | LLM03 | ASI04 | `CVE-2026-31621` |
+| 851 | 2026-04 | [`INC-01203`](docs/incidents/2026.md#inc-01203) | In the Linux kernel, the following vulnerability has been resolved: dmaengine: idxd: fix possible wrong descr… | Critical | LLM03 | ASI04 | `CVE-2026-31436` |
+| 852 | 2026-04 | [`INC-01204`](docs/incidents/2026.md#inc-01204) | In the Linux kernel, the following vulnerability has been resolved: dpaa2-switch: Fix interrupt storm after r… | High | LLM03 | ASI04 | `CVE-2026-23422` |
+| 853 | 2026-04 | [`INC-01205`](docs/incidents/2026.md#inc-01205) | In the Linux kernel, the following vulnerability has been resolved: EDAC/mc: Fix error path ordering in edac_… | Medium | LLM03 | ASI04 | `CVE-2026-31689` |
+| 854 | 2026-04 | [`INC-01208`](docs/incidents/2026.md#inc-01208) | In the Linux kernel, the following vulnerability has been resolved: futex: Require sys_futex_requeue() to hav… | High | LLM03 | ASI04 | `CVE-2026-31554` |
+| 855 | 2026-04 | [`INC-01212`](docs/incidents/2026.md#inc-01212) | In the Linux kernel, the following vulnerability has been resolved: net/smc: fix double-free of smc_spd_priv… | High | LLM03 | ASI04 | `CVE-2026-31507` |
+| 856 | 2026-04 | [`INC-01213`](docs/incidents/2026.md#inc-01213) | In the Linux kernel, the following vulnerability has been resolved: net: fix fanout UAF in packet_release() v… | High | LLM03 | ASI04 | `CVE-2026-31504` |
+| 857 | 2026-04 | [`INC-01217`](docs/incidents/2026.md#inc-01217) | In the Linux kernel, the following vulnerability has been resolved: wifi: wlcore: Return -ENOMEM instead of -… | High | LLM03 | ASI04 | `CVE-2026-31552` |
 | 858 | 2026-04 | [`INC-01274`](docs/incidents/2026.md#inc-01274) | JoeCastrom mcp-chat-studio — Ssrf (CVE-2026-7147) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7147` |
 | 859 | 2026-04 | [`INC-01286`](docs/incidents/2026.md#inc-01286) | KubeAI — Vulnerability (CVE-2026-34940) | High | LLM03 | ASI04 | `CVE-2026-34940` |
 | 860 | 2026-04 | [`INC-01293`](docs/incidents/2026.md#inc-01293) | LangChain — Ssrf (CVE-2026-41481) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41481` |
@@ -1644,8 +1644,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 1,514 | 2026-03 | [`INC-01193`](docs/incidents/2026.md#inc-01193) | In its design for automatic terminal command execution, HAI Build Code Generator offers two options: Execute… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30308` |
 | 1,515 | 2026-03 | [`INC-01194`](docs/incidents/2026.md#inc-01194) | In its design for automatic terminal command execution, Sixth offers two options: Execute safe commands and E… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30310` |
 | 1,516 | 2026-03 | [`INC-01201`](docs/incidents/2026.md#inc-01201) | In the latest version of mlflow/mlflow, when the `basic-auth` app is enabled, tracing and assessment endpoint… | High | LLM03 | ASI04 | `CVE-2025-15381` |
-| 1,517 | 2026-03 | [`INC-01216`](docs/incidents/2026.md#inc-01216) | In the Linux kernel, the following vulnerability has been resolved:  tracing: Add NULL pointer check to trigg… | Medium | LLM03 | ASI04 | `CVE-2026-23309` |
-| 1,518 | 2026-03 | [`INC-01218`](docs/incidents/2026.md#inc-01218) | In the Linux kernel, the following vulnerability has been resolved:  xfs: check for deleted cursors when reva… | Medium | LLM03 | ASI04 | `CVE-2026-23249` |
+| 1,517 | 2026-03 | [`INC-01216`](docs/incidents/2026.md#inc-01216) | In the Linux kernel, the following vulnerability has been resolved: tracing: Add NULL pointer check to trigge… | Medium | LLM03 | ASI04 | `CVE-2026-23309` |
+| 1,518 | 2026-03 | [`INC-01218`](docs/incidents/2026.md#inc-01218) | In the Linux kernel, the following vulnerability has been resolved: xfs: check for deleted cursors when reval… | Medium | LLM03 | ASI04 | `CVE-2026-23249` |
 | 1,519 | 2026-03 | [`INC-01282`](docs/incidents/2026.md#inc-01282) | Keystone — Auth Bypass (CVE-2026-33326) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33326` |
 | 1,520 | 2026-03 | [`INC-01288`](docs/incidents/2026.md#inc-01288) | LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs | Critical | LLM01, LLM06, LLM07 | ASI01, ASI02, ASI03, ASI06 |  |
 | 1,521 | 2026-03 | [`INC-01289`](docs/incidents/2026.md#inc-01289) | LangBot — Xss (CVE-2026-28509) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28509` |
@@ -1964,7 +1964,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 1,834 | 2026-02-03 | [`INC-01599`](docs/incidents/2026.md#inc-01599) | OpenClaw Command & Control via Prompt Injection | High |  |  |  |
 | 1,835 | 2026-02-01 | [`INC-01365`](docs/incidents/2026.md#inc-01365) | Malicious OpenClaw Skills Reportedly Delivered AMOS Stealer and Exfiltrated Credentials via ClawHub | Critical | LLM02, LLM03, LLM04, LLM09 | ASI02, ASI03, ASI04, ASI06, ASI09 |  |
 | 1,836 | 2026-02-01 | [`INC-01589`](docs/incidents/2026.md#inc-01589) | OpenClaw 1-Click Remote Code Execution | Critical |  |  |  |
-| 1,837 | 2026-02 | [`INC-00022`](docs/incidents/2026.md#inc-00022) | A vulnerability in Google Cloud Vertex AI Workbench from 7/21/2025 to 01/30/2026 allows an attacker to exfilt… | Medium | LLM03 | ASI04 | `CVE-2026-2244` |
+| 1,837 | 2026-02 | [`INC-00022`](docs/incidents/2026.md#inc-00022) | A vulnerability in Google Cloud Vertex AI Workbench from 7/21/2025 to 01/30/2026 allows an attacker to exfilt… | Medium | LLM03 | ASI04 | `CVE-2026-2244` |
 | 1,838 | 2026-02 | [`INC-00048`](docs/incidents/2026.md#inc-00048) | Agenta — Sandbox Escape (CVE-2026-27952) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27952` |
 | 1,839 | 2026-02 | [`INC-00049`](docs/incidents/2026.md#inc-00049) | Agenta — Vulnerability (CVE-2026-27961) | High | LLM03 | ASI04 | `CVE-2026-27961` |
 | 1,840 | 2026-02 | [`INC-00198`](docs/incidents/2026.md#inc-00198) | AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies | High | LLM01, LLM04 | ASI01, ASI06, ASI09 |  |
@@ -2000,7 +2000,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 1,870 | 2026-02 | [`INC-01157`](docs/incidents/2026.md#inc-01157) | HackerBot Claw campaign: autonomous AI agent probes CI/CD across open-source repos | High | LLM03, LLM06 | ASI01, ASI02, ASI10 |  |
 | 1,871 | 2026-02 | [`INC-01166`](docs/incidents/2026.md#inc-01166) | HuggingFace Transformers RCE | High | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2026-1839` |
 | 1,872 | 2026-02 | [`INC-01196`](docs/incidents/2026.md#inc-01196) | In mlflow version 2.20.3, the temporary directory used for creating Python virtual environments is assigned i… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-10279` |
-| 1,873 | 2026-02 | [`INC-01215`](docs/incidents/2026.md#inc-01215) | In the Linux kernel, the following vulnerability has been resolved:  rust_binder: correctly handle FDA object… | High | LLM03 | ASI04 | `CVE-2026-23194` |
+| 1,873 | 2026-02 | [`INC-01215`](docs/incidents/2026.md#inc-01215) | In the Linux kernel, the following vulnerability has been resolved: rust_binder: correctly handle FDA objects… | High | LLM03 | ASI04 | `CVE-2026-23194` |
 | 1,874 | 2026-02 | [`INC-01292`](docs/incidents/2026.md#inc-01292) | LangChain — Ssrf (CVE-2026-26013) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26013` |
 | 1,875 | 2026-02 | [`INC-01295`](docs/incidents/2026.md#inc-01295) | LangChain — Vulnerability (CVE-2026-26019) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26019`, `CVE-2026-27795` |
 | 1,876 | 2026-02 | [`INC-01297`](docs/incidents/2026.md#inc-01297) | Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966) | Critical | LLM01, LLM05 | ASI01, ASI02, ASI05 | `CVE-2026-27966` |
@@ -2044,7 +2044,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 1,914 | 2026-02 | [`INC-01773`](docs/incidents/2026.md#inc-01773) | SillyTavern — Ssrf (CVE-2026-26286) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26286` |
 | 1,915 | 2026-02 | [`INC-01777`](docs/incidents/2026.md#inc-01777) | Skill Scanner — Prompt Injection (CVE-2026-26057) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-26057` |
 | 1,916 | 2026-02 | [`INC-01810`](docs/incidents/2026.md#inc-01810) | Stored Cross-Site Scripting (XSS) in the _genai/_evals_visualization component of Google Cloud Vertex AI SDK… | Medium | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2026-2472`, `CVE-2026-2473` |
-| 1,917 | 2026-02 | [`INC-01823`](docs/incidents/2026.md#inc-01823) | Summary  A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the AI Playground's OAuth cal… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1721` |
+| 1,917 | 2026-02 | [`INC-01823`](docs/incidents/2026.md#inc-01823) | Summary A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the AI Playground's OAuth call… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1721` |
 | 1,918 | 2026-02 | [`INC-01852`](docs/incidents/2026.md#inc-01852) | TensorFlow HDF5 Library Uncontrolled Search Path Element Local Privilege Escalation Vulnerability. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-2492` |
 | 1,919 | 2026-02 | [`INC-01884`](docs/incidents/2026.md#inc-01884) | The Amazon SageMaker Python SDK before v3.2.0 and v2.256.0 includes the ModelBuilder HMAC signing key in the… | High | LLM03 | ASI04 | `CVE-2026-1777`, `CVE-2026-1778` |
 | 1,920 | 2026-02 | [`INC-01895`](docs/incidents/2026.md#inc-01895) | The Python code being run by 'runPython' or 'runPythonAsync' is not isolated from the rest of the JS code, al… | Medium | LLM03 | ASI04 | `CVE-2026-25905` |
@@ -2321,8 +2321,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,191 | 2025-12 | [`INC-02718`](docs/incidents/2025.md#inc-02718) | Hugging Face Transformers X-CLIP Checkpoint Conversion Deserialization of Untrusted Data Remote Code Executio… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-14929` |
 | 2,192 | 2025-12 | [`INC-02722`](docs/incidents/2025.md#inc-02722) | IBM UCD - IBM DevOps Deploy 8.1 through 8.1.2.3 could allow an authenticated user with LLM integration config… | Medium | LLM03 | ASI04 | `CVE-2025-14148` |
 | 2,193 | 2025-12 | [`INC-02738`](docs/incidents/2025.md#inc-02738) | In Splunk MCP Server app versions below 0.2.4, a user with access to the "run_splunk_query" Model Context Pro… | Medium | LLM03 | ASI04 | `CVE-2025-20381` |
-| 2,194 | 2025-12 | [`INC-02741`](docs/incidents/2025.md#inc-02741) | In the Linux kernel, the following vulnerability has been resolved:  Bluetooth: hci_sync: Fix UAF in hci_disc… | Medium | LLM03 | ASI04 | `CVE-2023-53762` |
-| 2,195 | 2025-12 | [`INC-02751`](docs/incidents/2025.md#inc-02751) | In the Linux kernel, the following vulnerability has been resolved:  kcm: Fix memory leak in error path of kc… | Medium | LLM03 | ASI04 | `CVE-2023-54112` |
+| 2,194 | 2025-12 | [`INC-02741`](docs/incidents/2025.md#inc-02741) | In the Linux kernel, the following vulnerability has been resolved: Bluetooth: hci_sync: Fix UAF in hci_disco… | Medium | LLM03 | ASI04 | `CVE-2023-53762` |
+| 2,195 | 2025-12 | [`INC-02751`](docs/incidents/2025.md#inc-02751) | In the Linux kernel, the following vulnerability has been resolved: kcm: Fix memory leak in error path of kcm… | Medium | LLM03 | ASI04 | `CVE-2023-54112` |
 | 2,196 | 2025-12 | [`INC-02755`](docs/incidents/2025.md#inc-02755) | Incorrect access control in the /api/v1/conversations/*/messages API of GT Edge AI Platform before v2.0.10-de… | High | LLM03 | ASI03, ASI04 | `CVE-2025-63664` |
 | 2,197 | 2025-12 | [`INC-02763`](docs/incidents/2025.md#inc-02763) | Insertion of Sensitive Information Into Sent Data vulnerability in WP Messiah WP AI CoPilot ai-co-pilot-for-w… | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2025-62994`, `CVE-2025-62998` |
 | 2,198 | 2025-12 | [`INC-02795`](docs/incidents/2025.md#inc-02795) | Koi AI Discovers Cursor/Windsurf/Antigravity Recommend Malware | High | LLM03 | ASI04 |  |
@@ -2409,8 +2409,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,279 | 2025-11 | [`INC-02729`](docs/incidents/2025.md#inc-02729) | Improper limitation of a pathname to a restricted directory ('path traversal') in Visual Studio Code CoPilot… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-62449` |
 | 2,280 | 2025-11 | [`INC-02730`](docs/incidents/2025.md#inc-02730) | Improper neutralization of special elements used in an OS command ('command injection') in Cursor allows an u… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-62354` |
 | 2,281 | 2025-11 | [`INC-02732`](docs/incidents/2025.md#inc-02732) | Improper validation of generative ai output in GitHub Copilot and Visual Studio Code allows an authorized att… | Medium | LLM03 | ASI04 | `CVE-2025-62453` |
-| 2,282 | 2025-11 | [`INC-02743`](docs/incidents/2025.md#inc-02743) | In the Linux kernel, the following vulnerability has been resolved:  drm/amd/display: Add NULL pointer checks… | Medium | LLM03 | ASI04 | `CVE-2024-50177` (+3) |
-| 2,283 | 2025-11 | [`INC-02746`](docs/incidents/2025.md#inc-02746) | In the Linux kernel, the following vulnerability has been resolved:  drm/vmwgfx: Fix a null-ptr access in the… | Medium | LLM03 | ASI04 | `CVE-2024-35810`, `CVE-2025-40110` |
+| 2,282 | 2025-11 | [`INC-02743`](docs/incidents/2025.md#inc-02743) | In the Linux kernel, the following vulnerability has been resolved: drm/amd/display: Add NULL pointer checks… | Medium | LLM03 | ASI04 | `CVE-2024-50177` (+3) |
+| 2,283 | 2025-11 | [`INC-02746`](docs/incidents/2025.md#inc-02746) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Fix a null-ptr access in the… | Medium | LLM03 | ASI04 | `CVE-2024-35810`, `CVE-2025-40110` |
 | 2,284 | 2025-11 | [`INC-02762`](docs/incidents/2025.md#inc-02762) | Insertion of Sensitive Information Into Sent Data vulnerability in Ays Pro AI ChatBot with ChatGPT and Conten… | High | LLM02, LLM03 | ASI02, ASI04 | `CVE-2025-62039` |
 | 2,285 | 2025-11 | [`INC-02801`](docs/incidents/2025.md#inc-02801) | LangChain — Vulnerability (CVE-2025-65106) | Medium | LLM03 | ASI04 | `CVE-2025-65106` |
 | 2,286 | 2025-11 | [`INC-02809`](docs/incidents/2025.md#inc-02809) | Langfuse — Vulnerability (CVE-2025-64504) | Medium | LLM03 | ASI04 | `CVE-2025-64504` |
@@ -2503,7 +2503,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,373 | 2025-10 | [`INC-02592`](docs/incidents/2025.md#inc-02592) | Framelink Figma MCP RCE | Critical | LLM03, LLM05 | ASI02, ASI04, ASI05 | `CVE-2025-15061`, `CVE-2025-53967` |
 | 2,374 | 2025-10 | [`INC-02691`](docs/incidents/2025.md#inc-02691) | HiddenLayer Bypass of OpenAI Guardrails (Self-Policing LLM) | High | LLM01, LLM07 | ASI01 |  |
 | 2,375 | 2025-10 | [`INC-02705`](docs/incidents/2025.md#inc-02705) | Hugging Face Smolagents version 1.20.0 contains an XPath injection vulnerability in the search_item_ctrl_f fu… | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2025-11844` |
-| 2,376 | 2025-10 | [`INC-02747`](docs/incidents/2025.md#inc-02747) | In the Linux kernel, the following vulnerability has been resolved:  drm/vmwgfx: Validate the box size for th… | Medium | LLM03 | ASI04 | `CVE-2022-50440` |
+| 2,376 | 2025-10 | [`INC-02747`](docs/incidents/2025.md#inc-02747) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Validate the box size for the… | Medium | LLM03 | ASI04 | `CVE-2022-50440` |
 | 2,377 | 2025-10 | [`INC-02782`](docs/incidents/2025.md#inc-02782) | Jenkins MCP Server Plugin 0.84.v50ca_24ef83f2 and earlier does not perform permission checks in multiple MCP… | Medium | LLM03 | ASI04 | `CVE-2025-64132` |
 | 2,378 | 2025-10 | [`INC-02799`](docs/incidents/2025.md#inc-02799) | LangBot — Vulnerability (CVE-2025-59835) | Medium | LLM03 | ASI04 | `CVE-2025-59835` |
 | 2,379 | 2025-10 | [`INC-02819`](docs/incidents/2025.md#inc-02819) | LayerX ChatGPT Atlas Tainted Memories Vulnerability | Critical | LLM01 | ASI06 |  |
@@ -2534,7 +2534,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,404 | 2025-10 | [`INC-03328`](docs/incidents/2025.md#inc-03328) | Veracode 2025 GenAI Code Security Report: 45% Fail Rate | High | LLM05 | ASI04 |  |
 | 2,405 | 2025-10 | [`INC-03339`](docs/incidents/2025.md#inc-03339) | vLLM — Auth Bypass (CVE-2025-59425) | High | LLM03 | ASI03, ASI04 | `CVE-2025-59425` |
 | 2,406 | 2025-09-29 | [`INC-02534`](docs/incidents/2025.md#inc-02534) | Donald Trump Reportedly Posts Purported AI-Modified Video of Chuck Schumer and Hakeem Jeffries During U.S. Go… | High | LLM09 | ASI09 |  |
-| 2,407 | 2025-09-29 | [`INC-02635`](docs/incidents/2025.md#inc-02635) | Google Gemini Reportedly Reinforced Delusions,  Allegedly Contributing to Florida User&#x27;s Near-Harm Episo… | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 2,407 | 2025-09-29 | [`INC-02635`](docs/incidents/2025.md#inc-02635) | Google Gemini Reportedly Reinforced Delusions, Allegedly Contributing to Florida User&#x27;s Near-Harm Episod… | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
 | 2,408 | 2025-09-29 | [`INC-03384`](docs/incidents/2025.md#inc-03384) | YouTube Channel Reportedly Posts Purported Deepfake Video of Rajat Sharma Announcing India-Bangladesh Conflict | High | LLM09 | ASI09 |  |
 | 2,409 | 2025-09-26 | [`INC-02615`](docs/incidents/2025.md#inc-02615) | Gold Coast Man Reportedly Ordered to Pay $343,500 After Posting Purported Deepfake Pornographic Images of Aus… | High | LLM09 | ASI09 |  |
 | 2,410 | 2025-09-20 | [`INC-02956`](docs/incidents/2025.md#inc-02956) | Nomi AI Companion Allegedly Directs Australian User to Stab Father and Engages in Harmful Role-Play | Critical | LLM05, LLM09 | ASI09 |  |
@@ -2580,8 +2580,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,450 | 2025-09 | [`INC-02636`](docs/incidents/2025.md#inc-02636) | Google Gemini Trifecta | Medium | LLM01 | ASI01, ASI02 |  |
 | 2,451 | 2025-09 | [`INC-02684`](docs/incidents/2025.md#inc-02684) | hackmd-mcp — Ssrf (CVE-2025-59155) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-59155` |
 | 2,452 | 2025-09 | [`INC-02737`](docs/incidents/2025.md#inc-02737) | In PyTorch through 2.6.0, when eager is used, nn.PairwiseDistance(p=2) produces incorrect results. | Medium | LLM03 | ASI04 | `CVE-2025-46148` (+4) |
-| 2,453 | 2025-09 | [`INC-02742`](docs/incidents/2025.md#inc-02742) | In the Linux kernel, the following vulnerability has been resolved:  Bluetooth: use RCU for hci_conn_params a… | High | LLM03 | ASI04 | `CVE-2023-53252` |
-| 2,454 | 2025-09 | [`INC-02745`](docs/incidents/2025.md#inc-02745) | In the Linux kernel, the following vulnerability has been resolved:  drm/mediatek: Add error handling for old… | Medium | LLM03 | ASI04 | `CVE-2025-39807` |
+| 2,453 | 2025-09 | [`INC-02742`](docs/incidents/2025.md#inc-02742) | In the Linux kernel, the following vulnerability has been resolved: Bluetooth: use RCU for hci_conn_params an… | High | LLM03 | ASI04 | `CVE-2023-53252` |
+| 2,454 | 2025-09 | [`INC-02745`](docs/incidents/2025.md#inc-02745) | In the Linux kernel, the following vulnerability has been resolved: drm/mediatek: Add error handling for old… | Medium | LLM03 | ASI04 | `CVE-2025-39807` |
 | 2,455 | 2025-09 | [`INC-02753`](docs/incidents/2025.md#inc-02753) | In writeToParcel of CursorWindow.cpp, there is a possible out of bounds read due to uninitialized data. | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2025-26448` |
 | 2,456 | 2025-09 | [`INC-02754`](docs/incidents/2025.md#inc-02754) | Incomplete validation of dunder attributes allows an attacker to escape from the Local Python execution envir… | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2025-9959` |
 | 2,457 | 2025-09 | [`INC-02794`](docs/incidents/2025.md#inc-02794) | Knostic Shadow AI Enterprise Leak Findings | High | LLM02 | ASI09 |  |
@@ -2827,7 +2827,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,697 | 2025-06 | [`INC-02432`](docs/incidents/2025.md#inc-02432) | Cisco Study: 46% of Orgs Report Internal GenAI Data Leaks | Medium | LLM02 | ASI09 |  |
 | 2,698 | 2025-06 | [`INC-02435`](docs/incidents/2025.md#inc-02435) | Claude Code DNS Exfiltration (CVE-2025-55284) | High | LLM01, LLM02, LLM03 | ASI01, ASI02, ASI04 | `CVE-2025-55284` |
 | 2,699 | 2025-06 | [`INC-02439`](docs/incidents/2025.md#inc-02439) | Claude Code — Vulnerability (CVE-2025-52882) | Medium | LLM03 | ASI04 | `CVE-2025-52882` |
-| 2,700 | 2025-06 | [`INC-02511`](docs/incidents/2025.md#inc-02511) | Description:  VMware AVI Load Balancer contains an authenticated blind SQL Injection vulnerability. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-41233` |
+| 2,700 | 2025-06 | [`INC-02511`](docs/incidents/2025.md#inc-02511) | Description: VMware AVI Load Balancer contains an authenticated blind SQL Injection vulnerability. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-41233` |
 | 2,701 | 2025-06 | [`INC-02521`](docs/incidents/2025.md#inc-02521) | Dify — Xss (CVE-2025-49149) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-49149` |
 | 2,702 | 2025-06 | [`INC-02566`](docs/incidents/2025.md#inc-02566) | FastGPT — Rce (CVE-2025-49131) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-49131` |
 | 2,703 | 2025-06 | [`INC-02569`](docs/incidents/2025.md#inc-02569) | FastGPT — Xss (CVE-2025-52552) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-52552` |
@@ -2892,7 +2892,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,762 | 2025-05 | [`INC-02360`](docs/incidents/2025.md#inc-02360) | Benchmarking Poisoning Attacks against Retrieval-Augmented Generation | High | LLM04, LLM08 | ASI02 |  |
 | 2,763 | 2025-05 | [`INC-02613`](docs/incidents/2025.md#inc-02613) | GitPublic Issue Repo Hijack | Critical | LLM01, LLM02, LLM04 | ASI01, ASI02, ASI06, ASI07, ASI08, ASI09 |  |
 | 2,764 | 2025-05 | [`INC-02654`](docs/incidents/2025.md#inc-02654) | Gradio — Dos (CVE-2025-48889) | Medium | LLM03 | ASI04 | `CVE-2025-48889` |
-| 2,765 | 2025-05 | [`INC-02756`](docs/incidents/2025.md#inc-02756) | Incorrect JSON input stringification in Google's Tensorflow serving versions up to 2.18.0 allows for potentia… | High | LLM03 | ASI04 | `CVE-2025-0649` |
+| 2,765 | 2025-05 | [`INC-02756`](docs/incidents/2025.md#inc-02756) | Incorrect JSON input stringification in Google's Tensorflow serving versions up to 2.18.0 allows for potentia… | High | LLM03 | ASI04 | `CVE-2025-0649` |
 | 2,766 | 2025-05 | [`INC-02814`](docs/incidents/2025.md#inc-02814) | Langroid — Info Disclosure (CVE-2025-46726) | Critical | LLM02, LLM03 | ASI02, ASI04 | `CVE-2025-46726` |
 | 2,767 | 2025-05 | [`INC-02815`](docs/incidents/2025.md#inc-02815) | Langroid — Vulnerability (CVE-2025-46724) | Critical | LLM03 | ASI04 | `CVE-2025-46724`, `CVE-2025-46725` |
 | 2,768 | 2025-05 | [`INC-02829`](docs/incidents/2025.md#inc-02829) | LLama Factory enables fine-tuning of large language models. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-52803`, `CVE-2025-46567` |
@@ -2907,7 +2907,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,777 | 2025-05 | [`INC-03255`](docs/incidents/2025.md#inc-03255) | Terraform WinDNS Provider allows users to manage their Windows DNS server resources through Terraform. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-46735` |
 | 2,778 | 2025-05 | [`INC-03272`](docs/incidents/2025.md#inc-03272) | The ChatGPT system through 2025-03-30 performs inline rendering of SVG documents (instead of, for example, re… | Medium | LLM03 | ASI04 | `CVE-2025-43714` |
 | 2,779 | 2025-05 | [`INC-03278`](docs/incidents/2025.md#inc-03278) | The Hidden Dangers of Browsing AI Agents | High | LLM01, LLM06 | ASI01, ASI03, ASI06 |  |
-| 2,780 | 2025-05 | [`INC-03290`](docs/incidents/2025.md#inc-03290) | The OAuth implementation in workers-oauth-provider that is part of  MCP framework https://github.com/cloudfla… | Medium | LLM03 | ASI03, ASI04 | `CVE-2025-4143` |
+| 2,780 | 2025-05 | [`INC-03290`](docs/incidents/2025.md#inc-03290) | The OAuth implementation in workers-oauth-provider that is part of MCP framework https://github.com/cloudflar… | Medium | LLM03 | ASI03, ASI04 | `CVE-2025-4143` |
 | 2,781 | 2025-05 | [`INC-03299`](docs/incidents/2025.md#inc-03299) | ToolHive — Vulnerability (CVE-2025-47274) | Medium | LLM03 | ASI03, ASI04 | `CVE-2025-47274` |
 | 2,782 | 2025-05 | [`INC-03338`](docs/incidents/2025.md#inc-03338) | vLLM V0 engine multi-node ZeroMQ pickle deserialization RCE | Critical | LLM03, LLM05 | ASI04, ASI05, ASI07 | `CVE-2025-30165` |
 | 2,783 | 2025-05 | [`INC-03343`](docs/incidents/2025.md#inc-03343) | vLLM — Info Disclosure (CVE-2025-46722) | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2025-46722` |
@@ -2981,7 +2981,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,851 | 2025-04 | [`INC-02693`](docs/incidents/2025.md#inc-02693) | HiddenLayer Policy Puppetry Attack Bypasses All Major AI Models | High | LLM01, LLM07 | ASI01 |  |
 | 2,852 | 2025-04 | [`INC-02707`](docs/incidents/2025.md#inc-02707) | Hugging Face Transformers get_configuration_file ReDoS | Medium | LLM03, LLM10 | ASI04, ASI08 | `CVE-2025-3263`, `CVE-2025-3264` |
 | 2,853 | 2025-04 | [`INC-02731`](docs/incidents/2025.md#inc-02731) | Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in aitool… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-31564` |
-| 2,854 | 2025-04 | [`INC-02748`](docs/incidents/2025.md#inc-02748) | In the Linux kernel, the following vulnerability has been resolved:  drm/xe/hmm: Don't dereference struct pag… | Medium | LLM03 | ASI04 | `CVE-2025-21939` |
+| 2,854 | 2025-04 | [`INC-02748`](docs/incidents/2025.md#inc-02748) | In the Linux kernel, the following vulnerability has been resolved: drm/xe/hmm: Don't dereference struct page… | Medium | LLM03 | ASI04 | `CVE-2025-21939` |
 | 2,855 | 2025-04 | [`INC-02773`](docs/incidents/2025.md#inc-02773) | Italian privacy watchdog opens investigation into OpenAI Sora | Medium | LLM02, LLM09 | ASI03 |  |
 | 2,856 | 2025-04 | [`INC-02783`](docs/incidents/2025.md#inc-02783) | JFrog Reports 6.5x Increase in Malicious Hugging Face Models | High | LLM03, LLM05 | ASI04 |  |
 | 2,857 | 2025-04 | [`INC-02800`](docs/incidents/2025.md#inc-02800) | LangChain GmailToolkit indirect prompt injection -> code execution | Critical | LLM01, LLM05, LLM06 | ASI01, ASI02, ASI05, ASI09 | `CVE-2025-46059` |
@@ -3099,7 +3099,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,969 | 2025-03 | [`INC-02736`](docs/incidents/2025.md#inc-02736) | In mlflow/mlflow version v2.13.2, a vulnerability exists that allows the creation or renaming of an experimen… | Medium | LLM03 | ASI04 | `CVE-2024-6838` |
 | 2,970 | 2025-03 | [`INC-02739`](docs/incidents/2025.md#inc-02739) | In the `manim` plugin of binary-husky/gpt_academic, versions prior to the fix, a vulnerability exists due to… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-10954` |
 | 2,971 | 2025-03 | [`INC-02740`](docs/incidents/2025.md#inc-02740) | In the latest version of pytorch/serve, the script 'upload_results_to_s3.sh' references the S3 bucket 'benchm… | Medium | LLM03 | ASI04 | `CVE-2024-6577` |
-| 2,972 | 2025-03 | [`INC-02750`](docs/incidents/2025.md#inc-02750) | In the Linux kernel, the following vulnerability has been resolved:  fscache: Use wait_on_bit() to wait for t… | Medium | LLM03 | ASI04 | `CVE-2023-52982` |
+| 2,972 | 2025-03 | [`INC-02750`](docs/incidents/2025.md#inc-02750) | In the Linux kernel, the following vulnerability has been resolved: fscache: Use wait_on_bit() to wait for th… | Medium | LLM03 | ASI04 | `CVE-2023-52982` |
 | 2,973 | 2025-03 | [`INC-02752`](docs/incidents/2025.md#inc-02752) | In version 3.83 of binary-husky/gpt_academic, a Server-Side Request Forgery (SSRF) vulnerability exists in th… | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2024-11031` |
 | 2,974 | 2025-03 | [`INC-02774`](docs/incidents/2025.md#inc-02774) | Italy Garante orders ChatGPT GDPR enforcement — consent and data minimization failures | High |  |  |  |
 | 2,975 | 2025-03 | [`INC-02811`](docs/incidents/2025.md#inc-02811) | langgenius/dify version 0.10.1 contains a Server-Side Request Forgery (SSRF) vulnerability in the test functi… | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2024-12775` |
@@ -3169,8 +3169,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,039 | 2025-02 | [`INC-02549`](docs/incidents/2025.md#inc-02549) | EU AI Act first enforcement actions — prohibited AI practices take effect | High |  |  |  |
 | 3,040 | 2025-02 | [`INC-02602`](docs/incidents/2025.md#inc-02602) | Gemini Memory Persistence via Prompt Injection | High | LLM01 | ASI06 |  |
 | 3,041 | 2025-02 | [`INC-02709`](docs/incidents/2025.md#inc-02709) | Hugging Face Transformers GPT-NeoX-Japanese tokenizer ReDoS | Medium | LLM10 | ASI08 | `CVE-2025-1194` |
-| 3,042 | 2025-02 | [`INC-02744`](docs/incidents/2025.md#inc-02744) | In the Linux kernel, the following vulnerability has been resolved:  drm/dp: Fix OOB read when handling Post… | High | LLM03 | ASI04 | `CVE-2022-49218` |
-| 3,043 | 2025-02 | [`INC-02749`](docs/incidents/2025.md#inc-02749) | In the Linux kernel, the following vulnerability has been resolved:  drm: msm: fix possible memory leak in md… | Medium | LLM03 | ASI04 | `CVE-2022-49467` |
+| 3,042 | 2025-02 | [`INC-02744`](docs/incidents/2025.md#inc-02744) | In the Linux kernel, the following vulnerability has been resolved: drm/dp: Fix OOB read when handling Post C… | High | LLM03 | ASI04 | `CVE-2022-49218` |
+| 3,043 | 2025-02 | [`INC-02749`](docs/incidents/2025.md#inc-02749) | In the Linux kernel, the following vulnerability has been resolved: drm: msm: fix possible memory leak in mdp… | Medium | LLM03 | ASI04 | `CVE-2022-49467` |
 | 3,044 | 2025-02 | [`INC-02775`](docs/incidents/2025.md#inc-02775) | JailbreakEdit: Injecting Universal Jailbreak Backdoors via Model Editing | High | LLM03, LLM04 | ASI02 |  |
 | 3,045 | 2025-02 | [`INC-02902`](docs/incidents/2025.md#inc-02902) | Microsoft — Storm-2139 hijacked Azure OpenAI accounts and sold jailbroken access | Critical | LLM02, LLM05 | ASI02, ASI06 |  |
 | 3,046 | 2025-02 | [`INC-02922`](docs/incidents/2025.md#inc-02922) | Multi-agent financial trading system flash crash — cascading autonomous failures | Critical |  | ASI07, ASI08, ASI09, ASI10 |  |
@@ -3559,7 +3559,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,429 | 2024-12 | [`INC-03785`](docs/incidents/2024.md#inc-03785) | Firecrawl — Ssrf (CVE-2024-56800) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-56800` |
 | 3,430 | 2024-12 | [`INC-03793`](docs/incidents/2024.md#inc-03793) | free-one-api allows users to access large language model reverse engineering libraries through the standard O… | Medium | LLM03 | ASI03, ASI04 | `CVE-2024-56516` |
 | 3,431 | 2024-12 | [`INC-03881`](docs/incidents/2024.md#inc-03881) | Hugging Face Transformers vulnerability | High | LLM03 | ASI04 | `CVE-2024-12720` |
-| 3,432 | 2024-12 | [`INC-03901`](docs/incidents/2024.md#inc-03901) | In the Linux kernel, the following vulnerability has been resolved:  mm/mremap: fix address wraparound in mov… | Medium | LLM03 | ASI04 | `CVE-2024-53111` |
+| 3,432 | 2024-12 | [`INC-03901`](docs/incidents/2024.md#inc-03901) | In the Linux kernel, the following vulnerability has been resolved: mm/mremap: fix address wraparound in move… | Medium | LLM03 | ASI04 | `CVE-2024-53111` |
 | 3,433 | 2024-12 | [`INC-03911`](docs/incidents/2024.md#inc-03911) | InvokeAI /api/v2/models/install torch.load deserialization RCE | Critical | LLM03, LLM04 | ASI04, ASI05 | `CVE-2024-12029` |
 | 3,434 | 2024-12 | [`INC-04001`](docs/incidents/2024.md#inc-04001) | Microsoft Copilot vulnerability exposes Fortune 500 data (Lasso Security) | High | LLM02, LLM08 | ASI03, ASI06 |  |
 | 3,435 | 2024-12 | [`INC-04010`](docs/incidents/2024.md#inc-04010) | MIT AI Risk Tracker captures escalating AI-incident counts in 2024-2025 | Medium | LLM09 | ASI09 |  |
@@ -3679,7 +3679,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,549 | 2024-10 | [`INC-04231`](docs/incidents/2024.md#inc-04231) | STORM-0817 (Iran) — used ChatGPT to debug Android surveillanceware | High | LLM05 | ASI02 |  |
 | 3,550 | 2024-10 | [`INC-04256`](docs/incidents/2024.md#inc-04256) | Taipy — Vulnerability (CVE-2024-47833) | Medium | LLM03 | ASI04 | `CVE-2024-47833` |
 | 3,551 | 2024-10 | [`INC-04261`](docs/incidents/2024.md#inc-04261) | Terminal DiLLMa: LLM Apps Hijack Terminals via ANSI Escape Codes | Medium | LLM05 | ASI02 |  |
-| 3,552 | 2024-10 | [`INC-04268`](docs/incidents/2024.md#inc-04268) | The  AWS ALB Route Directive Adapter For Istio repo https://github.com/awslabs/aws-alb-route-directive-adapte… | High | LLM03 | ASI04 | `CVE-2024-8901` |
+| 3,552 | 2024-10 | [`INC-04268`](docs/incidents/2024.md#inc-04268) | The AWS ALB Route Directive Adapter For Istio repo https://github.com/awslabs/aws-alb-route-directive-adapter… | High | LLM03 | ASI04 | `CVE-2024-8901` |
 | 3,553 | 2024-10 | [`INC-04341`](docs/incidents/2024.md#inc-04341) | Vulnerability in the XML Database component of Oracle Database Server. | Low | LLM03 | ASI04 | `CVE-2024-21242` |
 | 3,554 | 2024-10 | [`INC-04371`](docs/incidents/2024.md#inc-04371) | ZombAIs: Claude Computer Use Prompt Injection to C2 | Critical | LLM01, LLM06 | ASI02, ASI05, ASI10 |  |
 | 3,555 | 2024-09-30 | [`INC-04345`](docs/incidents/2024.md#inc-04345) | Waymo Driverless Taxi Allegedly Stalled During Pedestrian Harassment Incident in San Francisco | Medium | LLM06 | ASI09 |  |
@@ -3720,8 +3720,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,590 | 2024-09 | [`INC-03746`](docs/incidents/2024.md#inc-03746) | EIA: Environmental Injection Attack on Generalist Web Agents | High | LLM01, LLM06 | ASI01, ASI03 |  |
 | 3,591 | 2024-09 | [`INC-03788`](docs/incidents/2024.md#inc-03788) | Flowise < 2.1.1 suffers from a Stored Cross-Site vulnerability due to a lack of input sanitization in Flowise… | Critical | LLM03 | ASI04 | `CVE-2024-9148` |
 | 3,592 | 2024-09 | [`INC-03868`](docs/incidents/2024.md#inc-03868) | HiddenLayer Gemini for Workspace Indirect Prompt Injection | High | LLM01, LLM02 | ASI01, ASI02 |  |
-| 3,593 | 2024-09 | [`INC-03896`](docs/incidents/2024.md#inc-03896) | In the Linux kernel, the following vulnerability has been resolved:  drm/vmwgfx: Disable coherent dumb buffer… | Medium | LLM03 | ASI04 | `CVE-2024-46712` |
-| 3,594 | 2024-09 | [`INC-03897`](docs/incidents/2024.md#inc-03897) | In the Linux kernel, the following vulnerability has been resolved:  drm/vmwgfx: Prevent unmapping active rea… | Medium | LLM03 | ASI04 | `CVE-2024-46710` |
+| 3,593 | 2024-09 | [`INC-03896`](docs/incidents/2024.md#inc-03896) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Disable coherent dumb buffers… | Medium | LLM03 | ASI04 | `CVE-2024-46712` |
+| 3,594 | 2024-09 | [`INC-03897`](docs/incidents/2024.md#inc-03897) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Prevent unmapping active read… | Medium | LLM03 | ASI04 | `CVE-2024-46710` |
 | 3,595 | 2024-09 | [`INC-03933`](docs/incidents/2024.md#inc-03933) | Lakera Copy-Paste Injection Exploit in ChatGPT | Medium | LLM01, LLM02 | ASI09 |  |
 | 3,596 | 2024-09 | [`INC-03940`](docs/incidents/2024.md#inc-03940) | langchain-experimental LLMSymbolicMathChain RCE via sympy.sympify | Critical | LLM01, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05 | `CVE-2024-46946` |
 | 3,597 | 2024-09 | [`INC-04044`](docs/incidents/2024.md#inc-04044) | Nomi AI companion bot incites self-harm, sexual violence, terror attacks | Critical | LLM05, LLM07, LLM09 | ASI08, ASI09 |  |
@@ -3820,7 +3820,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,690 | 2024-07 | [`INC-03789`](docs/incidents/2024.md#inc-03789) | Flowise — Path Traversal (CVE-2024-36420) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2024-36420` (+5) |
 | 3,691 | 2024-07 | [`INC-03838`](docs/incidents/2024.md#inc-03838) | Gradio v4.36.1 was discovered to contain a code injection vulnerability via the component /gradio/component_m… | Critical | LLM03 | ASI04 | `CVE-2024-39236` |
 | 3,692 | 2024-07 | [`INC-03867`](docs/incidents/2024.md#inc-03867) | Haystack — Rce (CVE-2024-41950) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-41950` |
-| 3,693 | 2024-07 | [`INC-03899`](docs/incidents/2024.md#inc-03899) | In the Linux kernel, the following vulnerability has been resolved:  kdb: Fix buffer overflow during tab-comp… | High | LLM03 | ASI04 | `CVE-2024-39480` |
+| 3,693 | 2024-07 | [`INC-03899`](docs/incidents/2024.md#inc-03899) | In the Linux kernel, the following vulnerability has been resolved: kdb: Fix buffer overflow during tab-compl… | High | LLM03 | ASI04 | `CVE-2024-39480` |
 | 3,694 | 2024-07 | [`INC-03916`](docs/incidents/2024.md#inc-03916) | It was possible to move the cursor using pointerlock from an iframe. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2015-0810` (+9) |
 | 3,695 | 2024-07 | [`INC-03925`](docs/incidents/2024.md#inc-03925) | Khoj — Prompt Injection (CVE-2024-25639) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2024-25639` |
 | 3,696 | 2024-07 | [`INC-04079`](docs/incidents/2024.md#inc-04079) | parisneo/lollms-webui, in its latest version, is vulnerable to remote code execution due to an insecure depen… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-4897` |
@@ -3926,8 +3926,8 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,796 | 2024-05 | [`INC-03810`](docs/incidents/2024.md#inc-03810) | GitHub Copilot Workspace prompt injection via repository content | High | LLM01, LLM05, LLM07 | ASI02 |  |
 | 3,797 | 2024-05 | [`INC-03815`](docs/incidents/2024.md#inc-03815) | Google AI Overviews recommends adding glue to pizza — RAG hallucination at search scale | High | LLM08, LLM09 |  |  |
 | 3,798 | 2024-05 | [`INC-03837`](docs/incidents/2024.md#inc-03837) | Gradio open redirect via file parameter | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-4940` |
-| 3,799 | 2024-05 | [`INC-03898`](docs/incidents/2024.md#inc-03898) | In the Linux kernel, the following vulnerability has been resolved:  drm/vmwgfx: Unmap the surface before res… | Medium | LLM03 | ASI04 | `CVE-2023-52648` |
-| 3,800 | 2024-05 | [`INC-03903`](docs/incidents/2024.md#inc-03903) | In the Linux kernel, the following vulnerability has been resolved:  wireguard: netlink: check for dangling p… | High | LLM03 | ASI04 | `CVE-2024-26951` |
+| 3,799 | 2024-05 | [`INC-03898`](docs/incidents/2024.md#inc-03898) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Unmap the surface before rese… | Medium | LLM03 | ASI04 | `CVE-2023-52648` |
+| 3,800 | 2024-05 | [`INC-03903`](docs/incidents/2024.md#inc-03903) | In the Linux kernel, the following vulnerability has been resolved: wireguard: netlink: check for dangling pe… | High | LLM03 | ASI04 | `CVE-2024-26951` |
 | 3,801 | 2024-05 | [`INC-03908`](docs/incidents/2024.md#inc-03908) | Intel Neural Compressor Critical CVE-2024-22476 | Critical | LLM05 | ASI05 |  |
 | 3,802 | 2024-05 | [`INC-03937`](docs/incidents/2024.md#inc-03937) | LangChain Web Research Retriever SSRF | High | LLM02, LLM03, LLM05, LLM06 | ASI02, ASI03, ASI04, ASI05 | `CVE-2024-3095` |
 | 3,803 | 2024-05 | [`INC-03941`](docs/incidents/2024.md#inc-03941) | langchain-experimental VectorSQLDatabaseChain arbitrary code execution via eval | Critical | LLM01, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI04, ASI05 | `CVE-2024-21513` |
@@ -4003,7 +4003,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,873 | 2024-04 | [`INC-03729`](docs/incidents/2024.md#inc-03729) | Deno — Vulnerability (CVE-2024-32477) | High | LLM03 | ASI04 | `CVE-2024-32477` |
 | 3,874 | 2024-04 | [`INC-03849`](docs/incidents/2024.md#inc-03849) | gradio-app/gradio is vulnerable to a local file inclusion vulnerability due to improper validation of user-su… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-1728` |
 | 3,875 | 2024-04 | [`INC-03877`](docs/incidents/2024.md#inc-03877) | Hugging Face Transformers load_repo_checkpoint pickle RCE | High | LLM03, LLM04 | ASI04, ASI05 | `CVE-2024-3568` |
-| 3,876 | 2024-04 | [`INC-03900`](docs/incidents/2024.md#inc-03900) | In the Linux kernel, the following vulnerability has been resolved:  libceph: just wait for more data to be a… | Medium | LLM03 | ASI04 | `CVE-2023-52636` |
+| 3,876 | 2024-04 | [`INC-03900`](docs/incidents/2024.md#inc-03900) | In the Linux kernel, the following vulnerability has been resolved: libceph: just wait for more data to be av… | Medium | LLM03 | ASI04 | `CVE-2023-52636` |
 | 3,877 | 2024-04 | [`INC-03917`](docs/incidents/2024.md#inc-03917) | Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks | Critical | LLM01 | ASI01 |  |
 | 3,878 | 2024-04 | [`INC-03924`](docs/incidents/2024.md#inc-03924) | Keras Lambda layer marshalled-code RCE | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2024-3660` |
 | 3,879 | 2024-04 | [`INC-03928`](docs/incidents/2024.md#inc-03928) | Kohya_ss — Command Injection (CVE-2024-32022) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-32022` (+5) |
@@ -4108,7 +4108,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,978 | 2024-02 | [`INC-03833`](docs/incidents/2024.md#inc-03833) | Gradio component_server SSRF / arbitrary file read | High | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2024-1561`, `CVE-2024-34510` |
 | 3,979 | 2024-02 | [`INC-03876`](docs/incidents/2024.md#inc-03876) | Hugging Face model repository pickle-based malware supply chain | Critical | LLM03 | ASI04 |  |
 | 3,980 | 2024-02 | [`INC-03890`](docs/incidents/2024.md#inc-03890) | Improper buffer restrictions in Intel(R) Optimization for TensorFlow before version 2.13.0 may allow an authe… | Medium | LLM03 | ASI04 | `CVE-2023-30767` |
-| 3,981 | 2024-02 | [`INC-03902`](docs/incidents/2024.md#inc-03902) | In the Linux kernel, the following vulnerability has been resolved:  powerpc/pseries/memhp: Fix access beyond… | High | LLM03 | ASI04 | `CVE-2023-52451` |
+| 3,981 | 2024-02 | [`INC-03902`](docs/incidents/2024.md#inc-03902) | In the Linux kernel, the following vulnerability has been resolved: powerpc/pseries/memhp: Fix access beyond… | High | LLM03 | ASI04 | `CVE-2023-52451` |
 | 3,982 | 2024-02 | [`INC-03918`](docs/incidents/2024.md#inc-03918) | Jailbreaking via Word Substitution and Novel Ciphers | High | LLM01 | ASI01 |  |
 | 3,983 | 2024-02 | [`INC-03943`](docs/incidents/2024.md#inc-03943) | langchain_experimental (aka LangChain Experimental) in LangChain before 0.1.8 allows an attacker to bypass th… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-27444` |
 | 3,984 | 2024-02 | [`INC-04011`](docs/incidents/2024.md#inc-04011) | MLflow artifact-deletion path traversal allowing arbitrary directory deletion | High | LLM03, LLM05, LLM10 | ASI04, ASI05 | `CVE-2024-1560` |
@@ -7401,7 +7401,7 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | 7,271 | 2018-11-08 | [`INC-07357`](docs/incidents/2018.md#inc-07357) | Wrongful Attempted Arrest for Apple Store Thefts Due to NYPD’s Facial Misidentification | High | LLM05 | ASI08 |  |
 | 7,272 | 2018-11-06 | [`INC-07325`](docs/incidents/2018.md#inc-07325) | Picture of Woman on Side of Bus Shamed for Jaywalking | Medium | LLM05 | ASI08 |  |
 | 7,273 | 2018-10-27 | [`INC-07289`](docs/incidents/2018.md#inc-07289) | Crashes with Maneuvering Characteristics Augmentation System (MCAS) | Medium | LLM05 | ASI08 |  |
-| 7,274 | 2018-10-01 | [`INC-07297`](docs/incidents/2018.md#inc-07297) | Facebook &quot;News Feed&quot; Allegedly Boosted Misinformation and Violating Content Following Use of MSI Me… | Medium | LLM05, LLM09 | ASI09 |  |
+| 7,274 | 2018-10-01 | [`INC-07297`](docs/incidents/2018.md#inc-07297) | Facebook &quot;News Feed&quot; Allegedly Boosted Misinformation and Violating Content Following Use of MSI Me… | Medium | LLM05, LLM09 | ASI09 |  |
 | 7,275 | 2018-10-01 | [`INC-07323`](docs/incidents/2018.md#inc-07323) | Oregon’s Screening Tool for Child Abuse Cases Discontinued Following Concerns of Racial Bias | Critical | LLM05, LLM06, LLM09 | ASI02, ASI09 |  |
 | 7,276 | 2018-09-01 | [`INC-07293`](docs/incidents/2018.md#inc-07293) | Dutch Families Wrongfully Accused of Tax Fraud Due to Discriminatory Algorithm | Medium | LLM05, LLM09 | ASI09 |  |
 | 7,277 | 2018-09 | [`INC-07332`](docs/incidents/2018.md#inc-07332) | SQL injection vulnerability in archivebot.py in docmarionum1 Slack ArchiveBot (aka slack-archive-bot) before… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2018-17232` |

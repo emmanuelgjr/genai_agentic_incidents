@@ -35,7 +35,10 @@ OUT = ROOT / "INCIDENTS.md"
 
 def _write_lf(path: Path, text: str, add_newline: bool = True) -> None:
     """Write ``text`` to ``path`` with explicit LF line endings, regardless
-    of platform. Avoids Windows-vs-Linux drift in the CI drift check."""
+    of platform. Source descriptions (especially NVD CVE blurbs) sometimes
+    carry embedded ``\\r`` characters; strip them so we never emit mixed
+    line endings into a generated file."""
+    text = text.replace("\r\n", "\n").replace("\r", "")
     if add_newline and not text.endswith("\n"):
         text += "\n"
     path.write_text(text, encoding="utf-8", newline="\n")

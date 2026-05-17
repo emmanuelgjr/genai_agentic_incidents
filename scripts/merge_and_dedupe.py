@@ -311,14 +311,21 @@ def normalize_entry(raw: dict) -> dict | None:
     if not refs:
         return None
 
-    title = (raw.get("title") or "").strip()
+    def _clean(s: str) -> str:
+        """Strip stray carriage returns and collapse runs of whitespace.
+        Some NVD CVE descriptions carry literal ``\\r\\n`` sequences from
+        the source HTML; keeping them produces mixed line endings in the
+        rendered markdown and confuses the CI drift check."""
+        return re.sub(r"\s+", " ", (s or "").replace("\r", " ")).strip()
+
+    title = _clean(raw.get("title"))
     if len(title) < 5:
         return None
 
-    desc = (raw.get("description") or "").strip()
+    desc = _clean(raw.get("description"))
     if len(desc) < 20:
         # tolerate short descriptions by padding from title+impact
-        desc = (desc + " " + (raw.get("impact") or "") + " " + title).strip()
+        desc = _clean(desc + " " + (raw.get("impact") or "") + " " + title)
         if len(desc) < 20:
             return None
 
