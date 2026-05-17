@@ -10,6 +10,11 @@ authors:
     alias: "emmanuelgjr"
 url: "https://github.com/emmanuelgjr/genai_agentic_incidents"
 repository-code: "https://github.com/emmanuelgjr/genai_agentic_incidents"
+doi: 10.5281/zenodo.20248676
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20248676
+    description: "Zenodo concept DOI (always resolves to the latest release)"
 license: CC-BY-4.0
 keywords:
   - "AI security"
@@ -29,4 +34,15 @@ abstract: >-
   AIAAIC, MITRE ATLAS, AVID, MIT FutureTech AI Risk Navigator, NVD/GHSA/OSV,
   garak, promptfoo, and dozens of researcher blogs and vendor threat reports.
 version: "2.0.0"
-date-released: "2026-05-16"
+date-released: "2026-05-17"
+preferred-citation:
+  type: dataset
+  title: "GenAI & Agentic AI Security Incidents"
+  authors:
+    - family-names: "Junior Rodrigues"
+      given-names: "Emmanuel G."
+      alias: "emmanuelgjr"
+  year: 2026
+  version: "2.0.0"
+  doi: 10.5281/zenodo.20248676
+  url: "https://doi.org/10.5281/zenodo.20248676"

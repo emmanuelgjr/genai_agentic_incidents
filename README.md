@@ -2,12 +2,13 @@
 
 [![Validate dataset](https://github.com/emmanuelgjr/genai_agentic_incidents/actions/workflows/validate.yml/badge.svg)](https://github.com/emmanuelgjr/genai_agentic_incidents/actions/workflows/validate.yml)
 [![PyPI](https://img.shields.io/pypi/v/genai-incidents.svg)](https://pypi.org/project/genai-incidents/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20248676.svg)](https://doi.org/10.5281/zenodo.20248676)
 [![License: MIT (code)](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![License: CC-BY-4.0 (data)](https://img.shields.io/badge/data-CC--BY--4.0-lightgrey.svg)](LICENSE-DATA)
 
 - 🔎 **Searchable site:** <https://emmanuelgjr.github.io/genai_agentic_incidents/>
 - 📦 **Python:** `pip install genai-incidents`
-- 📄 **Cite:** see [`CITATION.cff`](CITATION.cff)
+- 🪪 **DOI:** [`10.5281/zenodo.20248676`](https://doi.org/10.5281/zenodo.20248676) — see [`CITATION.cff`](CITATION.cff)
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
 A single source of truth for **GenAI and agentic AI security incidents**, mapped to:
