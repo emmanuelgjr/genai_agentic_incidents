@@ -37,7 +37,12 @@ jobs:
           if [ -n "$(git status --porcelain $paths)" ]; then
             echo "::error::Generated files are out of date. Run 'make build' locally and commit the result."
             git status --porcelain $paths
-            git --no-pager diff INCIDENTS.md data/incidents.min.json | head -200
+            echo "::group::Drifted file diff (first 200 lines)"
+            for f in $(git status --porcelain $paths | awk '{print $2}'); do
+              echo "--- diff for $f ---"
+              git --no-pager diff -- "$f" | head -80
+            done
+            echo "::endgroup::"
             exit 1
           fi
 
