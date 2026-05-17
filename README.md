@@ -1,7 +1,8 @@
 # GenAI & Agentic AI Security Incidents
 
 [![Validate dataset](https://github.com/emmanuelgjr/genai_agentic_incidents/actions/workflows/validate.yml/badge.svg)](https://github.com/emmanuelgjr/genai_agentic_incidents/actions/workflows/validate.yml)
-[![PyPI](https://img.shields.io/pypi/v/genai-incidents.svg)](https://pypi.org/project/genai-incidents/)
+[![PyPI version](https://img.shields.io/pypi/v/genai-incidents?logo=pypi&logoColor=white&label=pypi)](https://pypi.org/project/genai-incidents/)
+[![Python versions](https://img.shields.io/pypi/pyversions/genai-incidents?logo=python&logoColor=white)](https://pypi.org/project/genai-incidents/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20248676.svg)](https://doi.org/10.5281/zenodo.20248676)
 [![License: MIT (code)](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![License: CC-BY-4.0 (data)](https://img.shields.io/badge/data-CC--BY--4.0-lightgrey.svg)](LICENSE-DATA)
