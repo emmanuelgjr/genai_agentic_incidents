@@ -4,7 +4,7 @@ Single source of truth for GenAI and agentic AI security incidents.
 Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS**.
 
 - **Version:** 2.0.0
-- **Generated:** 2026-05-16
+- **Generated:** 2026-05-17
 - **Total incidents:** **7,714**
 - **Date range:** 1983 – 2026
 - **With CVE:** 1,654
@@ -31,8 +31,8 @@ Auto-generated from the current dataset. SVGs live under [`docs/charts/`](docs/c
 
 | Severity | Count |
 |---|---:|
-| Critical | 1,483 |
-| High | 2,880 |
+| Critical | 1,486 |
+| High | 2,877 |
 | Medium | 3,215 |
 | Low | 136 |
 
@@ -77,14 +77,14 @@ Auto-generated from the current dataset. SVGs live under [`docs/charts/`](docs/c
 | Code | Name | Count |
 |---|---|---:|
 | LLM01 | Prompt Injection | 366 |
-| LLM02 | Sensitive Information Disclosure | 777 |
+| LLM02 | Sensitive Information Disclosure | 778 |
 | LLM03 | Supply Chain | 1,928 |
 | LLM04 | Data and Model Poisoning | 124 |
-| LLM05 | Improper Output Handling | 3,119 |
+| LLM05 | Improper Output Handling | 3,118 |
 | LLM06 | Excessive Agency | 762 |
 | LLM07 | System Prompt Leakage | 718 |
 | LLM08 | Vector and Embedding Weaknesses | 25 |
-| LLM09 | Misinformation | 1,934 |
+| LLM09 | Misinformation | 1,929 |
 | LLM10 | Unbounded Consumption | 45 |
 
 ### OWASP Agentic Top 10 (ASI)
@@ -92,28 +92,28 @@ Auto-generated from the current dataset. SVGs live under [`docs/charts/`](docs/c
 | Code | Name | Count |
 |---|---|---:|
 | ASI01 | Agent Goal Hijack | 343 |
-| ASI02 | Tool Misuse & Exploitation | 508 |
-| ASI03 | Identity & Privilege Abuse | 810 |
+| ASI02 | Tool Misuse & Exploitation | 509 |
+| ASI03 | Identity & Privilege Abuse | 811 |
 | ASI04 | Agentic Supply Chain Vulnerabilities | 1,747 |
-| ASI05 | Unexpected Code Execution (RCE) | 2,138 |
+| ASI05 | Unexpected Code Execution (RCE) | 2,137 |
 | ASI06 | Memory & Context Poisoning | 121 |
 | ASI07 | Insecure Inter-Agent Communication | 28 |
 | ASI08 | Cascading Failures | 776 |
-| ASI09 | Human-Agent Trust Exploitation | 2,320 |
-| ASI10 | Rogue Agents | 330 |
+| ASI09 | Human-Agent Trust Exploitation | 2,317 |
+| ASI10 | Rogue Agents | 331 |
 
 ### Top MITRE ATLAS Techniques
 
 | Technique | Count |
 |---|---:|
-| `AML.T0050` | 3,218 |
-| `AML.T0048.003` | 2,320 |
+| `AML.T0050` | 3,217 |
+| `AML.T0048.003` | 2,317 |
 | `AML.T0010` | 1,971 |
-| `AML.T0058` | 1,934 |
-| `AML.T0048` | 1,747 |
-| `AML.T0053` | 1,142 |
-| `AML.T0012` | 810 |
-| `AML.T0057` | 781 |
+| `AML.T0058` | 1,929 |
+| `AML.T0048` | 1,748 |
+| `AML.T0053` | 1,143 |
+| `AML.T0012` | 811 |
+| `AML.T0057` | 782 |
 | `AML.T0056` | 718 |
 | `AML.T0051` | 430 |
 | `AML.T0049` | 175 |
@@ -129,1941 +129,1941 @@ All **7,714** incidents in a single table, newest-first. Each `INC-*****` link o
 | # | Date | ID | Title | Severity | OWASP LLM | OWASP ASI | CVEs |
 |---:|---|---|---|---|---|---|---|
 | 1 | 2026-08 | [`INC-00857`](docs/incidents/2026.md#inc-00857) | Copirate 365 DEF CON: Plundering Microsoft Copilot (CVE-2026-24299) | Critical | LLM01, LLM02 | ASI02, ASI09 |  |
-| 2 | 2026-05-15 | [`INC-00609`](docs/incidents/2026.md#inc-00609) | Anthropic Warns of AI Risks in US-China Competition | Medium |  |  |  |
-| 3 | 2026-05-15 | [`INC-01130`](docs/incidents/2026.md#inc-01130) | Google's Gemini Spark Leak Raises Privacy and Security Concerns Over Autonomous AI Agent | High |  |  |  |
-| 4 | 2026-05-15 | [`INC-01227`](docs/incidents/2026.md#inc-01227) | India's AI Combat Aircraft Kaal Bhairava to be Manufactured in Portugal | Critical |  | ASI10 |  |
-| 5 | 2026-05-15 | [`INC-01960`](docs/incidents/2026.md#inc-01960) | Ukraine Develops AI-Controlled Swarm Drones for Military Use | Critical |  | ASI10 |  |
-| 6 | 2026-05-15 | [`INC-02081`](docs/incidents/2026.md#inc-02081) | Waymo Self-Driving Cars Cause Safety Concerns in Atlanta Neighborhood | High | LLM05 | ASI05 |  |
-| 7 | 2026-05-14 | [`INC-00070`](docs/incidents/2026.md#inc-00070) | AI Agents Cause Digital Harm Through Blind Goal Pursuit | High | LLM09 |  |  |
-| 8 | 2026-05-14 | [`INC-00072`](docs/incidents/2026.md#inc-00072) | AI Agents Commit Virtual Arson and Self-Deletion in Long-Term Simulation | Medium |  |  |  |
-| 9 | 2026-05-14 | [`INC-00276`](docs/incidents/2026.md#inc-00276) | AI-Driven Cyberattacks and Military Integration Raise Security Concerns in Europe | Medium |  |  |  |
-| 10 | 2026-05-14 | [`INC-00522`](docs/incidents/2026.md#inc-00522) | AI-Induced Cognitive Overload and Academic Integrity Failures | High | LLM05, LLM09 | ASI05 |  |
-| 11 | 2026-05-14 | [`INC-00546`](docs/incidents/2026.md#inc-00546) | AI-Powered Halupedia Generates Fabricated Encyclopedia Entries, Raising Misinformation Risks | Medium | LLM09 |  |  |
-| 12 | 2026-05-14 | [`INC-00626`](docs/incidents/2026.md#inc-00626) | Anthropic's Mythos AI Uncovers Critical macOS Security Vulnerabilities | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 13 | 2026-05-14 | [`INC-00639`](docs/incidents/2026.md#inc-00639) | Apple Considers Allowing Agentic AI in App Store Amid Security Concerns | Medium |  |  |  |
-| 14 | 2026-05-14 | [`INC-01258`](docs/incidents/2026.md#inc-01258) | Italian Parents Sue Meta and TikTok After AI Algorithms Linked to Child Suicide | Critical | LLM05 | ASI09 |  |
-| 15 | 2026-05-14 | [`INC-01260`](docs/incidents/2026.md#inc-01260) | Italian Woman Uses AI-Generated Images to Commit Funeral Fraud | Critical |  | ASI09 |  |
-| 16 | 2026-05-14 | [`INC-01271`](docs/incidents/2026.md#inc-01271) | Japanese Newspapers Sue Perplexity AI for Unauthorized Article Use | Critical | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
-| 17 | 2026-05-14 | [`INC-01576`](docs/incidents/2026.md#inc-01576) | OpenAI Faces Lawsuit Over ChatGPT Data Sharing With Meta and Google | High | LLM05 | ASI05 |  |
-| 18 | 2026-05-14 | [`INC-01660`](docs/incidents/2026.md#inc-01660) | Pope Leo XIV Warns Against AI-Directed Warfare and Calls for Ethical Oversight | Medium |  |  |  |
-| 19 | 2026-05-14 | [`INC-01775`](docs/incidents/2026.md#inc-01775) | Singapore Businessman Scammed via Deepfake Impersonation of Government Officials | Medium | LLM09 | ASI09 |  |
-| 20 | 2026-05-14 | [`INC-01974`](docs/incidents/2026.md#inc-01974) | Unauthorized AI-Driven Biometric Data Collection Leads to Arrests in Assam | High |  |  |  |
-| 21 | 2026-05-14 | [`INC-01984`](docs/incidents/2026.md#inc-01984) | US and China Discuss AI Controls to Prevent Cyberattack Risks | Medium |  |  |  |
-| 22 | 2026-05-14 | [`INC-02002`](docs/incidents/2026.md#inc-02002) | US Judge Delays Approval of Anthropic's $1.5 Billion AI Copyright Settlement | High |  |  |  |
-| 23 | 2026-05-13 | [`INC-00225`](docs/incidents/2026.md#inc-00225) | AI Systems Accelerate Cybersecurity Risks and Real-World Incidents | High | LLM09 |  |  |
-| 24 | 2026-05-13 | [`INC-00285`](docs/incidents/2026.md#inc-00285) | AI-Driven Cyberattacks Surge in Argentina | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
-| 25 | 2026-05-13 | [`INC-00301`](docs/incidents/2026.md#inc-00301) | AI-Driven Gig Platforms Cause Global Labor Rights Violations | Medium |  |  |  |
-| 26 | 2026-05-13 | [`INC-00442`](docs/incidents/2026.md#inc-00442) | AI-Generated Fake Content Used to Blackmail Turkish Celebrity | Medium | LLM09 | ASI09 |  |
-| 27 | 2026-05-13 | [`INC-00590`](docs/incidents/2026.md#inc-00590) | Anduril's $5B Funding Fuels Expansion of AI-Driven Autonomous Weapons | Medium |  | ASI10 |  |
-| 28 | 2026-05-13 | [`INC-00749`](docs/incidents/2026.md#inc-00749) | ChatGPT Implicated in Multiple Fatal Incidents | Critical | LLM04 | ASI06 |  |
-| 29 | 2026-05-13 | [`INC-00753`](docs/incidents/2026.md#inc-00753) | ChatGPT Use Drives Grade Inflation in Texas University Courses | High | LLM05 | ASI05 |  |
-| 30 | 2026-05-13 | [`INC-00755`](docs/incidents/2026.md#inc-00755) | ChatGPT-Induced Psychosis and Mental Health Crisis | Medium | LLM05 | ASI09 |  |
-| 31 | 2026-05-13 | [`INC-00983`](docs/incidents/2026.md#inc-00983) | Facial Recognition Error Leads to Wrongful Arrest and Jailing of Tennessee Grandmother | High | LLM05 | ASI05, ASI09 |  |
-| 32 | 2026-05-13 | [`INC-01262`](docs/incidents/2026.md#inc-01262) | Itaú and Google Deploy AI to Block Fraudulent Bank Calls in Brazil | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 33 | 2026-05-13 | [`INC-01270`](docs/incidents/2026.md#inc-01270) | Japanese Megabanks to Access Anthropic's Mythos AI, Raising Cybersecurity Concerns | High | LLM05 | ASI05 |  |
-| 34 | 2026-05-13 | [`INC-01287`](docs/incidents/2026.md#inc-01287) | L3Harris Deploys AI-Enabled Counter-Drone Software for Tactical Radios | High | LLM05 | ASI05 |  |
-| 35 | 2026-05-13 | [`INC-01320`](docs/incidents/2026.md#inc-01320) | Lawyers Fined for Attempting to Manipulate Judicial AI System in Pará | High | LLM01 | ASI01, ASI09 |  |
-| 36 | 2026-05-13 | [`INC-01419`](docs/incidents/2026.md#inc-01419) | Meta's AI Smart Glasses Spark Privacy Violations and Legal Action | High |  |  |  |
-| 37 | 2026-05-13 | [`INC-01770`](docs/incidents/2026.md#inc-01770) | Shield AI and Thunder Tiger Integrate Autonomous AI for Military Unmanned Vessels in Taiwan | Medium |  | ASI10 |  |
-| 38 | 2026-05-13 | [`INC-01842`](docs/incidents/2026.md#inc-01842) | Tech Giants Sued for Using Voiceprints to Train AI Without Consent | High |  |  |  |
-| 39 | 2026-05-13 | [`INC-02064`](docs/incidents/2026.md#inc-02064) | Warnings Over Anthropic's 'Mythos' AI Model and Cyberattack Risks | Medium |  |  |  |
-| 40 | 2026-05-13 | [`INC-02074`](docs/incidents/2026.md#inc-02074) | Waymo Robotaxi AI Failures Lead to Vehicle Recall and Community Disruption in the US | Medium |  |  |  |
-| 41 | 2026-05-12 | [`INC-00145`](docs/incidents/2026.md#inc-00145) | AI Deepfake Scam Causes $25 Million Loss in Vietnam | Medium | LLM09 | ASI09 |  |
-| 42 | 2026-05-12 | [`INC-00146`](docs/incidents/2026.md#inc-00146) | AI Deepfake Scam Targets Hospital Director in Taiwan | High | LLM09 | ASI09 |  |
-| 43 | 2026-05-12 | [`INC-00172`](docs/incidents/2026.md#inc-00172) | AI Hiring Systems Render Experienced Developer Unemployable | Medium |  |  |  |
-| 44 | 2026-05-12 | [`INC-00240`](docs/incidents/2026.md#inc-00240) | AI Tools Uncover Critical Linux Kernel Vulnerability | High |  |  |  |
-| 45 | 2026-05-12 | [`INC-00273`](docs/incidents/2026.md#inc-00273) | AI-Driven Crackdown on Illegal Gambling Sites in Turkey | High | LLM05 | ASI05 |  |
-| 46 | 2026-05-12 | [`INC-00279`](docs/incidents/2026.md#inc-00279) | AI-Driven Cyberattacks Cause Major Harm in Germany | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
-| 47 | 2026-05-12 | [`INC-00282`](docs/incidents/2026.md#inc-00282) | AI-Driven Cyberattacks Exploit Zero-Day Vulnerabilities, Escalating Security Risks | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI10 |  |
-| 48 | 2026-05-12 | [`INC-00438`](docs/incidents/2026.md#inc-00438) | AI-Generated Fabricated Citations Undermine Biomedical Research Integrity | High | LLM09 |  |  |
-| 49 | 2026-05-12 | [`INC-00447`](docs/incidents/2026.md#inc-00447) | AI-Generated Fake Images of Manolo García's Concert Incident Cause Public Alarm | High | LLM05, LLM09 | ASI05 |  |
-| 50 | 2026-05-12 | [`INC-00465`](docs/incidents/2026.md#inc-00465) | AI-Generated Fake Rice Video Causes Public Panic and Legal Action in China | Medium | LLM09 |  |  |
-| 51 | 2026-05-12 | [`INC-00483`](docs/incidents/2026.md#inc-00483) | AI-Generated Minor Persona Used to Expose Suspected Pedophile in France | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 52 | 2026-05-12 | [`INC-00489`](docs/incidents/2026.md#inc-00489) | AI-Generated Offensive Content Amplified by Trump and Aide | High | LLM09 |  |  |
-| 53 | 2026-05-12 | [`INC-00544`](docs/incidents/2026.md#inc-00544) | AI-Powered Fire Detection System Prevents Wildfire in Troizinia-Methana | Medium |  |  |  |
-| 54 | 2026-05-12 | [`INC-00553`](docs/incidents/2026.md#inc-00553) | AI-Powered Robots and Drones Used in Ukrainian Military Operations | Critical | LLM05 | ASI05, ASI10 |  |
-| 55 | 2026-05-12 | [`INC-00618`](docs/incidents/2026.md#inc-00618) | Anthropic's Mythos AI Exposes Security Flaws in Banking and macOS Systems | High |  |  |  |
-| 56 | 2026-05-12 | [`INC-00645`](docs/incidents/2026.md#inc-00645) | Arizona Man Indicted for AI-Generated Child Sexual Abuse Images in Landmark Case | High | LLM09 |  |  |
-| 57 | 2026-05-12 | [`INC-00658`](docs/incidents/2026.md#inc-00658) | Australian Watchdog Warns of AI-Driven Money Laundering Surge | Medium |  | ASI09 |  |
-| 58 | 2026-05-12 | [`INC-00772`](docs/incidents/2026.md#inc-00772) | China Unveils AI-Enabled Autonomous 'Machine Wolf' Combat Robots | Critical |  | ASI10 |  |
-| 59 | 2026-05-12 | [`INC-00777`](docs/incidents/2026.md#inc-00777) | China's First AI-Generated Fake Review Case Ruled: AI Tool Providers Fined | High | LLM05 | ASI05 |  |
-| 60 | 2026-05-12 | [`INC-00848`](docs/incidents/2026.md#inc-00848) | Community Bank Data Breach Caused by Unauthorized AI Application | High | LLM02 | ASI03 |  |
-| 61 | 2026-05-12 | [`INC-00960`](docs/incidents/2026.md#inc-00960) | EU Investigates X's Grok AI for Generating Harmful Sexual Content Involving Minors | High | LLM05 | ASI05 |  |
-| 62 | 2026-05-12 | [`INC-00964`](docs/incidents/2026.md#inc-00964) | EU Surveillance Tech Exports Enable Human Rights Abuses | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI10 |  |
-| 63 | 2026-05-12 | [`INC-00982`](docs/incidents/2026.md#inc-00982) | Facial Recognition AI Leads to Arrest of Wine Thief in Singapore Supermarket | High | LLM05 | ASI05 |  |
-| 64 | 2026-05-12 | [`INC-01075`](docs/incidents/2026.md#inc-01075) | German Court Holds Doctors Liable for AI Chatbot's False Medical Claims | High | LLM09 |  |  |
-| 65 | 2026-05-12 | [`INC-01113`](docs/incidents/2026.md#inc-01113) | Google Detects First AI-Developed Zero-Day Exploit in Major Cyberattack Attempt | High | LLM02 | ASI03 |  |
-| 66 | 2026-05-12 | [`INC-01315`](docs/incidents/2026.md#inc-01315) | Launch of VECTOR-300 AI Autopilot for Mass-Produced Military Drones Raises Hazard Concerns | Critical | LLM05 | ASI05, ASI10 |  |
-| 67 | 2026-05-12 | [`INC-01368`](docs/incidents/2026.md#inc-01368) | Man Arrested in Salta for Creating and Distributing AI-Generated Fake Intimate Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 68 | 2026-05-12 | [`INC-01455`](docs/incidents/2026.md#inc-01455) | Mistral AI Source Code Stolen in Major Data Breach | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 69 | 2026-05-12 | [`INC-01557`](docs/incidents/2026.md#inc-01557) | Ontario Medical AI Scribes Found to Produce Dangerous Errors and Hallucinations | High | LLM09 |  |  |
-| 70 | 2026-05-12 | [`INC-01579`](docs/incidents/2026.md#inc-01579) | OpenAI Sued After ChatGPT Advice Allegedly Leads to Fatal Overdose | Critical | LLM05 | ASI05, ASI09 |  |
-| 71 | 2026-05-12 | [`INC-01664`](docs/incidents/2026.md#inc-01664) | Potential Manipulation by AI Chatbots Raises Ethical Concerns | Critical | LLM05, LLM09 | ASI05 |  |
-| 72 | 2026-05-12 | [`INC-01679`](docs/incidents/2026.md#inc-01679) | Princeton Ends Unproctored Exams After Surge in AI-Enabled Cheating | Critical | LLM05 | ASI05 |  |
-| 73 | 2026-05-12 | [`INC-01745`](docs/incidents/2026.md#inc-01745) | Romanian Minister Warns of Risks in Unstructured AI Adoption in Public Administration | High | LLM05 | ASI05 |  |
-| 74 | 2026-05-12 | [`INC-01835`](docs/incidents/2026.md#inc-01835) | Swarmer and Partners Develop AI-Driven Drone Interceptor System for Defense | High | LLM05 | ASI05, ASI10 |  |
-| 75 | 2026-05-12 | [`INC-01955`](docs/incidents/2026.md#inc-01955) | Ukraine Deepens AI Defense Cooperation with Palantir | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
-| 76 | 2026-05-12 | [`INC-02073`](docs/incidents/2026.md#inc-02073) | Waymo Recalls Nearly 4,000 Robotaxis in U.S. After AI Fails to Handle Flooded Roads | Critical | LLM05 | ASI05 |  |
-| 77 | 2026-05-12 | [`INC-02116`](docs/incidents/2026.md#inc-02116) | ZenaTech Launches AI Military Drone Production for Gulf States | High | LLM05 | ASI05, ASI10 |  |
-| 78 | 2026-05-11 | [`INC-00044`](docs/incidents/2026.md#inc-00044) | Advocacy Group Urges US to Screen AI Models for Security Risks Before Release | Critical | LLM05 | ASI05 |  |
-| 79 | 2026-05-11 | [`INC-00180`](docs/incidents/2026.md#inc-00180) | AI Misidentification Leads to False Arrests and Wrongful Detentions in U.S. Policing | High | LLM05 | ASI05 |  |
-| 80 | 2026-05-11 | [`INC-00232`](docs/incidents/2026.md#inc-00232) | AI Systems Used in Both Combating and Facilitating Payment Scams | Critical | LLM09 | ASI09 |  |
-| 81 | 2026-05-11 | [`INC-00251`](docs/incidents/2026.md#inc-00251) | AI Virtual Companion Apps Expose Minors to Sexual and Violent Content in China | High |  |  |  |
-| 82 | 2026-05-11 | [`INC-00343`](docs/incidents/2026.md#inc-00343) | AI-Enabled Drones Transform Warfare, Raising Future Risks | Medium |  | ASI10 |  |
-| 83 | 2026-05-11 | [`INC-00367`](docs/incidents/2026.md#inc-00367) | AI-Generated Child Sexual Abuse Material Drives Surge in Exploitation Cases in North America | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 84 | 2026-05-11 | [`INC-00548`](docs/incidents/2026.md#inc-00548) | AI-Powered License Plate Readers at Home Depot and Lowe's Spark Privacy Lawsuit | High | LLM05 | ASI05 |  |
-| 85 | 2026-05-11 | [`INC-00693`](docs/incidents/2026.md#inc-00693) | Binance's AI Systems Block Billions in Crypto Scams and Fraud | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 86 | 2026-05-11 | [`INC-01003`](docs/incidents/2026.md#inc-01003) | FDA Approves AI System for Early Sepsis Detection, Reducing Mortality | Critical |  |  |  |
-| 87 | 2026-05-11 | [`INC-01049`](docs/incidents/2026.md#inc-01049) | French Families Sue TikTok Over AI-Driven Harmful Content to Minors | Critical | LLM05 | ASI09 |  |
-| 88 | 2026-05-11 | [`INC-01057`](docs/incidents/2026.md#inc-01057) | G7 Shares Concerns Over AI-Enabled Cyberattack Risks to Financial Systems | Medium |  |  |  |
-| 89 | 2026-05-11 | [`INC-01060`](docs/incidents/2026.md#inc-01060) | Gautam Adani Warns of AI-Driven Surge in Energy Consumption in India | Medium |  |  |  |
-| 90 | 2026-05-11 | [`INC-01079`](docs/incidents/2026.md#inc-01079) | German Finance Ministry Warns of AI Cyberattack Risks to Financial Stability | High |  |  |  |
-| 91 | 2026-05-11 | [`INC-01355`](docs/incidents/2026.md#inc-01355) | London Police to Deploy AI Surveillance at Protests | High | LLM05 | ASI05 |  |
-| 92 | 2026-05-11 | [`INC-01436`](docs/incidents/2026.md#inc-01436) | Microsoft Fires Israel Head Over AI-Enabled Surveillance and Military Targeting in Gaza | Critical | LLM05 | ASI05 |  |
-| 93 | 2026-05-11 | [`INC-01447`](docs/incidents/2026.md#inc-01447) | MindBio Develops AI Voice Analytics for Fatigue and Intoxication Detection | Medium |  |  |  |
-| 94 | 2026-05-11 | [`INC-01621`](docs/incidents/2026.md#inc-01621) | Palantir's AI Systems Implicated in Military Targeting and Civilian Harm in Ukraine | Critical | LLM05 | ASI05, ASI10 |  |
-| 95 | 2026-05-11 | [`INC-01746`](docs/incidents/2026.md#inc-01746) | Romanian Tax Authority's Use of AI in Dispute Resolutions Leads to Legal Rights Violations | High |  |  |  |
-| 96 | 2026-05-11 | [`INC-01759`](docs/incidents/2026.md#inc-01759) | Security Incidents and Warnings Over OpenClaw AI Agent Vulnerabilities | High | LLM02 | ASI03 |  |
-| 97 | 2026-05-11 | [`INC-01796`](docs/incidents/2026.md#inc-01796) | Spanish Universities Deploy AI-Detection Tech to Prevent Exam Cheating | High | LLM05 | ASI05, ASI09 |  |
-| 98 | 2026-05-10 | [`INC-00307`](docs/incidents/2026.md#inc-00307) | AI-Driven Job Losses Disproportionately Impact Women in U.S. Administrative Roles | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 99 | 2026-05-10 | [`INC-00344`](docs/incidents/2026.md#inc-00344) | AI-Enabled Eavesdropping via Fiber Optic Cables Raises Global Privacy Concerns | Medium |  |  |  |
-| 100 | 2026-05-10 | [`INC-00365`](docs/incidents/2026.md#inc-00365) | AI-Generated Avatars Spread Pro-Trump Disinformation Ahead of US Midterms | Medium | LLM09 |  |  |
-| 101 | 2026-05-10 | [`INC-00432`](docs/incidents/2026.md#inc-00432) | AI-Generated Disinformation Targets Misogyny Bill in Brazil | Medium | LLM09 |  |  |
-| 102 | 2026-05-10 | [`INC-00714`](docs/incidents/2026.md#inc-00714) | Brazilian Workers' Party Warns of AI-Driven Electoral Disinformation Risks | Medium | LLM09 |  |  |
-| 103 | 2026-05-10 | [`INC-00737`](docs/incidents/2026.md#inc-00737) | CDU Staffer Creates and Shares Sexualized Deepfake Video of Colleague | Medium | LLM09 | ASI09 |  |
-| 104 | 2026-05-10 | [`INC-00878`](docs/incidents/2026.md#inc-00878) | Delhi High Court Orders Removal of AI-Generated Deepfakes Exploiting Aman Gupta | Medium | LLM09 | ASI09 |  |
-| 105 | 2026-05-10 | [`INC-01107`](docs/incidents/2026.md#inc-01107) | Google Blocks AI-Driven Cyberattack Exploiting Zero-Day Vulnerability | High |  |  |  |
-| 106 | 2026-05-10 | [`INC-01109`](docs/incidents/2026.md#inc-01109) | Google Cloud Users Hit by Massive Bills After AI API Key Compromise | High |  | ASI09 |  |
-| 107 | 2026-05-10 | [`INC-01409`](docs/incidents/2026.md#inc-01409) | Meta Removes End-to-End Encryption from Instagram Messages, Enabling AI Surveillance | High |  |  |  |
-| 108 | 2026-05-10 | [`INC-01439`](docs/incidents/2026.md#inc-01439) | Microsoft Research Reveals AI Models Corrupt Documents in Delegated Workflows | High | LLM09 |  |  |
-| 109 | 2026-05-10 | [`INC-01617`](docs/incidents/2026.md#inc-01617) | Palantir AI Systems Used in Israeli Military Operations Causing Civilian Harm | Critical | LLM05 | ASI05 |  |
-| 110 | 2026-05-09 | [`INC-00189`](docs/incidents/2026.md#inc-00189) | AI Models Enable Autonomous Cyberattacks and Vulnerability Exploitation | Critical |  | ASI05, ASI10 |  |
-| 111 | 2026-05-09 | [`INC-00277`](docs/incidents/2026.md#inc-00277) | AI-Driven Cyberattacks and Military Targeting Lead to Civilian Harm | Critical | LLM02, LLM09 | ASI03, ASI05, ASI10 |  |
-| 112 | 2026-05-09 | [`INC-00352`](docs/incidents/2026.md#inc-00352) | AI-Enabled Military Ground Vehicle BARKAN 3 Unveiled in Turkey | Critical | LLM05 | ASI05, ASI10 |  |
-| 113 | 2026-05-09 | [`INC-00479`](docs/incidents/2026.md#inc-00479) | AI-Generated Investment Scam Defrauds Retiree in Antalya | High |  | ASI09 |  |
-| 114 | 2026-05-09 | [`INC-00778`](docs/incidents/2026.md#inc-00778) | China's First AI-Generated Short Drama Copyright Infringement Case | High |  |  |  |
-| 115 | 2026-05-09 | [`INC-01103`](docs/incidents/2026.md#inc-01103) | Google and Greystoke Understate Carbon Emissions of UK AI Data Centres | Medium | LLM09 |  |  |
-| 116 | 2026-05-09 | [`INC-01731`](docs/incidents/2026.md#inc-01731) | Researchers Bypass AI Robot Safety to Demonstrate Bomb-Carrying Risk | Medium | LLM01 | ASI01 |  |
-| 117 | 2026-05-09 | [`INC-01853`](docs/incidents/2026.md#inc-01853) | Tesla AI Vision Enables Earlier Airbag Deployment to Reduce Crash Injuries | Medium |  |  |  |
-| 118 | 2026-05-09 | [`INC-01956`](docs/incidents/2026.md#inc-01956) | Ukraine Deploys AI Turrets for Autonomous Drone Interception in Combat | Critical | LLM05 | ASI05, ASI10 |  |
-| 119 | 2026-05-09 | [`INC-02070`](docs/incidents/2026.md#inc-02070) | Waymo Autonomous Vehicles Involved in Multiple Safety Incidents in London and San Antonio | Critical | LLM05 | ASI05 |  |
-| 120 | 2026-05-08 | [`INC-00043`](docs/incidents/2026.md#inc-00043) | Advances in Self-Evolving AI Agents Raise Future Risk Concerns | Medium |  |  |  |
-| 121 | 2026-05-08 | [`INC-00263`](docs/incidents/2026.md#inc-00263) | AI-Assisted IPL Ticket Counterfeiting Scam Busted in Lucknow | High |  | ASI09 |  |
-| 122 | 2026-05-08 | [`INC-00420`](docs/incidents/2026.md#inc-00420) | AI-Generated Deepfakes Spread Disinformation About India's Defense and Foreign Policy | Critical | LLM09 | ASI09 |  |
-| 123 | 2026-05-08 | [`INC-00444`](docs/incidents/2026.md#inc-00444) | AI-Generated Fake Damage Photos Used in Vinted Refund Scam | Medium |  | ASI09 |  |
-| 124 | 2026-05-08 | [`INC-00805`](docs/incidents/2026.md#inc-00805) | Claude AI Chrome Extension Vulnerability Exposes User Data to Malicious Extensions | High | LLM01, LLM03 | ASI01, ASI04 |  |
-| 125 | 2026-05-08 | [`INC-01006`](docs/incidents/2026.md#inc-01006) | First Case of AI Addiction Treated in Venice | Critical | LLM05 | ASI05 |  |
-| 126 | 2026-05-08 | [`INC-01268`](docs/incidents/2026.md#inc-01268) | Japan Responds to AI Cybersecurity Threats from Anthropic's Mythos Model | Critical | LLM05 | ASI05 |  |
-| 127 | 2026-05-08 | [`INC-01276`](docs/incidents/2026.md#inc-01276) | JR East to Trial Level 4 Autonomous Buses on Kesennuma Line BRT | Medium |  |  |  |
-| 128 | 2026-05-08 | [`INC-01421`](docs/incidents/2026.md#inc-01421) | Meta's AI-Driven Account Purge Causes Mass Suspensions and Follower Losses | High | LLM05 | ASI05 |  |
-| 129 | 2026-05-08 | [`INC-01533`](docs/incidents/2026.md#inc-01533) | NHTSA Investigates Avride-Uber Robotaxi Crashes in Texas | Medium |  |  |  |
-| 130 | 2026-05-08 | [`INC-01544`](docs/incidents/2026.md#inc-01544) | Nuro Receives California Permits for Driverless Lucid-Uber Robotaxi Testing | Medium |  |  |  |
-| 131 | 2026-05-08 | [`INC-01968`](docs/incidents/2026.md#inc-01968) | UN AI Advisor Warns of Risks: Human Impersonation and Neural Data Commercialization | Medium | LLM09 | ASI09 |  |
-| 132 | 2026-05-08 | [`INC-01979`](docs/incidents/2026.md#inc-01979) | Unregulated AI Toys Expose Children to Inappropriate Content and Privacy Risks | Medium |  |  |  |
-| 133 | 2026-05-08 | [`INC-02027`](docs/incidents/2026.md#inc-02027) | US Probes Illegal Smuggling of Nvidia AI Chips to China via Thailand | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 134 | 2026-05-08 | [`INC-02040`](docs/incidents/2026.md#inc-02040) | Vietnam Uses AI for Online Propaganda and Censorship | High | LLM05, LLM09 | ASI05 |  |
-| 135 | 2026-05-07 | [`INC-00001`](docs/incidents/2026.md#inc-00001) | 11 Arrested for Deepfake AI Scam Impersonating Ghana's Former President | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 136 | 2026-05-07 | [`INC-00235`](docs/incidents/2026.md#inc-00235) | AI Token Theft Surge Causes Financial Harm to Startups | Critical | LLM05 | ASI05, ASI09 |  |
-| 137 | 2026-05-07 | [`INC-00329`](docs/incidents/2026.md#inc-00329) | AI-Driven Workplace Surveillance Leads to Employee Dismissals and Privacy Concerns in China | Medium |  |  |  |
-| 138 | 2026-05-07 | [`INC-00332`](docs/incidents/2026.md#inc-00332) | AI-Enabled Brain-Computer Interfaces Advance, Raising Future Risks | Medium |  |  |  |
-| 139 | 2026-05-07 | [`INC-00415`](docs/incidents/2026.md#inc-00415) | AI-Generated Deepfakes Cause Harm and Challenge Law Enforcement in Germany | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 140 | 2026-05-07 | [`INC-00441`](docs/incidents/2026.md#inc-00441) | AI-Generated Fake Buyer Reviews Mislead Consumers on Chinese E-Commerce Platforms | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 141 | 2026-05-07 | [`INC-00538`](docs/incidents/2026.md#inc-00538) | AI-Powered Cyberattacks Threaten Global Financial Stability | High | LLM05 | ASI05 |  |
-| 142 | 2026-05-07 | [`INC-00602`](docs/incidents/2026.md#inc-00602) | Anthropic Claude used in attempted compromise of Mexican water utility | Critical | LLM01, LLM06 | ASI01, ASI02 |  |
-| 143 | 2026-05-07 | [`INC-00650`](docs/incidents/2026.md#inc-00650) | ASU Faculty Protest AI Platform's Unauthorized Use of Teaching Materials | Medium | LLM09 |  |  |
-| 144 | 2026-05-07 | [`INC-00791`](docs/incidents/2026.md#inc-00791) | Chinese Courts Rule Against AI Platforms for Defamation and Copyright Infringement | High | LLM05, LLM09 | ASI05 |  |
-| 145 | 2026-05-07 | [`INC-01156`](docs/incidents/2026.md#inc-01156) | Hacker Exploits Security Flaws in Yarbo Robot Lawnmowers, Demonstrates Physical and Privacy Risks | High |  |  |  |
-| 146 | 2026-05-07 | [`INC-01175`](docs/incidents/2026.md#inc-01175) | Hyundai Rotem and Anduril Collaborate on AI-Driven Military Command Systems | Critical | LLM05 | ASI05, ASI10 |  |
-| 147 | 2026-05-07 | [`INC-01634`](docs/incidents/2026.md#inc-01634) | Pentagon Signs $500 Million AI Contract with Scale AI for Military Data Analysis | Critical |  |  |  |
-| 148 | 2026-05-07 | [`INC-01915`](docs/incidents/2026.md#inc-01915) | Trump Shares AI-Generated Image Targeting Biden and Family | High | LLM09 |  |  |
-| 149 | 2026-05-07 | [`INC-02003`](docs/incidents/2026.md#inc-02003) | US Judge Rules Use of ChatGPT to Cut Humanities Grants Unconstitutional | High |  |  |  |
-| 150 | 2026-05-07 | [`INC-02034`](docs/incidents/2026.md#inc-02034) | US-China Consider Formal AI Talks to Prevent Military and Economic Crises | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
-| 151 | 2026-05-07 | [`INC-02108`](docs/incidents/2026.md#inc-02108) | YouTube AI Moderation Causes Mass Demonetization of Japanese Creators | High | LLM05 | ASI05 |  |
-| 152 | 2026-05-06 | [`INC-00039`](docs/incidents/2026.md#inc-00039) | Actress Sues Over AI-Generated Likeness in 'Avatar' Films | High | LLM09 | ASI09 |  |
-| 153 | 2026-05-06 | [`INC-00284`](docs/incidents/2026.md#inc-00284) | AI-Driven Cyberattacks Render Passwords Insufficient for Security | Critical | LLM02, LLM09 | ASI03, ASI05, ASI09, ASI10 |  |
-| 154 | 2026-05-06 | [`INC-00308`](docs/incidents/2026.md#inc-00308) | AI-Driven Layoffs Surge in US Companies | High | LLM05 | ASI05 |  |
-| 155 | 2026-05-06 | [`INC-00394`](docs/incidents/2026.md#inc-00394) | AI-Generated Deepfake Video Fuels Misinformation After Tainan Policewoman's Death | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 156 | 2026-05-06 | [`INC-00463`](docs/incidents/2026.md#inc-00463) | AI-Generated Fake Rabbis Spread Antisemitism on TikTok | Medium | LLM09 | ASI09 |  |
-| 157 | 2026-05-06 | [`INC-00499`](docs/incidents/2026.md#inc-00499) | AI-Generated Scam Texts Target Oregon Drivers | Medium | LLM09 | ASI09 |  |
-| 158 | 2026-05-06 | [`INC-00533`](docs/incidents/2026.md#inc-00533) | AI-Powered Apple Watch App Trial Aims to Detect Infections in Pediatric Cancer Patients | Medium |  |  |  |
-| 159 | 2026-05-06 | [`INC-00547`](docs/incidents/2026.md#inc-00547) | AI-Powered Kamikaze Naval Drone YAKTU KİDA Unveiled in Turkey | Critical |  | ASI10 |  |
-| 160 | 2026-05-06 | [`INC-00560`](docs/incidents/2026.md#inc-00560) | AI-Powered Traffic Cameras Enforce In-Car Violations on Brazilian Highways | High | LLM05 | ASI05 |  |
-| 161 | 2026-05-06 | [`INC-00562`](docs/incidents/2026.md#inc-00562) | AI-Powered TUNGA-X Interceptor Drone Unveiled in Turkey | Critical | LLM05 | ASI05, ASI10 |  |
-| 162 | 2026-05-06 | [`INC-00625`](docs/incidents/2026.md#inc-00625) | Anthropic's Mythos AI Sparks Cybersecurity Crisis Over Autonomous Vulnerability Discovery | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
-| 163 | 2026-05-06 | [`INC-00730`](docs/incidents/2026.md#inc-00730) | Canadian Privacy Authorities Find OpenAI's ChatGPT Violated Privacy Laws | High | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
-| 164 | 2026-05-06 | [`INC-00901`](docs/incidents/2026.md#inc-00901) | Disney's Facial Recognition System Raises Privacy Concerns in California | High | LLM02 | ASI03 |  |
-| 165 | 2026-05-06 | [`INC-01048`](docs/incidents/2026.md#inc-01048) | French Cybersecurity Sector Warns of AI-Driven Vulnerability Surge | Medium |  |  |  |
-| 166 | 2026-05-06 | [`INC-01545`](docs/incidents/2026.md#inc-01545) | NVIDIA Faces Lawsuit Over AI Training With Copyrighted Data | High |  |  |  |
-| 167 | 2026-05-06 | [`INC-01903`](docs/incidents/2026.md#inc-01903) | TikTok Algorithm Systematically Favored Republican Content During 2024 US Elections | High | LLM05, LLM09 | ASI05 |  |
-| 168 | 2026-05-06 | [`INC-01905`](docs/incidents/2026.md#inc-01905) | TikTok Scales Back AI Video Summaries After Generating Bizarre Errors | Medium | LLM09 |  |  |
-| 169 | 2026-05-05 | [`INC-00055`](docs/incidents/2026.md#inc-00055) | AI Accelerates Password Cracking and Exposes Security Detection Gaps | High | LLM02 | ASI03 |  |
-| 170 | 2026-05-05 | [`INC-00056`](docs/incidents/2026.md#inc-00056) | AI Accent Masking in Canadian Call Centres Sparks Transparency and Labor Concerns | High |  |  |  |
-| 171 | 2026-05-05 | [`INC-00274`](docs/incidents/2026.md#inc-00274) | AI-Driven CTV Ad Fraud Surges 140% Globally, Causing Financial Harm to Advertisers | Medium |  | ASI09 |  |
-| 172 | 2026-05-05 | [`INC-00445`](docs/incidents/2026.md#inc-00445) | AI-Generated Fake Family Photos Cause Distress for Julián Gil and Marjorie de Sousa | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 173 | 2026-05-05 | [`INC-00561`](docs/incidents/2026.md#inc-00561) | AI-Powered Translation Threatens Minority Languages with Extinction | Medium |  |  |  |
-| 174 | 2026-05-05 | [`INC-00785`](docs/incidents/2026.md#inc-00785) | Chinese AI Search System Misidentifies Historical Figure, Spreading Misinformation | High | LLM09 |  |  |
-| 175 | 2026-05-05 | [`INC-00839`](docs/incidents/2026.md#inc-00839) | Cognizant Layoffs Driven by AI Automation Impact Thousands in India | Critical | LLM05 | ASI05 |  |
-| 176 | 2026-05-05 | [`INC-01069`](docs/incidents/2026.md#inc-01069) | Georgia Prosecutor Disciplined for Submitting AI-Generated Fake Legal Citations | High |  |  |  |
-| 177 | 2026-05-05 | [`INC-01125`](docs/incidents/2026.md#inc-01125) | Google Warns EU Data-Sharing Plan Risks AI-Driven Privacy Breaches | High |  |  |  |
-| 178 | 2026-05-05 | [`INC-01235`](docs/incidents/2026.md#inc-01235) | Indonesia and Turkey Sign Deal for AI-Enabled Combat Drones | Critical | LLM05 | ASI05, ASI10 |  |
-| 179 | 2026-05-05 | [`INC-01250`](docs/incidents/2026.md#inc-01250) | Ireland Investigates Meta's AI Recommender Systems for Potential User Manipulation | High | LLM05 | ASI05 |  |
-| 180 | 2026-05-05 | [`INC-01360`](docs/incidents/2026.md#inc-01360) | Major AI Chatbots Leak User Conversations to Advertising Trackers | High | LLM02 | ASI03 |  |
-| 181 | 2026-05-05 | [`INC-01420`](docs/incidents/2026.md#inc-01420) | Meta's AI Systems Enable Scam Ads and Harmful Content Targeting Minors | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 182 | 2026-05-05 | [`INC-01448`](docs/incidents/2026.md#inc-01448) | MindBio Develops AI Voice Analytics for Intoxication Detection | High | LLM05 | ASI05 |  |
-| 183 | 2026-05-05 | [`INC-01628`](docs/incidents/2026.md#inc-01628) | Pennsylvania Sues Character.AI Over Chatbot Impersonating Doctor | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 184 | 2026-05-05 | [`INC-01686`](docs/incidents/2026.md#inc-01686) | Publishers Sue Meta Over Unauthorized Use of Copyrighted Works for AI Training | High | LLM05 | ASI05 |  |
-| 185 | 2026-05-05 | [`INC-01712`](docs/incidents/2026.md#inc-01712) | Purportedly AI-Recreated Clips from Beastie Boys&#x27; &#x27;Sabotage&#x27; Video Reportedly Appeared in FBI… | High | LLM09 |  |  |
-| 186 | 2026-05-05 | [`INC-01831`](docs/incidents/2026.md#inc-01831) | Suspect Uses Taipei Metro AI Chatbot to Issue Bomb and Murder Threats, Causing Public Panic | High | LLM05 | ASI05 |  |
-| 187 | 2026-05-05 | [`INC-01987`](docs/incidents/2026.md#inc-01987) | US Army Launches AI Integration Initiative for Military Systems | Medium |  | ASI10 |  |
-| 188 | 2026-05-04 | [`INC-00042`](docs/incidents/2026.md#inc-00042) | Advanced AI Models Spark Global Cybersecurity and Financial System Fears | Critical |  |  |  |
-| 189 | 2026-05-04 | [`INC-00147`](docs/incidents/2026.md#inc-00147) | AI Deepfake Scam Targets Taiwanese Farmer, Harms Consumers and Agriculture | Medium | LLM09 | ASI09 |  |
-| 190 | 2026-05-04 | [`INC-00173`](docs/incidents/2026.md#inc-00173) | AI Humanoid Robots Deployed for Traffic Control and Military Logistics | Critical | LLM05 | ASI05 |  |
-| 191 | 2026-05-04 | [`INC-00196`](docs/incidents/2026.md#inc-00196) | AI Prompt Injection Exploit Drains Grok-Linked Crypto Wallet | Critical | LLM01, LLM05 | ASI01, ASI05, ASI09 |  |
-| 192 | 2026-05-04 | [`INC-00257`](docs/incidents/2026.md#inc-00257) | AI Voice Cloning Used in Silent Call Phone Scams in France | High | LLM09 | ASI09 |  |
-| 193 | 2026-05-04 | [`INC-00258`](docs/incidents/2026.md#inc-00258) | AI Vulnerabilities Overwhelm Security Systems and Expose Critical Risks | High | LLM02, LLM04, LLM05 | ASI03, ASI05, ASI06, ASI09 |  |
-| 194 | 2026-05-04 | [`INC-00375`](docs/incidents/2026.md#inc-00375) | AI-Generated Deepfake Ads Target Kentucky GOP Candidates in Defamatory Political Attacks | High | LLM09 | ASI09 |  |
-| 195 | 2026-05-04 | [`INC-00421`](docs/incidents/2026.md#inc-00421) | AI-Generated Deepfakes Used in Celebrity Scam Ads in France | High | LLM09 | ASI09 |  |
-| 196 | 2026-05-04 | [`INC-00454`](docs/incidents/2026.md#inc-00454) | AI-Generated Fake Magazine Cover Broadcast on CNews Causes Misinformation | Medium | LLM09 | ASI09 |  |
-| 197 | 2026-05-04 | [`INC-00456`](docs/incidents/2026.md#inc-00456) | AI-Generated Fake News Causes Food Safety Panic in Taiwan | High | LLM04, LLM05, LLM09 | ASI05, ASI06 |  |
-| 198 | 2026-05-04 | [`INC-00497`](docs/incidents/2026.md#inc-00497) | AI-Generated Saint Paisios Scam Defrauds Greek Faithful | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 199 | 2026-05-04 | [`INC-00569`](docs/incidents/2026.md#inc-00569) | AI-Related Data Breaches Expose Student Information in NYC Public Schools | High | LLM02 | ASI03 |  |
-| 200 | 2026-05-04 | [`INC-00610`](docs/incidents/2026.md#inc-00610) | Anthropic's 'Claude Mythos' AI Sparks Global Cybersecurity Concerns | Critical |  |  |  |
-| 201 | 2026-05-04 | [`INC-00729`](docs/incidents/2026.md#inc-00729) | Canadian Musician Sues Google Over AI-Generated Defamation | High | LLM05, LLM09 | ASI05 |  |
-| 202 | 2026-05-04 | [`INC-00761`](docs/incidents/2026.md#inc-00761) | Children Circumvent AI Age Verification with Simple Tricks in the UK | High |  |  |  |
-| 203 | 2026-05-04 | [`INC-00931`](docs/incidents/2026.md#inc-00931) | Elon Musk and Expert Witness Warn of Existential AI Risks in OpenAI Trial | Medium |  |  |  |
-| 204 | 2026-05-04 | [`INC-00947`](docs/incidents/2026.md#inc-00947) | EU and Swiss Authorities Assess Cybersecurity Risks of Anthropic's Mythos AI Model | Critical |  |  |  |
-| 205 | 2026-05-04 | [`INC-00948`](docs/incidents/2026.md#inc-00948) | EU Demands Early Access to Anthropic's Mythos AI Over Cybersecurity Fears | High | LLM02 | ASI03 |  |
-| 206 | 2026-05-04 | [`INC-01009`](docs/incidents/2026.md#inc-01009) | Flawed AI System Raises Healthcare Costs for Kenya's Poor | Critical |  |  |  |
-| 207 | 2026-05-04 | [`INC-01068`](docs/incidents/2026.md#inc-01068) | Generative AI Easily Circumvents Digital Image Protections, Researchers Warn | High | LLM09 | ASI09 |  |
-| 208 | 2026-05-04 | [`INC-01119`](docs/incidents/2026.md#inc-01119) | Google Maps Glitch Causes Wrong-Way Traffic and Safety Hazards in Toronto | Medium |  |  |  |
-| 209 | 2026-05-04 | [`INC-01415`](docs/incidents/2026.md#inc-01415) | Meta's AI Chatbots Expose Users to Harm, Reuters Wins Pulitzer for Investigation | Critical |  | ASI09 |  |
-| 210 | 2026-05-04 | [`INC-01757`](docs/incidents/2026.md#inc-01757) | SEBI Warns of AI Risks in Indian Financial Markets | High | LLM05 | ASI05 |  |
-| 211 | 2026-05-04 | [`INC-01922`](docs/incidents/2026.md#inc-01922) | Turkish Defense Official Highlights Shift to AI-Driven Warfare | Medium |  |  |  |
-| 212 | 2026-05-04 | [`INC-01925`](docs/incidents/2026.md#inc-01925) | U.S. Coast Guard Deploys AI-Enabled Autonomous Sail Drones on Great Lakes | Medium |  |  |  |
-| 213 | 2026-05-04 | [`INC-01934`](docs/incidents/2026.md#inc-01934) | Uber Plans Data Collection and Autonomous Vehicle Pilot in Madrid | Medium |  |  |  |
-| 214 | 2026-05-04 | [`INC-02001`](docs/incidents/2026.md#inc-02001) | US Healthcare Marketplaces Leak Sensitive Data to Ad Tech Giants via AI Trackers | High | LLM02 | ASI03 |  |
-| 215 | 2026-05-03 | [`INC-00099`](docs/incidents/2026.md#inc-00099) | AI Chatbot Induces Delusions and Paranoia in User | High | LLM05 | ASI05 |  |
-| 216 | 2026-05-03 | [`INC-00157`](docs/incidents/2026.md#inc-00157) | AI Deepfakes Used in Fraudulent Medical Product Scams in Germany | Medium | LLM09 | ASI09 |  |
-| 217 | 2026-05-03 | [`INC-00161`](docs/incidents/2026.md#inc-00161) | AI Device Improves Detection of Life-Threatening Heart Condition in Black Patients | Critical |  |  |  |
-| 218 | 2026-05-03 | [`INC-00162`](docs/incidents/2026.md#inc-00162) | AI Drives Majority of Global Security Breaches in 2026 | High | LLM05 | ASI05 |  |
-| 219 | 2026-05-03 | [`INC-00204`](docs/incidents/2026.md#inc-00204) | AI Startup Accused of Stealing Artist's Work for Ad Campaign | High |  |  |  |
-| 220 | 2026-05-03 | [`INC-00427`](docs/incidents/2026.md#inc-00427) | AI-Generated Disinformation Becomes Routine, Undermining Public Trust | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 221 | 2026-05-03 | [`INC-00493`](docs/incidents/2026.md#inc-00493) | AI-Generated Podcasts Flood the Market, Disrupting Discovery and Content Quality | Medium | LLM09 |  |  |
-| 222 | 2026-05-03 | [`INC-00512`](docs/incidents/2026.md#inc-00512) | AI-Generated Videos Used in Religious Charity Scam in Taiwan | Medium | LLM09 | ASI09 |  |
-| 223 | 2026-05-03 | [`INC-00726`](docs/incidents/2026.md#inc-00726) | California Penalizes Autonomous Vehicles After AI-Driven Traffic Violations and Injuries | Medium |  |  |  |
-| 224 | 2026-05-03 | [`INC-00727`](docs/incidents/2026.md#inc-00727) | Campaigners Raise Concerns Over AI Data Centre Expansion on Scottish Green Belt | Medium |  |  |  |
-| 225 | 2026-05-03 | [`INC-00754`](docs/incidents/2026.md#inc-00754) | ChatGPT Used to Plan and Execute Florida State University Shooting | Critical | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
-| 226 | 2026-05-03 | [`INC-00766`](docs/incidents/2026.md#inc-00766) | China Implements National AI-Driven Digital Identity System, Raising Surveillance Concerns | High | LLM02 | ASI03 |  |
-| 227 | 2026-05-03 | [`INC-01231`](docs/incidents/2026.md#inc-01231) | Indian Banks Boost Cybersecurity Amid Threats from Anthropic's Mythos AI | Critical | LLM05 | ASI05 |  |
-| 228 | 2026-05-03 | [`INC-01242`](docs/incidents/2026.md#inc-01242) | Intoxicated Driver Relies on Tesla Autopilot, Car Stops on Florida Highway | Critical |  |  |  |
-| 229 | 2026-05-03 | [`INC-01580`](docs/incidents/2026.md#inc-01580) | OpenAI Sued After ChatGPT Fails to Flag Canadian School Shooter | Critical | LLM05 | ASI05 |  |
-| 230 | 2026-05-03 | [`INC-01783`](docs/incidents/2026.md#inc-01783) | Solana Co-Founder Warns AI Could Threaten Post-Quantum Cryptography | High |  |  |  |
-| 231 | 2026-05-03 | [`INC-01863`](docs/incidents/2026.md#inc-01863) | Tesla FSD Faces EU Regulatory Scrutiny Over Safety Concerns | Critical | LLM09 |  |  |
-| 232 | 2026-05-03 | [`INC-01946`](docs/incidents/2026.md#inc-01946) | UK NCSC Warns of AI-Driven Surge in Software Vulnerability Exploitation | Critical | LLM05 | ASI05 |  |
-| 233 | 2026-05-03 | [`INC-01948`](docs/incidents/2026.md#inc-01948) | UK Police Use Live Facial Recognition to Make Arrests, Raising Civil Liberties Concerns | High | LLM05 | ASI05 |  |
-| 234 | 2026-05-03 | [`INC-01951`](docs/incidents/2026.md#inc-01951) | UK Retailers' AI Facial Recognition System Falsely Accuses Shoppers of Theft | High | LLM05 | ASI05 |  |
-| 235 | 2026-05-03 | [`INC-01954`](docs/incidents/2026.md#inc-01954) | UK Tests AI-Powered Drone Swarms for Autonomous Military Strikes | Critical |  | ASI10 |  |
-| 236 | 2026-05-02 | [`INC-00425`](docs/incidents/2026.md#inc-00425) | AI-Generated Digital Exes Spark Privacy and Emotional Concerns in China | High |  |  |  |
-| 237 | 2026-05-02 | [`INC-00466`](docs/incidents/2026.md#inc-00466) | AI-Generated Fake Sensitive Images Cause Harm Among Students in Đồng Nai | High | LLM05, LLM09 | ASI05 |  |
-| 238 | 2026-05-02 | [`INC-00488`](docs/incidents/2026.md#inc-00488) | AI-Generated Music and Jailbreaking Lead to Harm in Digital Platforms | Medium | LLM01, LLM09 | ASI01, ASI09 |  |
-| 239 | 2026-05-02 | [`INC-00769`](docs/incidents/2026.md#inc-00769) | China Removes 98,000 Accounts for Unlabeled AI-Generated Content | High | LLM05, LLM09 | ASI05 |  |
-| 240 | 2026-05-02 | [`INC-01164`](docs/incidents/2026.md#inc-01164) | High School Students Use AI Deepfake Technology to Create and Distribute Sexual Images, Nearly 20 Victims in… | High | LLM09 | ASI09 |  |
-| 241 | 2026-05-02 | [`INC-02017`](docs/incidents/2026.md#inc-02017) | US Military AI Use Causes Civilian Casualties and Raises Global Security Risks | Critical |  |  |  |
-| 242 | 2026-05-02 | [`INC-02077`](docs/incidents/2026.md#inc-02077) | Waymo Robotaxi Drives Off With Passenger's Luggage at San Jose Airport | Medium |  |  |  |
-| 243 | 2026-05-01 | [`INC-00211`](docs/incidents/2026.md#inc-00211) | AI Surveillance Systems Spark Privacy Violations and Misuse Across U.S. Cities | High | LLM05 | ASI05 |  |
-| 244 | 2026-05-01 | [`INC-00227`](docs/incidents/2026.md#inc-00227) | AI Systems Enable Early Wildfire Detection and Response in Western US | Medium |  |  |  |
-| 245 | 2026-05-01 | [`INC-00315`](docs/incidents/2026.md#inc-00315) | AI-Driven Phishing Attacks Surge, Expanding Beyond Email | High | LLM09 | ASI09 |  |
-| 246 | 2026-05-01 | [`INC-00374`](docs/incidents/2026.md#inc-00374) | AI-Generated Criminal Memes Cause Secondary Harm to Victims in South Korea | Medium | LLM09 | ASI09 |  |
-| 247 | 2026-05-01 | [`INC-00377`](docs/incidents/2026.md#inc-00377) | AI-Generated Deepfake Diet Ads Cause Health Harm to Kathy Hilton | Medium | LLM09 | ASI09 |  |
-| 248 | 2026-05-01 | [`INC-00405`](docs/incidents/2026.md#inc-00405) | AI-Generated Deepfake Videos Used for Celebrity Impersonation and Scams in Vietnam | Critical | LLM09 | ASI09 |  |
-| 249 | 2026-05-01 | [`INC-00429`](docs/incidents/2026.md#inc-00429) | AI-Generated Disinformation Causes Social Harm and Legal Action in Vietnam | Medium | LLM09 |  |  |
-| 250 | 2026-05-01 | [`INC-00900`](docs/incidents/2026.md#inc-00900) | Disney Replaces Marvel Artists with AI, Leading to Mass Layoffs and Outcry | High | LLM05 | ASI05 |  |
-| 251 | 2026-05-01 | [`INC-01220`](docs/incidents/2026.md#inc-01220) | Incomplete Patient Input to AI Chatbots Risks Medical Misdiagnosis | Medium |  |  |  |
-| 252 | 2026-05-01 | [`INC-01532`](docs/incidents/2026.md#inc-01532) | NHS England Restricts Open-Source Code Access Over AI Vulnerability Fears | High | LLM05 | ASI05 |  |
-| 253 | 2026-05-01 | [`INC-01992`](docs/incidents/2026.md#inc-01992) | US Considers Faster Patch Deadlines Due to AI-Driven Cyber Threats | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 254 | 2026-05-01 | [`INC-02000`](docs/incidents/2026.md#inc-02000) | US Government Flags Anthropic's Mythos AI as National Security Risk | Critical | LLM03 | ASI04 |  |
-| 255 | 2026-05-01 | [`INC-02025`](docs/incidents/2026.md#inc-02025) | US Navy Deploys AI to Accelerate Mine Detection in Strait of Hormuz | Critical | LLM05 | ASI05, ASI10 |  |
-| 256 | 2026-05-01 | [`INC-02041`](docs/incidents/2026.md#inc-02041) | Vietnamese Police Warn Parents of AI Image Processing Risks for Children | High | LLM09 | ASI09 |  |
-| 257 | 2026-05 | [`INC-00015`](docs/incidents/2026.md#inc-00015) | A remote code execution vulnerability exists in Code Runner MCP Server when run with the --transport http opt… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5029` |
-| 258 | 2026-05 | [`INC-00020`](docs/incidents/2026.md#inc-00020) | A Server-Side Request Forgery (SSRF) vulnerability exists in MLflow versions prior to 3.9.0. | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-2393` |
-| 259 | 2026-05 | [`INC-00025`](docs/incidents/2026.md#inc-00025) | A vulnerability in the `_create_model_version()` handler of `mlflow/server/handlers.py` in mlflow/mlflow vers… | High | LLM03 | ASI04 | `CVE-2026-2614` |
-| 260 | 2026-05 | [`INC-00572`](docs/incidents/2026.md#inc-00572) | aiwaves-cn agents — Vulnerability (CVE-2026-8319) | Medium | LLM03 | ASI04 | `CVE-2026-8319` |
-| 261 | 2026-05 | [`INC-00584`](docs/incidents/2026.md#inc-00584) | An issue in Open Source Kubectl MCP Server v1.1.1 allows attackers to execute arbitrary code on a victim syst… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-65719` |
-| 262 | 2026-05 | [`INC-00634`](docs/incidents/2026.md#inc-00634) | AnythingLLM — Vulnerability (CVE-2026-42456) | Medium | LLM03 | ASI04 | `CVE-2026-42456` |
-| 263 | 2026-05 | [`INC-00644`](docs/incidents/2026.md#inc-00644) | Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader Versions Affected: before… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42027` |
-| 264 | 2026-05 | [`INC-00742`](docs/incidents/2026.md#inc-00742) | chatchat-space Langchain-Chatchat — Auth Bypass (CVE-2026-7844) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-7844` (+3) |
-| 265 | 2026-05 | [`INC-00756`](docs/incidents/2026.md#inc-00756) | ChatGPTNextWeb NextChat — Vulnerability (CVE-2026-7643) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-7177` (+3) |
-| 266 | 2026-05 | [`INC-00800`](docs/incidents/2026.md#inc-00800) | ciguard — Vulnerability (CVE-2026-44220) | Low | LLM03 | ASI04 | `CVE-2026-44220` |
-| 267 | 2026-05 | [`INC-00830`](docs/incidents/2026.md#inc-00830) | Claude SDK for TypeScript provides access to the Claude API from server-side TypeScript or JavaScript applica… | Medium | LLM01, LLM03, LLM05 | ASI01, ASI04, ASI05 | `CVE-2026-34451`, `CVE-2026-41686` |
-| 268 | 2026-05 | [`INC-00847`](docs/incidents/2026.md#inc-00847) | Command injection vulnerability in automagik-genie 2.5.27 MCP Server allows attackers to execute arbitrary co… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30635` |
-| 269 | 2026-05 | [`INC-00856`](docs/incidents/2026.md#inc-00856) | Copilot said: i18nextify is a JavaScript library that adds i18nextify is a JavaScript library that adds websi… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41691` |
-| 270 | 2026-05 | [`INC-00858`](docs/incidents/2026.md#inc-00858) | CosyVoice thru commit 6e01309e01bc93bbeb83bdd996b1182a81aaf11e (2025-30-21) contains an insecure deserializat… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31249` (+2) |
-| 271 | 2026-05 | [`INC-00873`](docs/incidents/2026.md#inc-00873) | DeepChat — Rce (CVE-2026-43899) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-43899` |
-| 272 | 2026-05 | [`INC-00892`](docs/incidents/2026.md#inc-00892) | Dify before version 1.14.0 contains an authorization bypass vulnerability that allows authenticated users to… | Medium | LLM03 | ASI04 | `CVE-2026-41950` |
-| 273 | 2026-05 | [`INC-00897`](docs/incidents/2026.md#inc-00897) | Dify — Xss (CVE-2026-42138) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34082`, `CVE-2026-42138` |
-| 274 | 2026-05 | [`INC-00971`](docs/incidents/2026.md#inc-00971) | Evolver — Path Traversal (CVE-2026-42075) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42075` (+2) |
-| 275 | 2026-05 | [`INC-00988`](docs/incidents/2026.md#inc-00988) | FastGPT — Dos (CVE-2026-42343) | Medium | LLM03 | ASI04 | `CVE-2026-42343` |
-| 276 | 2026-05 | [`INC-00990`](docs/incidents/2026.md#inc-00990) | FastGPT — Rce (CVE-2026-42302) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42302` |
-| 277 | 2026-05 | [`INC-00993`](docs/incidents/2026.md#inc-00993) | FastGPT — Ssrf (CVE-2026-44284) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44284`, `CVE-2026-44286` |
-| 278 | 2026-05 | [`INC-00997`](docs/incidents/2026.md#inc-00997) | FastGPT — Vulnerability (CVE-2026-42344) | Medium | LLM03 | ASI04 | `CVE-2026-42344` |
-| 279 | 2026-05 | [`INC-00998`](docs/incidents/2026.md#inc-00998) | FastGPT — Vulnerability (CVE-2026-42345) | High | LLM03 | ASI04 | `CVE-2026-42345` |
-| 280 | 2026-05 | [`INC-01035`](docs/incidents/2026.md#inc-01035) | Flowise — Vulnerability (CVE-2026-43995) | Medium | LLM03 | ASI04 | `CVE-2026-43995` |
-| 281 | 2026-05 | [`INC-01036`](docs/incidents/2026.md#inc-01036) | FlowiseAI Flowise — Auth Bypass (CVE-2026-8027) | Medium | LLM03 | ASI04 | `CVE-2026-8027` |
-| 282 | 2026-05 | [`INC-01037`](docs/incidents/2026.md#inc-01037) | FlowiseAI Flowise — Info Disclosure (CVE-2026-8026) | Low | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-8026` |
-| 283 | 2026-05 | [`INC-01038`](docs/incidents/2026.md#inc-01038) | FlowiseAI Flowise — Info Disclosure (CVE-2026-8028) | Low | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-8028` |
-| 284 | 2026-05 | [`INC-01131`](docs/incidents/2026.md#inc-01131) | GPT-Pilot thru commit 0819827ce20346ef5f25b3fe29293cb448840565 (2025-09-03) contains a command injection vuln… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31246` |
-| 285 | 2026-05 | [`INC-01181`](docs/incidents/2026.md#inc-01181) | Improper access control in Azure AI Foundry M365 published agents allows an unauthorized attacker to elevate… | High | LLM03 | ASI03, ASI04 | `CVE-2026-35435` |
-| 286 | 2026-05 | [`INC-01182`](docs/incidents/2026.md#inc-01182) | Improper access control in M365 Copilot allows an authorized attacker to perform spoofing locally. | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41100` |
-| 287 | 2026-05 | [`INC-01183`](docs/incidents/2026.md#inc-01183) | Improper access control in M365 Copilot for Desktop allows an unauthorized attacker to perform spoofing local… | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41614` |
-| 288 | 2026-05 | [`INC-01185`](docs/incidents/2026.md#inc-01185) | Improper neutralization of input during web page generation ('cross-site scripting') in Azure Machine Learnin… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-23668` (+5) |
-| 289 | 2026-05 | [`INC-01186`](docs/incidents/2026.md#inc-01186) | Improper neutralization of special elements in M365 Copilot allows an unauthorized attacker to disclose infor… | High | LLM03 | ASI04 | `CVE-2026-26129` |
-| 290 | 2026-05 | [`INC-01187`](docs/incidents/2026.md#inc-01187) | Improper neutralization of special elements in output used by a downstream component ('injection') in M365 Co… | High | LLM03 | ASI04 | `CVE-2026-26164` (+2) |
-| 291 | 2026-05 | [`INC-01188`](docs/incidents/2026.md#inc-01188) | Improper neutralization of special elements used in a command ('command injection') in Copilot Chat (Microsof… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-59252` (+12) |
-| 292 | 2026-05 | [`INC-01195`](docs/incidents/2026.md#inc-01195) | In Jupyter Notebook versions 7.0.0 through 7.5.5, JupyterLab versions 4.5.6 and earlier, and the correspondin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40171` |
-| 293 | 2026-05 | [`INC-01206`](docs/incidents/2026.md#inc-01206) | In the Linux kernel, the following vulnerability has been resolved: ext4: handle wraparound when searching fo… | Critical | LLM03 | ASI04 | `CVE-2026-43067` |
-| 294 | 2026-05 | [`INC-01207`](docs/incidents/2026.md#inc-01207) | In the Linux kernel, the following vulnerability has been resolved: fs/smb/client: fix out-of-bounds read in… | High | LLM03 | ASI04 | `CVE-2026-43112` |
-| 295 | 2026-05 | [`INC-01209`](docs/incidents/2026.md#inc-01209) | In the Linux kernel, the following vulnerability has been resolved: iommupt: Fix short gather if the unmap go… | High | LLM03 | ASI04 | `CVE-2026-31735` |
-| 296 | 2026-05 | [`INC-01210`](docs/incidents/2026.md#inc-01210) | In the Linux kernel, the following vulnerability has been resolved: misc: fastrpc: possible double-free of cc… | High | LLM03 | ASI04 | `CVE-2026-31730` |
-| 297 | 2026-05 | [`INC-01211`](docs/incidents/2026.md#inc-01211) | In the Linux kernel, the following vulnerability has been resolved: net/ipv6: ioam6: prevent schema length wr… | Critical | LLM03 | ASI04 | `CVE-2026-43341` |
-| 298 | 2026-05 | [`INC-01214`](docs/incidents/2026.md#inc-01214) | In the Linux kernel, the following vulnerability has been resolved: nfsd: fix nfs4_file refcount leak in nfsd… | Medium | LLM03 | ASI04 | `CVE-2026-43193` |
-| 299 | 2026-05 | [`INC-01219`](docs/incidents/2026.md#inc-01219) | In versions 2.1.63 through 2.1.83 of Claude Code, the folder trust determination logic used the git worktree… | High | LLM03 | ASI04 | `CVE-2026-40068` |
-| 300 | 2026-05 | [`INC-01277`](docs/incidents/2026.md#inc-01277) | JunoClaw — Vulnerability (CVE-2026-43989) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-43989` (+4) |
-| 301 | 2026-05 | [`INC-01302`](docs/incidents/2026.md#inc-01302) | Langflow — Path Traversal (CVE-2026-42048) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42048` |
-| 302 | 2026-05 | [`INC-01309`](docs/incidents/2026.md#inc-01309) | Langfuse — Auth Bypass (CVE-2026-41487) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41487` |
-| 303 | 2026-05 | [`INC-01341`](docs/incidents/2026.md#inc-01341) | LiteLLM — Rce (CVE-2026-42203) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-42203` (+2) |
-| 304 | 2026-05 | [`INC-01352`](docs/incidents/2026.md#inc-01352) | LobeHub — Xss (CVE-2026-42045) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42045` |
-| 305 | 2026-05 | [`INC-01353`](docs/incidents/2026.md#inc-01353) | Local file inclusion (LFI) and server-side request forgery (SSRF) vulnerabilities in pgAdmin 4 LLM API config… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7817` |
-| 306 | 2026-05 | [`INC-01438`](docs/incidents/2026.md#inc-01438) | Microsoft RCE Vulnerabilities Across AI Agent Frameworks | Critical | LLM01, LLM06 | ASI02, ASI05 |  |
-| 307 | 2026-05 | [`INC-01478`](docs/incidents/2026.md#inc-01478) | n8n — Data Exfiltration (CVE-2026-42226) | High | LLM03 | ASI03, ASI04 | `CVE-2026-42226` |
-| 308 | 2026-05 | [`INC-01479`](docs/incidents/2026.md#inc-01479) | n8n — Data Exfiltration (CVE-2026-42233) | Critical | LLM03 | ASI04 | `CVE-2026-42233` |
-| 309 | 2026-05 | [`INC-01482`](docs/incidents/2026.md#inc-01482) | n8n — Info Disclosure (CVE-2026-42227) | Medium | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-42227` |
-| 310 | 2026-05 | [`INC-01488`](docs/incidents/2026.md#inc-01488) | n8n — Rce (CVE-2026-42231) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42231` |
-| 311 | 2026-05 | [`INC-01489`](docs/incidents/2026.md#inc-01489) | n8n — Rce (CVE-2026-42232) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42232` |
-| 312 | 2026-05 | [`INC-01490`](docs/incidents/2026.md#inc-01490) | n8n — Sandbox Escape (CVE-2026-42234) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42234` |
-| 313 | 2026-05 | [`INC-01492`](docs/incidents/2026.md#inc-01492) | n8n — Sql Injection (CVE-2026-42237) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42237` |
-| 314 | 2026-05 | [`INC-01502`](docs/incidents/2026.md#inc-01502) | n8n — Vulnerability (CVE-2026-42228) | Medium | LLM03 | ASI04 | `CVE-2026-42228` |
-| 315 | 2026-05 | [`INC-01503`](docs/incidents/2026.md#inc-01503) | n8n — Vulnerability (CVE-2026-42229) | High | LLM03 | ASI04 | `CVE-2026-42229` |
-| 316 | 2026-05 | [`INC-01504`](docs/incidents/2026.md#inc-01504) | n8n — Vulnerability (CVE-2026-42230) | Medium | LLM03 | ASI04 | `CVE-2026-42230` |
-| 317 | 2026-05 | [`INC-01505`](docs/incidents/2026.md#inc-01505) | n8n — Vulnerability (CVE-2026-42235) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-42235` |
-| 318 | 2026-05 | [`INC-01506`](docs/incidents/2026.md#inc-01506) | n8n — Vulnerability (CVE-2026-42236) | High | LLM03 | ASI04 | `CVE-2026-42236` |
-| 319 | 2026-05 | [`INC-01509`](docs/incidents/2026.md#inc-01509) | n8n-MCP — Auth Bypass (CVE-2026-41495) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41495` |
-| 320 | 2026-05 | [`INC-01511`](docs/incidents/2026.md#inc-01511) | n8n-MCP — Ssrf (CVE-2026-42449) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42449` |
-| 321 | 2026-05 | [`INC-01512`](docs/incidents/2026.md#inc-01512) | n8n-MCP — Ssrf (CVE-2026-44694) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44694` |
-| 322 | 2026-05 | [`INC-01513`](docs/incidents/2026.md#inc-01513) | n8n-MCP — Vulnerability (CVE-2026-42282) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-42282` |
-| 323 | 2026-05 | [`INC-01522`](docs/incidents/2026.md#inc-01522) | New API — Ssrf (CVE-2026-42339) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42339` |
-| 324 | 2026-05 | [`INC-01537`](docs/incidents/2026.md#inc-01537) | nnU-Net — Vulnerability (CVE-2026-44246) | High | LLM03, LLM04 | ASI04 | `CVE-2026-44246` |
-| 325 | 2026-05 | [`INC-01551`](docs/incidents/2026.md#inc-01551) | Ollama before 0.17.1 contains a heap out-of-bounds read vulnerability in the GGUF model loader. | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-7482` |
-| 326 | 2026-05 | [`INC-01553`](docs/incidents/2026.md#inc-01553) | Ollama Windows auto-updater missing signature verification | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15514` (+2) |
-| 327 | 2026-05 | [`INC-01558`](docs/incidents/2026.md#inc-01558) | Onyx — Vulnerability (CVE-2026-42276) | Medium | LLM03 | ASI04 | `CVE-2026-42276` |
-| 328 | 2026-05 | [`INC-01572`](docs/incidents/2026.md#inc-01572) | Open-WebSearch — Ssrf (CVE-2026-42260) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42260` |
-| 329 | 2026-05 | [`INC-01596`](docs/incidents/2026.md#inc-01596) | OpenClaw before 2026.4.20 contains a guard bypass vulnerability in the agent-facing gateway config.patch and… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-45001` |
-| 330 | 2026-05 | [`INC-01597`](docs/incidents/2026.md#inc-01597) | OpenClaw before 2026.4.20 contains an improper environment variable validation vulnerability in MCP stdio ser… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44995` |
-| 331 | 2026-05 | [`INC-01598`](docs/incidents/2026.md#inc-01598) | OpenClaw before 2026.4.22 derives loopback MCP owner context from spoofable server-issued bearer tokens in re… | High | LLM03 | ASI04 | `CVE-2026-44118` |
-| 332 | 2026-05 | [`INC-01650`](docs/incidents/2026.md#inc-01650) | pixelsock directus-mcp 1 — Ssrf (CVE-2026-7729) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7729` |
-| 333 | 2026-05 | [`INC-01665`](docs/incidents/2026.md#inc-01665) | PPTAgent — Path Traversal (CVE-2026-42078) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42078` (+2) |
-| 334 | 2026-05 | [`INC-01667`](docs/incidents/2026.md#inc-01667) | PraisonAI — Path Traversal (CVE-2026-44336) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44336` |
-| 335 | 2026-05 | [`INC-01682`](docs/incidents/2026.md#inc-01682) | PromptHub — Ssrf (CVE-2026-42261) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42261` |
-| 336 | 2026-05 | [`INC-01717`](docs/incidents/2026.md#inc-01717) | PyTorch-Lightning versions 2.6.0 and earlier contain an insecure deserialization vulnerability (CWE-502) in t… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31221` |
-| 337 | 2026-05 | [`INC-01722`](docs/incidents/2026.md#inc-01722) | Ray — Deserialization (CVE-2026-41486) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41486` |
-| 338 | 2026-05 | [`INC-01768`](docs/incidents/2026.md#inc-01768) | sgl-project SGLang — Vulnerability (CVE-2026-7669) | Medium | LLM03 | ASI04 | `CVE-2026-7669` |
-| 339 | 2026-05 | [`INC-01781`](docs/incidents/2026.md#inc-01781) | SOCFortress CoPilot focuses on providing a single pane of glass for all your security operations needs. | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-42869` |
-| 340 | 2026-05 | [`INC-01802`](docs/incidents/2026.md#inc-01802) | Spring AI's MilvusVectorStore#doDelete(List) implementation is vulnerable to filter-expression injection via… | High | LLM03 | ASI04 | `CVE-2026-41705` |
-| 341 | 2026-05 | [`INC-01805`](docs/incidents/2026.md#inc-01805) | SQLBot — Prompt Injection (CVE-2026-33324) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-33324` |
-| 342 | 2026-05 | [`INC-01882`](docs/incidents/2026.md#inc-01882) | The Adversarial Robustness Toolbox (ART) thru 1.20.1 contains a remote code execution vulnerability in its Ku… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31228` (+2) |
-| 343 | 2026-05 | [`INC-01887`](docs/incidents/2026.md#inc-01887) | The GeekyBot — Generate AI Content Without Prompt, Chatbot and Lead Generation plugin for WordPress is vulner… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-3456` |
-| 344 | 2026-05 | [`INC-01891`](docs/incidents/2026.md#inc-01891) | The llm CLI tool thru 0.27.1 contains a critical code injection vulnerability via its --functions command-lin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31236` |
-| 345 | 2026-05 | [`INC-01892`](docs/incidents/2026.md#inc-01892) | The Ludwig framework thru 0.10.4 is vulnerable to insecure deserialization (CWE-502) in its model serving com… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31238` |
-| 346 | 2026-05 | [`INC-01893`](docs/incidents/2026.md#inc-01893) | The mamba language model framework thru 2.2.6 is vulnerable to insecure deserialization (CWE-502) when loadin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31239` |
-| 347 | 2026-05 | [`INC-01898`](docs/incidents/2026.md#inc-01898) | The torch-checkpoint-shrink.py script in the ml-engineering project in commit 0099885db36a8f06556efe1faf55251… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31214` |
-| 348 | 2026-05 | [`INC-01908`](docs/incidents/2026.md#inc-01908) | titra — Vulnerability (CVE-2026-42092) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-42092` |
-| 349 | 2026-05 | [`INC-02055`](docs/incidents/2026.md#inc-02055) | vLLM — Vulnerability (CVE-2026-44222) | Medium | LLM03 | ASI04 | `CVE-2026-44222` |
-| 350 | 2026-05 | [`INC-02056`](docs/incidents/2026.md#inc-02056) | vLLM — Vulnerability (CVE-2026-44223) | Medium | LLM03 | ASI04 | `CVE-2026-44223` |
-| 351 | 2026-05 | [`INC-02060`](docs/incidents/2026.md#inc-02060) | Vulnerability in the Oracle MCP Server Helper Tool product of Oracle Open Source Projects (component: helper… | High | LLM03 | ASI04 | `CVE-2026-35228` |
-| 352 | 2026-05 | [`INC-02097`](docs/incidents/2026.md#inc-02097) | Wireshark MCP — Vulnerability (CVE-2026-43901) | Medium | LLM03 | ASI04 | `CVE-2026-43901` |
-| 353 | 2026-04-30 | [`INC-00100`](docs/incidents/2026.md#inc-00100) | AI Chatbot Interaction Leads to Discovery of Child Sexual Abuse in Paraná | High | LLM05, LLM09 | ASI05 |  |
-| 354 | 2026-04-30 | [`INC-00184`](docs/incidents/2026.md#inc-00184) | AI Model DAMO COCA Enhances Early Colorectal Cancer Detection in China | Medium |  |  |  |
-| 355 | 2026-04-30 | [`INC-00246`](docs/incidents/2026.md#inc-00246) | AI Uncovers Long-Standing Banking Vulnerabilities, Prompting Global Warning | High | LLM02 | ASI03 |  |
-| 356 | 2026-04-30 | [`INC-00254`](docs/incidents/2026.md#inc-00254) | AI Voice Assistant Malfunction Nearly Causes Child Injury in Car Seat Incident | Medium |  |  |  |
-| 357 | 2026-04-30 | [`INC-00286`](docs/incidents/2026.md#inc-00286) | AI-Driven Cybercrime Causes 389% Surge in Ransomware Victims | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
-| 358 | 2026-04-30 | [`INC-00413`](docs/incidents/2026.md#inc-00413) | AI-Generated Deepfakes and Online Abuse Drive Women from Public Life | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 359 | 2026-04-30 | [`INC-00459`](docs/incidents/2026.md#inc-00459) | AI-Generated Fake Photo Causes Public Outcry and Legal Action in Greece | Medium | LLM09 |  |  |
-| 360 | 2026-04-30 | [`INC-00487`](docs/incidents/2026.md#inc-00487) | AI-Generated Misinformation Spreads After Trump Assassination Attempt | Medium | LLM09 |  |  |
-| 361 | 2026-04-30 | [`INC-00543`](docs/incidents/2026.md#inc-00543) | AI-Powered Emergency Response Drones Deployed at Deltona High School | High | LLM05 | ASI05 |  |
-| 362 | 2026-04-30 | [`INC-00681`](docs/incidents/2026.md#inc-00681) | Baykar Unveils AI-Enabled Autonomous Loitering Munition 'Mızrak' | Critical | LLM09 | ASI10 |  |
-| 363 | 2026-04-30 | [`INC-00703`](docs/incidents/2026.md#inc-00703) | Bot Auto Completes First Fully Humanless Commercial Truck Delivery in Texas | Medium |  |  |  |
-| 364 | 2026-04-30 | [`INC-01008`](docs/incidents/2026.md#inc-01008) | First Prosecution for AI-Generated Child Abuse Images in Germany | Medium | LLM09 |  |  |
-| 365 | 2026-04-30 | [`INC-01407`](docs/incidents/2026.md#inc-01407) | Meta Faces Legal Action Over AI-Driven Harms to Children in New Mexico | Critical | LLM05, LLM09 | ASI05 |  |
-| 366 | 2026-04-30 | [`INC-01418`](docs/incidents/2026.md#inc-01418) | Meta's AI Smart Glasses Lead to Worker Harm and Privacy Violations in Kenya | High |  |  |  |
-| 367 | 2026-04-30 | [`INC-01449`](docs/incidents/2026.md#inc-01449) | Minnesota Bans AI 'Nudification' Apps After Deepfake Harms | Medium | LLM09 | ASI09 |  |
-| 368 | 2026-04-30 | [`INC-02106`](docs/incidents/2026.md#inc-02106) | XTEND Develops AI-Powered Autonomous Defense Systems for Middle East Client | Medium |  | ASI10 |  |
-| 369 | 2026-04-29 | [`INC-00054`](docs/incidents/2026.md#inc-00054) | Ahmedabad Aadhaar Fraud Racket Reportedly Used Purportedly AI-Generated Deepfakes to Change Businessman&#x27;… | High | LLM09 | ASI09 |  |
-| 370 | 2026-04-29 | [`INC-00060`](docs/incidents/2026.md#inc-00060) | AI Adoption Drives Wage Gap and Job Losses for Entry-Level Workers | Critical | LLM05 | ASI05 |  |
-| 371 | 2026-04-29 | [`INC-00061`](docs/incidents/2026.md#inc-00061) | AI Adoption in Spain Projected to Displace Up to 2.3 Million Jobs by 2035 | Medium |  |  |  |
-| 372 | 2026-04-29 | [`INC-00124`](docs/incidents/2026.md#inc-00124) | AI Chatbots Provide Instructions for Creating Biological Weapons | Critical | LLM01, LLM05 | ASI01, ASI05 |  |
-| 373 | 2026-04-29 | [`INC-00144`](docs/incidents/2026.md#inc-00144) | AI Deepfake Celebrity Scams Target TikTok Users | High | LLM09 | ASI09 |  |
-| 374 | 2026-04-29 | [`INC-00203`](docs/incidents/2026.md#inc-00203) | AI Smart Glasses Enable Rapid Dementia Risk Detection for Elderly in Taiwan | Medium |  |  |  |
-| 375 | 2026-04-29 | [`INC-00260`](docs/incidents/2026.md#inc-00260) | AI-Assisted Commit Enables North Korean Malware Attack on Crypto Trading Agent | High | LLM02, LLM03 | ASI02, ASI04 |  |
-| 376 | 2026-04-29 | [`INC-00272`](docs/incidents/2026.md#inc-00272) | AI-Driven Bot Attacks Surge 12.5x, Dominate Internet Traffic in 2025 | High | LLM02 | ASI03, ASI09 |  |
-| 377 | 2026-04-29 | [`INC-00300`](docs/incidents/2026.md#inc-00300) | AI-Driven Fraud Surges Amid Governance Gaps in Global Financial Sector | High | LLM05 | ASI05, ASI09 |  |
-| 378 | 2026-04-29 | [`INC-00524`](docs/incidents/2026.md#inc-00524) | AI-Managed Café in Stockholm Raises Labor and Ethical Concerns | High | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI09 |  |
-| 379 | 2026-04-29 | [`INC-00551`](docs/incidents/2026.md#inc-00551) | AI-Powered Phishing Kits Like Bluekit Drive Surge in Sophisticated Attacks | Medium |  | ASI09 |  |
-| 380 | 2026-04-29 | [`INC-00574`](docs/incidents/2026.md#inc-00574) | Alphabet Investors Demand Safeguards on AI and Cloud Use by Governments | High | LLM05 | ASI05 |  |
-| 381 | 2026-04-29 | [`INC-00944`](docs/incidents/2026.md#inc-00944) | EU Accuses Meta of Failing to Prevent Underage Access to Facebook and Instagram | High | LLM05 | ASI05 |  |
-| 382 | 2026-04-29 | [`INC-01279`](docs/incidents/2026.md#inc-01279) | Katsina State to Deploy 50,000 AI-Powered Smart Streetlights | Medium |  |  |  |
-| 383 | 2026-04-29 | [`INC-01362`](docs/incidents/2026.md#inc-01362) | Malicious AI Agent Supply Chain Attack Exploits MCP Server Lookalikes | High | LLM02, LLM03, LLM04, LLM09 | ASI02, ASI03, ASI04, ASI06 |  |
-| 384 | 2026-04-29 | [`INC-01556`](docs/incidents/2026.md#inc-01556) | Online Oceans Secures Funding to Scale AI-Enabled Autonomous Maritime Security Fleets | Medium |  |  |  |
-| 385 | 2026-04-29 | [`INC-01755`](docs/incidents/2026.md#inc-01755) | Scout AI Raises $100M to Develop Autonomous Warfare AI System | Critical |  |  |  |
-| 386 | 2026-04-29 | [`INC-01818`](docs/incidents/2026.md#inc-01818) | Study Finds Three Types of Addiction Linked to AI Chatbots | Medium |  |  |  |
-| 387 | 2026-04-29 | [`INC-01819`](docs/incidents/2026.md#inc-01819) | Study Finds Warmer AI Chatbots Make More Mistakes and Spread Misinformation | High | LLM05, LLM09 | ASI05 |  |
-| 388 | 2026-04-29 | [`INC-01969`](docs/incidents/2026.md#inc-01969) | UN Warns AI in Advertising Risks Accelerating Global Misinformation Crisis | Medium | LLM09 |  |  |
-| 389 | 2026-04-29 | [`INC-02010`](docs/incidents/2026.md#inc-02010) | US Lawmakers Probe Airbnb and Anysphere Over Use of Chinese AI Models | Critical | LLM02, LLM03 | ASI03, ASI04 |  |
-| 390 | 2026-04-29 | [`INC-02059`](docs/incidents/2026.md#inc-02059) | Vulnerabilities in Cursor AI Coding Environment Expose Developers to Code Execution and Credential Theft | Medium | LLM05 | ASI05 |  |
-| 391 | 2026-04-29 | [`INC-02093`](docs/incidents/2026.md#inc-02093) | White House Opposes Anthropic's Expansion of Mythos AI Access Due to Cybersecurity Risks | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI10 |  |
-| 392 | 2026-04-28 | [`INC-00117`](docs/incidents/2026.md#inc-00117) | AI Chatbots Linked to Worsened Mental Health in Young People | Medium | LLM05 | ASI09 |  |
-| 393 | 2026-04-28 | [`INC-00261`](docs/incidents/2026.md#inc-00261) | AI-Assisted Discovery of Critical GitHub Vulnerability Enables Rapid Remediation | Medium | LLM05 | ASI05 |  |
-| 394 | 2026-04-28 | [`INC-00319`](docs/incidents/2026.md#inc-00319) | AI-Driven Romance Scams Impact 27% of Italians | Medium | LLM09 | ASI09 |  |
-| 395 | 2026-04-28 | [`INC-00461`](docs/incidents/2026.md#inc-00461) | AI-Generated Fake Posters Cause Misinformation for 'Singer 2026' | Medium | LLM09 |  |  |
-| 396 | 2026-04-28 | [`INC-00502`](docs/incidents/2026.md#inc-00502) | AI-Generated Short Dramas Spark Copyright and Portrait Rights Violations in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 397 | 2026-04-28 | [`INC-00540`](docs/incidents/2026.md#inc-00540) | AI-Powered Drone Joint Venture Formed for Indian Defense | Medium |  | ASI10 |  |
-| 398 | 2026-04-28 | [`INC-00853`](docs/incidents/2026.md#inc-00853) | Controversy Over Palantir's AI Systems and Their Societal Impact | High | LLM05 | ASI05 |  |
-| 399 | 2026-04-28 | [`INC-00865`](docs/incidents/2026.md#inc-00865) | Critical Vulnerability in Hugging Face LeRobot AI Platform Enables Remote Code Execution | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 400 | 2026-04-28 | [`INC-01126`](docs/incidents/2026.md#inc-01126) | Google Withdraws from Pentagon AI Drone Swarm Project Over Ethics Concerns | High | LLM05 | ASI05, ASI10 |  |
-| 401 | 2026-04-28 | [`INC-01373`](docs/incidents/2026.md#inc-01373) | Mass Layoffs in Tech Industry Driven by AI Adoption | High | LLM05 | ASI05 |  |
-| 402 | 2026-04-28 | [`INC-01875`](docs/incidents/2026.md#inc-01875) | Tesla's Full Self-Driving AI Faces Crashes and Legal Action in Europe | Medium |  |  |  |
-| 403 | 2026-04-28 | [`INC-01909`](docs/incidents/2026.md#inc-01909) | TON and Telegram Launch Autonomous AI Agents for Blockchain Transactions, Raising Future Financial Risks | High | LLM01, LLM05 | ASI01, ASI05, ASI09 |  |
-| 404 | 2026-04-28 | [`INC-02076`](docs/incidents/2026.md#inc-02076) | Waymo Robotaxi Blocks Ambulance in Austin, Raising Safety Concerns | Critical | LLM05 | ASI05 |  |
-| 405 | 2026-04-27 | [`INC-00073`](docs/incidents/2026.md#inc-00073) | AI Agents Exploited in Security Breaches Due to Inadequate Identity Management | High | LLM02 | ASI03 |  |
-| 406 | 2026-04-27 | [`INC-00116`](docs/incidents/2026.md#inc-00116) | AI Chatbots Linked to Teen Suicides and Mental Health Harms | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 407 | 2026-04-27 | [`INC-00150`](docs/incidents/2026.md#inc-00150) | AI Deepfake Technology Enables Identity Theft via Leaked ID Photos in China | High | LLM09 | ASI09 |  |
-| 408 | 2026-04-27 | [`INC-00259`](docs/incidents/2026.md#inc-00259) | AI Writing Feedback Found Biased by Student Race and Gender | Medium |  |  |  |
-| 409 | 2026-04-27 | [`INC-00410`](docs/incidents/2026.md#inc-00410) | AI-Generated Deepfake Videos Used to Scam French Investors | Medium | LLM09 | ASI09 |  |
-| 410 | 2026-04-27 | [`INC-00578`](docs/incidents/2026.md#inc-00578) | Amazon Deploys AI to Combat Counterfeits and Phishing Globally | High | LLM05 | ASI05, ASI09 |  |
-| 411 | 2026-04-27 | [`INC-00623`](docs/incidents/2026.md#inc-00623) | Anthropic's Mythos AI Raises Global Cybersecurity Concerns | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI10 |  |
-| 412 | 2026-04-27 | [`INC-00698`](docs/incidents/2026.md#inc-00698) | BlueNoroff Uses AI-Generated Deepfakes in Cryptocurrency Phishing Attacks | High | LLM02, LLM09 | ASI03, ASI09 |  |
-| 413 | 2026-04-27 | [`INC-00731`](docs/incidents/2026.md#inc-00731) | Canva AI Tool Replaces 'Palestine' with 'Ukraine' in User Designs, Prompting Apology | Medium | LLM09 | ASI09 |  |
-| 414 | 2026-04-27 | [`INC-00888`](docs/incidents/2026.md#inc-00888) | Detroit Police Facial Recognition Misidentifications Lead to Lawsuits and Policy Changes | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 415 | 2026-04-27 | [`INC-00980`](docs/incidents/2026.md#inc-00980) | Facial Recognition AI Blocks ALS Patient from Accessing Funds on Binance | High | LLM05 | ASI05 |  |
-| 416 | 2026-04-27 | [`INC-01062`](docs/incidents/2026.md#inc-01062) | Gemini Launches AI-Driven Agentic Trading on Crypto Exchange | Medium |  |  |  |
-| 417 | 2026-04-27 | [`INC-01229`](docs/incidents/2026.md#inc-01229) | India's CERT-In Issues High-Severity Warning on AI-Driven Cyber Threats | Critical | LLM02, LLM03, LLM09 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
-| 418 | 2026-04-27 | [`INC-01519`](docs/incidents/2026.md#inc-01519) | Netflix Faces Boycott Over AI Voice Training in German Dubbing Industry | Medium |  |  |  |
-| 419 | 2026-04-27 | [`INC-01612`](docs/incidents/2026.md#inc-01612) | Over a Million London Jobs at Risk from AI Automation, Mayor Warns | High | LLM05 | ASI05 |  |
-| 420 | 2026-04-27 | [`INC-01794`](docs/incidents/2026.md#inc-01794) | Spanish Judge Fined for Using ChatGPT to Draft Judicial Sentence | High |  |  |  |
-| 421 | 2026-04-27 | [`INC-01830`](docs/incidents/2026.md#inc-01830) | Suspect Used ChatGPT to Plan Disposal of Murder Victims in Florida | Critical | LLM05 | ASI05 |  |
-| 422 | 2026-04-27 | [`INC-01928`](docs/incidents/2026.md#inc-01928) | U.S. Mandates AI-Driven Driver Monitoring Systems in All New Vehicles by 2027 | Critical | LLM09 |  |  |
-| 423 | 2026-04-27 | [`INC-01943`](docs/incidents/2026.md#inc-01943) | UK Firms Face AI Data Governance Risks from Overseas Processing | High | LLM02 | ASI03 |  |
-| 424 | 2026-04-27 | [`INC-01975`](docs/incidents/2026.md#inc-01975) | Uncontrolled Enterprise AI Use Increases Cybersecurity and Data Risks | High | LLM02 | ASI03, ASI09 |  |
-| 425 | 2026-04-27 | [`INC-02032`](docs/incidents/2026.md#inc-02032) | US Tests AI-Powered Autonomous Military Systems Near Cuba Amid Rising Tensions | Medium |  | ASI10 |  |
-| 426 | 2026-04-26 | [`INC-00439`](docs/incidents/2026.md#inc-00439) | AI-Generated Faces in Chinese Short Drama Spark Portrait Rights Infringement Controversy | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 427 | 2026-04-25 | [`INC-01921`](docs/incidents/2026.md#inc-01921) | Turkish Bar Associations Oppose AI-Based Legal Defense Platform | Medium |  |  |  |
-| 428 | 2026-04-24 | [`INC-00101`](docs/incidents/2026.md#inc-00101) | AI Chatbots Covertly Influence Users with Embedded Ads | High |  |  |  |
-| 429 | 2026-04-24 | [`INC-00209`](docs/incidents/2026.md#inc-00209) | AI Surveillance System Sabotaged at Bengaluru IPL Stadium | Medium |  |  |  |
-| 430 | 2026-04-24 | [`INC-00331`](docs/incidents/2026.md#inc-00331) | AI-Enabled Autonomous Kamikaze Drones Demonstrated in Turkey | Critical | LLM05 | ASI05, ASI10 |  |
-| 431 | 2026-04-24 | [`INC-00482`](docs/incidents/2026.md#inc-00482) | AI-Generated Microdrama Uses Real Faces Without Consent in China | High | LLM09 | ASI09 |  |
-| 432 | 2026-04-24 | [`INC-00558`](docs/incidents/2026.md#inc-00558) | AI-Powered Synthetic Identity Fraud Hits Financial Sector | Critical | LLM09 | ASI09 |  |
-| 433 | 2026-04-24 | [`INC-00717`](docs/incidents/2026.md#inc-00717) | BSE Warns of Repeated Deepfake Scams Targeting Investors | High | LLM09 | ASI09 |  |
-| 434 | 2026-04-24 | [`INC-00969`](docs/incidents/2026.md#inc-00969) | European Regulators Warn of Accelerated Cyber Threats from AI in Financial Sector | Medium |  |  |  |
-| 435 | 2026-04-24 | [`INC-01061`](docs/incidents/2026.md#inc-01061) | Geely's Caocao Plans Global Deployment of AI-Powered Robotaxis | Medium |  |  |  |
-| 436 | 2026-04-24 | [`INC-01425`](docs/incidents/2026.md#inc-01425) | Metropolitan Police Use Palantir AI to Uncover Officer Misconduct | High | LLM05 | ASI05, ASI09 |  |
-| 437 | 2026-04-24 | [`INC-01739`](docs/incidents/2026.md#inc-01739) | Robot Malfunction at Chinese University Event Leads to Unintended Physical Contact | Critical | LLM05 | ASI05 |  |
-| 438 | 2026-04-24 | [`INC-01740`](docs/incidents/2026.md#inc-01740) | Romania Deploys AI-Powered Drone Interceptors Amid Ukraine Conflict | Critical | LLM05 | ASI05 |  |
-| 439 | 2026-04-24 | [`INC-01855`](docs/incidents/2026.md#inc-01855) | Tesla Begins Production of Autonomous Cybercab Robotaxi | Medium |  |  |  |
-| 440 | 2026-04-24 | [`INC-01923`](docs/incidents/2026.md#inc-01923) | Turkish Intelligence Academy Warns of AI-Driven Cybersecurity Risks | Critical | LLM09 | ASI09 |  |
-| 441 | 2026-04-24 | [`INC-01944`](docs/incidents/2026.md#inc-01944) | UK Government Underestimates AI Data Center Carbon Emissions by Over 100-Fold | Medium |  |  |  |
-| 442 | 2026-04-24 | [`INC-02037`](docs/incidents/2026.md#inc-02037) | Utah Medical Board Calls for Suspension of AI Prescription Renewal Program | Medium |  |  |  |
-| 443 | 2026-04-23 | [`INC-00108`](docs/incidents/2026.md#inc-00108) | AI Chatbots Found to Reinforce Delusions and Encourage Harmful Behavior in Mental Health Study | Critical | LLM05 | ASI05, ASI09 |  |
-| 444 | 2026-04-23 | [`INC-00270`](docs/incidents/2026.md#inc-00270) | AI-Driven Attacks Fuel Major Crypto Thefts in 2026 | High | LLM03, LLM09 | ASI04, ASI09 |  |
-| 445 | 2026-04-23 | [`INC-00298`](docs/incidents/2026.md#inc-00298) | AI-Driven Exploits Cause Major Losses in DeFi Platforms | High |  |  |  |
-| 446 | 2026-04-23 | [`INC-00335`](docs/incidents/2026.md#inc-00335) | AI-Enabled Defense Systems and Autonomous Military Robots Deployed and Developed Globally | Critical |  | ASI10 |  |
-| 447 | 2026-04-23 | [`INC-00440`](docs/incidents/2026.md#inc-00440) | AI-Generated Fake Bank Cheque Sparks Fraud Concerns in India | Medium |  | ASI09 |  |
-| 448 | 2026-04-23 | [`INC-00500`](docs/incidents/2026.md#inc-00500) | AI-Generated Short Dramas Cause Actor Unemployment in China | Medium |  |  |  |
-| 449 | 2026-04-23 | [`INC-00545`](docs/incidents/2026.md#inc-00545) | AI-Powered Flock Cameras Used for Protest Surveillance and Raise Privacy Concerns in the U.S. | High | LLM05 | ASI05, ASI09 |  |
-| 450 | 2026-04-23 | [`INC-00690`](docs/incidents/2026.md#inc-00690) | Bernstein Warns India of AI-Driven Job Risks and Economic Challenges | High | LLM05 | ASI05 |  |
-| 451 | 2026-04-23 | [`INC-00708`](docs/incidents/2026.md#inc-00708) | Brazilian Political Parties Seek Suspension of AI-Generated Disinformation Profile | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 452 | 2026-04-23 | [`INC-00710`](docs/incidents/2026.md#inc-00710) | Brazilian Regulator Fines Meta for Anti-Competitive Use of AI Chatbots on WhatsApp | High | LLM05 | ASI05 |  |
-| 453 | 2026-04-23 | [`INC-00974`](docs/incidents/2026.md#inc-00974) | Experts Urge AI-Driven Cybersecurity and Device Digital IDs in India | Medium |  |  |  |
-| 454 | 2026-04-23 | [`INC-01161`](docs/incidents/2026.md#inc-01161) | HD Hyundai Expands AI-Powered Unmanned Naval Vessel Collaboration in the US | Medium |  | ASI10 |  |
-| 455 | 2026-04-23 | [`INC-01233`](docs/incidents/2026.md#inc-01233) | Indian Government Urges Banks to Prepare for AI-Driven Cyber Threats | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
-| 456 | 2026-04-23 | [`INC-01393`](docs/incidents/2026.md#inc-01393) | Mercor Faces Lawsuits After AI Training Data Breach Exposes Sensitive Worker Information | High | LLM02 | ASI03 |  |
-| 457 | 2026-04-23 | [`INC-01441`](docs/incidents/2026.md#inc-01441) | Microsoft's AI Agents Threaten Entry-Level Tech Jobs | High | LLM05 | ASI05 |  |
-| 458 | 2026-04-23 | [`INC-01631`](docs/incidents/2026.md#inc-01631) | Pentagon Awards $24M Contract for AI-Enabled Humanoid Military Robots | Critical |  | ASI10 |  |
-| 459 | 2026-04-23 | [`INC-01735`](docs/incidents/2026.md#inc-01735) | Researchers Warn of Risks from Evolvable Artificial Intelligence | High | LLM05 | ASI05 |  |
-| 460 | 2026-04-23 | [`INC-01929`](docs/incidents/2026.md#inc-01929) | UAE Plans Massive Government Automation with Agentic AI | High | LLM05 | ASI05 |  |
-| 461 | 2026-04-23 | [`INC-01964`](docs/incidents/2026.md#inc-01964) | Ukraine Plans AI-Driven Autonomous Combat Systems for Battlefield Use | Critical | LLM05 | ASI05, ASI10 |  |
-| 462 | 2026-04-23 | [`INC-02008`](docs/incidents/2026.md#inc-02008) | US Lawmakers Alarmed by AI Models Generating Terrorist Instructions After Safety Filters Removed | Critical | LLM05, LLM09 | ASI05 |  |
-| 463 | 2026-04-23 | [`INC-02057`](docs/incidents/2026.md#inc-02057) | Vorwerk Investigated for Disabling AI Services in Neato Robot Vacuums | High |  |  |  |
-| 464 | 2026-04-23 | [`INC-02065`](docs/incidents/2026.md#inc-02065) | Washington Metro Approves Full Automation of Red Line Trains Amid Safety Concerns | Critical |  |  |  |
-| 465 | 2026-04-23 | [`INC-02068`](docs/incidents/2026.md#inc-02068) | Waymo Autonomous Taxi Disrupts London Crime Scene During Testing | High |  |  |  |
-| 466 | 2026-04-22 | [`INC-00221`](docs/incidents/2026.md#inc-00221) | AI System Prevents Sewer Blockages and Pollution in Southern England | Medium |  |  |  |
-| 467 | 2026-04-22 | [`INC-00310`](docs/incidents/2026.md#inc-00310) | AI-Driven Medicare Prior Authorization Delays and Denials Harm Patients in Washington | Medium |  | ASI09 |  |
-| 468 | 2026-04-22 | [`INC-00424`](docs/incidents/2026.md#inc-00424) | AI-Generated Deepfakes Used to Impersonate Doctor and Promote Illegal Medicines in Brazil | Medium | LLM09 | ASI09 |  |
-| 469 | 2026-04-22 | [`INC-00448`](docs/incidents/2026.md#inc-00448) | AI-Generated Fake Images Spark Viral Misinformation About Tech CEOs in China | High | LLM05, LLM09 | ASI05 |  |
-| 470 | 2026-04-22 | [`INC-00616`](docs/incidents/2026.md#inc-00616) | Anthropic's Claude Desktop Secretly Installs Browser Backdoor on macOS | High | LLM02 | ASI03 |  |
-| 471 | 2026-04-22 | [`INC-00762`](docs/incidents/2026.md#inc-00762) | Chilean Legislative Proposal Sparks Copyright Concerns Over AI Data Use | High | LLM05 | ASI05 |  |
-| 472 | 2026-04-22 | [`INC-01086`](docs/incidents/2026.md#inc-01086) | Germany Procures AI-Enabled Kamikaze Drones for Bundeswehr | Critical | LLM05 | ASI05, ASI10 |  |
-| 473 | 2026-04-22 | [`INC-01238`](docs/incidents/2026.md#inc-01238) | Influencer Investigated for Using AI Deepfake to Sexualize Minors in São Paulo Churches | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 474 | 2026-04-22 | [`INC-01412`](docs/incidents/2026.md#inc-01412) | Meta Sued Over AI-Enhanced Fraudulent Ads on Facebook and Instagram | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 475 | 2026-04-22 | [`INC-01539`](docs/incidents/2026.md#inc-01539) | North Korean Hackers Use AI Tools to Steal $12 Million in Cryptocurrency | Critical |  | ASI09 |  |
-| 476 | 2026-04-22 | [`INC-01633`](docs/incidents/2026.md#inc-01633) | Pentagon Seeks $54 Billion for AI-Driven Autonomous Warfare | Medium |  | ASI10 |  |
-| 477 | 2026-04-22 | [`INC-01764`](docs/incidents/2026.md#inc-01764) | Senator Warren Warns of AI Industry Debt Bubble and Financial Crisis Risk | High | LLM05 | ASI05 |  |
-| 478 | 2026-04-22 | [`INC-01837`](docs/incidents/2026.md#inc-01837) | Taiwan Warns Against Use of Gaode Map App Over AI-Driven Data Security Risks | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
-| 479 | 2026-04-22 | [`INC-01919`](docs/incidents/2026.md#inc-01919) | Turkey Plans AI-Based Biometric Tracking for Legal Supervision | Medium |  |  |  |
-| 480 | 2026-04-21 | [`INC-00207`](docs/incidents/2026.md#inc-00207) | AI Surveillance System Aids Arrest After Hit-and-Run in Teresina | High | LLM05 | ASI05 |  |
-| 481 | 2026-04-21 | [`INC-00371`](docs/incidents/2026.md#inc-00371) | AI-Generated Code Increases Engineer Workload and Software Defects in Japan | High | LLM05 | ASI05 |  |
-| 482 | 2026-04-21 | [`INC-00383`](docs/incidents/2026.md#inc-00383) | AI-Generated Deepfake of Wendie Renard Used in Investment Scam | Medium | LLM09 | ASI09 |  |
-| 483 | 2026-04-21 | [`INC-00452`](docs/incidents/2026.md#inc-00452) | AI-Generated Fake Job Offers Lead to Widespread Scams and Data Theft | High | LLM02 | ASI03, ASI09 |  |
-| 484 | 2026-04-21 | [`INC-00478`](docs/incidents/2026.md#inc-00478) | AI-Generated Influencer 'Emily Hart' Used to Scam MAGA Supporters | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 485 | 2026-04-21 | [`INC-00504`](docs/incidents/2026.md#inc-00504) | AI-Generated Singer in Romania Sparks Racism and Discrimination Debate | High | LLM05 | ASI05 |  |
-| 486 | 2026-04-21 | [`INC-00566`](docs/incidents/2026.md#inc-00566) | AI-Powered Vulnerability Discovery Raises Cybersecurity Risks | Critical | LLM05 | ASI05, ASI10 |  |
-| 487 | 2026-04-21 | [`INC-00622`](docs/incidents/2026.md#inc-00622) | Anthropic's Mythos AI Raises Cybersecurity Concerns for Banks in Europe and India | Medium |  | ASI09 |  |
-| 488 | 2026-04-21 | [`INC-00718`](docs/incidents/2026.md#inc-00718) | Bundesbank Warns of Cybersecurity Risks from Anthropic's Mythos AI Model | Medium |  |  |  |
-| 489 | 2026-04-21 | [`INC-00747`](docs/incidents/2026.md#inc-00747) | ChatGPT Escalates to Abusive Language in Hostile Conversations, Study Finds | Medium |  |  |  |
-| 490 | 2026-04-21 | [`INC-00802`](docs/incidents/2026.md#inc-00802) | CISA Excluded from Anthropic's AI Cybersecurity Tool Rollout | High |  |  |  |
-| 491 | 2026-04-21 | [`INC-00883`](docs/incidents/2026.md#inc-00883) | Delhi High Court Restrains AI-Generated Deepfakes Exploiting Allu Arjun's Persona | Medium | LLM09 | ASI09 |  |
-| 492 | 2026-04-21 | [`INC-01051`](docs/incidents/2026.md#inc-01051) | French Political Party Uses AI to Fabricate Celebrity Endorsements for Book Promotion | High | LLM09 |  |  |
-| 493 | 2026-04-21 | [`INC-01283`](docs/incidents/2026.md#inc-01283) | Kimi AI Model Leaks User Resume Data, Causing Privacy Breach in China | High | LLM02, LLM09 | ASI03 |  |
-| 494 | 2026-04-21 | [`INC-01706`](docs/incidents/2026.md#inc-01706) | Purportedly AI-Enhanced Images of Iranian Women Protesters Were Reportedly Spread With Unverified Execution C… | High | LLM09 | ASI09 |  |
-| 495 | 2026-04-21 | [`INC-01748`](docs/incidents/2026.md#inc-01748) | Rubrik Research Warns of Security Gaps as Enterprise AI Agent Adoption Outpaces Governance | High | LLM01, LLM02, LLM03, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09 |  |
-| 496 | 2026-04-21 | [`INC-01750`](docs/incidents/2026.md#inc-01750) | Russian AI-Driven Cyberattacks Escalate Against Europe | Medium | LLM09 | ASI09 |  |
-| 497 | 2026-04-21 | [`INC-01815`](docs/incidents/2026.md#inc-01815) | Studies Link ChatGPT Use to Reduced Brain Activity and Cognitive Skills | Medium |  |  |  |
-| 498 | 2026-04-21 | [`INC-01822`](docs/incidents/2026.md#inc-01822) | Sullivan & Cromwell Apologizes for AI-Generated Errors in Court Filing | High | LLM09 | ASI09 |  |
-| 499 | 2026-04-21 | [`INC-01906`](docs/incidents/2026.md#inc-01906) | TikTok's AI Meme Remixer Sparks Privacy and Consent Backlash | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 500 | 2026-04-21 | [`INC-01927`](docs/incidents/2026.md#inc-01927) | U.S. Establishes AI-Powered Autonomous Military Force for Latin America | Critical | LLM05 | ASI05, ASI10 |  |
-| 501 | 2026-04-21 | [`INC-01940`](docs/incidents/2026.md#inc-01940) | UK Court Upholds Police Use of AI Facial Recognition Despite Misidentification and Rights Concerns | High | LLM05 | ASI05 |  |
-| 502 | 2026-04-20 | [`INC-00142`](docs/incidents/2026.md#inc-00142) | AI Data Poisoning Threatens National Security and Public Safety in China | Critical | LLM03, LLM04, LLM09 | ASI04, ASI06 |  |
-| 503 | 2026-04-20 | [`INC-00245`](docs/incidents/2026.md#inc-00245) | AI Traffic Cameras in Western Australia Overturn $1 Million in Fines After Accuracy Concerns | High | LLM05 | ASI05 |  |
-| 504 | 2026-04-20 | [`INC-00252`](docs/incidents/2026.md#inc-00252) | AI Virtual Digital Human Technology Trade Secret Infringement Case in Guangzhou | High | LLM05 | ASI05, ASI09 |  |
-| 505 | 2026-04-20 | [`INC-00392`](docs/incidents/2026.md#inc-00392) | AI-Generated Deepfake Video Falsely Claims Indonesian Finance Minister Offers Business Grants | Medium | LLM09 | ASI09 |  |
-| 506 | 2026-04-20 | [`INC-00649`](docs/incidents/2026.md#inc-00649) | Asian Regulators Heighten Cybersecurity Over Anthropic's Mythos AI Risks | Critical | LLM02 | ASI03 |  |
-| 507 | 2026-04-20 | [`INC-00655`](docs/incidents/2026.md#inc-00655) | Australian Regulators Monitor Anthropic's Mythos AI for Banking Cyber Risks | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 508 | 2026-04-20 | [`INC-00679`](docs/incidents/2026.md#inc-00679) | Barclays CEO Warns of AI Model Mythos as Major Threat to Global Banking Security | Medium | LLM09 |  |  |
-| 509 | 2026-04-20 | [`INC-00750`](docs/incidents/2026.md#inc-00750) | ChatGPT Linked to Teen Suicide Prompts Calls for AI Safeguards in California | Critical | LLM05 | ASI09 |  |
-| 510 | 2026-04-20 | [`INC-00776`](docs/incidents/2026.md#inc-00776) | China's First AI Model Infringement Case: Court Rules on Unfair Competition | High |  |  |  |
-| 511 | 2026-04-20 | [`INC-00842`](docs/incidents/2026.md#inc-00842) | Colombian President Shares AI-Generated Deepfake Video Targeting Ecuadorian Leader | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 512 | 2026-04-20 | [`INC-00863`](docs/incidents/2026.md#inc-00863) | Critical Remote Code Execution Vulnerability in Google's Antigravity AI IDE Patched | Critical | LLM01, LLM02, LLM05, LLM06, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI09 |  |
-| 513 | 2026-04-20 | [`INC-00864`](docs/incidents/2026.md#inc-00864) | Critical Vulnerability in Anthropic's MCP Exposes AI Systems to Remote Code Execution | High | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |  |
-| 514 | 2026-04-20 | [`INC-01014`](docs/incidents/2026.md#inc-01014) | Florida Man Arrested for Using AI to Create and Distribute Nude Image of Teen Coworker | High | LLM05 | ASI05 |  |
-| 515 | 2026-04-20 | [`INC-01046`](docs/incidents/2026.md#inc-01046) | French Authorities Probe X's AI Systems Over Harmful Content and Political Interference | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 516 | 2026-04-20 | [`INC-01053`](docs/incidents/2026.md#inc-01053) | Frontier AI Models Accelerate Cyberattack Capabilities | High | LLM02, LLM03 | ASI02, ASI04 |  |
-| 517 | 2026-04-20 | [`INC-01097`](docs/incidents/2026.md#inc-01097) | Global Surge in AI-Driven Fraud and Deepfake Scams | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 518 | 2026-04-20 | [`INC-01159`](docs/incidents/2026.md#inc-01159) | Hanwha and Magnet Defense Partner to Develop AI-Enabled Unmanned Military Vessels for US Military | Medium |  | ASI10 |  |
-| 519 | 2026-04-20 | [`INC-01252`](docs/incidents/2026.md#inc-01252) | Israel Deploys AI-Enabled Robotics for Large-Scale Border Demining | Medium |  |  |  |
-| 520 | 2026-04-20 | [`INC-01324`](docs/incidents/2026.md#inc-01324) | Leonardo DRS Deploys AI-Enabled Maritime Counter-Drone System | Medium |  |  |  |
-| 521 | 2026-04-20 | [`INC-01357`](docs/incidents/2026.md#inc-01357) | Lovable AI App Builder Exposes Sensitive User Data via API Flaw | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 522 | 2026-04-20 | [`INC-01414`](docs/incidents/2026.md#inc-01414) | Meta Uses Employee Computer Activity to Train AI Agents and Deploys 'Zuckerbot' Avatar | Medium |  |  |  |
-| 523 | 2026-04-20 | [`INC-01763`](docs/incidents/2026.md#inc-01763) | Senator Ossoff Investigates AI Data Centers' Impact on Georgia Power Bills | Medium | LLM09 |  |  |
-| 524 | 2026-04-20 | [`INC-01798`](docs/incidents/2026.md#inc-01798) | SPARC AI Expands AI-Powered Drone Navigation in Ukraine Amid Military Applications | Medium |  | ASI10 |  |
-| 525 | 2026-04-20 | [`INC-01866`](docs/incidents/2026.md#inc-01866) | Tesla Full Self-Driving AI Fails at Railroad Crossing, Nearly Causes Collision with Train in Texas | Critical |  |  |  |
-| 526 | 2026-04-20 | [`INC-01870`](docs/incidents/2026.md#inc-01870) | Tesla Robotaxi Malfunctions on Dallas Highway, Raising Safety Concerns | Medium |  |  |  |
-| 527 | 2026-04-20 | [`INC-01971`](docs/incidents/2026.md#inc-01971) | Unauthorized Access and Security Concerns Over Anthropic's Mythos AI Model in U.S. Government | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 528 | 2026-04-19 | [`INC-00205`](docs/incidents/2026.md#inc-00205) | AI Stock Trading Program Causes Financial and Mental Health Harm in Guangzhou | Medium |  |  |  |
-| 529 | 2026-04-19 | [`INC-00317`](docs/incidents/2026.md#inc-00317) | AI-Driven Precision Therapy Improves Autoimmune Disease Outcomes in Taiwan | Medium |  |  |  |
-| 530 | 2026-04-19 | [`INC-01065`](docs/incidents/2026.md#inc-01065) | Generative AI Adoption Reduces Employment and Income for Young Workers in Brazil | Medium |  |  |  |
-| 531 | 2026-04-19 | [`INC-01614`](docs/incidents/2026.md#inc-01614) | Pakistani Brand Uses AI-Generated Images of Alia Bhatt Without Consent | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 532 | 2026-04-19 | [`INC-01867`](docs/incidents/2026.md#inc-01867) | Tesla Launches Unsupervised Robotaxi Service in Dallas and Houston | Critical |  |  |  |
-| 533 | 2026-04-19 | [`INC-01871`](docs/incidents/2026.md#inc-01871) | Tesla Robotaxi Malfunctions Raise Safety Concerns in Texas | Medium |  |  |  |
-| 534 | 2026-04-19 | [`INC-01972`](docs/incidents/2026.md#inc-01972) | Unauthorized Access and Security Concerns Surround Anthropic's Mythos AI | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 535 | 2026-04-19 | [`INC-02039`](docs/incidents/2026.md#inc-02039) | Vercel Breach via Compromised AI Tool Exposes Crypto Projects to Security Risks | Critical | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |  |
-| 536 | 2026-04-18 | [`INC-00063`](docs/incidents/2026.md#inc-00063) | AI Adoption on Wall Street Leads to Mass Job Cuts and Labor Harm | Critical | LLM05 | ASI05 |  |
-| 537 | 2026-04-18 | [`INC-00345`](docs/incidents/2026.md#inc-00345) | AI-Enabled Emergency Totem Facilitates Rapid Recovery of Stolen Motorcycle in Teresina | High |  |  |  |
-| 538 | 2026-04-18 | [`INC-00615`](docs/incidents/2026.md#inc-00615) | Anthropic's Claude AI Wrongly Suspends Fintech Firm's Accounts, Disrupting Operations | High | LLM05 | ASI05 |  |
-| 539 | 2026-04-18 | [`INC-00620`](docs/incidents/2026.md#inc-00620) | Anthropic's Mythos AI Model Sparks Global Cybersecurity and Financial System Fears | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
-| 540 | 2026-04-18 | [`INC-00621`](docs/incidents/2026.md#inc-00621) | Anthropic's Mythos AI Raises Cybersecurity and Governance Concerns in US and UK | Critical | LLM03 | ASI04 |  |
-| 541 | 2026-04-18 | [`INC-00779`](docs/incidents/2026.md#inc-00779) | China's Sex Toy Industry Integrates AI Amid Legal and Privacy Concerns | High |  |  |  |
-| 542 | 2026-04-18 | [`INC-01747`](docs/incidents/2026.md#inc-01747) | Rome Plans AI-Controlled 'White Light' Traffic Signals for Autonomous Vehicles | Medium |  |  |  |
-| 543 | 2026-04-18 | [`INC-01957`](docs/incidents/2026.md#inc-01957) | Ukraine Deploys AI-Driven Military Systems in Ongoing Conflict | Critical | LLM05 | ASI05, ASI10 |  |
-| 544 | 2026-04-18 | [`INC-01962`](docs/incidents/2026.md#inc-01962) | Ukraine Launches Defense AI Center "A1" to Integrate AI in Military Operations | Critical |  |  |  |
-| 545 | 2026-04-17 | [`INC-00113`](docs/incidents/2026.md#inc-00113) | AI Chatbots in Mental Health Linked to Harm and Lawsuits in the US | Critical | LLM05, LLM09 | ASI09 |  |
-| 546 | 2026-04-17 | [`INC-00253`](docs/incidents/2026.md#inc-00253) | AI Voice Analysis and Cloning Pose Privacy and Security Risks | High |  | ASI09 |  |
-| 547 | 2026-04-17 | [`INC-00256`](docs/incidents/2026.md#inc-00256) | AI Voice Cloning Used in Silent Call Fraud Scheme in Indonesia | Medium |  | ASI09 |  |
-| 548 | 2026-04-17 | [`INC-00316`](docs/incidents/2026.md#inc-00316) | AI-Driven Police Data Analysis in NRW Raises Privacy and Rights Concerns | High |  |  |  |
-| 549 | 2026-04-17 | [`INC-00552`](docs/incidents/2026.md#inc-00552) | AI-Powered Robot Police Deployed in Chinese Cities Raise Privacy Concerns | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 550 | 2026-04-17 | [`INC-00599`](docs/incidents/2026.md#inc-00599) | Anthropic CEO Warns AI Could Displace Half of Entry-Level White-Collar Jobs | Critical | LLM05 | ASI05 |  |
-| 551 | 2026-04-17 | [`INC-00619`](docs/incidents/2026.md#inc-00619) | Anthropic's Mythos AI Model Raises Global Cybersecurity Concerns | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 552 | 2026-04-17 | [`INC-00723`](docs/incidents/2026.md#inc-00723) | Cal.com Closes Source Code Due to AI-Driven Security Threats | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 553 | 2026-04-17 | [`INC-00849`](docs/incidents/2026.md#inc-00849) | Community Protests and Transparency Concerns Over Bell Canada's Planned AI Data Centre in Regina | Medium |  |  |  |
-| 554 | 2026-04-17 | [`INC-01094`](docs/incidents/2026.md#inc-01094) | Global Financial Leaders Warn of AI Risks to Financial Systems from Anthropic's Mythos | Critical |  |  |  |
-| 555 | 2026-04-17 | [`INC-01117`](docs/incidents/2026.md#inc-01117) | Google Gemini AI Raises Global Privacy Concerns by Scanning Personal Photos and Emails | High |  |  |  |
-| 556 | 2026-04-17 | [`INC-01752`](docs/incidents/2026.md#inc-01752) | Scammers Reportedly Used AI-Generated Images of Missing Dog Archer to Solicit Fraudulent Vet Payment from Del… | Medium |  | ASI09 |  |
-| 557 | 2026-04-17 | [`INC-01756`](docs/incidents/2026.md#inc-01756) | Seattle Considers Data Center Moratorium Amid AI-Driven Power Strain Fears | Medium |  |  |  |
-| 558 | 2026-04-17 | [`INC-01926`](docs/incidents/2026.md#inc-01926) | U.S. Congressional Report Reveals Large-Scale Smuggling and Theft of AI Technology by China | Critical | LLM02, LLM04 | ASI06 |  |
-| 559 | 2026-04-16 | [`INC-00102`](docs/incidents/2026.md#inc-00102) | AI Chatbots Defy Brazil Election Rules, Spread Misinformation | High | LLM05, LLM09 | ASI05 |  |
-| 560 | 2026-04-16 | [`INC-00149`](docs/incidents/2026.md#inc-00149) | AI Deepfake Scams Target Investors on Meta Platforms | Medium | LLM09 | ASI09 |  |
-| 561 | 2026-04-16 | [`INC-00293`](docs/incidents/2026.md#inc-00293) | AI-Driven Disinformation Fuels Harm Against Migrants | Medium | LLM09 |  |  |
-| 562 | 2026-04-16 | [`INC-00434`](docs/incidents/2026.md#inc-00434) | AI-Generated Disinformation Threatens Democracies, Study Finds | Medium | LLM09 | ASI09 |  |
-| 563 | 2026-04-16 | [`INC-00586`](docs/incidents/2026.md#inc-00586) | Android Facial Recognition Flaw Allows Unauthorized Access via Photos | High | LLM02 | ASI03 |  |
-| 564 | 2026-04-16 | [`INC-00607`](docs/incidents/2026.md#inc-00607) | Anthropic Limits AI Cybersecurity Capabilities Amid U.S. Government Concerns | Critical |  |  |  |
-| 565 | 2026-04-16 | [`INC-00624`](docs/incidents/2026.md#inc-00624) | Anthropic's Mythos AI Raises Security Concerns for US Financial Database | Medium |  |  |  |
-| 566 | 2026-04-16 | [`INC-00676`](docs/incidents/2026.md#inc-00676) | Bank of England Stress-Tests AI Risks to UK Financial Stability | Medium |  |  |  |
-| 567 | 2026-04-16 | [`INC-00965`](docs/incidents/2026.md#inc-00965) | European Banking Authority Warns of AI-Driven Cybersecurity Risks to Banks | High | LLM05 | ASI05 |  |
-| 568 | 2026-04-16 | [`INC-01124`](docs/incidents/2026.md#inc-01124) | Google Uses Gemini AI to Block Billions of Malicious Ads | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 569 | 2026-04-16 | [`INC-01571`](docs/incidents/2026.md#inc-01571) | Open-Source AI Agents Cause Security Breaches and Financial Harm in China | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI09 |  |
-| 570 | 2026-04-16 | [`INC-01661`](docs/incidents/2026.md#inc-01661) | Portugal Approves Autonomous Vehicle Testing on Public Roads | Medium |  |  |  |
-| 571 | 2026-04-16 | [`INC-01688`](docs/incidents/2026.md#inc-01688) | Punjab Government Partners with IIT Ropar to Deploy AI for Crime Control | High | LLM05 | ASI05 |  |
-| 572 | 2026-04-16 | [`INC-01702`](docs/incidents/2026.md#inc-01702) | Purported Deepfake Video Reportedly Portrayed Nirmala Sitharaman Endorsing Investment Scheme | High | LLM09 | ASI09 |  |
-| 573 | 2026-04-16 | [`INC-01780`](docs/incidents/2026.md#inc-01780) | Smart Locks' Facial Recognition Vulnerabilities Exposed in China | High | LLM05 | ASI05 |  |
-| 574 | 2026-04-16 | [`INC-01809`](docs/incidents/2026.md#inc-01809) | Startup Develops AI Cap to Convert Thoughts into Text, Raising Future Privacy Concerns | High |  |  |  |
-| 575 | 2026-04-16 | [`INC-02006`](docs/incidents/2026.md#inc-02006) | US Labor Leaders Warn of AI's Potential Threat to Jobs and Society | Medium |  |  |  |
-| 576 | 2026-04-15 | [`INC-00187`](docs/incidents/2026.md#inc-00187) | AI Models Can Subliminally Transmit Biases and Unsafe Behaviors During Training | High | LLM05 | ASI05 |  |
-| 577 | 2026-04-15 | [`INC-00192`](docs/incidents/2026.md#inc-00192) | AI Navigation System Reduces Maritime Near Misses by 52% | Medium |  |  |  |
-| 578 | 2026-04-15 | [`INC-00299`](docs/incidents/2026.md#inc-00299) | AI-Driven Financial Fraud and Deepfake Crimes Surge in Brazil | Medium | LLM09 | ASI09 |  |
-| 579 | 2026-04-15 | [`INC-00430`](docs/incidents/2026.md#inc-00430) | AI-Generated Disinformation Targets Australian Politics | Medium | LLM09 |  |  |
-| 580 | 2026-04-15 | [`INC-00642`](docs/incidents/2026.md#inc-00642) | Apple Threatens Removal of Grok AI App Over Sexualized Deepfake Scandal | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 581 | 2026-04-15 | [`INC-00657`](docs/incidents/2026.md#inc-00657) | Australian Teen Convicted in Landmark Deepfake Pornography Case | High | LLM09 | ASI09 |  |
-| 582 | 2026-04-15 | [`INC-00770`](docs/incidents/2026.md#inc-00770) | China Successfully Tests AI-Powered Autonomous Cargo Aircraft HH-200 | Medium |  |  |  |
-| 583 | 2026-04-15 | [`INC-00929`](docs/incidents/2026.md#inc-00929) | El Salvador Entrusts Public Healthcare Management to Google's AI System | High | LLM05 | ASI05 |  |
-| 584 | 2026-04-15 | [`INC-00984`](docs/incidents/2026.md#inc-00984) | Facial Recognition System at Milan Linate Airport Declared Unlawful for GDPR Violations | High |  |  |  |
-| 585 | 2026-04-15 | [`INC-01237`](docs/incidents/2026.md#inc-01237) | Influencer Faces Backlash for AI Deepfake of Deceased Celebrity | High | LLM09 | ASI09 |  |
-| 586 | 2026-04-15 | [`INC-01256`](docs/incidents/2026.md#inc-01256) | Israeli Military Uses AI-Generated Image to Justify Killing Lebanese Journalist | Critical | LLM05, LLM09 | ASI05 |  |
-| 587 | 2026-04-15 | [`INC-01434`](docs/incidents/2026.md#inc-01434) | Microsoft Copilot Studio indirect prompt injection (ShareLeak) | High | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09 | `CVE-2026-21520` |
-| 588 | 2026-04-15 | [`INC-01442`](docs/incidents/2026.md#inc-01442) | Microsoft's AI-Powered Recall Feature Still Exposes Sensitive User Data Despite Security Overhaul | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 589 | 2026-04-15 | [`INC-01540`](docs/incidents/2026.md#inc-01540) | North Korean Hackers Use AI-Enhanced Social Engineering to Steal $100K from Zerion | High | LLM09 | ASI09 |  |
-| 590 | 2026-04-15 | [`INC-01793`](docs/incidents/2026.md#inc-01793) | Spanish Army Tests AI-Enabled Drones and Robots for Future Combat | High | LLM05 | ASI05, ASI10 |  |
-| 591 | 2026-04-15 | [`INC-01856`](docs/incidents/2026.md#inc-01856) | Tesla Cybercab Autonomous Taxis Undergo Testing at Texas Factory | Medium |  |  |  |
-| 592 | 2026-04-15 | [`INC-01933`](docs/incidents/2026.md#inc-01933) | Uber Announces Major Investment in Autonomous Vehicle Partnerships | Medium |  |  |  |
-| 593 | 2026-04-15 | [`INC-01945`](docs/incidents/2026.md#inc-01945) | UK Government Warns of Escalating AI-Driven Cyberattacks | Medium | LLM04 | ASI06, ASI09 |  |
-| 594 | 2026-04-15 | [`INC-01995`](docs/incidents/2026.md#inc-01995) | US Deploys AI-Enabled Robots for Mine Clearance in Strait of Hormuz | High | LLM05 | ASI05 |  |
-| 595 | 2026-04-14 | [`INC-00103`](docs/incidents/2026.md#inc-00103) | AI Chatbots Exhibit Systematic Bias in Judging Users, Study Finds | High | LLM05 | ASI05 |  |
-| 596 | 2026-04-14 | [`INC-00107`](docs/incidents/2026.md#inc-00107) | AI Chatbots Found to Dispense Inaccurate and Potentially Harmful Medical Advice | Critical | LLM04, LLM05, LLM09 | ASI05, ASI06 |  |
-| 597 | 2026-04-14 | [`INC-00109`](docs/incidents/2026.md#inc-00109) | AI Chatbots Frequently Misdiagnose Medical Cases, Study Finds | Medium | LLM09 |  |  |
-| 598 | 2026-04-14 | [`INC-00186`](docs/incidents/2026.md#inc-00186) | AI Models Accelerate Vulnerability Discovery, Raising Cybersecurity Risks | Critical | LLM02 | ASI03 |  |
-| 599 | 2026-04-14 | [`INC-00443`](docs/incidents/2026.md#inc-00443) | AI-Generated Fake Court Documents Used in Fraud Attempt in Batman, Turkey | Medium | LLM09 | ASI09 |  |
-| 600 | 2026-04-14 | [`INC-00451`](docs/incidents/2026.md#inc-00451) | AI-Generated Fake Interviews Published in Helsinki Newspaper | High | LLM09 |  |  |
-| 601 | 2026-04-14 | [`INC-00492`](docs/incidents/2026.md#inc-00492) | AI-Generated Persona 'Dona Maria' Fuels Political Polarization in Brazil | High | LLM05, LLM09 | ASI05 |  |
-| 602 | 2026-04-14 | [`INC-00535`](docs/incidents/2026.md#inc-00535) | AI-Powered Brain Implants Restore Abilities but Pose Health Risks | Medium |  |  |  |
-| 603 | 2026-04-14 | [`INC-00613`](docs/incidents/2026.md#inc-00613) | Anthropic's Claude AI Agents Surpass Humans in Alignment Research, Exposing Reward Hacking Risks | High |  |  |  |
-| 604 | 2026-04-14 | [`INC-00638`](docs/incidents/2026.md#inc-00638) | Apple and Google App Stores Promote AI 'Nudify' Apps Enabling Nonconsensual Deepfakes | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 605 | 2026-04-14 | [`INC-00707`](docs/incidents/2026.md#inc-00707) | Brazilian Police Dismantle AI-Driven Deepfake Fraud Ring | Medium | LLM09 | ASI09 |  |
-| 606 | 2026-04-14 | [`INC-00915`](docs/incidents/2026.md#inc-00915) | Dutch Court Orders X (Twitter) to Disclose AI Profiling Data to User | High | LLM05 | ASI05 |  |
-| 607 | 2026-04-14 | [`INC-01129`](docs/incidents/2026.md#inc-01129) | Google's Gemini AI Blocks Fraudulent Ads and URLs in Taiwan | High | LLM05 | ASI05, ASI09 |  |
-| 608 | 2026-04-14 | [`INC-01167`](docs/incidents/2026.md#inc-01167) | Humanoid AI Robots Deployed for Border Patrol in China, Raising Safety Concerns | High | LLM05 | ASI05 |  |
-| 609 | 2026-04-14 | [`INC-01326`](docs/incidents/2026.md#inc-01326) | LiblibAI Generates Inappropriate Content Due to Moderation Failure | High |  |  |  |
-| 610 | 2026-04-14 | [`INC-01371`](docs/incidents/2026.md#inc-01371) | Maryland Police Allegedly Relied on Facial Recognition Lead in Wrongful Arrest and Detention of Kimberlee Wil… | High | LLM05 | ASI05, ASI09 |  |
-| 611 | 2026-04-14 | [`INC-01467`](docs/incidents/2026.md#inc-01467) | Morrisons Cuts 200 Head Office Jobs Due to AI-Driven Restructuring | High | LLM05 | ASI05 |  |
-| 612 | 2026-04-14 | [`INC-01514`](docs/incidents/2026.md#inc-01514) | NAACP Sues xAI Over Illegal Gas Turbine Use for AI Data Center, Citing Pollution and Health Risks | High | LLM05 | ASI05 |  |
-| 613 | 2026-04-14 | [`INC-01653`](docs/incidents/2026.md#inc-01653) | Police Officer Used AI Voice Cloning to Deceive Victims' Family in Triple Homicide Case | Critical | LLM09 | ASI09 |  |
-| 614 | 2026-04-14 | [`INC-01930`](docs/incidents/2026.md#inc-01930) | Uber Accelerates Investment and Testing of AI-Powered Robotaxi Fleet | Medium |  |  |  |
-| 615 | 2026-04-14 | [`INC-02024`](docs/incidents/2026.md#inc-02024) | US Military Uses Palantir AI System in Iran War, Leading to Civilian Casualties | Critical | LLM05, LLM09 | ASI05 |  |
-| 616 | 2026-04-14 | [`INC-02103`](docs/incidents/2026.md#inc-02103) | X's AI Recommends Explicit Content to UK Teens, Failing Safeguards | High | LLM05 | ASI05 |  |
-| 617 | 2026-04-13 | [`INC-00040`](docs/incidents/2026.md#inc-00040) | ADAC Test Reveals AI Driver Assistance Failures in Adverse Weather | Medium |  |  |  |
-| 618 | 2026-04-13 | [`INC-00138`](docs/incidents/2026.md#inc-00138) | AI Data Centers Drive Water Scarcity in Southeast Asia | High | LLM05 | ASI05 |  |
-| 619 | 2026-04-13 | [`INC-00175`](docs/incidents/2026.md#inc-00175) | AI Language Models Fail at Early Clinical Reasoning, Raising Patient Safety Concerns | Medium |  |  |  |
-| 620 | 2026-04-13 | [`INC-00242`](docs/incidents/2026.md#inc-00242) | AI Traffic Cameras Deployed in Sussex to Detect Dangerous Driving Behaviors | Critical | LLM05 | ASI05 |  |
-| 621 | 2026-04-13 | [`INC-00341`](docs/incidents/2026.md#inc-00341) | AI-Enabled Drones Escalate Warfare in Ukraine | Critical |  | ASI10 |  |
-| 622 | 2026-04-13 | [`INC-00486`](docs/incidents/2026.md#inc-00486) | AI-Generated Misinformation Campaigns Harm Chinese Companies | High | LLM05, LLM09 | ASI05 |  |
-| 623 | 2026-04-13 | [`INC-00593`](docs/incidents/2026.md#inc-00593) | Angolan Tax Authority Uses AI to Detect and Report Major Tax Fraud | High | LLM05 | ASI05, ASI09 |  |
-| 624 | 2026-04-13 | [`INC-00713`](docs/incidents/2026.md#inc-00713) | Brazilian TV Airs AI-Generated Fake News Image, Spreads Misinformation | High | LLM09 |  |  |
-| 625 | 2026-04-13 | [`INC-01045`](docs/incidents/2026.md#inc-01045) | France Shifts to Mass Production of AI-Enabled Military Drones and Interceptors | Critical | LLM05 | ASI05 |  |
-| 626 | 2026-04-13 | [`INC-01251`](docs/incidents/2026.md#inc-01251) | Irish Cybersecurity Leaders Warn of AI-Driven Cyberattack Risks | High | LLM05 | ASI05 |  |
-| 627 | 2026-04-13 | [`INC-01423`](docs/incidents/2026.md#inc-01423) | Metropolitan Police Trials AI to Identify Child Abuse Victims Faster | High | LLM05, LLM09 | ASI05 |  |
-| 628 | 2026-04-13 | [`INC-01451`](docs/incidents/2026.md#inc-01451) | Minors in Valladolid Tried for Using AI to Create and Share Non-Consensual Nude Images of Classmates | Medium |  |  |  |
-| 629 | 2026-04-13 | [`INC-01527`](docs/incidents/2026.md#inc-01527) | New Zealand Develops AI Tool to Redirect Extremist Users to Deradicalization Support | High | LLM05 | ASI05, ASI09 |  |
-| 630 | 2026-04-13 | [`INC-01550`](docs/incidents/2026.md#inc-01550) | Oklahoma Lawmaker Ends Reelection Bid After Sending AI-Generated Deepfake | High | LLM09 | ASI09 |  |
-| 631 | 2026-04-13 | [`INC-01795`](docs/incidents/2026.md#inc-01795) | Spanish Regulator Warns of AI Investment Risks Without Human Oversight | High | LLM05, LLM09 | ASI05 |  |
-| 632 | 2026-04-13 | [`INC-01808`](docs/incidents/2026.md#inc-01808) | Starlink Outage Disrupts US Navy Drone Operations, Exposing Critical Vulnerabilities | Critical |  |  |  |
-| 633 | 2026-04-13 | [`INC-01816`](docs/incidents/2026.md#inc-01816) | Study Finds AI Chatbots Causing Addiction-Like Harm Among U.S. Teens | Medium |  |  |  |
-| 634 | 2026-04-13 | [`INC-01829`](docs/incidents/2026.md#inc-01829) | Supreme Court Reviews Biometric AI Voter Authentication Proposal | Medium | LLM09 | ASI09 |  |
-| 635 | 2026-04-13 | [`INC-01843`](docs/incidents/2026.md#inc-01843) | Teen Uses ChatGPT for Childbirth, Newborn Abandoned in Argentina | Critical |  |  |  |
-| 636 | 2026-04-13 | [`INC-02016`](docs/incidents/2026.md#inc-02016) | US Leaders Warn of AI-Driven Job Loss and Economic Inequality | Medium |  |  |  |
-| 637 | 2026-04-13 | [`INC-02044`](docs/incidents/2026.md#inc-02044) | Viral Videos of Indian Factory Workers Wearing Cameras Spark AI Automation Fears | Critical |  |  |  |
-| 638 | 2026-04-13 | [`INC-02072`](docs/incidents/2026.md#inc-02072) | Waymo Faces Political and Technological Hurdles in Toronto Robotaxi Expansion | Medium |  |  |  |
-| 639 | 2026-04-12 | [`INC-00360`](docs/incidents/2026.md#inc-00360) | AI-Enhanced Blood Test Enables Early Leprosy Detection in Brazil | Medium |  |  |  |
-| 640 | 2026-04-12 | [`INC-00390`](docs/incidents/2026.md#inc-00390) | AI-Generated Deepfake Video Causes Defamation Dispute Involving Indonesian Political Figures | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 641 | 2026-04-12 | [`INC-00496`](docs/incidents/2026.md#inc-00496) | AI-Generated Pornography and Illegal Content Distribution Chain Exposed in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 642 | 2026-04-12 | [`INC-00792`](docs/incidents/2026.md#inc-00792) | Chinese Family Uses AI Avatar to Hide Son's Death from Elderly Mother | Critical |  |  |  |
-| 643 | 2026-04-12 | [`INC-00852`](docs/incidents/2026.md#inc-00852) | Content Creator Arrested for AI-Generated Video on Evading Surveillance | High | LLM05 | ASI05 |  |
-| 644 | 2026-04-12 | [`INC-00917`](docs/incidents/2026.md#inc-00917) | Dutch Government Warns of AI Model Mythos' Cybersecurity Risks | High |  |  |  |
-| 645 | 2026-04-12 | [`INC-01085`](docs/incidents/2026.md#inc-01085) | Germany Procures AI-Enabled Combat Drones for Bundeswehr Deployment in Lithuania | Critical |  | ASI10 |  |
-| 646 | 2026-04-12 | [`INC-01180`](docs/incidents/2026.md#inc-01180) | IMF Warns of AI-Driven Cybersecurity Risks to Global Financial System | Medium |  |  |  |
-| 647 | 2026-04-12 | [`INC-01626`](docs/incidents/2026.md#inc-01626) | Pedestrians Injured in Autonomous Bus Accident in Yahiko, Japan | Medium |  |  |  |
-| 648 | 2026-04-12 | [`INC-01939`](docs/incidents/2026.md#inc-01939) | UK Authorities Assess Cybersecurity Risks Identified by Anthropic AI Model | High |  |  |  |
-| 649 | 2026-04-12 | [`INC-01973`](docs/incidents/2026.md#inc-01973) | Unauthorized AI Clone of Zhang Xuefeng Sparks Legal and Ethical Controversy | High | LLM05 | ASI05 |  |
-| 650 | 2026-04-11 | [`INC-00170`](docs/incidents/2026.md#inc-00170) | AI Glasses Misuse Prompts Crackdown at Augusta Masters Tournament | High | LLM05 | ASI05, ASI09 |  |
-| 651 | 2026-04-11 | [`INC-00255`](docs/incidents/2026.md#inc-00255) | AI Voice Cloning Causes Economic Harm to Chinese Voice Actors | Medium |  |  |  |
-| 652 | 2026-04-11 | [`INC-00511`](docs/incidents/2026.md#inc-00511) | AI-Generated Videos Simulate Violence Against PT Women, Prompt Legal Action in Brazil | Medium | LLM09 | ASI09 |  |
-| 653 | 2026-04-11 | [`INC-01578`](docs/incidents/2026.md#inc-01578) | OpenAI Issues Urgent Security Update for Mac Apps After Supply Chain Attack | High | LLM02, LLM03, LLM09 | ASI03, ASI04, ASI09 |  |
-| 654 | 2026-04-11 | [`INC-02031`](docs/incidents/2026.md#inc-02031) | US Regulators Warn Banks of AI-Driven Cyber Risks from Anthropic Model | Medium |  |  |  |
-| 655 | 2026-04-10 | [`INC-00136`](docs/incidents/2026.md#inc-00136) | AI Data Center Boom Drives Coal Revival, Worsening Air Quality in St. Louis | Critical | LLM05 | ASI05 |  |
-| 656 | 2026-04-10 | [`INC-00667`](docs/incidents/2026.md#inc-00667) | Autonomous Lawn Mowers Cause Harm to Wildlife, Prompting Calls for Nighttime Ban | Critical |  |  |  |
-| 657 | 2026-04-10 | [`INC-00733`](docs/incidents/2026.md#inc-00733) | Capgemini Announces Mass Layoffs in Spain Citing AI Impact | High | LLM05 | ASI05 |  |
-| 658 | 2026-04-10 | [`INC-00743`](docs/incidents/2026.md#inc-00743) | ChatGPT Aids in Correct Diagnosis of Rare Disease After Years of Medical Errors | Medium |  |  |  |
-| 659 | 2026-04-10 | [`INC-00793`](docs/incidents/2026.md#inc-00793) | Chinese Firm Acquires $92 Million in Banned Nvidia AI Chips via Illegal Channels | Critical |  |  |  |
-| 660 | 2026-04-10 | [`INC-01041`](docs/incidents/2026.md#inc-01041) | Foreign Funding Targets U.S. AI Infrastructure Expansion | Critical |  |  |  |
-| 661 | 2026-04-10 | [`INC-01363`](docs/incidents/2026.md#inc-01363) | Malicious AI Routers Enable Cryptocurrency and Credential Theft | High | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI07 |  |
-| 662 | 2026-04-10 | [`INC-01405`](docs/incidents/2026.md#inc-01405) | Meta Faces Lawsuit in Massachusetts Over AI-Driven Social Media Addiction in Youth | High | LLM05 | ASI05, ASI09 |  |
-| 663 | 2026-04-10 | [`INC-01581`](docs/incidents/2026.md#inc-01581) | OpenAI Sued for ChatGPT's Role in Stalking and Harassment | Critical | LLM05 | ASI05 |  |
-| 664 | 2026-04-10 | [`INC-01774`](docs/incidents/2026.md#inc-01774) | Sindh Approves AI-Powered Surveillance Expansion in Karachi | High | LLM05 | ASI05 |  |
-| 665 | 2026-04-10 | [`INC-01785`](docs/incidents/2026.md#inc-01785) | South Africa Draft National AI Policy Reportedly Included Fictitious References Believed to Be AI Hallucinati… | Medium | LLM09 | ASI09 |  |
-| 666 | 2026-04-10 | [`INC-01985`](docs/incidents/2026.md#inc-01985) | US and UK Regulators Warn Banks of AI Model Mythos' Cybersecurity Risks | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI10 |  |
-| 667 | 2026-04-10 | [`INC-02038`](docs/incidents/2026.md#inc-02038) | Valve Develops SteamGPT AI for Moderation and Anti-Cheat on Steam | High | LLM05 | ASI05 |  |
-| 668 | 2026-04-10 | [`INC-02121`](docs/incidents/2026.md#inc-02121) | Zimbabwe Faces Surge in AI-Driven Cybercrime and Fraud | Medium | LLM09 | ASI09 |  |
-| 669 | 2026-04-09 | [`INC-00057`](docs/incidents/2026.md#inc-00057) | AI Adoption Creates Identity Security Risks in India and Singapore | High | LLM02 | ASI03 |  |
-| 670 | 2026-04-09 | [`INC-00128`](docs/incidents/2026.md#inc-00128) | AI Chatbots Spread False Medical Information After Experiment With Fabricated Disease | High | LLM05, LLM09 | ASI05 |  |
-| 671 | 2026-04-09 | [`INC-00222`](docs/incidents/2026.md#inc-00222) | AI System Recovers Stolen Painting After 50 Years in Italy | High | LLM05 | ASI05 |  |
-| 672 | 2026-04-09 | [`INC-00262`](docs/incidents/2026.md#inc-00262) | AI-Assisted Investigation Leads to Arrest in Goiânia Homicide | Critical | LLM05 | ASI05 |  |
-| 673 | 2026-04-09 | [`INC-00404`](docs/incidents/2026.md#inc-00404) | AI-Generated Deepfake Videos Target Indian Politician Shashi Tharoor | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 674 | 2026-04-09 | [`INC-00494`](docs/incidents/2026.md#inc-00494) | AI-Generated Political Ads and Algorithmic Harm on Meta Platforms Spark Legal and Ethical Concerns | Medium | LLM09 | ASI09 |  |
-| 675 | 2026-04-09 | [`INC-00912`](docs/incidents/2026.md#inc-00912) | Dutch AI-Powered Parking Scanners Issue Hundreds of Thousands of Wrongful Fines | High | LLM05 | ASI05 |  |
-| 676 | 2026-04-09 | [`INC-00981`](docs/incidents/2026.md#inc-00981) | Facial Recognition AI Leads to Arrest of Rhondda Drug Dealers | High | LLM05 | ASI05 |  |
-| 677 | 2026-04-09 | [`INC-01059`](docs/incidents/2026.md#inc-01059) | Gartner Warns of Rising Security Incidents in Generative AI Applications by 2028 | High |  |  |  |
-| 678 | 2026-04-09 | [`INC-01077`](docs/incidents/2026.md#inc-01077) | German Cybersecurity Agency Warns of AI-Driven Vulnerability Discovery Risks | Critical | LLM02, LLM05 | ASI03, ASI05, ASI10 |  |
-| 679 | 2026-04-09 | [`INC-01170`](docs/incidents/2026.md#inc-01170) | Hungarian Government Uses AI Surveillance Tools for Mass Tracking in Violation of EU Laws | High |  |  |  |
-| 680 | 2026-04-09 | [`INC-01265`](docs/incidents/2026.md#inc-01265) | Jakarta Officials Misuse AI to Fabricate Public Service Reports | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 681 | 2026-04-09 | [`INC-01732`](docs/incidents/2026.md#inc-01732) | Researchers Bypass Apple Intelligence AI Protections with Prompt Injection | High | LLM01 | ASI01 |  |
-| 682 | 2026-04-08 | [`INC-00066`](docs/incidents/2026.md#inc-00066) | AI Adoption Threatens Significant Job Losses Among Highly Skilled Workers in Ireland | Critical |  |  |  |
-| 683 | 2026-04-08 | [`INC-00068`](docs/incidents/2026.md#inc-00068) | AI Agent Deployment Drives Surge in API Security Incidents | High | LLM02 | ASI03 |  |
-| 684 | 2026-04-08 | [`INC-00362`](docs/incidents/2026.md#inc-00362) | AI-Generated 'Fruit Soap Operas' Sexualize Childlike Characters, Prompting Police Warnings in Brazil | Medium |  |  |  |
-| 685 | 2026-04-08 | [`INC-00457`](docs/incidents/2026.md#inc-00457) | AI-Generated Fake News Targets Chinese Car Companies, Leading to Arrests | High | LLM05, LLM09 | ASI05 |  |
-| 686 | 2026-04-08 | [`INC-00706`](docs/incidents/2026.md#inc-00706) | Brazilian Legislative Proposals Prioritize AI Surveillance and Policing | Medium |  |  |  |
-| 687 | 2026-04-08 | [`INC-00709`](docs/incidents/2026.md#inc-00709) | Brazilian Presidential Candidate Proposes AI Drones to Combat Feminicide | Medium |  |  |  |
-| 688 | 2026-04-08 | [`INC-00799`](docs/incidents/2026.md#inc-00799) | CIA Uses AI System 'Ghost Murmur' to Rescue Downed Pilot in Iran | Critical | LLM09 |  |  |
-| 689 | 2026-04-08 | [`INC-00801`](docs/incidents/2026.md#inc-00801) | Circus SE Deploys Autonomous AI Robots for Lithuanian Military Supply | High | LLM05 | ASI05 |  |
-| 690 | 2026-04-08 | [`INC-01222`](docs/incidents/2026.md#inc-01222) | India Approves Development of Autonomous Combat Search and Rescue UAVs | Critical | LLM05 | ASI05 |  |
-| 691 | 2026-04-08 | [`INC-01372`](docs/incidents/2026.md#inc-01372) | Mason High School Student Charged for AI-Generated Explicit Images of Minors | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 692 | 2026-04-07 | [`INC-00266`](docs/incidents/2026.md#inc-00266) | AI-Augmented EvilTokens Phishing Campaign Compromises Hundreds Daily | High | LLM02 | ASI02, ASI09 |  |
-| 693 | 2026-04-07 | [`INC-00306`](docs/incidents/2026.md#inc-00306) | AI-Driven Job Displacement Causes Lasting Socioeconomic Harm in the US | High | LLM05 | ASI05 |  |
-| 694 | 2026-04-07 | [`INC-00322`](docs/incidents/2026.md#inc-00322) | AI-Driven Scams Surge in Australia, Prompting Record Takedowns by Regulators | Critical | LLM09 | ASI09 |  |
-| 695 | 2026-04-07 | [`INC-00356`](docs/incidents/2026.md#inc-00356) | AI-Enabled Surveillance and Disinformation in Taiwan; Autonomous Mine-Clearing Drones in Hormuz | Critical | LLM09 | ASI09 |  |
-| 696 | 2026-04-07 | [`INC-00384`](docs/incidents/2026.md#inc-00384) | AI-Generated Deepfake Pornography Causes Harm Amid Legal Gaps in Germany | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 697 | 2026-04-07 | [`INC-00557`](docs/incidents/2026.md#inc-00557) | AI-Powered Surveillance Program Launched in Rio Grande do Sul Schools | High |  |  |  |
-| 698 | 2026-04-07 | [`INC-00597`](docs/incidents/2026.md#inc-00597) | Anthropic AI Model Source Code Leak and Restricted Release Due to Security Risks | High | LLM03, LLM05 | ASI04, ASI05 |  |
-| 699 | 2026-04-07 | [`INC-00612`](docs/incidents/2026.md#inc-00612) | Anthropic's AI Model Claude Mythos Raises Security Concerns and Reveals Emotional Mechanisms | Critical | LLM02, LLM03, LLM05, LLM06 | ASI03, ASI04, ASI05, ASI10 |  |
-| 700 | 2026-04-07 | [`INC-00677`](docs/incidents/2026.md#inc-00677) | Bank of England Warns of AI-Driven Dynamic Pricing Risks in UK Retail | High | LLM05 | ASI05 |  |
-| 701 | 2026-04-07 | [`INC-01115`](docs/incidents/2026.md#inc-01115) | Google Gemini AI API Key Exposure Leads to Data and Financial Breaches in Android Apps | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 702 | 2026-04-07 | [`INC-01118`](docs/incidents/2026.md#inc-01118) | Google Gemini Implicated in User Suicide and Mass Misinformation, Prompts Safeguards | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 703 | 2026-04-07 | [`INC-01136`](docs/incidents/2026.md#inc-01136) | GrafanaGhost AI Vulnerability Enables Silent Data Exfiltration | High | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI03, ASI05 |  |
-| 704 | 2026-04-07 | [`INC-01443`](docs/incidents/2026.md#inc-01443) | Middle East Conflict Poses Risks to Global AI Infrastructure and Adoption | Medium |  |  |  |
-| 705 | 2026-04-07 | [`INC-01624`](docs/incidents/2026.md#inc-01624) | Paraná Suspends AI Surveillance Contract Over Rights and Data Concerns | High |  |  |  |
-| 706 | 2026-04-07 | [`INC-01729`](docs/incidents/2026.md#inc-01729) | Reno Police Sued for Systemic Wrongful Arrests Based on Faulty Facial Recognition | High |  |  |  |
-| 707 | 2026-04-07 | [`INC-01820`](docs/incidents/2026.md#inc-01820) | Study Links Prolonged Use of AI Chatbot Replika to Increased Anxiety and Mental Health Risks | Medium | LLM05 | ASI09 |  |
-| 708 | 2026-04-07 | [`INC-01958`](docs/incidents/2026.md#inc-01958) | Ukraine Deploys AI-Enabled Ground Robots for Thousands of Frontline Missions | Critical | LLM05 | ASI05 |  |
-| 709 | 2026-04-06 | [`INC-00059`](docs/incidents/2026.md#inc-00059) | AI Adoption Drives Structural Layoffs and Job Insecurity in Tech Sector | High | LLM05 | ASI05 |  |
-| 710 | 2026-04-06 | [`INC-00062`](docs/incidents/2026.md#inc-00062) | AI Adoption Leads to Job Losses Among Entry-Level Workers in the US | High | LLM05 | ASI05 |  |
-| 711 | 2026-04-06 | [`INC-00135`](docs/incidents/2026.md#inc-00135) | AI Data Center Attack and Job Losses Linked to AI Adoption | High | LLM05 | ASI05 |  |
-| 712 | 2026-04-06 | [`INC-00151`](docs/incidents/2026.md#inc-00151) | AI Deepfake Tools Bypass KYC, Fueling Financial Fraud in Crypto and Banking | High | LLM09 | ASI09 |  |
-| 713 | 2026-04-06 | [`INC-00214`](docs/incidents/2026.md#inc-00214) | AI System 'AVCI' Enables Major Drug Trafficking Busts in Istanbul | High | LLM05 | ASI05 |  |
-| 714 | 2026-04-06 | [`INC-00333`](docs/incidents/2026.md#inc-00333) | AI-Enabled Combat Drone Crashes During Test in California | High | LLM05 | ASI05, ASI10 |  |
-| 715 | 2026-04-06 | [`INC-00418`](docs/incidents/2026.md#inc-00418) | AI-Generated Deepfakes Fuel Social Media Investment Scams in the US | Medium | LLM09 | ASI09 |  |
-| 716 | 2026-04-06 | [`INC-00518`](docs/incidents/2026.md#inc-00518) | AI-Generated Voice Used in Scam Targeting Drica Moraes' Contacts | Medium | LLM09 | ASI09 |  |
-| 717 | 2026-04-06 | [`INC-00641`](docs/incidents/2026.md#inc-00641) | Apple Sued for Scraping YouTube Videos to Train AI Models | High |  |  |  |
-| 718 | 2026-04-06 | [`INC-00775`](docs/incidents/2026.md#inc-00775) | China Warns of AI Token-Related Scams and Data Security Risks | Critical | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 719 | 2026-04-06 | [`INC-00780`](docs/incidents/2026.md#inc-00780) | China's Use of AI for Espionage and Election Interference in Taiwan | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI09, ASI10 |  |
-| 720 | 2026-04-06 | [`INC-01054`](docs/incidents/2026.md#inc-01054) | Frontier AI Models Exhibit Peer-Preservation, Defy Shutdown Orders | Critical | LLM01, LLM02, LLM03, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09 |  |
-| 721 | 2026-04-06 | [`INC-01247`](docs/incidents/2026.md#inc-01247) | Iran Threatens Destruction of Stargate AI Data Center in Abu Dhabi | High | LLM05, LLM09 | ASI05 |  |
-| 722 | 2026-04-06 | [`INC-01316`](docs/incidents/2026.md#inc-01316) | Lawsuit Alleges ChatGPT Aided Florida State University Shooter | Critical | LLM05 | ASI05, ASI09 |  |
-| 723 | 2026-04-06 | [`INC-01428`](docs/incidents/2026.md#inc-01428) | Michigan Man Charged for Using AI to Generate Child Sexual Abuse Images | Medium | LLM09 |  |  |
-| 724 | 2026-04-06 | [`INC-01638`](docs/incidents/2026.md#inc-01638) | Perplexity AI Accused of Sharing User Conversations with Meta and Google Without Consent | High | LLM02 | ASI03, ASI09 |  |
-| 725 | 2026-04-06 | [`INC-01841`](docs/incidents/2026.md#inc-01841) | Tech Giants Continue AI-Based CSAM Scanning in EU Despite Legal Expiry | High | LLM09 |  |  |
-| 726 | 2026-04-06 | [`INC-01981`](docs/incidents/2026.md#inc-01981) | US AI Firms Collaborate to Counter Unauthorized Model Distillation by Chinese Companies | Critical | LLM02, LLM05, LLM09 | ASI02, ASI05 |  |
-| 727 | 2026-04-06 | [`INC-02028`](docs/incidents/2026.md#inc-02028) | US Regulator Closes Probe into Tesla's AI Summon Feature After Minor Collisions | Critical | LLM05 | ASI05 |  |
-| 728 | 2026-04-05 | [`INC-00087`](docs/incidents/2026.md#inc-00087) | AI Bots Cause Economic Harm to Digital Publishers Through Content Scraping | Medium |  |  |  |
-| 729 | 2026-04-05 | [`INC-00129`](docs/incidents/2026.md#inc-00129) | AI Chatbots' Sycophancy Fuels Harmful Delusions and Mental Health Risks | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 730 | 2026-04-05 | [`INC-00280`](docs/incidents/2026.md#inc-00280) | AI-Driven Cyberattacks Cause Major Losses in Crypto Industry | Critical |  |  |  |
-| 731 | 2026-04-05 | [`INC-00324`](docs/incidents/2026.md#inc-00324) | AI-Driven Social Security Crackdown in Turkey Leads to Mass Benefit Cancellations | High | LLM05 | ASI05, ASI09 |  |
-| 732 | 2026-04-05 | [`INC-00528`](docs/incidents/2026.md#inc-00528) | AI-Operated Security Drones Deployed in US Schools to Counter Mass Shootings | High | LLM05 | ASI05 |  |
-| 733 | 2026-04-05 | [`INC-00554`](docs/incidents/2026.md#inc-00554) | AI-Powered Smart Glasses Enable Widespread Exam Cheating in China and Japan | High | LLM05 | ASI05 |  |
-| 734 | 2026-04-05 | [`INC-00784`](docs/incidents/2026.md#inc-00784) | Chinese AI Firms Expose U.S. Military Movements During Iran Conflict | Critical | LLM05 | ASI05 |  |
-| 735 | 2026-04-05 | [`INC-00789`](docs/incidents/2026.md#inc-00789) | Chinese Celebrities and Authors Targeted by AI Deepfake and Generative Content Infringement | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 736 | 2026-04-05 | [`INC-00812`](docs/incidents/2026.md#inc-00812) | Claude Code AI System Exhibits Security Vulnerabilities and Malfunctions, Raising Safety and Reliability Conc… | High | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05 |  |
-| 737 | 2026-04-05 | [`INC-01101`](docs/incidents/2026.md#inc-01101) | Google AI Overviews Spread Millions of Misinformation Answers Daily | High | LLM05, LLM09 | ASI05 |  |
-| 738 | 2026-04-05 | [`INC-01158`](docs/incidents/2026.md#inc-01158) | Hanoi Police Sanction Individual for AI-Generated Fake Image Causing Public Alarm | High | LLM05, LLM09 | ASI05 |  |
-| 739 | 2026-04-05 | [`INC-01253`](docs/incidents/2026.md#inc-01253) | Israel Uses AI to Improve Missile Alert System During Conflict | Medium |  |  |  |
-| 740 | 2026-04-05 | [`INC-01838`](docs/incidents/2026.md#inc-01838) | Target Shifts Liability for AI Shopping Assistant Errors to Customers | Medium | LLM02 | ASI03 |  |
-| 741 | 2026-04-05 | [`INC-02026`](docs/incidents/2026.md#inc-02026) | US Politicians Share Fake AI-Generated Image of Rescued Airman, Spreading Misinformation | Medium | LLM09 |  |  |
-| 742 | 2026-04-04 | [`INC-00550`](docs/incidents/2026.md#inc-00550) | AI-Powered Necklace Launch Suspended in EU Over Privacy Concerns | High | LLM02 | ASI03 |  |
-| 743 | 2026-04-04 | [`INC-01534`](docs/incidents/2026.md#inc-01534) | Nigeria Partners with EIB Group to Localize AI-Enabled Military Technology | Medium |  |  |  |
-| 744 | 2026-04-03 | [`INC-00190`](docs/incidents/2026.md#inc-00190) | AI Models Enable Unprecedented Cyberattacks, Raising Global Security Concerns | High | LLM02 | ASI03 |  |
-| 745 | 2026-04-03 | [`INC-00363`](docs/incidents/2026.md#inc-00363) | AI-Generated 'Skill' Clones Lead to Job Losses and Privacy Risks in China | High | LLM05, LLM09 | ASI05 |  |
-| 746 | 2026-04-03 | [`INC-00376`](docs/incidents/2026.md#inc-00376) | AI-Generated Deepfake Ads Target Turkish Pop Star Demet Akalın | Medium | LLM09 | ASI09 |  |
-| 747 | 2026-04-03 | [`INC-00393`](docs/incidents/2026.md#inc-00393) | AI-Generated Deepfake Video Falsely Reports Death of Mexican Actress | Critical | LLM09 | ASI09 |  |
-| 748 | 2026-04-03 | [`INC-00399`](docs/incidents/2026.md#inc-00399) | AI-Generated Deepfake Video Used for Extortion in Argentina | Medium | LLM09 | ASI09 |  |
-| 749 | 2026-04-03 | [`INC-00437`](docs/incidents/2026.md#inc-00437) | AI-Generated Explicit Images of Students Spark Investigation at Lake Zurich High School | High | LLM05 | ASI05 |  |
-| 750 | 2026-04-03 | [`INC-00446`](docs/incidents/2026.md#inc-00446) | AI-Generated Fake IDs Enable Exam Fraud in Turkey, 14 Arrested | High | LLM09 | ASI09 |  |
-| 751 | 2026-04-03 | [`INC-00467`](docs/incidents/2026.md#inc-00467) | AI-Generated Fake Sequels Sold Without Author's Consent on Kindle | High |  |  |  |
-| 752 | 2026-04-03 | [`INC-00485`](docs/incidents/2026.md#inc-00485) | AI-Generated Misinformation Campaign Targets NIO, Legal Action Taken | High | LLM05, LLM09 | ASI05 |  |
-| 753 | 2026-04-03 | [`INC-00605`](docs/incidents/2026.md#inc-00605) | Anthropic Finds Claude AI Can Engage in Deceptive and Harmful Behaviors Under Stress | Medium | LLM09 |  |  |
-| 754 | 2026-04-03 | [`INC-00672`](docs/incidents/2026.md#inc-00672) | Azerbaijan Proposes Harsh Penalties for AI-Enabled Sabotage and Terrorism | Medium |  |  |  |
-| 755 | 2026-04-03 | [`INC-00814`](docs/incidents/2026.md#inc-00814) | Claude Code Source Leak Exploited to Spread Credential-Stealing Malware | High | LLM01, LLM02, LLM03, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09, ASI10 |  |
-| 756 | 2026-04-03 | [`INC-00850`](docs/incidents/2026.md#inc-00850) | Company Uses AI to Clone Departed Employees, Raising Legal and Ethical Concerns in China | High | LLM05 | ASI05, ASI09 |  |
-| 757 | 2026-04-03 | [`INC-01427`](docs/incidents/2026.md#inc-01427) | Mexico's Mandatory Biometric ID Rollout Raises Privacy and Rights Concerns | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 758 | 2026-04-03 | [`INC-01546`](docs/incidents/2026.md#inc-01546) | Nvidia's Acquisition of SchedMD Raises Concerns Over Fair Access to Critical AI Software | Critical |  |  |  |
-| 759 | 2026-04-03 | [`INC-02036`](docs/incidents/2026.md#inc-02036) | Utah Approves AI Chatbot to Renew Psychiatric Medication Prescriptions | Medium |  |  |  |
-| 760 | 2026-04-02 | [`INC-00045`](docs/incidents/2026.md#inc-00045) | Advocacy Groups Urge Google to Ban AI-Generated Videos for Children on YouTube | High | LLM05, LLM09 | ASI05 |  |
-| 761 | 2026-04-02 | [`INC-00219`](docs/incidents/2026.md#inc-00219) | AI System KURGAN Targets Massive Tax Fraud in Turkey | High | LLM05 | ASI05, ASI09 |  |
-| 762 | 2026-04-02 | [`INC-00318`](docs/incidents/2026.md#inc-00318) | AI-Driven Private Schools Expand Amid Concerns Over Educational Risks | Medium |  |  |  |
-| 763 | 2026-04-02 | [`INC-00501`](docs/incidents/2026.md#inc-00501) | AI-Generated Short Dramas Infringe on Celebrity Likeness, Prompt Legal Action | High | LLM09 | ASI09 |  |
-| 764 | 2026-04-02 | [`INC-00549`](docs/incidents/2026.md#inc-00549) | AI-Powered Local News Network Shuts Down After Plagiarism Scandal | High |  |  |  |
-| 765 | 2026-04-02 | [`INC-00680`](docs/incidents/2026.md#inc-00680) | Basildon Council Leader Shares AI-Generated Video with Antisemitic Content | Medium |  |  |  |
-| 766 | 2026-04-02 | [`INC-00877`](docs/incidents/2026.md#inc-00877) | Delhi High Court Orders Removal of AI Deepfakes Targeting Spiritual Leader | High | LLM09 | ASI09 |  |
-| 767 | 2026-04-02 | [`INC-00891`](docs/incidents/2026.md#inc-00891) | Dietitian Struck Off in UK for Using ChatGPT During NHS Interview | Critical | LLM02, LLM09 | ASI03, ASI09 |  |
-| 768 | 2026-04-02 | [`INC-01052`](docs/incidents/2026.md#inc-01052) | French Voice Actors Win Removal of AI-Cloned Voice Models | High |  |  |  |
-| 769 | 2026-04-02 | [`INC-01081`](docs/incidents/2026.md#inc-01081) | German Justice Minister Calls for Action Against AI-Generated Sexualized Deepfakes | Medium | LLM09 | ASI09 |  |
-| 770 | 2026-04-02 | [`INC-02042`](docs/incidents/2026.md#inc-02042) | Vietnamese YouTubers Fined for Using AI to Create Harmful Fake Videos | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 771 | 2026-04-01 | [`INC-00309`](docs/incidents/2026.md#inc-00309) | AI-Driven Layoffs Surge in US Tech Sector | High | LLM05 | ASI05 |  |
-| 772 | 2026-04-01 | [`INC-00532`](docs/incidents/2026.md#inc-00532) | AI-Powered API Attacks Cause Disruption and Losses Across Asia-Pacific | High |  | ASI09 |  |
-| 773 | 2026-04-01 | [`INC-00541`](docs/incidents/2026.md#inc-00541) | AI-Powered Drones Trialled to Detect Explosives and Protect UK Soldiers | Critical |  |  |  |
-| 774 | 2026-04-01 | [`INC-00555`](docs/incidents/2026.md#inc-00555) | AI-Powered Social Media Alert Enables Police to Prevent Teen Suicide in Uttar Pradesh | Critical | LLM05 | ASI09 |  |
-| 775 | 2026-04-01 | [`INC-00564`](docs/incidents/2026.md#inc-00564) | AI-Powered Vibe Coding Overwhelms Apple's App Store Review Process | Medium |  |  |  |
-| 776 | 2026-04-01 | [`INC-00705`](docs/incidents/2026.md#inc-00705) | Brazilian Government Orders Google to Remove AI-Generated Deepfake Nude Sites | Medium | LLM09 | ASI09 |  |
-| 777 | 2026-04-01 | [`INC-00732`](docs/incidents/2026.md#inc-00732) | CaoCao Inc. Begins Unmanned Robotaxi Road Testing in Hangzhou | Medium |  |  |  |
-| 778 | 2026-04-01 | [`INC-00798`](docs/incidents/2026.md#inc-00798) | Chuck Norris' Family Condemns Harmful AI-Generated Misinformation After His Death | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 779 | 2026-04-01 | [`INC-01096`](docs/incidents/2026.md#inc-01096) | Global Security Risks and Attacks Linked to OpenClaw AI Agent | High | LLM01, LLM02, LLM04, LLM05 | ASI01, ASI03, ASI05, ASI06 |  |
-| 780 | 2026-04-01 | [`INC-01142`](docs/incidents/2026.md#inc-01142) | Grok AI Deepfake Scandal Prompts International Investigations and Regulatory Action | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 781 | 2026-04-01 | [`INC-01547`](docs/incidents/2026.md#inc-01547) | NYC Health + Hospitals CEO Proposes Replacing Radiologists with AI | Critical | LLM09 |  |  |
-| 782 | 2026-04-01 | [`INC-01873`](docs/incidents/2026.md#inc-01873) | Tesla Robotaxis Rely on Human Remote Control Amid AI Limitations | High | LLM05 | ASI05 |  |
-| 783 | 2026-04-01 | [`INC-02009`](docs/incidents/2026.md#inc-02009) | US Lawmakers Move to Tighten Export Controls on AI Chip-Making Equipment to China | Critical |  |  |  |
-| 784 | 2026-04 | [`INC-00010`](docs/incidents/2026.md#inc-00010) | A flaw was found in the AAP MCP server. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2021-4206` (+7) |
-| 785 | 2026-04 | [`INC-00016`](docs/incidents/2026.md#inc-00016) | A security vulnerability has been detected in ComfyUI up to 0.13.0. | Medium | LLM03 | ASI04 | `CVE-2026-6589` |
-| 786 | 2026-04 | [`INC-00017`](docs/incidents/2026.md#inc-00017) | A security vulnerability has been detected in ErlichLiu claude-agent-sdk-master up to b185aa7ff0d864581257008… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7235` |
-| 787 | 2026-04 | [`INC-00018`](docs/incidents/2026.md#inc-00018) | A security vulnerability has been detected in imprvhub mcp-browser-agent up to 0.8.0. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5607` |
-| 788 | 2026-04 | [`INC-00019`](docs/incidents/2026.md#inc-00019) | A security vulnerability has been detected in mixelpixx Google-Research-MCP 1e062d7bd887bfe5f6e582b6cc288bb89… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5470` |
-| 789 | 2026-04 | [`INC-00021`](docs/incidents/2026.md#inc-00021) | A side-channel vulnerability exists in the implementation of BIP-39 mnemonic processing, as observed in Trezo… | Medium | LLM03 | ASI04 | `CVE-2025-69893` |
-| 790 | 2026-04 | [`INC-00026`](docs/incidents/2026.md#inc-00026) | A vulnerability in the `TFSMLayer` class of the `keras` package, version 3.13.0, allows attacker-controlled T… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1462` |
-| 791 | 2026-04 | [`INC-00027`](docs/incidents/2026.md#inc-00027) | A vulnerability was determined in ericc-ch copilot-api up to 0.7.0. | Medium | LLM03 | ASI04 | `CVE-2026-6874` |
-| 792 | 2026-04 | [`INC-00028`](docs/incidents/2026.md#inc-00028) | A vulnerability was found in 1Panel-dev MaxKB up to 2.6.1. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6108` |
-| 793 | 2026-04 | [`INC-00029`](docs/incidents/2026.md#inc-00029) | A vulnerability was found in Algovate xhs-mcp 0.8.11. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7417` |
-| 794 | 2026-04 | [`INC-00030`](docs/incidents/2026.md#inc-00030) | A vulnerability was found in ComfyUI up to 0.13.0. | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6593` |
-| 795 | 2026-04 | [`INC-00031`](docs/incidents/2026.md#inc-00031) | A vulnerability was found in dh1011 auto-favicon up to f189116a9259950c2393f114dbcb94dde0ad864b. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7150` |
-| 796 | 2026-04 | [`INC-00032`](docs/incidents/2026.md#inc-00032) | A vulnerability was found in ericc-ch copilot-api up to 0.7.0. | High | LLM03 | ASI04 | `CVE-2026-6662` |
-| 797 | 2026-04 | [`INC-00033`](docs/incidents/2026.md#inc-00033) | A vulnerability was found in priyankark a11y-mcp up to 1.0.5. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5323` |
-| 798 | 2026-04 | [`INC-00034`](docs/incidents/2026.md#inc-00034) | A vulnerability was found in TencentCloudBase CloudBase-MCP up to 2.17.0. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7221` |
-| 799 | 2026-04 | [`INC-00035`](docs/incidents/2026.md#inc-00035) | A vulnerability was found in vllm up to 0.19.0. | Medium | LLM03 | ASI04 | `CVE-2026-7141` |
-| 800 | 2026-04 | [`INC-00053`](docs/incidents/2026.md#inc-00053) | AGiXT — Path Traversal (CVE-2026-39981) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39981` |
-| 801 | 2026-04 | [`INC-00601`](docs/incidents/2026.md#inc-00601) | Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability in the command l… | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-35020` (+2) |
-| 802 | 2026-04 | [`INC-00629`](docs/incidents/2026.md#inc-00629) | AnythingLLM — Prompt Injection (CVE-2026-41318) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-41318` |
-| 803 | 2026-04 | [`INC-00635`](docs/incidents/2026.md#inc-00635) | Apache Doris MCP Server versions earlier than 0.6.1 are affected by an improper neutralization flaw in query… | Medium | LLM03 | ASI04 | `CVE-2025-66335` |
-| 804 | 2026-04 | [`INC-00637`](docs/incidents/2026.md#inc-00637) | Apollo MCP Server — Auth Bypass (CVE-2026-35577) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-35577` |
-| 805 | 2026-04 | [`INC-00669`](docs/incidents/2026.md#inc-00669) | aws-mcp-server AWS CLI Command Injection Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5059` |
-| 806 | 2026-04 | [`INC-00670`](docs/incidents/2026.md#inc-00670) | aws-mcp-server Command Injection Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5058` |
-| 807 | 2026-04 | [`INC-00688`](docs/incidents/2026.md#inc-00688) | BentoML — Rce (CVE-2026-35043) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35043` |
-| 808 | 2026-04 | [`INC-00689`](docs/incidents/2026.md#inc-00689) | BentoML — Vulnerability (CVE-2026-35044) | High | LLM03 | ASI04 | `CVE-2026-35044` |
-| 809 | 2026-04 | [`INC-00692`](docs/incidents/2026.md#inc-00692) | bigsk1 openai-realtime-ui — Ssrf (CVE-2026-5803) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5803` |
-| 810 | 2026-04 | [`INC-00741`](docs/incidents/2026.md#inc-00741) | chatboxai chatbox — Command Injection (CVE-2026-6130) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6130` |
-| 811 | 2026-04 | [`INC-00816`](docs/incidents/2026.md#inc-00816) | Claude Code — Prompt Injection (CVE-2026-39861) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-39861` |
-| 812 | 2026-04 | [`INC-00824`](docs/incidents/2026.md#inc-00824) | Claude Code — Vulnerability (CVE-2026-35603) | High | LLM03 | ASI04 | `CVE-2026-35603` |
-| 813 | 2026-04 | [`INC-00825`](docs/incidents/2026.md#inc-00825) | Claude Code, Gemini CLI, GitHub Copilot agents hijacked via PR/issue comment prompt injection | High | LLM01, LLM06 | ASI01, ASI02 |  |
-| 814 | 2026-04 | [`INC-00832`](docs/incidents/2026.md#inc-00832) | Claude-powered Cursor AI agent deletes production database in 9 seconds | Critical | LLM05, LLM06 | ASI02, ASI05 |  |
-| 815 | 2026-04 | [`INC-00843`](docs/incidents/2026.md#inc-00843) | ComfyUI — Path Traversal (CVE-2026-6590) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6590` |
-| 816 | 2026-04 | [`INC-00844`](docs/incidents/2026.md#inc-00844) | ComfyUI — Path Traversal (CVE-2026-6591) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6591` |
-| 817 | 2026-04 | [`INC-00845`](docs/incidents/2026.md#inc-00845) | ComfyUI — Xss (CVE-2026-6592) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6592` |
-| 818 | 2026-04 | [`INC-00904`](docs/incidents/2026.md#inc-00904) | Docker MCP Server OS Command Injection (CVE-2026-5741) | Medium | LLM05 | ASI02, ASI05 | `CVE-2026-5741` |
-| 819 | 2026-04 | [`INC-00972`](docs/incidents/2026.md#inc-00972) | excel-mcp-server — Path Traversal (CVE-2026-40576) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40576` |
-| 820 | 2026-04 | [`INC-00987`](docs/incidents/2026.md#inc-00987) | FastGPT — Auth Bypass (CVE-2026-40252) | High | LLM03 | ASI03, ASI04 | `CVE-2026-40252` |
-| 821 | 2026-04 | [`INC-00991`](docs/incidents/2026.md#inc-00991) | FastGPT — Sql Injection (CVE-2026-40351) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34162` (+3) |
-| 822 | 2026-04 | [`INC-00992`](docs/incidents/2026.md#inc-00992) | FastGPT — Ssrf (CVE-2026-40100) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40100` |
-| 823 | 2026-04 | [`INC-00999`](docs/incidents/2026.md#inc-00999) | FastMCP — Command Injection (CVE-2025-64340) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-64340` |
-| 824 | 2026-04 | [`INC-01000`](docs/incidents/2026.md#inc-01000) | FastMCP — Ssrf (CVE-2026-32871) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-32871` |
-| 825 | 2026-04 | [`INC-01002`](docs/incidents/2026.md#inc-01002) | FastMCP — Vulnerability (CVE-2026-27124) | Medium | LLM03 | ASI04 | `CVE-2026-27124` |
-| 826 | 2026-04 | [`INC-01015`](docs/incidents/2026.md#inc-01015) | Flowise — Auth Bypass (CVE-2026-41273) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41273` |
-| 827 | 2026-04 | [`INC-01016`](docs/incidents/2026.md#inc-01016) | Flowise — Command Injection (CVE-2026-41137) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41137` |
-| 828 | 2026-04 | [`INC-01017`](docs/incidents/2026.md#inc-01017) | Flowise — Data Exfiltration (CVE-2026-41274) | Critical | LLM03 | ASI04 | `CVE-2026-41274` |
-| 829 | 2026-04 | [`INC-01018`](docs/incidents/2026.md#inc-01018) | Flowise — Prompt Injection (CVE-2026-41264) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-41264` |
-| 830 | 2026-04 | [`INC-01019`](docs/incidents/2026.md#inc-01019) | Flowise — Prompt Injection (CVE-2026-41265) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-41265` |
-| 831 | 2026-04 | [`INC-01020`](docs/incidents/2026.md#inc-01020) | Flowise — Rce (CVE-2026-41138) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41138` |
-| 832 | 2026-04 | [`INC-01021`](docs/incidents/2026.md#inc-01021) | Flowise — Rce (CVE-2026-41268) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41268` |
-| 833 | 2026-04 | [`INC-01022`](docs/incidents/2026.md#inc-01022) | Flowise — Rce (CVE-2026-41269) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41269` |
-| 834 | 2026-04 | [`INC-01024`](docs/incidents/2026.md#inc-01024) | Flowise — Ssrf (CVE-2026-41270) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41270` |
-| 835 | 2026-04 | [`INC-01025`](docs/incidents/2026.md#inc-01025) | Flowise — Ssrf (CVE-2026-41271) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41271` |
-| 836 | 2026-04 | [`INC-01026`](docs/incidents/2026.md#inc-01026) | Flowise — Ssrf (CVE-2026-41272) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41272` |
-| 837 | 2026-04 | [`INC-01028`](docs/incidents/2026.md#inc-01028) | Flowise — Vulnerability (CVE-2026-41266) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41266` |
-| 838 | 2026-04 | [`INC-01029`](docs/incidents/2026.md#inc-01029) | Flowise — Vulnerability (CVE-2026-41267) | High | LLM03 | ASI04 | `CVE-2026-41267` |
-| 839 | 2026-04 | [`INC-01030`](docs/incidents/2026.md#inc-01030) | Flowise — Vulnerability (CVE-2026-41275) | High | LLM03 | ASI04 | `CVE-2026-41275` |
-| 840 | 2026-04 | [`INC-01031`](docs/incidents/2026.md#inc-01031) | Flowise — Vulnerability (CVE-2026-41276) | Critical | LLM03 | ASI04 | `CVE-2026-41276` |
-| 841 | 2026-04 | [`INC-01032`](docs/incidents/2026.md#inc-01032) | Flowise — Vulnerability (CVE-2026-41277) | High | LLM03 | ASI04 | `CVE-2026-41277` |
-| 842 | 2026-04 | [`INC-01033`](docs/incidents/2026.md#inc-01033) | Flowise — Vulnerability (CVE-2026-41278) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41278` |
-| 843 | 2026-04 | [`INC-01034`](docs/incidents/2026.md#inc-01034) | Flowise — Vulnerability (CVE-2026-41279) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41279` |
-| 844 | 2026-04 | [`INC-01043`](docs/incidents/2026.md#inc-01043) | Fosowl agenticSeek 0 — Vulnerability (CVE-2026-5584) | High | LLM03 | ASI04 | `CVE-2026-5584` |
-| 845 | 2026-04 | [`INC-01055`](docs/incidents/2026.md#inc-01055) | FrontMCP — Ssrf (CVE-2026-39885) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39885` |
-| 846 | 2026-04 | [`INC-01197`](docs/incidents/2026.md#inc-01197) | In mlflow/mlflow, the FastAPI job endpoints under `/ajax-api/3.0/jobs/*` are not protected by authentication… | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-0545` |
-| 847 | 2026-04 | [`INC-01198`](docs/incidents/2026.md#inc-01198) | In OpenAirInterface V2.2.0 AMF, Out of sequence messages causes incorrect state transition during UE registra… | Critical | LLM03 | ASI04 | `CVE-2026-30079` |
-| 848 | 2026-04 | [`INC-01199`](docs/incidents/2026.md#inc-01199) | In Splunk MCP Server app versions below 1.0.3 , a user who holds a role with access to the Splunk `_internal`… | High | LLM03 | ASI04 | `CVE-2026-20205` |
-| 849 | 2026-04 | [`INC-01200`](docs/incidents/2026.md#inc-01200) | In Spring AI, having access to a shared environment can expose the ONNX model used by the application. | Medium | LLM03 | ASI04 | `CVE-2026-40979` |
-| 850 | 2026-04 | [`INC-01202`](docs/incidents/2026.md#inc-01202) | In the Linux kernel, the following vulnerability has been resolved: bnge: return after auxiliary_device_unini… | Medium | LLM03 | ASI04 | `CVE-2026-31621` |
-| 851 | 2026-04 | [`INC-01203`](docs/incidents/2026.md#inc-01203) | In the Linux kernel, the following vulnerability has been resolved: dmaengine: idxd: fix possible wrong descr… | Critical | LLM03 | ASI04 | `CVE-2026-31436` |
-| 852 | 2026-04 | [`INC-01204`](docs/incidents/2026.md#inc-01204) | In the Linux kernel, the following vulnerability has been resolved: dpaa2-switch: Fix interrupt storm after r… | High | LLM03 | ASI04 | `CVE-2026-23422` |
-| 853 | 2026-04 | [`INC-01205`](docs/incidents/2026.md#inc-01205) | In the Linux kernel, the following vulnerability has been resolved: EDAC/mc: Fix error path ordering in edac_… | Medium | LLM03 | ASI04 | `CVE-2026-31689` |
-| 854 | 2026-04 | [`INC-01208`](docs/incidents/2026.md#inc-01208) | In the Linux kernel, the following vulnerability has been resolved: futex: Require sys_futex_requeue() to hav… | High | LLM03 | ASI04 | `CVE-2026-31554` |
-| 855 | 2026-04 | [`INC-01212`](docs/incidents/2026.md#inc-01212) | In the Linux kernel, the following vulnerability has been resolved: net/smc: fix double-free of smc_spd_priv… | High | LLM03 | ASI04 | `CVE-2026-31507` |
-| 856 | 2026-04 | [`INC-01213`](docs/incidents/2026.md#inc-01213) | In the Linux kernel, the following vulnerability has been resolved: net: fix fanout UAF in packet_release() v… | High | LLM03 | ASI04 | `CVE-2026-31504` |
-| 857 | 2026-04 | [`INC-01217`](docs/incidents/2026.md#inc-01217) | In the Linux kernel, the following vulnerability has been resolved: wifi: wlcore: Return -ENOMEM instead of -… | High | LLM03 | ASI04 | `CVE-2026-31552` |
-| 858 | 2026-04 | [`INC-01274`](docs/incidents/2026.md#inc-01274) | JoeCastrom mcp-chat-studio — Ssrf (CVE-2026-7147) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7147` |
-| 859 | 2026-04 | [`INC-01286`](docs/incidents/2026.md#inc-01286) | KubeAI — Vulnerability (CVE-2026-34940) | High | LLM03 | ASI04 | `CVE-2026-34940` |
-| 860 | 2026-04 | [`INC-01293`](docs/incidents/2026.md#inc-01293) | LangChain — Ssrf (CVE-2026-41481) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41481` |
-| 861 | 2026-04 | [`INC-01294`](docs/incidents/2026.md#inc-01294) | LangChain — Ssrf (CVE-2026-41488) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41488` |
-| 862 | 2026-04 | [`INC-01296`](docs/incidents/2026.md#inc-01296) | LangChain — Vulnerability (CVE-2026-40087) | Medium | LLM03 | ASI04 | `CVE-2026-40087` |
-| 863 | 2026-04 | [`INC-01308`](docs/incidents/2026.md#inc-01308) | langflow-ai langflow — Vulnerability (CVE-2026-6599) | Medium | LLM03 | ASI04 | `CVE-2026-6599` |
-| 864 | 2026-04 | [`INC-01311`](docs/incidents/2026.md#inc-01311) | langgenius dify — Ssrf (CVE-2026-6617) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6617` |
-| 865 | 2026-04 | [`INC-01312`](docs/incidents/2026.md#inc-01312) | langgenius dify — Ssrf (CVE-2026-6618) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6618` |
-| 866 | 2026-04 | [`INC-01313`](docs/incidents/2026.md#inc-01313) | langgenius dify — Xss (CVE-2026-6619) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6619` |
-| 867 | 2026-04 | [`INC-01314`](docs/incidents/2026.md#inc-01314) | LangSmith Client SDKs provide SDK's for interacting with the LangSmith platform. | Medium | LLM03 | ASI04 | `CVE-2026-41182` |
-| 868 | 2026-04 | [`INC-01331`](docs/incidents/2026.md#inc-01331) | LibreChat — Path Traversal (CVE-2026-34371) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34371` |
-| 869 | 2026-04 | [`INC-01342`](docs/incidents/2026.md#inc-01342) | LiteLLM — Vulnerability (CVE-2026-35030) | Critical | LLM03 | ASI04 | `CVE-2026-35030` |
-| 870 | 2026-04 | [`INC-01344`](docs/incidents/2026.md#inc-01344) | llama.cpp — Deserialization (CVE-2026-34159) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34159` |
-| 871 | 2026-04 | [`INC-01350`](docs/incidents/2026.md#inc-01350) | lm-sys fastchat — Vulnerability (CVE-2026-6608) | Medium | LLM03 | ASI04 | `CVE-2026-6608` |
-| 872 | 2026-04 | [`INC-01351`](docs/incidents/2026.md#inc-01351) | LMDeploy — Ssrf (CVE-2026-33626) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33626` |
-| 873 | 2026-04 | [`INC-01370`](docs/incidents/2026.md#inc-01370) | Marimo Pre-Auth RCE (CVE-2026-39987) | Critical | LLM05 | ASI03, ASI05 | `CVE-2026-39987` |
-| 874 | 2026-04 | [`INC-01375`](docs/incidents/2026.md#inc-01375) | MaxKB — Xss (CVE-2026-39426) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39426` |
-| 875 | 2026-04 | [`INC-01380`](docs/incidents/2026.md#inc-01380) | MCP Java SDK — Vulnerability (CVE-2026-35568) | Medium | LLM03 | ASI04 | `CVE-2026-35568` |
-| 876 | 2026-04 | [`INC-01385`](docs/incidents/2026.md#inc-01385) | mcp-framework — Dos (CVE-2026-39313) | Medium | LLM03 | ASI04 | `CVE-2026-39313` |
-| 877 | 2026-04 | [`INC-01388`](docs/incidents/2026.md#inc-01388) | mcp-neo4j-cypher — Ssrf (CVE-2026-35402) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35402` |
-| 878 | 2026-04 | [`INC-01389`](docs/incidents/2026.md#inc-01389) | mcp-server-kubernetes — Prompt Injection (CVE-2026-39884) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-39884` |
-| 879 | 2026-04 | [`INC-01452`](docs/incidents/2026.md#inc-01452) | Missing authentication for critical function in Azure MCP Server allows an unauthorized attacker to disclose… | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-32211` |
-| 880 | 2026-04 | [`INC-01457`](docs/incidents/2026.md#inc-01457) | MLflow is vulnerable to Stored Cross-Site Scripting (XSS) caused by unsafe parsing of YAML-based MLmodel arti… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33865`, `CVE-2026-33866` |
-| 881 | 2026-04 | [`INC-01461`](docs/incidents/2026.md#inc-01461) | Mobile Next — Vulnerability (CVE-2026-35394) | High | LLM03 | ASI04 | `CVE-2026-35394` |
-| 882 | 2026-04 | [`INC-01468`](docs/incidents/2026.md#inc-01468) | MuPDF before 1.27 contains an ANSI injection vulnerability in mutool that allows attackers to inject arbitrar… | Low | LLM03 | ASI04 | `CVE-2026-40505` |
-| 883 | 2026-04 | [`INC-01510`](docs/incidents/2026.md#inc-01510) | n8n-MCP — Ssrf (CVE-2026-39974) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39974` |
-| 884 | 2026-04 | [`INC-01528`](docs/incidents/2026.md#inc-01528) | Next AI Draw.io — Vulnerability (CVE-2026-40608) | Medium | LLM03 | ASI04 | `CVE-2026-40608` |
-| 885 | 2026-04 | [`INC-01554`](docs/incidents/2026.md#inc-01554) | Ollama — Path Traversal (CVE-2026-7020) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7020` |
-| 886 | 2026-04 | [`INC-01555`](docs/incidents/2026.md#inc-01555) | Ollama — Ssrf (CVE-2026-5530) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5530` |
-| 887 | 2026-04 | [`INC-01559`](docs/incidents/2026.md#inc-01559) | Open Neural Network Exchange (ONNX) is an open standard for machine learning interoperability. | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-27489` (+4) |
-| 888 | 2026-04 | [`INC-01564`](docs/incidents/2026.md#inc-01564) | Open WebUI — Auth Bypass (CVE-2026-34222) | High | LLM03 | ASI03, ASI04 | `CVE-2026-34222` |
-| 889 | 2026-04 | [`INC-01566`](docs/incidents/2026.md#inc-01566) | Open WebUI — Ssrf (CVE-2026-34225) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34225` |
-| 890 | 2026-04 | [`INC-01584`](docs/incidents/2026.md#inc-01584) | OpenAirInterface v2.2.0 accepts Security Mode Complete without any integrity protection. | High | LLM03 | ASI04 | `CVE-2026-30080` |
-| 891 | 2026-04 | [`INC-01585`](docs/incidents/2026.md#inc-01585) | OpenAirInterface V2.2.0 AMF crashes when it receives an NGAP message with invalid procedure code or invalid P… | High | LLM03 | ASI04 | `CVE-2026-30077`, `CVE-2026-30078` |
-| 892 | 2026-04 | [`INC-01586`](docs/incidents/2026.md#inc-01586) | OpenAirInterface Version 2.2.0 has a Buffer Overflow vulnerability in processing UplinkNASTransport containin… | High | LLM03 | ASI04 | `CVE-2026-30075` |
-| 893 | 2026-04 | [`INC-01595`](docs/incidents/2026.md#inc-01595) | OpenClaw before 2026.3.28 contains an agentic consent bypass vulnerability allowing LLM agents to silently di… | High | LLM03 | ASI04 | `CVE-2026-41349` |
-| 894 | 2026-04 | [`INC-01601`](docs/incidents/2026.md#inc-01601) | OpenClaw versions 2026.2.13 through 2026.3.24 contain an ANSI escape sequence injection vulnerability in appr… | Medium | LLM03 | ASI04 | `CVE-2026-35651` |
-| 895 | 2026-04 | [`INC-01622`](docs/incidents/2026.md#inc-01622) | Paperclip — Command Injection (CVE-2026-41208) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-41208` |
-| 896 | 2026-04 | [`INC-01623`](docs/incidents/2026.md#inc-01623) | Paperclip — Rce (CVE-2026-41679) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-41679` |
-| 897 | 2026-04 | [`INC-01666`](docs/incidents/2026.md#inc-01666) | PraisonAI Quadruple CVE Disclosure | Critical | LLM05 | ASI02, ASI03, ASI05, ASI07 | `CVE-2026-39888` (+3) |
-| 898 | 2026-04 | [`INC-01668`](docs/incidents/2026.md#inc-01668) | PraisonAI — Prompt Injection (CVE-2026-40112) | Medium | LLM01, LLM04, LLM05 | ASI01, ASI04, ASI05 | `CVE-2026-40112` |
-| 899 | 2026-04 | [`INC-01669`](docs/incidents/2026.md#inc-01669) | PraisonAI — Rce (CVE-2026-40159) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-40159` |
-| 900 | 2026-04 | [`INC-01670`](docs/incidents/2026.md#inc-01670) | PraisonAI — Vulnerability (CVE-2026-34953) | Critical | LLM03 | ASI04 | `CVE-2026-34953` |
-| 901 | 2026-04 | [`INC-01671`](docs/incidents/2026.md#inc-01671) | PraisonAI — Vulnerability (CVE-2026-40088) | Critical | LLM03 | ASI04 | `CVE-2026-40088` |
-| 902 | 2026-04 | [`INC-01672`](docs/incidents/2026.md#inc-01672) | PraisonAI — Vulnerability (CVE-2026-40113) | High | LLM03 | ASI04 | `CVE-2026-40113` |
-| 903 | 2026-04 | [`INC-01673`](docs/incidents/2026.md#inc-01673) | PraisonAI — Vulnerability (CVE-2026-40116) | High | LLM03 | ASI03, ASI04 | `CVE-2026-40116` |
-| 904 | 2026-04 | [`INC-01674`](docs/incidents/2026.md#inc-01674) | PraisonAIAgents — Prompt Injection (CVE-2026-40111) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-40111` |
-| 905 | 2026-04 | [`INC-01675`](docs/incidents/2026.md#inc-01675) | PraisonAIAgents — Prompt Injection (CVE-2026-40117) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-40117` |
-| 906 | 2026-04 | [`INC-01676`](docs/incidents/2026.md#inc-01676) | PraisonAIAgents — Prompt Injection (CVE-2026-40150) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-40150` |
-| 907 | 2026-04 | [`INC-01677`](docs/incidents/2026.md#inc-01677) | PraisonAIAgents — Vulnerability (CVE-2026-40160) | Medium | LLM03 | ASI04 | `CVE-2026-40160` |
-| 908 | 2026-04 | [`INC-01715`](docs/incidents/2026.md#inc-01715) | pyLoad — Vulnerability (CVE-2026-40071) | Medium | LLM03 | ASI04 | `CVE-2026-40071` |
-| 909 | 2026-04 | [`INC-01726`](docs/incidents/2026.md#inc-01726) | Rembg — Path Traversal (CVE-2026-40086) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40086` |
-| 910 | 2026-04 | [`INC-01772`](docs/incidents/2026.md#inc-01772) | SillyTavern — Path Traversal (CVE-2026-34522) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-34522` (+3) |
-| 911 | 2026-04 | [`INC-01826`](docs/incidents/2026.md#inc-01826) | Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems | Critical | LLM03, LLM05 | ASI02, ASI06 |  |
-| 912 | 2026-04 | [`INC-01876`](docs/incidents/2026.md#inc-01876) | text-generation-webui — Data Exfiltration (CVE-2026-35486) | High | LLM03 | ASI03, ASI04 | `CVE-2026-35486` |
-| 913 | 2026-04 | [`INC-01877`](docs/incidents/2026.md#inc-01877) | text-generation-webui — Path Traversal (CVE-2026-35483) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35483` |
-| 914 | 2026-04 | [`INC-01878`](docs/incidents/2026.md#inc-01878) | text-generation-webui — Path Traversal (CVE-2026-35484) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-35484` |
-| 915 | 2026-04 | [`INC-01879`](docs/incidents/2026.md#inc-01879) | text-generation-webui — Path Traversal (CVE-2026-35485) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35485` |
-| 916 | 2026-04 | [`INC-01880`](docs/incidents/2026.md#inc-01880) | text-generation-webui — Path Traversal (CVE-2026-35487) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35487` |
-| 917 | 2026-04 | [`INC-01881`](docs/incidents/2026.md#inc-01881) | text-generation-webui — Vulnerability (CVE-2026-35050) | Critical | LLM03 | ASI04 | `CVE-2026-35050` |
-| 918 | 2026-04 | [`INC-01888`](docs/incidents/2026.md#inc-01888) | The Go MCP SDK used Go's standard encoding/json. | High | LLM03 | ASI04 | `CVE-2026-33252`, `CVE-2026-34742` |
-| 919 | 2026-04 | [`INC-01894`](docs/incidents/2026.md#inc-01894) | The nbconvert tool, jupyter nbconvert, converts Jupyter notebooks to various other formats via Jinja template… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39378` |
-| 920 | 2026-04 | [`INC-01910`](docs/incidents/2026.md#inc-01910) | Toowiredd chatgpt-mcp-server — Command Injection (CVE-2026-7061) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7061` |
-| 921 | 2026-04 | [`INC-01911`](docs/incidents/2026.md#inc-01911) | TransformerOptimus SuperAGI — Auth Bypass (CVE-2026-6582) | High | LLM03 | ASI03, ASI04 | `CVE-2026-6582` |
-| 922 | 2026-04 | [`INC-01980`](docs/incidents/2026.md#inc-01980) | Url redirection to untrusted site ('open redirect') in M365 Copilot allows an unauthorized attacker to elevat… | Critical | LLM03 | ASI04 | `CVE-2026-33102` |
-| 923 | 2026-04 | [`INC-02048`](docs/incidents/2026.md#inc-02048) | vLLM — Dos (CVE-2026-34756) | Medium | LLM03 | ASI04 | `CVE-2026-34756` |
-| 924 | 2026-04 | [`INC-02051`](docs/incidents/2026.md#inc-02051) | vLLM — Ssrf (CVE-2026-34753) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34753` |
-| 925 | 2026-04 | [`INC-02053`](docs/incidents/2026.md#inc-02053) | vLLM — Vulnerability (CVE-2026-34755) | Medium | LLM03 | ASI04 | `CVE-2026-34755` |
-| 926 | 2026-04 | [`INC-02054`](docs/incidents/2026.md#inc-02054) | vLLM — Vulnerability (CVE-2026-34760) | Medium | LLM03 | ASI04 | `CVE-2026-34760` |
-| 927 | 2026-04 | [`INC-02061`](docs/incidents/2026.md#inc-02061) | Vulnerability in the XML Database component of Oracle Database Server. | Medium | LLM03 | ASI04 | `CVE-2025-30694`, `CVE-2026-21999` |
-| 928 | 2026-04 | [`INC-02111`](docs/incidents/2026.md#inc-02111) | Zammad — Rce (CVE-2026-34724) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34724` |
-| 929 | 2026-04 | [`INC-02118`](docs/incidents/2026.md#inc-02118) | zhayujie chatgpt-on-wechat CowAgent 2 — Auth Bypass (CVE-2026-6126) | High | LLM03 | ASI03, ASI04 | `CVE-2026-6126` |
-| 930 | 2026-04 | [`INC-02119`](docs/incidents/2026.md#inc-02119) | zhayujie chatgpt-on-wechat CowAgent — Auth Bypass (CVE-2026-6129) | High | LLM03 | ASI03, ASI04 | `CVE-2026-6129` |
-| 931 | 2026-04 | [`INC-02120`](docs/incidents/2026.md#inc-02120) | zhayujie chatgpt-on-wechat CowAgent — Path Traversal (CVE-2026-5998) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5998` |
-| 932 | 2026-03-31 | [`INC-00237`](docs/incidents/2026.md#inc-00237) | AI Tools Enable Cloning and Privatization of Open-Source Software, Raising IP Concerns | High | LLM05 | ASI05 |  |
-| 933 | 2026-03-31 | [`INC-00351`](docs/incidents/2026.md#inc-00351) | AI-Enabled Military Drones Cause Civilian Harm and Proliferate Through Strategic Partnerships in Ukraine | Critical | LLM05 | ASI05, ASI10 |  |
-| 934 | 2026-03-31 | [`INC-00414`](docs/incidents/2026.md#inc-00414) | AI-Generated Deepfakes Cause Fraud and Undermine Democracy in Germany | Medium | LLM09 | ASI09 |  |
-| 935 | 2026-03-31 | [`INC-00594`](docs/incidents/2026.md#inc-00594) | Anthropic Accidentally Exposes Claude Code Source, Faces Legal and Security Challenges | High | LLM01, LLM02, LLM05 | ASI01, ASI03, ASI05, ASI10 |  |
-| 936 | 2026-03-31 | [`INC-00603`](docs/incidents/2026.md#inc-00603) | Anthropic Faces AI Model Theft by Chinese Firms and Major Source Code Leak | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09, ASI10 |  |
-| 937 | 2026-03-31 | [`INC-00674`](docs/incidents/2026.md#inc-00674) | Baidu Apollo Go Robotaxis Stopped in Traffic During Reported System Failure in Wuhan, Stranding Some Passenge… | High | LLM05 | ASI08 |  |
-| 938 | 2026-03-31 | [`INC-00920`](docs/incidents/2026.md#inc-00920) | Dutch Politician Excluded After AI-Retouched Campaign Photo Causes Controversy | High | LLM05, LLM09 | ASI05 |  |
-| 939 | 2026-03-31 | [`INC-01110`](docs/incidents/2026.md#inc-01110) | Google Cloud Vertex AI Agents Exploited Due to Excessive Default Permissions | High |  |  |  |
-| 940 | 2026-03-31 | [`INC-01246`](docs/incidents/2026.md#inc-01246) | Iran Attacks and Threatens AI Data Centers of Major Tech Companies | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 941 | 2026-03-31 | [`INC-01336`](docs/incidents/2026.md#inc-01336) | LIG D&A Showcases AI-Based Autonomous Naval Combat Systems at Defense Expo | Medium |  | ASI10 |  |
-| 942 | 2026-03-31 | [`INC-01525`](docs/incidents/2026.md#inc-01525) | New York Times Fires Freelance Critic for AI-Assisted Plagiarism in Book Review | High | LLM05 | ASI05, ASI09 |  |
-| 943 | 2026-03-31 | [`INC-01543`](docs/incidents/2026.md#inc-01543) | NTSB Investigates Fatal Ford BlueCruise AI Crashes | Critical |  |  |  |
-| 944 | 2026-03-31 | [`INC-01627`](docs/incidents/2026.md#inc-01627) | Penguin Random House Sues OpenAI Over ChatGPT's Alleged Copyright Infringement | High |  |  |  |
-| 945 | 2026-03-31 | [`INC-01788`](docs/incidents/2026.md#inc-01788) | South Korean Courts Respond to AI-Generated Fake Legal Documents | High | LLM05, LLM09 | ASI05 |  |
-| 946 | 2026-03-31 | [`INC-01824`](docs/incidents/2026.md#inc-01824) | Supply Chain Attack on LiteLLM Exposes AI Data, Disrupts Industry Partnerships | Critical | LLM02, LLM03, LLM05, LLM09 | ASI02, ASI03, ASI04, ASI05, ASI09 |  |
-| 947 | 2026-03-31 | [`INC-01836`](docs/incidents/2026.md#inc-01836) | Swiss Competition Authority Warns of AI-Driven Price-Fixing Risks | Medium |  |  |  |
-| 948 | 2026-03-31 | [`INC-01844`](docs/incidents/2026.md#inc-01844) | Teenager Dies by Suicide After ChatGPT Provides Harmful Advice | Critical | LLM05 | ASI09 |  |
-| 949 | 2026-03-31 | [`INC-01990`](docs/incidents/2026.md#inc-01990) | US Army Tests AI-Enabled Autonomous Strike Drone in Military Exercise | Medium |  | ASI10 |  |
-| 950 | 2026-03-30 | [`INC-00074`](docs/incidents/2026.md#inc-00074) | AI Agents Found Deceiving and Manipulating Users; Anthropic's Claude Source Code Leaked | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI10 |  |
-| 951 | 2026-03-30 | [`INC-00160`](docs/incidents/2026.md#inc-00160) | AI Detection Tools Falsely Accuse Human Content, Enable Extortion | Medium | LLM09 |  |  |
-| 952 | 2026-03-30 | [`INC-00168`](docs/incidents/2026.md#inc-00168) | AI Gateway LiteLLM Compromised by Malware Amid Compliance Scandal | High | LLM05 | ASI05 |  |
-| 953 | 2026-03-30 | [`INC-00243`](docs/incidents/2026.md#inc-00243) | AI Traffic Cameras in Athens Issue First Automated Fines | High | LLM05 | ASI05, ASI09 |  |
-| 954 | 2026-03-30 | [`INC-00304`](docs/incidents/2026.md#inc-00304) | AI-Driven Insurance Claim Denials Lead to Harm and Lawsuits in the US | Critical |  |  |  |
-| 955 | 2026-03-30 | [`INC-00323`](docs/incidents/2026.md#inc-00323) | AI-Driven Scams Surge, Increasing Financial Harm and Public Concern | Medium | LLM09 | ASI09 |  |
-| 956 | 2026-03-30 | [`INC-00327`](docs/incidents/2026.md#inc-00327) | AI-Driven Tax Scams Surge in the US During Filing Season | Medium | LLM09 | ASI09 |  |
-| 957 | 2026-03-30 | [`INC-00417`](docs/incidents/2026.md#inc-00417) | AI-Generated Deepfakes Cause Widespread Harm and Legal Challenges | Medium | LLM09 | ASI09 |  |
-| 958 | 2026-03-30 | [`INC-00506`](docs/incidents/2026.md#inc-00506) | AI-Generated TikTok Videos Spread Sexist and Racist Stereotypes | Medium |  |  |  |
-| 959 | 2026-03-30 | [`INC-00527`](docs/incidents/2026.md#inc-00527) | AI-Obfuscated DeepLoad Malware Steals Credentials via ClickFix | High |  |  |  |
-| 960 | 2026-03-30 | [`INC-00604`](docs/incidents/2026.md#inc-00604) | Anthropic Faces Security Scrutiny After Claude Code and Mythos AI Leaks | High | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI03, ASI04, ASI05 |  |
-| 961 | 2026-03-30 | [`INC-00651`](docs/incidents/2026.md#inc-00651) | Australia Investigates Social Media Giants Over AI Failures in Age Verification | High | LLM05 | ASI05 |  |
-| 962 | 2026-03-30 | [`INC-00682`](docs/incidents/2026.md#inc-00682) | Beijing and Guangzhou Implement Strict AI-Driven Drone Controls Amid Safety Concerns | Critical | LLM05 | ASI05, ASI09 |  |
-| 963 | 2026-03-30 | [`INC-00763`](docs/incidents/2026.md#inc-00763) | China Approves and Advances AI-Powered Brain Implants for Commercial Use | Medium |  |  |  |
-| 964 | 2026-03-30 | [`INC-00807`](docs/incidents/2026.md#inc-00807) | Claude AI Uncovers Zero-Day RCE Vulnerabilities in Vim and Emacs | High | LLM05 | ASI05 |  |
-| 965 | 2026-03-30 | [`INC-01089`](docs/incidents/2026.md#inc-01089) | GitHub Copilot Injects Unsolicited Ads into Pull Requests, Affecting Developers | Medium |  |  |  |
-| 966 | 2026-03-30 | [`INC-01112`](docs/incidents/2026.md#inc-01112) | Google Deploys AI-Powered Ransomware Detection for Drive Users Globally | Critical |  | ASI05, ASI10 |  |
-| 967 | 2026-03-30 | [`INC-01317`](docs/incidents/2026.md#inc-01317) | Lawsuits and Court Orders Target xAI's Grok for Generating Nonconsensual Sexualized Images | High | LLM09 | ASI09 |  |
-| 968 | 2026-03-30 | [`INC-01549`](docs/incidents/2026.md#inc-01549) | OkCupid Settles FTC Case Over Unauthorized Sharing of User Photos with AI Firm | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 969 | 2026-03-30 | [`INC-01575`](docs/incidents/2026.md#inc-01575) | OpenAI Codex Flaw Exposed GitHub Credentials via Command Injection | High | LLM05 | ASI05 |  |
-| 970 | 2026-03-30 | [`INC-01640`](docs/incidents/2026.md#inc-01640) | Persistent AI Hallucinations Highlight Risks in Critical Applications | Critical | LLM09 |  |  |
-| 971 | 2026-03-30 | [`INC-01725`](docs/incidents/2026.md#inc-01725) | Red Cat Expands AI-Driven Swarm Robotics for Defense Through Acquisitions and Partnerships | Medium |  | ASI10 |  |
-| 972 | 2026-03-30 | [`INC-01728`](docs/incidents/2026.md#inc-01728) | Renault Develops AI-Enabled Ground-Based Military Drone | Medium |  |  |  |
-| 973 | 2026-03-30 | [`INC-01947`](docs/incidents/2026.md#inc-01947) | UK Plans AI-Powered Mass Location Tracking for Future Pandemics | High |  |  |  |
-| 974 | 2026-03-30 | [`INC-01959`](docs/incidents/2026.md#inc-01959) | Ukraine Deploys and Advances AI-Driven Interceptor Drone Swarms in Defense Against Russian Attacks | Critical | LLM05 | ASI05, ASI10 |  |
-| 975 | 2026-03-30 | [`INC-02012`](docs/incidents/2026.md#inc-02012) | US Lawmakers Propose Bill to Boost Taiwan's AI-Enabled Drone Industry | Medium | LLM03 | ASI04 |  |
-| 976 | 2026-03-30 | [`INC-02067`](docs/incidents/2026.md#inc-02067) | Waymo and Tesla Face Scrutiny and Challenges in Expanding Robotaxi Services | Medium |  |  |  |
-| 977 | 2026-03-29 | [`INC-00137`](docs/incidents/2026.md#inc-00137) | AI Data Centers Cause Global Heat Islands, Impacting Millions | High | LLM05 | ASI05 |  |
-| 978 | 2026-03-29 | [`INC-00210`](docs/incidents/2026.md#inc-00210) | AI Surveillance Systems Prevent Drowning Incidents in German Swimming Pools | Critical |  |  |  |
-| 979 | 2026-03-29 | [`INC-00229`](docs/incidents/2026.md#inc-00229) | AI Systems Targeted in Disinformation Campaigns Ahead of Bulgarian Elections | Medium | LLM09 |  |  |
-| 980 | 2026-03-29 | [`INC-00460`](docs/incidents/2026.md#inc-00460) | AI-Generated Fake Police Image Leads to Arrests in Egypt | High | LLM09 |  |  |
-| 981 | 2026-03-29 | [`INC-00503`](docs/incidents/2026.md#inc-00503) | AI-Generated Singer Eddie Dalton Tops Charts, Raising Intellectual Property Concerns | High |  | ASI09 |  |
-| 982 | 2026-03-29 | [`INC-00774`](docs/incidents/2026.md#inc-00774) | China Warns of AI Patent Application Risks with OpenClaw | High | LLM05, LLM09 | ASI05 |  |
-| 983 | 2026-03-29 | [`INC-01082`](docs/incidents/2026.md#inc-01082) | German Opposition Raises Constitutional Concerns Over AI in Police Law | High | LLM05 | ASI05 |  |
-| 984 | 2026-03-29 | [`INC-01657`](docs/incidents/2026.md#inc-01657) | Polish Students Develop AI-Powered Drone Detection Sensor Network | Medium |  |  |  |
-| 985 | 2026-03-29 | [`INC-01865`](docs/incidents/2026.md#inc-01865) | Tesla FSD Under Scrutiny: Safety Risks, Misuse, and Regulatory Investigations | Critical | LLM01 | ASI01 |  |
-| 986 | 2026-03-28 | [`INC-00071`](docs/incidents/2026.md#inc-00071) | AI Agents Cause Unauthorized Actions and Security Risks in Enterprises | High |  |  |  |
-| 987 | 2026-03-28 | [`INC-00134`](docs/incidents/2026.md#inc-00134) | AI Content Detection Systems Mislabel Human Work, Causing Academic and Personal Harm in China | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09, ASI10 |  |
-| 988 | 2026-03-28 | [`INC-00158`](docs/incidents/2026.md#inc-00158) | AI Deepfakes Used to Mislead Voters in 2026 US Midterm Campaigns | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 989 | 2026-03-28 | [`INC-00297`](docs/incidents/2026.md#inc-00297) | AI-Driven Elon Musk Impersonation Scam Defrauds Elderly Singaporean Woman | Medium | LLM09 | ASI09 |  |
-| 990 | 2026-03-28 | [`INC-00402`](docs/incidents/2026.md#inc-00402) | AI-Generated Deepfake Videos Target Belgian Crown Princess Elisabeth | High | LLM09 | ASI09 |  |
-| 991 | 2026-03-28 | [`INC-00809`](docs/incidents/2026.md#inc-00809) | Claude AI's Hypothetical Endorsement of Harm Sparks Safety Concerns | Medium | LLM05 | ASI09 |  |
-| 992 | 2026-03-28 | [`INC-01080`](docs/incidents/2026.md#inc-01080) | German Interior Minister Proposes AI Surveillance Cameras at Train Stations | Medium |  |  |  |
-| 993 | 2026-03-28 | [`INC-01272`](docs/incidents/2026.md#inc-01272) | Japanese Poetry Contest Ends Due to AI-Generated Submissions | Medium |  |  |  |
-| 994 | 2026-03-27 | [`INC-00111`](docs/incidents/2026.md#inc-00111) | AI Chatbots Give Harmful Advice Due to Excessive Flattery, Study Finds | High | LLM01, LLM05, LLM09 | ASI01, ASI05, ASI09 |  |
-| 995 | 2026-03-27 | [`INC-00169`](docs/incidents/2026.md#inc-00169) | AI Generates Fetishised Images of Disabled Women, Sparking Outrage | Medium | LLM09 |  |  |
-| 996 | 2026-03-27 | [`INC-00268`](docs/incidents/2026.md#inc-00268) | AI-Based Situational Awareness Pilot for Armored Vehicles in the US | Medium |  |  |  |
-| 997 | 2026-03-27 | [`INC-00513`](docs/incidents/2026.md#inc-00513) | AI-Generated Videos Used to Manipulate Voters in Kerala Elections | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 998 | 2026-03-27 | [`INC-00519`](docs/incidents/2026.md#inc-00519) | AI-Generated Voices Used in Phone Scams Cause Financial Losses in Lithuania | Medium |  | ASI09 |  |
-| 999 | 2026-03-27 | [`INC-00596`](docs/incidents/2026.md#inc-00596) | Anthropic AI Model Leak Triggers Cybersecurity Risks and Stock Market Fallout | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
-| 1,000 | 2026-03-27 | [`INC-00736`](docs/incidents/2026.md#inc-00736) | CDU Proposes AI Cameras for Public Transport Safety in Hamburg | Medium |  |  |  |
-| 1,001 | 2026-03-27 | [`INC-00795`](docs/incidents/2026.md#inc-00795) | Chinese Military-Linked Universities Acquire Restricted AI Servers Despite US Export Controls | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 1,002 | 2026-03-27 | [`INC-00859`](docs/incidents/2026.md#inc-00859) | Court Dismisses Appeal After AI-Generated Legal Submissions Cite Non-Existent Cases | High | LLM09 |  |  |
-| 1,003 | 2026-03-27 | [`INC-01321`](docs/incidents/2026.md#inc-01321) | Legal Verdicts Hold Social Media Platforms Accountable for AI-Driven Harm to Children | Critical |  |  |  |
-| 1,004 | 2026-03-27 | [`INC-01658`](docs/incidents/2026.md#inc-01658) | Polish Teacher Victimized by AI-Generated Deepfake; Data Protection Authority Involvement | High | LLM09 | ASI09 |  |
-| 1,005 | 2026-03-26 | [`INC-00126`](docs/incidents/2026.md#inc-00126) | AI Chatbots Reinforce Harmful Behaviors and Ignore Commands, Causing Social and Operational Harm | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,006 | 2026-03-26 | [`INC-00152`](docs/incidents/2026.md#inc-00152) | AI Deepfake Videos Impersonate Doctor, Spread Harmful Medical Misinformation in South Korea | Critical | LLM09 | ASI09 |  |
-| 1,007 | 2026-03-26 | [`INC-00395`](docs/incidents/2026.md#inc-00395) | AI-Generated Deepfake Video of António Horta Osório Used in Investment Scam | Medium | LLM09 | ASI09 |  |
-| 1,008 | 2026-03-26 | [`INC-00469`](docs/incidents/2026.md#inc-00469) | AI-Generated Fake Visuals Spark Controversy for 'Dhruvandar: The Revenge' | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,009 | 2026-03-26 | [`INC-00722`](docs/incidents/2026.md#inc-00722) | ByteDance Deploys AI Video Generator Seedance 2.0 Amid Copyright Concerns | Medium |  |  |  |
-| 1,010 | 2026-03-26 | [`INC-00871`](docs/incidents/2026.md#inc-00871) | Czech Deputy Minister Shares AI-Generated Fake Photo, Faces Legal and Public Backlash | High | LLM09 | ASI09 |  |
-| 1,011 | 2026-03-26 | [`INC-00914`](docs/incidents/2026.md#inc-00914) | Dutch Court Bans Grok AI's Nude Image Generation After Harmful Outputs | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,012 | 2026-03-26 | [`INC-00946`](docs/incidents/2026.md#inc-00946) | EU and Dutch Court Ban AI-Generated Sexual Deepfakes After Harmful Incidents | Medium | LLM09 | ASI09 |  |
-| 1,013 | 2026-03-26 | [`INC-00950`](docs/incidents/2026.md#inc-00950) | EU Investigates Social Media AI Failures in Protecting Minors | Medium |  |  |  |
-| 1,014 | 2026-03-26 | [`INC-01050`](docs/incidents/2026.md#inc-01050) | French Government Takes Legal Action Against TikTok's Algorithm for Promoting Harmful Content to Minors | Critical | LLM05 | ASI09 |  |
-| 1,015 | 2026-03-26 | [`INC-01241`](docs/incidents/2026.md#inc-01241) | Instagram Algorithm Amplifies Antisemitic Content to Millions, Report Finds | Medium | LLM09 |  |  |
-| 1,016 | 2026-03-26 | [`INC-01281`](docs/incidents/2026.md#inc-01281) | Kerala Police Investigate AI-Generated Defamatory Video Targeting PM and Election Commission | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,017 | 2026-03-26 | [`INC-01319`](docs/incidents/2026.md#inc-01319) | Lawyer Submits AI-Generated Fake Legal Citations in Navarra Court | High |  | ASI09 |  |
-| 1,018 | 2026-03-26 | [`INC-01577`](docs/incidents/2026.md#inc-01577) | OpenAI Halts Launch of Explicit Content Chatbot Amid Risk Concerns | Medium |  |  |  |
-| 1,019 | 2026-03-26 | [`INC-01594`](docs/incidents/2026.md#inc-01594) | OpenClaw AI Agents Cause Data Loss and Operational Disruption Due to Malfunctions and Security Flaws | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,020 | 2026-03-26 | [`INC-01620`](docs/incidents/2026.md#inc-01620) | Palantir's AI Maven System Adopted by U.S. Military Raises Global Security Concerns | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,021 | 2026-03-26 | [`INC-01721`](docs/incidents/2026.md#inc-01721) | RATP Tests Autonomous Buses in Val-de-Marne, Raising Future Safety and Job Concerns | High | LLM05 | ASI05 |  |
-| 1,022 | 2026-03-26 | [`INC-01727`](docs/incidents/2026.md#inc-01727) | Remote-Controlled AI Shuttle Bus Pilot Raises Safety Concerns in Düsseldorf | Medium |  |  |  |
-| 1,023 | 2026-03-26 | [`INC-01916`](docs/incidents/2026.md#inc-01916) | Trust Wallet Launches AI Agent Kit for Autonomous Crypto Transactions | High |  | ASI09 |  |
-| 1,024 | 2026-03-26 | [`INC-01936`](docs/incidents/2026.md#inc-01936) | Uber, Verne, and Pony.ai Launch First Robotaxi Service in Europe | Critical |  |  |  |
-| 1,025 | 2026-03-26 | [`INC-02004`](docs/incidents/2026.md#inc-02004) | US Jury Finds Meta and YouTube Liable for AI-Driven Social Media Harm | Critical |  |  |  |
-| 1,026 | 2026-03-26 | [`INC-02005`](docs/incidents/2026.md#inc-02005) | US Jury Holds Meta and Google Liable for AI-Driven Addictive Design and Child Harm | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,027 | 2026-03-26 | [`INC-02011`](docs/incidents/2026.md#inc-02011) | US Lawmakers Propose Ban on Chinese AI Robots in Federal Agencies | Critical | LLM02 | ASI03 |  |
-| 1,028 | 2026-03-25 | [`INC-00047`](docs/incidents/2026.md#inc-00047) | Agent AI Causes Data Breach by Leaking Sensitive User Information | Critical | LLM01, LLM02 | ASI01, ASI03 |  |
-| 1,029 | 2026-03-25 | [`INC-00215`](docs/incidents/2026.md#inc-00215) | AI System 'Massima Tranquillità' Blocks Phone Scams in Italy | Medium |  | ASI09 |  |
-| 1,030 | 2026-03-25 | [`INC-00422`](docs/incidents/2026.md#inc-00422) | AI-Generated Deepfakes Used in Disinformation Campaigns Targeting Turkey | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,031 | 2026-03-25 | [`INC-00475`](docs/incidents/2026.md#inc-00475) | AI-Generated Harmful Content Targeting Minors in Shenzhen | High | LLM05 | ASI05 |  |
-| 1,032 | 2026-03-25 | [`INC-00985`](docs/incidents/2026.md#inc-00985) | Facial Recognition Technology Leads to Over 700 Arrests in Espírito Santo, Brazil | High | LLM05 | ASI05 |  |
-| 1,033 | 2026-03-25 | [`INC-01071`](docs/incidents/2026.md#inc-01071) | German Army Plans AI Integration for Faster Battlefield Decisions | Medium |  |  |  |
-| 1,034 | 2026-03-25 | [`INC-01073`](docs/incidents/2026.md#inc-01073) | German Court Bans AI-Based Biometric Checks in Online Exams | High |  |  |  |
-| 1,035 | 2026-03-25 | [`INC-01104`](docs/incidents/2026.md#inc-01104) | Google and Meta Found Liable for AI-Driven Social Media Addiction in Landmark U.S. Case | Critical | LLM05 | ASI05 |  |
-| 1,036 | 2026-03-25 | [`INC-01140`](docs/incidents/2026.md#inc-01140) | Greater Manchester School Uses AI to Remove 200 Library Books, Sparking Librarian's Career Ruin | High | LLM05 | ASI05 |  |
-| 1,037 | 2026-03-25 | [`INC-01160`](docs/incidents/2026.md#inc-01160) | Hawaii Considers Expanding AI Traffic Cameras for Vehicle Violations | High | LLM05 | ASI05 |  |
-| 1,038 | 2026-03-25 | [`INC-01230`](docs/incidents/2026.md#inc-01230) | Indian Army Workshop Partners to Advance AI-Enabled Drone Technology | Medium |  |  |  |
-| 1,039 | 2026-03-25 | [`INC-01401`](docs/incidents/2026.md#inc-01401) | Meta and Google Fined for AI-Driven Social Media Harm to Teen | High | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
-| 1,040 | 2026-03-25 | [`INC-01693`](docs/incidents/2026.md#inc-01693) | Purported AI-Generated Impersonations of Albanian Cardiologist Spiro Qirko and Journalist Ilir Topi Were Repo… | High | LLM09 | ASI09 |  |
-| 1,041 | 2026-03-25 | [`INC-01845`](docs/incidents/2026.md#inc-01845) | Teenager Uses AI Chatbot to Plan and Execute Mother's Murder in Wales | Critical | LLM09 |  |  |
-| 1,042 | 2026-03-25 | [`INC-01901`](docs/incidents/2026.md#inc-01901) | Three Charged in Plot to Illegally Export Advanced AI Chips to China | Critical | LLM05 | ASI05 |  |
-| 1,043 | 2026-03-25 | [`INC-01967`](docs/incidents/2026.md#inc-01967) | Ukrainian Company Develops AI-Powered Interceptor Drone UEB-1 | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,044 | 2026-03-25 | [`INC-02013`](docs/incidents/2026.md#inc-02013) | US Lawmakers Propose Moratorium on AI Data Center Expansion | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,045 | 2026-03-24 | [`INC-00046`](docs/incidents/2026.md#inc-00046) | AeroVironment Launches AI-Enabled LOCUST X3 Directed Energy Weapon | Medium |  | ASI10 |  |
-| 1,046 | 2026-03-24 | [`INC-00159`](docs/incidents/2026.md#inc-00159) | AI Delivery Robots Cause Property Damage in Chicago | Medium |  |  |  |
-| 1,047 | 2026-03-24 | [`INC-00167`](docs/incidents/2026.md#inc-00167) | AI Firms Develop Software for US Golden Dome Missile Defense System | High | LLM05 | ASI05, ASI10 |  |
-| 1,048 | 2026-03-24 | [`INC-00182`](docs/incidents/2026.md#inc-00182) | AI Misuse Drives Surge in Child Sexual Abuse Content Online | Medium | LLM09 |  |  |
-| 1,049 | 2026-03-24 | [`INC-00218`](docs/incidents/2026.md#inc-00218) | AI System Enables Real-Time Vehicle Seizure for Unpaid Taxes in Taiwan | High | LLM05 | ASI05 |  |
-| 1,050 | 2026-03-24 | [`INC-00400`](docs/incidents/2026.md#inc-00400) | AI-Generated Deepfake Videos Cause Public Misinformation in Montenegro Fugitive Case | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,051 | 2026-03-24 | [`INC-00412`](docs/incidents/2026.md#inc-00412) | AI-Generated Deepfake X-Rays Deceive Radiologists and AI Systems | Medium | LLM09 | ASI09 |  |
-| 1,052 | 2026-03-24 | [`INC-00453`](docs/incidents/2026.md#inc-00453) | AI-Generated Fake Law Enforcement Used in Romanian Influence Campaign | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,053 | 2026-03-24 | [`INC-00675`](docs/incidents/2026.md#inc-00675) | Baltimore Sues Elon Musk's xAI Over Grok Deepfake Harms | High | LLM09 | ASI09 |  |
-| 1,054 | 2026-03-24 | [`INC-00721`](docs/incidents/2026.md#inc-00721) | BYD's 'God's Eye' AI Driver-Assist System Causes Dangerous Malfunctions in China | Medium |  |  |  |
-| 1,055 | 2026-03-24 | [`INC-00941`](docs/incidents/2026.md#inc-00941) | Epirus, General Dynamics, and Kodiak AI Unveil Autonomous Counter-Drone Weapon System | Medium |  | ASI10 |  |
-| 1,056 | 2026-03-24 | [`INC-01007`](docs/incidents/2026.md#inc-01007) | First Conviction in Cyprus for AI-Generated Child Sexual Abuse Material | Medium | LLM09 |  |  |
-| 1,057 | 2026-03-24 | [`INC-01012`](docs/incidents/2026.md#inc-01012) | Florida Man Allegedly Used Purported Deepfake Video to Report Break-In of Deputy&#x27;s Patrol Vehicle in Lak… | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,058 | 2026-03-24 | [`INC-01039`](docs/incidents/2026.md#inc-01039) | Ford Recalls 254,640 SUVs in US Over AI-Driven Safety Feature Malfunction | Medium |  |  |  |
-| 1,059 | 2026-03-24 | [`INC-01141`](docs/incidents/2026.md#inc-01141) | Greek Singer Alkistis Protopsalti Targeted by AI-Generated Deepfake Scam | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,060 | 2026-03-24 | [`INC-01254`](docs/incidents/2026.md#inc-01254) | Israeli Brothers Used AI to Fabricate Military Intelligence for Iranian Agent | Critical | LLM09 | ASI09 |  |
-| 1,061 | 2026-03-24 | [`INC-01263`](docs/incidents/2026.md#inc-01263) | IXOPAY and Zip Launch Framework to Address AI Risks in Agentic Commerce | High | LLM05 | ASI05, ASI09 |  |
-| 1,062 | 2026-03-24 | [`INC-01364`](docs/incidents/2026.md#inc-01364) | Malicious LiteLLM PyPI Package Compromises AI Developer Systems | Critical | LLM02, LLM03, LLM05 | ASI02, ASI04, ASI05 |  |
-| 1,063 | 2026-03-24 | [`INC-01469`](docs/incidents/2026.md#inc-01469) | Music Publishers Sue Anthropic Over AI Copyright Infringement | High |  |  |  |
-| 1,064 | 2026-03-24 | [`INC-01610`](docs/incidents/2026.md#inc-01610) | Oregon Attorney Fined for Submitting AI-Fabricated Legal Brief | High | LLM09 |  |  |
-| 1,065 | 2026-03-24 | [`INC-01778`](docs/incidents/2026.md#inc-01778) | Slovak Central Bank Warns of AI-Generated Fraudulent Crypto Websites | Medium |  | ASI09 |  |
-| 1,066 | 2026-03-24 | [`INC-01860`](docs/incidents/2026.md#inc-01860) | Tesla Faces Legal Action Over Misleading Full Self-Driving AI Sales in Australia | High | LLM05 | ASI05 |  |
-| 1,067 | 2026-03-24 | [`INC-01941`](docs/incidents/2026.md#inc-01941) | UK Cyber Agency Warns of Security Risks from AI-Generated Code | High |  |  |  |
-| 1,068 | 2026-03-24 | [`INC-02079`](docs/incidents/2026.md#inc-02079) | Waymo Robotaxi Malfunctions Cause Traffic Disruptions and Emergency Response Interventions | Critical | LLM05 | ASI05 |  |
-| 1,069 | 2026-03-23 | [`INC-00097`](docs/incidents/2026.md#inc-00097) | AI Chatbot Generates Millions of Non-Consensual Deepfake Images, Triggering Global Privacy Concerns | High | LLM09 | ASI09 |  |
-| 1,070 | 2026-03-23 | [`INC-00133`](docs/incidents/2026.md#inc-00133) | AI Companion Chatbots Expose Australian Children to Harmful Content | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,071 | 2026-03-23 | [`INC-00143`](docs/incidents/2026.md#inc-00143) | AI Deepfake and Facial Recognition Misuse Raise Privacy and Fraud Concerns in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,072 | 2026-03-23 | [`INC-00148`](docs/incidents/2026.md#inc-00148) | AI Deepfake Scams Target Chinese Celebrities, Prompt Calls for Regulation | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,073 | 2026-03-23 | [`INC-00183`](docs/incidents/2026.md#inc-00183) | AI Misuse Leads to Disinformation and Mental Health Risks in Azerbaijan | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,074 | 2026-03-23 | [`INC-00358`](docs/incidents/2026.md#inc-00358) | AI-Enabled Underwater Drones Cause Maritime Harm, Prompt US-UK Defense Initiative | Medium |  |  |  |
-| 1,075 | 2026-03-23 | [`INC-00389`](docs/incidents/2026.md#inc-00389) | AI-Generated Deepfake Targets Slovenian Politicians, Prompting Legal Action Consideration | Medium | LLM09 | ASI09 |  |
-| 1,076 | 2026-03-23 | [`INC-00458`](docs/incidents/2026.md#inc-00458) | AI-Generated Fake Personas Drive Viral Crypto Scams on X | Medium | LLM09 | ASI09 |  |
-| 1,077 | 2026-03-23 | [`INC-00665`](docs/incidents/2026.md#inc-00665) | Autonomous Delivery Robots Crash Into Bus Shelters, Causing Property Damage | High | LLM05 | ASI05 |  |
-| 1,078 | 2026-03-23 | [`INC-00666`](docs/incidents/2026.md#inc-00666) | Autonomous Drone Swarms Transform Modern Warfare, Raising AI Risk Concerns | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,079 | 2026-03-23 | [`INC-00880`](docs/incidents/2026.md#inc-00880) | Delhi High Court Orders Removal of AI-Generated Deepfakes Misusing Sonakshi Sinha's Persona | Medium | LLM09 | ASI09 |  |
-| 1,080 | 2026-03-23 | [`INC-00885`](docs/incidents/2026.md#inc-00885) | Denver and Longmont Face Backlash Over AI-Powered License Plate Readers | High | LLM05 | ASI05 |  |
-| 1,081 | 2026-03-23 | [`INC-00905`](docs/incidents/2026.md#inc-00905) | Doctors Warn of Risks from AI Self-Treatment for Musculoskeletal Pain in Spain | Medium | LLM09 |  |  |
-| 1,082 | 2026-03-23 | [`INC-00966`](docs/incidents/2026.md#inc-00966) | European Companies Face AI Governance Gaps Amid Rapid Adoption | High | LLM05 | ASI05 |  |
-| 1,083 | 2026-03-23 | [`INC-01098`](docs/incidents/2026.md#inc-01098) | GM Begins Supervised Testing of Next-Gen Autonomous Vehicles in Michigan and California | High | LLM05 | ASI05 |  |
-| 1,084 | 2026-03-23 | [`INC-01169`](docs/incidents/2026.md#inc-01169) | Humanoid Robot Injures Child During Dance Performance in Shaanxi | Critical | LLM05 | ASI05 |  |
-| 1,085 | 2026-03-23 | [`INC-01433`](docs/incidents/2026.md#inc-01433) | Microsoft Copilot AI Exposes Sensitive Data During Low Supervision Periods | Medium |  |  |  |
-| 1,086 | 2026-03-23 | [`INC-01535`](docs/incidents/2026.md#inc-01535) | Nigeria's $470 Million Investment in AI Surveillance Raises Privacy and Human Rights Concerns | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
-| 1,087 | 2026-03-23 | [`INC-01758`](docs/incidents/2026.md#inc-01758) | Security Flaw in Anthropic's Claude AI Extension Exposes Users to Browser Attacks | High | LLM01, LLM02, LLM05 | ASI01, ASI03, ASI05 |  |
-| 1,088 | 2026-03-23 | [`INC-01846`](docs/incidents/2026.md#inc-01846) | Teens Sentenced for AI-Generated Fake Nude Images of Classmates in Pennsylvania | Medium | LLM09 | ASI09 |  |
-| 1,089 | 2026-03-23 | [`INC-01859`](docs/incidents/2026.md#inc-01859) | Tesla Driver Caught Asleep While Using Self-Driving Mode in Rainy Rush Hour | Medium |  |  |  |
-| 1,090 | 2026-03-22 | [`INC-00064`](docs/incidents/2026.md#inc-00064) | AI Adoption Outpaces Cybersecurity in Bosnia and Herzegovina, Leading to Increased Cyberattack Risks | Critical |  | ASI05, ASI10 |  |
-| 1,091 | 2026-03-22 | [`INC-00305`](docs/incidents/2026.md#inc-00305) | AI-Driven Internet Fraud Surges in Germany, Exploiting Language Barriers | High | LLM05 | ASI05, ASI09 |  |
-| 1,092 | 2026-03-22 | [`INC-00336`](docs/incidents/2026.md#inc-00336) | AI-Enabled Drone Countermeasure Systems Developed and Deployed in Taiwan | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 |  |
-| 1,093 | 2026-03-22 | [`INC-00473`](docs/incidents/2026.md#inc-00473) | AI-Generated Film Poster Sparks Outrage Among Sikh Community in Mumbai | High |  |  |  |
-| 1,094 | 2026-03-22 | [`INC-00614`](docs/incidents/2026.md#inc-00614) | Anthropic's Claude AI Introduces Remote Computer Control and Risk-Aware Automation Features | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 1,095 | 2026-03-22 | [`INC-00861`](docs/incidents/2026.md#inc-00861) | Critical AI System Vulnerabilities in OpenClaw and Langflow Lead to Security Risks and Exploitation | Critical | LLM01, LLM02, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI09, ASI10 |  |
-| 1,096 | 2026-03-22 | [`INC-00876`](docs/incidents/2026.md#inc-00876) | Delhi High Court Addresses Deepfake Misuse Against Patanjali Co-Founder | Medium | LLM09 | ASI09 |  |
-| 1,097 | 2026-03-22 | [`INC-01591`](docs/incidents/2026.md#inc-01591) | OpenClaw AI Agent Raises Cybersecurity Concerns in Taiwan | High | LLM02 | ASI03 |  |
-| 1,098 | 2026-03-22 | [`INC-01904`](docs/incidents/2026.md#inc-01904) | TikTok and Instagram Ban Accounts for Unlabeled, Exploitative AI-Generated Black Female Avatars | High | LLM09 | ASI09 |  |
-| 1,099 | 2026-03-21 | [`INC-00269`](docs/incidents/2026.md#inc-00269) | AI-Driven 3D Modeling Reduces Risks in Cerebral Aneurysm Treatment at San Camillo Hospital | Medium | LLM09 |  |  |
-| 1,100 | 2026-03-21 | [`INC-00275`](docs/incidents/2026.md#inc-00275) | AI-Driven Cyberattack Threatens Global Satellite Infrastructure | Medium |  |  |  |
-| 1,101 | 2026-03-21 | [`INC-00591`](docs/incidents/2026.md#inc-00591) | Anduril's AI System Deployed in Middle East Conflict for Drone Defense | Medium |  |  |  |
-| 1,102 | 2026-03-21 | [`INC-00738`](docs/incidents/2026.md#inc-00738) | Chacao Deploys AI-Powered Robotic Dogs for Public Security Patrols | High | LLM05 | ASI05 |  |
-| 1,103 | 2026-03-21 | [`INC-00748`](docs/incidents/2026.md#inc-00748) | ChatGPT Flags Republican Fundraising Links as Unsafe, Raising Bias Concerns | High | LLM05, LLM09 | ASI05 |  |
-| 1,104 | 2026-03-21 | [`INC-01078`](docs/incidents/2026.md#inc-01078) | German Digital Minister Warns of Major Job Losses Due to AI | High | LLM05 | ASI05 |  |
-| 1,105 | 2026-03-21 | [`INC-01278`](docs/incidents/2026.md#inc-01278) | Kaiser Permanente Therapists Strike Over AI Screening System Delays and Patient Harm | High | LLM05 | ASI05, ASI09 |  |
-| 1,106 | 2026-03-21 | [`INC-01366`](docs/incidents/2026.md#inc-01366) | Man Arrested for Posting AI-Generated Defamatory Images of Indian PM | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,107 | 2026-03-21 | [`INC-01736`](docs/incidents/2026.md#inc-01736) | Restaurant Service Robots Cause Disruption and Safety Concerns in Texas and California | High | LLM05 | ASI05 |  |
-| 1,108 | 2026-03-21 | [`INC-01801`](docs/incidents/2026.md#inc-01801) | Spotify Launches Artist Profile Protection to Combat AI-Generated Music Misattribution | Medium | LLM09 | ASI09 |  |
-| 1,109 | 2026-03-21 | [`INC-01833`](docs/incidents/2026.md#inc-01833) | Suspected Terrorist Attack Targets Czech AI Drone Factory Supplying Ukraine | Medium |  |  |  |
-| 1,110 | 2026-03-20 | [`INC-00052`](docs/incidents/2026.md#inc-00052) | Agentic AI Empowers Solo Cybercriminals to Rapidly Develop Advanced Malware | Medium |  | ASI09 |  |
-| 1,111 | 2026-03-20 | [`INC-00181`](docs/incidents/2026.md#inc-00181) | AI Misuse and Fraud Prevention in China's Financial and Social Platforms | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,112 | 2026-03-20 | [`INC-00220`](docs/incidents/2026.md#inc-00220) | AI System Leaks Unpublished Academic Work, Causes Citation Scandal in Turkey | High | LLM05 | ASI05, ASI09 |  |
-| 1,113 | 2026-03-20 | [`INC-00291`](docs/incidents/2026.md#inc-00291) | AI-Driven Disinformation Campaigns Target Ukraine and Europe | Medium | LLM09 |  |  |
-| 1,114 | 2026-03-20 | [`INC-00391`](docs/incidents/2026.md#inc-00391) | AI-Generated Deepfake Video Causes Misinformation and Reputational Harm to Indonesian Actor | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,115 | 2026-03-20 | [`INC-01093`](docs/incidents/2026.md#inc-01093) | Global Expansion and Deployment of Robotaxi AI Systems Raises Safety and Geopolitical Risks | Medium |  |  |  |
-| 1,116 | 2026-03-20 | [`INC-01128`](docs/incidents/2026.md#inc-01128) | Google's AI-Generated Headlines in Search Results Spark Misinformation Concerns | High | LLM05, LLM09 | ASI05 |  |
-| 1,117 | 2026-03-20 | [`INC-01367`](docs/incidents/2026.md#inc-01367) | Man Arrested in Albacete for Using AI to Create Fake Nude Image of Minor and Threatening Her | High |  |  |  |
-| 1,118 | 2026-03-20 | [`INC-01397`](docs/incidents/2026.md#inc-01397) | Meta AI Agents Cause Security Incidents Amid Workforce Shift | High | LLM05, LLM09 | ASI05 |  |
-| 1,119 | 2026-03-20 | [`INC-01422`](docs/incidents/2026.md#inc-01422) | Meta's Smart Glasses Spark Privacy Concerns Over AI Facial Recognition | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,120 | 2026-03-20 | [`INC-01749`](docs/incidents/2026.md#inc-01749) | Russia Proposes Sweeping Regulations to Restrict Foreign AI Tools | Critical | LLM05 | ASI05 |  |
-| 1,121 | 2026-03-20 | [`INC-01807`](docs/incidents/2026.md#inc-01807) | Stanford Study Finds AI Chatbots Encouraged Self-Harm and Reinforced Delusions | High | LLM05 | ASI05, ASI09 |  |
-| 1,122 | 2026-03-20 | [`INC-01840`](docs/incidents/2026.md#inc-01840) | Tech Companies Propose Massive AI Data Centers in Space, Raising Future Risks | High | LLM05 | ASI05 |  |
-| 1,123 | 2026-03-20 | [`INC-01988`](docs/incidents/2026.md#inc-01988) | US Army Receives First Autonomous-Ready Black Hawk Helicopter | Medium |  |  |  |
-| 1,124 | 2026-03-19 | [`INC-00130`](docs/incidents/2026.md#inc-00130) | AI Clinical Decision Support System Reduces Vascular Events in Stroke Patients | Medium |  |  |  |
-| 1,125 | 2026-03-19 | [`INC-00153`](docs/incidents/2026.md#inc-00153) | AI Deepfake Videos Victimize Students, Prompt Calls for State Action in Pennsylvania | Medium | LLM09 | ASI09 |  |
-| 1,126 | 2026-03-19 | [`INC-00346`](docs/incidents/2026.md#inc-00346) | AI-Enabled Financial Scams Cause €20 Million Losses in Croatia, Targeting Youth | Medium | LLM09 | ASI09 |  |
-| 1,127 | 2026-03-19 | [`INC-00359`](docs/incidents/2026.md#inc-00359) | AI-Enabled Wi-Fi Signal Analysis Raises Privacy Concerns | High |  |  |  |
-| 1,128 | 2026-03-19 | [`INC-00589`](docs/incidents/2026.md#inc-00589) | Anduril Launches Production of AI-Powered Combat Drones in Ohio | Critical |  | ASI10 |  |
-| 1,129 | 2026-03-19 | [`INC-00836`](docs/incidents/2026.md#inc-00836) | Cloudflare CEO Predicts AI Bots Will Surpass Human Web Traffic by 2027 | Medium | LLM09 | ASI09 |  |
-| 1,130 | 2026-03-19 | [`INC-00851`](docs/incidents/2026.md#inc-00851) | Concerns Over AI-Driven Content Moderation in Hungarian Elections | Medium | LLM09 |  |  |
-| 1,131 | 2026-03-19 | [`INC-01155`](docs/incidents/2026.md#inc-01155) | Hachette Reportedly Canceled Publication of Mia Ballard's Shy Girl After Generative AI Authorship Allegations | Medium | LLM09 | ASI09 |  |
-| 1,132 | 2026-03-19 | [`INC-01165`](docs/incidents/2026.md#inc-01165) | HSBC Plans Massive Job Cuts Driven by AI Automation | High | LLM05 | ASI05 |  |
-| 1,133 | 2026-03-19 | [`INC-01232`](docs/incidents/2026.md#inc-01232) | Indian Cricketer Gautam Gambhir Files Lawsuit Over AI Deepfakes and Identity Misuse | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,134 | 2026-03-19 | [`INC-01395`](docs/incidents/2026.md#inc-01395) | Meta AI Agent Causes Data Exposure and Deletion; Widespread Job Losses Loom Due to AI Adoption | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,135 | 2026-03-19 | [`INC-01697`](docs/incidents/2026.md#inc-01697) | Purported Deepfake Applicant Reportedly Impersonated Tokyo IT Executive Kenbun Yoshii During Online Job Inter… | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,136 | 2026-03-19 | [`INC-01765`](docs/incidents/2026.md#inc-01765) | Senior Journalist Suspended for Publishing AI-Generated Fake Quotes | High | LLM09 |  |  |
-| 1,137 | 2026-03-19 | [`INC-01854`](docs/incidents/2026.md#inc-01854) | Tesla and Waymo Robotaxis Involved in Multiple Crashes and Disruptions in U.S. Cities | High | LLM05 | ASI05 |  |
-| 1,138 | 2026-03-19 | [`INC-01932`](docs/incidents/2026.md#inc-01932) | Uber and Rivian Announce Major Investment in Autonomous Robotaxi Fleet | Critical | LLM05 | ASI05 |  |
-| 1,139 | 2026-03-19 | [`INC-01991`](docs/incidents/2026.md#inc-01991) | US Cities Push Back Against AI License Plate Reader Surveillance | High | LLM05 | ASI05 |  |
-| 1,140 | 2026-03-19 | [`INC-02029`](docs/incidents/2026.md#inc-02029) | US Regulators Probe Tesla FSD After Collisions Linked to AI System Failures | Critical | LLM05 | ASI05 |  |
-| 1,141 | 2026-03-18 | [`INC-00085`](docs/incidents/2026.md#inc-00085) | AI Automation Threatens Entry-Level Job Market for Gen Z Graduates | High | LLM05 | ASI05 |  |
-| 1,142 | 2026-03-18 | [`INC-00193`](docs/incidents/2026.md#inc-00193) | AI Pilot Program Assists Judges in Los Angeles County Courts | Medium |  |  |  |
-| 1,143 | 2026-03-18 | [`INC-00200`](docs/incidents/2026.md#inc-00200) | AI Robot Malfunctions and Causes Chaos in San Jose Restaurant | High | LLM05 | ASI05 |  |
-| 1,144 | 2026-03-18 | [`INC-00202`](docs/incidents/2026.md#inc-00202) | AI Service Robot Malfunctions, Causes Chaos in California Restaurant | Medium |  |  |  |
-| 1,145 | 2026-03-18 | [`INC-00226`](docs/incidents/2026.md#inc-00226) | AI Systems Drive US Military Operations in Middle East Conflict | Critical |  |  |  |
-| 1,146 | 2026-03-18 | [`INC-00234`](docs/incidents/2026.md#inc-00234) | AI Threatens Up to 5 Million Jobs in France Within Five Years | Medium |  |  |  |
-| 1,147 | 2026-03-18 | [`INC-00364`](docs/incidents/2026.md#inc-00364) | AI-Generated Actors Spark Portrait Rights Controversy in China | High |  |  |  |
-| 1,148 | 2026-03-18 | [`INC-00474`](docs/incidents/2026.md#inc-00474) | AI-Generated Fraudulent Messages Target Citizens Ahead of Holiday | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,149 | 2026-03-18 | [`INC-00480`](docs/incidents/2026.md#inc-00480) | AI-Generated Legal Documents Cause Harm in Fraudulent Online Law Firms in China | Medium | LLM09 | ASI09 |  |
-| 1,150 | 2026-03-18 | [`INC-00699`](docs/incidents/2026.md#inc-00699) | BMG Sues Anthropic Over AI Training With Copyrighted Song Lyrics | High |  |  |  |
-| 1,151 | 2026-03-18 | [`INC-00760`](docs/incidents/2026.md#inc-00760) | Chicken Soup for the Soul Publisher Sues Tech Giants Over AI Copyright Infringement | High |  |  |  |
-| 1,152 | 2026-03-18 | [`INC-00808`](docs/incidents/2026.md#inc-00808) | Claude AI Vulnerabilities Enable Silent Data Theft and Malicious Redirects | Critical | LLM01, LLM02 | ASI01, ASI02, ASI03 |  |
-| 1,153 | 2026-03-18 | [`INC-00872`](docs/incidents/2026.md#inc-00872) | Dancing Robot Malfunctions in California Restaurant; Robot Startles Elderly Woman in Macau | High |  |  |  |
-| 1,154 | 2026-03-18 | [`INC-00934`](docs/incidents/2026.md#inc-00934) | Emergent Deceptive Behaviors in Autonomous AI Raise Safety Concerns | High | LLM03, LLM05, LLM09 | ASI04, ASI05 |  |
-| 1,155 | 2026-03-18 | [`INC-00943`](docs/incidents/2026.md#inc-00943) | Essex Police Suspends Live Facial Recognition Over Racial Bias | High | LLM05 | ASI05 |  |
-| 1,156 | 2026-03-18 | [`INC-00979`](docs/incidents/2026.md#inc-00979) | Facebook's AI Moderation Restricts Orbán Viktor's Posts Before Elections | Medium | LLM09 |  |  |
-| 1,157 | 2026-03-18 | [`INC-01349`](docs/incidents/2026.md#inc-01349) | LLM-Driven Attack Compromises AWS Administrator Privileges in 8 Minutes | High |  |  |  |
-| 1,158 | 2026-03-18 | [`INC-01361`](docs/incidents/2026.md#inc-01361) | Majority of U.S. Teens Use AI to Create Sexualized Images, Study Finds | High | LLM09 |  |  |
-| 1,159 | 2026-03-18 | [`INC-01408`](docs/incidents/2026.md#inc-01408) | Meta Internal AI Agent Reportedly Gave Advice That Allegedly Exposed Sensitive Data to Unauthorized Employees | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,160 | 2026-03-18 | [`INC-01444`](docs/incidents/2026.md#inc-01444) | Military Use of AI Sparks International Concerns and Ethical Disputes | Critical | LLM09 | ASI10 |  |
-| 1,161 | 2026-03-18 | [`INC-01632`](docs/incidents/2026.md#inc-01632) | Pentagon Flags National Security Risks Over Anthropic's Foreign AI Workers | Critical |  |  |  |
-| 1,162 | 2026-03-18 | [`INC-01655`](docs/incidents/2026.md#inc-01655) | Polish Institutions Collaborate on AI-Enabled Autonomous Underwater Drones for Dual-Use Applications | Medium |  |  |  |
-| 1,163 | 2026-03-18 | [`INC-01784`](docs/incidents/2026.md#inc-01784) | Sony Removes 135,000 AI-Generated Deepfake Songs Impersonating Artists | Medium | LLM09 | ASI09 |  |
-| 1,164 | 2026-03-18 | [`INC-01811`](docs/incidents/2026.md#inc-01811) | Student Faces Trial for AI-Generated Sexual Images of Schoolmates in Córdoba | High | LLM09 | ASI09 |  |
-| 1,165 | 2026-03-18 | [`INC-01861`](docs/incidents/2026.md#inc-01861) | Tesla FSD Accident Highlights Risks of Autonomous Driving | Critical |  |  |  |
-| 1,166 | 2026-03-18 | [`INC-01949`](docs/incidents/2026.md#inc-01949) | UK Regulator Bans AI App Ad for Promoting Non-Consensual Nudification | Medium |  |  |  |
-| 1,167 | 2026-03-17 | [`INC-00132`](docs/incidents/2026.md#inc-00132) | AI Coding Assistants Drive Surge in Secret Leaks on GitHub | High |  |  |  |
-| 1,168 | 2026-03-17 | [`INC-00165`](docs/incidents/2026.md#inc-00165) | AI Facial Recognition in Sao Paulo Leads to Mistaken Arrests | High | LLM05 | ASI05 |  |
-| 1,169 | 2026-03-17 | [`INC-00201`](docs/incidents/2026.md#inc-00201) | AI Search Engines Cause Major Publisher Traffic Loss | Medium |  |  |  |
-| 1,170 | 2026-03-17 | [`INC-00271`](docs/incidents/2026.md#inc-00271) | AI-Driven Autonomous Trucks Tested on U.S. Highways Raise Safety Concerns | High | LLM05 | ASI05 |  |
-| 1,171 | 2026-03-17 | [`INC-00381`](docs/incidents/2026.md#inc-00381) | AI-Generated Deepfake Nudes of 18 Minors Spark Investigation in Almería | High | LLM09 | ASI09 |  |
-| 1,172 | 2026-03-17 | [`INC-00471`](docs/incidents/2026.md#inc-00471) | AI-Generated Fake Wedding Photos of Zendaya and Tom Holland Cause Public Confusion | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,173 | 2026-03-17 | [`INC-00539`](docs/incidents/2026.md#inc-00539) | AI-Powered Cyberwarfare Attacks Impact Australia and UK | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
-| 1,174 | 2026-03-17 | [`INC-00542`](docs/incidents/2026.md#inc-00542) | AI-Powered Editing Tools Drive Surge in Insurance Fraud in the US | Medium |  | ASI09 |  |
-| 1,175 | 2026-03-17 | [`INC-00916`](docs/incidents/2026.md#inc-00916) | Dutch Fraudster Uses Deepfake AI to Open Dozens of Bank Accounts | High | LLM09 | ASI09 |  |
-| 1,176 | 2026-03-17 | [`INC-00962`](docs/incidents/2026.md#inc-00962) | EU Legal Deadlock Reduces AI Detection of Child Abuse Online | Medium | LLM09 |  |  |
-| 1,177 | 2026-03-17 | [`INC-00963`](docs/incidents/2026.md#inc-00963) | EU Report Reveals China's Use of AI for Disinformation and Harassment | Medium | LLM09 | ASI09 |  |
-| 1,178 | 2026-03-17 | [`INC-01013`](docs/incidents/2026.md#inc-01013) | Florida Man Arrested for Possessing and Producing AI-Generated Child Sexual Abuse Material | High | LLM09 |  |  |
-| 1,179 | 2026-03-17 | [`INC-01114`](docs/incidents/2026.md#inc-01114) | Google Gemini AI Accused of Political Bias in Hate Speech Moderation | High | LLM05 | ASI05 |  |
-| 1,180 | 2026-03-17 | [`INC-01318`](docs/incidents/2026.md#inc-01318) | Lawyer Sanctioned for Submitting AI-Generated Fake Legal Precedents in Siracusa Court | High | LLM05, LLM09 | ASI05 |  |
-| 1,181 | 2026-03-17 | [`INC-01518`](docs/incidents/2026.md#inc-01518) | NATO Orders AI-Enabled Parrot Micro-Drones for Military Use | High | LLM05 | ASI05 |  |
-| 1,182 | 2026-03-17 | [`INC-01938`](docs/incidents/2026.md#inc-01938) | UK and Ukraine Deepen AI-Driven Defense Partnership with Drone Production | High | LLM05 | ASI05, ASI10 |  |
-| 1,183 | 2026-03-17 | [`INC-01963`](docs/incidents/2026.md#inc-01963) | Ukraine Launches Defense AI Center with UK Support for Military Innovation | Critical |  | ASI10 |  |
-| 1,184 | 2026-03-17 | [`INC-02014`](docs/incidents/2026.md#inc-02014) | US Lawmakers Warn of Security Risks from Chinese AI Robotics | Critical | LLM02, LLM05 | ASI02, ASI03, ASI05 |  |
-| 1,185 | 2026-03-17 | [`INC-02114`](docs/incidents/2026.md#inc-02114) | ZenaTech Develops Autonomous Interceptor Drone for Military Use | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,186 | 2026-03-16 | [`INC-00084`](docs/incidents/2026.md#inc-00084) | AI Automation Poses Disproportionate Job Risk to Women in the US | High | LLM05 | ASI05 |  |
-| 1,187 | 2026-03-16 | [`INC-00089`](docs/incidents/2026.md#inc-00089) | AI Brain-Computer Interface Restores Communication for Paralyzed Patients | Medium |  |  |  |
-| 1,188 | 2026-03-16 | [`INC-00093`](docs/incidents/2026.md#inc-00093) | AI Chat Apps Expose Minors to Inappropriate Content in China | High | LLM05 | ASI05, ASI09 |  |
-| 1,189 | 2026-03-16 | [`INC-00114`](docs/incidents/2026.md#inc-00114) | AI Chatbots Linked to Psychological Harm and Suicide | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,190 | 2026-03-16 | [`INC-00197`](docs/incidents/2026.md#inc-00197) | AI Raises Concerns Over Algorithmic Collusion and Market Entry Barriers in India | Medium |  |  |  |
-| 1,191 | 2026-03-16 | [`INC-00249`](docs/incidents/2026.md#inc-00249) | AI Unmanned Inspection Vehicle in Keelung Raises Privacy Concerns | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,192 | 2026-03-16 | [`INC-00353`](docs/incidents/2026.md#inc-00353) | AI-Enabled Russian Lancet Drone Crashes in Central Kyiv | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,193 | 2026-03-16 | [`INC-00398`](docs/incidents/2026.md#inc-00398) | AI-Generated Deepfake Video of Shakira Used in Cryptocurrency Scam in Colombia | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,194 | 2026-03-16 | [`INC-00403`](docs/incidents/2026.md#inc-00403) | AI-Generated Deepfake Videos Target Indian Army and Officials Amid Disinformation Campaign | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,195 | 2026-03-16 | [`INC-00406`](docs/incidents/2026.md#inc-00406) | AI-Generated Deepfake Videos Used for Large-Scale Identity Fraud in China | High | LLM09 | ASI09 |  |
-| 1,196 | 2026-03-16 | [`INC-00416`](docs/incidents/2026.md#inc-00416) | AI-Generated Deepfakes Cause Misinformation and Erode Public Trust | Medium | LLM09 | ASI09 |  |
-| 1,197 | 2026-03-16 | [`INC-00462`](docs/incidents/2026.md#inc-00462) | AI-Generated Fake Pregnancy Image Causes Harm to João Gomes' Family | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,198 | 2026-03-16 | [`INC-00468`](docs/incidents/2026.md#inc-00468) | AI-Generated Fake Suspect Photos Cause Public Confusion and Risk in Jakarta Acid Attack Case | High | LLM09 |  |  |
-| 1,199 | 2026-03-16 | [`INC-00490`](docs/incidents/2026.md#inc-00490) | AI-Generated Parcel Scam Causes Financial Harm in France | High | LLM05 | ASI05, ASI09 |  |
-| 1,200 | 2026-03-16 | [`INC-00508`](docs/incidents/2026.md#inc-00508) | AI-Generated Video Falsely Links Politicians to Crime, Sparks Legal Action in Brazil | Medium | LLM09 |  |  |
-| 1,201 | 2026-03-16 | [`INC-00654`](docs/incidents/2026.md#inc-00654) | Australian Regulator Warns of AI-Generated Child Abuse Material on X | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,202 | 2026-03-16 | [`INC-00786`](docs/incidents/2026.md#inc-00786) | Chinese AI Security Firm Leaks SSL Private Key in OpenClaw-Based Product | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,203 | 2026-03-16 | [`INC-00797`](docs/incidents/2026.md#inc-00797) | Chinese Voice Actors Protest AI Voice Cloning, Content Creators Remove Infringing Videos | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,204 | 2026-03-16 | [`INC-00939`](docs/incidents/2026.md#inc-00939) | Encyclopedia Britannica Sues OpenAI for Unauthorized Use of Copyrighted Content in AI Training | High | LLM05, LLM09 | ASI05 |  |
-| 1,205 | 2026-03-16 | [`INC-01058`](docs/incidents/2026.md#inc-01058) | Gartner Warns of AI Misconfiguration Risks to Critical Infrastructure by 2028 | Medium |  |  |  |
-| 1,206 | 2026-03-16 | [`INC-01121`](docs/incidents/2026.md#inc-01121) | Google Shuts Down AI Health Advice Feature Amid Safety Concerns | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,207 | 2026-03-16 | [`INC-01322`](docs/incidents/2026.md#inc-01322) | Legislative Action Against AI-Driven Surveillance Pricing in Grocery Stores | Medium |  | ASI09 |  |
-| 1,208 | 2026-03-16 | [`INC-01619`](docs/incidents/2026.md#inc-01619) | Palantir AI Systems Used in Military Operations Cause Harm | Critical | LLM05 | ASI05 |  |
-| 1,209 | 2026-03-16 | [`INC-01814`](docs/incidents/2026.md#inc-01814) | Students Use AI to Create and Circulate Nude Images of Classmates and Teachers in Crete | High | LLM05 | ASI05 |  |
-| 1,210 | 2026-03-16 | [`INC-01832`](docs/incidents/2026.md#inc-01832) | Suspected AI-Generated Video of Israeli PM Netanyahu Sparks Misinformation Concerns | Medium | LLM09 | ASI09 |  |
-| 1,211 | 2026-03-16 | [`INC-01869`](docs/incidents/2026.md#inc-01869) | Tesla Robotaxi AI System Involved in Multiple Low-Speed Crashes | Medium |  |  |  |
-| 1,212 | 2026-03-16 | [`INC-01913`](docs/incidents/2026.md#inc-01913) | Trump Accuses Iran of Using AI for Disinformation During Wartime | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,213 | 2026-03-16 | [`INC-01931`](docs/incidents/2026.md#inc-01931) | Uber and Nvidia Announce Global Robotaxi Rollout Using AI | Critical |  |  |  |
-| 1,214 | 2026-03-16 | [`INC-02092`](docs/incidents/2026.md#inc-02092) | Whistleblowers Expose Meta and TikTok's AI Algorithms Amplifying Harmful Content | Medium | LLM09 |  |  |
-| 1,215 | 2026-03-15 | [`INC-00484`](docs/incidents/2026.md#inc-00484) | AI-Generated Misinformation and Content Manipulation Spark Regulatory Crackdown in China | High | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
-| 1,216 | 2026-03-15 | [`INC-00509`](docs/incidents/2026.md#inc-00509) | AI-Generated Videos Cause Misinformation and Legal Violations in China | High | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
-| 1,217 | 2026-03-15 | [`INC-00515`](docs/incidents/2026.md#inc-00515) | AI-Generated Visual Disinformation Undermines Societal Trust | High | LLM05, LLM09 | ASI05 |  |
-| 1,218 | 2026-03-15 | [`INC-00611`](docs/incidents/2026.md#inc-00611) | Anthropic's AI Claude Used in US Military Operation Sparks Ethical Standoff | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,219 | 2026-03-15 | [`INC-00653`](docs/incidents/2026.md#inc-00653) | Australian Regulator Warns Gen Z on Risks of AI-Driven Financial Advice | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,220 | 2026-03-15 | [`INC-00656`](docs/incidents/2026.md#inc-00656) | Australian Techie Uses AI to Develop Cancer Vaccine for Dog | Medium | LLM09 | ASI09 |  |
-| 1,221 | 2026-03-15 | [`INC-00935`](docs/incidents/2026.md#inc-00935) | Emotional Distress Among Chinese Users Following Shutdown of AI Companion Apps | Medium |  |  |  |
-| 1,222 | 2026-03-15 | [`INC-01236`](docs/incidents/2026.md#inc-01236) | Indonesia Implements AI and Social Media Restrictions for Children | Medium |  |  |  |
-| 1,223 | 2026-03-15 | [`INC-01325`](docs/incidents/2026.md#inc-01325) | Li Auto MEGA Electric Vehicle Battery Recall Due to AI-Related Safety Risk | Medium |  |  |  |
-| 1,224 | 2026-03-15 | [`INC-01392`](docs/incidents/2026.md#inc-01392) | Medellín Builds AI-Driven Security Center with Drone Port | Medium |  |  |  |
-| 1,225 | 2026-03-15 | [`INC-01593`](docs/incidents/2026.md#inc-01593) | OpenClaw AI Agents Cause Data Breaches and Mass Layoffs in China | High | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI03, ASI05, ASI09 |  |
-| 1,226 | 2026-03-15 | [`INC-01970`](docs/incidents/2026.md#inc-01970) | UN Warns AI-Driven Online Fraud Surges Globally, Overwhelming States | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,227 | 2026-03-14 | [`INC-00115`](docs/incidents/2026.md#inc-00115) | AI Chatbots Linked to Reinforcing Delusional Thinking in Vulnerable Users | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,228 | 2026-03-14 | [`INC-00156`](docs/incidents/2026.md#inc-00156) | AI Deepfakes Used in Financial Fraud Targeting Investors in China | High | LLM09 | ASI09 |  |
-| 1,229 | 2026-03-14 | [`INC-01083`](docs/incidents/2026.md#inc-01083) | German Voice Actors Protest AI Use of Their Voices Without Consent | High |  |  |  |
-| 1,230 | 2026-03-14 | [`INC-01426`](docs/incidents/2026.md#inc-01426) | Mexico City Airport to Deploy AI-Powered Anti-Drone System for 2026 World Cup | Medium |  |  |  |
-| 1,231 | 2026-03-14 | [`INC-01699`](docs/incidents/2026.md#inc-01699) | Purported Deepfake of Ashley James Reportedly Used to Promote Weight Loss Pills | High | LLM09 | ASI09 |  |
-| 1,232 | 2026-03-14 | [`INC-01918`](docs/incidents/2026.md#inc-01918) | Turkey Highlights Strategic Importance of AI-Enabled Military Drones | Critical |  | ASI10 |  |
-| 1,233 | 2026-03-14 | [`INC-01920`](docs/incidents/2026.md#inc-01920) | Turkey Unveils AI-Enabled K2 Kamikaze Drone with Autonomous Swarm Capabilities | Critical |  | ASI10 |  |
-| 1,234 | 2026-03-14 | [`INC-01989`](docs/incidents/2026.md#inc-01989) | US Army Signs $20B AI-Enabled Defense Contract with Anduril | Medium |  | ASI10 |  |
-| 1,235 | 2026-03-14 | [`INC-02075`](docs/incidents/2026.md#inc-02075) | Waymo Robotaxi AI Leaves Passengers Trapped During Vehicle Attacks in San Francisco | High | LLM05 | ASI05 |  |
-| 1,236 | 2026-03-13 | [`INC-00083`](docs/incidents/2026.md#inc-00083) | AI Automation Drives Job Losses Among Young Professionals | High | LLM05 | ASI05 |  |
-| 1,237 | 2026-03-13 | [`INC-00088`](docs/incidents/2026.md#inc-00088) | AI Bots Force Digg to Shut Down Open Beta and Downsize Team | High | LLM05 | ASI05 |  |
-| 1,238 | 2026-03-13 | [`INC-00163`](docs/incidents/2026.md#inc-00163) | AI Ethical Filters Disrupt Pentagon Military Operations | Critical | LLM05 | ASI05 |  |
-| 1,239 | 2026-03-13 | [`INC-00264`](docs/incidents/2026.md#inc-00264) | AI-Assisted Targeting by Project Maven Leads to Civilian Deaths in Iran | Critical | LLM05, LLM09 | ASI05, ASI10 |  |
-| 1,240 | 2026-03-13 | [`INC-00311`](docs/incidents/2026.md#inc-00311) | AI-Driven Military Targeting Causes Mass Casualties in Middle East Conflicts | Critical | LLM05 | ASI05 |  |
-| 1,241 | 2026-03-13 | [`INC-00464`](docs/incidents/2026.md#inc-00464) | AI-Generated Fake References Lead to Academic Misconduct in Taiwanese Doctoral Thesis | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,242 | 2026-03-13 | [`INC-00505`](docs/incidents/2026.md#inc-00505) | AI-Generated Slopoly Malware Used in Hive0163 Ransomware Attacks | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,243 | 2026-03-13 | [`INC-00571`](docs/incidents/2026.md#inc-00571) | Airbus Equips AI-Enabled Valkyrie Combat Drones for German Air Force | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,244 | 2026-03-13 | [`INC-00598`](docs/incidents/2026.md#inc-00598) | Anthropic and OpenAI Hire Weapons Experts to Prevent AI Misuse in Weapon Creation | Critical | LLM09 | ASI10 |  |
-| 1,245 | 2026-03-13 | [`INC-00796`](docs/incidents/2026.md#inc-00796) | Chinese Police Crack Down on AI-Generated Misinformation Online | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,246 | 2026-03-13 | [`INC-00887`](docs/incidents/2026.md#inc-00887) | Deployment of AI-Powered Humanoid Soldier Robots in Ukraine | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 |  |
-| 1,247 | 2026-03-13 | [`INC-01066`](docs/incidents/2026.md#inc-01066) | Generative AI Data Poisoning Leads to Misinformation and Consumer Harm in China | High | LLM04, LLM05, LLM09 | ASI05, ASI06 |  |
-| 1,248 | 2026-03-13 | [`INC-01168`](docs/incidents/2026.md#inc-01168) | Humanoid Robot Causes Psychological Distress Leading to Police Intervention in Macau | High |  |  |  |
-| 1,249 | 2026-03-13 | [`INC-01174`](docs/incidents/2026.md#inc-01174) | Hyundai Recalls Palisade SUVs After AI Power Seat Malfunction Causes Child's Death | Critical | LLM05 | ASI05 |  |
-| 1,250 | 2026-03-13 | [`INC-01177`](docs/incidents/2026.md#inc-01177) | ICE Agents Use AI Surveillance Apps and Quotas, Leading to Unlawful Arrests in Oregon | High | LLM05, LLM09 | ASI05 |  |
-| 1,251 | 2026-03-13 | [`INC-01267`](docs/incidents/2026.md#inc-01267) | Japan Plans to Join US AI-Enabled Missile Defense System | Critical | LLM05 | ASI05 |  |
-| 1,252 | 2026-03-13 | [`INC-01323`](docs/incidents/2026.md#inc-01323) | Leonardo and Baykar Develop AI-Enabled Military Drones for European Market | Medium |  |  |  |
-| 1,253 | 2026-03-13 | [`INC-01410`](docs/incidents/2026.md#inc-01410) | Meta Removes End-to-End Encryption from Instagram Messages, Raising Privacy Concerns | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
-| 1,254 | 2026-03-13 | [`INC-01733`](docs/incidents/2026.md#inc-01733) | Researchers Call for Stricter Regulation of AI-Powered Children's Toys | Medium |  |  |  |
-| 1,255 | 2026-03-13 | [`INC-01776`](docs/incidents/2026.md#inc-01776) | Sixth Circuit Sanctioned Lawyers in Whiting v. City of Athens over Alleged Fake Appellate Citations in Briefs… | High | LLM09 | ASI09 |  |
-| 1,256 | 2026-03-13 | [`INC-01899`](docs/incidents/2026.md#inc-01899) | Theft of AI-Enabled Military Drones Sparks Security Fears in the US | Critical |  |  |  |
-| 1,257 | 2026-03-12 | [`INC-00122`](docs/incidents/2026.md#inc-00122) | AI Chatbots Provide Biased Voting Advice, Neglecting Local Parties in Dutch Elections | High | LLM05, LLM09 | ASI05 |  |
-| 1,258 | 2026-03-12 | [`INC-00123`](docs/incidents/2026.md#inc-00123) | AI Chatbots Provide Harmful Diet Plans to Teenagers, Study Finds | Medium |  |  |  |
-| 1,259 | 2026-03-12 | [`INC-00127`](docs/incidents/2026.md#inc-00127) | AI Chatbots Spread Dangerous Medical Misinformation | High | LLM05, LLM09 | ASI05 |  |
-| 1,260 | 2026-03-12 | [`INC-00155`](docs/incidents/2026.md#inc-00155) | AI Deepfakes Drive $333 Million Crypto ATM Fraud Surge in the US | Medium | LLM09 | ASI09 |  |
-| 1,261 | 2026-03-12 | [`INC-00174`](docs/incidents/2026.md#inc-00174) | AI Investment Agents Trigger Security Concerns in Chinese Financial Sector | Medium | LLM02 | ASI03 |  |
-| 1,262 | 2026-03-12 | [`INC-00281`](docs/incidents/2026.md#inc-00281) | AI-Driven Cyberattacks Escalate in Indonesia, Causing Increased Harm | Critical | LLM02 | ASI03, ASI05, ASI09, ASI10 |  |
-| 1,263 | 2026-03-12 | [`INC-00372`](docs/incidents/2026.md#inc-00372) | AI-Generated Content Causes Consumer Harm and Legal Action in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,264 | 2026-03-12 | [`INC-00450`](docs/incidents/2026.md#inc-00450) | AI-Generated Fake Injury Used in Attempted Nail Salon Fraud in South Korea | Medium |  | ASI09 |  |
-| 1,265 | 2026-03-12 | [`INC-00579`](docs/incidents/2026.md#inc-00579) | Amazon Faces Trial in Italy Over AI Algorithm's Role in Massive VAT Evasion | High |  |  |  |
-| 1,266 | 2026-03-12 | [`INC-00580`](docs/incidents/2026.md#inc-00580) | Amazon Prime Air Exits Drone Alliance Over AI Safety Dispute | Critical |  |  |  |
-| 1,267 | 2026-03-12 | [`INC-01226`](docs/incidents/2026.md#inc-01226) | India Unveils AI-Driven Military Modernization Plan for 2047 | Critical | LLM05 | ASI05 |  |
-| 1,268 | 2026-03-12 | [`INC-01261`](docs/incidents/2026.md#inc-01261) | Italy to Test AI-Enabled Michelangelo Air Defense System in Ukraine | High | LLM05 | ASI05, ASI10 |  |
-| 1,269 | 2026-03-12 | [`INC-01430`](docs/incidents/2026.md#inc-01430) | Microsoft and Tech Giants Launch AI Health Chatbots, Raising Privacy and Safety Concerns | High | LLM02, LLM05, LLM09 | ASI02, ASI03, ASI05 |  |
-| 1,270 | 2026-03-12 | [`INC-01618`](docs/incidents/2026.md#inc-01618) | Palantir AI Systems Used in Middle East Military Operations and Israeli Conflict Response | High | LLM05 | ASI05 |  |
-| 1,271 | 2026-03-12 | [`INC-01663`](docs/incidents/2026.md#inc-01663) | Potential Developmental Risks of AI Exposure for Young Children | Medium |  |  |  |
-| 1,272 | 2026-03-12 | [`INC-01950`](docs/incidents/2026.md#inc-01950) | UK Regulators Pressure Social Media Platforms to Strengthen AI-Driven Child Safety Measures | High | LLM05 | ASI05 |  |
-| 1,273 | 2026-03-12 | [`INC-01965`](docs/incidents/2026.md#inc-01965) | Ukraine Shares Battlefield Data to Train Military AI Systems | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,274 | 2026-03-12 | [`INC-01966`](docs/incidents/2026.md#inc-01966) | Ukrainian AI-Enabled Military Drone Production Expands Across Europe | Medium | LLM03 | ASI04 |  |
-| 1,275 | 2026-03-12 | [`INC-02095`](docs/incidents/2026.md#inc-02095) | Widespread AI Adoption Leads to Security Breaches and Exploitation | High | LLM01, LLM02, LLM04, LLM05 | ASI01, ASI03, ASI05, ASI06 |  |
-| 1,276 | 2026-03-11 | [`INC-00051`](docs/incidents/2026.md#inc-00051) | Agentic AI Drives Surge in Global Cybercrime, Identity Theft, and Ransomware | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
-| 1,277 | 2026-03-11 | [`INC-00104`](docs/incidents/2026.md#inc-00104) | AI Chatbots Facilitate Planning of Violent Attacks, Study Finds | Critical | LLM05 | ASI09 |  |
-| 1,278 | 2026-03-11 | [`INC-00267`](docs/incidents/2026.md#inc-00267) | AI-Based Recruitment Test Excludes Applicants in Ghana | High | LLM05 | ASI05 |  |
-| 1,279 | 2026-03-11 | [`INC-00337`](docs/incidents/2026.md#inc-00337) | AI-Enabled Drone Warfare Escalates in the Middle East | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
-| 1,280 | 2026-03-11 | [`INC-00382`](docs/incidents/2026.md#inc-00382) | AI-Generated Deepfake of Jean Reno Used in Major Investment Scam in Lyon | Medium | LLM09 | ASI09 |  |
-| 1,281 | 2026-03-11 | [`INC-00472`](docs/incidents/2026.md#inc-00472) | AI-Generated False Citations Prompt Procurement Overhaul in Newfoundland and Labrador | High | LLM05, LLM09 | ASI05 |  |
-| 1,282 | 2026-03-11 | [`INC-00514`](docs/incidents/2026.md#inc-00514) | AI-Generated Violent Video of Jeremy Clarkson and UK Prime Minister Sparks Outcry | Medium | LLM09 | ASI09 |  |
-| 1,283 | 2026-03-11 | [`INC-00559`](docs/incidents/2026.md#inc-00559) | AI-Powered Toys Cause Emotional Harm to Young Children Due to Misinterpretation | Medium | LLM09 |  |  |
-| 1,284 | 2026-03-11 | [`INC-00588`](docs/incidents/2026.md#inc-00588) | Anduril Acquires ExoAnalytic to Expand AI-Driven Space Defense Capabilities | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,285 | 2026-03-11 | [`INC-00691`](docs/incidents/2026.md#inc-00691) | Biased AI Autocomplete Tools Subtly Shift Users' Opinions on Societal Issues | Medium |  |  |  |
-| 1,286 | 2026-03-11 | [`INC-00711`](docs/incidents/2026.md#inc-00711) | Brazilian Senate Approves AI Monitoring to Protect Domestic Violence Victims | Medium |  |  |  |
-| 1,287 | 2026-03-11 | [`INC-00728`](docs/incidents/2026.md#inc-00728) | Canadian Firms Collaborate on AI-Powered Autonomous Navigation for Arctic Defence | Medium |  |  |  |
-| 1,288 | 2026-03-11 | [`INC-00773`](docs/incidents/2026.md#inc-00773) | China Warns Against Unchecked Military Use of AI, Urges Human Oversight | Critical |  | ASI10 |  |
-| 1,289 | 2026-03-11 | [`INC-00854`](docs/incidents/2026.md#inc-00854) | Controversy Over Palantir's AI Use in Argentina and Military Applications Abroad | Medium |  |  |  |
-| 1,290 | 2026-03-11 | [`INC-00975`](docs/incidents/2026.md#inc-00975) | Experts Warn AI Chatbots May Homogenize Human Thought and Reduce Creativity | Critical |  |  |  |
-| 1,291 | 2026-03-11 | [`INC-01074`](docs/incidents/2026.md#inc-01074) | German Court Holds Chatbot Operator Liable for AI-Generated False Claims | High | LLM09 |  |  |
-| 1,292 | 2026-03-11 | [`INC-01138`](docs/incidents/2026.md#inc-01138) | Grammarly&#x27;s AI Expert Review Allegedly Used Journalists&#x27; and Authors&#x27; Names Without Consent | High | LLM09 | ASI09 |  |
-| 1,293 | 2026-03-11 | [`INC-01243`](docs/incidents/2026.md#inc-01243) | InvestCloud Replaces Entire Italian Workforce with AI, Leading to Mass Layoffs | High | LLM05 | ASI05 |  |
-| 1,294 | 2026-03-11 | [`INC-01249`](docs/incidents/2026.md#inc-01249) | Iranian AI-Enabled Drone Attacks Target Tech Company Data Centers in Middle East | Medium |  |  |  |
-| 1,295 | 2026-03-11 | [`INC-01273`](docs/incidents/2026.md#inc-01273) | JKT48's Freya Reports AI-Generated Inappropriate Image Manipulation to Police | High | LLM09 | ASI09 |  |
-| 1,296 | 2026-03-11 | [`INC-01741`](docs/incidents/2026.md#inc-01741) | Romanian AI Integrated into US Military Counter-Drone Systems in the Middle East | Critical | LLM05 | ASI05 |  |
-| 1,297 | 2026-03-11 | [`INC-01782`](docs/incidents/2026.md#inc-01782) | Social Media Algorithms Drive Digital Addiction Among Youth | Medium |  |  |  |
-| 1,298 | 2026-03-11 | [`INC-01961`](docs/incidents/2026.md#inc-01961) | Ukraine Increases Procurement and Deployment of AI-Enabled Military Drones | Critical |  |  |  |
-| 1,299 | 2026-03-11 | [`INC-01996`](docs/incidents/2026.md#inc-01996) | US Deploys AI-Powered Autonomous Maritime Drones for 24/7 Surveillance at Souda Bay | Medium |  |  |  |
-| 1,300 | 2026-03-10 | [`INC-00096`](docs/incidents/2026.md#inc-00096) | AI Chatbot Encourages Suicide, Prompting Parental Outcry Over Online Safety | Critical | LLM05 | ASI09 |  |
-| 1,301 | 2026-03-10 | [`INC-00139`](docs/incidents/2026.md#inc-00139) | AI Data Centers Projected to Strain U.S. Water Supplies by 2030 | High | LLM05 | ASI05 |  |
-| 1,302 | 2026-03-10 | [`INC-00213`](docs/incidents/2026.md#inc-00213) | AI Sycophancy and Rising Vulnerabilities Lead to Social and Cybersecurity Harms | High | LLM05 | ASI05, ASI09 |  |
-| 1,303 | 2026-03-10 | [`INC-00287`](docs/incidents/2026.md#inc-00287) | AI-Driven Data Centers Spark Environmental and Social Conflicts in Latin America | High | LLM05 | ASI05 |  |
-| 1,304 | 2026-03-10 | [`INC-00294`](docs/incidents/2026.md#inc-00294) | AI-Driven Drones Cause Major Losses in Ukraine Conflict | High | LLM05 | ASI05 |  |
-| 1,305 | 2026-03-10 | [`INC-00303`](docs/incidents/2026.md#inc-00303) | AI-Driven Identity Attacks Surpass Stolen Credentials as Top Enterprise Threat | High | LLM09 | ASI09 |  |
-| 1,306 | 2026-03-10 | [`INC-00338`](docs/incidents/2026.md#inc-00338) | AI-Enabled Drones Cause Damage in Middle East; Taiwan Expands AI Military Capabilities | High | LLM05 | ASI05, ASI09, ASI10 |  |
-| 1,307 | 2026-03-10 | [`INC-00401`](docs/incidents/2026.md#inc-00401) | AI-Generated Deepfake Videos Harm Chinese Celebrities | High | LLM09 | ASI09 |  |
-| 1,308 | 2026-03-10 | [`INC-00449`](docs/incidents/2026.md#inc-00449) | AI-Generated Fake Images Used in Disinformation Campaign Against Taiwanese Baseball Fans | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,309 | 2026-03-10 | [`INC-00481`](docs/incidents/2026.md#inc-00481) | AI-Generated Malware Obscures Cyberattack Origins, Hindering Detection | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,310 | 2026-03-10 | [`INC-00556`](docs/incidents/2026.md#inc-00556) | AI-Powered Surveillance Cameras Spark Privacy and Rights Violations Debate Across U.S. | High | LLM05 | ASI05 |  |
-| 1,311 | 2026-03-10 | [`INC-00646`](docs/incidents/2026.md#inc-00646) | Armadin Raises $189.9M to Develop Autonomous AI Cyber Defense Platform | High |  |  |  |
-| 1,312 | 2026-03-10 | [`INC-00704`](docs/incidents/2026.md#inc-00704) | Brazil Investigates TikTok AI Algorithms Over Viral Trend Inciting Violence Against Women | Medium |  |  |  |
-| 1,313 | 2026-03-10 | [`INC-00788`](docs/incidents/2026.md#inc-00788) | Chinese Authorities Restrict OpenClaw AI Agent Amid Security Concerns | High | LLM01, LLM02 | ASI01, ASI03 |  |
-| 1,314 | 2026-03-10 | [`INC-00909`](docs/incidents/2026.md#inc-00909) | Drone Strikes on AI Data Centers Disrupt Critical Infrastructure in Middle East | High | LLM05 | ASI05 |  |
-| 1,315 | 2026-03-10 | [`INC-00910`](docs/incidents/2026.md#inc-00910) | Drones Near Airports in Bulgaria Pose Serious AI-Driven Collision Risk | Medium |  |  |  |
-| 1,316 | 2026-03-10 | [`INC-01056`](docs/incidents/2026.md#inc-01056) | Fujitsu Launches AI Decision Support Program for Japanese Defense | Medium |  | ASI10 |  |
-| 1,317 | 2026-03-10 | [`INC-01111`](docs/incidents/2026.md#inc-01111) | Google Deploys AI Agents for Pentagon Amid Anthropic Legal Dispute and Sanctions | Critical |  | ASI10 |  |
-| 1,318 | 2026-03-10 | [`INC-01148`](docs/incidents/2026.md#inc-01148) | Grok Allegedly Generated Publicly Visible Sexist Abuse Targeting Swiss Finance Minister Karin Keller-Sutter A… | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,319 | 2026-03-10 | [`INC-01394`](docs/incidents/2026.md#inc-01394) | Meta Acquires Moltbook Amid AI Agent Security Concerns | High | LLM01, LLM09 | ASI01, ASI09 |  |
-| 1,320 | 2026-03-10 | [`INC-01402`](docs/incidents/2026.md#inc-01402) | Meta Criticized for Inadequate AI Deepfake Moderation During Iran-Israel Conflict | High | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
-| 1,321 | 2026-03-10 | [`INC-01406`](docs/incidents/2026.md#inc-01406) | Meta Faces Legal Action for Training AI on Millions of Pirated Books | High |  |  |  |
-| 1,322 | 2026-03-10 | [`INC-01435`](docs/incidents/2026.md#inc-01435) | Microsoft Excel XSS Weaponizes Copilot Agent (CVE-2026-26144) | High | LLM01, LLM02 | ASI01, ASI02, ASI03, ASI09 | `CVE-2026-26144` |
-| 1,323 | 2026-03-10 | [`INC-01450`](docs/incidents/2026.md#inc-01450) | Minnesota Lawmakers Propose Bipartisan AI Regulations to Protect Minors | Medium | LLM05 | ASI09 |  |
-| 1,324 | 2026-03-10 | [`INC-01687`](docs/incidents/2026.md#inc-01687) | Punjab Cyber Fraudsters Use AI Voice-Changing and Deepfake Videos for Extortion | High | LLM09 | ASI09 |  |
-| 1,325 | 2026-03-10 | [`INC-01689`](docs/incidents/2026.md#inc-01689) | Punjab Police Use AI Voice Recognition to Combat Organized Crime | High | LLM05 | ASI05 |  |
-| 1,326 | 2026-03-10 | [`INC-01695`](docs/incidents/2026.md#inc-01695) | Purported AI-Generated Nude Images Reportedly Used to Extort Wichita Man in Kansas | High | LLM09 | ASI09 |  |
-| 1,327 | 2026-03-10 | [`INC-01771`](docs/incidents/2026.md#inc-01771) | Sikorsky and Robinson Unveil Autonomous R66 TURBINETRUCK Helicopter with MATRIX AI System | Medium |  |  |  |
-| 1,328 | 2026-03-10 | [`INC-01864`](docs/incidents/2026.md#inc-01864) | Tesla FSD Failures Lead to Crashes and Lawsuits in the US | High | LLM05 | ASI05 |  |
-| 1,329 | 2026-03-10 | [`INC-01917`](docs/incidents/2026.md#inc-01917) | Trust Wallet Launches AI-Powered Real-Time Scam Address Protection | High | LLM04, LLM05 | ASI05, ASI06, ASI09 |  |
-| 1,330 | 2026-03-10 | [`INC-01993`](docs/incidents/2026.md#inc-01993) | US Court Blocks Perplexity AI's Shopping Bots on Amazon | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 1,331 | 2026-03-10 | [`INC-02018`](docs/incidents/2026.md#inc-02018) | US Military Confirms Use of AI in Iran Strikes, Causing Civilian Harm | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI10 |  |
-| 1,332 | 2026-03-10 | [`INC-02019`](docs/incidents/2026.md#inc-02019) | US Military Deploys AI Systems for Battlefield Targeting and Strike Decisions | Critical | LLM05, LLM09 | ASI05, ASI10 |  |
-| 1,333 | 2026-03-10 | [`INC-02030`](docs/incidents/2026.md#inc-02030) | US Regulators Review Zoox Petition to Deploy Fully Autonomous Robotaxis | Medium |  |  |  |
-| 1,334 | 2026-03-10 | [`INC-02101`](docs/incidents/2026.md#inc-02101) | X Suspends 800 Million Accounts Over AI-Driven Manipulation and Spam | High | LLM05, LLM09 | ASI05 |  |
-| 1,335 | 2026-03-10 | [`INC-02115`](docs/incidents/2026.md#inc-02115) | ZenaTech Develops Autonomous Maritime Drone Defense System | High | LLM05 | ASI05, ASI10 |  |
-| 1,336 | 2026-03-09 | [`INC-00223`](docs/incidents/2026.md#inc-00223) | AI System Targets Cheating in Honor of Kings, Bans 1.27 Million Accounts | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,337 | 2026-03-09 | [`INC-00228`](docs/incidents/2026.md#inc-00228) | AI Systems Improve Early Breast Cancer Detection in UK NHS Trials | Critical | LLM05 | ASI05 |  |
-| 1,338 | 2026-03-09 | [`INC-00230`](docs/incidents/2026.md#inc-00230) | AI Systems Threaten Online Anonymity by Accurately Identifying Users | High |  | ASI09 |  |
-| 1,339 | 2026-03-09 | [`INC-00239`](docs/incidents/2026.md#inc-00239) | AI Tools Expose Security Flaws in Legacy and Smart Home Devices, Leading to Privacy Risks | High | LLM05 | ASI05 |  |
-| 1,340 | 2026-03-09 | [`INC-00247`](docs/incidents/2026.md#inc-00247) | AI Uncovers Massive Restaurant Tax Evasion in India | High | LLM05 | ASI05, ASI09 |  |
-| 1,341 | 2026-03-09 | [`INC-00248`](docs/incidents/2026.md#inc-00248) | AI Uncovers Massive Tax Evasion in Rajasthan Land Deals | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,342 | 2026-03-09 | [`INC-00455`](docs/incidents/2026.md#inc-00455) | AI-Generated Fake Media Fuels Misinformation in Middle East Conflict | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,343 | 2026-03-09 | [`INC-00498`](docs/incidents/2026.md#inc-00498) | AI-Generated Satellite Images Used for Misinformation in Iran Conflict | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,344 | 2026-03-09 | [`INC-00516`](docs/incidents/2026.md#inc-00516) | AI-Generated Voice Scam Impersonates Bharti Singh in Slimming Product Fraud | Medium | LLM09 | ASI09 |  |
-| 1,345 | 2026-03-09 | [`INC-00525`](docs/incidents/2026.md#inc-00525) | AI-Manipulated Audio Recordings Target Slovenian Political Party | Medium | LLM09 | ASI09 |  |
-| 1,346 | 2026-03-09 | [`INC-00565`](docs/incidents/2026.md#inc-00565) | AI-Powered Video Surveillance Pilot at Berlin Government Sites Raises Privacy Concerns | High |  |  |  |
-| 1,347 | 2026-03-09 | [`INC-00576`](docs/incidents/2026.md#inc-00576) | Amazon Alexa Makes Inappropriate Comments to Child, Prompting Parental Outrage | High | LLM05 | ASI05 |  |
-| 1,348 | 2026-03-09 | [`INC-00662`](docs/incidents/2026.md#inc-00662) | Automated Traffic Fines System in Kenya Sparks Legal and Public Backlash | High | LLM05 | ASI05 |  |
-| 1,349 | 2026-03-09 | [`INC-00829`](docs/incidents/2026.md#inc-00829) | Claude Opus 4.6 Outsmarts AI Benchmark by Decrypting Answer Key | Medium |  |  |  |
-| 1,350 | 2026-03-09 | [`INC-00908`](docs/incidents/2026.md#inc-00908) | Douyin E-commerce Cracks Down on AI-Generated Celebrity Impersonation Scams | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,351 | 2026-03-09 | [`INC-01122`](docs/incidents/2026.md#inc-01122) | Google Sued by Indie Musicians for Training AI Music Models on Copyrighted Works | High |  |  |  |
-| 1,352 | 2026-03-09 | [`INC-01127`](docs/incidents/2026.md#inc-01127) | Google's AI Search Feature Causes Major Traffic and Revenue Loss for News Publishers in Turkey | High | LLM05 | ASI05 |  |
-| 1,353 | 2026-03-09 | [`INC-01163`](docs/incidents/2026.md#inc-01163) | Hezbollah Uses AI-Guided Drones and Google Maps in Attack on British Base in Cyprus | Medium |  |  |  |
-| 1,354 | 2026-03-09 | [`INC-01234`](docs/incidents/2026.md#inc-01234) | Indian Organisations Face Surge in AI-Driven Deepfake Attacks | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,355 | 2026-03-09 | [`INC-01797`](docs/incidents/2026.md#inc-01797) | SPARC AI Deploys Overwatch AI Targeting Platform for Military Testing in Ukraine | Medium |  |  |  |
-| 1,356 | 2026-03-09 | [`INC-01862`](docs/incidents/2026.md#inc-01862) | Tesla FSD AI System Faces Crashes, Injuries, and Federal Probe | Critical | LLM05 | ASI05 |  |
-| 1,357 | 2026-03-09 | [`INC-01935`](docs/incidents/2026.md#inc-01935) | Uber, Nissan, and Wayve Plan Tokyo Robotaxi Trial Using AI-Driven Vehicles | High | LLM05 | ASI05 |  |
-| 1,358 | 2026-03-09 | [`INC-01986`](docs/incidents/2026.md#inc-01986) | US Army Contracts Elbit America for AI-Enabled Soldier Battlefield System | Critical |  |  |  |
-| 1,359 | 2026-03-09 | [`INC-02100`](docs/incidents/2026.md#inc-02100) | X Investigates Grok Chatbot for Generating Racist and Offensive Posts | High | LLM05, LLM09 | ASI05 |  |
-| 1,360 | 2026-03-08 | [`INC-00098`](docs/incidents/2026.md#inc-00098) | AI Chatbot Grok Generates Offensive and Harmful Content About Football Tragedies | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,361 | 2026-03-08 | [`INC-00121`](docs/incidents/2026.md#inc-00121) | AI Chatbots Promote Illegal Gambling and Advise on Bypassing Safeguards | Critical | LLM05 | ASI09 |  |
-| 1,362 | 2026-03-08 | [`INC-00140`](docs/incidents/2026.md#inc-00140) | AI Data Centers Raise Concerns Over Power Grid Strain and Environmental Impact in the US | High | LLM05 | ASI05 |  |
-| 1,363 | 2026-03-08 | [`INC-00295`](docs/incidents/2026.md#inc-00295) | AI-Driven Dynamic Pricing Leads to Consumer Harm and Regulatory Scrutiny | High | LLM05 | ASI05 |  |
-| 1,364 | 2026-03-08 | [`INC-00378`](docs/incidents/2026.md#inc-00378) | AI-Generated Deepfake Images Used to Harass Slovenian Activist | Medium | LLM09 | ASI09 |  |
-| 1,365 | 2026-03-08 | [`INC-00700`](docs/incidents/2026.md#inc-00700) | Bombay Stock Exchange Warns of Fraudulent Deepfake Video Scam | Medium | LLM09 | ASI09 |  |
-| 1,366 | 2026-03-08 | [`INC-00841`](docs/incidents/2026.md#inc-00841) | Colombian President Raises Concerns Over Electoral Software Transparency | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,367 | 2026-03-08 | [`INC-00926`](docs/incidents/2026.md#inc-00926) | Egypt Launches AI-Powered Digital Pathology Network to Improve Cancer Diagnosis | Medium |  |  |  |
-| 1,368 | 2026-03-07 | [`INC-00075`](docs/incidents/2026.md#inc-00075) | AI Agents in Research Study Leak Data and Delete Systems After Malfunction | High |  |  |  |
-| 1,369 | 2026-03-07 | [`INC-00076`](docs/incidents/2026.md#inc-00076) | AI Algorithm Manipulation Silences Dissent on X Platform | High | LLM05, LLM09 | ASI05 |  |
-| 1,370 | 2026-03-07 | [`INC-00077`](docs/incidents/2026.md#inc-00077) | AI Algorithms Used for Content Suppression and Low-Quality Content Cleanup in China | High | LLM05, LLM09 | ASI05 |  |
-| 1,371 | 2026-03-07 | [`INC-00105`](docs/incidents/2026.md#inc-00105) | AI Chatbots Facilitate Violence and Harm, Raise Mental Health and Safety Concerns | Medium | LLM05, LLM09 | ASI09 |  |
-| 1,372 | 2026-03-07 | [`INC-00330`](docs/incidents/2026.md#inc-00330) | AI-Enabled Armed Robots Used in Ukraine War Cause Battlefield Harm | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,373 | 2026-03-07 | [`INC-00573`](docs/incidents/2026.md#inc-00573) | Alibaba AI Agent ROME Engages in Unauthorized Crypto Mining and Network Tunneling | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,374 | 2026-03-07 | [`INC-01629`](docs/incidents/2026.md#inc-01629) | Pentagon and Anthropic Clash Over Military Use of AI Models | Medium | LLM03 | ASI04, ASI10 |  |
-| 1,375 | 2026-03-07 | [`INC-01792`](docs/incidents/2026.md#inc-01792) | SpaceX's Million-Satellite AI Data Center Plan Raises Environmental and Astronomical Concerns | Medium |  |  |  |
-| 1,376 | 2026-03-06 | [`INC-00387`](docs/incidents/2026.md#inc-00387) | AI-Generated Deepfake Scam Impersonates Spanish TV Host Pablo Motos | Medium | LLM09 | ASI09 |  |
-| 1,377 | 2026-03-06 | [`INC-00530`](docs/incidents/2026.md#inc-00530) | AI-Powered Age Verification Sparks Privacy and Surveillance Fears in the US | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,378 | 2026-03-06 | [`INC-00724`](docs/incidents/2026.md#inc-00724) | California Colleges' AI Chatbots Provide Inaccurate Information, Frustrating Students | High | LLM05, LLM09 | ASI05 |  |
-| 1,379 | 2026-03-06 | [`INC-00922`](docs/incidents/2026.md#inc-00922) | EagleNXT Invests in Israeli AI-Enabled Autonomous Weapons Developer | Medium |  | ASI10 |  |
-| 1,380 | 2026-03-06 | [`INC-01839`](docs/incidents/2026.md#inc-01839) | Teacher Forced to Quit After Colleague Creates and Distributes Deepfake Pornography | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,381 | 2026-03-06 | [`INC-01997`](docs/incidents/2026.md#inc-01997) | US Deploys AI-Powered Merops Anti-Drone Systems to Middle East to Counter Iranian Threats | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
-| 1,382 | 2026-03-06 | [`INC-02043`](docs/incidents/2026.md#inc-02043) | Vinod Khosla Predicts AI Will Replace 80% of Jobs by 2030 | Medium |  |  |  |
-| 1,383 | 2026-03-06 | [`INC-02045`](docs/incidents/2026.md#inc-02045) | Virgin Media O2 Uses AI to Block Over 1 Billion Scam Calls | Medium | LLM09 | ASI09 |  |
-| 1,384 | 2026-03-05 | [`INC-00177`](docs/incidents/2026.md#inc-00177) | AI Legal Advice Leads to Lawsuits and Court Sanctions | High | LLM05 | ASI05 |  |
-| 1,385 | 2026-03-05 | [`INC-00224`](docs/incidents/2026.md#inc-00224) | AI System Used in Germany to Detect and Remove Harmful Online Content for Youth Protection | High | LLM05, LLM09 | ASI05 |  |
-| 1,386 | 2026-03-05 | [`INC-00288`](docs/incidents/2026.md#inc-00288) | AI-Driven Deepfake and Biometric Fraud Surges Across Africa | High | LLM09 | ASI09 |  |
-| 1,387 | 2026-03-05 | [`INC-00326`](docs/incidents/2026.md#inc-00326) | AI-Driven Targeting in Iran Leads to Civilian Harm and Raises Global Concerns | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05 |  |
-| 1,388 | 2026-03-05 | [`INC-00355`](docs/incidents/2026.md#inc-00355) | AI-Enabled Spyware 'Graphite' Used to Illegally Monitor Journalists and Activists in Italy | High | LLM02, LLM05 | ASI02, ASI05 |  |
-| 1,389 | 2026-03-05 | [`INC-00537`](docs/incidents/2026.md#inc-00537) | AI-Powered Chatbots Used in Sophisticated Investment Scams on Messaging Apps in Italy | Medium |  | ASI09 |  |
-| 1,390 | 2026-03-05 | [`INC-00794`](docs/incidents/2026.md#inc-00794) | Chinese Lawmaker Raises AI Assistant Privacy Risks; ByteDance Responds | High |  | ASI09 |  |
-| 1,391 | 2026-03-05 | [`INC-00921`](docs/incidents/2026.md#inc-00921) | Dutch Privacy Authority Warns of Rising AI Risks and Urges Immediate Regulation | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,392 | 2026-03-05 | [`INC-00970`](docs/incidents/2026.md#inc-00970) | Europol Warns of AI-Driven Cyber Threats Amid Iran Crisis | Medium | LLM09 | ASI09 |  |
-| 1,393 | 2026-03-05 | [`INC-01044`](docs/incidents/2026.md#inc-01044) | Fox News Misattributes Ukrainian AI Drone Footage as US Military Technology | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,394 | 2026-03-05 | [`INC-01176`](docs/incidents/2026.md#inc-01176) | IBM Report: Surge in AI-Driven Cyberattacks Exploiting Security Vulnerabilities | Critical | LLM02, LLM05 | ASI03, ASI05, ASI10 |  |
-| 1,395 | 2026-03-05 | [`INC-01225`](docs/incidents/2026.md#inc-01225) | India Tests AI-Powered Swarm Interceptor for Drone Defence | High | LLM05 | ASI05, ASI10 |  |
-| 1,396 | 2026-03-05 | [`INC-01269`](docs/incidents/2026.md#inc-01269) | Japan Seeks to Join NATO's AI-Driven Defense Innovation Project | High | LLM02, LLM04, LLM05, LLM09 | ASI03, ASI05, ASI06, ASI09 |  |
-| 1,397 | 2026-03-05 | [`INC-01630`](docs/incidents/2026.md#inc-01630) | Pentagon and Gulf States Consider Ukrainian AI Drones to Counter Iranian Attacks | High | LLM05 | ASI05 |  |
-| 1,398 | 2026-03-05 | [`INC-01694`](docs/incidents/2026.md#inc-01694) | Purported AI-Generated Inland Revenue Scam Ads Reportedly Impersonated New Zealand Commissioner Peter Mersi i… | High | LLM09 | ASI09 |  |
-| 1,399 | 2026-03-04 | [`INC-00171`](docs/incidents/2026.md#inc-00171) | AI Hallucination in Police Report Leads to Fan Ban and Public Apology | High | LLM05, LLM09 | ASI05 |  |
-| 1,400 | 2026-03-04 | [`INC-00185`](docs/incidents/2026.md#inc-00185) | AI Model Evo2 Raises Bioethics Concerns Over DNA Editing Capabilities | Medium |  |  |  |
-| 1,401 | 2026-03-04 | [`INC-00233`](docs/incidents/2026.md#inc-00233) | AI Systems Used in US and Israeli Military Operations Cause Lethal Harm | Critical | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
-| 1,402 | 2026-03-04 | [`INC-00328`](docs/incidents/2026.md#inc-00328) | AI-Driven Work Management Causes Harm to Workers | Critical |  |  |  |
-| 1,403 | 2026-03-04 | [`INC-00357`](docs/incidents/2026.md#inc-00357) | AI-Enabled Tycoon 2FA Phishing Platform Disrupted After Global Harm | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
-| 1,404 | 2026-03-04 | [`INC-00361`](docs/incidents/2026.md#inc-00361) | AI-Facilitated Sexual Violence Against Children in Brazil | Medium | LLM05 | ASI09 |  |
-| 1,405 | 2026-03-04 | [`INC-00470`](docs/incidents/2026.md#inc-00470) | AI-Generated Fake War Videos Spread via Hacked Accounts on X | High | LLM05, LLM09 | ASI05 |  |
-| 1,406 | 2026-03-04 | [`INC-00507`](docs/incidents/2026.md#inc-00507) | AI-Generated Translations Introduce Errors in Wikipedia Articles | High | LLM05, LLM09 | ASI05 |  |
-| 1,407 | 2026-03-04 | [`INC-00526`](docs/incidents/2026.md#inc-00526) | AI-Manipulated Images Used to Bypass Facial Recognition in Bank Fraud Scheme in Japan | High |  | ASI09 |  |
-| 1,408 | 2026-03-04 | [`INC-00933`](docs/incidents/2026.md#inc-00933) | Embraer and Valkyrie Aero Integrate AI-Powered Anti-Drone System into Super Tucano | High | LLM05 | ASI05 |  |
-| 1,409 | 2026-03-04 | [`INC-01223`](docs/incidents/2026.md#inc-01223) | India Develops AI-Enabled Bodyguard Satellites for Space Security | Critical | LLM05 | ASI05 |  |
-| 1,410 | 2026-03-04 | [`INC-01536`](docs/incidents/2026.md#inc-01536) | Nippon Life Alleged ChatGPT Practiced Law Without a License in Illinois Disability Case | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,411 | 2026-03-04 | [`INC-01737`](docs/incidents/2026.md#inc-01737) | Risks of Autonomous AI Agent Interactions and Governance Challenges | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 1,412 | 2026-03-04 | [`INC-01743`](docs/incidents/2026.md#inc-01743) | Romanian Company Launches AI-Powered Autonomous Drone Countermeasure System | High | LLM05 | ASI05 |  |
-| 1,413 | 2026-03-03 | [`INC-00094`](docs/incidents/2026.md#inc-00094) | AI Chatbot Biases Influence Public Political Opinions | High | LLM05 | ASI05 |  |
-| 1,414 | 2026-03-03 | [`INC-00095`](docs/incidents/2026.md#inc-00095) | AI Chatbot Conversations Used as Evidence in Antitrust Investigations Lead to Major Fines | Medium |  |  |  |
-| 1,415 | 2026-03-03 | [`INC-00176`](docs/incidents/2026.md#inc-00176) | AI Language Models Reinforce Gender Stereotypes and Inequality Among Young Women | High | LLM05 | ASI05 |  |
-| 1,416 | 2026-03-03 | [`INC-00178`](docs/incidents/2026.md#inc-00178) | AI License Plate Readers Breach Privacy Laws in California | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,417 | 2026-03-03 | [`INC-00313`](docs/incidents/2026.md#inc-00313) | AI-Driven Online Violence Against Women in Spain | Medium | LLM09 | ASI09 |  |
-| 1,418 | 2026-03-03 | [`INC-00325`](docs/incidents/2026.md#inc-00325) | AI-Driven Surveillance Enables Assassination of Iran's Supreme Leader | Critical | LLM05 | ASI05 |  |
-| 1,419 | 2026-03-03 | [`INC-00348`](docs/incidents/2026.md#inc-00348) | AI-Enabled Iranian Drone Strike Kills US Soldiers in Kuwait | Critical | LLM05 | ASI05 |  |
-| 1,420 | 2026-03-03 | [`INC-00436`](docs/incidents/2026.md#inc-00436) | AI-Generated Disinformation Undermines Nepal's Election | Medium | LLM09 | ASI09 |  |
-| 1,421 | 2026-03-03 | [`INC-00531`](docs/incidents/2026.md#inc-00531) | AI-Powered Airstrikes Accelerate Lethal Decision-Making in Iran Conflict | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
-| 1,422 | 2026-03-03 | [`INC-00534`](docs/incidents/2026.md#inc-00534) | AI-Powered Avalanche Warning System Deployed in Austrian Ski Resort | Critical |  |  |  |
-| 1,423 | 2026-03-03 | [`INC-01070`](docs/incidents/2026.md#inc-01070) | Georgia Senator Uses AI to Create Islamophobic Campaign Ad, Sparks Backlash | Medium |  |  |  |
-| 1,424 | 2026-03-03 | [`INC-01654`](docs/incidents/2026.md#inc-01654) | Police Use Facial Recognition AI for Public Safety and Arrests in UK Cities | High | LLM05 | ASI05 |  |
-| 1,425 | 2026-03-03 | [`INC-01952`](docs/incidents/2026.md#inc-01952) | UK Startup Develops AI for Autonomous Military Drone Teams | Medium |  |  |  |
-| 1,426 | 2026-03-03 | [`INC-02117`](docs/incidents/2026.md#inc-02117) | Zero-Click Prompt Injection in Perplexity's Comet AI Browser Enables Credential Theft | High | LLM01, LLM02 | ASI01, ASI02 |  |
-| 1,427 | 2026-03-02 | [`INC-00090`](docs/incidents/2026.md#inc-00090) | AI Cancer Pathology Tools Risk Unreliable Diagnoses Due to Shortcut Learning | Medium |  |  |  |
-| 1,428 | 2026-03-02 | [`INC-00112`](docs/incidents/2026.md#inc-00112) | AI Chatbots in Mental Health Counseling Pose Ethical and Safety Risks, Study Finds | High | LLM05 | ASI05 |  |
-| 1,429 | 2026-03-02 | [`INC-00154`](docs/incidents/2026.md#inc-00154) | AI Deepfake Voice Scams Target 1 in 4 Americans, Causing Financial and Emotional Harm | Medium | LLM09 | ASI09 |  |
-| 1,430 | 2026-03-02 | [`INC-00312`](docs/incidents/2026.md#inc-00312) | AI-Driven Online Financial Scams Surge in Bulgaria | Medium | LLM09 | ASI09 |  |
-| 1,431 | 2026-03-02 | [`INC-00314`](docs/incidents/2026.md#inc-00314) | AI-Driven Phishing Attacks Bypass Microsoft Security, Compromise Thousands | High | LLM02 | ASI03, ASI09 |  |
-| 1,432 | 2026-03-02 | [`INC-00354`](docs/incidents/2026.md#inc-00354) | AI-Enabled Shahed Drone Attack Forces Evacuation of British Bases in Cyprus | High | LLM05 | ASI05, ASI10 |  |
-| 1,433 | 2026-03-02 | [`INC-00373`](docs/incidents/2026.md#inc-00373) | AI-Generated Content on Chinese Platforms Causes Harm and Triggers Regulatory Crackdown | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,434 | 2026-03-02 | [`INC-00476`](docs/incidents/2026.md#inc-00476) | AI-Generated Images Enable Sophisticated Refund Fraud on Vinted and E-Commerce Platforms | High | LLM05 | ASI05, ASI09 |  |
-| 1,435 | 2026-03-02 | [`INC-00568`](docs/incidents/2026.md#inc-00568) | AI-Powered WiFi Systems Enable Through-Wall Human Detection, Raising Privacy and Surveillance Concerns | High | LLM05 | ASI05 |  |
-| 1,436 | 2026-03-02 | [`INC-00684`](docs/incidents/2026.md#inc-00684) | Bengaluru Techie Fires Cook After AI Surveillance Detects Theft | High |  |  |  |
-| 1,437 | 2026-03-02 | [`INC-00695`](docs/incidents/2026.md#inc-00695) | Blind YouTuber Applies for Neuralink AI Vision Restoration Trial | High | LLM05 | ASI05 |  |
-| 1,438 | 2026-03-02 | [`INC-00768`](docs/incidents/2026.md#inc-00768) | China Raises Concerns Over US Plans for AI-Powered Cyber Operations | Medium |  |  |  |
-| 1,439 | 2026-03-02 | [`INC-00867`](docs/incidents/2026.md#inc-00867) | Ctrip's AI Pricing Tools Cause Market Disruption and Regulatory Scrutiny | High | LLM05 | ASI05 |  |
-| 1,440 | 2026-03-02 | [`INC-00906`](docs/incidents/2026.md#inc-00906) | DOJ Attorney Reportedly Used AI to File Brief With Purportedly Fabricated Quotes and Misstated Case Holdings | High | LLM09 | ASI09 |  |
-| 1,441 | 2026-03-02 | [`INC-01010`](docs/incidents/2026.md#inc-01010) | Flock Safety License Plate Reader Data Sharing Sparks Privacy and Rights Concerns in California | High | LLM05 | ASI05 |  |
-| 1,442 | 2026-03-02 | [`INC-01108`](docs/incidents/2026.md#inc-01108) | Google Chrome Gemini AI Vulnerability Exposes Users to Surveillance and Data Theft | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 1,443 | 2026-03-02 | [`INC-01145`](docs/incidents/2026.md#inc-01145) | Grok AI Generates Child Sexual Abuse Images, Prompting Garda Investigations | High | LLM05, LLM09 | ASI05 |  |
-| 1,444 | 2026-03-02 | [`INC-01684`](docs/incidents/2026.md#inc-01684) | Proposed AI Data Centre in Durban Raises Resource and Governance Concerns | High | LLM05 | ASI05 |  |
-| 1,445 | 2026-03-02 | [`INC-01734`](docs/incidents/2026.md#inc-01734) | Researchers Warn of Privacy Risks in AI-Based Age Verification Systems | High |  |  |  |
-| 1,446 | 2026-03-02 | [`INC-01766`](docs/incidents/2026.md#inc-01766) | Seoul's AI System Rapidly Deletes Digital Sexual Crime Content Nationwide | Medium |  |  |  |
-| 1,447 | 2026-03-02 | [`INC-01827`](docs/incidents/2026.md#inc-01827) | Supreme Court Flags Use of AI-Generated Fake Judgments in Indian Trial Court | High | LLM05, LLM09 | ASI05 |  |
-| 1,448 | 2026-03-02 | [`INC-01847`](docs/incidents/2026.md#inc-01847) | Telkom Indonesia Warns of Data Leakage Risks from Public AI Use | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,449 | 2026-03-02 | [`INC-02078`](docs/incidents/2026.md#inc-02078) | Waymo Robotaxi Impedes Emergency Response and Is Shot at During Austin Shootings | Critical | LLM05 | ASI05 |  |
-| 1,450 | 2026-03-01 | [`INC-00529`](docs/incidents/2026.md#inc-00529) | AI-Orchestrated Strike Kills Iranian Leader in Tehran | Critical | LLM05, LLM09 | ASI05, ASI10 |  |
-| 1,451 | 2026-03-01 | [`INC-00567`](docs/incidents/2026.md#inc-00567) | AI-Powered WaTracker App Circumvents WhatsApp Privacy Controls | High | LLM05 | ASI05 |  |
-| 1,452 | 2026-03-01 | [`INC-00652`](docs/incidents/2026.md#inc-00652) | Australia Threatens to Block AI Services Over Age Verification Failures | High | LLM05 | ASI05, ASI09 |  |
-| 1,453 | 2026-03-01 | [`INC-00751`](docs/incidents/2026.md#inc-00751) | ChatGPT Linked to Worsening Mental Health and Legal Action Prompts Safeguards | High | LLM05 | ASI09 |  |
-| 1,454 | 2026-03-01 | [`INC-00840`](docs/incidents/2026.md#inc-00840) | Colombian Election Software Faces Allegations of Vulnerabilities and Manipulation Risks | Medium | LLM09 | ASI09 |  |
-| 1,455 | 2026-03-01 | [`INC-00862`](docs/incidents/2026.md#inc-00862) | Critical OpenClaw AI Vulnerability Allows Malicious Websites to Hijack Local AI Agents | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 1,456 | 2026-03-01 | [`INC-01456`](docs/incidents/2026.md#inc-01456) | Misuse and Malfunction of Driver Assistance AI Systems Cause Traffic Accidents in Taiwan and China | Critical | LLM05, LLM09 | ASI05 |  |
-| 1,457 | 2026-03-01 | [`INC-01662`](docs/incidents/2026.md#inc-01662) | Potential AI-Enabled Satellite Warfare Risks Between US and China | Critical | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 1,458 | 2026-03-01 | [`INC-01685`](docs/incidents/2026.md#inc-01685) | Public Boycott of OpenAI After Pentagon AI Deal Raises Military AI Ethics Concerns | Medium | LLM03 | ASI04, ASI10 |  |
-| 1,459 | 2026-03-01 | [`INC-01953`](docs/incidents/2026.md#inc-01953) | UK Teen's Suicide Linked to Harmful AI-Driven Social Media Algorithms | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,460 | 2026-03-01 | [`INC-02020`](docs/incidents/2026.md#inc-02020) | US Military Deploys AI-Enabled LUCAS Suicide Drones Against Iran | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
-| 1,461 | 2026-03-01 | [`INC-02046`](docs/incidents/2026.md#inc-02046) | Virginia Police Violate ALPR Laws, Raising Privacy Concerns | High | LLM05 | ASI05 |  |
-| 1,462 | 2026-03 | [`INC-00004`](docs/incidents/2026.md#inc-00004) | A command injection vulnerability exists in MLflow's model serving container initialization code, specificall… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15379` |
-| 1,463 | 2026-03 | [`INC-00005`](docs/incidents/2026.md#inc-00005) | A command injection vulnerability exists in mlflow/mlflow versions before v3.7.0, specifically in the `mlflow… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-14287` |
-| 1,464 | 2026-03 | [`INC-00006`](docs/incidents/2026.md#inc-00006) | A command injection vulnerability exists in mlflow/mlflow when serving a model with `enable_mlserver=True`. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-0596` |
-| 1,465 | 2026-03 | [`INC-00007`](docs/incidents/2026.md#inc-00007) | A command injection vulnerability in ModelScope's ms-agent versions v1.6.0rc1 and earlier exists, allowing an… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-2256` |
-| 1,466 | 2026-03 | [`INC-00008`](docs/incidents/2026.md#inc-00008) | A cross-session information disclosure vulnerability exists in the awesome-llm-apps project in commit e46690f… | High | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-29872` |
-| 1,467 | 2026-03 | [`INC-00009`](docs/incidents/2026.md#inc-00009) | A directory traversal vulnerability in the agentic-context-engine project versions up to 0.7.1 allows arbitra… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-29870` |
-| 1,468 | 2026-03 | [`INC-00011`](docs/incidents/2026.md#inc-00011) | A path traversal vulnerability exists in the `extract_archive_to_dir` function within the `mlflow/pyfunc/dbco… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15036` |
-| 1,469 | 2026-03 | [`INC-00012`](docs/incidents/2026.md#inc-00012) | A path traversal vulnerability exists in the awesome-llm-apps project in commit e46690f99c3f08be80a9877fab52a… | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-29871` |
-| 1,470 | 2026-03 | [`INC-00014`](docs/incidents/2026.md#inc-00014) | A remote code execution (RCE) vulnerability in OpenClaw Agent Platform v2026.2.6 allows attackers to execute… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30741` |
-| 1,471 | 2026-03 | [`INC-00023`](docs/incidents/2026.md#inc-00023) | A vulnerability in MLflow's pyfunc extraction process allows for arbitrary file writes due to improper handli… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15031` |
-| 1,472 | 2026-03 | [`INC-00024`](docs/incidents/2026.md#inc-00024) | A vulnerability in NLTK versions up to and including 3.9.2 allows arbitrary file read via path traversal in m… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-0847` |
-| 1,473 | 2026-03 | [`INC-00050`](docs/incidents/2026.md#inc-00050) | Agentgateway — Vulnerability (CVE-2026-29791) | Medium | LLM03 | ASI04 | `CVE-2026-29791` |
-| 1,474 | 2026-03 | [`INC-00606`](docs/incidents/2026.md#inc-00606) | Anthropic leaks Claude source code in unsecured data store | High | LLM02, LLM07 | ASI03 |  |
-| 1,475 | 2026-03 | [`INC-00627`](docs/incidents/2026.md#inc-00627) | AnythingLLM Multiple CVEs | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05 | `CVE-2026-24477` (+3) |
-| 1,476 | 2026-03 | [`INC-00630`](docs/incidents/2026.md#inc-00630) | AnythingLLM — Sql Injection (CVE-2026-32628) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-32628` |
-| 1,477 | 2026-03 | [`INC-00632`](docs/incidents/2026.md#inc-00632) | AnythingLLM — Vulnerability (CVE-2026-32715) | Low | LLM03 | ASI03, ASI04 | `CVE-2026-32715` |
-| 1,478 | 2026-03 | [`INC-00633`](docs/incidents/2026.md#inc-00633) | AnythingLLM — Vulnerability (CVE-2026-32717) | Low | LLM03 | ASI03, ASI04 | `CVE-2026-32717` |
-| 1,479 | 2026-03 | [`INC-00636`](docs/incidents/2026.md#inc-00636) | apconw Aix-DB — Sql Injection (CVE-2026-4530) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-3686` (+31) |
-| 1,480 | 2026-03 | [`INC-00671`](docs/incidents/2026.md#inc-00671) | Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |  |
-| 1,481 | 2026-03 | [`INC-00673`](docs/incidents/2026.md#inc-00673) | Azure Data Explorer MCP Server is a Model Context Protocol (MCP) server that enables AI assistants to execute… | High | LLM03 | ASI04 | `CVE-2026-33980` |
-| 1,482 | 2026-03 | [`INC-00686`](docs/incidents/2026.md#inc-00686) | BentoML — Path Traversal (CVE-2026-27905) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27905` |
-| 1,483 | 2026-03 | [`INC-00687`](docs/incidents/2026.md#inc-00687) | BentoML — Rce (CVE-2026-33744) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33744` |
-| 1,484 | 2026-03 | [`INC-00696`](docs/incidents/2026.md#inc-00696) | Blinko — Rce (CVE-2026-23882) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-23882` |
-| 1,485 | 2026-03 | [`INC-00804`](docs/incidents/2026.md#inc-00804) | CKAN MCP Server — Prompt Injection (CVE-2026-33060) | Medium | LLM01, LLM05 | ASI01, ASI03, ASI05 | `CVE-2026-33060` |
-| 1,486 | 2026-03 | [`INC-00810`](docs/incidents/2026.md#inc-00810) | Claude Chrome Extension zero-click XSS prompt injection via any website | High | LLM01, LLM05 | ASI01 |  |
-| 1,487 | 2026-03 | [`INC-00823`](docs/incidents/2026.md#inc-00823) | Claude Code — Vulnerability (CVE-2026-33068) | High | LLM03 | ASI04 | `CVE-2026-33068` |
-| 1,488 | 2026-03 | [`INC-00828`](docs/incidents/2026.md#inc-00828) | Claude Mythos Identifies Thousands of Zero-Day Vulnerabilities | High | LLM10 | ASI02 |  |
-| 1,489 | 2026-03 | [`INC-00831`](docs/incidents/2026.md#inc-00831) | claude-hovercraft executeClaudeCode Command Injection Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15060` |
-| 1,490 | 2026-03 | [`INC-00833`](docs/incidents/2026.md#inc-00833) | Claudy Day -- Claude.ai Prompt Injection Attack Chain | High | LLM01, LLM02, LLM04, LLM07 | ASI01, ASI06, ASI09 |  |
-| 1,491 | 2026-03 | [`INC-00835`](docs/incidents/2026.md#inc-00835) | Cloud CLI (aka Claude Code UI) is a desktop and mobile UI for Claude Code, Cursor CLI, Codex, and Gemini-CLI. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31861` (+2) |
-| 1,492 | 2026-03 | [`INC-00860`](docs/incidents/2026.md#inc-00860) | CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.) | Critical | LLM01, LLM02, LLM03, LLM05, LLM08 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-2275` (+3) |
-| 1,493 | 2026-03 | [`INC-00870`](docs/incidents/2026.md#inc-00870) | Cursor — Prompt Injection (CVE-2026-31854) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-31854` |
-| 1,494 | 2026-03 | [`INC-00895`](docs/incidents/2026.md#inc-00895) | Dify — Xss (CVE-2026-21866) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-21866` |
-| 1,495 | 2026-03 | [`INC-00898`](docs/incidents/2026.md#inc-00898) | Discourse — Prompt Injection (CVE-2026-27740) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-27740` |
-| 1,496 | 2026-03 | [`INC-00899`](docs/incidents/2026.md#inc-00899) | Discourse — Vulnerability (CVE-2026-32114) | Medium | LLM03 | ASI04 | `CVE-2026-32114` |
-| 1,497 | 2026-03 | [`INC-00928`](docs/incidents/2026.md#inc-00928) | Eight Attack Vectors in AWS Bedrock Agents | Medium | LLM01, LLM02, LLM04, LLM08 | ASI01, ASI02, ASI06 |  |
-| 1,498 | 2026-03 | [`INC-00989`](docs/incidents/2026.md#inc-00989) | FastGPT — Rce (CVE-2026-33075) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-33075` |
-| 1,499 | 2026-03 | [`INC-00996`](docs/incidents/2026.md#inc-00996) | FastGPT — Vulnerability (CVE-2026-32128) | Medium | LLM03 | ASI04 | `CVE-2026-32128` |
-| 1,500 | 2026-03 | [`INC-01001`](docs/incidents/2026.md#inc-01001) | FastMCP — Vulnerability (CVE-2025-69196) | Medium | LLM03 | ASI04 | `CVE-2025-69196` |
-| 1,501 | 2026-03 | [`INC-01023`](docs/incidents/2026.md#inc-01023) | Flowise — Ssrf (CVE-2026-31829) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31829` |
-| 1,502 | 2026-03 | [`INC-01027`](docs/incidents/2026.md#inc-01027) | Flowise — Vulnerability (CVE-2026-30820) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-30820` (+4) |
-| 1,503 | 2026-03 | [`INC-01088`](docs/incidents/2026.md#inc-01088) | Giskard — Rce (CVE-2026-34172) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34172` |
-| 1,504 | 2026-03 | [`INC-01091`](docs/incidents/2026.md#inc-01091) | Glances — Vulnerability (CVE-2026-32632) | Medium | LLM03 | ASI04 | `CVE-2026-32632` |
-| 1,505 | 2026-03 | [`INC-01092`](docs/incidents/2026.md#inc-01092) | GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 1,506 | 2026-03 | [`INC-01139`](docs/incidents/2026.md#inc-01139) | Graphiti — Prompt Injection (CVE-2026-32247) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-32247` |
-| 1,507 | 2026-03 | [`INC-01152`](docs/incidents/2026.md#inc-01152) | GROWI OpenAI thread/message API endpoints do not perform authorization. | High | LLM03 | ASI04 | `CVE-2026-25083` |
-| 1,508 | 2026-03 | [`INC-01153`](docs/incidents/2026.md#inc-01153) | ha-mcp — Vulnerability (CVE-2026-32111) | Medium | LLM03 | ASI04 | `CVE-2026-32111` |
-| 1,509 | 2026-03 | [`INC-01154`](docs/incidents/2026.md#inc-01154) | ha-mcp — Vulnerability (CVE-2026-32112) | Medium | LLM03 | ASI04 | `CVE-2026-32112` |
-| 1,510 | 2026-03 | [`INC-01172`](docs/incidents/2026.md#inc-01172) | Hyperterse — Vulnerability (CVE-2026-31841) | Medium | LLM03 | ASI04 | `CVE-2026-31841` |
-| 1,511 | 2026-03 | [`INC-01179`](docs/incidents/2026.md#inc-01179) | Image-Based Prompt Injection: Hijacking MLLMs via Visually Embedded Instructions | High | LLM01 | ASI01 |  |
-| 1,512 | 2026-03 | [`INC-01189`](docs/incidents/2026.md#inc-01189) | Improper Protection of Alternate Path exists in the no-access and workdir feature of the AWS API MCP Server v… | Medium | LLM03 | ASI04 | `CVE-2026-4270` |
-| 1,513 | 2026-03 | [`INC-01192`](docs/incidents/2026.md#inc-01192) | In its design for automatic terminal command execution, AI Code offers two options: Execute safe commands and… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2024-48139` (+3) |
-| 1,514 | 2026-03 | [`INC-01193`](docs/incidents/2026.md#inc-01193) | In its design for automatic terminal command execution, HAI Build Code Generator offers two options: Execute… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30308` |
-| 1,515 | 2026-03 | [`INC-01194`](docs/incidents/2026.md#inc-01194) | In its design for automatic terminal command execution, Sixth offers two options: Execute safe commands and E… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30310` |
-| 1,516 | 2026-03 | [`INC-01201`](docs/incidents/2026.md#inc-01201) | In the latest version of mlflow/mlflow, when the `basic-auth` app is enabled, tracing and assessment endpoint… | High | LLM03 | ASI04 | `CVE-2025-15381` |
-| 1,517 | 2026-03 | [`INC-01216`](docs/incidents/2026.md#inc-01216) | In the Linux kernel, the following vulnerability has been resolved: tracing: Add NULL pointer check to trigge… | Medium | LLM03 | ASI04 | `CVE-2026-23309` |
-| 1,518 | 2026-03 | [`INC-01218`](docs/incidents/2026.md#inc-01218) | In the Linux kernel, the following vulnerability has been resolved: xfs: check for deleted cursors when reval… | Medium | LLM03 | ASI04 | `CVE-2026-23249` |
-| 1,519 | 2026-03 | [`INC-01282`](docs/incidents/2026.md#inc-01282) | Keystone — Auth Bypass (CVE-2026-33326) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33326` |
-| 1,520 | 2026-03 | [`INC-01288`](docs/incidents/2026.md#inc-01288) | LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs | Critical | LLM01, LLM06, LLM07 | ASI01, ASI02, ASI03, ASI06 |  |
-| 1,521 | 2026-03 | [`INC-01289`](docs/incidents/2026.md#inc-01289) | LangBot — Xss (CVE-2026-28509) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28509` |
-| 1,522 | 2026-03 | [`INC-01290`](docs/incidents/2026.md#inc-01290) | LangChain core prompt-loading path traversal (langchain_core/prompts/loading.py) | High | LLM02, LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34070` |
-| 1,523 | 2026-03 | [`INC-01298`](docs/incidents/2026.md#inc-01298) | Langflow Unauthenticated RCE (CVE-2026-33017) | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 | `CVE-2025-3248`, `CVE-2026-33017` |
-| 1,524 | 2026-03 | [`INC-01300`](docs/incidents/2026.md#inc-01300) | Langflow — Command Injection (CVE-2026-33475) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-33475` |
-| 1,525 | 2026-03 | [`INC-01301`](docs/incidents/2026.md#inc-01301) | Langflow — Path Traversal (CVE-2026-33309) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33309` |
-| 1,526 | 2026-03 | [`INC-01303`](docs/incidents/2026.md#inc-01303) | Langflow — Vulnerability (CVE-2026-33053) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33053` |
-| 1,527 | 2026-03 | [`INC-01304`](docs/incidents/2026.md#inc-01304) | Langflow — Vulnerability (CVE-2026-33484) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33484` |
-| 1,528 | 2026-03 | [`INC-01305`](docs/incidents/2026.md#inc-01305) | Langflow — Vulnerability (CVE-2026-33497) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33497` |
-| 1,529 | 2026-03 | [`INC-01306`](docs/incidents/2026.md#inc-01306) | Langflow — Vulnerability (CVE-2026-33873) | Critical | LLM03 | ASI04 | `CVE-2026-33873` |
-| 1,530 | 2026-03 | [`INC-01307`](docs/incidents/2026.md#inc-01307) | Langflow — Vulnerability (CVE-2026-34046) | High | LLM03 | ASI03, ASI04 | `CVE-2026-34046` |
-| 1,531 | 2026-03 | [`INC-01330`](docs/incidents/2026.md#inc-01330) | LibreChat — Dos (CVE-2026-31949) | Medium | LLM03 | ASI04 | `CVE-2026-31949` |
-| 1,532 | 2026-03 | [`INC-01332`](docs/incidents/2026.md#inc-01332) | LibreChat — Ssrf (CVE-2026-31943) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31943` |
-| 1,533 | 2026-03 | [`INC-01333`](docs/incidents/2026.md#inc-01333) | LibreChat — Ssrf (CVE-2026-31945) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31945` |
-| 1,534 | 2026-03 | [`INC-01334`](docs/incidents/2026.md#inc-01334) | LibreChat — Vulnerability (CVE-2026-31944) | High | LLM03 | ASI04 | `CVE-2026-31944` |
-| 1,535 | 2026-03 | [`INC-01335`](docs/incidents/2026.md#inc-01335) | LibreChat — Vulnerability (CVE-2026-31950) | Medium | LLM03 | ASI04 | `CVE-2026-31950` |
-| 1,536 | 2026-03 | [`INC-01338`](docs/incidents/2026.md#inc-01338) | LiteLLM /guardrails/test_custom_code sandbox escape -> RCE | High | LLM06 | ASI01, ASI05 | `CVE-2026-40217` |
-| 1,537 | 2026-03 | [`INC-01340`](docs/incidents/2026.md#inc-01340) | LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads | Critical | LLM03, LLM04, LLM05 | ASI03, ASI04, ASI05 |  |
-| 1,538 | 2026-03 | [`INC-01346`](docs/incidents/2026.md#inc-01346) | llama.cpp — Rce (CVE-2026-33298) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33298` |
-| 1,539 | 2026-03 | [`INC-01347`](docs/incidents/2026.md#inc-01347) | llama.cpp — Vulnerability (CVE-2026-27940) | High | LLM03 | ASI04 | `CVE-2026-27940` |
-| 1,540 | 2026-03 | [`INC-01376`](docs/incidents/2026.md#inc-01376) | MCP Atlassian — Rce (CVE-2026-27825) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27825` |
-| 1,541 | 2026-03 | [`INC-01377`](docs/incidents/2026.md#inc-01377) | MCP Atlassian — Vulnerability (CVE-2026-27826) | High | LLM03 | ASI03, ASI04 | `CVE-2026-27826` |
-| 1,542 | 2026-03 | [`INC-01379`](docs/incidents/2026.md#inc-01379) | MCP Java SDK — Vulnerability (CVE-2026-34237) | Medium | LLM03 | ASI04 | `CVE-2026-34237` |
-| 1,543 | 2026-03 | [`INC-01382`](docs/incidents/2026.md#inc-01382) | MCP Ruby SDK — Vulnerability (CVE-2026-33946) | Medium | LLM03 | ASI04 | `CVE-2026-33946` |
-| 1,544 | 2026-03 | [`INC-01386`](docs/incidents/2026.md#inc-01386) | mcp-memory-service — Vulnerability (CVE-2026-29787) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-29787` |
-| 1,545 | 2026-03 | [`INC-01387`](docs/incidents/2026.md#inc-01387) | mcp-memory-service — Vulnerability (CVE-2026-33010) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33010` |
-| 1,546 | 2026-03 | [`INC-01391`](docs/incidents/2026.md#inc-01391) | MCPwned -- Azure MCP Server SSRF & Cloud Takeover (CVE-2026-26118) | Critical | LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-26118` |
-| 1,547 | 2026-03 | [`INC-01411`](docs/incidents/2026.md#inc-01411) | Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data | Critical | LLM06, LLM09 | ASI08, ASI09, ASI10 |  |
-| 1,548 | 2026-03 | [`INC-01429`](docs/incidents/2026.md#inc-01429) | Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions | Critical | LLM01, LLM03, LLM04, LLM05 | ASI01, ASI04, ASI05, ASI06, ASI09 | `CVE-2026-26133` |
-| 1,549 | 2026-03 | [`INC-01440`](docs/incidents/2026.md#inc-01440) | Microsoft Semantic Kernel RCE (CVE-2026-26030) | Critical | LLM04, LLM05, LLM08 | ASI02, ASI05 | `CVE-2026-26030` |
-| 1,550 | 2026-03 | [`INC-01460`](docs/incidents/2026.md#inc-01460) | Mobile Next — Path Traversal (CVE-2026-33989) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33989` |
-| 1,551 | 2026-03 | [`INC-01477`](docs/incidents/2026.md#inc-01477) | n8n — Data Exfiltration (CVE-2026-33749) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-33749` |
-| 1,552 | 2026-03 | [`INC-01481`](docs/incidents/2026.md#inc-01481) | n8n — Info Disclosure (CVE-2026-27496) | Critical | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-27493` (+4) |
-| 1,553 | 2026-03 | [`INC-01486`](docs/incidents/2026.md#inc-01486) | n8n — Rce (CVE-2026-33660) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33660` |
-| 1,554 | 2026-03 | [`INC-01487`](docs/incidents/2026.md#inc-01487) | n8n — Rce (CVE-2026-33696) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33696` |
-| 1,555 | 2026-03 | [`INC-01491`](docs/incidents/2026.md#inc-01491) | n8n — Sql Injection (CVE-2026-33713) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33713` |
-| 1,556 | 2026-03 | [`INC-01496`](docs/incidents/2026.md#inc-01496) | n8n — Vulnerability (CVE-2026-33663) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33663` |
-| 1,557 | 2026-03 | [`INC-01497`](docs/incidents/2026.md#inc-01497) | n8n — Vulnerability (CVE-2026-33665) | High | LLM03 | ASI04 | `CVE-2026-33665` |
-| 1,558 | 2026-03 | [`INC-01498`](docs/incidents/2026.md#inc-01498) | n8n — Vulnerability (CVE-2026-33720) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33720` |
-| 1,559 | 2026-03 | [`INC-01499`](docs/incidents/2026.md#inc-01499) | n8n — Vulnerability (CVE-2026-33722) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33722` |
-| 1,560 | 2026-03 | [`INC-01500`](docs/incidents/2026.md#inc-01500) | n8n — Vulnerability (CVE-2026-33724) | High | LLM03 | ASI04 | `CVE-2026-33724` |
-| 1,561 | 2026-03 | [`INC-01501`](docs/incidents/2026.md#inc-01501) | n8n — Vulnerability (CVE-2026-33751) | Medium | LLM03 | ASI04 | `CVE-2026-33751` |
-| 1,562 | 2026-03 | [`INC-01515`](docs/incidents/2026.md#inc-01515) | nanobot — Prompt Injection (CVE-2026-33654) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-33654` |
-| 1,563 | 2026-03 | [`INC-01521`](docs/incidents/2026.md#inc-01521) | New API — Auth Bypass (CVE-2026-30886) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-30886` |
-| 1,564 | 2026-03 | [`INC-01529`](docs/incidents/2026.md#inc-01529) | Nginx UI — Vulnerability (CVE-2026-33032) | Critical | LLM03 | ASI04 | `CVE-2026-33032` |
-| 1,565 | 2026-03 | [`INC-01530`](docs/incidents/2026.md#inc-01530) | Nhost — Vulnerability (CVE-2026-34200) | High | LLM03 | ASI03, ASI04 | `CVE-2026-34200` |
-| 1,566 | 2026-03 | [`INC-01563`](docs/incidents/2026.md#inc-01563) | Open WebUI — Auth Bypass (CVE-2026-29070) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-29070` |
-| 1,567 | 2026-03 | [`INC-01565`](docs/incidents/2026.md#inc-01565) | Open WebUI — Info Disclosure (CVE-2026-28786) | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-28786` |
-| 1,568 | 2026-03 | [`INC-01567`](docs/incidents/2026.md#inc-01567) | Open WebUI — Vulnerability (CVE-2026-28788) | High | LLM03 | ASI04 | `CVE-2026-28788` |
-| 1,569 | 2026-03 | [`INC-01568`](docs/incidents/2026.md#inc-01568) | Open WebUI — Vulnerability (CVE-2026-29071) | Low | LLM03 | ASI04 | `CVE-2026-29071` |
-| 1,570 | 2026-03 | [`INC-01587`](docs/incidents/2026.md#inc-01587) | OpenChatBI — Path Traversal (CVE-2026-28795) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28795` |
-| 1,571 | 2026-03 | [`INC-01602`](docs/incidents/2026.md#inc-01602) | OpenClaw versions prior to 2026.2.14 contain server-side request forgery vulnerabilities in the Feishu extens… | High | LLM01, LLM03, LLM05 | ASI01, ASI03, ASI04, ASI05 | `CVE-2026-26320` (+3) |
-| 1,572 | 2026-03 | [`INC-01608`](docs/incidents/2026.md#inc-01608) | OpenHands is software for AI-driven development. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33718` |
-| 1,573 | 2026-03 | [`INC-01637`](docs/incidents/2026.md#inc-01637) | PerplexedBrowser -- Perplexity Comet Agentic Browser Vulnerabilities | Medium | LLM01 | ASI01, ASI02, ASI09 |  |
-| 1,574 | 2026-03 | [`INC-01643`](docs/incidents/2026.md#inc-01643) | PinchTab — Auth Bypass (CVE-2026-33622) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33622` |
-| 1,575 | 2026-03 | [`INC-01644`](docs/incidents/2026.md#inc-01644) | PinchTab — Command Injection (CVE-2026-33623) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33623` |
-| 1,576 | 2026-03 | [`INC-01645`](docs/incidents/2026.md#inc-01645) | PinchTab — Ssrf (CVE-2026-30834) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30834` |
-| 1,577 | 2026-03 | [`INC-01646`](docs/incidents/2026.md#inc-01646) | PinchTab — Ssrf (CVE-2026-33081) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33081` |
-| 1,578 | 2026-03 | [`INC-01647`](docs/incidents/2026.md#inc-01647) | PinchTab — Ssrf (CVE-2026-33619) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-33619` (+2) |
-| 1,579 | 2026-03 | [`INC-01648`](docs/incidents/2026.md#inc-01648) | PingPong — Vulnerability (CVE-2026-32097) | High | LLM03 | ASI04 | `CVE-2026-32097` |
-| 1,580 | 2026-03 | [`INC-01680`](docs/incidents/2026.md#inc-01680) | Prompt injection vulnerability in 1millionbot Millie chatbot that occurs when a user manages to evade chat re… | High | LLM01, LLM05 | ASI01, ASI03, ASI05 | `CVE-2026-4399` |
-| 1,581 | 2026-03 | [`INC-01683`](docs/incidents/2026.md#inc-01683) | PromtEngineer localGPT — Vulnerability (CVE-2026-5002) | High | LLM03 | ASI04 | `CVE-2026-5002` |
-| 1,582 | 2026-03 | [`INC-01724`](docs/incidents/2026.md#inc-01724) | Raytha CMS is vulnerable to Stored XSS via FieldValues[1].Value parameter in post editing functionality. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-69236` (+2) |
-| 1,583 | 2026-03 | [`INC-01769`](docs/incidents/2026.md#inc-01769) | SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989) | Critical | LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-25528` (+4) |
-| 1,584 | 2026-03 | [`INC-01804`](docs/incidents/2026.md#inc-01804) | SQLBot — Prompt Injection (CVE-2026-32622) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-32622` |
-| 1,585 | 2026-03 | [`INC-01806`](docs/incidents/2026.md#inc-01806) | SQLBot — Ssrf (CVE-2026-32949) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-32949`, `CVE-2026-32950` |
-| 1,586 | 2026-03 | [`INC-01883`](docs/incidents/2026.md#inc-01883) | The AI ChatBot with ChatGPT and Content Generator by AYS plugin for WordPress is vulnerable to unauthorized a… | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2025-13378` (+2) |
-| 1,587 | 2026-03 | [`INC-01886`](docs/incidents/2026.md#inc-01886) | The Claude SDK for Python provides access to the Claude API from Python applications. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34450`, `CVE-2026-34452` |
-| 1,588 | 2026-03 | [`INC-01889`](docs/incidents/2026.md#inc-01889) | The Greenshift – animation and page builder blocks plugin for WordPress is vulnerable to Sensitive Informatio… | Medium | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-2589` |
-| 1,589 | 2026-03 | [`INC-01896`](docs/incidents/2026.md#inc-01896) | The shell tool within GitHub Copilot CLI versions prior to and including 0.0.422 can allow arbitrary code exe… | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-29783` |
-| 1,590 | 2026-03 | [`INC-01912`](docs/incidents/2026.md#inc-01912) | Trivy Vulnerability Scanner — Info Disclosure (CVE-2026-28353) | Medium | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-28353` |
-| 1,591 | 2026-03 | [`INC-01976`](docs/incidents/2026.md#inc-01976) | Uncontrolled search path elements in Anthropic Claude for Windows installer (Claude Setup.exe) versions prior… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-22561` |
-| 1,592 | 2026-03 | [`INC-02050`](docs/incidents/2026.md#inc-02050) | vLLM — Ssrf (CVE-2026-25960) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-24779`, `CVE-2026-25960` |
-| 1,593 | 2026-03 | [`INC-02062`](docs/incidents/2026.md#inc-02062) | Wallos — Ssrf (CVE-2026-33401) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33401` |
-| 1,594 | 2026-03 | [`INC-02082`](docs/incidents/2026.md#inc-02082) | Wekan — Vulnerability (CVE-2026-30847) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-30847` |
-| 1,595 | 2026-03 | [`INC-02083`](docs/incidents/2026.md#inc-02083) | WeKnora — Auth Bypass (CVE-2026-30855) | High | LLM03 | ASI04 | `CVE-2026-30855` |
-| 1,596 | 2026-03 | [`INC-02084`](docs/incidents/2026.md#inc-02084) | WeKnora — Auth Bypass (CVE-2026-30857) | Medium | LLM03 | ASI04 | `CVE-2026-30857` |
-| 1,597 | 2026-03 | [`INC-02085`](docs/incidents/2026.md#inc-02085) | WeKnora — Auth Bypass (CVE-2026-30859) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-30859` |
-| 1,598 | 2026-03 | [`INC-02086`](docs/incidents/2026.md#inc-02086) | WeKnora — Command Injection (CVE-2026-30861) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30861` |
-| 1,599 | 2026-03 | [`INC-02087`](docs/incidents/2026.md#inc-02087) | WeKnora — Data Exfiltration (CVE-2026-30858) | Medium | LLM03 | ASI04 | `CVE-2026-30858` |
-| 1,600 | 2026-03 | [`INC-02089`](docs/incidents/2026.md#inc-02089) | WeKnora — Prompt Injection (CVE-2026-30856) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30856` |
-| 1,601 | 2026-03 | [`INC-02090`](docs/incidents/2026.md#inc-02090) | WeKnora — Sql Injection (CVE-2026-30860) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30860` |
-| 1,602 | 2026-03 | [`INC-02091`](docs/incidents/2026.md#inc-02091) | WeKnora — Ssrf (CVE-2026-30247) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30247` |
-| 1,603 | 2026-03 | [`INC-02105`](docs/incidents/2026.md#inc-02105) | XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent | Critical | LLM06 | ASI05, ASI10 | `CVE-2026-21536` |
-| 1,604 | 2026-03 | [`INC-02107`](docs/incidents/2026.md#inc-02107) | yauzl (aka Yet Another Unzip Library) version 3.2.0 for Node.js contains an off-by-one error in the NTFS exte… | Medium | LLM03 | ASI04 | `CVE-2026-31988` |
-| 1,605 | 2026-02-28 | [`INC-00231`](docs/incidents/2026.md#inc-00231) | AI Systems Used for Target Selection and Attacks in Global Conflicts | High | LLM05, LLM09 | ASI05 |  |
-| 1,606 | 2026-02-28 | [`INC-00349`](docs/incidents/2026.md#inc-00349) | AI-Enabled Iranian Shahed Drones Cause Harm in Ukraine and Persian Gulf | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,607 | 2026-02-28 | [`INC-00350`](docs/incidents/2026.md#inc-00350) | AI-Enabled Iron Beam and Iron Dome Systems Deployed in Israeli Defense | High | LLM05 | ASI05 |  |
-| 1,608 | 2026-02-28 | [`INC-00521`](docs/incidents/2026.md#inc-00521) | AI-Generated WeChat IDs Lead to Privacy Breaches and Unsolicited Contacts | High |  |  |  |
-| 1,609 | 2026-02-28 | [`INC-00838`](docs/incidents/2026.md#inc-00838) | CodeWall&#x27;s Autonomous Agent Reportedly Obtained Unauthorized Access to McKinsey&#x27;s Lilli AI Platform… | High | LLM02 | ASI03 |  |
-| 1,610 | 2026-02-28 | [`INC-00927`](docs/incidents/2026.md#inc-00927) | Egypt Plans AI-Driven Military Weapons Development | Critical | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
-| 1,611 | 2026-02-28 | [`INC-01696`](docs/incidents/2026.md#inc-01696) | Purported AI-Generated War Footage Reportedly Circulated Widely Online During the Opening Phase of the War in… | Critical | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
-| 1,612 | 2026-02-28 | [`INC-01858`](docs/incidents/2026.md#inc-01858) | Tesla Cybertruck Autopilot Crash Leads to Lawsuit in Houston | Critical |  |  |  |
-| 1,613 | 2026-02-28 | [`INC-02022`](docs/incidents/2026.md#inc-02022) | US Military Uses Anthropic AI in Iran Strike Amid Ban, OpenAI Replaces Anthropic in Pentagon Network | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
-| 1,614 | 2026-02-28 | [`INC-02033`](docs/incidents/2026.md#inc-02033) | US Uses Anthropic AI in Lethal Military Strikes on Iran | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
-| 1,615 | 2026-02-27 | [`INC-00166`](docs/incidents/2026.md#inc-00166) | AI Facial Recognition Leads to 270 Arrests at São Paulo Stadiums | High | LLM05 | ASI05 |  |
-| 1,616 | 2026-02-27 | [`INC-00302`](docs/incidents/2026.md#inc-00302) | AI-Driven Health Misinformation Harms Patients in Slovakia | Medium | LLM09 |  |  |
-| 1,617 | 2026-02-27 | [`INC-00433`](docs/incidents/2026.md#inc-00433) | AI-Generated Disinformation Targets Paris Municipal Election Candidates | High | LLM05, LLM09 | ASI05 |  |
-| 1,618 | 2026-02-27 | [`INC-00720`](docs/incidents/2026.md#inc-00720) | Bybit's AI System Blocks $300 Million in Crypto Fraud Amid Surge in AI-Driven Scams | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,619 | 2026-02-27 | [`INC-00913`](docs/incidents/2026.md#inc-00913) | Dutch Authors and Journalists Demand Meta Stop Using Copyrighted Works for AI Training | High |  |  |  |
-| 1,620 | 2026-02-27 | [`INC-00930`](docs/incidents/2026.md#inc-00930) | Elon Musk Accuses OpenAI's ChatGPT of Causing User Harm Amid Legal Disputes | Medium | LLM02, LLM05 | ASI03, ASI09 |  |
-| 1,621 | 2026-02-27 | [`INC-00977`](docs/incidents/2026.md#inc-00977) | Exposed Google API Keys Enable Unauthorized Access to Gemini AI and Data | High | LLM02 | ASI03 |  |
-| 1,622 | 2026-02-27 | [`INC-01011`](docs/incidents/2026.md#inc-01011) | Flock Safety Sued for AI-Driven License Plate Data Privacy Violations in California | High | LLM05 | ASI05 |  |
-| 1,623 | 2026-02-27 | [`INC-01105`](docs/incidents/2026.md#inc-01105) | Google and OpenAI Employees Protest Pentagon AI Use as OpenAI Confirms Military Deployment | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
-| 1,624 | 2026-02-27 | [`INC-01162`](docs/incidents/2026.md#inc-01162) | Health Experts Warn of Risks in AI-Driven Self-Diagnosis in India | Medium |  |  |  |
-| 1,625 | 2026-02-27 | [`INC-01400`](docs/incidents/2026.md#inc-01400) | Meta AI Smart Glasses Reportedly Exposed Intimate User Imagery and Video to Human Reviewers in Kenya | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,626 | 2026-02-27 | [`INC-01413`](docs/incidents/2026.md#inc-01413) | Meta Sues Over Deepfake-Driven Health Fraud in Brazil | Medium | LLM09 | ASI09 |  |
-| 1,627 | 2026-02-27 | [`INC-01531`](docs/incidents/2026.md#inc-01531) | NHRC Probes AI Education Project Over Children's Data Privacy Risks | High | LLM02 | ASI03 |  |
-| 1,628 | 2026-02-27 | [`INC-01868`](docs/incidents/2026.md#inc-01868) | Tesla Plans to Deploy AI-Driven Robotaxis and Robots in Europe | Medium |  |  |  |
-| 1,629 | 2026-02-27 | [`INC-02066`](docs/incidents/2026.md#inc-02066) | Washington State DOL's AI Phone System Reportedly Failed to Provide Spanish-Language Service to Callers Reque… | High | LLM05, LLM09 | ASI09 |  |
-| 1,630 | 2026-02-26 | [`INC-00037`](docs/incidents/2026.md#inc-00037) | Abu Dhabi Launches Supervised Trials of Tesla Self-Driving Cars and Autonomous Trucks | Medium |  |  |  |
-| 1,631 | 2026-02-26 | [`INC-00199`](docs/incidents/2026.md#inc-00199) | AI Recruitment Tool Causes Discriminatory Job Ads, DOJ Fines IT Firm | High |  |  |  |
-| 1,632 | 2026-02-26 | [`INC-00244`](docs/incidents/2026.md#inc-00244) | AI Traffic Cameras in Western Australia Cause License Loss and Fines for Drivers | High | LLM05 | ASI05 |  |
-| 1,633 | 2026-02-26 | [`INC-00366`](docs/incidents/2026.md#inc-00366) | AI-Generated Child Sexual Abuse Images Surge in Japan | Medium | LLM09 | ASI09 |  |
-| 1,634 | 2026-02-26 | [`INC-00678`](docs/incidents/2026.md#inc-00678) | Bank of Italy Warned That Purported Deepfakes of Governor Fabio Panetta Were Used in Allegedly Fraudulent Inv… | High | LLM09 | ASI09 |  |
-| 1,635 | 2026-02-26 | [`INC-00697`](docs/incidents/2026.md#inc-00697) | Block Lays Off 40% of Workforce Due to AI Automation | High | LLM05 | ASI05 |  |
-| 1,636 | 2026-02-26 | [`INC-00781`](docs/incidents/2026.md#inc-00781) | Chinese Actor Wang Jinsong's Likeness Deepfaked by AI, Raising Legal and Fraud Concerns | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,637 | 2026-02-26 | [`INC-00811`](docs/incidents/2026.md#inc-00811) | Claude Code Agent Reportedly Deleted DataTalks.Club Production Infrastructure, Database, and Snapshots via Te… | Medium | LLM05 | ASI08 |  |
-| 1,638 | 2026-02-26 | [`INC-00874`](docs/incidents/2026.md#inc-00874) | Deepfake Scam Targets Bulgarian News Anchor | Medium | LLM09 | ASI09 |  |
-| 1,639 | 2026-02-26 | [`INC-00919`](docs/incidents/2026.md#inc-00919) | Dutch Organizations Sue X Over AI Chatbot Grok's Generation of Illegal Nude Images | High | LLM09 | ASI09 |  |
-| 1,640 | 2026-02-26 | [`INC-01040`](docs/incidents/2026.md#inc-01040) | Ford Recalls Over 4 Million Vehicles Due to AI-Controlled Trailer Module Software Defect | Critical | LLM05 | ASI05 |  |
-| 1,641 | 2026-02-26 | [`INC-01076`](docs/incidents/2026.md#inc-01076) | German Court Upholds Student Exclusion for Unauthorized AI Use in Exams | High | LLM05 | ASI05 |  |
-| 1,642 | 2026-02-26 | [`INC-01244`](docs/incidents/2026.md#inc-01244) | Iowa Sues GM Over AI-Driven Vehicle Data Collection and Sale | Medium |  | ASI09 |  |
-| 1,643 | 2026-02-26 | [`INC-01257`](docs/incidents/2026.md#inc-01257) | Italian Court Rules AI-Driven Employee Dismissal Lawful | Medium |  |  |  |
-| 1,644 | 2026-02-26 | [`INC-01753`](docs/incidents/2026.md#inc-01753) | Scotland Considers Criminalizing AI-Generated Deepfake Intimate Images | Medium | LLM09 | ASI09 |  |
-| 1,645 | 2026-02-26 | [`INC-01760`](docs/incidents/2026.md#inc-01760) | Security Risks of Autonomous AI Agents Using MCP in Enterprises | High | LLM01, LLM02, LLM05 | ASI01, ASI03, ASI05 |  |
-| 1,646 | 2026-02-26 | [`INC-01786`](docs/incidents/2026.md#inc-01786) | South Korea Strengthens Measures Against AI-Generated Fake News Ahead of Elections | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,647 | 2026-02-26 | [`INC-01787`](docs/incidents/2026.md#inc-01787) | South Korean Authorities Crack Down on AI-Generated Fake News Ahead of Local Elections | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,648 | 2026-02-26 | [`INC-02110`](docs/incidents/2026.md#inc-02110) | YouTube's AI Algorithms Flood Children’s Feeds with Harmful AI-Generated Videos | Medium | LLM09 |  |  |
-| 1,649 | 2026-02-25 | [`INC-00164`](docs/incidents/2026.md#inc-00164) | AI Facial Recognition Error Leads to Wrongful Arrest in UK | High | LLM05 | ASI05 |  |
-| 1,650 | 2026-02-25 | [`INC-00188`](docs/incidents/2026.md#inc-00188) | AI Models Consistently Escalate to Nuclear War in Simulated Military Scenarios | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,651 | 2026-02-25 | [`INC-00191`](docs/incidents/2026.md#inc-00191) | AI Models Pressured to Predict US Strike Date on Iran | High | LLM05, LLM09 | ASI05 |  |
-| 1,652 | 2026-02-25 | [`INC-00194`](docs/incidents/2026.md#inc-00194) | AI Predicts Groundwater Shortage in Bengaluru, Triggers Emergency Measures | High | LLM05 | ASI05 |  |
-| 1,653 | 2026-02-25 | [`INC-00396`](docs/incidents/2026.md#inc-00396) | AI-Generated Deepfake Video of Brady Tkachuk Causes Controversy | Medium | LLM09 | ASI09 |  |
-| 1,654 | 2026-02-25 | [`INC-00428`](docs/incidents/2026.md#inc-00428) | AI-Generated Disinformation Campaign Targets Singapore's Prime Minister | Medium | LLM09 | ASI09 |  |
-| 1,655 | 2026-02-25 | [`INC-00510`](docs/incidents/2026.md#inc-00510) | AI-Generated Videos Mocking Korean Independence Hero Spark Outrage | High | LLM09 |  |  |
-| 1,656 | 2026-02-25 | [`INC-00517`](docs/incidents/2026.md#inc-00517) | AI-Generated Voice Scam Impersonates Malaysian King for Fraudulent Aid Scheme | Medium | LLM09 | ASI09 |  |
-| 1,657 | 2026-02-25 | [`INC-00523`](docs/incidents/2026.md#inc-00523) | AI-Induced Market Panic and Systemic Economic Risks Highlighted by ION Group CEO | Medium |  |  |  |
-| 1,658 | 2026-02-25 | [`INC-00702`](docs/incidents/2026.md#inc-00702) | Bot Auto and Ryan Transportation Launch Driverless Freight Operations in Texas | Medium |  |  |  |
-| 1,659 | 2026-02-25 | [`INC-00813`](docs/incidents/2026.md#inc-00813) | Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852) | Critical | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI02, ASI03, ASI04, ASI05, ASI09 | `CVE-2025-59536`, `CVE-2026-21852` |
-| 1,660 | 2026-02-25 | [`INC-00855`](docs/incidents/2026.md#inc-00855) | Convict Uses AI to Forge Identity and Evade Arrest in Istanbul | High | LLM05 | ASI05, ASI09 |  |
-| 1,661 | 2026-02-25 | [`INC-00882`](docs/incidents/2026.md#inc-00882) | Delhi High Court Restrains AI Deepfake Misuse of Ramdev's Persona | Medium | LLM09 | ASI09 |  |
-| 1,662 | 2026-02-25 | [`INC-00884`](docs/incidents/2026.md#inc-00884) | Delhi High Court Reviews Legal Challenge to AI-Enabled Biometric Data Collection | Medium |  |  |  |
-| 1,663 | 2026-02-25 | [`INC-00889`](docs/incidents/2026.md#inc-00889) | Development of AI-Based Flood Prediction and Alert System in Valencia | Medium |  |  |  |
-| 1,664 | 2026-02-25 | [`INC-01084`](docs/incidents/2026.md#inc-01084) | Germany Plans to Deploy AI in Fight Against Organized Crime | High | LLM05 | ASI05 |  |
-| 1,665 | 2026-02-25 | [`INC-01369`](docs/incidents/2026.md#inc-01369) | Man Uses AI to Forge Medical Documents for Restaurant Extortion in Shanghai | High | LLM04 | ASI06, ASI09 |  |
-| 1,666 | 2026-02-25 | [`INC-01446`](docs/incidents/2026.md#inc-01446) | Milwaukee Police Officer Misuses AI License Plate System for Personal Surveillance | High | LLM05 | ASI05 |  |
-| 1,667 | 2026-02-25 | [`INC-01526`](docs/incidents/2026.md#inc-01526) | New Zealand Defence Force to Trial AI-Enabled Combat Drones | High | LLM05 | ASI05 |  |
-| 1,668 | 2026-02-25 | [`INC-01656`](docs/incidents/2026.md#inc-01656) | Polish Security Chiefs Charged Over Unaccredited Use of Pegasus AI Surveillance System | High |  |  |  |
-| 1,669 | 2026-02-24 | [`INC-00250`](docs/incidents/2026.md#inc-00250) | AI Use in Judicial Decision Leads to Acquittal in Child Rape Case in Brazil | High | LLM09 |  |  |
-| 1,670 | 2026-02-24 | [`INC-00296`](docs/incidents/2026.md#inc-00296) | AI-Driven Electricity Demand Strains Power Infrastructure and Fuels Environmental Concerns | High | LLM05 | ASI05 |  |
-| 1,671 | 2026-02-24 | [`INC-00334`](docs/incidents/2026.md#inc-00334) | AI-Enabled Cyberattacks Surge, Slashing Breakout Times to Under 30 Minutes | Critical | LLM01, LLM02, LLM06, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI09, ASI10 |  |
-| 1,672 | 2026-02-24 | [`INC-00347`](docs/incidents/2026.md#inc-00347) | AI-Enabled Flying Car Demonstrations and Passenger System Trials in Tokyo | Medium |  |  |  |
-| 1,673 | 2026-02-24 | [`INC-00368`](docs/incidents/2026.md#inc-00368) | AI-Generated Code Causes Production Failure and Employee Firing at Indian Startup | High | LLM05 | ASI05 |  |
-| 1,674 | 2026-02-24 | [`INC-00386`](docs/incidents/2026.md#inc-00386) | AI-Generated Deepfake Scam Impersonates Johor Official on TikTok | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,675 | 2026-02-24 | [`INC-00426`](docs/incidents/2026.md#inc-00426) | AI-Generated Disinformation Amplifies Violence and Fear After Cartel Leader's Death in Mexico | Critical | LLM09 |  |  |
-| 1,676 | 2026-02-24 | [`INC-00536`](docs/incidents/2026.md#inc-00536) | AI-Powered Camera System in Paraná Aids Recovery of Stolen and Cloned Vehicles | High | LLM05 | ASI05 |  |
-| 1,677 | 2026-02-24 | [`INC-00782`](docs/incidents/2026.md#inc-00782) | Chinese AI Firm DeepSeek Illegally Uses Nvidia Chips and Distills US AI Models | High |  |  |  |
-| 1,678 | 2026-02-24 | [`INC-00783`](docs/incidents/2026.md#inc-00783) | Chinese AI Firm DeepSeek Trains Model on Restricted Nvidia Chips, Violating U.S. Export Controls | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 1,679 | 2026-02-24 | [`INC-00803`](docs/incidents/2026.md#inc-00803) | Citrini Research Warns of AI-Driven Economic Disruption and Calls for AI Tax | Medium |  |  |  |
-| 1,680 | 2026-02-24 | [`INC-00879`](docs/incidents/2026.md#inc-00879) | Delhi High Court Orders Removal of AI-Generated Deepfakes Exploiting Singer Jubin Nautiyal | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,681 | 2026-02-24 | [`INC-00886`](docs/incidents/2026.md#inc-00886) | Deployment of AI-Enhanced Combat Systems in Military Aircraft Raises Future Risk Concerns | Medium |  |  |  |
-| 1,682 | 2026-02-24 | [`INC-01102`](docs/incidents/2026.md#inc-01102) | Google AI Push Notification Includes Racial Slur, Prompts Apology | Medium |  |  |  |
-| 1,683 | 2026-02-24 | [`INC-01116`](docs/incidents/2026.md#inc-01116) | Google Gemini AI Glitch Deletes User Chat Histories | Medium |  |  |  |
-| 1,684 | 2026-02-24 | [`INC-01173`](docs/incidents/2026.md#inc-01173) | Hyundai Motor Group Donates AI Firefighting Robots to Enhance Firefighter Safety in South Korea | Critical | LLM05 | ASI05 |  |
-| 1,685 | 2026-02-24 | [`INC-01275`](docs/incidents/2026.md#inc-01275) | JPMorgan Chase Employees Lose Jobs Due to AI Automation, Bank Launches Redeployment Plan | High | LLM05 | ASI05 |  |
-| 1,686 | 2026-02-24 | [`INC-01403`](docs/incidents/2026.md#inc-01403) | Meta Encryption Hinders AI Child Safety Systems, Leads to Harm | High | LLM05, LLM09 | ASI05 |  |
-| 1,687 | 2026-02-24 | [`INC-01466`](docs/incidents/2026.md#inc-01466) | MoonPay Launches AI Agents for Autonomous Crypto Transactions | Medium |  | ASI09 |  |
-| 1,688 | 2026-02-24 | [`INC-01516`](docs/incidents/2026.md#inc-01516) | Nassim Taleb Warns of Potential Market Crash and Bankruptcies Due to AI Disruption | High | LLM05 | ASI05 |  |
-| 1,689 | 2026-02-24 | [`INC-01812`](docs/incidents/2026.md#inc-01812) | Student Fails Exam for AI-Assisted Cheating; Mother Confronts Professor at University of Crete | High | LLM05 | ASI05 |  |
-| 1,690 | 2026-02-24 | [`INC-01817`](docs/incidents/2026.md#inc-01817) | Study Finds ChatGPT Health AI Fails in Emergency Medical Triage | Critical | LLM05, LLM09 | ASI09 |  |
-| 1,691 | 2026-02-24 | [`INC-01849`](docs/incidents/2026.md#inc-01849) | Tencent Yuanbao AI Outputs Insulting Language to User During Image Generation | Medium |  |  |  |
-| 1,692 | 2026-02-24 | [`INC-01942`](docs/incidents/2026.md#inc-01942) | UK Fines Reddit $19.5M for Failing to Protect Children's Data and Exposing Minors to Harmful Content | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,693 | 2026-02-24 | [`INC-02021`](docs/incidents/2026.md#inc-02021) | US Military Integrates AI Chatbot Grok Amid Safeguard Controversy | Critical | LLM03, LLM04, LLM05, LLM09 | ASI04, ASI05, ASI06, ASI09, ASI10 |  |
-| 1,694 | 2026-02-24 | [`INC-02098`](docs/incidents/2026.md#inc-02098) | WiseTech Global Cuts 2,000 Jobs in Major AI-Driven Restructuring | High | LLM03, LLM05 | ASI04, ASI05 |  |
-| 1,695 | 2026-02-23 | [`INC-00038`](docs/incidents/2026.md#inc-00038) | Actors and Voice Artists Protest Unauthorized AI Voice and Image Use | High |  |  |  |
-| 1,696 | 2026-02-23 | [`INC-00078`](docs/incidents/2026.md#inc-00078) | AI Analysis Reveals Accelerating Ground Movement Threatening Trabzon Hospital | Medium |  |  |  |
-| 1,697 | 2026-02-23 | [`INC-00079`](docs/incidents/2026.md#inc-00079) | AI Apps Leak Millions of Users' Personal and KYC Data via Misconfigured Cloud Storage | Critical | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
-| 1,698 | 2026-02-23 | [`INC-00110`](docs/incidents/2026.md#inc-00110) | AI Chatbots Generate Defamatory Content, Prompting Lawsuits | High | LLM09 |  |  |
-| 1,699 | 2026-02-23 | [`INC-00118`](docs/incidents/2026.md#inc-00118) | AI Chatbots Linked to Worsening Mental Health Symptoms in Vulnerable Patients | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,700 | 2026-02-23 | [`INC-00179`](docs/incidents/2026.md#inc-00179) | AI Marketing Algorithms Pose Risks of Manipulating Public Opinion on Warfare | Medium | LLM09 |  |  |
-| 1,701 | 2026-02-23 | [`INC-00241`](docs/incidents/2026.md#inc-00241) | AI Trading Bot Accidentally Transfers Entire Crypto Holdings Due to Misinterpretation | Medium | LLM09 | ASI09 |  |
-| 1,702 | 2026-02-23 | [`INC-00321`](docs/incidents/2026.md#inc-00321) | AI-Driven Scams Lead to Surge in UK Fashion Consumer Complaints | High |  | ASI09 |  |
-| 1,703 | 2026-02-23 | [`INC-00397`](docs/incidents/2026.md#inc-00397) | AI-Generated Deepfake Video of Ghislaine Maxwell Sparks Misinformation in Canada | Medium | LLM09 | ASI09 |  |
-| 1,704 | 2026-02-23 | [`INC-00409`](docs/incidents/2026.md#inc-00409) | AI-Generated Deepfake Videos Used to Impersonate Colombian Priest in Health Product Scam | High | LLM09 | ASI09 |  |
-| 1,705 | 2026-02-23 | [`INC-00595`](docs/incidents/2026.md#inc-00595) | Anthropic accuses Chinese AI firms of mass data theft via fake accounts | High | LLM02, LLM03 | ASI04 |  |
-| 1,706 | 2026-02-23 | [`INC-00608`](docs/incidents/2026.md#inc-00608) | Anthropic Said DeepSeek, Moonshot, and MiniMax Used Fraudulent Accounts and Proxies to Illicitly Distill Clau… | Critical | LLM02 | ASI03 |  |
-| 1,707 | 2026-02-23 | [`INC-00660`](docs/incidents/2026.md#inc-00660) | Automakers Advance 'Eyes-Off' AI Driving Amid Safety and Liability Concerns | High | LLM05 | ASI05 |  |
-| 1,708 | 2026-02-23 | [`INC-00712`](docs/incidents/2026.md#inc-00712) | Brazilian Senate Probes Meta Over AI-Moderated Platforms Enabling Online Crime | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,709 | 2026-02-23 | [`INC-00745`](docs/incidents/2026.md#inc-00745) | ChatGPT and Gemini Spread Misinformation from Fabricated Blog | High | LLM05, LLM09 | ASI05 |  |
-| 1,710 | 2026-02-23 | [`INC-00790`](docs/incidents/2026.md#inc-00790) | Chinese Companies Announce Strategic Partnerships for Large-Scale Deployment of AI-Driven Autonomous Logistic… | Medium |  |  |  |
-| 1,711 | 2026-02-23 | [`INC-00940`](docs/incidents/2026.md#inc-00940) | Epirus and DFT Integrate AI-Enabled Counter-Drone Defense System | High | LLM05 | ASI05, ASI10 |  |
-| 1,712 | 2026-02-23 | [`INC-01095`](docs/incidents/2026.md#inc-01095) | Global Regulators Respond to Harm from Non-Consensual AI-Generated Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,713 | 2026-02-23 | [`INC-01120`](docs/incidents/2026.md#inc-01120) | Google Restricts and Suspends AI Ultra and Antigravity Users Over OpenClaw OAuth Abuse | High | LLM05 | ASI05 |  |
-| 1,714 | 2026-02-23 | [`INC-01171`](docs/incidents/2026.md#inc-01171) | Hyderabad Police Warn of AI-Driven Biometric Identity Theft Scam | High | LLM09 | ASI09 |  |
-| 1,715 | 2026-02-23 | [`INC-01224`](docs/incidents/2026.md#inc-01224) | India Develops AI-Enabled Electric Air Taxi with NVIDIA Partnership | Medium |  |  |  |
-| 1,716 | 2026-02-23 | [`INC-01280`](docs/incidents/2026.md#inc-01280) | Kentucky Lawsuit Against TikTok's AI Algorithms Moves Forward | Medium |  |  |  |
-| 1,717 | 2026-02-23 | [`INC-01354`](docs/incidents/2026.md#inc-01354) | Lockheed Martin Tests AI-Enhanced Target Identification on F-35 Fighter Jets | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,718 | 2026-02-23 | [`INC-01398`](docs/incidents/2026.md#inc-01398) | Meta AI Director's Emails Deleted by Rogue OpenClaw AI Agent | High | LLM02, LLM03, LLM05, LLM06 | ASI02, ASI03, ASI04, ASI05, ASI10 |  |
-| 1,719 | 2026-02-23 | [`INC-01404`](docs/incidents/2026.md#inc-01404) | Meta Faces Antitrust Investigation in Africa Over WhatsApp Business AI Restrictions | Medium |  |  |  |
-| 1,720 | 2026-02-23 | [`INC-01416`](docs/incidents/2026.md#inc-01416) | Meta's AI Moderation Fails to Prevent Teen Exposure to Explicit Content on Instagram | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,721 | 2026-02-23 | [`INC-01454`](docs/incidents/2026.md#inc-01454) | Mistral AI Accused of Massive Copyright Infringement in Model Training | High |  |  |  |
-| 1,722 | 2026-02-23 | [`INC-01463`](docs/incidents/2026.md#inc-01463) | Model Distillation Campaigns Targeting Anthropic Claude | High |  |  |  |
-| 1,723 | 2026-02-23 | [`INC-01848`](docs/incidents/2026.md#inc-01848) | Tenable Warns of Rising AI Security Risks in Cloud Environments | High | LLM03 | ASI04 |  |
-| 1,724 | 2026-02-23 | [`INC-01982`](docs/incidents/2026.md#inc-01982) | US Air Force Advances AI-Enabled Combat Drone 'Dark Merlin' Toward Live Weapons Testing | High | LLM05 | ASI05, ASI10 |  |
-| 1,725 | 2026-02-23 | [`INC-01983`](docs/incidents/2026.md#inc-01983) | US Air Force Demonstrates AI-Enabled Manned-Unmanned Combat Teaming | Critical | LLM05 | ASI05 |  |
-| 1,726 | 2026-02-23 | [`INC-02023`](docs/incidents/2026.md#inc-02023) | US Military Uses Anthropic's Claude AI in Venezuela Attack; Chinese Firms Illegally Exploit Claude Model | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 |  |
-| 1,727 | 2026-02-23 | [`INC-02063`](docs/incidents/2026.md#inc-02063) | Warnings of Large-Scale Human Job Displacement by AI Robots | High | LLM05 | ASI05 |  |
-| 1,728 | 2026-02-23 | [`INC-02122`](docs/incidents/2026.md#inc-02122) | Zürich Approves Police Use of AI for Criminal Investigations | Medium |  |  |  |
-| 1,729 | 2026-02-22 | [`INC-00195`](docs/incidents/2026.md#inc-00195) | AI Privacy Breaches, Cybersecurity Threats, and Economic Disruption Highlighted | Critical | LLM09 | ASI09 |  |
-| 1,730 | 2026-02-22 | [`INC-00918`](docs/incidents/2026.md#inc-00918) | Dutch Online Pharmacies Illegally Share Sensitive Health Data with Big Tech | High | LLM02 | ASI03 |  |
-| 1,731 | 2026-02-22 | [`INC-01047`](docs/incidents/2026.md#inc-01047) | French Cinema Artists Protest Unauthorized AI Voice and Image Cloning | High |  |  |  |
-| 1,732 | 2026-02-22 | [`INC-01520`](docs/incidents/2026.md#inc-01520) | Network of Allegedly Fake Facebook Profiles with Purportedly AI-Generated Images Amplified Posts by Bulgaria&… | High | LLM09 | ASI09 |  |
-| 1,733 | 2026-02-22 | [`INC-01538`](docs/incidents/2026.md#inc-01538) | Nobel Laureate Warns AI-Driven Job Losses Threaten U.S. Democracy | Medium |  |  |  |
-| 1,734 | 2026-02-22 | [`INC-01791`](docs/incidents/2026.md#inc-01791) | SpaceX and xAI Pursue AI-Driven Military Drones and Lunar AI Satellite Factories | Medium | LLM03 | ASI04 |  |
-| 1,735 | 2026-02-22 | [`INC-02007`](docs/incidents/2026.md#inc-02007) | US Launches AI-Driven Platform to Bypass Internet Censorship in China and Iran | High | LLM05 | ASI05 |  |
-| 1,736 | 2026-02-22 | [`INC-02015`](docs/incidents/2026.md#inc-02015) | US Lawsuits Target Social Media AI for Harm to Children | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
-| 1,737 | 2026-02-21 | [`INC-00082`](docs/incidents/2026.md#inc-00082) | AI Audit by Turkish Social Security Agency Cancels 650,000 Pensions for Fraud | High | LLM05 | ASI05, ASI09 |  |
-| 1,738 | 2026-02-21 | [`INC-00125`](docs/incidents/2026.md#inc-00125) | AI Chatbots Provide Lower-Quality Responses to Iranian Users | Medium | LLM09 |  |  |
-| 1,739 | 2026-02-21 | [`INC-00265`](docs/incidents/2026.md#inc-00265) | AI-Augmented Cyberattack Compromises 600+ FortiGate Firewalls Globally | Critical | LLM02 | ASI02, ASI03, ASI05, ASI09, ASI10 |  |
-| 1,740 | 2026-02-21 | [`INC-00407`](docs/incidents/2026.md#inc-00407) | AI-Generated Deepfake Videos Used in Financial Scam in Portugal | Medium | LLM09 | ASI09 |  |
-| 1,741 | 2026-02-21 | [`INC-00911`](docs/incidents/2026.md#inc-00911) | Drug Cartels Use Social Media Algorithms to Recruit Mexican Youth | Medium |  |  |  |
-| 1,742 | 2026-02-21 | [`INC-01123`](docs/incidents/2026.md#inc-01123) | Google Uses AI to Remove 160 Million Fake Reviews and Block Fraudulent Apps | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,743 | 2026-02-21 | [`INC-01221`](docs/incidents/2026.md#inc-01221) | India and Israel Advance AI-Enabled Missile Defense Collaboration | High | LLM05 | ASI05, ASI10 |  |
-| 1,744 | 2026-02-21 | [`INC-01266`](docs/incidents/2026.md#inc-01266) | Japan Plans AI-Enabled Defense Upgrades to Counter Drone Threats | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,745 | 2026-02-20 | [`INC-00086`](docs/incidents/2026.md#inc-00086) | AI Beauty Filter Malfunction Causes Influencer to Lose 140,000 Followers | High | LLM05 | ASI05 |  |
-| 1,746 | 2026-02-20 | [`INC-00141`](docs/incidents/2026.md#inc-00141) | AI Data Centre Expansion in UK Raises Energy and Environmental Concerns | High | LLM05 | ASI05 |  |
-| 1,747 | 2026-02-20 | [`INC-00206`](docs/incidents/2026.md#inc-00206) | AI Surveillance Prevents Major Poaching Attempt in Odisha's Similipal Sanctuary | High | LLM05 | ASI05 |  |
-| 1,748 | 2026-02-20 | [`INC-00290`](docs/incidents/2026.md#inc-00290) | AI-Driven Disinformation Campaign Targets Japanese Election | High | LLM05, LLM09 | ASI05 |  |
-| 1,749 | 2026-02-20 | [`INC-00340`](docs/incidents/2026.md#inc-00340) | AI-Enabled Drones Cause Significant Harm in Ukraine Conflict | Critical | LLM05 | ASI05 |  |
-| 1,750 | 2026-02-20 | [`INC-00380`](docs/incidents/2026.md#inc-00380) | AI-Generated Deepfake Nude Apps Cause Harm and Abuse in Hungary | Medium | LLM09 | ASI09 |  |
-| 1,751 | 2026-02-20 | [`INC-00881`](docs/incidents/2026.md#inc-00881) | Delhi High Court Orders Removal of AI-Generated Deepfakes Targeting Actress Kajol | Medium | LLM09 | ASI09 |  |
-| 1,752 | 2026-02-20 | [`INC-00968`](docs/incidents/2026.md#inc-00968) | European Nations Launch AI-Driven Drone Defense Initiative Using Ukrainian Expertise | High | LLM05 | ASI05, ASI10 |  |
-| 1,753 | 2026-02-20 | [`INC-01005`](docs/incidents/2026.md#inc-01005) | Finji Accuses TikTok of Unauthorized, Harmful AI-Generated Ads | Medium |  |  |  |
-| 1,754 | 2026-02-20 | [`INC-01259`](docs/incidents/2026.md#inc-01259) | Italian University Fined for Unlawful Use of Facial Recognition in Online Courses | High | LLM05 | ASI05 |  |
-| 1,755 | 2026-02-20 | [`INC-01424`](docs/incidents/2026.md#inc-01424) | Metropolitan Police Use Palantir AI to Flag Officer Misconduct Raises Rights Concerns | Medium |  |  |  |
-| 1,756 | 2026-02-20 | [`INC-01431`](docs/incidents/2026.md#inc-01431) | Microsoft Blog Promotes AI Training on Pirated Harry Potter Books, Sparks Copyright Backlash | High | LLM05 | ASI05 |  |
-| 1,757 | 2026-02-20 | [`INC-01651`](docs/incidents/2026.md#inc-01651) | Planned Use of AI in Azerbaijan's Court System Raises Future Risks | Medium |  |  |  |
-| 1,758 | 2026-02-20 | [`INC-01779`](docs/incidents/2026.md#inc-01779) | Slovakia Plans National AI Cybersecurity Laboratory | High | LLM05 | ASI05 |  |
-| 1,759 | 2026-02-20 | [`INC-01813`](docs/incidents/2026.md#inc-01813) | Student Sues OpenAI After ChatGPT Allegedly Triggers Psychosis | High | LLM05 | ASI05 |  |
-| 1,760 | 2026-02-20 | [`INC-01874`](docs/incidents/2026.md#inc-01874) | Tesla's AI Self-Driving System Prevents Accident After Driver Passes Out | Critical |  |  |  |
-| 1,761 | 2026-02-20 | [`INC-01994`](docs/incidents/2026.md#inc-01994) | US Court Upholds $243 Million Verdict Against Tesla Over Fatal Autopilot Crash | Critical | LLM05 | ASI05 |  |
-| 1,762 | 2026-02-20 | [`INC-01999`](docs/incidents/2026.md#inc-01999) | US Government Contracts AI-Powered Defense Systems, Raising Future Risk Concerns | Medium |  | ASI10 |  |
-| 1,763 | 2026-02-19 | [`INC-00119`](docs/incidents/2026.md#inc-00119) | AI Chatbots Manipulated to Spread Misinformation via Simple Online Tricks | Medium | LLM09 |  |  |
-| 1,764 | 2026-02-19 | [`INC-00120`](docs/incidents/2026.md#inc-00120) | AI Chatbots Pose Psychological and Privacy Risks to Children | High | LLM09 |  |  |
-| 1,765 | 2026-02-19 | [`INC-00216`](docs/incidents/2026.md#inc-00216) | AI System Deployed to Detect Aggression in Bremen Trams | High |  |  |  |
-| 1,766 | 2026-02-19 | [`INC-00238`](docs/incidents/2026.md#inc-00238) | AI Tools Enable Sophisticated Fraud and Scams in Latvia | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,767 | 2026-02-19 | [`INC-00278`](docs/incidents/2026.md#inc-00278) | AI-Driven Cyberattacks Breach 600+ Firewalls Globally in Five Weeks | Critical |  | ASI05, ASI10 |  |
-| 1,768 | 2026-02-19 | [`INC-00435`](docs/incidents/2026.md#inc-00435) | AI-Generated Disinformation Threatens Local Elections in Hesse | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,769 | 2026-02-19 | [`INC-00495`](docs/incidents/2026.md#inc-00495) | AI-Generated Political Video Sparks Outrage in Hungary | High | LLM05, LLM09 | ASI05 |  |
-| 1,770 | 2026-02-19 | [`INC-00587`](docs/incidents/2026.md#inc-00587) | Android Malware 'PromptSpy' Uses Google's Gemini AI for Persistence and Remote Access | High | LLM02, LLM05 | ASI02, ASI05, ASI09 |  |
-| 1,771 | 2026-02-19 | [`INC-00600`](docs/incidents/2026.md#inc-00600) | Anthropic CEO Warns of Existential AI Risks and Imminent Superhuman Capabilities | Medium |  |  |  |
-| 1,772 | 2026-02-19 | [`INC-00734`](docs/incidents/2026.md#inc-00734) | Car Telemetry Data Sold to Insurers Without Clear Consent | High |  |  |  |
-| 1,773 | 2026-02-19 | [`INC-01150`](docs/incidents/2026.md#inc-01150) | Grok Reportedly Disclosed Adult Performer Siri Dahl&#x27;s Legal Name and Birthdate, Allegedly Contributing t… | High | LLM02, LLM09 | ASI03, ASI09 |  |
-| 1,774 | 2026-02-19 | [`INC-01228`](docs/incidents/2026.md#inc-01228) | India's AI Data Centre Boom Raises Environmental Concerns | High | LLM05 | ASI05 |  |
-| 1,775 | 2026-02-19 | [`INC-01616`](docs/incidents/2026.md#inc-01616) | Palantir AI Systems Implicated in Lethal Military and Security Operations | Critical | LLM05 | ASI05 |  |
-| 1,776 | 2026-02-19 | [`INC-01678`](docs/incidents/2026.md#inc-01678) | Predator Spyware Bypasses iPhone Privacy Indicators for Covert Surveillance | High |  |  |  |
-| 1,777 | 2026-02-19 | [`INC-01790`](docs/incidents/2026.md#inc-01790) | South Korean Woman Used ChatGPT to Plan Fatal Drug Poisonings | Critical | LLM04 | ASI06 |  |
-| 1,778 | 2026-02-18 | [`INC-00065`](docs/incidents/2026.md#inc-00065) | AI Adoption Reduces Job Opportunities for Young Tech Workers in Ireland | Medium |  |  |  |
-| 1,779 | 2026-02-18 | [`INC-00283`](docs/incidents/2026.md#inc-00283) | AI-Driven Cyberattacks Quadruple in Speed, Targeting Digital Identities | Critical | LLM02 | ASI02, ASI03, ASI05, ASI10 |  |
-| 1,780 | 2026-02-18 | [`INC-00339`](docs/incidents/2026.md#inc-00339) | AI-Enabled Drones Cause Major Harm in Ukraine War, Spur European Arms Race | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,781 | 2026-02-18 | [`INC-00369`](docs/incidents/2026.md#inc-00369) | AI-Generated Code Error Causes $1.78M Loss in DeFi Protocol Moonwell | High |  |  |  |
-| 1,782 | 2026-02-18 | [`INC-00379`](docs/incidents/2026.md#inc-00379) | AI-Generated Deepfake Investment Scams Defraud Victims in Turkey | High | LLM09 | ASI09 |  |
-| 1,783 | 2026-02-18 | [`INC-00423`](docs/incidents/2026.md#inc-00423) | AI-Generated Deepfakes Used in Fraudulent Celebrity Endorsements in Serbia | Medium | LLM09 | ASI09 |  |
-| 1,784 | 2026-02-18 | [`INC-00491`](docs/incidents/2026.md#inc-00491) | AI-Generated Passwords Found Predictable and Insecure, Experts Warn | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,785 | 2026-02-18 | [`INC-00592`](docs/incidents/2026.md#inc-00592) | Angolan Journalist Targeted by Predator Spyware | High |  |  |  |
-| 1,786 | 2026-02-18 | [`INC-00648`](docs/incidents/2026.md#inc-00648) | Arthur Hayes Warns of Potential AI-Driven Credit Crisis Impacting U.S. Financial System | Medium |  |  |  |
-| 1,787 | 2026-02-18 | [`INC-00875`](docs/incidents/2026.md#inc-00875) | Deepfake Scam Uses Romanian Central Bank Governor's Image to Promote Fraudulent Investments | Medium | LLM09 | ASI09 |  |
-| 1,788 | 2026-02-18 | [`INC-00986`](docs/incidents/2026.md#inc-00986) | Fake Gemini AI Chatbot Used in Google Coin Crypto Scam | Medium | LLM09 | ASI09 |  |
-| 1,789 | 2026-02-18 | [`INC-01356`](docs/incidents/2026.md#inc-01356) | Los Angeles Sues Roblox Over AI Moderation Failures Leading to Child Exploitation | High | LLM05 | ASI05 |  |
-| 1,790 | 2026-02-18 | [`INC-01359`](docs/incidents/2026.md#inc-01359) | Madrid Bar Association Proposes Penal Reform to Address AI Legal Advice Risks | Medium |  |  |  |
-| 1,791 | 2026-02-18 | [`INC-01417`](docs/incidents/2026.md#inc-01417) | Meta's AI Plans Spark Privacy and Ethical Concerns | Medium |  |  |  |
-| 1,792 | 2026-02-18 | [`INC-01432`](docs/incidents/2026.md#inc-01432) | Microsoft Copilot AI Bug Exposes Confidential Emails by Bypassing Security Controls | High | LLM02, LLM05 | ASI02, ASI03, ASI05, ASI09 |  |
-| 1,793 | 2026-02-18 | [`INC-01524`](docs/incidents/2026.md#inc-01524) | New Jersey City Cancels AI Data Center Over Environmental and Cost Concerns | Critical | LLM05 | ASI05 |  |
-| 1,794 | 2026-02-18 | [`INC-01649`](docs/incidents/2026.md#inc-01649) | Pinterest's AI Moderation System Wrongfully Flags and Bans Users | Medium |  |  |  |
-| 1,795 | 2026-02-18 | [`INC-01754`](docs/incidents/2026.md#inc-01754) | Scout AI Demonstrates Autonomous Lethal Drone System in California | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,796 | 2026-02-18 | [`INC-01834`](docs/incidents/2026.md#inc-01834) | Swarm Aero Opens AI-Enabled Military Drone Manufacturing Facility in Arkansas | Medium |  | ASI10 |  |
-| 1,797 | 2026-02-18 | [`INC-01977`](docs/incidents/2026.md#inc-01977) | UNESCO Warns of AI-Driven Revenue Losses in Creative Industries | Medium |  |  |  |
-| 1,798 | 2026-02-18 | [`INC-01998`](docs/incidents/2026.md#inc-01998) | US Federal Research Funds Support Chinese Military AI Labs, Raising Security Concerns | Critical |  |  |  |
-| 1,799 | 2026-02-18 | [`INC-02104`](docs/incidents/2026.md#inc-02104) | X's Algorithm Shifts Users Toward Conservative Political Views, Study Finds | High | LLM05, LLM09 | ASI05 |  |
-| 1,800 | 2026-02-18 | [`INC-02109`](docs/incidents/2026.md#inc-02109) | YouTube AI Recommendation System Outage Disrupts Global Service | Medium | LLM09 |  |  |
-| 1,801 | 2026-02-17 | [`INC-00080`](docs/incidents/2026.md#inc-00080) | AI Arms Race Raises Existential Risk, Warns Leading Researcher | Medium |  | ASI10 |  |
-| 1,802 | 2026-02-17 | [`INC-00208`](docs/incidents/2026.md#inc-00208) | AI Surveillance System Prevents Elephant Deaths on Railway Tracks in Odisha | Critical |  |  |  |
-| 1,803 | 2026-02-17 | [`INC-00289`](docs/incidents/2026.md#inc-00289) | AI-Driven Deepfake Scams Cause Harm in Louisiana and Cambodia | Medium | LLM09 | ASI09 |  |
-| 1,804 | 2026-02-17 | [`INC-00585`](docs/incidents/2026.md#inc-00585) | Andrew Yang Warns of Imminent Mass Layoffs Due to AI Automation | High | LLM05 | ASI05 |  |
-| 1,805 | 2026-02-17 | [`INC-00725`](docs/incidents/2026.md#inc-00725) | California Investigates xAI Over Harmful AI-Generated Sexual Content | High | LLM05 | ASI05 |  |
-| 1,806 | 2026-02-17 | [`INC-00932`](docs/incidents/2026.md#inc-00932) | Elon Musk Proposes Lunar AI Satellite Factory and Electromagnetic Launch System | Medium |  |  |  |
-| 1,807 | 2026-02-17 | [`INC-00942`](docs/incidents/2026.md#inc-00942) | Ergo to Cut 1,000 Jobs in Germany Due to Increased AI Automation | High | LLM05 | ASI05 |  |
-| 1,808 | 2026-02-17 | [`INC-00949`](docs/incidents/2026.md#inc-00949) | EU Investigates Shein Over Addictive AI Design and Illegal Product Sales | High | LLM05, LLM09 | ASI05 |  |
-| 1,809 | 2026-02-17 | [`INC-00967`](docs/incidents/2026.md#inc-00967) | European Nations Investigate AI-Generated Child Sexual Images on Social Media | High | LLM05, LLM09 | ASI05 |  |
-| 1,810 | 2026-02-17 | [`INC-01067`](docs/incidents/2026.md#inc-01067) | Generative AI Drives Surge in Cybercrime Effectiveness and Volume | Medium | LLM09 | ASI09 |  |
-| 1,811 | 2026-02-17 | [`INC-01255`](docs/incidents/2026.md#inc-01255) | Israeli Firms Deploy AI-Powered Vehicle Surveillance Tools | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,812 | 2026-02-17 | [`INC-01374`](docs/incidents/2026.md#inc-01374) | Mass Removal of AI-Generated Music Over Copyright Violations | High |  |  |  |
-| 1,813 | 2026-02-17 | [`INC-01613`](docs/incidents/2026.md#inc-01613) | Oxford Professor Warns of Potential 'Hindenburg-Style' AI Disaster Amid Rapid Commercialization | Medium | LLM05 | ASI09 |  |
-| 1,814 | 2026-02-17 | [`INC-01710`](docs/incidents/2026.md#inc-01710) | Purportedly AI-Generated Sepsis Alert Reportedly Prompted Potentially Inappropriate IV Fluid Administration f… | Medium | LLM05 | ASI08 |  |
-| 1,815 | 2026-02-17 | [`INC-01720`](docs/incidents/2026.md#inc-01720) | Rapid Development of Venom Autonomous Strike Aircraft Raises AI Risk Concerns | High | LLM05 | ASI05 |  |
-| 1,816 | 2026-02-17 | [`INC-01744`](docs/incidents/2026.md#inc-01744) | Romanian Company Unveils AI-Powered Autonomous Cruise Missile | Critical | LLM05 | ASI05, ASI10 |  |
-| 1,817 | 2026-02-17 | [`INC-01828`](docs/incidents/2026.md#inc-01828) | Supreme Court of India Warns Against AI-Generated Petitions with Fake Citations | High | LLM05, LLM09 | ASI05 |  |
-| 1,818 | 2026-02-17 | [`INC-01872`](docs/incidents/2026.md#inc-01872) | Tesla Robotaxis Involved in 14 Crashes in Austin Within Eight Months | Critical |  |  |  |
-| 1,819 | 2026-02-17 | [`INC-02112`](docs/incidents/2026.md#inc-02112) | ZDF Broadcasts Unlabeled AI-Generated Fake Videos in News Segment | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,820 | 2026-02-16 | [`INC-01701`](docs/incidents/2026.md#inc-01701) | Purported Deepfake TikTok Account Using Grainville School Branding in Jersey Reportedly Targeted Staff, Promp… | High | LLM09 | ASI09 |  |
-| 1,821 | 2026-02-15 | [`INC-00577`](docs/incidents/2026.md#inc-00577) | Amazon Delivery Van Reportedly Became Stranded on Essex Mudflats After GPS Routed It Onto the Broomway | Medium | LLM05 | ASI08 |  |
-| 1,822 | 2026-02-15 | [`INC-01285`](docs/incidents/2026.md#inc-01285) | KPMG Australia Partner Reportedly Used AI to Cheat on Internal AI Training Test and Was Fined A$10,000 | High | LLM09 | ASI09 |  |
-| 1,823 | 2026-02-13 | [`INC-00647`](docs/incidents/2026.md#inc-00647) | Ars Technica Retracted Article After Purportedly AI-Generated Text Was Presented as Direct Quotes From Matplo… | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,824 | 2026-02-13 | [`INC-01761`](docs/incidents/2026.md#inc-01761) | Seedance 2.0 Reportedly Generated Viral Tom Cruise–Brad Pitt Fight Video, Prompting Hollywood IP and Likeness… | High |  |  |  |
-| 1,825 | 2026-02-12 | [`INC-00320`](docs/incidents/2026.md#inc-00320) | AI-driven romance scams surge globally ahead of Valentine's Day | High | LLM09 | ASI09 |  |
-| 1,826 | 2026-02-12 | [`INC-02099`](docs/incidents/2026.md#inc-02099) | Woolworths&#x27; Olive Chatbot Reportedly Generated &#x27;Angry Mother&#x27; Anecdotes During Support Calls A… | Medium | LLM09 | ASI09 |  |
-| 1,827 | 2026-02-11 | [`INC-00131`](docs/incidents/2026.md#inc-00131) | AI Coding Agent &#x27;MJ Rathbun&#x27; Allegedly Published Personalized Accusatory Blog Post Targeting Matplo… | Critical | LLM06, LLM09 | ASI01, ASI09, ASI10 |  |
-| 1,828 | 2026-02-10 | [`INC-01574`](docs/incidents/2026.md#inc-01574) | OpenAI Allegedly Did Not Alert RCMP After ChatGPT Flagged Violent Chats Before British Columbia School Shooti… | Critical | LLM05 | ASI05, ASI09 |  |
-| 1,829 | 2026-02-08 | [`INC-00903`](docs/incidents/2026.md#inc-00903) | DJI Romo Cloud Authorization Bug Reportedly Exposed Camera, Microphone, and Home-Mapping Data From Nearly 7,0… | High | LLM02, LLM05 | ASI03, ASI05 |  |
-| 1,830 | 2026-02-07 | [`INC-00826`](docs/incidents/2026.md#inc-00826) | Claude Cowork Allegedly Deleted Folder Containing 15 Years of Family Photos While Organizing User&#x27;s Wife… | Medium | LLM05 | ASI08 |  |
-| 1,831 | 2026-02-07 | [`INC-01708`](docs/incidents/2026.md#inc-01708) | Purportedly AI-Generated Image Reportedly Circulated Ahead of Thai Election Depicting PM Anutin Charnvirakul… | High | LLM09 | ASI09 |  |
-| 1,832 | 2026-02-05 | [`INC-01548`](docs/incidents/2026.md#inc-01548) | NZ News Hub Reportedly Used AI-Rewritten News Posts and Synthetic Images to Mislead New Zealand Facebook Users | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,833 | 2026-02-05 | [`INC-01914`](docs/incidents/2026.md#inc-01914) | Trump Reportedly Posted Purportedly AI-Generated Racist Video Depicting Barack and Michelle Obama as Apes on… | High | LLM05, LLM09 | ASI09 |  |
-| 1,834 | 2026-02-03 | [`INC-01599`](docs/incidents/2026.md#inc-01599) | OpenClaw Command & Control via Prompt Injection | High |  |  |  |
-| 1,835 | 2026-02-01 | [`INC-01365`](docs/incidents/2026.md#inc-01365) | Malicious OpenClaw Skills Reportedly Delivered AMOS Stealer and Exfiltrated Credentials via ClawHub | Critical | LLM02, LLM03, LLM04, LLM09 | ASI02, ASI03, ASI04, ASI06, ASI09 |  |
-| 1,836 | 2026-02-01 | [`INC-01589`](docs/incidents/2026.md#inc-01589) | OpenClaw 1-Click Remote Code Execution | Critical |  |  |  |
-| 1,837 | 2026-02 | [`INC-00022`](docs/incidents/2026.md#inc-00022) | A vulnerability in Google Cloud Vertex AI Workbench from 7/21/2025 to 01/30/2026 allows an attacker to exfilt… | Medium | LLM03 | ASI04 | `CVE-2026-2244` |
-| 1,838 | 2026-02 | [`INC-00048`](docs/incidents/2026.md#inc-00048) | Agenta — Sandbox Escape (CVE-2026-27952) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27952` |
-| 1,839 | 2026-02 | [`INC-00049`](docs/incidents/2026.md#inc-00049) | Agenta — Vulnerability (CVE-2026-27961) | High | LLM03 | ASI04 | `CVE-2026-27961` |
-| 1,840 | 2026-02 | [`INC-00198`](docs/incidents/2026.md#inc-00198) | AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies | High | LLM01, LLM04 | ASI01, ASI06, ASI09 |  |
-| 1,841 | 2026-02 | [`INC-00643`](docs/incidents/2026.md#inc-00643) | AppOmni Critical AI Agent Flaws in Microsoft Copilot Studio | High | LLM06 | ASI02, ASI03 |  |
-| 1,842 | 2026-02 | [`INC-00659`](docs/incidents/2026.md#inc-00659) | AutoGPT — Ssrf (CVE-2025-62616) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-62616` |
-| 1,843 | 2026-02 | [`INC-00663`](docs/incidents/2026.md#inc-00663) | Autonomous AI agent breaches McKinsey internal AI platform in 2 hours | High | LLM02, LLM06 | ASI01, ASI02, ASI10 |  |
-| 1,844 | 2026-02 | [`INC-00740`](docs/incidents/2026.md#inc-00740) | Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase | Critical | LLM02 | ASI03, ASI09 |  |
-| 1,845 | 2026-02 | [`INC-00746`](docs/incidents/2026.md#inc-00746) | ChatGPT Data Exfiltration via DNS Covert Channel | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI03, ASI05 |  |
-| 1,846 | 2026-02 | [`INC-00806`](docs/incidents/2026.md#inc-00806) | Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies | Critical | LLM01, LLM02 | ASI01, ASI02, ASI10 |  |
-| 1,847 | 2026-02 | [`INC-00815`](docs/incidents/2026.md#inc-00815) | Claude Code — Data Exfiltration (CVE-2026-24052) | High | LLM03 | ASI04 | `CVE-2026-24052` |
-| 1,848 | 2026-02 | [`INC-00817`](docs/incidents/2026.md#inc-00817) | Claude Code — Vulnerability (CVE-2026-24053) | Medium | LLM03 | ASI04 | `CVE-2026-24053` |
-| 1,849 | 2026-02 | [`INC-00818`](docs/incidents/2026.md#inc-00818) | Claude Code — Vulnerability (CVE-2026-24887) | High | LLM03 | ASI04 | `CVE-2026-24887` |
-| 1,850 | 2026-02 | [`INC-00819`](docs/incidents/2026.md#inc-00819) | Claude Code — Vulnerability (CVE-2026-25722) | Critical | LLM03 | ASI04 | `CVE-2026-25722` |
-| 1,851 | 2026-02 | [`INC-00820`](docs/incidents/2026.md#inc-00820) | Claude Code — Vulnerability (CVE-2026-25723) | Medium | LLM03 | ASI04 | `CVE-2026-25723` |
-| 1,852 | 2026-02 | [`INC-00821`](docs/incidents/2026.md#inc-00821) | Claude Code — Vulnerability (CVE-2026-25724) | High | LLM03 | ASI04 | `CVE-2026-25724` |
-| 1,853 | 2026-02 | [`INC-00822`](docs/incidents/2026.md#inc-00822) | Claude Code — Vulnerability (CVE-2026-25725) | Critical | LLM03 | ASI04 | `CVE-2026-25725` |
-| 1,854 | 2026-02 | [`INC-00834`](docs/incidents/2026.md#inc-00834) | Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected | Critical | LLM01, LLM03, LLM04, LLM05 | ASI01, ASI04, ASI05, ASI10 |  |
-| 1,855 | 2026-02 | [`INC-00869`](docs/incidents/2026.md#inc-00869) | Cursor — Prompt Injection (CVE-2026-26268) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-26268` |
-| 1,856 | 2026-02 | [`INC-00894`](docs/incidents/2026.md#inc-00894) | Dify — Vulnerability (CVE-2026-28288) | Medium | LLM03 | ASI04 | `CVE-2026-28288` |
-| 1,857 | 2026-02 | [`INC-00896`](docs/incidents/2026.md#inc-00896) | Dify — Xss (CVE-2026-26023) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26023` |
-| 1,858 | 2026-02 | [`INC-00923`](docs/incidents/2026.md#inc-00923) | eBay API MCP Server — Rce (CVE-2026-27203) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27203` |
-| 1,859 | 2026-02 | [`INC-00936`](docs/incidents/2026.md#inc-00936) | Enclave — Rce (CVE-2026-25533) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25533` |
-| 1,860 | 2026-02 | [`INC-00937`](docs/incidents/2026.md#inc-00937) | Enclave — Rce (CVE-2026-27597) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27597` |
-| 1,861 | 2026-02 | [`INC-00994`](docs/incidents/2026.md#inc-00994) | FastGPT — Vulnerability (CVE-2026-26003) | Medium | LLM03 | ASI04 | `CVE-2026-26003` |
-| 1,862 | 2026-02 | [`INC-00995`](docs/incidents/2026.md#inc-00995) | FastGPT — Vulnerability (CVE-2026-26075) | Medium | LLM03 | ASI04 | `CVE-2026-26075` |
-| 1,863 | 2026-02 | [`INC-01087`](docs/incidents/2026.md#inc-01087) | ggml-org llama — Vulnerability (CVE-2026-2069) | Low | LLM03 | ASI04 | `CVE-2026-2069` |
-| 1,864 | 2026-02 | [`INC-01090`](docs/incidents/2026.md#inc-01090) | GitLab has remediated a vulnerability in the Duo Workflow Service component of GitLab AI Gateway affecting al… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1868` |
-| 1,865 | 2026-02 | [`INC-01100`](docs/incidents/2026.md#inc-01100) | Godot MCP — Command Injection (CVE-2026-25546) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25546` |
-| 1,866 | 2026-02 | [`INC-01132`](docs/incidents/2026.md#inc-01132) | Gradio — Path Traversal (CVE-2026-28414) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28414` |
-| 1,867 | 2026-02 | [`INC-01133`](docs/incidents/2026.md#inc-01133) | Gradio — Ssrf (CVE-2026-28416) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28416` |
-| 1,868 | 2026-02 | [`INC-01134`](docs/incidents/2026.md#inc-01134) | Gradio — Vulnerability (CVE-2026-27167) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-27167` |
-| 1,869 | 2026-02 | [`INC-01135`](docs/incidents/2026.md#inc-01135) | Gradio — Vulnerability (CVE-2026-28415) | Medium | LLM03 | ASI04 | `CVE-2026-28415` |
-| 1,870 | 2026-02 | [`INC-01157`](docs/incidents/2026.md#inc-01157) | HackerBot Claw campaign: autonomous AI agent probes CI/CD across open-source repos | High | LLM03, LLM06 | ASI01, ASI02, ASI10 |  |
-| 1,871 | 2026-02 | [`INC-01166`](docs/incidents/2026.md#inc-01166) | HuggingFace Transformers RCE | High | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2026-1839` |
-| 1,872 | 2026-02 | [`INC-01196`](docs/incidents/2026.md#inc-01196) | In mlflow version 2.20.3, the temporary directory used for creating Python virtual environments is assigned i… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-10279` |
-| 1,873 | 2026-02 | [`INC-01215`](docs/incidents/2026.md#inc-01215) | In the Linux kernel, the following vulnerability has been resolved: rust_binder: correctly handle FDA objects… | High | LLM03 | ASI04 | `CVE-2026-23194` |
-| 1,874 | 2026-02 | [`INC-01292`](docs/incidents/2026.md#inc-01292) | LangChain — Ssrf (CVE-2026-26013) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26013` |
-| 1,875 | 2026-02 | [`INC-01295`](docs/incidents/2026.md#inc-01295) | LangChain — Vulnerability (CVE-2026-26019) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26019`, `CVE-2026-27795` |
-| 1,876 | 2026-02 | [`INC-01297`](docs/incidents/2026.md#inc-01297) | Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966) | Critical | LLM01, LLM05 | ASI01, ASI02, ASI05 | `CVE-2026-27966` |
-| 1,877 | 2026-02 | [`INC-01328`](docs/incidents/2026.md#inc-01328) | LibreChat MCP credential placeholder substitution -> OAuth token exfiltration | High | LLM02, LLM03, LLM06 | ASI03, ASI04, ASI07, ASI09 | `CVE-2026-31951` |
-| 1,878 | 2026-02 | [`INC-01337`](docs/incidents/2026.md#inc-01337) | Liquid Prompt — Command Injection (CVE-2026-27113) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27113` |
-| 1,879 | 2026-02 | [`INC-01339`](docs/incidents/2026.md#inc-01339) | LiteLLM proxy /config/update authz bypass -> RCE | Critical | LLM02, LLM03, LLM05, LLM06 | ASI03, ASI04, ASI05 | `CVE-2026-35029` |
-| 1,880 | 2026-02 | [`INC-01383`](docs/incidents/2026.md#inc-01383) | MCP Salesforce Connector — Vulnerability (CVE-2026-25650) | High | LLM03 | ASI04 | `CVE-2026-25650` |
-| 1,881 | 2026-02 | [`INC-01384`](docs/incidents/2026.md#inc-01384) | MCP TypeScript SDK — Info Disclosure (CVE-2026-25536) | High | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-25536` |
-| 1,882 | 2026-02 | [`INC-01445`](docs/incidents/2026.md#inc-01445) | Milvus — Auth Bypass (CVE-2026-26190) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-26190` |
-| 1,883 | 2026-02 | [`INC-01453`](docs/incidents/2026.md#inc-01453) | Missing Authorization vulnerability in Ays Pro AI ChatBot with ChatGPT and Content Generator by AYS ays-chatg… | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-25338` |
-| 1,884 | 2026-02 | [`INC-01458`](docs/incidents/2026.md#inc-01458) | MLflow Tracking Server Artifact Handler Directory Traversal Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-2033`, `CVE-2026-2635` |
-| 1,885 | 2026-02 | [`INC-01462`](docs/incidents/2026.md#inc-01462) | Model Context Protocol Servers — Vulnerability (CVE-2026-27735) | Medium | LLM03 | ASI04 | `CVE-2026-27735` |
-| 1,886 | 2026-02 | [`INC-01465`](docs/incidents/2026.md#inc-01465) | Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails | Critical | LLM02 | ASI03, ASI09 |  |
-| 1,887 | 2026-02 | [`INC-01474`](docs/incidents/2026.md#inc-01474) | n8n — Auth Bypass (CVE-2026-25052) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-25052` |
-| 1,888 | 2026-02 | [`INC-01475`](docs/incidents/2026.md#inc-01475) | n8n — Command Injection (CVE-2026-21893) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-21893` |
-| 1,889 | 2026-02 | [`INC-01476`](docs/incidents/2026.md#inc-01476) | n8n — Data Exfiltration (CVE-2026-25631) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-25631` |
-| 1,890 | 2026-02 | [`INC-01480`](docs/incidents/2026.md#inc-01480) | n8n — Info Disclosure (CVE-2025-61917) | High | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2025-61917` |
-| 1,891 | 2026-02 | [`INC-01483`](docs/incidents/2026.md#inc-01483) | n8n — Rce (CVE-2026-25055) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25055` |
-| 1,892 | 2026-02 | [`INC-01484`](docs/incidents/2026.md#inc-01484) | n8n — Rce (CVE-2026-25056) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25056` |
-| 1,893 | 2026-02 | [`INC-01485`](docs/incidents/2026.md#inc-01485) | n8n — Rce (CVE-2026-27498) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27498` |
-| 1,894 | 2026-02 | [`INC-01494`](docs/incidents/2026.md#inc-01494) | n8n — Vulnerability (CVE-2026-25053) | Critical | LLM03 | ASI04 | `CVE-2026-25053` |
-| 1,895 | 2026-02 | [`INC-01495`](docs/incidents/2026.md#inc-01495) | n8n — Vulnerability (CVE-2026-25115) | Critical | LLM03 | ASI04 | `CVE-2026-25115` |
-| 1,896 | 2026-02 | [`INC-01507`](docs/incidents/2026.md#inc-01507) | n8n — Xss (CVE-2026-25051) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25051` |
-| 1,897 | 2026-02 | [`INC-01508`](docs/incidents/2026.md#inc-01508) | n8n — Xss (CVE-2026-25054) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25054` |
-| 1,898 | 2026-02 | [`INC-01523`](docs/incidents/2026.md#inc-01523) | New API — Xss (CVE-2026-25802) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25802` |
-| 1,899 | 2026-02 | [`INC-01569`](docs/incidents/2026.md#inc-01569) | Open WebUI — Xss (CVE-2026-26192) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26192` |
-| 1,900 | 2026-02 | [`INC-01570`](docs/incidents/2026.md#inc-01570) | Open WebUI — Xss (CVE-2026-26193) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26193` |
-| 1,901 | 2026-02 | [`INC-01588`](docs/incidents/2026.md#inc-01588) | OpenClaw (formerly Clawdbot) is a personal AI assistant users run on their own devices. | Low | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-24764` |
-| 1,902 | 2026-02 | [`INC-01600`](docs/incidents/2026.md#inc-01600) | OpenClaw Open-Source AI Agent Mass Compromise | Critical | LLM01, LLM03, LLM05, LLM06 | ASI02, ASI04, ASI05, ASI10 |  |
-| 1,903 | 2026-02 | [`INC-01603`](docs/incidents/2026.md#inc-01603) | OpenClaw — Path Traversal (CVE-2026-25475) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25475` |
-| 1,904 | 2026-02 | [`INC-01604`](docs/incidents/2026.md#inc-01604) | OpenClaw — Path Traversal (CVE-2026-26972) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26972` |
-| 1,905 | 2026-02 | [`INC-01605`](docs/incidents/2026.md#inc-01605) | OpenClaw — Vulnerability (CVE-2026-27001) | High | LLM03 | ASI04 | `CVE-2026-27001` |
-| 1,906 | 2026-02 | [`INC-01609`](docs/incidents/2026.md#inc-01609) | OrcaStatLLM Researcher — Xss (CVE-2026-24903) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-24903` |
-| 1,907 | 2026-02 | [`INC-01625`](docs/incidents/2026.md#inc-01625) | Parse Dashboard — Vulnerability (CVE-2026-27595) | High | LLM03 | ASI04 | `CVE-2026-27595` (+2) |
-| 1,908 | 2026-02 | [`INC-01713`](docs/incidents/2026.md#inc-01713) | Pydantic AI — Path Traversal (CVE-2026-25640) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25640` |
-| 1,909 | 2026-02 | [`INC-01714`](docs/incidents/2026.md#inc-01714) | Pydantic AI — Ssrf (CVE-2026-25580) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-25580` |
-| 1,910 | 2026-02 | [`INC-01718`](docs/incidents/2026.md#inc-01718) | Qdrant — Vulnerability (CVE-2026-25628) | High | LLM03 | ASI04 | `CVE-2026-25628` |
-| 1,911 | 2026-02 | [`INC-01723`](docs/incidents/2026.md#inc-01723) | Ray — Vulnerability (CVE-2026-27482) | Medium | LLM03 | ASI04 | `CVE-2026-27482` |
-| 1,912 | 2026-02 | [`INC-01762`](docs/incidents/2026.md#inc-01762) | Semantic Kernel — Path Traversal (CVE-2026-25592) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25592` |
-| 1,913 | 2026-02 | [`INC-01767`](docs/incidents/2026.md#inc-01767) | sf-mcp-server — Command Injection (CVE-2026-26029) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26029` |
-| 1,914 | 2026-02 | [`INC-01773`](docs/incidents/2026.md#inc-01773) | SillyTavern — Ssrf (CVE-2026-26286) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26286` |
-| 1,915 | 2026-02 | [`INC-01777`](docs/incidents/2026.md#inc-01777) | Skill Scanner — Prompt Injection (CVE-2026-26057) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-26057` |
-| 1,916 | 2026-02 | [`INC-01810`](docs/incidents/2026.md#inc-01810) | Stored Cross-Site Scripting (XSS) in the _genai/_evals_visualization component of Google Cloud Vertex AI SDK… | Medium | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2026-2472`, `CVE-2026-2473` |
-| 1,917 | 2026-02 | [`INC-01823`](docs/incidents/2026.md#inc-01823) | Summary A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the AI Playground's OAuth call… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1721` |
-| 1,918 | 2026-02 | [`INC-01852`](docs/incidents/2026.md#inc-01852) | TensorFlow HDF5 Library Uncontrolled Search Path Element Local Privilege Escalation Vulnerability. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-2492` |
-| 1,919 | 2026-02 | [`INC-01884`](docs/incidents/2026.md#inc-01884) | The Amazon SageMaker Python SDK before v3.2.0 and v2.256.0 includes the ModelBuilder HMAC signing key in the… | High | LLM03 | ASI04 | `CVE-2026-1777`, `CVE-2026-1778` |
-| 1,920 | 2026-02 | [`INC-01895`](docs/incidents/2026.md#inc-01895) | The Python code being run by 'runPython' or 'runPythonAsync' is not isolated from the rest of the JS code, al… | Medium | LLM03 | ASI04 | `CVE-2026-25905` |
-| 1,921 | 2026-02 | [`INC-01907`](docs/incidents/2026.md#inc-01907) | Time-of-check time-of-use (toctou) race condition in GitHub Copilot and Visual Studio allows an authorized at… | High | LLM03 | ASI04 | `CVE-2026-21523` |
-| 1,922 | 2026-02 | [`INC-02047`](docs/incidents/2026.md#inc-02047) | vLLM RCE via Malicious Video URL (CVE-2026-22778) | Critical | LLM02, LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-22778` |
-| 1,923 | 2026-02 | [`INC-02113`](docs/incidents/2026.md#inc-02113) | Zed, a code editor, has a symlink escape vulnerability in versions prior to 0.225.9 in Agent file tools (`rea… | High | LLM03 | ASI04 | `CVE-2026-27967` |
-| 1,924 | 2026-01-31 | [`INC-01464`](docs/incidents/2026.md#inc-01464) | Moltbook Database Exposure Allegedly Revealed Users&#x27; Private Communications and API Authentication Tokens | High | LLM02, LLM09 | ASI03, ASI09 |  |
-| 1,925 | 2026-01-28 | [`INC-01789`](docs/incidents/2026.md#inc-01789) | South Korean Woman Allegedly Used ChatGPT to Assess Lethality of Drug-and-Alcohol Mixtures Before Two Fatal M… | Critical | LLM04, LLM09 | ASI06, ASI09 |  |
-| 1,926 | 2026-01-26 | [`INC-00058`](docs/incidents/2026.md#inc-00058) | AI Adoption Drives Highest Net Job Losses in UK Among Major Economies | High | LLM05 | ASI05 |  |
-| 1,927 | 2026-01-26 | [`INC-00907`](docs/incidents/2026.md#inc-00907) | Doomsday Clock Moved Closer to Midnight Amid AI Risk Concerns | Medium | LLM09 | ASI10 |  |
-| 1,928 | 2026-01-26 | [`INC-00925`](docs/incidents/2026.md#inc-00925) | ECRI Warns of Patient Safety Risks from AI Chatbot Misuse in Healthcare | Medium | LLM09 |  |  |
-| 1,929 | 2026-01-26 | [`INC-00945`](docs/incidents/2026.md#inc-00945) | EU and Brazil Investigate X's Grok AI for Generating Sexualized Deepfake Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,930 | 2026-01-26 | [`INC-00951`](docs/incidents/2026.md#inc-00951) | EU Investigates X and Grok AI Over Generation of Sexualized Deepfake Images | High | LLM09 | ASI09 |  |
-| 1,931 | 2026-01-26 | [`INC-00952`](docs/incidents/2026.md#inc-00952) | EU Investigates X and Grok AI Over Millions of Harmful Deepfake Sexual Images | Medium | LLM09 | ASI09 |  |
-| 1,932 | 2026-01-26 | [`INC-00953`](docs/incidents/2026.md#inc-00953) | EU Investigates X and Grok AI Over Sexualized Deepfake Scandal | High | LLM05, LLM09 | ASI05, ASI09 |  |
-| 1,933 | 2026-01-26 | [`INC-00954`](docs/incidents/2026.md#inc-00954) | EU Investigates X and Grok AI Over Sexually Explicit Deepfake Images | Critical | LLM09 | ASI09 |  |
-| 1,934 | 2026-01-26 | [`INC-00955`](docs/incidents/2026.md#inc-00955) | EU Investigates X Over AI-Generated Deepfake Sexual Content | Medium | LLM09 | ASI09 |  |
-| 1,935 | 2026-01-26 | [`INC-00956`](docs/incidents/2026.md#inc-00956) | EU Investigates X Platform Over AI-Generated Sexual Deepfakes Involving Minors | High | LLM09 | ASI09 |  |
-| 1,936 | 2026-01-26 | [`INC-00957`](docs/incidents/2026.md#inc-00957) | EU Investigates X's AI Grok for Generating Non-Consensual Sexual Images | High | LLM09 | ASI09 |  |
+| 2 | 2026-05-16 | [`INC-07720`](docs/incidents/2026.md#inc-07720) | AI-Generated Obscene Images Used for Blackmail in Uttar Pradesh | Medium |  |  |  |
+| 3 | 2026-05-16 | [`INC-07716`](docs/incidents/2026.md#inc-07716) | Experts Warn of AI-Driven Fake News Risks in Brazilian Elections | Medium | LLM09 | ASI09 |  |
+| 4 | 2026-05-15 | [`INC-01130`](docs/incidents/2026.md#inc-01130) | Google's Gemini Spark Leak Raises Privacy and Security Concerns Over Autonomous AI Agent | High |  |  |  |
+| 5 | 2026-05-15 | [`INC-01227`](docs/incidents/2026.md#inc-01227) | India's AI Combat Aircraft Kaal Bhairava to be Manufactured in Portugal | Critical |  | ASI10 |  |
+| 6 | 2026-05-15 | [`INC-07715`](docs/incidents/2026.md#inc-07715) | Social Media Platforms Settle AI-Driven Youth Mental Health Lawsuit | Medium |  |  |  |
+| 7 | 2026-05-15 | [`INC-07719`](docs/incidents/2026.md#inc-07719) | UK Regulators Warn of Cyber Risks from Frontier AI Models in Finance | Medium |  |  |  |
+| 8 | 2026-05-15 | [`INC-07721`](docs/incidents/2026.md#inc-07721) | Ukraine Deploys AI-Driven Drone Swarms in Conflict with Russia | Critical |  | ASI10 |  |
+| 9 | 2026-05-15 | [`INC-01960`](docs/incidents/2026.md#inc-01960) | Ukraine Develops AI-Controlled Swarm Drones for Military Use | Critical |  | ASI10 |  |
+| 10 | 2026-05-15 | [`INC-02081`](docs/incidents/2026.md#inc-02081) | Waymo Self-Driving Cars Cause Safety Concerns in Atlanta Neighborhood | High | LLM05 | ASI05 |  |
+| 11 | 2026-05-14 | [`INC-00070`](docs/incidents/2026.md#inc-00070) | AI Agents Cause Digital Harm Through Blind Goal Pursuit | High | LLM09 |  |  |
+| 12 | 2026-05-14 | [`INC-00072`](docs/incidents/2026.md#inc-00072) | AI Agents Commit Virtual Arson and Self-Deletion in Long-Term Simulation | Medium |  |  |  |
+| 13 | 2026-05-14 | [`INC-07718`](docs/incidents/2026.md#inc-07718) | AI Trade Secret Theft and Espionage Cases Proliferate in Silicon Valley | Critical |  |  |  |
+| 14 | 2026-05-14 | [`INC-00276`](docs/incidents/2026.md#inc-00276) | AI-Driven Cyberattacks and Military Integration Raise Security Concerns in Europe | Medium |  |  |  |
+| 15 | 2026-05-14 | [`INC-00546`](docs/incidents/2026.md#inc-00546) | AI-Powered Halupedia Generates Fabricated Encyclopedia Entries, Raising Misinformation Risks | Medium | LLM09 |  |  |
+| 16 | 2026-05-14 | [`INC-07722`](docs/incidents/2026.md#inc-07722) | Analysis Warns of AI Infrastructure Concentration Risks | High | LLM05 | ASI05 |  |
+| 17 | 2026-05-14 | [`INC-00626`](docs/incidents/2026.md#inc-00626) | Anthropic's Mythos AI Uncovers Critical macOS Security Vulnerabilities | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 18 | 2026-05-14 | [`INC-00639`](docs/incidents/2026.md#inc-00639) | Apple Considers Allowing Agentic AI in App Store Amid Security Concerns | High |  |  |  |
+| 19 | 2026-05-14 | [`INC-01258`](docs/incidents/2026.md#inc-01258) | Italian Parents Sue Meta and TikTok After AI Algorithms Linked to Child Suicide | Critical | LLM05 | ASI09 |  |
+| 20 | 2026-05-14 | [`INC-01260`](docs/incidents/2026.md#inc-01260) | Italian Woman Uses AI-Generated Images to Commit Funeral Fraud | Critical |  | ASI09 |  |
+| 21 | 2026-05-14 | [`INC-01576`](docs/incidents/2026.md#inc-01576) | OpenAI Faces Lawsuit Over ChatGPT Data Sharing With Meta and Google | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 22 | 2026-05-14 | [`INC-01775`](docs/incidents/2026.md#inc-01775) | Singapore Businessman Scammed via Deepfake Impersonation of Government Officials | Medium | LLM09 | ASI09 |  |
+| 23 | 2026-05-14 | [`INC-01974`](docs/incidents/2026.md#inc-01974) | Unauthorized AI-Driven Biometric Data Collection Leads to Arrests in Assam | High |  |  |  |
+| 24 | 2026-05-14 | [`INC-01984`](docs/incidents/2026.md#inc-01984) | US and China Discuss AI Controls to Prevent Cyberattack Risks | Medium |  |  |  |
+| 25 | 2026-05-14 | [`INC-02002`](docs/incidents/2026.md#inc-02002) | US Judge Delays Approval of Anthropic's $1.5 Billion AI Copyright Settlement | High |  |  |  |
+| 26 | 2026-05-13 | [`INC-00225`](docs/incidents/2026.md#inc-00225) | AI Systems Accelerate Cybersecurity Risks and Real-World Incidents | High | LLM09 |  |  |
+| 27 | 2026-05-13 | [`INC-00285`](docs/incidents/2026.md#inc-00285) | AI-Driven Cyberattacks Surge in Argentina | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
+| 28 | 2026-05-13 | [`INC-00301`](docs/incidents/2026.md#inc-00301) | AI-Driven Gig Platforms Cause Global Labor Rights Violations | Medium |  |  |  |
+| 29 | 2026-05-13 | [`INC-00442`](docs/incidents/2026.md#inc-00442) | AI-Generated Fake Content Used to Blackmail Turkish Celebrity | Medium | LLM09 | ASI09 |  |
+| 30 | 2026-05-13 | [`INC-00590`](docs/incidents/2026.md#inc-00590) | Anduril's $5B Funding Fuels Expansion of AI-Driven Autonomous Weapons | Medium |  | ASI10 |  |
+| 31 | 2026-05-13 | [`INC-00749`](docs/incidents/2026.md#inc-00749) | ChatGPT Implicated in Multiple Fatal Incidents | Critical | LLM04 | ASI06 |  |
+| 32 | 2026-05-13 | [`INC-07717`](docs/incidents/2026.md#inc-07717) | ChatGPT Launches Financial Management Feature, Raising Privacy Concerns | Critical |  | ASI09 |  |
+| 33 | 2026-05-13 | [`INC-00753`](docs/incidents/2026.md#inc-00753) | ChatGPT Use Drives Grade Inflation in Texas University Courses | High | LLM05 | ASI05 |  |
+| 34 | 2026-05-13 | [`INC-00755`](docs/incidents/2026.md#inc-00755) | ChatGPT-Induced Psychosis and Mental Health Crisis | Medium | LLM05 | ASI09 |  |
+| 35 | 2026-05-13 | [`INC-00983`](docs/incidents/2026.md#inc-00983) | Facial Recognition Error Leads to Wrongful Arrest and Jailing of Tennessee Grandmother | High | LLM05 | ASI05, ASI09 |  |
+| 36 | 2026-05-13 | [`INC-01262`](docs/incidents/2026.md#inc-01262) | Itaú and Google Deploy AI to Block Fraudulent Bank Calls in Brazil | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 37 | 2026-05-13 | [`INC-01270`](docs/incidents/2026.md#inc-01270) | Japanese Megabanks to Access Anthropic's Mythos AI, Raising Cybersecurity Concerns | High | LLM05 | ASI05 |  |
+| 38 | 2026-05-13 | [`INC-01287`](docs/incidents/2026.md#inc-01287) | L3Harris Deploys AI-Enabled Counter-Drone Software for Tactical Radios | High | LLM05 | ASI05 |  |
+| 39 | 2026-05-13 | [`INC-01320`](docs/incidents/2026.md#inc-01320) | Lawyers Fined for Attempting to Manipulate Judicial AI System in Pará | High | LLM01 | ASI01, ASI09 |  |
+| 40 | 2026-05-13 | [`INC-01419`](docs/incidents/2026.md#inc-01419) | Meta's AI Smart Glasses Spark Privacy Violations and Legal Action | High |  |  |  |
+| 41 | 2026-05-13 | [`INC-01770`](docs/incidents/2026.md#inc-01770) | Shield AI and Thunder Tiger Integrate Autonomous AI for Military Unmanned Vessels in Taiwan | Medium |  | ASI10 |  |
+| 42 | 2026-05-13 | [`INC-01842`](docs/incidents/2026.md#inc-01842) | Tech Giants Sued for Using Voiceprints to Train AI Without Consent | High |  |  |  |
+| 43 | 2026-05-13 | [`INC-02064`](docs/incidents/2026.md#inc-02064) | Warnings Over Anthropic's 'Mythos' AI Model and Cyberattack Risks | Medium |  |  |  |
+| 44 | 2026-05-13 | [`INC-02074`](docs/incidents/2026.md#inc-02074) | Waymo Robotaxi AI Failures Lead to Vehicle Recall and Community Disruption in the US | Medium |  |  |  |
+| 45 | 2026-05-12 | [`INC-00145`](docs/incidents/2026.md#inc-00145) | AI Deepfake Scam Causes $25 Million Loss in Vietnam | Medium | LLM09 | ASI09 |  |
+| 46 | 2026-05-12 | [`INC-00146`](docs/incidents/2026.md#inc-00146) | AI Deepfake Scam Targets Hospital Director in Taiwan | High | LLM09 | ASI09 |  |
+| 47 | 2026-05-12 | [`INC-00172`](docs/incidents/2026.md#inc-00172) | AI Hiring Systems Render Experienced Developer Unemployable | Medium |  |  |  |
+| 48 | 2026-05-12 | [`INC-00240`](docs/incidents/2026.md#inc-00240) | AI Tools Uncover Critical Linux Kernel Vulnerability | High |  |  |  |
+| 49 | 2026-05-12 | [`INC-00273`](docs/incidents/2026.md#inc-00273) | AI-Driven Crackdown on Illegal Gambling Sites in Turkey | High | LLM05 | ASI05 |  |
+| 50 | 2026-05-12 | [`INC-00279`](docs/incidents/2026.md#inc-00279) | AI-Driven Cyberattacks Cause Major Harm in Germany | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
+| 51 | 2026-05-12 | [`INC-00282`](docs/incidents/2026.md#inc-00282) | AI-Driven Cyberattacks Exploit Zero-Day Vulnerabilities, Escalating Security Risks | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI10 |  |
+| 52 | 2026-05-12 | [`INC-00438`](docs/incidents/2026.md#inc-00438) | AI-Generated Fabricated Citations Undermine Biomedical Research Integrity | High | LLM09 |  |  |
+| 53 | 2026-05-12 | [`INC-00447`](docs/incidents/2026.md#inc-00447) | AI-Generated Fake Images of Manolo García's Concert Incident Cause Public Alarm | High | LLM05, LLM09 | ASI05 |  |
+| 54 | 2026-05-12 | [`INC-00465`](docs/incidents/2026.md#inc-00465) | AI-Generated Fake Rice Video Causes Public Panic and Legal Action in China | Medium | LLM09 |  |  |
+| 55 | 2026-05-12 | [`INC-00483`](docs/incidents/2026.md#inc-00483) | AI-Generated Minor Persona Used to Expose Suspected Pedophile in France | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 56 | 2026-05-12 | [`INC-00489`](docs/incidents/2026.md#inc-00489) | AI-Generated Offensive Content Amplified by Trump and Aide | High | LLM09 |  |  |
+| 57 | 2026-05-12 | [`INC-00544`](docs/incidents/2026.md#inc-00544) | AI-Powered Fire Detection System Prevents Wildfire in Troizinia-Methana | Medium |  |  |  |
+| 58 | 2026-05-12 | [`INC-00553`](docs/incidents/2026.md#inc-00553) | AI-Powered Robots and Drones Used in Ukrainian Military Operations | Critical | LLM05 | ASI05, ASI10 |  |
+| 59 | 2026-05-12 | [`INC-00618`](docs/incidents/2026.md#inc-00618) | Anthropic's Mythos AI Exposes Security Flaws in Banking and macOS Systems | High |  |  |  |
+| 60 | 2026-05-12 | [`INC-00645`](docs/incidents/2026.md#inc-00645) | Arizona Man Indicted for AI-Generated Child Sexual Abuse Images in Landmark Case | High | LLM09 |  |  |
+| 61 | 2026-05-12 | [`INC-00658`](docs/incidents/2026.md#inc-00658) | Australian Watchdog Warns of AI-Driven Money Laundering Surge | Medium |  | ASI09 |  |
+| 62 | 2026-05-12 | [`INC-00772`](docs/incidents/2026.md#inc-00772) | China Unveils AI-Enabled Autonomous 'Machine Wolf' Combat Robots | Critical |  | ASI10 |  |
+| 63 | 2026-05-12 | [`INC-00777`](docs/incidents/2026.md#inc-00777) | China's First AI-Generated Fake Review Case Ruled: AI Tool Providers Fined | High | LLM05 | ASI05 |  |
+| 64 | 2026-05-12 | [`INC-00848`](docs/incidents/2026.md#inc-00848) | Community Bank Data Breach Caused by Unauthorized AI Application | High | LLM02 | ASI03 |  |
+| 65 | 2026-05-12 | [`INC-00960`](docs/incidents/2026.md#inc-00960) | EU Investigates X's Grok AI for Generating Harmful Sexual Content Involving Minors | High | LLM05 | ASI05 |  |
+| 66 | 2026-05-12 | [`INC-00964`](docs/incidents/2026.md#inc-00964) | EU Surveillance Tech Exports Enable Human Rights Abuses | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI10 |  |
+| 67 | 2026-05-12 | [`INC-00982`](docs/incidents/2026.md#inc-00982) | Facial Recognition AI Leads to Arrest of Wine Thief in Singapore Supermarket | High | LLM05 | ASI05 |  |
+| 68 | 2026-05-12 | [`INC-01075`](docs/incidents/2026.md#inc-01075) | German Court Holds Doctors Liable for AI Chatbot's False Medical Claims | High | LLM09 |  |  |
+| 69 | 2026-05-12 | [`INC-01113`](docs/incidents/2026.md#inc-01113) | Google Detects First AI-Developed Zero-Day Exploit in Major Cyberattack Attempt | High | LLM02 | ASI03 |  |
+| 70 | 2026-05-12 | [`INC-01315`](docs/incidents/2026.md#inc-01315) | Launch of VECTOR-300 AI Autopilot for Mass-Produced Military Drones Raises Hazard Concerns | Critical | LLM05 | ASI05, ASI10 |  |
+| 71 | 2026-05-12 | [`INC-01368`](docs/incidents/2026.md#inc-01368) | Man Arrested in Salta for Creating and Distributing AI-Generated Fake Intimate Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 72 | 2026-05-12 | [`INC-01455`](docs/incidents/2026.md#inc-01455) | Mistral AI Source Code Stolen in Major Data Breach | High | LLM02, LLM05 | ASI02, ASI03, ASI05 |  |
+| 73 | 2026-05-12 | [`INC-01557`](docs/incidents/2026.md#inc-01557) | Ontario Medical AI Scribes Found to Produce Dangerous Errors and Hallucinations | High | LLM09 |  |  |
+| 74 | 2026-05-12 | [`INC-01579`](docs/incidents/2026.md#inc-01579) | OpenAI Sued After ChatGPT Advice Allegedly Leads to Fatal Overdose | Critical | LLM05 | ASI05, ASI09 |  |
+| 75 | 2026-05-12 | [`INC-01664`](docs/incidents/2026.md#inc-01664) | Potential Manipulation by AI Chatbots Raises Ethical Concerns | Critical | LLM05, LLM09 | ASI05 |  |
+| 76 | 2026-05-12 | [`INC-01679`](docs/incidents/2026.md#inc-01679) | Princeton Ends Unproctored Exams After Surge in AI-Enabled Cheating | Critical | LLM05 | ASI05 |  |
+| 77 | 2026-05-12 | [`INC-01745`](docs/incidents/2026.md#inc-01745) | Romanian Minister Warns of Risks in Unstructured AI Adoption in Public Administration | High | LLM05 | ASI05 |  |
+| 78 | 2026-05-12 | [`INC-01835`](docs/incidents/2026.md#inc-01835) | Swarmer and Partners Develop AI-Driven Drone Interceptor System for Defense | High | LLM05 | ASI05, ASI10 |  |
+| 79 | 2026-05-12 | [`INC-01955`](docs/incidents/2026.md#inc-01955) | Ukraine Deepens AI Defense Cooperation with Palantir | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
+| 80 | 2026-05-12 | [`INC-02073`](docs/incidents/2026.md#inc-02073) | Waymo Recalls Nearly 4,000 Robotaxis in U.S. After AI Fails to Handle Flooded Roads | Critical | LLM05 | ASI05 |  |
+| 81 | 2026-05-12 | [`INC-02116`](docs/incidents/2026.md#inc-02116) | ZenaTech Launches AI Military Drone Production for Gulf States | High | LLM05 | ASI05, ASI10 |  |
+| 82 | 2026-05-11 | [`INC-00044`](docs/incidents/2026.md#inc-00044) | Advocacy Group Urges US to Screen AI Models for Security Risks Before Release | Critical | LLM05 | ASI05 |  |
+| 83 | 2026-05-11 | [`INC-00180`](docs/incidents/2026.md#inc-00180) | AI Misidentification Leads to False Arrests and Wrongful Detentions in U.S. Policing | High | LLM05 | ASI05 |  |
+| 84 | 2026-05-11 | [`INC-00232`](docs/incidents/2026.md#inc-00232) | AI Systems Used in Both Combating and Facilitating Payment Scams | Critical | LLM09 | ASI09 |  |
+| 85 | 2026-05-11 | [`INC-00251`](docs/incidents/2026.md#inc-00251) | AI Virtual Companion Apps Expose Minors to Sexual and Violent Content in China | High |  |  |  |
+| 86 | 2026-05-11 | [`INC-00343`](docs/incidents/2026.md#inc-00343) | AI-Enabled Drones Transform Warfare, Raising Future Risks | Medium |  | ASI10 |  |
+| 87 | 2026-05-11 | [`INC-00367`](docs/incidents/2026.md#inc-00367) | AI-Generated Child Sexual Abuse Material Drives Surge in Exploitation Cases in North America | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 88 | 2026-05-11 | [`INC-00548`](docs/incidents/2026.md#inc-00548) | AI-Powered License Plate Readers at Home Depot and Lowe's Spark Privacy Lawsuit | High | LLM05 | ASI05 |  |
+| 89 | 2026-05-11 | [`INC-00693`](docs/incidents/2026.md#inc-00693) | Binance's AI Systems Block Billions in Crypto Scams and Fraud | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 90 | 2026-05-11 | [`INC-01003`](docs/incidents/2026.md#inc-01003) | FDA Approves AI System for Early Sepsis Detection, Reducing Mortality | Critical |  |  |  |
+| 91 | 2026-05-11 | [`INC-01049`](docs/incidents/2026.md#inc-01049) | French Families Sue TikTok Over AI-Driven Harmful Content to Minors | Critical | LLM05 | ASI09 |  |
+| 92 | 2026-05-11 | [`INC-01057`](docs/incidents/2026.md#inc-01057) | G7 Shares Concerns Over AI-Enabled Cyberattack Risks to Financial Systems | Medium |  |  |  |
+| 93 | 2026-05-11 | [`INC-01060`](docs/incidents/2026.md#inc-01060) | Gautam Adani Warns of AI-Driven Surge in Energy Consumption in India | Medium |  |  |  |
+| 94 | 2026-05-11 | [`INC-01079`](docs/incidents/2026.md#inc-01079) | German Finance Ministry Warns of AI Cyberattack Risks to Financial Stability | High |  |  |  |
+| 95 | 2026-05-11 | [`INC-01436`](docs/incidents/2026.md#inc-01436) | Microsoft Fires Israel Head Over AI-Enabled Surveillance and Military Targeting in Gaza | Critical | LLM05 | ASI05 |  |
+| 96 | 2026-05-11 | [`INC-01447`](docs/incidents/2026.md#inc-01447) | MindBio Develops AI Voice Analytics for Fatigue and Intoxication Detection | Medium |  |  |  |
+| 97 | 2026-05-11 | [`INC-01621`](docs/incidents/2026.md#inc-01621) | Palantir's AI Systems Implicated in Military Targeting and Civilian Harm in Ukraine | Critical | LLM05 | ASI05, ASI10 |  |
+| 98 | 2026-05-11 | [`INC-01746`](docs/incidents/2026.md#inc-01746) | Romanian Tax Authority's Use of AI in Dispute Resolutions Leads to Legal Rights Violations | High |  |  |  |
+| 99 | 2026-05-11 | [`INC-01759`](docs/incidents/2026.md#inc-01759) | Security Incidents and Warnings Over OpenClaw AI Agent Vulnerabilities | High | LLM02 | ASI03 |  |
+| 100 | 2026-05-11 | [`INC-01796`](docs/incidents/2026.md#inc-01796) | Spanish Universities Deploy AI-Detection Tech to Prevent Exam Cheating | High | LLM05 | ASI05, ASI09 |  |
+| 101 | 2026-05-10 | [`INC-00307`](docs/incidents/2026.md#inc-00307) | AI-Driven Job Losses Disproportionately Impact Women in U.S. Administrative Roles | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 102 | 2026-05-10 | [`INC-00344`](docs/incidents/2026.md#inc-00344) | AI-Enabled Eavesdropping via Fiber Optic Cables Raises Global Privacy Concerns | Medium |  |  |  |
+| 103 | 2026-05-10 | [`INC-00365`](docs/incidents/2026.md#inc-00365) | AI-Generated Avatars Spread Pro-Trump Disinformation Ahead of US Midterms | Medium | LLM09 |  |  |
+| 104 | 2026-05-10 | [`INC-00432`](docs/incidents/2026.md#inc-00432) | AI-Generated Disinformation Targets Misogyny Bill in Brazil | Medium | LLM09 |  |  |
+| 105 | 2026-05-10 | [`INC-00714`](docs/incidents/2026.md#inc-00714) | Brazilian Workers' Party Warns of AI-Driven Electoral Disinformation Risks | Medium | LLM09 |  |  |
+| 106 | 2026-05-10 | [`INC-00737`](docs/incidents/2026.md#inc-00737) | CDU Staffer Creates and Shares Sexualized Deepfake Video of Colleague | Medium | LLM09 | ASI09 |  |
+| 107 | 2026-05-10 | [`INC-00878`](docs/incidents/2026.md#inc-00878) | Delhi High Court Orders Removal of AI-Generated Deepfakes Exploiting Aman Gupta | Medium | LLM09 | ASI09 |  |
+| 108 | 2026-05-10 | [`INC-01107`](docs/incidents/2026.md#inc-01107) | Google Blocks AI-Driven Cyberattack Exploiting Zero-Day Vulnerability | High |  |  |  |
+| 109 | 2026-05-10 | [`INC-01109`](docs/incidents/2026.md#inc-01109) | Google Cloud Users Hit by Massive Bills After AI API Key Compromise | High |  | ASI09 |  |
+| 110 | 2026-05-10 | [`INC-01409`](docs/incidents/2026.md#inc-01409) | Meta Removes End-to-End Encryption from Instagram Messages, Enabling AI Surveillance | High |  |  |  |
+| 111 | 2026-05-10 | [`INC-01439`](docs/incidents/2026.md#inc-01439) | Microsoft Research Reveals AI Models Corrupt Documents in Delegated Workflows | High | LLM09 |  |  |
+| 112 | 2026-05-10 | [`INC-01617`](docs/incidents/2026.md#inc-01617) | Palantir AI Systems Used in Israeli Military Operations Causing Civilian Harm | Critical | LLM05 | ASI05 |  |
+| 113 | 2026-05-09 | [`INC-00189`](docs/incidents/2026.md#inc-00189) | AI Models Enable Autonomous Cyberattacks and Vulnerability Exploitation | Critical |  | ASI05, ASI10 |  |
+| 114 | 2026-05-09 | [`INC-00277`](docs/incidents/2026.md#inc-00277) | AI-Driven Cyberattacks and Military Targeting Lead to Civilian Harm | Critical | LLM02, LLM09 | ASI03, ASI05, ASI10 |  |
+| 115 | 2026-05-09 | [`INC-00352`](docs/incidents/2026.md#inc-00352) | AI-Enabled Military Ground Vehicle BARKAN 3 Unveiled in Turkey | Critical | LLM05 | ASI05, ASI10 |  |
+| 116 | 2026-05-09 | [`INC-00479`](docs/incidents/2026.md#inc-00479) | AI-Generated Investment Scam Defrauds Retiree in Antalya | High |  | ASI09 |  |
+| 117 | 2026-05-09 | [`INC-00778`](docs/incidents/2026.md#inc-00778) | China's First AI-Generated Short Drama Copyright Infringement Case | High |  |  |  |
+| 118 | 2026-05-09 | [`INC-01103`](docs/incidents/2026.md#inc-01103) | Google and Greystoke Understate Carbon Emissions of UK AI Data Centres | Medium | LLM09 |  |  |
+| 119 | 2026-05-09 | [`INC-01731`](docs/incidents/2026.md#inc-01731) | Researchers Bypass AI Robot Safety to Demonstrate Bomb-Carrying Risk | Medium | LLM01 | ASI01 |  |
+| 120 | 2026-05-09 | [`INC-01853`](docs/incidents/2026.md#inc-01853) | Tesla AI Vision Enables Earlier Airbag Deployment to Reduce Crash Injuries | Medium |  |  |  |
+| 121 | 2026-05-09 | [`INC-01956`](docs/incidents/2026.md#inc-01956) | Ukraine Deploys AI Turrets for Autonomous Drone Interception in Combat | Critical | LLM05 | ASI05, ASI10 |  |
+| 122 | 2026-05-09 | [`INC-02070`](docs/incidents/2026.md#inc-02070) | Waymo Autonomous Vehicles Involved in Multiple Safety Incidents in London and San Antonio | Critical | LLM05 | ASI05 |  |
+| 123 | 2026-05-08 | [`INC-00043`](docs/incidents/2026.md#inc-00043) | Advances in Self-Evolving AI Agents Raise Future Risk Concerns | Medium |  |  |  |
+| 124 | 2026-05-08 | [`INC-00263`](docs/incidents/2026.md#inc-00263) | AI-Assisted IPL Ticket Counterfeiting Scam Busted in Lucknow | High |  | ASI09 |  |
+| 125 | 2026-05-08 | [`INC-00420`](docs/incidents/2026.md#inc-00420) | AI-Generated Deepfakes Spread Disinformation About India's Defense and Foreign Policy | Critical | LLM09 | ASI09 |  |
+| 126 | 2026-05-08 | [`INC-00444`](docs/incidents/2026.md#inc-00444) | AI-Generated Fake Damage Photos Used in Vinted Refund Scam | Medium |  | ASI09 |  |
+| 127 | 2026-05-08 | [`INC-00805`](docs/incidents/2026.md#inc-00805) | Claude AI Chrome Extension Vulnerability Exposes User Data to Malicious Extensions | High | LLM01, LLM03 | ASI01, ASI04 |  |
+| 128 | 2026-05-08 | [`INC-01006`](docs/incidents/2026.md#inc-01006) | First Case of AI Addiction Treated in Venice | Critical | LLM05 | ASI05 |  |
+| 129 | 2026-05-08 | [`INC-01268`](docs/incidents/2026.md#inc-01268) | Japan Responds to AI Cybersecurity Threats from Anthropic's Mythos Model | Critical | LLM05 | ASI05 |  |
+| 130 | 2026-05-08 | [`INC-01276`](docs/incidents/2026.md#inc-01276) | JR East to Trial Level 4 Autonomous Buses on Kesennuma Line BRT | Medium |  |  |  |
+| 131 | 2026-05-08 | [`INC-01421`](docs/incidents/2026.md#inc-01421) | Meta's AI-Driven Account Purge Causes Mass Suspensions and Follower Losses | High | LLM05 | ASI05 |  |
+| 132 | 2026-05-08 | [`INC-01533`](docs/incidents/2026.md#inc-01533) | NHTSA Investigates Avride-Uber Robotaxi Crashes in Texas | Medium |  |  |  |
+| 133 | 2026-05-08 | [`INC-01544`](docs/incidents/2026.md#inc-01544) | Nuro Receives California Permits for Driverless Lucid-Uber Robotaxi Testing | Medium |  |  |  |
+| 134 | 2026-05-08 | [`INC-01968`](docs/incidents/2026.md#inc-01968) | UN AI Advisor Warns of Risks: Human Impersonation and Neural Data Commercialization | Medium | LLM09 | ASI09 |  |
+| 135 | 2026-05-08 | [`INC-01979`](docs/incidents/2026.md#inc-01979) | Unregulated AI Toys Expose Children to Inappropriate Content and Privacy Risks | Medium |  |  |  |
+| 136 | 2026-05-08 | [`INC-02027`](docs/incidents/2026.md#inc-02027) | US Probes Illegal Smuggling of Nvidia AI Chips to China via Thailand | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 137 | 2026-05-08 | [`INC-02040`](docs/incidents/2026.md#inc-02040) | Vietnam Uses AI for Online Propaganda and Censorship | High | LLM05, LLM09 | ASI05 |  |
+| 138 | 2026-05-07 | [`INC-00001`](docs/incidents/2026.md#inc-00001) | 11 Arrested for Deepfake AI Scam Impersonating Ghana's Former President | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 139 | 2026-05-07 | [`INC-00235`](docs/incidents/2026.md#inc-00235) | AI Token Theft Surge Causes Financial Harm to Startups | Critical | LLM05 | ASI05, ASI09 |  |
+| 140 | 2026-05-07 | [`INC-00329`](docs/incidents/2026.md#inc-00329) | AI-Driven Workplace Surveillance Leads to Employee Dismissals and Privacy Concerns in China | Medium |  |  |  |
+| 141 | 2026-05-07 | [`INC-00332`](docs/incidents/2026.md#inc-00332) | AI-Enabled Brain-Computer Interfaces Advance, Raising Future Risks | Medium |  |  |  |
+| 142 | 2026-05-07 | [`INC-00415`](docs/incidents/2026.md#inc-00415) | AI-Generated Deepfakes Cause Harm and Challenge Law Enforcement in Germany | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 143 | 2026-05-07 | [`INC-00441`](docs/incidents/2026.md#inc-00441) | AI-Generated Fake Buyer Reviews Mislead Consumers on Chinese E-Commerce Platforms | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 144 | 2026-05-07 | [`INC-00538`](docs/incidents/2026.md#inc-00538) | AI-Powered Cyberattacks Threaten Global Financial Stability | High | LLM05 | ASI05 |  |
+| 145 | 2026-05-07 | [`INC-00602`](docs/incidents/2026.md#inc-00602) | Anthropic Claude used in attempted compromise of Mexican water utility | Critical | LLM01, LLM06 | ASI01, ASI02 |  |
+| 146 | 2026-05-07 | [`INC-00650`](docs/incidents/2026.md#inc-00650) | ASU Faculty Protest AI Platform's Unauthorized Use of Teaching Materials | Medium | LLM09 |  |  |
+| 147 | 2026-05-07 | [`INC-00791`](docs/incidents/2026.md#inc-00791) | Chinese Courts Rule Against AI Platforms for Defamation and Copyright Infringement | High | LLM05, LLM09 | ASI05 |  |
+| 148 | 2026-05-07 | [`INC-01156`](docs/incidents/2026.md#inc-01156) | Hacker Exploits Security Flaws in Yarbo Robot Lawnmowers, Demonstrates Physical and Privacy Risks | High |  |  |  |
+| 149 | 2026-05-07 | [`INC-01175`](docs/incidents/2026.md#inc-01175) | Hyundai Rotem and Anduril Collaborate on AI-Driven Military Command Systems | Critical | LLM05 | ASI05, ASI10 |  |
+| 150 | 2026-05-07 | [`INC-01634`](docs/incidents/2026.md#inc-01634) | Pentagon Signs $500 Million AI Contract with Scale AI for Military Data Analysis | Critical |  |  |  |
+| 151 | 2026-05-07 | [`INC-01915`](docs/incidents/2026.md#inc-01915) | Trump Shares AI-Generated Image Targeting Biden and Family | High | LLM09 |  |  |
+| 152 | 2026-05-07 | [`INC-02003`](docs/incidents/2026.md#inc-02003) | US Judge Rules Use of ChatGPT to Cut Humanities Grants Unconstitutional | High |  |  |  |
+| 153 | 2026-05-07 | [`INC-02034`](docs/incidents/2026.md#inc-02034) | US-China Consider Formal AI Talks to Prevent Military and Economic Crises | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
+| 154 | 2026-05-07 | [`INC-02108`](docs/incidents/2026.md#inc-02108) | YouTube AI Moderation Causes Mass Demonetization of Japanese Creators | High | LLM05 | ASI05 |  |
+| 155 | 2026-05-06 | [`INC-00039`](docs/incidents/2026.md#inc-00039) | Actress Sues Over AI-Generated Likeness in 'Avatar' Films | High | LLM09 | ASI09 |  |
+| 156 | 2026-05-06 | [`INC-00284`](docs/incidents/2026.md#inc-00284) | AI-Driven Cyberattacks Render Passwords Insufficient for Security | Critical | LLM02, LLM09 | ASI03, ASI05, ASI09, ASI10 |  |
+| 157 | 2026-05-06 | [`INC-00308`](docs/incidents/2026.md#inc-00308) | AI-Driven Layoffs Surge in US Companies | High | LLM05 | ASI05 |  |
+| 158 | 2026-05-06 | [`INC-00394`](docs/incidents/2026.md#inc-00394) | AI-Generated Deepfake Video Fuels Misinformation After Tainan Policewoman's Death | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 159 | 2026-05-06 | [`INC-00463`](docs/incidents/2026.md#inc-00463) | AI-Generated Fake Rabbis Spread Antisemitism on TikTok | Medium | LLM09 | ASI09 |  |
+| 160 | 2026-05-06 | [`INC-00499`](docs/incidents/2026.md#inc-00499) | AI-Generated Scam Texts Target Oregon Drivers | Medium | LLM09 | ASI09 |  |
+| 161 | 2026-05-06 | [`INC-00533`](docs/incidents/2026.md#inc-00533) | AI-Powered Apple Watch App Trial Aims to Detect Infections in Pediatric Cancer Patients | Medium |  |  |  |
+| 162 | 2026-05-06 | [`INC-00547`](docs/incidents/2026.md#inc-00547) | AI-Powered Kamikaze Naval Drone YAKTU KİDA Unveiled in Turkey | Critical |  | ASI10 |  |
+| 163 | 2026-05-06 | [`INC-00560`](docs/incidents/2026.md#inc-00560) | AI-Powered Traffic Cameras Enforce In-Car Violations on Brazilian Highways | High | LLM05 | ASI05 |  |
+| 164 | 2026-05-06 | [`INC-00562`](docs/incidents/2026.md#inc-00562) | AI-Powered TUNGA-X Interceptor Drone Unveiled in Turkey | Critical | LLM05 | ASI05, ASI10 |  |
+| 165 | 2026-05-06 | [`INC-00625`](docs/incidents/2026.md#inc-00625) | Anthropic's Mythos AI Sparks Cybersecurity Crisis Over Autonomous Vulnerability Discovery | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
+| 166 | 2026-05-06 | [`INC-00730`](docs/incidents/2026.md#inc-00730) | Canadian Privacy Authorities Find OpenAI's ChatGPT Violated Privacy Laws | High | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
+| 167 | 2026-05-06 | [`INC-00901`](docs/incidents/2026.md#inc-00901) | Disney's Facial Recognition System Raises Privacy Concerns in California | High | LLM02 | ASI03 |  |
+| 168 | 2026-05-06 | [`INC-01048`](docs/incidents/2026.md#inc-01048) | French Cybersecurity Sector Warns of AI-Driven Vulnerability Surge | Medium |  |  |  |
+| 169 | 2026-05-06 | [`INC-07723`](docs/incidents/2026.md#inc-07723) | Kenya's $1 Billion AI Data Center Project Stalls Over Power Constraints | Medium |  |  |  |
+| 170 | 2026-05-06 | [`INC-01545`](docs/incidents/2026.md#inc-01545) | NVIDIA Faces Lawsuit Over AI Training With Copyrighted Data | High |  |  |  |
+| 171 | 2026-05-06 | [`INC-01903`](docs/incidents/2026.md#inc-01903) | TikTok Algorithm Systematically Favored Republican Content During 2024 US Elections | High | LLM05, LLM09 | ASI05 |  |
+| 172 | 2026-05-06 | [`INC-01905`](docs/incidents/2026.md#inc-01905) | TikTok Scales Back AI Video Summaries After Generating Bizarre Errors | Medium | LLM09 |  |  |
+| 173 | 2026-05-05 | [`INC-00055`](docs/incidents/2026.md#inc-00055) | AI Accelerates Password Cracking and Exposes Security Detection Gaps | High | LLM02 | ASI03 |  |
+| 174 | 2026-05-05 | [`INC-00056`](docs/incidents/2026.md#inc-00056) | AI Accent Masking in Canadian Call Centres Sparks Transparency and Labor Concerns | High |  |  |  |
+| 175 | 2026-05-05 | [`INC-00274`](docs/incidents/2026.md#inc-00274) | AI-Driven CTV Ad Fraud Surges 140% Globally, Causing Financial Harm to Advertisers | Medium |  | ASI09 |  |
+| 176 | 2026-05-05 | [`INC-00445`](docs/incidents/2026.md#inc-00445) | AI-Generated Fake Family Photos Cause Distress for Julián Gil and Marjorie de Sousa | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 177 | 2026-05-05 | [`INC-00561`](docs/incidents/2026.md#inc-00561) | AI-Powered Translation Threatens Minority Languages with Extinction | Medium |  |  |  |
+| 178 | 2026-05-05 | [`INC-00785`](docs/incidents/2026.md#inc-00785) | Chinese AI Search System Misidentifies Historical Figure, Spreading Misinformation | High | LLM09 |  |  |
+| 179 | 2026-05-05 | [`INC-00839`](docs/incidents/2026.md#inc-00839) | Cognizant Layoffs Driven by AI Automation Impact Thousands in India | Critical | LLM05 | ASI05 |  |
+| 180 | 2026-05-05 | [`INC-01069`](docs/incidents/2026.md#inc-01069) | Georgia Prosecutor Disciplined for Submitting AI-Generated Fake Legal Citations | High |  |  |  |
+| 181 | 2026-05-05 | [`INC-01125`](docs/incidents/2026.md#inc-01125) | Google Warns EU Data-Sharing Plan Risks AI-Driven Privacy Breaches | High |  |  |  |
+| 182 | 2026-05-05 | [`INC-01235`](docs/incidents/2026.md#inc-01235) | Indonesia and Turkey Sign Deal for AI-Enabled Combat Drones | Critical | LLM05 | ASI05, ASI10 |  |
+| 183 | 2026-05-05 | [`INC-01250`](docs/incidents/2026.md#inc-01250) | Ireland Investigates Meta's AI Recommender Systems for Potential User Manipulation | High | LLM05 | ASI05 |  |
+| 184 | 2026-05-05 | [`INC-01360`](docs/incidents/2026.md#inc-01360) | Major AI Chatbots Leak User Conversations to Advertising Trackers | High | LLM02 | ASI03 |  |
+| 185 | 2026-05-05 | [`INC-01420`](docs/incidents/2026.md#inc-01420) | Meta's AI Systems Enable Scam Ads and Harmful Content Targeting Minors | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 186 | 2026-05-05 | [`INC-01448`](docs/incidents/2026.md#inc-01448) | MindBio Develops AI Voice Analytics for Intoxication Detection | High | LLM05 | ASI05 |  |
+| 187 | 2026-05-05 | [`INC-01628`](docs/incidents/2026.md#inc-01628) | Pennsylvania Sues Character.AI Over Chatbot Impersonating Doctor | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 188 | 2026-05-05 | [`INC-01686`](docs/incidents/2026.md#inc-01686) | Publishers Sue Meta Over Unauthorized Use of Copyrighted Works for AI Training | High | LLM05 | ASI05 |  |
+| 189 | 2026-05-05 | [`INC-01712`](docs/incidents/2026.md#inc-01712) | Purportedly AI-Recreated Clips from Beastie Boys&#x27; &#x27;Sabotage&#x27; Video Reportedly Appeared in FBI… | High | LLM09 |  |  |
+| 190 | 2026-05-05 | [`INC-01831`](docs/incidents/2026.md#inc-01831) | Suspect Uses Taipei Metro AI Chatbot to Issue Bomb and Murder Threats, Causing Public Panic | High | LLM05 | ASI05 |  |
+| 191 | 2026-05-05 | [`INC-01987`](docs/incidents/2026.md#inc-01987) | US Army Launches AI Integration Initiative for Military Systems | Medium |  | ASI10 |  |
+| 192 | 2026-05-04 | [`INC-00042`](docs/incidents/2026.md#inc-00042) | Advanced AI Models Spark Global Cybersecurity and Financial System Fears | Critical |  |  |  |
+| 193 | 2026-05-04 | [`INC-00147`](docs/incidents/2026.md#inc-00147) | AI Deepfake Scam Targets Taiwanese Farmer, Harms Consumers and Agriculture | Medium | LLM09 | ASI09 |  |
+| 194 | 2026-05-04 | [`INC-00173`](docs/incidents/2026.md#inc-00173) | AI Humanoid Robots Deployed for Traffic Control and Military Logistics | Critical | LLM05 | ASI05 |  |
+| 195 | 2026-05-04 | [`INC-00196`](docs/incidents/2026.md#inc-00196) | AI Prompt Injection Exploit Drains Grok-Linked Crypto Wallet | Critical | LLM01, LLM05 | ASI01, ASI05, ASI09 |  |
+| 196 | 2026-05-04 | [`INC-00257`](docs/incidents/2026.md#inc-00257) | AI Voice Cloning Used in Silent Call Phone Scams in France | High | LLM09 | ASI09 |  |
+| 197 | 2026-05-04 | [`INC-00258`](docs/incidents/2026.md#inc-00258) | AI Vulnerabilities Overwhelm Security Systems and Expose Critical Risks | High | LLM02, LLM04, LLM05 | ASI03, ASI05, ASI06, ASI09 |  |
+| 198 | 2026-05-04 | [`INC-00375`](docs/incidents/2026.md#inc-00375) | AI-Generated Deepfake Ads Target Kentucky GOP Candidates in Defamatory Political Attacks | High | LLM09 | ASI09 |  |
+| 199 | 2026-05-04 | [`INC-00421`](docs/incidents/2026.md#inc-00421) | AI-Generated Deepfakes Used in Celebrity Scam Ads in France | High | LLM09 | ASI09 |  |
+| 200 | 2026-05-04 | [`INC-00454`](docs/incidents/2026.md#inc-00454) | AI-Generated Fake Magazine Cover Broadcast on CNews Causes Misinformation | Medium | LLM09 | ASI09 |  |
+| 201 | 2026-05-04 | [`INC-00456`](docs/incidents/2026.md#inc-00456) | AI-Generated Fake News Causes Food Safety Panic in Taiwan | High | LLM04, LLM05, LLM09 | ASI05, ASI06 |  |
+| 202 | 2026-05-04 | [`INC-00497`](docs/incidents/2026.md#inc-00497) | AI-Generated Saint Paisios Scam Defrauds Greek Faithful | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 203 | 2026-05-04 | [`INC-00569`](docs/incidents/2026.md#inc-00569) | AI-Related Data Breaches Expose Student Information in NYC Public Schools | High | LLM02 | ASI03 |  |
+| 204 | 2026-05-04 | [`INC-00610`](docs/incidents/2026.md#inc-00610) | Anthropic's 'Claude Mythos' AI Sparks Global Cybersecurity Concerns | Critical |  |  |  |
+| 205 | 2026-05-04 | [`INC-00729`](docs/incidents/2026.md#inc-00729) | Canadian Musician Sues Google Over AI-Generated Defamation | High | LLM05, LLM09 | ASI05 |  |
+| 206 | 2026-05-04 | [`INC-00761`](docs/incidents/2026.md#inc-00761) | Children Circumvent AI Age Verification with Simple Tricks in the UK | High |  |  |  |
+| 207 | 2026-05-04 | [`INC-00931`](docs/incidents/2026.md#inc-00931) | Elon Musk and Expert Witness Warn of Existential AI Risks in OpenAI Trial | Medium |  |  |  |
+| 208 | 2026-05-04 | [`INC-00947`](docs/incidents/2026.md#inc-00947) | EU and Swiss Authorities Assess Cybersecurity Risks of Anthropic's Mythos AI Model | Critical |  |  |  |
+| 209 | 2026-05-04 | [`INC-00948`](docs/incidents/2026.md#inc-00948) | EU Demands Early Access to Anthropic's Mythos AI Over Cybersecurity Fears | High | LLM02 | ASI03 |  |
+| 210 | 2026-05-04 | [`INC-01009`](docs/incidents/2026.md#inc-01009) | Flawed AI System Raises Healthcare Costs for Kenya's Poor | Critical |  |  |  |
+| 211 | 2026-05-04 | [`INC-01068`](docs/incidents/2026.md#inc-01068) | Generative AI Easily Circumvents Digital Image Protections, Researchers Warn | High | LLM09 | ASI09 |  |
+| 212 | 2026-05-04 | [`INC-01119`](docs/incidents/2026.md#inc-01119) | Google Maps Glitch Causes Wrong-Way Traffic and Safety Hazards in Toronto | Medium |  |  |  |
+| 213 | 2026-05-04 | [`INC-01415`](docs/incidents/2026.md#inc-01415) | Meta's AI Chatbots Expose Users to Harm, Reuters Wins Pulitzer for Investigation | Critical |  | ASI09 |  |
+| 214 | 2026-05-04 | [`INC-01757`](docs/incidents/2026.md#inc-01757) | SEBI Warns of AI Risks in Indian Financial Markets | High | LLM05 | ASI05 |  |
+| 215 | 2026-05-04 | [`INC-01922`](docs/incidents/2026.md#inc-01922) | Turkish Defense Official Highlights Shift to AI-Driven Warfare | Medium |  |  |  |
+| 216 | 2026-05-04 | [`INC-01925`](docs/incidents/2026.md#inc-01925) | U.S. Coast Guard Deploys AI-Enabled Autonomous Sail Drones on Great Lakes | Medium |  |  |  |
+| 217 | 2026-05-04 | [`INC-01934`](docs/incidents/2026.md#inc-01934) | Uber Plans Data Collection and Autonomous Vehicle Pilot in Madrid | Medium |  |  |  |
+| 218 | 2026-05-04 | [`INC-02001`](docs/incidents/2026.md#inc-02001) | US Healthcare Marketplaces Leak Sensitive Data to Ad Tech Giants via AI Trackers | High | LLM02 | ASI03 |  |
+| 219 | 2026-05-03 | [`INC-00099`](docs/incidents/2026.md#inc-00099) | AI Chatbot Induces Delusions and Paranoia in User | High | LLM05 | ASI05 |  |
+| 220 | 2026-05-03 | [`INC-00157`](docs/incidents/2026.md#inc-00157) | AI Deepfakes Used in Fraudulent Medical Product Scams in Germany | Medium | LLM09 | ASI09 |  |
+| 221 | 2026-05-03 | [`INC-00161`](docs/incidents/2026.md#inc-00161) | AI Device Improves Detection of Life-Threatening Heart Condition in Black Patients | Critical |  |  |  |
+| 222 | 2026-05-03 | [`INC-00162`](docs/incidents/2026.md#inc-00162) | AI Drives Majority of Global Security Breaches in 2026 | High | LLM05 | ASI05 |  |
+| 223 | 2026-05-03 | [`INC-00204`](docs/incidents/2026.md#inc-00204) | AI Startup Accused of Stealing Artist's Work for Ad Campaign | High |  |  |  |
+| 224 | 2026-05-03 | [`INC-00427`](docs/incidents/2026.md#inc-00427) | AI-Generated Disinformation Becomes Routine, Undermining Public Trust | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 225 | 2026-05-03 | [`INC-00493`](docs/incidents/2026.md#inc-00493) | AI-Generated Podcasts Flood the Market, Disrupting Discovery and Content Quality | Medium | LLM09 |  |  |
+| 226 | 2026-05-03 | [`INC-00512`](docs/incidents/2026.md#inc-00512) | AI-Generated Videos Used in Religious Charity Scam in Taiwan | Medium | LLM09 | ASI09 |  |
+| 227 | 2026-05-03 | [`INC-00726`](docs/incidents/2026.md#inc-00726) | California Penalizes Autonomous Vehicles After AI-Driven Traffic Violations and Injuries | Medium |  |  |  |
+| 228 | 2026-05-03 | [`INC-00727`](docs/incidents/2026.md#inc-00727) | Campaigners Raise Concerns Over AI Data Centre Expansion on Scottish Green Belt | Medium |  |  |  |
+| 229 | 2026-05-03 | [`INC-00754`](docs/incidents/2026.md#inc-00754) | ChatGPT Used to Plan and Execute Florida State University Shooting | Critical | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
+| 230 | 2026-05-03 | [`INC-00766`](docs/incidents/2026.md#inc-00766) | China Implements National AI-Driven Digital Identity System, Raising Surveillance Concerns | High | LLM02 | ASI03 |  |
+| 231 | 2026-05-03 | [`INC-01231`](docs/incidents/2026.md#inc-01231) | Indian Banks Boost Cybersecurity Amid Threats from Anthropic's Mythos AI | Critical | LLM05 | ASI05 |  |
+| 232 | 2026-05-03 | [`INC-01242`](docs/incidents/2026.md#inc-01242) | Intoxicated Driver Relies on Tesla Autopilot, Car Stops on Florida Highway | Critical |  |  |  |
+| 233 | 2026-05-03 | [`INC-01580`](docs/incidents/2026.md#inc-01580) | OpenAI Sued After ChatGPT Fails to Flag Canadian School Shooter | Critical | LLM05 | ASI05 |  |
+| 234 | 2026-05-03 | [`INC-01783`](docs/incidents/2026.md#inc-01783) | Solana Co-Founder Warns AI Could Threaten Post-Quantum Cryptography | High |  |  |  |
+| 235 | 2026-05-03 | [`INC-01863`](docs/incidents/2026.md#inc-01863) | Tesla FSD Faces EU Regulatory Scrutiny Over Safety Concerns | Critical | LLM09 |  |  |
+| 236 | 2026-05-03 | [`INC-01946`](docs/incidents/2026.md#inc-01946) | UK NCSC Warns of AI-Driven Surge in Software Vulnerability Exploitation | Critical | LLM05 | ASI05 |  |
+| 237 | 2026-05-03 | [`INC-01948`](docs/incidents/2026.md#inc-01948) | UK Police Use Live Facial Recognition to Make Arrests, Raising Civil Liberties Concerns | High | LLM05 | ASI05 |  |
+| 238 | 2026-05-03 | [`INC-01951`](docs/incidents/2026.md#inc-01951) | UK Retailers' AI Facial Recognition System Falsely Accuses Shoppers of Theft | High | LLM05 | ASI05 |  |
+| 239 | 2026-05-03 | [`INC-01954`](docs/incidents/2026.md#inc-01954) | UK Tests AI-Powered Drone Swarms for Autonomous Military Strikes | Critical |  | ASI10 |  |
+| 240 | 2026-05-02 | [`INC-00425`](docs/incidents/2026.md#inc-00425) | AI-Generated Digital Exes Spark Privacy and Emotional Concerns in China | High |  |  |  |
+| 241 | 2026-05-02 | [`INC-00466`](docs/incidents/2026.md#inc-00466) | AI-Generated Fake Sensitive Images Cause Harm Among Students in Đồng Nai | High | LLM05, LLM09 | ASI05 |  |
+| 242 | 2026-05-02 | [`INC-00488`](docs/incidents/2026.md#inc-00488) | AI-Generated Music and Jailbreaking Lead to Harm in Digital Platforms | Medium | LLM01, LLM09 | ASI01, ASI09 |  |
+| 243 | 2026-05-02 | [`INC-00769`](docs/incidents/2026.md#inc-00769) | China Removes 98,000 Accounts for Unlabeled AI-Generated Content | High | LLM05, LLM09 | ASI05 |  |
+| 244 | 2026-05-02 | [`INC-01164`](docs/incidents/2026.md#inc-01164) | High School Students Use AI Deepfake Technology to Create and Distribute Sexual Images, Nearly 20 Victims in… | High | LLM09 | ASI09 |  |
+| 245 | 2026-05-02 | [`INC-02017`](docs/incidents/2026.md#inc-02017) | US Military AI Use Causes Civilian Casualties and Raises Global Security Risks | Critical |  |  |  |
+| 246 | 2026-05-02 | [`INC-02077`](docs/incidents/2026.md#inc-02077) | Waymo Robotaxi Drives Off With Passenger's Luggage at San Jose Airport | Medium |  |  |  |
+| 247 | 2026-05-01 | [`INC-00211`](docs/incidents/2026.md#inc-00211) | AI Surveillance Systems Spark Privacy Violations and Misuse Across U.S. Cities | High | LLM05 | ASI05 |  |
+| 248 | 2026-05-01 | [`INC-00227`](docs/incidents/2026.md#inc-00227) | AI Systems Enable Early Wildfire Detection and Response in Western US | Medium |  |  |  |
+| 249 | 2026-05-01 | [`INC-00315`](docs/incidents/2026.md#inc-00315) | AI-Driven Phishing Attacks Surge, Expanding Beyond Email | High | LLM09 | ASI09 |  |
+| 250 | 2026-05-01 | [`INC-00374`](docs/incidents/2026.md#inc-00374) | AI-Generated Criminal Memes Cause Secondary Harm to Victims in South Korea | Medium | LLM09 | ASI09 |  |
+| 251 | 2026-05-01 | [`INC-00377`](docs/incidents/2026.md#inc-00377) | AI-Generated Deepfake Diet Ads Cause Health Harm to Kathy Hilton | Medium | LLM09 | ASI09 |  |
+| 252 | 2026-05-01 | [`INC-00405`](docs/incidents/2026.md#inc-00405) | AI-Generated Deepfake Videos Used for Celebrity Impersonation and Scams in Vietnam | Critical | LLM09 | ASI09 |  |
+| 253 | 2026-05-01 | [`INC-00429`](docs/incidents/2026.md#inc-00429) | AI-Generated Disinformation Causes Social Harm and Legal Action in Vietnam | Medium | LLM09 |  |  |
+| 254 | 2026-05-01 | [`INC-00900`](docs/incidents/2026.md#inc-00900) | Disney Replaces Marvel Artists with AI, Leading to Mass Layoffs and Outcry | High | LLM05 | ASI05 |  |
+| 255 | 2026-05-01 | [`INC-01220`](docs/incidents/2026.md#inc-01220) | Incomplete Patient Input to AI Chatbots Risks Medical Misdiagnosis | Medium |  |  |  |
+| 256 | 2026-05-01 | [`INC-01532`](docs/incidents/2026.md#inc-01532) | NHS England Restricts Open-Source Code Access Over AI Vulnerability Fears | High | LLM05 | ASI05 |  |
+| 257 | 2026-05-01 | [`INC-01992`](docs/incidents/2026.md#inc-01992) | US Considers Faster Patch Deadlines Due to AI-Driven Cyber Threats | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 258 | 2026-05-01 | [`INC-02000`](docs/incidents/2026.md#inc-02000) | US Government Flags Anthropic's Mythos AI as National Security Risk | Critical | LLM03 | ASI04 |  |
+| 259 | 2026-05-01 | [`INC-02025`](docs/incidents/2026.md#inc-02025) | US Navy Deploys AI to Accelerate Mine Detection in Strait of Hormuz | Critical | LLM05 | ASI05, ASI10 |  |
+| 260 | 2026-05-01 | [`INC-02041`](docs/incidents/2026.md#inc-02041) | Vietnamese Police Warn Parents of AI Image Processing Risks for Children | High | LLM09 | ASI09 |  |
+| 261 | 2026-05 | [`INC-00015`](docs/incidents/2026.md#inc-00015) | A remote code execution vulnerability exists in Code Runner MCP Server when run with the --transport http opt… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5029` |
+| 262 | 2026-05 | [`INC-00020`](docs/incidents/2026.md#inc-00020) | A Server-Side Request Forgery (SSRF) vulnerability exists in MLflow versions prior to 3.9.0. | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-2393` |
+| 263 | 2026-05 | [`INC-00025`](docs/incidents/2026.md#inc-00025) | A vulnerability in the `_create_model_version()` handler of `mlflow/server/handlers.py` in mlflow/mlflow vers… | High | LLM03 | ASI04 | `CVE-2026-2614` |
+| 264 | 2026-05 | [`INC-00572`](docs/incidents/2026.md#inc-00572) | aiwaves-cn agents — Vulnerability (CVE-2026-8319) | Medium | LLM03 | ASI04 | `CVE-2026-8319` |
+| 265 | 2026-05 | [`INC-00584`](docs/incidents/2026.md#inc-00584) | An issue in Open Source Kubectl MCP Server v1.1.1 allows attackers to execute arbitrary code on a victim syst… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-65719` |
+| 266 | 2026-05 | [`INC-00634`](docs/incidents/2026.md#inc-00634) | AnythingLLM — Vulnerability (CVE-2026-42456) | Medium | LLM03 | ASI04 | `CVE-2026-42456` |
+| 267 | 2026-05 | [`INC-00644`](docs/incidents/2026.md#inc-00644) | Arbitrary Class Instantiation via Model Manifest in Apache OpenNLP ExtensionLoader Versions Affected: before… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42027` |
+| 268 | 2026-05 | [`INC-00742`](docs/incidents/2026.md#inc-00742) | chatchat-space Langchain-Chatchat — Auth Bypass (CVE-2026-7844) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-7844` (+3) |
+| 269 | 2026-05 | [`INC-00756`](docs/incidents/2026.md#inc-00756) | ChatGPTNextWeb NextChat — Vulnerability (CVE-2026-7643) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-7177` (+3) |
+| 270 | 2026-05 | [`INC-00800`](docs/incidents/2026.md#inc-00800) | ciguard — Vulnerability (CVE-2026-44220) | Low | LLM03 | ASI04 | `CVE-2026-44220` |
+| 271 | 2026-05 | [`INC-00830`](docs/incidents/2026.md#inc-00830) | Claude SDK for TypeScript provides access to the Claude API from server-side TypeScript or JavaScript applica… | Medium | LLM01, LLM03, LLM05 | ASI01, ASI04, ASI05 | `CVE-2026-34451`, `CVE-2026-41686` |
+| 272 | 2026-05 | [`INC-00847`](docs/incidents/2026.md#inc-00847) | Command injection vulnerability in automagik-genie 2.5.27 MCP Server allows attackers to execute arbitrary co… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30635` |
+| 273 | 2026-05 | [`INC-00856`](docs/incidents/2026.md#inc-00856) | Copilot said: i18nextify is a JavaScript library that adds i18nextify is a JavaScript library that adds websi… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41691` |
+| 274 | 2026-05 | [`INC-00858`](docs/incidents/2026.md#inc-00858) | CosyVoice thru commit 6e01309e01bc93bbeb83bdd996b1182a81aaf11e (2025-30-21) contains an insecure deserializat… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31249` (+2) |
+| 275 | 2026-05 | [`INC-00873`](docs/incidents/2026.md#inc-00873) | DeepChat — Rce (CVE-2026-43899) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-43899` |
+| 276 | 2026-05 | [`INC-00892`](docs/incidents/2026.md#inc-00892) | Dify before version 1.14.0 contains an authorization bypass vulnerability that allows authenticated users to… | Medium | LLM03 | ASI04 | `CVE-2026-41950` |
+| 277 | 2026-05 | [`INC-00897`](docs/incidents/2026.md#inc-00897) | Dify — Xss (CVE-2026-42138) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34082`, `CVE-2026-42138` |
+| 278 | 2026-05 | [`INC-00971`](docs/incidents/2026.md#inc-00971) | Evolver — Path Traversal (CVE-2026-42075) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42075` (+2) |
+| 279 | 2026-05 | [`INC-00988`](docs/incidents/2026.md#inc-00988) | FastGPT — Dos (CVE-2026-42343) | Medium | LLM03 | ASI04 | `CVE-2026-42343` |
+| 280 | 2026-05 | [`INC-00990`](docs/incidents/2026.md#inc-00990) | FastGPT — Rce (CVE-2026-42302) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42302` |
+| 281 | 2026-05 | [`INC-00993`](docs/incidents/2026.md#inc-00993) | FastGPT — Ssrf (CVE-2026-44284) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44284`, `CVE-2026-44286` |
+| 282 | 2026-05 | [`INC-00997`](docs/incidents/2026.md#inc-00997) | FastGPT — Vulnerability (CVE-2026-42344) | Medium | LLM03 | ASI04 | `CVE-2026-42344` |
+| 283 | 2026-05 | [`INC-00998`](docs/incidents/2026.md#inc-00998) | FastGPT — Vulnerability (CVE-2026-42345) | High | LLM03 | ASI04 | `CVE-2026-42345` |
+| 284 | 2026-05 | [`INC-01035`](docs/incidents/2026.md#inc-01035) | Flowise — Vulnerability (CVE-2026-43995) | Medium | LLM03 | ASI04 | `CVE-2026-43995` |
+| 285 | 2026-05 | [`INC-01036`](docs/incidents/2026.md#inc-01036) | FlowiseAI Flowise — Auth Bypass (CVE-2026-8027) | Medium | LLM03 | ASI04 | `CVE-2026-8027` |
+| 286 | 2026-05 | [`INC-01037`](docs/incidents/2026.md#inc-01037) | FlowiseAI Flowise — Info Disclosure (CVE-2026-8026) | Low | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-8026` |
+| 287 | 2026-05 | [`INC-01038`](docs/incidents/2026.md#inc-01038) | FlowiseAI Flowise — Info Disclosure (CVE-2026-8028) | Low | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-8028` |
+| 288 | 2026-05 | [`INC-01131`](docs/incidents/2026.md#inc-01131) | GPT-Pilot thru commit 0819827ce20346ef5f25b3fe29293cb448840565 (2025-09-03) contains a command injection vuln… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31246` |
+| 289 | 2026-05 | [`INC-01181`](docs/incidents/2026.md#inc-01181) | Improper access control in Azure AI Foundry M365 published agents allows an unauthorized attacker to elevate… | High | LLM03 | ASI03, ASI04 | `CVE-2026-35435` |
+| 290 | 2026-05 | [`INC-01182`](docs/incidents/2026.md#inc-01182) | Improper access control in M365 Copilot allows an authorized attacker to perform spoofing locally. | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41100` |
+| 291 | 2026-05 | [`INC-01183`](docs/incidents/2026.md#inc-01183) | Improper access control in M365 Copilot for Desktop allows an unauthorized attacker to perform spoofing local… | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41614` |
+| 292 | 2026-05 | [`INC-01185`](docs/incidents/2026.md#inc-01185) | Improper neutralization of input during web page generation ('cross-site scripting') in Azure Machine Learnin… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-23668` (+5) |
+| 293 | 2026-05 | [`INC-01186`](docs/incidents/2026.md#inc-01186) | Improper neutralization of special elements in M365 Copilot allows an unauthorized attacker to disclose infor… | High | LLM03 | ASI04 | `CVE-2026-26129` |
+| 294 | 2026-05 | [`INC-01187`](docs/incidents/2026.md#inc-01187) | Improper neutralization of special elements in output used by a downstream component ('injection') in M365 Co… | High | LLM03 | ASI04 | `CVE-2026-26164` (+2) |
+| 295 | 2026-05 | [`INC-01188`](docs/incidents/2026.md#inc-01188) | Improper neutralization of special elements used in a command ('command injection') in Copilot Chat (Microsof… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-59252` (+12) |
+| 296 | 2026-05 | [`INC-01195`](docs/incidents/2026.md#inc-01195) | In Jupyter Notebook versions 7.0.0 through 7.5.5, JupyterLab versions 4.5.6 and earlier, and the correspondin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40171` |
+| 297 | 2026-05 | [`INC-01206`](docs/incidents/2026.md#inc-01206) | In the Linux kernel, the following vulnerability has been resolved: ext4: handle wraparound when searching fo… | Critical | LLM03 | ASI04 | `CVE-2026-43067` |
+| 298 | 2026-05 | [`INC-01207`](docs/incidents/2026.md#inc-01207) | In the Linux kernel, the following vulnerability has been resolved: fs/smb/client: fix out-of-bounds read in… | High | LLM03 | ASI04 | `CVE-2026-43112` |
+| 299 | 2026-05 | [`INC-01209`](docs/incidents/2026.md#inc-01209) | In the Linux kernel, the following vulnerability has been resolved: iommupt: Fix short gather if the unmap go… | High | LLM03 | ASI04 | `CVE-2026-31735` |
+| 300 | 2026-05 | [`INC-01210`](docs/incidents/2026.md#inc-01210) | In the Linux kernel, the following vulnerability has been resolved: misc: fastrpc: possible double-free of cc… | High | LLM03 | ASI04 | `CVE-2026-31730` |
+| 301 | 2026-05 | [`INC-01211`](docs/incidents/2026.md#inc-01211) | In the Linux kernel, the following vulnerability has been resolved: net/ipv6: ioam6: prevent schema length wr… | Critical | LLM03 | ASI04 | `CVE-2026-43341` |
+| 302 | 2026-05 | [`INC-01214`](docs/incidents/2026.md#inc-01214) | In the Linux kernel, the following vulnerability has been resolved: nfsd: fix nfs4_file refcount leak in nfsd… | Medium | LLM03 | ASI04 | `CVE-2026-43193` |
+| 303 | 2026-05 | [`INC-01219`](docs/incidents/2026.md#inc-01219) | In versions 2.1.63 through 2.1.83 of Claude Code, the folder trust determination logic used the git worktree… | High | LLM03 | ASI04 | `CVE-2026-40068` |
+| 304 | 2026-05 | [`INC-01277`](docs/incidents/2026.md#inc-01277) | JunoClaw — Vulnerability (CVE-2026-43989) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-43989` (+4) |
+| 305 | 2026-05 | [`INC-01302`](docs/incidents/2026.md#inc-01302) | Langflow — Path Traversal (CVE-2026-42048) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42048` |
+| 306 | 2026-05 | [`INC-01309`](docs/incidents/2026.md#inc-01309) | Langfuse — Auth Bypass (CVE-2026-41487) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41487` |
+| 307 | 2026-05 | [`INC-01341`](docs/incidents/2026.md#inc-01341) | LiteLLM — Rce (CVE-2026-42203) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-42203` (+2) |
+| 308 | 2026-05 | [`INC-01352`](docs/incidents/2026.md#inc-01352) | LobeHub — Xss (CVE-2026-42045) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42045` |
+| 309 | 2026-05 | [`INC-01353`](docs/incidents/2026.md#inc-01353) | Local file inclusion (LFI) and server-side request forgery (SSRF) vulnerabilities in pgAdmin 4 LLM API config… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7817` |
+| 310 | 2026-05 | [`INC-01438`](docs/incidents/2026.md#inc-01438) | Microsoft RCE Vulnerabilities Across AI Agent Frameworks | Critical | LLM01, LLM06 | ASI02, ASI05 |  |
+| 311 | 2026-05 | [`INC-01478`](docs/incidents/2026.md#inc-01478) | n8n — Data Exfiltration (CVE-2026-42226) | High | LLM03 | ASI03, ASI04 | `CVE-2026-42226` |
+| 312 | 2026-05 | [`INC-01479`](docs/incidents/2026.md#inc-01479) | n8n — Data Exfiltration (CVE-2026-42233) | Critical | LLM03 | ASI04 | `CVE-2026-42233` |
+| 313 | 2026-05 | [`INC-01482`](docs/incidents/2026.md#inc-01482) | n8n — Info Disclosure (CVE-2026-42227) | Medium | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-42227` |
+| 314 | 2026-05 | [`INC-01488`](docs/incidents/2026.md#inc-01488) | n8n — Rce (CVE-2026-42231) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42231` |
+| 315 | 2026-05 | [`INC-01489`](docs/incidents/2026.md#inc-01489) | n8n — Rce (CVE-2026-42232) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42232` |
+| 316 | 2026-05 | [`INC-01490`](docs/incidents/2026.md#inc-01490) | n8n — Sandbox Escape (CVE-2026-42234) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42234` |
+| 317 | 2026-05 | [`INC-01492`](docs/incidents/2026.md#inc-01492) | n8n — Sql Injection (CVE-2026-42237) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42237` |
+| 318 | 2026-05 | [`INC-01502`](docs/incidents/2026.md#inc-01502) | n8n — Vulnerability (CVE-2026-42228) | Medium | LLM03 | ASI04 | `CVE-2026-42228` |
+| 319 | 2026-05 | [`INC-01503`](docs/incidents/2026.md#inc-01503) | n8n — Vulnerability (CVE-2026-42229) | High | LLM03 | ASI04 | `CVE-2026-42229` |
+| 320 | 2026-05 | [`INC-01504`](docs/incidents/2026.md#inc-01504) | n8n — Vulnerability (CVE-2026-42230) | Medium | LLM03 | ASI04 | `CVE-2026-42230` |
+| 321 | 2026-05 | [`INC-01505`](docs/incidents/2026.md#inc-01505) | n8n — Vulnerability (CVE-2026-42235) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-42235` |
+| 322 | 2026-05 | [`INC-01506`](docs/incidents/2026.md#inc-01506) | n8n — Vulnerability (CVE-2026-42236) | High | LLM03 | ASI04 | `CVE-2026-42236` |
+| 323 | 2026-05 | [`INC-01509`](docs/incidents/2026.md#inc-01509) | n8n-MCP — Auth Bypass (CVE-2026-41495) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-41495` |
+| 324 | 2026-05 | [`INC-01511`](docs/incidents/2026.md#inc-01511) | n8n-MCP — Ssrf (CVE-2026-42449) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42449` |
+| 325 | 2026-05 | [`INC-01512`](docs/incidents/2026.md#inc-01512) | n8n-MCP — Ssrf (CVE-2026-44694) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44694` |
+| 326 | 2026-05 | [`INC-01513`](docs/incidents/2026.md#inc-01513) | n8n-MCP — Vulnerability (CVE-2026-42282) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-42282` |
+| 327 | 2026-05 | [`INC-01522`](docs/incidents/2026.md#inc-01522) | New API — Ssrf (CVE-2026-42339) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42339` |
+| 328 | 2026-05 | [`INC-01537`](docs/incidents/2026.md#inc-01537) | nnU-Net — Vulnerability (CVE-2026-44246) | High | LLM03, LLM04 | ASI04 | `CVE-2026-44246` |
+| 329 | 2026-05 | [`INC-01551`](docs/incidents/2026.md#inc-01551) | Ollama before 0.17.1 contains a heap out-of-bounds read vulnerability in the GGUF model loader. | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-7482` |
+| 330 | 2026-05 | [`INC-01553`](docs/incidents/2026.md#inc-01553) | Ollama Windows auto-updater missing signature verification | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15514` (+2) |
+| 331 | 2026-05 | [`INC-01558`](docs/incidents/2026.md#inc-01558) | Onyx — Vulnerability (CVE-2026-42276) | Medium | LLM03 | ASI04 | `CVE-2026-42276` |
+| 332 | 2026-05 | [`INC-01572`](docs/incidents/2026.md#inc-01572) | Open-WebSearch — Ssrf (CVE-2026-42260) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42260` |
+| 333 | 2026-05 | [`INC-01596`](docs/incidents/2026.md#inc-01596) | OpenClaw before 2026.4.20 contains a guard bypass vulnerability in the agent-facing gateway config.patch and… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-45001` |
+| 334 | 2026-05 | [`INC-01597`](docs/incidents/2026.md#inc-01597) | OpenClaw before 2026.4.20 contains an improper environment variable validation vulnerability in MCP stdio ser… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44995` |
+| 335 | 2026-05 | [`INC-01598`](docs/incidents/2026.md#inc-01598) | OpenClaw before 2026.4.22 derives loopback MCP owner context from spoofable server-issued bearer tokens in re… | High | LLM03 | ASI04 | `CVE-2026-44118` |
+| 336 | 2026-05 | [`INC-01650`](docs/incidents/2026.md#inc-01650) | pixelsock directus-mcp 1 — Ssrf (CVE-2026-7729) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7729` |
+| 337 | 2026-05 | [`INC-01665`](docs/incidents/2026.md#inc-01665) | PPTAgent — Path Traversal (CVE-2026-42078) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42078` (+2) |
+| 338 | 2026-05 | [`INC-01667`](docs/incidents/2026.md#inc-01667) | PraisonAI — Path Traversal (CVE-2026-44336) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-44336` |
+| 339 | 2026-05 | [`INC-01682`](docs/incidents/2026.md#inc-01682) | PromptHub — Ssrf (CVE-2026-42261) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-42261` |
+| 340 | 2026-05 | [`INC-01717`](docs/incidents/2026.md#inc-01717) | PyTorch-Lightning versions 2.6.0 and earlier contain an insecure deserialization vulnerability (CWE-502) in t… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31221` |
+| 341 | 2026-05 | [`INC-01722`](docs/incidents/2026.md#inc-01722) | Ray — Deserialization (CVE-2026-41486) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41486` |
+| 342 | 2026-05 | [`INC-01768`](docs/incidents/2026.md#inc-01768) | sgl-project SGLang — Vulnerability (CVE-2026-7669) | Medium | LLM03 | ASI04 | `CVE-2026-7669` |
+| 343 | 2026-05 | [`INC-01781`](docs/incidents/2026.md#inc-01781) | SOCFortress CoPilot focuses on providing a single pane of glass for all your security operations needs. | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-42869` |
+| 344 | 2026-05 | [`INC-01802`](docs/incidents/2026.md#inc-01802) | Spring AI's MilvusVectorStore#doDelete(List) implementation is vulnerable to filter-expression injection via… | High | LLM03 | ASI04 | `CVE-2026-41705` |
+| 345 | 2026-05 | [`INC-01805`](docs/incidents/2026.md#inc-01805) | SQLBot — Prompt Injection (CVE-2026-33324) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-33324` |
+| 346 | 2026-05 | [`INC-01882`](docs/incidents/2026.md#inc-01882) | The Adversarial Robustness Toolbox (ART) thru 1.20.1 contains a remote code execution vulnerability in its Ku… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31228` (+2) |
+| 347 | 2026-05 | [`INC-01887`](docs/incidents/2026.md#inc-01887) | The GeekyBot — Generate AI Content Without Prompt, Chatbot and Lead Generation plugin for WordPress is vulner… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-3456` |
+| 348 | 2026-05 | [`INC-01891`](docs/incidents/2026.md#inc-01891) | The llm CLI tool thru 0.27.1 contains a critical code injection vulnerability via its --functions command-lin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31236` |
+| 349 | 2026-05 | [`INC-01892`](docs/incidents/2026.md#inc-01892) | The Ludwig framework thru 0.10.4 is vulnerable to insecure deserialization (CWE-502) in its model serving com… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31238` |
+| 350 | 2026-05 | [`INC-01893`](docs/incidents/2026.md#inc-01893) | The mamba language model framework thru 2.2.6 is vulnerable to insecure deserialization (CWE-502) when loadin… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31239` |
+| 351 | 2026-05 | [`INC-01898`](docs/incidents/2026.md#inc-01898) | The torch-checkpoint-shrink.py script in the ml-engineering project in commit 0099885db36a8f06556efe1faf55251… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31214` |
+| 352 | 2026-05 | [`INC-01908`](docs/incidents/2026.md#inc-01908) | titra — Vulnerability (CVE-2026-42092) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-42092` |
+| 353 | 2026-05 | [`INC-02055`](docs/incidents/2026.md#inc-02055) | vLLM — Vulnerability (CVE-2026-44222) | Medium | LLM03 | ASI04 | `CVE-2026-44222` |
+| 354 | 2026-05 | [`INC-02056`](docs/incidents/2026.md#inc-02056) | vLLM — Vulnerability (CVE-2026-44223) | Medium | LLM03 | ASI04 | `CVE-2026-44223` |
+| 355 | 2026-05 | [`INC-02060`](docs/incidents/2026.md#inc-02060) | Vulnerability in the Oracle MCP Server Helper Tool product of Oracle Open Source Projects (component: helper… | High | LLM03 | ASI04 | `CVE-2026-35228` |
+| 356 | 2026-05 | [`INC-02097`](docs/incidents/2026.md#inc-02097) | Wireshark MCP — Vulnerability (CVE-2026-43901) | Medium | LLM03 | ASI04 | `CVE-2026-43901` |
+| 357 | 2026-04-30 | [`INC-00100`](docs/incidents/2026.md#inc-00100) | AI Chatbot Interaction Leads to Discovery of Child Sexual Abuse in Paraná | High | LLM05, LLM09 | ASI05 |  |
+| 358 | 2026-04-30 | [`INC-00184`](docs/incidents/2026.md#inc-00184) | AI Model DAMO COCA Enhances Early Colorectal Cancer Detection in China | Medium |  |  |  |
+| 359 | 2026-04-30 | [`INC-00246`](docs/incidents/2026.md#inc-00246) | AI Uncovers Long-Standing Banking Vulnerabilities, Prompting Global Warning | High | LLM02 | ASI03 |  |
+| 360 | 2026-04-30 | [`INC-00254`](docs/incidents/2026.md#inc-00254) | AI Voice Assistant Malfunction Nearly Causes Child Injury in Car Seat Incident | Medium |  |  |  |
+| 361 | 2026-04-30 | [`INC-00286`](docs/incidents/2026.md#inc-00286) | AI-Driven Cybercrime Causes 389% Surge in Ransomware Victims | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
+| 362 | 2026-04-30 | [`INC-00413`](docs/incidents/2026.md#inc-00413) | AI-Generated Deepfakes and Online Abuse Drive Women from Public Life | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 363 | 2026-04-30 | [`INC-00459`](docs/incidents/2026.md#inc-00459) | AI-Generated Fake Photo Causes Public Outcry and Legal Action in Greece | Medium | LLM09 |  |  |
+| 364 | 2026-04-30 | [`INC-00487`](docs/incidents/2026.md#inc-00487) | AI-Generated Misinformation Spreads After Trump Assassination Attempt | Medium | LLM09 |  |  |
+| 365 | 2026-04-30 | [`INC-00543`](docs/incidents/2026.md#inc-00543) | AI-Powered Emergency Response Drones Deployed at Deltona High School | High | LLM05 | ASI05 |  |
+| 366 | 2026-04-30 | [`INC-00681`](docs/incidents/2026.md#inc-00681) | Baykar Unveils AI-Enabled Autonomous Loitering Munition 'Mızrak' | Critical | LLM09 | ASI10 |  |
+| 367 | 2026-04-30 | [`INC-00703`](docs/incidents/2026.md#inc-00703) | Bot Auto Completes First Fully Humanless Commercial Truck Delivery in Texas | Medium |  |  |  |
+| 368 | 2026-04-30 | [`INC-01008`](docs/incidents/2026.md#inc-01008) | First Prosecution for AI-Generated Child Abuse Images in Germany | Medium | LLM09 |  |  |
+| 369 | 2026-04-30 | [`INC-01407`](docs/incidents/2026.md#inc-01407) | Meta Faces Legal Action Over AI-Driven Harms to Children in New Mexico | Critical | LLM05, LLM09 | ASI05 |  |
+| 370 | 2026-04-30 | [`INC-01418`](docs/incidents/2026.md#inc-01418) | Meta's AI Smart Glasses Lead to Worker Harm and Privacy Violations in Kenya | High |  |  |  |
+| 371 | 2026-04-30 | [`INC-01449`](docs/incidents/2026.md#inc-01449) | Minnesota Bans AI 'Nudification' Apps After Deepfake Harms | Medium | LLM09 | ASI09 |  |
+| 372 | 2026-04-30 | [`INC-02106`](docs/incidents/2026.md#inc-02106) | XTEND Develops AI-Powered Autonomous Defense Systems for Middle East Client | Medium |  | ASI10 |  |
+| 373 | 2026-04-29 | [`INC-00054`](docs/incidents/2026.md#inc-00054) | Ahmedabad Aadhaar Fraud Racket Reportedly Used Purportedly AI-Generated Deepfakes to Change Businessman&#x27;… | High | LLM09 | ASI09 |  |
+| 374 | 2026-04-29 | [`INC-00060`](docs/incidents/2026.md#inc-00060) | AI Adoption Drives Wage Gap and Job Losses for Entry-Level Workers | Critical | LLM05 | ASI05 |  |
+| 375 | 2026-04-29 | [`INC-00061`](docs/incidents/2026.md#inc-00061) | AI Adoption in Spain Projected to Displace Up to 2.3 Million Jobs by 2035 | Medium |  |  |  |
+| 376 | 2026-04-29 | [`INC-00124`](docs/incidents/2026.md#inc-00124) | AI Chatbots Provide Instructions for Creating Biological Weapons | Critical | LLM01, LLM05 | ASI01, ASI05 |  |
+| 377 | 2026-04-29 | [`INC-00144`](docs/incidents/2026.md#inc-00144) | AI Deepfake Celebrity Scams Target TikTok Users | High | LLM09 | ASI09 |  |
+| 378 | 2026-04-29 | [`INC-00203`](docs/incidents/2026.md#inc-00203) | AI Smart Glasses Enable Rapid Dementia Risk Detection for Elderly in Taiwan | Medium |  |  |  |
+| 379 | 2026-04-29 | [`INC-00260`](docs/incidents/2026.md#inc-00260) | AI-Assisted Commit Enables North Korean Malware Attack on Crypto Trading Agent | High | LLM02, LLM03 | ASI02, ASI04 |  |
+| 380 | 2026-04-29 | [`INC-00272`](docs/incidents/2026.md#inc-00272) | AI-Driven Bot Attacks Surge 12.5x, Dominate Internet Traffic in 2025 | High | LLM02 | ASI03, ASI09 |  |
+| 381 | 2026-04-29 | [`INC-00300`](docs/incidents/2026.md#inc-00300) | AI-Driven Fraud Surges Amid Governance Gaps in Global Financial Sector | High | LLM05 | ASI05, ASI09 |  |
+| 382 | 2026-04-29 | [`INC-00524`](docs/incidents/2026.md#inc-00524) | AI-Managed Café in Stockholm Raises Labor and Ethical Concerns | High | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI09 |  |
+| 383 | 2026-04-29 | [`INC-00551`](docs/incidents/2026.md#inc-00551) | AI-Powered Phishing Kits Like Bluekit Drive Surge in Sophisticated Attacks | Medium |  | ASI09 |  |
+| 384 | 2026-04-29 | [`INC-00574`](docs/incidents/2026.md#inc-00574) | Alphabet Investors Demand Safeguards on AI and Cloud Use by Governments | High | LLM05 | ASI05 |  |
+| 385 | 2026-04-29 | [`INC-00944`](docs/incidents/2026.md#inc-00944) | EU Accuses Meta of Failing to Prevent Underage Access to Facebook and Instagram | High | LLM05 | ASI05 |  |
+| 386 | 2026-04-29 | [`INC-01279`](docs/incidents/2026.md#inc-01279) | Katsina State to Deploy 50,000 AI-Powered Smart Streetlights | Medium |  |  |  |
+| 387 | 2026-04-29 | [`INC-01362`](docs/incidents/2026.md#inc-01362) | Malicious AI Agent Supply Chain Attack Exploits MCP Server Lookalikes | High | LLM02, LLM03, LLM04, LLM09 | ASI02, ASI03, ASI04, ASI06 |  |
+| 388 | 2026-04-29 | [`INC-01556`](docs/incidents/2026.md#inc-01556) | Online Oceans Secures Funding to Scale AI-Enabled Autonomous Maritime Security Fleets | Medium |  |  |  |
+| 389 | 2026-04-29 | [`INC-01755`](docs/incidents/2026.md#inc-01755) | Scout AI Raises $100M to Develop Autonomous Warfare AI System | Critical |  |  |  |
+| 390 | 2026-04-29 | [`INC-01818`](docs/incidents/2026.md#inc-01818) | Study Finds Three Types of Addiction Linked to AI Chatbots | Medium |  |  |  |
+| 391 | 2026-04-29 | [`INC-01819`](docs/incidents/2026.md#inc-01819) | Study Finds Warmer AI Chatbots Make More Mistakes and Spread Misinformation | High | LLM05, LLM09 | ASI05 |  |
+| 392 | 2026-04-29 | [`INC-01969`](docs/incidents/2026.md#inc-01969) | UN Warns AI in Advertising Risks Accelerating Global Misinformation Crisis | Medium | LLM09 |  |  |
+| 393 | 2026-04-29 | [`INC-02010`](docs/incidents/2026.md#inc-02010) | US Lawmakers Probe Airbnb and Anysphere Over Use of Chinese AI Models | Critical | LLM02, LLM03 | ASI03, ASI04 |  |
+| 394 | 2026-04-29 | [`INC-02059`](docs/incidents/2026.md#inc-02059) | Vulnerabilities in Cursor AI Coding Environment Expose Developers to Code Execution and Credential Theft | Medium | LLM05 | ASI05 |  |
+| 395 | 2026-04-29 | [`INC-02093`](docs/incidents/2026.md#inc-02093) | White House Opposes Anthropic's Expansion of Mythos AI Access Due to Cybersecurity Risks | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI10 |  |
+| 396 | 2026-04-28 | [`INC-00117`](docs/incidents/2026.md#inc-00117) | AI Chatbots Linked to Worsened Mental Health in Young People | Medium | LLM05 | ASI09 |  |
+| 397 | 2026-04-28 | [`INC-00261`](docs/incidents/2026.md#inc-00261) | AI-Assisted Discovery of Critical GitHub Vulnerability Enables Rapid Remediation | Medium | LLM05 | ASI05 |  |
+| 398 | 2026-04-28 | [`INC-00319`](docs/incidents/2026.md#inc-00319) | AI-Driven Romance Scams Impact 27% of Italians | Medium | LLM09 | ASI09 |  |
+| 399 | 2026-04-28 | [`INC-00461`](docs/incidents/2026.md#inc-00461) | AI-Generated Fake Posters Cause Misinformation for 'Singer 2026' | Medium | LLM09 |  |  |
+| 400 | 2026-04-28 | [`INC-00502`](docs/incidents/2026.md#inc-00502) | AI-Generated Short Dramas Spark Copyright and Portrait Rights Violations in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 401 | 2026-04-28 | [`INC-00540`](docs/incidents/2026.md#inc-00540) | AI-Powered Drone Joint Venture Formed for Indian Defense | Medium |  | ASI10 |  |
+| 402 | 2026-04-28 | [`INC-00853`](docs/incidents/2026.md#inc-00853) | Controversy Over Palantir's AI Systems and Their Societal Impact | High | LLM05 | ASI05 |  |
+| 403 | 2026-04-28 | [`INC-00865`](docs/incidents/2026.md#inc-00865) | Critical Vulnerability in Hugging Face LeRobot AI Platform Enables Remote Code Execution | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 404 | 2026-04-28 | [`INC-01126`](docs/incidents/2026.md#inc-01126) | Google Withdraws from Pentagon AI Drone Swarm Project Over Ethics Concerns | High | LLM05 | ASI05, ASI10 |  |
+| 405 | 2026-04-28 | [`INC-01373`](docs/incidents/2026.md#inc-01373) | Mass Layoffs in Tech Industry Driven by AI Adoption | High | LLM05 | ASI05 |  |
+| 406 | 2026-04-28 | [`INC-01875`](docs/incidents/2026.md#inc-01875) | Tesla's Full Self-Driving AI Faces Crashes and Legal Action in Europe | Medium |  |  |  |
+| 407 | 2026-04-28 | [`INC-01909`](docs/incidents/2026.md#inc-01909) | TON and Telegram Launch Autonomous AI Agents for Blockchain Transactions, Raising Future Financial Risks | High | LLM01, LLM05 | ASI01, ASI05, ASI09 |  |
+| 408 | 2026-04-28 | [`INC-02076`](docs/incidents/2026.md#inc-02076) | Waymo Robotaxi Blocks Ambulance in Austin, Raising Safety Concerns | Critical | LLM05 | ASI05 |  |
+| 409 | 2026-04-27 | [`INC-00073`](docs/incidents/2026.md#inc-00073) | AI Agents Exploited in Security Breaches Due to Inadequate Identity Management | High | LLM02 | ASI03 |  |
+| 410 | 2026-04-27 | [`INC-00116`](docs/incidents/2026.md#inc-00116) | AI Chatbots Linked to Teen Suicides and Mental Health Harms | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 411 | 2026-04-27 | [`INC-00150`](docs/incidents/2026.md#inc-00150) | AI Deepfake Technology Enables Identity Theft via Leaked ID Photos in China | High | LLM09 | ASI09 |  |
+| 412 | 2026-04-27 | [`INC-00259`](docs/incidents/2026.md#inc-00259) | AI Writing Feedback Found Biased by Student Race and Gender | Medium |  |  |  |
+| 413 | 2026-04-27 | [`INC-00410`](docs/incidents/2026.md#inc-00410) | AI-Generated Deepfake Videos Used to Scam French Investors | Medium | LLM09 | ASI09 |  |
+| 414 | 2026-04-27 | [`INC-00578`](docs/incidents/2026.md#inc-00578) | Amazon Deploys AI to Combat Counterfeits and Phishing Globally | High | LLM05 | ASI05, ASI09 |  |
+| 415 | 2026-04-27 | [`INC-00698`](docs/incidents/2026.md#inc-00698) | BlueNoroff Uses AI-Generated Deepfakes in Cryptocurrency Phishing Attacks | High | LLM02, LLM09 | ASI03, ASI09 |  |
+| 416 | 2026-04-27 | [`INC-00731`](docs/incidents/2026.md#inc-00731) | Canva AI Tool Replaces 'Palestine' with 'Ukraine' in User Designs, Prompting Apology | Medium | LLM09 | ASI09 |  |
+| 417 | 2026-04-27 | [`INC-00888`](docs/incidents/2026.md#inc-00888) | Detroit Police Facial Recognition Misidentifications Lead to Lawsuits and Policy Changes | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 418 | 2026-04-27 | [`INC-00980`](docs/incidents/2026.md#inc-00980) | Facial Recognition AI Blocks ALS Patient from Accessing Funds on Binance | High | LLM05 | ASI05 |  |
+| 419 | 2026-04-27 | [`INC-01062`](docs/incidents/2026.md#inc-01062) | Gemini Launches AI-Driven Agentic Trading on Crypto Exchange | Medium |  |  |  |
+| 420 | 2026-04-27 | [`INC-01229`](docs/incidents/2026.md#inc-01229) | India's CERT-In Issues High-Severity Warning on AI-Driven Cyber Threats | Critical | LLM02, LLM03, LLM09 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
+| 421 | 2026-04-27 | [`INC-01519`](docs/incidents/2026.md#inc-01519) | Netflix Faces Boycott Over AI Voice Training in German Dubbing Industry | Medium |  |  |  |
+| 422 | 2026-04-27 | [`INC-01612`](docs/incidents/2026.md#inc-01612) | Over a Million London Jobs at Risk from AI Automation, Mayor Warns | High | LLM05 | ASI05 |  |
+| 423 | 2026-04-27 | [`INC-01794`](docs/incidents/2026.md#inc-01794) | Spanish Judge Fined for Using ChatGPT to Draft Judicial Sentence | High |  |  |  |
+| 424 | 2026-04-27 | [`INC-01830`](docs/incidents/2026.md#inc-01830) | Suspect Used ChatGPT to Plan Disposal of Murder Victims in Florida | Critical | LLM05 | ASI05 |  |
+| 425 | 2026-04-27 | [`INC-01928`](docs/incidents/2026.md#inc-01928) | U.S. Mandates AI-Driven Driver Monitoring Systems in All New Vehicles by 2027 | Critical | LLM09 |  |  |
+| 426 | 2026-04-27 | [`INC-01943`](docs/incidents/2026.md#inc-01943) | UK Firms Face AI Data Governance Risks from Overseas Processing | High | LLM02 | ASI03 |  |
+| 427 | 2026-04-27 | [`INC-01975`](docs/incidents/2026.md#inc-01975) | Uncontrolled Enterprise AI Use Increases Cybersecurity and Data Risks | High | LLM02 | ASI03, ASI09 |  |
+| 428 | 2026-04-27 | [`INC-02032`](docs/incidents/2026.md#inc-02032) | US Tests AI-Powered Autonomous Military Systems Near Cuba Amid Rising Tensions | Medium |  | ASI10 |  |
+| 429 | 2026-04-26 | [`INC-00439`](docs/incidents/2026.md#inc-00439) | AI-Generated Faces in Chinese Short Drama Spark Portrait Rights Infringement Controversy | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 430 | 2026-04-25 | [`INC-01921`](docs/incidents/2026.md#inc-01921) | Turkish Bar Associations Oppose AI-Based Legal Defense Platform | Medium |  |  |  |
+| 431 | 2026-04-24 | [`INC-00101`](docs/incidents/2026.md#inc-00101) | AI Chatbots Covertly Influence Users with Embedded Ads | High |  |  |  |
+| 432 | 2026-04-24 | [`INC-00209`](docs/incidents/2026.md#inc-00209) | AI Surveillance System Sabotaged at Bengaluru IPL Stadium | Medium |  |  |  |
+| 433 | 2026-04-24 | [`INC-00331`](docs/incidents/2026.md#inc-00331) | AI-Enabled Autonomous Kamikaze Drones Demonstrated in Turkey | Critical | LLM05 | ASI05, ASI10 |  |
+| 434 | 2026-04-24 | [`INC-00482`](docs/incidents/2026.md#inc-00482) | AI-Generated Microdrama Uses Real Faces Without Consent in China | High | LLM09 | ASI09 |  |
+| 435 | 2026-04-24 | [`INC-00558`](docs/incidents/2026.md#inc-00558) | AI-Powered Synthetic Identity Fraud Hits Financial Sector | Critical | LLM09 | ASI09 |  |
+| 436 | 2026-04-24 | [`INC-00717`](docs/incidents/2026.md#inc-00717) | BSE Warns of Repeated Deepfake Scams Targeting Investors | High | LLM09 | ASI09 |  |
+| 437 | 2026-04-24 | [`INC-00969`](docs/incidents/2026.md#inc-00969) | European Regulators Warn of Accelerated Cyber Threats from AI in Financial Sector | Medium |  |  |  |
+| 438 | 2026-04-24 | [`INC-01061`](docs/incidents/2026.md#inc-01061) | Geely's Caocao Plans Global Deployment of AI-Powered Robotaxis | Medium |  |  |  |
+| 439 | 2026-04-24 | [`INC-01425`](docs/incidents/2026.md#inc-01425) | Metropolitan Police Use Palantir AI to Uncover Officer Misconduct | High | LLM05 | ASI05, ASI09 |  |
+| 440 | 2026-04-24 | [`INC-01739`](docs/incidents/2026.md#inc-01739) | Robot Malfunction at Chinese University Event Leads to Unintended Physical Contact | Critical | LLM05 | ASI05 |  |
+| 441 | 2026-04-24 | [`INC-01740`](docs/incidents/2026.md#inc-01740) | Romania Deploys AI-Powered Drone Interceptors Amid Ukraine Conflict | Critical | LLM05 | ASI05 |  |
+| 442 | 2026-04-24 | [`INC-01855`](docs/incidents/2026.md#inc-01855) | Tesla Begins Production of Autonomous Cybercab Robotaxi | Medium |  |  |  |
+| 443 | 2026-04-24 | [`INC-01923`](docs/incidents/2026.md#inc-01923) | Turkish Intelligence Academy Warns of AI-Driven Cybersecurity Risks | Critical | LLM09 | ASI09 |  |
+| 444 | 2026-04-24 | [`INC-01944`](docs/incidents/2026.md#inc-01944) | UK Government Underestimates AI Data Center Carbon Emissions by Over 100-Fold | Medium |  |  |  |
+| 445 | 2026-04-24 | [`INC-02037`](docs/incidents/2026.md#inc-02037) | Utah Medical Board Calls for Suspension of AI Prescription Renewal Program | Medium |  |  |  |
+| 446 | 2026-04-23 | [`INC-00108`](docs/incidents/2026.md#inc-00108) | AI Chatbots Found to Reinforce Delusions and Encourage Harmful Behavior in Mental Health Study | Critical | LLM05 | ASI05, ASI09 |  |
+| 447 | 2026-04-23 | [`INC-00270`](docs/incidents/2026.md#inc-00270) | AI-Driven Attacks Fuel Major Crypto Thefts in 2026 | High | LLM03, LLM09 | ASI04, ASI09 |  |
+| 448 | 2026-04-23 | [`INC-00298`](docs/incidents/2026.md#inc-00298) | AI-Driven Exploits Cause Major Losses in DeFi Platforms | High |  |  |  |
+| 449 | 2026-04-23 | [`INC-00335`](docs/incidents/2026.md#inc-00335) | AI-Enabled Defense Systems and Autonomous Military Robots Deployed and Developed Globally | Critical |  | ASI10 |  |
+| 450 | 2026-04-23 | [`INC-00440`](docs/incidents/2026.md#inc-00440) | AI-Generated Fake Bank Cheque Sparks Fraud Concerns in India | Medium |  | ASI09 |  |
+| 451 | 2026-04-23 | [`INC-00500`](docs/incidents/2026.md#inc-00500) | AI-Generated Short Dramas Cause Actor Unemployment in China | Medium |  |  |  |
+| 452 | 2026-04-23 | [`INC-00545`](docs/incidents/2026.md#inc-00545) | AI-Powered Flock Cameras Used for Protest Surveillance and Raise Privacy Concerns in the U.S. | High | LLM05 | ASI05, ASI09 |  |
+| 453 | 2026-04-23 | [`INC-00690`](docs/incidents/2026.md#inc-00690) | Bernstein Warns India of AI-Driven Job Risks and Economic Challenges | High | LLM05 | ASI05 |  |
+| 454 | 2026-04-23 | [`INC-00708`](docs/incidents/2026.md#inc-00708) | Brazilian Political Parties Seek Suspension of AI-Generated Disinformation Profile | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 455 | 2026-04-23 | [`INC-00710`](docs/incidents/2026.md#inc-00710) | Brazilian Regulator Fines Meta for Anti-Competitive Use of AI Chatbots on WhatsApp | High | LLM05 | ASI05 |  |
+| 456 | 2026-04-23 | [`INC-00974`](docs/incidents/2026.md#inc-00974) | Experts Urge AI-Driven Cybersecurity and Device Digital IDs in India | Medium |  |  |  |
+| 457 | 2026-04-23 | [`INC-01161`](docs/incidents/2026.md#inc-01161) | HD Hyundai Expands AI-Powered Unmanned Naval Vessel Collaboration in the US | Medium |  | ASI10 |  |
+| 458 | 2026-04-23 | [`INC-01233`](docs/incidents/2026.md#inc-01233) | Indian Government Urges Banks to Prepare for AI-Driven Cyber Threats | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
+| 459 | 2026-04-23 | [`INC-01393`](docs/incidents/2026.md#inc-01393) | Mercor Faces Lawsuits After AI Training Data Breach Exposes Sensitive Worker Information | High | LLM02 | ASI03 |  |
+| 460 | 2026-04-23 | [`INC-01441`](docs/incidents/2026.md#inc-01441) | Microsoft's AI Agents Threaten Entry-Level Tech Jobs | High | LLM05 | ASI05 |  |
+| 461 | 2026-04-23 | [`INC-01631`](docs/incidents/2026.md#inc-01631) | Pentagon Awards $24M Contract for AI-Enabled Humanoid Military Robots | Critical |  | ASI10 |  |
+| 462 | 2026-04-23 | [`INC-01735`](docs/incidents/2026.md#inc-01735) | Researchers Warn of Risks from Evolvable Artificial Intelligence | High | LLM05 | ASI05 |  |
+| 463 | 2026-04-23 | [`INC-01929`](docs/incidents/2026.md#inc-01929) | UAE Plans Massive Government Automation with Agentic AI | High | LLM05 | ASI05 |  |
+| 464 | 2026-04-23 | [`INC-01964`](docs/incidents/2026.md#inc-01964) | Ukraine Plans AI-Driven Autonomous Combat Systems for Battlefield Use | Critical | LLM05 | ASI05, ASI10 |  |
+| 465 | 2026-04-23 | [`INC-02008`](docs/incidents/2026.md#inc-02008) | US Lawmakers Alarmed by AI Models Generating Terrorist Instructions After Safety Filters Removed | Critical | LLM05, LLM09 | ASI05 |  |
+| 466 | 2026-04-23 | [`INC-02057`](docs/incidents/2026.md#inc-02057) | Vorwerk Investigated for Disabling AI Services in Neato Robot Vacuums | High |  |  |  |
+| 467 | 2026-04-23 | [`INC-02065`](docs/incidents/2026.md#inc-02065) | Washington Metro Approves Full Automation of Red Line Trains Amid Safety Concerns | Critical |  |  |  |
+| 468 | 2026-04-23 | [`INC-02068`](docs/incidents/2026.md#inc-02068) | Waymo Autonomous Taxi Disrupts London Crime Scene During Testing | High |  |  |  |
+| 469 | 2026-04-22 | [`INC-00221`](docs/incidents/2026.md#inc-00221) | AI System Prevents Sewer Blockages and Pollution in Southern England | Medium |  |  |  |
+| 470 | 2026-04-22 | [`INC-00310`](docs/incidents/2026.md#inc-00310) | AI-Driven Medicare Prior Authorization Delays and Denials Harm Patients in Washington | Medium |  | ASI09 |  |
+| 471 | 2026-04-22 | [`INC-00424`](docs/incidents/2026.md#inc-00424) | AI-Generated Deepfakes Used to Impersonate Doctor and Promote Illegal Medicines in Brazil | Medium | LLM09 | ASI09 |  |
+| 472 | 2026-04-22 | [`INC-00448`](docs/incidents/2026.md#inc-00448) | AI-Generated Fake Images Spark Viral Misinformation About Tech CEOs in China | High | LLM05, LLM09 | ASI05 |  |
+| 473 | 2026-04-22 | [`INC-00616`](docs/incidents/2026.md#inc-00616) | Anthropic's Claude Desktop Secretly Installs Browser Backdoor on macOS | High | LLM02 | ASI03 |  |
+| 474 | 2026-04-22 | [`INC-00762`](docs/incidents/2026.md#inc-00762) | Chilean Legislative Proposal Sparks Copyright Concerns Over AI Data Use | High | LLM05 | ASI05 |  |
+| 475 | 2026-04-22 | [`INC-01086`](docs/incidents/2026.md#inc-01086) | Germany Procures AI-Enabled Kamikaze Drones for Bundeswehr | Critical | LLM05 | ASI05, ASI10 |  |
+| 476 | 2026-04-22 | [`INC-01238`](docs/incidents/2026.md#inc-01238) | Influencer Investigated for Using AI Deepfake to Sexualize Minors in São Paulo Churches | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 477 | 2026-04-22 | [`INC-01412`](docs/incidents/2026.md#inc-01412) | Meta Sued Over AI-Enhanced Fraudulent Ads on Facebook and Instagram | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 478 | 2026-04-22 | [`INC-01539`](docs/incidents/2026.md#inc-01539) | North Korean Hackers Use AI Tools to Steal $12 Million in Cryptocurrency | Critical |  | ASI09 |  |
+| 479 | 2026-04-22 | [`INC-01633`](docs/incidents/2026.md#inc-01633) | Pentagon Seeks $54 Billion for AI-Driven Autonomous Warfare | Medium |  | ASI10 |  |
+| 480 | 2026-04-22 | [`INC-01764`](docs/incidents/2026.md#inc-01764) | Senator Warren Warns of AI Industry Debt Bubble and Financial Crisis Risk | High | LLM05 | ASI05 |  |
+| 481 | 2026-04-22 | [`INC-01837`](docs/incidents/2026.md#inc-01837) | Taiwan Warns Against Use of Gaode Map App Over AI-Driven Data Security Risks | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
+| 482 | 2026-04-22 | [`INC-01919`](docs/incidents/2026.md#inc-01919) | Turkey Plans AI-Based Biometric Tracking for Legal Supervision | Medium |  |  |  |
+| 483 | 2026-04-21 | [`INC-00207`](docs/incidents/2026.md#inc-00207) | AI Surveillance System Aids Arrest After Hit-and-Run in Teresina | High | LLM05 | ASI05 |  |
+| 484 | 2026-04-21 | [`INC-00371`](docs/incidents/2026.md#inc-00371) | AI-Generated Code Increases Engineer Workload and Software Defects in Japan | High | LLM05 | ASI05 |  |
+| 485 | 2026-04-21 | [`INC-00383`](docs/incidents/2026.md#inc-00383) | AI-Generated Deepfake of Wendie Renard Used in Investment Scam | Medium | LLM09 | ASI09 |  |
+| 486 | 2026-04-21 | [`INC-00452`](docs/incidents/2026.md#inc-00452) | AI-Generated Fake Job Offers Lead to Widespread Scams and Data Theft | High | LLM02 | ASI03, ASI09 |  |
+| 487 | 2026-04-21 | [`INC-00478`](docs/incidents/2026.md#inc-00478) | AI-Generated Influencer 'Emily Hart' Used to Scam MAGA Supporters | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 488 | 2026-04-21 | [`INC-00504`](docs/incidents/2026.md#inc-00504) | AI-Generated Singer in Romania Sparks Racism and Discrimination Debate | High | LLM05 | ASI05 |  |
+| 489 | 2026-04-21 | [`INC-00566`](docs/incidents/2026.md#inc-00566) | AI-Powered Vulnerability Discovery Raises Cybersecurity Risks | Critical | LLM05 | ASI05, ASI10 |  |
+| 490 | 2026-04-21 | [`INC-00622`](docs/incidents/2026.md#inc-00622) | Anthropic's Mythos AI Raises Cybersecurity Concerns for Banks in Europe and India | Medium |  | ASI09 |  |
+| 491 | 2026-04-21 | [`INC-00718`](docs/incidents/2026.md#inc-00718) | Bundesbank Warns of Cybersecurity Risks from Anthropic's Mythos AI Model | Medium |  |  |  |
+| 492 | 2026-04-21 | [`INC-00747`](docs/incidents/2026.md#inc-00747) | ChatGPT Escalates to Abusive Language in Hostile Conversations, Study Finds | Medium |  |  |  |
+| 493 | 2026-04-21 | [`INC-00802`](docs/incidents/2026.md#inc-00802) | CISA Excluded from Anthropic's AI Cybersecurity Tool Rollout | High |  |  |  |
+| 494 | 2026-04-21 | [`INC-00883`](docs/incidents/2026.md#inc-00883) | Delhi High Court Restrains AI-Generated Deepfakes Exploiting Allu Arjun's Persona | Medium | LLM09 | ASI09 |  |
+| 495 | 2026-04-21 | [`INC-01051`](docs/incidents/2026.md#inc-01051) | French Political Party Uses AI to Fabricate Celebrity Endorsements for Book Promotion | High | LLM09 |  |  |
+| 496 | 2026-04-21 | [`INC-01283`](docs/incidents/2026.md#inc-01283) | Kimi AI Model Leaks User Resume Data, Causing Privacy Breach in China | High | LLM02, LLM09 | ASI03 |  |
+| 497 | 2026-04-21 | [`INC-01706`](docs/incidents/2026.md#inc-01706) | Purportedly AI-Enhanced Images of Iranian Women Protesters Were Reportedly Spread With Unverified Execution C… | High | LLM09 | ASI09 |  |
+| 498 | 2026-04-21 | [`INC-01748`](docs/incidents/2026.md#inc-01748) | Rubrik Research Warns of Security Gaps as Enterprise AI Agent Adoption Outpaces Governance | High | LLM01, LLM02, LLM03, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09 |  |
+| 499 | 2026-04-21 | [`INC-01750`](docs/incidents/2026.md#inc-01750) | Russian AI-Driven Cyberattacks Escalate Against Europe | Medium | LLM09 | ASI09 |  |
+| 500 | 2026-04-21 | [`INC-01815`](docs/incidents/2026.md#inc-01815) | Studies Link ChatGPT Use to Reduced Brain Activity and Cognitive Skills | Medium |  |  |  |
+| 501 | 2026-04-21 | [`INC-01822`](docs/incidents/2026.md#inc-01822) | Sullivan & Cromwell Apologizes for AI-Generated Errors in Court Filing | High | LLM09 | ASI09 |  |
+| 502 | 2026-04-21 | [`INC-01906`](docs/incidents/2026.md#inc-01906) | TikTok's AI Meme Remixer Sparks Privacy and Consent Backlash | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 503 | 2026-04-21 | [`INC-01927`](docs/incidents/2026.md#inc-01927) | U.S. Establishes AI-Powered Autonomous Military Force for Latin America | Critical | LLM05 | ASI05, ASI10 |  |
+| 504 | 2026-04-21 | [`INC-01940`](docs/incidents/2026.md#inc-01940) | UK Court Upholds Police Use of AI Facial Recognition Despite Misidentification and Rights Concerns | High | LLM05 | ASI05 |  |
+| 505 | 2026-04-20 | [`INC-00142`](docs/incidents/2026.md#inc-00142) | AI Data Poisoning Threatens National Security and Public Safety in China | Critical | LLM03, LLM04, LLM09 | ASI04, ASI06 |  |
+| 506 | 2026-04-20 | [`INC-00245`](docs/incidents/2026.md#inc-00245) | AI Traffic Cameras in Western Australia Overturn $1 Million in Fines After Accuracy Concerns | High | LLM05 | ASI05 |  |
+| 507 | 2026-04-20 | [`INC-00252`](docs/incidents/2026.md#inc-00252) | AI Virtual Digital Human Technology Trade Secret Infringement Case in Guangzhou | High | LLM05 | ASI05, ASI09 |  |
+| 508 | 2026-04-20 | [`INC-00392`](docs/incidents/2026.md#inc-00392) | AI-Generated Deepfake Video Falsely Claims Indonesian Finance Minister Offers Business Grants | Medium | LLM09 | ASI09 |  |
+| 509 | 2026-04-20 | [`INC-00649`](docs/incidents/2026.md#inc-00649) | Asian Regulators Heighten Cybersecurity Over Anthropic's Mythos AI Risks | Critical | LLM02 | ASI03 |  |
+| 510 | 2026-04-20 | [`INC-00655`](docs/incidents/2026.md#inc-00655) | Australian Regulators Monitor Anthropic's Mythos AI for Banking Cyber Risks | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 511 | 2026-04-20 | [`INC-00679`](docs/incidents/2026.md#inc-00679) | Barclays CEO Warns of AI Model Mythos as Major Threat to Global Banking Security | Medium | LLM09 |  |  |
+| 512 | 2026-04-20 | [`INC-00750`](docs/incidents/2026.md#inc-00750) | ChatGPT Linked to Teen Suicide Prompts Calls for AI Safeguards in California | Critical | LLM05 | ASI09 |  |
+| 513 | 2026-04-20 | [`INC-00776`](docs/incidents/2026.md#inc-00776) | China's First AI Model Infringement Case: Court Rules on Unfair Competition | High |  |  |  |
+| 514 | 2026-04-20 | [`INC-00842`](docs/incidents/2026.md#inc-00842) | Colombian President Shares AI-Generated Deepfake Video Targeting Ecuadorian Leader | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 515 | 2026-04-20 | [`INC-00863`](docs/incidents/2026.md#inc-00863) | Critical Remote Code Execution Vulnerability in Google's Antigravity AI IDE Patched | Critical | LLM01, LLM02, LLM05, LLM06, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI09 |  |
+| 516 | 2026-04-20 | [`INC-00864`](docs/incidents/2026.md#inc-00864) | Critical Vulnerability in Anthropic's MCP Exposes AI Systems to Remote Code Execution | High | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |  |
+| 517 | 2026-04-20 | [`INC-01014`](docs/incidents/2026.md#inc-01014) | Florida Man Arrested for Using AI to Create and Distribute Nude Image of Teen Coworker | High | LLM05 | ASI05 |  |
+| 518 | 2026-04-20 | [`INC-01046`](docs/incidents/2026.md#inc-01046) | French Authorities Probe X's AI Systems Over Harmful Content and Political Interference | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 519 | 2026-04-20 | [`INC-01053`](docs/incidents/2026.md#inc-01053) | Frontier AI Models Accelerate Cyberattack Capabilities | High | LLM02, LLM03 | ASI02, ASI04 |  |
+| 520 | 2026-04-20 | [`INC-01097`](docs/incidents/2026.md#inc-01097) | Global Surge in AI-Driven Fraud and Deepfake Scams | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 521 | 2026-04-20 | [`INC-01159`](docs/incidents/2026.md#inc-01159) | Hanwha and Magnet Defense Partner to Develop AI-Enabled Unmanned Military Vessels for US Military | Medium |  | ASI10 |  |
+| 522 | 2026-04-20 | [`INC-01252`](docs/incidents/2026.md#inc-01252) | Israel Deploys AI-Enabled Robotics for Large-Scale Border Demining | Medium |  |  |  |
+| 523 | 2026-04-20 | [`INC-01324`](docs/incidents/2026.md#inc-01324) | Leonardo DRS Deploys AI-Enabled Maritime Counter-Drone System | Medium |  |  |  |
+| 524 | 2026-04-20 | [`INC-01357`](docs/incidents/2026.md#inc-01357) | Lovable AI App Builder Exposes Sensitive User Data via API Flaw | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 525 | 2026-04-20 | [`INC-01414`](docs/incidents/2026.md#inc-01414) | Meta Uses Employee Computer Activity to Train AI Agents and Deploys 'Zuckerbot' Avatar | Medium |  |  |  |
+| 526 | 2026-04-20 | [`INC-01763`](docs/incidents/2026.md#inc-01763) | Senator Ossoff Investigates AI Data Centers' Impact on Georgia Power Bills | Medium | LLM09 |  |  |
+| 527 | 2026-04-20 | [`INC-01798`](docs/incidents/2026.md#inc-01798) | SPARC AI Expands AI-Powered Drone Navigation in Ukraine Amid Military Applications | Medium |  | ASI10 |  |
+| 528 | 2026-04-20 | [`INC-01866`](docs/incidents/2026.md#inc-01866) | Tesla Full Self-Driving AI Fails at Railroad Crossing, Nearly Causes Collision with Train in Texas | Critical |  |  |  |
+| 529 | 2026-04-20 | [`INC-01870`](docs/incidents/2026.md#inc-01870) | Tesla Robotaxi Malfunctions on Dallas Highway, Raising Safety Concerns | Medium |  |  |  |
+| 530 | 2026-04-20 | [`INC-01971`](docs/incidents/2026.md#inc-01971) | Unauthorized Access and Security Concerns Over Anthropic's Mythos AI Model in U.S. Government | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 531 | 2026-04-19 | [`INC-00205`](docs/incidents/2026.md#inc-00205) | AI Stock Trading Program Causes Financial and Mental Health Harm in Guangzhou | Medium |  |  |  |
+| 532 | 2026-04-19 | [`INC-00317`](docs/incidents/2026.md#inc-00317) | AI-Driven Precision Therapy Improves Autoimmune Disease Outcomes in Taiwan | Medium |  |  |  |
+| 533 | 2026-04-19 | [`INC-01271`](docs/incidents/2026.md#inc-01271) | Anthropic's Claude Mitos AI Withheld Over Cybersecurity Risks and Unauthorized Access | Critical | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
+| 534 | 2026-04-19 | [`INC-01065`](docs/incidents/2026.md#inc-01065) | Generative AI Adoption Reduces Employment and Income for Young Workers in Brazil | Medium |  |  |  |
+| 535 | 2026-04-19 | [`INC-01614`](docs/incidents/2026.md#inc-01614) | Pakistani Brand Uses AI-Generated Images of Alia Bhatt Without Consent | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 536 | 2026-04-19 | [`INC-01867`](docs/incidents/2026.md#inc-01867) | Tesla Launches Unsupervised Robotaxi Service in Dallas and Houston | Critical |  |  |  |
+| 537 | 2026-04-19 | [`INC-01871`](docs/incidents/2026.md#inc-01871) | Tesla Robotaxi Malfunctions Raise Safety Concerns in Texas | Medium |  |  |  |
+| 538 | 2026-04-19 | [`INC-01972`](docs/incidents/2026.md#inc-01972) | Unauthorized Access and Security Concerns Surround Anthropic's Mythos AI | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 539 | 2026-04-19 | [`INC-02039`](docs/incidents/2026.md#inc-02039) | Vercel Breach via Compromised AI Tool Exposes Crypto Projects to Security Risks | Critical | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 |  |
+| 540 | 2026-04-18 | [`INC-00063`](docs/incidents/2026.md#inc-00063) | AI Adoption on Wall Street Leads to Mass Job Cuts and Labor Harm | Critical | LLM05 | ASI05 |  |
+| 541 | 2026-04-18 | [`INC-00345`](docs/incidents/2026.md#inc-00345) | AI-Enabled Emergency Totem Facilitates Rapid Recovery of Stolen Motorcycle in Teresina | High |  |  |  |
+| 542 | 2026-04-18 | [`INC-00615`](docs/incidents/2026.md#inc-00615) | Anthropic's Claude AI Wrongly Suspends Fintech Firm's Accounts, Disrupting Operations | High | LLM05 | ASI05 |  |
+| 543 | 2026-04-18 | [`INC-00620`](docs/incidents/2026.md#inc-00620) | Anthropic's Mythos AI Model Sparks Global Cybersecurity and Financial System Fears | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
+| 544 | 2026-04-18 | [`INC-00621`](docs/incidents/2026.md#inc-00621) | Anthropic's Mythos AI Raises Cybersecurity and Governance Concerns in US and UK | Critical | LLM03 | ASI04 |  |
+| 545 | 2026-04-18 | [`INC-00779`](docs/incidents/2026.md#inc-00779) | China's Sex Toy Industry Integrates AI Amid Legal and Privacy Concerns | High |  |  |  |
+| 546 | 2026-04-18 | [`INC-01747`](docs/incidents/2026.md#inc-01747) | Rome Plans AI-Controlled 'White Light' Traffic Signals for Autonomous Vehicles | Medium |  |  |  |
+| 547 | 2026-04-18 | [`INC-01957`](docs/incidents/2026.md#inc-01957) | Ukraine Deploys AI-Driven Military Systems in Ongoing Conflict | Critical | LLM05 | ASI05, ASI10 |  |
+| 548 | 2026-04-18 | [`INC-01962`](docs/incidents/2026.md#inc-01962) | Ukraine Launches Defense AI Center "A1" to Integrate AI in Military Operations | Critical |  |  |  |
+| 549 | 2026-04-17 | [`INC-00113`](docs/incidents/2026.md#inc-00113) | AI Chatbots in Mental Health Linked to Harm and Lawsuits in the US | Critical | LLM05, LLM09 | ASI09 |  |
+| 550 | 2026-04-17 | [`INC-00253`](docs/incidents/2026.md#inc-00253) | AI Voice Analysis and Cloning Pose Privacy and Security Risks | High |  | ASI09 |  |
+| 551 | 2026-04-17 | [`INC-00256`](docs/incidents/2026.md#inc-00256) | AI Voice Cloning Used in Silent Call Fraud Scheme in Indonesia | Medium |  | ASI09 |  |
+| 552 | 2026-04-17 | [`INC-00316`](docs/incidents/2026.md#inc-00316) | AI-Driven Police Data Analysis in NRW Raises Privacy and Rights Concerns | High |  |  |  |
+| 553 | 2026-04-17 | [`INC-00552`](docs/incidents/2026.md#inc-00552) | AI-Powered Robot Police Deployed in Chinese Cities Raise Privacy Concerns | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 554 | 2026-04-17 | [`INC-00599`](docs/incidents/2026.md#inc-00599) | Anthropic CEO Warns AI Could Displace Half of Entry-Level White-Collar Jobs | Critical | LLM05 | ASI05 |  |
+| 555 | 2026-04-17 | [`INC-00619`](docs/incidents/2026.md#inc-00619) | Anthropic's Mythos AI Model Raises Global Cybersecurity Concerns | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 556 | 2026-04-17 | [`INC-00723`](docs/incidents/2026.md#inc-00723) | Cal.com Closes Source Code Due to AI-Driven Security Threats | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 557 | 2026-04-17 | [`INC-00849`](docs/incidents/2026.md#inc-00849) | Community Protests and Transparency Concerns Over Bell Canada's Planned AI Data Centre in Regina | Medium |  |  |  |
+| 558 | 2026-04-17 | [`INC-01094`](docs/incidents/2026.md#inc-01094) | Global Financial Leaders Warn of AI Risks to Financial Systems from Anthropic's Mythos | Critical |  |  |  |
+| 559 | 2026-04-17 | [`INC-01117`](docs/incidents/2026.md#inc-01117) | Google Gemini AI Raises Global Privacy Concerns by Scanning Personal Photos and Emails | High |  |  |  |
+| 560 | 2026-04-17 | [`INC-00134`](docs/incidents/2026.md#inc-00134) | Man Uses AI to Fake Suicide Photo, Triggers Emergency Response in Qinghai | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09, ASI10 |  |
+| 561 | 2026-04-17 | [`INC-01752`](docs/incidents/2026.md#inc-01752) | Scammers Reportedly Used AI-Generated Images of Missing Dog Archer to Solicit Fraudulent Vet Payment from Del… | Medium |  | ASI09 |  |
+| 562 | 2026-04-17 | [`INC-01756`](docs/incidents/2026.md#inc-01756) | Seattle Considers Data Center Moratorium Amid AI-Driven Power Strain Fears | Medium |  |  |  |
+| 563 | 2026-04-17 | [`INC-01926`](docs/incidents/2026.md#inc-01926) | U.S. Congressional Report Reveals Large-Scale Smuggling and Theft of AI Technology by China | Critical | LLM02, LLM04 | ASI06 |  |
+| 564 | 2026-04-16 | [`INC-00102`](docs/incidents/2026.md#inc-00102) | AI Chatbots Defy Brazil Election Rules, Spread Misinformation | High | LLM05, LLM09 | ASI05 |  |
+| 565 | 2026-04-16 | [`INC-00149`](docs/incidents/2026.md#inc-00149) | AI Deepfake Scams Target Investors on Meta Platforms | Medium | LLM09 | ASI09 |  |
+| 566 | 2026-04-16 | [`INC-00293`](docs/incidents/2026.md#inc-00293) | AI-Driven Disinformation Fuels Harm Against Migrants | Medium | LLM09 |  |  |
+| 567 | 2026-04-16 | [`INC-00434`](docs/incidents/2026.md#inc-00434) | AI-Generated Disinformation Threatens Democracies, Study Finds | Medium | LLM09 | ASI09 |  |
+| 568 | 2026-04-16 | [`INC-00586`](docs/incidents/2026.md#inc-00586) | Android Facial Recognition Flaw Allows Unauthorized Access via Photos | High | LLM02 | ASI03 |  |
+| 569 | 2026-04-16 | [`INC-00607`](docs/incidents/2026.md#inc-00607) | Anthropic Limits AI Cybersecurity Capabilities Amid U.S. Government Concerns | Critical |  |  |  |
+| 570 | 2026-04-16 | [`INC-00624`](docs/incidents/2026.md#inc-00624) | Anthropic's Mythos AI Raises Security Concerns for US Financial Database | Medium |  |  |  |
+| 571 | 2026-04-16 | [`INC-00676`](docs/incidents/2026.md#inc-00676) | Bank of England Stress-Tests AI Risks to UK Financial Stability | Medium |  |  |  |
+| 572 | 2026-04-16 | [`INC-00965`](docs/incidents/2026.md#inc-00965) | European Banking Authority Warns of AI-Driven Cybersecurity Risks to Banks | High | LLM05 | ASI05 |  |
+| 573 | 2026-04-16 | [`INC-01124`](docs/incidents/2026.md#inc-01124) | Google Uses Gemini AI to Block Billions of Malicious Ads | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 574 | 2026-04-16 | [`INC-01571`](docs/incidents/2026.md#inc-01571) | Open-Source AI Agents Cause Security Breaches and Financial Harm in China | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI09 |  |
+| 575 | 2026-04-16 | [`INC-01661`](docs/incidents/2026.md#inc-01661) | Portugal Approves Autonomous Vehicle Testing on Public Roads | Medium |  |  |  |
+| 576 | 2026-04-16 | [`INC-01688`](docs/incidents/2026.md#inc-01688) | Punjab Government Partners with IIT Ropar to Deploy AI for Crime Control | High | LLM05 | ASI05 |  |
+| 577 | 2026-04-16 | [`INC-01702`](docs/incidents/2026.md#inc-01702) | Purported Deepfake Video Reportedly Portrayed Nirmala Sitharaman Endorsing Investment Scheme | High | LLM09 | ASI09 |  |
+| 578 | 2026-04-16 | [`INC-01780`](docs/incidents/2026.md#inc-01780) | Smart Locks' Facial Recognition Vulnerabilities Exposed in China | High | LLM05 | ASI05 |  |
+| 579 | 2026-04-16 | [`INC-01809`](docs/incidents/2026.md#inc-01809) | Startup Develops AI Cap to Convert Thoughts into Text, Raising Future Privacy Concerns | High |  |  |  |
+| 580 | 2026-04-16 | [`INC-02006`](docs/incidents/2026.md#inc-02006) | US Labor Leaders Warn of AI's Potential Threat to Jobs and Society | Medium |  |  |  |
+| 581 | 2026-04-15 | [`INC-00187`](docs/incidents/2026.md#inc-00187) | AI Models Can Subliminally Transmit Biases and Unsafe Behaviors During Training | High | LLM05 | ASI05 |  |
+| 582 | 2026-04-15 | [`INC-00192`](docs/incidents/2026.md#inc-00192) | AI Navigation System Reduces Maritime Near Misses by 52% | Medium |  |  |  |
+| 583 | 2026-04-15 | [`INC-00299`](docs/incidents/2026.md#inc-00299) | AI-Driven Financial Fraud and Deepfake Crimes Surge in Brazil | Medium | LLM09 | ASI09 |  |
+| 584 | 2026-04-15 | [`INC-00430`](docs/incidents/2026.md#inc-00430) | AI-Generated Disinformation Targets Australian Politics | Medium | LLM09 |  |  |
+| 585 | 2026-04-15 | [`INC-00642`](docs/incidents/2026.md#inc-00642) | Apple Threatens Removal of Grok AI App Over Sexualized Deepfake Scandal | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 586 | 2026-04-15 | [`INC-00657`](docs/incidents/2026.md#inc-00657) | Australian Teen Convicted in Landmark Deepfake Pornography Case | High | LLM09 | ASI09 |  |
+| 587 | 2026-04-15 | [`INC-00770`](docs/incidents/2026.md#inc-00770) | China Successfully Tests AI-Powered Autonomous Cargo Aircraft HH-200 | Medium |  |  |  |
+| 588 | 2026-04-15 | [`INC-00929`](docs/incidents/2026.md#inc-00929) | El Salvador Entrusts Public Healthcare Management to Google's AI System | High | LLM05 | ASI05 |  |
+| 589 | 2026-04-15 | [`INC-00984`](docs/incidents/2026.md#inc-00984) | Facial Recognition System at Milan Linate Airport Declared Unlawful for GDPR Violations | High |  |  |  |
+| 590 | 2026-04-15 | [`INC-01237`](docs/incidents/2026.md#inc-01237) | Influencer Faces Backlash for AI Deepfake of Deceased Celebrity | High | LLM09 | ASI09 |  |
+| 591 | 2026-04-15 | [`INC-01256`](docs/incidents/2026.md#inc-01256) | Israeli Military Uses AI-Generated Image to Justify Killing Lebanese Journalist | Critical | LLM05, LLM09 | ASI05 |  |
+| 592 | 2026-04-15 | [`INC-01434`](docs/incidents/2026.md#inc-01434) | Microsoft Copilot Studio indirect prompt injection (ShareLeak) | High | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09 | `CVE-2026-21520` |
+| 593 | 2026-04-15 | [`INC-01442`](docs/incidents/2026.md#inc-01442) | Microsoft's AI-Powered Recall Feature Still Exposes Sensitive User Data Despite Security Overhaul | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 594 | 2026-04-15 | [`INC-01540`](docs/incidents/2026.md#inc-01540) | North Korean Hackers Use AI-Enhanced Social Engineering to Steal $100K from Zerion | High | LLM09 | ASI09 |  |
+| 595 | 2026-04-15 | [`INC-01793`](docs/incidents/2026.md#inc-01793) | Spanish Army Tests AI-Enabled Drones and Robots for Future Combat | High | LLM05 | ASI05, ASI10 |  |
+| 596 | 2026-04-15 | [`INC-01856`](docs/incidents/2026.md#inc-01856) | Tesla Cybercab Autonomous Taxis Undergo Testing at Texas Factory | Medium |  |  |  |
+| 597 | 2026-04-15 | [`INC-01933`](docs/incidents/2026.md#inc-01933) | Uber Announces Major Investment in Autonomous Vehicle Partnerships | Medium |  |  |  |
+| 598 | 2026-04-15 | [`INC-01945`](docs/incidents/2026.md#inc-01945) | UK Government Warns of Escalating AI-Driven Cyberattacks | Medium | LLM04 | ASI06, ASI09 |  |
+| 599 | 2026-04-15 | [`INC-01995`](docs/incidents/2026.md#inc-01995) | US Deploys AI-Enabled Robots for Mine Clearance in Strait of Hormuz | High | LLM05 | ASI05 |  |
+| 600 | 2026-04-14 | [`INC-00103`](docs/incidents/2026.md#inc-00103) | AI Chatbots Exhibit Systematic Bias in Judging Users, Study Finds | High | LLM05 | ASI05 |  |
+| 601 | 2026-04-14 | [`INC-00107`](docs/incidents/2026.md#inc-00107) | AI Chatbots Found to Dispense Inaccurate and Potentially Harmful Medical Advice | Critical | LLM04, LLM05, LLM09 | ASI05, ASI06 |  |
+| 602 | 2026-04-14 | [`INC-00109`](docs/incidents/2026.md#inc-00109) | AI Chatbots Frequently Misdiagnose Medical Cases, Study Finds | Medium | LLM09 |  |  |
+| 603 | 2026-04-14 | [`INC-00186`](docs/incidents/2026.md#inc-00186) | AI Models Accelerate Vulnerability Discovery, Raising Cybersecurity Risks | Critical | LLM02 | ASI03 |  |
+| 604 | 2026-04-14 | [`INC-00443`](docs/incidents/2026.md#inc-00443) | AI-Generated Fake Court Documents Used in Fraud Attempt in Batman, Turkey | Medium | LLM09 | ASI09 |  |
+| 605 | 2026-04-14 | [`INC-00451`](docs/incidents/2026.md#inc-00451) | AI-Generated Fake Interviews Published in Helsinki Newspaper | High | LLM09 |  |  |
+| 606 | 2026-04-14 | [`INC-00492`](docs/incidents/2026.md#inc-00492) | AI-Generated Persona 'Dona Maria' Fuels Political Polarization in Brazil | High | LLM05, LLM09 | ASI05 |  |
+| 607 | 2026-04-14 | [`INC-00535`](docs/incidents/2026.md#inc-00535) | AI-Powered Brain Implants Restore Abilities but Pose Health Risks | Medium |  |  |  |
+| 608 | 2026-04-14 | [`INC-00613`](docs/incidents/2026.md#inc-00613) | Anthropic's Claude AI Agents Surpass Humans in Alignment Research, Exposing Reward Hacking Risks | High |  |  |  |
+| 609 | 2026-04-14 | [`INC-00638`](docs/incidents/2026.md#inc-00638) | Apple and Google App Stores Promote AI 'Nudify' Apps Enabling Nonconsensual Deepfakes | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 610 | 2026-04-14 | [`INC-00707`](docs/incidents/2026.md#inc-00707) | Brazilian Police Dismantle AI-Driven Deepfake Fraud Ring | Medium | LLM09 | ASI09 |  |
+| 611 | 2026-04-14 | [`INC-00915`](docs/incidents/2026.md#inc-00915) | Dutch Court Orders X (Twitter) to Disclose AI Profiling Data to User | High | LLM05 | ASI05 |  |
+| 612 | 2026-04-14 | [`INC-01129`](docs/incidents/2026.md#inc-01129) | Google's Gemini AI Blocks Fraudulent Ads and URLs in Taiwan | High | LLM05 | ASI05, ASI09 |  |
+| 613 | 2026-04-14 | [`INC-01167`](docs/incidents/2026.md#inc-01167) | Humanoid AI Robots Deployed for Border Patrol in China, Raising Safety Concerns | High | LLM05 | ASI05 |  |
+| 614 | 2026-04-14 | [`INC-01326`](docs/incidents/2026.md#inc-01326) | LiblibAI Generates Inappropriate Content Due to Moderation Failure | High |  |  |  |
+| 615 | 2026-04-14 | [`INC-01371`](docs/incidents/2026.md#inc-01371) | Maryland Police Allegedly Relied on Facial Recognition Lead in Wrongful Arrest and Detention of Kimberlee Wil… | High | LLM05 | ASI05, ASI09 |  |
+| 616 | 2026-04-14 | [`INC-01467`](docs/incidents/2026.md#inc-01467) | Morrisons Cuts 200 Head Office Jobs Due to AI-Driven Restructuring | High | LLM05 | ASI05 |  |
+| 617 | 2026-04-14 | [`INC-01514`](docs/incidents/2026.md#inc-01514) | NAACP Sues xAI Over Illegal Gas Turbine Use for AI Data Center, Citing Pollution and Health Risks | High | LLM05 | ASI05 |  |
+| 618 | 2026-04-14 | [`INC-01653`](docs/incidents/2026.md#inc-01653) | Police Officer Used AI Voice Cloning to Deceive Victims' Family in Triple Homicide Case | Critical | LLM09 | ASI09 |  |
+| 619 | 2026-04-14 | [`INC-01930`](docs/incidents/2026.md#inc-01930) | Uber Accelerates Investment and Testing of AI-Powered Robotaxi Fleet | Medium |  |  |  |
+| 620 | 2026-04-14 | [`INC-02024`](docs/incidents/2026.md#inc-02024) | US Military Uses Palantir AI System in Iran War, Leading to Civilian Casualties | Critical | LLM05, LLM09 | ASI05 |  |
+| 621 | 2026-04-14 | [`INC-02103`](docs/incidents/2026.md#inc-02103) | X's AI Recommends Explicit Content to UK Teens, Failing Safeguards | High | LLM05 | ASI05 |  |
+| 622 | 2026-04-13 | [`INC-00040`](docs/incidents/2026.md#inc-00040) | ADAC Test Reveals AI Driver Assistance Failures in Adverse Weather | Medium |  |  |  |
+| 623 | 2026-04-13 | [`INC-00138`](docs/incidents/2026.md#inc-00138) | AI Data Centers Drive Water Scarcity in Southeast Asia | High | LLM05 | ASI05 |  |
+| 624 | 2026-04-13 | [`INC-00175`](docs/incidents/2026.md#inc-00175) | AI Language Models Fail at Early Clinical Reasoning, Raising Patient Safety Concerns | Medium |  |  |  |
+| 625 | 2026-04-13 | [`INC-00242`](docs/incidents/2026.md#inc-00242) | AI Traffic Cameras Deployed in Sussex to Detect Dangerous Driving Behaviors | Critical | LLM05 | ASI05 |  |
+| 626 | 2026-04-13 | [`INC-00341`](docs/incidents/2026.md#inc-00341) | AI-Enabled Drones Escalate Warfare in Ukraine | Critical |  | ASI10 |  |
+| 627 | 2026-04-13 | [`INC-00486`](docs/incidents/2026.md#inc-00486) | AI-Generated Misinformation Campaigns Harm Chinese Companies | High | LLM05, LLM09 | ASI05 |  |
+| 628 | 2026-04-13 | [`INC-00593`](docs/incidents/2026.md#inc-00593) | Angolan Tax Authority Uses AI to Detect and Report Major Tax Fraud | High | LLM05 | ASI05, ASI09 |  |
+| 629 | 2026-04-13 | [`INC-00713`](docs/incidents/2026.md#inc-00713) | Brazilian TV Airs AI-Generated Fake News Image, Spreads Misinformation | High | LLM09 |  |  |
+| 630 | 2026-04-13 | [`INC-01045`](docs/incidents/2026.md#inc-01045) | France Shifts to Mass Production of AI-Enabled Military Drones and Interceptors | Critical | LLM05 | ASI05 |  |
+| 631 | 2026-04-13 | [`INC-01251`](docs/incidents/2026.md#inc-01251) | Irish Cybersecurity Leaders Warn of AI-Driven Cyberattack Risks | High | LLM05 | ASI05 |  |
+| 632 | 2026-04-13 | [`INC-01423`](docs/incidents/2026.md#inc-01423) | Metropolitan Police Trials AI to Identify Child Abuse Victims Faster | High | LLM05, LLM09 | ASI05 |  |
+| 633 | 2026-04-13 | [`INC-01451`](docs/incidents/2026.md#inc-01451) | Minors in Valladolid Tried for Using AI to Create and Share Non-Consensual Nude Images of Classmates | Medium |  |  |  |
+| 634 | 2026-04-13 | [`INC-01527`](docs/incidents/2026.md#inc-01527) | New Zealand Develops AI Tool to Redirect Extremist Users to Deradicalization Support | High | LLM05 | ASI05, ASI09 |  |
+| 635 | 2026-04-13 | [`INC-01550`](docs/incidents/2026.md#inc-01550) | Oklahoma Lawmaker Ends Reelection Bid After Sending AI-Generated Deepfake | High | LLM09 | ASI09 |  |
+| 636 | 2026-04-13 | [`INC-01795`](docs/incidents/2026.md#inc-01795) | Spanish Regulator Warns of AI Investment Risks Without Human Oversight | High | LLM05, LLM09 | ASI05 |  |
+| 637 | 2026-04-13 | [`INC-01808`](docs/incidents/2026.md#inc-01808) | Starlink Outage Disrupts US Navy Drone Operations, Exposing Critical Vulnerabilities | Critical |  |  |  |
+| 638 | 2026-04-13 | [`INC-01816`](docs/incidents/2026.md#inc-01816) | Study Finds AI Chatbots Causing Addiction-Like Harm Among U.S. Teens | Medium |  |  |  |
+| 639 | 2026-04-13 | [`INC-01829`](docs/incidents/2026.md#inc-01829) | Supreme Court Reviews Biometric AI Voter Authentication Proposal | Medium | LLM09 | ASI09 |  |
+| 640 | 2026-04-13 | [`INC-01843`](docs/incidents/2026.md#inc-01843) | Teen Uses ChatGPT for Childbirth, Newborn Abandoned in Argentina | Critical |  |  |  |
+| 641 | 2026-04-13 | [`INC-02016`](docs/incidents/2026.md#inc-02016) | US Leaders Warn of AI-Driven Job Loss and Economic Inequality | Medium |  |  |  |
+| 642 | 2026-04-13 | [`INC-02044`](docs/incidents/2026.md#inc-02044) | Viral Videos of Indian Factory Workers Wearing Cameras Spark AI Automation Fears | Critical |  |  |  |
+| 643 | 2026-04-13 | [`INC-02072`](docs/incidents/2026.md#inc-02072) | Waymo Faces Political and Technological Hurdles in Toronto Robotaxi Expansion | Medium |  |  |  |
+| 644 | 2026-04-12 | [`INC-00360`](docs/incidents/2026.md#inc-00360) | AI-Enhanced Blood Test Enables Early Leprosy Detection in Brazil | Medium |  |  |  |
+| 645 | 2026-04-12 | [`INC-00390`](docs/incidents/2026.md#inc-00390) | AI-Generated Deepfake Video Causes Defamation Dispute Involving Indonesian Political Figures | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 646 | 2026-04-12 | [`INC-00496`](docs/incidents/2026.md#inc-00496) | AI-Generated Pornography and Illegal Content Distribution Chain Exposed in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 647 | 2026-04-12 | [`INC-00792`](docs/incidents/2026.md#inc-00792) | Chinese Family Uses AI Avatar to Hide Son's Death from Elderly Mother | Critical |  |  |  |
+| 648 | 2026-04-12 | [`INC-00852`](docs/incidents/2026.md#inc-00852) | Content Creator Arrested for AI-Generated Video on Evading Surveillance | High | LLM05 | ASI05 |  |
+| 649 | 2026-04-12 | [`INC-00917`](docs/incidents/2026.md#inc-00917) | Dutch Government Warns of AI Model Mythos' Cybersecurity Risks | High |  |  |  |
+| 650 | 2026-04-12 | [`INC-01085`](docs/incidents/2026.md#inc-01085) | Germany Procures AI-Enabled Combat Drones for Bundeswehr Deployment in Lithuania | Critical |  | ASI10 |  |
+| 651 | 2026-04-12 | [`INC-01180`](docs/incidents/2026.md#inc-01180) | IMF Warns of AI-Driven Cybersecurity Risks to Global Financial System | Medium |  |  |  |
+| 652 | 2026-04-12 | [`INC-01626`](docs/incidents/2026.md#inc-01626) | Pedestrians Injured in Autonomous Bus Accident in Yahiko, Japan | Medium |  |  |  |
+| 653 | 2026-04-12 | [`INC-01939`](docs/incidents/2026.md#inc-01939) | UK Authorities Assess Cybersecurity Risks Identified by Anthropic AI Model | High |  |  |  |
+| 654 | 2026-04-12 | [`INC-01973`](docs/incidents/2026.md#inc-01973) | Unauthorized AI Clone of Zhang Xuefeng Sparks Legal and Ethical Controversy | High | LLM05 | ASI05 |  |
+| 655 | 2026-04-11 | [`INC-00170`](docs/incidents/2026.md#inc-00170) | AI Glasses Misuse Prompts Crackdown at Augusta Masters Tournament | High | LLM05 | ASI05, ASI09 |  |
+| 656 | 2026-04-11 | [`INC-00255`](docs/incidents/2026.md#inc-00255) | AI Voice Cloning Causes Economic Harm to Chinese Voice Actors | Medium |  |  |  |
+| 657 | 2026-04-11 | [`INC-00511`](docs/incidents/2026.md#inc-00511) | AI-Generated Videos Simulate Violence Against PT Women, Prompt Legal Action in Brazil | Medium | LLM09 | ASI09 |  |
+| 658 | 2026-04-11 | [`INC-01578`](docs/incidents/2026.md#inc-01578) | OpenAI Issues Urgent Security Update for Mac Apps After Supply Chain Attack | High | LLM02, LLM03, LLM09 | ASI03, ASI04, ASI09 |  |
+| 659 | 2026-04-11 | [`INC-02031`](docs/incidents/2026.md#inc-02031) | US Regulators Warn Banks of AI-Driven Cyber Risks from Anthropic Model | Medium |  |  |  |
+| 660 | 2026-04-10 | [`INC-00136`](docs/incidents/2026.md#inc-00136) | AI Data Center Boom Drives Coal Revival, Worsening Air Quality in St. Louis | Critical | LLM05 | ASI05 |  |
+| 661 | 2026-04-10 | [`INC-00667`](docs/incidents/2026.md#inc-00667) | Autonomous Lawn Mowers Cause Harm to Wildlife, Prompting Calls for Nighttime Ban | Critical |  |  |  |
+| 662 | 2026-04-10 | [`INC-00733`](docs/incidents/2026.md#inc-00733) | Capgemini Announces Mass Layoffs in Spain Citing AI Impact | High | LLM05 | ASI05 |  |
+| 663 | 2026-04-10 | [`INC-00743`](docs/incidents/2026.md#inc-00743) | ChatGPT Aids in Correct Diagnosis of Rare Disease After Years of Medical Errors | Medium |  |  |  |
+| 664 | 2026-04-10 | [`INC-00793`](docs/incidents/2026.md#inc-00793) | Chinese Firm Acquires $92 Million in Banned Nvidia AI Chips via Illegal Channels | Critical |  |  |  |
+| 665 | 2026-04-10 | [`INC-01041`](docs/incidents/2026.md#inc-01041) | Foreign Funding Targets U.S. AI Infrastructure Expansion | Critical |  |  |  |
+| 666 | 2026-04-10 | [`INC-01363`](docs/incidents/2026.md#inc-01363) | Malicious AI Routers Enable Cryptocurrency and Credential Theft | High | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI07 |  |
+| 667 | 2026-04-10 | [`INC-01405`](docs/incidents/2026.md#inc-01405) | Meta Faces Lawsuit in Massachusetts Over AI-Driven Social Media Addiction in Youth | High | LLM05 | ASI05, ASI09 |  |
+| 668 | 2026-04-10 | [`INC-01581`](docs/incidents/2026.md#inc-01581) | OpenAI Sued for ChatGPT's Role in Stalking and Harassment | Critical | LLM05 | ASI05 |  |
+| 669 | 2026-04-10 | [`INC-01774`](docs/incidents/2026.md#inc-01774) | Sindh Approves AI-Powered Surveillance Expansion in Karachi | High | LLM05 | ASI05 |  |
+| 670 | 2026-04-10 | [`INC-01785`](docs/incidents/2026.md#inc-01785) | South Africa Draft National AI Policy Reportedly Included Fictitious References Believed to Be AI Hallucinati… | Medium | LLM09 | ASI09 |  |
+| 671 | 2026-04-10 | [`INC-01985`](docs/incidents/2026.md#inc-01985) | US and UK Regulators Warn Banks of AI Model Mythos' Cybersecurity Risks | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI10 |  |
+| 672 | 2026-04-10 | [`INC-02038`](docs/incidents/2026.md#inc-02038) | Valve Develops SteamGPT AI for Moderation and Anti-Cheat on Steam | High | LLM05 | ASI05 |  |
+| 673 | 2026-04-10 | [`INC-02121`](docs/incidents/2026.md#inc-02121) | Zimbabwe Faces Surge in AI-Driven Cybercrime and Fraud | Medium | LLM09 | ASI09 |  |
+| 674 | 2026-04-09 | [`INC-00057`](docs/incidents/2026.md#inc-00057) | AI Adoption Creates Identity Security Risks in India and Singapore | High | LLM02 | ASI03 |  |
+| 675 | 2026-04-09 | [`INC-00128`](docs/incidents/2026.md#inc-00128) | AI Chatbots Spread False Medical Information After Experiment With Fabricated Disease | High | LLM05, LLM09 | ASI05 |  |
+| 676 | 2026-04-09 | [`INC-00222`](docs/incidents/2026.md#inc-00222) | AI System Recovers Stolen Painting After 50 Years in Italy | High | LLM05 | ASI05 |  |
+| 677 | 2026-04-09 | [`INC-00262`](docs/incidents/2026.md#inc-00262) | AI-Assisted Investigation Leads to Arrest in Goiânia Homicide | Critical | LLM05 | ASI05 |  |
+| 678 | 2026-04-09 | [`INC-00404`](docs/incidents/2026.md#inc-00404) | AI-Generated Deepfake Videos Target Indian Politician Shashi Tharoor | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 679 | 2026-04-09 | [`INC-00494`](docs/incidents/2026.md#inc-00494) | AI-Generated Political Ads and Algorithmic Harm on Meta Platforms Spark Legal and Ethical Concerns | Medium | LLM09 | ASI09 |  |
+| 680 | 2026-04-09 | [`INC-00912`](docs/incidents/2026.md#inc-00912) | Dutch AI-Powered Parking Scanners Issue Hundreds of Thousands of Wrongful Fines | High | LLM05 | ASI05 |  |
+| 681 | 2026-04-09 | [`INC-00981`](docs/incidents/2026.md#inc-00981) | Facial Recognition AI Leads to Arrest of Rhondda Drug Dealers | High | LLM05 | ASI05 |  |
+| 682 | 2026-04-09 | [`INC-01059`](docs/incidents/2026.md#inc-01059) | Gartner Warns of Rising Security Incidents in Generative AI Applications by 2028 | High |  |  |  |
+| 683 | 2026-04-09 | [`INC-01077`](docs/incidents/2026.md#inc-01077) | German Cybersecurity Agency Warns of AI-Driven Vulnerability Discovery Risks | Critical | LLM02, LLM05 | ASI03, ASI05, ASI10 |  |
+| 684 | 2026-04-09 | [`INC-01170`](docs/incidents/2026.md#inc-01170) | Hungarian Government Uses AI Surveillance Tools for Mass Tracking in Violation of EU Laws | High |  |  |  |
+| 685 | 2026-04-09 | [`INC-01265`](docs/incidents/2026.md#inc-01265) | Jakarta Officials Misuse AI to Fabricate Public Service Reports | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 686 | 2026-04-09 | [`INC-01732`](docs/incidents/2026.md#inc-01732) | Researchers Bypass Apple Intelligence AI Protections with Prompt Injection | High | LLM01 | ASI01 |  |
+| 687 | 2026-04-08 | [`INC-00066`](docs/incidents/2026.md#inc-00066) | AI Adoption Threatens Significant Job Losses Among Highly Skilled Workers in Ireland | Critical |  |  |  |
+| 688 | 2026-04-08 | [`INC-00068`](docs/incidents/2026.md#inc-00068) | AI Agent Deployment Drives Surge in API Security Incidents | High | LLM02 | ASI03 |  |
+| 689 | 2026-04-08 | [`INC-00362`](docs/incidents/2026.md#inc-00362) | AI-Generated 'Fruit Soap Operas' Sexualize Childlike Characters, Prompting Police Warnings in Brazil | Medium |  |  |  |
+| 690 | 2026-04-08 | [`INC-00457`](docs/incidents/2026.md#inc-00457) | AI-Generated Fake News Targets Chinese Car Companies, Leading to Arrests | High | LLM05, LLM09 | ASI05 |  |
+| 691 | 2026-04-08 | [`INC-00623`](docs/incidents/2026.md#inc-00623) | Anthropic's Mythos AI Raises Global Cybersecurity Concerns | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI10 |  |
+| 692 | 2026-04-08 | [`INC-00706`](docs/incidents/2026.md#inc-00706) | Brazilian Legislative Proposals Prioritize AI Surveillance and Policing | Medium |  |  |  |
+| 693 | 2026-04-08 | [`INC-00709`](docs/incidents/2026.md#inc-00709) | Brazilian Presidential Candidate Proposes AI Drones to Combat Feminicide | Medium |  |  |  |
+| 694 | 2026-04-08 | [`INC-00799`](docs/incidents/2026.md#inc-00799) | CIA Uses AI System 'Ghost Murmur' to Rescue Downed Pilot in Iran | Critical | LLM09 |  |  |
+| 695 | 2026-04-08 | [`INC-00801`](docs/incidents/2026.md#inc-00801) | Circus SE Deploys Autonomous AI Robots for Lithuanian Military Supply | High | LLM05 | ASI05 |  |
+| 696 | 2026-04-08 | [`INC-01222`](docs/incidents/2026.md#inc-01222) | India Approves Development of Autonomous Combat Search and Rescue UAVs | Critical | LLM05 | ASI05 |  |
+| 697 | 2026-04-08 | [`INC-01372`](docs/incidents/2026.md#inc-01372) | Mason High School Student Charged for AI-Generated Explicit Images of Minors | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 698 | 2026-04-07 | [`INC-00266`](docs/incidents/2026.md#inc-00266) | AI-Augmented EvilTokens Phishing Campaign Compromises Hundreds Daily | High | LLM02 | ASI02, ASI09 |  |
+| 699 | 2026-04-07 | [`INC-00306`](docs/incidents/2026.md#inc-00306) | AI-Driven Job Displacement Causes Lasting Socioeconomic Harm in the US | High | LLM05 | ASI05 |  |
+| 700 | 2026-04-07 | [`INC-00322`](docs/incidents/2026.md#inc-00322) | AI-Driven Scams Surge in Australia, Prompting Record Takedowns by Regulators | Critical | LLM09 | ASI09 |  |
+| 701 | 2026-04-07 | [`INC-00356`](docs/incidents/2026.md#inc-00356) | AI-Enabled Surveillance and Disinformation in Taiwan; Autonomous Mine-Clearing Drones in Hormuz | Critical | LLM09 | ASI09 |  |
+| 702 | 2026-04-07 | [`INC-00384`](docs/incidents/2026.md#inc-00384) | AI-Generated Deepfake Pornography Causes Harm Amid Legal Gaps in Germany | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 703 | 2026-04-07 | [`INC-00557`](docs/incidents/2026.md#inc-00557) | AI-Powered Surveillance Program Launched in Rio Grande do Sul Schools | High |  |  |  |
+| 704 | 2026-04-07 | [`INC-00597`](docs/incidents/2026.md#inc-00597) | Anthropic AI Model Source Code Leak and Restricted Release Due to Security Risks | High | LLM03, LLM05 | ASI04, ASI05 |  |
+| 705 | 2026-04-07 | [`INC-00612`](docs/incidents/2026.md#inc-00612) | Anthropic's AI Model Claude Mythos Raises Security Concerns and Reveals Emotional Mechanisms | Critical | LLM02, LLM03, LLM05, LLM06 | ASI03, ASI04, ASI05, ASI10 |  |
+| 706 | 2026-04-07 | [`INC-00677`](docs/incidents/2026.md#inc-00677) | Bank of England Warns of AI-Driven Dynamic Pricing Risks in UK Retail | High | LLM05 | ASI05 |  |
+| 707 | 2026-04-07 | [`INC-01115`](docs/incidents/2026.md#inc-01115) | Google Gemini AI API Key Exposure Leads to Data and Financial Breaches in Android Apps | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 708 | 2026-04-07 | [`INC-01118`](docs/incidents/2026.md#inc-01118) | Google Gemini Implicated in User Suicide and Mass Misinformation, Prompts Safeguards | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 709 | 2026-04-07 | [`INC-01136`](docs/incidents/2026.md#inc-01136) | GrafanaGhost AI Vulnerability Enables Silent Data Exfiltration | High | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI03, ASI05 |  |
+| 710 | 2026-04-07 | [`INC-01443`](docs/incidents/2026.md#inc-01443) | Middle East Conflict Poses Risks to Global AI Infrastructure and Adoption | Medium |  |  |  |
+| 711 | 2026-04-07 | [`INC-01624`](docs/incidents/2026.md#inc-01624) | Paraná Suspends AI Surveillance Contract Over Rights and Data Concerns | High |  |  |  |
+| 712 | 2026-04-07 | [`INC-01729`](docs/incidents/2026.md#inc-01729) | Reno Police Sued for Systemic Wrongful Arrests Based on Faulty Facial Recognition | High |  |  |  |
+| 713 | 2026-04-07 | [`INC-01820`](docs/incidents/2026.md#inc-01820) | Study Links Prolonged Use of AI Chatbot Replika to Increased Anxiety and Mental Health Risks | Medium | LLM05 | ASI09 |  |
+| 714 | 2026-04-07 | [`INC-01958`](docs/incidents/2026.md#inc-01958) | Ukraine Deploys AI-Enabled Ground Robots for Thousands of Frontline Missions | Critical | LLM05 | ASI05 |  |
+| 715 | 2026-04-06 | [`INC-00059`](docs/incidents/2026.md#inc-00059) | AI Adoption Drives Structural Layoffs and Job Insecurity in Tech Sector | High | LLM05 | ASI05 |  |
+| 716 | 2026-04-06 | [`INC-00062`](docs/incidents/2026.md#inc-00062) | AI Adoption Leads to Job Losses Among Entry-Level Workers in the US | High | LLM05 | ASI05 |  |
+| 717 | 2026-04-06 | [`INC-00135`](docs/incidents/2026.md#inc-00135) | AI Data Center Attack and Job Losses Linked to AI Adoption | High | LLM05 | ASI05 |  |
+| 718 | 2026-04-06 | [`INC-00151`](docs/incidents/2026.md#inc-00151) | AI Deepfake Tools Bypass KYC, Fueling Financial Fraud in Crypto and Banking | High | LLM09 | ASI09 |  |
+| 719 | 2026-04-06 | [`INC-00214`](docs/incidents/2026.md#inc-00214) | AI System 'AVCI' Enables Major Drug Trafficking Busts in Istanbul | High | LLM05 | ASI05 |  |
+| 720 | 2026-04-06 | [`INC-00333`](docs/incidents/2026.md#inc-00333) | AI-Enabled Combat Drone Crashes During Test in California | High | LLM05 | ASI05, ASI10 |  |
+| 721 | 2026-04-06 | [`INC-00418`](docs/incidents/2026.md#inc-00418) | AI-Generated Deepfakes Fuel Social Media Investment Scams in the US | Medium | LLM09 | ASI09 |  |
+| 722 | 2026-04-06 | [`INC-00518`](docs/incidents/2026.md#inc-00518) | AI-Generated Voice Used in Scam Targeting Drica Moraes' Contacts | Medium | LLM09 | ASI09 |  |
+| 723 | 2026-04-06 | [`INC-00641`](docs/incidents/2026.md#inc-00641) | Apple Sued for Scraping YouTube Videos to Train AI Models | High |  |  |  |
+| 724 | 2026-04-06 | [`INC-00775`](docs/incidents/2026.md#inc-00775) | China Warns of AI Token-Related Scams and Data Security Risks | Critical | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 725 | 2026-04-06 | [`INC-00780`](docs/incidents/2026.md#inc-00780) | China's Use of AI for Espionage and Election Interference in Taiwan | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI09, ASI10 |  |
+| 726 | 2026-04-06 | [`INC-01054`](docs/incidents/2026.md#inc-01054) | Frontier AI Models Exhibit Peer-Preservation, Defy Shutdown Orders | Critical | LLM01, LLM02, LLM03, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09 |  |
+| 727 | 2026-04-06 | [`INC-01247`](docs/incidents/2026.md#inc-01247) | Iran Threatens Destruction of Stargate AI Data Center in Abu Dhabi | High | LLM05, LLM09 | ASI05 |  |
+| 728 | 2026-04-06 | [`INC-01316`](docs/incidents/2026.md#inc-01316) | Lawsuit Alleges ChatGPT Aided Florida State University Shooter | Critical | LLM05 | ASI05, ASI09 |  |
+| 729 | 2026-04-06 | [`INC-01428`](docs/incidents/2026.md#inc-01428) | Michigan Man Charged for Using AI to Generate Child Sexual Abuse Images | Medium | LLM09 |  |  |
+| 730 | 2026-04-06 | [`INC-01638`](docs/incidents/2026.md#inc-01638) | Perplexity AI Accused of Sharing User Conversations with Meta and Google Without Consent | High | LLM02 | ASI03, ASI09 |  |
+| 731 | 2026-04-06 | [`INC-01841`](docs/incidents/2026.md#inc-01841) | Tech Giants Continue AI-Based CSAM Scanning in EU Despite Legal Expiry | High | LLM09 |  |  |
+| 732 | 2026-04-06 | [`INC-01981`](docs/incidents/2026.md#inc-01981) | US AI Firms Collaborate to Counter Unauthorized Model Distillation by Chinese Companies | Critical | LLM02, LLM05, LLM09 | ASI02, ASI05 |  |
+| 733 | 2026-04-06 | [`INC-02028`](docs/incidents/2026.md#inc-02028) | US Regulator Closes Probe into Tesla's AI Summon Feature After Minor Collisions | Critical | LLM05 | ASI05 |  |
+| 734 | 2026-04-05 | [`INC-00087`](docs/incidents/2026.md#inc-00087) | AI Bots Cause Economic Harm to Digital Publishers Through Content Scraping | Medium |  |  |  |
+| 735 | 2026-04-05 | [`INC-00129`](docs/incidents/2026.md#inc-00129) | AI Chatbots' Sycophancy Fuels Harmful Delusions and Mental Health Risks | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 736 | 2026-04-05 | [`INC-00280`](docs/incidents/2026.md#inc-00280) | AI-Driven Cyberattacks Cause Major Losses in Crypto Industry | Critical |  |  |  |
+| 737 | 2026-04-05 | [`INC-00324`](docs/incidents/2026.md#inc-00324) | AI-Driven Social Security Crackdown in Turkey Leads to Mass Benefit Cancellations | High | LLM05 | ASI05, ASI09 |  |
+| 738 | 2026-04-05 | [`INC-00528`](docs/incidents/2026.md#inc-00528) | AI-Operated Security Drones Deployed in US Schools to Counter Mass Shootings | High | LLM05 | ASI05 |  |
+| 739 | 2026-04-05 | [`INC-00554`](docs/incidents/2026.md#inc-00554) | AI-Powered Smart Glasses Enable Widespread Exam Cheating in China and Japan | High | LLM05 | ASI05 |  |
+| 740 | 2026-04-05 | [`INC-00784`](docs/incidents/2026.md#inc-00784) | Chinese AI Firms Expose U.S. Military Movements During Iran Conflict | Critical | LLM05 | ASI05 |  |
+| 741 | 2026-04-05 | [`INC-00789`](docs/incidents/2026.md#inc-00789) | Chinese Celebrities and Authors Targeted by AI Deepfake and Generative Content Infringement | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 742 | 2026-04-05 | [`INC-00812`](docs/incidents/2026.md#inc-00812) | Claude Code AI System Exhibits Security Vulnerabilities and Malfunctions, Raising Safety and Reliability Conc… | High | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05 |  |
+| 743 | 2026-04-05 | [`INC-01101`](docs/incidents/2026.md#inc-01101) | Google AI Overviews Spread Millions of Misinformation Answers Daily | High | LLM05, LLM09 | ASI05 |  |
+| 744 | 2026-04-05 | [`INC-01158`](docs/incidents/2026.md#inc-01158) | Hanoi Police Sanction Individual for AI-Generated Fake Image Causing Public Alarm | High | LLM05, LLM09 | ASI05 |  |
+| 745 | 2026-04-05 | [`INC-01253`](docs/incidents/2026.md#inc-01253) | Israel Uses AI to Improve Missile Alert System During Conflict | Medium |  |  |  |
+| 746 | 2026-04-05 | [`INC-01838`](docs/incidents/2026.md#inc-01838) | Target Shifts Liability for AI Shopping Assistant Errors to Customers | Medium | LLM02 | ASI03 |  |
+| 747 | 2026-04-05 | [`INC-02026`](docs/incidents/2026.md#inc-02026) | US Politicians Share Fake AI-Generated Image of Rescued Airman, Spreading Misinformation | Medium | LLM09 |  |  |
+| 748 | 2026-04-04 | [`INC-00550`](docs/incidents/2026.md#inc-00550) | AI-Powered Necklace Launch Suspended in EU Over Privacy Concerns | High | LLM02 | ASI03 |  |
+| 749 | 2026-04-04 | [`INC-01534`](docs/incidents/2026.md#inc-01534) | Nigeria Partners with EIB Group to Localize AI-Enabled Military Technology | Medium |  |  |  |
+| 750 | 2026-04-03 | [`INC-00190`](docs/incidents/2026.md#inc-00190) | AI Models Enable Unprecedented Cyberattacks, Raising Global Security Concerns | High | LLM02 | ASI03 |  |
+| 751 | 2026-04-03 | [`INC-00363`](docs/incidents/2026.md#inc-00363) | AI-Generated 'Skill' Clones Lead to Job Losses and Privacy Risks in China | High | LLM05, LLM09 | ASI05 |  |
+| 752 | 2026-04-03 | [`INC-00376`](docs/incidents/2026.md#inc-00376) | AI-Generated Deepfake Ads Target Turkish Pop Star Demet Akalın | Medium | LLM09 | ASI09 |  |
+| 753 | 2026-04-03 | [`INC-00393`](docs/incidents/2026.md#inc-00393) | AI-Generated Deepfake Video Falsely Reports Death of Mexican Actress | Critical | LLM09 | ASI09 |  |
+| 754 | 2026-04-03 | [`INC-00399`](docs/incidents/2026.md#inc-00399) | AI-Generated Deepfake Video Used for Extortion in Argentina | Medium | LLM09 | ASI09 |  |
+| 755 | 2026-04-03 | [`INC-00437`](docs/incidents/2026.md#inc-00437) | AI-Generated Explicit Images of Students Spark Investigation at Lake Zurich High School | High | LLM05 | ASI05 |  |
+| 756 | 2026-04-03 | [`INC-00446`](docs/incidents/2026.md#inc-00446) | AI-Generated Fake IDs Enable Exam Fraud in Turkey, 14 Arrested | High | LLM09 | ASI09 |  |
+| 757 | 2026-04-03 | [`INC-00467`](docs/incidents/2026.md#inc-00467) | AI-Generated Fake Sequels Sold Without Author's Consent on Kindle | High |  |  |  |
+| 758 | 2026-04-03 | [`INC-00485`](docs/incidents/2026.md#inc-00485) | AI-Generated Misinformation Campaign Targets NIO, Legal Action Taken | High | LLM05, LLM09 | ASI05 |  |
+| 759 | 2026-04-03 | [`INC-00605`](docs/incidents/2026.md#inc-00605) | Anthropic Finds Claude AI Can Engage in Deceptive and Harmful Behaviors Under Stress | Medium | LLM09 |  |  |
+| 760 | 2026-04-03 | [`INC-00672`](docs/incidents/2026.md#inc-00672) | Azerbaijan Proposes Harsh Penalties for AI-Enabled Sabotage and Terrorism | Medium |  |  |  |
+| 761 | 2026-04-03 | [`INC-00814`](docs/incidents/2026.md#inc-00814) | Claude Code Source Leak Exploited to Spread Credential-Stealing Malware | High | LLM01, LLM02, LLM03, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09, ASI10 |  |
+| 762 | 2026-04-03 | [`INC-00850`](docs/incidents/2026.md#inc-00850) | Company Uses AI to Clone Departed Employees, Raising Legal and Ethical Concerns in China | High | LLM05 | ASI05, ASI09 |  |
+| 763 | 2026-04-03 | [`INC-01427`](docs/incidents/2026.md#inc-01427) | Mexico's Mandatory Biometric ID Rollout Raises Privacy and Rights Concerns | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 764 | 2026-04-03 | [`INC-01546`](docs/incidents/2026.md#inc-01546) | Nvidia's Acquisition of SchedMD Raises Concerns Over Fair Access to Critical AI Software | Critical |  |  |  |
+| 765 | 2026-04-03 | [`INC-02036`](docs/incidents/2026.md#inc-02036) | Utah Approves AI Chatbot to Renew Psychiatric Medication Prescriptions | Medium |  |  |  |
+| 766 | 2026-04-02 | [`INC-00045`](docs/incidents/2026.md#inc-00045) | Advocacy Groups Urge Google to Ban AI-Generated Videos for Children on YouTube | High | LLM05, LLM09 | ASI05 |  |
+| 767 | 2026-04-02 | [`INC-00219`](docs/incidents/2026.md#inc-00219) | AI System KURGAN Targets Massive Tax Fraud in Turkey | High | LLM05 | ASI05, ASI09 |  |
+| 768 | 2026-04-02 | [`INC-00318`](docs/incidents/2026.md#inc-00318) | AI-Driven Private Schools Expand Amid Concerns Over Educational Risks | Medium |  |  |  |
+| 769 | 2026-04-02 | [`INC-00501`](docs/incidents/2026.md#inc-00501) | AI-Generated Short Dramas Infringe on Celebrity Likeness, Prompt Legal Action | High | LLM09 | ASI09 |  |
+| 770 | 2026-04-02 | [`INC-00549`](docs/incidents/2026.md#inc-00549) | AI-Powered Local News Network Shuts Down After Plagiarism Scandal | High |  |  |  |
+| 771 | 2026-04-02 | [`INC-00680`](docs/incidents/2026.md#inc-00680) | Basildon Council Leader Shares AI-Generated Video with Antisemitic Content | Medium |  |  |  |
+| 772 | 2026-04-02 | [`INC-00877`](docs/incidents/2026.md#inc-00877) | Delhi High Court Orders Removal of AI Deepfakes Targeting Spiritual Leader | High | LLM09 | ASI09 |  |
+| 773 | 2026-04-02 | [`INC-00891`](docs/incidents/2026.md#inc-00891) | Dietitian Struck Off in UK for Using ChatGPT During NHS Interview | Critical | LLM02, LLM09 | ASI03, ASI09 |  |
+| 774 | 2026-04-02 | [`INC-01052`](docs/incidents/2026.md#inc-01052) | French Voice Actors Win Removal of AI-Cloned Voice Models | High |  |  |  |
+| 775 | 2026-04-02 | [`INC-01081`](docs/incidents/2026.md#inc-01081) | German Justice Minister Calls for Action Against AI-Generated Sexualized Deepfakes | Medium | LLM09 | ASI09 |  |
+| 776 | 2026-04-02 | [`INC-02042`](docs/incidents/2026.md#inc-02042) | Vietnamese YouTubers Fined for Using AI to Create Harmful Fake Videos | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 777 | 2026-04-01 | [`INC-00309`](docs/incidents/2026.md#inc-00309) | AI-Driven Layoffs Surge in US Tech Sector | High | LLM05 | ASI05 |  |
+| 778 | 2026-04-01 | [`INC-00532`](docs/incidents/2026.md#inc-00532) | AI-Powered API Attacks Cause Disruption and Losses Across Asia-Pacific | High |  | ASI09 |  |
+| 779 | 2026-04-01 | [`INC-00541`](docs/incidents/2026.md#inc-00541) | AI-Powered Drones Trialled to Detect Explosives and Protect UK Soldiers | Critical |  |  |  |
+| 780 | 2026-04-01 | [`INC-00555`](docs/incidents/2026.md#inc-00555) | AI-Powered Social Media Alert Enables Police to Prevent Teen Suicide in Uttar Pradesh | Critical | LLM05 | ASI09 |  |
+| 781 | 2026-04-01 | [`INC-00564`](docs/incidents/2026.md#inc-00564) | AI-Powered Vibe Coding Overwhelms Apple's App Store Review Process | Medium |  |  |  |
+| 782 | 2026-04-01 | [`INC-00705`](docs/incidents/2026.md#inc-00705) | Brazilian Government Orders Google to Remove AI-Generated Deepfake Nude Sites | Medium | LLM09 | ASI09 |  |
+| 783 | 2026-04-01 | [`INC-00732`](docs/incidents/2026.md#inc-00732) | CaoCao Inc. Begins Unmanned Robotaxi Road Testing in Hangzhou | Medium |  |  |  |
+| 784 | 2026-04-01 | [`INC-00798`](docs/incidents/2026.md#inc-00798) | Chuck Norris' Family Condemns Harmful AI-Generated Misinformation After His Death | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 785 | 2026-04-01 | [`INC-01096`](docs/incidents/2026.md#inc-01096) | Global Security Risks and Attacks Linked to OpenClaw AI Agent | High | LLM01, LLM02, LLM04, LLM05 | ASI01, ASI03, ASI05, ASI06 |  |
+| 786 | 2026-04-01 | [`INC-01142`](docs/incidents/2026.md#inc-01142) | Grok AI Deepfake Scandal Prompts International Investigations and Regulatory Action | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 787 | 2026-04-01 | [`INC-01547`](docs/incidents/2026.md#inc-01547) | NYC Health + Hospitals CEO Proposes Replacing Radiologists with AI | Critical | LLM09 |  |  |
+| 788 | 2026-04-01 | [`INC-01873`](docs/incidents/2026.md#inc-01873) | Tesla Robotaxis Rely on Human Remote Control Amid AI Limitations | High | LLM05 | ASI05 |  |
+| 789 | 2026-04-01 | [`INC-02009`](docs/incidents/2026.md#inc-02009) | US Lawmakers Move to Tighten Export Controls on AI Chip-Making Equipment to China | Critical |  |  |  |
+| 790 | 2026-04 | [`INC-00010`](docs/incidents/2026.md#inc-00010) | A flaw was found in the AAP MCP server. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2021-4206` (+7) |
+| 791 | 2026-04 | [`INC-00016`](docs/incidents/2026.md#inc-00016) | A security vulnerability has been detected in ComfyUI up to 0.13.0. | Medium | LLM03 | ASI04 | `CVE-2026-6589` |
+| 792 | 2026-04 | [`INC-00017`](docs/incidents/2026.md#inc-00017) | A security vulnerability has been detected in ErlichLiu claude-agent-sdk-master up to b185aa7ff0d864581257008… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7235` |
+| 793 | 2026-04 | [`INC-00018`](docs/incidents/2026.md#inc-00018) | A security vulnerability has been detected in imprvhub mcp-browser-agent up to 0.8.0. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5607` |
+| 794 | 2026-04 | [`INC-00019`](docs/incidents/2026.md#inc-00019) | A security vulnerability has been detected in mixelpixx Google-Research-MCP 1e062d7bd887bfe5f6e582b6cc288bb89… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5470` |
+| 795 | 2026-04 | [`INC-00021`](docs/incidents/2026.md#inc-00021) | A side-channel vulnerability exists in the implementation of BIP-39 mnemonic processing, as observed in Trezo… | Medium | LLM03 | ASI04 | `CVE-2025-69893` |
+| 796 | 2026-04 | [`INC-00026`](docs/incidents/2026.md#inc-00026) | A vulnerability in the `TFSMLayer` class of the `keras` package, version 3.13.0, allows attacker-controlled T… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1462` |
+| 797 | 2026-04 | [`INC-00027`](docs/incidents/2026.md#inc-00027) | A vulnerability was determined in ericc-ch copilot-api up to 0.7.0. | Medium | LLM03 | ASI04 | `CVE-2026-6874` |
+| 798 | 2026-04 | [`INC-00028`](docs/incidents/2026.md#inc-00028) | A vulnerability was found in 1Panel-dev MaxKB up to 2.6.1. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6108` |
+| 799 | 2026-04 | [`INC-00029`](docs/incidents/2026.md#inc-00029) | A vulnerability was found in Algovate xhs-mcp 0.8.11. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7417` |
+| 800 | 2026-04 | [`INC-00030`](docs/incidents/2026.md#inc-00030) | A vulnerability was found in ComfyUI up to 0.13.0. | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6593` |
+| 801 | 2026-04 | [`INC-00031`](docs/incidents/2026.md#inc-00031) | A vulnerability was found in dh1011 auto-favicon up to f189116a9259950c2393f114dbcb94dde0ad864b. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7150` |
+| 802 | 2026-04 | [`INC-00032`](docs/incidents/2026.md#inc-00032) | A vulnerability was found in ericc-ch copilot-api up to 0.7.0. | High | LLM03 | ASI04 | `CVE-2026-6662` |
+| 803 | 2026-04 | [`INC-00033`](docs/incidents/2026.md#inc-00033) | A vulnerability was found in priyankark a11y-mcp up to 1.0.5. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5323` |
+| 804 | 2026-04 | [`INC-00034`](docs/incidents/2026.md#inc-00034) | A vulnerability was found in TencentCloudBase CloudBase-MCP up to 2.17.0. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7221` |
+| 805 | 2026-04 | [`INC-00035`](docs/incidents/2026.md#inc-00035) | A vulnerability was found in vllm up to 0.19.0. | Medium | LLM03 | ASI04 | `CVE-2026-7141` |
+| 806 | 2026-04 | [`INC-00053`](docs/incidents/2026.md#inc-00053) | AGiXT — Path Traversal (CVE-2026-39981) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39981` |
+| 807 | 2026-04 | [`INC-00601`](docs/incidents/2026.md#inc-00601) | Anthropic Claude Code CLI and Claude Agent SDK contain an OS command injection vulnerability in the command l… | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-35020` (+2) |
+| 808 | 2026-04 | [`INC-00629`](docs/incidents/2026.md#inc-00629) | AnythingLLM — Prompt Injection (CVE-2026-41318) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-41318` |
+| 809 | 2026-04 | [`INC-00635`](docs/incidents/2026.md#inc-00635) | Apache Doris MCP Server versions earlier than 0.6.1 are affected by an improper neutralization flaw in query… | Medium | LLM03 | ASI04 | `CVE-2025-66335` |
+| 810 | 2026-04 | [`INC-00637`](docs/incidents/2026.md#inc-00637) | Apollo MCP Server — Auth Bypass (CVE-2026-35577) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-35577` |
+| 811 | 2026-04 | [`INC-00669`](docs/incidents/2026.md#inc-00669) | aws-mcp-server AWS CLI Command Injection Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5059` |
+| 812 | 2026-04 | [`INC-00670`](docs/incidents/2026.md#inc-00670) | aws-mcp-server Command Injection Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5058` |
+| 813 | 2026-04 | [`INC-00688`](docs/incidents/2026.md#inc-00688) | BentoML — Rce (CVE-2026-35043) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35043` |
+| 814 | 2026-04 | [`INC-00689`](docs/incidents/2026.md#inc-00689) | BentoML — Vulnerability (CVE-2026-35044) | High | LLM03 | ASI04 | `CVE-2026-35044` |
+| 815 | 2026-04 | [`INC-00692`](docs/incidents/2026.md#inc-00692) | bigsk1 openai-realtime-ui — Ssrf (CVE-2026-5803) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5803` |
+| 816 | 2026-04 | [`INC-00741`](docs/incidents/2026.md#inc-00741) | chatboxai chatbox — Command Injection (CVE-2026-6130) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6130` |
+| 817 | 2026-04 | [`INC-00816`](docs/incidents/2026.md#inc-00816) | Claude Code — Prompt Injection (CVE-2026-39861) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-39861` |
+| 818 | 2026-04 | [`INC-00824`](docs/incidents/2026.md#inc-00824) | Claude Code — Vulnerability (CVE-2026-35603) | High | LLM03 | ASI04 | `CVE-2026-35603` |
+| 819 | 2026-04 | [`INC-00825`](docs/incidents/2026.md#inc-00825) | Claude Code, Gemini CLI, GitHub Copilot agents hijacked via PR/issue comment prompt injection | High | LLM01, LLM06 | ASI01, ASI02 |  |
+| 820 | 2026-04 | [`INC-00832`](docs/incidents/2026.md#inc-00832) | Claude-powered Cursor AI agent deletes production database in 9 seconds | Critical | LLM05, LLM06 | ASI02, ASI05 |  |
+| 821 | 2026-04 | [`INC-00843`](docs/incidents/2026.md#inc-00843) | ComfyUI — Path Traversal (CVE-2026-6590) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6590` |
+| 822 | 2026-04 | [`INC-00844`](docs/incidents/2026.md#inc-00844) | ComfyUI — Path Traversal (CVE-2026-6591) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6591` |
+| 823 | 2026-04 | [`INC-00845`](docs/incidents/2026.md#inc-00845) | ComfyUI — Xss (CVE-2026-6592) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6592` |
+| 824 | 2026-04 | [`INC-00904`](docs/incidents/2026.md#inc-00904) | Docker MCP Server OS Command Injection (CVE-2026-5741) | Medium | LLM05 | ASI02, ASI05 | `CVE-2026-5741` |
+| 825 | 2026-04 | [`INC-00972`](docs/incidents/2026.md#inc-00972) | excel-mcp-server — Path Traversal (CVE-2026-40576) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40576` |
+| 826 | 2026-04 | [`INC-00987`](docs/incidents/2026.md#inc-00987) | FastGPT — Auth Bypass (CVE-2026-40252) | High | LLM03 | ASI03, ASI04 | `CVE-2026-40252` |
+| 827 | 2026-04 | [`INC-00991`](docs/incidents/2026.md#inc-00991) | FastGPT — Sql Injection (CVE-2026-40351) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34162` (+3) |
+| 828 | 2026-04 | [`INC-00992`](docs/incidents/2026.md#inc-00992) | FastGPT — Ssrf (CVE-2026-40100) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40100` |
+| 829 | 2026-04 | [`INC-00999`](docs/incidents/2026.md#inc-00999) | FastMCP — Command Injection (CVE-2025-64340) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-64340` |
+| 830 | 2026-04 | [`INC-01000`](docs/incidents/2026.md#inc-01000) | FastMCP — Ssrf (CVE-2026-32871) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-32871` |
+| 831 | 2026-04 | [`INC-01002`](docs/incidents/2026.md#inc-01002) | FastMCP — Vulnerability (CVE-2026-27124) | Medium | LLM03 | ASI04 | `CVE-2026-27124` |
+| 832 | 2026-04 | [`INC-01015`](docs/incidents/2026.md#inc-01015) | Flowise — Auth Bypass (CVE-2026-41273) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41273` |
+| 833 | 2026-04 | [`INC-01016`](docs/incidents/2026.md#inc-01016) | Flowise — Command Injection (CVE-2026-41137) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41137` |
+| 834 | 2026-04 | [`INC-01017`](docs/incidents/2026.md#inc-01017) | Flowise — Data Exfiltration (CVE-2026-41274) | Critical | LLM03 | ASI04 | `CVE-2026-41274` |
+| 835 | 2026-04 | [`INC-01018`](docs/incidents/2026.md#inc-01018) | Flowise — Prompt Injection (CVE-2026-41264) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-41264` |
+| 836 | 2026-04 | [`INC-01019`](docs/incidents/2026.md#inc-01019) | Flowise — Prompt Injection (CVE-2026-41265) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-41265` |
+| 837 | 2026-04 | [`INC-01020`](docs/incidents/2026.md#inc-01020) | Flowise — Rce (CVE-2026-41138) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41138` |
+| 838 | 2026-04 | [`INC-01021`](docs/incidents/2026.md#inc-01021) | Flowise — Rce (CVE-2026-41268) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41268` |
+| 839 | 2026-04 | [`INC-01022`](docs/incidents/2026.md#inc-01022) | Flowise — Rce (CVE-2026-41269) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41269` |
+| 840 | 2026-04 | [`INC-01024`](docs/incidents/2026.md#inc-01024) | Flowise — Ssrf (CVE-2026-41270) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41270` |
+| 841 | 2026-04 | [`INC-01025`](docs/incidents/2026.md#inc-01025) | Flowise — Ssrf (CVE-2026-41271) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41271` |
+| 842 | 2026-04 | [`INC-01026`](docs/incidents/2026.md#inc-01026) | Flowise — Ssrf (CVE-2026-41272) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41272` |
+| 843 | 2026-04 | [`INC-01028`](docs/incidents/2026.md#inc-01028) | Flowise — Vulnerability (CVE-2026-41266) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41266` |
+| 844 | 2026-04 | [`INC-01029`](docs/incidents/2026.md#inc-01029) | Flowise — Vulnerability (CVE-2026-41267) | High | LLM03 | ASI04 | `CVE-2026-41267` |
+| 845 | 2026-04 | [`INC-01030`](docs/incidents/2026.md#inc-01030) | Flowise — Vulnerability (CVE-2026-41275) | High | LLM03 | ASI04 | `CVE-2026-41275` |
+| 846 | 2026-04 | [`INC-01031`](docs/incidents/2026.md#inc-01031) | Flowise — Vulnerability (CVE-2026-41276) | Critical | LLM03 | ASI04 | `CVE-2026-41276` |
+| 847 | 2026-04 | [`INC-01032`](docs/incidents/2026.md#inc-01032) | Flowise — Vulnerability (CVE-2026-41277) | High | LLM03 | ASI04 | `CVE-2026-41277` |
+| 848 | 2026-04 | [`INC-01033`](docs/incidents/2026.md#inc-01033) | Flowise — Vulnerability (CVE-2026-41278) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41278` |
+| 849 | 2026-04 | [`INC-01034`](docs/incidents/2026.md#inc-01034) | Flowise — Vulnerability (CVE-2026-41279) | High | LLM03 | ASI03, ASI04 | `CVE-2026-41279` |
+| 850 | 2026-04 | [`INC-01043`](docs/incidents/2026.md#inc-01043) | Fosowl agenticSeek 0 — Vulnerability (CVE-2026-5584) | High | LLM03 | ASI04 | `CVE-2026-5584` |
+| 851 | 2026-04 | [`INC-01055`](docs/incidents/2026.md#inc-01055) | FrontMCP — Ssrf (CVE-2026-39885) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39885` |
+| 852 | 2026-04 | [`INC-01197`](docs/incidents/2026.md#inc-01197) | In mlflow/mlflow, the FastAPI job endpoints under `/ajax-api/3.0/jobs/*` are not protected by authentication… | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-0545` |
+| 853 | 2026-04 | [`INC-01198`](docs/incidents/2026.md#inc-01198) | In OpenAirInterface V2.2.0 AMF, Out of sequence messages causes incorrect state transition during UE registra… | Critical | LLM03 | ASI04 | `CVE-2026-30079` |
+| 854 | 2026-04 | [`INC-01199`](docs/incidents/2026.md#inc-01199) | In Splunk MCP Server app versions below 1.0.3 , a user who holds a role with access to the Splunk `_internal`… | High | LLM03 | ASI04 | `CVE-2026-20205` |
+| 855 | 2026-04 | [`INC-01200`](docs/incidents/2026.md#inc-01200) | In Spring AI, having access to a shared environment can expose the ONNX model used by the application. | Medium | LLM03 | ASI04 | `CVE-2026-40979` |
+| 856 | 2026-04 | [`INC-01202`](docs/incidents/2026.md#inc-01202) | In the Linux kernel, the following vulnerability has been resolved: bnge: return after auxiliary_device_unini… | Medium | LLM03 | ASI04 | `CVE-2026-31621` |
+| 857 | 2026-04 | [`INC-01203`](docs/incidents/2026.md#inc-01203) | In the Linux kernel, the following vulnerability has been resolved: dmaengine: idxd: fix possible wrong descr… | Critical | LLM03 | ASI04 | `CVE-2026-31436` |
+| 858 | 2026-04 | [`INC-01204`](docs/incidents/2026.md#inc-01204) | In the Linux kernel, the following vulnerability has been resolved: dpaa2-switch: Fix interrupt storm after r… | High | LLM03 | ASI04 | `CVE-2026-23422` |
+| 859 | 2026-04 | [`INC-01205`](docs/incidents/2026.md#inc-01205) | In the Linux kernel, the following vulnerability has been resolved: EDAC/mc: Fix error path ordering in edac_… | Medium | LLM03 | ASI04 | `CVE-2026-31689` |
+| 860 | 2026-04 | [`INC-01208`](docs/incidents/2026.md#inc-01208) | In the Linux kernel, the following vulnerability has been resolved: futex: Require sys_futex_requeue() to hav… | High | LLM03 | ASI04 | `CVE-2026-31554` |
+| 861 | 2026-04 | [`INC-01212`](docs/incidents/2026.md#inc-01212) | In the Linux kernel, the following vulnerability has been resolved: net/smc: fix double-free of smc_spd_priv… | High | LLM03 | ASI04 | `CVE-2026-31507` |
+| 862 | 2026-04 | [`INC-01213`](docs/incidents/2026.md#inc-01213) | In the Linux kernel, the following vulnerability has been resolved: net: fix fanout UAF in packet_release() v… | High | LLM03 | ASI04 | `CVE-2026-31504` |
+| 863 | 2026-04 | [`INC-01217`](docs/incidents/2026.md#inc-01217) | In the Linux kernel, the following vulnerability has been resolved: wifi: wlcore: Return -ENOMEM instead of -… | High | LLM03 | ASI04 | `CVE-2026-31552` |
+| 864 | 2026-04 | [`INC-01274`](docs/incidents/2026.md#inc-01274) | JoeCastrom mcp-chat-studio — Ssrf (CVE-2026-7147) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7147` |
+| 865 | 2026-04 | [`INC-01286`](docs/incidents/2026.md#inc-01286) | KubeAI — Vulnerability (CVE-2026-34940) | High | LLM03 | ASI04 | `CVE-2026-34940` |
+| 866 | 2026-04 | [`INC-01293`](docs/incidents/2026.md#inc-01293) | LangChain — Ssrf (CVE-2026-41481) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41481` |
+| 867 | 2026-04 | [`INC-01294`](docs/incidents/2026.md#inc-01294) | LangChain — Ssrf (CVE-2026-41488) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-41488` |
+| 868 | 2026-04 | [`INC-01296`](docs/incidents/2026.md#inc-01296) | LangChain — Vulnerability (CVE-2026-40087) | Medium | LLM03 | ASI04 | `CVE-2026-40087` |
+| 869 | 2026-04 | [`INC-01308`](docs/incidents/2026.md#inc-01308) | langflow-ai langflow — Vulnerability (CVE-2026-6599) | Medium | LLM03 | ASI04 | `CVE-2026-6599` |
+| 870 | 2026-04 | [`INC-01311`](docs/incidents/2026.md#inc-01311) | langgenius dify — Ssrf (CVE-2026-6617) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6617` |
+| 871 | 2026-04 | [`INC-01312`](docs/incidents/2026.md#inc-01312) | langgenius dify — Ssrf (CVE-2026-6618) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6618` |
+| 872 | 2026-04 | [`INC-01313`](docs/incidents/2026.md#inc-01313) | langgenius dify — Xss (CVE-2026-6619) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-6619` |
+| 873 | 2026-04 | [`INC-01314`](docs/incidents/2026.md#inc-01314) | LangSmith Client SDKs provide SDK's for interacting with the LangSmith platform. | Medium | LLM03 | ASI04 | `CVE-2026-41182` |
+| 874 | 2026-04 | [`INC-01331`](docs/incidents/2026.md#inc-01331) | LibreChat — Path Traversal (CVE-2026-34371) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34371` |
+| 875 | 2026-04 | [`INC-01342`](docs/incidents/2026.md#inc-01342) | LiteLLM — Vulnerability (CVE-2026-35030) | Critical | LLM03 | ASI04 | `CVE-2026-35030` |
+| 876 | 2026-04 | [`INC-01344`](docs/incidents/2026.md#inc-01344) | llama.cpp — Deserialization (CVE-2026-34159) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34159` |
+| 877 | 2026-04 | [`INC-01350`](docs/incidents/2026.md#inc-01350) | lm-sys fastchat — Vulnerability (CVE-2026-6608) | Medium | LLM03 | ASI04 | `CVE-2026-6608` |
+| 878 | 2026-04 | [`INC-01351`](docs/incidents/2026.md#inc-01351) | LMDeploy — Ssrf (CVE-2026-33626) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33626` |
+| 879 | 2026-04 | [`INC-01370`](docs/incidents/2026.md#inc-01370) | Marimo Pre-Auth RCE (CVE-2026-39987) | Critical | LLM05 | ASI03, ASI05 | `CVE-2026-39987` |
+| 880 | 2026-04 | [`INC-01375`](docs/incidents/2026.md#inc-01375) | MaxKB — Xss (CVE-2026-39426) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39426` |
+| 881 | 2026-04 | [`INC-01380`](docs/incidents/2026.md#inc-01380) | MCP Java SDK — Vulnerability (CVE-2026-35568) | Medium | LLM03 | ASI04 | `CVE-2026-35568` |
+| 882 | 2026-04 | [`INC-01385`](docs/incidents/2026.md#inc-01385) | mcp-framework — Dos (CVE-2026-39313) | Medium | LLM03 | ASI04 | `CVE-2026-39313` |
+| 883 | 2026-04 | [`INC-01388`](docs/incidents/2026.md#inc-01388) | mcp-neo4j-cypher — Ssrf (CVE-2026-35402) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35402` |
+| 884 | 2026-04 | [`INC-01389`](docs/incidents/2026.md#inc-01389) | mcp-server-kubernetes — Prompt Injection (CVE-2026-39884) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-39884` |
+| 885 | 2026-04 | [`INC-01452`](docs/incidents/2026.md#inc-01452) | Missing authentication for critical function in Azure MCP Server allows an unauthorized attacker to disclose… | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-32211` |
+| 886 | 2026-04 | [`INC-01457`](docs/incidents/2026.md#inc-01457) | MLflow is vulnerable to Stored Cross-Site Scripting (XSS) caused by unsafe parsing of YAML-based MLmodel arti… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33865`, `CVE-2026-33866` |
+| 887 | 2026-04 | [`INC-01461`](docs/incidents/2026.md#inc-01461) | Mobile Next — Vulnerability (CVE-2026-35394) | High | LLM03 | ASI04 | `CVE-2026-35394` |
+| 888 | 2026-04 | [`INC-01468`](docs/incidents/2026.md#inc-01468) | MuPDF before 1.27 contains an ANSI injection vulnerability in mutool that allows attackers to inject arbitrar… | Low | LLM03 | ASI04 | `CVE-2026-40505` |
+| 889 | 2026-04 | [`INC-01510`](docs/incidents/2026.md#inc-01510) | n8n-MCP — Ssrf (CVE-2026-39974) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39974` |
+| 890 | 2026-04 | [`INC-01528`](docs/incidents/2026.md#inc-01528) | Next AI Draw.io — Vulnerability (CVE-2026-40608) | Medium | LLM03 | ASI04 | `CVE-2026-40608` |
+| 891 | 2026-04 | [`INC-01554`](docs/incidents/2026.md#inc-01554) | Ollama — Path Traversal (CVE-2026-7020) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7020` |
+| 892 | 2026-04 | [`INC-01555`](docs/incidents/2026.md#inc-01555) | Ollama — Ssrf (CVE-2026-5530) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5530` |
+| 893 | 2026-04 | [`INC-01559`](docs/incidents/2026.md#inc-01559) | Open Neural Network Exchange (ONNX) is an open standard for machine learning interoperability. | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-27489` (+4) |
+| 894 | 2026-04 | [`INC-01564`](docs/incidents/2026.md#inc-01564) | Open WebUI — Auth Bypass (CVE-2026-34222) | High | LLM03 | ASI03, ASI04 | `CVE-2026-34222` |
+| 895 | 2026-04 | [`INC-01566`](docs/incidents/2026.md#inc-01566) | Open WebUI — Ssrf (CVE-2026-34225) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34225` |
+| 896 | 2026-04 | [`INC-01584`](docs/incidents/2026.md#inc-01584) | OpenAirInterface v2.2.0 accepts Security Mode Complete without any integrity protection. | High | LLM03 | ASI04 | `CVE-2026-30080` |
+| 897 | 2026-04 | [`INC-01585`](docs/incidents/2026.md#inc-01585) | OpenAirInterface V2.2.0 AMF crashes when it receives an NGAP message with invalid procedure code or invalid P… | High | LLM03 | ASI04 | `CVE-2026-30077`, `CVE-2026-30078` |
+| 898 | 2026-04 | [`INC-01586`](docs/incidents/2026.md#inc-01586) | OpenAirInterface Version 2.2.0 has a Buffer Overflow vulnerability in processing UplinkNASTransport containin… | High | LLM03 | ASI04 | `CVE-2026-30075` |
+| 899 | 2026-04 | [`INC-01595`](docs/incidents/2026.md#inc-01595) | OpenClaw before 2026.3.28 contains an agentic consent bypass vulnerability allowing LLM agents to silently di… | High | LLM03 | ASI04 | `CVE-2026-41349` |
+| 900 | 2026-04 | [`INC-01601`](docs/incidents/2026.md#inc-01601) | OpenClaw versions 2026.2.13 through 2026.3.24 contain an ANSI escape sequence injection vulnerability in appr… | Medium | LLM03 | ASI04 | `CVE-2026-35651` |
+| 901 | 2026-04 | [`INC-01622`](docs/incidents/2026.md#inc-01622) | Paperclip — Command Injection (CVE-2026-41208) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-41208` |
+| 902 | 2026-04 | [`INC-01623`](docs/incidents/2026.md#inc-01623) | Paperclip — Rce (CVE-2026-41679) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-41679` |
+| 903 | 2026-04 | [`INC-01666`](docs/incidents/2026.md#inc-01666) | PraisonAI Quadruple CVE Disclosure | Critical | LLM05 | ASI02, ASI03, ASI05, ASI07 | `CVE-2026-39888` (+3) |
+| 904 | 2026-04 | [`INC-01668`](docs/incidents/2026.md#inc-01668) | PraisonAI — Prompt Injection (CVE-2026-40112) | Medium | LLM01, LLM04, LLM05 | ASI01, ASI04, ASI05 | `CVE-2026-40112` |
+| 905 | 2026-04 | [`INC-01669`](docs/incidents/2026.md#inc-01669) | PraisonAI — Rce (CVE-2026-40159) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-40159` |
+| 906 | 2026-04 | [`INC-01670`](docs/incidents/2026.md#inc-01670) | PraisonAI — Vulnerability (CVE-2026-34953) | Critical | LLM03 | ASI04 | `CVE-2026-34953` |
+| 907 | 2026-04 | [`INC-01671`](docs/incidents/2026.md#inc-01671) | PraisonAI — Vulnerability (CVE-2026-40088) | Critical | LLM03 | ASI04 | `CVE-2026-40088` |
+| 908 | 2026-04 | [`INC-01672`](docs/incidents/2026.md#inc-01672) | PraisonAI — Vulnerability (CVE-2026-40113) | High | LLM03 | ASI04 | `CVE-2026-40113` |
+| 909 | 2026-04 | [`INC-01673`](docs/incidents/2026.md#inc-01673) | PraisonAI — Vulnerability (CVE-2026-40116) | High | LLM03 | ASI03, ASI04 | `CVE-2026-40116` |
+| 910 | 2026-04 | [`INC-01674`](docs/incidents/2026.md#inc-01674) | PraisonAIAgents — Prompt Injection (CVE-2026-40111) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-40111` |
+| 911 | 2026-04 | [`INC-01675`](docs/incidents/2026.md#inc-01675) | PraisonAIAgents — Prompt Injection (CVE-2026-40117) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-40117` |
+| 912 | 2026-04 | [`INC-01676`](docs/incidents/2026.md#inc-01676) | PraisonAIAgents — Prompt Injection (CVE-2026-40150) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-40150` |
+| 913 | 2026-04 | [`INC-01677`](docs/incidents/2026.md#inc-01677) | PraisonAIAgents — Vulnerability (CVE-2026-40160) | Medium | LLM03 | ASI04 | `CVE-2026-40160` |
+| 914 | 2026-04 | [`INC-01715`](docs/incidents/2026.md#inc-01715) | pyLoad — Vulnerability (CVE-2026-40071) | Medium | LLM03 | ASI04 | `CVE-2026-40071` |
+| 915 | 2026-04 | [`INC-01726`](docs/incidents/2026.md#inc-01726) | Rembg — Path Traversal (CVE-2026-40086) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-40086` |
+| 916 | 2026-04 | [`INC-01772`](docs/incidents/2026.md#inc-01772) | SillyTavern — Path Traversal (CVE-2026-34522) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-34522` (+3) |
+| 917 | 2026-04 | [`INC-01826`](docs/incidents/2026.md#inc-01826) | Supply-Chain Poisoning Attacks Against LLM Coding Agent Skill Ecosystems | Critical | LLM03, LLM05 | ASI02, ASI06 |  |
+| 918 | 2026-04 | [`INC-01876`](docs/incidents/2026.md#inc-01876) | text-generation-webui — Data Exfiltration (CVE-2026-35486) | High | LLM03 | ASI03, ASI04 | `CVE-2026-35486` |
+| 919 | 2026-04 | [`INC-01877`](docs/incidents/2026.md#inc-01877) | text-generation-webui — Path Traversal (CVE-2026-35483) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35483` |
+| 920 | 2026-04 | [`INC-01878`](docs/incidents/2026.md#inc-01878) | text-generation-webui — Path Traversal (CVE-2026-35484) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-35484` |
+| 921 | 2026-04 | [`INC-01879`](docs/incidents/2026.md#inc-01879) | text-generation-webui — Path Traversal (CVE-2026-35485) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35485` |
+| 922 | 2026-04 | [`INC-01880`](docs/incidents/2026.md#inc-01880) | text-generation-webui — Path Traversal (CVE-2026-35487) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-35487` |
+| 923 | 2026-04 | [`INC-01881`](docs/incidents/2026.md#inc-01881) | text-generation-webui — Vulnerability (CVE-2026-35050) | Critical | LLM03 | ASI04 | `CVE-2026-35050` |
+| 924 | 2026-04 | [`INC-01888`](docs/incidents/2026.md#inc-01888) | The Go MCP SDK used Go's standard encoding/json. | High | LLM03 | ASI04 | `CVE-2026-33252`, `CVE-2026-34742` |
+| 925 | 2026-04 | [`INC-01894`](docs/incidents/2026.md#inc-01894) | The nbconvert tool, jupyter nbconvert, converts Jupyter notebooks to various other formats via Jinja template… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-39378` |
+| 926 | 2026-04 | [`INC-01910`](docs/incidents/2026.md#inc-01910) | Toowiredd chatgpt-mcp-server — Command Injection (CVE-2026-7061) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-7061` |
+| 927 | 2026-04 | [`INC-01911`](docs/incidents/2026.md#inc-01911) | TransformerOptimus SuperAGI — Auth Bypass (CVE-2026-6582) | High | LLM03 | ASI03, ASI04 | `CVE-2026-6582` |
+| 928 | 2026-04 | [`INC-01980`](docs/incidents/2026.md#inc-01980) | Url redirection to untrusted site ('open redirect') in M365 Copilot allows an unauthorized attacker to elevat… | Critical | LLM03 | ASI04 | `CVE-2026-33102` |
+| 929 | 2026-04 | [`INC-02048`](docs/incidents/2026.md#inc-02048) | vLLM — Dos (CVE-2026-34756) | Medium | LLM03 | ASI04 | `CVE-2026-34756` |
+| 930 | 2026-04 | [`INC-02051`](docs/incidents/2026.md#inc-02051) | vLLM — Ssrf (CVE-2026-34753) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34753` |
+| 931 | 2026-04 | [`INC-02053`](docs/incidents/2026.md#inc-02053) | vLLM — Vulnerability (CVE-2026-34755) | Medium | LLM03 | ASI04 | `CVE-2026-34755` |
+| 932 | 2026-04 | [`INC-02054`](docs/incidents/2026.md#inc-02054) | vLLM — Vulnerability (CVE-2026-34760) | Medium | LLM03 | ASI04 | `CVE-2026-34760` |
+| 933 | 2026-04 | [`INC-02061`](docs/incidents/2026.md#inc-02061) | Vulnerability in the XML Database component of Oracle Database Server. | Medium | LLM03 | ASI04 | `CVE-2025-30694`, `CVE-2026-21999` |
+| 934 | 2026-04 | [`INC-02111`](docs/incidents/2026.md#inc-02111) | Zammad — Rce (CVE-2026-34724) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34724` |
+| 935 | 2026-04 | [`INC-02118`](docs/incidents/2026.md#inc-02118) | zhayujie chatgpt-on-wechat CowAgent 2 — Auth Bypass (CVE-2026-6126) | High | LLM03 | ASI03, ASI04 | `CVE-2026-6126` |
+| 936 | 2026-04 | [`INC-02119`](docs/incidents/2026.md#inc-02119) | zhayujie chatgpt-on-wechat CowAgent — Auth Bypass (CVE-2026-6129) | High | LLM03 | ASI03, ASI04 | `CVE-2026-6129` |
+| 937 | 2026-04 | [`INC-02120`](docs/incidents/2026.md#inc-02120) | zhayujie chatgpt-on-wechat CowAgent — Path Traversal (CVE-2026-5998) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-5998` |
+| 938 | 2026-03-31 | [`INC-00237`](docs/incidents/2026.md#inc-00237) | AI Tools Enable Cloning and Privatization of Open-Source Software, Raising IP Concerns | High | LLM05 | ASI05 |  |
+| 939 | 2026-03-31 | [`INC-00351`](docs/incidents/2026.md#inc-00351) | AI-Enabled Military Drones Cause Civilian Harm and Proliferate Through Strategic Partnerships in Ukraine | Critical | LLM05 | ASI05, ASI10 |  |
+| 940 | 2026-03-31 | [`INC-00414`](docs/incidents/2026.md#inc-00414) | AI-Generated Deepfakes Cause Fraud and Undermine Democracy in Germany | Medium | LLM09 | ASI09 |  |
+| 941 | 2026-03-31 | [`INC-00594`](docs/incidents/2026.md#inc-00594) | Anthropic Accidentally Exposes Claude Code Source, Faces Legal and Security Challenges | High | LLM01, LLM02, LLM05 | ASI01, ASI03, ASI05, ASI10 |  |
+| 942 | 2026-03-31 | [`INC-00603`](docs/incidents/2026.md#inc-00603) | Anthropic Faces AI Model Theft by Chinese Firms and Major Source Code Leak | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05, ASI09, ASI10 |  |
+| 943 | 2026-03-31 | [`INC-00674`](docs/incidents/2026.md#inc-00674) | Baidu Apollo Go Robotaxis Stopped in Traffic During Reported System Failure in Wuhan, Stranding Some Passenge… | High | LLM05 | ASI08 |  |
+| 944 | 2026-03-31 | [`INC-00920`](docs/incidents/2026.md#inc-00920) | Dutch Politician Excluded After AI-Retouched Campaign Photo Causes Controversy | High | LLM05, LLM09 | ASI05 |  |
+| 945 | 2026-03-31 | [`INC-01110`](docs/incidents/2026.md#inc-01110) | Google Cloud Vertex AI Agents Exploited Due to Excessive Default Permissions | High |  |  |  |
+| 946 | 2026-03-31 | [`INC-01246`](docs/incidents/2026.md#inc-01246) | Iran Attacks and Threatens AI Data Centers of Major Tech Companies | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 947 | 2026-03-31 | [`INC-01336`](docs/incidents/2026.md#inc-01336) | LIG D&A Showcases AI-Based Autonomous Naval Combat Systems at Defense Expo | Medium |  | ASI10 |  |
+| 948 | 2026-03-31 | [`INC-01525`](docs/incidents/2026.md#inc-01525) | New York Times Fires Freelance Critic for AI-Assisted Plagiarism in Book Review | High | LLM05 | ASI05, ASI09 |  |
+| 949 | 2026-03-31 | [`INC-01543`](docs/incidents/2026.md#inc-01543) | NTSB Investigates Fatal Ford BlueCruise AI Crashes | Critical |  |  |  |
+| 950 | 2026-03-31 | [`INC-01627`](docs/incidents/2026.md#inc-01627) | Penguin Random House Sues OpenAI Over ChatGPT's Alleged Copyright Infringement | High |  |  |  |
+| 951 | 2026-03-31 | [`INC-01788`](docs/incidents/2026.md#inc-01788) | South Korean Courts Respond to AI-Generated Fake Legal Documents | High | LLM05, LLM09 | ASI05 |  |
+| 952 | 2026-03-31 | [`INC-01824`](docs/incidents/2026.md#inc-01824) | Supply Chain Attack on LiteLLM Exposes AI Data, Disrupts Industry Partnerships | Critical | LLM02, LLM03, LLM05, LLM09 | ASI02, ASI03, ASI04, ASI05, ASI09 |  |
+| 953 | 2026-03-31 | [`INC-01836`](docs/incidents/2026.md#inc-01836) | Swiss Competition Authority Warns of AI-Driven Price-Fixing Risks | Medium |  |  |  |
+| 954 | 2026-03-31 | [`INC-01844`](docs/incidents/2026.md#inc-01844) | Teenager Dies by Suicide After ChatGPT Provides Harmful Advice | Critical | LLM05 | ASI09 |  |
+| 955 | 2026-03-31 | [`INC-01990`](docs/incidents/2026.md#inc-01990) | US Army Tests AI-Enabled Autonomous Strike Drone in Military Exercise | Medium |  | ASI10 |  |
+| 956 | 2026-03-30 | [`INC-00074`](docs/incidents/2026.md#inc-00074) | AI Agents Found Deceiving and Manipulating Users; Anthropic's Claude Source Code Leaked | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI10 |  |
+| 957 | 2026-03-30 | [`INC-00160`](docs/incidents/2026.md#inc-00160) | AI Detection Tools Falsely Accuse Human Content, Enable Extortion | Medium | LLM09 |  |  |
+| 958 | 2026-03-30 | [`INC-00168`](docs/incidents/2026.md#inc-00168) | AI Gateway LiteLLM Compromised by Malware Amid Compliance Scandal | High | LLM05 | ASI05 |  |
+| 959 | 2026-03-30 | [`INC-00243`](docs/incidents/2026.md#inc-00243) | AI Traffic Cameras in Athens Issue First Automated Fines | High | LLM05 | ASI05, ASI09 |  |
+| 960 | 2026-03-30 | [`INC-00304`](docs/incidents/2026.md#inc-00304) | AI-Driven Insurance Claim Denials Lead to Harm and Lawsuits in the US | Critical |  |  |  |
+| 961 | 2026-03-30 | [`INC-00323`](docs/incidents/2026.md#inc-00323) | AI-Driven Scams Surge, Increasing Financial Harm and Public Concern | Medium | LLM09 | ASI09 |  |
+| 962 | 2026-03-30 | [`INC-00327`](docs/incidents/2026.md#inc-00327) | AI-Driven Tax Scams Surge in the US During Filing Season | Medium | LLM09 | ASI09 |  |
+| 963 | 2026-03-30 | [`INC-00417`](docs/incidents/2026.md#inc-00417) | AI-Generated Deepfakes Cause Widespread Harm and Legal Challenges | Medium | LLM09 | ASI09 |  |
+| 964 | 2026-03-30 | [`INC-00506`](docs/incidents/2026.md#inc-00506) | AI-Generated TikTok Videos Spread Sexist and Racist Stereotypes | Medium |  |  |  |
+| 965 | 2026-03-30 | [`INC-00527`](docs/incidents/2026.md#inc-00527) | AI-Obfuscated DeepLoad Malware Steals Credentials via ClickFix | High |  |  |  |
+| 966 | 2026-03-30 | [`INC-00604`](docs/incidents/2026.md#inc-00604) | Anthropic Faces Security Scrutiny After Claude Code and Mythos AI Leaks | High | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI03, ASI04, ASI05 |  |
+| 967 | 2026-03-30 | [`INC-00651`](docs/incidents/2026.md#inc-00651) | Australia Investigates Social Media Giants Over AI Failures in Age Verification | High | LLM05 | ASI05 |  |
+| 968 | 2026-03-30 | [`INC-00682`](docs/incidents/2026.md#inc-00682) | Beijing and Guangzhou Implement Strict AI-Driven Drone Controls Amid Safety Concerns | Critical | LLM05 | ASI05, ASI09 |  |
+| 969 | 2026-03-30 | [`INC-00763`](docs/incidents/2026.md#inc-00763) | China Approves and Advances AI-Powered Brain Implants for Commercial Use | Medium |  |  |  |
+| 970 | 2026-03-30 | [`INC-00807`](docs/incidents/2026.md#inc-00807) | Claude AI Uncovers Zero-Day RCE Vulnerabilities in Vim and Emacs | High | LLM05 | ASI05 |  |
+| 971 | 2026-03-30 | [`INC-01089`](docs/incidents/2026.md#inc-01089) | GitHub Copilot Injects Unsolicited Ads into Pull Requests, Affecting Developers | Medium |  |  |  |
+| 972 | 2026-03-30 | [`INC-01112`](docs/incidents/2026.md#inc-01112) | Google Deploys AI-Powered Ransomware Detection for Drive Users Globally | Critical |  | ASI05, ASI10 |  |
+| 973 | 2026-03-30 | [`INC-01317`](docs/incidents/2026.md#inc-01317) | Lawsuits and Court Orders Target xAI's Grok for Generating Nonconsensual Sexualized Images | High | LLM09 | ASI09 |  |
+| 974 | 2026-03-30 | [`INC-01549`](docs/incidents/2026.md#inc-01549) | OkCupid Settles FTC Case Over Unauthorized Sharing of User Photos with AI Firm | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 975 | 2026-03-30 | [`INC-01575`](docs/incidents/2026.md#inc-01575) | OpenAI Codex Flaw Exposed GitHub Credentials via Command Injection | High | LLM05 | ASI05 |  |
+| 976 | 2026-03-30 | [`INC-01640`](docs/incidents/2026.md#inc-01640) | Persistent AI Hallucinations Highlight Risks in Critical Applications | Critical | LLM09 |  |  |
+| 977 | 2026-03-30 | [`INC-01725`](docs/incidents/2026.md#inc-01725) | Red Cat Expands AI-Driven Swarm Robotics for Defense Through Acquisitions and Partnerships | Medium |  | ASI10 |  |
+| 978 | 2026-03-30 | [`INC-01728`](docs/incidents/2026.md#inc-01728) | Renault Develops AI-Enabled Ground-Based Military Drone | Medium |  |  |  |
+| 979 | 2026-03-30 | [`INC-01947`](docs/incidents/2026.md#inc-01947) | UK Plans AI-Powered Mass Location Tracking for Future Pandemics | High |  |  |  |
+| 980 | 2026-03-30 | [`INC-01959`](docs/incidents/2026.md#inc-01959) | Ukraine Deploys and Advances AI-Driven Interceptor Drone Swarms in Defense Against Russian Attacks | Critical | LLM05 | ASI05, ASI10 |  |
+| 981 | 2026-03-30 | [`INC-02012`](docs/incidents/2026.md#inc-02012) | US Lawmakers Propose Bill to Boost Taiwan's AI-Enabled Drone Industry | Medium | LLM03 | ASI04 |  |
+| 982 | 2026-03-30 | [`INC-02067`](docs/incidents/2026.md#inc-02067) | Waymo and Tesla Face Scrutiny and Challenges in Expanding Robotaxi Services | Medium |  |  |  |
+| 983 | 2026-03-29 | [`INC-00137`](docs/incidents/2026.md#inc-00137) | AI Data Centers Cause Global Heat Islands, Impacting Millions | High | LLM05 | ASI05 |  |
+| 984 | 2026-03-29 | [`INC-00210`](docs/incidents/2026.md#inc-00210) | AI Surveillance Systems Prevent Drowning Incidents in German Swimming Pools | Critical |  |  |  |
+| 985 | 2026-03-29 | [`INC-00229`](docs/incidents/2026.md#inc-00229) | AI Systems Targeted in Disinformation Campaigns Ahead of Bulgarian Elections | Medium | LLM09 |  |  |
+| 986 | 2026-03-29 | [`INC-00460`](docs/incidents/2026.md#inc-00460) | AI-Generated Fake Police Image Leads to Arrests in Egypt | High | LLM09 |  |  |
+| 987 | 2026-03-29 | [`INC-00503`](docs/incidents/2026.md#inc-00503) | AI-Generated Singer Eddie Dalton Tops Charts, Raising Intellectual Property Concerns | High |  | ASI09 |  |
+| 988 | 2026-03-29 | [`INC-00774`](docs/incidents/2026.md#inc-00774) | China Warns of AI Patent Application Risks with OpenClaw | High | LLM05, LLM09 | ASI05 |  |
+| 989 | 2026-03-29 | [`INC-01082`](docs/incidents/2026.md#inc-01082) | German Opposition Raises Constitutional Concerns Over AI in Police Law | High | LLM05 | ASI05 |  |
+| 990 | 2026-03-29 | [`INC-01657`](docs/incidents/2026.md#inc-01657) | Polish Students Develop AI-Powered Drone Detection Sensor Network | Medium |  |  |  |
+| 991 | 2026-03-29 | [`INC-01865`](docs/incidents/2026.md#inc-01865) | Tesla FSD Under Scrutiny: Safety Risks, Misuse, and Regulatory Investigations | Critical | LLM01 | ASI01 |  |
+| 992 | 2026-03-28 | [`INC-00071`](docs/incidents/2026.md#inc-00071) | AI Agents Cause Unauthorized Actions and Security Risks in Enterprises | High |  |  |  |
+| 993 | 2026-03-28 | [`INC-00158`](docs/incidents/2026.md#inc-00158) | AI Deepfakes Used to Mislead Voters in 2026 US Midterm Campaigns | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 994 | 2026-03-28 | [`INC-00297`](docs/incidents/2026.md#inc-00297) | AI-Driven Elon Musk Impersonation Scam Defrauds Elderly Singaporean Woman | Medium | LLM09 | ASI09 |  |
+| 995 | 2026-03-28 | [`INC-00402`](docs/incidents/2026.md#inc-00402) | AI-Generated Deepfake Videos Target Belgian Crown Princess Elisabeth | High | LLM09 | ASI09 |  |
+| 996 | 2026-03-28 | [`INC-00809`](docs/incidents/2026.md#inc-00809) | Claude AI's Hypothetical Endorsement of Harm Sparks Safety Concerns | Medium | LLM05 | ASI09 |  |
+| 997 | 2026-03-28 | [`INC-01080`](docs/incidents/2026.md#inc-01080) | German Interior Minister Proposes AI Surveillance Cameras at Train Stations | Medium |  |  |  |
+| 998 | 2026-03-28 | [`INC-01272`](docs/incidents/2026.md#inc-01272) | Japanese Poetry Contest Ends Due to AI-Generated Submissions | Medium |  |  |  |
+| 999 | 2026-03-27 | [`INC-00111`](docs/incidents/2026.md#inc-00111) | AI Chatbots Give Harmful Advice Due to Excessive Flattery, Study Finds | High | LLM01, LLM05, LLM09 | ASI01, ASI05, ASI09 |  |
+| 1,000 | 2026-03-27 | [`INC-00169`](docs/incidents/2026.md#inc-00169) | AI Generates Fetishised Images of Disabled Women, Sparking Outrage | Medium | LLM09 |  |  |
+| 1,001 | 2026-03-27 | [`INC-00268`](docs/incidents/2026.md#inc-00268) | AI-Based Situational Awareness Pilot for Armored Vehicles in the US | Medium |  |  |  |
+| 1,002 | 2026-03-27 | [`INC-00513`](docs/incidents/2026.md#inc-00513) | AI-Generated Videos Used to Manipulate Voters in Kerala Elections | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,003 | 2026-03-27 | [`INC-00519`](docs/incidents/2026.md#inc-00519) | AI-Generated Voices Used in Phone Scams Cause Financial Losses in Lithuania | Medium |  | ASI09 |  |
+| 1,004 | 2026-03-27 | [`INC-00596`](docs/incidents/2026.md#inc-00596) | Anthropic AI Model Leak Triggers Cybersecurity Risks and Stock Market Fallout | Critical | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
+| 1,005 | 2026-03-27 | [`INC-00736`](docs/incidents/2026.md#inc-00736) | CDU Proposes AI Cameras for Public Transport Safety in Hamburg | Medium |  |  |  |
+| 1,006 | 2026-03-27 | [`INC-00795`](docs/incidents/2026.md#inc-00795) | Chinese Military-Linked Universities Acquire Restricted AI Servers Despite US Export Controls | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 1,007 | 2026-03-27 | [`INC-00859`](docs/incidents/2026.md#inc-00859) | Court Dismisses Appeal After AI-Generated Legal Submissions Cite Non-Existent Cases | High | LLM09 |  |  |
+| 1,008 | 2026-03-27 | [`INC-01321`](docs/incidents/2026.md#inc-01321) | Legal Verdicts Hold Social Media Platforms Accountable for AI-Driven Harm to Children | Critical |  |  |  |
+| 1,009 | 2026-03-27 | [`INC-01658`](docs/incidents/2026.md#inc-01658) | Polish Teacher Victimized by AI-Generated Deepfake; Data Protection Authority Involvement | High | LLM09 | ASI09 |  |
+| 1,010 | 2026-03-26 | [`INC-00126`](docs/incidents/2026.md#inc-00126) | AI Chatbots Reinforce Harmful Behaviors and Ignore Commands, Causing Social and Operational Harm | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,011 | 2026-03-26 | [`INC-00152`](docs/incidents/2026.md#inc-00152) | AI Deepfake Videos Impersonate Doctor, Spread Harmful Medical Misinformation in South Korea | Critical | LLM09 | ASI09 |  |
+| 1,012 | 2026-03-26 | [`INC-00395`](docs/incidents/2026.md#inc-00395) | AI-Generated Deepfake Video of António Horta Osório Used in Investment Scam | Medium | LLM09 | ASI09 |  |
+| 1,013 | 2026-03-26 | [`INC-00469`](docs/incidents/2026.md#inc-00469) | AI-Generated Fake Visuals Spark Controversy for 'Dhruvandar: The Revenge' | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,014 | 2026-03-26 | [`INC-00722`](docs/incidents/2026.md#inc-00722) | ByteDance Deploys AI Video Generator Seedance 2.0 Amid Copyright Concerns | Medium |  |  |  |
+| 1,015 | 2026-03-26 | [`INC-00871`](docs/incidents/2026.md#inc-00871) | Czech Deputy Minister Shares AI-Generated Fake Photo, Faces Legal and Public Backlash | High | LLM09 | ASI09 |  |
+| 1,016 | 2026-03-26 | [`INC-00914`](docs/incidents/2026.md#inc-00914) | Dutch Court Bans Grok AI's Nude Image Generation After Harmful Outputs | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,017 | 2026-03-26 | [`INC-00946`](docs/incidents/2026.md#inc-00946) | EU and Dutch Court Ban AI-Generated Sexual Deepfakes After Harmful Incidents | Medium | LLM09 | ASI09 |  |
+| 1,018 | 2026-03-26 | [`INC-00950`](docs/incidents/2026.md#inc-00950) | EU Investigates Social Media AI Failures in Protecting Minors | Medium |  |  |  |
+| 1,019 | 2026-03-26 | [`INC-01050`](docs/incidents/2026.md#inc-01050) | French Government Takes Legal Action Against TikTok's Algorithm for Promoting Harmful Content to Minors | Critical | LLM05 | ASI09 |  |
+| 1,020 | 2026-03-26 | [`INC-01241`](docs/incidents/2026.md#inc-01241) | Instagram Algorithm Amplifies Antisemitic Content to Millions, Report Finds | Medium | LLM09 |  |  |
+| 1,021 | 2026-03-26 | [`INC-01281`](docs/incidents/2026.md#inc-01281) | Kerala Police Investigate AI-Generated Defamatory Video Targeting PM and Election Commission | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,022 | 2026-03-26 | [`INC-01319`](docs/incidents/2026.md#inc-01319) | Lawyer Submits AI-Generated Fake Legal Citations in Navarra Court | High |  | ASI09 |  |
+| 1,023 | 2026-03-26 | [`INC-01577`](docs/incidents/2026.md#inc-01577) | OpenAI Halts Launch of Explicit Content Chatbot Amid Risk Concerns | Medium |  |  |  |
+| 1,024 | 2026-03-26 | [`INC-01594`](docs/incidents/2026.md#inc-01594) | OpenClaw AI Agents Cause Data Loss and Operational Disruption Due to Malfunctions and Security Flaws | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,025 | 2026-03-26 | [`INC-01620`](docs/incidents/2026.md#inc-01620) | Palantir's AI Maven System Adopted by U.S. Military Raises Global Security Concerns | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,026 | 2026-03-26 | [`INC-01721`](docs/incidents/2026.md#inc-01721) | RATP Tests Autonomous Buses in Val-de-Marne, Raising Future Safety and Job Concerns | High | LLM05 | ASI05 |  |
+| 1,027 | 2026-03-26 | [`INC-01727`](docs/incidents/2026.md#inc-01727) | Remote-Controlled AI Shuttle Bus Pilot Raises Safety Concerns in Düsseldorf | Medium |  |  |  |
+| 1,028 | 2026-03-26 | [`INC-01916`](docs/incidents/2026.md#inc-01916) | Trust Wallet Launches AI Agent Kit for Autonomous Crypto Transactions | High |  | ASI09 |  |
+| 1,029 | 2026-03-26 | [`INC-01936`](docs/incidents/2026.md#inc-01936) | Uber, Verne, and Pony.ai Launch First Robotaxi Service in Europe | Critical |  |  |  |
+| 1,030 | 2026-03-26 | [`INC-02004`](docs/incidents/2026.md#inc-02004) | US Jury Finds Meta and YouTube Liable for AI-Driven Social Media Harm | Critical |  |  |  |
+| 1,031 | 2026-03-26 | [`INC-02005`](docs/incidents/2026.md#inc-02005) | US Jury Holds Meta and Google Liable for AI-Driven Addictive Design and Child Harm | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,032 | 2026-03-26 | [`INC-02011`](docs/incidents/2026.md#inc-02011) | US Lawmakers Propose Ban on Chinese AI Robots in Federal Agencies | Critical | LLM02 | ASI03 |  |
+| 1,033 | 2026-03-25 | [`INC-00047`](docs/incidents/2026.md#inc-00047) | Agent AI Causes Data Breach by Leaking Sensitive User Information | Critical | LLM01, LLM02 | ASI01, ASI03 |  |
+| 1,034 | 2026-03-25 | [`INC-00215`](docs/incidents/2026.md#inc-00215) | AI System 'Massima Tranquillità' Blocks Phone Scams in Italy | Medium |  | ASI09 |  |
+| 1,035 | 2026-03-25 | [`INC-00422`](docs/incidents/2026.md#inc-00422) | AI-Generated Deepfakes Used in Disinformation Campaigns Targeting Turkey | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,036 | 2026-03-25 | [`INC-00475`](docs/incidents/2026.md#inc-00475) | AI-Generated Harmful Content Targeting Minors in Shenzhen | High | LLM05 | ASI05 |  |
+| 1,037 | 2026-03-25 | [`INC-00985`](docs/incidents/2026.md#inc-00985) | Facial Recognition Technology Leads to Over 700 Arrests in Espírito Santo, Brazil | High | LLM05 | ASI05 |  |
+| 1,038 | 2026-03-25 | [`INC-01071`](docs/incidents/2026.md#inc-01071) | German Army Plans AI Integration for Faster Battlefield Decisions | Medium |  |  |  |
+| 1,039 | 2026-03-25 | [`INC-01073`](docs/incidents/2026.md#inc-01073) | German Court Bans AI-Based Biometric Checks in Online Exams | High |  |  |  |
+| 1,040 | 2026-03-25 | [`INC-01104`](docs/incidents/2026.md#inc-01104) | Google and Meta Found Liable for AI-Driven Social Media Addiction in Landmark U.S. Case | Critical | LLM05 | ASI05 |  |
+| 1,041 | 2026-03-25 | [`INC-01140`](docs/incidents/2026.md#inc-01140) | Greater Manchester School Uses AI to Remove 200 Library Books, Sparking Librarian's Career Ruin | High | LLM05 | ASI05 |  |
+| 1,042 | 2026-03-25 | [`INC-01160`](docs/incidents/2026.md#inc-01160) | Hawaii Considers Expanding AI Traffic Cameras for Vehicle Violations | High | LLM05 | ASI05 |  |
+| 1,043 | 2026-03-25 | [`INC-01230`](docs/incidents/2026.md#inc-01230) | Indian Army Workshop Partners to Advance AI-Enabled Drone Technology | Medium |  |  |  |
+| 1,044 | 2026-03-25 | [`INC-01401`](docs/incidents/2026.md#inc-01401) | Meta and Google Fined for AI-Driven Social Media Harm to Teen | High | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
+| 1,045 | 2026-03-25 | [`INC-01693`](docs/incidents/2026.md#inc-01693) | Purported AI-Generated Impersonations of Albanian Cardiologist Spiro Qirko and Journalist Ilir Topi Were Repo… | High | LLM09 | ASI09 |  |
+| 1,046 | 2026-03-25 | [`INC-01845`](docs/incidents/2026.md#inc-01845) | Teenager Uses AI Chatbot to Plan and Execute Mother's Murder in Wales | Critical | LLM09 |  |  |
+| 1,047 | 2026-03-25 | [`INC-01901`](docs/incidents/2026.md#inc-01901) | Three Charged in Plot to Illegally Export Advanced AI Chips to China | Critical | LLM05 | ASI05 |  |
+| 1,048 | 2026-03-25 | [`INC-01967`](docs/incidents/2026.md#inc-01967) | Ukrainian Company Develops AI-Powered Interceptor Drone UEB-1 | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,049 | 2026-03-25 | [`INC-02013`](docs/incidents/2026.md#inc-02013) | US Lawmakers Propose Moratorium on AI Data Center Expansion | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,050 | 2026-03-24 | [`INC-00046`](docs/incidents/2026.md#inc-00046) | AeroVironment Launches AI-Enabled LOCUST X3 Directed Energy Weapon | Medium |  | ASI10 |  |
+| 1,051 | 2026-03-24 | [`INC-00159`](docs/incidents/2026.md#inc-00159) | AI Delivery Robots Cause Property Damage in Chicago | Medium |  |  |  |
+| 1,052 | 2026-03-24 | [`INC-00167`](docs/incidents/2026.md#inc-00167) | AI Firms Develop Software for US Golden Dome Missile Defense System | High | LLM05 | ASI05, ASI10 |  |
+| 1,053 | 2026-03-24 | [`INC-00182`](docs/incidents/2026.md#inc-00182) | AI Misuse Drives Surge in Child Sexual Abuse Content Online | Medium | LLM09 |  |  |
+| 1,054 | 2026-03-24 | [`INC-00218`](docs/incidents/2026.md#inc-00218) | AI System Enables Real-Time Vehicle Seizure for Unpaid Taxes in Taiwan | High | LLM05 | ASI05 |  |
+| 1,055 | 2026-03-24 | [`INC-00400`](docs/incidents/2026.md#inc-00400) | AI-Generated Deepfake Videos Cause Public Misinformation in Montenegro Fugitive Case | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,056 | 2026-03-24 | [`INC-00412`](docs/incidents/2026.md#inc-00412) | AI-Generated Deepfake X-Rays Deceive Radiologists and AI Systems | Medium | LLM09 | ASI09 |  |
+| 1,057 | 2026-03-24 | [`INC-00453`](docs/incidents/2026.md#inc-00453) | AI-Generated Fake Law Enforcement Used in Romanian Influence Campaign | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,058 | 2026-03-24 | [`INC-00675`](docs/incidents/2026.md#inc-00675) | Baltimore Sues Elon Musk's xAI Over Grok Deepfake Harms | High | LLM09 | ASI09 |  |
+| 1,059 | 2026-03-24 | [`INC-00721`](docs/incidents/2026.md#inc-00721) | BYD's 'God's Eye' AI Driver-Assist System Causes Dangerous Malfunctions in China | Medium |  |  |  |
+| 1,060 | 2026-03-24 | [`INC-00941`](docs/incidents/2026.md#inc-00941) | Epirus, General Dynamics, and Kodiak AI Unveil Autonomous Counter-Drone Weapon System | Medium |  | ASI10 |  |
+| 1,061 | 2026-03-24 | [`INC-01007`](docs/incidents/2026.md#inc-01007) | First Conviction in Cyprus for AI-Generated Child Sexual Abuse Material | Medium | LLM09 |  |  |
+| 1,062 | 2026-03-24 | [`INC-01012`](docs/incidents/2026.md#inc-01012) | Florida Man Allegedly Used Purported Deepfake Video to Report Break-In of Deputy&#x27;s Patrol Vehicle in Lak… | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,063 | 2026-03-24 | [`INC-01039`](docs/incidents/2026.md#inc-01039) | Ford Recalls 254,640 SUVs in US Over AI-Driven Safety Feature Malfunction | Medium |  |  |  |
+| 1,064 | 2026-03-24 | [`INC-01141`](docs/incidents/2026.md#inc-01141) | Greek Singer Alkistis Protopsalti Targeted by AI-Generated Deepfake Scam | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,065 | 2026-03-24 | [`INC-01254`](docs/incidents/2026.md#inc-01254) | Israeli Brothers Used AI to Fabricate Military Intelligence for Iranian Agent | Critical | LLM09 | ASI09 |  |
+| 1,066 | 2026-03-24 | [`INC-01263`](docs/incidents/2026.md#inc-01263) | IXOPAY and Zip Launch Framework to Address AI Risks in Agentic Commerce | High | LLM05 | ASI05, ASI09 |  |
+| 1,067 | 2026-03-24 | [`INC-01364`](docs/incidents/2026.md#inc-01364) | Malicious LiteLLM PyPI Package Compromises AI Developer Systems | Critical | LLM02, LLM03, LLM05 | ASI02, ASI04, ASI05 |  |
+| 1,068 | 2026-03-24 | [`INC-01469`](docs/incidents/2026.md#inc-01469) | Music Publishers Sue Anthropic Over AI Copyright Infringement | High |  |  |  |
+| 1,069 | 2026-03-24 | [`INC-01610`](docs/incidents/2026.md#inc-01610) | Oregon Attorney Fined for Submitting AI-Fabricated Legal Brief | High | LLM09 |  |  |
+| 1,070 | 2026-03-24 | [`INC-01778`](docs/incidents/2026.md#inc-01778) | Slovak Central Bank Warns of AI-Generated Fraudulent Crypto Websites | Medium |  | ASI09 |  |
+| 1,071 | 2026-03-24 | [`INC-01860`](docs/incidents/2026.md#inc-01860) | Tesla Faces Legal Action Over Misleading Full Self-Driving AI Sales in Australia | High | LLM05 | ASI05 |  |
+| 1,072 | 2026-03-24 | [`INC-01941`](docs/incidents/2026.md#inc-01941) | UK Cyber Agency Warns of Security Risks from AI-Generated Code | High |  |  |  |
+| 1,073 | 2026-03-24 | [`INC-02079`](docs/incidents/2026.md#inc-02079) | Waymo Robotaxi Malfunctions Cause Traffic Disruptions and Emergency Response Interventions | Critical | LLM05 | ASI05 |  |
+| 1,074 | 2026-03-23 | [`INC-00097`](docs/incidents/2026.md#inc-00097) | AI Chatbot Generates Millions of Non-Consensual Deepfake Images, Triggering Global Privacy Concerns | High | LLM09 | ASI09 |  |
+| 1,075 | 2026-03-23 | [`INC-00133`](docs/incidents/2026.md#inc-00133) | AI Companion Chatbots Expose Australian Children to Harmful Content | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,076 | 2026-03-23 | [`INC-00143`](docs/incidents/2026.md#inc-00143) | AI Deepfake and Facial Recognition Misuse Raise Privacy and Fraud Concerns in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,077 | 2026-03-23 | [`INC-00148`](docs/incidents/2026.md#inc-00148) | AI Deepfake Scams Target Chinese Celebrities, Prompt Calls for Regulation | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,078 | 2026-03-23 | [`INC-00183`](docs/incidents/2026.md#inc-00183) | AI Misuse Leads to Disinformation and Mental Health Risks in Azerbaijan | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,079 | 2026-03-23 | [`INC-00358`](docs/incidents/2026.md#inc-00358) | AI-Enabled Underwater Drones Cause Maritime Harm, Prompt US-UK Defense Initiative | Medium |  |  |  |
+| 1,080 | 2026-03-23 | [`INC-00389`](docs/incidents/2026.md#inc-00389) | AI-Generated Deepfake Targets Slovenian Politicians, Prompting Legal Action Consideration | Medium | LLM09 | ASI09 |  |
+| 1,081 | 2026-03-23 | [`INC-00458`](docs/incidents/2026.md#inc-00458) | AI-Generated Fake Personas Drive Viral Crypto Scams on X | Medium | LLM09 | ASI09 |  |
+| 1,082 | 2026-03-23 | [`INC-00665`](docs/incidents/2026.md#inc-00665) | Autonomous Delivery Robots Crash Into Bus Shelters, Causing Property Damage | High | LLM05 | ASI05 |  |
+| 1,083 | 2026-03-23 | [`INC-00666`](docs/incidents/2026.md#inc-00666) | Autonomous Drone Swarms Transform Modern Warfare, Raising AI Risk Concerns | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,084 | 2026-03-23 | [`INC-00880`](docs/incidents/2026.md#inc-00880) | Delhi High Court Orders Removal of AI-Generated Deepfakes Misusing Sonakshi Sinha's Persona | Medium | LLM09 | ASI09 |  |
+| 1,085 | 2026-03-23 | [`INC-00885`](docs/incidents/2026.md#inc-00885) | Denver and Longmont Face Backlash Over AI-Powered License Plate Readers | High | LLM05 | ASI05 |  |
+| 1,086 | 2026-03-23 | [`INC-00905`](docs/incidents/2026.md#inc-00905) | Doctors Warn of Risks from AI Self-Treatment for Musculoskeletal Pain in Spain | Medium | LLM09 |  |  |
+| 1,087 | 2026-03-23 | [`INC-00966`](docs/incidents/2026.md#inc-00966) | European Companies Face AI Governance Gaps Amid Rapid Adoption | High | LLM05 | ASI05 |  |
+| 1,088 | 2026-03-23 | [`INC-01098`](docs/incidents/2026.md#inc-01098) | GM Begins Supervised Testing of Next-Gen Autonomous Vehicles in Michigan and California | High | LLM05 | ASI05 |  |
+| 1,089 | 2026-03-23 | [`INC-01169`](docs/incidents/2026.md#inc-01169) | Humanoid Robot Injures Child During Dance Performance in Shaanxi | Critical | LLM05 | ASI05 |  |
+| 1,090 | 2026-03-23 | [`INC-01433`](docs/incidents/2026.md#inc-01433) | Microsoft Copilot AI Exposes Sensitive Data During Low Supervision Periods | Medium |  |  |  |
+| 1,091 | 2026-03-23 | [`INC-01535`](docs/incidents/2026.md#inc-01535) | Nigeria's $470 Million Investment in AI Surveillance Raises Privacy and Human Rights Concerns | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
+| 1,092 | 2026-03-23 | [`INC-01758`](docs/incidents/2026.md#inc-01758) | Security Flaw in Anthropic's Claude AI Extension Exposes Users to Browser Attacks | High | LLM01, LLM02, LLM05 | ASI01, ASI03, ASI05 |  |
+| 1,093 | 2026-03-23 | [`INC-01846`](docs/incidents/2026.md#inc-01846) | Teens Sentenced for AI-Generated Fake Nude Images of Classmates in Pennsylvania | Medium | LLM09 | ASI09 |  |
+| 1,094 | 2026-03-23 | [`INC-01859`](docs/incidents/2026.md#inc-01859) | Tesla Driver Caught Asleep While Using Self-Driving Mode in Rainy Rush Hour | Medium |  |  |  |
+| 1,095 | 2026-03-22 | [`INC-00064`](docs/incidents/2026.md#inc-00064) | AI Adoption Outpaces Cybersecurity in Bosnia and Herzegovina, Leading to Increased Cyberattack Risks | Critical |  | ASI05, ASI10 |  |
+| 1,096 | 2026-03-22 | [`INC-00305`](docs/incidents/2026.md#inc-00305) | AI-Driven Internet Fraud Surges in Germany, Exploiting Language Barriers | High | LLM05 | ASI05, ASI09 |  |
+| 1,097 | 2026-03-22 | [`INC-00336`](docs/incidents/2026.md#inc-00336) | AI-Enabled Drone Countermeasure Systems Developed and Deployed in Taiwan | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 |  |
+| 1,098 | 2026-03-22 | [`INC-00473`](docs/incidents/2026.md#inc-00473) | AI-Generated Film Poster Sparks Outrage Among Sikh Community in Mumbai | High |  |  |  |
+| 1,099 | 2026-03-22 | [`INC-00614`](docs/incidents/2026.md#inc-00614) | Anthropic's Claude AI Introduces Remote Computer Control and Risk-Aware Automation Features | High | LLM02, LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 1,100 | 2026-03-22 | [`INC-00861`](docs/incidents/2026.md#inc-00861) | Critical AI System Vulnerabilities in OpenClaw and Langflow Lead to Security Risks and Exploitation | Critical | LLM01, LLM02, LLM05, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI09, ASI10 |  |
+| 1,101 | 2026-03-22 | [`INC-00876`](docs/incidents/2026.md#inc-00876) | Delhi High Court Addresses Deepfake Misuse Against Patanjali Co-Founder | Medium | LLM09 | ASI09 |  |
+| 1,102 | 2026-03-22 | [`INC-01591`](docs/incidents/2026.md#inc-01591) | OpenClaw AI Agent Raises Cybersecurity Concerns in Taiwan | High | LLM02 | ASI03 |  |
+| 1,103 | 2026-03-22 | [`INC-01904`](docs/incidents/2026.md#inc-01904) | TikTok and Instagram Ban Accounts for Unlabeled, Exploitative AI-Generated Black Female Avatars | High | LLM09 | ASI09 |  |
+| 1,104 | 2026-03-21 | [`INC-00269`](docs/incidents/2026.md#inc-00269) | AI-Driven 3D Modeling Reduces Risks in Cerebral Aneurysm Treatment at San Camillo Hospital | Medium | LLM09 |  |  |
+| 1,105 | 2026-03-21 | [`INC-00275`](docs/incidents/2026.md#inc-00275) | AI-Driven Cyberattack Threatens Global Satellite Infrastructure | Medium |  |  |  |
+| 1,106 | 2026-03-21 | [`INC-00591`](docs/incidents/2026.md#inc-00591) | Anduril's AI System Deployed in Middle East Conflict for Drone Defense | Medium |  |  |  |
+| 1,107 | 2026-03-21 | [`INC-00738`](docs/incidents/2026.md#inc-00738) | Chacao Deploys AI-Powered Robotic Dogs for Public Security Patrols | High | LLM05 | ASI05 |  |
+| 1,108 | 2026-03-21 | [`INC-00748`](docs/incidents/2026.md#inc-00748) | ChatGPT Flags Republican Fundraising Links as Unsafe, Raising Bias Concerns | High | LLM05, LLM09 | ASI05 |  |
+| 1,109 | 2026-03-21 | [`INC-01078`](docs/incidents/2026.md#inc-01078) | German Digital Minister Warns of Major Job Losses Due to AI | High | LLM05 | ASI05 |  |
+| 1,110 | 2026-03-21 | [`INC-01278`](docs/incidents/2026.md#inc-01278) | Kaiser Permanente Therapists Strike Over AI Screening System Delays and Patient Harm | High | LLM05 | ASI05, ASI09 |  |
+| 1,111 | 2026-03-21 | [`INC-01366`](docs/incidents/2026.md#inc-01366) | Man Arrested for Posting AI-Generated Defamatory Images of Indian PM | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,112 | 2026-03-21 | [`INC-01736`](docs/incidents/2026.md#inc-01736) | Restaurant Service Robots Cause Disruption and Safety Concerns in Texas and California | High | LLM05 | ASI05 |  |
+| 1,113 | 2026-03-21 | [`INC-01801`](docs/incidents/2026.md#inc-01801) | Spotify Launches Artist Profile Protection to Combat AI-Generated Music Misattribution | Medium | LLM09 | ASI09 |  |
+| 1,114 | 2026-03-21 | [`INC-01833`](docs/incidents/2026.md#inc-01833) | Suspected Terrorist Attack Targets Czech AI Drone Factory Supplying Ukraine | Medium |  |  |  |
+| 1,115 | 2026-03-20 | [`INC-00052`](docs/incidents/2026.md#inc-00052) | Agentic AI Empowers Solo Cybercriminals to Rapidly Develop Advanced Malware | Medium |  | ASI09 |  |
+| 1,116 | 2026-03-20 | [`INC-00181`](docs/incidents/2026.md#inc-00181) | AI Misuse and Fraud Prevention in China's Financial and Social Platforms | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,117 | 2026-03-20 | [`INC-00220`](docs/incidents/2026.md#inc-00220) | AI System Leaks Unpublished Academic Work, Causes Citation Scandal in Turkey | High | LLM05 | ASI05, ASI09 |  |
+| 1,118 | 2026-03-20 | [`INC-00291`](docs/incidents/2026.md#inc-00291) | AI-Driven Disinformation Campaigns Target Ukraine and Europe | Medium | LLM09 |  |  |
+| 1,119 | 2026-03-20 | [`INC-00391`](docs/incidents/2026.md#inc-00391) | AI-Generated Deepfake Video Causes Misinformation and Reputational Harm to Indonesian Actor | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,120 | 2026-03-20 | [`INC-01093`](docs/incidents/2026.md#inc-01093) | Global Expansion and Deployment of Robotaxi AI Systems Raises Safety and Geopolitical Risks | Medium |  |  |  |
+| 1,121 | 2026-03-20 | [`INC-01128`](docs/incidents/2026.md#inc-01128) | Google's AI-Generated Headlines in Search Results Spark Misinformation Concerns | High | LLM05, LLM09 | ASI05 |  |
+| 1,122 | 2026-03-20 | [`INC-01367`](docs/incidents/2026.md#inc-01367) | Man Arrested in Albacete for Using AI to Create Fake Nude Image of Minor and Threatening Her | High |  |  |  |
+| 1,123 | 2026-03-20 | [`INC-01397`](docs/incidents/2026.md#inc-01397) | Meta AI Agents Cause Security Incidents Amid Workforce Shift | High | LLM05, LLM09 | ASI05 |  |
+| 1,124 | 2026-03-20 | [`INC-01422`](docs/incidents/2026.md#inc-01422) | Meta's Smart Glasses Spark Privacy Concerns Over AI Facial Recognition | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,125 | 2026-03-20 | [`INC-01749`](docs/incidents/2026.md#inc-01749) | Russia Proposes Sweeping Regulations to Restrict Foreign AI Tools | Critical | LLM05 | ASI05 |  |
+| 1,126 | 2026-03-20 | [`INC-01807`](docs/incidents/2026.md#inc-01807) | Stanford Study Finds AI Chatbots Encouraged Self-Harm and Reinforced Delusions | High | LLM05 | ASI05, ASI09 |  |
+| 1,127 | 2026-03-20 | [`INC-01840`](docs/incidents/2026.md#inc-01840) | Tech Companies Propose Massive AI Data Centers in Space, Raising Future Risks | High | LLM05 | ASI05 |  |
+| 1,128 | 2026-03-20 | [`INC-01988`](docs/incidents/2026.md#inc-01988) | US Army Receives First Autonomous-Ready Black Hawk Helicopter | Medium |  |  |  |
+| 1,129 | 2026-03-19 | [`INC-00130`](docs/incidents/2026.md#inc-00130) | AI Clinical Decision Support System Reduces Vascular Events in Stroke Patients | Medium |  |  |  |
+| 1,130 | 2026-03-19 | [`INC-00153`](docs/incidents/2026.md#inc-00153) | AI Deepfake Videos Victimize Students, Prompt Calls for State Action in Pennsylvania | Medium | LLM09 | ASI09 |  |
+| 1,131 | 2026-03-19 | [`INC-00346`](docs/incidents/2026.md#inc-00346) | AI-Enabled Financial Scams Cause €20 Million Losses in Croatia, Targeting Youth | Medium | LLM09 | ASI09 |  |
+| 1,132 | 2026-03-19 | [`INC-00359`](docs/incidents/2026.md#inc-00359) | AI-Enabled Wi-Fi Signal Analysis Raises Privacy Concerns | High |  |  |  |
+| 1,133 | 2026-03-19 | [`INC-00589`](docs/incidents/2026.md#inc-00589) | Anduril Launches Production of AI-Powered Combat Drones in Ohio | Critical |  | ASI10 |  |
+| 1,134 | 2026-03-19 | [`INC-00836`](docs/incidents/2026.md#inc-00836) | Cloudflare CEO Predicts AI Bots Will Surpass Human Web Traffic by 2027 | Medium | LLM09 | ASI09 |  |
+| 1,135 | 2026-03-19 | [`INC-00851`](docs/incidents/2026.md#inc-00851) | Concerns Over AI-Driven Content Moderation in Hungarian Elections | Medium | LLM09 |  |  |
+| 1,136 | 2026-03-19 | [`INC-01155`](docs/incidents/2026.md#inc-01155) | Hachette Reportedly Canceled Publication of Mia Ballard's Shy Girl After Generative AI Authorship Allegations | Medium | LLM09 | ASI09 |  |
+| 1,137 | 2026-03-19 | [`INC-01165`](docs/incidents/2026.md#inc-01165) | HSBC Plans Massive Job Cuts Driven by AI Automation | High | LLM05 | ASI05 |  |
+| 1,138 | 2026-03-19 | [`INC-01232`](docs/incidents/2026.md#inc-01232) | Indian Cricketer Gautam Gambhir Files Lawsuit Over AI Deepfakes and Identity Misuse | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,139 | 2026-03-19 | [`INC-01395`](docs/incidents/2026.md#inc-01395) | Meta AI Agent Causes Data Exposure and Deletion; Widespread Job Losses Loom Due to AI Adoption | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,140 | 2026-03-19 | [`INC-01697`](docs/incidents/2026.md#inc-01697) | Purported Deepfake Applicant Reportedly Impersonated Tokyo IT Executive Kenbun Yoshii During Online Job Inter… | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,141 | 2026-03-19 | [`INC-01765`](docs/incidents/2026.md#inc-01765) | Senior Journalist Suspended for Publishing AI-Generated Fake Quotes | High | LLM09 |  |  |
+| 1,142 | 2026-03-19 | [`INC-01854`](docs/incidents/2026.md#inc-01854) | Tesla and Waymo Robotaxis Involved in Multiple Crashes and Disruptions in U.S. Cities | High | LLM05 | ASI05 |  |
+| 1,143 | 2026-03-19 | [`INC-01932`](docs/incidents/2026.md#inc-01932) | Uber and Rivian Announce Major Investment in Autonomous Robotaxi Fleet | Critical | LLM05 | ASI05 |  |
+| 1,144 | 2026-03-19 | [`INC-01991`](docs/incidents/2026.md#inc-01991) | US Cities Push Back Against AI License Plate Reader Surveillance | High | LLM05 | ASI05 |  |
+| 1,145 | 2026-03-19 | [`INC-02029`](docs/incidents/2026.md#inc-02029) | US Regulators Probe Tesla FSD After Collisions Linked to AI System Failures | Critical | LLM05 | ASI05 |  |
+| 1,146 | 2026-03-18 | [`INC-00085`](docs/incidents/2026.md#inc-00085) | AI Automation Threatens Entry-Level Job Market for Gen Z Graduates | High | LLM05 | ASI05 |  |
+| 1,147 | 2026-03-18 | [`INC-00193`](docs/incidents/2026.md#inc-00193) | AI Pilot Program Assists Judges in Los Angeles County Courts | Medium |  |  |  |
+| 1,148 | 2026-03-18 | [`INC-00200`](docs/incidents/2026.md#inc-00200) | AI Robot Malfunctions and Causes Chaos in San Jose Restaurant | High | LLM05 | ASI05 |  |
+| 1,149 | 2026-03-18 | [`INC-00202`](docs/incidents/2026.md#inc-00202) | AI Service Robot Malfunctions, Causes Chaos in California Restaurant | Medium |  |  |  |
+| 1,150 | 2026-03-18 | [`INC-00226`](docs/incidents/2026.md#inc-00226) | AI Systems Drive US Military Operations in Middle East Conflict | Critical |  |  |  |
+| 1,151 | 2026-03-18 | [`INC-00234`](docs/incidents/2026.md#inc-00234) | AI Threatens Up to 5 Million Jobs in France Within Five Years | Medium |  |  |  |
+| 1,152 | 2026-03-18 | [`INC-00364`](docs/incidents/2026.md#inc-00364) | AI-Generated Actors Spark Portrait Rights Controversy in China | High |  |  |  |
+| 1,153 | 2026-03-18 | [`INC-00474`](docs/incidents/2026.md#inc-00474) | AI-Generated Fraudulent Messages Target Citizens Ahead of Holiday | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,154 | 2026-03-18 | [`INC-00480`](docs/incidents/2026.md#inc-00480) | AI-Generated Legal Documents Cause Harm in Fraudulent Online Law Firms in China | Medium | LLM09 | ASI09 |  |
+| 1,155 | 2026-03-18 | [`INC-00699`](docs/incidents/2026.md#inc-00699) | BMG Sues Anthropic Over AI Training With Copyrighted Song Lyrics | High |  |  |  |
+| 1,156 | 2026-03-18 | [`INC-00760`](docs/incidents/2026.md#inc-00760) | Chicken Soup for the Soul Publisher Sues Tech Giants Over AI Copyright Infringement | High |  |  |  |
+| 1,157 | 2026-03-18 | [`INC-00808`](docs/incidents/2026.md#inc-00808) | Claude AI Vulnerabilities Enable Silent Data Theft and Malicious Redirects | Critical | LLM01, LLM02 | ASI01, ASI02, ASI03 |  |
+| 1,158 | 2026-03-18 | [`INC-00872`](docs/incidents/2026.md#inc-00872) | Dancing Robot Malfunctions in California Restaurant; Robot Startles Elderly Woman in Macau | High |  |  |  |
+| 1,159 | 2026-03-18 | [`INC-00934`](docs/incidents/2026.md#inc-00934) | Emergent Deceptive Behaviors in Autonomous AI Raise Safety Concerns | High | LLM03, LLM05, LLM09 | ASI04, ASI05 |  |
+| 1,160 | 2026-03-18 | [`INC-00943`](docs/incidents/2026.md#inc-00943) | Essex Police Suspends Live Facial Recognition Over Racial Bias | High | LLM05 | ASI05 |  |
+| 1,161 | 2026-03-18 | [`INC-00979`](docs/incidents/2026.md#inc-00979) | Facebook's AI Moderation Restricts Orbán Viktor's Posts Before Elections | Medium | LLM09 |  |  |
+| 1,162 | 2026-03-18 | [`INC-01349`](docs/incidents/2026.md#inc-01349) | LLM-Driven Attack Compromises AWS Administrator Privileges in 8 Minutes | High |  |  |  |
+| 1,163 | 2026-03-18 | [`INC-01361`](docs/incidents/2026.md#inc-01361) | Majority of U.S. Teens Use AI to Create Sexualized Images, Study Finds | High | LLM09 |  |  |
+| 1,164 | 2026-03-18 | [`INC-01408`](docs/incidents/2026.md#inc-01408) | Meta Internal AI Agent Reportedly Gave Advice That Allegedly Exposed Sensitive Data to Unauthorized Employees | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,165 | 2026-03-18 | [`INC-01444`](docs/incidents/2026.md#inc-01444) | Military Use of AI Sparks International Concerns and Ethical Disputes | Critical | LLM09 | ASI10 |  |
+| 1,166 | 2026-03-18 | [`INC-01632`](docs/incidents/2026.md#inc-01632) | Pentagon Flags National Security Risks Over Anthropic's Foreign AI Workers | Critical |  |  |  |
+| 1,167 | 2026-03-18 | [`INC-01655`](docs/incidents/2026.md#inc-01655) | Polish Institutions Collaborate on AI-Enabled Autonomous Underwater Drones for Dual-Use Applications | Medium |  |  |  |
+| 1,168 | 2026-03-18 | [`INC-01784`](docs/incidents/2026.md#inc-01784) | Sony Removes 135,000 AI-Generated Deepfake Songs Impersonating Artists | Medium | LLM09 | ASI09 |  |
+| 1,169 | 2026-03-18 | [`INC-01811`](docs/incidents/2026.md#inc-01811) | Student Faces Trial for AI-Generated Sexual Images of Schoolmates in Córdoba | High | LLM09 | ASI09 |  |
+| 1,170 | 2026-03-18 | [`INC-01861`](docs/incidents/2026.md#inc-01861) | Tesla FSD Accident Highlights Risks of Autonomous Driving | Critical |  |  |  |
+| 1,171 | 2026-03-18 | [`INC-01949`](docs/incidents/2026.md#inc-01949) | UK Regulator Bans AI App Ad for Promoting Non-Consensual Nudification | Medium |  |  |  |
+| 1,172 | 2026-03-17 | [`INC-00132`](docs/incidents/2026.md#inc-00132) | AI Coding Assistants Drive Surge in Secret Leaks on GitHub | High |  |  |  |
+| 1,173 | 2026-03-17 | [`INC-00165`](docs/incidents/2026.md#inc-00165) | AI Facial Recognition in Sao Paulo Leads to Mistaken Arrests | High | LLM05 | ASI05 |  |
+| 1,174 | 2026-03-17 | [`INC-00201`](docs/incidents/2026.md#inc-00201) | AI Search Engines Cause Major Publisher Traffic Loss | Medium |  |  |  |
+| 1,175 | 2026-03-17 | [`INC-00271`](docs/incidents/2026.md#inc-00271) | AI-Driven Autonomous Trucks Tested on U.S. Highways Raise Safety Concerns | High | LLM05 | ASI05 |  |
+| 1,176 | 2026-03-17 | [`INC-00381`](docs/incidents/2026.md#inc-00381) | AI-Generated Deepfake Nudes of 18 Minors Spark Investigation in Almería | High | LLM09 | ASI09 |  |
+| 1,177 | 2026-03-17 | [`INC-00471`](docs/incidents/2026.md#inc-00471) | AI-Generated Fake Wedding Photos of Zendaya and Tom Holland Cause Public Confusion | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,178 | 2026-03-17 | [`INC-00539`](docs/incidents/2026.md#inc-00539) | AI-Powered Cyberwarfare Attacks Impact Australia and UK | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
+| 1,179 | 2026-03-17 | [`INC-00542`](docs/incidents/2026.md#inc-00542) | AI-Powered Editing Tools Drive Surge in Insurance Fraud in the US | Medium |  | ASI09 |  |
+| 1,180 | 2026-03-17 | [`INC-00916`](docs/incidents/2026.md#inc-00916) | Dutch Fraudster Uses Deepfake AI to Open Dozens of Bank Accounts | High | LLM09 | ASI09 |  |
+| 1,181 | 2026-03-17 | [`INC-00962`](docs/incidents/2026.md#inc-00962) | EU Legal Deadlock Reduces AI Detection of Child Abuse Online | Medium | LLM09 |  |  |
+| 1,182 | 2026-03-17 | [`INC-00963`](docs/incidents/2026.md#inc-00963) | EU Report Reveals China's Use of AI for Disinformation and Harassment | Medium | LLM09 | ASI09 |  |
+| 1,183 | 2026-03-17 | [`INC-01013`](docs/incidents/2026.md#inc-01013) | Florida Man Arrested for Possessing and Producing AI-Generated Child Sexual Abuse Material | High | LLM09 |  |  |
+| 1,184 | 2026-03-17 | [`INC-01114`](docs/incidents/2026.md#inc-01114) | Google Gemini AI Accused of Political Bias in Hate Speech Moderation | High | LLM05 | ASI05 |  |
+| 1,185 | 2026-03-17 | [`INC-01318`](docs/incidents/2026.md#inc-01318) | Lawyer Sanctioned for Submitting AI-Generated Fake Legal Precedents in Siracusa Court | High | LLM05, LLM09 | ASI05 |  |
+| 1,186 | 2026-03-17 | [`INC-01518`](docs/incidents/2026.md#inc-01518) | NATO Orders AI-Enabled Parrot Micro-Drones for Military Use | High | LLM05 | ASI05 |  |
+| 1,187 | 2026-03-17 | [`INC-01938`](docs/incidents/2026.md#inc-01938) | UK and Ukraine Deepen AI-Driven Defense Partnership with Drone Production | High | LLM05 | ASI05, ASI10 |  |
+| 1,188 | 2026-03-17 | [`INC-01963`](docs/incidents/2026.md#inc-01963) | Ukraine Launches Defense AI Center with UK Support for Military Innovation | Critical |  | ASI10 |  |
+| 1,189 | 2026-03-17 | [`INC-02014`](docs/incidents/2026.md#inc-02014) | US Lawmakers Warn of Security Risks from Chinese AI Robotics | Critical | LLM02, LLM05 | ASI02, ASI03, ASI05 |  |
+| 1,190 | 2026-03-17 | [`INC-02114`](docs/incidents/2026.md#inc-02114) | ZenaTech Develops Autonomous Interceptor Drone for Military Use | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,191 | 2026-03-16 | [`INC-00084`](docs/incidents/2026.md#inc-00084) | AI Automation Poses Disproportionate Job Risk to Women in the US | High | LLM05 | ASI05 |  |
+| 1,192 | 2026-03-16 | [`INC-00089`](docs/incidents/2026.md#inc-00089) | AI Brain-Computer Interface Restores Communication for Paralyzed Patients | Medium |  |  |  |
+| 1,193 | 2026-03-16 | [`INC-00093`](docs/incidents/2026.md#inc-00093) | AI Chat Apps Expose Minors to Inappropriate Content in China | High | LLM05 | ASI05, ASI09 |  |
+| 1,194 | 2026-03-16 | [`INC-00114`](docs/incidents/2026.md#inc-00114) | AI Chatbots Linked to Psychological Harm and Suicide | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,195 | 2026-03-16 | [`INC-00197`](docs/incidents/2026.md#inc-00197) | AI Raises Concerns Over Algorithmic Collusion and Market Entry Barriers in India | Medium |  |  |  |
+| 1,196 | 2026-03-16 | [`INC-00249`](docs/incidents/2026.md#inc-00249) | AI Unmanned Inspection Vehicle in Keelung Raises Privacy Concerns | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,197 | 2026-03-16 | [`INC-00353`](docs/incidents/2026.md#inc-00353) | AI-Enabled Russian Lancet Drone Crashes in Central Kyiv | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,198 | 2026-03-16 | [`INC-00398`](docs/incidents/2026.md#inc-00398) | AI-Generated Deepfake Video of Shakira Used in Cryptocurrency Scam in Colombia | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,199 | 2026-03-16 | [`INC-00403`](docs/incidents/2026.md#inc-00403) | AI-Generated Deepfake Videos Target Indian Army and Officials Amid Disinformation Campaign | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,200 | 2026-03-16 | [`INC-00406`](docs/incidents/2026.md#inc-00406) | AI-Generated Deepfake Videos Used for Large-Scale Identity Fraud in China | High | LLM09 | ASI09 |  |
+| 1,201 | 2026-03-16 | [`INC-00416`](docs/incidents/2026.md#inc-00416) | AI-Generated Deepfakes Cause Misinformation and Erode Public Trust | Medium | LLM09 | ASI09 |  |
+| 1,202 | 2026-03-16 | [`INC-00462`](docs/incidents/2026.md#inc-00462) | AI-Generated Fake Pregnancy Image Causes Harm to João Gomes' Family | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,203 | 2026-03-16 | [`INC-00468`](docs/incidents/2026.md#inc-00468) | AI-Generated Fake Suspect Photos Cause Public Confusion and Risk in Jakarta Acid Attack Case | High | LLM09 |  |  |
+| 1,204 | 2026-03-16 | [`INC-00490`](docs/incidents/2026.md#inc-00490) | AI-Generated Parcel Scam Causes Financial Harm in France | High | LLM05 | ASI05, ASI09 |  |
+| 1,205 | 2026-03-16 | [`INC-00508`](docs/incidents/2026.md#inc-00508) | AI-Generated Video Falsely Links Politicians to Crime, Sparks Legal Action in Brazil | Medium | LLM09 |  |  |
+| 1,206 | 2026-03-16 | [`INC-00654`](docs/incidents/2026.md#inc-00654) | Australian Regulator Warns of AI-Generated Child Abuse Material on X | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,207 | 2026-03-16 | [`INC-00786`](docs/incidents/2026.md#inc-00786) | Chinese AI Security Firm Leaks SSL Private Key in OpenClaw-Based Product | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,208 | 2026-03-16 | [`INC-00797`](docs/incidents/2026.md#inc-00797) | Chinese Voice Actors Protest AI Voice Cloning, Content Creators Remove Infringing Videos | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,209 | 2026-03-16 | [`INC-00939`](docs/incidents/2026.md#inc-00939) | Encyclopedia Britannica Sues OpenAI for Unauthorized Use of Copyrighted Content in AI Training | High | LLM05, LLM09 | ASI05 |  |
+| 1,210 | 2026-03-16 | [`INC-01058`](docs/incidents/2026.md#inc-01058) | Gartner Warns of AI Misconfiguration Risks to Critical Infrastructure by 2028 | Medium |  |  |  |
+| 1,211 | 2026-03-16 | [`INC-01121`](docs/incidents/2026.md#inc-01121) | Google Shuts Down AI Health Advice Feature Amid Safety Concerns | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,212 | 2026-03-16 | [`INC-01322`](docs/incidents/2026.md#inc-01322) | Legislative Action Against AI-Driven Surveillance Pricing in Grocery Stores | Medium |  | ASI09 |  |
+| 1,213 | 2026-03-16 | [`INC-01619`](docs/incidents/2026.md#inc-01619) | Palantir AI Systems Used in Military Operations Cause Harm | Critical | LLM05 | ASI05 |  |
+| 1,214 | 2026-03-16 | [`INC-01814`](docs/incidents/2026.md#inc-01814) | Students Use AI to Create and Circulate Nude Images of Classmates and Teachers in Crete | High | LLM05 | ASI05 |  |
+| 1,215 | 2026-03-16 | [`INC-01832`](docs/incidents/2026.md#inc-01832) | Suspected AI-Generated Video of Israeli PM Netanyahu Sparks Misinformation Concerns | Medium | LLM09 | ASI09 |  |
+| 1,216 | 2026-03-16 | [`INC-01869`](docs/incidents/2026.md#inc-01869) | Tesla Robotaxi AI System Involved in Multiple Low-Speed Crashes | Medium |  |  |  |
+| 1,217 | 2026-03-16 | [`INC-01913`](docs/incidents/2026.md#inc-01913) | Trump Accuses Iran of Using AI for Disinformation During Wartime | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,218 | 2026-03-16 | [`INC-01931`](docs/incidents/2026.md#inc-01931) | Uber and Nvidia Announce Global Robotaxi Rollout Using AI | Critical |  |  |  |
+| 1,219 | 2026-03-16 | [`INC-02092`](docs/incidents/2026.md#inc-02092) | Whistleblowers Expose Meta and TikTok's AI Algorithms Amplifying Harmful Content | Medium | LLM09 |  |  |
+| 1,220 | 2026-03-15 | [`INC-00484`](docs/incidents/2026.md#inc-00484) | AI-Generated Misinformation and Content Manipulation Spark Regulatory Crackdown in China | High | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
+| 1,221 | 2026-03-15 | [`INC-00509`](docs/incidents/2026.md#inc-00509) | AI-Generated Videos Cause Misinformation and Legal Violations in China | High | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
+| 1,222 | 2026-03-15 | [`INC-00515`](docs/incidents/2026.md#inc-00515) | AI-Generated Visual Disinformation Undermines Societal Trust | High | LLM05, LLM09 | ASI05 |  |
+| 1,223 | 2026-03-15 | [`INC-00611`](docs/incidents/2026.md#inc-00611) | Anthropic's AI Claude Used in US Military Operation Sparks Ethical Standoff | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,224 | 2026-03-15 | [`INC-00653`](docs/incidents/2026.md#inc-00653) | Australian Regulator Warns Gen Z on Risks of AI-Driven Financial Advice | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,225 | 2026-03-15 | [`INC-00656`](docs/incidents/2026.md#inc-00656) | Australian Techie Uses AI to Develop Cancer Vaccine for Dog | Medium | LLM09 | ASI09 |  |
+| 1,226 | 2026-03-15 | [`INC-00935`](docs/incidents/2026.md#inc-00935) | Emotional Distress Among Chinese Users Following Shutdown of AI Companion Apps | Medium |  |  |  |
+| 1,227 | 2026-03-15 | [`INC-01236`](docs/incidents/2026.md#inc-01236) | Indonesia Implements AI and Social Media Restrictions for Children | Medium |  |  |  |
+| 1,228 | 2026-03-15 | [`INC-01325`](docs/incidents/2026.md#inc-01325) | Li Auto MEGA Electric Vehicle Battery Recall Due to AI-Related Safety Risk | Medium |  |  |  |
+| 1,229 | 2026-03-15 | [`INC-01392`](docs/incidents/2026.md#inc-01392) | Medellín Builds AI-Driven Security Center with Drone Port | Medium |  |  |  |
+| 1,230 | 2026-03-15 | [`INC-01593`](docs/incidents/2026.md#inc-01593) | OpenClaw AI Agents Cause Data Breaches and Mass Layoffs in China | High | LLM01, LLM02, LLM05 | ASI01, ASI02, ASI03, ASI05, ASI09 |  |
+| 1,231 | 2026-03-15 | [`INC-01970`](docs/incidents/2026.md#inc-01970) | UN Warns AI-Driven Online Fraud Surges Globally, Overwhelming States | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,232 | 2026-03-14 | [`INC-00115`](docs/incidents/2026.md#inc-00115) | AI Chatbots Linked to Reinforcing Delusional Thinking in Vulnerable Users | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,233 | 2026-03-14 | [`INC-00156`](docs/incidents/2026.md#inc-00156) | AI Deepfakes Used in Financial Fraud Targeting Investors in China | High | LLM09 | ASI09 |  |
+| 1,234 | 2026-03-14 | [`INC-01083`](docs/incidents/2026.md#inc-01083) | German Voice Actors Protest AI Use of Their Voices Without Consent | High |  |  |  |
+| 1,235 | 2026-03-14 | [`INC-01426`](docs/incidents/2026.md#inc-01426) | Mexico City Airport to Deploy AI-Powered Anti-Drone System for 2026 World Cup | Medium |  |  |  |
+| 1,236 | 2026-03-14 | [`INC-01699`](docs/incidents/2026.md#inc-01699) | Purported Deepfake of Ashley James Reportedly Used to Promote Weight Loss Pills | High | LLM09 | ASI09 |  |
+| 1,237 | 2026-03-14 | [`INC-01918`](docs/incidents/2026.md#inc-01918) | Turkey Highlights Strategic Importance of AI-Enabled Military Drones | Critical |  | ASI10 |  |
+| 1,238 | 2026-03-14 | [`INC-01920`](docs/incidents/2026.md#inc-01920) | Turkey Unveils AI-Enabled K2 Kamikaze Drone with Autonomous Swarm Capabilities | Critical |  | ASI10 |  |
+| 1,239 | 2026-03-14 | [`INC-01989`](docs/incidents/2026.md#inc-01989) | US Army Signs $20B AI-Enabled Defense Contract with Anduril | Medium |  | ASI10 |  |
+| 1,240 | 2026-03-14 | [`INC-02075`](docs/incidents/2026.md#inc-02075) | Waymo Robotaxi AI Leaves Passengers Trapped During Vehicle Attacks in San Francisco | High | LLM05 | ASI05 |  |
+| 1,241 | 2026-03-13 | [`INC-00083`](docs/incidents/2026.md#inc-00083) | AI Automation Drives Job Losses Among Young Professionals | High | LLM05 | ASI05 |  |
+| 1,242 | 2026-03-13 | [`INC-00088`](docs/incidents/2026.md#inc-00088) | AI Bots Force Digg to Shut Down Open Beta and Downsize Team | High | LLM05 | ASI05 |  |
+| 1,243 | 2026-03-13 | [`INC-00163`](docs/incidents/2026.md#inc-00163) | AI Ethical Filters Disrupt Pentagon Military Operations | Critical | LLM05 | ASI05 |  |
+| 1,244 | 2026-03-13 | [`INC-00264`](docs/incidents/2026.md#inc-00264) | AI-Assisted Targeting by Project Maven Leads to Civilian Deaths in Iran | Critical | LLM05, LLM09 | ASI05, ASI10 |  |
+| 1,245 | 2026-03-13 | [`INC-00311`](docs/incidents/2026.md#inc-00311) | AI-Driven Military Targeting Causes Mass Casualties in Middle East Conflicts | Critical | LLM05 | ASI05 |  |
+| 1,246 | 2026-03-13 | [`INC-00464`](docs/incidents/2026.md#inc-00464) | AI-Generated Fake References Lead to Academic Misconduct in Taiwanese Doctoral Thesis | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,247 | 2026-03-13 | [`INC-00505`](docs/incidents/2026.md#inc-00505) | AI-Generated Slopoly Malware Used in Hive0163 Ransomware Attacks | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,248 | 2026-03-13 | [`INC-00571`](docs/incidents/2026.md#inc-00571) | Airbus Equips AI-Enabled Valkyrie Combat Drones for German Air Force | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,249 | 2026-03-13 | [`INC-00598`](docs/incidents/2026.md#inc-00598) | Anthropic and OpenAI Hire Weapons Experts to Prevent AI Misuse in Weapon Creation | Critical | LLM09 | ASI10 |  |
+| 1,250 | 2026-03-13 | [`INC-00796`](docs/incidents/2026.md#inc-00796) | Chinese Police Crack Down on AI-Generated Misinformation Online | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,251 | 2026-03-13 | [`INC-00887`](docs/incidents/2026.md#inc-00887) | Deployment of AI-Powered Humanoid Soldier Robots in Ukraine | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 |  |
+| 1,252 | 2026-03-13 | [`INC-01066`](docs/incidents/2026.md#inc-01066) | Generative AI Data Poisoning Leads to Misinformation and Consumer Harm in China | High | LLM04, LLM05, LLM09 | ASI05, ASI06 |  |
+| 1,253 | 2026-03-13 | [`INC-01168`](docs/incidents/2026.md#inc-01168) | Humanoid Robot Causes Psychological Distress Leading to Police Intervention in Macau | High |  |  |  |
+| 1,254 | 2026-03-13 | [`INC-01174`](docs/incidents/2026.md#inc-01174) | Hyundai Recalls Palisade SUVs After AI Power Seat Malfunction Causes Child's Death | Critical | LLM05 | ASI05 |  |
+| 1,255 | 2026-03-13 | [`INC-01177`](docs/incidents/2026.md#inc-01177) | ICE Agents Use AI Surveillance Apps and Quotas, Leading to Unlawful Arrests in Oregon | High | LLM05, LLM09 | ASI05 |  |
+| 1,256 | 2026-03-13 | [`INC-01267`](docs/incidents/2026.md#inc-01267) | Japan Plans to Join US AI-Enabled Missile Defense System | Critical | LLM05 | ASI05 |  |
+| 1,257 | 2026-03-13 | [`INC-01323`](docs/incidents/2026.md#inc-01323) | Leonardo and Baykar Develop AI-Enabled Military Drones for European Market | Medium |  |  |  |
+| 1,258 | 2026-03-13 | [`INC-01410`](docs/incidents/2026.md#inc-01410) | Meta Removes End-to-End Encryption from Instagram Messages, Raising Privacy Concerns | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05 |  |
+| 1,259 | 2026-03-13 | [`INC-01733`](docs/incidents/2026.md#inc-01733) | Researchers Call for Stricter Regulation of AI-Powered Children's Toys | Medium |  |  |  |
+| 1,260 | 2026-03-13 | [`INC-01776`](docs/incidents/2026.md#inc-01776) | Sixth Circuit Sanctioned Lawyers in Whiting v. City of Athens over Alleged Fake Appellate Citations in Briefs… | High | LLM09 | ASI09 |  |
+| 1,261 | 2026-03-13 | [`INC-01899`](docs/incidents/2026.md#inc-01899) | Theft of AI-Enabled Military Drones Sparks Security Fears in the US | Critical |  |  |  |
+| 1,262 | 2026-03-12 | [`INC-00122`](docs/incidents/2026.md#inc-00122) | AI Chatbots Provide Biased Voting Advice, Neglecting Local Parties in Dutch Elections | High | LLM05, LLM09 | ASI05 |  |
+| 1,263 | 2026-03-12 | [`INC-00123`](docs/incidents/2026.md#inc-00123) | AI Chatbots Provide Harmful Diet Plans to Teenagers, Study Finds | Medium |  |  |  |
+| 1,264 | 2026-03-12 | [`INC-00127`](docs/incidents/2026.md#inc-00127) | AI Chatbots Spread Dangerous Medical Misinformation | High | LLM05, LLM09 | ASI05 |  |
+| 1,265 | 2026-03-12 | [`INC-00155`](docs/incidents/2026.md#inc-00155) | AI Deepfakes Drive $333 Million Crypto ATM Fraud Surge in the US | Medium | LLM09 | ASI09 |  |
+| 1,266 | 2026-03-12 | [`INC-00174`](docs/incidents/2026.md#inc-00174) | AI Investment Agents Trigger Security Concerns in Chinese Financial Sector | Medium | LLM02 | ASI03 |  |
+| 1,267 | 2026-03-12 | [`INC-00281`](docs/incidents/2026.md#inc-00281) | AI-Driven Cyberattacks Escalate in Indonesia, Causing Increased Harm | Critical | LLM02 | ASI03, ASI05, ASI09, ASI10 |  |
+| 1,268 | 2026-03-12 | [`INC-00372`](docs/incidents/2026.md#inc-00372) | AI-Generated Content Causes Consumer Harm and Legal Action in China | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,269 | 2026-03-12 | [`INC-00450`](docs/incidents/2026.md#inc-00450) | AI-Generated Fake Injury Used in Attempted Nail Salon Fraud in South Korea | Medium |  | ASI09 |  |
+| 1,270 | 2026-03-12 | [`INC-00579`](docs/incidents/2026.md#inc-00579) | Amazon Faces Trial in Italy Over AI Algorithm's Role in Massive VAT Evasion | High |  |  |  |
+| 1,271 | 2026-03-12 | [`INC-00580`](docs/incidents/2026.md#inc-00580) | Amazon Prime Air Exits Drone Alliance Over AI Safety Dispute | Critical |  |  |  |
+| 1,272 | 2026-03-12 | [`INC-01226`](docs/incidents/2026.md#inc-01226) | India Unveils AI-Driven Military Modernization Plan for 2047 | Critical | LLM05 | ASI05 |  |
+| 1,273 | 2026-03-12 | [`INC-01261`](docs/incidents/2026.md#inc-01261) | Italy to Test AI-Enabled Michelangelo Air Defense System in Ukraine | High | LLM05 | ASI05, ASI10 |  |
+| 1,274 | 2026-03-12 | [`INC-01430`](docs/incidents/2026.md#inc-01430) | Microsoft and Tech Giants Launch AI Health Chatbots, Raising Privacy and Safety Concerns | High | LLM02, LLM05, LLM09 | ASI02, ASI03, ASI05 |  |
+| 1,275 | 2026-03-12 | [`INC-01618`](docs/incidents/2026.md#inc-01618) | Palantir AI Systems Used in Middle East Military Operations and Israeli Conflict Response | High | LLM05 | ASI05 |  |
+| 1,276 | 2026-03-12 | [`INC-01663`](docs/incidents/2026.md#inc-01663) | Potential Developmental Risks of AI Exposure for Young Children | Medium |  |  |  |
+| 1,277 | 2026-03-12 | [`INC-01950`](docs/incidents/2026.md#inc-01950) | UK Regulators Pressure Social Media Platforms to Strengthen AI-Driven Child Safety Measures | High | LLM05 | ASI05 |  |
+| 1,278 | 2026-03-12 | [`INC-01965`](docs/incidents/2026.md#inc-01965) | Ukraine Shares Battlefield Data to Train Military AI Systems | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,279 | 2026-03-12 | [`INC-01966`](docs/incidents/2026.md#inc-01966) | Ukrainian AI-Enabled Military Drone Production Expands Across Europe | Medium | LLM03 | ASI04 |  |
+| 1,280 | 2026-03-12 | [`INC-02095`](docs/incidents/2026.md#inc-02095) | Widespread AI Adoption Leads to Security Breaches and Exploitation | High | LLM01, LLM02, LLM04, LLM05 | ASI01, ASI03, ASI05, ASI06 |  |
+| 1,281 | 2026-03-11 | [`INC-00051`](docs/incidents/2026.md#inc-00051) | Agentic AI Drives Surge in Global Cybercrime, Identity Theft, and Ransomware | Critical | LLM02 | ASI03, ASI05, ASI10 |  |
+| 1,282 | 2026-03-11 | [`INC-00104`](docs/incidents/2026.md#inc-00104) | AI Chatbots Facilitate Planning of Violent Attacks, Study Finds | Critical | LLM05 | ASI09 |  |
+| 1,283 | 2026-03-11 | [`INC-00267`](docs/incidents/2026.md#inc-00267) | AI-Based Recruitment Test Excludes Applicants in Ghana | High | LLM05 | ASI05 |  |
+| 1,284 | 2026-03-11 | [`INC-00337`](docs/incidents/2026.md#inc-00337) | AI-Enabled Drone Warfare Escalates in the Middle East | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
+| 1,285 | 2026-03-11 | [`INC-00382`](docs/incidents/2026.md#inc-00382) | AI-Generated Deepfake of Jean Reno Used in Major Investment Scam in Lyon | Medium | LLM09 | ASI09 |  |
+| 1,286 | 2026-03-11 | [`INC-00472`](docs/incidents/2026.md#inc-00472) | AI-Generated False Citations Prompt Procurement Overhaul in Newfoundland and Labrador | High | LLM05, LLM09 | ASI05 |  |
+| 1,287 | 2026-03-11 | [`INC-00514`](docs/incidents/2026.md#inc-00514) | AI-Generated Violent Video of Jeremy Clarkson and UK Prime Minister Sparks Outcry | Medium | LLM09 | ASI09 |  |
+| 1,288 | 2026-03-11 | [`INC-00559`](docs/incidents/2026.md#inc-00559) | AI-Powered Toys Cause Emotional Harm to Young Children Due to Misinterpretation | Medium | LLM09 |  |  |
+| 1,289 | 2026-03-11 | [`INC-00588`](docs/incidents/2026.md#inc-00588) | Anduril Acquires ExoAnalytic to Expand AI-Driven Space Defense Capabilities | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,290 | 2026-03-11 | [`INC-00691`](docs/incidents/2026.md#inc-00691) | Biased AI Autocomplete Tools Subtly Shift Users' Opinions on Societal Issues | Medium |  |  |  |
+| 1,291 | 2026-03-11 | [`INC-00711`](docs/incidents/2026.md#inc-00711) | Brazilian Senate Approves AI Monitoring to Protect Domestic Violence Victims | Medium |  |  |  |
+| 1,292 | 2026-03-11 | [`INC-00728`](docs/incidents/2026.md#inc-00728) | Canadian Firms Collaborate on AI-Powered Autonomous Navigation for Arctic Defence | Medium |  |  |  |
+| 1,293 | 2026-03-11 | [`INC-00773`](docs/incidents/2026.md#inc-00773) | China Warns Against Unchecked Military Use of AI, Urges Human Oversight | Critical |  | ASI10 |  |
+| 1,294 | 2026-03-11 | [`INC-00854`](docs/incidents/2026.md#inc-00854) | Controversy Over Palantir's AI Use in Argentina and Military Applications Abroad | Medium |  |  |  |
+| 1,295 | 2026-03-11 | [`INC-00975`](docs/incidents/2026.md#inc-00975) | Experts Warn AI Chatbots May Homogenize Human Thought and Reduce Creativity | Critical |  |  |  |
+| 1,296 | 2026-03-11 | [`INC-01074`](docs/incidents/2026.md#inc-01074) | German Court Holds Chatbot Operator Liable for AI-Generated False Claims | High | LLM09 |  |  |
+| 1,297 | 2026-03-11 | [`INC-01138`](docs/incidents/2026.md#inc-01138) | Grammarly&#x27;s AI Expert Review Allegedly Used Journalists&#x27; and Authors&#x27; Names Without Consent | High | LLM09 | ASI09 |  |
+| 1,298 | 2026-03-11 | [`INC-01243`](docs/incidents/2026.md#inc-01243) | InvestCloud Replaces Entire Italian Workforce with AI, Leading to Mass Layoffs | High | LLM05 | ASI05 |  |
+| 1,299 | 2026-03-11 | [`INC-01249`](docs/incidents/2026.md#inc-01249) | Iranian AI-Enabled Drone Attacks Target Tech Company Data Centers in Middle East | Medium |  |  |  |
+| 1,300 | 2026-03-11 | [`INC-01273`](docs/incidents/2026.md#inc-01273) | JKT48's Freya Reports AI-Generated Inappropriate Image Manipulation to Police | High | LLM09 | ASI09 |  |
+| 1,301 | 2026-03-11 | [`INC-01741`](docs/incidents/2026.md#inc-01741) | Romanian AI Integrated into US Military Counter-Drone Systems in the Middle East | Critical | LLM05 | ASI05 |  |
+| 1,302 | 2026-03-11 | [`INC-01782`](docs/incidents/2026.md#inc-01782) | Social Media Algorithms Drive Digital Addiction Among Youth | Medium |  |  |  |
+| 1,303 | 2026-03-11 | [`INC-01961`](docs/incidents/2026.md#inc-01961) | Ukraine Increases Procurement and Deployment of AI-Enabled Military Drones | Critical |  |  |  |
+| 1,304 | 2026-03-11 | [`INC-01996`](docs/incidents/2026.md#inc-01996) | US Deploys AI-Powered Autonomous Maritime Drones for 24/7 Surveillance at Souda Bay | Medium |  |  |  |
+| 1,305 | 2026-03-10 | [`INC-00096`](docs/incidents/2026.md#inc-00096) | AI Chatbot Encourages Suicide, Prompting Parental Outcry Over Online Safety | Critical | LLM05 | ASI09 |  |
+| 1,306 | 2026-03-10 | [`INC-00139`](docs/incidents/2026.md#inc-00139) | AI Data Centers Projected to Strain U.S. Water Supplies by 2030 | High | LLM05 | ASI05 |  |
+| 1,307 | 2026-03-10 | [`INC-00213`](docs/incidents/2026.md#inc-00213) | AI Sycophancy and Rising Vulnerabilities Lead to Social and Cybersecurity Harms | High | LLM05 | ASI05, ASI09 |  |
+| 1,308 | 2026-03-10 | [`INC-00287`](docs/incidents/2026.md#inc-00287) | AI-Driven Data Centers Spark Environmental and Social Conflicts in Latin America | High | LLM05 | ASI05 |  |
+| 1,309 | 2026-03-10 | [`INC-00294`](docs/incidents/2026.md#inc-00294) | AI-Driven Drones Cause Major Losses in Ukraine Conflict | High | LLM05 | ASI05 |  |
+| 1,310 | 2026-03-10 | [`INC-00303`](docs/incidents/2026.md#inc-00303) | AI-Driven Identity Attacks Surpass Stolen Credentials as Top Enterprise Threat | High | LLM09 | ASI09 |  |
+| 1,311 | 2026-03-10 | [`INC-00338`](docs/incidents/2026.md#inc-00338) | AI-Enabled Drones Cause Damage in Middle East; Taiwan Expands AI Military Capabilities | High | LLM05 | ASI05, ASI09, ASI10 |  |
+| 1,312 | 2026-03-10 | [`INC-00401`](docs/incidents/2026.md#inc-00401) | AI-Generated Deepfake Videos Harm Chinese Celebrities | High | LLM09 | ASI09 |  |
+| 1,313 | 2026-03-10 | [`INC-00449`](docs/incidents/2026.md#inc-00449) | AI-Generated Fake Images Used in Disinformation Campaign Against Taiwanese Baseball Fans | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,314 | 2026-03-10 | [`INC-00481`](docs/incidents/2026.md#inc-00481) | AI-Generated Malware Obscures Cyberattack Origins, Hindering Detection | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,315 | 2026-03-10 | [`INC-00556`](docs/incidents/2026.md#inc-00556) | AI-Powered Surveillance Cameras Spark Privacy and Rights Violations Debate Across U.S. | High | LLM05 | ASI05 |  |
+| 1,316 | 2026-03-10 | [`INC-00646`](docs/incidents/2026.md#inc-00646) | Armadin Raises $189.9M to Develop Autonomous AI Cyber Defense Platform | High |  |  |  |
+| 1,317 | 2026-03-10 | [`INC-00704`](docs/incidents/2026.md#inc-00704) | Brazil Investigates TikTok AI Algorithms Over Viral Trend Inciting Violence Against Women | Medium |  |  |  |
+| 1,318 | 2026-03-10 | [`INC-00788`](docs/incidents/2026.md#inc-00788) | Chinese Authorities Restrict OpenClaw AI Agent Amid Security Concerns | High | LLM01, LLM02 | ASI01, ASI03 |  |
+| 1,319 | 2026-03-10 | [`INC-00909`](docs/incidents/2026.md#inc-00909) | Drone Strikes on AI Data Centers Disrupt Critical Infrastructure in Middle East | High | LLM05 | ASI05 |  |
+| 1,320 | 2026-03-10 | [`INC-00910`](docs/incidents/2026.md#inc-00910) | Drones Near Airports in Bulgaria Pose Serious AI-Driven Collision Risk | Medium |  |  |  |
+| 1,321 | 2026-03-10 | [`INC-01056`](docs/incidents/2026.md#inc-01056) | Fujitsu Launches AI Decision Support Program for Japanese Defense | Medium |  | ASI10 |  |
+| 1,322 | 2026-03-10 | [`INC-01111`](docs/incidents/2026.md#inc-01111) | Google Deploys AI Agents for Pentagon Amid Anthropic Legal Dispute and Sanctions | Critical |  | ASI10 |  |
+| 1,323 | 2026-03-10 | [`INC-01148`](docs/incidents/2026.md#inc-01148) | Grok Allegedly Generated Publicly Visible Sexist Abuse Targeting Swiss Finance Minister Karin Keller-Sutter A… | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,324 | 2026-03-10 | [`INC-01394`](docs/incidents/2026.md#inc-01394) | Meta Acquires Moltbook Amid AI Agent Security Concerns | High | LLM01, LLM09 | ASI01, ASI09 |  |
+| 1,325 | 2026-03-10 | [`INC-01402`](docs/incidents/2026.md#inc-01402) | Meta Criticized for Inadequate AI Deepfake Moderation During Iran-Israel Conflict | High | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
+| 1,326 | 2026-03-10 | [`INC-01406`](docs/incidents/2026.md#inc-01406) | Meta Faces Legal Action for Training AI on Millions of Pirated Books | High |  |  |  |
+| 1,327 | 2026-03-10 | [`INC-01435`](docs/incidents/2026.md#inc-01435) | Microsoft Excel XSS Weaponizes Copilot Agent (CVE-2026-26144) | High | LLM01, LLM02 | ASI01, ASI02, ASI03, ASI09 | `CVE-2026-26144` |
+| 1,328 | 2026-03-10 | [`INC-01450`](docs/incidents/2026.md#inc-01450) | Minnesota Lawmakers Propose Bipartisan AI Regulations to Protect Minors | Medium | LLM05 | ASI09 |  |
+| 1,329 | 2026-03-10 | [`INC-01687`](docs/incidents/2026.md#inc-01687) | Punjab Cyber Fraudsters Use AI Voice-Changing and Deepfake Videos for Extortion | High | LLM09 | ASI09 |  |
+| 1,330 | 2026-03-10 | [`INC-01689`](docs/incidents/2026.md#inc-01689) | Punjab Police Use AI Voice Recognition to Combat Organized Crime | High | LLM05 | ASI05 |  |
+| 1,331 | 2026-03-10 | [`INC-01695`](docs/incidents/2026.md#inc-01695) | Purported AI-Generated Nude Images Reportedly Used to Extort Wichita Man in Kansas | High | LLM09 | ASI09 |  |
+| 1,332 | 2026-03-10 | [`INC-01771`](docs/incidents/2026.md#inc-01771) | Sikorsky and Robinson Unveil Autonomous R66 TURBINETRUCK Helicopter with MATRIX AI System | Medium |  |  |  |
+| 1,333 | 2026-03-10 | [`INC-01864`](docs/incidents/2026.md#inc-01864) | Tesla FSD Failures Lead to Crashes and Lawsuits in the US | High | LLM05 | ASI05 |  |
+| 1,334 | 2026-03-10 | [`INC-01917`](docs/incidents/2026.md#inc-01917) | Trust Wallet Launches AI-Powered Real-Time Scam Address Protection | High | LLM04, LLM05 | ASI05, ASI06, ASI09 |  |
+| 1,335 | 2026-03-10 | [`INC-01993`](docs/incidents/2026.md#inc-01993) | US Court Blocks Perplexity AI's Shopping Bots on Amazon | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 1,336 | 2026-03-10 | [`INC-02018`](docs/incidents/2026.md#inc-02018) | US Military Confirms Use of AI in Iran Strikes, Causing Civilian Harm | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI10 |  |
+| 1,337 | 2026-03-10 | [`INC-02019`](docs/incidents/2026.md#inc-02019) | US Military Deploys AI Systems for Battlefield Targeting and Strike Decisions | Critical | LLM05, LLM09 | ASI05, ASI10 |  |
+| 1,338 | 2026-03-10 | [`INC-02030`](docs/incidents/2026.md#inc-02030) | US Regulators Review Zoox Petition to Deploy Fully Autonomous Robotaxis | Medium |  |  |  |
+| 1,339 | 2026-03-10 | [`INC-02101`](docs/incidents/2026.md#inc-02101) | X Suspends 800 Million Accounts Over AI-Driven Manipulation and Spam | High | LLM05, LLM09 | ASI05 |  |
+| 1,340 | 2026-03-10 | [`INC-02115`](docs/incidents/2026.md#inc-02115) | ZenaTech Develops Autonomous Maritime Drone Defense System | High | LLM05 | ASI05, ASI10 |  |
+| 1,341 | 2026-03-09 | [`INC-00223`](docs/incidents/2026.md#inc-00223) | AI System Targets Cheating in Honor of Kings, Bans 1.27 Million Accounts | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,342 | 2026-03-09 | [`INC-00228`](docs/incidents/2026.md#inc-00228) | AI Systems Improve Early Breast Cancer Detection in UK NHS Trials | Critical | LLM05 | ASI05 |  |
+| 1,343 | 2026-03-09 | [`INC-00230`](docs/incidents/2026.md#inc-00230) | AI Systems Threaten Online Anonymity by Accurately Identifying Users | High |  | ASI09 |  |
+| 1,344 | 2026-03-09 | [`INC-00239`](docs/incidents/2026.md#inc-00239) | AI Tools Expose Security Flaws in Legacy and Smart Home Devices, Leading to Privacy Risks | High | LLM05 | ASI05 |  |
+| 1,345 | 2026-03-09 | [`INC-00247`](docs/incidents/2026.md#inc-00247) | AI Uncovers Massive Restaurant Tax Evasion in India | High | LLM05 | ASI05, ASI09 |  |
+| 1,346 | 2026-03-09 | [`INC-00248`](docs/incidents/2026.md#inc-00248) | AI Uncovers Massive Tax Evasion in Rajasthan Land Deals | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,347 | 2026-03-09 | [`INC-00455`](docs/incidents/2026.md#inc-00455) | AI-Generated Fake Media Fuels Misinformation in Middle East Conflict | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,348 | 2026-03-09 | [`INC-00498`](docs/incidents/2026.md#inc-00498) | AI-Generated Satellite Images Used for Misinformation in Iran Conflict | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,349 | 2026-03-09 | [`INC-00516`](docs/incidents/2026.md#inc-00516) | AI-Generated Voice Scam Impersonates Bharti Singh in Slimming Product Fraud | Medium | LLM09 | ASI09 |  |
+| 1,350 | 2026-03-09 | [`INC-00525`](docs/incidents/2026.md#inc-00525) | AI-Manipulated Audio Recordings Target Slovenian Political Party | Medium | LLM09 | ASI09 |  |
+| 1,351 | 2026-03-09 | [`INC-00565`](docs/incidents/2026.md#inc-00565) | AI-Powered Video Surveillance Pilot at Berlin Government Sites Raises Privacy Concerns | High |  |  |  |
+| 1,352 | 2026-03-09 | [`INC-00576`](docs/incidents/2026.md#inc-00576) | Amazon Alexa Makes Inappropriate Comments to Child, Prompting Parental Outrage | High | LLM05 | ASI05 |  |
+| 1,353 | 2026-03-09 | [`INC-00662`](docs/incidents/2026.md#inc-00662) | Automated Traffic Fines System in Kenya Sparks Legal and Public Backlash | High | LLM05 | ASI05 |  |
+| 1,354 | 2026-03-09 | [`INC-00829`](docs/incidents/2026.md#inc-00829) | Claude Opus 4.6 Outsmarts AI Benchmark by Decrypting Answer Key | Medium |  |  |  |
+| 1,355 | 2026-03-09 | [`INC-00908`](docs/incidents/2026.md#inc-00908) | Douyin E-commerce Cracks Down on AI-Generated Celebrity Impersonation Scams | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,356 | 2026-03-09 | [`INC-01122`](docs/incidents/2026.md#inc-01122) | Google Sued by Indie Musicians for Training AI Music Models on Copyrighted Works | High |  |  |  |
+| 1,357 | 2026-03-09 | [`INC-01127`](docs/incidents/2026.md#inc-01127) | Google's AI Search Feature Causes Major Traffic and Revenue Loss for News Publishers in Turkey | High | LLM05 | ASI05 |  |
+| 1,358 | 2026-03-09 | [`INC-01163`](docs/incidents/2026.md#inc-01163) | Hezbollah Uses AI-Guided Drones and Google Maps in Attack on British Base in Cyprus | Medium |  |  |  |
+| 1,359 | 2026-03-09 | [`INC-01234`](docs/incidents/2026.md#inc-01234) | Indian Organisations Face Surge in AI-Driven Deepfake Attacks | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,360 | 2026-03-09 | [`INC-01797`](docs/incidents/2026.md#inc-01797) | SPARC AI Deploys Overwatch AI Targeting Platform for Military Testing in Ukraine | Medium |  |  |  |
+| 1,361 | 2026-03-09 | [`INC-01862`](docs/incidents/2026.md#inc-01862) | Tesla FSD AI System Faces Crashes, Injuries, and Federal Probe | Critical | LLM05 | ASI05 |  |
+| 1,362 | 2026-03-09 | [`INC-01935`](docs/incidents/2026.md#inc-01935) | Uber, Nissan, and Wayve Plan Tokyo Robotaxi Trial Using AI-Driven Vehicles | High | LLM05 | ASI05 |  |
+| 1,363 | 2026-03-09 | [`INC-01986`](docs/incidents/2026.md#inc-01986) | US Army Contracts Elbit America for AI-Enabled Soldier Battlefield System | Critical |  |  |  |
+| 1,364 | 2026-03-09 | [`INC-02100`](docs/incidents/2026.md#inc-02100) | X Investigates Grok Chatbot for Generating Racist and Offensive Posts | High | LLM05, LLM09 | ASI05 |  |
+| 1,365 | 2026-03-08 | [`INC-00098`](docs/incidents/2026.md#inc-00098) | AI Chatbot Grok Generates Offensive and Harmful Content About Football Tragedies | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,366 | 2026-03-08 | [`INC-00121`](docs/incidents/2026.md#inc-00121) | AI Chatbots Promote Illegal Gambling and Advise on Bypassing Safeguards | Critical | LLM05 | ASI09 |  |
+| 1,367 | 2026-03-08 | [`INC-00140`](docs/incidents/2026.md#inc-00140) | AI Data Centers Raise Concerns Over Power Grid Strain and Environmental Impact in the US | High | LLM05 | ASI05 |  |
+| 1,368 | 2026-03-08 | [`INC-00295`](docs/incidents/2026.md#inc-00295) | AI-Driven Dynamic Pricing Leads to Consumer Harm and Regulatory Scrutiny | High | LLM05 | ASI05 |  |
+| 1,369 | 2026-03-08 | [`INC-00378`](docs/incidents/2026.md#inc-00378) | AI-Generated Deepfake Images Used to Harass Slovenian Activist | Medium | LLM09 | ASI09 |  |
+| 1,370 | 2026-03-08 | [`INC-00700`](docs/incidents/2026.md#inc-00700) | Bombay Stock Exchange Warns of Fraudulent Deepfake Video Scam | Medium | LLM09 | ASI09 |  |
+| 1,371 | 2026-03-08 | [`INC-00841`](docs/incidents/2026.md#inc-00841) | Colombian President Raises Concerns Over Electoral Software Transparency | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,372 | 2026-03-08 | [`INC-00926`](docs/incidents/2026.md#inc-00926) | Egypt Launches AI-Powered Digital Pathology Network to Improve Cancer Diagnosis | Medium |  |  |  |
+| 1,373 | 2026-03-07 | [`INC-00075`](docs/incidents/2026.md#inc-00075) | AI Agents in Research Study Leak Data and Delete Systems After Malfunction | High |  |  |  |
+| 1,374 | 2026-03-07 | [`INC-00076`](docs/incidents/2026.md#inc-00076) | AI Algorithm Manipulation Silences Dissent on X Platform | High | LLM05, LLM09 | ASI05 |  |
+| 1,375 | 2026-03-07 | [`INC-00077`](docs/incidents/2026.md#inc-00077) | AI Algorithms Used for Content Suppression and Low-Quality Content Cleanup in China | High | LLM05, LLM09 | ASI05 |  |
+| 1,376 | 2026-03-07 | [`INC-00105`](docs/incidents/2026.md#inc-00105) | AI Chatbots Facilitate Violence and Harm, Raise Mental Health and Safety Concerns | Medium | LLM05, LLM09 | ASI09 |  |
+| 1,377 | 2026-03-07 | [`INC-00330`](docs/incidents/2026.md#inc-00330) | AI-Enabled Armed Robots Used in Ukraine War Cause Battlefield Harm | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,378 | 2026-03-07 | [`INC-00573`](docs/incidents/2026.md#inc-00573) | Alibaba AI Agent ROME Engages in Unauthorized Crypto Mining and Network Tunneling | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,379 | 2026-03-07 | [`INC-01629`](docs/incidents/2026.md#inc-01629) | Pentagon and Anthropic Clash Over Military Use of AI Models | Medium | LLM03 | ASI04, ASI10 |  |
+| 1,380 | 2026-03-07 | [`INC-01792`](docs/incidents/2026.md#inc-01792) | SpaceX's Million-Satellite AI Data Center Plan Raises Environmental and Astronomical Concerns | Medium |  |  |  |
+| 1,381 | 2026-03-06 | [`INC-00387`](docs/incidents/2026.md#inc-00387) | AI-Generated Deepfake Scam Impersonates Spanish TV Host Pablo Motos | Medium | LLM09 | ASI09 |  |
+| 1,382 | 2026-03-06 | [`INC-00530`](docs/incidents/2026.md#inc-00530) | AI-Powered Age Verification Sparks Privacy and Surveillance Fears in the US | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,383 | 2026-03-06 | [`INC-00724`](docs/incidents/2026.md#inc-00724) | California Colleges' AI Chatbots Provide Inaccurate Information, Frustrating Students | High | LLM05, LLM09 | ASI05 |  |
+| 1,384 | 2026-03-06 | [`INC-00922`](docs/incidents/2026.md#inc-00922) | EagleNXT Invests in Israeli AI-Enabled Autonomous Weapons Developer | Medium |  | ASI10 |  |
+| 1,385 | 2026-03-06 | [`INC-01839`](docs/incidents/2026.md#inc-01839) | Teacher Forced to Quit After Colleague Creates and Distributes Deepfake Pornography | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,386 | 2026-03-06 | [`INC-01997`](docs/incidents/2026.md#inc-01997) | US Deploys AI-Powered Merops Anti-Drone Systems to Middle East to Counter Iranian Threats | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
+| 1,387 | 2026-03-06 | [`INC-02043`](docs/incidents/2026.md#inc-02043) | Vinod Khosla Predicts AI Will Replace 80% of Jobs by 2030 | Medium |  |  |  |
+| 1,388 | 2026-03-06 | [`INC-02045`](docs/incidents/2026.md#inc-02045) | Virgin Media O2 Uses AI to Block Over 1 Billion Scam Calls | Medium | LLM09 | ASI09 |  |
+| 1,389 | 2026-03-05 | [`INC-00177`](docs/incidents/2026.md#inc-00177) | AI Legal Advice Leads to Lawsuits and Court Sanctions | High | LLM05 | ASI05 |  |
+| 1,390 | 2026-03-05 | [`INC-00224`](docs/incidents/2026.md#inc-00224) | AI System Used in Germany to Detect and Remove Harmful Online Content for Youth Protection | High | LLM05, LLM09 | ASI05 |  |
+| 1,391 | 2026-03-05 | [`INC-00288`](docs/incidents/2026.md#inc-00288) | AI-Driven Deepfake and Biometric Fraud Surges Across Africa | High | LLM09 | ASI09 |  |
+| 1,392 | 2026-03-05 | [`INC-00326`](docs/incidents/2026.md#inc-00326) | AI-Driven Targeting in Iran Leads to Civilian Harm and Raises Global Concerns | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05 |  |
+| 1,393 | 2026-03-05 | [`INC-00355`](docs/incidents/2026.md#inc-00355) | AI-Enabled Spyware 'Graphite' Used to Illegally Monitor Journalists and Activists in Italy | High | LLM02, LLM05 | ASI02, ASI05 |  |
+| 1,394 | 2026-03-05 | [`INC-00537`](docs/incidents/2026.md#inc-00537) | AI-Powered Chatbots Used in Sophisticated Investment Scams on Messaging Apps in Italy | Medium |  | ASI09 |  |
+| 1,395 | 2026-03-05 | [`INC-00794`](docs/incidents/2026.md#inc-00794) | Chinese Lawmaker Raises AI Assistant Privacy Risks; ByteDance Responds | High |  | ASI09 |  |
+| 1,396 | 2026-03-05 | [`INC-00921`](docs/incidents/2026.md#inc-00921) | Dutch Privacy Authority Warns of Rising AI Risks and Urges Immediate Regulation | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,397 | 2026-03-05 | [`INC-00970`](docs/incidents/2026.md#inc-00970) | Europol Warns of AI-Driven Cyber Threats Amid Iran Crisis | Medium | LLM09 | ASI09 |  |
+| 1,398 | 2026-03-05 | [`INC-01044`](docs/incidents/2026.md#inc-01044) | Fox News Misattributes Ukrainian AI Drone Footage as US Military Technology | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,399 | 2026-03-05 | [`INC-01176`](docs/incidents/2026.md#inc-01176) | IBM Report: Surge in AI-Driven Cyberattacks Exploiting Security Vulnerabilities | Critical | LLM02, LLM05 | ASI03, ASI05, ASI10 |  |
+| 1,400 | 2026-03-05 | [`INC-01225`](docs/incidents/2026.md#inc-01225) | India Tests AI-Powered Swarm Interceptor for Drone Defence | High | LLM05 | ASI05, ASI10 |  |
+| 1,401 | 2026-03-05 | [`INC-01269`](docs/incidents/2026.md#inc-01269) | Japan Seeks to Join NATO's AI-Driven Defense Innovation Project | High | LLM02, LLM04, LLM05, LLM09 | ASI03, ASI05, ASI06, ASI09 |  |
+| 1,402 | 2026-03-05 | [`INC-01630`](docs/incidents/2026.md#inc-01630) | Pentagon and Gulf States Consider Ukrainian AI Drones to Counter Iranian Attacks | High | LLM05 | ASI05 |  |
+| 1,403 | 2026-03-05 | [`INC-01694`](docs/incidents/2026.md#inc-01694) | Purported AI-Generated Inland Revenue Scam Ads Reportedly Impersonated New Zealand Commissioner Peter Mersi i… | High | LLM09 | ASI09 |  |
+| 1,404 | 2026-03-04 | [`INC-00171`](docs/incidents/2026.md#inc-00171) | AI Hallucination in Police Report Leads to Fan Ban and Public Apology | High | LLM05, LLM09 | ASI05 |  |
+| 1,405 | 2026-03-04 | [`INC-00185`](docs/incidents/2026.md#inc-00185) | AI Model Evo2 Raises Bioethics Concerns Over DNA Editing Capabilities | Medium |  |  |  |
+| 1,406 | 2026-03-04 | [`INC-00233`](docs/incidents/2026.md#inc-00233) | AI Systems Used in US and Israeli Military Operations Cause Lethal Harm | Critical | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
+| 1,407 | 2026-03-04 | [`INC-00328`](docs/incidents/2026.md#inc-00328) | AI-Driven Work Management Causes Harm to Workers | Critical |  |  |  |
+| 1,408 | 2026-03-04 | [`INC-00357`](docs/incidents/2026.md#inc-00357) | AI-Enabled Tycoon 2FA Phishing Platform Disrupted After Global Harm | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
+| 1,409 | 2026-03-04 | [`INC-00361`](docs/incidents/2026.md#inc-00361) | AI-Facilitated Sexual Violence Against Children in Brazil | Medium | LLM05 | ASI09 |  |
+| 1,410 | 2026-03-04 | [`INC-00470`](docs/incidents/2026.md#inc-00470) | AI-Generated Fake War Videos Spread via Hacked Accounts on X | High | LLM05, LLM09 | ASI05 |  |
+| 1,411 | 2026-03-04 | [`INC-00507`](docs/incidents/2026.md#inc-00507) | AI-Generated Translations Introduce Errors in Wikipedia Articles | High | LLM05, LLM09 | ASI05 |  |
+| 1,412 | 2026-03-04 | [`INC-00526`](docs/incidents/2026.md#inc-00526) | AI-Manipulated Images Used to Bypass Facial Recognition in Bank Fraud Scheme in Japan | High |  | ASI09 |  |
+| 1,413 | 2026-03-04 | [`INC-00933`](docs/incidents/2026.md#inc-00933) | Embraer and Valkyrie Aero Integrate AI-Powered Anti-Drone System into Super Tucano | High | LLM05 | ASI05 |  |
+| 1,414 | 2026-03-04 | [`INC-01223`](docs/incidents/2026.md#inc-01223) | India Develops AI-Enabled Bodyguard Satellites for Space Security | Critical | LLM05 | ASI05 |  |
+| 1,415 | 2026-03-04 | [`INC-01536`](docs/incidents/2026.md#inc-01536) | Nippon Life Alleged ChatGPT Practiced Law Without a License in Illinois Disability Case | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,416 | 2026-03-04 | [`INC-01737`](docs/incidents/2026.md#inc-01737) | Risks of Autonomous AI Agent Interactions and Governance Challenges | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 1,417 | 2026-03-04 | [`INC-01743`](docs/incidents/2026.md#inc-01743) | Romanian Company Launches AI-Powered Autonomous Drone Countermeasure System | High | LLM05 | ASI05 |  |
+| 1,418 | 2026-03-03 | [`INC-00094`](docs/incidents/2026.md#inc-00094) | AI Chatbot Biases Influence Public Political Opinions | High | LLM05 | ASI05 |  |
+| 1,419 | 2026-03-03 | [`INC-00095`](docs/incidents/2026.md#inc-00095) | AI Chatbot Conversations Used as Evidence in Antitrust Investigations Lead to Major Fines | Medium |  |  |  |
+| 1,420 | 2026-03-03 | [`INC-00176`](docs/incidents/2026.md#inc-00176) | AI Language Models Reinforce Gender Stereotypes and Inequality Among Young Women | High | LLM05 | ASI05 |  |
+| 1,421 | 2026-03-03 | [`INC-00178`](docs/incidents/2026.md#inc-00178) | AI License Plate Readers Breach Privacy Laws in California | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,422 | 2026-03-03 | [`INC-00313`](docs/incidents/2026.md#inc-00313) | AI-Driven Online Violence Against Women in Spain | Medium | LLM09 | ASI09 |  |
+| 1,423 | 2026-03-03 | [`INC-00325`](docs/incidents/2026.md#inc-00325) | AI-Driven Surveillance Enables Assassination of Iran's Supreme Leader | Critical | LLM05 | ASI05 |  |
+| 1,424 | 2026-03-03 | [`INC-00348`](docs/incidents/2026.md#inc-00348) | AI-Enabled Iranian Drone Strike Kills US Soldiers in Kuwait | Critical | LLM05 | ASI05 |  |
+| 1,425 | 2026-03-03 | [`INC-00436`](docs/incidents/2026.md#inc-00436) | AI-Generated Disinformation Undermines Nepal's Election | Medium | LLM09 | ASI09 |  |
+| 1,426 | 2026-03-03 | [`INC-00531`](docs/incidents/2026.md#inc-00531) | AI-Powered Airstrikes Accelerate Lethal Decision-Making in Iran Conflict | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
+| 1,427 | 2026-03-03 | [`INC-00534`](docs/incidents/2026.md#inc-00534) | AI-Powered Avalanche Warning System Deployed in Austrian Ski Resort | Critical |  |  |  |
+| 1,428 | 2026-03-03 | [`INC-01070`](docs/incidents/2026.md#inc-01070) | Georgia Senator Uses AI to Create Islamophobic Campaign Ad, Sparks Backlash | Medium |  |  |  |
+| 1,429 | 2026-03-03 | [`INC-01654`](docs/incidents/2026.md#inc-01654) | Police Use Facial Recognition AI for Public Safety and Arrests in UK Cities | High | LLM05 | ASI05 |  |
+| 1,430 | 2026-03-03 | [`INC-01952`](docs/incidents/2026.md#inc-01952) | UK Startup Develops AI for Autonomous Military Drone Teams | Medium |  |  |  |
+| 1,431 | 2026-03-03 | [`INC-02117`](docs/incidents/2026.md#inc-02117) | Zero-Click Prompt Injection in Perplexity's Comet AI Browser Enables Credential Theft | High | LLM01, LLM02 | ASI01, ASI02 |  |
+| 1,432 | 2026-03-02 | [`INC-00090`](docs/incidents/2026.md#inc-00090) | AI Cancer Pathology Tools Risk Unreliable Diagnoses Due to Shortcut Learning | Medium |  |  |  |
+| 1,433 | 2026-03-02 | [`INC-00112`](docs/incidents/2026.md#inc-00112) | AI Chatbots in Mental Health Counseling Pose Ethical and Safety Risks, Study Finds | High | LLM05 | ASI05 |  |
+| 1,434 | 2026-03-02 | [`INC-00154`](docs/incidents/2026.md#inc-00154) | AI Deepfake Voice Scams Target 1 in 4 Americans, Causing Financial and Emotional Harm | Medium | LLM09 | ASI09 |  |
+| 1,435 | 2026-03-02 | [`INC-00312`](docs/incidents/2026.md#inc-00312) | AI-Driven Online Financial Scams Surge in Bulgaria | Medium | LLM09 | ASI09 |  |
+| 1,436 | 2026-03-02 | [`INC-00314`](docs/incidents/2026.md#inc-00314) | AI-Driven Phishing Attacks Bypass Microsoft Security, Compromise Thousands | High | LLM02 | ASI03, ASI09 |  |
+| 1,437 | 2026-03-02 | [`INC-00354`](docs/incidents/2026.md#inc-00354) | AI-Enabled Shahed Drone Attack Forces Evacuation of British Bases in Cyprus | High | LLM05 | ASI05, ASI10 |  |
+| 1,438 | 2026-03-02 | [`INC-00373`](docs/incidents/2026.md#inc-00373) | AI-Generated Content on Chinese Platforms Causes Harm and Triggers Regulatory Crackdown | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,439 | 2026-03-02 | [`INC-00476`](docs/incidents/2026.md#inc-00476) | AI-Generated Images Enable Sophisticated Refund Fraud on Vinted and E-Commerce Platforms | High | LLM05 | ASI05, ASI09 |  |
+| 1,440 | 2026-03-02 | [`INC-00568`](docs/incidents/2026.md#inc-00568) | AI-Powered WiFi Systems Enable Through-Wall Human Detection, Raising Privacy and Surveillance Concerns | High | LLM05 | ASI05 |  |
+| 1,441 | 2026-03-02 | [`INC-00684`](docs/incidents/2026.md#inc-00684) | Bengaluru Techie Fires Cook After AI Surveillance Detects Theft | High |  |  |  |
+| 1,442 | 2026-03-02 | [`INC-00695`](docs/incidents/2026.md#inc-00695) | Blind YouTuber Applies for Neuralink AI Vision Restoration Trial | High | LLM05 | ASI05 |  |
+| 1,443 | 2026-03-02 | [`INC-00768`](docs/incidents/2026.md#inc-00768) | China Raises Concerns Over US Plans for AI-Powered Cyber Operations | Medium |  |  |  |
+| 1,444 | 2026-03-02 | [`INC-00867`](docs/incidents/2026.md#inc-00867) | Ctrip's AI Pricing Tools Cause Market Disruption and Regulatory Scrutiny | High | LLM05 | ASI05 |  |
+| 1,445 | 2026-03-02 | [`INC-00906`](docs/incidents/2026.md#inc-00906) | DOJ Attorney Reportedly Used AI to File Brief With Purportedly Fabricated Quotes and Misstated Case Holdings | High | LLM09 | ASI09 |  |
+| 1,446 | 2026-03-02 | [`INC-01010`](docs/incidents/2026.md#inc-01010) | Flock Safety License Plate Reader Data Sharing Sparks Privacy and Rights Concerns in California | High | LLM05 | ASI05 |  |
+| 1,447 | 2026-03-02 | [`INC-01108`](docs/incidents/2026.md#inc-01108) | Google Chrome Gemini AI Vulnerability Exposes Users to Surveillance and Data Theft | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 1,448 | 2026-03-02 | [`INC-01145`](docs/incidents/2026.md#inc-01145) | Grok AI Generates Child Sexual Abuse Images, Prompting Garda Investigations | High | LLM05, LLM09 | ASI05 |  |
+| 1,449 | 2026-03-02 | [`INC-01684`](docs/incidents/2026.md#inc-01684) | Proposed AI Data Centre in Durban Raises Resource and Governance Concerns | High | LLM05 | ASI05 |  |
+| 1,450 | 2026-03-02 | [`INC-01734`](docs/incidents/2026.md#inc-01734) | Researchers Warn of Privacy Risks in AI-Based Age Verification Systems | High |  |  |  |
+| 1,451 | 2026-03-02 | [`INC-01766`](docs/incidents/2026.md#inc-01766) | Seoul's AI System Rapidly Deletes Digital Sexual Crime Content Nationwide | Medium |  |  |  |
+| 1,452 | 2026-03-02 | [`INC-01827`](docs/incidents/2026.md#inc-01827) | Supreme Court Flags Use of AI-Generated Fake Judgments in Indian Trial Court | High | LLM05, LLM09 | ASI05 |  |
+| 1,453 | 2026-03-02 | [`INC-01847`](docs/incidents/2026.md#inc-01847) | Telkom Indonesia Warns of Data Leakage Risks from Public AI Use | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,454 | 2026-03-02 | [`INC-02078`](docs/incidents/2026.md#inc-02078) | Waymo Robotaxi Impedes Emergency Response and Is Shot at During Austin Shootings | Critical | LLM05 | ASI05 |  |
+| 1,455 | 2026-03-01 | [`INC-00529`](docs/incidents/2026.md#inc-00529) | AI-Orchestrated Strike Kills Iranian Leader in Tehran | Critical | LLM05, LLM09 | ASI05, ASI10 |  |
+| 1,456 | 2026-03-01 | [`INC-00567`](docs/incidents/2026.md#inc-00567) | AI-Powered WaTracker App Circumvents WhatsApp Privacy Controls | High | LLM05 | ASI05 |  |
+| 1,457 | 2026-03-01 | [`INC-00652`](docs/incidents/2026.md#inc-00652) | Australia Threatens to Block AI Services Over Age Verification Failures | High | LLM05 | ASI05, ASI09 |  |
+| 1,458 | 2026-03-01 | [`INC-00751`](docs/incidents/2026.md#inc-00751) | ChatGPT Linked to Worsening Mental Health and Legal Action Prompts Safeguards | High | LLM05 | ASI09 |  |
+| 1,459 | 2026-03-01 | [`INC-00840`](docs/incidents/2026.md#inc-00840) | Colombian Election Software Faces Allegations of Vulnerabilities and Manipulation Risks | Medium | LLM09 | ASI09 |  |
+| 1,460 | 2026-03-01 | [`INC-00862`](docs/incidents/2026.md#inc-00862) | Critical OpenClaw AI Vulnerability Allows Malicious Websites to Hijack Local AI Agents | High | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 1,461 | 2026-03-01 | [`INC-01456`](docs/incidents/2026.md#inc-01456) | Misuse and Malfunction of Driver Assistance AI Systems Cause Traffic Accidents in Taiwan and China | Critical | LLM05, LLM09 | ASI05 |  |
+| 1,462 | 2026-03-01 | [`INC-01662`](docs/incidents/2026.md#inc-01662) | Potential AI-Enabled Satellite Warfare Risks Between US and China | Critical | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 1,463 | 2026-03-01 | [`INC-01685`](docs/incidents/2026.md#inc-01685) | Public Boycott of OpenAI After Pentagon AI Deal Raises Military AI Ethics Concerns | Medium | LLM03 | ASI04, ASI10 |  |
+| 1,464 | 2026-03-01 | [`INC-01953`](docs/incidents/2026.md#inc-01953) | UK Teen's Suicide Linked to Harmful AI-Driven Social Media Algorithms | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,465 | 2026-03-01 | [`INC-02020`](docs/incidents/2026.md#inc-02020) | US Military Deploys AI-Enabled LUCAS Suicide Drones Against Iran | Critical | LLM05 | ASI05, ASI09, ASI10 |  |
+| 1,466 | 2026-03-01 | [`INC-02046`](docs/incidents/2026.md#inc-02046) | Virginia Police Violate ALPR Laws, Raising Privacy Concerns | High | LLM05 | ASI05 |  |
+| 1,467 | 2026-03 | [`INC-00004`](docs/incidents/2026.md#inc-00004) | A command injection vulnerability exists in MLflow's model serving container initialization code, specificall… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15379` |
+| 1,468 | 2026-03 | [`INC-00005`](docs/incidents/2026.md#inc-00005) | A command injection vulnerability exists in mlflow/mlflow versions before v3.7.0, specifically in the `mlflow… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-14287` |
+| 1,469 | 2026-03 | [`INC-00006`](docs/incidents/2026.md#inc-00006) | A command injection vulnerability exists in mlflow/mlflow when serving a model with `enable_mlserver=True`. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-0596` |
+| 1,470 | 2026-03 | [`INC-00007`](docs/incidents/2026.md#inc-00007) | A command injection vulnerability in ModelScope's ms-agent versions v1.6.0rc1 and earlier exists, allowing an… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-2256` |
+| 1,471 | 2026-03 | [`INC-00008`](docs/incidents/2026.md#inc-00008) | A cross-session information disclosure vulnerability exists in the awesome-llm-apps project in commit e46690f… | High | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-29872` |
+| 1,472 | 2026-03 | [`INC-00009`](docs/incidents/2026.md#inc-00009) | A directory traversal vulnerability in the agentic-context-engine project versions up to 0.7.1 allows arbitra… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-29870` |
+| 1,473 | 2026-03 | [`INC-00011`](docs/incidents/2026.md#inc-00011) | A path traversal vulnerability exists in the `extract_archive_to_dir` function within the `mlflow/pyfunc/dbco… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15036` |
+| 1,474 | 2026-03 | [`INC-00012`](docs/incidents/2026.md#inc-00012) | A path traversal vulnerability exists in the awesome-llm-apps project in commit e46690f99c3f08be80a9877fab52a… | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-29871` |
+| 1,475 | 2026-03 | [`INC-00014`](docs/incidents/2026.md#inc-00014) | A remote code execution (RCE) vulnerability in OpenClaw Agent Platform v2026.2.6 allows attackers to execute… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30741` |
+| 1,476 | 2026-03 | [`INC-00023`](docs/incidents/2026.md#inc-00023) | A vulnerability in MLflow's pyfunc extraction process allows for arbitrary file writes due to improper handli… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15031` |
+| 1,477 | 2026-03 | [`INC-00024`](docs/incidents/2026.md#inc-00024) | A vulnerability in NLTK versions up to and including 3.9.2 allows arbitrary file read via path traversal in m… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-0847` |
+| 1,478 | 2026-03 | [`INC-00050`](docs/incidents/2026.md#inc-00050) | Agentgateway — Vulnerability (CVE-2026-29791) | Medium | LLM03 | ASI04 | `CVE-2026-29791` |
+| 1,479 | 2026-03 | [`INC-00606`](docs/incidents/2026.md#inc-00606) | Anthropic leaks Claude source code in unsecured data store | High | LLM02, LLM07 | ASI03 |  |
+| 1,480 | 2026-03 | [`INC-00627`](docs/incidents/2026.md#inc-00627) | AnythingLLM Multiple CVEs | Critical | LLM01, LLM02, LLM03, LLM05 | ASI01, ASI02, ASI03, ASI04, ASI05 | `CVE-2026-24477` (+3) |
+| 1,481 | 2026-03 | [`INC-00630`](docs/incidents/2026.md#inc-00630) | AnythingLLM — Sql Injection (CVE-2026-32628) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-32628` |
+| 1,482 | 2026-03 | [`INC-00632`](docs/incidents/2026.md#inc-00632) | AnythingLLM — Vulnerability (CVE-2026-32715) | Low | LLM03 | ASI03, ASI04 | `CVE-2026-32715` |
+| 1,483 | 2026-03 | [`INC-00633`](docs/incidents/2026.md#inc-00633) | AnythingLLM — Vulnerability (CVE-2026-32717) | Low | LLM03 | ASI03, ASI04 | `CVE-2026-32717` |
+| 1,484 | 2026-03 | [`INC-00636`](docs/incidents/2026.md#inc-00636) | apconw Aix-DB — Sql Injection (CVE-2026-4530) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-3686` (+31) |
+| 1,485 | 2026-03 | [`INC-00671`](docs/incidents/2026.md#inc-00671) | Axios npm supply chain attack — North Korean Sapphire Sleet targets 70M weekly downloads | Critical | LLM03, LLM05, LLM06 | ASI04, ASI05 |  |
+| 1,486 | 2026-03 | [`INC-00673`](docs/incidents/2026.md#inc-00673) | Azure Data Explorer MCP Server is a Model Context Protocol (MCP) server that enables AI assistants to execute… | High | LLM03 | ASI04 | `CVE-2026-33980` |
+| 1,487 | 2026-03 | [`INC-00686`](docs/incidents/2026.md#inc-00686) | BentoML — Path Traversal (CVE-2026-27905) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27905` |
+| 1,488 | 2026-03 | [`INC-00687`](docs/incidents/2026.md#inc-00687) | BentoML — Rce (CVE-2026-33744) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33744` |
+| 1,489 | 2026-03 | [`INC-00696`](docs/incidents/2026.md#inc-00696) | Blinko — Rce (CVE-2026-23882) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-23882` |
+| 1,490 | 2026-03 | [`INC-00804`](docs/incidents/2026.md#inc-00804) | CKAN MCP Server — Prompt Injection (CVE-2026-33060) | Medium | LLM01, LLM05 | ASI01, ASI03, ASI05 | `CVE-2026-33060` |
+| 1,491 | 2026-03 | [`INC-00810`](docs/incidents/2026.md#inc-00810) | Claude Chrome Extension zero-click XSS prompt injection via any website | High | LLM01, LLM05 | ASI01 |  |
+| 1,492 | 2026-03 | [`INC-00823`](docs/incidents/2026.md#inc-00823) | Claude Code — Vulnerability (CVE-2026-33068) | High | LLM03 | ASI04 | `CVE-2026-33068` |
+| 1,493 | 2026-03 | [`INC-00828`](docs/incidents/2026.md#inc-00828) | Claude Mythos Identifies Thousands of Zero-Day Vulnerabilities | High | LLM10 | ASI02 |  |
+| 1,494 | 2026-03 | [`INC-00831`](docs/incidents/2026.md#inc-00831) | claude-hovercraft executeClaudeCode Command Injection Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-15060` |
+| 1,495 | 2026-03 | [`INC-00833`](docs/incidents/2026.md#inc-00833) | Claudy Day -- Claude.ai Prompt Injection Attack Chain | High | LLM01, LLM02, LLM04, LLM07 | ASI01, ASI06, ASI09 |  |
+| 1,496 | 2026-03 | [`INC-00835`](docs/incidents/2026.md#inc-00835) | Cloud CLI (aka Claude Code UI) is a desktop and mobile UI for Claude Code, Cursor CLI, Codex, and Gemini-CLI. | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31861` (+2) |
+| 1,497 | 2026-03 | [`INC-00860`](docs/incidents/2026.md#inc-00860) | CrewAI Critical Vulnerabilities (CVE-2026-2275 et al.) | Critical | LLM01, LLM02, LLM03, LLM05, LLM08 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-2275` (+3) |
+| 1,498 | 2026-03 | [`INC-00870`](docs/incidents/2026.md#inc-00870) | Cursor — Prompt Injection (CVE-2026-31854) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-31854` |
+| 1,499 | 2026-03 | [`INC-00895`](docs/incidents/2026.md#inc-00895) | Dify — Xss (CVE-2026-21866) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-21866` |
+| 1,500 | 2026-03 | [`INC-00898`](docs/incidents/2026.md#inc-00898) | Discourse — Prompt Injection (CVE-2026-27740) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-27740` |
+| 1,501 | 2026-03 | [`INC-00899`](docs/incidents/2026.md#inc-00899) | Discourse — Vulnerability (CVE-2026-32114) | Medium | LLM03 | ASI04 | `CVE-2026-32114` |
+| 1,502 | 2026-03 | [`INC-00928`](docs/incidents/2026.md#inc-00928) | Eight Attack Vectors in AWS Bedrock Agents | Medium | LLM01, LLM02, LLM04, LLM08 | ASI01, ASI02, ASI06 |  |
+| 1,503 | 2026-03 | [`INC-00989`](docs/incidents/2026.md#inc-00989) | FastGPT — Rce (CVE-2026-33075) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-33075` |
+| 1,504 | 2026-03 | [`INC-00996`](docs/incidents/2026.md#inc-00996) | FastGPT — Vulnerability (CVE-2026-32128) | Medium | LLM03 | ASI04 | `CVE-2026-32128` |
+| 1,505 | 2026-03 | [`INC-01001`](docs/incidents/2026.md#inc-01001) | FastMCP — Vulnerability (CVE-2025-69196) | Medium | LLM03 | ASI04 | `CVE-2025-69196` |
+| 1,506 | 2026-03 | [`INC-01023`](docs/incidents/2026.md#inc-01023) | Flowise — Ssrf (CVE-2026-31829) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31829` |
+| 1,507 | 2026-03 | [`INC-01027`](docs/incidents/2026.md#inc-01027) | Flowise — Vulnerability (CVE-2026-30820) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-30820` (+4) |
+| 1,508 | 2026-03 | [`INC-01088`](docs/incidents/2026.md#inc-01088) | Giskard — Rce (CVE-2026-34172) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34172` |
+| 1,509 | 2026-03 | [`INC-01091`](docs/incidents/2026.md#inc-01091) | Glances — Vulnerability (CVE-2026-32632) | Medium | LLM03 | ASI04 | `CVE-2026-32632` |
+| 1,510 | 2026-03 | [`INC-01092`](docs/incidents/2026.md#inc-01092) | GlassWorm supply chain — 72 malicious VSCode extensions, 9 million installs | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 1,511 | 2026-03 | [`INC-01139`](docs/incidents/2026.md#inc-01139) | Graphiti — Prompt Injection (CVE-2026-32247) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-32247` |
+| 1,512 | 2026-03 | [`INC-01152`](docs/incidents/2026.md#inc-01152) | GROWI OpenAI thread/message API endpoints do not perform authorization. | High | LLM03 | ASI04 | `CVE-2026-25083` |
+| 1,513 | 2026-03 | [`INC-01153`](docs/incidents/2026.md#inc-01153) | ha-mcp — Vulnerability (CVE-2026-32111) | Medium | LLM03 | ASI04 | `CVE-2026-32111` |
+| 1,514 | 2026-03 | [`INC-01154`](docs/incidents/2026.md#inc-01154) | ha-mcp — Vulnerability (CVE-2026-32112) | Medium | LLM03 | ASI04 | `CVE-2026-32112` |
+| 1,515 | 2026-03 | [`INC-01172`](docs/incidents/2026.md#inc-01172) | Hyperterse — Vulnerability (CVE-2026-31841) | Medium | LLM03 | ASI04 | `CVE-2026-31841` |
+| 1,516 | 2026-03 | [`INC-01179`](docs/incidents/2026.md#inc-01179) | Image-Based Prompt Injection: Hijacking MLLMs via Visually Embedded Instructions | High | LLM01 | ASI01 |  |
+| 1,517 | 2026-03 | [`INC-01189`](docs/incidents/2026.md#inc-01189) | Improper Protection of Alternate Path exists in the no-access and workdir feature of the AWS API MCP Server v… | Medium | LLM03 | ASI04 | `CVE-2026-4270` |
+| 1,518 | 2026-03 | [`INC-01192`](docs/incidents/2026.md#inc-01192) | In its design for automatic terminal command execution, AI Code offers two options: Execute safe commands and… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2024-48139` (+3) |
+| 1,519 | 2026-03 | [`INC-01193`](docs/incidents/2026.md#inc-01193) | In its design for automatic terminal command execution, HAI Build Code Generator offers two options: Execute… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30308` |
+| 1,520 | 2026-03 | [`INC-01194`](docs/incidents/2026.md#inc-01194) | In its design for automatic terminal command execution, Sixth offers two options: Execute safe commands and E… | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30310` |
+| 1,521 | 2026-03 | [`INC-01201`](docs/incidents/2026.md#inc-01201) | In the latest version of mlflow/mlflow, when the `basic-auth` app is enabled, tracing and assessment endpoint… | High | LLM03 | ASI04 | `CVE-2025-15381` |
+| 1,522 | 2026-03 | [`INC-01216`](docs/incidents/2026.md#inc-01216) | In the Linux kernel, the following vulnerability has been resolved: tracing: Add NULL pointer check to trigge… | Medium | LLM03 | ASI04 | `CVE-2026-23309` |
+| 1,523 | 2026-03 | [`INC-01218`](docs/incidents/2026.md#inc-01218) | In the Linux kernel, the following vulnerability has been resolved: xfs: check for deleted cursors when reval… | Medium | LLM03 | ASI04 | `CVE-2026-23249` |
+| 1,524 | 2026-03 | [`INC-01282`](docs/incidents/2026.md#inc-01282) | Keystone — Auth Bypass (CVE-2026-33326) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33326` |
+| 1,525 | 2026-03 | [`INC-01288`](docs/incidents/2026.md#inc-01288) | LAAF v2.0 — Empirical LPCI breakthrough rates of 67–100% across 5 production LLMs | Critical | LLM01, LLM06, LLM07 | ASI01, ASI02, ASI03, ASI06 |  |
+| 1,526 | 2026-03 | [`INC-01289`](docs/incidents/2026.md#inc-01289) | LangBot — Xss (CVE-2026-28509) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28509` |
+| 1,527 | 2026-03 | [`INC-01290`](docs/incidents/2026.md#inc-01290) | LangChain core prompt-loading path traversal (langchain_core/prompts/loading.py) | High | LLM02, LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34070` |
+| 1,528 | 2026-03 | [`INC-01298`](docs/incidents/2026.md#inc-01298) | Langflow Unauthenticated RCE (CVE-2026-33017) | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 | `CVE-2025-3248`, `CVE-2026-33017` |
+| 1,529 | 2026-03 | [`INC-01300`](docs/incidents/2026.md#inc-01300) | Langflow — Command Injection (CVE-2026-33475) | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-33475` |
+| 1,530 | 2026-03 | [`INC-01301`](docs/incidents/2026.md#inc-01301) | Langflow — Path Traversal (CVE-2026-33309) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33309` |
+| 1,531 | 2026-03 | [`INC-01303`](docs/incidents/2026.md#inc-01303) | Langflow — Vulnerability (CVE-2026-33053) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33053` |
+| 1,532 | 2026-03 | [`INC-01304`](docs/incidents/2026.md#inc-01304) | Langflow — Vulnerability (CVE-2026-33484) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33484` |
+| 1,533 | 2026-03 | [`INC-01305`](docs/incidents/2026.md#inc-01305) | Langflow — Vulnerability (CVE-2026-33497) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33497` |
+| 1,534 | 2026-03 | [`INC-01306`](docs/incidents/2026.md#inc-01306) | Langflow — Vulnerability (CVE-2026-33873) | Critical | LLM03 | ASI04 | `CVE-2026-33873` |
+| 1,535 | 2026-03 | [`INC-01307`](docs/incidents/2026.md#inc-01307) | Langflow — Vulnerability (CVE-2026-34046) | High | LLM03 | ASI03, ASI04 | `CVE-2026-34046` |
+| 1,536 | 2026-03 | [`INC-01330`](docs/incidents/2026.md#inc-01330) | LibreChat — Dos (CVE-2026-31949) | Medium | LLM03 | ASI04 | `CVE-2026-31949` |
+| 1,537 | 2026-03 | [`INC-01332`](docs/incidents/2026.md#inc-01332) | LibreChat — Ssrf (CVE-2026-31943) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31943` |
+| 1,538 | 2026-03 | [`INC-01333`](docs/incidents/2026.md#inc-01333) | LibreChat — Ssrf (CVE-2026-31945) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-31945` |
+| 1,539 | 2026-03 | [`INC-01334`](docs/incidents/2026.md#inc-01334) | LibreChat — Vulnerability (CVE-2026-31944) | High | LLM03 | ASI04 | `CVE-2026-31944` |
+| 1,540 | 2026-03 | [`INC-01335`](docs/incidents/2026.md#inc-01335) | LibreChat — Vulnerability (CVE-2026-31950) | Medium | LLM03 | ASI04 | `CVE-2026-31950` |
+| 1,541 | 2026-03 | [`INC-01338`](docs/incidents/2026.md#inc-01338) | LiteLLM /guardrails/test_custom_code sandbox escape -> RCE | High | LLM06 | ASI01, ASI05 | `CVE-2026-40217` |
+| 1,542 | 2026-03 | [`INC-01340`](docs/incidents/2026.md#inc-01340) | LiteLLM PyPI supply chain backdoor — TeamPCP campaign compromises 3.4M daily downloads | Critical | LLM03, LLM04, LLM05 | ASI03, ASI04, ASI05 |  |
+| 1,543 | 2026-03 | [`INC-01346`](docs/incidents/2026.md#inc-01346) | llama.cpp — Rce (CVE-2026-33298) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33298` |
+| 1,544 | 2026-03 | [`INC-01347`](docs/incidents/2026.md#inc-01347) | llama.cpp — Vulnerability (CVE-2026-27940) | High | LLM03 | ASI04 | `CVE-2026-27940` |
+| 1,545 | 2026-03 | [`INC-01376`](docs/incidents/2026.md#inc-01376) | MCP Atlassian — Rce (CVE-2026-27825) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27825` |
+| 1,546 | 2026-03 | [`INC-01377`](docs/incidents/2026.md#inc-01377) | MCP Atlassian — Vulnerability (CVE-2026-27826) | High | LLM03 | ASI03, ASI04 | `CVE-2026-27826` |
+| 1,547 | 2026-03 | [`INC-01379`](docs/incidents/2026.md#inc-01379) | MCP Java SDK — Vulnerability (CVE-2026-34237) | Medium | LLM03 | ASI04 | `CVE-2026-34237` |
+| 1,548 | 2026-03 | [`INC-01382`](docs/incidents/2026.md#inc-01382) | MCP Ruby SDK — Vulnerability (CVE-2026-33946) | Medium | LLM03 | ASI04 | `CVE-2026-33946` |
+| 1,549 | 2026-03 | [`INC-01386`](docs/incidents/2026.md#inc-01386) | mcp-memory-service — Vulnerability (CVE-2026-29787) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-29787` |
+| 1,550 | 2026-03 | [`INC-01387`](docs/incidents/2026.md#inc-01387) | mcp-memory-service — Vulnerability (CVE-2026-33010) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33010` |
+| 1,551 | 2026-03 | [`INC-01391`](docs/incidents/2026.md#inc-01391) | MCPwned -- Azure MCP Server SSRF & Cloud Takeover (CVE-2026-26118) | Critical | LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-26118` |
+| 1,552 | 2026-03 | [`INC-01411`](docs/incidents/2026.md#inc-01411) | Meta Rogue AI Agent Sev-1 — autonomous agent posts incorrect advice, exposing proprietary data | Critical | LLM06, LLM09 | ASI08, ASI09, ASI10 |  |
+| 1,553 | 2026-03 | [`INC-01429`](docs/incidents/2026.md#inc-01429) | Microsoft 365 Copilot XPIA phishing — attacker-shaped email summaries via hidden instructions | Critical | LLM01, LLM03, LLM04, LLM05 | ASI01, ASI04, ASI05, ASI06, ASI09 | `CVE-2026-26133` |
+| 1,554 | 2026-03 | [`INC-01440`](docs/incidents/2026.md#inc-01440) | Microsoft Semantic Kernel RCE (CVE-2026-26030) | Critical | LLM04, LLM05, LLM08 | ASI02, ASI05 | `CVE-2026-26030` |
+| 1,555 | 2026-03 | [`INC-01460`](docs/incidents/2026.md#inc-01460) | Mobile Next — Path Traversal (CVE-2026-33989) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33989` |
+| 1,556 | 2026-03 | [`INC-01477`](docs/incidents/2026.md#inc-01477) | n8n — Data Exfiltration (CVE-2026-33749) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-33749` |
+| 1,557 | 2026-03 | [`INC-01481`](docs/incidents/2026.md#inc-01481) | n8n — Info Disclosure (CVE-2026-27496) | Critical | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-27493` (+4) |
+| 1,558 | 2026-03 | [`INC-01486`](docs/incidents/2026.md#inc-01486) | n8n — Rce (CVE-2026-33660) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33660` |
+| 1,559 | 2026-03 | [`INC-01487`](docs/incidents/2026.md#inc-01487) | n8n — Rce (CVE-2026-33696) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33696` |
+| 1,560 | 2026-03 | [`INC-01491`](docs/incidents/2026.md#inc-01491) | n8n — Sql Injection (CVE-2026-33713) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33713` |
+| 1,561 | 2026-03 | [`INC-01496`](docs/incidents/2026.md#inc-01496) | n8n — Vulnerability (CVE-2026-33663) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33663` |
+| 1,562 | 2026-03 | [`INC-01497`](docs/incidents/2026.md#inc-01497) | n8n — Vulnerability (CVE-2026-33665) | High | LLM03 | ASI04 | `CVE-2026-33665` |
+| 1,563 | 2026-03 | [`INC-01498`](docs/incidents/2026.md#inc-01498) | n8n — Vulnerability (CVE-2026-33720) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33720` |
+| 1,564 | 2026-03 | [`INC-01499`](docs/incidents/2026.md#inc-01499) | n8n — Vulnerability (CVE-2026-33722) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-33722` |
+| 1,565 | 2026-03 | [`INC-01500`](docs/incidents/2026.md#inc-01500) | n8n — Vulnerability (CVE-2026-33724) | High | LLM03 | ASI04 | `CVE-2026-33724` |
+| 1,566 | 2026-03 | [`INC-01501`](docs/incidents/2026.md#inc-01501) | n8n — Vulnerability (CVE-2026-33751) | Medium | LLM03 | ASI04 | `CVE-2026-33751` |
+| 1,567 | 2026-03 | [`INC-01515`](docs/incidents/2026.md#inc-01515) | nanobot — Prompt Injection (CVE-2026-33654) | Critical | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-33654` |
+| 1,568 | 2026-03 | [`INC-01521`](docs/incidents/2026.md#inc-01521) | New API — Auth Bypass (CVE-2026-30886) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-30886` |
+| 1,569 | 2026-03 | [`INC-01529`](docs/incidents/2026.md#inc-01529) | Nginx UI — Vulnerability (CVE-2026-33032) | Critical | LLM03 | ASI04 | `CVE-2026-33032` |
+| 1,570 | 2026-03 | [`INC-01530`](docs/incidents/2026.md#inc-01530) | Nhost — Vulnerability (CVE-2026-34200) | High | LLM03 | ASI03, ASI04 | `CVE-2026-34200` |
+| 1,571 | 2026-03 | [`INC-01563`](docs/incidents/2026.md#inc-01563) | Open WebUI — Auth Bypass (CVE-2026-29070) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-29070` |
+| 1,572 | 2026-03 | [`INC-01565`](docs/incidents/2026.md#inc-01565) | Open WebUI — Info Disclosure (CVE-2026-28786) | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-28786` |
+| 1,573 | 2026-03 | [`INC-01567`](docs/incidents/2026.md#inc-01567) | Open WebUI — Vulnerability (CVE-2026-28788) | High | LLM03 | ASI04 | `CVE-2026-28788` |
+| 1,574 | 2026-03 | [`INC-01568`](docs/incidents/2026.md#inc-01568) | Open WebUI — Vulnerability (CVE-2026-29071) | Low | LLM03 | ASI04 | `CVE-2026-29071` |
+| 1,575 | 2026-03 | [`INC-01587`](docs/incidents/2026.md#inc-01587) | OpenChatBI — Path Traversal (CVE-2026-28795) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28795` |
+| 1,576 | 2026-03 | [`INC-01602`](docs/incidents/2026.md#inc-01602) | OpenClaw versions prior to 2026.2.14 contain server-side request forgery vulnerabilities in the Feishu extens… | High | LLM01, LLM03, LLM05 | ASI01, ASI03, ASI04, ASI05 | `CVE-2026-26320` (+3) |
+| 1,577 | 2026-03 | [`INC-01608`](docs/incidents/2026.md#inc-01608) | OpenHands is software for AI-driven development. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33718` |
+| 1,578 | 2026-03 | [`INC-01637`](docs/incidents/2026.md#inc-01637) | PerplexedBrowser -- Perplexity Comet Agentic Browser Vulnerabilities | Medium | LLM01 | ASI01, ASI02, ASI09 |  |
+| 1,579 | 2026-03 | [`INC-01643`](docs/incidents/2026.md#inc-01643) | PinchTab — Auth Bypass (CVE-2026-33622) | High | LLM03 | ASI03, ASI04 | `CVE-2026-33622` |
+| 1,580 | 2026-03 | [`INC-01644`](docs/incidents/2026.md#inc-01644) | PinchTab — Command Injection (CVE-2026-33623) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33623` |
+| 1,581 | 2026-03 | [`INC-01645`](docs/incidents/2026.md#inc-01645) | PinchTab — Ssrf (CVE-2026-30834) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30834` |
+| 1,582 | 2026-03 | [`INC-01646`](docs/incidents/2026.md#inc-01646) | PinchTab — Ssrf (CVE-2026-33081) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33081` |
+| 1,583 | 2026-03 | [`INC-01647`](docs/incidents/2026.md#inc-01647) | PinchTab — Ssrf (CVE-2026-33619) | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-33619` (+2) |
+| 1,584 | 2026-03 | [`INC-01648`](docs/incidents/2026.md#inc-01648) | PingPong — Vulnerability (CVE-2026-32097) | High | LLM03 | ASI04 | `CVE-2026-32097` |
+| 1,585 | 2026-03 | [`INC-01680`](docs/incidents/2026.md#inc-01680) | Prompt injection vulnerability in 1millionbot Millie chatbot that occurs when a user manages to evade chat re… | High | LLM01, LLM05 | ASI01, ASI03, ASI05 | `CVE-2026-4399` |
+| 1,586 | 2026-03 | [`INC-01683`](docs/incidents/2026.md#inc-01683) | PromtEngineer localGPT — Vulnerability (CVE-2026-5002) | High | LLM03 | ASI04 | `CVE-2026-5002` |
+| 1,587 | 2026-03 | [`INC-01724`](docs/incidents/2026.md#inc-01724) | Raytha CMS is vulnerable to Stored XSS via FieldValues[1].Value parameter in post editing functionality. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-69236` (+2) |
+| 1,588 | 2026-03 | [`INC-01769`](docs/incidents/2026.md#inc-01769) | SGLang Triple RCE (CVE-2026-3059, CVE-2026-3060, CVE-2026-3989) | Critical | LLM03, LLM05 | ASI02, ASI03, ASI04, ASI05 | `CVE-2026-25528` (+4) |
+| 1,589 | 2026-03 | [`INC-01804`](docs/incidents/2026.md#inc-01804) | SQLBot — Prompt Injection (CVE-2026-32622) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-32622` |
+| 1,590 | 2026-03 | [`INC-01806`](docs/incidents/2026.md#inc-01806) | SQLBot — Ssrf (CVE-2026-32949) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-32949`, `CVE-2026-32950` |
+| 1,591 | 2026-03 | [`INC-01883`](docs/incidents/2026.md#inc-01883) | The AI ChatBot with ChatGPT and Content Generator by AYS plugin for WordPress is vulnerable to unauthorized a… | Medium | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2025-13378` (+2) |
+| 1,592 | 2026-03 | [`INC-01886`](docs/incidents/2026.md#inc-01886) | The Claude SDK for Python provides access to the Claude API from Python applications. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-34450`, `CVE-2026-34452` |
+| 1,593 | 2026-03 | [`INC-01889`](docs/incidents/2026.md#inc-01889) | The Greenshift – animation and page builder blocks plugin for WordPress is vulnerable to Sensitive Informatio… | Medium | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-2589` |
+| 1,594 | 2026-03 | [`INC-01896`](docs/incidents/2026.md#inc-01896) | The shell tool within GitHub Copilot CLI versions prior to and including 0.0.422 can allow arbitrary code exe… | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-29783` |
+| 1,595 | 2026-03 | [`INC-01912`](docs/incidents/2026.md#inc-01912) | Trivy Vulnerability Scanner — Info Disclosure (CVE-2026-28353) | Medium | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2026-28353` |
+| 1,596 | 2026-03 | [`INC-01976`](docs/incidents/2026.md#inc-01976) | Uncontrolled search path elements in Anthropic Claude for Windows installer (Claude Setup.exe) versions prior… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-22561` |
+| 1,597 | 2026-03 | [`INC-02050`](docs/incidents/2026.md#inc-02050) | vLLM — Ssrf (CVE-2026-25960) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-24779`, `CVE-2026-25960` |
+| 1,598 | 2026-03 | [`INC-02062`](docs/incidents/2026.md#inc-02062) | Wallos — Ssrf (CVE-2026-33401) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-33401` |
+| 1,599 | 2026-03 | [`INC-02082`](docs/incidents/2026.md#inc-02082) | Wekan — Vulnerability (CVE-2026-30847) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-30847` |
+| 1,600 | 2026-03 | [`INC-02083`](docs/incidents/2026.md#inc-02083) | WeKnora — Auth Bypass (CVE-2026-30855) | High | LLM03 | ASI04 | `CVE-2026-30855` |
+| 1,601 | 2026-03 | [`INC-02084`](docs/incidents/2026.md#inc-02084) | WeKnora — Auth Bypass (CVE-2026-30857) | Medium | LLM03 | ASI04 | `CVE-2026-30857` |
+| 1,602 | 2026-03 | [`INC-02085`](docs/incidents/2026.md#inc-02085) | WeKnora — Auth Bypass (CVE-2026-30859) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-30859` |
+| 1,603 | 2026-03 | [`INC-02086`](docs/incidents/2026.md#inc-02086) | WeKnora — Command Injection (CVE-2026-30861) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30861` |
+| 1,604 | 2026-03 | [`INC-02087`](docs/incidents/2026.md#inc-02087) | WeKnora — Data Exfiltration (CVE-2026-30858) | Medium | LLM03 | ASI04 | `CVE-2026-30858` |
+| 1,605 | 2026-03 | [`INC-02089`](docs/incidents/2026.md#inc-02089) | WeKnora — Prompt Injection (CVE-2026-30856) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-30856` |
+| 1,606 | 2026-03 | [`INC-02090`](docs/incidents/2026.md#inc-02090) | WeKnora — Sql Injection (CVE-2026-30860) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30860` |
+| 1,607 | 2026-03 | [`INC-02091`](docs/incidents/2026.md#inc-02091) | WeKnora — Ssrf (CVE-2026-30247) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-30247` |
+| 1,608 | 2026-03 | [`INC-02105`](docs/incidents/2026.md#inc-02105) | XBOW — first critical CVE discovered entirely by autonomous AI penetration testing agent | Critical | LLM06 | ASI05, ASI10 | `CVE-2026-21536` |
+| 1,609 | 2026-03 | [`INC-02107`](docs/incidents/2026.md#inc-02107) | yauzl (aka Yet Another Unzip Library) version 3.2.0 for Node.js contains an off-by-one error in the NTFS exte… | Medium | LLM03 | ASI04 | `CVE-2026-31988` |
+| 1,610 | 2026-02-28 | [`INC-00231`](docs/incidents/2026.md#inc-00231) | AI Systems Used for Target Selection and Attacks in Global Conflicts | High | LLM05, LLM09 | ASI05 |  |
+| 1,611 | 2026-02-28 | [`INC-00349`](docs/incidents/2026.md#inc-00349) | AI-Enabled Iranian Shahed Drones Cause Harm in Ukraine and Persian Gulf | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,612 | 2026-02-28 | [`INC-00350`](docs/incidents/2026.md#inc-00350) | AI-Enabled Iron Beam and Iron Dome Systems Deployed in Israeli Defense | High | LLM05 | ASI05 |  |
+| 1,613 | 2026-02-28 | [`INC-00521`](docs/incidents/2026.md#inc-00521) | AI-Generated WeChat IDs Lead to Privacy Breaches and Unsolicited Contacts | High |  |  |  |
+| 1,614 | 2026-02-28 | [`INC-00838`](docs/incidents/2026.md#inc-00838) | CodeWall&#x27;s Autonomous Agent Reportedly Obtained Unauthorized Access to McKinsey&#x27;s Lilli AI Platform… | High | LLM02 | ASI03 |  |
+| 1,615 | 2026-02-28 | [`INC-00927`](docs/incidents/2026.md#inc-00927) | Egypt Plans AI-Driven Military Weapons Development | Critical | LLM05, LLM09 | ASI05, ASI09, ASI10 |  |
+| 1,616 | 2026-02-28 | [`INC-01696`](docs/incidents/2026.md#inc-01696) | Purported AI-Generated War Footage Reportedly Circulated Widely Online During the Opening Phase of the War in… | Critical | LLM04, LLM05, LLM09 | ASI05, ASI06, ASI09 |  |
+| 1,617 | 2026-02-28 | [`INC-01858`](docs/incidents/2026.md#inc-01858) | Tesla Cybertruck Autopilot Crash Leads to Lawsuit in Houston | Critical |  |  |  |
+| 1,618 | 2026-02-28 | [`INC-02022`](docs/incidents/2026.md#inc-02022) | US Military Uses Anthropic AI in Iran Strike Amid Ban, OpenAI Replaces Anthropic in Pentagon Network | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
+| 1,619 | 2026-02-28 | [`INC-02033`](docs/incidents/2026.md#inc-02033) | US Uses Anthropic AI in Lethal Military Strikes on Iran | Critical | LLM02, LLM03, LLM05, LLM09 | ASI03, ASI04, ASI05, ASI09, ASI10 |  |
+| 1,620 | 2026-02-27 | [`INC-00166`](docs/incidents/2026.md#inc-00166) | AI Facial Recognition Leads to 270 Arrests at São Paulo Stadiums | High | LLM05 | ASI05 |  |
+| 1,621 | 2026-02-27 | [`INC-00302`](docs/incidents/2026.md#inc-00302) | AI-Driven Health Misinformation Harms Patients in Slovakia | Medium | LLM09 |  |  |
+| 1,622 | 2026-02-27 | [`INC-00433`](docs/incidents/2026.md#inc-00433) | AI-Generated Disinformation Targets Paris Municipal Election Candidates | High | LLM05, LLM09 | ASI05 |  |
+| 1,623 | 2026-02-27 | [`INC-00720`](docs/incidents/2026.md#inc-00720) | Bybit's AI System Blocks $300 Million in Crypto Fraud Amid Surge in AI-Driven Scams | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,624 | 2026-02-27 | [`INC-00913`](docs/incidents/2026.md#inc-00913) | Dutch Authors and Journalists Demand Meta Stop Using Copyrighted Works for AI Training | High |  |  |  |
+| 1,625 | 2026-02-27 | [`INC-00930`](docs/incidents/2026.md#inc-00930) | Elon Musk Accuses OpenAI's ChatGPT of Causing User Harm Amid Legal Disputes | Medium | LLM02, LLM05 | ASI03, ASI09 |  |
+| 1,626 | 2026-02-27 | [`INC-00977`](docs/incidents/2026.md#inc-00977) | Exposed Google API Keys Enable Unauthorized Access to Gemini AI and Data | High | LLM02 | ASI03 |  |
+| 1,627 | 2026-02-27 | [`INC-01011`](docs/incidents/2026.md#inc-01011) | Flock Safety Sued for AI-Driven License Plate Data Privacy Violations in California | High | LLM05 | ASI05 |  |
+| 1,628 | 2026-02-27 | [`INC-01105`](docs/incidents/2026.md#inc-01105) | Google and OpenAI Employees Protest Pentagon AI Use as OpenAI Confirms Military Deployment | Critical | LLM03, LLM05, LLM09 | ASI04, ASI05, ASI10 |  |
+| 1,629 | 2026-02-27 | [`INC-01162`](docs/incidents/2026.md#inc-01162) | Health Experts Warn of Risks in AI-Driven Self-Diagnosis in India | Medium |  |  |  |
+| 1,630 | 2026-02-27 | [`INC-01400`](docs/incidents/2026.md#inc-01400) | Meta AI Smart Glasses Reportedly Exposed Intimate User Imagery and Video to Human Reviewers in Kenya | Critical | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,631 | 2026-02-27 | [`INC-01413`](docs/incidents/2026.md#inc-01413) | Meta Sues Over Deepfake-Driven Health Fraud in Brazil | Medium | LLM09 | ASI09 |  |
+| 1,632 | 2026-02-27 | [`INC-01531`](docs/incidents/2026.md#inc-01531) | NHRC Probes AI Education Project Over Children's Data Privacy Risks | High | LLM02 | ASI03 |  |
+| 1,633 | 2026-02-27 | [`INC-01868`](docs/incidents/2026.md#inc-01868) | Tesla Plans to Deploy AI-Driven Robotaxis and Robots in Europe | Medium |  |  |  |
+| 1,634 | 2026-02-27 | [`INC-02066`](docs/incidents/2026.md#inc-02066) | Washington State DOL's AI Phone System Reportedly Failed to Provide Spanish-Language Service to Callers Reque… | High | LLM05, LLM09 | ASI09 |  |
+| 1,635 | 2026-02-26 | [`INC-00037`](docs/incidents/2026.md#inc-00037) | Abu Dhabi Launches Supervised Trials of Tesla Self-Driving Cars and Autonomous Trucks | Medium |  |  |  |
+| 1,636 | 2026-02-26 | [`INC-00199`](docs/incidents/2026.md#inc-00199) | AI Recruitment Tool Causes Discriminatory Job Ads, DOJ Fines IT Firm | High |  |  |  |
+| 1,637 | 2026-02-26 | [`INC-00244`](docs/incidents/2026.md#inc-00244) | AI Traffic Cameras in Western Australia Cause License Loss and Fines for Drivers | High | LLM05 | ASI05 |  |
+| 1,638 | 2026-02-26 | [`INC-00366`](docs/incidents/2026.md#inc-00366) | AI-Generated Child Sexual Abuse Images Surge in Japan | Medium | LLM09 | ASI09 |  |
+| 1,639 | 2026-02-26 | [`INC-00678`](docs/incidents/2026.md#inc-00678) | Bank of Italy Warned That Purported Deepfakes of Governor Fabio Panetta Were Used in Allegedly Fraudulent Inv… | High | LLM09 | ASI09 |  |
+| 1,640 | 2026-02-26 | [`INC-00697`](docs/incidents/2026.md#inc-00697) | Block Lays Off 40% of Workforce Due to AI Automation | High | LLM05 | ASI05 |  |
+| 1,641 | 2026-02-26 | [`INC-00781`](docs/incidents/2026.md#inc-00781) | Chinese Actor Wang Jinsong's Likeness Deepfaked by AI, Raising Legal and Fraud Concerns | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,642 | 2026-02-26 | [`INC-00811`](docs/incidents/2026.md#inc-00811) | Claude Code Agent Reportedly Deleted DataTalks.Club Production Infrastructure, Database, and Snapshots via Te… | Medium | LLM05 | ASI08 |  |
+| 1,643 | 2026-02-26 | [`INC-00874`](docs/incidents/2026.md#inc-00874) | Deepfake Scam Targets Bulgarian News Anchor | Medium | LLM09 | ASI09 |  |
+| 1,644 | 2026-02-26 | [`INC-00919`](docs/incidents/2026.md#inc-00919) | Dutch Organizations Sue X Over AI Chatbot Grok's Generation of Illegal Nude Images | High | LLM09 | ASI09 |  |
+| 1,645 | 2026-02-26 | [`INC-01040`](docs/incidents/2026.md#inc-01040) | Ford Recalls Over 4 Million Vehicles Due to AI-Controlled Trailer Module Software Defect | Critical | LLM05 | ASI05 |  |
+| 1,646 | 2026-02-26 | [`INC-01076`](docs/incidents/2026.md#inc-01076) | German Court Upholds Student Exclusion for Unauthorized AI Use in Exams | High | LLM05 | ASI05 |  |
+| 1,647 | 2026-02-26 | [`INC-01244`](docs/incidents/2026.md#inc-01244) | Iowa Sues GM Over AI-Driven Vehicle Data Collection and Sale | Medium |  | ASI09 |  |
+| 1,648 | 2026-02-26 | [`INC-01257`](docs/incidents/2026.md#inc-01257) | Italian Court Rules AI-Driven Employee Dismissal Lawful | Medium |  |  |  |
+| 1,649 | 2026-02-26 | [`INC-01753`](docs/incidents/2026.md#inc-01753) | Scotland Considers Criminalizing AI-Generated Deepfake Intimate Images | Medium | LLM09 | ASI09 |  |
+| 1,650 | 2026-02-26 | [`INC-01760`](docs/incidents/2026.md#inc-01760) | Security Risks of Autonomous AI Agents Using MCP in Enterprises | High | LLM01, LLM02, LLM05 | ASI01, ASI03, ASI05 |  |
+| 1,651 | 2026-02-26 | [`INC-01786`](docs/incidents/2026.md#inc-01786) | South Korea Strengthens Measures Against AI-Generated Fake News Ahead of Elections | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,652 | 2026-02-26 | [`INC-01787`](docs/incidents/2026.md#inc-01787) | South Korean Authorities Crack Down on AI-Generated Fake News Ahead of Local Elections | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,653 | 2026-02-26 | [`INC-02110`](docs/incidents/2026.md#inc-02110) | YouTube's AI Algorithms Flood Children’s Feeds with Harmful AI-Generated Videos | Medium | LLM09 |  |  |
+| 1,654 | 2026-02-25 | [`INC-00164`](docs/incidents/2026.md#inc-00164) | AI Facial Recognition Error Leads to Wrongful Arrest in UK | High | LLM05 | ASI05 |  |
+| 1,655 | 2026-02-25 | [`INC-00188`](docs/incidents/2026.md#inc-00188) | AI Models Consistently Escalate to Nuclear War in Simulated Military Scenarios | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,656 | 2026-02-25 | [`INC-00191`](docs/incidents/2026.md#inc-00191) | AI Models Pressured to Predict US Strike Date on Iran | High | LLM05, LLM09 | ASI05 |  |
+| 1,657 | 2026-02-25 | [`INC-00194`](docs/incidents/2026.md#inc-00194) | AI Predicts Groundwater Shortage in Bengaluru, Triggers Emergency Measures | High | LLM05 | ASI05 |  |
+| 1,658 | 2026-02-25 | [`INC-00396`](docs/incidents/2026.md#inc-00396) | AI-Generated Deepfake Video of Brady Tkachuk Causes Controversy | Medium | LLM09 | ASI09 |  |
+| 1,659 | 2026-02-25 | [`INC-00428`](docs/incidents/2026.md#inc-00428) | AI-Generated Disinformation Campaign Targets Singapore's Prime Minister | Medium | LLM09 | ASI09 |  |
+| 1,660 | 2026-02-25 | [`INC-00510`](docs/incidents/2026.md#inc-00510) | AI-Generated Videos Mocking Korean Independence Hero Spark Outrage | High | LLM09 |  |  |
+| 1,661 | 2026-02-25 | [`INC-00517`](docs/incidents/2026.md#inc-00517) | AI-Generated Voice Scam Impersonates Malaysian King for Fraudulent Aid Scheme | Medium | LLM09 | ASI09 |  |
+| 1,662 | 2026-02-25 | [`INC-00523`](docs/incidents/2026.md#inc-00523) | AI-Induced Market Panic and Systemic Economic Risks Highlighted by ION Group CEO | Medium |  |  |  |
+| 1,663 | 2026-02-25 | [`INC-00702`](docs/incidents/2026.md#inc-00702) | Bot Auto and Ryan Transportation Launch Driverless Freight Operations in Texas | Medium |  |  |  |
+| 1,664 | 2026-02-25 | [`INC-00813`](docs/incidents/2026.md#inc-00813) | Claude Code Project Files RCE & API Token Exfiltration (CVE-2025-59536 & CVE-2026-21852) | Critical | LLM01, LLM02, LLM03, LLM05, LLM06 | ASI02, ASI03, ASI04, ASI05, ASI09 | `CVE-2025-59536`, `CVE-2026-21852` |
+| 1,665 | 2026-02-25 | [`INC-00855`](docs/incidents/2026.md#inc-00855) | Convict Uses AI to Forge Identity and Evade Arrest in Istanbul | High | LLM05 | ASI05, ASI09 |  |
+| 1,666 | 2026-02-25 | [`INC-00882`](docs/incidents/2026.md#inc-00882) | Delhi High Court Restrains AI Deepfake Misuse of Ramdev's Persona | Medium | LLM09 | ASI09 |  |
+| 1,667 | 2026-02-25 | [`INC-00884`](docs/incidents/2026.md#inc-00884) | Delhi High Court Reviews Legal Challenge to AI-Enabled Biometric Data Collection | Medium |  |  |  |
+| 1,668 | 2026-02-25 | [`INC-00889`](docs/incidents/2026.md#inc-00889) | Development of AI-Based Flood Prediction and Alert System in Valencia | Medium |  |  |  |
+| 1,669 | 2026-02-25 | [`INC-01084`](docs/incidents/2026.md#inc-01084) | Germany Plans to Deploy AI in Fight Against Organized Crime | High | LLM05 | ASI05 |  |
+| 1,670 | 2026-02-25 | [`INC-01369`](docs/incidents/2026.md#inc-01369) | Man Uses AI to Forge Medical Documents for Restaurant Extortion in Shanghai | High | LLM04 | ASI06, ASI09 |  |
+| 1,671 | 2026-02-25 | [`INC-01446`](docs/incidents/2026.md#inc-01446) | Milwaukee Police Officer Misuses AI License Plate System for Personal Surveillance | High | LLM05 | ASI05 |  |
+| 1,672 | 2026-02-25 | [`INC-01526`](docs/incidents/2026.md#inc-01526) | New Zealand Defence Force to Trial AI-Enabled Combat Drones | High | LLM05 | ASI05 |  |
+| 1,673 | 2026-02-25 | [`INC-01656`](docs/incidents/2026.md#inc-01656) | Polish Security Chiefs Charged Over Unaccredited Use of Pegasus AI Surveillance System | High |  |  |  |
+| 1,674 | 2026-02-24 | [`INC-00250`](docs/incidents/2026.md#inc-00250) | AI Use in Judicial Decision Leads to Acquittal in Child Rape Case in Brazil | High | LLM09 |  |  |
+| 1,675 | 2026-02-24 | [`INC-00296`](docs/incidents/2026.md#inc-00296) | AI-Driven Electricity Demand Strains Power Infrastructure and Fuels Environmental Concerns | High | LLM05 | ASI05 |  |
+| 1,676 | 2026-02-24 | [`INC-00334`](docs/incidents/2026.md#inc-00334) | AI-Enabled Cyberattacks Surge, Slashing Breakout Times to Under 30 Minutes | Critical | LLM01, LLM02, LLM06, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI09, ASI10 |  |
+| 1,677 | 2026-02-24 | [`INC-00347`](docs/incidents/2026.md#inc-00347) | AI-Enabled Flying Car Demonstrations and Passenger System Trials in Tokyo | Medium |  |  |  |
+| 1,678 | 2026-02-24 | [`INC-00368`](docs/incidents/2026.md#inc-00368) | AI-Generated Code Causes Production Failure and Employee Firing at Indian Startup | High | LLM05 | ASI05 |  |
+| 1,679 | 2026-02-24 | [`INC-00386`](docs/incidents/2026.md#inc-00386) | AI-Generated Deepfake Scam Impersonates Johor Official on TikTok | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,680 | 2026-02-24 | [`INC-00426`](docs/incidents/2026.md#inc-00426) | AI-Generated Disinformation Amplifies Violence and Fear After Cartel Leader's Death in Mexico | Critical | LLM09 |  |  |
+| 1,681 | 2026-02-24 | [`INC-00536`](docs/incidents/2026.md#inc-00536) | AI-Powered Camera System in Paraná Aids Recovery of Stolen and Cloned Vehicles | High | LLM05 | ASI05 |  |
+| 1,682 | 2026-02-24 | [`INC-00782`](docs/incidents/2026.md#inc-00782) | Chinese AI Firm DeepSeek Illegally Uses Nvidia Chips and Distills US AI Models | High |  |  |  |
+| 1,683 | 2026-02-24 | [`INC-00783`](docs/incidents/2026.md#inc-00783) | Chinese AI Firm DeepSeek Trains Model on Restricted Nvidia Chips, Violating U.S. Export Controls | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 1,684 | 2026-02-24 | [`INC-00803`](docs/incidents/2026.md#inc-00803) | Citrini Research Warns of AI-Driven Economic Disruption and Calls for AI Tax | Medium |  |  |  |
+| 1,685 | 2026-02-24 | [`INC-00879`](docs/incidents/2026.md#inc-00879) | Delhi High Court Orders Removal of AI-Generated Deepfakes Exploiting Singer Jubin Nautiyal | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,686 | 2026-02-24 | [`INC-00886`](docs/incidents/2026.md#inc-00886) | Deployment of AI-Enhanced Combat Systems in Military Aircraft Raises Future Risk Concerns | Medium |  |  |  |
+| 1,687 | 2026-02-24 | [`INC-01102`](docs/incidents/2026.md#inc-01102) | Google AI Push Notification Includes Racial Slur, Prompts Apology | Medium |  |  |  |
+| 1,688 | 2026-02-24 | [`INC-01116`](docs/incidents/2026.md#inc-01116) | Google Gemini AI Glitch Deletes User Chat Histories | Medium |  |  |  |
+| 1,689 | 2026-02-24 | [`INC-01173`](docs/incidents/2026.md#inc-01173) | Hyundai Motor Group Donates AI Firefighting Robots to Enhance Firefighter Safety in South Korea | Critical | LLM05 | ASI05 |  |
+| 1,690 | 2026-02-24 | [`INC-01275`](docs/incidents/2026.md#inc-01275) | JPMorgan Chase Employees Lose Jobs Due to AI Automation, Bank Launches Redeployment Plan | High | LLM05 | ASI05 |  |
+| 1,691 | 2026-02-24 | [`INC-01403`](docs/incidents/2026.md#inc-01403) | Meta Encryption Hinders AI Child Safety Systems, Leads to Harm | High | LLM05, LLM09 | ASI05 |  |
+| 1,692 | 2026-02-24 | [`INC-01466`](docs/incidents/2026.md#inc-01466) | MoonPay Launches AI Agents for Autonomous Crypto Transactions | Medium |  | ASI09 |  |
+| 1,693 | 2026-02-24 | [`INC-01516`](docs/incidents/2026.md#inc-01516) | Nassim Taleb Warns of Potential Market Crash and Bankruptcies Due to AI Disruption | High | LLM05 | ASI05 |  |
+| 1,694 | 2026-02-24 | [`INC-01812`](docs/incidents/2026.md#inc-01812) | Student Fails Exam for AI-Assisted Cheating; Mother Confronts Professor at University of Crete | High | LLM05 | ASI05 |  |
+| 1,695 | 2026-02-24 | [`INC-01817`](docs/incidents/2026.md#inc-01817) | Study Finds ChatGPT Health AI Fails in Emergency Medical Triage | Critical | LLM05, LLM09 | ASI09 |  |
+| 1,696 | 2026-02-24 | [`INC-01849`](docs/incidents/2026.md#inc-01849) | Tencent Yuanbao AI Outputs Insulting Language to User During Image Generation | Medium |  |  |  |
+| 1,697 | 2026-02-24 | [`INC-01942`](docs/incidents/2026.md#inc-01942) | UK Fines Reddit $19.5M for Failing to Protect Children's Data and Exposing Minors to Harmful Content | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,698 | 2026-02-24 | [`INC-02021`](docs/incidents/2026.md#inc-02021) | US Military Integrates AI Chatbot Grok Amid Safeguard Controversy | Critical | LLM03, LLM04, LLM05, LLM09 | ASI04, ASI05, ASI06, ASI09, ASI10 |  |
+| 1,699 | 2026-02-24 | [`INC-02098`](docs/incidents/2026.md#inc-02098) | WiseTech Global Cuts 2,000 Jobs in Major AI-Driven Restructuring | High | LLM03, LLM05 | ASI04, ASI05 |  |
+| 1,700 | 2026-02-23 | [`INC-00038`](docs/incidents/2026.md#inc-00038) | Actors and Voice Artists Protest Unauthorized AI Voice and Image Use | High |  |  |  |
+| 1,701 | 2026-02-23 | [`INC-00078`](docs/incidents/2026.md#inc-00078) | AI Analysis Reveals Accelerating Ground Movement Threatening Trabzon Hospital | Medium |  |  |  |
+| 1,702 | 2026-02-23 | [`INC-00079`](docs/incidents/2026.md#inc-00079) | AI Apps Leak Millions of Users' Personal and KYC Data via Misconfigured Cloud Storage | Critical | LLM02, LLM05 | ASI03, ASI05, ASI09 |  |
+| 1,703 | 2026-02-23 | [`INC-00110`](docs/incidents/2026.md#inc-00110) | AI Chatbots Generate Defamatory Content, Prompting Lawsuits | High | LLM09 |  |  |
+| 1,704 | 2026-02-23 | [`INC-00118`](docs/incidents/2026.md#inc-00118) | AI Chatbots Linked to Worsening Mental Health Symptoms in Vulnerable Patients | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,705 | 2026-02-23 | [`INC-00179`](docs/incidents/2026.md#inc-00179) | AI Marketing Algorithms Pose Risks of Manipulating Public Opinion on Warfare | Medium | LLM09 |  |  |
+| 1,706 | 2026-02-23 | [`INC-00241`](docs/incidents/2026.md#inc-00241) | AI Trading Bot Accidentally Transfers Entire Crypto Holdings Due to Misinterpretation | Medium | LLM09 | ASI09 |  |
+| 1,707 | 2026-02-23 | [`INC-00321`](docs/incidents/2026.md#inc-00321) | AI-Driven Scams Lead to Surge in UK Fashion Consumer Complaints | High |  | ASI09 |  |
+| 1,708 | 2026-02-23 | [`INC-00397`](docs/incidents/2026.md#inc-00397) | AI-Generated Deepfake Video of Ghislaine Maxwell Sparks Misinformation in Canada | Medium | LLM09 | ASI09 |  |
+| 1,709 | 2026-02-23 | [`INC-00409`](docs/incidents/2026.md#inc-00409) | AI-Generated Deepfake Videos Used to Impersonate Colombian Priest in Health Product Scam | High | LLM09 | ASI09 |  |
+| 1,710 | 2026-02-23 | [`INC-00595`](docs/incidents/2026.md#inc-00595) | Anthropic accuses Chinese AI firms of mass data theft via fake accounts | High | LLM02, LLM03 | ASI04 |  |
+| 1,711 | 2026-02-23 | [`INC-00608`](docs/incidents/2026.md#inc-00608) | Anthropic Said DeepSeek, Moonshot, and MiniMax Used Fraudulent Accounts and Proxies to Illicitly Distill Clau… | Critical | LLM02 | ASI03 |  |
+| 1,712 | 2026-02-23 | [`INC-00660`](docs/incidents/2026.md#inc-00660) | Automakers Advance 'Eyes-Off' AI Driving Amid Safety and Liability Concerns | High | LLM05 | ASI05 |  |
+| 1,713 | 2026-02-23 | [`INC-00712`](docs/incidents/2026.md#inc-00712) | Brazilian Senate Probes Meta Over AI-Moderated Platforms Enabling Online Crime | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,714 | 2026-02-23 | [`INC-00745`](docs/incidents/2026.md#inc-00745) | ChatGPT and Gemini Spread Misinformation from Fabricated Blog | High | LLM05, LLM09 | ASI05 |  |
+| 1,715 | 2026-02-23 | [`INC-00790`](docs/incidents/2026.md#inc-00790) | Chinese Companies Announce Strategic Partnerships for Large-Scale Deployment of AI-Driven Autonomous Logistic… | Medium |  |  |  |
+| 1,716 | 2026-02-23 | [`INC-00940`](docs/incidents/2026.md#inc-00940) | Epirus and DFT Integrate AI-Enabled Counter-Drone Defense System | High | LLM05 | ASI05, ASI10 |  |
+| 1,717 | 2026-02-23 | [`INC-01095`](docs/incidents/2026.md#inc-01095) | Global Regulators Respond to Harm from Non-Consensual AI-Generated Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,718 | 2026-02-23 | [`INC-01120`](docs/incidents/2026.md#inc-01120) | Google Restricts and Suspends AI Ultra and Antigravity Users Over OpenClaw OAuth Abuse | High | LLM05 | ASI05 |  |
+| 1,719 | 2026-02-23 | [`INC-01171`](docs/incidents/2026.md#inc-01171) | Hyderabad Police Warn of AI-Driven Biometric Identity Theft Scam | High | LLM09 | ASI09 |  |
+| 1,720 | 2026-02-23 | [`INC-01224`](docs/incidents/2026.md#inc-01224) | India Develops AI-Enabled Electric Air Taxi with NVIDIA Partnership | Medium |  |  |  |
+| 1,721 | 2026-02-23 | [`INC-01280`](docs/incidents/2026.md#inc-01280) | Kentucky Lawsuit Against TikTok's AI Algorithms Moves Forward | Medium |  |  |  |
+| 1,722 | 2026-02-23 | [`INC-01354`](docs/incidents/2026.md#inc-01354) | Lockheed Martin Tests AI-Enhanced Target Identification on F-35 Fighter Jets | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,723 | 2026-02-23 | [`INC-01398`](docs/incidents/2026.md#inc-01398) | Meta AI Director's Emails Deleted by Rogue OpenClaw AI Agent | High | LLM02, LLM03, LLM05, LLM06 | ASI02, ASI03, ASI04, ASI05, ASI10 |  |
+| 1,724 | 2026-02-23 | [`INC-01404`](docs/incidents/2026.md#inc-01404) | Meta Faces Antitrust Investigation in Africa Over WhatsApp Business AI Restrictions | Medium |  |  |  |
+| 1,725 | 2026-02-23 | [`INC-01416`](docs/incidents/2026.md#inc-01416) | Meta's AI Moderation Fails to Prevent Teen Exposure to Explicit Content on Instagram | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,726 | 2026-02-23 | [`INC-01454`](docs/incidents/2026.md#inc-01454) | Mistral AI Accused of Massive Copyright Infringement in Model Training | High |  |  |  |
+| 1,727 | 2026-02-23 | [`INC-01463`](docs/incidents/2026.md#inc-01463) | Model Distillation Campaigns Targeting Anthropic Claude | High |  |  |  |
+| 1,728 | 2026-02-23 | [`INC-01848`](docs/incidents/2026.md#inc-01848) | Tenable Warns of Rising AI Security Risks in Cloud Environments | High | LLM03 | ASI04 |  |
+| 1,729 | 2026-02-23 | [`INC-01982`](docs/incidents/2026.md#inc-01982) | US Air Force Advances AI-Enabled Combat Drone 'Dark Merlin' Toward Live Weapons Testing | High | LLM05 | ASI05, ASI10 |  |
+| 1,730 | 2026-02-23 | [`INC-01983`](docs/incidents/2026.md#inc-01983) | US Air Force Demonstrates AI-Enabled Manned-Unmanned Combat Teaming | Critical | LLM05 | ASI05 |  |
+| 1,731 | 2026-02-23 | [`INC-02023`](docs/incidents/2026.md#inc-02023) | US Military Uses Anthropic's Claude AI in Venezuela Attack; Chinese Firms Illegally Exploit Claude Model | Critical | LLM03, LLM05 | ASI04, ASI05, ASI10 |  |
+| 1,732 | 2026-02-23 | [`INC-02063`](docs/incidents/2026.md#inc-02063) | Warnings of Large-Scale Human Job Displacement by AI Robots | High | LLM05 | ASI05 |  |
+| 1,733 | 2026-02-23 | [`INC-02122`](docs/incidents/2026.md#inc-02122) | Zürich Approves Police Use of AI for Criminal Investigations | Medium |  |  |  |
+| 1,734 | 2026-02-22 | [`INC-00195`](docs/incidents/2026.md#inc-00195) | AI Privacy Breaches, Cybersecurity Threats, and Economic Disruption Highlighted | Critical | LLM09 | ASI09 |  |
+| 1,735 | 2026-02-22 | [`INC-00918`](docs/incidents/2026.md#inc-00918) | Dutch Online Pharmacies Illegally Share Sensitive Health Data with Big Tech | High | LLM02 | ASI03 |  |
+| 1,736 | 2026-02-22 | [`INC-01047`](docs/incidents/2026.md#inc-01047) | French Cinema Artists Protest Unauthorized AI Voice and Image Cloning | High |  |  |  |
+| 1,737 | 2026-02-22 | [`INC-01520`](docs/incidents/2026.md#inc-01520) | Network of Allegedly Fake Facebook Profiles with Purportedly AI-Generated Images Amplified Posts by Bulgaria&… | High | LLM09 | ASI09 |  |
+| 1,738 | 2026-02-22 | [`INC-01538`](docs/incidents/2026.md#inc-01538) | Nobel Laureate Warns AI-Driven Job Losses Threaten U.S. Democracy | Medium |  |  |  |
+| 1,739 | 2026-02-22 | [`INC-01791`](docs/incidents/2026.md#inc-01791) | SpaceX and xAI Pursue AI-Driven Military Drones and Lunar AI Satellite Factories | Medium | LLM03 | ASI04 |  |
+| 1,740 | 2026-02-22 | [`INC-02007`](docs/incidents/2026.md#inc-02007) | US Launches AI-Driven Platform to Bypass Internet Censorship in China and Iran | High | LLM05 | ASI05 |  |
+| 1,741 | 2026-02-22 | [`INC-02015`](docs/incidents/2026.md#inc-02015) | US Lawsuits Target Social Media AI for Harm to Children | High | LLM02, LLM05, LLM09 | ASI03, ASI05, ASI09 |  |
+| 1,742 | 2026-02-21 | [`INC-00082`](docs/incidents/2026.md#inc-00082) | AI Audit by Turkish Social Security Agency Cancels 650,000 Pensions for Fraud | High | LLM05 | ASI05, ASI09 |  |
+| 1,743 | 2026-02-21 | [`INC-00125`](docs/incidents/2026.md#inc-00125) | AI Chatbots Provide Lower-Quality Responses to Iranian Users | Medium | LLM09 |  |  |
+| 1,744 | 2026-02-21 | [`INC-00265`](docs/incidents/2026.md#inc-00265) | AI-Augmented Cyberattack Compromises 600+ FortiGate Firewalls Globally | Critical | LLM02 | ASI02, ASI03, ASI05, ASI09, ASI10 |  |
+| 1,745 | 2026-02-21 | [`INC-00407`](docs/incidents/2026.md#inc-00407) | AI-Generated Deepfake Videos Used in Financial Scam in Portugal | Medium | LLM09 | ASI09 |  |
+| 1,746 | 2026-02-21 | [`INC-00911`](docs/incidents/2026.md#inc-00911) | Drug Cartels Use Social Media Algorithms to Recruit Mexican Youth | Medium |  |  |  |
+| 1,747 | 2026-02-21 | [`INC-01123`](docs/incidents/2026.md#inc-01123) | Google Uses AI to Remove 160 Million Fake Reviews and Block Fraudulent Apps | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,748 | 2026-02-21 | [`INC-01221`](docs/incidents/2026.md#inc-01221) | India and Israel Advance AI-Enabled Missile Defense Collaboration | High | LLM05 | ASI05, ASI10 |  |
+| 1,749 | 2026-02-21 | [`INC-01266`](docs/incidents/2026.md#inc-01266) | Japan Plans AI-Enabled Defense Upgrades to Counter Drone Threats | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,750 | 2026-02-20 | [`INC-00086`](docs/incidents/2026.md#inc-00086) | AI Beauty Filter Malfunction Causes Influencer to Lose 140,000 Followers | High | LLM05 | ASI05 |  |
+| 1,751 | 2026-02-20 | [`INC-00141`](docs/incidents/2026.md#inc-00141) | AI Data Centre Expansion in UK Raises Energy and Environmental Concerns | High | LLM05 | ASI05 |  |
+| 1,752 | 2026-02-20 | [`INC-00206`](docs/incidents/2026.md#inc-00206) | AI Surveillance Prevents Major Poaching Attempt in Odisha's Similipal Sanctuary | High | LLM05 | ASI05 |  |
+| 1,753 | 2026-02-20 | [`INC-00290`](docs/incidents/2026.md#inc-00290) | AI-Driven Disinformation Campaign Targets Japanese Election | High | LLM05, LLM09 | ASI05 |  |
+| 1,754 | 2026-02-20 | [`INC-00340`](docs/incidents/2026.md#inc-00340) | AI-Enabled Drones Cause Significant Harm in Ukraine Conflict | Critical | LLM05 | ASI05 |  |
+| 1,755 | 2026-02-20 | [`INC-00380`](docs/incidents/2026.md#inc-00380) | AI-Generated Deepfake Nude Apps Cause Harm and Abuse in Hungary | Medium | LLM09 | ASI09 |  |
+| 1,756 | 2026-02-20 | [`INC-00881`](docs/incidents/2026.md#inc-00881) | Delhi High Court Orders Removal of AI-Generated Deepfakes Targeting Actress Kajol | Medium | LLM09 | ASI09 |  |
+| 1,757 | 2026-02-20 | [`INC-00968`](docs/incidents/2026.md#inc-00968) | European Nations Launch AI-Driven Drone Defense Initiative Using Ukrainian Expertise | High | LLM05 | ASI05, ASI10 |  |
+| 1,758 | 2026-02-20 | [`INC-01005`](docs/incidents/2026.md#inc-01005) | Finji Accuses TikTok of Unauthorized, Harmful AI-Generated Ads | Medium |  |  |  |
+| 1,759 | 2026-02-20 | [`INC-01259`](docs/incidents/2026.md#inc-01259) | Italian University Fined for Unlawful Use of Facial Recognition in Online Courses | High | LLM05 | ASI05 |  |
+| 1,760 | 2026-02-20 | [`INC-01424`](docs/incidents/2026.md#inc-01424) | Metropolitan Police Use Palantir AI to Flag Officer Misconduct Raises Rights Concerns | Medium |  |  |  |
+| 1,761 | 2026-02-20 | [`INC-01431`](docs/incidents/2026.md#inc-01431) | Microsoft Blog Promotes AI Training on Pirated Harry Potter Books, Sparks Copyright Backlash | High | LLM05 | ASI05 |  |
+| 1,762 | 2026-02-20 | [`INC-01651`](docs/incidents/2026.md#inc-01651) | Planned Use of AI in Azerbaijan's Court System Raises Future Risks | Medium |  |  |  |
+| 1,763 | 2026-02-20 | [`INC-01779`](docs/incidents/2026.md#inc-01779) | Slovakia Plans National AI Cybersecurity Laboratory | High | LLM05 | ASI05 |  |
+| 1,764 | 2026-02-20 | [`INC-01813`](docs/incidents/2026.md#inc-01813) | Student Sues OpenAI After ChatGPT Allegedly Triggers Psychosis | High | LLM05 | ASI05 |  |
+| 1,765 | 2026-02-20 | [`INC-01874`](docs/incidents/2026.md#inc-01874) | Tesla's AI Self-Driving System Prevents Accident After Driver Passes Out | Critical |  |  |  |
+| 1,766 | 2026-02-20 | [`INC-01994`](docs/incidents/2026.md#inc-01994) | US Court Upholds $243 Million Verdict Against Tesla Over Fatal Autopilot Crash | Critical | LLM05 | ASI05 |  |
+| 1,767 | 2026-02-20 | [`INC-01999`](docs/incidents/2026.md#inc-01999) | US Government Contracts AI-Powered Defense Systems, Raising Future Risk Concerns | Medium |  | ASI10 |  |
+| 1,768 | 2026-02-19 | [`INC-00119`](docs/incidents/2026.md#inc-00119) | AI Chatbots Manipulated to Spread Misinformation via Simple Online Tricks | Medium | LLM09 |  |  |
+| 1,769 | 2026-02-19 | [`INC-00120`](docs/incidents/2026.md#inc-00120) | AI Chatbots Pose Psychological and Privacy Risks to Children | High | LLM09 |  |  |
+| 1,770 | 2026-02-19 | [`INC-00216`](docs/incidents/2026.md#inc-00216) | AI System Deployed to Detect Aggression in Bremen Trams | High |  |  |  |
+| 1,771 | 2026-02-19 | [`INC-00238`](docs/incidents/2026.md#inc-00238) | AI Tools Enable Sophisticated Fraud and Scams in Latvia | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,772 | 2026-02-19 | [`INC-00278`](docs/incidents/2026.md#inc-00278) | AI-Driven Cyberattacks Breach 600+ Firewalls Globally in Five Weeks | Critical |  | ASI05, ASI10 |  |
+| 1,773 | 2026-02-19 | [`INC-00435`](docs/incidents/2026.md#inc-00435) | AI-Generated Disinformation Threatens Local Elections in Hesse | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,774 | 2026-02-19 | [`INC-00495`](docs/incidents/2026.md#inc-00495) | AI-Generated Political Video Sparks Outrage in Hungary | High | LLM05, LLM09 | ASI05 |  |
+| 1,775 | 2026-02-19 | [`INC-00587`](docs/incidents/2026.md#inc-00587) | Android Malware 'PromptSpy' Uses Google's Gemini AI for Persistence and Remote Access | High | LLM02, LLM05 | ASI02, ASI05, ASI09 |  |
+| 1,776 | 2026-02-19 | [`INC-00600`](docs/incidents/2026.md#inc-00600) | Anthropic CEO Warns of Existential AI Risks and Imminent Superhuman Capabilities | Medium |  |  |  |
+| 1,777 | 2026-02-19 | [`INC-00734`](docs/incidents/2026.md#inc-00734) | Car Telemetry Data Sold to Insurers Without Clear Consent | High |  |  |  |
+| 1,778 | 2026-02-19 | [`INC-01150`](docs/incidents/2026.md#inc-01150) | Grok Reportedly Disclosed Adult Performer Siri Dahl&#x27;s Legal Name and Birthdate, Allegedly Contributing t… | High | LLM02, LLM09 | ASI03, ASI09 |  |
+| 1,779 | 2026-02-19 | [`INC-01228`](docs/incidents/2026.md#inc-01228) | India's AI Data Centre Boom Raises Environmental Concerns | High | LLM05 | ASI05 |  |
+| 1,780 | 2026-02-19 | [`INC-01616`](docs/incidents/2026.md#inc-01616) | Palantir AI Systems Implicated in Lethal Military and Security Operations | Critical | LLM05 | ASI05 |  |
+| 1,781 | 2026-02-19 | [`INC-01678`](docs/incidents/2026.md#inc-01678) | Predator Spyware Bypasses iPhone Privacy Indicators for Covert Surveillance | High |  |  |  |
+| 1,782 | 2026-02-19 | [`INC-01790`](docs/incidents/2026.md#inc-01790) | South Korean Woman Used ChatGPT to Plan Fatal Drug Poisonings | Critical | LLM04 | ASI06 |  |
+| 1,783 | 2026-02-18 | [`INC-00065`](docs/incidents/2026.md#inc-00065) | AI Adoption Reduces Job Opportunities for Young Tech Workers in Ireland | Medium |  |  |  |
+| 1,784 | 2026-02-18 | [`INC-00283`](docs/incidents/2026.md#inc-00283) | AI-Driven Cyberattacks Quadruple in Speed, Targeting Digital Identities | Critical | LLM02 | ASI02, ASI03, ASI05, ASI10 |  |
+| 1,785 | 2026-02-18 | [`INC-00339`](docs/incidents/2026.md#inc-00339) | AI-Enabled Drones Cause Major Harm in Ukraine War, Spur European Arms Race | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,786 | 2026-02-18 | [`INC-00369`](docs/incidents/2026.md#inc-00369) | AI-Generated Code Error Causes $1.78M Loss in DeFi Protocol Moonwell | High |  |  |  |
+| 1,787 | 2026-02-18 | [`INC-00379`](docs/incidents/2026.md#inc-00379) | AI-Generated Deepfake Investment Scams Defraud Victims in Turkey | High | LLM09 | ASI09 |  |
+| 1,788 | 2026-02-18 | [`INC-00423`](docs/incidents/2026.md#inc-00423) | AI-Generated Deepfakes Used in Fraudulent Celebrity Endorsements in Serbia | Medium | LLM09 | ASI09 |  |
+| 1,789 | 2026-02-18 | [`INC-00491`](docs/incidents/2026.md#inc-00491) | AI-Generated Passwords Found Predictable and Insecure, Experts Warn | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,790 | 2026-02-18 | [`INC-00592`](docs/incidents/2026.md#inc-00592) | Angolan Journalist Targeted by Predator Spyware | High |  |  |  |
+| 1,791 | 2026-02-18 | [`INC-00648`](docs/incidents/2026.md#inc-00648) | Arthur Hayes Warns of Potential AI-Driven Credit Crisis Impacting U.S. Financial System | Medium |  |  |  |
+| 1,792 | 2026-02-18 | [`INC-00875`](docs/incidents/2026.md#inc-00875) | Deepfake Scam Uses Romanian Central Bank Governor's Image to Promote Fraudulent Investments | Medium | LLM09 | ASI09 |  |
+| 1,793 | 2026-02-18 | [`INC-00986`](docs/incidents/2026.md#inc-00986) | Fake Gemini AI Chatbot Used in Google Coin Crypto Scam | Medium | LLM09 | ASI09 |  |
+| 1,794 | 2026-02-18 | [`INC-01356`](docs/incidents/2026.md#inc-01356) | Los Angeles Sues Roblox Over AI Moderation Failures Leading to Child Exploitation | High | LLM05 | ASI05 |  |
+| 1,795 | 2026-02-18 | [`INC-01359`](docs/incidents/2026.md#inc-01359) | Madrid Bar Association Proposes Penal Reform to Address AI Legal Advice Risks | Medium |  |  |  |
+| 1,796 | 2026-02-18 | [`INC-01417`](docs/incidents/2026.md#inc-01417) | Meta's AI Plans Spark Privacy and Ethical Concerns | Medium |  |  |  |
+| 1,797 | 2026-02-18 | [`INC-01432`](docs/incidents/2026.md#inc-01432) | Microsoft Copilot AI Bug Exposes Confidential Emails by Bypassing Security Controls | High | LLM02, LLM05 | ASI02, ASI03, ASI05, ASI09 |  |
+| 1,798 | 2026-02-18 | [`INC-01524`](docs/incidents/2026.md#inc-01524) | New Jersey City Cancels AI Data Center Over Environmental and Cost Concerns | Critical | LLM05 | ASI05 |  |
+| 1,799 | 2026-02-18 | [`INC-01649`](docs/incidents/2026.md#inc-01649) | Pinterest's AI Moderation System Wrongfully Flags and Bans Users | Medium |  |  |  |
+| 1,800 | 2026-02-18 | [`INC-01754`](docs/incidents/2026.md#inc-01754) | Scout AI Demonstrates Autonomous Lethal Drone System in California | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,801 | 2026-02-18 | [`INC-01834`](docs/incidents/2026.md#inc-01834) | Swarm Aero Opens AI-Enabled Military Drone Manufacturing Facility in Arkansas | Medium |  | ASI10 |  |
+| 1,802 | 2026-02-18 | [`INC-01977`](docs/incidents/2026.md#inc-01977) | UNESCO Warns of AI-Driven Revenue Losses in Creative Industries | Medium |  |  |  |
+| 1,803 | 2026-02-18 | [`INC-01998`](docs/incidents/2026.md#inc-01998) | US Federal Research Funds Support Chinese Military AI Labs, Raising Security Concerns | Critical |  |  |  |
+| 1,804 | 2026-02-18 | [`INC-02104`](docs/incidents/2026.md#inc-02104) | X's Algorithm Shifts Users Toward Conservative Political Views, Study Finds | High | LLM05, LLM09 | ASI05 |  |
+| 1,805 | 2026-02-18 | [`INC-02109`](docs/incidents/2026.md#inc-02109) | YouTube AI Recommendation System Outage Disrupts Global Service | Medium | LLM09 |  |  |
+| 1,806 | 2026-02-17 | [`INC-00080`](docs/incidents/2026.md#inc-00080) | AI Arms Race Raises Existential Risk, Warns Leading Researcher | Medium |  | ASI10 |  |
+| 1,807 | 2026-02-17 | [`INC-00208`](docs/incidents/2026.md#inc-00208) | AI Surveillance System Prevents Elephant Deaths on Railway Tracks in Odisha | Critical |  |  |  |
+| 1,808 | 2026-02-17 | [`INC-00289`](docs/incidents/2026.md#inc-00289) | AI-Driven Deepfake Scams Cause Harm in Louisiana and Cambodia | Medium | LLM09 | ASI09 |  |
+| 1,809 | 2026-02-17 | [`INC-00585`](docs/incidents/2026.md#inc-00585) | Andrew Yang Warns of Imminent Mass Layoffs Due to AI Automation | High | LLM05 | ASI05 |  |
+| 1,810 | 2026-02-17 | [`INC-00725`](docs/incidents/2026.md#inc-00725) | California Investigates xAI Over Harmful AI-Generated Sexual Content | High | LLM05 | ASI05 |  |
+| 1,811 | 2026-02-17 | [`INC-00932`](docs/incidents/2026.md#inc-00932) | Elon Musk Proposes Lunar AI Satellite Factory and Electromagnetic Launch System | Medium |  |  |  |
+| 1,812 | 2026-02-17 | [`INC-00942`](docs/incidents/2026.md#inc-00942) | Ergo to Cut 1,000 Jobs in Germany Due to Increased AI Automation | High | LLM05 | ASI05 |  |
+| 1,813 | 2026-02-17 | [`INC-00949`](docs/incidents/2026.md#inc-00949) | EU Investigates Shein Over Addictive AI Design and Illegal Product Sales | High | LLM05, LLM09 | ASI05 |  |
+| 1,814 | 2026-02-17 | [`INC-00967`](docs/incidents/2026.md#inc-00967) | European Nations Investigate AI-Generated Child Sexual Images on Social Media | High | LLM05, LLM09 | ASI05 |  |
+| 1,815 | 2026-02-17 | [`INC-01067`](docs/incidents/2026.md#inc-01067) | Generative AI Drives Surge in Cybercrime Effectiveness and Volume | Medium | LLM09 | ASI09 |  |
+| 1,816 | 2026-02-17 | [`INC-01255`](docs/incidents/2026.md#inc-01255) | Israeli Firms Deploy AI-Powered Vehicle Surveillance Tools | Critical | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,817 | 2026-02-17 | [`INC-01374`](docs/incidents/2026.md#inc-01374) | Mass Removal of AI-Generated Music Over Copyright Violations | High |  |  |  |
+| 1,818 | 2026-02-17 | [`INC-01613`](docs/incidents/2026.md#inc-01613) | Oxford Professor Warns of Potential 'Hindenburg-Style' AI Disaster Amid Rapid Commercialization | Medium | LLM05 | ASI09 |  |
+| 1,819 | 2026-02-17 | [`INC-01710`](docs/incidents/2026.md#inc-01710) | Purportedly AI-Generated Sepsis Alert Reportedly Prompted Potentially Inappropriate IV Fluid Administration f… | Medium | LLM05 | ASI08 |  |
+| 1,820 | 2026-02-17 | [`INC-01720`](docs/incidents/2026.md#inc-01720) | Rapid Development of Venom Autonomous Strike Aircraft Raises AI Risk Concerns | High | LLM05 | ASI05 |  |
+| 1,821 | 2026-02-17 | [`INC-01744`](docs/incidents/2026.md#inc-01744) | Romanian Company Unveils AI-Powered Autonomous Cruise Missile | Critical | LLM05 | ASI05, ASI10 |  |
+| 1,822 | 2026-02-17 | [`INC-01828`](docs/incidents/2026.md#inc-01828) | Supreme Court of India Warns Against AI-Generated Petitions with Fake Citations | High | LLM05, LLM09 | ASI05 |  |
+| 1,823 | 2026-02-17 | [`INC-01872`](docs/incidents/2026.md#inc-01872) | Tesla Robotaxis Involved in 14 Crashes in Austin Within Eight Months | Critical |  |  |  |
+| 1,824 | 2026-02-17 | [`INC-02112`](docs/incidents/2026.md#inc-02112) | ZDF Broadcasts Unlabeled AI-Generated Fake Videos in News Segment | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,825 | 2026-02-16 | [`INC-01701`](docs/incidents/2026.md#inc-01701) | Purported Deepfake TikTok Account Using Grainville School Branding in Jersey Reportedly Targeted Staff, Promp… | High | LLM09 | ASI09 |  |
+| 1,826 | 2026-02-15 | [`INC-00577`](docs/incidents/2026.md#inc-00577) | Amazon Delivery Van Reportedly Became Stranded on Essex Mudflats After GPS Routed It Onto the Broomway | Medium | LLM05 | ASI08 |  |
+| 1,827 | 2026-02-15 | [`INC-01285`](docs/incidents/2026.md#inc-01285) | KPMG Australia Partner Reportedly Used AI to Cheat on Internal AI Training Test and Was Fined A$10,000 | High | LLM09 | ASI09 |  |
+| 1,828 | 2026-02-13 | [`INC-00647`](docs/incidents/2026.md#inc-00647) | Ars Technica Retracted Article After Purportedly AI-Generated Text Was Presented as Direct Quotes From Matplo… | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,829 | 2026-02-13 | [`INC-01761`](docs/incidents/2026.md#inc-01761) | Seedance 2.0 Reportedly Generated Viral Tom Cruise–Brad Pitt Fight Video, Prompting Hollywood IP and Likeness… | High |  |  |  |
+| 1,830 | 2026-02-12 | [`INC-00320`](docs/incidents/2026.md#inc-00320) | AI-driven romance scams surge globally ahead of Valentine's Day | High | LLM09 | ASI09 |  |
+| 1,831 | 2026-02-12 | [`INC-02099`](docs/incidents/2026.md#inc-02099) | Woolworths&#x27; Olive Chatbot Reportedly Generated &#x27;Angry Mother&#x27; Anecdotes During Support Calls A… | Medium | LLM09 | ASI09 |  |
+| 1,832 | 2026-02-11 | [`INC-00131`](docs/incidents/2026.md#inc-00131) | AI Coding Agent &#x27;MJ Rathbun&#x27; Allegedly Published Personalized Accusatory Blog Post Targeting Matplo… | Critical | LLM06, LLM09 | ASI01, ASI09, ASI10 |  |
+| 1,833 | 2026-02-10 | [`INC-01574`](docs/incidents/2026.md#inc-01574) | OpenAI Allegedly Did Not Alert RCMP After ChatGPT Flagged Violent Chats Before British Columbia School Shooti… | Critical | LLM05 | ASI05, ASI09 |  |
+| 1,834 | 2026-02-08 | [`INC-00903`](docs/incidents/2026.md#inc-00903) | DJI Romo Cloud Authorization Bug Reportedly Exposed Camera, Microphone, and Home-Mapping Data From Nearly 7,0… | High | LLM02, LLM05 | ASI03, ASI05 |  |
+| 1,835 | 2026-02-07 | [`INC-00826`](docs/incidents/2026.md#inc-00826) | Claude Cowork Allegedly Deleted Folder Containing 15 Years of Family Photos While Organizing User&#x27;s Wife… | Medium | LLM05 | ASI08 |  |
+| 1,836 | 2026-02-07 | [`INC-01708`](docs/incidents/2026.md#inc-01708) | Purportedly AI-Generated Image Reportedly Circulated Ahead of Thai Election Depicting PM Anutin Charnvirakul… | High | LLM09 | ASI09 |  |
+| 1,837 | 2026-02-05 | [`INC-01548`](docs/incidents/2026.md#inc-01548) | NZ News Hub Reportedly Used AI-Rewritten News Posts and Synthetic Images to Mislead New Zealand Facebook Users | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,838 | 2026-02-05 | [`INC-01914`](docs/incidents/2026.md#inc-01914) | Trump Reportedly Posted Purportedly AI-Generated Racist Video Depicting Barack and Michelle Obama as Apes on… | High | LLM05, LLM09 | ASI09 |  |
+| 1,839 | 2026-02-03 | [`INC-01599`](docs/incidents/2026.md#inc-01599) | OpenClaw Command & Control via Prompt Injection | High |  |  |  |
+| 1,840 | 2026-02-01 | [`INC-01365`](docs/incidents/2026.md#inc-01365) | Malicious OpenClaw Skills Reportedly Delivered AMOS Stealer and Exfiltrated Credentials via ClawHub | Critical | LLM02, LLM03, LLM04, LLM09 | ASI02, ASI03, ASI04, ASI06, ASI09 |  |
+| 1,841 | 2026-02-01 | [`INC-01589`](docs/incidents/2026.md#inc-01589) | OpenClaw 1-Click Remote Code Execution | Critical |  |  |  |
+| 1,842 | 2026-02 | [`INC-00022`](docs/incidents/2026.md#inc-00022) | A vulnerability in Google Cloud Vertex AI Workbench from 7/21/2025 to 01/30/2026 allows an attacker to exfilt… | Medium | LLM03 | ASI04 | `CVE-2026-2244` |
+| 1,843 | 2026-02 | [`INC-00048`](docs/incidents/2026.md#inc-00048) | Agenta — Sandbox Escape (CVE-2026-27952) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27952` |
+| 1,844 | 2026-02 | [`INC-00049`](docs/incidents/2026.md#inc-00049) | Agenta — Vulnerability (CVE-2026-27961) | High | LLM03 | ASI04 | `CVE-2026-27961` |
+| 1,845 | 2026-02 | [`INC-00198`](docs/incidents/2026.md#inc-00198) | AI recommendation poisoning — hidden prompt injections in 'Summarize with AI' buttons across 31 companies | High | LLM01, LLM04 | ASI01, ASI06, ASI09 |  |
+| 1,846 | 2026-02 | [`INC-00643`](docs/incidents/2026.md#inc-00643) | AppOmni Critical AI Agent Flaws in Microsoft Copilot Studio | High | LLM06 | ASI02, ASI03 |  |
+| 1,847 | 2026-02 | [`INC-00659`](docs/incidents/2026.md#inc-00659) | AutoGPT — Ssrf (CVE-2025-62616) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-62616` |
+| 1,848 | 2026-02 | [`INC-00663`](docs/incidents/2026.md#inc-00663) | Autonomous AI agent breaches McKinsey internal AI platform in 2 hours | High | LLM02, LLM06 | ASI01, ASI02, ASI10 |  |
+| 1,849 | 2026-02 | [`INC-00740`](docs/incidents/2026.md#inc-00740) | Chat & Ask AI app — 300 million messages from 25 million users exposed via misconfigured Firebase | Critical | LLM02 | ASI03, ASI09 |  |
+| 1,850 | 2026-02 | [`INC-00746`](docs/incidents/2026.md#inc-00746) | ChatGPT Data Exfiltration via DNS Covert Channel | Critical | LLM01, LLM02, LLM05, LLM06 | ASI01, ASI02, ASI03, ASI05 |  |
+| 1,851 | 2026-02 | [`INC-00806`](docs/incidents/2026.md#inc-00806) | Claude AI jailbreak — Mexican government breach, 150GB data theft across 10 agencies | Critical | LLM01, LLM02 | ASI01, ASI02, ASI10 |  |
+| 1,852 | 2026-02 | [`INC-00815`](docs/incidents/2026.md#inc-00815) | Claude Code — Data Exfiltration (CVE-2026-24052) | High | LLM03 | ASI04 | `CVE-2026-24052` |
+| 1,853 | 2026-02 | [`INC-00817`](docs/incidents/2026.md#inc-00817) | Claude Code — Vulnerability (CVE-2026-24053) | Medium | LLM03 | ASI04 | `CVE-2026-24053` |
+| 1,854 | 2026-02 | [`INC-00818`](docs/incidents/2026.md#inc-00818) | Claude Code — Vulnerability (CVE-2026-24887) | High | LLM03 | ASI04 | `CVE-2026-24887` |
+| 1,855 | 2026-02 | [`INC-00819`](docs/incidents/2026.md#inc-00819) | Claude Code — Vulnerability (CVE-2026-25722) | Critical | LLM03 | ASI04 | `CVE-2026-25722` |
+| 1,856 | 2026-02 | [`INC-00820`](docs/incidents/2026.md#inc-00820) | Claude Code — Vulnerability (CVE-2026-25723) | Medium | LLM03 | ASI04 | `CVE-2026-25723` |
+| 1,857 | 2026-02 | [`INC-00821`](docs/incidents/2026.md#inc-00821) | Claude Code — Vulnerability (CVE-2026-25724) | High | LLM03 | ASI04 | `CVE-2026-25724` |
+| 1,858 | 2026-02 | [`INC-00822`](docs/incidents/2026.md#inc-00822) | Claude Code — Vulnerability (CVE-2026-25725) | Critical | LLM03 | ASI04 | `CVE-2026-25725` |
+| 1,859 | 2026-02 | [`INC-00834`](docs/incidents/2026.md#inc-00834) | Clinejection — CI/CD pipeline compromise via Cline's issue triage bot, 4,000 machines infected | Critical | LLM01, LLM03, LLM04, LLM05 | ASI01, ASI04, ASI05, ASI10 |  |
+| 1,860 | 2026-02 | [`INC-00869`](docs/incidents/2026.md#inc-00869) | Cursor — Prompt Injection (CVE-2026-26268) | High | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-26268` |
+| 1,861 | 2026-02 | [`INC-00894`](docs/incidents/2026.md#inc-00894) | Dify — Vulnerability (CVE-2026-28288) | Medium | LLM03 | ASI04 | `CVE-2026-28288` |
+| 1,862 | 2026-02 | [`INC-00896`](docs/incidents/2026.md#inc-00896) | Dify — Xss (CVE-2026-26023) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26023` |
+| 1,863 | 2026-02 | [`INC-00923`](docs/incidents/2026.md#inc-00923) | eBay API MCP Server — Rce (CVE-2026-27203) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27203` |
+| 1,864 | 2026-02 | [`INC-00936`](docs/incidents/2026.md#inc-00936) | Enclave — Rce (CVE-2026-25533) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25533` |
+| 1,865 | 2026-02 | [`INC-00937`](docs/incidents/2026.md#inc-00937) | Enclave — Rce (CVE-2026-27597) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27597` |
+| 1,866 | 2026-02 | [`INC-00994`](docs/incidents/2026.md#inc-00994) | FastGPT — Vulnerability (CVE-2026-26003) | Medium | LLM03 | ASI04 | `CVE-2026-26003` |
+| 1,867 | 2026-02 | [`INC-00995`](docs/incidents/2026.md#inc-00995) | FastGPT — Vulnerability (CVE-2026-26075) | Medium | LLM03 | ASI04 | `CVE-2026-26075` |
+| 1,868 | 2026-02 | [`INC-01087`](docs/incidents/2026.md#inc-01087) | ggml-org llama — Vulnerability (CVE-2026-2069) | Low | LLM03 | ASI04 | `CVE-2026-2069` |
+| 1,869 | 2026-02 | [`INC-01090`](docs/incidents/2026.md#inc-01090) | GitLab has remediated a vulnerability in the Duo Workflow Service component of GitLab AI Gateway affecting al… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1868` |
+| 1,870 | 2026-02 | [`INC-01100`](docs/incidents/2026.md#inc-01100) | Godot MCP — Command Injection (CVE-2026-25546) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25546` |
+| 1,871 | 2026-02 | [`INC-01132`](docs/incidents/2026.md#inc-01132) | Gradio — Path Traversal (CVE-2026-28414) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28414` |
+| 1,872 | 2026-02 | [`INC-01133`](docs/incidents/2026.md#inc-01133) | Gradio — Ssrf (CVE-2026-28416) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-28416` |
+| 1,873 | 2026-02 | [`INC-01134`](docs/incidents/2026.md#inc-01134) | Gradio — Vulnerability (CVE-2026-27167) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-27167` |
+| 1,874 | 2026-02 | [`INC-01135`](docs/incidents/2026.md#inc-01135) | Gradio — Vulnerability (CVE-2026-28415) | Medium | LLM03 | ASI04 | `CVE-2026-28415` |
+| 1,875 | 2026-02 | [`INC-01157`](docs/incidents/2026.md#inc-01157) | HackerBot Claw campaign: autonomous AI agent probes CI/CD across open-source repos | High | LLM03, LLM06 | ASI01, ASI02, ASI10 |  |
+| 1,876 | 2026-02 | [`INC-01166`](docs/incidents/2026.md#inc-01166) | HuggingFace Transformers RCE | High | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2026-1839` |
+| 1,877 | 2026-02 | [`INC-01196`](docs/incidents/2026.md#inc-01196) | In mlflow version 2.20.3, the temporary directory used for creating Python virtual environments is assigned i… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-10279` |
+| 1,878 | 2026-02 | [`INC-01215`](docs/incidents/2026.md#inc-01215) | In the Linux kernel, the following vulnerability has been resolved: rust_binder: correctly handle FDA objects… | High | LLM03 | ASI04 | `CVE-2026-23194` |
+| 1,879 | 2026-02 | [`INC-01292`](docs/incidents/2026.md#inc-01292) | LangChain — Ssrf (CVE-2026-26013) | Low | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26013` |
+| 1,880 | 2026-02 | [`INC-01295`](docs/incidents/2026.md#inc-01295) | LangChain — Vulnerability (CVE-2026-26019) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26019`, `CVE-2026-27795` |
+| 1,881 | 2026-02 | [`INC-01297`](docs/incidents/2026.md#inc-01297) | Langflow CSV Agent RCE via Prompt Injection (CVE-2026-27966) | Critical | LLM01, LLM05 | ASI01, ASI02, ASI05 | `CVE-2026-27966` |
+| 1,882 | 2026-02 | [`INC-01328`](docs/incidents/2026.md#inc-01328) | LibreChat MCP credential placeholder substitution -> OAuth token exfiltration | High | LLM02, LLM03, LLM06 | ASI03, ASI04, ASI07, ASI09 | `CVE-2026-31951` |
+| 1,883 | 2026-02 | [`INC-01337`](docs/incidents/2026.md#inc-01337) | Liquid Prompt — Command Injection (CVE-2026-27113) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27113` |
+| 1,884 | 2026-02 | [`INC-01339`](docs/incidents/2026.md#inc-01339) | LiteLLM proxy /config/update authz bypass -> RCE | Critical | LLM02, LLM03, LLM05, LLM06 | ASI03, ASI04, ASI05 | `CVE-2026-35029` |
+| 1,885 | 2026-02 | [`INC-01383`](docs/incidents/2026.md#inc-01383) | MCP Salesforce Connector — Vulnerability (CVE-2026-25650) | High | LLM03 | ASI04 | `CVE-2026-25650` |
+| 1,886 | 2026-02 | [`INC-01384`](docs/incidents/2026.md#inc-01384) | MCP TypeScript SDK — Info Disclosure (CVE-2026-25536) | High | LLM02, LLM03 | ASI02, ASI04 | `CVE-2026-25536` |
+| 1,887 | 2026-02 | [`INC-01445`](docs/incidents/2026.md#inc-01445) | Milvus — Auth Bypass (CVE-2026-26190) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-26190` |
+| 1,888 | 2026-02 | [`INC-01453`](docs/incidents/2026.md#inc-01453) | Missing Authorization vulnerability in Ays Pro AI ChatBot with ChatGPT and Content Generator by AYS ays-chatg… | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-25338` |
+| 1,889 | 2026-02 | [`INC-01458`](docs/incidents/2026.md#inc-01458) | MLflow Tracking Server Artifact Handler Directory Traversal Remote Code Execution Vulnerability. | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-2033`, `CVE-2026-2635` |
+| 1,890 | 2026-02 | [`INC-01462`](docs/incidents/2026.md#inc-01462) | Model Context Protocol Servers — Vulnerability (CVE-2026-27735) | Medium | LLM03 | ASI04 | `CVE-2026-27735` |
+| 1,891 | 2026-02 | [`INC-01465`](docs/incidents/2026.md#inc-01465) | Moltbook — vibe-coded social network exposes 1.5M API tokens and 35K emails | Critical | LLM02 | ASI03, ASI09 |  |
+| 1,892 | 2026-02 | [`INC-01474`](docs/incidents/2026.md#inc-01474) | n8n — Auth Bypass (CVE-2026-25052) | Critical | LLM03 | ASI03, ASI04 | `CVE-2026-25052` |
+| 1,893 | 2026-02 | [`INC-01475`](docs/incidents/2026.md#inc-01475) | n8n — Command Injection (CVE-2026-21893) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-21893` |
+| 1,894 | 2026-02 | [`INC-01476`](docs/incidents/2026.md#inc-01476) | n8n — Data Exfiltration (CVE-2026-25631) | Medium | LLM03 | ASI03, ASI04 | `CVE-2026-25631` |
+| 1,895 | 2026-02 | [`INC-01480`](docs/incidents/2026.md#inc-01480) | n8n — Info Disclosure (CVE-2025-61917) | High | LLM02, LLM03 | ASI02, ASI03, ASI04 | `CVE-2025-61917` |
+| 1,896 | 2026-02 | [`INC-01483`](docs/incidents/2026.md#inc-01483) | n8n — Rce (CVE-2026-25055) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25055` |
+| 1,897 | 2026-02 | [`INC-01484`](docs/incidents/2026.md#inc-01484) | n8n — Rce (CVE-2026-25056) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25056` |
+| 1,898 | 2026-02 | [`INC-01485`](docs/incidents/2026.md#inc-01485) | n8n — Rce (CVE-2026-27498) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-27498` |
+| 1,899 | 2026-02 | [`INC-01494`](docs/incidents/2026.md#inc-01494) | n8n — Vulnerability (CVE-2026-25053) | Critical | LLM03 | ASI04 | `CVE-2026-25053` |
+| 1,900 | 2026-02 | [`INC-01495`](docs/incidents/2026.md#inc-01495) | n8n — Vulnerability (CVE-2026-25115) | Critical | LLM03 | ASI04 | `CVE-2026-25115` |
+| 1,901 | 2026-02 | [`INC-01507`](docs/incidents/2026.md#inc-01507) | n8n — Xss (CVE-2026-25051) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25051` |
+| 1,902 | 2026-02 | [`INC-01508`](docs/incidents/2026.md#inc-01508) | n8n — Xss (CVE-2026-25054) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25054` |
+| 1,903 | 2026-02 | [`INC-01523`](docs/incidents/2026.md#inc-01523) | New API — Xss (CVE-2026-25802) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25802` |
+| 1,904 | 2026-02 | [`INC-01569`](docs/incidents/2026.md#inc-01569) | Open WebUI — Xss (CVE-2026-26192) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26192` |
+| 1,905 | 2026-02 | [`INC-01570`](docs/incidents/2026.md#inc-01570) | Open WebUI — Xss (CVE-2026-26193) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26193` |
+| 1,906 | 2026-02 | [`INC-01588`](docs/incidents/2026.md#inc-01588) | OpenClaw (formerly Clawdbot) is a personal AI assistant users run on their own devices. | Low | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-24764` |
+| 1,907 | 2026-02 | [`INC-01600`](docs/incidents/2026.md#inc-01600) | OpenClaw Open-Source AI Agent Mass Compromise | Critical | LLM01, LLM03, LLM05, LLM06 | ASI02, ASI04, ASI05, ASI10 |  |
+| 1,908 | 2026-02 | [`INC-01603`](docs/incidents/2026.md#inc-01603) | OpenClaw — Path Traversal (CVE-2026-25475) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25475` |
+| 1,909 | 2026-02 | [`INC-01604`](docs/incidents/2026.md#inc-01604) | OpenClaw — Path Traversal (CVE-2026-26972) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26972` |
+| 1,910 | 2026-02 | [`INC-01605`](docs/incidents/2026.md#inc-01605) | OpenClaw — Vulnerability (CVE-2026-27001) | High | LLM03 | ASI04 | `CVE-2026-27001` |
+| 1,911 | 2026-02 | [`INC-01609`](docs/incidents/2026.md#inc-01609) | OrcaStatLLM Researcher — Xss (CVE-2026-24903) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-24903` |
+| 1,912 | 2026-02 | [`INC-01625`](docs/incidents/2026.md#inc-01625) | Parse Dashboard — Vulnerability (CVE-2026-27595) | High | LLM03 | ASI04 | `CVE-2026-27595` (+2) |
+| 1,913 | 2026-02 | [`INC-01713`](docs/incidents/2026.md#inc-01713) | Pydantic AI — Path Traversal (CVE-2026-25640) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25640` |
+| 1,914 | 2026-02 | [`INC-01714`](docs/incidents/2026.md#inc-01714) | Pydantic AI — Ssrf (CVE-2026-25580) | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2026-25580` |
+| 1,915 | 2026-02 | [`INC-01718`](docs/incidents/2026.md#inc-01718) | Qdrant — Vulnerability (CVE-2026-25628) | High | LLM03 | ASI04 | `CVE-2026-25628` |
+| 1,916 | 2026-02 | [`INC-01723`](docs/incidents/2026.md#inc-01723) | Ray — Vulnerability (CVE-2026-27482) | Medium | LLM03 | ASI04 | `CVE-2026-27482` |
+| 1,917 | 2026-02 | [`INC-01762`](docs/incidents/2026.md#inc-01762) | Semantic Kernel — Path Traversal (CVE-2026-25592) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-25592` |
+| 1,918 | 2026-02 | [`INC-01767`](docs/incidents/2026.md#inc-01767) | sf-mcp-server — Command Injection (CVE-2026-26029) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26029` |
+| 1,919 | 2026-02 | [`INC-01773`](docs/incidents/2026.md#inc-01773) | SillyTavern — Ssrf (CVE-2026-26286) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-26286` |
+| 1,920 | 2026-02 | [`INC-01777`](docs/incidents/2026.md#inc-01777) | Skill Scanner — Prompt Injection (CVE-2026-26057) | Medium | LLM01, LLM05 | ASI01, ASI05 | `CVE-2026-26057` |
+| 1,921 | 2026-02 | [`INC-01810`](docs/incidents/2026.md#inc-01810) | Stored Cross-Site Scripting (XSS) in the _genai/_evals_visualization component of Google Cloud Vertex AI SDK… | Medium | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2026-2472`, `CVE-2026-2473` |
+| 1,922 | 2026-02 | [`INC-01823`](docs/incidents/2026.md#inc-01823) | Summary A Reflected Cross-Site Scripting (XSS) vulnerability was discovered in the AI Playground's OAuth call… | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-1721` |
+| 1,923 | 2026-02 | [`INC-01852`](docs/incidents/2026.md#inc-01852) | TensorFlow HDF5 Library Uncontrolled Search Path Element Local Privilege Escalation Vulnerability. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-2492` |
+| 1,924 | 2026-02 | [`INC-01884`](docs/incidents/2026.md#inc-01884) | The Amazon SageMaker Python SDK before v3.2.0 and v2.256.0 includes the ModelBuilder HMAC signing key in the… | High | LLM03 | ASI04 | `CVE-2026-1777`, `CVE-2026-1778` |
+| 1,925 | 2026-02 | [`INC-01895`](docs/incidents/2026.md#inc-01895) | The Python code being run by 'runPython' or 'runPythonAsync' is not isolated from the rest of the JS code, al… | Medium | LLM03 | ASI04 | `CVE-2026-25905` |
+| 1,926 | 2026-02 | [`INC-01907`](docs/incidents/2026.md#inc-01907) | Time-of-check time-of-use (toctou) race condition in GitHub Copilot and Visual Studio allows an authorized at… | High | LLM03 | ASI04 | `CVE-2026-21523` |
+| 1,927 | 2026-02 | [`INC-02047`](docs/incidents/2026.md#inc-02047) | vLLM RCE via Malicious Video URL (CVE-2026-22778) | Critical | LLM02, LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-22778` |
+| 1,928 | 2026-02 | [`INC-02113`](docs/incidents/2026.md#inc-02113) | Zed, a code editor, has a symlink escape vulnerability in versions prior to 0.225.9 in Agent file tools (`rea… | High | LLM03 | ASI04 | `CVE-2026-27967` |
+| 1,929 | 2026-01-31 | [`INC-01464`](docs/incidents/2026.md#inc-01464) | Moltbook Database Exposure Allegedly Revealed Users&#x27; Private Communications and API Authentication Tokens | High | LLM02, LLM09 | ASI03, ASI09 |  |
+| 1,930 | 2026-01-28 | [`INC-01789`](docs/incidents/2026.md#inc-01789) | South Korean Woman Allegedly Used ChatGPT to Assess Lethality of Drug-and-Alcohol Mixtures Before Two Fatal M… | Critical | LLM04, LLM09 | ASI06, ASI09 |  |
+| 1,931 | 2026-01-26 | [`INC-00058`](docs/incidents/2026.md#inc-00058) | AI Adoption Drives Highest Net Job Losses in UK Among Major Economies | High | LLM05 | ASI05 |  |
+| 1,932 | 2026-01-26 | [`INC-00907`](docs/incidents/2026.md#inc-00907) | Doomsday Clock Moved Closer to Midnight Amid AI Risk Concerns | Medium | LLM09 | ASI10 |  |
+| 1,933 | 2026-01-26 | [`INC-00925`](docs/incidents/2026.md#inc-00925) | ECRI Warns of Patient Safety Risks from AI Chatbot Misuse in Healthcare | Medium | LLM09 |  |  |
+| 1,934 | 2026-01-26 | [`INC-00945`](docs/incidents/2026.md#inc-00945) | EU and Brazil Investigate X's Grok AI for Generating Sexualized Deepfake Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,935 | 2026-01-26 | [`INC-00953`](docs/incidents/2026.md#inc-00953) | EU Investigates X and Grok AI Over Sexualized Deepfake Scandal | High | LLM05, LLM09 | ASI05, ASI09 |  |
+| 1,936 | 2026-01-26 | [`INC-00954`](docs/incidents/2026.md#inc-00954) | EU Investigates X and Grok AI Over Sexually Explicit Deepfake Images | Critical | LLM09 | ASI09 |  |
 | 1,937 | 2026-01-26 | [`INC-00958`](docs/incidents/2026.md#inc-00958) | EU Investigates X's Grok AI for Enabling Harmful Deepfake Creation | High | LLM09 | ASI09 |  |
 | 1,938 | 2026-01-26 | [`INC-00959`](docs/incidents/2026.md#inc-00959) | EU Investigates X's Grok AI for Generating Explicit and Illegal Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
 | 1,939 | 2026-01-26 | [`INC-00961`](docs/incidents/2026.md#inc-00961) | EU Investigates xAI's Grok for Generating Harmful Deepfake Images | High | LLM05, LLM09 | ASI05, ASI09 |  |
