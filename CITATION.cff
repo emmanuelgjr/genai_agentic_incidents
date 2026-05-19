@@ -5,8 +5,8 @@ message: >-
   please cite it as below.
 type: dataset
 authors:
-  - family-names: "Junior Rodrigues"
-    given-names: "Emmanuel G."
+  - family-names: "Guilherme Junior"
+    given-names: "Emmanuel"
     alias: "emmanuelgjr"
 url: "https://github.com/emmanuelgjr/genai_agentic_incidents"
 repository-code: "https://github.com/emmanuelgjr/genai_agentic_incidents"
@@ -39,8 +39,8 @@ preferred-citation:
   type: dataset
   title: "GenAI & Agentic AI Security Incidents"
   authors:
-    - family-names: "Junior Rodrigues"
-      given-names: "Emmanuel G."
+    - family-names: "Guilherme Junior"
+      given-names: "Emmanuel"
       alias: "emmanuelgjr"
   year: 2026
   version: "2.0.0"
