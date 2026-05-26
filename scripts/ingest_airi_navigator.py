@@ -19,10 +19,11 @@ import csv
 import io
 import json
 import re
-import ssl
 import urllib.request
 import zipfile
 from pathlib import Path
+
+from ingest_utils import conditional_fetch
 
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
@@ -70,17 +71,14 @@ SUBDOMAIN_MAP: dict[str, tuple[list[str], list[str], str]] = {
 SEVERITY_MAP = {"0": "Low", "1": "Medium", "2": "High", "3": "Critical"}
 
 
-def download_zip() -> Path:
-    if ZIP_PATH.exists() and ZIP_PATH.stat().st_size > 100_000:
-        return ZIP_PATH
-    print(f"[airi] downloading {ZIP_URL}")
-    ctx = ssl.create_default_context()
-    req = urllib.request.Request(
-        ZIP_URL, headers={"User-Agent": "Mozilla/5.0 (genai_agentic_incidents)"}
-    )
-    with urllib.request.urlopen(req, context=ctx, timeout=60) as r:
-        ZIP_PATH.write_bytes(r.read())
-    return ZIP_PATH
+def download_zip() -> tuple[Path, bool]:
+    """Download the AIRI ZIP with conditional fetch (ETag support)."""
+    data, changed = conditional_fetch(ZIP_URL, ZIP_PATH, min_cache_bytes=100_000)
+    if not changed:
+        print("[airi] ZIP unchanged (304), using cache")
+    else:
+        print(f"[airi] downloaded {len(data):,} bytes -> {ZIP_PATH.name}")
+    return ZIP_PATH, changed
 
 
 def load_incidents(zip_path: Path) -> list[dict]:
@@ -90,27 +88,6 @@ def load_incidents(zip_path: Path) -> list[dict]:
             text = io.TextIOWrapper(f, encoding="utf-8", newline="")
             rows = list(csv.DictReader(text))
     return rows
-
-
-SECURITY_KEYWORDS = (
-    "prompt injection prompt-injection jailbreak jailbroken deepfake voice clone "
-    "voice cloning data leak data breach leaked exposed exfiltrat ransomware "
-    "phishing vishing smishing rce remote code execution command injection "
-    "sandbox escape ssrf sql injection deserialization supply chain model theft "
-    "model extraction membership inference adversarial evasion poisoning "
-    "backdoor scam fraud imperson spoofed spoofing malware trojan worm "
-    "vulnerab exploit hack hijack stole stolen theft unauthorized credential "
-    "password api key token agent autonomous copilot openai anthropic gemini "
-    "chatgpt claude hallucina misinform disinform election influence operation "
-    "propaganda chatbot llm language model facial recognition surveillance "
-    "biometric privacy weapon csam child sexual racist discriminat bias "
-    "deepseek mistral huggingface cyberattack cybersecurity"
-).split()
-
-
-def is_security_relevant(title: str, desc: str) -> bool:
-    text = (title + " " + desc).lower()
-    return any(kw in text for kw in SECURITY_KEYWORDS)
 
 
 def normalize_row(row: dict) -> dict | None:
@@ -133,11 +110,6 @@ def normalize_row(row: dict) -> dict | None:
         year = int(date[:4])
     if not year:
         return None
-
-    if not is_security_relevant(title, desc):
-        # Keep all incidents anyway — AIRI is curated and adds taxonomy
-        # value across the board. Skip only purely non-AI rows.
-        pass
 
     sub = (row.get("subdomain_id") or "").strip()
     llm, asi, attack_vector = SUBDOMAIN_MAP.get(sub, ([], [], "other"))
@@ -188,7 +160,7 @@ def normalize_row(row: dict) -> dict | None:
 
 
 def main():
-    zip_path = download_zip()
+    zip_path, _ = download_zip()
     rows = load_incidents(zip_path)
     print(f"[airi] loaded {len(rows)} rows from {zip_path.name}")
 
