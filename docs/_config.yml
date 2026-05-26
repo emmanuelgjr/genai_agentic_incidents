@@ -16,3 +16,4 @@ exclude:
   - _site
   - Gemfile
   - Gemfile.lock
+  - superpowers
