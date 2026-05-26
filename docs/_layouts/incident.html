@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title | default: "Incident" }} · GenAI & Agentic AI Security Incidents</title>
+  <meta name="description" content="{{ page.description_preview | default: 'Incident detail from the GenAI & Agentic AI Security Incidents dataset.' | escape }}">
+  <link rel="canonical" href="https://emmanuelgjr.github.io/genai_agentic_incidents/incident/{{ page.incident_id }}.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ page.title | escape }}">
+  <meta property="og:description" content="{{ page.description_preview | default: 'GenAI security incident detail.' | escape }}">
+  <meta property="og:url" content="https://emmanuelgjr.github.io/genai_agentic_incidents/incident/{{ page.incident_id }}.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="GenAI & Agentic AI Security Incidents">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DigitalDocument",
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.description_preview | default: "" | jsonify }},
+    "url": "https://emmanuelgjr.github.io/genai_agentic_incidents/incident/{{ page.incident_id }}.html",
+    "datePublished": "{{ page.date | default: '' }}",
+    "publisher": {
+      "@type": "Person",
+      "name": "Emmanuel Guilherme Junior"
+    },
+    "keywords": {{ page.tags_str | default: "" | jsonify }}
+  }
+  </script>
+</head>
+<body class="shard-page incident-page">
+  <header class="masthead">
+    <div class="wrap">
+      <div class="title-row">
+        <h1>{{ page.incident_id }}</h1>
+        <p class="links">
+          <a href="{{ '/' | relative_url }}">← All incidents</a>
+          {% if page.year %}<a href="{{ '/incidents/' | append: page.year | append: '.html' | relative_url }}">← {{ page.year }} incidents</a>{% endif %}
+          <a href="https://github.com/emmanuelgjr/genai_agentic_incidents">GitHub</a>
+          <a href="https://doi.org/10.5281/zenodo.20248676">DOI</a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap shard-body">
+    {{ content }}
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        Curated by <strong>Emmanuel Guilherme Junior</strong> ·
+        Data licensed <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> ·
+        Code licensed <a href="https://opensource.org/licenses/MIT">MIT</a> ·
+        Cite with DOI <a href="https://doi.org/10.5281/zenodo.20248676"><code>10.5281/zenodo.20248676</code></a>.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
