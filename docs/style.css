@@ -645,6 +645,14 @@ footer .meta { margin-top: 0.4rem; }
 .back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .back-to-top:hover { background: var(--fg); color: var(--bg-elev); text-decoration: none; }
 
+/* ----------------------------- Incident pages ----------------------------- */
+.incident-page .masthead h1 {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
 /* ----------------------------- Mobile ----------------------------- */
 @media (max-width: 720px) {
   .wrap { padding: 0 1rem; }
