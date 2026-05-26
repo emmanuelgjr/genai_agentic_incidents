@@ -59,6 +59,48 @@ def test_owasp_bar_chart_uses_codes(tmp_path):
     assert "Prompt Injection" in body
 
 
+def test_render_incident_block_produces_card():
+    """The shared helper should produce an incident card with anchor div."""
+    entry = {
+        "id": "INC-00001",
+        "title": "Test incident",
+        "date": "2025-01-15",
+        "year": 2025,
+        "category": "real-world",
+        "severity": "High",
+        "description": "A test description.",
+        "attack_vector": "prompt-injection",
+        "owasp_llm": ["LLM01"],
+        "references": [{"title": "Source", "url": "https://example.com", "type": "news"}],
+        "tags": ["test"],
+    }
+    lines = r.render_incident_block(entry)
+    body = "\n".join(lines)
+    assert 'id="inc-00001"' in body
+    assert "### INC-00001" in body
+    assert "Test incident" in body
+    assert "prompt-injection" in body
+    assert "LLM01" in body
+    assert "https://example.com" in body
+
+
+def test_render_incident_block_handles_minimal_entry():
+    """Minimal entry with only required fields should not crash."""
+    entry = {
+        "id": "INC-99999",
+        "title": "Minimal",
+        "date": "2025",
+        "year": 2025,
+        "category": "real-world",
+        "severity": "Medium",
+        "description": "",
+    }
+    lines = r.render_incident_block(entry)
+    body = "\n".join(lines)
+    assert "### INC-99999" in body
+    assert "Minimal" in body
+
+
 def test_severity_stack_renders_legend(tmp_path):
     from collections import Counter
     out = tmp_path / "sev.svg"

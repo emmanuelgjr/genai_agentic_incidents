@@ -262,6 +262,97 @@ def shard_rel(year: int) -> str:
     return f"docs/incidents/{year}.md"
 
 
+def render_incident_block(e: dict) -> list[str]:
+    """Return a list of markdown lines for one incident card.
+
+    Reusable by both year-shard generation and per-incident page generation.
+    """
+    lines: list[str] = []
+    # Each incident is wrapped in a `<div class="incident-anchor">`
+    # with an id matching the lowercase INC-* slug. The layout's
+    # JS highlights `.target` when the URL hash matches, so links
+    # arriving from the main app land on a visibly-marked card.
+    slug = e["id"].lower()
+    lines.append(f'<div class="incident-anchor" id="{slug}" markdown="1">')
+    lines.append("")
+    lines.append(f"### {e['id']}")
+    lines.append("")
+    lines.append(f"**{e['title']}**  ")
+    meta_bits = [
+        e.get("date", ""),
+        e.get("category", ""),
+        f"Severity: {e.get('severity','')}",
+    ]
+    lines.append("_" + " · ".join(b for b in meta_bits if b) + "_")
+    if e.get("cve_ids"):
+        lines.append("")
+        lines.append("CVEs: " + ", ".join(f"`{c}`" for c in e["cve_ids"]))
+    if e.get("cwe_ids"):
+        lines.append("CWEs: " + ", ".join(f"`{c}`" for c in e["cwe_ids"]))
+    if e.get("cvss_score") is not None:
+        cvss_line = f"CVSS: **{e['cvss_score']}**"
+        if e.get("cvss_vector"):
+            cvss_line += f" — `{e['cvss_vector']}`"
+        lines.append(cvss_line)
+    if e.get("aiid_id"):
+        lines.append(
+            f"AIID: [`#{e['aiid_id']}`]"
+            f"(https://incidentdatabase.ai/cite/{e['aiid_id']}/)"
+        )
+    if e.get("disclosure_date") and e["disclosure_date"] != e.get("date"):
+        lines.append(f"Disclosed: {e['disclosure_date']}")
+    lines.append("")
+    lines.append(e.get("description", ""))
+    lines.append("")
+    if e.get("affected"):
+        lines.append(f"**Affected:** {e['affected']}  ")
+    if e.get("attack_vector"):
+        lines.append(f"**Attack vector:** `{e['attack_vector']}`  ")
+    if e.get("impact"):
+        lines.append(f"**Impact:** {e['impact']}  ")
+    lines.append("")
+    if e.get("owasp_llm"):
+        lines.append(
+            f"**OWASP LLM Top 10:** {', '.join(f'`{c}`' for c in e['owasp_llm'])}  "
+        )
+    if e.get("owasp_asi"):
+        lines.append(
+            f"**OWASP Agentic (ASI):** {', '.join(f'`{c}`' for c in e['owasp_asi'])}  "
+        )
+    if e.get("nist_ai_rmf"):
+        lines.append(
+            f"**NIST AI RMF:** {', '.join(f'`{c}`' for c in e['nist_ai_rmf'])}  "
+        )
+    if e.get("mitre_atlas"):
+        lines.append(
+            f"**MITRE ATLAS:** {', '.join(f'`{c}`' for c in e['mitre_atlas'])}  "
+        )
+    if e.get("maestro_layers"):
+        ml = ", ".join(
+            f"`{l['layer']} {l.get('label','')}`" for l in e["maestro_layers"]
+        )
+        lines.append(f"**MAESTRO layers:** {ml}  ")
+    lines.append("")
+    if e.get("mitigations"):
+        lines.append("**Mitigations:**")
+        for m in e["mitigations"]:
+            lines.append(f"- {m}")
+        lines.append("")
+    if e.get("references"):
+        lines.append("**References:**")
+        for ref in e["references"]:
+            title = ref.get("title") or ref["url"]
+            suffix = f" _({ref.get('type')})_" if ref.get("type") else ""
+            lines.append(f"- [{title}]({ref['url']}){suffix}")
+        lines.append("")
+    if e.get("tags"):
+        lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))
+        lines.append("")
+    lines.append("</div>")
+    lines.append("")
+    return lines
+
+
 def render_details_shard(year: int, rows: list[dict]) -> str:
     rows = sorted(rows, key=sort_key)
     lines: list[str] = []
@@ -282,88 +373,7 @@ def render_details_shard(year: int, rows: list[dict]) -> str:
     )
     lines.append("")
     for e in rows:
-        # Each incident is wrapped in a `<div class="incident-anchor">`
-        # with an id matching the lowercase INC-* slug. The layout's
-        # JS highlights `.target` when the URL hash matches, so links
-        # arriving from the main app land on a visibly-marked card.
-        slug = e["id"].lower()
-        lines.append(f'<div class="incident-anchor" id="{slug}" markdown="1">')
-        lines.append("")
-        lines.append(f"### {e['id']}")
-        lines.append("")
-        lines.append(f"**{e['title']}**  ")
-        meta_bits = [
-            e.get("date", ""),
-            e.get("category", ""),
-            f"Severity: {e.get('severity','')}",
-        ]
-        lines.append("_" + " · ".join(b for b in meta_bits if b) + "_")
-        if e.get("cve_ids"):
-            lines.append("")
-            lines.append("CVEs: " + ", ".join(f"`{c}`" for c in e["cve_ids"]))
-        if e.get("cwe_ids"):
-            lines.append("CWEs: " + ", ".join(f"`{c}`" for c in e["cwe_ids"]))
-        if e.get("cvss_score") is not None:
-            cvss_line = f"CVSS: **{e['cvss_score']}**"
-            if e.get("cvss_vector"):
-                cvss_line += f" — `{e['cvss_vector']}`"
-            lines.append(cvss_line)
-        if e.get("aiid_id"):
-            lines.append(
-                f"AIID: [`#{e['aiid_id']}`]"
-                f"(https://incidentdatabase.ai/cite/{e['aiid_id']}/)"
-            )
-        if e.get("disclosure_date") and e["disclosure_date"] != e.get("date"):
-            lines.append(f"Disclosed: {e['disclosure_date']}")
-        lines.append("")
-        lines.append(e.get("description", ""))
-        lines.append("")
-        if e.get("affected"):
-            lines.append(f"**Affected:** {e['affected']}  ")
-        if e.get("attack_vector"):
-            lines.append(f"**Attack vector:** `{e['attack_vector']}`  ")
-        if e.get("impact"):
-            lines.append(f"**Impact:** {e['impact']}  ")
-        lines.append("")
-        if e.get("owasp_llm"):
-            lines.append(
-                f"**OWASP LLM Top 10:** {', '.join(f'`{c}`' for c in e['owasp_llm'])}  "
-            )
-        if e.get("owasp_asi"):
-            lines.append(
-                f"**OWASP Agentic (ASI):** {', '.join(f'`{c}`' for c in e['owasp_asi'])}  "
-            )
-        if e.get("nist_ai_rmf"):
-            lines.append(
-                f"**NIST AI RMF:** {', '.join(f'`{c}`' for c in e['nist_ai_rmf'])}  "
-            )
-        if e.get("mitre_atlas"):
-            lines.append(
-                f"**MITRE ATLAS:** {', '.join(f'`{c}`' for c in e['mitre_atlas'])}  "
-            )
-        if e.get("maestro_layers"):
-            ml = ", ".join(
-                f"`{l['layer']} {l.get('label','')}`" for l in e["maestro_layers"]
-            )
-            lines.append(f"**MAESTRO layers:** {ml}  ")
-        lines.append("")
-        if e.get("mitigations"):
-            lines.append("**Mitigations:**")
-            for m in e["mitigations"]:
-                lines.append(f"- {m}")
-            lines.append("")
-        if e.get("references"):
-            lines.append("**References:**")
-            for r in e["references"]:
-                title = r.get("title") or r["url"]
-                suffix = f" _({r.get('type')})_" if r.get("type") else ""
-                lines.append(f"- [{title}]({r['url']}){suffix}")
-            lines.append("")
-        if e.get("tags"):
-            lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))
-            lines.append("")
-        lines.append("</div>")
-        lines.append("")
+        lines.extend(render_incident_block(e))
     lines.append("")
     lines.append(
         f"> Back to [`INCIDENTS.md`](../../INCIDENTS.md). "
