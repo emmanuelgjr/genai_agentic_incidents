@@ -353,6 +353,55 @@ def render_incident_block(e: dict) -> list[str]:
     return lines
 
 
+INCIDENT_PAGE_DIR = ROOT / "docs" / "incident"
+
+
+def _yaml_escape(s: str) -> str:
+    """Escape a string for safe use as a YAML scalar value."""
+    if not s:
+        return '""'
+    if any(c in s for c in ':{}[]&*?|->!%@`,"\'#'):
+        return '"' + s.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    return s
+
+
+def render_incident_page(e: dict) -> str:
+    """Render a full per-incident markdown page with Jekyll front matter."""
+    lines: list[str] = []
+    lines.append("---")
+    lines.append(f"title: {_yaml_escape(e['id'] + ' — ' + e['title'])}")
+    lines.append("layout: incident")
+    lines.append(f"permalink: /incident/{e['id']}.html")
+    lines.append(f"incident_id: {e['id']}")
+    lines.append(f"year: {e.get('year', '')}")
+    lines.append(f"severity: {e.get('severity', '')}")
+    desc_preview = (e.get("description") or "")[:200].replace("\n", " ").strip()
+    lines.append(f"description_preview: {_yaml_escape(desc_preview)}")
+    tags_str = ", ".join(e.get("tags", []))
+    lines.append(f"tags_str: {_yaml_escape(tags_str)}")
+    lines.append("---")
+    lines.append("")
+    lines.extend(render_incident_block(e))
+    lines.append("")
+    return "\n".join(lines)
+
+
+def generate_incident_pages(entries: list[dict], out_dir: Path | None = None) -> None:
+    """Write one markdown file per incident under docs/incident/."""
+    out_dir = out_dir or INCIDENT_PAGE_DIR
+    out_dir.mkdir(parents=True, exist_ok=True)
+    expected: set[str] = set()
+    for e in entries:
+        filename = f"{e['id']}.md"
+        expected.add(filename)
+        body = render_incident_page(e)
+        _write_lf(out_dir / filename, body)
+    for existing in out_dir.glob("*.md"):
+        if existing.name not in expected:
+            existing.unlink()
+    print(f"wrote {len(entries)} per-incident pages under {out_dir}/")
+
+
 def render_details_shard(year: int, rows: list[dict]) -> str:
     rows = sorted(rows, key=sort_key)
     lines: list[str] = []
@@ -604,6 +653,9 @@ def render():
         f"wrote {len(by_year)} year shards under docs/incidents/ "
         f"({total_shard_chars:,} chars total)"
     )
+
+    # ----- Per-incident pages -----
+    generate_incident_pages(entries)
 
     # Mirror the slim JSON under docs/data/ so the static site can fetch it
     # without leaving the Pages origin; and into the pip package source
