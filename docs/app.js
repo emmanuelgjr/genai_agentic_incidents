@@ -235,10 +235,8 @@ function renderTable(slice, start) {
     const cveCell = cves.length === 0 ? '' :
       cves.length === 1 ? `<code>${escapeHtml(cves[0])}</code>` :
       `<code>${escapeHtml(cves[0])}</code> +${cves.length - 1}`;
-    const yearShard = e.year ? `incidents/${e.year}.html#${e.id.toLowerCase()}` : '';
-    const idCell = yearShard
-      ? `<a href="${yearShard}" onclick="event.stopPropagation()">${escapeHtml(e.id)}</a>`
-      : escapeHtml(e.id);
+    const incidentUrl = `incident/${e.id}.html`;
+    const idCell = `<a href="${incidentUrl}" onclick="event.stopPropagation()">${escapeHtml(e.id)}</a>`;
     const llm = (e.owasp_llm || []).join(', ');
     const asi = (e.owasp_asi || []).join(', ');
     const expanded = EXPANDED.has(e.id);
@@ -272,9 +270,7 @@ function renderDetail(e) {
   const refLink = e.primary_reference
     ? `<a href="${escapeHtml(e.primary_reference)}" rel="noopener" target="_blank">primary source ↗</a>`
     : '';
-  const shardLink = e.year
-    ? `<a href="incidents/${e.year}.html#${e.id.toLowerCase()}">full details ↗</a>`
-    : '';
+  const shardLink = `<a href="incident/${e.id}.html">full details ↗</a>`;
   return `<tr class="detail"><td colspan="7"><div class="detail-body">
     <p>${escapeHtml(e.description || 'No description.')}</p>
     <div class="detail-meta">
