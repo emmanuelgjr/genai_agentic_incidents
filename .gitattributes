@@ -26,6 +26,7 @@ data/incidents.min.json     text eol=lf linguist-generated=true
 data/legacy_consolidated.json text eol=lf linguist-generated=true
 INCIDENTS.md                text eol=lf linguist-generated=true
 docs/incidents/*.md         text eol=lf linguist-generated=true
+docs/incident/*.md          text eol=lf linguist-generated=true
 docs/data/*.json            text eol=lf linguist-generated=true
 docs/charts/*.svg           text eol=lf linguist-generated=true
 src/genai_incidents/data/*.json text eol=lf linguist-generated=true

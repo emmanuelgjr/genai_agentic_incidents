@@ -33,7 +33,7 @@ jobs:
       - name: Re-render INCIDENTS.md and ensure no drift
         run: |
           python scripts/render_markdown.py
-          paths="INCIDENTS.md data/incidents.json data/incidents.min.json data/id_deprecations.json docs/incidents docs/data docs/charts src/genai_incidents/data src/genai_incidents/schema"
+          paths="INCIDENTS.md data/incidents.json data/incidents.min.json data/id_deprecations.json docs/incidents docs/incident docs/data docs/charts src/genai_incidents/data src/genai_incidents/schema"
           if [ -n "$(git status --porcelain $paths)" ]; then
             echo "::error::Generated files are out of date. Run 'make build' locally and commit the result."
             git status --porcelain $paths
