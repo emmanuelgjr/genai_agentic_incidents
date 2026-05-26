@@ -21,8 +21,11 @@ import csv
 import io
 import json
 import re
+import sys
 import urllib.request
 from pathlib import Path
+
+from ingest_utils import conditional_fetch
 
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
@@ -37,15 +40,41 @@ CSV_URL = (
 )
 CACHE_FILE = CACHE / "aiaaic_sheet.csv"
 
-# AIAAIC headers come on row index 1 of the dump (row 0 is the section
-# label "Incidents"). Columns are positional in the export.
-COL_ID, COL_HEADLINE, COL_OCCURRED, COL_DEPLOYER, COL_DEVELOPER = 0, 1, 2, 3, 4
-COL_SYSTEM, COL_TECH, COL_PURPOSE = 5, 6, 7
-COL_TRIGGER, COL_ETHICAL = 8, 9
-COL_JURISDICTION, COL_SECTOR = 10, 11
-COL_HARM_INDIV, COL_HARM_SOCIETAL, COL_HARM_ENV = 12, 13, 14
-COL_CONSEQ, COL_RESPONSE = 15, 16
-COL_SUMMARY = 17
+EXPECTED_COLUMNS: dict[str, list[str]] = {
+    "id":          ["aiaaic id#", "#", "id"],
+    "headline":    ["headline/title", "headline", "title"],
+    "occurred":    ["occurred", "date"],
+    "deployer":    ["deployer(s)", "deployer"],
+    "developer":   ["developer(s)", "developer"],
+    "system":      ["system(s)", "system"],
+    "technology":  ["technology(ies)", "technology"],
+    "purpose":     ["purpose(s)", "purpose"],
+    "trigger":     ["issue trigger", "trigger"],
+    "ethical":     ["issue(s)", "ethical issue(s)", "issue"],
+    "jurisdiction": ["jurisdiction", "country"],
+    "sector":      ["sector(s)", "sector"],
+    "harm_indiv":  ["ind. harm(s)", "individual harm(s)", "individual harm"],
+    "harm_societal": ["soc. harm(s)", "societal harm(s)", "societal harm"],
+    "harm_env":    ["env. harm(s)", "environmental harm(s)", "environmental harm"],
+    "consequence": ["consequence(s)", "consequence"],
+    "response":    ["response(s)", "response"],
+    "summary":     ["summary", "links"],
+}
+
+
+def build_column_map(header_row: list[str]) -> dict[str, int]:
+    """Map logical column names to indices based on the actual header row."""
+    normalized = [h.strip().lower() for h in header_row]
+    col_map: dict[str, int] = {}
+    for key, aliases in EXPECTED_COLUMNS.items():
+        for alias in aliases:
+            if alias in normalized:
+                col_map[key] = normalized.index(alias)
+                break
+        else:
+            print(f"  [aiaaic] WARNING: column '{key}' not found (tried {aliases})", file=sys.stderr)
+            col_map[key] = -1
+    return col_map
 
 # Security-relevant ethical-issue / news-trigger / technology values.
 # We keep an entry if it touches security, privacy, or trustworthiness OR
@@ -124,19 +153,14 @@ CONSEQUENCE_TO_SEVERITY = {
 }
 
 
-def download_csv() -> str:
-    """Fetch the sheet (with disk cache)."""
-    if CACHE_FILE.exists() and CACHE_FILE.stat().st_size > 100_000:
-        return CACHE_FILE.read_text(encoding="utf-8")
-    print(f"[aiaaic] downloading {CSV_URL}")
-    req = urllib.request.Request(
-        CSV_URL, headers={"User-Agent": "Mozilla/5.0 (genai_agentic_incidents)"}
-    )
-    text = urllib.request.urlopen(req, timeout=60).read().decode(
-        "utf-8", errors="replace"
-    )
-    CACHE_FILE.write_text(text, encoding="utf-8")
-    return text
+def download_csv() -> tuple[str, bool]:
+    """Fetch the sheet CSV with conditional fetch (ETag support)."""
+    data, changed = conditional_fetch(CSV_URL, CACHE_FILE, min_cache_bytes=100_000)
+    if not changed:
+        print("[aiaaic] CSV unchanged (304), using cache")
+    else:
+        print(f"[aiaaic] downloaded {len(data):,} bytes -> {CACHE_FILE.name}")
+    return data.decode("utf-8", errors="replace"), changed
 
 
 def parse_year(occurred: str) -> int | None:
@@ -203,33 +227,43 @@ def detect_severity(row: dict) -> str:
     return "Medium"
 
 
-def normalize_row(raw_row: list[str]) -> dict | None:
-    while len(raw_row) < 19:
+def _cell(raw_row: list[str], col: dict[str, int], key: str) -> str:
+    """Safely get a cell value by logical column name."""
+    idx = col.get(key, -1)
+    if idx < 0 or idx >= len(raw_row):
+        return ""
+    return (raw_row[idx] or "").strip()
+
+
+def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
+    max_idx = max((v for v in col.values() if v >= 0), default=0)
+    while len(raw_row) <= max_idx:
         raw_row.append("")
-    if not (raw_row[COL_ID] or "").startswith("AIAAIC"):
+    row_id = _cell(raw_row, col, "id")
+    if not row_id.startswith("AIAAIC"):
         return None
-    if raw_row[COL_ID] == "AIAAIC ID#":  # second header row
+    if row_id == "AIAAIC ID#":
         return None
 
     row = {
-        "id": raw_row[COL_ID].strip(),
-        "headline": (raw_row[COL_HEADLINE] or "").strip(),
-        "occurred": (raw_row[COL_OCCURRED] or "").strip(),
-        "deployer": (raw_row[COL_DEPLOYER] or "").strip(),
-        "developer": (raw_row[COL_DEVELOPER] or "").strip(),
-        "system": (raw_row[COL_SYSTEM] or "").strip(),
-        "technology": (raw_row[COL_TECH] or "").strip(),
-        "purpose": (raw_row[COL_PURPOSE] or "").strip(),
-        "trigger": (raw_row[COL_TRIGGER] or "").strip(),
-        "ethical": (raw_row[COL_ETHICAL] or "").strip(),
-        "jurisdiction": (raw_row[COL_JURISDICTION] or "").strip(),
-        "sector": (raw_row[COL_SECTOR] or "").strip(),
-        "harm_indiv": (raw_row[COL_HARM_INDIV] or "").strip(),
-        "harm_societal": (raw_row[COL_HARM_SOCIETAL] or "").strip(),
-        "harm_env": (raw_row[COL_HARM_ENV] or "").strip(),
-        "consequence": (raw_row[COL_CONSEQ] or "").strip(),
-        "response": (raw_row[COL_RESPONSE] or "").strip(),
-        "summary": (raw_row[COL_SUMMARY] or "").strip(),
+        "id": row_id,
+        "headline": _cell(raw_row, col, "headline"),
+        "occurred": _cell(raw_row, col, "occurred"),
+        "deployer": _cell(raw_row, col, "deployer"),
+        "developer": _cell(raw_row, col, "developer"),
+        "system": _cell(raw_row, col, "system"),
+        "technology": _cell(raw_row, col, "technology"),
+        "purpose": _cell(raw_row, col, "purpose"),
+        "trigger": _cell(raw_row, col, "trigger"),
+        "ethical": _cell(raw_row, col, "ethical"),
+        "jurisdiction": _cell(raw_row, col, "jurisdiction"),
+        "sector": _cell(raw_row, col, "sector"),
+        "harm_indiv": _cell(raw_row, col, "harm_indiv"),
+        "harm_societal": _cell(raw_row, col, "harm_societal"),
+        "harm_env": _cell(raw_row, col, "harm_env"),
+        "consequence": _cell(raw_row, col, "consequence"),
+        "response": _cell(raw_row, col, "response"),
+        "summary": _cell(raw_row, col, "summary"),
     }
     if not row["headline"] or len(row["headline"]) < 5:
         return None
@@ -319,14 +353,26 @@ def normalize_row(raw_row: list[str]) -> dict | None:
 
 
 def main():
-    body = download_csv()
+    body, _ = download_csv()
     rows = list(csv.reader(io.StringIO(body)))
     print(f"[aiaaic] {len(rows)} raw rows")
 
+    col = None
+    header_idx = 0
+    for i, row in enumerate(rows[:5]):
+        joined = " ".join(row).lower()
+        if "headline" in joined or "aiaaic id" in joined:
+            col = build_column_map(row)
+            header_idx = i
+            break
+    if col is None:
+        print("[aiaaic] ERROR: could not find header row", file=sys.stderr)
+        return
+
     out = []
     skipped = 0
-    for row in rows:
-        norm = normalize_row(row)
+    for row in rows[header_idx + 1:]:
+        norm = normalize_row(row, col)
         if norm:
             out.append(norm)
         else:
