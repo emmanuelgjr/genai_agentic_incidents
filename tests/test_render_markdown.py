@@ -101,6 +101,22 @@ def test_render_incident_block_handles_minimal_entry():
     assert "Minimal" in body
 
 
+def test_render_incident_block_contains_permalink():
+    """Incident block should include a link to the per-incident page."""
+    entry = {
+        "id": "INC-00001",
+        "title": "Test",
+        "date": "2025",
+        "year": 2025,
+        "category": "real-world",
+        "severity": "High",
+        "description": "Desc.",
+    }
+    lines = r.render_incident_block(entry)
+    body = "\n".join(lines)
+    assert "/incident/INC-00001.html" in body
+
+
 def test_severity_stack_renders_legend(tmp_path):
     from collections import Counter
     out = tmp_path / "sev.svg"

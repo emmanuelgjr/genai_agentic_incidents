@@ -275,7 +275,7 @@ def render_incident_block(e: dict) -> list[str]:
     slug = e["id"].lower()
     lines.append(f'<div class="incident-anchor" id="{slug}" markdown="1">')
     lines.append("")
-    lines.append(f"### {e['id']}")
+    lines.append(f"### {e['id']}  [↗](/incident/{e['id']}.html)")
     lines.append("")
     lines.append(f"**{e['title']}**  ")
     meta_bits = [
