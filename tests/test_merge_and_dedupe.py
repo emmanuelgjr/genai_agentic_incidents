@@ -18,6 +18,18 @@ def test_classify_attack_vector_misc():
     assert m.classify_attack_vector("Supply-chain malicious package") == "supply-chain"
 
 
+def test_classify_attack_vector_new_patterns():
+    assert m.classify_attack_vector("ChatGPT hallucinated a court case") == "hallucination"
+    assert m.classify_attack_vector("AI-generated misinformation campaign") == "misinformation"
+    assert m.classify_attack_vector("Phishing email crafted by LLM") == "phishing"
+    assert m.classify_attack_vector("Ransomware attack on hospital") == "ransomware"
+    assert m.classify_attack_vector("Impersonating CEO via AI voice") == "deepfake"
+    assert m.classify_attack_vector("Arbitrary code execution in TensorFlow") == "rce"
+    assert m.classify_attack_vector("RAG poisoning via injected documents") == "memory-poisoning"
+    assert m.classify_attack_vector("Resource exhaustion via token flooding") == "dos"
+    assert m.classify_attack_vector("Dependency confusion in PyTorch package") == "supply-chain"
+
+
 def test_classify_attack_vector_no_match():
     assert m.classify_attack_vector("Generic AI failure with no specifics") is None
 

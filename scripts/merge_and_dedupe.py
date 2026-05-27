@@ -81,36 +81,91 @@ def slug_to_id(n: int) -> str:
     return f"INC-{n:05d}"
 
 
+_ATTACK_VECTOR_NORMALIZE: dict[str, str] = {
+    "supply": "supply-chain",
+    "prompt": "prompt-injection",
+    "direct": "prompt-injection",
+    "indirect": "indirect-prompt-injection",
+    "adversarial": "adversarial-input",
+    "poisoning": "model-poisoning",
+    "membership": "membership-inference",
+    "agent": "agent-hijack",
+    "credential": "auth-bypass",
+    "authentication": "auth-bypass",
+    "oauth": "auth-bypass",
+    "hardcoded": "auth-bypass",
+    "insecure": "auth-bypass",
+    "cross": "xss",
+    "code": "rce",
+    "fraud": "deepfake",
+    "no": "other",
+    "not": "other",
+    "multi": "other",
+    "mass": "other",
+    "ai": "other",
+    "data": "other",
+    "self": "other",
+    "real": "other",
+    "harmful": "other",
+    "json": "other",
+    "dual": "other",
+    "zero": "other",
+    "training": "other",
+    "autonomous": "other",
+    "persistent": "other",
+    "user": "other",
+    "infrastructure": "other",
+    "multimodal": "other",
+    "corpus": "other",
+    "gradual": "other",
+    "design": "other",
+    "documents": "other",
+    "maximum": "other",
+    "systemic": "other",
+    "knowledge": "other",
+    "mcp": "other",
+    "100–256": "other",
+}
+
 # Keyword -> attack_vector classifier. Order matters: first hit wins.
 # Used to replace the catch-all "other" on entries that have no explicit
 # attack_vector field but whose title/description contains an obvious one.
 _ATTACK_VECTOR_RULES: list[tuple[str, str]] = [
-    # Order matters — more specific patterns must come before their parents.
     (r"indirect[\s-]*prompt", "indirect-prompt-injection"),
     (r"prompt[\s-]*inject", "prompt-injection"),
     (r"jailbreak|jailbroken", "jailbreak"),
-    (r"deepfake|voice clon", "deepfake"),
+    (r"deepfake|voice clon|face swap|face[\s-]*generat", "deepfake"),
+    (r"impersonat|fake (?:ceo|cfo|executive|employee)|vishing", "deepfake"),
     (r"command injection|cmd injection|os command", "command-injection"),
     (r"path traversal|directory traversal|\\.\\./", "path-traversal"),
     (r"\bSSRF\b|server[\s-]*side request forgery", "ssrf"),
     (r"\bSQL\b injection|sqli\b", "sql-injection"),
     (r"\bXSS\b|cross[\s-]*site scripting", "xss"),
     (r"\bRCE\b|remote code execution|sandbox escape", "rce"),
+    (r"arbitrary code|code execution|arbitrary command", "rce"),
     (r"deserializ|insecure deserial", "deserialization"),
-    (r"auth(?:entication|orization)? bypass|missing auth", "auth-bypass"),
-    (r"data exfil|exfiltrat", "data-exfiltration"),
+    (r"auth(?:entication|orization)? bypass|missing auth|improper auth", "auth-bypass"),
+    (r"hardcoded (?:key|secret|credential|password|token)", "auth-bypass"),
+    (r"data exfil|exfiltrat|data breach|data leak", "data-exfiltration"),
     (r"model theft|model extract", "model-extraction"),
     (r"model invers", "model-inversion"),
     (r"membership inference", "membership-inference"),
-    (r"adversarial (?:example|input|patch)|evasion attack", "adversarial-input"),
+    (r"adversarial (?:example|input|patch|attack)|evasion attack", "adversarial-input"),
     (r"data poisoning|backdoor|model poisoning", "model-poisoning"),
-    (r"memory poison|context poison", "memory-poisoning"),
+    (r"memory poison|context poison|rag[\s-]*poison|corpus[\s-]*poison", "memory-poisoning"),
     (r"agent (?:goal )?hijack|goal hijack", "agent-hijack"),
     (r"tool (?:misuse|abuse)|plugin compromise", "tool-abuse"),
-    (r"supply[\s-]*chain|typosquat|malicious package", "supply-chain"),
-    (r"denial[\s-]*of[\s-]*service|\bDoS\b|\bDDoS\b", "dos"),
+    (r"supply[\s-]*chain|typosquat|malicious package|dependency confusion", "supply-chain"),
+    (r"denial[\s-]*of[\s-]*service|\bDoS\b|\bDDoS\b|resource[\s-]*exhaust", "dos"),
     (r"info(?:rmation)?[\s-]*disclos|sensitive data exposure", "info-disclosure"),
     (r"insider threat|insider attack", "insider"),
+    (r"hallucina|confabula", "hallucination"),
+    (r"misinform|disinform", "misinformation"),
+    (r"phishing|spear[\s-]*phish|smishing", "phishing"),
+    (r"ransomware|ransom[\s-]*attack", "ransomware"),
+    (r"malware|trojan|worm", "malware"),
+    (r"(?:privacy|surveillance)[\s-]*(?:violat|breach|invasion)", "privacy-violation"),
+    (r"bias(?:ed)?[\s-]*(?:algorithm|model|output|decision)", "algorithmic-bias"),
 ]
 
 
@@ -367,9 +422,8 @@ def normalize_entry(raw: dict) -> dict | None:
         re.sub(r"^AIID-(\d+)-OECD$", r"AIID-\1", s) for s in src_ids
     ]
 
-    # If the raw entry's attack_vector is the catch-all "other", try to
-    # classify it heuristically from the title + description.
     raw_vec = (raw.get("attack_vector") or "").lower().strip()
+    raw_vec = _ATTACK_VECTOR_NORMALIZE.get(raw_vec, raw_vec)
     if not raw_vec or raw_vec == "other":
         classified = classify_attack_vector((title or "") + " " + (desc or ""))
         if classified:
@@ -805,7 +859,21 @@ def main():
         )
         print(f"[output] wrote {DEPRECATIONS_PATH.name} ({len(deprecations_all)} entries)")
 
-    # 9) Write outputs
+    # 9) Final attack_vector cleanup — normalize fragments and re-classify
+    for e in deduped:
+        vec = (e.get("attack_vector") or "other").lower().strip()
+        vec = _ATTACK_VECTOR_NORMALIZE.get(vec, vec)
+        if not vec or vec == "other":
+            classified = classify_attack_vector(
+                (e.get("title") or "") + " " + (e.get("description") or "")
+            )
+            if classified:
+                vec = classified
+            else:
+                vec = "other"
+        e["attack_vector"] = vec
+
+    # 10) Write outputs
     out = {
         "version": "2.0.0",
         "generated": generated,
