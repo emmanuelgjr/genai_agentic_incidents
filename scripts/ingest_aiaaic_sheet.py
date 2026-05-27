@@ -42,34 +42,47 @@ CACHE_FILE = CACHE / "aiaaic_sheet.csv"
 
 EXPECTED_COLUMNS: dict[str, list[str]] = {
     "id":          ["aiaaic id#", "#", "id"],
-    "headline":    ["headline/title", "headline", "title"],
+    "headline":    ["headline", "headline/title", "title"],
     "occurred":    ["occurred", "date"],
-    "deployer":    ["deployer(s)", "deployer"],
-    "developer":   ["developer(s)", "developer"],
-    "system":      ["system(s)", "system"],
-    "technology":  ["technology(ies)", "technology"],
-    "purpose":     ["purpose(s)", "purpose"],
-    "trigger":     ["issue trigger", "trigger"],
-    "ethical":     ["issue(s)", "ethical issue(s)", "issue"],
+    "deployer":    ["deployer", "deployer(s)"],
+    "developer":   ["developer", "developer(s)"],
+    "system":      ["system name", "system(s)", "system"],
+    "technology":  ["technology", "technology(ies)"],
+    "purpose":     ["purpose", "purpose(s)"],
+    "trigger":     ["news trigger (taxonomy)", "issue trigger", "trigger"],
+    "ethical":     ["ethical issue (taxonomy)", "issue(s)", "ethical issue(s)", "issue"],
     "jurisdiction": ["jurisdiction", "country"],
-    "sector":      ["sector(s)", "sector"],
-    "harm_indiv":  ["ind. harm(s)", "individual harm(s)", "individual harm"],
-    "harm_societal": ["soc. harm(s)", "societal harm(s)", "societal harm"],
-    "harm_env":    ["env. harm(s)", "environmental harm(s)", "environmental harm"],
-    "consequence": ["consequence(s)", "consequence"],
-    "response":    ["response(s)", "response"],
-    "summary":     ["summary", "links"],
+    "sector":      ["sector", "sector(s)"],
+    "harm_indiv":  ["individual", "ind. harm(s)", "individual harm(s)", "individual harm"],
+    "harm_societal": ["societal", "soc. harm(s)", "societal harm(s)", "societal harm"],
+    "harm_env":    ["environmental", "env. harm(s)", "environmental harm(s)", "environmental harm"],
+    "consequence": ["consequence (taxonomy)", "consequence(s)", "consequence"],
+    "response":    ["response (taxonomy)", "response(s)", "response"],
+    "summary":     ["summary/links", "summary", "links"],
 }
 
 
-def build_column_map(header_row: list[str]) -> dict[str, int]:
-    """Map logical column names to indices based on the actual header row."""
-    normalized = [h.strip().lower() for h in header_row]
+def build_column_map(header_rows: list[list[str]]) -> dict[str, int]:
+    """Map logical column names to indices based on header rows.
+
+    The AIAAIC CSV uses a two-row header: row 1 has the main column
+    names and row 2 has sub-headers for split columns (e.g. Impacted
+    area → Jurisdiction, Sector; External harm → Individual, Societal,
+    Environmental).  We merge both rows so that sub-headers are found.
+    """
+    merged = []
+    main = header_rows[0] if header_rows else []
+    sub = header_rows[1] if len(header_rows) > 1 else []
+    for i in range(max(len(main), len(sub))):
+        m = (main[i] if i < len(main) else "").strip().lower()
+        s = (sub[i] if i < len(sub) else "").strip().lower()
+        merged.append(s if s else m)
+
     col_map: dict[str, int] = {}
     for key, aliases in EXPECTED_COLUMNS.items():
         for alias in aliases:
-            if alias in normalized:
-                col_map[key] = normalized.index(alias)
+            if alias in merged:
+                col_map[key] = merged.index(alias)
                 break
         else:
             print(f"  [aiaaic] WARNING: column '{key}' not found (tried {aliases})", file=sys.stderr)
@@ -362,8 +375,9 @@ def main():
     for i, row in enumerate(rows[:5]):
         joined = " ".join(row).lower()
         if "headline" in joined or "aiaaic id" in joined:
-            col = build_column_map(row)
-            header_idx = i
+            sub_row = rows[i + 1] if i + 1 < len(rows) else []
+            col = build_column_map([row, sub_row])
+            header_idx = i + 1  # skip both header rows
             break
     if col is None:
         print("[aiaaic] ERROR: could not find header row", file=sys.stderr)
