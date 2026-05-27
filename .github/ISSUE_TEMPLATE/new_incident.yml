@@ -1,0 +1,38 @@
+name: Submit a New Incident
+description: Suggest a GenAI/agentic AI security incident to add to the dataset
+labels: [new-incident]
+body:
+  - type: textarea
+    id: title
+    attributes:
+      label: Incident title
+      description: A short descriptive title for the incident.
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date (approximate)
+      description: When did this happen? (YYYY-MM-DD or YYYY-MM or YYYY)
+      placeholder: "2025-06-15"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? Include affected systems, impact, and attack vector if known.
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links to news articles, advisories, CVEs, or other sources.
+    validations:
+      required: true
+  - type: input
+    id: cve
+    attributes:
+      label: CVE ID (if applicable)
+      placeholder: "CVE-2025-XXXXX"
