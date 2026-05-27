@@ -29,6 +29,8 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+from ingest_utils import robust_fetch
+
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
 CACHE = INGEST / "_cache" / "oecd_aim"
@@ -114,16 +116,10 @@ def load_sitemap() -> list[str]:
 def fetch_page(url: str) -> str | None:
     slug = url.rstrip("/").split("/")[-1]
     cache_file = CACHE / f"{slug}.html"
-    if cache_file.exists() and cache_file.stat().st_size > 1000:
-        return cache_file.read_text(encoding="utf-8", errors="replace")
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-        with urllib.request.urlopen(req, timeout=20) as r:
-            body = r.read(800_000)  # 800KB cap per page
-        text = body.decode("utf-8", errors="replace")
-        cache_file.write_text(text, encoding="utf-8")
-        return text
-    except (urllib.error.URLError, TimeoutError, ConnectionError) as e:
+        data = robust_fetch(url, cache_file, timeout=20, max_retries=3, min_cache_bytes=1000)
+        return data[:800_000].decode("utf-8", errors="replace")
+    except RuntimeError as e:
         print(f"  ! {slug}: {e}", file=sys.stderr)
         return None
 
