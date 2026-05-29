@@ -14,6 +14,13 @@ permissions:
   contents: write
   pull-requests: write
 
+# Never let a scheduled run and a manual dispatch (or two schedules) race on the
+# shared auto-refresh/data branch. Queue them instead of cancelling so a run is
+# never interrupted mid-commit.
+concurrency:
+  group: auto-refresh
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -48,6 +55,11 @@ jobs:
           python scripts/render_markdown.py
           python scripts/validate.py
 
+      # Hard gate: the same suite that runs on every PR/push. A regression in the
+      # refreshed data or generated outputs blocks the PR instead of shipping it.
+      - name: Unit tests
+        run: pytest tests -q
+
       - name: Show summary
         run: |
           echo "::group::Diff stats"
@@ -58,10 +70,13 @@ jobs:
           echo "::endgroup::"
 
       - name: Open / update refresh PR
-        uses: peter-evans/create-pull-request@v7
+        # Pinned to a full commit SHA (v7) for supply-chain safety; bump
+        # deliberately rather than tracking a mutable tag.
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
         with:
           commit-message: "chore(data): weekly auto-refresh"
           branch: auto-refresh/data
+          base: main
           delete-branch: true
           title: "Weekly data refresh"
           labels: data-refresh, automated
@@ -69,6 +84,13 @@ jobs:
             Automated weekly refresh of external sources:
             AIRI Navigator, AIAAIC sheet, OECD AI Incidents Monitor.
 
-            Review the diff before merging — flag any unexpected
-            mass deletions or large taxonomy shifts. Schema validation
-            and the unit tests both ran green in this workflow.
+            On each run this branch is recreated from the current `main`, so the
+            diff is always relative to the latest `main` *at run time*. **Merge
+            promptly** — if commits land on `main` after this PR opens, the open
+            branch goes stale and merging it can revert that newer work. If it
+            has sat open across other merges, close it and re-run this workflow
+            (Actions → "Weekly auto-refresh" → Run workflow) rather than merging.
+
+            Review the diff before merging — flag any unexpected mass deletions
+            or large taxonomy shifts. Schema validation and the full unit-test
+            suite both ran green in this workflow before the PR was opened.

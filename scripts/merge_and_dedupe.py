@@ -329,7 +329,7 @@ def maybe_rewrite_cve_title(entry: dict) -> None:
         return
 
     product = re.split(
-        r"\s+up to\s+|\s+versions? prior to\s+|\s+before\s+|[.,;]", body, 1
+        r"\s+up to\s+|\s+versions? prior to\s+|\s+before\s+|[.,;]", body, maxsplit=1
     )[0].strip()
     if not product or len(product) > 80:
         return
