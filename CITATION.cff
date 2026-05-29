@@ -8,8 +8,8 @@ authors:
   - family-names: "Guilherme Junior"
     given-names: "Emmanuel"
     alias: "emmanuelgjr"
-url: "https://github.com/emmanuelgjr/genai_agentic_incidents"
-repository-code: "https://github.com/emmanuelgjr/genai_agentic_incidents"
+url: "https://github.com/emmanuelgjr/genai_incidents"
+repository-code: "https://github.com/emmanuelgjr/genai_incidents"
 doi: 10.5281/zenodo.20248676
 identifiers:
   - type: doi

@@ -34,10 +34,10 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/emmanuelgjr/genai_agentic_incidents"
-Repository = "https://github.com/emmanuelgjr/genai_agentic_incidents"
-Issues = "https://github.com/emmanuelgjr/genai_agentic_incidents/issues"
-Changelog = "https://github.com/emmanuelgjr/genai_agentic_incidents/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/emmanuelgjr/genai_incidents"
+Repository = "https://github.com/emmanuelgjr/genai_incidents"
+Issues = "https://github.com/emmanuelgjr/genai_incidents/issues"
+Changelog = "https://github.com/emmanuelgjr/genai_incidents/blob/main/CHANGELOG.md"
 
 [tool.hatch.build]
 include = [

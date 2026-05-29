@@ -37,7 +37,7 @@ CACHE = INGEST / "_cache" / "oecd_aim"
 CACHE.mkdir(parents=True, exist_ok=True)
 
 SITEMAP_URL = "https://oecd.ai/sitemaps/incident-monitor-sitemap.xml"
-USER_AGENT = "Mozilla/5.0 (genai_agentic_incidents/1.0; +https://github.com/emmanuelgjr)"
+USER_AGENT = "Mozilla/5.0 (genai_incidents/1.0; +https://github.com/emmanuelgjr)"
 
 # Default page cap. Override with OECD_AIM_LIMIT=N (0 = unlimited).
 DEFAULT_LIMIT = 3000

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/emmanuelgjr/genai_agentic_incidents/schema/incident.schema.json",
+  "$id": "https://github.com/emmanuelgjr/genai_incidents/schema/incident.schema.json",
   "title": "GenAI / Agentic AI Security Incident",
-  "description": "Schema for a single incident entry in the genai_agentic_incidents single-source-of-truth dataset. Every entry is mapped to OWASP LLM Top 10, OWASP Agentic (ASI) Top 10, NIST AI RMF, and MITRE ATLAS where applicable.",
+  "description": "Schema for a single incident entry in the genai_incidents single-source-of-truth dataset. Every entry is mapped to OWASP LLM Top 10, OWASP Agentic (ASI) Top 10, NIST AI RMF, and MITRE ATLAS where applicable.",
   "type": "object",
   "required": ["id", "title", "date", "year", "category", "description", "severity", "references"],
   "additionalProperties": false,
@@ -71,7 +71,11 @@
         "tool-abuse", "memory-poisoning", "agent-hijack",
         "insider", "adversarial-input", "evasion",
         "membership-inference", "model-inversion", "model-extraction",
-        "dos", "other"
+        "dos",
+        "deepfake", "misinformation", "hallucination", "phishing",
+        "malware", "backdoor", "privacy-violation", "algorithmic-bias",
+        "csam-generation", "unsafe-advice",
+        "other"
       ]
     },
     "affected": {
