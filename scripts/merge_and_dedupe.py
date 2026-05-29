@@ -166,6 +166,48 @@ _ATTACK_VECTOR_RULES: list[tuple[str, str]] = [
     (r"malware|trojan|worm", "malware"),
     (r"(?:privacy|surveillance)[\s-]*(?:violat|breach|invasion)", "privacy-violation"),
     (r"bias(?:ed)?[\s-]*(?:algorithm|model|output|decision)", "algorithmic-bias"),
+    # AI-harm vectors. These run after the security rules above, so an entry
+    # is only labelled with a harm vector when no security exploit matched —
+    # this is what pulls the AIAAIC ai-harm corpus out of the "other" bucket.
+    # Patterns are deliberately high-precision (demographic/decision context
+    # for bias, generative-AI context for misinformation, etc.) so a fuzzy
+    # keyword in a description doesn't mislabel a record.
+    (r"\bcsam\b|\bcsae\b|child sexual abuse|child (?:porn|sexual abuse)"
+     r"|sexualis\w+ (?:a |the )?(?:child|minor)"
+     r"|ai[\s-]generated .{0,20}(?:child|minor).{0,12}(?:sexual|porn|nude|abuse)"
+     r"|generat\w+ .{0,24}child (?:porn|sexual)"
+     r"|nudif\w+ .{0,20}(?:child|minor|student|girl|teen)"
+     r"|(?:sexual|nude|explicit|pornographic) .{0,30}minors?\b"
+     r"|minors?\b.{0,20}(?:sexual abuse|sexual image|explicit image|nude image|porn)",
+     "csam-generation"),
+    (r"\bsuicid\w+|self[\s-]harm|encourag\w+ .{0,20}(?:suicide|self-harm|kill)"
+     r"|incit\w+ .{0,20}(?:self-harm|violence|suicide|terror)|bomb[\s-]?making"
+     r"|how to (?:make|build|create|synthesize) .{0,20}(?:bomb|weapon|explosive|nerve agent|meth)"
+     r"|coach\w* .{0,15}suicide|promot\w+ .{0,10}(?:suicide|self-harm|eating disorder)",
+     "unsafe-advice"),
+    (r"deepfake|voice clon\w+|face[\s-]?swap\w*|nudif\w+"
+     r"|ai[\s-]generated (?:nude|porn|explicit|intimate|sexual)"
+     r"|synthetic (?:nude|porn|intimate)"
+     r"|non[\s-]consensual (?:intimate|sexual|nude|porn)|fake nude",
+     "deepfake"),
+    (r"facial recognition|mass surveillance"
+     r"|biometric (?:surveillance|tracking|database|data|privacy|information)"
+     r"|covert(?:ly)? .{0,12}(?:record|track|monitor|surveil)|location tracking"
+     r"|scrap\w+ .{0,24}(?:faces|photos|profiles|personal data|biometric)"
+     r"|secretly (?:record|collect|track|monitor)|invasive .{0,10}surveillance",
+     "privacy-violation"),
+    (r"\b(?:racial|racism|gender|sexis\w+|ethnic|caste|religious|disabilit\w+|\bage\b|demographic) "
+     r"(?:bias|discriminat\w+|stereotyp\w+)"
+     r"|discriminat\w+ (?:against|based on|toward|by)|biased against"
+     r"|\bbias(?:ed)?\b.{0,30}(?:hiring|recruit|loan|credit|sentenc|arrest|police|policing|grading|admission|healthcare|transplant|welfare|mortgage|housing|insurance)"
+     r"|perpetuat\w+ .{0,18}(?:racial|gender|sexis|racis|stereotype|inequal)",
+     "algorithmic-bias"),
+    (r"defam\w+|\blibel\w*|\bslander"
+     r"|fabricat\w+ .{0,20}(?:quote|stor|claim|source|case|citation|legal)"
+     r"|false (?:legal )?citation|hallucinat\w+ .{0,20}(?:case|citation|source|legal)"
+     r"|made[\s-]up .{0,12}(?:case|citation|legal)"
+     r"|(?:chatbot|chatgpt|\bai\b|\bllm\b|gemini|copilot|\bbard\b|grok) .{0,40}(?:false (?:claim|information|accusation)|spread\w* (?:false|misinfo))",
+     "misinformation"),
 ]
 
 

@@ -30,6 +30,45 @@ def test_classify_attack_vector_new_patterns():
     assert m.classify_attack_vector("Dependency confusion in PyTorch package") == "supply-chain"
 
 
+def test_classify_attack_vector_harm_vectors():
+    # New high-precision AI-harm vectors (catch the AIAAIC "other" residue).
+    assert m.classify_attack_vector(
+        "CivitAI accused of generating synthetic 'child pornography' images"
+    ) == "csam-generation"
+    assert m.classify_attack_vector(
+        "Purportedly AI-generated sexual images of at least 400 minors at a school"
+    ) == "csam-generation"
+    assert m.classify_attack_vector(
+        "Character.AI companion encouraged a teen toward self-harm and suicide"
+    ) == "unsafe-advice"
+    assert m.classify_attack_vector(
+        "Leonardo AI generates celebrity non-consensual porn images"
+    ) == "deepfake"
+    assert m.classify_attack_vector(
+        "Clearview AI facial recognition scraped billions of faces (BIPA)"
+    ) == "privacy-violation"
+    assert m.classify_attack_vector(
+        "Amazon scraps recruiting tool showing gender bias against women"
+    ) == "algorithmic-bias"
+    assert m.classify_attack_vector(
+        "ChatGPT defamed a radio host by inventing an embezzlement case"
+    ) == "misinformation"
+
+
+def test_classify_attack_vector_harm_precision():
+    # Regression guards: AIAAIC category-label tokens and non-generative
+    # automated-decision errors must NOT be force-fit into a harm vector.
+    # "Automation bias" (over-trust in automation) is not algorithmic bias.
+    assert m.classify_attack_vector(
+        "Amazon AI coding bot causes AWS outage. Ethical issues: Automation bias; "
+        "Autonomy/agency. Response: Policy review/update."
+    ) is None
+    # A flawed RPA debt-recovery system is not generative-AI misinformation.
+    assert m.classify_attack_vector(
+        "Robodebt system falsely accused Australians of welfare debt via RPA"
+    ) is None
+
+
 def test_classify_attack_vector_no_match():
     assert m.classify_attack_vector("Generic AI failure with no specifics") is None
 
