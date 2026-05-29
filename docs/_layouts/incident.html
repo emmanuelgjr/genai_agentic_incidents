@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ page.title | default: "Incident" }} · GenAI & Agentic AI Security Incidents</title>
   <meta name="description" content="{{ page.description_preview | default: 'Incident detail from the GenAI & Agentic AI Security Incidents dataset.' | escape }}">
-  <link rel="canonical" href="https://emmanuelgjr.github.io/genai_agentic_incidents/incident/{{ page.incident_id }}.html">
+  <link rel="canonical" href="https://emmanuelgjr.github.io/genai_incidents/incident/{{ page.incident_id }}.html">
   <!-- Open Graph -->
   <meta property="og:title" content="{{ page.title | escape }}">
   <meta property="og:description" content="{{ page.description_preview | default: 'GenAI security incident detail.' | escape }}">
-  <meta property="og:url" content="https://emmanuelgjr.github.io/genai_agentic_incidents/incident/{{ page.incident_id }}.html">
+  <meta property="og:url" content="https://emmanuelgjr.github.io/genai_incidents/incident/{{ page.incident_id }}.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="GenAI & Agentic AI Security Incidents">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
@@ -20,7 +20,7 @@
     "@type": "DigitalDocument",
     "name": {{ page.title | jsonify }},
     "description": {{ page.description_preview | default: "" | jsonify }},
-    "url": "https://emmanuelgjr.github.io/genai_agentic_incidents/incident/{{ page.incident_id }}.html",
+    "url": "https://emmanuelgjr.github.io/genai_incidents/incident/{{ page.incident_id }}.html",
     "datePublished": "{{ page.date | default: '' }}",
     "publisher": {
       "@type": "Person",
@@ -38,7 +38,7 @@
         <p class="links">
           <a href="{{ '/' | relative_url }}">← All incidents</a>
           {% if page.year %}<a href="{{ '/incidents/' | append: page.year | append: '.html' | relative_url }}">← {{ page.year }} incidents</a>{% endif %}
-          <a href="https://github.com/emmanuelgjr/genai_agentic_incidents">GitHub</a>
+          <a href="https://github.com/emmanuelgjr/genai_incidents">GitHub</a>
           <a href="https://doi.org/10.5281/zenodo.20248676">DOI</a>
         </p>
       </div>

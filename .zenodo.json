@@ -27,7 +27,7 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/emmanuelgjr/genai_agentic_incidents",
+      "identifier": "https://github.com/emmanuelgjr/genai_incidents",
       "relation": "isSupplementTo",
       "scheme": "url"
     }

@@ -79,7 +79,7 @@ def fetch_one(url: str, timeout: int = 12) -> dict | None:
         return None
     try:
         req = urllib.request.Request(url, headers={
-            "User-Agent": "Mozilla/5.0 (compatible; genai_agentic_incidents/1.0)",
+            "User-Agent": "Mozilla/5.0 (compatible; genai_incidents/1.0)",
             "Accept": "text/html",
         })
         with urllib.request.urlopen(req, timeout=timeout) as r:

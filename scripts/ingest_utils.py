@@ -8,7 +8,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-USER_AGENT = "Mozilla/5.0 (genai_agentic_incidents/2.0; +https://github.com/emmanuelgjr)"
+USER_AGENT = "Mozilla/5.0 (genai_incidents/2.0; +https://github.com/emmanuelgjr)"
 
 
 def robust_fetch(

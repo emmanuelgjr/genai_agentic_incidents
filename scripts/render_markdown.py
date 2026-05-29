@@ -418,7 +418,7 @@ def render_details_shard(year: int, rows: list[dict]) -> str:
     lines.append(
         "Use the [searchable web view](../index.html) for filtering across "
         "all years. The raw markdown lives under "
-        "[`docs/incidents/`](https://github.com/emmanuelgjr/genai_agentic_incidents/tree/main/docs/incidents)."
+        "[`docs/incidents/`](https://github.com/emmanuelgjr/genai_incidents/tree/main/docs/incidents)."
     )
     lines.append("")
     for e in rows:
