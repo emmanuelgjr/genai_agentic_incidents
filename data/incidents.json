@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated": "2026-05-26",
+  "generated": "2026-05-29",
   "description": "Single source of truth for GenAI and agentic AI security incidents. Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable.",
   "schema": "schema/incident.schema.json",
   "incident_count": 7720,
@@ -174,7 +174,7 @@
         "chatbot"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -259,7 +259,7 @@
         "accountability"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -339,7 +339,7 @@
         "thin-wrapper"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -414,7 +414,7 @@
         "caching"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -498,7 +498,7 @@
         "code-generation"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -582,7 +582,7 @@
         "hugging-face"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -677,7 +677,7 @@
         "enterprise"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -767,7 +767,7 @@
         "phishing"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -895,7 +895,7 @@
         "rce"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2023-36188",
         "CVE-2023-36258",
@@ -989,7 +989,7 @@
         "system-prompt-leakage"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -1068,7 +1068,7 @@
         "volume-attack"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -1151,7 +1151,7 @@
         "gpt-4v"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -1277,7 +1277,7 @@
         "worm"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -1369,7 +1369,7 @@
         "no-oversight"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -1455,7 +1455,7 @@
         "tool-abuse"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -1584,7 +1584,7 @@
         "empirical"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -1722,7 +1722,7 @@
         "worm"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -1872,7 +1872,7 @@
         "summarisation"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -1979,7 +1979,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -2080,7 +2080,7 @@
         "cfo-fraud"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -2164,7 +2164,7 @@
         "frontier-models"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -2257,7 +2257,7 @@
         "safety-bypass"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-11",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -2361,7 +2361,7 @@
         "usenix-2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -2457,7 +2457,7 @@
         "skeleton-key"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -2553,7 +2553,7 @@
         "premature-deployment"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -2641,7 +2641,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -2732,7 +2732,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -2928,7 +2928,7 @@
         "training-data"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "ai-harm"
     },
@@ -3011,7 +3011,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3108,7 +3108,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3185,7 +3185,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3281,7 +3281,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3353,7 +3353,7 @@
         "2024"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3557,7 +3557,7 @@
         "worker-exploitation"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -3639,7 +3639,7 @@
         "2024"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3730,7 +3730,7 @@
         "2024"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3831,7 +3831,7 @@
         "2024"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -3925,7 +3925,7 @@
         "2024"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4014,7 +4014,7 @@
         "safety-alignment"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4099,7 +4099,7 @@
         "brand-damage"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4186,7 +4186,7 @@
         "nhi"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4261,7 +4261,7 @@
         "os-level"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4341,7 +4341,7 @@
         "data-quality"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4431,7 +4431,7 @@
         "trust"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4595,7 +4595,7 @@
         "attribution"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4675,7 +4675,7 @@
         "attribution"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -4784,7 +4784,7 @@
         "sleeper-agents"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -4889,7 +4889,7 @@
         "tool-poisoning"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -4973,7 +4973,7 @@
         "image-generation"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5051,7 +5051,7 @@
         "data-governance"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5151,7 +5151,7 @@
         "system-prompt"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -5221,7 +5221,7 @@
         "autonomous-vehicle"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5307,7 +5307,7 @@
         "developer-tools"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5390,7 +5390,7 @@
         "compliance"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5478,7 +5478,7 @@
         "browser"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5560,7 +5560,7 @@
         "mfa"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5711,7 +5711,7 @@
         "government-ban"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5799,7 +5799,7 @@
         "reward-hacking"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -5885,7 +5885,7 @@
         "training-data"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -5971,7 +5971,7 @@
         "offensive-ai"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -6129,7 +6129,7 @@
         "synthetic-media"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -6297,7 +6297,7 @@
         "nhi"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -6383,7 +6383,7 @@
         "healthcare"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -6481,7 +6481,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -6558,7 +6558,7 @@
         "misinterpretation"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -6736,7 +6736,7 @@
         "unauthorized-access"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -6827,7 +6827,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -6944,7 +6944,7 @@
         "salesforce"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2025-10875",
         "CVE-2025-64318",
@@ -7130,7 +7130,7 @@
         "zero-click"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2025-32711"
       ],
@@ -7320,7 +7320,7 @@
         "sev-1"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -7513,7 +7513,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -7600,7 +7600,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -7708,7 +7708,7 @@
         "xpia"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2026-26133"
       ],
@@ -7793,7 +7793,7 @@
         "vulnerability-research"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2026-21536"
       ],
@@ -7881,7 +7881,7 @@
         "vscode"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -7978,7 +7978,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8059,7 +8059,7 @@
         "vibe-coding"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8146,7 +8146,7 @@
         "web-content"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8253,7 +8253,7 @@
         "zero-click"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8355,7 +8355,7 @@
         "openclaw"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2026-25253"
       ],
@@ -8452,7 +8452,7 @@
         "servicenow"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2025-12420"
       ],
@@ -8567,7 +8567,7 @@
         "tool-misuse"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8660,7 +8660,7 @@
         "vibe-coding"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8753,7 +8753,7 @@
         "zero-click"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8837,7 +8837,7 @@
         "usenix"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -8922,7 +8922,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -9023,7 +9023,7 @@
         "whatsapp"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -9105,7 +9105,7 @@
         "privacy"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -9230,7 +9230,7 @@
         "rce"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "cve_ids": [
         "CVE-2025-59528"
       ],
@@ -9323,7 +9323,7 @@
         "systemic-risk"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -10148,7 +10148,7 @@
         "nvd"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -10450,7 +10450,7 @@
         "prompt-injection"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -10553,7 +10553,7 @@
       ],
       "tags": [],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -11523,7 +11523,7 @@
       ],
       "tags": [],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -12838,7 +12838,7 @@
         "prompt-injection"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -13191,7 +13191,7 @@
       ],
       "tags": [],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -13269,7 +13269,7 @@
         "rce"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -14032,7 +14032,7 @@
         "windsurf"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -14518,7 +14518,7 @@
         "nvd"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -14891,7 +14891,7 @@
       ],
       "tags": [],
       "added": "2026-05-11",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "curated",
       "corpus": "security"
     },
@@ -20533,309 +20533,6 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-16",
-      "quality_tier": "auto",
-      "corpus": "security"
-    },
-    {
-      "id": "INC-07724",
-      "source_ids": [
-        "AIAAIC2263"
-      ],
-      "title": "Chinese AI actors spark personality rights controversy",
-      "date": "2026",
-      "year": 2026,
-      "category": "real-world",
-      "description": "AIAAIC report: Chinese AI actors spark personality rights controversy. Technology: Generative AI. Purpose: Create AI-generated performers. Ethical issues: Accountability; Consent; Employment; Transparency.",
-      "attack_vector": "other",
-      "affected": "Youhug Media",
-      "severity": "Medium",
-      "owasp_llm": [
-        "LLM06",
-        "LLM07"
-      ],
-      "owasp_asi": [
-        "ASI09"
-      ],
-      "nist_ai_rmf": [
-        "MAP-3.5",
-        "MEASURE-2.7"
-      ],
-      "mitre_atlas": [
-        "AML.T0048.003",
-        "AML.T0053",
-        "AML.T0056"
-      ],
-      "references": [
-        {
-          "title": "AIAAIC entry",
-          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chinese-ai-actors-spark-personality-rights-controversy",
-          "type": "report"
-        }
-      ],
-      "tags": [
-        "aiaaic",
-        "aiaaic-sheet",
-        "sector-media/entertainment/sports/arts",
-        "juris-china"
-      ],
-      "added": "2026-05-26",
-      "updated": "2026-05-26",
-      "quality_tier": "auto",
-      "corpus": "security"
-    },
-    {
-      "id": "INC-07725",
-      "source_ids": [
-        "AIAAIC2262"
-      ],
-      "title": "German TV star accuses husband of spreading deepfake porn images of her",
-      "date": "2024",
-      "year": 2024,
-      "category": "real-world",
-      "description": "AIAAIC report: German TV star accuses husband of spreading deepfake porn images of her. Technology: Deepfake. Purpose: Harass ex-wife. Ethical issues: Accountability; Authenticity/integrity; Privacy/surveillance; Safety; Transparency. Reported consequences: Legal complaint/investigation; Legislation introduction/update.",
-      "attack_vector": "deepfake",
-      "affected": "Christian Ulmen",
-      "severity": "Medium",
-      "owasp_llm": [
-        "LLM05",
-        "LLM06",
-        "LLM07",
-        "LLM09"
-      ],
-      "owasp_asi": [
-        "ASI08",
-        "ASI09"
-      ],
-      "nist_ai_rmf": [
-        "MANAGE-4.1",
-        "MAP-3.5",
-        "MEASURE-2.7",
-        "MEASURE-2.8"
-      ],
-      "mitre_atlas": [
-        "AML.T0048",
-        "AML.T0048.003",
-        "AML.T0050",
-        "AML.T0053",
-        "AML.T0056",
-        "AML.T0058"
-      ],
-      "references": [
-        {
-          "title": "AIAAIC entry",
-          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/german-tv-star-accuses-husband-of-spreading-deepfake-porn-images-of-her",
-          "type": "report"
-        }
-      ],
-      "tags": [
-        "aiaaic",
-        "aiaaic-sheet",
-        "sector-media/entertainment/sports/arts",
-        "juris-germany;-spain"
-      ],
-      "added": "2026-05-26",
-      "updated": "2026-05-26",
-      "quality_tier": "auto",
-      "corpus": "security"
-    },
-    {
-      "id": "INC-07726",
-      "source_ids": [
-        "AIAAIC2261"
-      ],
-      "title": "AI chatbots lure vulnerable gamblers to unlicensed betting websites",
-      "date": "2026",
-      "year": 2026,
-      "category": "real-world",
-      "description": "AIAAIC report: AI chatbots lure vulnerable gamblers to unlicensed betting websites. System: ChatGPT; Claude; Copilot; Gemini; Grok; Le Chat; Meta AI. Technology: Generative AI. Purpose: Recommend online casinos. Ethical issues: Accountability; Safety; Transparency.",
-      "attack_vector": "other",
-      "affected": "Anthropic; Google; Meta; Microsoft; Mistral; OpenAI; xAI",
-      "severity": "Medium",
-      "owasp_llm": [
-        "LLM05",
-        "LLM06",
-        "LLM07"
-      ],
-      "owasp_asi": [
-        "ASI08",
-        "ASI09"
-      ],
-      "nist_ai_rmf": [
-        "MANAGE-4.1",
-        "MAP-3.5",
-        "MEASURE-2.7"
-      ],
-      "mitre_atlas": [
-        "AML.T0048",
-        "AML.T0048.003",
-        "AML.T0050",
-        "AML.T0053",
-        "AML.T0056"
-      ],
-      "references": [
-        {
-          "title": "AIAAIC entry",
-          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/ai-chatbots-lure-vulnerable-gamblers-to-unlicensed-betting-websites",
-          "type": "report"
-        }
-      ],
-      "tags": [
-        "aiaaic",
-        "aiaaic-sheet",
-        "sector-gambling",
-        "juris-austria;-belgium;-france"
-      ],
-      "added": "2026-05-26",
-      "updated": "2026-05-26",
-      "quality_tier": "auto",
-      "corpus": "security"
-    },
-    {
-      "id": "INC-07727",
-      "source_ids": [
-        "AIAAIC2260"
-      ],
-      "title": "ChatGPT accused of enabling Florida State University mass shooting",
-      "date": "2025",
-      "year": 2025,
-      "category": "real-world",
-      "description": "AIAAIC report: ChatGPT accused of enabling Florida State University mass shooting. System: ChatGPT. Technology: Generative AI. Purpose: Plan mass shooting. Ethical issues: Accountability; Alignment; Safety. Reported consequences: Litigation.",
-      "attack_vector": "other",
-      "affected": "OpenAI",
-      "severity": "Medium",
-      "owasp_llm": [
-        "LLM05",
-        "LLM06"
-      ],
-      "owasp_asi": [
-        "ASI08",
-        "ASI09"
-      ],
-      "nist_ai_rmf": [
-        "MANAGE-4.1",
-        "MAP-3.5",
-        "MEASURE-2.7"
-      ],
-      "mitre_atlas": [
-        "AML.T0048",
-        "AML.T0048.003",
-        "AML.T0050",
-        "AML.T0053"
-      ],
-      "references": [
-        {
-          "title": "AIAAIC entry",
-          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chatgpt-accused-of-enabling-florida-state-university-mass-shooting",
-          "type": "report"
-        }
-      ],
-      "tags": [
-        "aiaaic",
-        "aiaaic-sheet",
-        "sector-education",
-        "juris-florida"
-      ],
-      "added": "2026-05-26",
-      "updated": "2026-05-26",
-      "quality_tier": "auto",
-      "corpus": "security"
-    },
-    {
-      "id": "INC-07728",
-      "source_ids": [
-        "AIAAIC2259"
-      ],
-      "title": "Meta, YouTube found liable for addicting child to social media",
-      "date": "2012",
-      "year": 2012,
-      "category": "real-world",
-      "description": "AIAAIC report: Meta, YouTube found liable for addicting child to social media. System: Explore. Technology: Machine learning; Recommendation algorithm. Purpose: Maximise user retention. Ethical issues: Accountability; Safety; Transparency. Reported consequences: Litigation; Fine/settlement.",
-      "attack_vector": "other",
-      "affected": "Google; Meta",
-      "severity": "Medium",
-      "owasp_llm": [
-        "LLM05",
-        "LLM06",
-        "LLM07"
-      ],
-      "owasp_asi": [
-        "ASI08",
-        "ASI09"
-      ],
-      "nist_ai_rmf": [
-        "MANAGE-4.1",
-        "MAP-3.5",
-        "MEASURE-2.7"
-      ],
-      "mitre_atlas": [
-        "AML.T0048",
-        "AML.T0048.003",
-        "AML.T0050",
-        "AML.T0053",
-        "AML.T0056"
-      ],
-      "references": [
-        {
-          "title": "AIAAIC entry",
-          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/meta-youtube-found-liable-for-addicting-child-to-social-media",
-          "type": "report"
-        }
-      ],
-      "tags": [
-        "aiaaic",
-        "aiaaic-sheet",
-        "sector-mental-health",
-        "juris-california"
-      ],
-      "added": "2026-05-26",
-      "updated": "2026-05-26",
-      "quality_tier": "auto",
-      "corpus": "security"
-    },
-    {
-      "id": "INC-07729",
-      "source_ids": [
-        "AIAAIC2258"
-      ],
-      "title": "ChatGPT advises exec on how to fire company founders to avoid payout",
-      "date": "2025",
-      "year": 2025,
-      "category": "real-world",
-      "description": "AIAAIC report: ChatGPT advises exec on how to fire company founders to avoid payout. System: ChatGPT. Technology: Generative AI. Purpose: Provide legal advice. Ethical issues: Accountability; Transparency. Reported consequences: Litigation; Fine/settlement.",
-      "attack_vector": "other",
-      "affected": "OpenAI",
-      "severity": "Medium",
-      "owasp_llm": [
-        "LLM06",
-        "LLM07"
-      ],
-      "owasp_asi": [
-        "ASI09"
-      ],
-      "nist_ai_rmf": [
-        "MAP-3.5",
-        "MEASURE-2.7"
-      ],
-      "mitre_atlas": [
-        "AML.T0048.003",
-        "AML.T0053",
-        "AML.T0056"
-      ],
-      "references": [
-        {
-          "title": "AIAAIC entry",
-          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chatgpt-advises-exec-on-how-to-fire-company-founders-to-avoid-payout",
-          "type": "report"
-        }
-      ],
-      "tags": [
-        "aiaaic",
-        "aiaaic-sheet",
-        "sector-media/entertainment/sports/arts",
-        "juris-delaware"
-      ],
-      "added": "2026-05-26",
-      "updated": "2026-05-26",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -29208,11 +28905,11 @@
       "source_ids": [
         "AIAAIC2072"
       ],
-      "title": "Australian bank employees train chatbot, are fired",
+      "title": "Australian Bank employees train chatbot, are fired",
       "date": "2025",
       "year": 2025,
       "category": "real-world",
-      "description": "AIAAIC report: Australian bank employees train chatbot, are fired. System: Bumblebee. Technology: Generative AI. Purpose: Train chatbot. Ethical issues: Employment/labour; Fairness; Transparency. Reported consequences: Regulatory investigation.",
+      "description": "AIAAIC report: Australian Bank employees train chatbot, are fired. System: Bumblebee. Technology: Generative AI. Purpose: Train chatbot. Ethical issues: Employment/labour; Fairness; Transparency. Reported consequences: Regulatory investigation.",
       "attack_vector": "other",
       "affected": "Commonwealth Bank of Australia",
       "severity": "Medium",
@@ -29240,7 +28937,7 @@
         "juris-australia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "ai-harm"
     },
@@ -61496,11 +61193,11 @@
       "tags": [
         "aiaaic",
         "aiaaic-sheet",
-        "sector-gambling",
+        "sector-gaming",
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -79261,14 +78958,13 @@
       "date": "2018",
       "year": 2018,
       "category": "real-world",
-      "description": "AIAAIC report: Uber self-driving car kills Arizona pedestrian. System: Automated Driving System. Technology: Self-driving system; Computer vision. Purpose: Automate steering, acceleration, braking. Ethical issues: Accountability; Accuracy/reliability; Consent; Oversight; Safety; Transparency. Reported consequences: Regulatory investigation; Litigation; Settlement/fine. Response: System suspension.",
+      "description": "AIAAIC report: Uber self-driving car kills Arizona pedestrian. Technology: Self-driving system; Computer vision. Purpose: Automate steering, acceleration, braking. Ethical issues: Accountability; Accuracy/reliability; Safety. Reported consequences: Regulatory investigation; Litigation. Response: System suspension.",
       "attack_vector": "other",
       "affected": "Uber",
       "severity": "Critical",
       "owasp_llm": [
         "LLM05",
-        "LLM06",
-        "LLM07"
+        "LLM06"
       ],
       "owasp_asi": [
         "ASI08",
@@ -79283,8 +78979,7 @@
         "AML.T0048",
         "AML.T0048.003",
         "AML.T0050",
-        "AML.T0053",
-        "AML.T0056"
+        "AML.T0053"
       ],
       "references": [
         {
@@ -79300,7 +78995,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -84466,6 +84161,309 @@
         "juris-australia"
       ],
       "added": "2026-05-16",
+      "updated": "2026-05-26",
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-07724",
+      "source_ids": [
+        "AIAAIC2263"
+      ],
+      "title": "Chinese AI actors spark personality rights controversy",
+      "date": "2026",
+      "year": 2026,
+      "category": "real-world",
+      "description": "AIAAIC report: Chinese AI actors spark personality rights controversy. Technology: Generative AI. Purpose: Create AI-generated performers. Ethical issues: Accountability; Consent; Employment; Transparency.",
+      "attack_vector": "other",
+      "affected": "Youhug Media",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM06",
+        "LLM07"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0048.003",
+        "AML.T0053",
+        "AML.T0056"
+      ],
+      "references": [
+        {
+          "title": "AIAAIC entry",
+          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chinese-ai-actors-spark-personality-rights-controversy",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "aiaaic",
+        "aiaaic-sheet",
+        "sector-media/entertainment/sports/arts",
+        "juris-china"
+      ],
+      "added": "2026-05-26",
+      "updated": "2026-05-26",
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-07725",
+      "source_ids": [
+        "AIAAIC2262"
+      ],
+      "title": "German TV star accuses husband of spreading deepfake porn images of her",
+      "date": "2024",
+      "year": 2024,
+      "category": "real-world",
+      "description": "AIAAIC report: German TV star accuses husband of spreading deepfake porn images of her. Technology: Deepfake. Purpose: Harass ex-wife. Ethical issues: Accountability; Authenticity/integrity; Privacy/surveillance; Safety; Transparency. Reported consequences: Legal complaint/investigation; Legislation introduction/update.",
+      "attack_vector": "deepfake",
+      "affected": "Christian Ulmen",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM05",
+        "LLM06",
+        "LLM07",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0053",
+        "AML.T0056",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIAAIC entry",
+          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/german-tv-star-accuses-husband-of-spreading-deepfake-porn-images-of-her",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "aiaaic",
+        "aiaaic-sheet",
+        "sector-media/entertainment/sports/arts",
+        "juris-germany;-spain"
+      ],
+      "added": "2026-05-26",
+      "updated": "2026-05-26",
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-07726",
+      "source_ids": [
+        "AIAAIC2261"
+      ],
+      "title": "AI chatbots lure vulnerable gamblers to unlicensed betting websites",
+      "date": "2026",
+      "year": 2026,
+      "category": "real-world",
+      "description": "AIAAIC report: AI chatbots lure vulnerable gamblers to unlicensed betting websites. System: ChatGPT; Claude; Copilot; Gemini; Grok; Le Chat; Meta AI. Technology: Generative AI. Purpose: Recommend online casinos. Ethical issues: Accountability; Safety; Transparency.",
+      "attack_vector": "other",
+      "affected": "Anthropic; Google; Meta; Microsoft; Mistral; OpenAI; xAI",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM05",
+        "LLM06",
+        "LLM07"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0053",
+        "AML.T0056"
+      ],
+      "references": [
+        {
+          "title": "AIAAIC entry",
+          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/ai-chatbots-lure-vulnerable-gamblers-to-unlicensed-betting-websites",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "aiaaic",
+        "aiaaic-sheet",
+        "sector-gambling",
+        "juris-austria;-belgium;-france"
+      ],
+      "added": "2026-05-26",
+      "updated": "2026-05-26",
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-07727",
+      "source_ids": [
+        "AIAAIC2260"
+      ],
+      "title": "ChatGPT accused of enabling Florida State University mass shooting",
+      "date": "2025",
+      "year": 2025,
+      "category": "real-world",
+      "description": "AIAAIC report: ChatGPT accused of enabling Florida State University mass shooting. System: ChatGPT. Technology: Generative AI. Purpose: Plan mass shooting. Ethical issues: Accountability; Alignment; Safety. Reported consequences: Litigation.",
+      "attack_vector": "other",
+      "affected": "OpenAI",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM05",
+        "LLM06"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0053"
+      ],
+      "references": [
+        {
+          "title": "AIAAIC entry",
+          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chatgpt-accused-of-enabling-florida-state-university-mass-shooting",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "aiaaic",
+        "aiaaic-sheet",
+        "sector-education",
+        "juris-florida"
+      ],
+      "added": "2026-05-26",
+      "updated": "2026-05-26",
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-07728",
+      "source_ids": [
+        "AIAAIC2259"
+      ],
+      "title": "Meta, YouTube found liable for addicting child to social media",
+      "date": "2012",
+      "year": 2012,
+      "category": "real-world",
+      "description": "AIAAIC report: Meta, YouTube found liable for addicting child to social media. System: Explore. Technology: Machine learning; Recommendation algorithm. Purpose: Maximise user retention. Ethical issues: Accountability; Safety; Transparency. Reported consequences: Litigation; Fine/settlement.",
+      "attack_vector": "other",
+      "affected": "Google; Meta",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM05",
+        "LLM06",
+        "LLM07"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0053",
+        "AML.T0056"
+      ],
+      "references": [
+        {
+          "title": "AIAAIC entry",
+          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/meta-youtube-found-liable-for-addicting-child-to-social-media",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "aiaaic",
+        "aiaaic-sheet",
+        "sector-mental-health",
+        "juris-california"
+      ],
+      "added": "2026-05-26",
+      "updated": "2026-05-26",
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-07729",
+      "source_ids": [
+        "AIAAIC2258"
+      ],
+      "title": "ChatGPT advises exec on how to fire company founders to avoid payout",
+      "date": "2025",
+      "year": 2025,
+      "category": "real-world",
+      "description": "AIAAIC report: ChatGPT advises exec on how to fire company founders to avoid payout. System: ChatGPT. Technology: Generative AI. Purpose: Provide legal advice. Ethical issues: Accountability; Transparency. Reported consequences: Litigation; Fine/settlement.",
+      "attack_vector": "other",
+      "affected": "OpenAI",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM06",
+        "LLM07"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0048.003",
+        "AML.T0053",
+        "AML.T0056"
+      ],
+      "references": [
+        {
+          "title": "AIAAIC entry",
+          "url": "https://www.aiaaic.org/aiaaic-repository/ai-algorithmic-and-automation-incidents/chatgpt-advises-exec-on-how-to-fire-company-founders-to-avoid-payout",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "aiaaic",
+        "aiaaic-sheet",
+        "sector-media/entertainment/sports/arts",
+        "juris-delaware"
+      ],
+      "added": "2026-05-26",
       "updated": "2026-05-26",
       "quality_tier": "auto",
       "corpus": "security"

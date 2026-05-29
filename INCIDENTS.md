@@ -4,7 +4,7 @@ Single source of truth for GenAI and agentic AI security incidents.
 Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS**.
 
 - **Version:** 2.0.0
-- **Generated:** 2026-05-26
+- **Generated:** 2026-05-29
 - **Total incidents:** **7,720**
 - **Date range:** 1983 – 2026
 - **With CVE:** 1,654
@@ -82,7 +82,7 @@ Auto-generated from the current dataset. SVGs live under [`docs/charts/`](docs/c
 | LLM04 | Data and Model Poisoning | 124 |
 | LLM05 | Improper Output Handling | 3,122 |
 | LLM06 | Excessive Agency | 768 |
-| LLM07 | System Prompt Leakage | 724 |
+| LLM07 | System Prompt Leakage | 723 |
 | LLM08 | Vector and Embedding Weaknesses | 25 |
 | LLM09 | Misinformation | 1,930 |
 | LLM10 | Unbounded Consumption | 45 |
@@ -114,7 +114,7 @@ Auto-generated from the current dataset. SVGs live under [`docs/charts/`](docs/c
 | `AML.T0053` | 1,149 |
 | `AML.T0012` | 811 |
 | `AML.T0057` | 782 |
-| `AML.T0056` | 724 |
+| `AML.T0056` | 723 |
 | `AML.T0051` | 430 |
 | `AML.T0049` | 175 |
 | `AML.T0024` | 171 |
@@ -3279,7 +3279,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,149 | 2025 | [`INC-02334`](docs/incidents/2025.md#inc-02334) | ARC Raiders slammed for replacing voice actors with AI | Medium | LLM06, LLM07 | ASI09 |  |
 | 3,150 | 2025 | [`INC-02343`](docs/incidents/2025.md#inc-02343) | Audio deepfake scam imitates Italian defence minister Guido Crosetto | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
 | 3,151 | 2025 | [`INC-02344`](docs/incidents/2025.md#inc-02344) | Australian activist Caitlin Roper targeted with AI-generated violent threats, images | Medium | LLM06, LLM07 | ASI09 |  |
-| 3,152 | 2025 | [`INC-02346`](docs/incidents/2025.md#inc-02346) | Australian bank employees train chatbot, are fired | Medium | LLM07 |  |  |
+| 3,152 | 2025 | [`INC-02346`](docs/incidents/2025.md#inc-02346) | Australian Bank employees train chatbot, are fired | Medium | LLM07 |  |  |
 | 3,153 | 2025 | [`INC-02349`](docs/incidents/2025.md#inc-02349) | Autonomous AI coding agent deletes company database | Medium | LLM07 |  |  |
 | 3,154 | 2025 | [`INC-02355`](docs/incidents/2025.md#inc-02355) | Azure PromptFlow RCE via improper isolation (CVE-2025-24986) | Critical | LLM05, LLM06 | ASI04 |  |
 | 3,155 | 2025 | [`INC-02359`](docs/incidents/2025.md#inc-02359) | Beijing uses AI to suppress Tibetan refugees in Nepal | Medium | LLM06, LLM07 | ASI09 |  |
@@ -7488,7 +7488,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 7,358 | 2018 | [`INC-07347`](docs/incidents/2018.md#inc-07347) | TV advert propels Amazon Alexa to order cat food | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
 | 7,359 | 2018 | [`INC-07350`](docs/incidents/2018.md#inc-07350) | Uber autonomous vehicle pedestrian fatality (Tempe, AZ) | Critical |  | ASI06 |  |
 | 7,360 | 2018 | [`INC-07352`](docs/incidents/2018.md#inc-07352) | Uber ID algorithm suspends transgender drivers | Medium | LLM06, LLM07 | ASI09 |  |
-| 7,361 | 2018 | [`INC-07353`](docs/incidents/2018.md#inc-07353) | Uber self-driving car kills Arizona pedestrian | Critical | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
+| 7,361 | 2018 | [`INC-07353`](docs/incidents/2018.md#inc-07353) | Uber self-driving car kills Arizona pedestrian | Critical | LLM05, LLM06 | ASI08, ASI09 |  |
 | 7,362 | 2018 | [`INC-07356`](docs/incidents/2018.md#inc-07356) | Waze directs tourists to drive into Vermont lake | Medium | LLM05 | ASI08 |  |
 | 7,363 | 2018 | [`INC-07358`](docs/incidents/2018.md#inc-07358) | Xinhua deepfake news anchors stir scepticism, distrust | Medium | LLM09 | ASI09 |  |
 | 7,364 | 2017-12-23 | [`INC-07379`](docs/incidents/2017.md#inc-07379) | Bad AI-Written Christmas Carols | Medium | LLM05 | ASI08 |  |

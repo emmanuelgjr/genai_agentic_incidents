@@ -20,8 +20,8 @@
 <rect x="220" y="146" width="118.1" height="14" fill="#0a58ca" rx="2"><title>Excessive Agency: 768</title></rect>
 <text x="344.1" y="157" fill="#666">768</text>
 <text x="212" y="179" text-anchor="end" fill="#333">LLM07 · System Prompt Leakage</text>
-<rect x="220" y="168" width="111.3" height="14" fill="#0a58ca" rx="2"><title>System Prompt Leakage: 724</title></rect>
-<text x="337.3" y="179" fill="#666">724</text>
+<rect x="220" y="168" width="111.2" height="14" fill="#0a58ca" rx="2"><title>System Prompt Leakage: 723</title></rect>
+<text x="337.2" y="179" fill="#666">723</text>
 <text x="212" y="201" text-anchor="end" fill="#333">LLM08 · Vector and Embedding Weaknesses</text>
 <rect x="220" y="190" width="3.8" height="14" fill="#0a58ca" rx="2"><title>Vector and Embedding Weaknesses: 25</title></rect>
 <text x="229.8" y="201" fill="#666">25</text>
