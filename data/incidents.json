@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated": "2026-05-29",
+  "generated": "2026-05-30",
   "description": "Single source of truth for GenAI and agentic AI security incidents. Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable.",
   "schema": "schema/incident.schema.json",
   "incident_count": 7720,
@@ -22801,7 +22801,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-26",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -24959,7 +24959,7 @@
       "description": "AIAAIC report: Nude detection dataset contains child sexual abuse imagery. System: NudeNet. Technology: Database/dataset. Purpose: Detect nude images. Ethical issues: Accountability; Privacy/surveillance; Safety; Transparency. Response: Content/data removal.",
       "attack_vector": "csam-generation",
       "affected": "Bedapudi Praneeth",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06",
@@ -24995,8 +24995,8 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-29",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -35031,7 +35031,7 @@
       "description": "AIAAIC report: AI malware scam \"destroys\" Disney employee's life. Technology: Machine learning. Purpose: Defraud. Ethical issues: Privacy/surveillance; Security. Response: Confidentiality loss.",
       "attack_vector": "malware",
       "affected": "Nullbulge",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM02",
         "LLM03"
@@ -35066,8 +35066,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -36231,7 +36231,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -43376,7 +43376,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-26",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -45112,7 +45112,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -45418,7 +45418,7 @@
       "description": "AIAAIC report: VRChat users’ avatars make sexual and violent threats against minors. System: VRChat Safety and Trust System. Technology: Machine learning; Safety management system. Purpose: Manage system safety. Ethical issues: Safety.",
       "attack_vector": "csam-generation",
       "affected": "VRChat",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05"
       ],
@@ -45447,8 +45447,8 @@
         "juris-multiple;-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-29",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -50457,7 +50457,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-26",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -56181,7 +56181,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-26",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -59728,7 +59728,7 @@
       "description": "AIAAIC report: CivitAI accused of generating synthetic 'child pornography' images. System: CivitAI. Technology: Generative AI; Text-to-imag. Purpose: Generate images. Ethical issues: Privacy/surveillance; Safety; Transparency.",
       "attack_vector": "csam-generation",
       "affected": "CivitAI",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM07"
@@ -59759,8 +59759,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-29",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -60047,7 +60047,7 @@
       "year": 2021,
       "category": "real-world",
       "description": "AIAAIC report: Google flags medical images of groins as CSAM. System: PhotoDNA. Technology: Hash matching; Machine learning. Purpose: Detect child sexual abuse material. Ethical issues: Accountability; Accuracy/reliability; Autonomy/agency; Transparency.",
-      "attack_vector": "csam-generation",
+      "attack_vector": "other",
       "affected": "Google",
       "severity": "Medium",
       "owasp_llm": [
@@ -60080,8 +60080,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-29",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -68876,7 +68876,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -69905,7 +69905,7 @@
       "year": 2021,
       "category": "real-world",
       "description": "AIAAIC report: Apple NeuralHash child sexual abuse scanning raises privacy concerns. System: NeuralHash. Technology: Perceptual hashing; Computer vision. Purpose: Detect child sexual abuse material. Ethical issues: Accuracy/reliability; Privacy/surveillance; Security. Reported consequences: Litigation.",
-      "attack_vector": "csam-generation",
+      "attack_vector": "privacy-violation",
       "affected": "Apple",
       "severity": "Medium",
       "owasp_llm": [
@@ -69942,8 +69942,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-29",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -72074,7 +72074,7 @@
       "description": "AIAAIC report: AI Dungeon offensive speech filter upgrade generates child porn. Technology: NLP/text analysis. Purpose: Minimise sexual content. Ethical issues: Accuracy/reliability; Consent; Safety; Privacy/surveillance. Response: System review/update.",
       "attack_vector": "csam-generation",
       "affected": "Latitude; OpenAI",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05"
       ],
@@ -72103,8 +72103,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-29",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -75707,7 +75707,7 @@
       ],
       "added": "2026-05-16",
       "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -78403,7 +78403,7 @@
       "description": "AIAAIC report: Gangs Matrix data leak puts young Londoners in \"serious danger\". System: Gangs Violence Matrix. Technology: Ranking algorithm. Purpose: Predict gang violence risk. Ethical issues: Fairness.",
       "attack_vector": "data-exfiltration",
       "affected": "Metropolitan Police Service (MPS)",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM02"
       ],
@@ -78432,8 +78432,8 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -79611,7 +79611,7 @@
       "description": "AIAAIC report: SenseNets facial recognition data breach reveals Beijing Uyghur surveillance. Technology: Facial recognition. Purpose: Identify Uyghurs. Ethical issues: Dual use; Privacy/surveillance; Security; Transparency.",
       "attack_vector": "data-exfiltration",
       "affected": "Netposa Technologies/SenseNets",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM02",
         "LLM03",
@@ -79649,8 +79649,8 @@
         "juris-china"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
