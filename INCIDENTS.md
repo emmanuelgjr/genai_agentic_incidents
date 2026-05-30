@@ -32,8 +32,8 @@ Auto-generated from the current dataset. SVGs live under [`docs/charts/`](docs/c
 | Severity | Count |
 |---|---:|
 | Critical | 1,486 |
-| High | 2,884 |
-| Medium | 3,214 |
+| High | 2,901 |
+| Medium | 3,197 |
 | Low | 136 |
 
 ### Incidents per Year
@@ -2242,7 +2242,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 2,112 | 2026 | [`INC-01635`](docs/incidents/2026.md#inc-01635) | Pentagon uses Anthropic's Claude to capture Venezuela president Maduro | Medium | LLM06, LLM07 | ASI09 |  |
 | 2,113 | 2026 | [`INC-01636`](docs/incidents/2026.md#inc-01636) | Pentagon uses Anthropic's Claude to plan and support Iran airstrikes | Medium | LLM06, LLM07 | ASI09 |  |
 | 2,114 | 2026 | [`INC-01659`](docs/incidents/2026.md#inc-01659) | Polymarket traders weaponise AI-generated Iran "war slop" | Medium | LLM07 |  |  |
-| 2,115 | 2026 | [`INC-01719`](docs/incidents/2026.md#inc-01719) | Radnor High School hit by fake AI sexualised images of students | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
+| 2,115 | 2026 | [`INC-01719`](docs/incidents/2026.md#inc-01719) | Radnor High School hit by fake AI sexualised images of students | High | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 2,116 | 2026 | [`INC-01738`](docs/incidents/2026.md#inc-01738) | Roblox AI age verification system accused of misidentifying minors as adults | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 2,117 | 2026 | [`INC-01751`](docs/incidents/2026.md#inc-01751) | Sacked UK gaming journalists misleadingly replaced with AI writers | Medium | LLM07 |  |  |
 | 2,118 | 2026 | [`INC-01821`](docs/incidents/2026.md#inc-01821) | Study: ChatGPT Health fails critical emergency and suicide tests | Medium | LLM06, LLM07 | ASI09 |  |
@@ -3467,7 +3467,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,337 | 2025 | [`INC-03182`](docs/incidents/2025.md#inc-03182) | Robin Williams' daughter slams "disgusting" AI versions of her father | Medium | LLM06 | ASI09 |  |
 | 3,338 | 2025 | [`INC-03188`](docs/incidents/2025.md#inc-03188) | Rotherham man wrongly accused of fraud after facial recognition error | Medium | LLM06, LLM07 | ASI09 |  |
 | 3,339 | 2025 | [`INC-03189`](docs/incidents/2025.md#inc-03189) | Royal Opera House slammed for dynamically priced tickets | Medium | LLM06, LLM07 | ASI09 |  |
-| 3,340 | 2025 | [`INC-03190`](docs/incidents/2025.md#inc-03190) | Royal School Armagh students targeted with explicit AI images | Medium | LLM06, LLM07 | ASI09 |  |
+| 3,340 | 2025 | [`INC-03190`](docs/incidents/2025.md#inc-03190) | Royal School Armagh students targeted with explicit AI images | High | LLM06, LLM07 | ASI09 |  |
 | 3,341 | 2025 | [`INC-03191`](docs/incidents/2025.md#inc-03191) | Russian AI fake news video makes false claims about USAID | Medium | LLM09 |  |  |
 | 3,342 | 2025 | [`INC-03193`](docs/incidents/2025.md#inc-03193) | Russian humanoid AI robot collapses on debut | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 3,343 | 2025 | [`INC-03199`](docs/incidents/2025.md#inc-03199) | Scammers Reportedly Used AI-Generated Image of Missing Puppy Hazel to Solicit Fraudulent Vet Payment from St.… | Medium | LLM09 | ASI09 |  |
@@ -3489,7 +3489,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 3,359 | 2025 | [`INC-03241`](docs/incidents/2025.md#inc-03241) | Study: Sora 2 generates false claim videos 80 percent of the time | Medium | LLM09 |  |  |
 | 3,360 | 2025 | [`INC-03242`](docs/incidents/2025.md#inc-03242) | Suno AI accused of violating "Mambo no.5 " copyright | Medium | LLM06, LLM07 | ASI09 |  |
 | 3,361 | 2025 | [`INC-03243`](docs/incidents/2025.md#inc-03243) | Suspected AI-Generated Deepfake Video Reportedly Targeted Former Chhattisgarh Chief Minister Bhupesh Baghel o… | Medium | LLM09 | ASI09 |  |
-| 3,362 | 2025 | [`INC-03245`](docs/incidents/2025.md#inc-03245) | Sydney schoolgirls targeted with nonconsensual deepfake porn | Medium | LLM05, LLM09 | ASI08, ASI09 |  |
+| 3,362 | 2025 | [`INC-03245`](docs/incidents/2025.md#inc-03245) | Sydney schoolgirls targeted with nonconsensual deepfake porn | High | LLM05, LLM09 | ASI08, ASI09 |  |
 | 3,363 | 2025 | [`INC-03250`](docs/incidents/2025.md#inc-03250) | Teacher uses AI to harass Italy's prime minister's daughter | Medium | LLM05, LLM06 | ASI08, ASI09 |  |
 | 3,364 | 2025 | [`INC-03251`](docs/incidents/2025.md#inc-03251) | Ted Cruz uses fake AI video to attack MSNBC over No Kings protest size | Medium | LLM07 |  |  |
 | 3,365 | 2025 | [`INC-03256`](docs/incidents/2025.md#inc-03256) | Tesla "Mad Max" mode accused of enabling reckless automated driving | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
@@ -4175,7 +4175,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,045 | 2024 | [`INC-03396`](docs/incidents/2024.md#inc-03396) | "Megalopolis" trailer includes AI-generated critics' quotes | Medium | LLM09 |  |  |
 | 4,046 | 2024 | [`INC-03397`](docs/incidents/2024.md#inc-03397) | "Soulless" AI-generated Coca-Cola Christmas ad backfires | Medium |  |  |  |
 | 4,047 | 2024 | [`INC-03401`](docs/incidents/2024.md#inc-03401) | 26 US Members of Congress attacked using porn deepfakes | Medium | LLM05, LLM09 | ASI08, ASI09 |  |
-| 4,048 | 2024 | [`INC-03402`](docs/incidents/2024.md#inc-03402) | 50 Melbourne school girls targeted using AI nude images | Medium | LLM05, LLM07 | ASI08 |  |
+| 4,048 | 2024 | [`INC-03402`](docs/incidents/2024.md#inc-03402) | 50 Melbourne school girls targeted using AI nude images | High | LLM05, LLM07 | ASI08 |  |
 | 4,049 | 2024 | [`INC-03440`](docs/incidents/2024.md#inc-03440) | Activision accused of selling AI-generated cosmetic in Call Of Duty | Medium | LLM07 |  |  |
 | 4,050 | 2024 | [`INC-03441`](docs/incidents/2024.md#inc-03441) | Adobe called out for selling AI-generated 'Ansel Adams' images | Medium |  |  |  |
 | 4,051 | 2024 | [`INC-03442`](docs/incidents/2024.md#inc-03442) | Adobe terms of use update sparks AI privacy, copyright controversy | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
@@ -4197,7 +4197,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,067 | 2024 | [`INC-03474`](docs/incidents/2024.md#inc-03474) | AI robot company closure leaves kids bereft | Medium |  |  |  |
 | 4,068 | 2024 | [`INC-03476`](docs/incidents/2024.md#inc-03476) | AI Scribe SEO plugin (ChatGPT GPT-4o) issue report | Medium | LLM06 |  |  |
 | 4,069 | 2024 | [`INC-03477`](docs/incidents/2024.md#inc-03477) | AI search engines promote white supremacism | Medium | LLM05 | ASI08 |  |
-| 4,070 | 2024 | [`INC-03478`](docs/incidents/2024.md#inc-03478) | AI systems used to conduct sexual violence against 1 in 5 Brazilian children | Medium | LLM05 | ASI08 |  |
+| 4,070 | 2024 | [`INC-03478`](docs/incidents/2024.md#inc-03478) | AI systems used to conduct sexual violence against 1 in 5 Brazilian children | High | LLM05 | ASI08 |  |
 | 4,071 | 2024 | [`INC-03482`](docs/incidents/2024.md#inc-03482) | AI unbuttons conference participant's blouse | Medium |  |  |  |
 | 4,072 | 2024 | [`INC-03493`](docs/incidents/2024.md#inc-03493) | AI-generated drama performance cancelled over plagiarism accusations | Medium | LLM07 |  |  |
 | 4,073 | 2024 | [`INC-03494`](docs/incidents/2024.md#inc-03494) | AI-generated exam image draws student complaints | Medium | LLM07 |  |  |
@@ -4443,7 +4443,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,313 | 2024 | [`INC-04224`](docs/incidents/2024.md#inc-04224) | Stack Overflow users rebel against OpenAI LLM training deal | Medium | LLM07 |  |  |
 | 4,314 | 2024 | [`INC-04225`](docs/incidents/2024.md#inc-04225) | Starship robot damages car, flees scene of crime | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 4,315 | 2024 | [`INC-04228`](docs/incidents/2024.md#inc-04228) | Steak 'n Shake sued for alleged facial biometric violations | Medium | LLM06, LLM07 | ASI09 |  |
-| 4,316 | 2024 | [`INC-04234`](docs/incidents/2024.md#inc-04234) | Students create deepfake nudes of St Thomas Aquinas Catholic Secondary School classmates | Medium | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
+| 4,316 | 2024 | [`INC-04234`](docs/incidents/2024.md#inc-04234) | Students create deepfake nudes of St Thomas Aquinas Catholic Secondary School classmates | High | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
 | 4,317 | 2024 | [`INC-04238`](docs/incidents/2024.md#inc-04238) | Study: AI chatbots fail disabled voters | Medium | LLM09 |  |  |
 | 4,318 | 2024 | [`INC-04239`](docs/incidents/2024.md#inc-04239) | Study: ChatGPT consumes a bottle of water per email | Medium | LLM07 |  |  |
 | 4,319 | 2024 | [`INC-04240`](docs/incidents/2024.md#inc-04240) | Study: ChatGPT misattributes, misrepresents news publisher content | Medium | LLM07 |  |  |
@@ -4859,7 +4859,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,729 | 2023 | [`INC-04424`](docs/incidents/2023.md#inc-04424) | Al video depicts Indonesian presidential hopeful speaking fluent Arabic | Medium | LLM07 |  |  |
 | 4,730 | 2023 | [`INC-04425`](docs/incidents/2023.md#inc-04425) | Alberta Party endorses itself using deepfake video | Medium | LLM07, LLM09 | ASI09 |  |
 | 4,731 | 2023 | [`INC-04435`](docs/incidents/2023.md#inc-04435) | Allegheny child neglect screening tool may harden bias against people with disabilities | Medium |  |  |  |
-| 4,732 | 2023 | [`INC-04436`](docs/incidents/2023.md#inc-04436) | Almendralejo hit by AI naked child images | Medium | LLM05 | ASI08 |  |
+| 4,732 | 2023 | [`INC-04436`](docs/incidents/2023.md#inc-04436) | Almendralejo hit by AI naked child images | High | LLM05 | ASI08 |  |
 | 4,733 | 2023 | [`INC-04437`](docs/incidents/2023.md#inc-04437) | Amazon Alexa says 2020 US election was rigged | Medium | LLM09 |  |  |
 | 4,734 | 2023 | [`INC-04439`](docs/incidents/2023.md#inc-04439) | Amazon disables Echo account after hearing racial slur | Medium | LLM06, LLM07 | ASI09 |  |
 | 4,735 | 2023 | [`INC-04440`](docs/incidents/2023.md#inc-04440) | Amazon employees use Ring to spy on customers | Medium | LLM02, LLM03, LLM07 | ASI02, ASI03 |  |
@@ -4952,7 +4952,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,822 | 2023 | [`INC-04598`](docs/incidents/2023.md#inc-04598) | Deepfake Greta Thunberg promotes use of 'vegan grenades' | Medium | LLM09 | ASI09 |  |
 | 4,823 | 2023 | [`INC-04599`](docs/incidents/2023.md#inc-04599) | Deepfake IDs used in HKD 200,000 bank fraud | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
 | 4,824 | 2023 | [`INC-04600`](docs/incidents/2023.md#inc-04600) | Deepfake Justin Trudeau endorses Petro-Canada scam | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
-| 4,825 | 2023 | [`INC-04604`](docs/incidents/2023.md#inc-04604) | Deepfake nudes target Winnipeg school female students | Medium | LLM05, LLM09 | ASI08, ASI09 |  |
+| 4,825 | 2023 | [`INC-04604`](docs/incidents/2023.md#inc-04604) | Deepfake nudes target Winnipeg school female students | High | LLM05, LLM09 | ASI08, ASI09 |  |
 | 4,826 | 2023 | [`INC-04606`](docs/incidents/2023.md#inc-04606) | Deepfake Palestinian man carries children out of rubble | Medium | LLM07, LLM09 | ASI09 |  |
 | 4,827 | 2023 | [`INC-04607`](docs/incidents/2023.md#inc-04607) | Deepfake Pope Francis wears deepfake LGBTQ+ flag | Medium | LLM09 | ASI09 |  |
 | 4,828 | 2023 | [`INC-04608`](docs/incidents/2023.md#inc-04608) | Deepfake Pope Francis wears white puffa jacket | Medium | LLM09 | ASI09 |  |
@@ -5012,7 +5012,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,882 | 2023 | [`INC-04731`](docs/incidents/2023.md#inc-04731) | Man's use of AI to "resurrect" grandmother stirs controversy | Medium | LLM09 | ASI09 |  |
 | 4,883 | 2023 | [`INC-04736`](docs/incidents/2023.md#inc-04736) | Men's Journal publishes AI-generated article riddled with errors | Medium | LLM07 |  |  |
 | 4,884 | 2023 | [`INC-04737`](docs/incidents/2023.md#inc-04737) | Meta accused of covertly using pirated books to train AI models | Medium | LLM06, LLM07 | ASI09 |  |
-| 4,885 | 2023 | [`INC-04741`](docs/incidents/2023.md#inc-04741) | Miami boys arrested for creating and sharing nude images of students | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
+| 4,885 | 2023 | [`INC-04741`](docs/incidents/2023.md#inc-04741) | Miami boys arrested for creating and sharing nude images of students | High | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 4,886 | 2023 | [`INC-04743`](docs/incidents/2023.md#inc-04743) | Michael Chabon sues OpenAI for violating copyright | Medium | LLM07 |  |  |
 | 4,887 | 2023 | [`INC-04744`](docs/incidents/2023.md#inc-04744) | Michael Cohen supplies fake AI legal citations to lawyer | Medium |  |  |  |
 | 4,888 | 2023 | [`INC-04745`](docs/incidents/2023.md#inc-04745) | Microsoft 'algorithm' recommends Ottawa Food Bank visit | Medium | LLM09 |  |  |
@@ -5046,7 +5046,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,916 | 2023 | [`INC-04806`](docs/incidents/2023.md#inc-04806) | Porcha Rudruff facial recognition wrongful arrest | Medium | LLM06, LLM07 | ASI09 |  |
 | 4,917 | 2023 | [`INC-04808`](docs/incidents/2023.md#inc-04808) | President Biden 'calls for US draft' deepfake video | Medium | LLM09 | ASI09 |  |
 | 4,918 | 2023 | [`INC-04809`](docs/incidents/2023.md#inc-04809) | Presto uses humans to support 70 percent of chatbot interactions | Medium | LLM07 |  |  |
-| 4,919 | 2023 | [`INC-04823`](docs/incidents/2023.md#inc-04823) | Quebec man jailed for producing AI child porn | Medium | LLM05 | ASI08 |  |
+| 4,919 | 2023 | [`INC-04823`](docs/incidents/2023.md#inc-04823) | Quebec man jailed for producing AI child porn | High | LLM05 | ASI08 |  |
 | 4,920 | 2023 | [`INC-04825`](docs/incidents/2023.md#inc-04825) | Quora, Google AIs say eggs can be melted | Medium | LLM09 |  |  |
 | 4,921 | 2023 | [`INC-04827`](docs/incidents/2023.md#inc-04827) | RCE in MathGPT via prompt injection (Streamlit demo) | Critical | LLM01, LLM05, LLM06 | ASI04 |  |
 | 4,922 | 2023 | [`INC-04828`](docs/incidents/2023.md#inc-04828) | RCE through LLM frameworks (LangChain, Boxcars) | Critical | LLM01, LLM05, LLM06 | ASI04 |  |
@@ -5081,7 +5081,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,951 | 2023 | [`INC-04884`](docs/incidents/2023.md#inc-04884) | Starship robot 'attacks' Milton Keynes resident | Medium | LLM05, LLM06 | ASI08, ASI09 |  |
 | 4,952 | 2023 | [`INC-04885`](docs/incidents/2023.md#inc-04885) | Starship robot 'tries to run over pedestrian' | Medium | LLM05 | ASI08 |  |
 | 4,953 | 2023 | [`INC-04886`](docs/incidents/2023.md#inc-04886) | Starship robot knocks over Arizona State University employee | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
-| 4,954 | 2023 | [`INC-04887`](docs/incidents/2023.md#inc-04887) | Student violates 50 Lancaster Country School students with nude deepfakes | Medium | LLM09 | ASI09 |  |
+| 4,954 | 2023 | [`INC-04887`](docs/incidents/2023.md#inc-04887) | Student violates 50 Lancaster Country School students with nude deepfakes | High | LLM09 | ASI09 |  |
 | 4,955 | 2023 | [`INC-04889`](docs/incidents/2023.md#inc-04889) | Study: AI image generators accept 85 percent of election manipulation prompts | Medium | LLM09 |  |  |
 | 4,956 | 2023 | [`INC-04890`](docs/incidents/2023.md#inc-04890) | Study: AI-powered stethoscope fails two-thirds of the time | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 4,957 | 2023 | [`INC-04891`](docs/incidents/2023.md#inc-04891) | Study: ChatGPT consumes 500 ml of water per 5-50 prompts | Medium |  |  |  |
@@ -5102,7 +5102,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,972 | 2023 | [`INC-04906`](docs/incidents/2023.md#inc-04906) | Study: Uber dynamic pricing increases passenger fares, lowers driver earnings | Medium | LLM06, LLM07 | ASI09 |  |
 | 4,973 | 2023 | [`INC-04907`](docs/incidents/2023.md#inc-04907) | Study: Uber, Amazon use AI to pay people different wages for the same work | Medium | LLM06, LLM07 | ASI09 |  |
 | 4,974 | 2023 | [`INC-04909`](docs/incidents/2023.md#inc-04909) | Taiwanese AI repeats Chinese government line | Medium |  |  |  |
-| 4,975 | 2023 | [`INC-04910`](docs/incidents/2023.md#inc-04910) | Teen distributes AI-generated nude pictures of Issaquah students | Medium | LLM05, LLM06 | ASI08, ASI09 |  |
+| 4,975 | 2023 | [`INC-04910`](docs/incidents/2023.md#inc-04910) | Teen distributes AI-generated nude pictures of Issaquah students | High | LLM05, LLM06 | ASI08, ASI09 |  |
 | 4,976 | 2023 | [`INC-04912`](docs/incidents/2023.md#inc-04912) | Tenants wrongly declined by faulty TransUnion AI system | Medium | LLM06, LLM07 | ASI09 |  |
 | 4,977 | 2023 | [`INC-04934`](docs/incidents/2023.md#inc-04934) | Tesla accused of rigging driving range algorithm | Medium | LLM06, LLM07 | ASI09 |  |
 | 4,978 | 2023 | [`INC-04935`](docs/incidents/2023.md#inc-04935) | Tesla Model 3 collides with Subaru Impreza, kills two | Critical | LLM05 | ASI08 |  |
@@ -5122,7 +5122,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 4,992 | 2023 | [`INC-04970`](docs/incidents/2023.md#inc-04970) | UK automated flood warning system issues late, false alerts | Medium | LLM05 | ASI08 |  |
 | 4,993 | 2023 | [`INC-04972`](docs/incidents/2023.md#inc-04972) | UK Privacy/surveillance watchdog accuses Snapchat of failing to assess My AI Privacy/surveillance risks | Medium |  |  |  |
 | 4,994 | 2023 | [`INC-04978`](docs/incidents/2023.md#inc-04978) | US Border Patrol's AI surveillance programme leads to rights violations | Medium | LLM06, LLM07 | ASI09 |  |
-| 4,995 | 2023 | [`INC-04980`](docs/incidents/2023.md#inc-04980) | US college student Taylor Klein's face is deepfaked onto porn | Medium | LLM05, LLM07, LLM09 | ASI08, ASI09 |  |
+| 4,995 | 2023 | [`INC-04980`](docs/incidents/2023.md#inc-04980) | US college student Taylor Klein's face is deepfaked onto porn | High | LLM05, LLM07, LLM09 | ASI08, ASI09 |  |
 | 4,996 | 2023 | [`INC-04981`](docs/incidents/2023.md#inc-04981) | US FTC investigates ChatGPT for possible consumer harms | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
 | 4,997 | 2023 | [`INC-04983`](docs/incidents/2023.md#inc-04983) | US tech worker goes crazy after obsessively generating AI images of herself | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 4,998 | 2023 | [`INC-04984`](docs/incidents/2023.md#inc-04984) | Vermeer Girl with a Pearl Earring AI facsimile causes controversy | Medium |  |  |  |
@@ -5130,7 +5130,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 5,000 | 2023 | [`INC-04990`](docs/incidents/2023.md#inc-04990) | VirusTotal poisoning of ransomware family | High | LLM04 |  |  |
 | 5,001 | 2023 | [`INC-04993`](docs/incidents/2023.md#inc-04993) | VW Brazil Elis Regina deepfake advert | Medium | LLM09 | ASI09 |  |
 | 5,002 | 2023 | [`INC-04994`](docs/incidents/2023.md#inc-04994) | Waymo robotaxi kills dog in San Francisco | Critical | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
-| 5,003 | 2023 | [`INC-04996`](docs/incidents/2023.md#inc-04996) | Westfield High School non-concensual nude deepfakes | Medium | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
+| 5,003 | 2023 | [`INC-04996`](docs/incidents/2023.md#inc-04996) | Westfield High School non-concensual nude deepfakes | High | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
 | 5,004 | 2023 | [`INC-04997`](docs/incidents/2023.md#inc-04997) | WhatsApp AI stickers generate Palestinian kids with guns | Medium |  |  |  |
 | 5,005 | 2023 | [`INC-04998`](docs/incidents/2023.md#inc-04998) | Whistleblower reveals Tesla phantom braking complaints | Medium | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI08 |  |
 | 5,006 | 2023 | [`INC-04999`](docs/incidents/2023.md#inc-04999) | Worldcoin suspended in Kenya over privacy, security concerns | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
@@ -6297,7 +6297,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 6,167 | 2021 | [`INC-05871`](docs/incidents/2021.md#inc-05871) | Study: Social media firms fail to take down anti-Semitic content | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
 | 6,168 | 2021 | [`INC-05872`](docs/incidents/2021.md#inc-05872) | Study: Top social media platforms 'unsafe' for LGBTQ users | Medium | LLM05, LLM07 | ASI08 |  |
 | 6,169 | 2021 | [`INC-05873`](docs/incidents/2021.md#inc-05873) | Study: US mortgage loans assessment tools suffer from economic, racial bias | Medium | LLM06, LLM07 | ASI09 |  |
-| 6,170 | 2021 | [`INC-05876`](docs/incidents/2021.md#inc-05876) | Teenager attempts to extort Lauren Book using deepfake nude photos | Medium | LLM05, LLM06, LLM07, LLM09 | ASI08, ASI09 |  |
+| 6,170 | 2021 | [`INC-05876`](docs/incidents/2021.md#inc-05876) | Teenager attempts to extort Lauren Book using deepfake nude photos | High | LLM05, LLM06, LLM07, LLM09 | ASI08, ASI09 |  |
 | 6,171 | 2021 | [`INC-05878`](docs/incidents/2021.md#inc-05878) | Teleperformance AI employee monitoring scheme prompts backlash | Medium | LLM07 |  |  |
 | 6,172 | 2021 | [`INC-06075`](docs/incidents/2021.md#inc-06075) | Tesla Autopilot confused by billboard | Medium | LLM05 | ASI08 |  |
 | 6,173 | 2021 | [`INC-06077`](docs/incidents/2021.md#inc-06077) | Tesla Autopilot is 'easily' tricked into driverless driving | Medium | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI08 |  |
@@ -6323,7 +6323,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 6,193 | 2021 | [`INC-06142`](docs/incidents/2021.md#inc-06142) | UK robo review 'unfairly' targets Bulgarians, Poles for benefit fraud investigation | Medium | LLM07 |  |  |
 | 6,194 | 2021 | [`INC-06143`](docs/incidents/2021.md#inc-06143) | UK sham marriage tool found to disproportionately flag Greeks, Albanians, Bulgarians and Romanians | Medium | LLM06, LLM07 | ASI09 |  |
 | 6,195 | 2021 | [`INC-06147`](docs/incidents/2021.md#inc-06147) | Ukraine uses Bayraktar TB2 drones to hit Russian targets | Critical | LLM05 | ASI08 |  |
-| 6,196 | 2021 | [`INC-06157`](docs/incidents/2021.md#inc-06157) | US child psychiatrist jailed for making deepfake child porn | Medium | LLM05, LLM09 | ASI08, ASI09 |  |
+| 6,196 | 2021 | [`INC-06157`](docs/incidents/2021.md#inc-06157) | US child psychiatrist jailed for making deepfake child porn | High | LLM05, LLM09 | ASI08, ASI09 |  |
 | 6,197 | 2021 | [`INC-06160`](docs/incidents/2021.md#inc-06160) | US CPB covertly uses facial recognition to process asylum seekers | Medium | LLM06, LLM07 | ASI09 |  |
 | 6,198 | 2021 | [`INC-06167`](docs/incidents/2021.md#inc-06167) | US mortgage approval algorithm more likely to reject people of colour | Medium | LLM06 | ASI09 |  |
 | 6,199 | 2021 | [`INC-06169`](docs/incidents/2021.md#inc-06169) | US Postal Inspection Service covertly monitors justice protestors | Medium | LLM06, LLM07 | ASI09 |  |
@@ -7201,7 +7201,7 @@ All **7,720** incidents in a single table, newest-first. Each `INC-*****` link o
 | 7,071 | 2020 | [`INC-06411`](docs/incidents/2020.md#inc-06411) | Buenos Aires government uses live facial recognition to identify child criminals | Medium |  |  |  |
 | 7,072 | 2020 | [`INC-06418`](docs/incidents/2020.md#inc-06418) | California police licence plate data sharing | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
 | 7,073 | 2020 | [`INC-06421`](docs/incidents/2020.md#inc-06421) | Canada Revenue Agency chatbot gives incorrect tax filing guidance | Medium | LLM06, LLM07 | ASI09 |  |
-| 7,074 | 2020 | [`INC-06429`](docs/incidents/2020.md#inc-06429) | Child sexual abuse investigation deepfakes | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
+| 7,074 | 2020 | [`INC-06429`](docs/incidents/2020.md#inc-06429) | Child sexual abuse investigation deepfakes | High | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
 | 7,075 | 2020 | [`INC-06459`](docs/incidents/2020.md#inc-06459) | Clearview AI misconfiguration exposed facial-recognition tool | High | LLM02 |  |  |
 | 7,076 | 2020 | [`INC-06472`](docs/incidents/2020.md#inc-06472) | Climate change denialism tweet bots | Medium | LLM09 |  |  |
 | 7,077 | 2020 | [`INC-06485`](docs/incidents/2020.md#inc-06485) | COVID-19 misinfo tweet bots | Medium | LLM09 |  |  |
