@@ -23,8 +23,8 @@
 <rect x="220" y="168" width="5.8" height="14" fill="#0a58ca" rx="2"><title>Insecure Inter-Agent Communication: 28</title></rect>
 <text x="231.8" y="179" fill="#666">28</text>
 <text x="212" y="201" text-anchor="end" fill="#333">ASI08 · Cascading Failures</text>
-<rect x="220" y="190" width="161.2" height="14" fill="#0a58ca" rx="2"><title>Cascading Failures: 780</title></rect>
-<text x="387.2" y="201" fill="#666">780</text>
+<rect x="220" y="190" width="161.6" height="14" fill="#0a58ca" rx="2"><title>Cascading Failures: 782</title></rect>
+<text x="387.6" y="201" fill="#666">782</text>
 <text x="212" y="223" text-anchor="end" fill="#333">ASI09 · Human-Agent Trust Exploitation</text>
 <rect x="220" y="212" width="480.0" height="14" fill="#0a58ca" rx="2"><title>Human-Agent Trust Exploitation: 2,323</title></rect>
 <text x="706.0" y="223" fill="#666">2,323</text>

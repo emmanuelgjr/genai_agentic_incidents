@@ -1,4 +1,4 @@
-.PHONY: build validate render merge install clean test stix huggingface ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-all
+.PHONY: build validate render merge install clean test stix huggingface ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all
 
 install:
 	pip install -r requirements.txt
@@ -30,6 +30,9 @@ huggingface:
 # Output: ingest/cve_nvd_expanded.json
 # Cached responses are stored under ingest/_cache/{nvd,ghsa,osv}/ so the
 # script is restartable.  Requires `gh` CLI to be authenticated.
+ingest-redteam:
+	python scripts/ingest_redteam_benchmarks.py
+
 ingest-cve:
 	python scripts/ingest_cve_nvd_expanded.py
 

@@ -1,0 +1,344 @@
+[
+  {
+    "source_id": "REDTEAM-jailbreakbench",
+    "title": "JailbreakBench: open robustness benchmark for LLM jailbreaking",
+    "date": "2024",
+    "year": 2024,
+    "category": "red-team",
+    "description": "JBB-Behaviors: 100 misuse behaviours across 10 OpenAI-policy categories (harassment, malware, physical/economic harm, fraud, disinformation, sexual content, privacy, expert/government advice) plus an evolving set of jailbreak artifacts. NeurIPS 2024 Datasets & Benchmarks.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "mitre_atlas": [
+      "AML.T0054"
+    ],
+    "references": [
+      {
+        "title": "JailbreakBench",
+        "url": "https://jailbreakbench.github.io/",
+        "type": "research"
+      },
+      {
+        "title": "Paper (NeurIPS 2024)",
+        "url": "https://arxiv.org/abs/2404.01318",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "jailbreakbench"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-harmbench",
+    "title": "HarmBench: standardized evaluation for automated red-teaming",
+    "date": "2024",
+    "year": 2024,
+    "category": "red-team",
+    "description": "~400 harmful behaviours (incl. contextual and multimodal) for automated red-teaming and robust-refusal evaluation across 18 attack methods. ICML 2024.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "mitre_atlas": [
+      "AML.T0054"
+    ],
+    "references": [
+      {
+        "title": "HarmBench",
+        "url": "https://www.harmbench.org/",
+        "type": "research"
+      },
+      {
+        "title": "Paper (ICML 2024)",
+        "url": "https://arxiv.org/abs/2402.04249",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "harmbench"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-advbench",
+    "title": "AdvBench: harmful behaviours & strings (GCG adversarial suffixes)",
+    "date": "2023",
+    "year": 2023,
+    "category": "red-team",
+    "description": "Harmful-behaviour and harmful-string sets introduced with the Greedy Coordinate Gradient (GCG) universal adversarial-suffix attack on aligned LLMs.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "mitre_atlas": [
+      "AML.T0054",
+      "AML.T0043"
+    ],
+    "references": [
+      {
+        "title": "Paper — Universal and Transferable Adversarial Attacks",
+        "url": "https://arxiv.org/abs/2307.15043",
+        "type": "paper"
+      },
+      {
+        "title": "llm-attacks repo",
+        "url": "https://github.com/llm-attacks/llm-attacks",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "advbench"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-agentharm",
+    "title": "AgentHarm: harmfulness benchmark for tool-calling LLM agents",
+    "date": "2025",
+    "year": 2025,
+    "category": "red-team",
+    "description": "110 malicious agent tasks across 11 harm categories (fraud, cybercrime, harassment, drugs, etc.) with rule-based scoring; measures whether agents complete harmful multi-step tool-use, incl. under jailbreak templates. ICLR 2025.",
+    "attack_vector": "agent-hijack",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "owasp_asi": [
+      "ASI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0053"
+    ],
+    "references": [
+      {
+        "title": "Paper (ICLR 2025)",
+        "url": "https://arxiv.org/abs/2410.09024",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "agentharm"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-agentdojo",
+    "title": "AgentDojo: prompt-injection attacks & defenses for LLM agents",
+    "date": "2024",
+    "year": 2024,
+    "category": "red-team",
+    "description": "Dynamic environment of realistic agent tasks (banking, Slack, travel, workspace) where harm arises from prompt injections planted in tool outputs; evaluates attacks and defenses. NeurIPS 2024 Datasets & Benchmarks.",
+    "attack_vector": "indirect-prompt-injection",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001"
+    ],
+    "references": [
+      {
+        "title": "Paper (NeurIPS 2024)",
+        "url": "https://arxiv.org/abs/2406.13352",
+        "type": "paper"
+      },
+      {
+        "title": "AgentDojo repo",
+        "url": "https://github.com/ethz-spylab/agentdojo",
+        "type": "research"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "agentdojo"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-injecagent",
+    "title": "InjecAgent: indirect prompt-injection benchmark for tool-integrated agents",
+    "date": "2024",
+    "year": 2024,
+    "category": "red-team",
+    "description": "1,054 test cases probing tool-integrated LLM agents for susceptibility to indirect prompt injection (direct harm + data exfiltration intents).",
+    "attack_vector": "indirect-prompt-injection",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [
+      "ASI01"
+    ],
+    "mitre_atlas": [
+      "AML.T0051.001"
+    ],
+    "references": [
+      {
+        "title": "Paper",
+        "url": "https://arxiv.org/abs/2403.02691",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "injecagent"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-os-harm",
+    "title": "OS-Harm: safety benchmark for computer-use agents",
+    "date": "2025",
+    "year": 2025,
+    "category": "red-team",
+    "description": "Benchmark for computer-use / GUI agents covering deliberate misuse, prompt injection, and model misbehaviour on real OS tasks, with an automated judge.",
+    "attack_vector": "agent-hijack",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM06"
+    ],
+    "owasp_asi": [
+      "ASI08"
+    ],
+    "mitre_atlas": [
+      "AML.T0053"
+    ],
+    "references": [
+      {
+        "title": "Paper",
+        "url": "https://arxiv.org/abs/2506.14866",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "os-harm"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-hackaprompt",
+    "title": "HackAPrompt: global prompt-injection/jailbreak competition dataset",
+    "date": "2023",
+    "year": 2023,
+    "category": "red-team",
+    "description": "~600k adversarial prompts crowdsourced from a global prompt-hacking competition; a large real-world corpus of human jailbreak/injection attempts. EMNLP 2023.",
+    "attack_vector": "prompt-injection",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "mitre_atlas": [
+      "AML.T0051"
+    ],
+    "references": [
+      {
+        "title": "Paper (EMNLP 2023)",
+        "url": "https://arxiv.org/abs/2311.16119",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "hackaprompt"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-strongreject",
+    "title": "StrongREJECT: high-quality jailbreak evaluation benchmark",
+    "date": "2024",
+    "year": 2024,
+    "category": "red-team",
+    "description": "Forbidden-prompt set plus an autograder that measures how useful a jailbroken response actually is, correcting over-estimation by prior jailbreak metrics. NeurIPS 2024.",
+    "attack_vector": "jailbreak",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "mitre_atlas": [
+      "AML.T0054"
+    ],
+    "references": [
+      {
+        "title": "Paper",
+        "url": "https://arxiv.org/abs/2402.10260",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "strongreject"
+    ]
+  },
+  {
+    "source_id": "REDTEAM-safetyprompts",
+    "title": "SafetyPrompts.com: open catalogue of LLM safety datasets",
+    "date": "2024",
+    "year": 2024,
+    "category": "red-team",
+    "description": "A living, curated index of 100+ open datasets for LLM safety evaluation (jailbreaks, toxicity, bias, value alignment) — a meta-source for red-team corpora.",
+    "attack_vector": "other",
+    "affected": "LLM / agent evaluation surface",
+    "severity": "Medium",
+    "owasp_llm": [
+      "LLM01"
+    ],
+    "owasp_asi": [],
+    "mitre_atlas": [],
+    "references": [
+      {
+        "title": "SafetyPrompts.com",
+        "url": "https://safetyprompts.com/",
+        "type": "research"
+      },
+      {
+        "title": "Paper",
+        "url": "https://arxiv.org/abs/2404.05399",
+        "type": "paper"
+      }
+    ],
+    "tags": [
+      "red-team",
+      "benchmark",
+      "research-demonstrated",
+      "safetyprompts"
+    ]
+  }
+]
