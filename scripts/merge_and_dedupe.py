@@ -59,6 +59,57 @@ ASI_TO_NIST = {
     "ASI10": ["GOVERN-1.4"],
 }
 
+# Seed a framework mapping from the attack_vector for entries that arrive
+# with no OWASP/NIST/ATLAS at all. Security exploits (and OWASP's own
+# LLM09 "Misinformation" category) map to OWASP LLM codes, which then
+# cascade through fill_taxonomy() to ATLAS + NIST. Societal-harm vectors
+# (privacy, bias, CSAM, self-harm) have no clean OWASP fit, so they seed
+# the appropriate NIST AI RMF control directly.
+_VECTOR_TO_OWASP_LLM = {
+    "prompt-injection": ["LLM01"], "indirect-prompt-injection": ["LLM01"], "jailbreak": ["LLM01"],
+    "data-exfiltration": ["LLM02"], "info-disclosure": ["LLM02"],
+    "membership-inference": ["LLM02"], "model-inversion": ["LLM02"],
+    "supply-chain": ["LLM03"],
+    "model-poisoning": ["LLM04"], "memory-poisoning": ["LLM04"], "backdoor": ["LLM04"],
+    "rce": ["LLM05"], "xss": ["LLM05"], "sql-injection": ["LLM05"],
+    "command-injection": ["LLM05"], "ssrf": ["LLM05"], "path-traversal": ["LLM05"],
+    "deserialization": ["LLM05"],
+    "agent-hijack": ["LLM06"], "tool-abuse": ["LLM06"],
+    "misinformation": ["LLM09"], "hallucination": ["LLM09"], "deepfake": ["LLM09"],
+    "dos": ["LLM10"], "model-extraction": ["LLM10"], "model-theft": ["LLM10"],
+}
+_VECTOR_TO_NIST_SEED = {
+    "privacy-violation": ["MAP-4.1", "MEASURE-2.10"],
+    "algorithmic-bias": ["MEASURE-2.11"],
+    "csam-generation": ["MEASURE-2.6"],
+    "unsafe-advice": ["MEASURE-2.6"],
+    "adversarial-input": ["MEASURE-2.7"],
+    "evasion": ["MEASURE-2.7"],
+}
+_VECTOR_TO_ATLAS_SEED = {
+    "adversarial-input": ["AML.T0015"],
+    "evasion": ["AML.T0015"],
+}
+
+
+def seed_frameworks_from_vector(entry: dict) -> None:
+    """Seed OWASP/NIST/ATLAS from the (finalized) attack_vector, but only for
+    entries that have no framework mapping at all. Never overrides an existing
+    mapping; the seeded OWASP code then cascades through fill_taxonomy()."""
+    if (entry.get("owasp_llm") or entry.get("owasp_asi")
+            or entry.get("mitre_atlas") or entry.get("nist_ai_rmf")):
+        return
+    av = (entry.get("attack_vector") or "").strip()
+    llm = _VECTOR_TO_OWASP_LLM.get(av)
+    if llm:
+        entry["owasp_llm"] = list(llm)
+    nist = _VECTOR_TO_NIST_SEED.get(av)
+    if nist:
+        entry["nist_ai_rmf"] = sorted(set((entry.get("nist_ai_rmf") or []) + list(nist)))
+    atlas = _VECTOR_TO_ATLAS_SEED.get(av)
+    if atlas:
+        entry["mitre_atlas"] = sorted(set((entry.get("mitre_atlas") or []) + list(atlas)))
+
 
 def normalize_url(url: str) -> str:
     if not url:
@@ -816,6 +867,14 @@ def main():
             )
             vec = classified or "other"
         e["attack_vector"] = vec
+
+    # 4c) Backfill framework mappings for entries that arrived with no
+    #     OWASP/NIST/ATLAS at all, seeding from the now-final attack_vector
+    #     (then cascading OWASP -> ATLAS/NIST via fill_taxonomy). Runs before
+    #     history stamping so the seeded mappings are part of the snapshot.
+    for e in surviving:
+        seed_frameworks_from_vector(e)
+        fill_taxonomy(e)
 
     # 5) Apply stable timestamps + classifiers (quality_tier, corpus).
     for e in surviving:

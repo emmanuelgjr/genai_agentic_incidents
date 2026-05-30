@@ -2866,7 +2866,10 @@
         "DSGAI17",
         "DSGAI21"
       ],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "maestro_layers": [
         {
@@ -3126,7 +3129,9 @@
       "affected": "Healthcare organizations using synthetic data for AI training and analytics; any organization assuming synthetic data is privacy-safe without formal guarantees (differential privacy, k-anonymity verification)",
       "impact": "23% re-identification rate destroys the assumption that synthetic data is inherently anonymous; HIPAA/GDPR exposure for healthcare organizations; synthetic data must be treated as pseudonymous, not anonymous, unless formal privacy guarantees are verified",
       "severity": "High",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM02"
+      ],
       "owasp_asi": [],
       "owasp_dsgai": [
         "DSGAI10",
@@ -3134,8 +3139,12 @@
         "DSGAI16",
         "DSGAI18"
       ],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.10"
+      ],
+      "mitre_atlas": [
+        "AML.T0057"
+      ],
       "maestro_layers": [
         {
           "layer": "L2",
@@ -5178,7 +5187,10 @@
         "DSGAI15",
         "DSGAI20"
       ],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "maestro_layers": [
         {
@@ -5654,7 +5666,9 @@
       "affected": "DeepSeek R1 users globally — conversation data sent to China-linked servers",
       "impact": "Multi-country government bans; national security investigations; data sovereignty regulatory precedent",
       "severity": "Critical",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM02"
+      ],
       "owasp_asi": [],
       "owasp_dsgai": [
         "DSGAI01",
@@ -5663,8 +5677,12 @@
         "DSGAI19",
         "DSGAI20"
       ],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.10"
+      ],
+      "mitre_atlas": [
+        "AML.T0057"
+      ],
       "maestro_layers": [
         {
           "layer": "L4",
@@ -22708,10 +22726,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -26806,10 +26830,16 @@
       "attack_vector": "misinformation",
       "affected": "Naver",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -26824,7 +26854,7 @@
         "juris-south-korea"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -27543,10 +27573,16 @@
       "attack_vector": "deepfake",
       "affected": "Education",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -27561,7 +27597,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -28390,10 +28426,16 @@
       "attack_vector": "misinformation",
       "affected": "Google; Mistral; OpenAI; xAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -28408,7 +28450,7 @@
         "juris-netherlands"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "ai-harm"
     },
@@ -29192,10 +29234,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -29210,7 +29258,7 @@
         "juris-italy"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -29227,10 +29275,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -29245,7 +29299,7 @@
         "juris-belgium;-france;-germany"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -29416,7 +29470,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -29739,10 +29795,16 @@
       "attack_vector": "misinformation",
       "affected": "Anthropic",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -29757,7 +29819,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -30383,10 +30445,16 @@
       "attack_vector": "hallucination",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -30401,7 +30469,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -30562,10 +30630,16 @@
       "attack_vector": "misinformation",
       "affected": "xAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -30580,7 +30654,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -30751,10 +30825,16 @@
       "attack_vector": "misinformation",
       "affected": "Perplexity AI; xAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -30769,7 +30849,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -30786,10 +30866,16 @@
       "attack_vector": "misinformation",
       "affected": "The Motley Fool",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -30804,7 +30890,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -32651,10 +32737,16 @@
       "attack_vector": "misinformation",
       "affected": "Government of Russia",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -32669,7 +32761,7 @@
         "juris-ukraine;-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -33346,10 +33438,16 @@
       "attack_vector": "misinformation",
       "affected": "Meta Platforms",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -33364,7 +33462,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -34192,10 +34290,16 @@
       "attack_vector": "misinformation",
       "affected": "Anthropic; Google; Inflection; Meta Platforms; Microsoft; Mistral; OpenAI; Perplexity AI; xAI; You.com",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -34210,7 +34314,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -34466,10 +34570,16 @@
       "attack_vector": "misinformation",
       "affected": "Anthropic; European Parliament",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -34484,7 +34594,7 @@
         "juris-belgium;-luxembourg"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -34557,10 +34667,16 @@
       "attack_vector": "deepfake",
       "affected": "MiniMax; Runway",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -34575,7 +34691,7 @@
         "juris-myanmar;-thailand"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -34881,7 +34997,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -35593,10 +35711,16 @@
       "attack_vector": "misinformation",
       "affected": "Google; Microsoft; OpenAI; Perplexity AI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -35611,7 +35735,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -36123,10 +36247,16 @@
       "attack_vector": "misinformation",
       "affected": "DeepSeek Artificial Intelligence Co",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -36141,7 +36271,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -36957,10 +37087,16 @@
       "attack_vector": "misinformation",
       "affected": "xAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -36975,7 +37111,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "ai-harm"
     },
@@ -37191,10 +37327,16 @@
       "attack_vector": "misinformation",
       "affected": "Meta Platforms",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -37209,7 +37351,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -37408,10 +37550,16 @@
       "attack_vector": "misinformation",
       "affected": "Apple",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -37426,7 +37574,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -37739,10 +37887,16 @@
       "attack_vector": "misinformation",
       "affected": "Apple",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -37757,7 +37911,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -38480,10 +38634,16 @@
       "attack_vector": "misinformation",
       "affected": "Impress3 Media/Hoodline",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -38498,7 +38658,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -38644,10 +38804,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -38662,7 +38828,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -38894,10 +39060,16 @@
       "attack_vector": "misinformation",
       "affected": "Fukuoka Tsunagari Ouen",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -38912,7 +39084,7 @@
         "juris-japan"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39050,10 +39222,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -39068,7 +39246,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39289,10 +39467,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -39307,7 +39491,7 @@
         "juris-ghana"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39569,10 +39753,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -39587,7 +39777,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39604,10 +39794,16 @@
       "attack_vector": "misinformation",
       "affected": "Anthropic; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -39622,7 +39818,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39819,10 +40015,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -39934,10 +40136,16 @@
       "attack_vector": "deepfake",
       "affected": "Deep Fusion Films",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -39952,7 +40160,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -40156,10 +40364,16 @@
       "attack_vector": "misinformation",
       "affected": "Nabla; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -40174,7 +40388,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "ai-harm"
     },
@@ -40239,10 +40453,16 @@
       "attack_vector": "misinformation",
       "affected": "Amazon",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -40257,7 +40477,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -40988,10 +41208,16 @@
       "attack_vector": "misinformation",
       "affected": "BigScience; Meta Platforms; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -41006,7 +41232,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -41610,10 +41836,16 @@
       "attack_vector": "misinformation",
       "affected": "Anthropic; Google; Meta Platforms; Mistral; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -41628,7 +41860,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42010,10 +42242,16 @@
       "attack_vector": "misinformation",
       "affected": "Google; Anthropic; Meta Platforms; Mistral; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42045,10 +42283,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42063,7 +42307,7 @@
         "juris-germany"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42233,10 +42477,16 @@
       "attack_vector": "misinformation",
       "affected": "Media/entertainment/sports/arts",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42251,7 +42501,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42268,10 +42518,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42286,7 +42542,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42391,10 +42647,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42409,7 +42671,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42502,10 +42764,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42520,7 +42788,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42537,10 +42805,16 @@
       "attack_vector": "misinformation",
       "affected": "X Corp",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -42555,7 +42829,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42741,7 +43015,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -43305,10 +43582,16 @@
       "attack_vector": "deepfake",
       "affected": "Ivan Petrov",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -43323,7 +43606,7 @@
         "juris-russia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -44392,10 +44675,16 @@
       "attack_vector": "misinformation",
       "affected": "X Corp",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -44410,7 +44699,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -44427,10 +44716,16 @@
       "attack_vector": "misinformation",
       "affected": "X Corp",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -44445,7 +44740,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -44462,10 +44757,16 @@
       "attack_vector": "hallucination",
       "affected": "Meta Platforms",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -44480,7 +44781,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -44556,10 +44857,16 @@
       "attack_vector": "misinformation",
       "affected": "X Corp",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -44574,7 +44881,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -44856,10 +45163,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -44874,7 +45187,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -45705,10 +46018,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -45723,7 +46042,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -45740,10 +46059,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -45758,7 +46083,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -46093,7 +46418,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -46171,10 +46498,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -46189,7 +46522,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -46247,10 +46580,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI, You.com, xAI, Inflection, Mistral, Microsoft, Meta Platforms; Anthropic, Google, Perplexity AI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -46265,7 +46604,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -46740,10 +47079,16 @@
       "attack_vector": "misinformation",
       "affected": "Biharprabha",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -46758,7 +47103,7 @@
         "juris-india;-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -47540,10 +47885,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -47558,7 +47909,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -48987,10 +49338,16 @@
       "attack_vector": "misinformation",
       "affected": "Google; Microsoft; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -49005,7 +49362,7 @@
         "juris-eu"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -49300,10 +49657,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -49318,7 +49681,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -49335,10 +49698,16 @@
       "attack_vector": "misinformation",
       "affected": "xAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -49353,7 +49722,7 @@
         "juris-iran;-israel"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -50772,7 +51141,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -50996,10 +51367,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft; Midjourney; OpenAI; Stability AI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -51014,7 +51391,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -51031,10 +51408,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -51049,7 +51432,7 @@
         "juris-canada"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -51224,10 +51607,16 @@
       "attack_vector": "misinformation",
       "affected": "Google, Anthropic, Meta, Mistral; OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -51242,7 +51631,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -52031,10 +52420,16 @@
       "attack_vector": "deepfake",
       "affected": "Revoicer",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -52049,7 +52444,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -52981,10 +53376,16 @@
       "attack_vector": "deepfake",
       "affected": "Mahindra Racing",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -52999,7 +53400,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -53914,10 +54315,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -53932,7 +54339,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -54089,10 +54496,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -54107,7 +54520,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -54124,10 +54537,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -54142,7 +54561,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -54159,10 +54578,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -54177,7 +54602,7 @@
         "juris-uk;-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -54685,10 +55110,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -54703,7 +55134,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -54720,10 +55151,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -54738,7 +55175,7 @@
         "juris-germany;-switzerland"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -55257,7 +55694,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -55629,10 +56068,16 @@
       "attack_vector": "misinformation",
       "affected": "Synthesia",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -55647,7 +56092,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -55666,7 +56111,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -55903,10 +56350,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -55921,7 +56374,7 @@
         "juris-sweden"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -56303,10 +56756,16 @@
       "attack_vector": "misinformation",
       "affected": "Global Village Space",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -56321,7 +56780,7 @@
         "juris-israel"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -56338,10 +56797,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -57007,10 +57472,16 @@
       "attack_vector": "misinformation",
       "affected": "Midjourney; OpenAI; Stability AI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -58334,10 +58805,16 @@
       "attack_vector": "misinformation",
       "affected": "YouTube",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -58352,7 +58829,7 @@
         "juris-uk;-thailand"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -58500,10 +58977,16 @@
       "attack_vector": "misinformation",
       "affected": "Amazon",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -58518,7 +59001,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -58742,10 +59225,16 @@
       "attack_vector": "misinformation",
       "affected": "Google; OpenAI; Quora",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -58760,7 +59249,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -58982,10 +59471,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -59000,7 +59495,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -59602,10 +60097,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -59620,7 +60121,7 @@
         "juris-denmark"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -59685,10 +60186,16 @@
       "attack_vector": "misinformation",
       "affected": "YouTube",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -59703,7 +60210,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -60928,7 +61435,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -61651,10 +62160,16 @@
       "attack_vector": "misinformation",
       "affected": "Stanford University",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -61669,7 +62184,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -61957,10 +62472,16 @@
       "attack_vector": "deepfake",
       "affected": "Bilibili; Kuaishou; QQ Music",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -61975,7 +62496,7 @@
         "juris-china;-singapore"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62180,10 +62701,16 @@
       "attack_vector": "misinformation",
       "affected": "Irish Times",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62198,7 +62725,7 @@
         "juris-ireland"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62215,10 +62742,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62233,7 +62766,7 @@
         "juris-china"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62250,10 +62783,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62268,7 +62807,7 @@
         "juris-brazil;-china;-czechia;-"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62285,10 +62824,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62303,7 +62848,7 @@
         "juris-usa;-china;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62371,10 +62916,16 @@
       "attack_vector": "misinformation",
       "affected": "Midjourney",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62389,7 +62940,7 @@
         "juris-norway;-colombia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62406,10 +62957,16 @@
       "attack_vector": "deepfake",
       "affected": "Republican National Committee (GOP)",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62424,7 +62981,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62531,10 +63088,16 @@
       "attack_vector": "deepfake",
       "affected": "Lalaland.ai",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62549,7 +63112,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -62566,10 +63129,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -62584,7 +63153,7 @@
         "juris-china;-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -63220,10 +63789,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI; Microsoft",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -63238,7 +63813,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -63489,10 +64064,16 @@
       "attack_vector": "deepfake",
       "affected": "Wondershare/Ufoto",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -63507,7 +64088,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -64050,10 +64631,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -64068,7 +64655,7 @@
         "juris-china"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -65188,10 +65775,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -65206,7 +65799,7 @@
         "juris-usa;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -65319,10 +65912,16 @@
       "attack_vector": "misinformation",
       "affected": "TikTok",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -65337,7 +65936,7 @@
         "juris-usa;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -65481,10 +66080,16 @@
       "attack_vector": "misinformation",
       "affected": "Government of Russia",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -65499,7 +66104,7 @@
         "juris-ukraine;-russia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -65715,10 +66320,16 @@
       "attack_vector": "deepfake",
       "affected": "Govt - defence",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -65733,7 +66344,7 @@
         "juris-ukraine;-russia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -67108,7 +67719,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -67124,7 +67738,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -67748,10 +68362,16 @@
       "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -67766,7 +68386,7 @@
         "juris-switzerland"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -68102,10 +68722,16 @@
       "attack_vector": "misinformation",
       "affected": "Microsoft",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -68120,7 +68746,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -68323,10 +68949,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook; Alphabet Google",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -68341,7 +68973,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -71314,10 +71946,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -71332,7 +71970,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -71396,10 +72034,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -71414,7 +72058,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -71748,10 +72392,16 @@
       "attack_vector": "deepfake",
       "affected": "Zhao, B., Zhang, Z., Xu, C., Sun, Y., Deng, C.",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -71766,7 +72416,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -72809,10 +73459,16 @@
       "attack_vector": "deepfake",
       "affected": "Supertone",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -72827,7 +73483,7 @@
         "juris-south-korea"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -72889,10 +73545,16 @@
       "attack_vector": "deepfake",
       "affected": "D-ID; MyHeritage",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -72907,7 +73569,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -73022,7 +73684,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -73055,10 +73719,16 @@
       "attack_vector": "misinformation",
       "affected": "Amazon; Foyles; Waterstones",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -73073,7 +73743,7 @@
         "juris-usa;-uk;-france"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -73180,10 +73850,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -73198,7 +73874,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -73215,10 +73891,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -73233,7 +73915,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -73330,10 +74012,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -73348,7 +74036,7 @@
         "juris-australia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -73678,7 +74366,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -74750,10 +75440,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -74768,7 +75464,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -74838,7 +75534,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -75068,10 +75767,16 @@
       "attack_vector": "misinformation",
       "affected": "Government of China",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -75086,7 +75791,7 @@
         "juris-hong-kong;-philippines;-"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -75241,7 +75946,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -76092,10 +76800,16 @@
       "attack_vector": "deepfake",
       "affected": "RepresentUs",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76110,7 +76824,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76127,10 +76841,16 @@
       "attack_vector": "deepfake",
       "affected": "Politics",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76145,7 +76865,7 @@
         "juris-uae"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76207,10 +76927,16 @@
       "attack_vector": "deepfake",
       "affected": "Apple Daily; Christopher Balding",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76225,7 +76951,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76242,10 +76968,16 @@
       "attack_vector": "deepfake",
       "affected": "xAI; Ballotpedia",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76260,7 +76992,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76322,10 +77054,16 @@
       "attack_vector": "misinformation",
       "affected": "Politics",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76340,7 +77078,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76357,10 +77095,16 @@
       "attack_vector": "misinformation",
       "affected": "Politics",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76375,7 +77119,7 @@
         "juris-usa;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76705,10 +77449,16 @@
       "attack_vector": "misinformation",
       "affected": "YouTube",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76723,7 +77473,7 @@
         "juris-usa;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76914,10 +77664,16 @@
       "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -76932,7 +77688,7 @@
         "juris-usa;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -77607,10 +78363,16 @@
       "attack_vector": "deepfake",
       "affected": "Icons8; Prototypr.io",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -77625,7 +78387,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -77687,10 +78449,16 @@
       "attack_vector": "deepfake",
       "affected": "Chris Vigorito",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -77705,7 +78473,7 @@
         "juris-canada"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -77724,7 +78492,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -77807,10 +78578,16 @@
       "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -77825,7 +78602,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -77842,10 +78619,16 @@
       "attack_vector": "deepfake",
       "affected": "LinkedIn",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -77860,7 +78643,7 @@
         "juris-usa;-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -77928,10 +78711,16 @@
       "attack_vector": "deepfake",
       "affected": "Canale 5",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -77946,7 +78735,7 @@
         "juris-italy"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -78053,10 +78842,16 @@
       "attack_vector": "deepfake",
       "affected": "Epoch Media Group",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -78071,7 +78866,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -78306,10 +79101,16 @@
       "attack_vector": "misinformation",
       "affected": "IEEE; Springer",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -78324,7 +79125,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -78676,10 +79477,16 @@
       "attack_vector": "misinformation",
       "affected": "Amazon",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIAAIC entry",
@@ -78694,7 +79501,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -79429,7 +80236,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -80733,7 +81543,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -81302,7 +82115,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -153650,10 +154466,16 @@
       "attack_vector": "hallucination",
       "affected": "Perplexity AI, Perplexity AI",
       "severity": "High",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AIID incident #1294",
@@ -153674,7 +154496,7 @@
         "ai-post-deployment"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "aiid_id": 1294,
       "quality_tier": "reviewed",
       "corpus": "security"
@@ -175896,8 +176718,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0032",
@@ -175921,7 +176747,7 @@
         "real-world"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -175940,8 +176766,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0033",
@@ -175955,7 +176785,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176299,8 +177129,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0043",
@@ -176319,7 +177153,7 @@
         "real-world"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176338,8 +177172,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0044",
@@ -176368,7 +177206,7 @@
         "real-world"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176387,8 +177225,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0045",
@@ -176407,7 +177249,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176426,8 +177268,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0046",
@@ -176446,7 +177292,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176465,8 +177311,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0048",
@@ -176485,7 +177335,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176504,8 +177354,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0049",
@@ -176524,7 +177378,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176543,8 +177397,12 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0050",
@@ -176568,7 +177426,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176587,8 +177445,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0051",
@@ -176607,7 +177469,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176626,8 +177488,12 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0052",
@@ -176651,7 +177517,7 @@
         "research"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176670,8 +177536,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0053",
@@ -176690,7 +177560,7 @@
         "real-world"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -176765,8 +177635,12 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "MITRE ATLAS — AML.CS0056",
@@ -176785,7 +177659,7 @@
         "real-world"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -285108,7 +285982,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.6"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -285579,7 +286455,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -285612,7 +286491,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -288691,7 +289570,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -288729,7 +289611,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -293635,8 +294517,12 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "AI-Enabled Underwater Drones Cause Maritime Harm, Prompt US-UK Defense Initiative",
@@ -293678,7 +294564,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -295983,7 +296869,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -298872,7 +299761,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -301692,7 +302584,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -308908,7 +309803,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -309612,7 +310510,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -309744,7 +310645,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -309787,7 +310691,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -310394,7 +311298,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -310422,7 +311329,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -311443,7 +312350,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -311746,7 +312656,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -312760,7 +313673,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -313217,10 +314133,16 @@
       "attack_vector": "deepfake",
       "affected": "",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AI Voice Cloning Causes Economic Harm to Chinese Voice Actors",
@@ -313262,7 +314184,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -315036,7 +315958,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.6"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -316694,7 +317618,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -320201,7 +321128,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -320244,7 +321174,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -326370,7 +327300,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -326413,7 +327346,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -328048,8 +328981,12 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "Advanced AI Models Spark Global Cybersecurity and Financial System Fears",
@@ -328091,7 +329028,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -328312,7 +329249,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -330038,7 +330978,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -330081,7 +331024,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -332105,10 +333048,16 @@
       "attack_vector": "misinformation",
       "affected": "",
       "severity": "High",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "Romanian Tax Authority's Use of AI in Dispute Resolutions Leads to Legal Rights Violations",
@@ -332645,7 +333594,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -332678,7 +333630,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -332769,7 +333721,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -332812,7 +333767,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -340716,7 +341671,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -340754,7 +341712,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -341764,10 +342722,16 @@
       "attack_vector": "deepfake",
       "affected": "",
       "severity": "High",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "China's Sex Toy Industry Integrates AI Amid Legal and Privacy Concerns",
@@ -343226,7 +344190,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -343269,7 +344236,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -350994,8 +351961,12 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "Claude Opus 4.6 Outsmarts AI Benchmark by Decrypting Answer Key",
@@ -351037,7 +352008,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -352511,7 +353482,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.6"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -362078,10 +363051,16 @@
       "attack_vector": "deepfake",
       "affected": "",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "UK Regulator Bans AI App Ad for Promoting Non-Consensual Nudification",
@@ -365639,7 +366618,9 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.6"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -370514,7 +371495,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -371706,7 +372690,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -371739,7 +372726,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -372027,7 +373014,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -373233,7 +374223,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -373261,7 +374254,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -375858,7 +376851,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -375886,7 +376882,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -377368,7 +378364,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -378889,7 +379888,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -378917,7 +379919,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -381932,7 +382934,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -381989,7 +382994,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -382017,7 +383025,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -382036,7 +383044,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -382079,7 +383090,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -382426,7 +383437,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -382469,7 +383483,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -382488,7 +383502,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -382550,7 +383567,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -383461,7 +384481,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -384777,7 +385800,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -384820,7 +385846,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -385274,7 +386300,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -385312,7 +386341,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -385799,7 +386828,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -385827,7 +386859,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -386953,7 +387985,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -386981,7 +388016,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -387206,7 +388241,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -387249,7 +388287,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -388223,7 +389261,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -388256,7 +389297,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -389274,7 +390315,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -389307,7 +390351,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -391108,7 +392152,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -391151,7 +392198,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -391170,7 +392217,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -391208,7 +392258,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -392258,7 +393308,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -392296,7 +393349,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -393168,7 +394221,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -394364,7 +395420,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -394984,7 +396043,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -395872,7 +396934,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -395910,7 +396975,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -396037,7 +397102,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -396080,7 +397148,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -396558,7 +397626,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -396596,7 +397667,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -397685,7 +398756,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -397728,7 +398802,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -397880,7 +398954,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -397908,7 +398985,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -398027,7 +399104,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -398142,7 +399222,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -398185,7 +399268,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -398204,7 +399287,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -398722,7 +399808,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -398750,7 +399839,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -398769,7 +399858,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -399039,7 +400131,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -399072,7 +400167,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -399286,7 +400381,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -399324,7 +400422,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -401460,7 +402558,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -401693,7 +402794,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -401736,7 +402840,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -401755,7 +402859,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.6"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -402532,7 +403638,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -402565,7 +403674,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -403409,7 +404518,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -404624,7 +405736,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -404662,7 +405777,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -404863,7 +405978,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -404925,7 +406043,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -404968,7 +406089,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -405321,7 +406442,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -406511,7 +407635,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -406544,7 +407671,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -407338,7 +408465,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -407884,7 +409013,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -407946,7 +409077,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -407974,7 +409108,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -409512,7 +410646,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -409555,7 +410692,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -410675,7 +411812,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -411201,7 +412341,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -416026,7 +417169,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.6"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -416960,7 +418105,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -416998,7 +418146,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -417226,7 +418374,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -418270,7 +419421,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -418308,7 +419462,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -418648,7 +419802,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -419884,7 +421041,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -419927,7 +421087,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -420012,10 +421172,16 @@
       "attack_vector": "deepfake",
       "affected": "",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "Bombay High Court Demands Action on AI Bot Creating Non-Consensual Nude Images",
@@ -420729,7 +421895,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -421254,7 +422423,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -421297,7 +422469,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -422112,7 +423284,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -426071,7 +427246,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -426109,7 +427287,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -426657,7 +427835,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -426700,7 +427881,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -426980,7 +428161,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -427008,7 +428192,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -427702,10 +428886,16 @@
       "attack_vector": "deepfake",
       "affected": "",
       "severity": "High",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "AI Face-Swapping Alters Fan Bingbing's Film Role, Damaging Career and Image",
@@ -428607,7 +429797,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -428650,7 +429843,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -429233,7 +430426,9 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -429839,7 +431034,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -429877,7 +431075,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -430136,7 +431334,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -430164,7 +431365,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -431363,7 +432564,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -431401,7 +432605,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -431490,7 +432694,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -431533,7 +432740,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -433979,7 +435186,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -434114,7 +435324,9 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -434414,7 +435626,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -434839,7 +436054,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -434877,7 +436094,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -435004,10 +436221,16 @@
       "attack_vector": "deepfake",
       "affected": "",
       "severity": "High",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "Zimbabwe Vice President Claims AI Voice Cloning Used in Defamation Scandal",
@@ -435049,7 +436272,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -435545,7 +436768,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -435864,7 +437090,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -435907,7 +437136,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -436031,7 +437260,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -436074,7 +437306,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -437938,7 +439170,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -437981,7 +439216,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -438710,7 +439945,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -438748,7 +439986,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -439576,7 +440814,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -441221,7 +442462,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -441345,7 +442589,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -442471,7 +443718,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -442823,7 +444073,10 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -443012,7 +444265,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -443045,7 +444301,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -443406,7 +444662,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -443449,7 +444708,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -444011,7 +445270,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -444200,7 +445462,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -445131,7 +446395,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -445159,7 +446426,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -445178,7 +446445,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -445618,7 +446888,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -446209,7 +447482,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -447098,7 +448373,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -447136,7 +448414,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -447637,7 +448915,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -448130,7 +449411,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -448979,7 +450263,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -449218,8 +450505,12 @@
       "severity": "Critical",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0015"
+      ],
       "references": [
         {
           "title": "Multiple Incidents Highlight Risks and Failures in Autonomous Vehicle AI Systems",
@@ -449261,7 +450552,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -450934,7 +452225,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -450967,7 +452261,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -451306,7 +452600,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -451349,7 +452646,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -451441,7 +452738,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -451573,7 +452873,9 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.11"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -451688,10 +452990,16 @@
       "attack_vector": "misinformation",
       "affected": "",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "Google Alters Search Algorithm to Combat Defamation and Extortion Sites",
@@ -453443,7 +454751,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -453471,7 +454782,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -454204,10 +455515,16 @@
       "attack_vector": "misinformation",
       "affected": "",
       "severity": "Medium",
-      "owasp_llm": [],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
-      "mitre_atlas": [],
+      "nist_ai_rmf": [
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0058"
+      ],
       "references": [
         {
           "title": "Amazon Japan's AI Fails to Block Defamatory and Obscene Listings",
@@ -454433,7 +455750,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -454476,7 +455796,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
     },
@@ -455047,7 +456367,10 @@
       "severity": "Medium",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
@@ -455090,7 +456413,7 @@
         "oecd-aim"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-26",
+      "updated": "2026-05-29",
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -455712,7 +457035,10 @@
       "severity": "High",
       "owasp_llm": [],
       "owasp_asi": [],
-      "nist_ai_rmf": [],
+      "nist_ai_rmf": [
+        "MAP-4.1",
+        "MEASURE-2.10"
+      ],
       "mitre_atlas": [],
       "references": [
         {
