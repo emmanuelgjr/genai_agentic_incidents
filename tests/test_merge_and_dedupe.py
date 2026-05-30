@@ -69,6 +69,33 @@ def test_classify_attack_vector_harm_precision():
     ) is None
 
 
+def test_seed_frameworks_from_vector_security():
+    e = {"attack_vector": "rce"}
+    m.seed_frameworks_from_vector(e)
+    assert e["owasp_llm"] == ["LLM05"]
+
+
+def test_seed_frameworks_from_vector_harm_nist():
+    e = {"attack_vector": "privacy-violation"}
+    m.seed_frameworks_from_vector(e)
+    assert e.get("nist_ai_rmf") and not e.get("owasp_llm")
+    e2 = {"attack_vector": "algorithmic-bias"}
+    m.seed_frameworks_from_vector(e2)
+    assert e2["nist_ai_rmf"] == ["MEASURE-2.11"]
+
+
+def test_seed_frameworks_never_overrides_existing():
+    e = {"attack_vector": "rce", "owasp_llm": ["LLM01"]}
+    m.seed_frameworks_from_vector(e)
+    assert e["owasp_llm"] == ["LLM01"]  # untouched
+
+
+def test_seed_frameworks_skips_unmappable_vector():
+    e = {"attack_vector": "other"}
+    m.seed_frameworks_from_vector(e)
+    assert not e.get("owasp_llm") and not e.get("nist_ai_rmf")
+
+
 def test_classify_attack_vector_no_match():
     assert m.classify_attack_vector("Generic AI failure with no specifics") is None
 
