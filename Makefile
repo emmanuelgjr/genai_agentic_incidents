@@ -1,4 +1,4 @@
-.PHONY: build validate render merge install clean test stix ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-all
+.PHONY: build validate render merge install clean test stix huggingface ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-all
 
 install:
 	pip install -r requirements.txt
@@ -21,6 +21,10 @@ validate:
 # STIX 2.1 bundle for threat-intel platforms (build artifact, not committed).
 stix:
 	python scripts/export_stix.py
+
+# Hugging Face dataset package (dist/hf/); add --push with HF_TOKEN set to upload.
+huggingface:
+	python scripts/export_huggingface.py
 
 # Pull AI/ML/LLM/agent CVEs from NVD + GHSA + OSV.
 # Output: ingest/cve_nvd_expanded.json

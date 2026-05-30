@@ -1,0 +1,38 @@
+name: Publish to Hugging Face
+
+# Publishes the dataset to the Hugging Face Hub on each GitHub release.
+# Requires repo secrets:
+#   HF_TOKEN  - a Hugging Face write token
+#   HF_REPO   - target dataset repo, e.g. "emmanuelgjr/genai-incidents" (optional;
+#               defaults to the exporter's built-in repo id)
+# No-ops cleanly if HF_TOKEN is absent, so forks without the secret don't fail.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install -r requirements.txt huggingface_hub
+      - name: Build and push dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO: ${{ secrets.HF_REPO }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "::warning::HF_TOKEN not set — building artifact only, skipping upload."
+            python scripts/export_huggingface.py
+          else
+            python scripts/export_huggingface.py --push ${HF_REPO:+--repo "$HF_REPO"}
+          fi
