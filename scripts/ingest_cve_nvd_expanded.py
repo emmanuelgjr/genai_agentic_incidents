@@ -373,6 +373,7 @@ def nvd_to_record(v: dict) -> dict | None:
 
     # CVSS - prefer v3.1, then v3.0, then v2
     cvss_score = None
+    cvss_vector = None
     severity = None
     metrics = cve.get("metrics", {}) or {}
     for key in ("cvssMetricV31", "cvssMetricV30", "cvssMetricV2"):
@@ -380,11 +381,19 @@ def nvd_to_record(v: dict) -> dict | None:
             m0 = metrics[key][0]
             cdata = m0.get("cvssData", {}) or {}
             cvss_score = cdata.get("baseScore") or m0.get("baseScore")
+            cvss_vector = cdata.get("vectorString")
             severity = (cdata.get("baseSeverity") or m0.get("baseSeverity")
                         or m0.get("cvssData", {}).get("baseSeverity"))
             if severity:
                 severity = severity.title()
             break
+
+    # CWE ids from the NVD `weaknesses` block (CWE-NNN, skipping NVD-CWE-noinfo).
+    cwe_ids = sorted({
+        d.get("value") for w in (cve.get("weaknesses") or [])
+        for d in (w.get("description") or [])
+        if (d.get("value") or "").startswith("CWE-")
+    })
     if not severity and cvss_score is not None:
         # Fall back to thresholds.
         if cvss_score >= 9.0:
@@ -497,6 +506,8 @@ def nvd_to_record(v: dict) -> dict | None:
         "affected": affected,
         "severity": severity,
         "cvss_score": cvss_score,
+        "cvss_vector": cvss_vector,
+        "cwe_ids": cwe_ids,
         "owasp_llm": owasp_llm,
         "owasp_asi": owasp_asi,
         "nist_ai_rmf": [],
@@ -518,7 +529,8 @@ query($after: String) {
       description
       publishedAt
       severity
-      cvss { score }
+      cvss { score vectorString }
+      cwes(first: 10) { nodes { cweId } }
       identifiers { type value }
       references { url }
       vulnerabilities(first: 10) { nodes { package { ecosystem name } } }
@@ -641,6 +653,11 @@ def ghsa_to_record(node: dict) -> dict | None:
 
     severity = (node.get("severity") or "").title() or "Medium"
     cvss_score = ((node.get("cvss") or {}).get("score"))
+    cvss_vector = ((node.get("cvss") or {}).get("vectorString")) or None
+    cwe_ids = sorted({
+        c.get("cweId") for c in ((node.get("cwes") or {}).get("nodes") or [])
+        if (c.get("cweId") or "").startswith("CWE-")
+    })
     published = (node.get("publishedAt") or "")
     date_str = published[:7] if published else ""
     year = int(published[:4]) if published[:4].isdigit() else None
@@ -695,6 +712,8 @@ def ghsa_to_record(node: dict) -> dict | None:
         "affected": affected,
         "severity": severity,
         "cvss_score": cvss_score,
+        "cvss_vector": cvss_vector,
+        "cwe_ids": cwe_ids,
         "owasp_llm": owasp_llm,
         "owasp_asi": owasp_asi,
         "nist_ai_rmf": [],
@@ -786,10 +805,14 @@ def osv_to_record(v: dict) -> dict | None:
 
     severity = "Medium"
     cvss_score = None
+    cvss_vector = None
+    cwe_ids: list[str] = []  # OSV doesn't carry CWE for these entries
     for sev in v.get("severity", []) or []:
-        if sev.get("type") in ("CVSS_V3", "CVSS_V31"):
+        if sev.get("type") in ("CVSS_V3", "CVSS_V31", "CVSS_V4"):
             score_str = sev.get("score", "")
             m = re.search(r"CVSS:[\d.]+/.*", score_str)
+            if m:
+                cvss_vector = m.group(0)
             # If a numeric base score is in the payload, NVD typically owns it;
             # we leave cvss_score as None unless we find a baseScore field.
             try:
@@ -844,6 +867,8 @@ def osv_to_record(v: dict) -> dict | None:
         "affected": affected,
         "severity": severity,
         "cvss_score": cvss_score,
+        "cvss_vector": cvss_vector,
+        "cwe_ids": cwe_ids,
         "owasp_llm": owasp_llm,
         "owasp_asi": owasp_asi,
         "nist_ai_rmf": [],
