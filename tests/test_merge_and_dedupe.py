@@ -96,6 +96,30 @@ def test_seed_frameworks_skips_unmappable_vector():
     assert not e.get("owasp_llm") and not e.get("nist_ai_rmf")
 
 
+def test_quality_tier_aiaaic_slug_vs_numeric():
+    # Hand-picked AIAAIC slug entries are reviewed; the numeric bulk sheet is auto.
+    assert m._classify_quality_tier({"source_ids": ["AIAAIC-arup-25m-cfo"]}) == "reviewed"
+    assert m._classify_quality_tier({"source_ids": ["AIAAIC2257"]}) == "auto"
+
+
+def test_quality_tier_cve_cvss_is_reviewed():
+    # NVD-analyst-scored CVEs are reviewed; unscored raw pulls stay auto.
+    assert m._classify_quality_tier(
+        {"source_ids": ["CVE-2026-1"], "cvss_score": 9.8}
+    ) == "reviewed"
+    assert m._classify_quality_tier({"source_ids": ["CVE-2026-1"]}) == "auto"
+
+
+def test_curation_overrides_file_loads_and_is_valid():
+    ov = m._load_curation_overrides()
+    assert isinstance(ov, dict)
+    # Every override must be a dict; quality_tier (if set) must be valid.
+    for sid, fields in ov.items():
+        assert isinstance(fields, dict), sid
+        if "quality_tier" in fields:
+            assert fields["quality_tier"] in ("curated", "reviewed", "auto"), sid
+
+
 def test_classify_attack_vector_no_match():
     assert m.classify_attack_vector("Generic AI failure with no specifics") is None
 

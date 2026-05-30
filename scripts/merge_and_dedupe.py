@@ -268,38 +268,41 @@ _VALID_SEVERITIES = ("Critical", "High", "Medium", "Low", "Info")
 # Sources we consider "auto-ingested" — present in bulk feeds but not
 # individually vetted by a maintainer. Anything else (legacy/, hand-curated
 # JSON, researcher-blog ingest) starts as "reviewed".
-_AUTO_INGEST_PREFIXES = (
-    "OECD-AIM-",  # OECD AI Incidents Monitor scrape
-    "AIAAIC",     # AIAAIC sheet (numeric ID form)
-    "CVE-",       # raw NVD/GHSA/OSV pull
-    "PROMPTFOO-", # red-team plugin catalogue
-    "GARAK-",     # garak probe catalogue
-)
-
-
 def _classify_quality_tier(entry: dict) -> str:
     """Heuristic quality tier:
 
       - ``curated``  — legacy hand-written entries (always source_id LEGACY-*),
         or entries with a populated `mitigations` list and >=2 source_ids.
       - ``reviewed`` — sourced from a maintained research catalogue
-        (ATLAS, AIID hand-pick, OWASP, AVID, AIRI, researcher blogs).
-      - ``auto``     — bulk-ingested from NVD/OECD AIM/AIAAIC sheet etc.
+        (ATLAS, AIID hand-pick, OWASP, AVID, AIRI, researcher blogs), a
+        hand-picked AIAAIC slug entry, or an NVD-analyst-scored CVE.
+      - ``auto``     — bulk-ingested from the NVD CVE feed (unscored), the
+        AIAAIC numeric sheet, OECD AIM, promptfoo, or garak.
     """
     src_ids = entry.get("source_ids") or []
     if any(s.startswith("LEGACY-") for s in src_ids):
         return "curated"
     if entry.get("mitigations") and len(src_ids) >= 2:
         return "curated"
-    has_auto = any(s.startswith(_AUTO_INGEST_PREFIXES) for s in src_ids)
     has_curated_source = any(
         s.startswith(("ATLAS-", "AIID-", "AVID-", "OWASP-", "RES-", "EXT-", "OECD-",
                       "USENIX-", "NDSS-", "CCS-", "ARXIV-", "INC-", "VTR-"))
         for s in src_ids
     )
-    if has_curated_source:
+    # Hand-picked AIAAIC entries use slug IDs (AIAAIC-<slug>); the bulk sheet
+    # uses numeric IDs (AIAAIC<n>). Only the numeric bulk form is "auto".
+    has_aiaaic_slug = any(re.match(r"^AIAAIC-[a-z]", s) for s in src_ids)
+    if has_curated_source or has_aiaaic_slug:
         return "reviewed"
-    if has_auto:
+    # NVD assigns CVSS/CWE to CVEs — that analyst scoring is catalogue review,
+    # so a CVSS-scored CVE is "reviewed". Unscored/raw CVE pulls stay "auto".
+    if any(s.startswith("CVE-") for s in src_ids) and entry.get("cvss_score") is not None:
+        return "reviewed"
+    has_bulk = any(
+        s.startswith(("OECD-AIM-", "CVE-", "PROMPTFOO-", "GARAK-")) or re.match(r"^AIAAIC\d", s)
+        for s in src_ids
+    )
+    if has_bulk:
         return "auto"
     return "reviewed"
 
@@ -615,6 +618,25 @@ def load_source(path: Path) -> list[dict]:
 
 
 DEPRECATIONS_PATH = DATA / "id_deprecations.json"
+CURATION_OVERRIDES_PATH = DATA / "curation_overrides.json"
+
+
+def _load_curation_overrides() -> dict[str, dict]:
+    """Load explicit, durable curation decisions keyed by source_id.
+
+    Format: ``{"overrides": {"<source_id>": {"quality_tier": "reviewed",
+    "severity": "High", "_note": "..."}, ...}}``. These are human/assisted
+    review decisions that override the heuristic classifiers and survive
+    rebuilds. Keys starting with ``_`` (e.g. ``_note``) are metadata and are
+    not written onto the entry.
+    """
+    if not CURATION_OVERRIDES_PATH.exists():
+        return {}
+    try:
+        raw = json.loads(CURATION_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return raw.get("overrides", {}) if isinstance(raw, dict) else {}
 
 
 def _load_prev_state() -> tuple[
@@ -875,6 +897,21 @@ def main():
     for e in surviving:
         seed_frameworks_from_vector(e)
         fill_taxonomy(e)
+
+    # 4d) Apply curation overrides (durable human/assisted review decisions)
+    #     before history stamping, so overridden content fields are part of
+    #     the snapshot and an override-set quality_tier is respected in step 5.
+    curation = _load_curation_overrides()
+    if curation:
+        applied = 0
+        for e in surviving:
+            ov = next((curation[s] for s in (e.get("source_ids") or []) if s in curation), None)
+            if ov:
+                for k, v in ov.items():
+                    if not k.startswith("_"):
+                        e[k] = v
+                applied += 1
+        print(f"[curation] applied {applied} override(s) from {CURATION_OVERRIDES_PATH.name}")
 
     # 5) Apply stable timestamps + classifiers (quality_tier, corpus).
     for e in surviving:

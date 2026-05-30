@@ -1,0 +1,345 @@
+{
+  "_doc": "Durable human/assisted curation decisions keyed by source_id. Applied by scripts/merge_and_dedupe.py (step 4d), overriding the heuristic quality_tier and any other listed fields, and surviving rebuilds. Keys beginning with '_' are metadata. Add entries here as incidents are reviewed; supported fields include quality_tier, severity, attack_vector, and other content fields.",
+  "overrides": {
+    "AIAAIC0112": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0151": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0187": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0188": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0216": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0218": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0270": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0290": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0297": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC035": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC039": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0490": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0497": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC054": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0586": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0591": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0592": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC069": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC070": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0811": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0819": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0825": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0834": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0837": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0841": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0941": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0963": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0964": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0966": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0973": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0974": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0975": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0978": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0986": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0987": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0988": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0991": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1000": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1028": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1042": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1043": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1045": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1098": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1110": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1111": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1112": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1323": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1340": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1341": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1360": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1441": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1442": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1460": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1471": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1472": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1751": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1809": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1845": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1869": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1885": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1944": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1971": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2008": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2010": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2011": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2012": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2013": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2014": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2015": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2023": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2070": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2085": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2094": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2096": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2097": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2106": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2107": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2108": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2109": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2145": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2147": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2184": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2212": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2235": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2257": {
+      "quality_tier": "reviewed",
+      "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    }
+  }
+}
