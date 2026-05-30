@@ -22705,7 +22705,7 @@
       "year": 2025,
       "category": "real-world",
       "description": "AIAAIC report: Study: Sora 2 generates false claim videos 80 percent of the time. System: Sora 2. Technology: Generative AI. Purpose: Create video. Ethical issues: Accuracy/reliability; Mis/disinformation.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
       "owasp_llm": [],
@@ -22726,7 +22726,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -32771,7 +32771,7 @@
       "year": 2025,
       "category": "real-world",
       "description": "AIAAIC report: Anthropic accused of using fake AI source in copyright case. System: Claude. Technology: Generative AI. Purpose: Generate academic citation. Ethical issues: Accountability; Accuracy/reliability; Mis/disinformation.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "Anthropic",
       "severity": "Medium",
       "owasp_llm": [
@@ -32801,7 +32801,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -34066,7 +34066,7 @@
       "year": 2025,
       "category": "real-world",
       "description": "AIAAIC report: 18 percent of daily uploads to Deezer are fully AI-generated. System: Suno; Udio. Technology: Generative AI. Purpose: Generate music. Ethical issues: Authenticity/integrity; Appropriation; Employment/labour.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Suno; Udio",
       "severity": "Medium",
       "owasp_llm": [],
@@ -34087,7 +34087,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -36705,7 +36705,7 @@
       "year": 2025,
       "category": "real-world",
       "description": "AIAAIC report: OpenAI bot crushes small Ukrainian e-commerce website. System: OpenAI bot. Technology: Bot/intelligent agent. Purpose: Scrape data. Ethical issues: Accountability; Security; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "OpenAI",
       "severity": "Medium",
       "owasp_llm": [
@@ -36748,7 +36748,7 @@
         "juris-ukraine"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -37484,7 +37484,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: Ukraine robot-only force attacks Russian troops. Technology: Drone; Robotics. Purpose: Kill/maim/damage/destroy. Ethical issues: Autonomous weapons; Safety.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Government of Ukraine",
       "severity": "Medium",
       "owasp_llm": [
@@ -37515,7 +37515,7 @@
         "juris-russia;-ukraine"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -38166,7 +38166,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: nH Predict algorithm accused of having a 90 percent error rate. System: nH Predict. Technology: Prediction algorithm; Machine learning. Purpose: Predict post-acute care needs. Ethical issues: Accountability; Accuracy/reliability; Transparency. Reported consequences: Litigation.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Optum; UnitedHealth Group",
       "severity": "Medium",
       "owasp_llm": [
@@ -38199,7 +38199,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -38844,7 +38844,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: UK AI immigration enforcement tool criticised as \"rubberstamping\" exercise. System: Identify and Prioritise Immigration Cases (IPIC). Technology: Machine learning; Risk assessment algorithm. Purpose: Assess and prioritise visa applications. Ethical issues: Accountability; Accuracy/reliability; Fairness; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "UK Home Office",
       "severity": "Medium",
       "owasp_llm": [
@@ -38877,7 +38877,7 @@
         "juris-uk"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39321,7 +39321,7 @@
       "year": 2022,
       "category": "real-world",
       "description": "AIAAIC report: Jiuquan school forces 160 vocational students to annotate data for Baidu. Technology: Generative AI. Purpose: Generate text. Ethical issues: Employment/labour.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Baidu",
       "severity": "Medium",
       "owasp_llm": [],
@@ -39342,7 +39342,7 @@
         "juris-china"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -39816,7 +39816,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: Study: Google AI Overviews is inaccurate in 43 percent of finance searches. System: AI Overviews. Technology: Generative AI. Purpose: Summarise search summaries. Ethical issues: Accuracy/reliability; Mis/disinformation.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "Google",
       "severity": "Medium",
       "owasp_llm": [],
@@ -39837,7 +39837,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42007,7 +42007,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: Top AI models generate misleading US election information 30 percent of the time. System: Claude; Gemini; GPT-4; Llama; Mixtral. Technology: Generative AI. Purpose: Generate electoral information. Ethical issues: Accuracy/reliability; Mis/disinformation.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "Google; Anthropic; Meta Platforms; Mistral; OpenAI",
       "severity": "Medium",
       "owasp_llm": [],
@@ -42028,7 +42028,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42300,7 +42300,7 @@
       "year": 2014,
       "category": "real-world",
       "description": "AIAAIC report: Uber raises prices 400 percent during Sydney hostage siege. System: Uber surge pricing. Technology: Dynamic pricing; Machine learning; Pricing algorithm. Purpose: Calculate price; Optimise revenue. Ethical issues: Fairness; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Uber",
       "severity": "Medium",
       "owasp_llm": [
@@ -42327,7 +42327,7 @@
         "juris-australia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -42967,7 +42967,7 @@
       "year": 2022,
       "category": "real-world",
       "description": "AIAAIC report: Facebook Cross-check criticised as unfair, under-resourced and opaque. System: Facebook Cross-check. Technology: Content moderation system; Machine learning. Purpose: Moderate content. Ethical issues: Accountability; Fairness; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Facebook",
       "severity": "Medium",
       "owasp_llm": [
@@ -43000,7 +43000,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -43436,7 +43436,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: ShotSpotter: Alerts are modified 10 percent of the time. System: ShotSpotter. Technology: Deep learning; Neural network; Machine learning. Purpose: Detect gunfire. Ethical issues: Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "SoundThinking",
       "severity": "Medium",
       "owasp_llm": [
@@ -43463,7 +43463,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -43477,7 +43477,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: New York City finds ShotSpotter identifies 13 percent of confirmed shootings. System: ShotSpotter. Technology: Deep learning; Neural network; Machine learning. Purpose: Detect gunfire. Ethical issues: Accuracy/reliability; Transparency. Reported consequences: Third-party audit.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "SoundThinking",
       "severity": "Medium",
       "owasp_llm": [
@@ -43504,7 +43504,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -45322,7 +45322,7 @@
       "year": 2020,
       "category": "real-world",
       "description": "AIAAIC report: Microsoft emissions rise 30 percent due to AI. System: Microsoft Copilot; Multiple. Technology: Generative AI. Purpose: Multiple. Ethical issues: Environment.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Microsoft",
       "severity": "Medium",
       "owasp_llm": [],
@@ -45343,7 +45343,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -45357,7 +45357,7 @@
       "year": 2020,
       "category": "real-world",
       "description": "AIAAIC report: AI increases Google emissions by 48 percent. System: Gemini; Multiple. Technology: Generative AI. Purpose: Multiple. Ethical issues: Environment.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Google",
       "severity": "Medium",
       "owasp_llm": [],
@@ -45378,7 +45378,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -46506,7 +46506,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: Study: Hate content increases 12 percent as LAION dataset size increases. System: LAION-400M. Technology: Database/dataset; Neural network; Deep learning; Machine learning. Purpose: Train large language models. Ethical issues: Safety.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "LAION",
       "severity": "Medium",
       "owasp_llm": [
@@ -46537,7 +46537,7 @@
         "juris-germany"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -47795,7 +47795,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: Slack forces users to opt-out of training its AI models. System: Bing Search; Google Search. Technology: Machine learning. Purpose: Predict search results; Recommend channels. Ethical issues: Privacy/surveillance; Security; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Salesforce/Slack",
       "severity": "Medium",
       "owasp_llm": [
@@ -47835,7 +47835,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -49449,7 +49449,7 @@
       "year": 2024,
       "category": "real-world",
       "description": "AIAAIC report: Up to 17 percent of AI conference reviews written by AI. System: ChatGPT. Technology: Generative AI. Purpose: Generate conference peer reviews. Ethical issues: Appropriation; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "OpenAI",
       "severity": "Medium",
       "owasp_llm": [
@@ -49476,7 +49476,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -54965,7 +54965,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: Presto uses humans to support 70 percent of chatbot interactions. System: Presto Voice. Technology: Speech recognition; Machine learning. Purpose: Process customer orders. Ethical issues: Accuracy/reliability; Transparency. Reported consequences: Regulatory investigation.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Presto",
       "severity": "Medium",
       "owasp_llm": [
@@ -54992,7 +54992,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -56335,7 +56335,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: Study: GPT-4 echoes false news narratives 100 percent of the time. System: GPT-4. Technology: Machine learning; Large language model. Purpose: Generate text. Ethical issues: Mis/disinformation.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "OpenAI",
       "severity": "Medium",
       "owasp_llm": [],
@@ -56356,7 +56356,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -57004,7 +57004,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: Study: AI image generators accept 85 percent of election manipulation prompts. System: Midjourney, DALL-E 2, Stable Diffusion. Technology: Generative AI; Text-to-image. Purpose: Generate images. Ethical issues: Mis/disinformation.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "Midjourney; OpenAI; Stability AI",
       "severity": "Medium",
       "owasp_llm": [],
@@ -57025,7 +57025,7 @@
         "juris-us;-uk;-india"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -58577,7 +58577,7 @@
       "year": 2023,
       "category": "real-world",
       "description": "AIAAIC report: Buzzfeed AI-generated Barbies reinforce racist stereotyping. System: Midjourney. Technology: Generative AI; Text-to-image. Purpose: Entertain. Ethical issues: Accuracy/reliability; Fairness.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Midjourney",
       "severity": "Medium",
       "owasp_llm": [],
@@ -58598,7 +58598,7 @@
         "juris-all"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -63030,7 +63030,7 @@
       "year": 2022,
       "category": "real-world",
       "description": "AIAAIC report: Bing Chat recommends journalist divorce wife. System: Microsoft Copilot. Technology: Chatbot; Machine learning. Purpose: Provide information, communicate. Ethical issues: Safety.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Microsoft",
       "severity": "Medium",
       "owasp_llm": [
@@ -63061,7 +63061,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -65087,7 +65087,7 @@
       "year": 2022,
       "category": "real-world",
       "description": "AIAAIC report: Instagram fails to protect women from 90 percent of abusive messages. System: Instagram Direct Messenger; Instagram Direct. Technology: Content moderation system; Machine learning. Purpose: Moderate content. Ethical issues: Safety.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Instagram",
       "severity": "Medium",
       "owasp_llm": [
@@ -65118,7 +65118,7 @@
         "juris-uk;-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -66465,7 +66465,7 @@
       "year": 2022,
       "category": "real-world",
       "description": "AIAAIC report: Hyderabad police force activist to remove COVID-19 mask. System: NeoFace Watch. Technology: Facial recognition. Purpose: Reduce crime. Ethical issues: Privacy/surveillance; Transparency. Reported consequences: Litigation.",
-      "attack_vector": "rce",
+      "attack_vector": "privacy-violation",
       "affected": "NEC",
       "severity": "Medium",
       "owasp_llm": [
@@ -66492,7 +66492,7 @@
         "juris-india"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -66733,7 +66733,7 @@
       "year": 2021,
       "category": "real-world",
       "description": "AIAAIC report: Study: Facebook misidentifies 83 percent of political ads. System: Facebook Ads Manager. Technology: Advertising management system. Purpose: Manage advertising process. Ethical issues: Accuracy/reliability.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Facebook",
       "severity": "Medium",
       "owasp_llm": [],
@@ -66754,7 +66754,7 @@
         "juris-argentina;-brazil;-franc"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -67868,7 +67868,7 @@
       "year": 2021,
       "category": "real-world",
       "description": "AIAAIC report: Amazon Flex algorithm forces delivery drivers to take unsafe routes. System: Amazon Flex. Technology: Routing algorithm. Purpose: Calculate route efficiency. Ethical issues: Accountability; Autonomy/agency; Employment/labour; Fairness; Safety; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Amazon",
       "severity": "Medium",
       "owasp_llm": [
@@ -67906,7 +67906,7 @@
         "juris-usa,-eu,-uk,-australia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -69029,7 +69029,7 @@
       "year": 2016,
       "category": "real-world",
       "description": "AIAAIC report: US law enforcement able to access facial photos of 117 million Americans. Technology: Facial recognition. Purpose: Identify criminal suspects. Ethical issues: Accuracy/reliability; Consent; Fairness; Privacy/surveillance/surveillance; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "privacy-violation",
       "affected": "Federal Bureau of Investigation (FBI)",
       "severity": "Medium",
       "owasp_llm": [
@@ -69056,7 +69056,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -70488,7 +70488,7 @@
       "year": 2021,
       "category": "real-world",
       "description": "AIAAIC report: RCMP violated Canadians' privacy using Clearview AI facial recognition. System: Clearview AI. Technology: Facial recognition. Purpose: Strengthen law enforcement. Ethical issues: Accountability; Privacy/surveillance; Transparency. Reported consequences: Regulatory investigation.",
-      "attack_vector": "rce",
+      "attack_vector": "privacy-violation",
       "affected": "Clearview AI",
       "severity": "Medium",
       "owasp_llm": [
@@ -70521,7 +70521,7 @@
         "juris-canada"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -70676,7 +70676,7 @@
       "year": 2020,
       "category": "real-world",
       "description": "AIAAIC report: Kargu-2 fully autonomous drone attacks Libyan armed forces. System: Kargu-2. Technology: Drone; Machine learning; Robotics. Purpose: Attack Libyan armed forces. Ethical issues: Accountability; Autonomous weapons.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "STM",
       "severity": "Medium",
       "owasp_llm": [
@@ -70706,7 +70706,7 @@
         "juris-libya"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -71520,7 +71520,7 @@
       "year": 2019,
       "category": "real-world",
       "description": "AIAAIC report: Amazon Alexa reinforces female stereotyping. System: Amazon Alexa. Technology: NLP/text analysis; Natural language understanding (NLU); Speech recognition. Purpose: Provide information, services. Ethical issues: Fairness.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Amazon",
       "severity": "Medium",
       "owasp_llm": [],
@@ -71541,7 +71541,7 @@
         "juris-multiple"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -75135,7 +75135,7 @@
       "year": 2020,
       "category": "real-world",
       "description": "AIAAIC report: Tyndall Air Force base robot patrol dogs. Technology: Robotics. Purpose: Enhance security. Ethical issues: Autonomous weapons; Safety.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Ghost Robotics",
       "severity": "Medium",
       "owasp_llm": [
@@ -75166,7 +75166,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -75443,7 +75443,7 @@
       "year": 2020,
       "category": "real-world",
       "description": "AIAAIC report: California police licence plate data sharing. Technology: Automated license plate/number recognition (ALPR/ANPR). Purpose: Strengthen law enforcement - parking, municipal laws, criminal investigations. Ethical issues: Privacy/surveillance; Security. Reported consequences: Legislative proposal. Response: Policy update.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "DRN; Motorola Solutions/Vigilant Solutions",
       "severity": "Medium",
       "owasp_llm": [
@@ -75480,7 +75480,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76876,7 +76876,7 @@
       "year": 2019,
       "category": "real-world",
       "description": "AIAAIC report: Poland forced to scrap unemployed worker profiling system. System: Syriusz. Technology: Prediction algorithm. Purpose: Assess unemployed worker support needs. Ethical issues: Alignment; Fairness; Fairness; Privacy/surveillance.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Ministry of Family, Labor and Social Policy",
       "severity": "Medium",
       "owasp_llm": [],
@@ -76897,7 +76897,7 @@
         "juris-poland"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -76993,7 +76993,7 @@
       "year": 2020,
       "category": "real-world",
       "description": "AIAAIC report: Study: Facebook fails to label 42 percent of debunked political misinformation. System: Facebook content moderation system. Technology: Content moderation system. Purpose: Identify, label and reduce the spread of misinformation. Ethical issues: Accountability; Accuracy/reliability; Human/civil rights; Transparency.",
-      "attack_vector": "rce",
+      "attack_vector": "misinformation",
       "affected": "Facebook",
       "severity": "Medium",
       "owasp_llm": [
@@ -77026,7 +77026,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -78130,7 +78130,7 @@
       "year": 2017,
       "category": "real-world",
       "description": "AIAAIC report: Barcelona robot brothel triggers local backlash. System: Lumi Dolls. Technology: Robotics. Purpose: Provide sexual services. Ethical issues: Anthropomorphism; Employment/labour.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Lumi Dolls",
       "severity": "Medium",
       "owasp_llm": [
@@ -78161,7 +78161,7 @@
         "juris-spain"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },
@@ -80511,7 +80511,7 @@
       "year": 2017,
       "category": "real-world",
       "description": "AIAAIC report: Insurers accused of charging drivers in minority areas 30 percent more. Technology: Pattern recognition. Purpose: Assess risk/determine price. Ethical issues: Fairness.",
-      "attack_vector": "rce",
+      "attack_vector": "other",
       "affected": "Geico; Safeco; Nationwide",
       "severity": "Medium",
       "owasp_llm": [],
@@ -80532,7 +80532,7 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
+      "updated": "2026-05-29",
       "quality_tier": "auto",
       "corpus": "security"
     },

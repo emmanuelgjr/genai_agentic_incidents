@@ -216,7 +216,10 @@ def detect_attack_vector(row: dict) -> str:
         return "prompt-injection"
     if "exfil" in text or "data leak" in text or "data breach" in text:
         return "data-exfiltration"
-    if "ransom" in text or "rce" in text or "remote code" in text:
+    # NB: match "rce" only as a whole word — a substring check matches
+    # "pe(rce)nt", "(rce)" in "reinforce/source/commerce/force", etc., and
+    # mislabels harm incidents as remote-code-execution.
+    if "ransom" in text or re.search(r"\brce\b", text) or "remote code" in text:
         return "rce"
     if "phishing" in text or "scam" in text or "fraud" in text or "imperson" in text:
         return "other"  # social engineering → keep generic
