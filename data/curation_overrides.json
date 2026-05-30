@@ -17,6 +17,11 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC0196": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Mass-surveillance data breach (Uyghur targeting); raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC0216": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
@@ -28,6 +33,11 @@
     "AIAAIC0270": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0285": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Police data leak placing named individuals in 'serious danger'; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC0290": {
       "quality_tier": "reviewed",
@@ -44,6 +54,10 @@
     "AIAAIC039": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0471": {
+      "quality_tier": "reviewed",
+      "_note": "Proctoring data breach; Medium appropriate. Reviewed 2026-05."
     },
     "AIAAIC0490": {
       "quality_tier": "reviewed",
@@ -69,13 +83,27 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC0616": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Content filter generated CSAM — serious; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC069": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC0696": {
+      "quality_tier": "reviewed",
+      "attack_vector": "privacy-violation",
+      "_note": "CSAM-*scanning* privacy controversy, not generation; corrected attack_vector. Reviewed 2026-05."
+    },
     "AIAAIC070": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0741": {
+      "quality_tier": "reviewed",
+      "_note": "Data leak exposing disinformation operation; Medium appropriate. Reviewed 2026-05."
     },
     "AIAAIC0811": {
       "quality_tier": "reviewed",
@@ -169,9 +197,19 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC1095": {
+      "quality_tier": "reviewed",
+      "attack_vector": "other",
+      "_note": "CSAM *detection* false-positive, not generation; corrected attack_vector. Reviewed 2026-05."
+    },
     "AIAAIC1098": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1105": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Generation of synthetic CSAM — serious; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC1110": {
       "quality_tier": "reviewed",
@@ -184,6 +222,10 @@
     "AIAAIC1112": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1211": {
+      "quality_tier": "reviewed",
+      "_note": "Phishing/malware generation capability study; Medium appropriate. Reviewed 2026-05."
     },
     "AIAAIC1323": {
       "quality_tier": "reviewed",
@@ -200,6 +242,10 @@
     "AIAAIC1360": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1412": {
+      "quality_tier": "reviewed",
+      "_note": "AI surfacing malware/fraud sites; Medium appropriate. Reviewed 2026-05."
     },
     "AIAAIC1441": {
       "quality_tier": "reviewed",
@@ -221,6 +267,19 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC1600": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Sexual/violent threats targeting minors; raised Medium->High. Reviewed 2026-05."
+    },
+    "AIAAIC1614": {
+      "quality_tier": "reviewed",
+      "_note": "Malicious-content generation capability study; Medium appropriate. Reviewed 2026-05."
+    },
+    "AIAAIC1676": {
+      "quality_tier": "reviewed",
+      "_note": "Demonstrated phishing-abuse capability; Medium appropriate. Reviewed 2026-05."
+    },
     "AIAAIC1751": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
@@ -240,6 +299,15 @@
     "AIAAIC1885": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1896": {
+      "quality_tier": "reviewed",
+      "_note": "Jailbreak-robustness study; Medium appropriate. Reviewed 2026-05."
+    },
+    "AIAAIC1927": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "AI-malware fraud causing severe personal/financial harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC1944": {
       "quality_tier": "reviewed",
@@ -325,9 +393,18 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC2159": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Training dataset found to contain CSAM — serious; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC2184": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2207": {
+      "quality_tier": "reviewed",
+      "_note": "Infostealer exfiltrating assistant data; Medium appropriate. Reviewed 2026-05."
     },
     "AIAAIC2212": {
       "quality_tier": "reviewed",
