@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" role="img" aria-label="Incidents per year, 1983–2026" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="11">
 <rect x="0" y="0" width="100%" height="100%" fill="white"/>
-<text x="44" y="18" font-weight="600">Incidents per year (7,720 total)</text>
+<text x="44" y="18" font-weight="600">Incidents per year (7,725 total)</text>
 <line x1="44" y1="30.0" x2="748" y2="30.0" stroke="#e5e5e5" stroke-width="1"/>
 <text x="38" y="33.0" text-anchor="end" fill="#666">2,124</text>
 <line x1="44" y1="64.8" x2="748" y2="64.8" stroke="#e5e5e5" stroke-width="1"/>
@@ -55,8 +55,8 @@
 <rect x="614.0" y="135.8" width="18.2" height="68.2" fill="#0a58ca" rx="1"><title>2021: 833</title></rect>
 <rect x="636.7" y="174.5" width="18.2" height="29.5" fill="#0a58ca" rx="1"><title>2022: 360</title></rect>
 <text x="645.8" y="218" text-anchor="middle" fill="#666">2022</text>
-<rect x="659.4" y="152.0" width="18.2" height="52.0" fill="#0a58ca" rx="1"><title>2023: 635</title></rect>
-<rect x="682.1" y="123.9" width="18.2" height="80.1" fill="#0a58ca" rx="1"><title>2024: 978</title></rect>
+<rect x="659.4" y="151.9" width="18.2" height="52.1" fill="#0a58ca" rx="1"><title>2023: 636</title></rect>
+<rect x="682.1" y="123.6" width="18.2" height="80.4" fill="#0a58ca" rx="1"><title>2024: 982</title></rect>
 <text x="691.2" y="218" text-anchor="middle" fill="#666">2024</text>
 <rect x="704.9" y="99.6" width="18.2" height="104.4" fill="#0a58ca" rx="1"><title>2025: 1,274</title></rect>
 <rect x="727.6" y="30.0" width="18.2" height="174.0" fill="#0a58ca" rx="1"><title>2026: 2,124</title></rect>
