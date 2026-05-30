@@ -9,7 +9,9 @@
 
 - 🔎 **Searchable site:** <https://emmanuelgjr.github.io/genai_incidents/>
 - 📦 **Python:** `pip install genai-incidents`
+- 🤗 **Hugging Face:** `load_dataset("emmanuelgjr/genai-incidents")` — built with `make huggingface`
 - 🛰️ **STIX 2.1 bundle** (for OpenCTI / MISP / TAXII): <https://emmanuelgjr.github.io/genai_incidents/data/incidents.stix.json> — incidents as `x-genai-incident` SDOs linked to MITRE ATLAS `attack-pattern`s and CVE `vulnerability`s. Build locally with `make stix`.
+- 📖 **Field reference:** [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) · **Provenance & limitations:** [`docs/DATASHEET.md`](docs/DATASHEET.md)
 - 🪪 **DOI:** [`10.5281/zenodo.20248676`](https://doi.org/10.5281/zenodo.20248676) — see [`CITATION.cff`](CITATION.cff)
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
