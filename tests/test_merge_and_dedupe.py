@@ -120,6 +120,22 @@ def test_curation_overrides_file_loads_and_is_valid():
             assert fields["quality_tier"] in ("curated", "reviewed", "auto"), sid
 
 
+def test_fill_taxonomy_populates_atlas_tactics():
+    e = {"owasp_llm": [], "owasp_asi": [], "mitre_atlas": ["AML.T0048"], "nist_ai_rmf": []}
+    m.fill_taxonomy(e)
+    # AML.T0048 (External Harms) maps to the Impact tactic in current ATLAS.
+    assert e.get("mitre_atlas_tactics"), "tactics should be populated"
+    assert all(t.startswith("AML.TA") for t in e["mitre_atlas_tactics"])
+
+
+def test_fill_taxonomy_subtechnique_inherits_parent_tactics():
+    parent = {"mitre_atlas": ["AML.T0048"]}
+    child = {"mitre_atlas": ["AML.T0048.003"]}
+    m.fill_taxonomy(parent)
+    m.fill_taxonomy(child)
+    assert child.get("mitre_atlas_tactics") == parent.get("mitre_atlas_tactics")
+
+
 def test_classify_attack_vector_no_match():
     assert m.classify_attack_vector("Generic AI failure with no specifics") is None
 

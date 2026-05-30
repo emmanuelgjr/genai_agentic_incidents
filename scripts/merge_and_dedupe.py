@@ -20,7 +20,21 @@ from collections import defaultdict
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
 DATA = ROOT / "data"
+MAPPINGS = ROOT / "mappings"
 DATA.mkdir(parents=True, exist_ok=True)
+
+
+def _load_atlas_technique_tactics() -> dict[str, list[str]]:
+    """technique-id -> [tactic-id, ...] from the committed ATLAS reference."""
+    try:
+        m = json.loads((MAPPINGS / "mitre_atlas.json").read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+    return {tid: e["tactics"] for tid, e in (m.get("techniques") or {}).items()
+            if isinstance(e, dict) and e.get("tactics")}
+
+
+_ATLAS_TECHNIQUE_TACTICS = _load_atlas_technique_tactics()
 
 CANONICAL_HOSTS = {
     "nvd.nist.gov": "advisory",
@@ -448,6 +462,17 @@ def fill_taxonomy(entry: dict) -> dict:
             nist.add(n)
     entry["mitre_atlas"] = sorted(atlas)
     entry["nist_ai_rmf"] = sorted(nist)
+    # Derive ATLAS tactics from the (final) technique set — subtechniques
+    # (AML.Txxxx.yyy) inherit their parent technique's tactics.
+    tactics = set(entry.get("mitre_atlas_tactics") or [])
+    for t in atlas:
+        tac = _ATLAS_TECHNIQUE_TACTICS.get(t)
+        if not tac and t.count(".") >= 2:  # subtechnique AML.Txxxx.yyy -> parent
+            tac = _ATLAS_TECHNIQUE_TACTICS.get(t.rsplit(".", 1)[0])
+        if tac:
+            tactics.update(tac)
+    if tactics:
+        entry["mitre_atlas_tactics"] = sorted(tactics)
     return entry
 
 
