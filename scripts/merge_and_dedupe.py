@@ -801,6 +801,22 @@ def main():
         else:
             surviving.append(e)
 
+    # 4b) Finalize attack_vector (normalize fragments + reclassify "other")
+    #     BEFORE stamping history. attack_vector is part of the content
+    #     snapshot, so finalizing it afterwards would make _apply_history
+    #     compare a stale value against the previous output and spuriously
+    #     bump `updated` (and therefore `generated`) on every rebuild —
+    #     breaking the drift check whenever CI runs on a later calendar day.
+    for e in surviving:
+        vec = (e.get("attack_vector") or "other").lower().strip()
+        vec = _ATTACK_VECTOR_NORMALIZE.get(vec, vec)
+        if not vec or vec == "other":
+            classified = classify_attack_vector(
+                (e.get("title") or "") + " " + (e.get("description") or "")
+            )
+            vec = classified or "other"
+        e["attack_vector"] = vec
+
     # 5) Apply stable timestamps + classifiers (quality_tier, corpus).
     for e in surviving:
         _apply_history(e, prev_ts)
@@ -901,21 +917,7 @@ def main():
         )
         print(f"[output] wrote {DEPRECATIONS_PATH.name} ({len(deprecations_all)} entries)")
 
-    # 9) Final attack_vector cleanup — normalize fragments and re-classify
-    for e in deduped:
-        vec = (e.get("attack_vector") or "other").lower().strip()
-        vec = _ATTACK_VECTOR_NORMALIZE.get(vec, vec)
-        if not vec or vec == "other":
-            classified = classify_attack_vector(
-                (e.get("title") or "") + " " + (e.get("description") or "")
-            )
-            if classified:
-                vec = classified
-            else:
-                vec = "other"
-        e["attack_vector"] = vec
-
-    # 10) Write outputs
+    # 9) Write outputs
     out = {
         "version": "2.0.0",
         "generated": generated,
