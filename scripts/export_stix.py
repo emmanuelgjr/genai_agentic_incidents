@@ -127,6 +127,7 @@ def build_bundle(incidents: list[dict]) -> dict:
             "x_owasp_asi": i.get("owasp_asi") or [],
             "x_nist_ai_rmf": i.get("nist_ai_rmf") or [],
             "x_mitre_atlas": i.get("mitre_atlas") or [],
+            "x_mitre_atlas_tactics": i.get("mitre_atlas_tactics") or [],
             "x_cve_ids": i.get("cve_ids") or [],
         }
         objects.append(sdo)
