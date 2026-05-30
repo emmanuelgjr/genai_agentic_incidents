@@ -1,4 +1,4 @@
-.PHONY: build validate render merge install clean test ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-all
+.PHONY: build validate render merge install clean test stix ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-all
 
 install:
 	pip install -r requirements.txt
@@ -17,6 +17,10 @@ render:
 
 validate:
 	python scripts/validate.py
+
+# STIX 2.1 bundle for threat-intel platforms (build artifact, not committed).
+stix:
+	python scripts/export_stix.py
 
 # Pull AI/ML/LLM/agent CVEs from NVD + GHSA + OSV.
 # Output: ingest/cve_nvd_expanded.json

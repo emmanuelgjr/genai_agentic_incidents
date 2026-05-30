@@ -6,6 +6,8 @@ on:
     paths:
       - "docs/**"
       - "data/incidents.min.json"
+      - "data/incidents.json"
+      - "scripts/export_stix.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -23,10 +25,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
       - name: Mirror data file into docs/data/
         run: |
           mkdir -p docs/data
           cp data/incidents.min.json docs/data/incidents.min.json
+      - name: Generate STIX 2.1 bundle for download
+        run: python scripts/export_stix.py
       - uses: actions/configure-pages@v5
       - uses: actions/jekyll-build-pages@v1
         with:
