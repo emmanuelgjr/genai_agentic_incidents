@@ -21455,7 +21455,7 @@
       "description": "AIAAIC report: AI systems used to conduct sexual violence against 1 in 5 Brazilian children. System: Flux; Stable Diffusion. Technology: Bot/intelligent agent; Deepfake; Generative AI. Purpose: Produce child pornography. Ethical issues: Autonomy/agency; Consent; Normalisation; Power inbalance; Safety. Reported consequences: Legislation introduction/update.",
       "attack_vector": "deepfake",
       "affected": "Black Forest Labs; LAION; Stability AI",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05"
       ],
@@ -21484,8 +21484,8 @@
         "juris-brazil"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -21927,7 +21927,7 @@
       "description": "AIAAIC report: Radnor High School hit by fake AI sexualised images of students. Technology: Deepfake; Generative AI. Purpose: Nudify students. Ethical issues: Accountability; Consent; Safety; Transparency. Reported consequences: Police investigation.",
       "attack_vector": "deepfake",
       "affected": "Radnor High School student",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06",
@@ -21963,8 +21963,8 @@
         "juris-pennsylvania"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -22989,7 +22989,7 @@
       "description": "AIAAIC report: Royal School Armagh students targeted with explicit AI images. Technology: Deepfake; Generative AI. Ethical issues: Accountability; Autonomy/agency; Privacy/surveillance; Transparency. Reported consequences: Police investigation.",
       "attack_vector": "deepfake",
       "affected": "Royal School Armagh students",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM06",
         "LLM07"
@@ -23020,8 +23020,8 @@
         "juris-northern-ireland"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -33197,7 +33197,7 @@
       "description": "AIAAIC report: Students create deepfake nudes of St Thomas Aquinas Catholic Secondary School classmates. Technology: Deepfake. Purpose: Harass/humiliate/shame. Ethical issues: Accountability; Authenticity/integrity; Privacy/surveillance; Safety.",
       "attack_vector": "deepfake",
       "affected": "St Thomas Aquinas Catholic Secondary School students",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06",
@@ -33234,8 +33234,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -36939,7 +36939,7 @@
       "description": "AIAAIC report: Sydney schoolgirls targeted with nonconsensual deepfake porn. Technology: Deepfake. Purpose: Harass/humiliate/shame. Ethical issues: Authenticity/integrity; Privacy/surveillance; Safety.",
       "attack_vector": "deepfake",
       "affected": "Education",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM09"
@@ -36974,8 +36974,8 @@
         "juris-australia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -39307,7 +39307,7 @@
       "description": "AIAAIC report: Student violates 50 Lancaster Country School students with nude deepfakes. Technology: Deepfake. Purpose: Harassment; Sexual gratification. Ethical issues: Authenticity/integrity; Privacy/surveillance.",
       "attack_vector": "deepfake",
       "affected": "Lancaster Country Day School student",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM09"
       ],
@@ -39336,8 +39336,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -46747,7 +46747,7 @@
       "description": "AIAAIC report: US college student Taylor Klein's face is deepfaked onto porn. Technology: Deepfake. Purpose: Earn revenue. Ethical issues: Authenticity/integrity; Privacy/surveillance; Safety; Transparency.",
       "attack_vector": "deepfake",
       "affected": "Personal - individual",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM07",
@@ -46784,8 +46784,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -46800,7 +46800,7 @@
       "description": "AIAAIC report: 50 Melbourne school girls targeted using AI nude images. Technology: Deepfake. Ethical issues: Authenticity/integrity; Privacy/surveillance/surveillance; Safety; Transparency.",
       "attack_vector": "deepfake",
       "affected": "Bacchus Marsh Grammar students",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM07"
@@ -46831,8 +46831,8 @@
         "juris-australia"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -51176,7 +51176,7 @@
       "description": "AIAAIC report: Miami boys arrested for creating and sharing nude images of students. Technology: Deepfake. Purpose: Undress individuals. Ethical issues: Accountability; Authenticity/integrity; Privacy/surveillance; Safety; Transparency. Reported consequences: Police investigation.",
       "attack_vector": "deepfake",
       "affected": "Pinecrest Cove Academy students",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06",
@@ -51212,8 +51212,8 @@
         "sector-education"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -53517,7 +53517,7 @@
       "description": "AIAAIC report: Teen distributes AI-generated nude pictures of Issaquah students. Technology: Deepfake. Purpose: Harass/intimidate/shame. Ethical issues: Accountability; Safety.",
       "attack_vector": "deepfake",
       "affected": "Issaquah High School students",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06"
@@ -53551,8 +53551,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -55975,7 +55975,7 @@
       "description": "AIAAIC report: Deepfake nudes target Winnipeg school female students. Technology: Deepfake. Purpose: Harass/humiliate/shame. Ethical issues: Authenticity/integrity; Safety.",
       "attack_vector": "deepfake",
       "affected": "Education",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM09"
@@ -56010,8 +56010,8 @@
         "juris-canada"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -56958,7 +56958,7 @@
       "description": "AIAAIC report: Quebec man jailed for producing AI child porn. Technology: Deepfake. Purpose: Sexual gratification. Ethical issues: Human rights/civil liberties; Privacy; Safety. Reported consequences: Incarceration; Litigation.",
       "attack_vector": "deepfake",
       "affected": "Steven Larouche",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05"
       ],
@@ -56987,8 +56987,8 @@
         "juris-canada"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -57048,7 +57048,7 @@
       "description": "AIAAIC report: US child psychiatrist jailed for making deepfake child porn. Technology: Deepfake. Purpose: Sexual gratification. Ethical issues: Authenticity/integrity; Human rights/civil liberties; Privacy; Safety. Reported consequences: Incarceration; Litigation.",
       "attack_vector": "deepfake",
       "affected": "David Tatum",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM09"
@@ -57083,8 +57083,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -57737,7 +57737,7 @@
       "description": "AIAAIC report: Westfield High School non-concensual nude deepfakes. System: ClothOff. Technology: Deepfake. Purpose: Undress individuals. Ethical issues: Accountability; Authenticity/integrity; Privacy/surveillance; Safety. Reported consequences: Police investigation; Litigation.",
       "attack_vector": "deepfake",
       "affected": "AI/Robotics Venture Strategy 3",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06",
@@ -57774,8 +57774,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -59321,7 +59321,7 @@
       "description": "AIAAIC report: Almendralejo hit by AI naked child images. System: ClothOff. Technology: Deepfake. Purpose: Harass/humiliate/shame; Extort. Ethical issues: Authenticity/integrity; Privacy/surveillance; Safety. Reported consequences: Police investigation.",
       "attack_vector": "deepfake",
       "affected": "AI/Robotics Venture Strategy 3",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05"
       ],
@@ -59350,8 +59350,8 @@
         "juris-spain"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -66737,7 +66737,7 @@
       "description": "AIAAIC report: Teenager attempts to extort Lauren Book using deepfake nude photos. Technology: Deepfake. Purpose: Extortion. Ethical issues: Accountability; Authenticity/integrity; Mis/disinformation; Privacy/surveillance; Safety; Transparency. Reported consequences: Protagonist arrest.",
       "attack_vector": "deepfake",
       "affected": "Jeremy Kampervee",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM05",
         "LLM06",
@@ -66776,8 +66776,8 @@
         "juris-usa"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {
@@ -75887,7 +75887,7 @@
       "description": "AIAAIC report: Child sexual abuse investigation deepfakes. Technology: Machine learning. Purpose: Mimic child abusers. Ethical issues: Privacy/surveillance; Security.",
       "attack_vector": "deepfake",
       "affected": "Govt - police",
-      "severity": "Medium",
+      "severity": "High",
       "owasp_llm": [
         "LLM02",
         "LLM03",
@@ -75927,8 +75927,8 @@
         "juris-germany"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-16",
-      "quality_tier": "auto",
+      "updated": "2026-05-30",
+      "quality_tier": "reviewed",
       "corpus": "security"
     },
     {

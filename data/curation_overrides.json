@@ -55,6 +55,11 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC0437": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC0471": {
       "quality_tier": "reviewed",
       "_note": "Proctoring data breach; Medium appropriate. Reviewed 2026-05."
@@ -112,6 +117,11 @@
     "AIAAIC0819": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC0820": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC0825": {
       "quality_tier": "reviewed",
@@ -223,9 +233,39 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC1116": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
+    "AIAAIC1166": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
+    "AIAAIC1184": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
+    "AIAAIC1189": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC1211": {
       "quality_tier": "reviewed",
       "_note": "Phishing/malware generation capability study; Medium appropriate. Reviewed 2026-05."
+    },
+    "AIAAIC1215": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
+    "AIAAIC1294": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC1323": {
       "quality_tier": "reviewed",
@@ -242,6 +282,11 @@
     "AIAAIC1360": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1377": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC1412": {
       "quality_tier": "reviewed",
@@ -267,6 +312,16 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC1532": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
+    "AIAAIC1535": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC1600": {
       "quality_tier": "reviewed",
       "severity": "High",
@@ -288,6 +343,11 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC1813": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC1845": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
@@ -295,6 +355,11 @@
     "AIAAIC1869": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1877": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC1885": {
       "quality_tier": "reviewed",
@@ -316,6 +381,11 @@
     "AIAAIC1971": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC1973": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC2008": {
       "quality_tier": "reviewed",
@@ -402,6 +472,11 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC2201": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC2207": {
       "quality_tier": "reviewed",
       "_note": "Infostealer exfiltrating assistant data; Medium appropriate. Reviewed 2026-05."
@@ -410,9 +485,19 @@
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
     },
+    "AIAAIC2227": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
+    },
     "AIAAIC2235": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIAAIC2237": {
+      "quality_tier": "reviewed",
+      "severity": "High",
+      "_note": "Non-consensual sexual deepfake imagery targeting minors/students (CSAM/NCII) — serious harm; raised Medium->High. Reviewed 2026-05."
     },
     "AIAAIC2257": {
       "quality_tier": "reviewed",
