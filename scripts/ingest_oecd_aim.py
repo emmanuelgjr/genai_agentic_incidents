@@ -343,15 +343,17 @@ def main():
             existing = json.loads(out_path.read_text(encoding="utf-8"))
             if not isinstance(existing, list):
                 existing = []
-        except (json.JSONDecodeError, OSError):
+        except (ValueError, OSError):
             existing = []
     merged = union_with_existing(out, existing)
     print(
-        f"[aim] union: {len(out)} fetched + {len(existing)} existing "
+        f"[aim] union: {len(out)} kept + {len(existing)} existing "
         f"-> {len(merged)} retained"
     )
     out_path.write_text(
-        json.dumps(merged, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(merged, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
     print(f"[aim] wrote -> {out_path}")
 
