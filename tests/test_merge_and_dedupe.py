@@ -376,3 +376,9 @@ def test_load_retained_priors_skips_entries_without_id():
     prev = [{"title": "no id"}, {"id": "INC-00003", "title": "ok"}]
     out = m.load_retained_priors(prev, set())
     assert [e["id"] for e in out] == ["INC-00003"]
+
+
+def test_load_retained_priors_all_deprecated_returns_empty():
+    prev = [{"id": "INC-00001"}, {"id": "INC-00002"}]
+    out = m.load_retained_priors(prev, {"INC-00001", "INC-00002"})
+    assert out == []

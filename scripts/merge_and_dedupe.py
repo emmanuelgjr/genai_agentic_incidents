@@ -670,9 +670,10 @@ def _load_prev_incidents() -> list[dict]:
     if not prev_path.exists():
         return []
     try:
-        return json.loads(prev_path.read_text(encoding="utf-8")).get("incidents", [])
+        data = json.loads(prev_path.read_text(encoding="utf-8"))
     except (ValueError, OSError):
         return []
+    return data.get("incidents", []) if isinstance(data, dict) else []
 
 
 def _load_deprecated_ids() -> set[str]:
@@ -683,6 +684,8 @@ def _load_deprecated_ids() -> set[str]:
     try:
         deprec = json.loads(DEPRECATIONS_PATH.read_text(encoding="utf-8"))
     except (ValueError, OSError):
+        return set()
+    if not isinstance(deprec, dict):
         return set()
     return {d.get("from") for d in deprec.get("deprecations", []) if d.get("from")}
 
