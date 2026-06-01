@@ -337,7 +337,22 @@ def main():
     )
 
     out_path = INGEST / "oecd_aim_full_incidents.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+    existing: list[dict] = []
+    if out_path.exists():
+        try:
+            existing = json.loads(out_path.read_text(encoding="utf-8"))
+            if not isinstance(existing, list):
+                existing = []
+        except (json.JSONDecodeError, OSError):
+            existing = []
+    merged = union_with_existing(out, existing)
+    print(
+        f"[aim] union: {len(out)} fetched + {len(existing)} existing "
+        f"-> {len(merged)} retained"
+    )
+    out_path.write_text(
+        json.dumps(merged, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
     print(f"[aim] wrote -> {out_path}")
 
 
