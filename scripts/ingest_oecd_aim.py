@@ -269,6 +269,25 @@ def normalize_body(body: dict, url: str) -> dict | None:
     }
 
 
+def union_with_existing(fresh: list[dict], existing: list[dict]) -> list[dict]:
+    """Union the fresh fetch with the previously-committed ingest file so the
+    OECD corpus only ever grows. Keyed by ``source_id`` (``OECD-AIM-<id>``):
+    fresh wins on conflict (latest content); entries present only in
+    ``existing`` (aged out of the newest-N sitemap window) are kept. Output is
+    sorted by ``source_id`` so the committed file has stable, deterministic
+    ordering."""
+    by_id: dict[str, dict] = {}
+    for e in existing:
+        sid = e.get("source_id")
+        if sid:
+            by_id[sid] = e
+    for e in fresh:
+        sid = e.get("source_id")
+        if sid:
+            by_id[sid] = e
+    return sorted(by_id.values(), key=lambda e: e.get("source_id") or "")
+
+
 def main():
     limit_env = os.environ.get("OECD_AIM_LIMIT", str(DEFAULT_LIMIT))
     try:
