@@ -858,6 +858,22 @@ def main():
             all_entries.extend(kept)
             print(f"[{src.name:40s}] {len(raw):4d} raw -> {len(kept):4d} normalized")
 
+    # 2b) Retention backstop: re-feed previously-published incidents (minus
+    #     explicitly deprecated ids) as build inputs. Appended AFTER the ingest
+    #     feeds so a prior that still has a live source merges INTO the fresh
+    #     entry (fresh content wins); a prior with no live source survives.
+    #     This makes the dataset archival — no source dropping an entry can
+    #     silently delete it. See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
+    prev_incidents = _load_prev_incidents()
+    retained = load_retained_priors(prev_incidents, _load_deprecated_ids())
+    kept_prior = []
+    for r in retained:
+        norm = normalize_entry(r)
+        if norm is not None:
+            kept_prior.append(norm)
+    all_entries.extend(kept_prior)
+    print(f"[retention] re-fed {len(kept_prior)} prior incident(s) as inputs")
+
     # 3) Dedupe
     by_cve: dict[str, dict] = {}
     by_url: dict[str, dict] = {}
