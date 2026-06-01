@@ -664,6 +664,48 @@ def _load_curation_overrides() -> dict[str, dict]:
     return raw.get("overrides", {}) if isinstance(raw, dict) else {}
 
 
+def _load_prev_incidents() -> list[dict]:
+    """Read the previously-published incidents list (empty if none yet)."""
+    prev_path = DATA / "incidents.json"
+    if not prev_path.exists():
+        return []
+    try:
+        return json.loads(prev_path.read_text(encoding="utf-8")).get("incidents", [])
+    except (ValueError, OSError):
+        return []
+
+
+def _load_deprecated_ids() -> set[str]:
+    """Ids that were explicitly retired via merge/dedupe. These must never be
+    resurrected by retention."""
+    if not DEPRECATIONS_PATH.exists():
+        return set()
+    try:
+        deprec = json.loads(DEPRECATIONS_PATH.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return set()
+    return {d.get("from") for d in deprec.get("deprecations", []) if d.get("from")}
+
+
+def load_retained_priors(
+    prev_incidents: list[dict], deprecated_ids: set[str]
+) -> list[dict]:
+    """Select previously-published incidents to carry forward into the build.
+
+    Every prior incident is re-fed as a build input EXCEPT those whose id was
+    explicitly deprecated (merged away). When re-run through dedupe, a prior
+    that still has a live source merges into the fresh entry; a prior with no
+    live source survives on its own — so the dataset never silently drops an
+    incident just because an upstream feed stopped returning it."""
+    out: list[dict] = []
+    for e in prev_incidents:
+        eid = e.get("id")
+        if not eid or eid in deprecated_ids:
+            continue
+        out.append(e)
+    return out
+
+
 def _load_prev_state() -> tuple[
     dict[str, tuple[str, str, dict]],
     dict[str, str],

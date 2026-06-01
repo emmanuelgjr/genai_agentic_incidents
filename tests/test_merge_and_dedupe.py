@@ -355,3 +355,24 @@ def test_maybe_rewrite_cve_title_skips_blurb_without_cve():
     }
     m.maybe_rewrite_cve_title(entry)
     assert entry["title"].startswith("Some Tool is a")
+
+
+def test_load_retained_priors_excludes_deprecated():
+    prev = [
+        {"id": "INC-00001", "title": "kept"},
+        {"id": "INC-00002", "title": "deprecated"},
+    ]
+    out = m.load_retained_priors(prev, {"INC-00002"})
+    assert [e["id"] for e in out] == ["INC-00001"]
+
+
+def test_load_retained_priors_keeps_all_when_none_deprecated():
+    prev = [{"id": "INC-00001"}, {"id": "INC-00002"}]
+    out = m.load_retained_priors(prev, set())
+    assert len(out) == 2
+
+
+def test_load_retained_priors_skips_entries_without_id():
+    prev = [{"title": "no id"}, {"id": "INC-00003", "title": "ok"}]
+    out = m.load_retained_priors(prev, set())
+    assert [e["id"] for e in out] == ["INC-00003"]
