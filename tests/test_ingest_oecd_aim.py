@@ -38,5 +38,5 @@ def test_union_output_sorted_by_source_id():
 
 def test_union_drops_entries_without_source_id():
     fresh = [{"title": "no id", "references": []}]
-    existing = []
+    existing = [{"title": "also no id"}]
     assert o.union_with_existing(fresh, existing) == []

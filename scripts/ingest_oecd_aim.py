@@ -275,7 +275,7 @@ def union_with_existing(fresh: list[dict], existing: list[dict]) -> list[dict]:
     fresh wins on conflict (latest content); entries present only in
     ``existing`` (aged out of the newest-N sitemap window) are kept. Output is
     sorted by ``source_id`` so the committed file has stable, deterministic
-    ordering."""
+    ordering (lexicographic by source_id; OECD ids are date/hash-suffixed strings, not bare integers)."""
     by_id: dict[str, dict] = {}
     for e in existing:
         sid = e.get("source_id")
