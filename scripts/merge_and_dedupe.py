@@ -872,7 +872,7 @@ def main():
         if norm is not None:
             kept_prior.append(norm)
     all_entries.extend(kept_prior)
-    print(f"[retention] re-fed {len(kept_prior)} prior incident(s) as inputs")
+    print(f"[retention] re-fed {len(kept_prior)}/{len(retained)} prior incident(s) as inputs")
 
     # 3) Dedupe
     by_cve: dict[str, dict] = {}
