@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import datetime
+import json as _json
+
 import merge_and_dedupe as m
 
 
@@ -384,10 +387,6 @@ def test_load_retained_priors_all_deprecated_returns_empty():
     assert out == []
 
 
-import datetime
-import json as _json
-
-
 class _FrozenDate(datetime.date):
     """date subclass whose today() is pinned, for cross-day determinism tests."""
     _pinned = datetime.date(2099, 6, 1)
@@ -437,6 +436,7 @@ def test_retention_keeps_dropped_incident_with_stable_id(tmp_path, monkeypatch):
         s: e["id"] for e in first["incidents"] for s in e["source_ids"]
     }
     assert {"OECD-AIM-A", "OECD-AIM-B"} <= set(id_by_src)
+    assert len(id_by_src) == 2
     b_id = id_by_src["OECD-AIM-B"]
 
     # Second build: source dropped incident B (aged out / removed upstream).
@@ -476,6 +476,7 @@ def test_deprecated_id_is_not_resurrected(tmp_path, monkeypatch):
     out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
     src_ids = {s for e in out["incidents"] for s in e["source_ids"]}
     assert "OECD-AIM-DEAD" not in src_ids, "deprecated entry must not be resurrected"
+    assert "OECD-AIM-LIVE" in src_ids, "live incident must still be present"
 
 
 def test_build_is_deterministic_across_days(tmp_path, monkeypatch):
@@ -487,12 +488,12 @@ def test_build_is_deterministic_across_days(tmp_path, monkeypatch):
 
     # Build on "day 1".
     monkeypatch.setattr(m, "date", _FrozenDate)
-    _FrozenDate._pinned = datetime.date(2099, 6, 1)
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 1))
     m.main()
     day1 = (data / "incidents.json").read_text(encoding="utf-8")
 
     # Rebuild on a LATER calendar day with identical inputs.
-    _FrozenDate._pinned = datetime.date(2099, 6, 2)
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 2))
     m.main()
     day2 = (data / "incidents.json").read_text(encoding="utf-8")
 
