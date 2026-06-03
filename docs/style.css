@@ -28,12 +28,14 @@
   /* severity ramp — also the chart palette */
   --critical:  #ff4d63;
   --high:      #ff8a3d;
-  --medium:    #ffd23f;
+  --medium:    #f5c542;   /* calmer gold — clearly distinct from the amber accent */
   --low:       #46d6b6;
   --info:      #6f7c91;
 
-  /* neutral category bar (year / vectors / vendors charts) */
-  --bar:       #41506a;
+  /* neutral category bar (year / vectors / vendors charts) — cool steel so
+     "how many" charts read as data, distinct from the warm severity ramp
+     and the amber chrome. */
+  --bar:       #6f93b8;
 
   --radius:    4px;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -517,7 +519,7 @@ td.cves { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); whi
 }
 .sev-badge.sev-Critical { color: var(--critical); background: rgba(255, 77, 99, 0.12); }
 .sev-badge.sev-High     { color: var(--high);     background: rgba(255, 138, 61, 0.12); }
-.sev-badge.sev-Medium   { color: var(--medium);   background: rgba(255, 210, 63, 0.12); }
+.sev-badge.sev-Medium   { color: var(--medium);   background: rgba(245, 197, 66, 0.12); }
 .sev-badge.sev-Low      { color: var(--low);      background: rgba(70, 214, 182, 0.12); }
 .sev-badge.sev-Info     { color: var(--info);     background: rgba(111, 124, 145, 0.14); }
 

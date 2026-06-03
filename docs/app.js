@@ -381,7 +381,10 @@ function renderBarChart(containerId, items, onClick, opts = {}) {
   const bars = items.map((it, i) => {
     const y = M_TOP + i * ROW_H + 4;
     const bw = (it.value / maxV) * chartW;
-    const labelTrunc = it.label.length > 32 ? it.label.slice(0, 31) + '…' : it.label;
+    // Truncate to what actually fits the label gutter (M_LEFT) at the mono
+    // label size (~6.8px/char), so labels never overflow the chart box.
+    const maxChars = Math.max(6, Math.floor((M_LEFT - 12) / 6.8));
+    const labelTrunc = it.label.length > maxChars ? it.label.slice(0, maxChars - 1) + '…' : it.label;
     const color = it.color || 'var(--bar)';
     const filterPayload = JSON.stringify(it.filter || null).replace(/"/g, '&quot;');
     return `
@@ -547,7 +550,7 @@ function renderAllCharts() {
   const llmItems = Object.keys(LLM_NAMES).map(k => ({
     label: `${k} · ${LLM_NAMES[k]}`, value: llmCounts[k] || 0, filter: { llm: k },
   })).sort((a,b) => b.value - a.value);
-  renderBarChart(CHART_ID.llm, llmItems, applyChartFilter, { rowH: 24 });
+  renderBarChart(CHART_ID.llm, llmItems, applyChartFilter, { rowH: 24, leftPad: 250 });
 
   // OWASP ASI bar chart
   const asiCounts = {};
@@ -556,7 +559,7 @@ function renderAllCharts() {
   const asiItems = Object.keys(ASI_NAMES).map(k => ({
     label: `${k} · ${ASI_NAMES[k]}`, value: asiCounts[k] || 0, filter: { asi: k },
   })).sort((a,b) => b.value - a.value);
-  renderBarChart(CHART_ID.asi, asiItems, applyChartFilter, { rowH: 24 });
+  renderBarChart(CHART_ID.asi, asiItems, applyChartFilter, { rowH: 24, leftPad: 250 });
 
   // Top attack vectors — fewer rows on narrow viewports
   const vecCounts = {};
