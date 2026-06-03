@@ -664,6 +664,48 @@ def _load_curation_overrides() -> dict[str, dict]:
     return raw.get("overrides", {}) if isinstance(raw, dict) else {}
 
 
+def _load_prev_incidents() -> list[dict]:
+    """Read the previously-published incidents list (empty if none yet)."""
+    prev_path = DATA / "incidents.json"
+    if not prev_path.exists():
+        return []
+    try:
+        data = json.loads(prev_path.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return []
+    return data.get("incidents", []) if isinstance(data, dict) else []
+
+
+def _load_deprecated_ids() -> set[str]:
+    """Ids that were explicitly retired via merge/dedupe. These must never be
+    resurrected by retention."""
+    if not DEPRECATIONS_PATH.exists():
+        return set()
+    try:
+        deprec = json.loads(DEPRECATIONS_PATH.read_text(encoding="utf-8"))
+    except (ValueError, OSError):
+        return set()
+    if not isinstance(deprec, dict):
+        return set()
+    return {d.get("from") for d in deprec.get("deprecations", []) if d.get("from")}
+
+
+def load_retained_priors(
+    prev_incidents: list[dict], deprecated_ids: set[str]
+) -> list[dict]:
+    """Return previously-published incidents eligible for retention: all priors
+    that have an id and were NOT explicitly deprecated. This applies only the
+    deprecation filter; the caller (the step 6c top-up in main) decides which of
+    these the fresh build no longer covers and appends those verbatim."""
+    out: list[dict] = []
+    for e in prev_incidents:
+        eid = e.get("id")
+        if not eid or eid in deprecated_ids:
+            continue
+        out.append(e)
+    return out
+
+
 def _load_prev_state() -> tuple[
     dict[str, tuple[str, str, dict]],
     dict[str, str],
@@ -989,6 +1031,41 @@ def main():
             deprecations_new.append(
                 {"from": old_id, "into": target_id, "reason": "transitive-merge", "date": today_str}
             )
+
+    # 6c) Retention top-up: restore previously-published incidents that the
+    #     fresh build no longer covers (their upstream source dropped them), so
+    #     the dataset is archival and never silently loses an incident. A prior
+    #     is restored only if it was not explicitly deprecated AND none of its
+    #     source_ids / cve_ids are already represented in the fresh build. It is
+    #     carried VERBATIM — keeping its id / added / updated and bypassing
+    #     dedupe — because re-feeding already-built records through the
+    #     raw-ingest dedupe is non-idempotent (it re-canonicalises and can
+    #     oscillate). See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
+    covered_keys: set[str] = set()
+    for e in surviving:
+        covered_keys.update(e.get("cve_ids") or [])
+        covered_keys.update(e.get("source_ids") or [])
+    eligible = load_retained_priors(_load_prev_incidents(), _load_deprecated_ids())
+    carried = 0
+    no_keys = 0
+    for prior in eligible:
+        pid = prior.get("id")
+        keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
+        if not keys:
+            # No source_id/cve_id anchor → can't test coverage. This should
+            # never happen for committed output (normalize_entry rejects keyless
+            # rows), so surface it loudly rather than dropping it silently.
+            no_keys += 1
+            continue
+        if (keys & covered_keys) or pid in used_ids:
+            continue
+        surviving.append(prior)
+        covered_keys.update(keys)
+        used_ids.add(pid)
+        carried += 1
+    print(f"[retention] carried {carried}/{len(eligible)} eligible prior(s) no longer in any source")
+    if no_keys:
+        print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")
 
     deduped = surviving
 

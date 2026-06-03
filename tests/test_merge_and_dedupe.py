@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import datetime
+import json as _json
+
 import merge_and_dedupe as m
 
 
@@ -355,3 +358,211 @@ def test_maybe_rewrite_cve_title_skips_blurb_without_cve():
     }
     m.maybe_rewrite_cve_title(entry)
     assert entry["title"].startswith("Some Tool is a")
+
+
+def test_load_retained_priors_excludes_deprecated():
+    prev = [
+        {"id": "INC-00001", "title": "kept"},
+        {"id": "INC-00002", "title": "deprecated"},
+    ]
+    out = m.load_retained_priors(prev, {"INC-00002"})
+    assert [e["id"] for e in out] == ["INC-00001"]
+
+
+def test_load_retained_priors_keeps_all_when_none_deprecated():
+    prev = [{"id": "INC-00001"}, {"id": "INC-00002"}]
+    out = m.load_retained_priors(prev, set())
+    assert len(out) == 2
+
+
+def test_load_retained_priors_skips_entries_without_id():
+    prev = [{"title": "no id"}, {"id": "INC-00003", "title": "ok"}]
+    out = m.load_retained_priors(prev, set())
+    assert [e["id"] for e in out] == ["INC-00003"]
+
+
+def test_load_retained_priors_all_deprecated_returns_empty():
+    prev = [{"id": "INC-00001"}, {"id": "INC-00002"}]
+    out = m.load_retained_priors(prev, {"INC-00001", "INC-00002"})
+    assert out == []
+
+
+class _FrozenDate(datetime.date):
+    """date subclass whose today() is pinned, for cross-day determinism tests."""
+    _pinned = datetime.date(2099, 6, 1)
+
+    @classmethod
+    def today(cls):
+        return cls._pinned
+
+
+def _oecd_entry(sid, title):
+    return {
+        "source_id": sid,
+        "title": title,
+        "description": "A description long enough to pass the minimum length filter.",
+        "year": 2026,
+        "date": "2026-04-01",
+        "attack_vector": "deepfake",
+        "severity": "High",
+        "references": [{"url": f"https://oecd.ai/en/incidents/{sid}"}],
+        "tags": ["oecd-aim"],
+    }
+
+
+def _setup_tmp_repo(tmp_path, monkeypatch):
+    data = tmp_path / "data"
+    ingest = tmp_path / "ingest"
+    data.mkdir()
+    ingest.mkdir()
+    monkeypatch.setattr(m, "DATA", data)
+    monkeypatch.setattr(m, "INGEST", ingest)
+    monkeypatch.setattr(m, "DEPRECATIONS_PATH", data / "id_deprecations.json")
+    monkeypatch.setattr(m, "CURATION_OVERRIDES_PATH", data / "curation_overrides.json")
+    return data, ingest
+
+
+def test_retention_keeps_dropped_incident_with_stable_id(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+
+    # First build: source emits two incidents.
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A"),
+         _oecd_entry("OECD-AIM-B", "Incident B")]
+    ), encoding="utf-8")
+    m.main()
+    first = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    id_by_src = {
+        s: e["id"] for e in first["incidents"] for s in e["source_ids"]
+    }
+    assert {"OECD-AIM-A", "OECD-AIM-B"} <= set(id_by_src)
+    assert len(id_by_src) == 2
+    b_id = id_by_src["OECD-AIM-B"]
+
+    # Second build: source dropped incident B (aged out / removed upstream).
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    m.main()
+    second = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    src_ids_second = {s for e in second["incidents"] for s in e["source_ids"]}
+
+    # B is retained, with the SAME id it had before.
+    assert "OECD-AIM-B" in src_ids_second, "dropped incident must be retained"
+    b_id_second = next(
+        e["id"] for e in second["incidents"] if "OECD-AIM-B" in e["source_ids"]
+    )
+    assert b_id_second == b_id
+
+
+def test_deprecated_id_is_not_resurrected(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    # Prior output contains INC-09999, which is recorded as deprecated.
+    (data / "incidents.json").write_text(_json.dumps({
+        "incidents": [{
+            **m.normalize_entry(_oecd_entry("OECD-AIM-DEAD", "Dead dup")),
+            "id": "INC-09999", "added": "2026-01-01", "updated": "2026-01-01",
+        }]
+    }), encoding="utf-8")
+    (data / "id_deprecations.json").write_text(_json.dumps({
+        "deprecations": [{"from": "INC-09999", "into": "INC-00001",
+                          "reason": "merged", "date": "2026-01-01"}]
+    }), encoding="utf-8")
+    # Current ingest has one live incident.
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-LIVE", "Live incident")]
+    ), encoding="utf-8")
+    m.main()
+    out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    src_ids = {s for e in out["incidents"] for s in e["source_ids"]}
+    assert "OECD-AIM-DEAD" not in src_ids, "deprecated entry must not be resurrected"
+    assert "OECD-AIM-LIVE" in src_ids, "live incident must still be present"
+
+
+def test_build_is_deterministic_across_days(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A"),
+         _oecd_entry("OECD-AIM-B", "Incident B")]
+    ), encoding="utf-8")
+
+    # Build on "day 1".
+    monkeypatch.setattr(m, "date", _FrozenDate)
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 1))
+    m.main()
+    day1 = (data / "incidents.json").read_text(encoding="utf-8")
+
+    # Rebuild on a LATER calendar day with identical inputs.
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 2))
+    m.main()
+    day2 = (data / "incidents.json").read_text(encoding="utf-8")
+
+    assert day1 == day2, "rebuild on a later UTC day must be byte-identical"
+
+
+def test_retention_topup_idempotent_after_drop(tmp_path, monkeypatch):
+    """Once a dropped incident is carried forward, further rebuilds with the
+    same inputs must be byte-stable (the top-up must not oscillate)."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A"),
+         _oecd_entry("OECD-AIM-B", "Incident B")]
+    ), encoding="utf-8")
+    m.main()
+
+    # B drops out of the source; it must be carried forward, then stay stable.
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    m.main()
+    second = (data / "incidents.json").read_text(encoding="utf-8")
+    m.main()
+    third = (data / "incidents.json").read_text(encoding="utf-8")
+
+    assert second == third, "retention top-up must be idempotent across rebuilds"
+    d = _json.loads(third)
+    assert d["incident_count"] == 2, "A (fresh) + B (carried forward)"
+    srcs = {s for e in d["incidents"] for s in e["source_ids"]}
+    assert {"OECD-AIM-A", "OECD-AIM-B"} <= srcs
+
+
+def test_retention_no_duplicate_when_prior_still_covered(tmp_path, monkeypatch):
+    """A prior whose source still emits it must NOT be carried as a duplicate —
+    the fresh build already represents it."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    m.main()
+    m.main()  # second build: prior has A and ingest still has A
+    d = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert d["incident_count"] == 1
+    assert sum(1 for e in d["incidents"] if "OECD-AIM-A" in e["source_ids"]) == 1
+
+
+def test_retention_carry_is_deterministic_across_days(tmp_path, monkeypatch):
+    """A carried-forward prior must not bump `generated`: rebuilding on a later
+    UTC day with the same inputs is byte-identical (CI drift check stays green)."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    monkeypatch.setattr(m, "date", _FrozenDate)
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 1))
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A"),
+         _oecd_entry("OECD-AIM-B", "Incident B")]
+    ), encoding="utf-8")
+    m.main()  # day 1: both present
+
+    # B drops out; it is carried forward on day 2.
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 2))
+    m.main()
+    day2 = (data / "incidents.json").read_text(encoding="utf-8")
+
+    # Day 3: later calendar day, identical inputs -> must be byte-identical.
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 3))
+    m.main()
+    day3 = (data / "incidents.json").read_text(encoding="utf-8")
+
+    assert day2 == day3, "carried-prior rebuild on a later UTC day must be byte-identical"

@@ -269,6 +269,25 @@ def normalize_body(body: dict, url: str) -> dict | None:
     }
 
 
+def union_with_existing(fresh: list[dict], existing: list[dict]) -> list[dict]:
+    """Union the fresh fetch with the previously-committed ingest file so the
+    OECD corpus only ever grows. Keyed by ``source_id`` (``OECD-AIM-<id>``):
+    fresh wins on conflict (latest content); entries present only in
+    ``existing`` (aged out of the newest-N sitemap window) are kept. Output is
+    sorted by ``source_id`` so the committed file has stable, deterministic
+    ordering (lexicographic by source_id; OECD ids are date/hash-suffixed strings, not bare integers)."""
+    by_id: dict[str, dict] = {}
+    for e in existing:
+        sid = e.get("source_id")
+        if sid:
+            by_id[sid] = e
+    for e in fresh:
+        sid = e.get("source_id")
+        if sid:
+            by_id[sid] = e
+    return sorted(by_id.values(), key=lambda e: e.get("source_id") or "")
+
+
 def main():
     limit_env = os.environ.get("OECD_AIM_LIMIT", str(DEFAULT_LIMIT))
     try:
@@ -318,7 +337,24 @@ def main():
     )
 
     out_path = INGEST / "oecd_aim_full_incidents.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+    existing: list[dict] = []
+    if out_path.exists():
+        try:
+            existing = json.loads(out_path.read_text(encoding="utf-8"))
+            if not isinstance(existing, list):
+                existing = []
+        except (ValueError, OSError):
+            existing = []
+    merged = union_with_existing(out, existing)
+    print(
+        f"[aim] union: {len(out)} kept + {len(existing)} existing "
+        f"-> {len(merged)} retained"
+    )
+    out_path.write_text(
+        json.dumps(merged, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     print(f"[aim] wrote -> {out_path}")
 
 
