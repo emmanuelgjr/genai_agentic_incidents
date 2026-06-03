@@ -32,14 +32,20 @@ language:
 pretty_name: GenAI & Agentic AI Security Incidents
 tags:
   - security
+  - cybersecurity
   - ai-safety
+  - ai-security
   - llm
+  - agentic-ai
   - incidents
+  - threat-intelligence
+  - prompt-injection
   - owasp
   - mitre-atlas
   - nist-ai-rmf
 task_categories:
   - text-classification
+  - text-retrieval
 size_categories:
   - 1K<n<10K
 configs:
@@ -49,23 +55,65 @@ configs:
 
 # GenAI & Agentic AI Security Incidents
 
-{count} real-world and research GenAI / agentic-AI security incidents, each mapped to
-**OWASP LLM Top 10 (2025)**, **OWASP Agentic (ASI) Top 10**, **NIST AI RMF**, and
-**MITRE ATLAS** (techniques + tactics). Dataset version `{version}`.
+**{count} real-world and research incidents** involving generative-AI and agentic-AI
+systems — prompt injection, jailbreaks, data exfiltration, deepfakes, model and
+supply-chain compromise, agent hijacking, and AI-enabled harms — each mapped to four
+industry frameworks. Dataset version `{version}`.
+
+Every incident is tagged with:
+
+- **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10`
+- **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10`
+- **NIST AI RMF (AI 100-1)** — `GOVERN` / `MAP` / `MEASURE` / `MANAGE`
+- **MITRE ATLAS** — techniques (`AML.T00xx`) and tactics (`AML.TA00xx`)
+
+## Quickstart
 
 ```python
 from datasets import load_dataset
 ds = load_dataset("{repo}", split="train")
-ds = ds.filter(lambda r: "LLM01" in (r["owasp_llm"] or []))   # prompt-injection incidents
+
+# prompt-injection incidents
+ds.filter(lambda r: "LLM01" in (r["owasp_llm"] or []))
+
+# only maintainer-reviewed entries
+ds.filter(lambda r: r["quality_tier"] in ("reviewed", "curated"))
 ```
 
-- Code: <https://github.com/emmanuelgjr/genai_incidents>
-- Schema & field reference: [`docs/DATA_DICTIONARY.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATA_DICTIONARY.md)
-- Provenance, scope & limitations: [`docs/DATASHEET.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATASHEET.md)
-- Citation: see [`CITATION.cff`](https://github.com/emmanuelgjr/genai_incidents/blob/main/CITATION.cff) · DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676)
+## What's inside
 
-**Licence:** data CC-BY-4.0, code MIT. Each entry carries a `quality_tier`
-(`curated` / `reviewed` / `auto`) so consumers can filter by vetting level.
+Key fields per record (full reference in the data dictionary):
+
+- `id`, `title`, `description`, `date`, `year`, `severity`
+- `attack_vector` — normalised exploit/harm class (e.g. `prompt-injection`, `deepfake`, `rce`)
+- `owasp_llm`, `owasp_asi`, `nist_ai_rmf`, `mitre_atlas`, `mitre_atlas_tactics` — framework mappings
+- `cve_ids`, `cwe_ids`, `cvss_score` — where applicable
+- `references` — source URLs · `source_ids` — upstream provenance
+- `quality_tier` — `curated` / `reviewed` / `auto` (filter by vetting level)
+- `corpus` — `security` or `ai-harm`
+
+## Sources & provenance
+
+Aggregated and de-duplicated from AIID, OECD AI Incidents Monitor, AIAAIC, MITRE ATLAS,
+AVID, MIT FutureTech AI Risk Repository, NVD / GitHub Security Advisories / OSV, garak,
+promptfoo, red-team benchmark catalogues, and researcher blogs / vendor threat reports.
+
+## Intended uses & limitations
+
+Built for security research, red-team scenario design, taxonomy / benchmark work, and
+trend analysis. It is **not** an exhaustive census: coverage skews toward
+English-language, publicly-reported events, and `auto`-tier rows are bulk-ingested
+without individual review — filter on `quality_tier` for higher-confidence subsets. See
+the datasheet for full scope, collection method, and limitations.
+
+## Links
+
+- **Code & issues:** <https://github.com/emmanuelgjr/genai_incidents>
+- **Field reference:** [`docs/DATA_DICTIONARY.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATA_DICTIONARY.md)
+- **Provenance, scope & limitations:** [`docs/DATASHEET.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATASHEET.md)
+- **Citation:** [`CITATION.cff`](https://github.com/emmanuelgjr/genai_incidents/blob/main/CITATION.cff) · DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676)
+
+**Licence:** data **CC-BY-4.0**, code MIT.
 """
 
 

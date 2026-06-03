@@ -3,13 +3,14 @@
 [![Validate dataset](https://github.com/emmanuelgjr/genai_incidents/actions/workflows/validate.yml/badge.svg)](https://github.com/emmanuelgjr/genai_incidents/actions/workflows/validate.yml)
 [![PyPI version](https://img.shields.io/pypi/v/genai-incidents?logo=pypi&logoColor=white&label=pypi)](https://pypi.org/project/genai-incidents/)
 [![Python versions](https://img.shields.io/pypi/pyversions/genai-incidents?logo=python&logoColor=white)](https://pypi.org/project/genai-incidents/)
+[![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-dataset-yellow)](https://huggingface.co/datasets/emmanuelgjr/genai-incidents)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20248676.svg)](https://doi.org/10.5281/zenodo.20248676)
 [![License: MIT (code)](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![License: CC-BY-4.0 (data)](https://img.shields.io/badge/data-CC--BY--4.0-lightgrey.svg)](LICENSE-DATA)
 
 - 🔎 **Searchable site:** <https://emmanuelgjr.github.io/genai_incidents/>
 - 📦 **Python:** `pip install genai-incidents`
-- 🤗 **Hugging Face:** `load_dataset("emmanuelgjr/genai-incidents")` — built with `make huggingface`
+- 🤗 **Hugging Face:** [`emmanuelgjr/genai-incidents`](https://huggingface.co/datasets/emmanuelgjr/genai-incidents) — `load_dataset("emmanuelgjr/genai-incidents")` (built with `make huggingface`)
 - 🛰️ **STIX 2.1 bundle** (for OpenCTI / MISP / TAXII): <https://emmanuelgjr.github.io/genai_incidents/data/incidents.stix.json> — incidents as `x-genai-incident` SDOs linked to MITRE ATLAS `attack-pattern`s and CVE `vulnerability`s. Build locally with `make stix`.
 - 📖 **Field reference:** [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) · **Provenance & limitations:** [`docs/DATASHEET.md`](docs/DATASHEET.md)
 - 🪪 **DOI:** [`10.5281/zenodo.20248676`](https://doi.org/10.5281/zenodo.20248676) — see [`CITATION.cff`](CITATION.cff)
