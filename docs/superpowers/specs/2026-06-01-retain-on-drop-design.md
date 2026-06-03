@@ -71,41 +71,60 @@ committed OECD ingest file only grows; nothing ages out.
 
 ## Part B — build-level retention backstop (`scripts/merge_and_dedupe.py`)
 
-Add **step 2b** in `main()`, immediately after the ingest files are loaded
-(step 2) and before dedupe (step 3):
+> **Design revised during implementation.** The original plan re-fed prior
+> incidents into `all_entries` *before* dedupe (a "step 2b"). Implementation
+> testing showed that re-running already-built records through the raw-ingest
+> dedupe is **non-idempotent** — the build oscillated (7725 → 7719 → 7725) and
+> **silently dropped 17 CVEs** by exposing a latent dedupe bug (see "Discovered
+> bug" below). The retention was therefore reworked as a **post-build top-up**
+> that bypasses dedupe entirely.
 
-1. Read the previous `data/incidents.json` (reuse the already-open read in
-   `_load_prev_state` or read once and pass through).
-2. Build the deprecations `from`-set from `id_deprecations.json`.
-3. For each prior incident whose `id` is **not** in the deprecations set,
-   append it to `all_entries`.
+Add **step 6c** in `main()`, *after* IDs are assigned (step 6) and *before*
+`generated` is computed (step 7):
 
-The existing dedup machinery then handles everything:
+1. Compute `covered_keys` — every `source_id` + `cve_id` present in the
+   freshly-built `surviving` set.
+2. For each prior incident from `load_retained_priors(...)` (i.e. not
+   explicitly deprecated): if **none** of its `source_id`/`cve_id` keys are in
+   `covered_keys` (and its id isn't already used), the fresh build no longer
+   represents it → append it **verbatim** to `surviving`, keeping its `id`,
+   `added`, and `updated`. Otherwise skip it (already represented).
 
-- A prior incident that also appears in a fresh ingest matches on
-  `source_id` / CVE / URL / title and **merges**. Ingest entries are appended
-  *before* priors, so the fresh entry is the dedup survivor and the prior merges
-  into it (fresh content wins).
-- A prior incident with no fresh match **survives on its own**.
+Key properties:
 
-Prior entries flow through the **same** normalize → finalize-vector →
-seed-frameworks → curation-overrides → `_apply_history` path as everything else,
-so a retained entry is treated identically to a freshly-ingested one.
+- The fresh ingest→dedupe build is **untouched** — byte-identical to the
+  pre-retention pipeline. Retention only *adds* uncovered priors.
+- A carried prior is preserved exactly as last published (not re-normalised,
+  re-classified, or re-deduped), which is the correct archival semantic.
+- A prior still emitted by any source is covered by the fresh build, so it is
+  **not** duplicated.
 
 ### Determinism (the critical constraint)
 
 The build must rebuild byte-identically across UTC days (see
-`pipeline-determinism`). Retention is safe because:
+`pipeline-determinism`). The top-up is safe because:
 
-- A retained entry's content is unchanged from the previous output, so its
-  `_content_snapshot` matches the stored snapshot and `_apply_history` preserves
-  `updated` — no spurious bump, no `generated` flap, drift check stays clean.
-- Idempotent: feeding the output back in produces the same set of survivors.
-- Deterministic ordering: priors are appended in their stored order (stable by
-  `id`); fresh-vs-prior conflicts always resolve to the fresh survivor.
+- The fresh build is deterministic exactly as before (unchanged code path).
+- A carried prior keeps its stored `added`/`updated` (not today's date), so it
+  never triggers an `updated` bump or a `generated` flap.
+- Idempotent: on the next rebuild the carried prior is still uncovered (its
+  source is still gone) → carried again, same id/timestamps → identical output.
+  Verified on real data: 3 consecutive rebuilds are byte-identical and equal to
+  the pre-change committed output (retention carries 0 until a source actually
+  drops something).
 
-This is the area to test hardest, given the prior `attack_vector`-before-
-`_apply_history` determinism bug.
+### Discovered bug (pre-existing, deferred to a follow-up PR)
+
+The dedupe indexes (`by_title`, and partially `by_cve`/`by_src`/`by_url`) can
+hold references to **tombstoned** entries: `by_title` is never updated on a
+transitive merge, and `_reindex` iterates a stale list snapshot so it misses
+keys newly absorbed by `merge_into`. A later entry that matches such a stale key
+is `merge_into`'d a dead entry and its content is silently dropped. This is
+reproducible with a 4-entry ingest fixture and **no retention**, so it is a
+latent core-dedupe bug — retention merely amplified it. It is dormant on current
+real data (the committed build is stable and lossless). **Decision: ship the
+safe top-up now; fix the core dedupe bug in a separate focused PR** (see
+`docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md`).
 
 ## Testing
 

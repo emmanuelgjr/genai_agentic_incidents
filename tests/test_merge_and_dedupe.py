@@ -498,3 +498,43 @@ def test_build_is_deterministic_across_days(tmp_path, monkeypatch):
     day2 = (data / "incidents.json").read_text(encoding="utf-8")
 
     assert day1 == day2, "rebuild on a later UTC day must be byte-identical"
+
+
+def test_retention_topup_idempotent_after_drop(tmp_path, monkeypatch):
+    """Once a dropped incident is carried forward, further rebuilds with the
+    same inputs must be byte-stable (the top-up must not oscillate)."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A"),
+         _oecd_entry("OECD-AIM-B", "Incident B")]
+    ), encoding="utf-8")
+    m.main()
+
+    # B drops out of the source; it must be carried forward, then stay stable.
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    m.main()
+    second = (data / "incidents.json").read_text(encoding="utf-8")
+    m.main()
+    third = (data / "incidents.json").read_text(encoding="utf-8")
+
+    assert second == third, "retention top-up must be idempotent across rebuilds"
+    d = _json.loads(third)
+    assert d["incident_count"] == 2, "A (fresh) + B (carried forward)"
+    srcs = {s for e in d["incidents"] for s in e["source_ids"]}
+    assert {"OECD-AIM-A", "OECD-AIM-B"} <= srcs
+
+
+def test_retention_no_duplicate_when_prior_still_covered(tmp_path, monkeypatch):
+    """A prior whose source still emits it must NOT be carried as a duplicate —
+    the fresh build already represents it."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    m.main()
+    m.main()  # second build: prior has A and ingest still has A
+    d = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert d["incident_count"] == 1
+    assert sum(1 for e in d["incidents"] if "OECD-AIM-A" in e["source_ids"]) == 1

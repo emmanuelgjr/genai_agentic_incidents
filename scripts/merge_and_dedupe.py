@@ -858,22 +858,6 @@ def main():
             all_entries.extend(kept)
             print(f"[{src.name:40s}] {len(raw):4d} raw -> {len(kept):4d} normalized")
 
-    # 2b) Retention backstop: re-feed previously-published incidents (minus
-    #     explicitly deprecated ids) as build inputs. Appended AFTER the ingest
-    #     feeds so a prior that still has a live source merges INTO the fresh
-    #     entry (fresh content wins); a prior with no live source survives.
-    #     This makes the dataset archival — no source dropping an entry can
-    #     silently delete it. See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
-    prev_incidents = _load_prev_incidents()
-    retained = load_retained_priors(prev_incidents, _load_deprecated_ids())
-    kept_prior = []
-    for r in retained:
-        norm = normalize_entry(r)
-        if norm is not None:
-            kept_prior.append(norm)
-    all_entries.extend(kept_prior)
-    print(f"[retention] re-fed {len(kept_prior)}/{len(retained)} prior incident(s) as inputs")
-
     # 3) Dedupe
     by_cve: dict[str, dict] = {}
     by_url: dict[str, dict] = {}
@@ -1050,6 +1034,31 @@ def main():
             deprecations_new.append(
                 {"from": old_id, "into": target_id, "reason": "transitive-merge", "date": today_str}
             )
+
+    # 6c) Retention top-up: restore previously-published incidents that the
+    #     fresh build no longer covers (their upstream source dropped them), so
+    #     the dataset is archival and never silently loses an incident. A prior
+    #     is restored only if it was not explicitly deprecated AND none of its
+    #     source_ids / cve_ids are already represented in the fresh build. It is
+    #     carried VERBATIM — keeping its id / added / updated and bypassing
+    #     dedupe — because re-feeding already-built records through the
+    #     raw-ingest dedupe is non-idempotent (it re-canonicalises and can
+    #     oscillate). See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
+    covered_keys: set[str] = set()
+    for e in surviving:
+        covered_keys.update(e.get("cve_ids") or [])
+        covered_keys.update(e.get("source_ids") or [])
+    carried = 0
+    for prior in load_retained_priors(_load_prev_incidents(), _load_deprecated_ids()):
+        pid = prior.get("id")
+        keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
+        if not keys or (keys & covered_keys) or pid in used_ids:
+            continue
+        surviving.append(prior)
+        covered_keys.update(keys)
+        used_ids.add(pid)
+        carried += 1
+    print(f"[retention] carried forward {carried} prior incident(s) no longer in any source")
 
     deduped = surviving
 

@@ -274,7 +274,14 @@ git commit -m "feat(merge): add retention helpers (load_retained_priors)"
 
 ---
 
-## Task 4: Build retention — wire "step 2b" into `merge_and_dedupe.main()`
+## Task 4: Build retention — wire retention into `merge_and_dedupe.main()`
+
+> **Revised during implementation.** The "step 2b re-feed before dedupe"
+> approach below proved non-idempotent and exposed a latent dedupe bug (it
+> dropped 17 CVEs). It was reworked as a **post-build top-up (step 6c)** that
+> appends only uncovered priors *after* dedupe, verbatim. See the updated
+> `docs/superpowers/specs/2026-06-01-retain-on-drop-design.md` (Part B) and the
+> follow-up `docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md`.
 
 **Files:**
 - Modify: `scripts/merge_and_dedupe.py` — `main()`, immediately after the ingest-loading loop (currently ends ~line 814, the `print(f"[{src.name:40s}] ...")` line)
