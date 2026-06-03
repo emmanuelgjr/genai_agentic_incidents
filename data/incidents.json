@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "generated": "2026-05-30",
   "description": "Single source of truth for GenAI and agentic AI security incidents. Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable.",
   "schema": "schema/incident.schema.json",
