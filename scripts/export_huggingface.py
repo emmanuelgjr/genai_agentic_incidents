@@ -148,7 +148,12 @@ def main() -> None:
             sys.exit(1)
         from huggingface_hub import HfApi
         api = HfApi(token=token)
-        api.create_repo(args.repo, repo_type="dataset", exist_ok=True)
+        # Only create the repo if it doesn't exist yet. Calling create_repo on
+        # every publish (even with exist_ok=True) hits HF's repo-create rate
+        # limit and 429s on repeated/automated runs; the lightweight existence
+        # check avoids that. upload_folder uses separate, higher limits.
+        if not api.repo_exists(args.repo, repo_type="dataset"):
+            api.create_repo(args.repo, repo_type="dataset")
         api.upload_folder(folder_path=str(OUT), repo_id=args.repo, repo_type="dataset")
         print(f"[hf] pushed to https://huggingface.co/datasets/{args.repo}")
 
