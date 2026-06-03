@@ -693,13 +693,10 @@ def _load_deprecated_ids() -> set[str]:
 def load_retained_priors(
     prev_incidents: list[dict], deprecated_ids: set[str]
 ) -> list[dict]:
-    """Select previously-published incidents to carry forward into the build.
-
-    Every prior incident is re-fed as a build input EXCEPT those whose id was
-    explicitly deprecated (merged away). When re-run through dedupe, a prior
-    that still has a live source merges into the fresh entry; a prior with no
-    live source survives on its own — so the dataset never silently drops an
-    incident just because an upstream feed stopped returning it."""
+    """Return previously-published incidents eligible for retention: all priors
+    that have an id and were NOT explicitly deprecated. This applies only the
+    deprecation filter; the caller (the step 6c top-up in main) decides which of
+    these the fresh build no longer covers and appends those verbatim."""
     out: list[dict] = []
     for e in prev_incidents:
         eid = e.get("id")
@@ -1048,8 +1045,9 @@ def main():
     for e in surviving:
         covered_keys.update(e.get("cve_ids") or [])
         covered_keys.update(e.get("source_ids") or [])
+    eligible = load_retained_priors(_load_prev_incidents(), _load_deprecated_ids())
     carried = 0
-    for prior in load_retained_priors(_load_prev_incidents(), _load_deprecated_ids()):
+    for prior in eligible:
         pid = prior.get("id")
         keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
         if not keys or (keys & covered_keys) or pid in used_ids:
@@ -1058,7 +1056,7 @@ def main():
         covered_keys.update(keys)
         used_ids.add(pid)
         carried += 1
-    print(f"[retention] carried forward {carried} prior incident(s) no longer in any source")
+    print(f"[retention] carried {carried}/{len(eligible)} eligible prior(s) no longer in any source")
 
     deduped = surviving
 

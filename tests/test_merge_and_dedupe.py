@@ -538,3 +538,31 @@ def test_retention_no_duplicate_when_prior_still_covered(tmp_path, monkeypatch):
     d = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
     assert d["incident_count"] == 1
     assert sum(1 for e in d["incidents"] if "OECD-AIM-A" in e["source_ids"]) == 1
+
+
+def test_retention_carry_is_deterministic_across_days(tmp_path, monkeypatch):
+    """A carried-forward prior must not bump `generated`: rebuilding on a later
+    UTC day with the same inputs is byte-identical (CI drift check stays green)."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    monkeypatch.setattr(m, "date", _FrozenDate)
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 1))
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A"),
+         _oecd_entry("OECD-AIM-B", "Incident B")]
+    ), encoding="utf-8")
+    m.main()  # day 1: both present
+
+    # B drops out; it is carried forward on day 2.
+    (ingest / "src.json").write_text(_json.dumps(
+        [_oecd_entry("OECD-AIM-A", "Incident A")]
+    ), encoding="utf-8")
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 2))
+    m.main()
+    day2 = (data / "incidents.json").read_text(encoding="utf-8")
+
+    # Day 3: later calendar day, identical inputs -> must be byte-identical.
+    monkeypatch.setattr(_FrozenDate, "_pinned", datetime.date(2099, 6, 3))
+    m.main()
+    day3 = (data / "incidents.json").read_text(encoding="utf-8")
+
+    assert day2 == day3, "carried-prior rebuild on a later UTC day must be byte-identical"
