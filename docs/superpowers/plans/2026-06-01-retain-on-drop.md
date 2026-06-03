@@ -282,6 +282,10 @@ git commit -m "feat(merge): add retention helpers (load_retained_priors)"
 > appends only uncovered priors *after* dedupe, verbatim. See the updated
 > `docs/superpowers/specs/2026-06-01-retain-on-drop-design.md` (Part B) and the
 > follow-up `docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md`.
+>
+> **The "step 2b" code block below is the ORIGINAL (superseded) approach,
+> retained only for history. The shipped implementation is the step-6c
+> post-build top-up described in the spec — do not implement the block below.**
 
 **Files:**
 - Modify: `scripts/merge_and_dedupe.py` — `main()`, immediately after the ingest-loading loop (currently ends ~line 814, the `print(f"[{src.name:40s}] ...")` line)

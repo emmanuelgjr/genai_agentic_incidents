@@ -1047,16 +1047,25 @@ def main():
         covered_keys.update(e.get("source_ids") or [])
     eligible = load_retained_priors(_load_prev_incidents(), _load_deprecated_ids())
     carried = 0
+    no_keys = 0
     for prior in eligible:
         pid = prior.get("id")
         keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
-        if not keys or (keys & covered_keys) or pid in used_ids:
+        if not keys:
+            # No source_id/cve_id anchor → can't test coverage. This should
+            # never happen for committed output (normalize_entry rejects keyless
+            # rows), so surface it loudly rather than dropping it silently.
+            no_keys += 1
+            continue
+        if (keys & covered_keys) or pid in used_ids:
             continue
         surviving.append(prior)
         covered_keys.update(keys)
         used_ids.add(pid)
         carried += 1
     print(f"[retention] carried {carried}/{len(eligible)} eligible prior(s) no longer in any source")
+    if no_keys:
+        print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")
 
     deduped = surviving
 
