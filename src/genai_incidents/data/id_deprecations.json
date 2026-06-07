@@ -1,1 +1,40 @@
-{"deprecations": []}
+{
+  "deprecations": [
+    {
+      "from": "INC-01580",
+      "into": "INC-01574",
+      "reason": "merged",
+      "date": "2026-06-07"
+    },
+    {
+      "from": "INC-02386",
+      "into": "INC-02125",
+      "reason": "merged",
+      "date": "2026-06-07"
+    },
+    {
+      "from": "INC-02523",
+      "into": "INC-01628",
+      "reason": "merged",
+      "date": "2026-06-07"
+    },
+    {
+      "from": "INC-03128",
+      "into": "INC-00754",
+      "reason": "merged",
+      "date": "2026-06-07"
+    },
+    {
+      "from": "INC-03626",
+      "into": "INC-02125",
+      "reason": "merged",
+      "date": "2026-06-07"
+    },
+    {
+      "from": "INC-04722",
+      "into": "INC-02125",
+      "reason": "merged",
+      "date": "2026-06-07"
+    }
+  ]
+}
