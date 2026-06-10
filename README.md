@@ -1,5 +1,6 @@
 # GenAI & Agentic AI Security Incidents
 
+[![Incidents](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Femmanuelgjr%2Fgenai_incidents%2Fmain%2Fdata%2Fstats.json&query=%24.incident_count&label=incidents&color=ffb000&logo=databricks&logoColor=white)](https://emmanuelgjr.github.io/genai_incidents/)
 [![Validate dataset](https://github.com/emmanuelgjr/genai_incidents/actions/workflows/validate.yml/badge.svg)](https://github.com/emmanuelgjr/genai_incidents/actions/workflows/validate.yml)
 [![PyPI version](https://img.shields.io/pypi/v/genai-incidents?logo=pypi&logoColor=white&label=pypi)](https://pypi.org/project/genai-incidents/)
 [![Python versions](https://img.shields.io/pypi/pyversions/genai-incidents?logo=python&logoColor=white)](https://pypi.org/project/genai-incidents/)
@@ -16,7 +17,7 @@
 - 🪪 **DOI:** [`10.5281/zenodo.20248676`](https://doi.org/10.5281/zenodo.20248676) — see [`CITATION.cff`](CITATION.cff)
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
-A single source of truth for **GenAI and agentic AI security incidents**, mapped to:
+A single source of truth of **[12,000+ GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
 
 - **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10`
 - **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10`
