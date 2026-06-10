@@ -128,3 +128,30 @@ def test_severity_stack_renders_legend(tmp_path):
     body = out.read_text(encoding="utf-8")
     assert "Critical" in body and "High" in body
     assert "2025" in body and "2026" in body
+
+
+def test_liquid_raw_block_wraps_and_defangs_endraw():
+    body = [
+        "Advisory text with {{ user.input }} and {% for x in y %} examples",
+        "attempt to break out: {% endraw %} and {%- endraw -%}",
+    ]
+    wrapped = r.liquid_raw_block(body)
+    assert wrapped[0] == "{% raw %}"
+    assert wrapped[-1] == "{% endraw %}"
+    inner = "\n".join(wrapped[1:-1])
+    assert "{{ user.input }}" in inner          # benign Liquid left as-is
+    assert "{% endraw %}" not in inner          # break-out sequences defanged
+    assert "{ % endraw %}" in inner
+
+
+def test_incident_page_body_is_liquid_safe():
+    e = {
+        "id": "INC-99999", "title": "SSTI demo {{ 7*7 }}", "year": 2026,
+        "severity": "High", "date": "2026-01-01",
+        "description": "Exploit uses {% for i in (1..9) %} loops.",
+        "source_ids": ["TEST-1"], "references": [], "tags": [],
+    }
+    page = r.render_incident_page(e)
+    front, _, body = page.partition("---\n\n")
+    assert body.lstrip().startswith("{% raw %}")
+    assert body.rstrip().endswith("{% endraw %}")
