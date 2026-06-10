@@ -106,6 +106,38 @@ NVD_KEYWORDS = [
     "machine learning",
     "deep learning",
     "Llama",
+    # Expanded 2026-06: high-CVE-count AI/ML products missing above.
+    "Langflow",
+    "LiteLLM",
+    "LangGraph",
+    "Rasa",
+    "NeMo",
+    "DeepSpeed",
+    "InvokeAI",
+    "text-generation-webui",
+    "llama.cpp",
+    "GPT4All",
+    "LocalAI",
+    "LibreChat",
+    "text generation inference",
+    "SGLang",
+    "LMDeploy",
+    "TensorRT-LLM",
+    "OpenVINO",
+    "DeepSeek",
+    "Mistral",
+    "Qwen",
+    "pgvector",
+    "FAISS",
+    "Haystack",
+    "Semantic Kernel",
+    "PrivateGPT",
+    "AutoGPT",
+    "MetaGPT",
+    "Label Studio",
+    "ZenML",
+    "ClearML",
+    "Weights & Biases",
 ]
 
 # AI / ML / LLM context filters - a CVE is kept only if its description or
@@ -125,6 +157,14 @@ AI_CONTEXT_TOKENS = [
     "cursor", "copilot", "codeium", "cody", "sourcegraph", "fine-tuning",
     "model serving", "inference server", "ai-driven", "ai assistant",
     "ai chatbot", "ai chat", "generative ai", "genai", "foundation model",
+    # Expanded 2026-06.
+    "langflow", "litellm", "langgraph", "rasa", "nemo", "deepspeed",
+    "invokeai", "text-generation-webui", "llama.cpp", "llama-cpp", "gpt4all",
+    "localai", "librechat", "text generation inference", "sglang", "lmdeploy",
+    "tensorrt-llm", "tensorrt", "openvino", "deepseek", "qwen", "pgvector",
+    "faiss", "haystack", "semantic kernel", "semantic-kernel", "privategpt",
+    "autogpt", "metagpt", "label studio", "label-studio", "zenml", "clearml",
+    "weights & biases", "wandb", "diffusers", "litserve", "guardrails",
 ]
 
 
@@ -147,6 +187,13 @@ AI_PRODUCT_CPE_FRAGMENTS = [
     "openai", "anthropic", "google", "deepset", "haystack",
     "label_studio", "labelstud.io", "label-studio", "binplist", "joblib",
     "scikit-learn", "scikit_learn", "tensorflow_serving",
+    # Expanded 2026-06.
+    "langflow", "langgraph", "rasa", "deepspeed", "invokeai",
+    "text-generation-webui", "llama.cpp", "llama_cpp", "gpt4all", "localai",
+    "librechat", "sglang", "lmdeploy", "tensorrt", "openvino", "deepseek",
+    "qwen", "pgvector", "faiss", "semantic-kernel", "privategpt", "autogpt",
+    "metagpt", "zenml", "clearml", "wandb", "diffusers", "litserve",
+    "guardrails_ai", "guardrails-ai", "vertexai", "sagemaker",
 ]
 
 
@@ -531,7 +578,7 @@ def nvd_to_record(v: dict) -> dict | None:
 # ----------------------------------------------------------------------------
 GHSA_QUERY = """
 query($after: String) {
-  securityAdvisories(first: 100, classifications: GENERAL, after: $after, orderBy: {field: PUBLISHED_AT, direction: DESC}) {
+  securityAdvisories(first: 100, classifications: %s, after: $after, orderBy: {field: PUBLISHED_AT, direction: DESC}) {
     nodes {
       ghsaId
       summary
@@ -550,27 +597,32 @@ query($after: String) {
 """
 
 
-def fetch_ghsa(max_pages: int = 60) -> list[dict]:
+def fetch_ghsa(max_pages: int = 400, classification: str = "GENERAL") -> list[dict]:
     """
     Fetch recent GHSA advisories via `gh api graphql`. We page through
     until `max_pages` pages or until the publish date drops below 2022
-    (older advisories are unlikely to be AI/agentic).
+    (older advisories are unlikely to be AI/agentic). ``max_pages`` is set
+    high enough that the 2022 date floor — not the page cap — is what stops
+    paging, so coverage is complete back to 2022 rather than truncated at
+    the newest N. ``classification`` is GENERAL (CVE-style advisories) or
+    MALWARE (malicious-package advisories, e.g. AI typosquats).
     """
-    cache_file = CACHE_GHSA / "advisories.json"
+    cache_file = CACHE_GHSA / f"advisories_{classification.lower()}.json"
     if cache_file.exists():
         try:
             cached = json.loads(cache_file.read_text("utf-8"))
             if isinstance(cached, list):
-                print(f"  [cache] ghsa: {len(cached)} advisories", flush=True)
+                print(f"  [cache] ghsa/{classification}: {len(cached)} advisories", flush=True)
                 return cached
         except Exception:  # noqa: BLE001
             pass
 
+    query = GHSA_QUERY % classification
     all_nodes: list[dict] = []
     cursor: str | None = None
     for page in range(max_pages):
         after_arg = ["-f", f"after={cursor}"] if cursor else []
-        cmd = ["gh", "api", "graphql", "-f", f"query={GHSA_QUERY}", *after_arg]
+        cmd = ["gh", "api", "graphql", "-f", f"query={query}", *after_arg]
         try:
             # encoding= matters: text=True alone decodes with the locale
             # codec (cp1252 on Windows) and UnicodeDecodeErrors on UTF-8
@@ -600,10 +652,10 @@ def fetch_ghsa(max_pages: int = 60) -> list[dict]:
             break
         time.sleep(1.5)
         if (page + 1) % 5 == 0:
-            print(f"  [ghsa]  page {page + 1}: total {len(all_nodes)}", flush=True)
+            print(f"  [ghsa/{classification}] page {page + 1}: total {len(all_nodes)}", flush=True)
 
     cache_file.write_text(json.dumps(all_nodes), encoding="utf-8")
-    print(f"  [ghsa]  fetched {len(all_nodes)} advisories", flush=True)
+    print(f"  [ghsa/{classification}] fetched {len(all_nodes)} advisories", flush=True)
     return all_nodes
 
 
@@ -619,12 +671,21 @@ AI_ECOSYSTEM_PACKAGES = {
         "pinecone", "gradio", "streamlit", "comfyui", "diffusers",
         "litserve", "lobe", "open-webui", "dify", "n8n", "agentops",
         "pyspark", "ml-",  "ml_",
+        # Expanded 2026-06.
+        "langflow", "langgraph", "rasa", "deepspeed", "llama-cpp-python",
+        "fastchat", "text-generation", "localai", "privategpt", "autogpt",
+        "metagpt", "zenml", "clearml", "wandb", "faiss", "pgvector",
+        "semantic-kernel", "guidance", "instructor", "dspy", "outlines",
+        "vertexai", "sagemaker", "nemo", "openvino", "sglang", "lmdeploy",
     },
     "npm": {
         "langchain", "llamaindex", "vllm", "openai", "anthropic",
         "@langchain", "@huggingface", "@modelcontextprotocol", "mcp-",
         "flowise", "n8n", "lobe-chat", "open-webui", "anything-llm",
         "@vercel/ai", "ai-",
+        # Expanded 2026-06.
+        "librechat", "@anthropic-ai", "@openai", "ollama", "@mistralai",
+        "langgraph", "@langchain/", "transformers.js", "@xenova/transformers",
     },
     "go": {"langchaingo", "ollama", "openai-go"},
     "rubygems": {"langchainrb", "openai", "anthropic"},
@@ -649,7 +710,7 @@ def ghsa_is_ai(node: dict) -> bool:
     return any(tok in blob for tok in AI_CONTEXT_TOKENS)
 
 
-def ghsa_to_record(node: dict) -> dict | None:
+def ghsa_to_record(node: dict, malware: bool = False) -> dict | None:
     if not ghsa_is_ai(node):
         return None
 
@@ -703,6 +764,8 @@ def ghsa_to_record(node: dict) -> dict | None:
     title = (node.get("summary") or description.splitlines()[0])[:200]
 
     tags = ["cve" if cve_id else "ghsa", "ghsa"]
+    if malware:
+        tags += ["malicious-package", "supply-chain"]
     if attack_vector and attack_vector != "other":
         tags.append(attack_vector)
     for p in pkgs:
@@ -719,7 +782,7 @@ def ghsa_to_record(node: dict) -> dict | None:
         "title": title,
         "date": date_str,
         "year": year,
-        "category": "vulnerability-disclosure",
+        "category": "threat-report" if malware else "vulnerability-disclosure",
         "description": description[:1500],
         "attack_vector": attack_vector,
         "affected": affected,
@@ -924,26 +987,31 @@ def main():
     print(f"  -> {kept_nvd} NVD CVEs passed AI-context filter", flush=True)
 
     print("=== Phase 2: GHSA scan ===", flush=True)
-    ghsa_nodes = fetch_ghsa(max_pages=60)
-    kept_ghsa = 0
-    for node in ghsa_nodes:
-        rec = ghsa_to_record(node)
-        if not rec:
-            continue
-        sid = rec["source_id"]
-        # If we already have the CVE from NVD, merge GHSA refs in instead.
-        if sid in records:
-            existing = records[sid]
-            seen_urls = {r["url"] for r in existing["references"]}
-            for r in rec["references"]:
-                if r["url"] not in seen_urls:
-                    existing["references"].append(r)
-                    seen_urls.add(r["url"])
-            existing["tags"] = sorted(set(existing["tags"] + rec["tags"]))
-            continue
-        records[sid] = rec
-        kept_ghsa += 1
-    print(f"  -> {kept_ghsa} new GHSA-only entries added", flush=True)
+    # Two passes: GENERAL (CVE-style advisories) and MALWARE (malicious
+    # packages — AI-ecosystem typosquats and trojaned deps). Both are paged
+    # back to the 2022 floor, not capped at the newest N.
+    for classification in ("GENERAL", "MALWARE"):
+        is_malware = classification == "MALWARE"
+        ghsa_nodes = fetch_ghsa(classification=classification)
+        kept_ghsa = 0
+        for node in ghsa_nodes:
+            rec = ghsa_to_record(node, malware=is_malware)
+            if not rec:
+                continue
+            sid = rec["source_id"]
+            # If we already have this id, merge GHSA refs in instead.
+            if sid in records:
+                existing = records[sid]
+                seen_urls = {r["url"] for r in existing["references"]}
+                for r in rec["references"]:
+                    if r["url"] not in seen_urls:
+                        existing["references"].append(r)
+                        seen_urls.add(r["url"])
+                existing["tags"] = sorted(set(existing["tags"] + rec["tags"]))
+                continue
+            records[sid] = rec
+            kept_ghsa += 1
+        print(f"  -> {kept_ghsa} new GHSA/{classification} entries added", flush=True)
 
     print("=== Phase 3: OSV ecosystem scan ===", flush=True)
     osv_vulns = fetch_osv()
