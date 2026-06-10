@@ -47,9 +47,12 @@ jobs:
           bundler-cache: true
           working-directory: docs
       - name: Build site with Jekyll
+        # The Gemfile lives in docs/; point bundler at it while keeping the
+        # source/destination paths repo-root-relative.
         run: bundle exec jekyll build --source docs --destination ./_site --trace
         env:
           JEKYLL_ENV: production
+          BUNDLE_GEMFILE: ${{ github.workspace }}/docs/Gemfile
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
