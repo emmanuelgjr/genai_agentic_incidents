@@ -35,18 +35,51 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Refresh AIRI Navigator
+        id: ingest_airi
         run: python scripts/ingest_airi_navigator.py
         continue-on-error: true
 
       - name: Refresh AIAAIC sheet
+        id: ingest_aiaaic
         run: python scripts/ingest_aiaaic_sheet.py
         continue-on-error: true
 
       - name: Refresh OECD AI Incidents Monitor
+        id: ingest_oecd
         env:
           OECD_AIM_LIMIT: ${{ github.event.inputs.oecd_aim_limit || '3000' }}
         run: python scripts/ingest_oecd_aim.py
         continue-on-error: true
+
+      # The ingest steps are continue-on-error so one flaky source doesn't
+      # block the others — but if ALL of them failed, the "refreshed" data is
+      # just last week's cache and the PR would ship silent staleness. Surface
+      # per-source outcomes and abort in the nothing-refreshed case.
+      - name: Ingest result summary
+        env:
+          AIRI: ${{ steps.ingest_airi.outcome }}
+          AIAAIC: ${{ steps.ingest_aiaaic.outcome }}
+          OECD: ${{ steps.ingest_oecd.outcome }}
+        run: |
+          {
+            echo "### Source refresh results"
+            echo "| Source | Outcome |"
+            echo "|---|---|"
+            echo "| AIRI Navigator | $AIRI |"
+            echo "| AIAAIC sheet | $AIAAIC |"
+            echo "| OECD AI Incidents Monitor | $OECD |"
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          ok=0
+          [ "$AIRI" = "success" ] && ok=$((ok+1))
+          [ "$AIAAIC" = "success" ] && ok=$((ok+1))
+          [ "$OECD" = "success" ] && ok=$((ok+1))
+          if [ "$ok" -eq 0 ]; then
+            echo "::error::All three source refreshes failed — the data would be stale. Aborting instead of opening a misleading refresh PR."
+            exit 1
+          fi
+          if [ "$ok" -lt 3 ]; then
+            echo "::warning::Only $ok of 3 sources refreshed — the PR will carry last week's data for the failed source(s)."
+          fi
 
       - name: Re-merge + render + validate
         run: |
