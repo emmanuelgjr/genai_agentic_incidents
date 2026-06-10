@@ -73,7 +73,11 @@ const escapeHtml = s => (s || '').replace(/[&<>"']/g,
 // so any URL coming from incident data must pass through here first.
 const safeUrl = s => {
   const u = (s || '').trim();
-  return /^(https?:|mailto:|\/|#|\.{0,2}\/)/i.test(u) ? u : '#';
+  // Allow only http(s)/mailto/relative, and reject whitespace/angle-brackets
+  // (a valid URL has none; malformed scraped ones can carry raw HTML).
+  if (!/^(https?:|mailto:|\/|#|\.{0,2}\/)/i.test(u)) return '#';
+  if (/[\s<>"']/.test(u)) return '#';
+  return u;
 };
 
 const uniqSorted = arr => Array.from(new Set(arr)).sort();

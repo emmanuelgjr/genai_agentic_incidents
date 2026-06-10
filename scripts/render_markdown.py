@@ -78,10 +78,17 @@ def md_safe_text(text: str) -> str:
 
 def safe_url(url: str) -> str:
     """Only allow http(s)/mailto/relative URLs in generated links; everything
-    else (javascript:, data:, vbscript:, …) collapses to '#'. Defence in depth
-    for reference URLs ingested from external sources."""
+    else (javascript:, data:, vbscript:, …) collapses to '#'. Also reject URLs
+    containing whitespace or angle brackets/quotes — a valid URL has none, and
+    scraped 'URLs' that do are typically malformed HTML (e.g. a news title that
+    swallowed '/> <meta property=...'), which would inject raw tags into the
+    Markdown link. Defence in depth for URLs ingested from external sources."""
     u = (url or "").strip()
-    return u if _SAFE_URL_SCHEME.match(u) else "#"
+    if not _SAFE_URL_SCHEME.match(u):
+        return "#"
+    if re.search(r'[\s<>"\']', u):
+        return "#"
+    return u
 
 
 def liquid_raw_block(body_lines: list[str]) -> list[str]:

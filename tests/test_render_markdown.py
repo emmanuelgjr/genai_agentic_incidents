@@ -195,3 +195,9 @@ def test_render_incident_block_neutralises_xss_description():
     }))
     assert "<img src=x onerror=" not in block
     assert "&lt;img src=x onerror=" in block
+
+
+def test_safe_url_rejects_embedded_html_and_whitespace():
+    # Malformed scraped URL that swallowed an HTML tag must not pass through.
+    assert r.safe_url('https://x.com/news/221899/ /> <meta property=') == "#"
+    assert r.safe_url('https://ok.com/a?b=1&c=2') == 'https://ok.com/a?b=1&c=2'
