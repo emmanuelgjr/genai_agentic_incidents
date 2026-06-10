@@ -14,8 +14,15 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime, timezone
 from collections import defaultdict
+
+
+def utc_today() -> date:
+    """Calendar date in UTC. CI builds run in UTC; a contributor whose local
+    clock lags UTC must stamp the same dates as a same-UTC-day CI build, or
+    the deterministic drift check flaps."""
+    return datetime.now(timezone.utc).date()
 
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
@@ -804,7 +811,7 @@ def _content_snapshot(entry: dict) -> dict:
 def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> None:
     """Look up the entry's previous timestamps by any matching CVE/source ID
     and apply them. Bump `updated` only when content actually changed."""
-    today = str(date.today())
+    today = str(utc_today())
     keys = list(entry.get("cve_ids") or []) + list(entry.get("source_ids") or [])
     prev = next((prev_ts[k] for k in keys if k in prev_ts), None)
     if prev is None:
@@ -994,7 +1001,7 @@ def main():
     #      as tombstones so their old IDs can be recorded for citation
     #      resolution below.
     surviving, tombstones = dedupe_entries(all_entries)
-    today_str = str(date.today())
+    today_str = str(utc_today())
 
     # 4b) Finalize attack_vector (normalize fragments + reclassify "other")
     #     BEFORE stamping history. attack_vector is part of the content
@@ -1129,7 +1136,7 @@ def main():
     # 7) Compute `generated`: today only if anything actually changed since
     #    the previous output; otherwise preserve the previous timestamp so
     #    CI drift checks don't flap on every daily re-run.
-    today = str(date.today())
+    today = str(utc_today())
     any_change = any((e.get("updated") or "") == today for e in deduped)
     prev_generated = ""
     try:
@@ -1283,7 +1290,7 @@ def merge_into(target: dict, src: dict):
     # Prefer the more specific / more plausible date.
     # Specificity: YYYY-MM-DD > YYYY-MM > YYYY. A future-year date should be
     # overridden by a same-or-earlier date from any other source.
-    current_year = date.today().year
+    current_year = utc_today().year
     src_date = (src.get("date") or "").strip()
     tgt_date = (target.get("date") or "").strip()
 
