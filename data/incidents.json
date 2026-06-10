@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "generated": "2026-05-30",
+  "generated": "2026-06-09",
   "description": "Single source of truth for GenAI and agentic AI security incidents. Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable.",
   "schema": "schema/incident.schema.json",
   "incident_count": 7725,
@@ -3420,7 +3420,6 @@
         "MEASURE-2.8"
       ],
       "mitre_atlas": [
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0048.003",
@@ -3477,7 +3476,7 @@
         "2025"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0005",
         "AML.TA0011",
@@ -3992,7 +3991,6 @@
         "MEASURE-2.8"
       ],
       "mitre_atlas": [
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0048.003",
@@ -4055,7 +4053,7 @@
         "2024"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0005",
         "AML.TA0011",
@@ -5001,7 +4999,6 @@
         "AML.T0018",
         "AML.T0019",
         "AML.T0020",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.003",
         "AML.T0053",
@@ -5058,7 +5055,7 @@
         "sleeper-agents"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0001",
         "AML.TA0003",
@@ -7620,7 +7617,6 @@
         "AML.T0019",
         "AML.T0020",
         "AML.T0024",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0049",
@@ -7667,7 +7663,7 @@
         "trust-spoofing"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0001",
         "AML.TA0003",
@@ -7722,7 +7718,6 @@
         "MEASURE-2.8"
       ],
       "mitre_atlas": [
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0048.003",
@@ -7763,7 +7758,7 @@
         "sev-1"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0005",
@@ -7815,7 +7810,6 @@
       "mitre_atlas": [
         "AML.T0024",
         "AML.T0025",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0050",
         "AML.T0051",
@@ -7870,7 +7864,7 @@
         "nation-state"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0005",
         "AML.TA0007",
@@ -8230,7 +8224,6 @@
       ],
       "mitre_atlas": [
         "AML.T0011",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -8274,7 +8267,7 @@
         "vulnerability-research"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0004",
         "AML.TA0005",
@@ -8428,7 +8421,6 @@
         "AML.T0018",
         "AML.T0019",
         "AML.T0020",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -8472,7 +8464,7 @@
         "supply-chain"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0001",
         "AML.TA0003",
@@ -8831,7 +8823,6 @@
         "AML.T0011",
         "AML.T0012",
         "AML.T0024",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -8880,7 +8871,7 @@
         "openclaw"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0004",
@@ -9162,7 +9153,6 @@
         "MEASURE-2.8"
       ],
       "mitre_atlas": [
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.001",
         "AML.T0048.003",
@@ -9210,7 +9200,7 @@
         "vibe-coding"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0005",
@@ -12800,7 +12790,6 @@
       "mitre_atlas": [
         "AML.T0010",
         "AML.T0011",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -12861,7 +12850,7 @@
         "rce"
       ],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0004",
@@ -16009,7 +15998,6 @@
       ],
       "mitre_atlas": [
         "AML.T0012",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0055"
       ],
@@ -16022,7 +16010,7 @@
       ],
       "tags": [],
       "added": "2026-05-11",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "mitre_atlas_tactics": [
         "AML.TA0004",
         "AML.TA0011",
@@ -144200,7 +144188,6 @@
         "AML.T0024",
         "AML.T0025",
         "AML.T0029",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0048.003",
         "AML.T0051",
@@ -144266,7 +144253,7 @@
         "weaponization"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "aiid_id": 1263,
       "mitre_atlas_tactics": [
         "AML.TA0003",
@@ -203033,7 +203020,6 @@
         "AML.T0010.001",
         "AML.T0011",
         "AML.T0024",
-        "AML.T0039",
         "AML.T0048",
         "AML.T0049",
         "AML.T0050",
@@ -203393,7 +203379,7 @@
         "triton-inference-server"
       ],
       "added": "2026-05-16",
-      "updated": "2026-05-30",
+      "updated": "2026-06-09",
       "cve_ids": [
         "CVE-2025-23298",
         "CVE-2025-23310",

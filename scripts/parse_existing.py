@@ -53,7 +53,7 @@ ASI_TO_ATLAS = {
     "ASI07": ["AML.T0053"],
     "ASI08": ["AML.T0048"],
     "ASI09": ["AML.T0048.001", "AML.T0048.003"],
-    "ASI10": ["AML.T0048", "AML.T0039"],
+    "ASI10": ["AML.T0048"],
 }
 
 LLM_TO_NIST = {
