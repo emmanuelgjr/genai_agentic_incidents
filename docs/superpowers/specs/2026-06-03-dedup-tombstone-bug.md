@@ -1,7 +1,7 @@
 # Core dedupe bug: content lost when merging into tombstoned entries
 
 **Date:** 2026-06-03
-**Status:** Identified + evidenced; fix deferred to its own PR
+**Status:** Fixed (2026-06-10) — `_live()` resolution + loop-until-stable reindex in `dedupe_entries`; regression tests in `tests/test_merge_and_dedupe.py`. The fix recovered 24 previously-lost incidents (+39 CVEs, +210 source_ids) from the real dataset.
 **Discovered by:** the retain-on-drop work (see
 `2026-06-01-retain-on-drop-design.md`), which amplified this latent bug.
 
