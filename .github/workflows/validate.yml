@@ -52,6 +52,22 @@ jobs:
             exit 1
           fi
 
+      - name: Scan rendered shards for raw HTML (stored-XSS guard)
+        run: |
+          # Incident free-text is HTML-escaped before going into the shards
+          # (scripts/render_markdown.py: md_safe_text). The only raw tags that
+          # should appear are the controlled <div class="incident-anchor"> /
+          # </div> wrappers. Any other raw <tag> means an un-escaped field is
+          # leaking HTML into the page — a stored-XSS regression. Fail loudly.
+          leaked=$(grep -rhoE '<[/]?[a-zA-Z][a-zA-Z0-9]*' docs/incidents/ \
+            | grep -viE '^<[/]?div$' | sort | uniq -c | sort -rn || true)
+          if [ -n "$leaked" ]; then
+            echo "::error::Raw HTML tags found in rendered shards (stored-XSS risk). Route the offending field through md_safe_text()/safe_url()."
+            echo "$leaked"
+            exit 1
+          fi
+          echo "shards clean: no raw HTML tags beyond the incident-anchor wrappers."
+
       - name: Build pip package (smoke)
         run: |
           pip install --quiet --upgrade build

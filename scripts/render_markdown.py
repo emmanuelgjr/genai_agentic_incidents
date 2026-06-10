@@ -53,6 +53,43 @@ def _write_lf(path: Path, text: str, add_newline: bool = True) -> None:
 
 _ENDRAW_RE = re.compile(r"\{%-?\s*endraw\s*-?%\}")
 
+_SAFE_URL_SCHEME = re.compile(r"^(https?:|mailto:|/|\#|\.{0,2}/)", re.I)
+
+
+def md_safe_text(text: str) -> str:
+    """Neutralise raw HTML in untrusted free text (incident descriptions,
+    titles, etc.) before it is emitted into a Markdown shard. kramdown passes
+    raw inline/block HTML straight through to the page, so an advisory
+    description containing ``<img src=x onerror=...>`` would execute as stored
+    XSS on the rendered shard.
+
+    Escape ``& < >`` over the WHOLE string, unconditionally. An earlier version
+    exempted code spans/fences (kramdown escapes those for display), but the
+    exemption only held if our notion of "code" matched kramdown's exactly —
+    and an inline ```...``` payload mid-prose slipped through that gap. On a
+    security dataset, any parser divergence is a bypass, so we escape
+    everything. The only cost is that HTML inside code examples shows as
+    entities (`&lt;img&gt;`), which for payload listings is if anything
+    clearer."""
+    if not text:
+        return text
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def safe_url(url: str) -> str:
+    """Only allow http(s)/mailto/relative URLs in generated links; everything
+    else (javascript:, data:, vbscript:, …) collapses to '#'. Also reject URLs
+    containing whitespace or angle brackets/quotes — a valid URL has none, and
+    scraped 'URLs' that do are typically malformed HTML (e.g. a news title that
+    swallowed '/> <meta property=...'), which would inject raw tags into the
+    Markdown link. Defence in depth for URLs ingested from external sources."""
+    u = (url or "").strip()
+    if not _SAFE_URL_SCHEME.match(u):
+        return "#"
+    if re.search(r'[\s<>"\']', u):
+        return "#"
+    return u
+
 
 def liquid_raw_block(body_lines: list[str]) -> list[str]:
     """Wrap generated page content in ``{% raw %}`` so Jekyll never parses
@@ -302,7 +339,7 @@ def render_incident_block(e: dict) -> list[str]:
     # at #<slug>, is the canonical detail target.
     lines.append(f"### {e['id']}  [#](#{slug})")
     lines.append("")
-    lines.append(f"**{e['title']}**  ")
+    lines.append(f"**{md_safe_text(e['title'])}**  ")
     meta_bits = [
         e.get("date", ""),
         e.get("category", ""),
@@ -334,14 +371,14 @@ def render_incident_block(e: dict) -> list[str]:
     if e.get("disclosure_date") and e["disclosure_date"] != e.get("date"):
         lines.append(f"Disclosed: {e['disclosure_date']}")
     lines.append("")
-    lines.append(e.get("description", ""))
+    lines.append(md_safe_text(e.get("description", "")))
     lines.append("")
     if e.get("affected"):
-        lines.append(f"**Affected:** {e['affected']}  ")
+        lines.append(f"**Affected:** {md_safe_text(e['affected'])}  ")
     if e.get("attack_vector"):
         lines.append(f"**Attack vector:** `{e['attack_vector']}`  ")
     if e.get("impact"):
-        lines.append(f"**Impact:** {e['impact']}  ")
+        lines.append(f"**Impact:** {md_safe_text(e['impact'])}  ")
     lines.append("")
     if e.get("owasp_llm"):
         lines.append(
@@ -368,14 +405,15 @@ def render_incident_block(e: dict) -> list[str]:
     if e.get("mitigations"):
         lines.append("**Mitigations:**")
         for m in e["mitigations"]:
-            lines.append(f"- {m}")
+            lines.append(f"- {md_safe_text(m)}")
         lines.append("")
     if e.get("references"):
         lines.append("**References:**")
         for ref in e["references"]:
-            title = ref.get("title") or ref["url"]
-            suffix = f" _({ref.get('type')})_" if ref.get("type") else ""
-            lines.append(f"- [{title}]({ref['url']}){suffix}")
+            url = safe_url(ref["url"])
+            title = md_safe_text(ref.get("title") or ref["url"])
+            suffix = f" _({md_safe_text(ref.get('type'))})_" if ref.get("type") else ""
+            lines.append(f"- [{title}]({url}){suffix}")
         lines.append("")
     if e.get("tags"):
         lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))

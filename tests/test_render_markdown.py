@@ -160,3 +160,44 @@ def test_shard_body_is_liquid_safe():
     _, _, body = shard.partition("---\n\n")
     assert "{% raw %}" in body
     assert body.rstrip().endswith("{% endraw %}")
+
+
+# ---------------------------------------------------------------------------
+# Stored-XSS hardening on shard markdown
+# ---------------------------------------------------------------------------
+
+def test_md_safe_text_escapes_prose_html():
+    assert r.md_safe_text("<img src=x onerror=alert(1)>") == \
+        "&lt;img src=x onerror=alert(1)&gt;"
+
+
+def test_md_safe_text_escapes_unconditionally_incl_inline_code():
+    # The bypass was an inline ```...``` payload mid-prose. Escape everything
+    # so no parser divergence can let raw HTML through.
+    assert r.md_safe_text("set to: ``` <img src=x onerror=alert(1)> ``` save") == \
+        "set to: ``` &lt;img src=x onerror=alert(1)&gt; ``` save"
+    assert "<script>" not in r.md_safe_text("```\n<script>a</script>\n```")
+    assert "<img onerror" not in r.md_safe_text("see `<img onerror=x>` here")
+
+
+def test_safe_url_blocks_dangerous_schemes():
+    assert r.safe_url("javascript:alert(1)") == "#"
+    assert r.safe_url("data:text/html,<script>") == "#"
+    assert r.safe_url("https://example.com") == "https://example.com"
+    assert r.safe_url("mailto:a@b.com") == "mailto:a@b.com"
+
+
+def test_render_incident_block_neutralises_xss_description():
+    block = "\n".join(r.render_incident_block({
+        "id": "INC-08243", "title": "AVideo stored XSS", "year": 2026,
+        "date": "2026-01-01", "severity": "High", "references": [], "tags": [],
+        "description": "Save the category description to <img src=x onerror=alert(document.domain)> and trigger.",
+    }))
+    assert "<img src=x onerror=" not in block
+    assert "&lt;img src=x onerror=" in block
+
+
+def test_safe_url_rejects_embedded_html_and_whitespace():
+    # Malformed scraped URL that swallowed an HTML tag must not pass through.
+    assert r.safe_url('https://x.com/news/221899/ /> <meta property=') == "#"
+    assert r.safe_url('https://ok.com/a?b=1&c=2') == 'https://ok.com/a?b=1&c=2'
