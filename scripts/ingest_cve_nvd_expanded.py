@@ -572,7 +572,11 @@ def fetch_ghsa(max_pages: int = 60) -> list[dict]:
         after_arg = ["-f", f"after={cursor}"] if cursor else []
         cmd = ["gh", "api", "graphql", "-f", f"query={GHSA_QUERY}", *after_arg]
         try:
-            out = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+            # encoding= matters: text=True alone decodes with the locale
+            # codec (cp1252 on Windows) and UnicodeDecodeErrors on UTF-8
+            # advisory text, silently yielding 0 advisories.
+            out = subprocess.run(cmd, capture_output=True, text=True,
+                                 encoding="utf-8", errors="replace", timeout=90)
         except FileNotFoundError:
             print("  [warn] gh CLI not available; skipping GHSA", flush=True)
             return []
