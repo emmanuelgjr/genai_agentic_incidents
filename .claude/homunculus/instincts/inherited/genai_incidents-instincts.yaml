@@ -1,0 +1,357 @@
+# Instincts generated from https://github.com/emmanuelgjr/genai_incidents
+# Generated: 2026-06-10T19:12:24.185Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: genai_incidents-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: refactor
+
+## Evidence
+
+- 2 commits analyzed
+- Detected conventional commit pattern
+- Examples: refactor(site): drop 12k per-incident pages + design polish, refactor(site): regenerate shards (self-anchored) + remove 12k per-incident pages
+
+---
+id: genai_incidents-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Commit Length
+
+## Action
+
+Write moderate-length commit messages (~70 characters)
+
+## Evidence
+
+- Average commit message length: 70 chars
+- Based on 2 commits
+
+---
+id: genai_incidents-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: genai_incidents-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: genai_incidents-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: genai_incidents-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: genai_incidents-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct File Naming
+
+## Action
+
+Name the file using kebab-case
+
+## Evidence
+
+- Pattern: namingConventions.files = kebab-case
+
+---
+id: genai_incidents-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Function Naming
+
+## Action
+
+Use camelCase for the function name
+
+## Evidence
+
+- Pattern: namingConventions.functions = camelCase
+
+---
+id: genai_incidents-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Class Naming
+
+## Action
+
+Use PascalCase for the class name
+
+## Evidence
+
+- Pattern: namingConventions.classes = PascalCase
+
+---
+id: genai_incidents-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for the constant name
+
+## Evidence
+
+- Pattern: namingConventions.constants = SCREAMING_SNAKE_CASE
+
+---
+id: genai_incidents-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern: importStyle = relative
+
+---
+id: genai_incidents-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern: exportStyle = named
+
+---
+id: genai_incidents-instinct-error-handling
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Error Handling
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern: errorHandling.style = try-catch
+
+---
+id: genai_incidents-instinct-git-commit-format
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Git Commit Format
+
+## Action
+
+Use the conventional commit format with a prefix (e.g., refactor:)
+
+## Evidence
+
+- Pattern: commits.type = conventional
+- Pattern: commits.prefixes includes refactor
+- Examples: refactor(site): drop 12k per-incident pages + design polish
+
+---
+id: genai_incidents-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Test Location
+
+## Action
+
+Place tests in a separate directory from source code
+
+## Evidence
+
+- Pattern: architecture.folderStructure.testLocation = separate
+
+---
+id: genai_incidents-instinct-docs-folder
+trigger: "When adding documentation"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Docs Folder
+
+## Action
+
+Place documentation files in the docs folder
+
+## Evidence
+
+- Pattern: architecture.folderStructure.commonFolders includes docs
+
+---
+id: genai_incidents-instinct-github-workflow-pages
+trigger: "When configuring deployment workflows"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Github Workflow Pages
+
+## Action
+
+Use .github/workflows/pages.yml for deployment configuration
+
+## Evidence
+
+- Pattern: architecture.configFiles includes .github/workflows/pages.yml
+
+---
+id: genai_incidents-instinct-github-workflow-validate
+trigger: "When configuring validation workflows"
+confidence: 0.7
+domain: workflow
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Github Workflow Validate
+
+## Action
+
+Use .github/workflows/validate.yml for validation configuration
+
+## Evidence
+
+- Pattern: architecture.configFiles includes .github/workflows/validate.yml
+
