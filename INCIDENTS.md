@@ -3,7 +3,7 @@
 Single source of truth for GenAI and agentic AI security incidents.
 Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS**.
 
-- **Version:** 2.1.0
+- **Version:** 2.2.0
 - **Generated:** 2026-06-10
 - **Total incidents:** **9,209**
 - **Date range:** 1983 – 2026
@@ -301,7 +301,7 @@ All **9,209** incidents in a single table, newest-first. Each `INC-*****` link o
 | 171 | 2026-06 | [`INC-08223`](docs/incidents/2026.md#inc-08223) | FUXA's scheduler API missing admin check enables operator-to-admin escalation via scheduled device actions | Medium | LLM03 | ASI04 | `CVE-2026-47721` |
 | 172 | 2026-06 | [`INC-08200`](docs/incidents/2026.md#inc-08200) | horizon921 mcpilot 0 — Ssrf (CVE-2026-10280) | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-10280` |
 | 173 | 2026-06 | [`INC-08210`](docs/incidents/2026.md#inc-08210) | Improper limitation of a pathname to a restricted directory ('path traversal') in GitHub Copilot and Visual S… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2026-45482` |
-| 174 | 2026-06 | [`INC-01187`](docs/incidents/2026.md#inc-01187) | Improper neutralization of special elements in output used by a downstream component ('injection') in Copilot… | High | LLM03 | ASI04 | `CVE-2026-33833` (+2) |
+| 174 | 2026-06 | [`INC-09630`](docs/incidents/2026.md#inc-09630) | Improper neutralization of special elements in output used by a downstream component ('injection') in Copilot… | High | LLM03 | ASI04 | `CVE-2026-33833` (+2) |
 | 175 | 2026-06 | [`INC-01186`](docs/incidents/2026.md#inc-01186) | Improper neutralization of special elements used in a command ('command injection') in M365 Copilot allows an… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2025-59252` (+18) |
 | 176 | 2026-06 | [`INC-08209`](docs/incidents/2026.md#inc-08209) | In MongoDB Server 8.0, an aggregation stage can leave its _subPipeline field null during processing of certai… | Medium | LLM03 | ASI04 | `CVE-2026-9743` |
 | 177 | 2026-06 | [`INC-08217`](docs/incidents/2026.md#inc-08217) | In the Linux kernel, the following vulnerability has been resolved: dm: fix a buffer overflow in ioctl proces… | Medium | LLM03 | ASI04 | `CVE-2026-46294` |
