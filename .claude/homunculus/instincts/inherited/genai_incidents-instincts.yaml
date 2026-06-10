@@ -1,0 +1,344 @@
+# Instincts generated from https://github.com/emmanuelgjr/genai_incidents
+# Generated: 2026-06-10T16:33:41.633Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: genai_incidents-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: fix
+
+## Evidence
+
+- 3 commits analyzed
+- Detected conventional commit pattern
+- Examples: fix(site): wrap generated page bodies in {% raw %} so incident text can't break Jekyll, fix(site): rebuild outputs on Linux so render matches committed data
+
+---
+id: genai_incidents-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Commit Length
+
+## Action
+
+Write moderate-length commit messages (~69 characters)
+
+## Evidence
+
+- Average commit message length: 69 chars
+- Based on 3 commits
+
+---
+id: genai_incidents-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: genai_incidents-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: genai_incidents-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: genai_incidents-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: genai_incidents-workflow-full-data-rebuild-and-site-output-sync
+trigger: "when doing full data rebuild and site output sync"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Workflow Full Data Rebuild And Site Output Sync
+
+## Action
+
+Follow the full-data-rebuild-and-site-output-sync workflow:
+1. Restore or update data source files (such as CVE feeds or deprecations).
+2. Regenerate all processed data files (e.g., incidents.json, incidents.min.json).
+3. Regenerate all output artifacts (e.g., INCIDENTS.md, SVG charts, per-incident markdown files, year shards).
+4. Commit all regenerated files to ensure outputs match the data source.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: data/incidents.json, data/incidents.min.json, docs/data/incidents.min.json
+
+---
+id: genai_incidents-instinct-file-naming
+trigger: "When creating or renaming a file in the codebase"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct File Naming
+
+## Action
+
+Use kebab-case for all file names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: genai_incidents-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+
+---
+id: genai_incidents-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: genai_incidents-instinct-constant-naming
+trigger: "When declaring a constant"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: genai_incidents-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: genai_incidents-instinct-export-style
+trigger: "When exporting from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: genai_incidents-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Test Location
+
+## Action
+
+Place test files in a separate directory from source code
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: genai_incidents-instinct-git-commit-format
+trigger: "When writing a git commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Git Commit Format
+
+## Action
+
+Use the conventional commit format with a prefix (e.g., fix:), a scope in parentheses if applicable, and a concise message
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Examples: fix(site): wrap generated page bodies in {% raw %} so incident text can't break Jekyll
+
+---
+id: genai_incidents-instinct-git-commit-length
+trigger: "When writing a git commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Git Commit Length
+
+## Action
+
+Keep the commit message around 69 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: genai_incidents-instinct-full-data-rebuild
+trigger: "When the incident data source is updated, corrupted, or out of sync with generated site outputs (e.g., after restoring a feed or fixing a build environment)"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Full Data Rebuild
+
+## Action
+
+Restore or update data source files, regenerate all processed data files and output artifacts, and commit all regenerated files to ensure outputs match the data source
+
+## Evidence
+
+- Workflow: full-data-rebuild-and-site-output-sync
+- Example commit sequence and files involved
+
