@@ -496,6 +496,19 @@ def render():
     entries = list(raw["incidents"])
     entries.sort(key=sort_key)
 
+    # Tiny stats file for the README's live incident-count badge (shields.io
+    # dynamic JSON reads it). Kept small so the badge endpoint is fast, and
+    # regenerated every build so it never drifts from the dataset.
+    years = sorted({e.get("year") for e in entries if e.get("year")})
+    stats = {
+        "incident_count": raw.get("incident_count", len(entries)),
+        "version": raw.get("version", ""),
+        "generated": raw.get("generated", ""),
+        "year_min": years[0] if years else None,
+        "year_max": years[-1] if years else None,
+    }
+    _write_lf(DATA / "stats.json", json.dumps(stats, indent=2))
+
     llm_counts: Counter = Counter()
     asi_counts: Counter = Counter()
     atlas_counts: Counter = Counter()
