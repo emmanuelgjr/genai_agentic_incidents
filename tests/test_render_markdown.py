@@ -171,16 +171,13 @@ def test_md_safe_text_escapes_prose_html():
         "&lt;img src=x onerror=alert(1)&gt;"
 
 
-def test_md_safe_text_keeps_code_spans_verbatim():
-    # Inside `code`, kramdown escapes for display, so leave it readable.
-    assert r.md_safe_text("see `<img onerror=x>` here") == "see `<img onerror=x>` here"
-
-
-def test_md_safe_text_keeps_fenced_code_verbatim():
-    src = "before\n```\n<script>a</script>\n```\nafter <b>x</b>"
-    out = r.md_safe_text(src)
-    assert "```\n<script>a</script>\n```" in out      # fence untouched
-    assert "after &lt;b&gt;x&lt;/b&gt;" in out        # prose escaped
+def test_md_safe_text_escapes_unconditionally_incl_inline_code():
+    # The bypass was an inline ```...``` payload mid-prose. Escape everything
+    # so no parser divergence can let raw HTML through.
+    assert r.md_safe_text("set to: ``` <img src=x onerror=alert(1)> ``` save") == \
+        "set to: ``` &lt;img src=x onerror=alert(1)&gt; ``` save"
+    assert "<script>" not in r.md_safe_text("```\n<script>a</script>\n```")
+    assert "<img onerror" not in r.md_safe_text("see `<img onerror=x>` here")
 
 
 def test_safe_url_blocks_dangerous_schemes():

@@ -53,10 +53,6 @@ def _write_lf(path: Path, text: str, add_newline: bool = True) -> None:
 
 _ENDRAW_RE = re.compile(r"\{%-?\s*endraw\s*-?%\}")
 
-# Split free text into code segments (fenced ```...``` blocks and inline
-# `...` spans) and prose. Capturing group => re.split keeps the delimiters,
-# so odd indices are code, even indices are prose.
-_CODE_SEG_RE = re.compile(r"(```.*?```|`[^`\n]*`)", re.S)
 _SAFE_URL_SCHEME = re.compile(r"^(https?:|mailto:|/|\#|\.{0,2}/)", re.I)
 
 
@@ -65,18 +61,19 @@ def md_safe_text(text: str) -> str:
     titles, etc.) before it is emitted into a Markdown shard. kramdown passes
     raw inline/block HTML straight through to the page, so an advisory
     description containing ``<img src=x onerror=...>`` would execute as stored
-    XSS. Escape ``& < >`` in prose only — code spans/fences are left verbatim
-    (kramdown already HTML-escapes their contents for display, so payloads
-    there are inert and still render legibly)."""
+    XSS on the rendered shard.
+
+    Escape ``& < >`` over the WHOLE string, unconditionally. An earlier version
+    exempted code spans/fences (kramdown escapes those for display), but the
+    exemption only held if our notion of "code" matched kramdown's exactly —
+    and an inline ```...``` payload mid-prose slipped through that gap. On a
+    security dataset, any parser divergence is a bypass, so we escape
+    everything. The only cost is that HTML inside code examples shows as
+    entities (`&lt;img&gt;`), which for payload listings is if anything
+    clearer."""
     if not text:
         return text
-    out = []
-    for i, seg in enumerate(_CODE_SEG_RE.split(text)):
-        if i % 2 == 1:  # code segment — kramdown escapes it for display
-            out.append(seg)
-        else:
-            out.append(seg.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
-    return "".join(out)
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def safe_url(url: str) -> str:
