@@ -39,3 +39,6 @@ data/legacy_consolidated.json
 # served from GitHub Pages, not committed to keep the repo lean)
 data/incidents.stix.json
 docs/data/incidents.stix.json
+
+# Generated at Pages build time (scripts/make_og_image.py), not committed.
+docs/og-image.png

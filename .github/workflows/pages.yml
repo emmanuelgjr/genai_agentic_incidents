@@ -34,6 +34,10 @@ jobs:
           cp data/incidents.min.json docs/data/incidents.min.json
       - name: Generate STIX 2.1 bundle for download
         run: python scripts/export_stix.py
+      - name: Generate Open Graph social card
+        run: |
+          pip install --quiet pillow
+          python scripts/make_og_image.py
       - uses: actions/configure-pages@v5
       # Custom Jekyll build instead of actions/jekyll-build-pages: the managed
       # action pins the github-pages metagem whose jekyll-relative-links plugin

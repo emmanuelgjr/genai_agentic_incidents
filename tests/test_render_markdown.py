@@ -101,8 +101,9 @@ def test_render_incident_block_handles_minimal_entry():
     assert "Minimal" in body
 
 
-def test_render_incident_block_contains_permalink():
-    """Incident block should include a link to the per-incident page."""
+def test_render_incident_block_contains_self_anchor():
+    """Incident block self-links to its #<slug> anchor (standalone per-incident
+    pages were retired; the shard block is the canonical detail target)."""
     entry = {
         "id": "INC-00001",
         "title": "Test",
@@ -114,7 +115,9 @@ def test_render_incident_block_contains_permalink():
     }
     lines = r.render_incident_block(entry)
     body = "\n".join(lines)
-    assert "/incident/INC-00001.html" in body
+    assert 'id="inc-00001"' in body
+    assert "(#inc-00001)" in body
+    assert "/incident/INC-00001.html" not in body
 
 
 def test_severity_stack_renders_legend(tmp_path):
@@ -144,14 +147,16 @@ def test_liquid_raw_block_wraps_and_defangs_endraw():
     assert "{ % endraw %}" in inner
 
 
-def test_incident_page_body_is_liquid_safe():
+def test_shard_body_is_liquid_safe():
+    # Year shards wrap incident content (which can contain template-injection
+    # advisory text like {{ }} / {% %}) in {% raw %} so Jekyll never parses it.
     e = {
         "id": "INC-99999", "title": "SSTI demo {{ 7*7 }}", "year": 2026,
         "severity": "High", "date": "2026-01-01",
         "description": "Exploit uses {% for i in (1..9) %} loops.",
         "source_ids": ["TEST-1"], "references": [], "tags": [],
     }
-    page = r.render_incident_page(e)
-    front, _, body = page.partition("---\n\n")
-    assert body.lstrip().startswith("{% raw %}")
+    shard = r.render_details_shard(2026, [e])
+    _, _, body = shard.partition("---\n\n")
+    assert "{% raw %}" in body
     assert body.rstrip().endswith("{% endraw %}")

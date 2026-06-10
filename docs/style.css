@@ -390,6 +390,8 @@ main { padding-bottom: 5rem; }
   border-radius: var(--radius);
   padding: 0.5rem 0.6rem;
   width: 100%;
+  /* Keep touch targets at the 44px accessibility minimum on mobile. */
+  min-height: 44px;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 .filter input[type="search"]::placeholder { color: var(--faint); }
