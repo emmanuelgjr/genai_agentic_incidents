@@ -19,8 +19,15 @@ from __future__ import annotations
 import json
 import re
 from collections import Counter, defaultdict
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
+
+
+def utc_today() -> date:
+    """Calendar date in UTC. CI builds run in UTC; a contributor whose local
+    clock lags UTC must stamp the same dates as a same-UTC-day CI build, or
+    the deterministic drift check flaps."""
+    return datetime.now(timezone.utc).date()
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -471,7 +478,7 @@ def render():
     )
     lines.append("")
     lines.append(f"- **Version:** {raw.get('version','1.0.0')}")
-    lines.append(f"- **Generated:** {raw.get('generated', str(date.today()))}")
+    lines.append(f"- **Generated:** {raw.get('generated', str(utc_today()))}")
     lines.append(f"- **Total incidents:** **{len(entries):,}**")
     if year_counts:
         latest = max(year_counts)

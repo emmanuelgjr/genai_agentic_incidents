@@ -22,7 +22,14 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from datetime import date
+from datetime import date, datetime, timezone
+
+
+def utc_today() -> date:
+    """Calendar date in UTC. CI builds run in UTC; a contributor whose local
+    clock lags UTC must stamp the same dates as a same-UTC-day CI build, or
+    the deterministic drift check flaps."""
+    return datetime.now(timezone.utc).date()
 
 ROOT = Path(__file__).resolve().parents[1]
 LEGACY = ROOT / "legacy"
@@ -184,8 +191,8 @@ def parse_json_source(path: Path, start_id: int) -> tuple[list[dict], int]:
                 for r in entry.get("references", []) if r.get("url")
             ],
             "tags": entry.get("tags", []),
-            "added": str(date.today()),
-            "updated": str(date.today()),
+            "added": str(utc_today()),
+            "updated": str(utc_today()),
         }
         # Year defaults
         if not new_entry["year"]:
@@ -357,8 +364,8 @@ def parse_md_table(path: Path, start_id: int) -> tuple[list[dict], int]:
             "mitre_atlas": atlas,
             "references": refs,
             "tags": [],
-            "added": str(date.today()),
-            "updated": str(date.today()),
+            "added": str(utc_today()),
+            "updated": str(utc_today()),
         }
         out.append(entry)
         next_id += 1
@@ -387,7 +394,7 @@ def main():
         json.dumps(
             {
                 "version": "1.0.0",
-                "generated": str(date.today()),
+                "generated": str(utc_today()),
                 "source": "legacy consolidation",
                 "incidents": all_entries,
             },
