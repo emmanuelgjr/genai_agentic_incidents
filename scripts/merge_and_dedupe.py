@@ -651,6 +651,21 @@ def load_source(path: Path) -> list[dict]:
 
 DEPRECATIONS_PATH = DATA / "id_deprecations.json"
 CURATION_OVERRIDES_PATH = DATA / "curation_overrides.json"
+CISA_KEV_PATH = INGEST / "cisa_kev.json"
+
+
+def _load_cisa_kev() -> dict[str, dict]:
+    """Load the committed CISA KEV snapshot as ``{cve_id: {dateAdded,
+    knownRansomwareCampaignUse}}``. Reading the committed snapshot (refreshed
+    by the data workflows) rather than the live CISA feed keeps the build
+    deterministic. Returns ``{}`` if the snapshot is absent."""
+    if not CISA_KEV_PATH.exists():
+        return {}
+    try:
+        raw = json.loads(CISA_KEV_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return raw.get("vulnerabilities", {}) if isinstance(raw, dict) else {}
 
 
 def _load_curation_overrides() -> dict[str, dict]:
@@ -785,6 +800,7 @@ _CONTENT_FIELDS = (
     "affected", "impact", "severity", "owasp_llm", "owasp_asi", "owasp_dsgai",
     "nist_ai_rmf", "mitre_atlas", "mitre_atlas_tactics", "cve_ids", "cwe_ids",
     "cvss_score", "cvss_vector", "aiid_id", "disclosure_date",
+    "exploited_in_wild", "kev_date_added",
     "mitigations", "references", "tags",
 )
 
@@ -1041,6 +1057,23 @@ def main():
                         e[k] = v
                 applied += 1
         print(f"[curation] applied {applied} override(s) from {CURATION_OVERRIDES_PATH.name}")
+
+    # 4e) Flag CISA KEV (known-exploited) CVEs from the committed snapshot.
+    #     Content fields, so set before history stamping. Deterministic:
+    #     reads the snapshot, never the live CISA feed.
+    kev = _load_cisa_kev()
+    if kev:
+        flagged = 0
+        for e in surviving:
+            matches = [kev[c] for c in (e.get("cve_ids") or []) if c in kev]
+            if matches:
+                e["exploited_in_wild"] = True
+                # Earliest KEV listing date among the entry's CVEs.
+                dates = sorted(m.get("dateAdded", "") for m in matches if m.get("dateAdded"))
+                if dates:
+                    e["kev_date_added"] = dates[0]
+                flagged += 1
+        print(f"[cisa-kev] flagged {flagged} incident(s) as exploited-in-the-wild")
 
     # 5) Apply stable timestamps + classifiers (quality_tier, corpus).
     for e in surviving:

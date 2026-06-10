@@ -1,4 +1,4 @@
-.PHONY: build validate render merge install clean test stix huggingface ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all
+.PHONY: build validate render merge install clean test stix huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all
 
 install:
 	pip install -r requirements.txt
@@ -36,6 +36,11 @@ ingest-redteam:
 ingest-cve:
 	python scripts/ingest_cve_nvd_expanded.py
 
+# Refresh the CISA Known Exploited Vulnerabilities snapshot.
+# Output: ingest/cisa_kev.json
+ingest-kev:
+	python scripts/ingest_cisa_kev.py
+
 # Pull the MIT FutureTech AI Risk Navigator dataset (wraps AIID with extra
 # taxonomy and authoritative incident dates).
 # Output: ingest/airi_navigator_incidents.json
@@ -55,7 +60,7 @@ ingest-oecd-aim:
 	python scripts/ingest_oecd_aim.py
 
 # Refresh every external source. Heavy: NVD/GHSA, AIRI, AIAAIC, OECD AIM.
-ingest-all: ingest-cve ingest-airi ingest-aiaaic ingest-oecd-aim
+ingest-all: ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim
 	python scripts/scrape_aiid.py
 
 clean:

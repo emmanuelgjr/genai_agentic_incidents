@@ -633,3 +633,30 @@ def test_dedupe_strips_internal_markers():
     for e in surviving + tombstoned:
         assert "_tombstoned" not in e
         assert "_merged_into" not in e
+
+
+# ---------------------------------------------------------------------------
+# CISA KEV enrichment
+# ---------------------------------------------------------------------------
+
+def test_load_cisa_kev_missing_returns_empty(tmp_path, monkeypatch):
+    monkeypatch.setattr(m, "CISA_KEV_PATH", tmp_path / "nope.json")
+    assert m._load_cisa_kev() == {}
+
+
+def test_load_cisa_kev_reads_snapshot(tmp_path, monkeypatch):
+    import json as _j
+    p = tmp_path / "cisa_kev.json"
+    p.write_text(_j.dumps({"catalogVersion": "x", "count": 1, "vulnerabilities": {
+        "CVE-2025-3248": {"dateAdded": "2025-05-12", "knownRansomwareCampaignUse": "Unknown"}
+    }}), encoding="utf-8")
+    monkeypatch.setattr(m, "CISA_KEV_PATH", p)
+    kev = m._load_cisa_kev()
+    assert kev["CVE-2025-3248"]["dateAdded"] == "2025-05-12"
+
+
+def test_kev_fields_are_content_fields():
+    # Must be in the content snapshot or KEV flagging would spuriously bump
+    # `updated` on the build after the snapshot first lists a CVE.
+    assert "exploited_in_wild" in m._CONTENT_FIELDS
+    assert "kev_date_added" in m._CONTENT_FIELDS

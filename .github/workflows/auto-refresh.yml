@@ -51,6 +51,11 @@ jobs:
         run: python scripts/ingest_oecd_aim.py
         continue-on-error: true
 
+      - name: Refresh CISA KEV catalog
+        id: ingest_kev
+        run: python scripts/ingest_cisa_kev.py
+        continue-on-error: true
+
       # The ingest steps are continue-on-error so one flaky source doesn't
       # block the others — but if ALL of them failed, the "refreshed" data is
       # just last week's cache and the PR would ship silent staleness. Surface

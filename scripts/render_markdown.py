@@ -306,6 +306,13 @@ def render_incident_block(e: dict) -> list[str]:
         f"Severity: {e.get('severity','')}",
     ]
     lines.append("_" + " · ".join(b for b in meta_bits if b) + "_")
+    if e.get("exploited_in_wild"):
+        kev = "**🚨 Exploited in the wild** (CISA KEV"
+        if e.get("kev_date_added"):
+            kev += f", added {e['kev_date_added']}"
+        kev += ")"
+        lines.append("")
+        lines.append(kev)
     if e.get("cve_ids"):
         lines.append("")
         lines.append("CVEs: " + ", ".join(f"`{c}`" for c in e["cve_ids"]))
