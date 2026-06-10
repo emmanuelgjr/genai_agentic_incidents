@@ -53,6 +53,39 @@ def _write_lf(path: Path, text: str, add_newline: bool = True) -> None:
 
 _ENDRAW_RE = re.compile(r"\{%-?\s*endraw\s*-?%\}")
 
+# Split free text into code segments (fenced ```...``` blocks and inline
+# `...` spans) and prose. Capturing group => re.split keeps the delimiters,
+# so odd indices are code, even indices are prose.
+_CODE_SEG_RE = re.compile(r"(```.*?```|`[^`\n]*`)", re.S)
+_SAFE_URL_SCHEME = re.compile(r"^(https?:|mailto:|/|\#|\.{0,2}/)", re.I)
+
+
+def md_safe_text(text: str) -> str:
+    """Neutralise raw HTML in untrusted free text (incident descriptions,
+    titles, etc.) before it is emitted into a Markdown shard. kramdown passes
+    raw inline/block HTML straight through to the page, so an advisory
+    description containing ``<img src=x onerror=...>`` would execute as stored
+    XSS. Escape ``& < >`` in prose only — code spans/fences are left verbatim
+    (kramdown already HTML-escapes their contents for display, so payloads
+    there are inert and still render legibly)."""
+    if not text:
+        return text
+    out = []
+    for i, seg in enumerate(_CODE_SEG_RE.split(text)):
+        if i % 2 == 1:  # code segment — kramdown escapes it for display
+            out.append(seg)
+        else:
+            out.append(seg.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    return "".join(out)
+
+
+def safe_url(url: str) -> str:
+    """Only allow http(s)/mailto/relative URLs in generated links; everything
+    else (javascript:, data:, vbscript:, …) collapses to '#'. Defence in depth
+    for reference URLs ingested from external sources."""
+    u = (url or "").strip()
+    return u if _SAFE_URL_SCHEME.match(u) else "#"
+
 
 def liquid_raw_block(body_lines: list[str]) -> list[str]:
     """Wrap generated page content in ``{% raw %}`` so Jekyll never parses
@@ -302,7 +335,7 @@ def render_incident_block(e: dict) -> list[str]:
     # at #<slug>, is the canonical detail target.
     lines.append(f"### {e['id']}  [#](#{slug})")
     lines.append("")
-    lines.append(f"**{e['title']}**  ")
+    lines.append(f"**{md_safe_text(e['title'])}**  ")
     meta_bits = [
         e.get("date", ""),
         e.get("category", ""),
@@ -334,14 +367,14 @@ def render_incident_block(e: dict) -> list[str]:
     if e.get("disclosure_date") and e["disclosure_date"] != e.get("date"):
         lines.append(f"Disclosed: {e['disclosure_date']}")
     lines.append("")
-    lines.append(e.get("description", ""))
+    lines.append(md_safe_text(e.get("description", "")))
     lines.append("")
     if e.get("affected"):
-        lines.append(f"**Affected:** {e['affected']}  ")
+        lines.append(f"**Affected:** {md_safe_text(e['affected'])}  ")
     if e.get("attack_vector"):
         lines.append(f"**Attack vector:** `{e['attack_vector']}`  ")
     if e.get("impact"):
-        lines.append(f"**Impact:** {e['impact']}  ")
+        lines.append(f"**Impact:** {md_safe_text(e['impact'])}  ")
     lines.append("")
     if e.get("owasp_llm"):
         lines.append(
@@ -368,14 +401,15 @@ def render_incident_block(e: dict) -> list[str]:
     if e.get("mitigations"):
         lines.append("**Mitigations:**")
         for m in e["mitigations"]:
-            lines.append(f"- {m}")
+            lines.append(f"- {md_safe_text(m)}")
         lines.append("")
     if e.get("references"):
         lines.append("**References:**")
         for ref in e["references"]:
-            title = ref.get("title") or ref["url"]
-            suffix = f" _({ref.get('type')})_" if ref.get("type") else ""
-            lines.append(f"- [{title}]({ref['url']}){suffix}")
+            url = safe_url(ref["url"])
+            title = md_safe_text(ref.get("title") or ref["url"])
+            suffix = f" _({md_safe_text(ref.get('type'))})_" if ref.get("type") else ""
+            lines.append(f"- [{title}]({url}){suffix}")
         lines.append("")
     if e.get("tags"):
         lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))

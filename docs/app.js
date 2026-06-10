@@ -68,6 +68,14 @@ let EXPANDED = new Set();
 const escapeHtml = s => (s || '').replace(/[&<>"']/g,
   c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
 
+// Only allow http(s)/mailto/relative hrefs. escapeHtml stops attribute
+// break-out but NOT a javascript:/data: scheme, which would execute on click,
+// so any URL coming from incident data must pass through here first.
+const safeUrl = s => {
+  const u = (s || '').trim();
+  return /^(https?:|mailto:|\/|#|\.{0,2}\/)/i.test(u) ? u : '#';
+};
+
 const uniqSorted = arr => Array.from(new Set(arr)).sort();
 
 const dateScore = e => (e.date || String(e.year || 0)).padEnd(10, '0');
@@ -238,7 +246,10 @@ function renderTable(slice, start) {
     const cveCell = cves.length === 0 ? '' :
       cves.length === 1 ? `<code>${escapeHtml(cves[0])}</code>` :
       `<code>${escapeHtml(cves[0])}</code> +${cves.length - 1}`;
-    const incidentUrl = `incident/${e.id}.html`;
+    // Link the ID to the year-shard anchor (the per-incident standalone pages
+    // were retired). stopPropagation so following the link doesn't also toggle
+    // the row's expand handler.
+    const incidentUrl = `incidents/${e.year}.html#${e.id.toLowerCase()}`;
     const idCell = `<a href="${incidentUrl}" onclick="event.stopPropagation()">${escapeHtml(e.id)}</a>`;
     const llm = (e.owasp_llm || []).join(', ');
     const asi = (e.owasp_asi || []).join(', ');
@@ -271,7 +282,7 @@ function renderDetail(e) {
   const cves = (e.cve_ids || []).map(c => `<code>${escapeHtml(c)}</code>`).join(' ');
   const tags = (e.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
   const refLink = e.primary_reference
-    ? `<a href="${escapeHtml(e.primary_reference)}" rel="noopener" target="_blank">primary source ↗</a>`
+    ? `<a href="${escapeHtml(safeUrl(e.primary_reference))}" rel="noopener" target="_blank">primary source ↗</a>`
     : '';
   const shardLink = `<a href="incidents/${e.year}.html#${e.id.toLowerCase()}">full details ↗</a>`;
   return `<tr class="detail"><td colspan="7"><div class="detail-body">

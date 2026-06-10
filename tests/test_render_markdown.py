@@ -160,3 +160,41 @@ def test_shard_body_is_liquid_safe():
     _, _, body = shard.partition("---\n\n")
     assert "{% raw %}" in body
     assert body.rstrip().endswith("{% endraw %}")
+
+
+# ---------------------------------------------------------------------------
+# Stored-XSS hardening on shard markdown
+# ---------------------------------------------------------------------------
+
+def test_md_safe_text_escapes_prose_html():
+    assert r.md_safe_text("<img src=x onerror=alert(1)>") == \
+        "&lt;img src=x onerror=alert(1)&gt;"
+
+
+def test_md_safe_text_keeps_code_spans_verbatim():
+    # Inside `code`, kramdown escapes for display, so leave it readable.
+    assert r.md_safe_text("see `<img onerror=x>` here") == "see `<img onerror=x>` here"
+
+
+def test_md_safe_text_keeps_fenced_code_verbatim():
+    src = "before\n```\n<script>a</script>\n```\nafter <b>x</b>"
+    out = r.md_safe_text(src)
+    assert "```\n<script>a</script>\n```" in out      # fence untouched
+    assert "after &lt;b&gt;x&lt;/b&gt;" in out        # prose escaped
+
+
+def test_safe_url_blocks_dangerous_schemes():
+    assert r.safe_url("javascript:alert(1)") == "#"
+    assert r.safe_url("data:text/html,<script>") == "#"
+    assert r.safe_url("https://example.com") == "https://example.com"
+    assert r.safe_url("mailto:a@b.com") == "mailto:a@b.com"
+
+
+def test_render_incident_block_neutralises_xss_description():
+    block = "\n".join(r.render_incident_block({
+        "id": "INC-08243", "title": "AVideo stored XSS", "year": 2026,
+        "date": "2026-01-01", "severity": "High", "references": [], "tags": [],
+        "description": "Save the category description to <img src=x onerror=alert(document.domain)> and trigger.",
+    }))
+    assert "<img src=x onerror=" not in block
+    assert "&lt;img src=x onerror=" in block
