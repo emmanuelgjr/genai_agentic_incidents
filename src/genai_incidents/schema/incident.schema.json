@@ -37,6 +37,15 @@
       "description": "Full CVSS vector string (e.g. CVSS:3.1/AV:N/AC:L/...).",
       "pattern": "^CVSS:[0-9]\\.[0-9]/.+"
     },
+    "exploited_in_wild": {
+      "type": "boolean",
+      "description": "True when one of the entry's CVEs appears in the CISA Known Exploited Vulnerabilities (KEV) catalog."
+    },
+    "kev_date_added": {
+      "type": "string",
+      "description": "Earliest date the entry's CVE(s) were added to the CISA KEV catalog.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
     "aiid_id": {
       "type": "integer",
       "description": "Canonical AI Incident Database numeric ID where this entry has an AIID counterpart.",
