@@ -735,6 +735,22 @@ async function init() {
       });
     }
 
+    // Light/dark theme toggle. The <head> script already set data-theme from
+    // localStorage / OS preference before paint; here we just wire the button
+    // and re-render the SVG charts so their var()-driven fills repaint in the
+    // new palette.
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        const next = document.documentElement.getAttribute('data-theme') === 'light'
+          ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) { /* private mode */ }
+        renderAllCharts();
+        if (DATA.length) renderStats(DATA);
+      });
+    }
+
     renderStats(DATA);
     renderAllCharts();
 

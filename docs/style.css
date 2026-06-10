@@ -38,8 +38,49 @@
   --bar:       #6f93b8;
 
   --radius:    4px;
+  --shadow:    rgba(0, 0, 0, 0.8);
+  --on-accent: #1a1205;   /* ink that sits on an amber fill */
+  --grain:     0.035;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+/* Light theme — the "paper console" twin of the dark amber instrument panel.
+   A no-FOUC <head> script sets data-theme on <html> from localStorage or the
+   OS preference, so the right palette is in place before first paint. Only
+   surfaces, ink, lines, shadow and the accent/severity colours shift; the
+   layout, type and component shapes are identical. The accent deepens to
+   #9a6400 so links/labels keep WCAG-AA contrast on a light ground, and the
+   severity ramp darkens for legibility — these feed the chart palette too. */
+:root[data-theme="light"] {
+  --bg:        #f4f2ec;
+  --bg-2:      #faf9f5;
+  --panel:     #ffffff;
+  --panel-2:   #f0ede4;
+  --line:      rgba(20, 24, 32, 0.10);
+  --line-2:    rgba(20, 24, 32, 0.18);
+
+  --ink:       #1a1d24;
+  --muted:     #586172;
+  --faint:     #8b94a3;
+
+  --accent:     #9a6400;
+  --accent-2:   #7c5000;
+  --accent-dim: rgba(154, 100, 0, 0.10);
+  --accent-line: rgba(154, 100, 0, 0.40);
+
+  --critical:  #d31f3a;
+  --high:      #bd5a16;
+  --medium:    #8a6f00;
+  --low:       #0e9a7f;
+  --info:      #586172;
+  --bar:       #3f6a99;
+
+  --shadow:    rgba(20, 30, 50, 0.16);
+  --on-accent: #fff7e6;
+  --grain:     0.02;
+  color-scheme: light;
 }
 
 /* --------------------------------------------------------------------- */
@@ -73,9 +114,48 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: var(--grain);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
+
+/* Lighter, cooler atmosphere on the paper theme so the corner glows tint
+   rather than muddy the page. */
+:root[data-theme="light"] body {
+  background-image:
+    radial-gradient(1100px 520px at 78% -8%, rgba(154, 100, 0, 0.06), transparent 60%),
+    radial-gradient(820px 420px at 8% 0%, rgba(63, 106, 153, 0.05), transparent 55%),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 46px 46px, 46px 46px;
+  background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+}
+:root[data-theme="light"] .masthead::after {
+  background: linear-gradient(90deg, transparent, rgba(154, 100, 0, 0.05), transparent);
+}
+
+/* ------------------------------- Theme toggle ------------------------ */
+.theme-toggle {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.34rem 0.6rem;
+  background: var(--panel);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 30px;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent-line); transform: translateY(-1px); }
+.theme-toggle .ico { width: 0.95em; height: 0.95em; display: inline-block; }
+/* Show the sun in dark mode (click → go light), the moon in light mode. */
+.theme-toggle .ico-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .ico-sun  { display: none; }
+:root[data-theme="light"] .theme-toggle .ico-moon { display: inline-block; }
 
 .wrap { width: min(1180px, 92vw); margin: 0 auto; position: relative; z-index: 1; }
 
@@ -83,7 +163,7 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { color: var(--accent-2); }
 code, kbd { font-family: var(--mono); font-size: 0.9em; }
 
-::selection { background: var(--accent); color: #1a1205; }
+::selection { background: var(--accent); color: var(--on-accent); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -264,14 +344,14 @@ main { padding-bottom: 5rem; }
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.03em;
-  color: #1a1205;
+  color: var(--on-accent);
   background: var(--accent);
   padding: 0.5rem 0.9rem;
   border-radius: var(--radius);
   white-space: nowrap;
   transition: transform 0.15s, box-shadow 0.15s;
 }
-.cta:hover { color: #1a1205; transform: translateY(-1px); box-shadow: 0 6px 22px -8px var(--accent); }
+.cta:hover { color: var(--on-accent); transform: translateY(-1px); box-shadow: 0 6px 22px -8px var(--accent); }
 .cta-hint { font-size: 0.84rem; color: var(--muted); }
 
 /* ------------------------------- Section heads ----------------------- */
@@ -356,7 +436,7 @@ main { padding-bottom: 5rem; }
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.1s;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 30px -10px var(--shadow);
 }
 .chart-tooltip.visible { opacity: 1; }
 
@@ -568,14 +648,14 @@ tr.detail td { padding: 0; background: var(--bg-2); }
   position: fixed; right: 1.4rem; bottom: 1.4rem; z-index: 40;
   width: 42px; height: 42px;
   display: grid; place-items: center;
-  font-size: 1.1rem; color: #1a1205;
+  font-size: 1.1rem; color: var(--on-accent);
   background: var(--accent); border-radius: var(--radius);
   opacity: 0; transform: translateY(10px); pointer-events: none;
   transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 8px 26px -10px var(--accent);
 }
 .back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-.back-to-top:hover { color: #1a1205; box-shadow: 0 10px 30px -8px var(--accent); }
+.back-to-top:hover { color: var(--on-accent); box-shadow: 0 10px 30px -8px var(--accent); }
 
 /* ------------------------------- Footer ------------------------------ */
 footer {
