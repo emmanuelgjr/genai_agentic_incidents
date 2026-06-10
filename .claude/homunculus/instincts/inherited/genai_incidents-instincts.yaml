@@ -1,0 +1,330 @@
+# Instincts generated from https://github.com/emmanuelgjr/genai_incidents
+# Generated: 2026-06-10T04:22:45.709Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: genai_incidents-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: chore, fix
+
+## Evidence
+
+- 2 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore(release): bump version to 2.2.0, fix(release): rebuild 2.2.0 data on Linux — local build was missing the CVE feed
+
+---
+id: genai_incidents-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Commit Length
+
+## Action
+
+Write moderate-length commit messages (~59 characters)
+
+## Evidence
+
+- Average commit message length: 59 chars
+- Based on 2 commits
+
+---
+id: genai_incidents-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Naming Files
+
+## Action
+
+Use kebab-case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: kebab-case
+
+---
+id: genai_incidents-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: genai_incidents-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: genai_incidents-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: genai_incidents-workflow-data-release-workflow
+trigger: "when doing data release workflow"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Workflow Data Release Workflow
+
+## Action
+
+Follow the data-release-workflow workflow:
+1. Update incident data files (data/incidents.json, data/incidents.min.json, src/genai_incidents/data/incidents.min.json)
+2. Update or generate deprecation/id mapping files (data/id_deprecations.json, src/genai_incidents/data/id_deprecations.json)
+3. Update documentation files (INCIDENTS.md, CHANGELOG.md, CITATION.cff)
+4. Update or add incident markdown files (docs/incident/INC-*.md)
+5. Update summary/yearly documentation (docs/incidents/YYYY.md)
+6. Update charts and visualizations (docs/charts/*.svg)
+7. Update minified data for docs (docs/data/incidents.min.json)
+8. Update project metadata (pyproject.toml)
+9. Update or run scripts as needed (scripts/merge_and_dedupe.py)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: data/incidents.json, data/incidents.min.json, data/id_deprecations.json
+
+---
+id: genai_incidents-instinct-file-naming
+trigger: "When creating a new Python file in the repository"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct File Naming
+
+## Action
+
+Name the file using kebab-case (e.g., my-module.py)
+
+## Evidence
+
+- Pattern in namingConventions.files: kebab-case
+
+---
+id: genai_incidents-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Function Naming
+
+## Action
+
+Use camelCase for the function name (e.g., processIncidentData)
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: genai_incidents-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Class Naming
+
+## Action
+
+Use PascalCase for the class name (e.g., IncidentParser)
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: genai_incidents-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for the constant name (e.g., INCIDENTS_PATH)
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: genai_incidents-instinct-import-style
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: genai_incidents-instinct-export-style
+trigger: "When exporting functions or classes from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: genai_incidents-instinct-test-location
+trigger: "When adding or updating tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Test Location
+
+## Action
+
+Place test files in a separate directory from the main source code
+
+## Evidence
+
+- Pattern in architecture.testLocation: separate
+
+---
+id: genai_incidents-instinct-git-commit-format
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Git Commit Format
+
+## Action
+
+Use conventional commit prefixes, specifically 'chore' or 'fix', followed by a scope and a concise message (e.g., chore(release): bump version to 2.2.0)
+
+## Evidence
+
+- Pattern in commits.prefixes: ['chore', 'fix']
+- Examples: 'chore(release): bump version to 2.2.0', 'fix(release): rebuild 2.2.0 data on Linux — local build was missing the CVE feed'
+
+---
+id: genai_incidents-instinct-data-release-workflow
+trigger: "When someone wants to publish a new release with updated incident data and documentation"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: emmanuelgjr/genai_incidents
+---
+
+# Genai_incidents Instinct Data Release Workflow
+
+## Action
+
+Follow the data-release-workflow steps: update incident data files, deprecation/id mapping files, documentation, incident markdown files, summary/yearly documentation, charts, minified data for docs, project metadata, and scripts as needed
+
+## Evidence
+
+- Workflow: data-release-workflow
+- Commit sequence and files involved in workflow definition
+
