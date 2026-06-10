@@ -820,6 +820,141 @@ def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> No
         entry["updated"] = today
 
 
+def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Dedupe normalized entries (first hit wins: CVE > source_id > URL >
+    fuzzy title ±1 year). Returns ``(surviving, tombstoned)`` — tombstoned
+    entries were transitively absorbed into a survivor during reindexing.
+
+    Every index hit and every transitive claim is resolved through
+    ``_live`` so a merge can never target a tombstoned entry: content
+    merged into a dead entry would be silently dropped with it (see
+    docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md)."""
+    by_cve: dict[str, dict] = {}
+    by_url: dict[str, dict] = {}
+    by_title: dict[str, dict] = {}
+    by_src: dict[str, dict] = {}
+    deduped: list[dict] = []
+
+    def _live(entry: dict) -> dict:
+        """Follow ``_merged_into`` links from a tombstoned entry to the live
+        entry that absorbed it (cycle-guarded)."""
+        seen: set[int] = set()
+        while entry.get("_tombstoned") and id(entry) not in seen:
+            seen.add(id(entry))
+            absorber = entry.get("_merged_into")
+            if absorber is None:
+                break
+            entry = absorber
+        return entry
+
+    def _reindex(target: dict) -> None:
+        """Refresh every dedup index for ``target`` after a merge. If a key
+        (CVE / source_id / reference URL) already maps to a *different*
+        previously-deduped entry, that other entry is transitively absorbed
+        into ``target`` and tombstoned so we don't end up with two records
+        for what is really one incident.
+
+        Claims loop until ``target``'s key set stops changing: merge_into
+        reassigns the key lists, so keys absorbed from a claimed entry
+        mid-pass would otherwise never be re-pointed at ``target`` and
+        would keep referencing the tombstoned entry."""
+
+        def _claim(idx: dict, key: str) -> None:
+            other = idx.get(key)
+            if other is None:
+                idx[key] = target
+                return
+            other = _live(other)
+            if other is target or other.get("_tombstoned"):
+                idx[key] = target
+                return
+            # Transitive merge: pull other's content into target and retire it.
+            merge_into(target, other)
+            other["_tombstoned"] = True
+            other["_merged_into"] = target
+            idx[key] = target
+
+        while True:
+            cves = list(target.get("cve_ids") or [])
+            srcs = list(target.get("source_ids") or [])
+            urls = [normalize_url(r.get("url", ""))
+                    for r in target.get("references", []) or []]
+            for c in cves:
+                _claim(by_cve, c)
+            for s in srcs:
+                _claim(by_src, s)
+            for u in urls:
+                if u:
+                    _claim(by_url, u)
+            unchanged = (
+                list(target.get("cve_ids") or []) == cves
+                and list(target.get("source_ids") or []) == srcs
+                and [normalize_url(r.get("url", ""))
+                     for r in target.get("references", []) or []] == urls
+            )
+            if unchanged:
+                break
+
+    for e in all_entries:
+        # CVE-key dedupe (strongest signal)
+        cve_keys = e.get("cve_ids") or []
+        cve_hit = next((by_cve[c] for c in cve_keys if c in by_cve), None)
+        if cve_hit:
+            cve_hit = _live(cve_hit)
+            merge_into(cve_hit, e)
+            _reindex(cve_hit)
+            continue
+        # Source-ID dedupe (e.g. AIID-1234 referenced from both AIID scrape
+        # and OECD AIM's aiid_ids cross-reference).
+        src_keys = e.get("source_ids") or []
+        src_hit = next((by_src[s] for s in src_keys if s in by_src), None)
+        if src_hit:
+            src_hit = _live(src_hit)
+            merge_into(src_hit, e)
+            _reindex(src_hit)
+            continue
+        # URL-key dedupe
+        url_hit = None
+        for r in e.get("references", []):
+            u = normalize_url(r.get("url", ""))
+            if u and u in by_url:
+                url_hit = _live(by_url[u])
+                break
+        if url_hit:
+            merge_into(url_hit, e)
+            _reindex(url_hit)
+            continue
+        # Title-key dedupe. _reindex never updates by_title, so resolve the
+        # hit (and refresh the pointer) before the year check — the stale
+        # pointer was the original trigger for the tombstone-merge bug.
+        tk = title_key(e["title"])
+        if tk in by_title:
+            title_hit = _live(by_title[tk])
+            by_title[tk] = title_hit
+            if abs(title_hit["year"] - e["year"]) <= 1:
+                merge_into(title_hit, e)
+                _reindex(title_hit)
+                continue
+
+        # New entry
+        deduped.append(e)
+        _reindex(e)
+        by_title.setdefault(tk, e)
+
+    # Split out entries that got transitively absorbed during reindex.
+    # _merged_into holds object references (cyclic) — strip before the
+    # entries are serialized.
+    surviving: list[dict] = []
+    tombstones: list[dict] = []
+    for e in deduped:
+        e.pop("_merged_into", None)
+        if e.pop("_tombstoned", False):
+            tombstones.append(e)
+        else:
+            surviving.append(e)
+    return surviving, tombstones
+
+
 def main():
     # 0) Load the previous output: timestamps, the id-by-key map (so stable
     #    INC-* IDs survive a rebuild), and the monotonic ID counter.
@@ -855,91 +990,11 @@ def main():
             all_entries.extend(kept)
             print(f"[{src.name:40s}] {len(raw):4d} raw -> {len(kept):4d} normalized")
 
-    # 3) Dedupe
-    by_cve: dict[str, dict] = {}
-    by_url: dict[str, dict] = {}
-    by_title: dict[str, dict] = {}
-    by_src: dict[str, dict] = {}
-    deduped: list[dict] = []
-
-    def _reindex(target: dict) -> None:
-        """Refresh every dedup index for ``target`` after a merge. If a key
-        (CVE / source_id / reference URL) already maps to a *different*
-        previously-deduped entry, that other entry is transitively absorbed
-        into ``target`` and tombstoned so we don't end up with two records
-        for what is really one incident."""
-
-        def _claim(idx: dict, key: str) -> None:
-            other = idx.get(key)
-            if other is None:
-                idx[key] = target
-                return
-            if other is target or other.get("_tombstoned"):
-                idx[key] = target
-                return
-            # Transitive merge: pull other's content into target and retire it.
-            merge_into(target, other)
-            other["_tombstoned"] = True
-            idx[key] = target
-
-        for c in target.get("cve_ids") or []:
-            _claim(by_cve, c)
-        for s in target.get("source_ids") or []:
-            _claim(by_src, s)
-        for r in target.get("references", []) or []:
-            u = normalize_url(r.get("url", ""))
-            if u:
-                _claim(by_url, u)
-
-    for e in all_entries:
-        # CVE-key dedupe (strongest signal)
-        cve_keys = e.get("cve_ids") or []
-        cve_hit = next((by_cve[c] for c in cve_keys if c in by_cve), None)
-        if cve_hit:
-            merge_into(cve_hit, e)
-            _reindex(cve_hit)
-            continue
-        # Source-ID dedupe (e.g. AIID-1234 referenced from both AIID scrape
-        # and OECD AIM's aiid_ids cross-reference).
-        src_keys = e.get("source_ids") or []
-        src_hit = next((by_src[s] for s in src_keys if s in by_src), None)
-        if src_hit:
-            merge_into(src_hit, e)
-            _reindex(src_hit)
-            continue
-        # URL-key dedupe
-        url_hit = None
-        for r in e.get("references", []):
-            u = normalize_url(r.get("url", ""))
-            if u and u in by_url:
-                url_hit = by_url[u]
-                break
-        if url_hit:
-            merge_into(url_hit, e)
-            _reindex(url_hit)
-            continue
-        # Title-key dedupe
-        tk = title_key(e["title"])
-        if tk in by_title and abs(by_title[tk]["year"] - e["year"]) <= 1:
-            merge_into(by_title[tk], e)
-            _reindex(by_title[tk])
-            continue
-
-        # New entry
-        deduped.append(e)
-        _reindex(e)
-        by_title.setdefault(tk, e)
-
-    # 4) Drop entries that got transitively absorbed during reindex, but
-    #    record their old IDs so old citations can be resolved.
-    surviving: list[dict] = []
-    tombstones: list[dict] = []  # [{from, into, reason, date}, ...]
+    # 3+4) Dedupe; entries transitively absorbed during reindexing come back
+    #      as tombstones so their old IDs can be recorded for citation
+    #      resolution below.
+    surviving, tombstones = dedupe_entries(all_entries)
     today_str = str(date.today())
-    for e in deduped:
-        if e.pop("_tombstoned", False):
-            tombstones.append(e)
-        else:
-            surviving.append(e)
 
     # 4b) Finalize attack_vector (normalize fragments + reclassify "other")
     #     BEFORE stamping history. attack_vector is part of the content

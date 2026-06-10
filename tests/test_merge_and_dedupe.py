@@ -566,3 +566,70 @@ def test_retention_carry_is_deterministic_across_days(tmp_path, monkeypatch):
     day3 = (data / "incidents.json").read_text(encoding="utf-8")
 
     assert day2 == day3, "carried-prior rebuild on a later UTC day must be byte-identical"
+
+
+# ---------------------------------------------------------------------------
+# dedupe_entries — tombstone-resolution regressions
+# (docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md)
+# ---------------------------------------------------------------------------
+
+def _dedupe_entry(title, year=2024, source_ids=None, cve_ids=None, references=None):
+    return {
+        "title": title,
+        "year": year,
+        "date": str(year),
+        "severity": "Medium",
+        "source_ids": source_ids or [],
+        "cve_ids": cve_ids or [],
+        "references": references or [],
+    }
+
+
+def test_dedupe_title_hit_on_tombstoned_entry_keeps_content():
+    # A and B start as survivors; C shares a source_id with each, so B is
+    # transitively absorbed into A and tombstoned — but by_title still points
+    # at dead B. D's only match is that stale title key: its CVE must end up
+    # on the live absorber, not silently dropped with the tombstone.
+    a = _dedupe_entry("Alpha incident", source_ids=["S-A"])
+    b = _dedupe_entry("Beta incident", source_ids=["S-B"], cve_ids=["CVE-2024-7001"])
+    c = _dedupe_entry("Gamma incident", source_ids=["S-A", "S-B"])
+    d = _dedupe_entry("Beta incident", source_ids=["S-D"], cve_ids=["CVE-2024-7002"])
+
+    surviving, tombstoned = m.dedupe_entries([a, b, c, d])
+
+    surviving_cves = {cv for e in surviving for cv in (e.get("cve_ids") or [])}
+    assert "CVE-2024-7001" in surviving_cves
+    assert "CVE-2024-7002" in surviving_cves  # lost before the _live() fix
+    surviving_srcs = {s for e in surviving for s in (e.get("source_ids") or [])}
+    assert {"S-A", "S-B", "S-D"} <= surviving_srcs
+    assert len(surviving) == 1 and len(tombstoned) == 1
+
+
+def test_dedupe_keys_absorbed_mid_reindex_are_reclaimed():
+    # When C triggers "B absorbed into A", the CVE that A just inherited from
+    # B must be re-pointed at A (the old single-pass reindex iterated a stale
+    # key list and left it on tombstoned B). D then matches on that CVE and
+    # must merge into live A, keeping its second CVE.
+    a = _dedupe_entry("Alpha incident", source_ids=["S-A"])
+    b = _dedupe_entry("Beta incident", source_ids=["S-B"], cve_ids=["CVE-2024-7001"])
+    c = _dedupe_entry("Gamma incident", source_ids=["S-A", "S-B"])
+    d = _dedupe_entry("Delta incident", source_ids=["S-D"],
+                      cve_ids=["CVE-2024-7001", "CVE-2024-7003"])
+
+    surviving, _ = m.dedupe_entries([a, b, c, d])
+
+    surviving_cves = {cv for e in surviving for cv in (e.get("cve_ids") or [])}
+    assert "CVE-2024-7003" in surviving_cves  # lost before the _live() fix
+    assert len(surviving) == 1
+
+
+def test_dedupe_strips_internal_markers():
+    a = _dedupe_entry("Alpha incident", source_ids=["S-A"])
+    b = _dedupe_entry("Beta incident", source_ids=["S-B"])
+    c = _dedupe_entry("Gamma incident", source_ids=["S-A", "S-B"])
+
+    surviving, tombstoned = m.dedupe_entries([a, b, c])
+
+    for e in surviving + tombstoned:
+        assert "_tombstoned" not in e
+        assert "_merged_into" not in e

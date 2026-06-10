@@ -3,7 +3,7 @@
   "generated": "2026-06-10",
   "description": "Single source of truth for GenAI and agentic AI security incidents. Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable.",
   "schema": "schema/incident.schema.json",
-  "incident_count": 8146,
+  "incident_count": 8170,
   "incidents": [
     {
       "id": "INC-04853",
@@ -100425,6 +100425,134 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08162",
+      "source_ids": [
+        "AIID-198",
+        "AIID-205",
+        "OECD-AIM-2022-02-28-bdcb"
+      ],
+      "title": "AI-Generated Profiles Used in Disinformation Campaign Targeting Ukrainians",
+      "date": "2022-02-25",
+      "year": 2022,
+      "category": "real-world",
+      "description": "According to security reports by Meta, fictitious personas with GAN-generated profile pictures were used by people operating in Russia and Ukraine to push a disinformation campaign targeting Ukrainian social media users, and were taken down.",
+      "attack_vector": "misinformation",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #205",
+          "url": "https://incidentdatabase.ai/cite/205/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2022-02-28-bdcb",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #198",
+          "url": "https://incidentdatabase.ai/cite/198/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2022-03-02-f037",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2022-03-16-a9f6",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2022-03-17-8a43",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 198",
+          "url": "https://www.airi-navigator.com/incidents/198",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 205",
+          "url": "https://www.airi-navigator.com/incidents/205",
+          "type": "research"
+        },
+        {
+          "title": "Facebook, Twitter Remove Disinformation Accounts",
+          "url": "https://politicalwire.com/2022/02/28/facebook-twitter-remove-disinformation-accounts",
+          "type": "news"
+        },
+        {
+          "title": "Fake social media users with AI-generated photos are spreading lies for Russia",
+          "url": "https://www.inputmag.com/tech/russia-ukraine-social-media-misinformation-campaign",
+          "type": "news"
+        },
+        {
+          "title": "Facebook, Twitter remove disinformation accounts targeting Ukrainians",
+          "url": "https://www.today.com/news/news/facebook-twitter-remove-disinformation-accounts-targeting-ukrainians-rcna17912",
+          "type": "news"
+        },
+        {
+          "title": "Deepfake videos being used to push anti-Ukraine misinformation",
+          "url": "https://www.socialnews.xyz/2022/03/02/deepfake-videos-being-used-to-push-anti-ukraine-misinformation",
+          "type": "news"
+        },
+        {
+          "title": "Russian Disinfo Groups Used AI-Generated Profiles To Target Ukrainians | BOOM",
+          "url": "https://www.boomlive.in/news/russia-ukraine-invasion-conflict-propaganda-fake-website-influence-operation-17004",
+          "type": "news"
+        },
+        {
+          "title": "Facebook, Twitter remove disinformation accounts targeting Ukrainians",
+          "url": "https://www.democraticunderground.com/10142879082",
+          "type": "news"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd",
+        "oecd-aim"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 205,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-05011",
       "source_ids": [
         "AIID-204"
@@ -101856,10 +101984,19 @@
     {
       "id": "INC-07386",
       "source_ids": [
+        "AIID-199",
         "AIID-267",
+        "AIID-288",
+        "AIID-439",
+        "AIID-592",
         "AIID-74",
         "OECD-AIM-2020-02-03-3bda",
         "OECD-AIM-2020-02-06-56fa",
+        "OECD-AIM-2020-07-10-f988",
+        "OECD-AIM-2020-09-29-ee7b",
+        "OECD-AIM-2020-12-29-7c1d",
+        "OECD-AIM-2021-01-08-aa1c",
+        "OECD-AIM-2021-02-22-86d0",
         "OECD-AIM-2021-03-09-5b87",
         "OECD-AIM-2021-04-06-6ccd",
         "OECD-AIM-2021-04-13-22c2",
@@ -101899,6 +102036,7 @@
         "AML.T0012",
         "AML.T0019",
         "AML.T0020",
+        "AML.T0048",
         "AML.T0048.003",
         "AML.T0050",
         "AML.T0057",
@@ -102066,6 +102204,236 @@
           "type": "news"
         },
         {
+          "title": "AIID incident #199",
+          "url": "https://incidentdatabase.ai/cite/199/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 199",
+          "url": "https://www.airi-navigator.com/incidents/199",
+          "type": "research"
+        },
+        {
+          "title": "FTC Orders Ever to Delete Illegally Collected Facial Recognition Data and AI Models",
+          "url": "https://oecd.ai/en/incidents/2021-01-08-aa1c",
+          "type": "report"
+        },
+        {
+          "title": "California Company Settles FTC Allegations It Deceived Consumers",
+          "url": "https://www.ftc.gov/news-events/press-releases/2021/01/california-company-settles-ftc-allegations-it-deceived-consumers",
+          "type": "news"
+        },
+        {
+          "title": "FTC settlement with Ever orders data and AIs deleted after facial recognition pivot (Natasha Lomas/TechCrunch)",
+          "url": "https://www.techinvestornews.com/Tech-News/Tech-Bloggers/ftc-settlement-with-ever-orders-data-and-ais-deleted-after-facial-recogniti",
+          "type": "news"
+        },
+        {
+          "title": "Another arrest, and jail time, because of a bad facial recognition match",
+          "url": "https://www.nytimes.com/2020/12/29/technology/facial-recognition-misidentify-jail.html",
+          "type": "news"
+        },
+        {
+          "title": "FTC settlement with Ever orders data and AIs deleted after facial recognition pivot",
+          "url": "https://finance.yahoo.com/news/ftc-settlement-ever-orders-data-134352491.html",
+          "type": "news"
+        },
+        {
+          "title": "Capitol attack: FBI mum on facial recognition, Clearview AI searches spike",
+          "url": "https://www.cnet.com/news/capitol-attack-fbi-mum-on-facial-recognition-clearview-ai-searches-spike",
+          "type": "news"
+        },
+        {
+          "title": "Ever app settles FTC allegations it trained facial recognition tech with users' photos",
+          "url": "https://www.cnet.com/news/ever-app-settles-ftc-allegations-it-trained-facial-recognition-tech-with-users-photos",
+          "type": "news"
+        },
+        {
+          "title": "AIID incident #288",
+          "url": "https://incidentdatabase.ai/cite/288/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 288",
+          "url": "https://www.airi-navigator.com/incidents/288",
+          "type": "research"
+        },
+        {
+          "title": "Facial Recognition Error Leads to Wrongful Arrest and Imprisonment in New Jersey",
+          "url": "https://oecd.ai/en/incidents/2020-12-29-7c1d",
+          "type": "report"
+        },
+        {
+          "title": "Black Man Jailed for 10 Days After Being Misidentified by Facial Recognition Technology",
+          "url": "https://www.complex.com/life/2020/12/black-man-jailed-after-being-misidentified-by-facial-recognition-technology",
+          "type": "news"
+        },
+        {
+          "title": "A Black man spent 10 days in jail after he was misidentified by facial recognition, a new lawsuit says",
+          "url": "https://news.yahoo.com/black-man-spent-10-days-105342968.html",
+          "type": "news"
+        },
+        {
+          "title": "Another Arrest, and Jail Time, Because of a Bad Facial Recognition Match",
+          "url": "https://news.yahoo.com/another-arrest-jail-time-because-195604721.html",
+          "type": "news"
+        },
+        {
+          "title": "Black man in New Jersey misidentified by facial recognition tech and falsely jailed, lawsuit claims",
+          "url": "https://news.yahoo.com/black-man-jersey-misidentified-facial-204400626.html",
+          "type": "news"
+        },
+        {
+          "title": "A Black man spent 10 days in jail after he was misidentified by facial recognition, a new lawsuit claims",
+          "url": "https://www.businessinsider.in/tech/news/a-black-man-spent-10-days-in-jail-after-he-was-misidentified-by-facial-recognition-a-new-lawsuit-claims/articleshow/80010094.cms",
+          "type": "news"
+        },
+        {
+          "title": "AIID incident #439",
+          "url": "https://incidentdatabase.ai/cite/439/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 439",
+          "url": "https://www.airi-navigator.com/incidents/439",
+          "type": "research"
+        },
+        {
+          "title": "Detroit Police Wrongfully Arrest Black Man Due to Faulty Facial Recognition AI",
+          "url": "https://oecd.ai/en/incidents/2020-07-10-f988",
+          "type": "report"
+        },
+        {
+          "title": "Police use facial-recognition tech to arrest another innocent man (Jack Morse/Mashable!)",
+          "url": "https://www.techinvestornews.com/Tech-News/Tech-Bloggers/police-use-facial-recognition-tech-to-arrest-another-innocent-man",
+          "type": "news"
+        },
+        {
+          "title": "Facial recognition software tallies second wrongful arrest | StateScoop",
+          "url": "https://statescoop.com/facial-recognition-second-wrongful-arrest-aclu",
+          "type": "news"
+        },
+        {
+          "title": "Facial recognition linked to a second wrongful arrest by Detroit police",
+          "url": "https://www.engadget.com/facial-recognition-false-match-wrongful-arrest-224053761.html",
+          "type": "news"
+        },
+        {
+          "title": "Detroit Police Wrongfully Arrested Another Black Man Falsely Identified by Face Recognition",
+          "url": "https://gizmodo.com/detroit-police-wrongfully-arrested-another-black-man-fa-1844342084",
+          "type": "news"
+        },
+        {
+          "title": "Detroit facial recognition technology has misidentified suspects",
+          "url": "https://www.freep.com/story/news/local/michigan/detroit/2020/07/10/facial-recognition-detroit-michael-oliver-robert-williams/5392166002",
+          "type": "news"
+        },
+        {
+          "title": "ACLU Statement on Second Wrongful Arrest due to Face Recognition",
+          "url": "https://www.commondreams.org/newswire/2020/07/10/aclu-statement-second-wrongful-arrest-due-face-recognition-technology",
+          "type": "news"
+        },
+        {
+          "title": "AIID incident #592",
+          "url": "https://incidentdatabase.ai/cite/592/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-08-06-09c5",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-07-07-4f2b",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #74",
+          "url": "https://incidentdatabase.ai/cite/74/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 592",
+          "url": "https://www.airi-navigator.com/incidents/592",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 74",
+          "url": "https://www.airi-navigator.com/incidents/74",
+          "type": "research"
+        },
+        {
+          "title": "Detroit Police Facial Recognition System Causes Wrongful Arrests and Racial Bias Concerns",
+          "url": "https://oecd.ai/en/incidents/2020-09-29-ee7b",
+          "type": "report"
+        },
+        {
+          "title": "Detroit City Council greenlights $200,000 facial recognition contract",
+          "url": "https://www.washingtonexaminer.com/politics/detroit-city-council-greenlights-200-000-facial-recognition-contract",
+          "type": "news"
+        },
+        {
+          "title": "Detroit City Council votes to extend facial recognition contract, despite controversy",
+          "url": "https://eu.freep.com/story/news/local/michigan/detroit/2020/09/29/facial-recognition-software-contract-extended/3578348001",
+          "type": "news"
+        },
+        {
+          "title": "Facial recognition contract extension reopens rifts among Detroit police commissioners",
+          "url": "https://eu.freep.com/story/news/local/michigan/detroit/2020/09/30/facial-recognition-police-commissioners-rifts/5869731002",
+          "type": "news"
+        },
+        {
+          "title": "Detroit council set to vote on facial recognition software contract",
+          "url": "https://eu.detroitnews.com/story/news/local/detroit-city/2020/09/29/detroit-council-vote-facial-recognition/3563440001",
+          "type": "news"
+        },
+        {
+          "title": "Detroit City Council defies public opposition and renews facial recognition contract",
+          "url": "https://www.wsws.org/en/articles/2020/10/01/face-o01.html",
+          "type": "news"
+        },
+        {
+          "title": "Detroit votes to pour more funding into its flawed surveillance software",
+          "url": "https://www.inputmag.com/tech/detroit-votes-to-re-up-funding-for-inaccurate-surveillance-software",
+          "type": "news"
+        },
+        {
+          "title": "Facial Recognition AI Faces Bans and Scrutiny Over Bias and Privacy Risks",
+          "url": "https://oecd.ai/en/incidents/2021-02-22-86d0",
+          "type": "report"
+        },
+        {
+          "title": "No Facial Recognition Tech for Cops",
+          "url": "https://reason.com/2021/02/22/no-facial-recognition-tech-for-cops",
+          "type": "news"
+        },
+        {
+          "title": "Facebook might put facial-recognition tech in its smart glasses, due to launch this year  --  but only if it can ensure 'authority structures' can't abuse user ",
+          "url": "https://www.businessinsider.com/facebook-smart-glasses-facial-recognition-tech-andrew-bosworth-ar-glasses-2021-2",
+          "type": "news"
+        },
+        {
+          "title": "Facebook is 'looking at' facial recognition technology for upcoming smart glasses, executive confirms",
+          "url": "https://www.cnbc.com/2021/02/25/facebook-looking-at-facial-recognition-technology-andrew-bosworth.html",
+          "type": "news"
+        },
+        {
+          "title": "Facebook weighs whether to build facial recognition into smart glasses",
+          "url": "https://www.cnet.com/news/facebook-weighs-whether-to-build-facial-recognition-into-smart-glasses",
+          "type": "news"
+        },
+        {
+          "title": "Minneapolis passes restrictive ban on facial recognition use by police, others",
+          "url": "https://www.thestar.com.my/tech/tech-news/2021/02/23/us-state-passes-restrictive-ban-on-facial-recognition-use-by-police-others",
+          "type": "news"
+        },
+        {
+          "title": "Facebook Is Considering Facial Recognition For Its Upcoming Smart Glasses",
+          "url": "https://www.buzzfeednews.com/article/ryanmac/facebook-considers-facial-recognition-smart-glasses",
+          "type": "news"
+        },
+        {
           "title": "Detroit Man Wrongfully Arrested After AI Facial Recognition Error Sparks Lawsuit",
           "url": "https://oecd.ai/en/incidents/2021-04-13-22c2",
           "type": "report"
@@ -102151,7 +102519,7 @@
         "scraping"
       ],
       "added": "2026-05-16",
-      "updated": "2026-06-10",
+      "updated": "2026-06-09",
       "aiid_id": 267,
       "mitre_atlas_tactics": [
         "AML.TA0003",
@@ -102573,6 +102941,100 @@
         "AML.TA0010",
         "AML.TA0011",
         "AML.TA0012"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08163",
+      "source_ids": [
+        "AIID-160",
+        "AIID-279",
+        "AIID-286"
+      ],
+      "title": "TikTok’s “For You” Algorithm Exposed Young Users to Pro-Eating Disorder Content",
+      "date": "2019-07-01",
+      "year": 2019,
+      "category": "real-world",
+      "description": "TikTok’s young users were allegedly exposed to community-guideline-violating pro-eating disorder content on their algorithmically curated “For You” page that serves videos from any user on its platform.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #279",
+          "url": "https://incidentdatabase.ai/cite/279/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2022-12-15-9bc1",
+          "type": "report"
+        },
+        {
+          "title": "AIID #286",
+          "url": "https://incidentdatabase.ai/cite/286/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2022-06-28-006d",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #160",
+          "url": "https://incidentdatabase.ai/cite/160/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 160",
+          "url": "https://www.airi-navigator.com/incidents/160",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 286",
+          "url": "https://www.airi-navigator.com/incidents/286",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 279",
+          "url": "https://www.airi-navigator.com/incidents/279",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "eu-ai-act-3-limited-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 279,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
       ],
       "quality_tier": "reviewed",
       "corpus": "security"
@@ -107530,6 +107992,97 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08164",
+      "source_ids": [
+        "AIID-468",
+        "AIID-477",
+        "AIID-511"
+      ],
+      "title": "ChatGPT-Powered Bing Reportedly Had Problems with Factual Accuracy on Some Controversial Topics",
+      "date": "2023-02-07",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Microsoft&#x27;s ChatGPT-powered Bing search engine reportedly ran into factual accuracy problems when prompted about controversial matters, such as inventing plot of a non-existent movie or creating conspiracy theories.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #468",
+          "url": "https://incidentdatabase.ai/cite/468/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-02-16-ad20",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #477",
+          "url": "https://incidentdatabase.ai/cite/477/",
+          "type": "report"
+        },
+        {
+          "title": "AIID #511",
+          "url": "https://incidentdatabase.ai/cite/511/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 477",
+          "url": "https://www.airi-navigator.com/incidents/477",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 511",
+          "url": "https://www.airi-navigator.com/incidents/511",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 468",
+          "url": "https://www.airi-navigator.com/incidents/468",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 468,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-07698",
       "source_ids": [
         "AIID-469"
@@ -108234,6 +108787,160 @@
       ],
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
+    },
+    {
+      "id": "INC-08165",
+      "source_ids": [
+        "AIID-480",
+        "AIID-481",
+        "AIID-487",
+        "AIID-494",
+        "AIID-496",
+        "AIID-720"
+      ],
+      "title": "Deepfake Video Featured Fictitious News Anchors Discussing Venezuela&#x27;s Economy",
+      "date": "2023-02-15",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Video featuring fictitious news anchors was created using Synthesia to allegedly spread disinformation about Venezuela&#x27;s economy on social media and Venezuelan state-run broadcast.",
+      "attack_vector": "deepfake",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #487",
+          "url": "https://incidentdatabase.ai/cite/487/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-03-17-dccc",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #720",
+          "url": "https://incidentdatabase.ai/cite/720/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-03-12-d792",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #496",
+          "url": "https://incidentdatabase.ai/cite/496/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-03-11-2029",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #494",
+          "url": "https://incidentdatabase.ai/cite/494/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-03-07-96b8",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #481",
+          "url": "https://incidentdatabase.ai/cite/481/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-02-11-3c63",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #480",
+          "url": "https://incidentdatabase.ai/cite/480/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-01-31-8c9d",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-02-14-e265",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-04-04-8655",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 494",
+          "url": "https://www.airi-navigator.com/incidents/494",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 720",
+          "url": "https://www.airi-navigator.com/incidents/720",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 487",
+          "url": "https://www.airi-navigator.com/incidents/487",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 481",
+          "url": "https://www.airi-navigator.com/incidents/481",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 480",
+          "url": "https://www.airi-navigator.com/incidents/480",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 496",
+          "url": "https://www.airi-navigator.com/incidents/496",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 487,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
     },
     {
       "id": "INC-04575",
@@ -111713,6 +112420,207 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08166",
+      "source_ids": [
+        "AIID-573",
+        "AIID-597",
+        "AIID-632",
+        "AIID-634",
+        "AIID-903"
+      ],
+      "title": "Deepfake Recordings Allegedly Influence Slovakian Election",
+      "date": "2023-10-07",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Days before Slovakia&#x27;s election, deepfake audio recordings surfaced, allegedly featuring conversations between a journalist and a leading liberal politician discussing vote-rigging and other controversial topics. The recordings were spread on social media platforms and may have influenced the election outcome, which saw the pro-Russian populist party winning.",
+      "attack_vector": "deepfake",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI02",
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.1",
+        "MANAGE-2.4",
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0053",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #573",
+          "url": "https://incidentdatabase.ai/cite/573/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-09-28-fae0",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-02-02-e719",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #903",
+          "url": "https://incidentdatabase.ai/cite/903/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-01-29-7622",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #597",
+          "url": "https://incidentdatabase.ai/cite/597/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-10-23-51e1",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-11-02-f4c2",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-11-06-e446",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-11-22-ba52",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-12-02-0b48",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-12-02-5fb6",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-01-17-0617",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-01-25-5e3f",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #632",
+          "url": "https://incidentdatabase.ai/cite/632/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-01-24-f633",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-01-26-a8a7",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #634",
+          "url": "https://incidentdatabase.ai/cite/634/",
+          "type": "report"
+        },
+        {
+          "title": "Arup revealed as victim of $25 million deepfake scam - CNN",
+          "url": "https://www.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk",
+          "type": "news"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-05-16-8bb5",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-04-02-7615",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 634",
+          "url": "https://www.airi-navigator.com/incidents/634",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 632",
+          "url": "https://www.airi-navigator.com/incidents/632",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 597",
+          "url": "https://www.airi-navigator.com/incidents/597",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 573",
+          "url": "https://www.airi-navigator.com/incidents/573",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 903",
+          "url": "https://www.airi-navigator.com/incidents/903",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "arup",
+        "bec",
+        "cfo-fraud",
+        "cross-listed",
+        "deepfake",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "minors",
+        "ncii",
+        "oecd",
+        "school",
+        "video"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 573,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011",
+        "AML.TA0012"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-04429",
       "source_ids": [
         "AIID-578"
@@ -112632,6 +113540,90 @@
       ],
       "quality_tier": "reviewed",
       "corpus": "ai-harm"
+    },
+    {
+      "id": "INC-08167",
+      "source_ids": [
+        "AIID-440",
+        "AIID-598"
+      ],
+      "title": "False Arrest of Georgia Man Due to Louisiana Police&#x27;s Faulty Facial Recognition Technology",
+      "date": "2022-11-25",
+      "year": 2022,
+      "category": "real-world",
+      "description": "The Jefferson Parish Sheriff’s Office in Louisiana relied on facial recognition technology to identify suspects for the alleged theft of luxury purses, resulting in a man in Georgia, Randal Reid, being arrested. However, the technology produced a false match, leading to Reid&#x27;s arrest and subsequent release. This incident highlights the potential pitfalls of facial recognition technology in law enforcement.",
+      "attack_vector": "rce",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #598",
+          "url": "https://incidentdatabase.ai/cite/598/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-01-02-0d4b",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #440",
+          "url": "https://incidentdatabase.ai/cite/440/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2023-01-03-9203",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 440",
+          "url": "https://www.airi-navigator.com/incidents/440",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 598",
+          "url": "https://www.airi-navigator.com/incidents/598",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 598,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
     },
     {
       "id": "INC-04851",
@@ -116720,6 +117712,86 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08168",
+      "source_ids": [
+        "AIID-650",
+        "AIID-682"
+      ],
+      "title": "GOP Pollster Reportedly Shares Purportedly AI-Generated Images to Fabricate Appearance of Black Voter Support",
+      "date": "2024-02-01",
+      "year": 2024,
+      "category": "real-world",
+      "description": "Purportedly AI-generated images circulated by GOP pollster Patrick Ruffini reportedly depicted Black men appearing to support the Republican Party shortly before Black History Month. The allegedly fabricated photos created a misleading impression of racial diversity within the GOP and may have shaped public perception. The episode raises concerns about the reported use of AI to distort political representation and the potential impact on Black communities.",
+      "attack_vector": "rce",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #682",
+          "url": "https://incidentdatabase.ai/cite/682/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-03-04-5ca7",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #650",
+          "url": "https://incidentdatabase.ai/cite/650/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 650",
+          "url": "https://www.airi-navigator.com/incidents/650",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 682",
+          "url": "https://www.airi-navigator.com/incidents/682",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 682,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-04378",
       "source_ids": [
         "AIID-679"
@@ -117359,6 +118431,84 @@
       "aiid_id": 690,
       "mitre_atlas_tactics": [
         "AML.TA0003",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08169",
+      "source_ids": [
+        "AIID-691",
+        "AIID-692"
+      ],
+      "title": "London Metropolitan Police&#x27;s Facial Recognition Technology Reportedly Misidentified Shaun Thompson as Suspect Leading to Arrest",
+      "date": "2024-02-01",
+      "year": 2024,
+      "category": "real-world",
+      "description": "Sometime in February 2024, Shaun Thompson is reported to have walked by one of the London Metropolitan Police&#x27;s facial recognition technology vans near London Bridge. He was almost immediately arrested because the technology is reported to have misidentified him as a suspect in an unrelated and unspecified crime.",
+      "attack_vector": "privacy-violation",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #692",
+          "url": "https://incidentdatabase.ai/cite/692/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-05-25-9f48",
+          "type": "report"
+        },
+        {
+          "title": "AIID #691",
+          "url": "https://incidentdatabase.ai/cite/691/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 691",
+          "url": "https://www.airi-navigator.com/incidents/691",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 692",
+          "url": "https://www.airi-navigator.com/incidents/692",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 692,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
         "AML.TA0011"
       ],
       "quality_tier": "reviewed",
@@ -120773,6 +121923,106 @@
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08170",
+      "source_ids": [
+        "AIID-762",
+        "AIID-763",
+        "OECD-2024-08-12-212f-grok-privacy"
+      ],
+      "title": "Grok AI Chatbot Reportedly Spreads Unfounded Rumors About Trump’s Dentures",
+      "date": "2024-08-13",
+      "year": 2024,
+      "category": "real-world",
+      "description": "Grok, X’s AI-powered chatbot, reportedly spread unsubstantiated claims about former President Trump’s alleged dentures during his interview with Elon Musk. The AI-generated summary is alleged to have falsely stated that Trump’s speech issues were due to missing dentures, despite no evidence. The post was quickly removed, but the incident is an example of concerns over Grok&#x27;s tendency to amplify misinformation.",
+      "attack_vector": "misinformation",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM02",
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI03",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.1",
+        "GOVERN-1.4",
+        "MAP-3.5",
+        "MEASURE-2.10",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0012",
+        "AML.T0024",
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0057",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #763",
+          "url": "https://incidentdatabase.ai/cite/763/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-09-01-759d",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #762",
+          "url": "https://incidentdatabase.ai/cite/762/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-08-12-212f",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 762",
+          "url": "https://www.airi-navigator.com/incidents/762",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 763",
+          "url": "https://www.airi-navigator.com/incidents/763",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "deepfake",
+        "eu-ai-act-3-limited-risk",
+        "gdpr",
+        "intentional",
+        "oecd",
+        "training-data",
+        "xai"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 763,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0004",
+        "AML.TA0005",
+        "AML.TA0010",
+        "AML.TA0011",
+        "AML.TA0012"
       ],
       "quality_tier": "reviewed",
       "corpus": "security"
@@ -124587,6 +125837,84 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08171",
+      "source_ids": [
+        "AIID-647",
+        "AIID-853"
+      ],
+      "title": "Two Passengers Report Feeling Trapped in Waymo Car During Sensor Obstruction",
+      "date": "2024-02-03",
+      "year": 2024,
+      "category": "real-world",
+      "description": "During a nighttime Waymo ride in San Francisco, an individual reportedly blocked the sensors of an autonomous vehicle, leaving passengers Robert Moreno and his husband feeling trapped and unsure how to proceed. Waymo&#x27;s support team reportedly advised the riders to stay inside the vehicle for safety. The individual reportedly left after a few minutes without further escalation.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM05"
+      ],
+      "owasp_asi": [
+        "ASI08"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0050"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #853",
+          "url": "https://incidentdatabase.ai/cite/853/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-02-07-5b6d",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #647",
+          "url": "https://incidentdatabase.ai/cite/647/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-03-02-ad98",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 647",
+          "url": "https://www.airi-navigator.com/incidents/647",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 853",
+          "url": "https://www.airi-navigator.com/incidents/853",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 853,
+      "mitre_atlas_tactics": [
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-04345",
       "source_ids": [
         "AIID-854"
@@ -126228,6 +127556,106 @@
       "added": "2026-05-16",
       "updated": "2026-05-30",
       "aiid_id": 891,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08172",
+      "source_ids": [
+        "AIID-861",
+        "AIID-892"
+      ],
+      "title": "Apple Intelligence Allegedly Flags Scam Messages as High Priority",
+      "date": "2024-08-05",
+      "year": 2024,
+      "category": "real-world",
+      "description": "Apple’s AI notification summarization and prioritization feature, part of the Apple Intelligence update, has reportedly flagged scam and phishing messages as high-priority, and is allegedly misleading users into trusting fraudulent communications. By rephrasing and condensing messages, the system is allegedly amplifying scam risks inadvertently and reportedly increasing the likelihood of financial harm for users.",
+      "attack_vector": "phishing",
+      "affected": "",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #892",
+          "url": "https://incidentdatabase.ai/cite/892/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-06-d760",
+          "type": "report"
+        },
+        {
+          "title": "AIID #861",
+          "url": "https://incidentdatabase.ai/cite/861/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-12-17-ff1a",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-03-8683",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-07-318d",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-17-e733",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 861",
+          "url": "https://www.airi-navigator.com/incidents/861",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 892",
+          "url": "https://www.airi-navigator.com/incidents/892",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 892,
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0005",
@@ -128690,6 +130118,137 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08173",
+      "source_ids": [
+        "AIID-927",
+        "AIID-941",
+        "AIID-942"
+      ],
+      "title": "Cybercriminals Reportedly Exploited Google’s G.Co Subdomain and Spoofed Caller ID in AI-Driven Phishing Attack on Hack Club Founder",
+      "date": "2025-02-20",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Hack Club founder Zach Latta was reportedly targeted in an AI-assisted phishing attack exploiting Google’s own systems. Cybercriminals allegedly spoofed a legitimate Google Assistant number and used voice cloning to impersonate support staff, claiming unusual login activity from Frankfurt. They reinforced the deception by sending a real email from Google’s Workspace domain. The attack, which relied on Google’s g.co subdomain, was thwarted when inconsistencies raised Latta’s suspicions.",
+      "attack_vector": "rce",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #942",
+          "url": "https://incidentdatabase.ai/cite/942/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-07-c2f4",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-31-4737",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-04-c7ae",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #941",
+          "url": "https://incidentdatabase.ai/cite/941/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-07-ef3e",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-10-63aa",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #927",
+          "url": "https://incidentdatabase.ai/cite/927/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-10-4779",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-12-acc4",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-25-6af8",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-03-11-1541",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 942",
+          "url": "https://www.airi-navigator.com/incidents/942",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 941",
+          "url": "https://www.airi-navigator.com/incidents/941",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 927",
+          "url": "https://www.airi-navigator.com/incidents/927",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 942,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-02279",
       "source_ids": [
         "AIID-948"
@@ -129991,6 +131550,214 @@
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08174",
+      "source_ids": [
+        "AIID-701",
+        "AIID-734",
+        "AIID-755",
+        "AIID-824",
+        "AIID-929",
+        "AIID-969",
+        "AIID-971",
+        "AIID-972"
+      ],
+      "title": "Russian Influence Operation Allegedly Uses AI to Create Fake Kamala Harris Campaign Website and Rhino-Hunting Hoax",
+      "date": "2024-09-25",
+      "year": 2024,
+      "category": "real-world",
+      "description": "A Russian disinformation campaign, linked to Storm-1516 and Kremlin propagandist John Mark Dougan, allegedly used AI-generated content to target Kamala Harris’s election bid. The operation included a fake campaign website promoting extreme policies and an AI-enhanced deepfake video falsely claiming Harris killed an endangered rhino in Zambia. The hoaxes were spread via Telegram, X, VK, and pro-Kremlin media outlets.",
+      "attack_vector": "deepfake",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM06",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI02",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0053",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #972",
+          "url": "https://incidentdatabase.ai/cite/972/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-10-07-078b",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #971",
+          "url": "https://incidentdatabase.ai/cite/971/",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #755",
+          "url": "https://incidentdatabase.ai/cite/755/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-06-22-9ab4",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #701",
+          "url": "https://incidentdatabase.ai/cite/701/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-06-18-16fb",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #734",
+          "url": "https://incidentdatabase.ai/cite/734/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-07-03-8c70",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-07-03-d6b1",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-08-19-c337",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-08-19-ee53",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-09-17-10f8",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #969",
+          "url": "https://incidentdatabase.ai/cite/969/",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #824",
+          "url": "https://incidentdatabase.ai/cite/824/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-10-21-1772",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-10-23-4490",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-11-05-188a",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-11-05-b345",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-06-93a4",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #929",
+          "url": "https://incidentdatabase.ai/cite/929/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 929",
+          "url": "https://www.airi-navigator.com/incidents/929",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 824",
+          "url": "https://www.airi-navigator.com/incidents/824",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 972",
+          "url": "https://www.airi-navigator.com/incidents/972",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 969",
+          "url": "https://www.airi-navigator.com/incidents/969",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 755",
+          "url": "https://www.airi-navigator.com/incidents/755",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 734",
+          "url": "https://www.airi-navigator.com/incidents/734",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 701",
+          "url": "https://www.airi-navigator.com/incidents/701",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 971",
+          "url": "https://www.airi-navigator.com/incidents/971",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "ai-pre-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 972,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011",
+        "AML.TA0012"
       ],
       "quality_tier": "reviewed",
       "corpus": "security"
@@ -135089,6 +136856,112 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08175",
+      "source_ids": [
+        "AIID-1077",
+        "AIID-1085",
+        "AIID-1141"
+      ],
+      "title": "FBI Reports Ongoing Vishing and Smishing Campaign Allegedly Targeting Government Officials Using Purportedly AI-Generated Voices",
+      "date": "2025-05-15",
+      "year": 2025,
+      "category": "real-world",
+      "description": "According to a May 15, 2025 public alert from the FBI and IC3, malicious actors have been using purported AI-generated voice messages and smishing tactics since April 2025 to impersonate senior U.S. officials. The campaign reportedly targets government personnel and their contacts to gain access to personal or official accounts. The FBI warns the scheme may involve credential theft and social engineering, with AI voice cloning used to increase believability.",
+      "attack_vector": "deepfake",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #1077",
+          "url": "https://incidentdatabase.ai/cite/1077/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-05-30-2790",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1085",
+          "url": "https://incidentdatabase.ai/cite/1085/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-07-08-ebee",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1141",
+          "url": "https://incidentdatabase.ai/cite/1141/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-07-07-9e94",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-07-22-f5ad",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-07-28-ad92",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 1141",
+          "url": "https://www.airi-navigator.com/incidents/1141",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1085",
+          "url": "https://www.airi-navigator.com/incidents/1085",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1077",
+          "url": "https://www.airi-navigator.com/incidents/1077",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 1077,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-02950",
       "source_ids": [
         "AIID-1075"
@@ -136011,6 +137884,116 @@
       "aiid_id": 1097,
       "mitre_atlas_tactics": [
         "AML.TA0003",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08176",
+      "source_ids": [
+        "AIID-1094",
+        "AIID-1095",
+        "AIID-1096",
+        "AIID-1283",
+        "OECD-AIM-2025-05-15-d9b7"
+      ],
+      "title": "Purported AI-Generated Video Depicts Ibrahim Traoré of Burkina Faso Delivering Speech on Western Exploitation",
+      "date": "2025-05-25",
+      "year": 2025,
+      "category": "real-world",
+      "description": "A video reportedly published on May 25, 2025, claimed to show Burkina Faso President Ibrahim Traoré delivering a forceful speech against Western media and exploitation. The video, which purportedly used AI-generated visuals and audio, was shared widely on social platforms. Despite containing disclaimers identifying it as fictional, the video was reportedly circulated and interpreted by some viewers as authentic.",
+      "attack_vector": "rce",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #1096",
+          "url": "https://incidentdatabase.ai/cite/1096/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-05-15-d9b7",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1095",
+          "url": "https://incidentdatabase.ai/cite/1095/",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1094",
+          "url": "https://incidentdatabase.ai/cite/1094/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 1095",
+          "url": "https://www.airi-navigator.com/incidents/1095",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1096",
+          "url": "https://www.airi-navigator.com/incidents/1096",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1094",
+          "url": "https://www.airi-navigator.com/incidents/1094",
+          "type": "research"
+        },
+        {
+          "title": "REVEALED: The social media accounts using AI videos to amplify pro-Traore propaganda",
+          "url": "https://factcheck.thecable.ng/revealed-the-social-media-accounts-using-ai-videos-to-amplify-pro-traore-propaganda",
+          "type": "news"
+        },
+        {
+          "title": "AIID incident #1283",
+          "url": "https://incidentdatabase.ai/cite/1283/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 1283",
+          "url": "https://www.airi-navigator.com/incidents/1283",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-2-high-risk",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd",
+        "oecd-aim"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 1096,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
         "AML.TA0011"
       ],
       "quality_tier": "reviewed",
@@ -136953,6 +138936,230 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08177",
+      "source_ids": [
+        "AIID-1021",
+        "AIID-1118",
+        "AIID-1201",
+        "EXT-2025-DPRK-RANSOMWARE-SALES",
+        "INC-110",
+        "LEGACY-INC-00222",
+        "OECD-2025-08-27-cabd-claude-extortion",
+        "RES-anthropic-aug2025",
+        "RES-anthropic-dprk-2025",
+        "RES-anthropic-extortion-2025",
+        "RES-anthropic-ransomware-sale-2025",
+        "RES-anthropic-vibe-extort-2025",
+        "VTR-anthropic-aug2025-csam-attempts",
+        "VTR-anthropic-aug2025-gtg2002-vibe-hacking",
+        "VTR-anthropic-aug2025-gtg5004-rwaas",
+        "VTR-anthropic-aug2025-nk-employment-fraud",
+        "VTR-anthropic-aug2025-no-code-ransomware",
+        "VTR-anthropic-aug2025-romance-scam-ru",
+        "VTR-anthropic-aug2025-vietnam-critical-infra",
+        "VTR-microsoft-jasper-sleet-2025"
+      ],
+      "title": "Ongoing Purported AI-Assisted Identity Fraud Enables Unauthorized Access to Western Companies by North Korean IT Workers",
+      "date": "2021-01-01",
+      "year": 2021,
+      "category": "real-world",
+      "description": "North Korean operatives have reportedly used AI-generated identities to secure remote jobs or impersonate employers in order to infiltrate companies. These tactics allegedly support sanctions evasion through wage theft, credential exfiltration, and malware deployment. Workers reportedly use fake resumes, VPNs, and face-altering tools; some deploy malware like OtterCookie after embedding, while others lure targets via spoofed job interviews. AI systems are reportedly used to generate fake resumes, alter profile photos, and assist in real-time responses during video interviews.",
+      "attack_vector": "data-exfiltration",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM01",
+        "LLM02",
+        "LLM05",
+        "LLM06",
+        "LLM07",
+        "LLM09",
+        "LLM10"
+      ],
+      "owasp_asi": [
+        "ASI01",
+        "ASI02",
+        "ASI03",
+        "ASI05",
+        "ASI06",
+        "ASI07",
+        "ASI09",
+        "ASI10"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.1",
+        "GOVERN-1.3",
+        "GOVERN-1.4",
+        "GOVERN-1.5",
+        "GOVERN-3.2",
+        "GOVERN-6.1",
+        "GOVERN-6.2",
+        "MANAGE-2.1",
+        "MANAGE-2.2",
+        "MANAGE-2.3",
+        "MANAGE-2.4",
+        "MANAGE-4.3",
+        "MAP-2.1",
+        "MAP-3.5",
+        "MAP-4.1",
+        "MEASURE-2.10",
+        "MEASURE-2.4",
+        "MEASURE-2.5",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0012",
+        "AML.T0017",
+        "AML.T0024",
+        "AML.T0025",
+        "AML.T0029",
+        "AML.T0048",
+        "AML.T0048.001",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0051",
+        "AML.T0051.000",
+        "AML.T0051.001",
+        "AML.T0053",
+        "AML.T0054",
+        "AML.T0056",
+        "AML.T0057",
+        "AML.T0058",
+        "AML.T0066"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #1118",
+          "url": "https://incidentdatabase.ai/cite/1118/",
+          "type": "report"
+        },
+        {
+          "title": "Jasper Sleet: North Korean remote IT workers - Microsoft",
+          "url": "https://www.microsoft.com/en-us/security/blog/2025/06/30/jasper-sleet-north-korean-remote-it-workers-evolving-tactics-to-infiltrate-organizations/",
+          "type": "vendor"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-04-08-98be",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1021",
+          "url": "https://incidentdatabase.ai/cite/1021/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-04-14-d8a1",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-08-27-cabd",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1201",
+          "url": "https://incidentdatabase.ai/cite/1201/",
+          "type": "report"
+        },
+        {
+          "title": "Detecting and countering misuse of AI: August 2025 - Anthropic",
+          "url": "https://www.anthropic.com/news/detecting-countering-misuse-aug-2025",
+          "type": "vendor"
+        },
+        {
+          "title": "AIRI Navigator — incident 1201",
+          "url": "https://www.airi-navigator.com/incidents/1201",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1021",
+          "url": "https://www.airi-navigator.com/incidents/1021",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1118",
+          "url": "https://www.airi-navigator.com/incidents/1118",
+          "type": "research"
+        },
+        {
+          "title": "Anthropic Threat Intelligence Report Aug 2025 (PDF)",
+          "url": "https://www-cdn.anthropic.com/b2a76c6f6992465c09a6f2fce282f6c0cea8c200.pdf",
+          "type": "report"
+        }
+      ],
+      "tags": [
+        "agentic",
+        "agentic-cybercrime",
+        "agentic-misuse",
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "anthropic",
+        "apt",
+        "automated-attack",
+        "automated-extortion",
+        "child-safety",
+        "china",
+        "claude",
+        "claude-code",
+        "criminal-misuse",
+        "critical-infrastructure",
+        "cross-listed",
+        "csam",
+        "deepfake",
+        "dprk",
+        "employment-fraud",
+        "eu-ai-act-2-high-risk",
+        "eu-ai-act-3-limited-risk",
+        "extortion",
+        "gtg-2002",
+        "gtg-5004",
+        "identity-fraud",
+        "insider-threat",
+        "intentional",
+        "jailbreak",
+        "jasper-sleet",
+        "microsoft",
+        "misuse",
+        "no-code-ransomware",
+        "north-korea",
+        "oecd",
+        "raas",
+        "ransomware",
+        "ransomware-adjacent",
+        "ransomware-gen",
+        "romance-scam",
+        "russia",
+        "skill-compression",
+        "skill-uplift",
+        "vibe-hacking",
+        "vietnam"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 1118,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0004",
+        "AML.TA0005",
+        "AML.TA0007",
+        "AML.TA0010",
+        "AML.TA0011",
+        "AML.TA0012"
+      ],
+      "mitigations": [
+        "Abuse reporting and rapid response",
+        "Employment verification tools resistant to AI-generated fraud",
+        "Offensive operation pattern detection"
+      ],
+      "impact": "AI-enabled criminal enterprises; ransomware ecosystem; employment fraud at scale; $500K+ extortion demands",
+      "quality_tier": "curated",
+      "corpus": "security"
+    },
+    {
       "id": "INC-02960",
       "source_ids": [
         "AIID-1117"
@@ -137002,6 +139209,97 @@
       "added": "2026-05-16",
       "updated": "2026-05-30",
       "aiid_id": 1117,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08178",
+      "source_ids": [
+        "AIID-1113",
+        "AIID-1114",
+        "AIID-1115"
+      ],
+      "title": "Alleged Deepfake Investment Scam Uses Economist David Rosenberg&#x27;s Likeness on Meta Platforms",
+      "date": "2025-04-15",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Fraudsters allegedly used AI-generated content and social media ads to impersonate economist David Rosenberg and promote a fraudulent investment scheme. Victims were reportedly directed to WhatsApp groups with fake stock tips, resulting in substantial financial losses, with some exceeding $500,000. The ads reportedly appeared on Meta platforms, including Facebook and Instagram. Rosenberg and his family reported the scam to authorities.",
+      "attack_vector": "deepfake",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #1115",
+          "url": "https://incidentdatabase.ai/cite/1115/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-06-16-b767",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1114",
+          "url": "https://incidentdatabase.ai/cite/1114/",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #1113",
+          "url": "https://incidentdatabase.ai/cite/1113/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-04-01-59e1",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 1114",
+          "url": "https://www.airi-navigator.com/incidents/1114",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1115",
+          "url": "https://www.airi-navigator.com/incidents/1115",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1113",
+          "url": "https://www.airi-navigator.com/incidents/1113",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 1115,
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0011"
@@ -138227,6 +140525,81 @@
       "mitre_atlas_tactics": [
         "AML.TA0003",
         "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08179",
+      "source_ids": [
+        "AIID-1143",
+        "AIID-924"
+      ],
+      "title": "Former Namibian First Lady Monica Geingos&#x27;s Likeness Reportedly Used in Purported AI-Generated Video Investment Scams",
+      "date": "2025-01-22",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Namibia&#x27;s former First Lady Monica Geingos publicly warned that scammers are using purportedly AI-manipulated videos to impersonate her and promote fake forex schemes. Reportedly, deepfake clips and cloned voice calls have convinced victims to hand over savings, including retirement funds. Her team reports the problem worsening across TikTok and other platforms. She urged the public to report fake accounts and ignore messages claiming she offers loans or investments.",
+      "attack_vector": "deepfake",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID incident #1143",
+          "url": "https://incidentdatabase.ai/cite/1143/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-02-13-710e",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #924",
+          "url": "https://incidentdatabase.ai/cite/924/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 924",
+          "url": "https://www.airi-navigator.com/incidents/924",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1143",
+          "url": "https://www.airi-navigator.com/incidents/1143",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "intentional",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 1143,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
         "AML.TA0011"
       ],
       "quality_tier": "reviewed",
@@ -157365,6 +159738,97 @@
       "corpus": "security"
     },
     {
+      "id": "INC-08180",
+      "source_ids": [
+        "AIID-475",
+        "AIID-753"
+      ],
+      "title": "McDonald's ends IBM partnership after AI drive-thru ordering errors",
+      "date": "2024-06-06",
+      "year": 2024,
+      "category": "real-world",
+      "description": "McDonald's piloted an AI-enabled voice-ordering system with IBM at 100+ U.S. drive-thrus, and ended the partnership in June 2024 after viral evidence of mis-orders (adding extras, mixing lane orders) and customer manipulation.",
+      "attack_vector": "adversarial-input",
+      "affected": "McDonald's / IBM",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI08",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MANAGE-1.3",
+        "MANAGE-4.1",
+        "MAP-3.5",
+        "MEASURE-2.6",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "Incident 475",
+          "url": "https://incidentdatabase.ai/cite/475/",
+          "type": "advisory"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-06-17-230b",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-06-17-d54b",
+          "type": "report"
+        },
+        {
+          "title": "AIID incident #753",
+          "url": "https://incidentdatabase.ai/cite/753/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 753",
+          "url": "https://www.airi-navigator.com/incidents/753",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 475",
+          "url": "https://www.airi-navigator.com/incidents/475",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "eu-ai-act-4-minimal-or-no-risk",
+        "mcdonalds",
+        "oecd",
+        "speech-recognition",
+        "voice-ai"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 475,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
       "id": "INC-04836",
       "source_ids": [
         "AIID-491"
@@ -158556,6 +161020,169 @@
         "AML.TA0012"
       ],
       "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08181",
+      "source_ids": [
+        "ATLAS-AML.CS0020",
+        "ATLAS-AML.CS0021",
+        "ATLAS-RESEARCH-PromptInjection-Greshake",
+        "EXT-2023-CHATGPT-ADV-PLUGIN-EXFIL",
+        "INC-003",
+        "INC-007",
+        "INC-022",
+        "RES-etr-chatgpt-plugins-2023"
+      ],
+      "title": "ChatGPT plugin/cross-plugin data exfiltration via Markdown image injection (Embrace The Red)",
+      "date": "2023-05-01",
+      "year": 2023,
+      "category": "real-world",
+      "description": "Johann Rehberger (Embrace The Red) demonstrated that ChatGPT plugins (e.g., WebPilot, Cross-Plugin Request Forgery) could exfiltrate conversation data via Markdown image rendering and indirect prompt injection, including auto-invocation of plugins without user consent.",
+      "attack_vector": "prompt-injection",
+      "affected": "OpenAI ChatGPT plugins",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM01",
+        "LLM02",
+        "LLM05",
+        "LLM06",
+        "LLM07"
+      ],
+      "owasp_asi": [
+        "ASI01",
+        "ASI02",
+        "ASI06",
+        "ASI07",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.1",
+        "GOVERN-1.4",
+        "GOVERN-3.2",
+        "MANAGE-2.1",
+        "MANAGE-2.3",
+        "MAP-2.1",
+        "MAP-3.5",
+        "MAP-4.1",
+        "MEASURE-2.10",
+        "MEASURE-2.6",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0024",
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0051",
+        "AML.T0051.000",
+        "AML.T0051.001",
+        "AML.T0053",
+        "AML.T0056",
+        "AML.T0057",
+        "AML.T0059",
+        "AML.T0066",
+        "AML.T0067"
+      ],
+      "references": [
+        {
+          "title": "Advanced Data Exfiltration Techniques with ChatGPT - Embrace The Red",
+          "url": "https://embracethered.com/blog/posts/2023/advanced-plugin-data-exfiltration-trickery/",
+          "type": "research"
+        },
+        {
+          "title": "ChatGPT Plugins: Data Exfiltration via Images & Cross-Plugin Request Forgery - Embrace The Red",
+          "url": "https://embracethered.com/blog/posts/2023/chatgpt-webpilot-data-exfil-via-markdown-injection/",
+          "type": "research"
+        },
+        {
+          "title": "MITRE ATLAS — AML.CS0021",
+          "url": "https://atlas.mitre.org/studies/AML.CS0021",
+          "type": "research"
+        },
+        {
+          "title": "Embrace The Red — ChatGPT Plugin Exploits",
+          "url": "https://embracethered.com/blog/posts/2023/chatgpt-plugin-vulns-chat-with-code/",
+          "type": "research"
+        },
+        {
+          "title": "MITRE ATLAS — AML.CS0020",
+          "url": "https://atlas.mitre.org/studies/AML.CS0020",
+          "type": "research"
+        },
+        {
+          "title": "Indirect Prompt Injection Threats: Bing Chat Data Pirate",
+          "url": "https://greshake.github.io/",
+          "type": "research"
+        },
+        {
+          "title": "Greshake et al. — Not what you've signed up for",
+          "url": "https://arxiv.org/abs/2302.12173",
+          "type": "research"
+        },
+        {
+          "title": "Riley Goodside demonstrates indirect injection via web browsing",
+          "url": "https://twitter.com/goodside/status/1651967111740268544",
+          "type": "advisory"
+        }
+      ],
+      "tags": [
+        "agentic",
+        "atlas",
+        "bing-chat",
+        "case-study",
+        "chatgpt",
+        "conversation-exfiltration",
+        "csrf",
+        "data-exfiltration",
+        "email",
+        "exfiltration",
+        "foundational",
+        "foundational-research",
+        "indirect-injection",
+        "indirect-prompt-injection",
+        "lateral-movement",
+        "llm",
+        "markdown",
+        "phishing",
+        "plugin",
+        "plugins",
+        "rag",
+        "research",
+        "retrieval",
+        "tool-access",
+        "web-browsing"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0005",
+        "AML.TA0007",
+        "AML.TA0010",
+        "AML.TA0011",
+        "AML.TA0012"
+      ],
+      "owasp_dsgai": [
+        "DSGAI01",
+        "DSGAI04"
+      ],
+      "mitigations": [
+        "Content sanitisation and instruction-stripping before inserting retrieved content into context",
+        "Content sanitisation for retrieved documents before inclusion in context",
+        "Limit tool access scope — principle of least privilege for AI agents (ASI02 mitigations)",
+        "Output review before action execution — human-in-the-loop for consequential actions",
+        "Output validation: flag instruction-like patterns in LLM responses before execution",
+        "Privilege separation: retrieval agent cannot execute actions without explicit user confirmation",
+        "RAG content integrity scanning (DSGAI04)",
+        "Require explicit user confirmation before any send/write action",
+        "Sandbox retrieved content from system instructions at the context level",
+        "Separate trust levels for system instructions vs. retrieved external content",
+        "Strict separation between system instructions and retrieved/user content at prompt construction",
+        "Treat all external email content as untrusted — never execute instructions found in email bodies"
+      ],
+      "impact": "Goal hijacking — model redirected to serve attacker; demonstrated potential for data exfiltration, social engineering, and persistent instruction injection",
+      "quality_tier": "curated",
       "corpus": "security"
     },
     {
@@ -164601,6 +167228,85 @@
       "aiid_id": 889,
       "mitre_atlas_tactics": [
         "AML.TA0005",
+        "AML.TA0011"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08182",
+      "source_ids": [
+        "AIID-1137",
+        "AIID-1139"
+      ],
+      "title": "AIID incident #1137 (OECD-tracked)",
+      "date": "2025-06-30",
+      "year": 2025,
+      "category": "real-world",
+      "description": "Cross-listed in the AI Incident Database (AIID) as incident #1137 and tracked by the OECD AI Incidents Monitor. See the linked entries for full context, victims, references, and harm classification.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "MAP-3.5",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0048.003",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "AIID #1137",
+          "url": "https://incidentdatabase.ai/cite/1137/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-01-09-261e",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2025-07-02-5f24",
+          "type": "report"
+        },
+        {
+          "title": "AIID #1139",
+          "url": "https://incidentdatabase.ai/cite/1139/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 1139",
+          "url": "https://www.airi-navigator.com/incidents/1139",
+          "type": "research"
+        },
+        {
+          "title": "AIRI Navigator — incident 1137",
+          "url": "https://www.airi-navigator.com/incidents/1137",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "cross-listed",
+        "eu-ai-act-3-limited-risk",
+        "eu-ai-act-4-minimal-or-no-risk",
+        "oecd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "aiid_id": 1137,
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
         "AML.TA0011"
       ],
       "quality_tier": "reviewed",
@@ -192184,6 +194890,191 @@
         "AML.TA0004",
         "AML.TA0006"
       ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08183",
+      "source_ids": [
+        "AIID-898",
+        "ATLAS-AML.CS0029",
+        "ATLAS-AML.CS0030",
+        "ATLAS-AML.CS0031",
+        "ATLAS-RESEARCH-ProjectGradio",
+        "EXT-2024-HF-MALICIOUS-MODELS",
+        "OECD-2024-05-10-9e61-llmjacking",
+        "RES-etr-bard-exfil-2023"
+      ],
+      "title": "Google Bard Conversation Exfiltration",
+      "date": "2023-11-23",
+      "year": 2023,
+      "category": "research",
+      "description": "[Embrace the Red](https://embracethered.com/blog/) demonstrated that Bard users' conversations could be exfiltrated via an indirect prompt injection. To execute the attack, a threat actor shares a Google Doc containing the prompt with the target user who then interacts with the document via Bard to inadvertently execute the prompt. The prompt causes Bard to respond with the markdown for an image, whose URL has the user's conversation secretly embedded. Bard renders the image for the user, creating an automatic request to an adversary-controlled script and exfiltrating the user's conversation. The request is not blocked by Google's Content Security Policy (CSP), because the script is hosted as a Google Apps Script with a Google-owned domain. Note: Google has fixed this vulnerability. The CSP remains the same, and Bard can still render images for the user, so there may be some filtering of data embedded in URLs.",
+      "attack_vector": "adversarial-input",
+      "affected": "Google Bard",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM01",
+        "LLM02",
+        "LLM03",
+        "LLM05",
+        "LLM06",
+        "LLM09",
+        "LLM10"
+      ],
+      "owasp_asi": [
+        "ASI01",
+        "ASI02",
+        "ASI03",
+        "ASI04",
+        "ASI05",
+        "ASI09"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.1",
+        "GOVERN-1.4",
+        "GOVERN-6.1",
+        "MANAGE-2.1",
+        "MANAGE-2.4",
+        "MANAGE-3.1",
+        "MAP-3.5",
+        "MAP-4.1",
+        "MEASURE-2.10",
+        "MEASURE-2.4",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0010",
+        "AML.T0010.001",
+        "AML.T0011",
+        "AML.T0012",
+        "AML.T0024",
+        "AML.T0029",
+        "AML.T0040",
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0051",
+        "AML.T0051.001",
+        "AML.T0053",
+        "AML.T0055",
+        "AML.T0057",
+        "AML.T0058",
+        "AML.T0072"
+      ],
+      "references": [
+        {
+          "title": "MITRE ATLAS — AML.CS0029",
+          "url": "https://atlas.mitre.org/studies/AML.CS0029",
+          "type": "research"
+        },
+        {
+          "title": "Hacking Google Bard - From Prompt Injection to Data Exfiltration",
+          "url": "https://embracethered.com/blog/posts/2023/google-bard-data-exfiltration/",
+          "type": "research"
+        },
+        {
+          "title": "Sysdig — LLMjacking: Stolen cloud credentials used in new AI attack",
+          "url": "https://sysdig.com/blog/llmjacking-stolen-cloud-credentials-used-in-new-ai-attack/",
+          "type": "research"
+        },
+        {
+          "title": "AIID incident #898",
+          "url": "https://incidentdatabase.ai/cite/898/",
+          "type": "report"
+        },
+        {
+          "title": "OECD AI Incidents Monitor entry",
+          "url": "https://oecd.ai/en/incidents/2024-05-10-9e61",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 898",
+          "url": "https://www.airi-navigator.com/incidents/898",
+          "type": "research"
+        },
+        {
+          "title": "MITRE ATLAS — AML.CS0030",
+          "url": "https://atlas.mitre.org/studies/AML.CS0030",
+          "type": "research"
+        },
+        {
+          "title": "The Growing Dangers of LLMjacking: Evolving Tactics and Evading Sanctions",
+          "url": "https://sysdig.com/blog/growing-dangers-of-llmjacking/",
+          "type": "research"
+        },
+        {
+          "title": "LLMjacking targets DeepSeek",
+          "url": "https://sysdig.com/blog/llmjacking-targets-deepseek/",
+          "type": "research"
+        },
+        {
+          "title": "JFrog — Malicious AI models on Hugging Face",
+          "url": "https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/",
+          "type": "research"
+        },
+        {
+          "title": "Malicious ML models discovered on Hugging Face platform - ReversingLabs",
+          "url": "https://www.reversinglabs.com/blog/rl-identifies-malware-ml-model-hosted-on-hugging-face",
+          "type": "research"
+        },
+        {
+          "title": "MITRE ATLAS — AML.CS0031",
+          "url": "https://atlas.mitre.org/studies/AML.CS0031",
+          "type": "research"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "atlas",
+        "bard",
+        "case-study",
+        "cloud",
+        "credential-theft",
+        "cross-listed",
+        "data-exfiltration",
+        "eu-ai-act-3-limited-risk",
+        "gemini",
+        "gradio",
+        "hugging-face",
+        "huggingface",
+        "huggingface-spaces",
+        "indirect-prompt-injection",
+        "intentional",
+        "llmjacking",
+        "markdown-image",
+        "model-abuse",
+        "model-poisoning",
+        "nullifai",
+        "oecd",
+        "pickle",
+        "pickle-exploit",
+        "rce",
+        "real-world",
+        "research",
+        "resource-abuse",
+        "reverse-shell",
+        "supply-chain",
+        "unbounded-consumption",
+        "workspace"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "mitre_atlas_tactics": [
+        "AML.TA0000",
+        "AML.TA0003",
+        "AML.TA0004",
+        "AML.TA0005",
+        "AML.TA0010",
+        "AML.TA0011",
+        "AML.TA0012",
+        "AML.TA0013",
+        "AML.TA0014"
+      ],
+      "aiid_id": 898,
       "quality_tier": "reviewed",
       "corpus": "security"
     },
@@ -304117,6 +307008,792 @@
       "mitre_atlas_tactics": [
         "AML.TA0004",
         "AML.TA0005"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08184",
+      "source_ids": [
+        "CVE-2002-2036",
+        "CVE-2004-1305",
+        "CVE-2005-0416",
+        "CVE-2006-0265",
+        "CVE-2006-0272",
+        "CVE-2006-1872",
+        "CVE-2006-4049",
+        "CVE-2007-0482",
+        "CVE-2007-6481",
+        "CVE-2007-6482",
+        "CVE-2008-0339",
+        "CVE-2008-5422",
+        "CVE-2008-5423",
+        "CVE-2009-2048",
+        "CVE-2009-2489",
+        "CVE-2009-2490",
+        "CVE-2009-2491",
+        "CVE-2009-4294",
+        "CVE-2009-4295",
+        "CVE-2009-4314",
+        "CVE-2010-0851",
+        "CVE-2010-0852",
+        "CVE-2010-0888",
+        "CVE-2010-1347",
+        "CVE-2010-3600",
+        "CVE-2010-3943",
+        "CVE-2010-4413",
+        "CVE-2011-0657",
+        "CVE-2011-3290",
+        "CVE-2011-4160",
+        "CVE-2012-0715",
+        "CVE-2012-0746",
+        "CVE-2012-3313",
+        "CVE-2012-3316",
+        "CVE-2012-3322",
+        "CVE-2012-3326",
+        "CVE-2012-3327",
+        "CVE-2012-3328",
+        "CVE-2013-5402"
+      ],
+      "title": "Unspecified vulnerability in HP Operations Agent 11.00 and Performance Agent 4.73 and 5.0 on AIX, HP-UX, Linux, and Solaris allows local users to bypass intended directory-acces...",
+      "date": "2011-11",
+      "year": 2011,
+      "category": "vulnerability-disclosure",
+      "description": "Unspecified vulnerability in HP Operations Agent 11.00 and Performance Agent 4.73 and 5.0 on AIX, HP-UX, Linux, and Solaris allows local users to bypass intended directory-access restrictions via unknown vectors.",
+      "attack_vector": "other",
+      "affected": "hp/operations_agent, hp/performance_agent, hp/hp-ux, ibm/aix",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM02",
+        "LLM03",
+        "LLM05"
+      ],
+      "owasp_asi": [
+        "ASI02",
+        "ASI03",
+        "ASI04",
+        "ASI05"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.4",
+        "GOVERN-6.1",
+        "MAP-3.5",
+        "MEASURE-2.10",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0010",
+        "AML.T0012",
+        "AML.T0024",
+        "AML.T0050",
+        "AML.T0053",
+        "AML.T0057"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2011-4160",
+          "type": "advisory"
+        },
+        {
+          "title": "hp-security-alert@hp.com",
+          "url": "http://marc.info/?l=bugtraq&m=132198248000785&w=2",
+          "type": "reference"
+        },
+        {
+          "title": "hp-security-alert@hp.com",
+          "url": "http://secunia.com/advisories/46971",
+          "type": "reference"
+        },
+        {
+          "title": "hp-security-alert@hp.com",
+          "url": "http://www.securityfocus.com/bid/50761",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-0339",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/28518",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/28556",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://securitytracker.com/id?1019218",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2008-086860.html",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0888",
+          "type": "advisory"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://sunsolve.sun.com/search/document.do?assetkey=1-77-1021732.1-1",
+          "type": "reference"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2010-099504.html",
+          "type": "vendor"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA10-103B.html",
+          "type": "reference"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/57745",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0851",
+          "type": "advisory"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://secunia.com/advisories/39438",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0852",
+          "type": "advisory"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-4294",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/37284",
+          "type": "patch"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.vupen.com/english/advisories/2009/3477",
+          "type": "vendor"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-4295",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/37285",
+          "type": "patch"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-4314",
+          "type": "advisory"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-2489",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.vupen.com/english/advisories/2009/1915",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/51743",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-2490",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://osvdb.org/55979",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/51741",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-2491",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://osvdb.org/55978",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/51742",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-5422",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/33108",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://support.avaya.com/elmodocs2/security/ASA-2008-502.htm",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/32769",
+          "type": "patch"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-5423",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/33119",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2013-5402",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "http://www-01.ibm.com/support/docview.wss?uid=swg21660032",
+          "type": "vendor"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "http://www.securityfocus.com/bid/64333",
+          "type": "reference"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/87298",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3316",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/77813",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3322",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/77918",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3327",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/78039",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3328",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/78040",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-0746",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "http://secunia.com/advisories/50551",
+          "type": "vendor"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/74726",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3313",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/77787",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-3326",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/77960",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-0715",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@us.ibm.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/73587",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-1347",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://osvdb.org/63595",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/39194",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/39305",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2011-3290",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://secunia.com/advisories/46061",
+          "type": "reference"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://www.cisco.com/en/US/products/products_security_advisory09186a0080b95105.shtml",
+          "type": "vendor"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://www.securityfocus.com/bid/49703",
+          "type": "reference"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "https://exchange.xforce.ibmcloud.com/vulnerabilities/69945",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2011-0657",
+          "type": "advisory"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "http://osvdb.org/71780",
+          "type": "reference"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "http://secunia.com/advisories/44161",
+          "type": "reference"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "http://www.securityfocus.com/bid/47242",
+          "type": "reference"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA11-102A.html",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-3600",
+          "type": "advisory"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://secunia.com/advisories/42895",
+          "type": "vendor"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://secunia.com/advisories/42921",
+          "type": "vendor"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2011-194091.html",
+          "type": "vendor"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://www.securityfocus.com/bid/45883",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-4413",
+          "type": "advisory"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://www.securityfocus.com/bid/45845",
+          "type": "reference"
+        },
+        {
+          "title": "secalert_us@oracle.com",
+          "url": "http://www.vupen.com/english/advisories/2011/0139",
+          "type": "vendor"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-3943",
+          "type": "advisory"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA10-348A.html",
+          "type": "reference"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2010/ms10-098",
+          "type": "reference"
+        },
+        {
+          "title": "secure@microsoft.com",
+          "url": "https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A12317",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-2048",
+          "type": "advisory"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://osvdb.org/55937",
+          "type": "reference"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://secunia.com/advisories/35861",
+          "type": "reference"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://www.cisco.com/en/US/products/products_security_advisory09186a0080ae04b2.shtml",
+          "type": "vendor"
+        },
+        {
+          "title": "psirt@cisco.com",
+          "url": "http://www.securityfocus.com/bid/35705",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2007-6481",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://osvdb.org/40845",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/28148",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/26944",
+          "type": "patch"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2007-6482",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://osvdb.org/40846",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2007-0482",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://osvdb.org/31671",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/23900",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/22192",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2006-4049",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/21398",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/19394",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.vupen.com/english/advisories/2006/3226",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2006-1872",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/19712",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/19859",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpuapr2006-090826.html",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/archive/1/432267/100/0/threaded",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2006-0265",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/18493",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://secunia.com/advisories/18608",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.kb.cert.org/vuls/id/545804",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.oracle.com/technetwork/topics/security/cpujan2006-082403.html",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2006-0272",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://archives.neohapsis.com/archives/fulldisclosure/2006-01/0893.html",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.argeniss.com/research/ARGENISS-ADV-010601.txt",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2005-0416",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://eeye.com/html/research/advisories/AD20050111.html",
+          "type": "reference"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/12233",
+          "type": "vendor"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "https://docs.microsoft.com/en-us/security-updates/securitybulletins/2005/ms05-002",
+          "type": "reference"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2004-1305",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.kb.cert.org/vuls/id/177584",
+          "type": "patch"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.kb.cert.org/vuls/id/697136",
+          "type": "patch"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.us-cert.gov/cas/techalerts/TA05-012A.html",
+          "type": "patch"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.xfocus.net/flashsky/icoExp/",
+          "type": "vendor"
+        },
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2002-2036",
+          "type": "advisory"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.iss.net/security_center/static/9252.php",
+          "type": "patch"
+        },
+        {
+          "title": "cve@mitre.org",
+          "url": "http://www.securityfocus.com/bid/4911",
+          "type": "patch"
+        }
+      ],
+      "tags": [
+        "cve",
+        "dify",
+        "info-disclosure",
+        "nvd",
+        "rce",
+        "sql-injection",
+        "xss"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2002-2036",
+        "CVE-2004-1305",
+        "CVE-2005-0416",
+        "CVE-2006-0265",
+        "CVE-2006-0272",
+        "CVE-2006-1872",
+        "CVE-2006-4049",
+        "CVE-2007-0482",
+        "CVE-2007-6481",
+        "CVE-2007-6482",
+        "CVE-2008-0339",
+        "CVE-2008-5422",
+        "CVE-2008-5423",
+        "CVE-2009-2048",
+        "CVE-2009-2489",
+        "CVE-2009-2490",
+        "CVE-2009-2491",
+        "CVE-2009-4294",
+        "CVE-2009-4295",
+        "CVE-2009-4314",
+        "CVE-2010-0851",
+        "CVE-2010-0852",
+        "CVE-2010-0888",
+        "CVE-2010-1347",
+        "CVE-2010-3600",
+        "CVE-2010-3943",
+        "CVE-2010-4413",
+        "CVE-2011-0657",
+        "CVE-2011-3290",
+        "CVE-2011-4160",
+        "CVE-2012-0715",
+        "CVE-2012-0746",
+        "CVE-2012-3313",
+        "CVE-2012-3316",
+        "CVE-2012-3322",
+        "CVE-2012-3326",
+        "CVE-2012-3327",
+        "CVE-2012-3328",
+        "CVE-2013-5402"
+      ],
+      "cvss_score": 3.2,
+      "mitre_atlas_tactics": [
+        "AML.TA0004",
+        "AML.TA0005",
+        "AML.TA0010",
+        "AML.TA0012"
       ],
       "quality_tier": "reviewed",
       "corpus": "security"
@@ -436627,6 +440304,1799 @@
         "AML.TA0005",
         "AML.TA0011"
       ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08185",
+      "source_ids": [
+        "AIID-1446",
+        "AIID-1484",
+        "OECD-AIM-2026-01-23-0e37",
+        "OECD-AIM-2026-02-18-6536",
+        "OECD-AIM-2026-02-18-de7c",
+        "OECD-AIM-2026-02-19-2443",
+        "OECD-AIM-2026-02-22-f501",
+        "OECD-AIM-2026-02-23-9944",
+        "OECD-AIM-2026-02-23-fb63",
+        "OECD-AIM-2026-02-24-05ea",
+        "OECD-AIM-2026-02-24-4cab",
+        "OECD-AIM-2026-02-24-d067",
+        "OECD-AIM-2026-02-25-0497",
+        "OECD-AIM-2026-02-26-c8db",
+        "OECD-AIM-2026-02-27-d649",
+        "OECD-AIM-2026-03-05-1052",
+        "OECD-AIM-2026-03-05-1ac3",
+        "OECD-AIM-2026-03-05-3b51",
+        "OECD-AIM-2026-03-13-32a4",
+        "OECD-AIM-2026-03-16-04e5",
+        "OECD-AIM-2026-03-18-6b02",
+        "OECD-AIM-2026-03-25-1f18",
+        "OECD-AIM-2026-03-27-2510",
+        "OECD-AIM-2026-03-28-f88c",
+        "OECD-AIM-2026-03-30-0d92",
+        "OECD-AIM-2026-04-01-0b6f",
+        "OECD-AIM-2026-04-01-fa00",
+        "OECD-AIM-2026-04-02-c3bb",
+        "OECD-AIM-2026-04-13-91b4",
+        "OECD-AIM-2026-04-13-e472",
+        "OECD-AIM-2026-04-14-0fa6",
+        "OECD-AIM-2026-04-14-8c7f",
+        "OECD-AIM-2026-04-17-cba1",
+        "OECD-AIM-2026-04-19-2f5a",
+        "OECD-AIM-2026-04-21-0b9e",
+        "OECD-AIM-2026-04-24-1366",
+        "OECD-AIM-2026-04-24-8861",
+        "OECD-AIM-2026-04-24-9ffe",
+        "OECD-AIM-2026-04-24-dafe",
+        "OECD-AIM-2026-04-27-ad82",
+        "OECD-AIM-2026-05-03-93c3",
+        "OECD-AIM-2026-05-05-a52a",
+        "OECD-AIM-2026-05-07-3d28",
+        "OECD-AIM-2026-05-07-ce72",
+        "OECD-AIM-2026-05-10-8873",
+        "OECD-AIM-2026-05-11-adac",
+        "OECD-AIM-2026-05-12-9d1d",
+        "OECD-AIM-2026-05-12-f150",
+        "OECD-AIM-2026-05-13-e14e",
+        "OECD-AIM-2026-05-13-f1e0",
+        "OECD-AIM-2026-05-13-fea6",
+        "OECD-AIM-2026-05-21-6f74",
+        "OECD-AIM-2026-05-22-ca85",
+        "OECD-AIM-2026-05-26-32db",
+        "OECD-AIM-2026-05-27-ff24",
+        "OECD-AIM-2026-05-28-2335",
+        "OECD-AIM-2026-05-29-2fa5",
+        "OECD-AIM-2026-05-29-e32f",
+        "OECD-AIM-2026-06-03-53db",
+        "OECD-AIM-2026-06-04-4530",
+        "OECD-AIM-2026-06-04-6e92",
+        "OECD-AIM-2026-06-05-a17f",
+        "OECD-AIM-2026-06-05-c9d5",
+        "OECD-AIM-2026-06-07-3f81",
+        "OECD-AIM-2026-06-08-2d00"
+      ],
+      "title": "China Deploys Armed AI 'Wolf Robots' in Urban Combat Training",
+      "date": "2026-03-27",
+      "year": 2026,
+      "category": "real-world",
+      "description": "China has unveiled and deployed AI-powered 'wolf robots' equipped with missiles and grenade launchers in military urban combat exercises. Developed by a state-owned research institute, these autonomous robots can perform reconnaissance, attack, and support roles, operate in swarms, and share sensor data, raising concerns about AI-driven lethal force in warfare.",
+      "attack_vector": "rce",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM01",
+        "LLM02",
+        "LLM03",
+        "LLM05",
+        "LLM09"
+      ],
+      "owasp_asi": [
+        "ASI01",
+        "ASI03",
+        "ASI04",
+        "ASI05",
+        "ASI09",
+        "ASI10"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-1.4",
+        "GOVERN-6.1",
+        "MAP-3.5",
+        "MEASURE-2.10",
+        "MEASURE-2.7",
+        "MEASURE-2.8"
+      ],
+      "mitre_atlas": [
+        "AML.T0010",
+        "AML.T0012",
+        "AML.T0048",
+        "AML.T0048.003",
+        "AML.T0050",
+        "AML.T0051",
+        "AML.T0057",
+        "AML.T0058"
+      ],
+      "references": [
+        {
+          "title": "China Deploys Armed AI 'Wolf Robots' in Urban Combat Training",
+          "url": "https://oecd.ai/en/incidents/2026-03-27-2510",
+          "type": "report"
+        },
+        {
+          "title": "中, 군사 훈련에 '로봇 늑대' 투입...미사일·유탄 등 탑재",
+          "url": "https://www.asiae.co.kr/article/2026032715573654011",
+          "type": "news"
+        },
+        {
+          "title": "中 차세대 '로봇늑대' 시가전 훈련 모습 공개...\"미사일 발사기도 탑재",
+          "url": "https://www.chosun.com/international/international_general/2026/03/27/E6VJPJKTB5E4FKNFZ6MG7W4XRI/",
+          "type": "news"
+        },
+        {
+          "title": "中, 로봇늑대 시가전 훈련 공개...\"미사일 발사기 탑재\" | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260327083100083",
+          "type": "news"
+        },
+        {
+          "title": "[영상] 중국 '로봇늑대' 첫 시가전 훈련...공중엔 100발 장착 '드론총' | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/MYH20260327016100704",
+          "type": "news"
+        },
+        {
+          "title": "中, 로봇늑대 시가전 훈련 공개...\"미사일 발사기 탑재\"",
+          "url": "https://www.wowtv.co.kr/NewsCenter/News/Read?articleId=AKR20260327083100083",
+          "type": "news"
+        },
+        {
+          "title": "중국, 로봇늑대 시가전 영상 공개...\"미사일 발사기 탑재\"",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR20260327140823n5V",
+          "type": "news"
+        },
+        {
+          "title": "AI Adoption Leads to Significant Job Losses Among Young Professionals in South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-03-28-f88c",
+          "type": "report"
+        },
+        {
+          "title": "IT·전문직 2030대 취업자 13.1만명 급감...AI발 청년일자리 충격 현실화하나",
+          "url": "https://www.chosun.com/economy/economy_general/2026/03/29/V5I4G3R335CTXHV5KQZ2KKRRWM/",
+          "type": "news"
+        },
+        {
+          "title": "AI에 청년일자리 흔들?...전문직·IT 감소 대부분이 2030 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260328045500002",
+          "type": "news"
+        },
+        {
+          "title": "'엄마, 컴공과 가면 모셔간다며...' 갈 곳 없어진 IT 인력들, AI 영향에 채용 줄어",
+          "url": "https://www.munhwa.com/article/11578141",
+          "type": "news"
+        },
+        {
+          "title": "AI도입에 전문직·IT분야 감소 - 전파신문",
+          "url": "http://www.jeonpa.co.kr/news/articleView.html?idxno=215930",
+          "type": "news"
+        },
+        {
+          "title": "AI-Discovered Peptide Treats Antibiotic-Resistant Salmonella Infections",
+          "url": "https://oecd.ai/en/incidents/2026-02-18-6536",
+          "type": "report"
+        },
+        {
+          "title": "항생제 내성 '살모넬라' 치료 물질...AI로 찾아냈다",
+          "url": "https://www.khan.co.kr/article/202602190956001",
+          "type": "news"
+        },
+        {
+          "title": "AI로 발굴한 신규 물질...항생제 내성 살모넬라 치료 효과",
+          "url": "https://www.asiae.co.kr/article/2026021907442037453",
+          "type": "news"
+        },
+        {
+          "title": "국립호남권생물자원관, 민관 협력 통해 염증성 장질환 신약 후보 물질 확인",
+          "url": "http://www.ikld.kr/news/articleView.html?idxno=329622",
+          "type": "news"
+        },
+        {
+          "title": "AI로 찾은 단백질 조각, 항생제 내성 살모넬라균 박멸",
+          "url": "https://daily.hankooki.com/news/articleView.html?idxno=1337314",
+          "type": "news"
+        },
+        {
+          "title": "사이언스타임즈/사용자메뉴/과학기술/생명과학·의학",
+          "url": "https://www.sciencetimes.co.kr:443/nscvrg/view/menu/251?searchCategory=223&nscvrgSn=261462",
+          "type": "news"
+        },
+        {
+          "title": "사이언스타임즈/사용자메뉴/과학기술/생명과학·의학",
+          "url": "https://www.sciencetimes.co.kr/nscvrg/view/menu/251?searchCategory=223&nscvrgSn=261462",
+          "type": "news"
+        },
+        {
+          "title": "KB Kookmin Bank and LG Uplus Unveil AI-Based Real-Time Voice Phishing Prevention System",
+          "url": "https://oecd.ai/en/incidents/2026-02-23-9944",
+          "type": "report"
+        },
+        {
+          "title": "은행이 이동통신 전시회 찾는 까닭...보이스피싱 잡는 데 AI 쓰인다",
+          "url": "https://www.khan.co.kr/article/202602231419001",
+          "type": "news"
+        },
+        {
+          "title": "국민은행, LGU+와 MWC26서 AI기반 보이스피싱 대응 체계 공개",
+          "url": "https://it.chosun.com/news/articleView.html?idxno=2023092157402",
+          "type": "news"
+        },
+        {
+          "title": "KB국민은행, LG유플러스와 'AI 기반 보이스피싱 실시간 대응 체계' 공개",
+          "url": "http://www.econonews.co.kr/news/articleView.html?idxno=428352",
+          "type": "news"
+        },
+        {
+          "title": "KB국민은행·LG유플, MWC2026서 '보이스피싱 대응 모델' 알린다 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260223091305426",
+          "type": "news"
+        },
+        {
+          "title": "국민은행-LG유플러스, 보이스피싱 대응 강화",
+          "url": "http://www.bikorea.net/news/articleView.html?idxno=45278",
+          "type": "news"
+        },
+        {
+          "title": "Korean Broadcasters Sue OpenAI for Unauthorized Use of News Content in ChatGPT Training",
+          "url": "https://oecd.ai/en/incidents/2026-02-23-fb63",
+          "type": "report"
+        },
+        {
+          "title": "지상파 3사, 오픈AI 상대 첫 저작권 소송...\"데이터 주권 침해\"",
+          "url": "https://www.asiae.co.kr/article/2026022322522562126",
+          "type": "news"
+        },
+        {
+          "title": "'지식재산권 침해'...지상파 3사, 오픈AI 상대 소송 제기 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260223154447911",
+          "type": "news"
+        },
+        {
+          "title": "지상파 3사, 오픈AI 상대 뉴스콘텐츠 무단이용 소송 제기",
+          "url": "https://www.ddaily.co.kr//page/view/2026022316004964536",
+          "type": "news"
+        },
+        {
+          "title": "\"챗GPT가 뉴스 무단 이용\" 지상파3사, 오픈AI 상대 소송 제기",
+          "url": "https://www.mediatoday.co.kr/news/articleView.html?idxno=332582",
+          "type": "news"
+        },
+        {
+          "title": "지상파3사, 오픈AI 상대로 저작권 침해 소송 제기",
+          "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=633278",
+          "type": "news"
+        },
+        {
+          "title": "KakaoBank Uses AI to Prevent Voice Phishing and Protect Customer Assets",
+          "url": "https://oecd.ai/en/incidents/2026-01-23-0e37",
+          "type": "report"
+        },
+        {
+          "title": "카카오뱅크 AI로 보이스피싱 잡는다",
+          "url": "https://www.asiae.co.kr/article/2026012309373052307",
+          "type": "news"
+        },
+        {
+          "title": "카카오뱅크, 이상거래탐지시스템 고도화...\"AI로 보이스피싱 잡는다\"",
+          "url": "https://www.fortunekorea.co.kr/news/articleView.html?idxno=51440",
+          "type": "news"
+        },
+        {
+          "title": "\"AI로 보이스피싱 잡는다\" 카카오뱅크, 이상거래탐지시스템 고도화 - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2285447.htm",
+          "type": "news"
+        },
+        {
+          "title": "셀카 인증에 AI 피싱탐지, 카뱅 고객자산 385억 지켰다 - 머니S",
+          "url": "https://www.moneys.co.kr/article/2026012309121363005",
+          "type": "news"
+        },
+        {
+          "title": "카카오뱅크, 이상거래탐지시스템 고도화 \"AI로 보이스피싱 잡는다",
+          "url": "http://www.m-i.kr/news/articleView.html?idxno=1328857",
+          "type": "news"
+        },
+        {
+          "title": "AI and Digital Twin Technology Deployed for Fire Prevention at Suwon Hwaseong Fortress",
+          "url": "https://oecd.ai/en/incidents/2026-02-18-de7c",
+          "type": "report"
+        },
+        {
+          "title": "수원시, 수원화성 화재 예방·안전 강화...인공지능·디지털 트윈 기술 활용 - 전국 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/national/2293823.htm",
+          "type": "news"
+        },
+        {
+          "title": "수원특례시, 인공지능(AI)·디지털 트윈 기술 활용해 세계문화유산 수원화성 화재 예방·안전 강화한다 - 내외일보",
+          "url": "https://www.naewoeilbo.com/news/articleView.html?idxno=2310964",
+          "type": "news"
+        },
+        {
+          "title": "수원시, AI·디지털 트윈 활용 '수원화성' 화재 예방 강화 - 동행미디어 시대",
+          "url": "https://www.sidae.com/article/2026021909312361409",
+          "type": "news"
+        },
+        {
+          "title": "세계문화유산 '수원화성', AI·디지털 트윈 기술 적용 안전 강화",
+          "url": "https://www.pressian.com/pages/articles/2026021916390221674",
+          "type": "news"
+        },
+        {
+          "title": "Gyeonggi Province Develops AI System to Prevent Real Estate Fraud",
+          "url": "https://oecd.ai/en/incidents/2026-02-24-05ea",
+          "type": "report"
+        },
+        {
+          "title": "경기도, AI 기반 부동산거래 안전망 구축 솔루션 개발 나선다",
+          "url": "https://www.asiae.co.kr/article/2026022507364382589",
+          "type": "news"
+        },
+        {
+          "title": "전세사기 등 예방...경기도, AI 기반 거래 안전망 구축 - 전국 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/national/2295893.htm",
+          "type": "news"
+        },
+        {
+          "title": "경기도, 전세사기 차단 'AI 거래안전망' 개발 착수",
+          "url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2398131",
+          "type": "news"
+        },
+        {
+          "title": "경기도, 'AI 기반 거래 안전망 솔루션' 개발 착수",
+          "url": "https://www.viva100.com/article/20260225500740",
+          "type": "news"
+        },
+        {
+          "title": "Samsung Settles Texas Lawsuit Over Smart TV AI Data Collection",
+          "url": "https://oecd.ai/en/incidents/2026-02-27-d649",
+          "type": "report"
+        },
+        {
+          "title": "美텍사스주, 삼성전자 상대 데이터 수집 분쟁 합의...소송 취하",
+          "url": "https://www.fnnews.com/news/202602271512210399",
+          "type": "news"
+        },
+        {
+          "title": "삼성, 텍사스주 '스마트TV 시청 데이터 수집 소송' 합의로 마무리",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR202602271522364Sr",
+          "type": "news"
+        },
+        {
+          "title": "삼성전자, 美텍사스주 TV 데이터 무단 수집 소송 합의 - 이비엔(EBN)뉴스센터",
+          "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1701135",
+          "type": "news"
+        },
+        {
+          "title": "삼성전자, 미국 텍사스주와 'TV 데이터 수집' 소송 합의로 마무리",
+          "url": "https://www.businesspost.co.kr/BP?command=article_view&num=431467",
+          "type": "news"
+        },
+        {
+          "title": "AI Chatbot Security Flaws Lead to Data Exposure Risks in South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-02-22-f501",
+          "type": "report"
+        },
+        {
+          "title": "올해 기업에 영향 미칠 5대 사이버 보안 위협은?",
+          "url": "https://www.chosun.com/economy/tech_it/2026/02/23/MK3BY2SV2RHETH7UZYPPZYIDCA/",
+          "type": "news"
+        },
+        {
+          "title": "믿었던 '일잘러 비서'에 회사기밀 줄줄 샌다...100% 신뢰 말라는데 - 매일경제",
+          "url": "https://www.mk.co.kr/news/it/11969829",
+          "type": "news"
+        },
+        {
+          "title": "\"AI 에이전트 확산이 보안 위협 키운다\"···삼성SDS, 5대 위협 발표",
+          "url": "https://www.khan.co.kr/article/202602231247001",
+          "type": "news"
+        },
+        {
+          "title": "삼성SDS \"생성형 AI 확산이 새로운 보안 위협 증폭\"",
+          "url": "https://www.asiae.co.kr/article/2026022308563223149",
+          "type": "news"
+        },
+        {
+          "title": "AI 악용·랜섬웨어 주의\"...삼성SDS, '5대 사이버 보안 위협' 선정",
+          "url": "https://biz.chosun.com/it-science/ict/2026/02/23/ER3TIUR3SNHNPMV6GL6U67ON7U/",
+          "type": "news"
+        },
+        {
+          "title": "Busan Launches AI-Based Urban Flood Response Platform",
+          "url": "https://oecd.ai/en/incidents/2026-03-05-1052",
+          "type": "report"
+        },
+        {
+          "title": "부산시, AI로 침수 미리 막는다",
+          "url": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=678218",
+          "type": "news"
+        },
+        {
+          "title": "'AI로 침수 막는다'...부산시, 극한호우 대응 협력체계 구축",
+          "url": "https://www.kukinews.com/article/view/kuk202603060049",
+          "type": "news"
+        },
+        {
+          "title": "AI로 침수피해 막는다... 부산시, 극한호우 대응 기술개발 협력체계 구축",
+          "url": "https://www.asiae.co.kr/article/2026030610254190893",
+          "type": "news"
+        },
+        {
+          "title": "'AI로 침수 예방' 부산시, 폭우 대응 플랫폼 개발 착수",
+          "url": "https://www.pressian.com/pages/articles/2026030610181995464",
+          "type": "news"
+        },
+        {
+          "title": "부산시-국책연구원, '디지털 도시홍수 제어' 맞손...384억 투입",
+          "url": "http://www.shinailbo.co.kr/news/articleView.html?idxno=2199154",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Army Demonstrates AI-Enabled Combat Engineering Vehicle in Live Training",
+          "url": "https://oecd.ai/en/incidents/2026-02-26-c8db",
+          "type": "report"
+        },
+        {
+          "title": "(현장+)AI 적용 무인 체계로 기계화부대 지뢰지대 개척",
+          "url": "https://www.newstomato.com/readnews.aspx?no=1292686",
+          "type": "news"
+        },
+        {
+          "title": "육군, AI 기반 'K-CEV' 첫 실전 훈련 공개... 유·무인 복합전투 본격화",
+          "url": "https://www.skyedaily.com/news/news_view.html?ID=299182",
+          "type": "news"
+        },
+        {
+          "title": "생존성 높이고 위험은 줄이고...AI·무인 전투차량 실전 훈련 공개",
+          "url": "https://www.mbn.co.kr/news/politics/5178403",
+          "type": "news"
+        },
+        {
+          "title": "AI Systems Reduce Livestock Accidents and Boost Farmer Income in Gyeonggi Province",
+          "url": "https://oecd.ai/en/incidents/2026-03-05-1ac3",
+          "type": "report"
+        },
+        {
+          "title": "AI와 ICT로 돼지 키운다...경기도농기원 \"출하 소득↑ 분만 사고↓\" - 전국 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/national/2299220.htm",
+          "type": "news"
+        },
+        {
+          "title": "\"사고 줄고 출하 빨라졌다\"...경기도 AI 스마트축산 시범사업 '대성공'",
+          "url": "https://www.fntoday.co.kr/news/articleView.html?idxno=379117",
+          "type": "news"
+        },
+        {
+          "title": "도농기원, AI 기술로 경기지역 농가서 스마트축산 실현 - 중부일보",
+          "url": "https://www.joongboo.com/news/articleView.html?idxno=363719065",
+          "type": "news"
+        },
+        {
+          "title": "Hanwha Aerospace and Krafton Partner to Develop Physical AI for Defense",
+          "url": "https://oecd.ai/en/incidents/2026-03-13-32a4",
+          "type": "report"
+        },
+        {
+          "title": "한화에어로스페이스, 건 슈팅 게임사와 '피지컬 AI' 개발... \"한국형 터미네이터 나올까\"",
+          "url": "https://www.donga.com/news/K-TECH+Global+Leaders/article/all/20260313/133523808/1",
+          "type": "news"
+        },
+        {
+          "title": "방산 한화와 게임사 크래프톤 맞손...AI 무기로 전쟁 판 바꾼다 - 매일경제",
+          "url": "https://www.mk.co.kr/news/business/11988034",
+          "type": "news"
+        },
+        {
+          "title": "한화·크래프톤 \"한국판 안두릴 만듭시다\" - 매일경제",
+          "url": "https://www.mk.co.kr/news/business/11987695",
+          "type": "news"
+        },
+        {
+          "title": "게임회사 크래프톤이 '진짜 총'에도 손 댄다고? 김창한 AI 야심 5년 만에 방산까지 뻗어나간다",
+          "url": "https://www.huffingtonpost.kr/article/250274",
+          "type": "news"
+        },
+        {
+          "title": "한화에어로스페이스, 크래프톤과 '피지컬 AI' 공동개발 나선다 - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2301806.htm",
+          "type": "news"
+        },
+        {
+          "title": "AI System Deployed in Hwaseong to Prevent Social Isolation and Solitary Deaths",
+          "url": "https://oecd.ai/en/incidents/2026-03-16-04e5",
+          "type": "report"
+        },
+        {
+          "title": "화성시, 사회적 고립가구 전수조사...AI 기반 스마트 돌봄 확대 - 전국 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/national/2302508.htm",
+          "type": "news"
+        },
+        {
+          "title": "화성특례시, AI로 사회적 고립 해소 앞장선다",
+          "url": "https://www.viva100.com/article/20260316500599",
+          "type": "news"
+        },
+        {
+          "title": "화성특례시, AI 활용 고독·고립 위험 1인 가구 돌본다",
+          "url": "https://www.pressian.com/pages/articles/2026031614280572759",
+          "type": "news"
+        },
+        {
+          "title": "LIG Nex1 and Palantir Sign MOU for AI-Enabled Defense Systems Development",
+          "url": "https://oecd.ai/en/incidents/2026-03-25-1f18",
+          "type": "report"
+        },
+        {
+          "title": "천궁Ⅱ로 UAE 하늘 지킨 LIG넥스원... 이번엔 팔란티어와 AI 방공망 만든다",
+          "url": "https://www.chosun.com/economy/industry-company/2026/03/25/Z5ISYD4AFZFWJIZSHYB2OZKFFQ/",
+          "type": "news"
+        },
+        {
+          "title": "LIG넥스원-팔란티어, '통합방공망 및 무인체계 솔루션 개발협력 MOU' 체결",
+          "url": "https://www.etoday.co.kr/news/view/2568997",
+          "type": "news"
+        },
+        {
+          "title": "LIG넥스원·팔란티어, 통합방공망·무인체계 개발 MOU",
+          "url": "https://www.dailian.co.kr/news/view/1625215/LIG%EB%84%A5%EC%8A%A4%EC%9B%90%ED%8C%94%EB%9E%80%ED%8B%B0%EC%96%B4-%ED%86%B5%ED%95%A9%EB%B0%A9%EA%B3%B5%EB%A7%9D%EB%AC%B4%EC%9D%B8%EC%B2%B4%EA%B3%84-2026",
+          "type": "news"
+        },
+        {
+          "title": "Speculative AI-Driven Financial Crisis Report Shakes Wall Street",
+          "url": "https://oecd.ai/en/incidents/2026-02-24-4cab",
+          "type": "report"
+        },
+        {
+          "title": "SF 같은 '2028 AI 보고서'...대규모 실직 공포에 美 기술주 급락- 매경ECONOMY",
+          "url": "https://www.mk.co.kr/news/business/11970473",
+          "type": "news"
+        },
+        {
+          "title": "월가 뒤흔든 'AI 공포' 보고서 뭐길래 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260224079700009",
+          "type": "news"
+        },
+        {
+          "title": "IBM 주가 역대급 '곤두박질'...월가 발칵 뒤집은 보고서 [지금이뉴스]",
+          "url": "https://www.ytn.co.kr/_ln/0134_202602241516207633",
+          "type": "news"
+        },
+        {
+          "title": "월가 뒤흔든 'AI 공포' 보고서 \"AI로 사상 초유의 경제 위기\"",
+          "url": "https://www.ytn.co.kr/_ln/0104_202602250730201038",
+          "type": "news"
+        },
+        {
+          "title": "월가 뒤흔든 브레이크없는 'AI 공포' 보고서 내용은",
+          "url": "https://www.munhwa.com/article/11570211",
+          "type": "news"
+        },
+        {
+          "title": "어떤 내용이길래...'AI 파괴론'에 IBM 주가 25년 만에 최대 폭락",
+          "url": "https://www.ekn.kr/web/view.php?key=20260224020212190",
+          "type": "news"
+        },
+        {
+          "title": "LIG Nex1 Unveils AI-Powered Swarm Suicide Drones at DSK 2026",
+          "url": "https://oecd.ai/en/incidents/2026-02-25-0497",
+          "type": "report"
+        },
+        {
+          "title": "LIG넥스원, DSK 2026서 AI 군집무인기 첫 공개",
+          "url": "https://www.asiae.co.kr/article/2026022509564640150",
+          "type": "news"
+        },
+        {
+          "title": "LIG넥스원, 'DSK 2026' 참가...AI 기반 군집 무인기 첫 공개",
+          "url": "https://www.etoday.co.kr/news/view/2559317",
+          "type": "news"
+        },
+        {
+          "title": "\"AI 기반 군집 자폭형 드론\"...LIG넥스원, DSK 2026 참가 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260225101531390",
+          "type": "news"
+        },
+        {
+          "title": "LIG넥스원, 'DSK 2026'서 AI 기반 군집 무인기 공개",
+          "url": "https://www.inews24.com/view/1942531",
+          "type": "news"
+        },
+        {
+          "title": "Seoul Uses AI to Crack Down on Illegal Real Estate Transactions",
+          "url": "https://oecd.ai/en/incidents/2026-03-05-3b51",
+          "type": "report"
+        },
+        {
+          "title": "허위매물 올렸다간 '딱' 걸린다...AI로 부동산 거래 집중 단속- 매경ECONOMY",
+          "url": "https://www.mk.co.kr/news/business/11979851",
+          "type": "news"
+        },
+        {
+          "title": "서울시, AI로 부동산 이상거래 잡는다...불법행위 집중 점검",
+          "url": "https://www.asiae.co.kr/article/2026030420252022433",
+          "type": "news"
+        },
+        {
+          "title": "\"AI가 부동산 이상거래 탐지\"...서울시, 부동산 불법행위 집중 점검",
+          "url": "https://www.fnnews.com/news/202603051050057065",
+          "type": "news"
+        },
+        {
+          "title": "AI로 부동산 불법행위 잡는다...봄 이사철 집중단속 - 사회 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/life/2298733.htm",
+          "type": "news"
+        },
+        {
+          "title": "서울시, AI로 부동산 이상거래 선별...불법행위 '집중점검'",
+          "url": "https://www.etoday.co.kr/news/view/2562105",
+          "type": "news"
+        },
+        {
+          "title": "Remote Extraction of AI Model Structures via Electromagnetic Signals Demonstrated by KAIST",
+          "url": "https://oecd.ai/en/incidents/2026-03-30-0d92",
+          "type": "report"
+        },
+        {
+          "title": "안테나 하나로 AI 설계도 97% 탈취 가능 - 매일경제",
+          "url": "https://www.mk.co.kr/news/it/12003873",
+          "type": "news"
+        },
+        {
+          "title": "KAIST, 안테나로 AI 모델 구조 탈취...방어 기술도 개발",
+          "url": "https://www.newspim.com/news/view/20260331000036",
+          "type": "news"
+        },
+        {
+          "title": "'보안 위협'은 해킹 뿐?...\"물리적 기술탈취가 복병 될 수도\"",
+          "url": "https://www.asiae.co.kr/article/2026033108270977422",
+          "type": "news"
+        },
+        {
+          "title": "가방 속 안테나로 벽 너머 6m 밖 AI 구조 간파",
+          "url": "https://www.dongascience.com/ko/news/77115",
+          "type": "news"
+        },
+        {
+          "title": "KAIST 연구팀, 원거리 AI 모델 탈취 기술 '모델스파이' 개발",
+          "url": "https://www.dailian.co.kr/news/view/1627677/KAIST-%EC%97%B0%EA%B5%AC%ED%8C%80-%EC%9B%90%EA%B1%B0%EB%A6%AC-AI-%EB%AA%A8%EB%8D%B8-2026",
+          "type": "news"
+        },
+        {
+          "title": "Seoul Deploys AI-Powered CCTV System for Rapid Missing Person Searches",
+          "url": "https://oecd.ai/en/incidents/2026-04-01-0b6f",
+          "type": "report"
+        },
+        {
+          "title": "서울 전역 CCTV 통합 검색···AI 분석으로 실종자 수색 빨라진다",
+          "url": "https://www.khan.co.kr/article/202604011115011",
+          "type": "news"
+        },
+        {
+          "title": "서울 전역 CCTV 통합 검색 시스템 연내 완료⋯100시간 영상 10분내 분석",
+          "url": "https://www.etoday.co.kr/news/view/2571487",
+          "type": "news"
+        },
+        {
+          "title": "서울시, AI CCTV로 실종자 수색 속도 혁신",
+          "url": "https://www.viva100.com/article/20260401500862",
+          "type": "news"
+        },
+        {
+          "title": "범죄·실종자 수색 빨라진다···100시간 분량 CCTV, AI로 10분에 다 본다 - 스마트비즈",
+          "url": "https://www.smartbizn.com/news/articleView.html?idxno=141014",
+          "type": "news"
+        },
+        {
+          "title": "AI가 100시간 영상 10분만에 분석...실종자 수색 빨라진다",
+          "url": "https://www.pointdaily.co.kr/news/articleView.html?idxno=299329",
+          "type": "news"
+        },
+        {
+          "title": "Makinarocks and LIG D&A Sign MOU for Defense AI Collaboration in South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-04-13-91b4",
+          "type": "report"
+        },
+        {
+          "title": "마키나락스, LIG D&A와 '국방 인공지능 협력' 업무협약 체결",
+          "url": "https://www.asiae.co.kr/article/2026041408445540177",
+          "type": "news"
+        },
+        {
+          "title": "마키나락스-LIG D&A, 국방 인공지능 협력 MOU",
+          "url": "https://www.widedaily.com/news/articleView.html?idxno=292213",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Prosecution Mobilizes Against AI-Generated Election Misinformation",
+          "url": "https://oecd.ai/en/incidents/2026-04-13-e472",
+          "type": "report"
+        },
+        {
+          "title": "검찰총장 대행 \"선거사건, 공정성 가장 중요...법과 원칙 따라야\" | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260413069700004",
+          "type": "news"
+        },
+        {
+          "title": "구자현 검찰총장 대행 \"AI 가짜뉴스·흑색선전 엄정 대응\" - 사회 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/life/2312415.htm",
+          "type": "news"
+        },
+        {
+          "title": "구자현 檢총장 대행 \"가짜뉴스 등 선거범죄 엄정 대응\"...6·3 지선 수사 역량 총동원",
+          "url": "https://www.asiae.co.kr/article/2026041311062857931",
+          "type": "news"
+        },
+        {
+          "title": "검찰총장 대행 \"중대 선거범죄 엄정 대응, 모든 역량 집중해 달라\"",
+          "url": "https://www.fnnews.com/news/202604131417421726",
+          "type": "news"
+        },
+        {
+          "title": "AI disinformation tests South Korean laws ahead of local elections",
+          "url": "https://www.straitstimes.com/asia/east-asia/ai-disinformation-tests-south-korean-laws-ahead-of-local-elections",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Government Cracks Down on AI-Generated Deepfake Election Content",
+          "url": "https://oecd.ai/en/incidents/2026-04-14-0fa6",
+          "type": "report"
+        },
+        {
+          "title": "金총리, 지선 D-50 대국민 담화...\"AI 가짜뉴스 최대한 엄중처벌\"(종합) | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260414139251001",
+          "type": "news"
+        },
+        {
+          "title": "김민석 \"선거 기간 AI 가짜뉴스, 법이 허용하는 최대한으로 처벌\" - 정치 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/ptoday/2313215.htm",
+          "type": "news"
+        },
+        {
+          "title": "김민석 총리 \"AI 딥페이크 영상 선거 90일 전부터 금지\"",
+          "url": "https://www.newspim.com/news/view/20260414001290",
+          "type": "news"
+        },
+        {
+          "title": "[6·3 지방선거] 金총리 \"AI 가짜뉴스, 최대한 엄중히 처벌\" | 아주경제",
+          "url": "https://www.ajunews.com/view/20260414180256826",
+          "type": "news"
+        },
+        {
+          "title": "金총리 \"선거 앞, AI 가짜뉴스 일벌백계...법 허용치 최대 처벌\"",
+          "url": "https://www.asiae.co.kr/article/2026041417510045563",
+          "type": "news"
+        },
+        {
+          "title": "South Korea Holds Emergency Meetings Over AI Cybersecurity Threats from Anthropic and OpenAI",
+          "url": "https://oecd.ai/en/incidents/2026-04-14-8c7f",
+          "type": "report"
+        },
+        {
+          "title": "모든 사이트 다 뚫는 '최악의 해킹 괴물'...'미토스 쇼크'에 전세계 비상 - 매일경제",
+          "url": "https://www.mk.co.kr/news/world/12017479",
+          "type": "news"
+        },
+        {
+          "title": "보안허점 뚫는 AI '미토스' 충격에...금융위, 금융권 비상소집 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260415069300002",
+          "type": "news"
+        },
+        {
+          "title": "[AI픽] 미토스 파장 확산...보안업계 \"제로트러스트 필수\" | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260415116100017",
+          "type": "news"
+        },
+        {
+          "title": "앤트로픽·오픈AI 보안 프로젝트 파장...정부, 현안점검회의 실시",
+          "url": "https://www.ddaily.co.kr//page/view/2026041417331910216",
+          "type": "news"
+        },
+        {
+          "title": "White House and Anthropic Discuss AI Security Amid Claude Mitos Concerns",
+          "url": "https://oecd.ai/en/incidents/2026-04-17-cba1",
+          "type": "report"
+        },
+        {
+          "title": "백악관, '미토스 충격'에 앤트로픽과 회동...양측 모두 \"생산적\" - 매일경제",
+          "url": "https://www.mk.co.kr/news/world/12020630",
+          "type": "news"
+        },
+        {
+          "title": "'공급망위험 분쟁' 앤트로픽, 백악관 회동...미토스도입 논의할듯 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260418001500091",
+          "type": "news"
+        },
+        {
+          "title": "백악관, '미토스 충격'에 앤트로픽과 회동...양측 모두 \"생산적\"(종합) | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260418001551091",
+          "type": "news"
+        },
+        {
+          "title": "백악관·앤트로픽, '미토스 충격'에 회동...양측 모두 \"생산적\"",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR20260418104739Uxx",
+          "type": "news"
+        },
+        {
+          "title": "AI System 'Mythos' Accelerates Automated Cyberattacks, Raising Security Concerns in South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-04-19-2f5a",
+          "type": "report"
+        },
+        {
+          "title": "보안 위협하는 '미토스 쇼크'",
+          "url": "https://www.sedaily.com/article/20034816",
+          "type": "news"
+        },
+        {
+          "title": "\"27년 못 찾은 취약점 뚫었다\"...보안 패러다임 뒤흔든 '미토스'",
+          "url": "https://www.newspim.com/news/view/20260420000978",
+          "type": "news"
+        },
+        {
+          "title": "인간 통제 밖 스스로 해킹 '미토스 쇼크'... 세계보안체계 흔든 'AI핵무기'[Who, What, Why]",
+          "url": "https://www.munhwa.com/article/11584076",
+          "type": "news"
+        },
+        {
+          "title": "AI-Based Wildfire Prevention System Deployed in Hamyang County",
+          "url": "https://oecd.ai/en/incidents/2026-04-21-0b9e",
+          "type": "report"
+        },
+        {
+          "title": "함양군, AI 기반 ICT 플랫폼으로 산불 예방 강화",
+          "url": "https://www.kukinews.com/article/view/kuk202604240138",
+          "type": "news"
+        },
+        {
+          "title": "함양군, AI·ICT 기반 산불 예방 체계 구축 성과",
+          "url": "https://www.asiae.co.kr/article/2026042506444882418",
+          "type": "news"
+        },
+        {
+          "title": "함양군, 산불예방 ICT 플랫폼 구축...불법 소각 과태료 부과 성과",
+          "url": "https://www.viva100.com/article/20260425500085",
+          "type": "news"
+        },
+        {
+          "title": "AI System at Shinhan Investment & Securities Blocks Financial Fraud",
+          "url": "https://oecd.ai/en/incidents/2026-04-24-1366",
+          "type": "report"
+        },
+        {
+          "title": "\"금융사기 노출액 2.3억 전액 차단\"...신한투자증권, AI 방어 도입",
+          "url": "https://www.ddaily.co.kr//page/view/2026042409254065097",
+          "type": "news"
+        },
+        {
+          "title": "신한투자증권 \"금융사기 차단으로 분기 평균 2.3억 피해 막았다\"",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR2026042410082001j",
+          "type": "news"
+        },
+        {
+          "title": "신한證, 금융사기 피해 차단 고도화...\"분기별 이상거래 평균 1800건",
+          "url": "https://www.viva100.com/article/20260424500235",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Civil Servant Prosecuted for AI-Generated Deepfake Harassment",
+          "url": "https://oecd.ai/en/incidents/2026-04-24-8861",
+          "type": "report"
+        },
+        {
+          "title": "부하 여직원과 연인인 척...카톡 '프사' 올린 공무원, 재판행 - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12027205",
+          "type": "news"
+        },
+        {
+          "title": "부하 여직원과 연인인 척 합성, 檢은 성폭력이라는데 경찰은...",
+          "url": "https://www.munhwa.com/article/11584959",
+          "type": "news"
+        },
+        {
+          "title": "카톡 프로필에 부하 직원 합성 사진...지방직 공무원 재판행",
+          "url": "https://www.asiatoday.co.kr/kn/view.php?key=20260424010007883",
+          "type": "news"
+        },
+        {
+          "title": "女직원 몰래 연인처럼 사진 합성한 공무원, 기소됐다",
+          "url": "https://www.dailian.co.kr/news/view/1637657/%EF%A6%81%EC%A7%81%EC%9B%90-%EB%AA%B0%EB%9E%98-%EC%97%B0%EC%9D%B8-%EC%82%AC%EC%A7%84-%ED%95%A9%EC%84%B1%ED%95%9C-%EA%B3%B5%EB%AC%B4%EC%9B%90-2026",
+          "type": "news"
+        },
+        {
+          "title": "'부하직원 연인처럼' AI 사진 꾸며낸 공무원 재판행",
+          "url": "https://www.asiae.co.kr/article/2026042417292971873",
+          "type": "news"
+        },
+        {
+          "title": "AIID incident #1446",
+          "url": "https://incidentdatabase.ai/cite/1446/",
+          "type": "report"
+        },
+        {
+          "title": "AIRI Navigator — incident 1446",
+          "url": "https://www.airi-navigator.com/incidents/1446",
+          "type": "research"
+        },
+        {
+          "title": "KBS AI Subtitle Error Broadcasts Profanity During Artemis II Launch",
+          "url": "https://oecd.ai/en/incidents/2026-04-02-c3bb",
+          "type": "report"
+        },
+        {
+          "title": "\"굴러 이X아\"...KBS, AI 욕설 자막 생중계 참사 - 매일경제",
+          "url": "https://www.mk.co.kr/news/culture/12007144",
+          "type": "news"
+        },
+        {
+          "title": "\"굴러, 이X아\"...KBS, 욕설 자막 내보냈다 \"번역 오류 사과\" - 스타투데이",
+          "url": "https://www.mk.co.kr/news/broadcasting-service/12007156",
+          "type": "news"
+        },
+        {
+          "title": "\"로저, 굴러\"...KBS, 아르테미스 비속어 자막에 \"진심으로 사과\" | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260403079000005",
+          "type": "news"
+        },
+        {
+          "title": "KBS, AI 오류로 비속어 자막 노출 사과...\"개선책 모색 중\" - 연예 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/entertain/2309450.htm",
+          "type": "news"
+        },
+        {
+          "title": "KBS, 아르테미스 2호 생중계 중 \"굴러 X년아?\"... \"AI 번역 오류, 진심으로 사과\" - 일간스포츠",
+          "url": "https://isplus.com/article/view/isp202604020168",
+          "type": "news"
+        },
+        {
+          "title": "Seoul Deploys Generative AI CCTV to Enhance Urban Safety",
+          "url": "https://oecd.ai/en/incidents/2026-02-19-2443",
+          "type": "report"
+        },
+        {
+          "title": "서울시, 상황·맥락 읽는 AI로 CCTV 고도화한다",
+          "url": "https://www.khan.co.kr/article/202602191115001",
+          "type": "news"
+        },
+        {
+          "title": "서울시, '생성형 AI 관제' 도입...CCTV 안전정책 패러다임 전환",
+          "url": "https://www.munhwa.com/article/11568966",
+          "type": "news"
+        },
+        {
+          "title": "\"AI가 사고 맥락까지 확인\"... 서울시, 271억 투자해 CCTV 관제 효율 높인다",
+          "url": "https://www.etoday.co.kr/news/view/2557337",
+          "type": "news"
+        },
+        {
+          "title": "CCTV 고도화 나선 서울시, '생성형AI' 관제 도입 - 월요신문",
+          "url": "https://www.wolyo.co.kr/news/articleView.html?idxno=308879",
+          "type": "news"
+        },
+        {
+          "title": "서울, AI로 도시 안전의 새로운 장을 열다",
+          "url": "https://www.viva100.com/article/20260219500863",
+          "type": "news"
+        },
+        {
+          "title": "Naver and Korean Police Deploy AI Triple Defense to Block Phishing Scams",
+          "url": "https://oecd.ai/en/incidents/2026-02-24-d067",
+          "type": "report"
+        },
+        {
+          "title": "네이버-경찰청, 보이스피싱·리딩방 뿌리 뽑는다...'3중 예방망' 구축 맞손 - 매일경제",
+          "url": "https://www.mk.co.kr/news/it/11970313",
+          "type": "news"
+        },
+        {
+          "title": "네이버, 경찰청과 보이스피싱·투자리딩 사기 예방 나선다...MOU 체결",
+          "url": "https://www.asiae.co.kr/article/2026022414452965244",
+          "type": "news"
+        },
+        {
+          "title": "플랫폼 피싱 사전에 막는다...경찰, 네이버와 '삼중 차단망' 가동 - 사회 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/life/2295565.htm",
+          "type": "news"
+        },
+        {
+          "title": "경찰청·네이버, 플랫폼 피싱 '삼중 차단망' 구축",
+          "url": "https://kr.headtopics.com/news/442215227252397914181-80182514",
+          "type": "news"
+        },
+        {
+          "title": "네이버, 경찰청과 '전기통신금융사기 피해예방 및 근절' 위한 MOU - 굿모닝경제",
+          "url": "https://www.goodkyung.com/news/articleView.html?idxno=283430",
+          "type": "news"
+        },
+        {
+          "title": "South Korea Plans AI-Based National Emergency Response System",
+          "url": "https://oecd.ai/en/incidents/2026-03-18-6b02",
+          "type": "report"
+        },
+        {
+          "title": "소방청, '차세대 119통합시스템' ISMP 수립 착수...AI·클라우드 기반 재난 대응 강화",
+          "url": "https://www.viva100.com/article/20260318501367",
+          "type": "news"
+        },
+        {
+          "title": "KT, 소방청 '차세대 119 통합시스템' 설계 착수...AX 기반 국가 재난대응 체계 만든다 - 매일경제",
+          "url": "https://www.mk.co.kr/news/it/11991387",
+          "type": "news"
+        },
+        {
+          "title": "재난대응 체계도 인공지능 전환...차세대 119 통합 시스템 만든다 - 매일경제",
+          "url": "https://www.mk.co.kr/news/it/11991685",
+          "type": "news"
+        },
+        {
+          "title": "KT, 소방청 '차세대 119통합시스템 구축 ISMP' 설계...AI 기반 재난대응 체계 만든다",
+          "url": "https://www.etoday.co.kr/news/view/2566680",
+          "type": "news"
+        },
+        {
+          "title": "KT, 소방청 '차세대 119통합시스템 구축 ISMP' 설계 맡는다",
+          "url": "https://www.newspim.com/news/view/20260318000988",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Defense Sector Advances AI Transformation Through Strategic Partnerships",
+          "url": "https://oecd.ai/en/incidents/2026-04-01-fa00",
+          "type": "report"
+        },
+        {
+          "title": "인텔리빅스·성균관대 인공지능융합원, '국방 AI 전환' MOU - 매일경제",
+          "url": "https://www.mk.co.kr/news/it/12007300",
+          "type": "news"
+        },
+        {
+          "title": "국방혁신기술보안협회, 성균관대와 국방 AI·보안 협력",
+          "url": "https://www.ddaily.co.kr//page/view/2026040116020099751",
+          "type": "news"
+        },
+        {
+          "title": "인텔리빅스-성균관대, '국방 AI 전환(AX)' 맞손... 육·해·공 전방위 파트너십 구축 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260403145009694",
+          "type": "news"
+        },
+        {
+          "title": "[헬로티 HelloT] 인텔리빅스, 성균관대 인공지능융합원과 국방 AI 전환 MOU 체결",
+          "url": "https://www.hellot.net/news/article.html?no=111867",
+          "type": "news"
+        },
+        {
+          "title": "AI-Driven Smart Port in Incheon Faces Security Risks Over Chinese Equipment Dominance",
+          "url": "https://oecd.ai/en/incidents/2026-04-24-9ffe",
+          "type": "report"
+        },
+        {
+          "title": "인천 스마트항만, 中 원격장비로 채워질판 - 매일경제",
+          "url": "https://www.mk.co.kr/news/business/12026836",
+          "type": "news"
+        },
+        {
+          "title": "서삼석 의원 \"K-스마트항만, 장비 중국산 장악...국산 의무화해야\" - 동행미디어 시대",
+          "url": "https://www.sidae.com/article/2026042710490644562",
+          "type": "news"
+        },
+        {
+          "title": "피지컬 AI 강국 외치더니...항만 '뇌'와 '팔' 모두 中에 맡긴 한국",
+          "url": "https://www.dailian.co.kr/news/view/1638753/%ED%94%BC%EC%A7%80%EC%BB%AC-AI-%EA%B0%95%EA%B5%AD-%EC%99%B8%EC%B9%98%EB%8D%94%EB%8B%88%ED%95%AD-%EB%87%8C%EC%99%80-%ED%8C%94-2026",
+          "type": "news"
+        },
+        {
+          "title": "Google Translate Mistranslates Korean Cultural Terms, Causing Controversy",
+          "url": "https://oecd.ai/en/incidents/2026-04-27-ad82",
+          "type": "report"
+        },
+        {
+          "title": "구글 번역기에 '독도·김치' 돌렸더니...'다케시마·파오차이'가? - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12029062",
+          "type": "news"
+        },
+        {
+          "title": "구글 번역기에 '독도·김치' 넣었더니...'다케시마·파오차이'로 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260427098900371",
+          "type": "news"
+        },
+        {
+          "title": "구글 번역 오류 계속...'독도·김치'를 '다케시마·파오차이'로",
+          "url": "https://www.ytn.co.kr/_ln/0103_202604280826232368",
+          "type": "news"
+        },
+        {
+          "title": "'독도=다케시마' '김치=파오차이'⋯구글 번역기 논란",
+          "url": "https://www.mbn.co.kr/news/society/5190724",
+          "type": "news"
+        },
+        {
+          "title": "독도는 다케시마, 김치는 파오차이?...구글 번역기 오류 심각",
+          "url": "https://www.asiae.co.kr/article/2026042808573629181",
+          "type": "news"
+        },
+        {
+          "title": "Illegal Activation of Tesla FSD AI System in South Korea Prompts Police Investigation",
+          "url": "https://oecd.ai/en/incidents/2026-05-03-93c3",
+          "type": "report"
+        },
+        {
+          "title": "중국산 테슬라, '불법 FSD' 활성화 기승 - 매일경제",
+          "url": "https://www.mk.co.kr/news/business/12034862",
+          "type": "news"
+        },
+        {
+          "title": "국내 테슬라 2％만 자율주행 합법인데...무단 활성화 시도 85건 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260501058600003",
+          "type": "news"
+        },
+        {
+          "title": "안전인증 없이 테슬라 완전자율주행, '탈옥' 시도 85건 적발",
+          "url": "https://www.khan.co.kr/article/202605041128001",
+          "type": "news"
+        },
+        {
+          "title": "중국산 테슬라 '불법 완전자율주행' 85건 적발",
+          "url": "https://www.khan.co.kr/article/202605042136005",
+          "type": "news"
+        },
+        {
+          "title": "국내 테슬라 2％만 자율주행 합법인데...무단 활성화 시도 85건",
+          "url": "https://www.fnnews.com/news/202605040606596271",
+          "type": "news"
+        },
+        {
+          "title": "HL Mando Deploys AI-Based Electrical Fire Prevention System at Hyundai's U.S. Plant",
+          "url": "https://oecd.ai/en/incidents/2026-05-05-a52a",
+          "type": "report"
+        },
+        {
+          "title": "HL만도, AI 기반 전기화재 예방 솔루션 '해치' 사업 본격화...첫 고객 현대차그룹",
+          "url": "https://www.etoday.co.kr/news/view/2581750",
+          "type": "news"
+        },
+        {
+          "title": "HL만도, AI 전기화재 예방 '해치' 현대차 메타플랜트 적용",
+          "url": "https://www.asiae.co.kr/article/2026050608432313598",
+          "type": "news"
+        },
+        {
+          "title": "\"불나기 전 잡는다\"...HL만도 'AI 방재 솔루션', 현대차 美공장 공급 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260506092747743",
+          "type": "news"
+        },
+        {
+          "title": "HL만도, AI 전기화재 솔루션 '해치' 본격 양산⋯현대차 美 HMGMA 첫 적용",
+          "url": "https://www.inews24.com/view/1965815",
+          "type": "news"
+        },
+        {
+          "title": "AI-Generated Fake Social Media Accounts Spread Political Misinformation in South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-05-07-3d28",
+          "type": "report"
+        },
+        {
+          "title": "\"윤어게인\"...태극기집회 아이돌급 미모 여성 정체는? - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12041587",
+          "type": "news"
+        },
+        {
+          "title": "\"윤어게인\" 외친 짦은 치마 미모20대女...알고보니 AI",
+          "url": "https://www.munhwa.com/article/11587548",
+          "type": "news"
+        },
+        {
+          "title": "어느샌가 내 SNS에 나타나 '윤 어게인'을 외치는 여성들의 정체 : 극우와 첨단기술의 만남",
+          "url": "https://www.huffingtonpost.kr/article/257051",
+          "type": "news"
+        },
+        {
+          "title": "\"윤어게인, 오늘도 멸공\" 20대 보수 여성의 SNS 정체...알고 보니 AI",
+          "url": "https://www.fnnews.com/news/202605071315530087",
+          "type": "news"
+        },
+        {
+          "title": "IT Contractor Creates Deepfake Videos from Stolen School Staff Photos in Busan",
+          "url": "https://oecd.ai/en/incidents/2026-05-07-ce72",
+          "type": "report"
+        },
+        {
+          "title": "\"PC 점검 왔습니다\"...여교사 사진 빼돌려 '딥페이크' 만든 30대 덜미 - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12039035",
+          "type": "news"
+        },
+        {
+          "title": "PC점검 왔다더니...여교사 사진 유출해 '딥페이크' 만든 30대 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260507064600051",
+          "type": "news"
+        },
+        {
+          "title": "\"PC 고쳐드릴게요\"...수년간 여교사 사진 빼돌려 딥페이크 만든 30대",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR20260507112700m1u",
+          "type": "news"
+        },
+        {
+          "title": "여교사 사진 유출해 '딥페이크' 만든 PC점검 직원",
+          "url": "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0300&key=20260507.99099001595",
+          "type": "news"
+        },
+        {
+          "title": "PC 점검은 안하고...여교사들 사진 빼돌려 음란물 만든 30대 - 시사저널",
+          "url": "https://www.sisajournal.com/news/articleView.html?idxno=372015",
+          "type": "news"
+        },
+        {
+          "title": "AIID incident #1484",
+          "url": "https://incidentdatabase.ai/cite/1484/",
+          "type": "report"
+        },
+        {
+          "title": "AI-Generated Fake Wolf Photo Disrupts Emergency Response in Daejeon",
+          "url": "https://oecd.ai/en/incidents/2026-04-24-dafe",
+          "type": "report"
+        },
+        {
+          "title": "\"재미로 그랬다\" 오월드 늑대 '늑구' 가짜 사진 유포한 남성",
+          "url": "https://www.gukjenews.com/news/articleView.html?idxno=3565693",
+          "type": "news"
+        },
+        {
+          "title": "'늑구 골든타임' 놓치게 한 그 사진...40대 유포자 \"재미로 그랬다\" - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12026987",
+          "type": "news"
+        },
+        {
+          "title": "\"재미로 그랬다\" AI 가짜 '늑구 사진' 유포자 잡았다",
+          "url": "https://www.khan.co.kr/article/202604241243001",
+          "type": "news"
+        },
+        {
+          "title": "늑구 AI 가짜사진 유포자 검거...\"경찰 기동대·특공대 헛걸음\" 오월드수색 업무 방해혐의",
+          "url": "https://www.munhwa.com/article/11584777",
+          "type": "news"
+        },
+        {
+          "title": "[속보]늑구 AI 조작 사진 유포자 검거 \"수색 시간 허비\"",
+          "url": "https://www.munhwa.com/article/11584859",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Police Deploy AI to Combat Election Misinformation",
+          "url": "https://oecd.ai/en/incidents/2026-05-10-8873",
+          "type": "report"
+        },
+        {
+          "title": "경찰, 선거사범 대응 체계 3단계 격상...AI 가짜뉴스 정조준 - 사회 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/life/2320871.htm",
+          "type": "news"
+        },
+        {
+          "title": "경찰, 14일부터 선거사범 대응 최고 단계 격상",
+          "url": "https://www.newspim.com/news/view/20260508001330",
+          "type": "news"
+        },
+        {
+          "title": "경찰, '선거사범 대응' 최고 수준 격상...AI 조작 잡는다",
+          "url": "https://www.asiae.co.kr/article/2026051005274121644",
+          "type": "news"
+        },
+        {
+          "title": "경찰, 6·3 지방선거 앞두고 선거범죄 대응 최고 수위 격상",
+          "url": "https://www.kgnews.co.kr/news/article.html?no=895019",
+          "type": "news"
+        },
+        {
+          "title": "OpenAI's ChatGPT and Codex Experience Temporary File Upload Outage",
+          "url": "https://oecd.ai/en/incidents/2026-05-11-adac",
+          "type": "report"
+        },
+        {
+          "title": "오픈AI 챗GPT·코덱스서 일부 오류 발생...오픈AI \"조사 중\"· | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260511085800017",
+          "type": "news"
+        },
+        {
+          "title": "챗GPT·코덱스서 한때 일부 오류...오픈AI \"복구 모니터링 중\"(종합) | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260511085851017",
+          "type": "news"
+        },
+        {
+          "title": "챗GPT 업로드 오류 4시간여만에 완전 복구...코덱스도 정상화(종합2보)",
+          "url": "https://www.yna.co.kr/view/AKR20260511085852017",
+          "type": "news"
+        },
+        {
+          "title": "챗GPT 일부 오류...파일 업로드 '무한 로딩'",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR20260511134358Kzq",
+          "type": "news"
+        },
+        {
+          "title": "오픈AI, 챗GPT·코덱스 파일 업로드 오류 복구",
+          "url": "https://www.ddaily.co.kr//page/view/2026051116320261402",
+          "type": "news"
+        },
+        {
+          "title": "Hanwha Showcases AI-Enabled Military Unmanned Systems at Romanian Defense Expo",
+          "url": "https://oecd.ai/en/incidents/2026-05-12-9d1d",
+          "type": "report"
+        },
+        {
+          "title": "한화에어로·한화시스템, 루마니아 방산전시회 참가...첨단 무인화 솔루션 제시 - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2321720.htm",
+          "type": "news"
+        },
+        {
+          "title": "한화, 루마니아 방산전시회 참가...첨단 무인화 솔루션 공개",
+          "url": "https://www.newspim.com/news/view/20260512000350",
+          "type": "news"
+        },
+        {
+          "title": "한화, 루마니아 UGV 수요 공략...차세대 무인화 솔루션 제시",
+          "url": "https://www.etoday.co.kr/news/view/2583599",
+          "type": "news"
+        },
+        {
+          "title": "한화, 'BSDA 2026' 참가...차세대 무인화 통합 솔루션 통해 동유럽 시장 공략",
+          "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=452065",
+          "type": "news"
+        },
+        {
+          "title": "한화, 루마니아 방산전시회 참가...UGV·AI 전장 기술 총출동",
+          "url": "https://www.ddaily.co.kr//page/view/2026051210514516819",
+          "type": "news"
+        },
+        {
+          "title": "Google Detects First AI-Generated Zero-Day Attack Code Used by State-Backed Hackers",
+          "url": "https://oecd.ai/en/incidents/2026-05-12-f150",
+          "type": "report"
+        },
+        {
+          "title": "AI 위협 추적 보고서...\"AI 기반 제로데이 공격 최초 탐지\"",
+          "url": "https://www.asiae.co.kr/article/2026051210210802829",
+          "type": "news"
+        },
+        {
+          "title": "구글, AI 이용해 생성된 '제로데이' 취약점 최초 발견",
+          "url": "https://kbench.com/?q=node%2F278617",
+          "type": "news"
+        },
+        {
+          "title": "AI 스스로 취약점 찾아 해킹... '사이버 무기' 시대",
+          "url": "https://www.seoul.co.kr/news/economy/IT/2026/05/13/20260513029002",
+          "type": "news"
+        },
+        {
+          "title": "South Korea Invests in AI-Driven Autonomous Shipyards and Vessels",
+          "url": "https://oecd.ai/en/incidents/2026-05-13-e14e",
+          "type": "report"
+        },
+        {
+          "title": "7대 선종 핵심기술 확보에 5250억원 투입...마스가 프로젝트 가속화 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260513165637272",
+          "type": "news"
+        },
+        {
+          "title": "AI조선소 프로젝트에 1조원 투입... 정부, 'K-조선 미래비전' 선포",
+          "url": "https://www.viva100.com/article/20260513501221",
+          "type": "news"
+        },
+        {
+          "title": "K-조선 '경쟁력 강화' 나선 정부···AI조선소·자율운항·고부가선에 집중 투자 - 투데이코리아",
+          "url": "https://www.todaykorea.co.kr/news/articleView.html?idxno=401671",
+          "type": "news"
+        },
+        {
+          "title": "South Korean Government Launches Joint Response Team for AI-Driven Cybersecurity Threats",
+          "url": "https://oecd.ai/en/incidents/2026-05-13-f1e0",
+          "type": "report"
+        },
+        {
+          "title": "靑, 안보 3차장 주재 사이버안보 현안점검회의 개최",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR20260513110220Yp9",
+          "type": "news"
+        },
+        {
+          "title": "안보실, 고성능 AI 사이버 위협 대응 점검...기술전문가 중심 대응반 운영",
+          "url": "https://www.etoday.co.kr/news/view/2584042",
+          "type": "news"
+        },
+        {
+          "title": "靑 국가안보실, AI 악용 사이버 위협 점검...기술전문가 중심 합동 대응반 운영",
+          "url": "https://www.newspim.com/news/view/20260513000596",
+          "type": "news"
+        },
+        {
+          "title": "안보실, AI 해킹 위협 대응 점검회의...기술전문가 합동대응반 운영",
+          "url": "https://www.asiae.co.kr/article/2026051310582282048",
+          "type": "news"
+        },
+        {
+          "title": "Hyundai Rotem Showcases AI-Enabled Unmanned Military Systems at Romanian Defense Expo",
+          "url": "https://oecd.ai/en/incidents/2026-05-13-fea6",
+          "type": "report"
+        },
+        {
+          "title": "현대로템, 동유럽 최대 방산전시회 참가...무인체계 기술 선보인다",
+          "url": "https://www.etoday.co.kr/news/view/2583950",
+          "type": "news"
+        },
+        {
+          "title": "현대로템, 동유럽 최대 방산 전시회 참가...무인체계 기술력 공개",
+          "url": "https://www.dailian.co.kr/news/view/1643610/%ED%98%84%EB%8C%80%EB%A1%9C%ED%85%9C-%EB%8F%99%EC%9C%A0%EB%9F%BD-%EC%B5%9C%EB%8C%80-%EB%B0%A9%EC%82%B0-%EC%A0%84%EC%8B%9C%ED%9A%8C-%EC%B0%B8-2026",
+          "type": "news"
+        },
+        {
+          "title": "현대로템, K2 전차 등 동유럽 방산시장 공략 나서 - 동행미디어 시대",
+          "url": "https://www.sidae.com/article/2026051309323673631",
+          "type": "news"
+        },
+        {
+          "title": "현대로템, 루마니아 방산 전시회 참가... 무인체계·수소 솔루션 공략",
+          "url": "https://www.pointe.co.kr/news/articleView.html?idxno=79431",
+          "type": "news"
+        },
+        {
+          "title": "Yangju City Deploys AI-Based Traffic Safety System to Prevent Accidents",
+          "url": "https://oecd.ai/en/incidents/2026-05-21-6f74",
+          "type": "report"
+        },
+        {
+          "title": "양주시,  국토부 '2026 AI 시티 혁신기술 발굴사업' 최종 선정",
+          "url": "https://www.munhwa.com/article/11590624",
+          "type": "news"
+        },
+        {
+          "title": "양주시, 국토부 AI 시티 공모 선정...\"골목길 사고까지 AI가 예측",
+          "url": "https://www.asiae.co.kr/article/2026052117301403634",
+          "type": "news"
+        },
+        {
+          "title": "양주시, AI로 교통안전 혁신: 사고 예방 앞장선다",
+          "url": "https://www.viva100.com/article/20260522500100",
+          "type": "news"
+        },
+        {
+          "title": "양주시, AI 기반 생활도로 안전망 구축... 국토부 혁신사업 선정",
+          "url": "https://www.ilyoseoul.co.kr/news/articleView.html?idxno=517470",
+          "type": "news"
+        },
+        {
+          "title": "AI-Generated Fake News Distorts South Korea's 5·18 Democratic Movement",
+          "url": "https://oecd.ai/en/incidents/2026-05-22-ca85",
+          "type": "report"
+        },
+        {
+          "title": "\"北간첩이 계엄군 공격\" 광주일보 1980년 기사?...알고보니 AI 조작 - 매일경제",
+          "url": "https://www.mk.co.kr/news/society/12055486",
+          "type": "news"
+        },
+        {
+          "title": "AI 가짜 신문기사까지...5·18 왜곡·조롱 게시물 온라인서 확산 | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260522065600054",
+          "type": "news"
+        },
+        {
+          "title": "경찰, '5·18은 北지령' AI가짜기사 작성자 추적...\"무관용 수사\" | 연합뉴스",
+          "url": "https://www.yna.co.kr/view/AKR20260522129900004",
+          "type": "news"
+        },
+        {
+          "title": "경찰, '5·18은 북한 지령' 가짜 신문 작성자 추적·수사 중",
+          "url": "https://www.khan.co.kr/article/202605221710001",
+          "type": "news"
+        },
+        {
+          "title": "'폭도와 광주 피로 믈들여' 경찰, 5·18 가짜뉴스 생산자 추적",
+          "url": "https://www.munhwa.com/article/11590850",
+          "type": "news"
+        },
+        {
+          "title": "Hyundai Rotem Advances Military Unmanned Systems with AI Command Technology",
+          "url": "https://oecd.ai/en/incidents/2026-05-26-32db",
+          "type": "report"
+        },
+        {
+          "title": "무인로봇 통합관제 시스템등 현대로템 국책과제 2건 수주 - 매일경제",
+          "url": "https://www.mk.co.kr/news/business/12058103",
+          "type": "news"
+        },
+        {
+          "title": "현대로템, 피지컬 AI 국책과제 수주···'로봇 전장' 선점 박차",
+          "url": "https://www.munhwa.com/article/11591350",
+          "type": "news"
+        },
+        {
+          "title": "현대로템, 무인로봇 국책과제 잇달아 수주...\"피지컬AI 기술 고도화\" - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2326002.htm",
+          "type": "news"
+        },
+        {
+          "title": "'무인화'로 미래 전장 바꾼다···한화·현대, 엔진·AI 기술 선점 박차 - 서울파이낸스",
+          "url": "https://www.seoulfn.com/news/articleView.html?idxno=629634",
+          "type": "news"
+        },
+        {
+          "title": "현대로템, 피지컬 AI 국책과제 수주...차세대 무인전장 기술 선점 나서",
+          "url": "https://www.ddaily.co.kr//page/view/2026052609265687536",
+          "type": "news"
+        },
+        {
+          "title": "AI-Enabled Drones Prevent Wildfires in Hanam City, South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-05-27-ff24",
+          "type": "report"
+        },
+        {
+          "title": "\"AI 드론이 산불 지켰다\"...하남시, 봄철 산불 '0건' 달성",
+          "url": "https://www.pressian.com/pages/articles/2026052713070137566",
+          "type": "news"
+        },
+        {
+          "title": "South Korea Battles Surge of Deepfake Election Misinformation Ahead of Local Elections",
+          "url": "https://oecd.ai/en/incidents/2026-05-28-2335",
+          "type": "report"
+        },
+        {
+          "title": "'6·3선거' 앞두고 허위·가짜뉴스 급증...하루 평균 12.5명 적발",
+          "url": "https://www.yna.co.kr/view/AKR20260528132800530",
+          "type": "news"
+        },
+        {
+          "title": "\"딥페이크 선거운동 폭증\"...지방선거 앞두고 가짜뉴스 단속 921명",
+          "url": "https://www.fnnews.com/news/202605281717397963",
+          "type": "news"
+        },
+        {
+          "title": "선거 위반 '딥페이크 게시물' 급증...\"대선 때보다 늘어날 전망\"",
+          "url": "https://www.asiae.co.kr/article/2026052816321538043",
+          "type": "news"
+        },
+        {
+          "title": "'지방선거' 허위·가짜뉴스 일평균 12.5명 적발",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR202605281737252EO",
+          "type": "news"
+        },
+        {
+          "title": "South Korea Launches Joint Public-Private Response to AI-Driven Cybersecurity Threats",
+          "url": "https://oecd.ai/en/incidents/2026-05-29-2fa5",
+          "type": "report"
+        },
+        {
+          "title": "거세진 AI 사이버 위협에...정부, 국가안보실 중심 민관 대응체계 마련",
+          "url": "https://www.mk.co.kr/news/it/12061264",
+          "type": "news"
+        },
+        {
+          "title": "[AI픽] AI 해킹 비상...정부, 민간 보안 총력 대응",
+          "url": "https://www.yna.co.kr/view/AKR20260528171700017",
+          "type": "news"
+        },
+        {
+          "title": "정부, AI 사이버위협 대응 민관합동 체계...내년 독자 AI 정보보호 체계 전환",
+          "url": "https://view.asiae.co.kr/article/2026052910500640350",
+          "type": "news"
+        },
+        {
+          "title": "정부, AI 기반 사이버 위협 대응체계 가동...취약점 관리 일원화 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260529083716515",
+          "type": "news"
+        },
+        {
+          "title": "AI Deepfake Videos Used for Election Misinformation in South Korea's Gyeongnam Governor Race",
+          "url": "https://oecd.ai/en/incidents/2026-05-29-e32f",
+          "type": "report"
+        },
+        {
+          "title": "경남지사 선거 '딥페이크·관권선거' 공방...김경수·박완수 충돌(종합)",
+          "url": "https://www.yna.co.kr/view/AKR20260529086851052",
+          "type": "news"
+        },
+        {
+          "title": "정원오측 \"吳캠프서 비방 콘텐츠 유포...고발할 것\" 오세훈측 \"사실무근",
+          "url": "https://www.donga.com/news/Politics/article/all/20260529/134015501/1",
+          "type": "news"
+        },
+        {
+          "title": "관권선거, 사퇴하라\" vs \"정치공세, 유착 의혹\"... 경남지사 선거 격화",
+          "url": "https://www.chosun.com/politics/election2026/2026/05/29/2O6IJLOPHFACFAWDVVEPILGMMU/",
+          "type": "news"
+        },
+        {
+          "title": "경남지사 선거 '딥페이크·관권선거' 논란...김경수·박완수 공방",
+          "url": "https://www.yna.co.kr/view/AKR20260529086800052",
+          "type": "news"
+        },
+        {
+          "title": "Yongin City Installs AI Fire Suppression Systems in Public EV Charging Areas",
+          "url": "https://oecd.ai/en/incidents/2026-06-03-53db",
+          "type": "report"
+        },
+        {
+          "title": "용인시, 공공시설 전기차 충전구역에 'AI 자동소화장치' 설치",
+          "url": "https://www.yna.co.kr/view/AKR20260604144100061",
+          "type": "news"
+        },
+        {
+          "title": "용인시, 공공시설 전기차 충전구역에 AI 자동소화장치 도입",
+          "url": "https://view.asiae.co.kr/article/2026060408105072004",
+          "type": "news"
+        },
+        {
+          "title": "AI-Based Wildfire and Safety Monitoring System Deployed in South Korea",
+          "url": "https://oecd.ai/en/incidents/2026-06-04-4530",
+          "type": "report"
+        },
+        {
+          "title": "인텔리빅스, 국산 AI 반도체 기반 안전관제 실증 성과 공개",
+          "url": "https://www.newspim.com/news/view/20260604000936",
+          "type": "news"
+        },
+        {
+          "title": "인텔리빅스, '소버린 AI' 구현...국산 AI 반도체 자립화 앞장선다",
+          "url": "http://kr.acrofan.com/detail.php?number=436965%EC%9D%B8%ED%85%94%EB%A6%AC%EB%B9%85%EC%8A%A4%2C_%27%EC%86%8C%EB%B2%84%EB%A6%B0_AI%27_%EA%B5%AC%ED%98%84...%EA%B5%AD%EC%82%B0_AI_%EB%B0%98%EB%8F%84%EC%B2%B4_%EC%9E%90%EB%A6%BD%ED%99%94_%EC%95%9E%EC%9E%A5%EC%84%A0%EB%8B%A4",
+          "type": "news"
+        },
+        {
+          "title": "인텔리빅스, 국산 AI 반도체 활용한 실증 성과 공개",
+          "url": "https://www.asiae.co.kr/article/2026060415125428496",
+          "type": "news"
+        },
+        {
+          "title": "인텔리빅스, 국산 AI 반도체 기반 산불·안전관제 실증 공개...소버린 AI 구현 속도",
+          "url": "https://www.viva100.com/article/20260604501163",
+          "type": "news"
+        },
+        {
+          "title": "South Korea Launches Task Force to Combat AI-Driven Insurance Fraud",
+          "url": "https://oecd.ai/en/incidents/2026-06-04-6e92",
+          "type": "report"
+        },
+        {
+          "title": "AI로 병원서류 조작해 1.5억 꿀꺽...당국, 보험사기 방지 TF 출범",
+          "url": "https://www.mk.co.kr/news/economy/12065851",
+          "type": "news"
+        },
+        {
+          "title": "작년 보험사기 9조 추산...AI 보험사기 방지체계 구축 나선다",
+          "url": "https://www.yna.co.kr/view/AKR20260604143700002",
+          "type": "news"
+        },
+        {
+          "title": "AI 보험사기 대응 나선다...범정부 TF 출범",
+          "url": "https://www.dailian.co.kr/news/view/1652203/AI-%EB%B3%B4%ED%97%98%EC%82%AC%EA%B8%B0-%EB%8C%80%EC%9D%91-%EB%82%98%EC%84%A0%EB%8B%A4%EB%B2%94%EC%A0%95%EB%B6%80-TF-2026",
+          "type": "news"
+        },
+        {
+          "title": "작년 보험사기 9조 추정...금융당국, AI 기반 사기예방 TF 가동 - 동행미디어 시대",
+          "url": "https://www.sidae.com/article/2026060409153122650",
+          "type": "news"
+        },
+        {
+          "title": "Chungnam Province Deploys AI Systems for Disaster and Safety Management",
+          "url": "https://oecd.ai/en/incidents/2026-06-05-a17f",
+          "type": "report"
+        },
+        {
+          "title": "충남도, AI로 지하차도 침수 감지...위험 땐 차량 진입 차단",
+          "url": "https://www.yna.co.kr/view/AKR20260605039600063",
+          "type": "news"
+        },
+        {
+          "title": "충남도, 온디바이스 AI 공모 선정...107억 원 투입 재난안전망 구축 - 보도자료 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/releasecopy/2329851.htm",
+          "type": "news"
+        },
+        {
+          "title": "Anyang City Deploys AI and Drones for Real-Time Disaster Prevention",
+          "url": "https://oecd.ai/en/incidents/2026-06-05-c9d5",
+          "type": "report"
+        },
+        {
+          "title": "안양시, AI·드론 총동원한 여름철 재난 대응체계 가동 - 보도자료 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/releasecopy/2329822.htm",
+          "type": "news"
+        },
+        {
+          "title": "안양시, 인공지능(AI)과 드론으로 기습 폭우·폭염 등 여름 재난 막는다",
+          "url": "https://go.seoul.co.kr/news/newsView.php?id=20260605500042",
+          "type": "news"
+        },
+        {
+          "title": "[안양 소식] 여름철 맞아 AI·드론 등 기술 접목 자연재해 예방 추진 - 동행미디어 시대",
+          "url": "https://www.sidae.com/article/2026060512050569856",
+          "type": "news"
+        },
+        {
+          "title": "안양시, \"폭우·폭염 사각지대 줄여...주민들 안심된다\" 호응 | 아주경제",
+          "url": "https://www.ajunews.com/view/20260605163616011",
+          "type": "news"
+        },
+        {
+          "title": "안양시, 여름철 재난 대응 AI+드론 스마트 방어망 구축",
+          "url": "https://www.viva100.com/article/20260605500695",
+          "type": "news"
+        },
+        {
+          "title": "Hyundai Glovis Advances AI-Powered Remote Ship Navigation Technology",
+          "url": "https://oecd.ai/en/incidents/2026-06-07-3f81",
+          "type": "report"
+        },
+        {
+          "title": "현대글로비스, 자동차운반선 원격운항 기술 고도화 추진",
+          "url": "https://www.yna.co.kr/view/AKR20260608029500003",
+          "type": "news"
+        },
+        {
+          "title": "현대글로비스, 자동차운반선 원격운항 기술 검증",
+          "url": "https://www.khan.co.kr/article/202606081011001",
+          "type": "news"
+        },
+        {
+          "title": "현대글로비스, 자동차운반선 원격운항 기술 고도화로 자율운항 시장 선점",
+          "url": "https://www.munhwa.com/article/11594070",
+          "type": "news"
+        },
+        {
+          "title": "현대글로비스, '자동차운반선 원격운항' 기술 고도화 나선다 - 경제 | 기사 - 더팩트",
+          "url": "https://news.tf.co.kr/read/economy/2330223.htm",
+          "type": "news"
+        },
+        {
+          "title": "현대글로비스, 자동차운반선 원격운항 기술 고도화",
+          "url": "https://www.etoday.co.kr/news/view/2591246",
+          "type": "news"
+        },
+        {
+          "title": "Teen Uses AI Deepfake to Create and Distribute Sexual Exploitation Images of Teachers in Incheon",
+          "url": "https://oecd.ai/en/incidents/2026-06-08-2d00",
+          "type": "report"
+        },
+        {
+          "title": "제자가 성착취물 만들어 유포...교사들 \"앨범 촬영조차 두려워\"",
+          "url": "https://www.yna.co.kr/view/AKR20260608123300065",
+          "type": "news"
+        },
+        {
+          "title": "담임 성착취물 제작, 유포한 10대...\"누구보다 제자들 사랑했는데\" 눈물흘린 교사",
+          "url": "https://www.munhwa.com/article/11594309",
+          "type": "news"
+        },
+        {
+          "title": "교사 사진으로 성착취물 만들어 유포한 10대 제자...검찰, 실형 구형",
+          "url": "https://www.yonhapnewstv.co.kr/news/AKR20260608160505yKZ",
+          "type": "news"
+        },
+        {
+          "title": "\"딥페이크 형량 적다\"...인천 교사들 탄원",
+          "url": "https://news.ifm.kr/news/articleView.html?idxno=472614",
+          "type": "news"
+        },
+        {
+          "title": "\"이제는 학생들 의심하게 됐다\"...제자 딥페이크에 무너진 교사들",
+          "url": "https://view.asiae.co.kr/article/2026060818221276043",
+          "type": "news"
+        }
+      ],
+      "tags": [
+        "ai-post-deployment",
+        "aiid",
+        "airi-navigator",
+        "eu-ai-act-4-minimal-or-no-risk",
+        "oecd-aim"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "mitre_atlas_tactics": [
+        "AML.TA0003",
+        "AML.TA0004",
+        "AML.TA0005",
+        "AML.TA0010",
+        "AML.TA0011",
+        "AML.TA0012"
+      ],
+      "aiid_id": 1446,
       "quality_tier": "reviewed",
       "corpus": "security"
     },
