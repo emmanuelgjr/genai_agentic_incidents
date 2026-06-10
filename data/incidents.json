@@ -3,7 +3,7 @@
   "generated": "2026-06-10",
   "description": "Single source of truth for GenAI and agentic AI security incidents. Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable.",
   "schema": "schema/incident.schema.json",
-  "incident_count": 8170,
+  "incident_count": 8179,
   "incidents": [
     {
       "id": "INC-04853",
@@ -310532,6 +310532,547 @@
         "CVE-2001-0352"
       ],
       "cvss_score": 5.0,
+      "mitre_atlas_tactics": [
+        "AML.TA0004"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08186",
+      "source_ids": [
+        "CVE-2026-25879"
+      ],
+      "title": "Langroid — Prompt Injection (CVE-2026-25879)",
+      "date": "2026-06",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "Langroid is a framework for building large-language-model-powered applications. Prior to version 0.63.0, SQLChatAgent executes SQL produced by an LLM, which is influenceable by prompt injection. When configured with a database role that has privileges enabling code execution or filesystem access (e.g., PostgreSQL pg_execute_server_program, MySQL FILE, MSSQL xp_cmdshell), an attacker who can shape the agent's input — including indirectly via data returned to the LLM — can coerce execution of dialect-specific primitives such as `COPY ... FROM PROGRAM`, achieving RCE on the database host. Fixed in v0.63.0 by defaulting SQLChatAgent to a SELECT-only sqlglot-parsed statement allowlist with a dialect-aware dangerous-pattern blocklist; allow_dangerous_operations=True restores the previous unrestricted behavior for trusted deployments.",
+      "attack_vector": "prompt-injection",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM01",
+        "LLM05"
+      ],
+      "owasp_asi": [
+        "ASI01",
+        "ASI05"
+      ],
+      "nist_ai_rmf": [
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0050",
+        "AML.T0051"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-25879",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/langroid/langroid/security/advisories/GHSA-mxfr-6hcw-j9rq",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd",
+        "prompt-injection"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-25879"
+      ],
+      "cwe_ids": [
+        "CWE-89",
+        "CWE-94"
+      ],
+      "cvss_score": 9.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "mitre_atlas_tactics": [
+        "AML.TA0005"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08187",
+      "source_ids": [
+        "CVE-2026-44209"
+      ],
+      "title": "Banks generates meaningful LLM prompts using a template language that makes sense.",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "Banks generates meaningful LLM prompts using a template language that makes sense. Prior to 2.4.2, banks uses jinja2.Environment() (unsandboxed) to render prompt templates. Applications that pass user-supplied strings as the template argument to Prompt() are vulnerable to Server-Side Template Injection (SSTI), which can lead to Remote Code Execution (RCE) on the host system. This vulnerability is fixed in 2.4.2.",
+      "attack_vector": "rce",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM03",
+        "LLM05"
+      ],
+      "owasp_asi": [
+        "ASI04",
+        "ASI05"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0010",
+        "AML.T0050"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44209",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/masci/banks/pull/74",
+          "type": "reference"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/masci/banks/security/advisories/GHSA-gphh-9q3h-jgpp",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd",
+        "rce"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-44209"
+      ],
+      "cwe_ids": [
+        "CWE-1336"
+      ],
+      "cvss_score": 7.5,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "mitre_atlas_tactics": [
+        "AML.TA0004",
+        "AML.TA0005"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08188",
+      "source_ids": [
+        "CVE-2026-45312"
+      ],
+      "title": "RAGFlow — Command Injection (CVE-2026-45312)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "RAGFlow is an open-source RAG (Retrieval-Augmented Generation) engine. In 0.24.0 and earlier, a Jinja2 template injection in the prompt generator (rag/prompts/generator.py) allows any authenticated user to execute arbitrary OS commands on the server. Any normal user can register, create a Canvas workflow with a DuckDuckGo + LLM component chain, and trigger the SSTI.",
+      "attack_vector": "command-injection",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM03",
+        "LLM05"
+      ],
+      "owasp_asi": [
+        "ASI04",
+        "ASI05"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0010",
+        "AML.T0050"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45312",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/infiniflow/ragflow/security/advisories/GHSA-wpg4-h5g2-jxm6",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "command-injection",
+        "cve",
+        "nvd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-45312"
+      ],
+      "cwe_ids": [
+        "CWE-1336"
+      ],
+      "cvss_score": 9.9,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H",
+      "mitre_atlas_tactics": [
+        "AML.TA0004",
+        "AML.TA0005"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08189",
+      "source_ids": [
+        "CVE-2026-44648"
+      ],
+      "title": "SillyTavern — Vulnerability (CVE-2026-44648)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "SillyTavern is a locally installed user interface that allows users to interact with text generation large language models, image generation engines, and text-to-speech voice models. Prior to 1.18.0, SillyTavern relies on cookie-session for authentication, storing all session data (user handle, permissions) in a signed cookie. The endpoints POST /api/users/change-password and POST /api/users/recover-step2 only update the password hash in the database but do not expire current sessions. Because the session is stateless and stored entirely in the client cookie, there is no server-side mechanism to revoke a token once issued. This vulnerability is fixed in 1.18.0.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "owasp_asi": [
+        "ASI04"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1"
+      ],
+      "mitre_atlas": [
+        "AML.T0010"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44648",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/SillyTavern/SillyTavern/security/advisories/GHSA-wmm3-h9qj-p5v6",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-44648"
+      ],
+      "cwe_ids": [
+        "CWE-613"
+      ],
+      "cvss_score": 7.5,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+      "mitre_atlas_tactics": [
+        "AML.TA0004"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08190",
+      "source_ids": [
+        "CVE-2026-44649"
+      ],
+      "title": "SillyTavern — Vulnerability (CVE-2026-44649)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "SillyTavern is a locally installed user interface that allows users to interact with text generation large language models, image generation engines, and text-to-speech voice models. Prior to 1.18.0, SillyTavern accepts Remote-User (Authelia) and X-Authentik-Username (Authentik) HTTP headers to automatically log in users when SSO is configured. There is no validation that these headers originate from a trusted reverse proxy. Any network client that can reach the SillyTavern port directly can inject these headers and authenticate as any user, including administrators, without a password. This vulnerability is exploitable only when sso.autheliaAuth: true or sso.authentikAuth: true is set in config.yaml (both default to false). This vulnerability is fixed in 1.18.0.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "owasp_asi": [
+        "ASI04"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1"
+      ],
+      "mitre_atlas": [
+        "AML.T0010"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44649",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/SillyTavern/SillyTavern/security/advisories/GHSA-gxx6-h3g6-vwjh",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-44649"
+      ],
+      "cwe_ids": [
+        "CWE-290",
+        "CWE-306",
+        "CWE-346",
+        "CWE-807"
+      ],
+      "cvss_score": 9.8,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "mitre_atlas_tactics": [
+        "AML.TA0004"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08191",
+      "source_ids": [
+        "CVE-2026-44650"
+      ],
+      "title": "SillyTavern — Vulnerability (CVE-2026-44650)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "SillyTavern is a locally installed user interface that allows users to interact with text generation large language models, image generation engines, and text-to-speech voice models. Prior to 1.18.0, POST /api/extensions/delete endpoint accepts extensionName: \".\" which bypasses sanitize-filename validation, causing the entire user extensions directory to be recursively deleted. No authentication is required in the default configuration. This vulnerability is fixed in 1.18.0.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Critical",
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "owasp_asi": [
+        "ASI04"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1"
+      ],
+      "mitre_atlas": [
+        "AML.T0010"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44650",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/SillyTavern/SillyTavern/security/advisories/GHSA-886q-f44j-h6wh",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-44650"
+      ],
+      "cwe_ids": [
+        "CWE-22"
+      ],
+      "cvss_score": 9.1,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H",
+      "mitre_atlas_tactics": [
+        "AML.TA0004"
+      ],
+      "quality_tier": "reviewed",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08192",
+      "source_ids": [
+        "CVE-2026-44651"
+      ],
+      "title": "SillyTavern — Vulnerability (CVE-2026-44651)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "SillyTavern is a locally installed user interface that allows users to interact with text generation large language models, image generation engines, and text-to-speech voice models. Prior to 1.18.0, when fetch(url) throws, the code sends: res.status(500).send('Error occurred while trying to proxy to: ' + url + ' ' + error). The url value is attacker-controlled (req.params.url) and is not HTML-escaped before rendering. This vulnerability is fixed in 1.18.0.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "owasp_asi": [
+        "ASI04"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1"
+      ],
+      "mitre_atlas": [
+        "AML.T0010"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44651",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/SillyTavern/SillyTavern/security/advisories/GHSA-xc4x-2452-5gc9",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-44651"
+      ],
+      "cwe_ids": [
+        "CWE-79"
+      ],
+      "mitre_atlas_tactics": [
+        "AML.TA0004"
+      ],
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08193",
+      "source_ids": [
+        "CVE-2026-44652"
+      ],
+      "title": "SillyTavern — Ssrf (CVE-2026-44652)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "SillyTavern is a locally installed user interface that allows users to interact with text generation large language models, image generation engines, and text-to-speech voice models. Prior to 1.18.0, corsProxyMiddleware forwards req.params.url directly into fetch(url, ...). It only blocks circular requests to its own host and does not enforce destination allowlist or private/loopback restrictions, enabling SSRF. This vulnerability is fixed in 1.18.0.",
+      "attack_vector": "ssrf",
+      "affected": "",
+      "severity": "Medium",
+      "owasp_llm": [
+        "LLM03",
+        "LLM05"
+      ],
+      "owasp_asi": [
+        "ASI04",
+        "ASI05"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1",
+        "MEASURE-2.7"
+      ],
+      "mitre_atlas": [
+        "AML.T0010",
+        "AML.T0049",
+        "AML.T0050"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-44652",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/SillyTavern/SillyTavern/security/advisories/GHSA-ccfq-2454-f5xw",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd",
+        "ssrf"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-44652"
+      ],
+      "cwe_ids": [
+        "CWE-918"
+      ],
+      "mitre_atlas_tactics": [
+        "AML.TA0004",
+        "AML.TA0005"
+      ],
+      "quality_tier": "auto",
+      "corpus": "security"
+    },
+    {
+      "id": "INC-08194",
+      "source_ids": [
+        "CVE-2026-46372"
+      ],
+      "title": "SillyTavern — Vulnerability (CVE-2026-46372)",
+      "date": "2026-05",
+      "year": 2026,
+      "category": "vulnerability-disclosure",
+      "description": "SillyTavern is a locally installed user interface that allows users to interact with text generation large language models, image generation engines, and text-to-speech voice models. Prior to 1.18.0, SillyTavern exposes /api/search/searxng, which accepts attacker-controlled baseUrl and uses it directly to build outbound server-side fetches. An authenticated low-privilege user can point baseUrl at an internal or loopback HTTP service and receive the /search response body. This vulnerability is fixed in 1.18.0.",
+      "attack_vector": "other",
+      "affected": "",
+      "severity": "High",
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "owasp_asi": [
+        "ASI04"
+      ],
+      "nist_ai_rmf": [
+        "GOVERN-6.1"
+      ],
+      "mitre_atlas": [
+        "AML.T0010"
+      ],
+      "references": [
+        {
+          "title": "NVD",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-46372",
+          "type": "advisory"
+        },
+        {
+          "title": "security-advisories@github.com",
+          "url": "https://github.com/SillyTavern/SillyTavern/security/advisories/GHSA-qg89-qwwh-5f3j",
+          "type": "reference"
+        }
+      ],
+      "tags": [
+        "cve",
+        "nvd"
+      ],
+      "added": "2026-06-09",
+      "updated": "2026-06-09",
+      "cve_ids": [
+        "CVE-2026-46372"
+      ],
+      "cwe_ids": [
+        "CWE-918"
+      ],
+      "cvss_score": 8.5,
+      "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:N",
       "mitre_atlas_tactics": [
         "AML.TA0004"
       ],
