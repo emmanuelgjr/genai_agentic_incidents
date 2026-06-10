@@ -5,6 +5,39 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.3.0] — 2026-06-10
+
+### Added
+
+- **9,209 → 12,062 incidents.** Deeper GitHub Security Advisory ingest
+  (paged back to the 2022 floor) plus a new **MALWARE-classification
+  pass** that surfaced **465 malicious-package** advisories (AI-ecosystem
+  typosquats / trojaned deps), and ~31 new NVD keywords + OSV packages
+  for high-CVE-count AI products (Langflow, LiteLLM, LangGraph, NeMo,
+  DeepSpeed, vLLM, llama.cpp, …).
+- **CISA KEV enrichment**: `exploited_in_wild` + `kev_date_added` flag
+  incidents whose CVEs are in the Known Exploited Vulnerabilities catalog
+  (deterministic, from a committed snapshot refreshed by the workflows).
+- New `exploited_in_wild` / `kev_date_added` schema fields. README now
+  carries a live incident-count badge fed by `data/stats.json`.
+
+### Security
+
+- **Fixed a stored XSS** on the generated incident pages: advisory
+  descriptions containing raw HTML (e.g. `<img src=x onerror=...>`)
+  executed when rendered as Markdown. All incident free-text is now
+  HTML-escaped and link schemes are restricted to http(s)/mailto; a CI
+  guard fails the build if raw HTML reaches a shard.
+
+### Changed
+
+- **Site rebuilt to scale**: custom Jekyll build (the managed builder
+  stopped finishing at 12k pages) and the per-incident standalone pages
+  were retired in favour of self-anchored year shards + client-side
+  detail. Added a **light/dark theme** toggle.
+- CI hardened: cross-entry integrity invariants (no CVE/source held by
+  two live entries; deprecations resolve) and UTC-stable date stamps.
+
 ## [2.2.0] — 2026-06-10
 
 ### Added
