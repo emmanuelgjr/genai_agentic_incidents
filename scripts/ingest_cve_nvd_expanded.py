@@ -293,6 +293,10 @@ def http_post_json(url: str, payload: dict, headers: dict | None = None, retries
 # ----------------------------------------------------------------------------
 NVD_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 NVD_PAGE = 2000
+# NVD rate limits: 5 req / 30s without an API key, 50 req / 30s with one.
+# Request a free key at https://nvd.nist.gov/developers/request-an-api-key
+NVD_API_KEY = os.environ.get("NVD_API_KEY", "").strip()
+NVD_SLEEP = 0.7 if NVD_API_KEY else 6.5
 
 
 def fetch_nvd_keyword(keyword: str) -> list[dict]:
@@ -308,6 +312,9 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
             pass
 
     print(f"  [nvd]   {keyword}: querying...", flush=True)
+    headers = {"User-Agent": "ai-incidents-ingest/1.0"}
+    if NVD_API_KEY:
+        headers["apiKey"] = NVD_API_KEY
     all_items: list[dict] = []
     start = 0
     while True:
@@ -318,7 +325,7 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
         }
         url = f"{NVD_URL}?{urllib.parse.urlencode(params)}"
         try:
-            data = http_get(url)
+            data = http_get(url, headers=headers)
         except RuntimeError as e:
             print(f"  [warn] giving up on {keyword}: {e}", flush=True)
             break
@@ -328,9 +335,11 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
         start += NVD_PAGE
         if start >= total or not vulns:
             break
-        # NVD asks for >=6s between requests w/o API key.
-        time.sleep(6.5)
+        time.sleep(NVD_SLEEP)
 
+    # Pace between keyword queries too — the limit is a rolling 30s window
+    # across all requests, not per keyword.
+    time.sleep(NVD_SLEEP)
     cache_file.write_text(json.dumps(all_items), encoding="utf-8")
     print(f"  [nvd]   {keyword}: {len(all_items)} CVEs cached", flush=True)
     return all_items
@@ -883,6 +892,11 @@ def osv_to_record(v: dict) -> dict | None:
 # ----------------------------------------------------------------------------
 def main():
     print("=== Phase 1: NVD keyword scans ===", flush=True)
+    if NVD_API_KEY:
+        print("  [nvd]   NVD_API_KEY set: 50 req/30s rate, 0.7s pacing", flush=True)
+    else:
+        print("  [nvd]   no NVD_API_KEY: 5 req/30s public rate, 6.5s pacing "
+              "(set NVD_API_KEY to speed this up ~10x)", flush=True)
     raw_nvd: dict[str, dict] = {}   # cve_id -> vuln object
     for kw in NVD_KEYWORDS:
         try:
