@@ -35,10 +35,21 @@ jobs:
       - name: Generate STIX 2.1 bundle for download
         run: python scripts/export_stix.py
       - uses: actions/configure-pages@v5
-      - uses: actions/jekyll-build-pages@v1
+      # Custom Jekyll build instead of actions/jekyll-build-pages: the managed
+      # action pins the github-pages metagem whose jekyll-relative-links plugin
+      # rewrites links across every page and took 400+ s at ~9k incident pages,
+      # so the build no longer finished at 12k+. Our docs/Gemfile pulls only
+      # Jekyll core + minima (no relative-links / optional-front-matter /
+      # readme-index / titles-from-headings / …), so the build scales.
+      - uses: ruby/setup-ruby@v1
         with:
-          source: docs
-          destination: ./_site
+          ruby-version: "3.3"
+          bundler-cache: true
+          working-directory: docs
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build --source docs --destination ./_site --trace
+        env:
+          JEKYLL_ENV: production
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site

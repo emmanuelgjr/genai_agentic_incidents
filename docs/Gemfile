@@ -1,0 +1,15 @@
+# Minimal Jekyll build for the Pages site. We deliberately do NOT use the
+# github-pages metagem: its fixed plugin set includes jekyll-relative-links,
+# which rewrites markdown links across every page and took 400+ seconds at
+# ~9k incident pages, so the managed build no longer finishes at 12k+. Our
+# layouts are standalone HTML (no SEO/feed Liquid tags; OG/Twitter meta is
+# hardcoded), so plain Jekyll + the minima theme is all we need.
+source "https://rubygems.org"
+
+gem "jekyll", "~> 4.3"
+gem "minima", "~> 2.5"
+# Jekyll 4 needs the GFM parser explicitly for `markdown: kramdown` GFM input.
+gem "kramdown-parser-gfm", "~> 1.1"
+
+# JRuby/Windows timezone data (harmless on CI).
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
