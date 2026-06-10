@@ -170,6 +170,9 @@ function comparator() {
 
 function renderStats(allRows) {
   const total = allRows.length;
+  // Replace the static "12,000+" hero fallback with the exact live count.
+  const heroCount = document.getElementById('hero-count');
+  if (heroCount) heroCount.textContent = fmtNum(total);
   const crit = allRows.filter(r => r.severity === 'Critical').length;
   const withCve = allRows.filter(r => (r.cve_ids || []).length).length;
   const curated = allRows.filter(r => r.quality_tier === 'curated').length;
@@ -270,7 +273,7 @@ function renderDetail(e) {
   const refLink = e.primary_reference
     ? `<a href="${escapeHtml(e.primary_reference)}" rel="noopener" target="_blank">primary source ↗</a>`
     : '';
-  const shardLink = `<a href="incident/${e.id}.html">full details ↗</a>`;
+  const shardLink = `<a href="incidents/${e.year}.html#${e.id.toLowerCase()}">full details ↗</a>`;
   return `<tr class="detail"><td colspan="7"><div class="detail-body">
     <p>${escapeHtml(e.description || 'No description.')}</p>
     <div class="detail-meta">

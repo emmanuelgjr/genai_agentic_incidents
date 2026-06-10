@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Not found — GenAI &amp; Agentic AI Security Incidents</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/genai_incidents/style.css">
+  <script>
+    // The per-incident standalone pages (/incident/INC-NNNNN.html) were
+    // retired in favour of client-side detail. Redirect any old, shared, or
+    // indexed per-incident link to the main table filtered to that incident
+    // ID — app.js reads `q` from the URL hash and the search matches INC-*.
+    (function () {
+      var m = location.pathname.match(/\/incident\/(INC-\d{5})\.html$/i);
+      if (m) {
+        location.replace('/genai_incidents/#q=' + m[1].toUpperCase());
+      }
+    })();
+  </script>
+</head>
+<body>
+  <main class="wrap" style="padding:4rem 0;text-align:center">
+    <h1>Page not found</h1>
+    <p class="hint">That page doesn’t exist. Head to the
+      <a href="/genai_incidents/">searchable incident index</a>.</p>
+  </main>
+</body>
+</html>
