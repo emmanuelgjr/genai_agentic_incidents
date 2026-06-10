@@ -5,6 +5,51 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.2.0] — 2026-06-10
+
+### Added
+
+- **CVE enrichment**: `cwe_ids` populated on 2,411 and `cvss_vector` on
+  2,094 of the 2,493 CVE-bearing incidents (previously 0). New
+  manually-dispatched `CVE enrichment` workflow re-pulls NVD + GHSA +
+  OSV on CI (supports the `NVD_API_KEY` secret).
+- **+1,361 incidents** from the first working GHSA ingest — a Windows
+  encoding bug (`text=True` decoding `gh api` output as cp1252) had
+  silently yielded 0 advisories; now UTF-8. Plus the weekly refresh
+  (+427) and 9 hand-curated crosswalk-watch CVEs. Total: 7,725 → 9,209.
+
+### Fixed
+
+- **Core dedupe tombstone bug**: stale index pointers could merge new
+  content into already-absorbed (tombstoned) entries, silently dropping
+  it. Dedupe now resolves every hit to the live absorber and reindexes
+  until stable; recovered 24 previously-lost incidents (+39 CVEs,
+  +210 source_ids). See
+  `docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md`.
+- **UTC date stamps**: `added`/`updated`/`generated` now derive from
+  the UTC calendar (`utc_today()`), so local builds behind UTC can't
+  drift against CI.
+- Removed CNA-rejected `CVE-2026-35020`; removed the phantom MITRE
+  ATLAS technique `AML.T0039`.
+
+### CI
+
+- Validate workflow runs a Python 3.12/3.13 matrix with least-privilege
+  permissions; publish/PR actions pinned to release commit SHAs
+  (`gh-action-pypi-publish` v1.14.0, `create-pull-request` v8.1.1);
+  weekly refresh reports per-source ingest outcomes and aborts if all
+  sources fail.
+
+## [2.1.0] — 2026-06-03
+
+### Added
+
+- Hugging Face dataset publishing (`emmanuelgjr/genai-incidents`) with
+  enriched dataset card; STIX 2.1 export; retain-on-drop (incidents are
+  never silently lost when a source drops them); red-team benchmark
+  catalogue; MITRE ATLAS tactic backfill; CWE/CVSS-vector capture in the
+  CVE ingester; GitHub Pages site redesign ("amber threat console").
+
 ## [2.0.0] — 2026-05-16
 
 ### Breaking
