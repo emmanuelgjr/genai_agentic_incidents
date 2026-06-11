@@ -5,6 +5,32 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.5.0] — 2026-06-11
+
+### Added (Coverage — linkage graph, #30)
+- **`capec_ids`** on every CWE-bearing entry — MITRE CAPEC attack patterns
+  derived from `cwe_ids` via an authoritative CWE→CAPEC map
+  (`mappings/cwe_capec.json`, built by `scripts/build_cwe_capec.py` from MITRE's
+  CAPEC corpus). The complete, uncapped union; ~4,433 entries.
+- **`purl`** on every entry with a structured `affected` identifier — Package-URLs
+  (`pkg:type/namespace/name`) for entity resolution of affected packages
+  (`pip/foo`→`pkg:pypi/foo`, `maven/g:a`→`pkg:maven/g/a`, scoped npm `%40`-encoded);
+  ~3,620 entries.
+
+### Added (Adoption — integrations, #33)
+- **Static TAXII 2.1 endpoint** at `docs/taxii2/` (discovery, API root,
+  collections, objects + manifest envelopes) — a read-only mirror of the STIX
+  collection, generated at Pages deploy. `make taxii`.
+- **MISP feed** at `docs/misp/` (manifest + one Event per year + `hashes.csv`)
+  with `genai-incidents:*` / `mitre-atlas:technique` attribute tags. Subscribe a
+  MISP instance to the feed URL. `make misp`.
+
+### Notes
+- Schema gains `capec_ids` + `purl` (additive). Both fields are derived in the
+  provenance pass, kept out of the content snapshot, and added to the full
+  `data/incidents.json` only (the slim site payload is unchanged). Incident
+  composition is identical to v2.4.0 (0 added / 0 removed).
+
 ## [2.4.0] — 2026-06-11
 
 ### Added (Trust foundation)
