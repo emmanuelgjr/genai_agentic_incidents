@@ -686,3 +686,24 @@ def test_is_out_of_scope_malware_ignores_non_malware():
         {"tags": ["cve"], "affected": "npm/chai-mocks"}) is False
     assert m.is_out_of_scope_malware(
         {"tags": ["malicious-package"], "affected": ""}) is False
+
+
+# ---------------------------------------------------------------------------
+# Provenance fields (Pillar 1 trust layer)
+# ---------------------------------------------------------------------------
+
+def test_derive_confidence_rule():
+    assert m._derive_confidence({"quality_tier": "curated"}) == "high"
+    assert m._derive_confidence({"quality_tier": "reviewed"}) == "high"
+    assert m._derive_confidence({"quality_tier": "auto", "source_ids": ["A", "B"],
+                                 "cve_ids": ["CVE-1"]}) == "high"
+    assert m._derive_confidence({"quality_tier": "auto", "source_ids": ["A", "B"]}) == "medium"
+    assert m._derive_confidence({"quality_tier": "auto", "source_ids": ["A"],
+                                 "cvss_score": 7.5}) == "medium"
+    assert m._derive_confidence({"quality_tier": "auto", "source_ids": ["A"]}) == "low"
+
+
+def test_provenance_fields_not_in_content_snapshot():
+    # Must stay out of the snapshot so they never spuriously bump `updated`.
+    for f in ("source_count", "confidence", "source_status", "first_seen", "last_seen"):
+        assert f not in m._CONTENT_FIELDS

@@ -104,6 +104,31 @@
       "description": "How well-vetted the entry is. `curated` = hand-written or maintainer-reviewed; `reviewed` = sourced from a maintained research catalogue; `auto` = bulk-ingested.",
       "enum": ["curated", "reviewed", "auto"]
     },
+    "confidence": {
+      "type": "string",
+      "description": "Transparent, rule-derived confidence in the entry (see DATA_DICTIONARY.md). high = curated/reviewed OR 2+ distinct sources with a CVE; medium = 2+ sources OR has a CVE/CVSS; low = a single auto-tier source.",
+      "enum": ["high", "medium", "low"]
+    },
+    "source_count": {
+      "type": "integer",
+      "description": "Number of distinct upstream sources (source_ids) corroborating the entry.",
+      "minimum": 0
+    },
+    "source_status": {
+      "type": "string",
+      "description": "Whether the entry is still emitted by at least one source on the latest build (`active`) or was retained from a prior build after all its sources dropped it (`retained`).",
+      "enum": ["active", "retained"]
+    },
+    "first_seen": {
+      "type": "string",
+      "description": "Date the entry first entered the dataset (provenance alias of `added`).",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "last_seen": {
+      "type": "string",
+      "description": "Date the entry's content was last confirmed/updated from a source (provenance alias of `updated`).",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
     "corpus": {
       "type": "string",
       "description": "Which sub-corpus the entry belongs to. `security` = exploitation, vulnerability, misuse; `ai-harm` = bias/discrimination/social harm without a security primitive.",
