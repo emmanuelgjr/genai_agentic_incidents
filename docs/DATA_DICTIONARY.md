@@ -46,6 +46,8 @@ Every incident in [`data/incidents.json`](../data/incidents.json) follows
 |---|---|---|
 | `cve_ids` | string[] | `CVE-YYYY-NNNN…`. |
 | `cwe_ids` | string[] | `CWE-NNN`. |
+| `capec_ids` | string[] | `CAPEC-NNN` attack patterns, **derived** from `cwe_ids` via the authoritative CWE→CAPEC map (`mappings/cwe_capec.json`, built by `scripts/build_cwe_capec.py` from MITRE's CAPEC corpus). The complete, uncapped union — a broad CWE legitimately implies many patterns — so high-CWE records carry many CAPECs by design. Fully reconstructable from `cwe_ids` + the map; denormalised here for convenience. |
+| `purl` | string[] | Package-URLs (`pkg:type/namespace/name`) **derived** from structured GHSA/OSV `affected` identifiers (e.g. `pip/foo` → `pkg:pypi/foo`, `maven/g:a` → `pkg:maven/g/a`). Entity-resolution anchor for the affected package; absent when `affected` is free-text. Only ecosystems with an official purl type are emitted. |
 | `cvss_score` | number | 0–10. |
 | `cvss_vector` | string | Full CVSS vector string. |
 | `aiid_id` | integer | AI Incident Database numeric id where cross-listed. |

@@ -45,6 +45,87 @@ def is_out_of_scope_malware(entry: dict) -> bool:
     return not any(package_is_strongly_ai(p) for p in pkgs)
 
 
+_CWE_CAPEC_PATH = Path(__file__).resolve().parents[1] / "mappings" / "cwe_capec.json"
+
+# GHSA ecosystem token -> Package-URL (purl) type. Only ecosystems with an
+# official purl `type` are mapped; anything else (e.g. GitHub Actions) yields
+# no purl rather than an invented identifier.
+_ECO_TO_PURL = {
+    "pip": "pypi", "npm": "npm", "go": "golang", "composer": "composer",
+    "maven": "maven", "nuget": "nuget", "rust": "cargo", "rubygems": "gem",
+    "swift": "swift", "pub": "pub", "erlang": "hex",
+}
+# A structured `affected` fragment looks like "<ecosystem>/<package[/subpath]>"
+# (the GHSA ecosystem/name form). The package part may itself contain slashes
+# (Go module paths) and a trailing version expression we strip.
+_PKG_RE = re.compile(r"^([a-z][a-z0-9+.\-]*)/(.+)$")
+
+
+def _load_cwe_capec() -> dict[str, list[str]]:
+    """Authoritative CWE -> [CAPEC, ...] map (mappings/cwe_capec.json, built by
+    scripts/build_cwe_capec.py from MITRE's CAPEC corpus). Reading the committed
+    map keeps the build deterministic. Returns {} if absent."""
+    try:
+        raw = json.loads(_CWE_CAPEC_PATH.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+    return raw.get("cwe_to_capec", {}) if isinstance(raw, dict) else {}
+
+
+def _derive_capec_ids(entry: dict, cwe_capec: dict[str, list[str]]) -> list[str]:
+    """Complete CAPEC set implied by the entry's CWEs, via the authoritative
+    CWE->CAPEC map. The union is faithful (not capped): a record tagged with a
+    broad CWE legitimately relates to many attack patterns. Fully reconstructable
+    from `cwe_ids` + mappings/cwe_capec.json — it is a denormalised convenience,
+    documented in DATA_DICTIONARY.md."""
+    if not cwe_capec:
+        return []
+    caps: set[str] = set()
+    for c in entry.get("cwe_ids") or []:
+        caps.update(cwe_capec.get(c, ()))
+    return sorted(caps, key=lambda c: int(c.split("-")[1]))
+
+
+def _affected_to_purl(fragment: str) -> str | None:
+    """Convert one GHSA-style "<ecosystem>/<package>" fragment to a purl, or
+    None if the ecosystem has no official purl type or the fragment isn't the
+    structured form."""
+    m = _PKG_RE.match(fragment.strip())
+    if not m:
+        return None
+    ptype = _ECO_TO_PURL.get(m.group(1).lower())
+    if not ptype:
+        return None
+    # Drop any trailing version expression ("foo < 1.2", "foo <= 1.2.1").
+    name = re.split(r"\s+[<>=]", m.group(2).strip())[0].strip()
+    if not name:
+        return None
+    if ptype == "maven" and ":" in name:  # group:artifact -> group/artifact
+        ns, _, art = name.partition(":")
+        name = f"{ns}/{art}"
+    if ptype == "npm" and name.startswith("@"):  # scoped pkg: @scope -> %40scope
+        scope, _, pkg = name[1:].partition("/")
+        if pkg:
+            name = f"%40{scope}/{pkg}"
+    return f"pkg:{ptype}/{name}"
+
+
+def _derive_purls(entry: dict) -> list[str]:
+    """Package-URLs for an entry whose `affected` carries structured
+    "<ecosystem>/<package>" identifiers (the GHSA/OSV form). Comma-separated
+    fragments are each resolved; free-text `affected` (a product sentence) yields
+    nothing. Deterministic entity-resolution anchor (INCLUSION.md coverage)."""
+    aff = (entry.get("affected") or "").strip()
+    if not aff:
+        return []
+    out: set[str] = set()
+    for frag in aff.split(","):
+        p = _affected_to_purl(frag)
+        if p:
+            out.add(p)
+    return sorted(out)
+
+
 def _derive_tier(entry: dict) -> str:
     """Two-tier split (INCLUSION.md §5): the curated/notable LANDMARK set vs
     the comprehensive vulnerability/advisory FEED. landmark = hand-curated, a
@@ -1258,6 +1339,8 @@ def main():
     #     derivations of already-finalised fields — set AFTER history stamping
     #     and kept OUT of the content snapshot, so they never perturb the
     #     `updated`/drift logic. See DATA_DICTIONARY.md for the confidence rule.
+    cwe_capec = _load_cwe_capec()
+    n_capec = n_purl = 0
     for e in deduped:
         e["tier"] = _derive_tier(e)
         e["source_count"] = len(e.get("source_ids") or [])
@@ -1267,6 +1350,19 @@ def main():
             e["first_seen"] = e["added"]
         if e.get("updated"):
             e["last_seen"] = e["updated"]
+        # Linkage graph (INCLUSION.md coverage layer). Derived denormalisations
+        # of cwe_ids/affected; like the other provenance fields they are set
+        # here, AFTER history stamping, and kept OUT of the content snapshot so
+        # they never perturb the `updated`/drift logic.
+        capec = _derive_capec_ids(e, cwe_capec)
+        if capec:
+            e["capec_ids"] = capec
+            n_capec += 1
+        purl = _derive_purls(e)
+        if purl:
+            e["purl"] = purl
+            n_purl += 1
+    print(f"[linkage] capec_ids on {n_capec} entr(ies); purl on {n_purl} entr(ies)")
 
     print(f"\n[total]  {len(all_entries)} input -> {len(deduped)} unique")
 
