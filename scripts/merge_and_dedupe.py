@@ -45,6 +45,23 @@ def is_out_of_scope_malware(entry: dict) -> bool:
     return not any(package_is_strongly_ai(p) for p in pkgs)
 
 
+def _derive_confidence(entry: dict) -> str:
+    """Transparent, rule-based confidence (documented in DATA_DICTIONARY.md):
+      high   = curated/reviewed tier, OR 2+ distinct sources AND a CVE;
+      medium = 2+ distinct sources, OR has a CVE / CVSS score;
+      low    = a single auto-tier source with no CVE.
+    A rule, not an opinion — disputable via the corrections process."""
+    n_src = len(entry.get("source_ids") or [])
+    has_cve = bool(entry.get("cve_ids"))
+    has_cvss = entry.get("cvss_score") is not None
+    tier = entry.get("quality_tier")
+    if tier in ("curated", "reviewed") or (n_src >= 2 and has_cve):
+        return "high"
+    if n_src >= 2 or has_cve or has_cvss:
+        return "medium"
+    return "low"
+
+
 def utc_today() -> date:
     """Calendar date in UTC. CI builds run in UTC; a contributor whose local
     clock lags UTC must stamp the same dates as a same-UTC-day CI build, or
@@ -1196,6 +1213,7 @@ def main():
             continue
         if (keys & covered_keys) or pid in used_ids:
             continue
+        prior["source_status"] = "retained"  # carried after all sources dropped it
         surviving.append(prior)
         covered_keys.update(keys)
         used_ids.add(pid)
@@ -1221,6 +1239,19 @@ def main():
         print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")
 
     deduped = surviving
+
+    # 6g) Provenance fields (INCLUSION.md trust layer). Pure, deterministic
+    #     derivations of already-finalised fields — set AFTER history stamping
+    #     and kept OUT of the content snapshot, so they never perturb the
+    #     `updated`/drift logic. See DATA_DICTIONARY.md for the confidence rule.
+    for e in deduped:
+        e["source_count"] = len(e.get("source_ids") or [])
+        e["confidence"] = _derive_confidence(e)
+        e.setdefault("source_status", "active")
+        if e.get("added"):
+            e["first_seen"] = e["added"]
+        if e.get("updated"):
+            e["last_seen"] = e["updated"]
 
     print(f"\n[total]  {len(all_entries)} input -> {len(deduped)} unique")
 
