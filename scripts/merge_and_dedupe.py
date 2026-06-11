@@ -1212,7 +1212,7 @@ def main():
 
     # 9) Write outputs
     out = {
-        "version": "2.3.0",
+        "version": "2.3.1",
         "generated": generated,
         "description": (
             "Single source of truth for GenAI and agentic AI security incidents. "

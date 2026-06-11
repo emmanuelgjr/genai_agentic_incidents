@@ -5,6 +5,23 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.3.1] — 2026-06-10
+
+### Fixed
+- **Data precision:** the v2.3.0 GHSA MALWARE pass matched generic npm
+  malware on weak substrings (`ai` in `chai-mocks`, `prompt` in
+  `sudo-prompt`, `nemo` in `nemo-reporter`) and a loose description-token
+  fallback — ~71% of the 465 malicious-package entries were not AI-related.
+  MALWARE advisories now require a **strong, segment-boundary** match
+  against a curated AI package allowlist (no weak substrings, no
+  description fallback); the noise entries are dropped.
+
+### Security / docs
+- Documented that `title`/`description`/`affected`/`impact`/`mitigations`
+  are **untrusted verbatim free text** (may contain raw HTML/exploit
+  payloads); consumers must escape before rendering (schema + DATASHEET).
+- Light/dark theme now also applies to the year-shard and 404 pages.
+
 ## [2.3.0] — 2026-06-10
 
 ### Added

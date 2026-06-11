@@ -710,8 +710,60 @@ def ghsa_is_ai(node: dict) -> bool:
     return any(tok in blob for tok in AI_CONTEXT_TOKENS)
 
 
+# Distinctive, unambiguous AI/ML/agent package identifiers for the STRICT
+# malware filter. Deliberately excludes short or dictionary-word tokens
+# (ai, ml, ray, nemo, prompt, agent, guidance, instructor, …) that cause
+# false positives as substrings — these matched generic npm malware like
+# `chai-mocks` ("ai"), `sudo-prompt` ("prompt") and `nemo-reporter" ("nemo")
+# in the v2.3.0 ingest. Matched against name SEGMENTS (split on / - _ . @),
+# never raw substrings, and with NO description fallback.
+STRONG_AI_PACKAGE_TOKENS = {
+    "langchain", "langgraph", "langflow", "langchain4j", "llamaindex",
+    "llama", "llamacpp", "llamasharp", "vllm", "ollama", "mlflow",
+    "huggingface", "openai", "anthropic", "comfyui", "litellm", "autogen",
+    "crewai", "diffusers", "modelcontextprotocol", "anythingllm", "openwebui",
+    "privategpt", "autogpt", "metagpt", "deepspeed", "sglang", "lmdeploy",
+    "tensorrt", "openvino", "chromadb", "weaviate", "qdrant", "milvus",
+    "kubeflow", "bentoml", "pytorch", "tensorflow", "onnxruntime",
+    "deeplearning4j", "semantickernel", "gpt4all", "localai", "librechat",
+    "flowise", "dify", "rasa", "deepset", "wandb", "clearml", "zenml",
+    "deepseek", "mistralai", "gguf", "mcp",
+}
+STRONG_AI_SCOPES = {
+    "langchain", "huggingface", "anthropic-ai", "openai", "modelcontextprotocol",
+    "mistralai", "llamaindex", "langgraph",
+}
+_SEG_SPLIT = re.compile(r"[/\-_.@]+")
+
+
+def package_is_strongly_ai(name: str) -> bool:
+    """True only when a package name contains an unambiguous AI/ML/agent
+    identifier as a delimited segment (or scope). 'chai-mocks' → segments
+    {chai, mocks} → no match; '@langchain/openai' → scope langchain → match."""
+    name = (name or "").lower()
+    if name.startswith("@") and "/" in name:
+        scope = name[1:].split("/", 1)[0]
+        if scope in STRONG_AI_SCOPES:
+            return True
+    segs = {s for s in _SEG_SPLIT.split(name) if s}
+    return bool(segs & STRONG_AI_PACKAGE_TOKENS)
+
+
+def ghsa_malware_is_ai(node: dict) -> bool:
+    """Strict AI-relevance gate for MALWARE advisories: the malicious package
+    NAME must strongly match an AI identifier. No weak substrings, no
+    description-text fallback (malware advisory text is generic boilerplate)."""
+    pkgs = node.get("vulnerabilities", {}).get("nodes", []) or []
+    return any(package_is_strongly_ai((p.get("package") or {}).get("name"))
+               for p in pkgs)
+
+
 def ghsa_to_record(node: dict, malware: bool = False) -> dict | None:
-    if not ghsa_is_ai(node):
+    # MALWARE advisories use the strict name-only gate (avoids the substring /
+    # description false positives that polluted v2.3.0). GENERAL advisories
+    # keep the broader package+context match.
+    relevant = ghsa_malware_is_ai(node) if malware else ghsa_is_ai(node)
+    if not relevant:
         return None
 
     cve_id = None

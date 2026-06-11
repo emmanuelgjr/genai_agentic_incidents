@@ -38,3 +38,28 @@ def test_nvd_to_record_extracts_cwe_and_vector():
     assert rec["cvss_vector"] == "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
     # NVD-CWE-noinfo filtered out; real CWE kept
     assert rec["cwe_ids"] == ["CWE-94"]
+
+
+def test_malware_filter_rejects_substring_false_positives():
+    """Generic npm malware must NOT be classed AI just because a weak token
+    (ai/prompt/nemo) appears as a substring (v2.3.0 regression)."""
+    for name in ("chai-mocks", "@doaction/sudo-prompt", "nemo-reporter",
+                 "@breezeai-frontend/tailwind-config", "email-validator"):
+        assert not ing.package_is_strongly_ai(name), name
+
+
+def test_malware_filter_accepts_real_ai_packages():
+    for name in ("langchain-core", "@langchain/openai", "vllm", "ollama",
+                 "llama-cpp-python", "@modelcontextprotocol/sdk", "comfyui-x",
+                 "anythingllm", "litellm"):
+        assert ing.package_is_strongly_ai(name), name
+
+
+def test_ghsa_malware_uses_strict_name_gate():
+    # Strict gate ignores the description-token fallback for malware.
+    node = {"vulnerabilities": {"nodes": [{"package": {"ecosystem": "npm", "name": "chai-mocks"}}]},
+            "summary": "malware contains prompt agent ai", "description": "ai agent prompt"}
+    assert ing.ghsa_malware_is_ai(node) is False
+    node2 = {"vulnerabilities": {"nodes": [{"package": {"ecosystem": "npm", "name": "@langchain/core"}}]},
+             "summary": "malware", "description": ""}
+    assert ing.ghsa_malware_is_ai(node2) is True
