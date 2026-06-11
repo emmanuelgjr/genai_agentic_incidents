@@ -67,7 +67,7 @@
       "type": "string",
       "enum": ["real-world", "research", "research-demonstrated", "red-team", "vulnerability-disclosure", "threat-report", "policy", "regulatory", "report"]
     },
-    "description": { "type": "string", "minLength": 20 },
+    "description": { "type": "string", "minLength": 20, "description": "Free text aggregated verbatim from upstream advisories. UNTRUSTED: may contain raw HTML / exploit payloads (e.g. '<img onerror=...>') from the original write-ups. Consumers MUST escape/sanitize before rendering it as HTML or Markdown." },
     "attack_vector": {
       "type": "string",
       "description": "Primary attack mechanism — free-form but should match one of the controlled values where possible.",
