@@ -5,6 +5,22 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.4.0] — 2026-06-11
+
+### Added (Trust foundation)
+- **[INCLUSION.md](INCLUSION.md)** — explicit scope policy: every entry must
+  satisfy AI-nexus + security/safety-relevance + evidence gates.
+- **Provenance fields** on every entry: `confidence` (transparent
+  high/medium/low rule), `source_count`, `source_status` (active/retained),
+  `first_seen`/`last_seen`.
+- **Corrections process** — `data_correction` / `scope_dispute` issue
+  templates and a public [CORRECTIONS.md](CORRECTIONS.md) log.
+
+### Changed (enforced quality)
+- CI now enforces two cross-entry invariants on every build: every entry has
+  a resolvable primary source, and no out-of-scope malicious-package entry
+  may survive (the v2.3.1 scope-purge is now a hard gate).
+
 ## [2.3.1] — 2026-06-10
 
 ### Fixed
