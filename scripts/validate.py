@@ -49,15 +49,20 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
 
     if deprecations is not None:
         into_map = {d.get("from"): d.get("into") for d in deprecations}
+        # 'removal' deprecations (into=null, e.g. reason 'out-of-scope') legitimately
+        # don't resolve to a live entry — the incident was dropped, not merged.
+        removed_ids = {d.get("from") for d in deprecations if d.get("into") is None}
         for frm, into in into_map.items():
             if frm in live_ids:
                 problems.append(f"deprecated id {frm} is still a live entry")
+            if into is None:
+                continue  # removal, not a merge — nothing to resolve
             seen: set[str] = set()
             cur = into
             while cur in into_map and cur not in live_ids and cur not in seen:
                 seen.add(cur)
                 cur = into_map[cur]
-            if cur not in live_ids:
+            if cur not in live_ids and cur not in removed_ids:
                 problems.append(
                     f"deprecation {frm} -> {into} does not resolve to a live entry"
                 )

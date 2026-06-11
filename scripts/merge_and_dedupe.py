@@ -17,6 +17,33 @@ from pathlib import Path
 from datetime import date, datetime, timezone
 from collections import defaultdict
 
+# Reuse the ingest layer's strict AI-package matcher so the inclusion policy
+# is enforced in exactly one place (INCLUSION.md §4).
+try:
+    from ingest_cve_nvd_expanded import package_is_strongly_ai
+except ImportError:  # pragma: no cover - script path fallback
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from ingest_cve_nvd_expanded import package_is_strongly_ai
+
+_AFFECTED_SPLIT = re.compile(r"[,\s]+")
+
+
+def is_out_of_scope_malware(entry: dict) -> bool:
+    """An entry is out-of-scope per the inclusion policy when it is a
+    malicious-package advisory whose affected package(s) do NOT strongly match
+    an AI/ML/agent identifier (INCLUSION.md §3/§4). This is what purges the
+    generic-npm-malware noise (chai-mocks, sudo-prompt, …) that a substring
+    filter let in — including already-committed entries that retain-on-drop
+    would otherwise resurrect."""
+    if "malicious-package" not in (entry.get("tags") or []):
+        return False
+    affected = entry.get("affected") or ""
+    pkgs = [p for p in _AFFECTED_SPLIT.split(affected) if p]
+    if not pkgs:
+        return False  # can't assess → keep (don't drop on missing data)
+    return not any(package_is_strongly_ai(p) for p in pkgs)
+
 
 def utc_today() -> date:
     """Calendar date in UTC. CI builds run in UTC; a contributor whose local
@@ -1136,6 +1163,17 @@ def main():
     #     dedupe — because re-feeding already-built records through the
     #     raw-ingest dedupe is non-idempotent (it re-canonicalises and can
     #     oscillate). See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
+    # 6a) Scope purge: drop out-of-scope malicious-package entries (failed the
+    #     inclusion policy) from freshly-built survivors. Dropped SILENTLY here —
+    #     these carry ephemeral, build-local IDs, so recording deprecations from
+    #     them is non-deterministic. Stable removal deprecations are derived
+    #     below (step 6f) purely from previously-published data vs the final
+    #     output. Also bars retention (below) from resurrecting committed noise.
+    purged_scope = 0
+    kept_surviving = [e for e in surviving if not is_out_of_scope_malware(e)]
+    purged_scope += len(surviving) - len(kept_surviving)
+    surviving = kept_surviving
+
     covered_keys: set[str] = set()
     for e in surviving:
         covered_keys.update(e.get("cve_ids") or [])
@@ -1145,6 +1183,10 @@ def main():
     no_keys = 0
     for prior in eligible:
         pid = prior.get("id")
+        # Never retain an entry the inclusion policy now excludes.
+        if is_out_of_scope_malware(prior):
+            purged_scope += 1
+            continue
         keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
         if not keys:
             # No source_id/cve_id anchor → can't test coverage. This should
@@ -1158,6 +1200,22 @@ def main():
         covered_keys.update(keys)
         used_ids.add(pid)
         carried += 1
+
+    # 6f) Stable out-of-scope removal deprecations. Derived only from the
+    #     PREVIOUSLY-PUBLISHED data and the final live id set — no dependence on
+    #     ephemeral build IDs — so the deprecation list is deterministic and
+    #     idempotent. A previously-published, out-of-scope entry that is no
+    #     longer live gets a `reason: out-of-scope`, `into: null` removal.
+    live_ids_final = {e["id"] for e in surviving}
+    for prev in _load_prev_incidents():
+        if (prev.get("id") not in live_ids_final
+                and is_out_of_scope_malware(prev)):
+            deprecations_new.append({
+                "from": prev["id"], "into": None, "reason": "out-of-scope",
+                "date": str(utc_today()),
+            })
+    if purged_scope:
+        print(f"[scope-purge] dropped {purged_scope} out-of-scope malicious-package entr(ies)")
     print(f"[retention] carried {carried}/{len(eligible)} eligible prior(s) no longer in any source")
     if no_keys:
         print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")

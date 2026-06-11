@@ -660,3 +660,29 @@ def test_kev_fields_are_content_fields():
     # `updated` on the build after the snapshot first lists a CVE.
     assert "exploited_in_wild" in m._CONTENT_FIELDS
     assert "kev_date_added" in m._CONTENT_FIELDS
+
+
+# ---------------------------------------------------------------------------
+# Inclusion-policy scope purge (v2.3.1) — drop / don't-retain out-of-scope malware
+# ---------------------------------------------------------------------------
+
+def test_is_out_of_scope_malware_generic_npm():
+    assert m.is_out_of_scope_malware(
+        {"tags": ["malicious-package"], "affected": "npm/chai-mocks"}) is True
+    assert m.is_out_of_scope_malware(
+        {"tags": ["malicious-package"], "affected": "npm/@doaction/sudo-prompt"}) is True
+
+
+def test_is_out_of_scope_malware_keeps_real_ai_and_mcp():
+    assert m.is_out_of_scope_malware(
+        {"tags": ["malicious-package"], "affected": "npm/@langchain/core"}) is False
+    assert m.is_out_of_scope_malware(  # MCP-ecosystem supply chain is in scope
+        {"tags": ["malicious-package"], "affected": "npm/nextmove-mcp"}) is False
+
+
+def test_is_out_of_scope_malware_ignores_non_malware():
+    # A real CVE in a non-AI-looking package is governed elsewhere, not purged here.
+    assert m.is_out_of_scope_malware(
+        {"tags": ["cve"], "affected": "npm/chai-mocks"}) is False
+    assert m.is_out_of_scope_malware(
+        {"tags": ["malicious-package"], "affected": ""}) is False
