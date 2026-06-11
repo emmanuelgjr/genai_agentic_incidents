@@ -48,13 +48,13 @@ def is_out_of_scope_malware(entry: dict) -> bool:
 def _derive_tier(entry: dict) -> str:
     """Two-tier split (INCLUSION.md §5): the curated/notable LANDMARK set vs
     the comprehensive vulnerability/advisory FEED. landmark = hand-curated, a
-    real-world incident (AIID-linked), an AI-harm case, or a real-world-category
-    event; feed = the CVE/GHSA/OSV bulk. Headline claims should cite the
-    landmark count, not the raw total."""
+    real-world incident catalogued in the AI Incident Database (`aiid_id`), or
+    an AI-harm case; feed = the CVE/GHSA/OSV bulk. (The `real-world` *category*
+    is deliberately NOT used — it also tags exploited CVEs, which belong in the
+    feed.) Headline claims should cite the landmark count, not the raw total."""
     if (entry.get("quality_tier") == "curated"
             or entry.get("aiid_id")
-            or entry.get("corpus") == "ai-harm"
-            or entry.get("category") == "real-world"):
+            or entry.get("corpus") == "ai-harm"):
         return "landmark"
     return "feed"
 
