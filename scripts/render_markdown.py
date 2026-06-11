@@ -502,6 +502,7 @@ def render():
     years = sorted({e.get("year") for e in entries if e.get("year")})
     stats = {
         "incident_count": raw.get("incident_count", len(entries)),
+        "landmark_count": sum(1 for e in entries if e.get("tier") == "landmark"),
         "version": raw.get("version", ""),
         "generated": raw.get("generated", ""),
         "year_min": years[0] if years else None,

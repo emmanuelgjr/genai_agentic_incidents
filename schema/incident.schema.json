@@ -109,6 +109,11 @@
       "description": "Transparent, rule-derived confidence in the entry (see DATA_DICTIONARY.md). high = curated/reviewed OR 2+ distinct sources with a CVE; medium = 2+ sources OR has a CVE/CVSS; low = a single auto-tier source.",
       "enum": ["high", "medium", "low"]
     },
+    "tier": {
+      "type": "string",
+      "description": "Curated/notable `landmark` incidents vs the comprehensive vulnerability/advisory `feed` (INCLUSION.md §5). landmark = curated, AIID-linked real-world, ai-harm, or real-world-category; feed = the CVE/GHSA/OSV bulk. Cite the landmark count for headlines.",
+      "enum": ["landmark", "feed"]
+    },
     "source_count": {
       "type": "integer",
       "description": "Number of distinct upstream sources (source_ids) corroborating the entry.",

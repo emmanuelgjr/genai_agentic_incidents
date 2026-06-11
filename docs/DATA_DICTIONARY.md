@@ -9,6 +9,7 @@ Every incident in [`data/incidents.json`](../data/incidents.json) follows
 | `id` **R** | string | Stable incident id, `INC-#####`. Never reused; merged-away ids are recorded in [`data/id_deprecations.json`](../data/id_deprecations.json) and resolvable via the package's `resolve_id()`. |
 | `source_ids` | string[] | Upstream ids this entry was consolidated from (e.g. `AIID-1234`, `CVE-2026-…`, `ATLAS-AML.CS0001`, `AIAAIC2257`). |
 | `quality_tier` | enum | Vetting level: `curated` (hand-written/maintainer), `reviewed` (maintained catalogue, NVD-scored CVE, hand-picked, or human/assisted review), `auto` (bulk-ingested). Filter on this to control trust. |
+| `tier` | enum | **landmark** (curated, AIID-linked real-world, ai-harm, or real-world-category — the notable headline set) vs **feed** (the comprehensive CVE/GHSA/OSV stream). Cite the landmark count for headlines. |
 | `confidence` | enum | Rule-derived, not opinion: **high** = `curated`/`reviewed`, OR 2+ sources with a CVE; **medium** = 2+ sources, OR has a CVE/CVSS; **low** = a single `auto` source, no CVE. |
 | `source_count` | int | Number of distinct upstream sources corroborating the entry. |
 | `source_status` | enum | `active` (still emitted by a source this build) or `retained` (carried from a prior build after all its sources dropped it — see retain-on-drop). |

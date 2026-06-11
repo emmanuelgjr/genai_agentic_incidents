@@ -45,6 +45,20 @@ def is_out_of_scope_malware(entry: dict) -> bool:
     return not any(package_is_strongly_ai(p) for p in pkgs)
 
 
+def _derive_tier(entry: dict) -> str:
+    """Two-tier split (INCLUSION.md §5): the curated/notable LANDMARK set vs
+    the comprehensive vulnerability/advisory FEED. landmark = hand-curated, a
+    real-world incident (AIID-linked), an AI-harm case, or a real-world-category
+    event; feed = the CVE/GHSA/OSV bulk. Headline claims should cite the
+    landmark count, not the raw total."""
+    if (entry.get("quality_tier") == "curated"
+            or entry.get("aiid_id")
+            or entry.get("corpus") == "ai-harm"
+            or entry.get("category") == "real-world"):
+        return "landmark"
+    return "feed"
+
+
 def _derive_confidence(entry: dict) -> str:
     """Transparent, rule-based confidence (documented in DATA_DICTIONARY.md):
       high   = curated/reviewed tier, OR 2+ distinct sources AND a CVE;
@@ -1245,6 +1259,7 @@ def main():
     #     and kept OUT of the content snapshot, so they never perturb the
     #     `updated`/drift logic. See DATA_DICTIONARY.md for the confidence rule.
     for e in deduped:
+        e["tier"] = _derive_tier(e)
         e["source_count"] = len(e.get("source_ids") or [])
         e["confidence"] = _derive_confidence(e)
         e.setdefault("source_status", "active")
