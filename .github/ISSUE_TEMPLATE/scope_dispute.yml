@@ -1,0 +1,34 @@
+name: Scope dispute
+description: Argue that an entry should be included or excluded under the inclusion policy
+labels: [scope]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Scope is governed by [INCLUSION.md](../../INCLUSION.md). An entry must
+        satisfy three gates: **AI-nexus**, **security/safety relevance**, and
+        **evidence**. Disputes are resolved by PR against that policy.
+  - type: dropdown
+    id: direction
+    attributes:
+      label: You are arguing to…
+      options:
+        - Exclude an entry that's currently in (out of scope)
+        - Include something that's currently out (in scope)
+        - Clarify / change the policy itself
+    validations:
+      required: true
+  - type: input
+    id: subject
+    attributes:
+      label: Incident ID or candidate
+      placeholder: "INC-01234  or  CVE-2026-xxxxx / package name"
+    validations:
+      required: true
+  - type: textarea
+    id: argument
+    attributes:
+      label: Which gate fails / passes, and why
+      description: Reference the specific INCLUSION.md gate(s) and give your reasoning + evidence.
+    validations:
+      required: true

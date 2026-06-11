@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Inclusion policy (what's in scope)
+    url: https://github.com/emmanuelgjr/genai_incidents/blob/main/INCLUSION.md
+    about: Read the scope contract before filing a scope dispute.
+  - name: Corrections log
+    url: https://github.com/emmanuelgjr/genai_incidents/blob/main/CORRECTIONS.md
+    about: Public record of accepted corrections and removals.
