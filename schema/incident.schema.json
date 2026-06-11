@@ -27,6 +27,18 @@
       "items": { "type": "string", "pattern": "^CWE-[0-9]{1,4}$" },
       "uniqueItems": true
     },
+    "capec_ids": {
+      "type": "array",
+      "description": "MITRE CAPEC attack-pattern identifiers, derived from the entry's CWEs via the authoritative CWE->CAPEC map (mappings/cwe_capec.json). A complete (uncapped) denormalisation — see DATA_DICTIONARY.md.",
+      "items": { "type": "string", "pattern": "^CAPEC-[0-9]{1,4}$" },
+      "uniqueItems": true
+    },
+    "purl": {
+      "type": "array",
+      "description": "Package-URLs (purl, pkg:type/namespace/name) derived from structured GHSA/OSV `affected` identifiers — entity-resolution anchors for affected packages. See DATA_DICTIONARY.md.",
+      "items": { "type": "string", "pattern": "^pkg:[a-z]+/.+" },
+      "uniqueItems": true
+    },
     "cvss_score": {
       "type": "number",
       "minimum": 0,
