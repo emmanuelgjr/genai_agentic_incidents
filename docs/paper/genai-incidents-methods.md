@@ -129,8 +129,8 @@ treatment.
 ## 9. Availability and reproducibility
 
 Open data (CC-BY-4.0) and code (MIT). Distributed via GitHub, PyPI
-(`genai-incidents`), Hugging Face Datasets, a STIX 2.1 bundle, a browsable site,
-and a per-version DOI on Zenodo. The entire dataset is regenerable from the
+(`genai-incidents`), Hugging Face Datasets, a STIX 2.1 bundle, a static TAXII 2.1
+endpoint, a MISP feed, a browsable site, and a per-version DOI on Zenodo. The entire dataset is regenerable from the
 committed ingest artifacts with `make build`; CI re-runs this on every change
 and fails on drift, so any published release is reproducible from source.
 

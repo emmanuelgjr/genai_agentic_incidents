@@ -8,6 +8,8 @@ on:
       - "data/incidents.min.json"
       - "data/incidents.json"
       - "scripts/export_stix.py"
+      - "scripts/export_taxii.py"
+      - "scripts/export_misp.py"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -34,6 +36,10 @@ jobs:
           cp data/incidents.min.json docs/data/incidents.min.json
       - name: Generate STIX 2.1 bundle for download
         run: python scripts/export_stix.py
+      - name: Generate static TAXII 2.1 endpoint
+        run: python scripts/export_taxii.py
+      - name: Generate MISP feed
+        run: python scripts/export_misp.py
       - name: Generate Open Graph social card
         run: |
           pip install --quiet pillow

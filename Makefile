@@ -1,4 +1,4 @@
-.PHONY: build validate render merge install clean test stix huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all
+.PHONY: build validate render merge install clean test stix taxii misp huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all
 
 install:
 	pip install -r requirements.txt
@@ -21,6 +21,14 @@ validate:
 # STIX 2.1 bundle for threat-intel platforms (build artifact, not committed).
 stix:
 	python scripts/export_stix.py
+
+# Static TAXII 2.1 endpoint under docs/taxii2/ (Pages artifact, not committed).
+taxii:
+	python scripts/export_taxii.py
+
+# MISP feed under docs/misp/ (Pages artifact, not committed).
+misp:
+	python scripts/export_misp.py
 
 # Hugging Face dataset package (dist/hf/); add --push with HF_TOKEN set to upload.
 huggingface:
