@@ -51,6 +51,14 @@ deduplicated by CVE / canonical URL / fuzzy title.
   `other` (~39%) reflects genuinely uncategorized harm incidents.
 - **Recency lag:** very recent CVEs may lack CVSS until NVD scores them.
 - **Scope drift:** broad sources (AIAAIC/OECD) include pre-LLM algorithmic harms.
+- **Untrusted free text (security):** `title`, `description`, `affected`,
+  `impact` and `mitigations` are aggregated **verbatim** from upstream
+  advisories and can contain raw HTML or exploit payloads (e.g.
+  `<img src=x onerror=...>`) lifted from the original write-ups. The data is
+  kept faithful on purpose — **consumers MUST HTML-escape/sanitize these
+  fields before rendering them as HTML or Markdown.** The project's own web
+  renderer escapes them; the data formats (JSON / STIX / HF) preserve the raw
+  text.
 
 ## Distribution & licence
 - **Data:** CC-BY-4.0. **Code:** MIT. DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676).

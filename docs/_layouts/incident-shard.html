@@ -3,6 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
   <title>{{ page.title | default: "Incident Details" }} · GenAI & Agentic AI Security Incidents</title>
   <meta name="description" content="Per-year detail shard from the GenAI & Agentic AI Security Incidents dataset.">
   <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
