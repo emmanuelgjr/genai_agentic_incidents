@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -17,6 +18,20 @@ except ImportError:
     )
     sys.exit(2)
 
+# Inclusion-policy gate: reuse the one strict matcher (INCLUSION.md §4).
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+try:
+    from merge_and_dedupe import is_out_of_scope_malware
+except Exception:  # pragma: no cover - keep validate runnable in isolation
+    is_out_of_scope_malware = None  # type: ignore
+
+_RESOLVABLE_URL = re.compile(r"^(https?://|mailto:)", re.I)
+
+
+def _has_primary_source(entry: dict) -> bool:
+    return any(_RESOLVABLE_URL.match((r.get("url") or "").strip())
+              for r in (entry.get("references") or []))
+
 
 def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[str]:
     """Cross-entry invariants the JSON schema can't express. Returns a list
@@ -28,9 +43,13 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
          2026-06 dedupe tombstone bug. This is the machine check for the
          audit done by hand when that bug was fixed.
     3.   id_deprecations referential integrity: every deprecated `from` id
-         must resolve through its `into` chain to a live entry, and no
-         deprecated id may still be live (an old citation must land
-         somewhere real and unambiguous).
+         must resolve through its `into` chain to a live entry (or be an
+         `into:null` removal), and no deprecated id may still be live.
+    4.   Evidence gate (INCLUSION.md): every entry must carry at least one
+         resolvable http(s)/mailto primary-source reference.
+    5.   Scope gate (INCLUSION.md): no out-of-scope malicious-package entry
+         may survive — makes the v2.3.1 scope-purge a hard, enforced
+         invariant so the generic-malware noise can never return.
     """
     problems: list[str] = []
     incidents = data["incidents"]
@@ -46,6 +65,23 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
                     )
                 else:
                     holders[key] = e["id"]
+
+    # 4) Evidence gate — every entry needs a resolvable primary source.
+    no_source = [e["id"] for e in incidents if not _has_primary_source(e)]
+    if no_source:
+        problems.append(
+            f"{len(no_source)} entr(ies) lack a resolvable primary source "
+            f"(e.g. {', '.join(no_source[:5])})"
+        )
+
+    # 5) Scope gate — no out-of-scope malicious-package entry may survive.
+    if is_out_of_scope_malware is not None:
+        oos = [e["id"] for e in incidents if is_out_of_scope_malware(e)]
+        if oos:
+            problems.append(
+                f"{len(oos)} out-of-scope malicious-package entr(ies) survived the "
+                f"scope purge (e.g. {', '.join(oos[:5])})"
+            )
 
     if deprecations is not None:
         into_map = {d.get("from"): d.get("into") for d in deprecations}
