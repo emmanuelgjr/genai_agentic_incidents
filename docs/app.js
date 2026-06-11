@@ -34,6 +34,7 @@ const els = {
   llm: document.getElementById('llm'),
   asi: document.getElementById('asi'),
   vector: document.getElementById('vector'),
+  tier: document.getElementById('tier'),
   corpus: document.getElementById('corpus'),
   quality: document.getElementById('quality'),
   cveOnly: document.getElementById('cve_only'),
@@ -49,11 +50,11 @@ const els = {
   exportCsv: document.getElementById('export-csv'),
 };
 
-const FILTER_KEYS = ['q','year','severity','llm','asi','vector','corpus','quality','cveOnly'];
+const FILTER_KEYS = ['q','year','severity','llm','asi','vector','tier','corpus','quality','cveOnly'];
 const FILTER_LABEL = {
   q: 'Search', year: 'Year', severity: 'Severity',
   llm: 'OWASP LLM', asi: 'OWASP ASI', vector: 'Vector',
-  corpus: 'Corpus', quality: 'Quality', cveOnly: 'CVE',
+  tier: 'Tier', corpus: 'Corpus', quality: 'Quality', cveOnly: 'CVE',
 };
 
 let DATA = [];
@@ -155,6 +156,7 @@ function matches(e) {
   if (els.asi.value      && !(e.owasp_asi || []).includes(els.asi.value)) return false;
   if (els.vector.value   && e.attack_vector !== els.vector.value) return false;
   if (els.corpus.value   && e.corpus !== els.corpus.value)      return false;
+  if (els.tier && els.tier.value && e.tier !== els.tier.value) return false;
   if (els.quality.value  && e.quality_tier !== els.quality.value) return false;
   if (els.cveOnly.checked && !(e.cve_ids || []).length)         return false;
   const q = els.q.value.trim().toLowerCase();
