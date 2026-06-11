@@ -17,6 +17,33 @@ from pathlib import Path
 from datetime import date, datetime, timezone
 from collections import defaultdict
 
+# Reuse the ingest layer's strict AI-package matcher so the inclusion policy
+# is enforced in exactly one place (INCLUSION.md §4).
+try:
+    from ingest_cve_nvd_expanded import package_is_strongly_ai
+except ImportError:  # pragma: no cover - script path fallback
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from ingest_cve_nvd_expanded import package_is_strongly_ai
+
+_AFFECTED_SPLIT = re.compile(r"[,\s]+")
+
+
+def is_out_of_scope_malware(entry: dict) -> bool:
+    """An entry is out-of-scope per the inclusion policy when it is a
+    malicious-package advisory whose affected package(s) do NOT strongly match
+    an AI/ML/agent identifier (INCLUSION.md §3/§4). This is what purges the
+    generic-npm-malware noise (chai-mocks, sudo-prompt, …) that a substring
+    filter let in — including already-committed entries that retain-on-drop
+    would otherwise resurrect."""
+    if "malicious-package" not in (entry.get("tags") or []):
+        return False
+    affected = entry.get("affected") or ""
+    pkgs = [p for p in _AFFECTED_SPLIT.split(affected) if p]
+    if not pkgs:
+        return False  # can't assess → keep (don't drop on missing data)
+    return not any(package_is_strongly_ai(p) for p in pkgs)
+
 
 def utc_today() -> date:
     """Calendar date in UTC. CI builds run in UTC; a contributor whose local
@@ -1136,6 +1163,24 @@ def main():
     #     dedupe — because re-feeding already-built records through the
     #     raw-ingest dedupe is non-idempotent (it re-canonicalises and can
     #     oscillate). See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
+    # 6a) Scope purge: drop out-of-scope malicious-package entries (failed the
+    #     inclusion policy). Applied to freshly-built survivors as defence in
+    #     depth, and used below to bar retention from resurrecting committed
+    #     noise. Each purged entry is recorded as a deprecation so old citations
+    #     resolve and the drop is auditable.
+    purged_scope = 0
+    kept_surviving: list[dict] = []
+    for e in surviving:
+        if is_out_of_scope_malware(e):
+            deprecations_new.append({
+                "from": e["id"], "into": None, "reason": "out-of-scope",
+                "date": str(utc_today()),
+            })
+            purged_scope += 1
+        else:
+            kept_surviving.append(e)
+    surviving = kept_surviving
+
     covered_keys: set[str] = set()
     for e in surviving:
         covered_keys.update(e.get("cve_ids") or [])
@@ -1145,6 +1190,10 @@ def main():
     no_keys = 0
     for prior in eligible:
         pid = prior.get("id")
+        # Never retain an entry the inclusion policy now excludes.
+        if is_out_of_scope_malware(prior):
+            purged_scope += 1
+            continue
         keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
         if not keys:
             # No source_id/cve_id anchor → can't test coverage. This should
@@ -1158,6 +1207,8 @@ def main():
         covered_keys.update(keys)
         used_ids.add(pid)
         carried += 1
+    if purged_scope:
+        print(f"[scope-purge] dropped {purged_scope} out-of-scope malicious-package entr(ies)")
     print(f"[retention] carried {carried}/{len(eligible)} eligible prior(s) no longer in any source")
     if no_keys:
         print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")
