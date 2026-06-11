@@ -17,6 +17,7 @@
 - 🎯 **Scope — what's in/out:** [`INCLUSION.md`](INCLUSION.md) (the inclusion policy every entry must satisfy)
 - 🛠️ **Spot an error?** Open a [data correction](https://github.com/emmanuelgjr/genai_incidents/issues/new?template=data_correction.yml) or [scope dispute](https://github.com/emmanuelgjr/genai_incidents/issues/new?template=scope_dispute.yml) — accepted changes are logged in [`CORRECTIONS.md`](CORRECTIONS.md)
 - 🪪 **DOI:** [`10.5281/zenodo.20248676`](https://doi.org/10.5281/zenodo.20248676) — see [`CITATION.cff`](CITATION.cff)
+- 📄 **Methodology:** [`docs/paper/genai-incidents-methods.md`](docs/paper/genai-incidents-methods.md) — how the dataset is built, mapped, and governed
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
 A single source of truth of **[12,000+ GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
