@@ -1164,21 +1164,14 @@ def main():
     #     raw-ingest dedupe is non-idempotent (it re-canonicalises and can
     #     oscillate). See docs/superpowers/specs/2026-06-01-retain-on-drop-design.md
     # 6a) Scope purge: drop out-of-scope malicious-package entries (failed the
-    #     inclusion policy). Applied to freshly-built survivors as defence in
-    #     depth, and used below to bar retention from resurrecting committed
-    #     noise. Each purged entry is recorded as a deprecation so old citations
-    #     resolve and the drop is auditable.
+    #     inclusion policy) from freshly-built survivors. Dropped SILENTLY here —
+    #     these carry ephemeral, build-local IDs, so recording deprecations from
+    #     them is non-deterministic. Stable removal deprecations are derived
+    #     below (step 6f) purely from previously-published data vs the final
+    #     output. Also bars retention (below) from resurrecting committed noise.
     purged_scope = 0
-    kept_surviving: list[dict] = []
-    for e in surviving:
-        if is_out_of_scope_malware(e):
-            deprecations_new.append({
-                "from": e["id"], "into": None, "reason": "out-of-scope",
-                "date": str(utc_today()),
-            })
-            purged_scope += 1
-        else:
-            kept_surviving.append(e)
+    kept_surviving = [e for e in surviving if not is_out_of_scope_malware(e)]
+    purged_scope += len(surviving) - len(kept_surviving)
     surviving = kept_surviving
 
     covered_keys: set[str] = set()
@@ -1207,6 +1200,20 @@ def main():
         covered_keys.update(keys)
         used_ids.add(pid)
         carried += 1
+
+    # 6f) Stable out-of-scope removal deprecations. Derived only from the
+    #     PREVIOUSLY-PUBLISHED data and the final live id set — no dependence on
+    #     ephemeral build IDs — so the deprecation list is deterministic and
+    #     idempotent. A previously-published, out-of-scope entry that is no
+    #     longer live gets a `reason: out-of-scope`, `into: null` removal.
+    live_ids_final = {e["id"] for e in surviving}
+    for prev in _load_prev_incidents():
+        if (prev.get("id") not in live_ids_final
+                and is_out_of_scope_malware(prev)):
+            deprecations_new.append({
+                "from": prev["id"], "into": None, "reason": "out-of-scope",
+                "date": str(utc_today()),
+            })
     if purged_scope:
         print(f"[scope-purge] dropped {purged_scope} out-of-scope malicious-package entr(ies)")
     print(f"[retention] carried {carried}/{len(eligible)} eligible prior(s) no longer in any source")
