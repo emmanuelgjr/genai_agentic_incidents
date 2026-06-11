@@ -6,6 +6,10 @@ import validate as v
 
 
 def _data(*incidents):
+    # Default a resolvable reference so fixtures pass the evidence gate unless
+    # a test is specifically exercising it.
+    for e in incidents:
+        e.setdefault("references", [{"url": "https://example.com/src"}])
     return {"incidents": list(incidents)}
 
 
@@ -63,3 +67,21 @@ def test_integrity_deprecation_cycle_does_not_hang():
     ]
     problems = v.check_integrity(data, deps)
     assert any("does not resolve" in p for p in problems)
+
+
+def test_integrity_evidence_gate_flags_sourceless():
+    data = _data({"id": "INC-1", "references": []})
+    assert any("primary source" in p for p in v.check_integrity(data, []))
+    ok = _data({"id": "INC-1", "references": [{"url": "https://x.com/a"}]})
+    assert not any("primary source" in p for p in v.check_integrity(ok, []))
+
+
+def test_integrity_scope_gate_flags_out_of_scope_malware():
+    data = _data({"id": "INC-1", "tags": ["malicious-package"],
+                  "affected": "npm/chai-mocks",
+                  "references": [{"url": "https://x.com/a"}]})
+    assert any("out-of-scope" in p for p in v.check_integrity(data, []))
+    ok = _data({"id": "INC-1", "tags": ["malicious-package"],
+                "affected": "npm/@langchain/core",
+                "references": [{"url": "https://x.com/a"}]})
+    assert not any("out-of-scope" in p for p in v.check_integrity(ok, []))
