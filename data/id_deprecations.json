@@ -379,6 +379,12 @@
       "date": "2026-06-10"
     },
     {
+      "from": "INC-02074",
+      "into": "INC-02070",
+      "reason": "merged",
+      "date": "2026-06-28"
+    },
+    {
       "from": "INC-02137",
       "into": "INC-01551",
       "reason": "merged",
@@ -2101,10 +2107,40 @@
       "date": "2026-06-10"
     },
     {
+      "from": "INC-07771",
+      "into": "INC-01271",
+      "reason": "merged",
+      "date": "2026-06-28"
+    },
+    {
+      "from": "INC-08109",
+      "into": "INC-01412",
+      "reason": "merged",
+      "date": "2026-06-28"
+    },
+    {
+      "from": "INC-08133",
+      "into": "INC-07736",
+      "reason": "merged",
+      "date": "2026-06-28"
+    },
+    {
+      "from": "INC-08146",
+      "into": "INC-08139",
+      "reason": "merged",
+      "date": "2026-06-28"
+    },
+    {
       "from": "INC-08184",
       "into": "INC-00010",
       "reason": "merged",
       "date": "2026-06-10"
+    },
+    {
+      "from": "INC-08185",
+      "into": "INC-08139",
+      "reason": "merged",
+      "date": "2026-06-28"
     },
     {
       "from": "INC-08284",
