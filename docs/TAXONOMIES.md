@@ -157,7 +157,7 @@ Source: <https://github.com/vz-risk/veris> (VERIS 1.4.1 — the incident vocabul
 
 Not a per-incident schema field: a hand-curated crosswalk in [`mappings/veris.json`](../mappings/veris.json) from the controlled `attack_vector` vocabulary to VERIS enum paths, emitted as `veris:*` machinetags in the MISP feed (`scripts/export_misp.py`). Anchored on VERIS 1.4.1's GenAI enums (`action.hacking.variety` "Prompt injection", asset "S - LLM application"). It makes incidents legible to DBIR-contributor and risk-quantification consumers without adding schema surface.
 
-Curation rules: closest defensible enum only — values with no honest VERIS equivalent (`algorithmic-bias`, `other`) stay unmapped; the LLM-application asset tag is attached only to vectors that by definition target an LLM/agent app. Deliberately **not** derived by chaining ATLAS→ATT&CK→VERIS: only ~20% of ATLAS techniques have ATT&CK anchors, and none of the AI-native ones do.
+Curation rules: closest defensible enum only — values with no honest VERIS equivalent (`algorithmic-bias`, `adversarial-input`, `other`) stay unmapped; the LLM-application asset tag is attached only to vectors that by definition target an LLM/agent app. Deliberately **not** derived by chaining ATLAS→ATT&CK→VERIS: only ~20% of ATLAS techniques have ATT&CK anchors, and none of the AI-native ones do.
 
 **Use it when:** consuming the MISP feed alongside VERIS-coded corpora (DBIR, VCDB) or FAIR-style risk tooling. Note MISP's bundled `veris` taxonomy predates VERIS 1.4.1, so the AI-specific tags render as plain tags until upstream refreshes it.
 

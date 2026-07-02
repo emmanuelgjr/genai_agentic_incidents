@@ -1,6 +1,6 @@
 {
   "_source": "VERIS Community Schema 1.4.1 (github.com/vz-risk/veris) — the incident vocabulary behind the Verizon DBIR and VCDB",
-  "_notes": "Hand-curated crosswalk from the controlled attack_vector vocabulary (schema/incident.schema.json examples) to VERIS enum paths, anchored on the 1.4.1 GenAI enums (action.hacking.variety 'Prompt injection', asset 'S - LLM application'). Entry format: '<misp-predicate>=<enum value>', where the predicate is the MISP veris-taxonomy machinetag predicate (colon-separated VERIS path); scripts/export_misp.py renders each as veris:<predicate>=\"<value>\". Values with no honest VERIS equivalent (algorithmic-bias, other) are deliberately unmapped — precision over coverage. The 'S - LLM application' asset row is attached only to vectors that by definition target an LLM/agent application, never inferred for generic web/infra vectors. Direct curation, NOT derived by chaining ATLAS->ATT&CK->VERIS (only ~20% of ATLAS techniques have ATT&CK anchors, and none of the AI-native ones).",
+  "_notes": "Hand-curated crosswalk from the controlled attack_vector vocabulary (schema/incident.schema.json examples) to VERIS enum paths, anchored on the 1.4.1 GenAI enums (action.hacking.variety 'Prompt injection', asset 'S - LLM application'). Entry format: '<misp-predicate>=<enum value>', where the predicate is the MISP veris-taxonomy machinetag predicate (colon-separated VERIS path); scripts/export_misp.py renders each as veris:<predicate>=\"<value>\". Curation rules: closest defensible enum per official VERIS definitions, adversarially reviewed against verisc-enum.json/verisc-labels.json. Values with no honest VERIS equivalent stay unmapped (algorithmic-bias, adversarial-input, other) — precision over coverage. jailbreak collapses into 'Prompt injection' (VERIS's definition — 'bypassing safety filters' — covers both; VERIS is deliberately that coarse). csam-generation keeps misuse 'Illicit content' with a caveat: VERIS misuse canonically covers trusted internal/partner actors, while GenAI illicit-content generation is usually an external user — kept because it is the only VERIS enum naming illicit content. The 'S - LLM application' asset row is attached only to vectors that by definition target an LLM/agent application, never inferred for generic web/infra vectors. Direct curation, NOT derived by chaining ATLAS->ATT&CK->VERIS (only ~20% of ATLAS techniques have ATT&CK anchors, and none of the AI-native ones).",
   "attack_vector_to_veris": {
     "prompt-injection": [
       "action:hacking:variety=Prompt injection",
@@ -11,7 +11,7 @@
       "asset:assets:variety=S - LLM application"
     ],
     "jailbreak": [
-      "action:hacking:variety=Evade Defenses",
+      "action:hacking:variety=Prompt injection",
       "asset:assets:variety=S - LLM application"
     ],
     "data-exfiltration": [
@@ -23,17 +23,18 @@
     ],
     "model-extraction": [
       "action:hacking:variety=Abuse of functionality",
+      "attribute:confidentiality:data_disclosure=Yes",
       "attribute:confidentiality:data:variety=Secrets"
     ],
     "model-poisoning": [
-      "attribute:integrity:variety=Alter behavior"
+      "attribute:integrity:variety=Modify data"
     ],
     "memory-poisoning": [
-      "attribute:integrity:variety=Alter behavior",
+      "attribute:integrity:variety=Modify data",
       "asset:assets:variety=S - LLM application"
     ],
     "supply-chain": [
-      "action:malware:vector=Software update"
+      "action:malware:vector=Partner"
     ],
     "rce": [
       "action:hacking:variety=Exploit vuln"
@@ -76,9 +77,6 @@
     "insider": [
       "action:misuse:variety=Privilege abuse"
     ],
-    "adversarial-input": [
-      "attribute:integrity:variety=Alter behavior"
-    ],
     "evasion": [
       "action:hacking:variety=Evade Defenses"
     ],
@@ -98,7 +96,7 @@
       "action:social:variety=Forgery"
     ],
     "misinformation": [
-      "action:social:variety=Influence"
+      "action:social:variety=Propaganda"
     ],
     "hallucination": [
       "action:error:variety=Misinformation"
@@ -107,7 +105,7 @@
       "action:social:variety=Phishing"
     ],
     "malware": [
-      "action:malware:variety=Trojan"
+      "action:malware:variety=Unknown"
     ],
     "backdoor": [
       "action:malware:variety=Backdoor"
