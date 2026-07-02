@@ -24,8 +24,23 @@ import re
 import sys
 import urllib.request
 from pathlib import Path
+from urllib.parse import urlparse
 
 from ingest_utils import conditional_fetch
+
+
+def _is_aiaaic_host(url: str) -> bool:
+    """True only when the URL's host is aiaaic.org or a subdomain.
+
+    Summary cells are untrusted upstream content; a plain substring test
+    would also match e.g. https://evil.example/aiaaic.org or
+    https://aiaaic.org.evil.example.
+    """
+    try:
+        host = urlparse(url).hostname or ""
+    except ValueError:
+        return False
+    return host == "aiaaic.org" or host.endswith(".aiaaic.org")
 
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
@@ -318,10 +333,11 @@ def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
     references = []
     for u in urls[:8]:
         u_clean = u.strip(",.;")
-        rtype = "report" if "aiaaic.org" in u_clean else "news"
-        ref_title = "AIAAIC entry" if "aiaaic.org" in u_clean else u_clean
+        is_aiaaic = _is_aiaaic_host(u_clean)
+        rtype = "report" if is_aiaaic else "news"
+        ref_title = "AIAAIC entry" if is_aiaaic else u_clean
         references.append({"title": ref_title, "url": u_clean, "type": rtype})
-        if "aiaaic.org" in u_clean and "/aiaaic-repository/" in u_clean:
+        if is_aiaaic and "/aiaaic-repository/" in u_clean:
             slug = u_clean.rstrip("/").split("/")[-1]
             aiaaic_slug = slug
 

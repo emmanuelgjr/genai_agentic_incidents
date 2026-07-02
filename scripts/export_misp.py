@@ -163,7 +163,12 @@ def build(incidents: list[dict]) -> tuple[int, int]:
         for e in sorted(by_year[year], key=lambda x: x["id"]):
             for a in _incident_attributes(e):
                 attributes.append(a)
-                md5 = hashlib.md5(a["value"].encode("utf-8")).hexdigest()
+                # The MISP feed format matches attributes on the MD5 of the
+                # value (hashes.csv) — an interop identifier, not a security
+                # control.
+                md5 = hashlib.md5(
+                    a["value"].encode("utf-8"), usedforsecurity=False
+                ).hexdigest()
                 hash_lines.append(f"{md5},{ev_uuid}")
         n_attr += len(attributes)
 
