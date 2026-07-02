@@ -87,7 +87,7 @@ fails on any drift. This is what makes the dataset reproducible and auditable.
 Mappings are produced by a combination of source-provided labels and
 heuristics seeded from the finalised attack vector, then cascaded
 (OWASP → ATLAS/NIST) via an authoritative technique→tactic map
-(`mappings/mitre_atlas.json`, ATLAS v5.6.0). Mapping decisions are content
+(`mappings/mitre_atlas.json`, ATLAS v2026.06). Mapping decisions are content
 fields under the determinism contract and are disputable via the corrections
 process. We make no claim that heuristic mappings are expert-reviewed for every
 entry; the `quality_tier` and `confidence` fields expose how vetted each record

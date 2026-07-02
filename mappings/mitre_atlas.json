@@ -1,6 +1,6 @@
 {
   "framework": "MITRE ATLAS (Adversarial Threat Landscape for AI Systems)",
-  "version": "2024-2025",
+  "version": "2026.06",
   "url": "https://atlas.mitre.org/",
   "tactics": {
     "AML.TA0000": {
@@ -752,6 +752,9 @@
     "AML.T0091.000": {
       "name": "Application Access Token"
     },
+    "AML.T0091.001": {
+      "name": "Web Session Cookie"
+    },
     "AML.T0092": {
       "name": "Manipulate User LLM Chat History",
       "tactics": [
@@ -887,10 +890,22 @@
     },
     "AML.T0112.001": {
       "name": "AI Artifacts"
+    },
+    "AML.T0113": {
+      "name": "Steal Web Session Cookie",
+      "tactics": [
+        "AML.TA0013"
+      ]
+    },
+    "AML.T0114": {
+      "name": "AI Service Web Interface",
+      "tactics": [
+        "AML.TA0014"
+      ]
     }
   },
   "case_studies_url": "https://atlas.mitre.org/studies",
-  "note": "Technique list is current as of MITRE ATLAS 2025 publications; subtechniques use the .NNN suffix. Where ATLAS adds techniques in newer releases, this mapping file should be updated. Tactic IDs/names and technique->tactic links refreshed from mitre-atlas/atlas-data; each technique carries `tactics` (subtechniques inherit parent).",
+  "note": "Technique list is current as of MITRE ATLAS v2026.06 (mitre-atlas/atlas-data dist/v6/ATLAS-2026.06.yaml); subtechniques use the .NNN suffix. Where ATLAS adds techniques in newer releases, this mapping file should be updated. Tactic IDs/names and technique->tactic links refreshed from mitre-atlas/atlas-data; each technique carries `tactics` (subtechniques inherit parent). IDs retired upstream (AML.T0009, AML.T0030, AML.T0038, AML.T0045) are retained without `tactics` for entries that still reference them.",
   "technique_tactics_note": "Each technique entry carries its ATLAS tactic id(s) under `tactics` (subtechniques inherit the parent's).",
-  "atlas_data_version": "5.6.0"
+  "atlas_data_version": "2026.06"
 }
