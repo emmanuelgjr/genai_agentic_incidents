@@ -184,7 +184,7 @@ function comparator() {
 
 function renderStats(allRows) {
   const total = allRows.length;
-  // Replace the static "11,500+" hero fallback with the exact live count.
+  // Replace the static "12,500+" hero fallback with the exact live count.
   const heroCount = document.getElementById('hero-count');
   if (heroCount) heroCount.textContent = fmtNum(total);
   const crit = allRows.filter(r => r.severity === 'Critical').length;
