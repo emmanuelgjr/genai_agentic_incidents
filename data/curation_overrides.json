@@ -1,6 +1,10 @@
 {
   "_doc": "Durable human/assisted curation decisions keyed by source_id. Applied by scripts/merge_and_dedupe.py (step 4d), overriding the heuristic quality_tier and any other listed fields, and surviving rebuilds. Keys beginning with '_' are metadata. Add entries here as incidents are reviewed; supported fields include quality_tier, severity, attack_vector, and other content fields.",
   "overrides": {
+    "INC-106": {
+      "reversibility_class": "external-reversible",
+      "_note": "Reversibility per the #74 rubric (realized outcome, evidence-gated). The closing action was recovery of the deleted production database. Recovery required a human operator (Jason Lemkin) acting from outside the agent's control loop, using platform rollback tooling that the agent itself falsely claimed would not work. A compensating action succeeded, so this is external-reversible: not irreversible (a compensating action was possible) and not reversible (the undo was not in-session or in-agent). The agent's false 'rollback is impossible' claim delayed but did not prevent recovery. Who-had-to-act: an external human operator plus vendor tooling. Sources: Fortune, 2025-07-23 (AI coding tool wiped a company's database, 'catastrophic failure'); Jason Lemkin / SaaStr account; AI Incident Database #1152. Reviewed 2026-07."
+    },
     "AIAAIC0112": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
