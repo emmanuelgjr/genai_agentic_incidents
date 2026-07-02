@@ -14,7 +14,7 @@
 - 🤗 **Hugging Face:** [`emmanuelgjr/genai-incidents`](https://huggingface.co/datasets/emmanuelgjr/genai-incidents) — `load_dataset("emmanuelgjr/genai-incidents")` (built with `make huggingface`)
 - 🛰️ **STIX 2.1 bundle** (for OpenCTI / MISP / TAXII): <https://emmanuelgjr.github.io/genai_incidents/data/incidents.stix.json> — incidents as `x-genai-incident` SDOs linked to MITRE ATLAS `attack-pattern`s and CVE `vulnerability`s. Build locally with `make stix`.
 - 📡 **TAXII 2.1 (static):** discovery at <https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json> — a read-only static mirror of the STIX collection ([usage + caveats](https://emmanuelgjr.github.io/genai_incidents/taxii2/README.md)). Build locally with `make taxii`.
-- 🛡️ **MISP feed:** subscribe a MISP instance to <https://emmanuelgjr.github.io/genai_incidents/misp/> (Format: *MISP Feed*) — incidents grouped into year-events with `genai-incidents:*` / `mitre-atlas:*` tags. Build locally with `make misp`.
+- 🛡️ **MISP feed:** subscribe a MISP instance to <https://emmanuelgjr.github.io/genai_incidents/misp/> (Format: *MISP Feed*) — incidents grouped into year-events with `genai-incidents:*` / `mitre-atlas:*` / VERIS 1.4.1 `veris:*` tags. Build locally with `make misp`.
 - 📖 **Field reference:** [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) · **Provenance & limitations:** [`docs/DATASHEET.md`](docs/DATASHEET.md)
 - 🎯 **Scope — what's in/out:** [`INCLUSION.md`](INCLUSION.md) (the inclusion policy every entry must satisfy)
 - 🛠️ **Spot an error?** Open a [data correction](https://github.com/emmanuelgjr/genai_incidents/issues/new?template=data_correction.yml) or [scope dispute](https://github.com/emmanuelgjr/genai_incidents/issues/new?template=scope_dispute.yml) — accepted changes are logged in [`CORRECTIONS.md`](CORRECTIONS.md)
@@ -49,6 +49,8 @@ The dataset is published as both a machine-readable JSON (`data/incidents.json`)
 │   ├── owasp_asi_top10.json
 │   ├── nist_ai_rmf.json
 │   ├── mitre_atlas.json
+│   ├── cwe_capec.json
+│   ├── veris.json
 │   └── maestro_layers.json
 ├── legacy/                     ← original source files (preserved verbatim)
 ├── ingest/                     ← per-source aggregator outputs (CVE, AIID, ATLAS, etc.)

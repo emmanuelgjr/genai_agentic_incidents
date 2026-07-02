@@ -47,7 +47,7 @@ task_categories:
   - text-classification
   - text-retrieval
 size_categories:
-  - 1K<n<10K
+  - {size_cat}
 configs:
   - config_name: default
     data_files: incidents.jsonl
@@ -125,8 +125,11 @@ def build(out_dir: Path) -> tuple[int, Path]:
     with jsonl.open("w", encoding="utf-8", newline="\n") as fh:
         for inc in incidents:
             fh.write(json.dumps(inc, ensure_ascii=False, sort_keys=True) + "\n")
-    card = CARD.format(count=f"{len(incidents):,}", version=raw.get("version", "?"),
-                       repo="emmanuelgjr/genai-incidents")
+    n = len(incidents)
+    size_cat = ("n<1K" if n < 1_000 else "1K<n<10K" if n < 10_000
+                else "10K<n<100K" if n < 100_000 else "100K<n<1M")
+    card = CARD.format(count=f"{n:,}", version=raw.get("version", "?"),
+                       size_cat=size_cat, repo="emmanuelgjr/genai-incidents")
     (out_dir / "README.md").write_text(card, encoding="utf-8", newline="\n")
     return len(incidents), jsonl
 

@@ -130,6 +130,11 @@ def build_bundle(incidents: list[dict]) -> dict:
             "x_mitre_atlas_tactics": i.get("mitre_atlas_tactics") or [],
             "x_cve_ids": i.get("cve_ids") or [],
         }
+        # Landmark-tier labels are optional and unassessed-by-absence: emit
+        # only when present so unlabeled entries carry no null/empty claim.
+        for opt in ("reversibility_class", "discovery_method"):
+            if i.get(opt):
+                sdo[f"x_{opt}"] = i[opt]
         objects.append(sdo)
         for t in i.get("mitre_atlas") or []:
             rid = _sid("relationship", iid, "uses", t)
