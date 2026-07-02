@@ -5,6 +5,45 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.6.0] — 2026-07-02
+
+### Added (Schema — landmark-tier labels)
+- **`reversibility_class`** — optional enum (`read-only` / `reversible` /
+  `external-reversible` / `irreversible`) classifying the reversibility of the
+  action that closed the incident. Landmark-tier only, evidence-gated via
+  `data/curation_overrides.json`, enforced by a new validate.py integrity
+  invariant. Community proposal #74 (lineage: OWASP AISVS C09-02). (#76)
+- **`discovery_method`** — optional enum (`security-researcher`,
+  `actor-disclosure`, `customer-report`, `media-report`, `law-enforcement`,
+  `internal-monitoring`, `internal-report`, `vendor-monitoring`, `other`)
+  recording how the incident was first surfaced; same landmark gate (the
+  validate.py invariant now covers both label fields). Lineage: VERIS 1.4.1
+  `discovery_method`, flattened and AI-adapted. (#81)
+
+### Added (Integrations)
+- **VERIS 1.4.1 crosswalk** — hand-curated `mappings/veris.json` (35
+  attack_vectors → 48 enum entries, mechanically verified and adversarially
+  reviewed against official VERIS definitions), emitted as `veris:*`
+  machinetags in the MISP feed alongside `genai-incidents:*` /
+  `mitre-atlas:*`. Opens the dataset to VERIS consumers (DBIR contributor
+  pipeline, cyber insurers, FAIR-style risk quantification) with zero schema
+  surface. (#79)
+
+### Data
+- 11,658 → **12,770 incidents**: weekly auto-refresh (#75), OpenClaw
+  ingest-coverage fix (#77 — `openclaw` added to the NVD keyword list,
+  AI-context tokens, npm ecosystem allowlist and strict malware gate after
+  CVE-2026-44112 was missed on wording alone), and a CVE-enrichment run
+  (#78: +788 incidents including 276 previously-invisible OpenClaw
+  advisories and CVE-2026-44112 itself as INC-14014; +936 CVEs; all 42
+  removals recorded as merge deprecations).
+
+### Notes
+- Both new fields are additive and optional — absence means **unassessed**,
+  never a claim. No existing records were modified for the schema change.
+- Hardcoded marketing lower bound updated "11,500+" → "12,500+" (canonical
+  count remains `data/stats.json`).
+
 ## [2.5.0] — 2026-06-11
 
 ### Added (Coverage — linkage graph, #30)
