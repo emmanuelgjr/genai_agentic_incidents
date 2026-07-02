@@ -29,6 +29,7 @@ Every incident in [`data/incidents.json`](../data/incidents.json) follows
 | `attack_vector` | string | Controlled vocabulary (see schema `examples`): `prompt-injection`, `rce`, `data-exfiltration`, `deepfake`, `privacy-violation`, `algorithmic-bias`, `csam-generation`, `unsafe-advice`, `other`, … |
 | `affected` | string | Vendor / product / organization / system affected (free text). |
 | `impact` | string | Real-world consequence summary. |
+| `reversibility_class` | enum | Reversibility of the incident's **closing action**, ordered least→most severe: `read-only` → `reversible` → `external-reversible` → `irreversible` (see [TAXONOMIES.md](TAXONOMIES.md#reversibility-class), #74). Landmark-tier only, assigned via `data/curation_overrides.json` where source evidence describes the closing action (evidence + review date in the override `_note`). **Absence means unassessed, not `read-only`.** |
 
 ## Framework mappings
 | Field | Type | Notes |

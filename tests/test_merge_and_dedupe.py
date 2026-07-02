@@ -662,6 +662,12 @@ def test_kev_fields_are_content_fields():
     assert "kev_date_added" in m._CONTENT_FIELDS
 
 
+def test_reversibility_class_is_content_field():
+    # Labels land via curation_overrides.json (step 4d, before history
+    # stamping) and must bump `updated` exactly once — the KEV precedent.
+    assert "reversibility_class" in m._CONTENT_FIELDS
+
+
 # ---------------------------------------------------------------------------
 # Inclusion-policy scope purge (v2.3.1) — drop / don't-retain out-of-scope malware
 # ---------------------------------------------------------------------------

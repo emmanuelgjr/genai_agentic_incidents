@@ -76,6 +76,21 @@ def test_integrity_evidence_gate_flags_sourceless():
     assert not any("primary source" in p for p in v.check_integrity(ok, []))
 
 
+def test_integrity_reversibility_gate_flags_non_landmark():
+    data = _data({"id": "INC-1", "tier": "feed",
+                  "reversibility_class": "irreversible"})
+    assert any("reversibility_class" in p for p in v.check_integrity(data, []))
+
+
+def test_integrity_reversibility_gate_allows_landmark():
+    data = _data({"id": "INC-1", "tier": "landmark",
+                  "reversibility_class": "read-only"})
+    assert not any("reversibility_class" in p for p in v.check_integrity(data, []))
+    # Unlabeled entries are fine on any tier — absence means unassessed.
+    unlabeled = _data({"id": "INC-2", "tier": "feed"})
+    assert not any("reversibility_class" in p for p in v.check_integrity(unlabeled, []))
+
+
 def test_integrity_scope_gate_flags_out_of_scope_malware():
     data = _data({"id": "INC-1", "tags": ["malicious-package"],
                   "affected": "npm/chai-mocks",
