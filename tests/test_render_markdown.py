@@ -83,7 +83,8 @@ def test_render_incident_block_produces_card():
     assert "Test incident" in body
     assert "prompt-injection" in body
     assert "LLM01" in body
-    assert "https://example.com" in re.findall(r"https?://[^\s)\"']+", body)
+    rendered_urls = re.findall(r"https?://[^\s)\"']+", body)
+    assert rendered_urls.count("https://example.com") == 1
 
 
 def test_render_incident_block_handles_minimal_entry():
