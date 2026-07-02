@@ -936,7 +936,7 @@ def _load_prev_timestamps() -> dict[str, tuple[str, str, dict]]:
 # bumps the timestamp, but `added`/`updated` themselves obviously do not.
 _CONTENT_FIELDS = (
     "title", "date", "year", "category", "description", "attack_vector",
-    "affected", "impact", "reversibility_class", "severity",
+    "affected", "impact", "reversibility_class", "discovery_method", "severity",
     "owasp_llm", "owasp_asi", "owasp_dsgai",
     "nist_ai_rmf", "mitre_atlas", "mitre_atlas_tactics", "cve_ids", "cwe_ids",
     "cvss_score", "cvss_vector", "aiid_id", "disclosure_date",

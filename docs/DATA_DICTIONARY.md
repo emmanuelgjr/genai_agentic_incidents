@@ -30,6 +30,7 @@ Every incident in [`data/incidents.json`](../data/incidents.json) follows
 | `affected` | string | Vendor / product / organization / system affected (free text). |
 | `impact` | string | Real-world consequence summary. |
 | `reversibility_class` | enum | Reversibility of the incident's **closing action**, ordered least→most severe: `read-only` → `reversible` → `external-reversible` → `irreversible` (see [TAXONOMIES.md](TAXONOMIES.md#reversibility-class), #74). Landmark-tier only, assigned via `data/curation_overrides.json` where source evidence describes the closing action (evidence + review date in the override `_note`). **Absence means unassessed, not `read-only`.** |
+| `discovery_method` | enum | How the incident was first surfaced: `security-researcher`, `actor-disclosure`, `customer-report`, `media-report`, `law-enforcement`, `internal-monitoring`, `internal-report`, `vendor-monitoring`, `other` (see [TAXONOMIES.md](TAXONOMIES.md#discovery-method); lineage: VERIS 1.4.1 `discovery_method`, flattened). Landmark-tier only, evidence-gated via `data/curation_overrides.json`. **Absence means unassessed, not internally detected.** |
 
 ## Framework mappings
 | Field | Type | Notes |

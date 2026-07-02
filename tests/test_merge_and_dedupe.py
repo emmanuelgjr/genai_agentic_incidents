@@ -668,6 +668,11 @@ def test_reversibility_class_is_content_field():
     assert "reversibility_class" in m._CONTENT_FIELDS
 
 
+def test_discovery_method_is_content_field():
+    # Same landmark-label mechanism as reversibility_class (#74).
+    assert "discovery_method" in m._CONTENT_FIELDS
+
+
 # ---------------------------------------------------------------------------
 # Inclusion-policy scope purge (v2.3.1) — drop / don't-retain out-of-scope malware
 # ---------------------------------------------------------------------------
