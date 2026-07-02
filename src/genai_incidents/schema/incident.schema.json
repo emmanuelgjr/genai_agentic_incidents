@@ -107,6 +107,11 @@
       "type": "string",
       "description": "Real-world consequence summary"
     },
+    "reversibility_class": {
+      "type": "string",
+      "description": "Reversibility of the action that closed the incident (#74), ordered least→most severe: read-only = no state mutation; reversible = undoable in-session or by trivial in-system action; external-reversible = undoable only via an external compensating action (refund, retraction, cleanup); irreversible = no compensating action possible. Landmark-tier only, assigned via data/curation_overrides.json where source evidence describes the closing action. Absent = unassessed, NOT read-only. The enum carries no lexical order — consumers must rank explicitly.",
+      "enum": ["read-only", "reversible", "external-reversible", "irreversible"]
+    },
     "severity": {
       "type": "string",
       "enum": ["Critical", "High", "Medium", "Low", "Info"]

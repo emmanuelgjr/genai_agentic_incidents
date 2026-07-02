@@ -11,6 +11,7 @@ This dataset maps each incident to four (sometimes five) taxonomies. They don't 
 | What organizational risk function should respond? | **NIST AI RMF** |
 | What adversary tactic/technique was used? | **MITRE ATLAS** |
 | Where in the architecture did it originate / impact? | **MAESTRO** (companion) |
+| Does response get paged or queued — could the closing action be undone? | **Reversibility class** (landmark tier) |
 
 ---
 
@@ -126,6 +127,27 @@ Companion model that describes **where in the AI/agent architecture** an inciden
 | L7 | Human Factors & UX |
 
 The `role` field on a MAESTRO mapping indicates whether the layer was the `origin`, `impact`, `blind-spot`, `control`, `amplifier`, or `propagation` vector.
+
+---
+
+## Reversibility class
+
+Proposed in [#74](https://github.com/emmanuelgjr/genai_incidents/issues/74) (lineage: OWASP AISVS C09-02 reversibility-classification gating). Severity says how bad; `reversibility_class` says whether incident response gets **paged or queued** — the same attack vector routes very differently depending on what the closing action could undo.
+
+Four **ordered** classes, least → most severe:
+
+| Rank | Class | Meaning |
+|---|---|---|
+| 1 | `read-only` | No state mutation — the agent observed, read, summarized, or inferred but did not act on external systems. |
+| 2 | `reversible` | Mutation undoable in-session or by trivial in-system action (file recoverable from trash, internal-only draft). |
+| 3 | `external-reversible` | Mutation undoable only via an external compensating action (refund, retraction, correction outreach, manual cleanup). |
+| 4 | `irreversible` | No compensating action possible (unrecoverable deletion, funds transferred, content published and indexed). |
+
+Scope rules (precision-over-coverage):
+- **Landmark tier only** — enforced as a `validate.py` integrity invariant. `tier` is re-derived each build, so a labeled entry drifting out of the landmark set fails CI rather than shipping a stale judgment.
+- **Evidence-gated** — assigned via `data/curation_overrides.json` only where the source evidence describes the closing action, with evidence and review date in the override `_note`. Feed/auto entries stay empty rather than guessing.
+- **Absence means unassessed, not `read-only`.**
+- The JSON-schema enum carries no order — consumers must rank explicitly (alphabetical sorting puts `irreversible` between the two reversible classes).
 
 ---
 
