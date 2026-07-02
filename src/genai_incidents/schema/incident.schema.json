@@ -112,6 +112,11 @@
       "description": "Reversibility of the action that closed the incident (#74), ordered least→most severe: read-only = no state mutation; reversible = undoable in-session or by trivial in-system action; external-reversible = undoable only via an external compensating action (refund, retraction, cleanup); irreversible = no compensating action possible. Landmark-tier only, assigned via data/curation_overrides.json where source evidence describes the closing action. Absent = unassessed, NOT read-only. The enum carries no lexical order — consumers must rank explicitly.",
       "enum": ["read-only", "reversible", "external-reversible", "irreversible"]
     },
+    "discovery_method": {
+      "type": "string",
+      "description": "How the incident was first surfaced (lineage: VERIS 1.4.1 discovery_method, flattened and AI-adapted; media-report has no VERIS parent). Landmark-tier only, assigned via data/curation_overrides.json where the source states the discovery channel — same evidence-gated mechanism as reversibility_class (#74). Absent = unassessed, NOT internally detected.",
+      "enum": ["security-researcher", "actor-disclosure", "customer-report", "media-report", "law-enforcement", "internal-monitoring", "internal-report", "vendor-monitoring", "other"]
+    },
     "severity": {
       "type": "string",
       "enum": ["Critical", "High", "Medium", "Low", "Info"]

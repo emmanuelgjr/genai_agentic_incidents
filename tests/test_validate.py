@@ -91,6 +91,18 @@ def test_integrity_reversibility_gate_allows_landmark():
     assert not any("reversibility_class" in p for p in v.check_integrity(unlabeled, []))
 
 
+def test_integrity_discovery_method_gate_flags_non_landmark():
+    data = _data({"id": "INC-1", "tier": "feed",
+                  "discovery_method": "security-researcher"})
+    assert any("discovery_method" in p for p in v.check_integrity(data, []))
+
+
+def test_integrity_discovery_method_gate_allows_landmark():
+    data = _data({"id": "INC-1", "tier": "landmark",
+                  "discovery_method": "actor-disclosure"})
+    assert not any("discovery_method" in p for p in v.check_integrity(data, []))
+
+
 def test_integrity_scope_gate_flags_out_of_scope_malware():
     data = _data({"id": "INC-1", "tags": ["malicious-package"],
                   "affected": "npm/chai-mocks",
