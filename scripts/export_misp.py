@@ -16,7 +16,9 @@ so they stay grouped, and carrying taxonomy as attribute Tags:
   - one ``link`` attribute per reference URL,
   - one ``text`` attribute holding the incident title,
 with Tags ``genai-incidents:*`` (incident id, attack vector, severity, OWASP
-LLM/ASI, corpus, tier) and ``mitre-atlas:technique="…"`` on the title attribute.
+LLM/ASI, corpus, tier), ``mitre-atlas:technique="…"``, and ``veris:*``
+machinetags (VERIS 1.4.1 enum paths derived from ``attack_vector`` via the
+hand-curated ``mappings/veris.json``) on the title attribute.
 
 Determinism: event/attribute UUIDs are UUIDv5 and every ``timestamp`` is derived
 from the year (fixed epoch), so the feed is byte-stable across rebuilds.
@@ -35,6 +37,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 OUT = ROOT / "docs" / "misp"
+
+# attack_vector -> VERIS 1.4.1 enum paths ("<misp-predicate>=<value>"),
+# hand-curated in mappings/veris.json. Missing file degrades to no veris tags
+# so the exporter stays runnable in isolation.
+try:
+    _VERIS_MAP: dict[str, list[str]] = json.loads(
+        (ROOT / "mappings" / "veris.json").read_text(encoding="utf-8")
+    ).get("attack_vector_to_veris", {})
+except (OSError, json.JSONDecodeError):
+    _VERIS_MAP = {}
 
 # Fixed namespace (shared scheme with the STIX export) so ids are stable.
 NS = uuid.UUID("6f1a9c4e-9b2d-5e7a-8c3f-0a1b2c3d4e5f")
@@ -75,6 +87,9 @@ def _incident_tags(e: dict) -> list[dict]:
         tags.append(_tag(f'genai-incidents:owasp-asi="{c}"'))
     for t in e.get("mitre_atlas") or []:
         tags.append(_tag(f'mitre-atlas:technique="{t}"'))
+    for mt in _VERIS_MAP.get(e.get("attack_vector") or "", []):
+        pred, _, val = mt.partition("=")
+        tags.append(_tag(f'veris:{pred}="{val}"'))
     return tags
 
 
@@ -198,7 +213,8 @@ A [MISP](https://www.misp-project.org/) feed mirroring the `genai_incidents`
 dataset, regenerated on every Pages deploy by `scripts/export_misp.py`.
 Incidents are grouped into **one Event per year** ({n_events} events); each
 incident's CVEs, reference links and title become tagged attributes
-(`genai-incidents:*`, `mitre-atlas:technique="…"`).
+(`genai-incidents:*`, `mitre-atlas:technique="…"`, and `veris:*` machinetags
+per the VERIS 1.4.1 crosswalk in `mappings/veris.json`).
 
 ## Subscribe (MISP)
 
