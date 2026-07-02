@@ -138,6 +138,11 @@ NVD_KEYWORDS = [
     "ZenML",
     "ClearML",
     "Weights & Biases",
+    # Expanded 2026-07: OpenClaw (agent framework, 138 CVEs in 63 days —
+    # INC-01592). Its GHSA advisories don't always carry AI-context tokens
+    # (missed CVE-2026-44112, "OpenShell FS bridge ... mount root"), so it
+    # needs explicit coverage on the NVD path too.
+    "OpenClaw",
 ]
 
 # AI / ML / LLM context filters - a CVE is kept only if its description or
@@ -165,6 +170,8 @@ AI_CONTEXT_TOKENS = [
     "faiss", "haystack", "semantic kernel", "semantic-kernel", "privategpt",
     "autogpt", "metagpt", "label studio", "label-studio", "zenml", "clearml",
     "weights & biases", "wandb", "diffusers", "litserve", "guardrails",
+    # Expanded 2026-07.
+    "openclaw",
 ]
 
 
@@ -194,6 +201,8 @@ AI_PRODUCT_CPE_FRAGMENTS = [
     "qwen", "pgvector", "faiss", "semantic-kernel", "privategpt", "autogpt",
     "metagpt", "zenml", "clearml", "wandb", "diffusers", "litserve",
     "guardrails_ai", "guardrails-ai", "vertexai", "sagemaker",
+    # Expanded 2026-07.
+    "openclaw",
 ]
 
 
@@ -686,6 +695,9 @@ AI_ECOSYSTEM_PACKAGES = {
         # Expanded 2026-06.
         "librechat", "@anthropic-ai", "@openai", "ollama", "@mistralai",
         "langgraph", "@langchain/", "transformers.js", "@xenova/transformers",
+        # Expanded 2026-07: advisory text isn't guaranteed to carry AI tokens
+        # (CVE-2026-44112 was missed because its GHSA summary didn't).
+        "openclaw",
     },
     "go": {"langchaingo", "ollama", "openai-go"},
     "rubygems": {"langchainrb", "openai", "anthropic"},
@@ -727,7 +739,7 @@ STRONG_AI_PACKAGE_TOKENS = {
     "kubeflow", "bentoml", "pytorch", "tensorflow", "onnxruntime",
     "deeplearning4j", "semantickernel", "gpt4all", "localai", "librechat",
     "flowise", "dify", "rasa", "deepset", "wandb", "clearml", "zenml",
-    "deepseek", "mistralai", "gguf", "mcp",
+    "deepseek", "mistralai", "gguf", "mcp", "openclaw",
 }
 STRONG_AI_SCOPES = {
     "langchain", "huggingface", "anthropic-ai", "openai", "modelcontextprotocol",

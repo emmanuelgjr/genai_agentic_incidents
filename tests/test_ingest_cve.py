@@ -55,6 +55,16 @@ def test_malware_filter_accepts_real_ai_packages():
         assert ing.package_is_strongly_ai(name), name
 
 
+def test_ghsa_openclaw_passes_without_ai_text():
+    # Regression: CVE-2026-44112 (GHSA-wppj-c6mr-83jj) was missed because its
+    # summary ("OpenShell FS bridge writes ... sandbox mount root") carries no
+    # AI-context token — the openclaw package itself must be the signal.
+    node = {"vulnerabilities": {"nodes": [{"package": {"ecosystem": "npm", "name": "openclaw"}}]},
+            "summary": "OpenShell FS bridge writes stay pinned to the sandbox mount root",
+            "description": ""}
+    assert ing.ghsa_is_ai(node) is True
+
+
 def test_ghsa_malware_uses_strict_name_gate():
     # Strict gate ignores the description-token fallback for malware.
     node = {"vulnerabilities": {"nodes": [{"package": {"ecosystem": "npm", "name": "chai-mocks"}}]},
