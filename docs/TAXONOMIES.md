@@ -12,6 +12,7 @@ This dataset maps each incident to four (sometimes five) taxonomies. They don't 
 | What adversary tactic/technique was used? | **MITRE ATLAS** |
 | Where in the architecture did it originate / impact? | **MAESTRO** (companion) |
 | Does response get paged or queued — could the closing action be undone? | **Reversibility class** (landmark tier) |
+| Which detection investment surfaced it? | **Discovery method** (landmark tier) |
 
 ---
 
@@ -148,6 +149,26 @@ Scope rules (precision-over-coverage):
 - **Evidence-gated** — assigned via `data/curation_overrides.json` only where the source evidence describes the closing action, with evidence and review date in the override `_note`. Feed/auto entries stay empty rather than guessing.
 - **Absence means unassessed, not `read-only`.**
 - The JSON-schema enum carries no order — consumers must rank explicitly (alphabetical sorting puts `irreversible` between the two reversible classes).
+
+---
+
+## Discovery method
+
+Lineage: [VERIS 1.4.1](https://github.com/vz-risk/veris) `discovery_method`, flattened from its external/internal/partner varieties and AI-adapted (`media-report` has no VERIS parent — journalist investigations surface many AI incidents). Severity says how bad, reversibility says paged-or-queued; `discovery_method` says **which detection investments actually surface GenAI incidents** — e.g. how many landmark incidents were found by external researchers versus the operator's own telemetry.
+
+| Value | Meaning (VERIS parent) |
+|---|---|
+| `security-researcher` | External researcher / bug bounty (Ext — Security researcher) |
+| `actor-disclosure` | The attacker announced, leaked, or extorted (Ext — Actor disclosure) |
+| `customer-report` | Affected user or customer reported it (Ext — Customer) |
+| `media-report` | Journalist or media investigation surfaced it (AI adaptation) |
+| `law-enforcement` | Law enforcement or regulator notified the operator (Ext — Law enforcement) |
+| `internal-monitoring` | Operator telemetry: logs, guardrails, anomaly detection (Int — Log review / monitoring) |
+| `internal-report` | Reported by an employee or insider (Int — Reported by employee) |
+| `vendor-monitoring` | Platform or model-provider abuse detection (Partner — Monitoring service) |
+| `other` | Known channel not listed above |
+
+Scope rules — identical to [Reversibility class](#reversibility-class): **landmark tier only** (validate.py integrity invariant), **evidence-gated** via `data/curation_overrides.json` (the source must state the discovery channel; evidence + review date in the override `_note`), and **absence means unassessed, not internally detected**.
 
 ---
 

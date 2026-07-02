@@ -50,10 +50,11 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
     5.   Scope gate (INCLUSION.md): no out-of-scope malicious-package entry
          may survive — makes the v2.3.1 scope-purge a hard, enforced
          invariant so the generic-malware noise can never return.
-    6.   Reversibility gate (#74): `reversibility_class` is a landmark-tier,
-         evidence-gated label. `tier` is re-derived every build, so an entry
-         drifting out of the landmark set must fail loudly rather than ship
-         a stale editorial judgment on a feed record.
+    6.   Landmark-label gate (#74): `reversibility_class` and
+         `discovery_method` are landmark-tier, evidence-gated labels. `tier`
+         is re-derived every build, so an entry drifting out of the landmark
+         set must fail loudly rather than ship a stale editorial judgment on
+         a feed record.
     """
     problems: list[str] = []
     incidents = data["incidents"]
@@ -87,14 +88,15 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
                 f"scope purge (e.g. {', '.join(oos[:5])})"
             )
 
-    # 6) Reversibility gate — labels only on the landmark tier.
-    mislabeled = [e["id"] for e in incidents
-                  if e.get("reversibility_class") and e.get("tier") != "landmark"]
-    if mislabeled:
-        problems.append(
-            f"{len(mislabeled)} entr(ies) carry reversibility_class outside the "
-            f"landmark tier (e.g. {', '.join(mislabeled[:5])})"
-        )
+    # 6) Landmark-label gate — evidence-gated labels only on the landmark tier.
+    for label_field in ("reversibility_class", "discovery_method"):
+        mislabeled = [e["id"] for e in incidents
+                      if e.get(label_field) and e.get("tier") != "landmark"]
+        if mislabeled:
+            problems.append(
+                f"{len(mislabeled)} entr(ies) carry {label_field} outside the "
+                f"landmark tier (e.g. {', '.join(mislabeled[:5])})"
+            )
 
     if deprecations is not None:
         into_map = {d.get("from"): d.get("into") for d in deprecations}
