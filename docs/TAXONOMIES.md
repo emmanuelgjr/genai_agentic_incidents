@@ -150,6 +150,10 @@ Scope rules (precision-over-coverage):
 - **Absence means unassessed, not `read-only`.**
 - The JSON-schema enum carries no order — consumers must rank explicitly (alphabetical sorting puts `irreversible` between the two reversible classes).
 
+Boundary rules (settled in [#74](https://github.com/emmanuelgjr/genai_incidents/issues/74) on INC-03152, the Replit prod-DB deletion):
+- **Realized outcome, not intrinsic risk.** Classes describe what the closing action could actually undo per the documented outcome: `irreversible` requires that *no compensating action was possible* — an action that succeeded rules it out, however catastrophic the mutation could have been. Counterfactual severity is already carried by `severity` and `attack_vector`; misleading recoverability claims by the agent belong in the `_note` evidence.
+- **Vantage point is the acting agent's session, not the vendor's infrastructure.** `reversible` is reserved for undo available within the acting system's own session or controls and trivially exercised (trash restore, unsent internal draft). Ask **"who had to act?"** — if recovery needed anyone or anything outside the acting agent's session (a human operator, vendor tooling, backups), it is `external-reversible`, even when the tooling is platform-native.
+
 ---
 
 ## Discovery method
