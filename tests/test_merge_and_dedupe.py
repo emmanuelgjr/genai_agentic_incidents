@@ -809,3 +809,35 @@ def test_new_bridge_blocked_even_when_one_side_has_prior():
     prior = {"S-a": "INC-00042", "CVE-2025-1111": "INC-00042"}
     surviving, tombstones = m.dedupe_entries([a, b], prior)
     assert len(surviving) == 2 and not tombstones
+
+
+# ---------------------------------------------------------------------------
+# CWE -> attack_vector reclassification (unanimity rule)
+# ---------------------------------------------------------------------------
+
+def test_vector_from_cwes_unanimous_and_ignores_unmapped():
+    cmap = {"CWE-79": "xss", "CWE-89": "sql-injection"}
+    assert m.vector_from_cwes(["CWE-79", "CWE-20"], cmap) == "xss"
+
+
+def test_vector_from_cwes_conflict_stays_unclassified():
+    cmap = {"CWE-79": "xss", "CWE-89": "sql-injection"}
+    assert m.vector_from_cwes(["CWE-79", "CWE-89"], cmap) is None
+
+
+def test_vector_from_cwes_empty_inputs():
+    cmap = {"CWE-79": "xss"}
+    assert m.vector_from_cwes(None, cmap) is None
+    assert m.vector_from_cwes([], cmap) is None
+    assert m.vector_from_cwes(["CWE-20"], cmap) is None
+    assert m.vector_from_cwes(["CWE-79"], {}) is None
+
+
+def test_cwe_vector_map_targets_known_vectors_only():
+    cmap = m.load_cwe_vector_map()
+    assert cmap, "mappings/cwe_attack_vector.json missing or empty"
+    veris = _json.loads((m.MAPPINGS / "veris.json").read_text(encoding="utf-8"))
+    vocab = set(veris["attack_vector_to_veris"])
+    assert set(cmap.values()) <= vocab
+    for generic in ("CWE-20", "CWE-74", "CWE-352", "CWE-611", "CWE-125", "CWE-787"):
+        assert generic not in cmap

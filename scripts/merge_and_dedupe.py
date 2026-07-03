@@ -804,6 +804,30 @@ def load_source(path: Path) -> list[dict]:
 DEPRECATIONS_PATH = DATA / "id_deprecations.json"
 CURATION_OVERRIDES_PATH = DATA / "curation_overrides.json"
 CISA_KEV_PATH = INGEST / "cisa_kev.json"
+CWE_VECTOR_PATH = MAPPINGS / "cwe_attack_vector.json"
+
+
+def load_cwe_vector_map() -> dict[str, str]:
+    """CWE id -> attack_vector for entries stuck at "other".
+
+    Only unambiguous CWE classes are listed (see the mapping's ``_doc``); the
+    caller must apply the unanimity rule — reclassify only when every mappable
+    CWE on the entry agrees on a single vector.
+    """
+    if not CWE_VECTOR_PATH.exists():
+        return {}
+    data = json.loads(CWE_VECTOR_PATH.read_text(encoding="utf-8"))
+    return data.get("cwe_to_vector", {})
+
+
+def vector_from_cwes(cwe_ids: list[str] | None, cwe_map: dict[str, str]) -> str | None:
+    """Return the unanimous vector for the entry's CWEs, else None."""
+    if not cwe_ids or not cwe_map:
+        return None
+    vectors = {cwe_map[c] for c in set(cwe_ids) if c in cwe_map}
+    if len(vectors) == 1:
+        return next(iter(vectors))
+    return None
 
 
 def _load_cisa_kev() -> dict[str, dict]:
@@ -1207,6 +1231,8 @@ def main():
     #     compare a stale value against the previous output and spuriously
     #     bump `updated` (and therefore `generated`) on every rebuild —
     #     breaking the drift check whenever CI runs on a later calendar day.
+    cwe_vector_map = load_cwe_vector_map()
+    cwe_reclassified = 0
     for e in surviving:
         vec = (e.get("attack_vector") or "other").lower().strip()
         vec = _ATTACK_VECTOR_NORMALIZE.get(vec, vec)
@@ -1215,7 +1241,17 @@ def main():
                 (e.get("title") or "") + " " + (e.get("description") or "")
             )
             vec = classified or "other"
+        if vec == "other":
+            # Text gave nothing — fall back to unanimous CWE evidence
+            # (mappings/cwe_attack_vector.json; mixed signals stay "other").
+            from_cwe = vector_from_cwes(e.get("cwe_ids"), cwe_vector_map)
+            if from_cwe:
+                vec = from_cwe
+                cwe_reclassified += 1
         e["attack_vector"] = vec
+    if cwe_reclassified:
+        print(f"[cwe-vector] reclassified {cwe_reclassified} 'other' entries "
+              "from unanimous CWE evidence")
 
     # 4c) Backfill framework mappings for entries that arrived with no
     #     OWASP/NIST/ATLAS at all, seeding from the now-final attack_vector
