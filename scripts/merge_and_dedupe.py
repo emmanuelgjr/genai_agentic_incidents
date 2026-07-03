@@ -292,6 +292,19 @@ def slug_to_id(n: int) -> str:
     return f"INC-{n:05d}"
 
 
+def cve_disjoint(a: dict, b: dict) -> bool:
+    """True when both entries carry CVE ids and the sets share nothing.
+
+    Two advisories about *different* CVEs are different incidents no matter
+    how similar their reference URLs or templated titles look — weak-key
+    (URL / fuzzy-title) merges must never bridge them (#36). CVE-key and
+    source_id-key merges are unaffected: a shared identity key implies the
+    sets are not disjoint or the rows are the same upstream record.
+    """
+    ca, cb = set(a.get("cve_ids") or []), set(b.get("cve_ids") or [])
+    return bool(ca) and bool(cb) and not (ca & cb)
+
+
 _ATTACK_VECTOR_NORMALIZE: dict[str, str] = {
     "supply": "supply-chain",
     "prompt": "prompt-injection",
@@ -983,7 +996,10 @@ def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> No
         entry["updated"] = today
 
 
-def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
+def dedupe_entries(
+    all_entries: list[dict],
+    prior_id_by_key: dict[str, str] | None = None,
+) -> tuple[list[dict], list[dict]]:
     """Dedupe normalized entries (first hit wins: CVE > source_id > URL >
     fuzzy title ±1 year). Returns ``(surviving, tombstoned)`` — tombstoned
     entries were transitively absorbed into a survivor during reindexing.
@@ -991,7 +1007,23 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
     Every index hit and every transitive claim is resolved through
     ``_live`` so a merge can never target a tombstoned entry: content
     merged into a dead entry would be silently dropped with it (see
-    docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md)."""
+    docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md).
+
+    Weak keys (URL / fuzzy title) refuse to merge two entries whose CVE
+    sets are disjoint (#36) — UNLESS both sides already co-resided in the
+    same previously-published entry (``prior_id_by_key``: cve/source_id →
+    previous INC id). The grandfather clause keeps rebuilds of committed
+    data byte-stable; only *new* URL/title bridges are blocked."""
+    prior_id_by_key = prior_id_by_key or {}
+
+    def _same_prior(a: dict, b: dict) -> bool:
+        ka = list(a.get("cve_ids") or []) + list(a.get("source_ids") or [])
+        kb = list(b.get("cve_ids") or []) + list(b.get("source_ids") or [])
+        ia = {prior_id_by_key[k] for k in ka if k in prior_id_by_key}
+        if not ia:
+            return False
+        ib = {prior_id_by_key[k] for k in kb if k in prior_id_by_key}
+        return bool(ia & ib)
     by_cve: dict[str, dict] = {}
     by_url: dict[str, dict] = {}
     by_title: dict[str, dict] = {}
@@ -1022,7 +1054,7 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
         mid-pass would otherwise never be re-pointed at ``target`` and
         would keep referencing the tombstoned entry."""
 
-        def _claim(idx: dict, key: str) -> None:
+        def _claim(idx: dict, key: str, weak: bool = False) -> None:
             other = idx.get(key)
             if other is None:
                 idx[key] = target
@@ -1030,6 +1062,11 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             other = _live(other)
             if other is target or other.get("_tombstoned"):
                 idx[key] = target
+                return
+            if weak and cve_disjoint(target, other) and not _same_prior(target, other):
+                # Shared weak key (reference URL) between entries with
+                # disjoint CVE sets — different incidents. Leave the key
+                # with its first owner instead of bridging them (#36).
                 return
             # Transitive merge: pull other's content into target and retire it.
             merge_into(target, other)
@@ -1048,7 +1085,7 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
                 _claim(by_src, s)
             for u in urls:
                 if u:
-                    _claim(by_url, u)
+                    _claim(by_url, u, weak=True)
             unchanged = (
                 list(target.get("cve_ids") or []) == cves
                 and list(target.get("source_ids") or []) == srcs
@@ -1076,13 +1113,17 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             merge_into(src_hit, e)
             _reindex(src_hit)
             continue
-        # URL-key dedupe
+        # URL-key dedupe. A URL hit is refused when the CVE sets are
+        # disjoint and the pair isn't grandfathered (#36) — keep scanning,
+        # another reference may point at the right entry.
         url_hit = None
         for r in e.get("references", []):
             u = normalize_url(r.get("url", ""))
             if u and u in by_url:
-                url_hit = _live(by_url[u])
-                break
+                candidate = _live(by_url[u])
+                if not cve_disjoint(candidate, e) or _same_prior(candidate, e):
+                    url_hit = candidate
+                    break
         if url_hit:
             merge_into(url_hit, e)
             _reindex(url_hit)
@@ -1094,7 +1135,8 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
         if tk in by_title:
             title_hit = _live(by_title[tk])
             by_title[tk] = title_hit
-            if abs(title_hit["year"] - e["year"]) <= 1:
+            if abs(title_hit["year"] - e["year"]) <= 1 and (
+                    not cve_disjoint(title_hit, e) or _same_prior(title_hit, e)):
                 merge_into(title_hit, e)
                 _reindex(title_hit)
                 continue
@@ -1156,7 +1198,7 @@ def main():
     # 3+4) Dedupe; entries transitively absorbed during reindexing come back
     #      as tombstones so their old IDs can be recorded for citation
     #      resolution below.
-    surviving, tombstones = dedupe_entries(all_entries)
+    surviving, tombstones = dedupe_entries(all_entries, prev_id_by_key)
     today_str = str(utc_today())
 
     # 4b) Finalize attack_vector (normalize fragments + reclassify "other")

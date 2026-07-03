@@ -588,8 +588,10 @@ def _dedupe_entry(title, year=2024, source_ids=None, cve_ids=None, references=No
 def test_dedupe_title_hit_on_tombstoned_entry_keeps_content():
     # A and B start as survivors; C shares a source_id with each, so B is
     # transitively absorbed into A and tombstoned — but by_title still points
-    # at dead B. D's only match is that stale title key: its CVE must end up
-    # on the live absorber, not silently dropped with the tombstone.
+    # at dead B. D's only match is that stale title key: its CVE must NOT be
+    # silently dropped with the tombstone. Since the #36 disjoint-CVE guard,
+    # D (a different CVE than the absorber now carries) survives as its own
+    # entry instead of being folded in — content is preserved by survival.
     a = _dedupe_entry("Alpha incident", source_ids=["S-A"])
     b = _dedupe_entry("Beta incident", source_ids=["S-B"], cve_ids=["CVE-2024-7001"])
     c = _dedupe_entry("Gamma incident", source_ids=["S-A", "S-B"])
@@ -602,7 +604,9 @@ def test_dedupe_title_hit_on_tombstoned_entry_keeps_content():
     assert "CVE-2024-7002" in surviving_cves  # lost before the _live() fix
     surviving_srcs = {s for e in surviving for s in (e.get("source_ids") or [])}
     assert {"S-A", "S-B", "S-D"} <= surviving_srcs
-    assert len(surviving) == 1 and len(tombstoned) == 1
+    assert len(surviving) == 2 and len(tombstoned) == 1
+    d_alone = next(e for e in surviving if "CVE-2024-7002" in (e.get("cve_ids") or []))
+    assert d_alone.get("source_ids") == ["S-D"]  # not absorbed into A
 
 
 def test_dedupe_keys_absorbed_mid_reindex_are_reclaimed():
@@ -718,3 +722,90 @@ def test_provenance_fields_not_in_content_snapshot():
     # Must stay out of the snapshot so they never spuriously bump `updated`.
     for f in ("source_count", "confidence", "source_status", "first_seen", "last_seen"):
         assert f not in m._CONTENT_FIELDS
+
+
+# ---------------------------------------------------------------------------
+# #36: weak-key merges must never bridge disjoint-CVE incidents
+# ---------------------------------------------------------------------------
+
+def _mk(title, year=2026, cves=None, srcs=None, urls=None):
+    return {
+        "title": title, "year": year, "date": str(year),
+        "cve_ids": cves or [], "source_ids": srcs or [],
+        "references": [{"url": u, "type": "advisory"} for u in (urls or [])],
+        "tags": [],
+    }
+
+
+def test_cve_disjoint_predicate():
+    assert m.cve_disjoint(_mk("a", cves=["CVE-1"]), _mk("b", cves=["CVE-2"]))
+    assert not m.cve_disjoint(_mk("a", cves=["CVE-1"]), _mk("b", cves=["CVE-1", "CVE-2"]))
+    assert not m.cve_disjoint(_mk("a", cves=["CVE-1"]), _mk("b"))
+    assert not m.cve_disjoint(_mk("a"), _mk("b"))
+
+
+def test_shared_url_disjoint_cves_do_not_merge():
+    a = _mk("MLflow path traversal", cves=["CVE-2025-1111"], srcs=["GHSA-a"],
+            urls=["https://example.com/shared-advisory", "https://nvd.nist.gov/vuln/detail/CVE-2025-1111"])
+    b = _mk("MLflow command injection", cves=["CVE-2025-2222"], srcs=["GHSA-b"],
+            urls=["https://example.com/shared-advisory", "https://nvd.nist.gov/vuln/detail/CVE-2025-2222"])
+    surviving, tombstones = m.dedupe_entries([a, b])
+    assert len(surviving) == 2 and not tombstones
+
+
+def test_transitive_url_bridge_is_blocked():
+    # The #36 MLflow shape: a CVE-less row shares URLs with two distinct-CVE
+    # entries; it may merge into one, but must not drag the other in.
+    a = _mk("MLflow LFI", cves=["CVE-2025-1111"], srcs=["S-a"],
+            urls=["https://example.com/adv-1"])
+    c = _mk("MLflow SSRF", cves=["CVE-2025-2222"], srcs=["S-c"],
+            urls=["https://example.com/adv-2"])
+    bridge = _mk("MLflow security roundup", srcs=["S-b"],
+                 urls=["https://example.com/adv-1", "https://example.com/adv-2"])
+    surviving, tombstones = m.dedupe_entries([a, c, bridge])
+    ids = {tuple(sorted(s["cve_ids"])) for s in surviving}
+    assert ("CVE-2025-1111",) in ids or ("CVE-2025-1111", "CVE-2025-2222") not in ids
+    assert len(surviving) == 2, [s["title"] for s in surviving]
+    assert ("CVE-2025-2222",) in ids  # C kept its own identity
+
+
+def test_shared_cve_still_merges_via_url_and_cve():
+    a = _mk("Advisory view", cves=["CVE-2025-1111"], srcs=["S-a"],
+            urls=["https://example.com/adv-1"])
+    b = _mk("Vendor view", cves=["CVE-2025-1111", "CVE-2025-3333"], srcs=["S-b"],
+            urls=["https://example.com/adv-1"])
+    surviving, tombstones = m.dedupe_entries([a, b])
+    assert len(surviving) == 1
+    assert sorted(surviving[0]["cve_ids"]) == ["CVE-2025-1111", "CVE-2025-3333"]
+
+
+def test_templated_title_disjoint_cves_do_not_merge():
+    a = _mk("A command injection vulnerability exists in mlflow", cves=["CVE-2025-1111"], srcs=["S-a"])
+    b = _mk("A command injection vulnerability exists in mlflow", cves=["CVE-2025-2222"], srcs=["S-b"])
+    surviving, tombstones = m.dedupe_entries([a, b])
+    assert len(surviving) == 2 and not tombstones
+
+
+def test_grandfathered_prior_merge_still_allowed():
+    # Disjoint CVEs, but both sides' keys map to the same previously
+    # published entry — the historical merge must reproduce (#36 stays
+    # backward-compatible with committed data).
+    a = _mk("Roundup A", cves=["CVE-2025-1111"], srcs=["S-a"],
+            urls=["https://example.com/adv-1"])
+    b = _mk("Roundup B", cves=["CVE-2025-2222"], srcs=["S-b"],
+            urls=["https://example.com/adv-1"])
+    prior = {"S-a": "INC-00042", "S-b": "INC-00042",
+             "CVE-2025-1111": "INC-00042", "CVE-2025-2222": "INC-00042"}
+    surviving, tombstones = m.dedupe_entries([a, b], prior)
+    assert len(surviving) == 1
+    assert sorted(surviving[0]["cve_ids"]) == ["CVE-2025-1111", "CVE-2025-2222"]
+
+
+def test_new_bridge_blocked_even_when_one_side_has_prior():
+    a = _mk("Old entry", cves=["CVE-2025-1111"], srcs=["S-a"],
+            urls=["https://example.com/adv-1"])
+    b = _mk("New feed row", cves=["CVE-2025-2222"], srcs=["S-new"],
+            urls=["https://example.com/adv-1"])
+    prior = {"S-a": "INC-00042", "CVE-2025-1111": "INC-00042"}
+    surviving, tombstones = m.dedupe_entries([a, b], prior)
+    assert len(surviving) == 2 and not tombstones
