@@ -292,6 +292,41 @@ def slug_to_id(n: int) -> str:
     return f"INC-{n:05d}"
 
 
+def cve_disjoint(a: dict, b: dict) -> bool:
+    """True when both entries carry CVE ids and the sets share nothing.
+
+    Two advisories about *different* CVEs are different incidents no matter
+    how similar their reference URLs or templated titles look — weak-key
+    (URL / fuzzy-title) merges must never bridge them (#36). CVE-key and
+    source_id-key merges are unaffected: a shared identity key implies the
+    sets are not disjoint or the rows are the same upstream record.
+    """
+    ca, cb = set(a.get("cve_ids") or []), set(b.get("cve_ids") or [])
+    return bool(ca) and bool(cb) and not (ca & cb)
+
+
+_GENERIC_URL_HOSTS = ("github.com", "gitlab.com", "bitbucket.org")
+
+
+def is_generic_url(norm_url: str) -> bool:
+    """True for repo-root / index URLs too weak to key incident identity.
+
+    Many distinct advisories share e.g. ``github.com/<org>/<repo>`` or a
+    huntr index page as a reference; keying the URL dedupe index on those
+    creates transitive merge bridges between unrelated incidents (#36).
+    Takes a ``normalize_url``-normalized URL (host/path, no scheme).
+    """
+    if not norm_url:
+        return True
+    host, _, path = norm_url.partition("/")
+    segs = [s for s in path.split("/") if s]
+    if host in _GENERIC_URL_HOSTS and len(segs) <= 2:
+        return True
+    if host in ("huntr.com", "huntr.dev") and len(segs) <= 1:
+        return True
+    return False
+
+
 _ATTACK_VECTOR_NORMALIZE: dict[str, str] = {
     "supply": "supply-chain",
     "prompt": "prompt-injection",
@@ -1022,7 +1057,7 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
         mid-pass would otherwise never be re-pointed at ``target`` and
         would keep referencing the tombstoned entry."""
 
-        def _claim(idx: dict, key: str) -> None:
+        def _claim(idx: dict, key: str, weak: bool = False) -> None:
             other = idx.get(key)
             if other is None:
                 idx[key] = target
@@ -1030,6 +1065,11 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             other = _live(other)
             if other is target or other.get("_tombstoned"):
                 idx[key] = target
+                return
+            if weak and cve_disjoint(target, other):
+                # Shared weak key (reference URL) between entries with
+                # disjoint CVE sets — different incidents. Leave the key
+                # with its first owner instead of bridging them (#36).
                 return
             # Transitive merge: pull other's content into target and retire it.
             merge_into(target, other)
@@ -1047,8 +1087,8 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             for s in srcs:
                 _claim(by_src, s)
             for u in urls:
-                if u:
-                    _claim(by_url, u)
+                if u and not is_generic_url(u):
+                    _claim(by_url, u, weak=True)
             unchanged = (
                 list(target.get("cve_ids") or []) == cves
                 and list(target.get("source_ids") or []) == srcs
@@ -1076,13 +1116,17 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             merge_into(src_hit, e)
             _reindex(src_hit)
             continue
-        # URL-key dedupe
+        # URL-key dedupe. Generic repo-root/index URLs never key identity,
+        # and a URL hit is refused when the CVE sets are disjoint (#36) —
+        # keep scanning, another reference may point at the right entry.
         url_hit = None
         for r in e.get("references", []):
             u = normalize_url(r.get("url", ""))
-            if u and u in by_url:
-                url_hit = _live(by_url[u])
-                break
+            if u and not is_generic_url(u) and u in by_url:
+                candidate = _live(by_url[u])
+                if not cve_disjoint(candidate, e):
+                    url_hit = candidate
+                    break
         if url_hit:
             merge_into(url_hit, e)
             _reindex(url_hit)
@@ -1094,7 +1138,7 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
         if tk in by_title:
             title_hit = _live(by_title[tk])
             by_title[tk] = title_hit
-            if abs(title_hit["year"] - e["year"]) <= 1:
+            if abs(title_hit["year"] - e["year"]) <= 1 and not cve_disjoint(title_hit, e):
                 merge_into(title_hit, e)
                 _reindex(title_hit)
                 continue
