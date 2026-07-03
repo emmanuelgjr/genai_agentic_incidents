@@ -62,56 +62,39 @@ ATLAS_TECH_TO_ASI = {
 }
 
 
+# Pinned ATLAS release parsed by ingest_atlas(). Upstream retired the
+# per-object data/ tree and froze dist/ATLAS.yaml at 5.6.0; the versioned
+# v6 dist files are the maintained, reproducible source.
+ATLAS_DIST = ("dist", "v6", "ATLAS-2026.06.yaml")
+
+
 def ingest_atlas() -> int:
-    atlas_dir = EXTERNAL / "atlas-data" / "data" / "case-studies"
-    if not atlas_dir.exists():
-        print("[atlas] case-studies dir missing — skipping")
+    dist = EXTERNAL / "atlas-data"
+    for part in ATLAS_DIST:
+        dist = dist / part
+    if not dist.exists():
+        print(f"[atlas] {'/'.join(ATLAS_DIST)} missing — skipping")
         return 0
+    try:
+        root = safe_yaml_load(dist.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"  WARN: failed to parse {dist.name}: {e}")
+        return 0
+    if not isinstance(root, dict):
+        return 0
+    relationships = root.get("relationships") or {}
     out = []
-    # Also build a tactic lookup from the data/tactics files
-    tactics_dir = EXTERNAL / "atlas-data" / "data" / "tactics"
-    tactic_id_by_name = {}
-    if tactics_dir.exists():
-        for f in tactics_dir.glob("*.yaml"):
-            try:
-                d = safe_yaml_load(f.read_text(encoding="utf-8"))
-                if isinstance(d, dict):
-                    tactic_id_by_name[d.get("name", "").lower()] = d.get("id")
-            except Exception:
-                pass
 
-    # Technique reference map
-    tech_dir = EXTERNAL / "atlas-data" / "data" / "techniques"
-    tech_id_by_handle = {}
-    if tech_dir.exists():
-        for f in tech_dir.glob("*.yaml"):
-            try:
-                d = safe_yaml_load(f.read_text(encoding="utf-8"))
-                if isinstance(d, dict):
-                    # ATLAS uses jinja-like {{handle.id}} — try to derive handle from filename
-                    handle = f.stem.lower().replace(".", "_")
-                    tech_id_by_handle[handle] = d.get("id")
-                    if d.get("name"):
-                        tech_id_by_handle[d["name"].lower().replace(" ", "_")] = d.get("id")
-            except Exception:
-                pass
-
-    for f in sorted(atlas_dir.glob("AML.CS*.yaml")):
-        try:
-            cs = safe_yaml_load(f.read_text(encoding="utf-8"))
-        except Exception as e:
-            print(f"  WARN: failed to parse {f.name}: {e}")
-            continue
+    for cs_id, cs in sorted((root.get("case-studies") or {}).items()):
         if not isinstance(cs, dict):
             continue
 
-        cs_id = cs.get("id", f.stem)
-        title = cs.get("name", "").strip()
-        summary = cs.get("summary", "").strip()
+        title = (cs.get("name") or "").strip()
+        summary = (cs.get("description") or "").strip()
         if not title or not summary:
             continue
 
-        inc_date = cs.get("incident-date")
+        inc_date = cs.get("date")
         year = None
         date_str = ""
         if inc_date:
@@ -127,26 +110,17 @@ def ingest_atlas() -> int:
         if not year:
             year = 2020  # placeholder; ATLAS publishes pre-LLM cases too
 
-        # Extract technique IDs from procedure
+        # Technique/tactic IDs arrive fully resolved in the dist file's
+        # `employs` relationships (the old data/ tree needed jinja handles)
         atlas_tech = set()
         atlas_tactics = set()
-        for step in cs.get("procedure") or []:
-            t = step.get("technique") or ""
-            # technique field looks like '{{handle.id}}' — needs the handle map
-            m = re.search(r"\{\{\s*([a-z_0-9]+)\.id\s*\}\}", t)
-            if m:
-                handle = m.group(1)
-                resolved = tech_id_by_handle.get(handle)
-                if resolved:
-                    atlas_tech.add(resolved)
+        for step in (relationships.get(cs_id) or {}).get("employs") or []:
+            t = step.get("target") or ""
+            if t.startswith("AML.T") and not t.startswith("AML.TA"):
+                atlas_tech.add(t)
             tactic = step.get("tactic") or ""
-            m = re.search(r"\{\{\s*([a-z_0-9]+)\.id\s*\}\}", tactic)
-            if m:
-                handle = m.group(1)
-                # Try as tactic-style id
-                resolved = tech_id_by_handle.get(handle)
-                if resolved and resolved.startswith("AML.TA"):
-                    atlas_tactics.add(resolved)
+            if tactic.startswith("AML.TA"):
+                atlas_tactics.add(tactic)
 
         # Derive OWASP codes from techniques
         llm = set()
@@ -157,8 +131,8 @@ def ingest_atlas() -> int:
             for c in ATLAS_TECH_TO_ASI.get(t, []):
                 asi.add(c)
 
-        # Determine category
-        cat = cs.get("case-study-type", "incident")
+        # Determine category (v6 `type` is "Incident" or "Exercise")
+        cat = str(cs.get("type") or "incident").lower()
         category = "real-world" if cat == "incident" else "research"
 
         refs = []
