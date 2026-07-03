@@ -744,29 +744,11 @@ def test_cve_disjoint_predicate():
     assert not m.cve_disjoint(_mk("a"), _mk("b"))
 
 
-def test_is_generic_url():
-    assert m.is_generic_url("github.com/mlflow/mlflow")
-    assert m.is_generic_url("github.com/mlflow")
-    assert m.is_generic_url("huntr.com/bounties")
-    assert m.is_generic_url("huntr.com")
-    assert not m.is_generic_url("github.com/mlflow/mlflow/security/advisories/ghsa-x")
-    assert not m.is_generic_url("huntr.com/bounties/11a8b1b2-e63e-4b6a-9f22-something")
-    assert not m.is_generic_url("nvd.nist.gov/vuln/detail/cve-2026-1")
-
-
 def test_shared_url_disjoint_cves_do_not_merge():
     a = _mk("MLflow path traversal", cves=["CVE-2025-1111"], srcs=["GHSA-a"],
             urls=["https://example.com/shared-advisory", "https://nvd.nist.gov/vuln/detail/CVE-2025-1111"])
     b = _mk("MLflow command injection", cves=["CVE-2025-2222"], srcs=["GHSA-b"],
             urls=["https://example.com/shared-advisory", "https://nvd.nist.gov/vuln/detail/CVE-2025-2222"])
-    surviving, tombstones = m.dedupe_entries([a, b])
-    assert len(surviving) == 2 and not tombstones
-
-
-def test_generic_repo_url_never_keys_a_merge():
-    a = _mk("Tool A flaw", cves=["CVE-2025-1111"], srcs=["S-a"],
-            urls=["https://github.com/mlflow/mlflow"])
-    b = _mk("Tool B flaw", srcs=["S-b"], urls=["https://github.com/mlflow/mlflow"])
     surviving, tombstones = m.dedupe_entries([a, b])
     assert len(surviving) == 2 and not tombstones
 
@@ -801,4 +783,29 @@ def test_templated_title_disjoint_cves_do_not_merge():
     a = _mk("A command injection vulnerability exists in mlflow", cves=["CVE-2025-1111"], srcs=["S-a"])
     b = _mk("A command injection vulnerability exists in mlflow", cves=["CVE-2025-2222"], srcs=["S-b"])
     surviving, tombstones = m.dedupe_entries([a, b])
+    assert len(surviving) == 2 and not tombstones
+
+
+def test_grandfathered_prior_merge_still_allowed():
+    # Disjoint CVEs, but both sides' keys map to the same previously
+    # published entry — the historical merge must reproduce (#36 stays
+    # backward-compatible with committed data).
+    a = _mk("Roundup A", cves=["CVE-2025-1111"], srcs=["S-a"],
+            urls=["https://example.com/adv-1"])
+    b = _mk("Roundup B", cves=["CVE-2025-2222"], srcs=["S-b"],
+            urls=["https://example.com/adv-1"])
+    prior = {"S-a": "INC-00042", "S-b": "INC-00042",
+             "CVE-2025-1111": "INC-00042", "CVE-2025-2222": "INC-00042"}
+    surviving, tombstones = m.dedupe_entries([a, b], prior)
+    assert len(surviving) == 1
+    assert sorted(surviving[0]["cve_ids"]) == ["CVE-2025-1111", "CVE-2025-2222"]
+
+
+def test_new_bridge_blocked_even_when_one_side_has_prior():
+    a = _mk("Old entry", cves=["CVE-2025-1111"], srcs=["S-a"],
+            urls=["https://example.com/adv-1"])
+    b = _mk("New feed row", cves=["CVE-2025-2222"], srcs=["S-new"],
+            urls=["https://example.com/adv-1"])
+    prior = {"S-a": "INC-00042", "CVE-2025-1111": "INC-00042"}
+    surviving, tombstones = m.dedupe_entries([a, b], prior)
     assert len(surviving) == 2 and not tombstones

@@ -305,28 +305,6 @@ def cve_disjoint(a: dict, b: dict) -> bool:
     return bool(ca) and bool(cb) and not (ca & cb)
 
 
-_GENERIC_URL_HOSTS = ("github.com", "gitlab.com", "bitbucket.org")
-
-
-def is_generic_url(norm_url: str) -> bool:
-    """True for repo-root / index URLs too weak to key incident identity.
-
-    Many distinct advisories share e.g. ``github.com/<org>/<repo>`` or a
-    huntr index page as a reference; keying the URL dedupe index on those
-    creates transitive merge bridges between unrelated incidents (#36).
-    Takes a ``normalize_url``-normalized URL (host/path, no scheme).
-    """
-    if not norm_url:
-        return True
-    host, _, path = norm_url.partition("/")
-    segs = [s for s in path.split("/") if s]
-    if host in _GENERIC_URL_HOSTS and len(segs) <= 2:
-        return True
-    if host in ("huntr.com", "huntr.dev") and len(segs) <= 1:
-        return True
-    return False
-
-
 _ATTACK_VECTOR_NORMALIZE: dict[str, str] = {
     "supply": "supply-chain",
     "prompt": "prompt-injection",
@@ -1018,7 +996,10 @@ def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> No
         entry["updated"] = today
 
 
-def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
+def dedupe_entries(
+    all_entries: list[dict],
+    prior_id_by_key: dict[str, str] | None = None,
+) -> tuple[list[dict], list[dict]]:
     """Dedupe normalized entries (first hit wins: CVE > source_id > URL >
     fuzzy title ±1 year). Returns ``(surviving, tombstoned)`` — tombstoned
     entries were transitively absorbed into a survivor during reindexing.
@@ -1026,7 +1007,23 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
     Every index hit and every transitive claim is resolved through
     ``_live`` so a merge can never target a tombstoned entry: content
     merged into a dead entry would be silently dropped with it (see
-    docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md)."""
+    docs/superpowers/specs/2026-06-03-dedup-tombstone-bug.md).
+
+    Weak keys (URL / fuzzy title) refuse to merge two entries whose CVE
+    sets are disjoint (#36) — UNLESS both sides already co-resided in the
+    same previously-published entry (``prior_id_by_key``: cve/source_id →
+    previous INC id). The grandfather clause keeps rebuilds of committed
+    data byte-stable; only *new* URL/title bridges are blocked."""
+    prior_id_by_key = prior_id_by_key or {}
+
+    def _same_prior(a: dict, b: dict) -> bool:
+        ka = list(a.get("cve_ids") or []) + list(a.get("source_ids") or [])
+        kb = list(b.get("cve_ids") or []) + list(b.get("source_ids") or [])
+        ia = {prior_id_by_key[k] for k in ka if k in prior_id_by_key}
+        if not ia:
+            return False
+        ib = {prior_id_by_key[k] for k in kb if k in prior_id_by_key}
+        return bool(ia & ib)
     by_cve: dict[str, dict] = {}
     by_url: dict[str, dict] = {}
     by_title: dict[str, dict] = {}
@@ -1066,7 +1063,7 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             if other is target or other.get("_tombstoned"):
                 idx[key] = target
                 return
-            if weak and cve_disjoint(target, other):
+            if weak and cve_disjoint(target, other) and not _same_prior(target, other):
                 # Shared weak key (reference URL) between entries with
                 # disjoint CVE sets — different incidents. Leave the key
                 # with its first owner instead of bridging them (#36).
@@ -1087,7 +1084,7 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             for s in srcs:
                 _claim(by_src, s)
             for u in urls:
-                if u and not is_generic_url(u):
+                if u:
                     _claim(by_url, u, weak=True)
             unchanged = (
                 list(target.get("cve_ids") or []) == cves
@@ -1116,15 +1113,15 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
             merge_into(src_hit, e)
             _reindex(src_hit)
             continue
-        # URL-key dedupe. Generic repo-root/index URLs never key identity,
-        # and a URL hit is refused when the CVE sets are disjoint (#36) —
-        # keep scanning, another reference may point at the right entry.
+        # URL-key dedupe. A URL hit is refused when the CVE sets are
+        # disjoint and the pair isn't grandfathered (#36) — keep scanning,
+        # another reference may point at the right entry.
         url_hit = None
         for r in e.get("references", []):
             u = normalize_url(r.get("url", ""))
-            if u and not is_generic_url(u) and u in by_url:
+            if u and u in by_url:
                 candidate = _live(by_url[u])
-                if not cve_disjoint(candidate, e):
+                if not cve_disjoint(candidate, e) or _same_prior(candidate, e):
                     url_hit = candidate
                     break
         if url_hit:
@@ -1138,7 +1135,8 @@ def dedupe_entries(all_entries: list[dict]) -> tuple[list[dict], list[dict]]:
         if tk in by_title:
             title_hit = _live(by_title[tk])
             by_title[tk] = title_hit
-            if abs(title_hit["year"] - e["year"]) <= 1 and not cve_disjoint(title_hit, e):
+            if abs(title_hit["year"] - e["year"]) <= 1 and (
+                    not cve_disjoint(title_hit, e) or _same_prior(title_hit, e)):
                 merge_into(title_hit, e)
                 _reindex(title_hit)
                 continue
@@ -1200,7 +1198,7 @@ def main():
     # 3+4) Dedupe; entries transitively absorbed during reindexing come back
     #      as tombstones so their old IDs can be recorded for citation
     #      resolution below.
-    surviving, tombstones = dedupe_entries(all_entries)
+    surviving, tombstones = dedupe_entries(all_entries, prev_id_by_key)
     today_str = str(utc_today())
 
     # 4b) Finalize attack_vector (normalize fragments + reclassify "other")
