@@ -5,6 +5,48 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.7.0] — 2026-07-03
+
+Data-quality and interoperability release. Incident composition is unchanged
+from v2.6.0 (12,770 entries, 0 added / 0 removed) — the work is in
+classification precision, threat-intel mapping freshness, and the first
+populated landmark-tier label.
+
+### Changed (interoperability)
+- **MITRE ATLAS mapping refreshed to content v2026.06** (`mappings/mitre_atlas.json`;
+  ATLAS froze the old `dist/ATLAS.yaml` at 5.6.0, so `scripts/ingest_external.py`
+  now parses the pinned `dist/v6/ATLAS-2026.06.yaml`). Adds techniques
+  `AML.T0113`, `AML.T0114`, `AML.T0091.001`; no renames or removals for existing
+  IDs. (#86)
+
+### Changed (classification precision)
+- **844 `attack_vector: other` entries reclassified from unanimous CWE evidence**
+  (`other` 4,589 → 3,745). A new `mappings/cwe_attack_vector.json` maps 35
+  unambiguous CWE classes to 10 vectors, applied only when text classification
+  left an entry at `other` **and** every mappable CWE on it agrees (unanimity
+  rule — mixed signals stay `other`). A 50-entry random sample reviewed 50/50
+  defensible. (#89)
+
+### Added (first labels)
+- **First `reversibility_class` label populated** — INC-03152 (the Replit
+  agent production-database deletion) classified `external-reversible`, with
+  closing-action evidence in the curation override. The boundary rubric
+  (realized-outcome, "who had to act?") is now documented in `TAXONOMIES.md`.
+  First community-contributed label (proposal #74). (#85)
+
+### Fixed
+- **Dedupe no longer over-merges distinct-CVE incidents** on a full CVE-feed
+  refresh — weak keys (shared reference URL, templated title) can no longer
+  bridge two entries with disjoint CVE sets, including transitive claims
+  (the shape that collapsed six distinct MLflow CVEs into one). Historical
+  merges are grandfathered so committed data is byte-stable. (#87, #36)
+
+### Docs
+- Datasheet/methods-paper truth-pass: incident count corrected, the two v2.6.0
+  landmark labels and the VERIS crosswalk documented, TAXII/MISP distribution
+  and `veris:*` machinetags surfaced; Hugging Face `size_categories` now
+  derived from the record count. (#84)
+
 ## [2.6.0] — 2026-07-02
 
 ### Added (Schema — landmark-tier labels)
