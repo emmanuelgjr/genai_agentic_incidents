@@ -4,7 +4,7 @@ Single source of truth for GenAI and agentic AI security incidents.
 Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS**.
 
 - **Version:** 2.6.0
-- **Generated:** 2026-07-02
+- **Generated:** 2026-07-03
 - **Total incidents:** **12,770**
 - **Date range:** 1983 – 2026
 - **With CVE:** 5,304
