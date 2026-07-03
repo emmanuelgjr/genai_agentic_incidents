@@ -91,7 +91,11 @@ heuristics seeded from the finalised attack vector, then cascaded
 fields under the determinism contract and are disputable via the corrections
 process. We make no claim that heuristic mappings are expert-reviewed for every
 entry; the `quality_tier` and `confidence` fields expose how vetted each record
-is.
+is. A further export-only crosswalk maps the controlled `attack_vector`
+vocabulary to VERIS 1.4.1 enum paths (`mappings/veris.json`), emitted as
+`veris:*` machinetags in the MISP feed — closest-defensible-enum curation,
+deliberately not derived by chaining ATLAS→ATT&CK→VERIS (see
+[`TAXONOMIES.md`](../TAXONOMIES.md)).
 
 ## 6. Schema and provenance
 
@@ -99,7 +103,13 @@ Every entry carries identity (`id`, `source_ids`), classification (severity,
 category, `corpus`), the five framework mappings, optional CVE/CWE/CVSS and KEV
 fields, and a **provenance block**: `quality_tier`, rule-derived `confidence`
 (high/medium/low), `source_count`, `source_status`, `first_seen`/`last_seen`,
-and `tier` (landmark vs feed). Free-text fields (`description`, etc.) are
+and `tier` (landmark vs feed). Landmark-tier entries may additionally carry two
+optional, evidence-gated labels — `reversibility_class` (reversibility of the
+incident's closing action) and `discovery_method` (how the incident was first
+surfaced; VERIS 1.4.1 lineage) — assigned only through
+`data/curation_overrides.json` with closing-action evidence in the override
+note and enforced by a landmark-tier integrity invariant; absence means
+unassessed. Free-text fields (`description`, etc.) are
 aggregated **verbatim and are untrusted** — they can contain raw HTML/exploit
 payloads — and must be escaped before rendering; the project's own renderer does
 so, and a CI guard enforces it.

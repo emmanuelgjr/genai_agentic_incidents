@@ -11,20 +11,24 @@ ATLAS — so developers, AppSec/threat-intel teams, and researchers can query,
 pivot, and cite incidents instead of re-scraping scattered trackers.
 
 ## Composition
-- **Instances:** consolidated incidents (currently 7,720), each an alleged
+- **Instances:** consolidated incidents (12,770 as of v2.6.0 — live count in
+  [`data/stats.json`](../data/stats.json)), each an alleged
   real-world harm, disclosed vulnerability, threat report, or research/red-team
   demonstration involving an AI system.
 - **Split:** `corpus` = `security` vs `ai-harm`; `category` distinguishes
   real-world from research/red-team/regulatory entries.
 - **Labels:** severity, attack_vector, and OWASP/NIST/ATLAS mappings — assigned
   by deterministic heuristics and, for a growing subset, human/assisted review
-  (see `quality_tier`).
+  (see `quality_tier`). Landmark-tier entries may additionally carry the
+  evidence-gated `reversibility_class` and `discovery_method` labels, assigned
+  only through curation overrides with closing-action evidence; absence means
+  unassessed (see [`TAXONOMIES.md`](TAXONOMIES.md)).
 - **Provenance:** every entry records its upstream `source_ids`.
 
 ## Collection
 Aggregated from public, credible sources: AI Incident Database (AIID), AIAAIC,
 OECD AI Incidents Monitor, MIT AI Risk Repository, MITRE ATLAS, AVID, NVD +
-GitHub Security Advisories + OSV.dev (AI/ML packages), OWASP, vendor threat
+GitHub Security Advisories + OSV.dev (AI/ML packages), CISA KEV, OWASP, vendor threat
 reports, and peer-reviewed venues (arXiv/USENIX/CCS/NDSS). Ingestion scripts
 live in [`scripts/`](../scripts); each source is re-pulled, normalized, then
 deduplicated by CVE / canonical URL / fuzzy title.
@@ -48,7 +52,7 @@ deduplicated by CVE / canonical URL / fuzzy title.
 - **Source & language bias:** English-language, Western-media-skewed; under-counts
   unreported or non-English incidents.
 - **Heuristic labels:** `auto`-tier mappings are unreviewed; `attack_vector`
-  `other` (~39%) reflects genuinely uncategorized harm incidents.
+  `other` (~36%) reflects genuinely uncategorized harm incidents.
 - **Recency lag:** very recent CVEs may lack CVSS until NVD scores them.
 - **Scope drift:** broad sources (AIAAIC/OECD) include pre-LLM algorithmic harms.
 - **Untrusted free text (security):** `title`, `description`, `affected`,
@@ -62,7 +66,10 @@ deduplicated by CVE / canonical URL / fuzzy title.
 
 ## Distribution & licence
 - **Data:** CC-BY-4.0. **Code:** MIT. DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676).
-- Distributed via GitHub, PyPI (`genai-incidents`), Hugging Face Datasets, and a STIX 2.1 bundle.
+- Distributed via GitHub, PyPI (`genai-incidents`), Hugging Face Datasets, a
+  STIX 2.1 bundle, a static [TAXII 2.1 endpoint](https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json),
+  and a [MISP feed](https://emmanuelgjr.github.io/genai_incidents/misp/) whose events
+  carry `genai-incidents:*`, `mitre-atlas:*`, and VERIS 1.4.1 `veris:*` machinetags.
 
 ## Maintenance
 Maintained at <https://github.com/emmanuelgjr/genai_incidents>; a weekly workflow
