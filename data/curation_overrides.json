@@ -1,10 +1,6 @@
 {
   "_doc": "Durable human/assisted curation decisions keyed by source_id. Applied by scripts/merge_and_dedupe.py (step 4d), overriding the heuristic quality_tier and any other listed fields, and surviving rebuilds. Keys beginning with '_' are metadata. Add entries here as incidents are reviewed; supported fields include quality_tier, severity, attack_vector, and other content fields.",
   "overrides": {
-    "INC-106": {
-      "reversibility_class": "external-reversible",
-      "_note": "Reversibility per the #74 rubric (realized outcome, evidence-gated). The closing action was recovery of the deleted production database. Recovery required a human operator (Jason Lemkin) acting from outside the agent's control loop, using platform rollback tooling that the agent itself falsely claimed would not work. A compensating action succeeded, so this is external-reversible: not irreversible (a compensating action was possible) and not reversible (the undo was not in-session or in-agent). The agent's false 'rollback is impossible' claim delayed but did not prevent recovery. Who-had-to-act: an external human operator plus vendor tooling. Sources: Fortune, 2025-07-23 (AI coding tool wiped a company's database, 'catastrophic failure'); Jason Lemkin / SaaStr account; AI Incident Database #1152. Reviewed 2026-07."
-    },
     "AIAAIC0112": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
@@ -506,6 +502,176 @@
     "AIAAIC2257": {
       "quality_tier": "reviewed",
       "_note": "Assisted editorial review: Critical severity justified by reported loss of life/serious harm; entry description coherent and on-topic. Reviewed 2026-05."
+    },
+    "AIID-1263": {
+      "reversibility_class": "irreversible",
+      "discovery_method": "vendor-monitoring",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Anthropic states attackers succeeded in a small number of cases, directing Claude to extract private data. The closing action was banning accounts and notifying authorities — neither recovers exfiltrated data. Sources: https://www.anthropic.com/news/disrupting-AI-espionage ; https://www.paulweiss.com/insights/client-memos/anthropic-disrupts-first-documented-case-of-large-scale-ai-orchestrated-cyberattack | discovery_method: Anthropic, the model/platform provider, detected the abuse of its own service via its own detection in mid-September 2025. Source: https://www.anthropic.com/news/disrupting-AI-espionage Reviewed 2026-07-03."
+    },
+    "ATLAS-AML.CS0020": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Demonstrated by external security researcher Johann Rehberger (wunderwuzzi/Embrace The Red); disclosed to OpenAI on 2023-04-09. Source: https://embracethered.com/blog/posts/2023/advanced-plugin-data-exfiltration-trickery/ Reviewed 2026-07-03."
+    },
+    "ATLAS-AML.CS0023": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: CVE-2023-6020 was reported through the huntr bug-bounty platform and credited to researcher cpropps-sysdig. Source: https://github.com/advisories/GHSA-6cxr-8q3m-jwrr Reviewed 2026-07-03."
+    },
+    "ATLAS-AML.CS0047": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "actor-disclosure",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): AWS immediately revoked and replaced credentials, removed the malicious code, removed version 1.84.0 from distribution, and released fixed version 1.85.0. The payload failed to execute due to a syntax error, preventing changes to services/customer environments, but recovery required vendor action plus end users upgrading. Source: https://aws.amazon.com/security/security-bulletins/AWS-2025-015 | discovery_method: The hacker injected the destructive prompt via a GitHub pull request, then leaked it to 404 Media to expose AWS's security. Sources: https://www.tomshardware.com/tech-industry/cyber-security/hacker-injects-malicious-potentially-disk-wiping-prompt-into-amazons-ai-coding-assistant-with-a-simple-pull-request ; https://www.theregister.com/2025/07/24/amazon_q_ai_prompt/ Reviewed 2026-07-03."
+    },
+    "CVE-2025-15061": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Imperva Threat Research uncovered and disclosed the RCE vulnerability in the Framelink Figma MCP Server; related advisory credited to Zero Day Initiative (ZDI-25-1197). Source: https://www.imperva.com/blog/another-critical-rce-discovered-in-a-popular-mcp-server/ Reviewed 2026-07-03."
+    },
+    "CVE-2025-53109": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Cymulate Research Labs security researcher Elad Beber discovered and reported the vulnerabilities on March 30, 2025; Anthropic acknowledged and patched. Source: https://cymulate.com/blog/cve-2025-53109-53110-escaperoute-anthropic/ Reviewed 2026-07-03."
+    },
+    "CVE-2025-55284": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Independent security researcher wunderwuzzi disclosed the vulnerability to Anthropic on May 26, 2025, using Claude itself to find the allowlist bypasses. Source: https://embracethered.com/blog/posts/2025/claude-code-exfiltration-via-dns-requests/ Reviewed 2026-07-03."
+    },
+    "CVE-2025-56520": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: CrowdSec vulntracking report: reported by a researcher via the originating GitHub issue #22532 filed by @ki9mu on 2025-07-17; in-the-wild exploitation was only detected months later by CrowdSec. Sources: https://www.crowdsec.net/vulntracking-report/cve-2025-56520 ; https://github.com/langgenius/dify/issues/22532 Reviewed 2026-07-03."
+    },
+    "CVE-2025-59944": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Lakera blog: Lakera researcher Brett Gustafson discovered and responsibly reported the vulnerability, notifying Cursor on 2025-09-02. Source: https://www.lakera.ai/blog/cursor-vulnerability-cve-2025-59944 Reviewed 2026-07-03."
+    },
+    "CVE-2025-61590": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Advisory credits section credits external researcher @MaccariTA as the finder of the workspace-file-injection issue. Source: https://github.com/cursor/cursor/security/advisories/GHSA-xg6w-rmh5-r77r Reviewed 2026-07-03."
+    },
+    "CVE-2025-61591": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Advisory credits GitHub user @Y4tacker as the reporter of the MCP OAuth command-injection issue. Source: https://github.com/cursor/cursor/security/advisories/GHSA-wj33-264c-j9cq Reviewed 2026-07-03."
+    },
+    "CVE-2025-64110": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: GitHub advisory GHSA-vhc2-fjv4-wqch credits external researchers 'joaodunas' (Finder) and 'aretekzs' (Reporter). Source: https://github.com/cursor/cursor/security/advisories/GHSA-vhc2-fjv4-wqch Reviewed 2026-07-03."
+    },
+    "CVE-2025-68143": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: The three flaws were discovered by Cyata researcher Yarden Porat and disclosed responsibly in June 2025. Source: https://thehackernews.com/2026/01/three-flaws-in-anthropic-mcp-git-server.html Reviewed 2026-07-03."
+    },
+    "CVE-2025-68664": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: LangGrinch was discovered by Cyata researcher Yarden Porat through code review of LangChain trust boundaries; responsibly disclosed and awarded a bug bounty. Source: https://cyata.ai/blog/langgrinch-langchain-core-cve-2025-68664/ Reviewed 2026-07-03."
+    },
+    "CVE-2026-21858": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Ni8mare was discovered by Cyera Research Labs (Dor Attias) via coordinated responsible disclosure to n8n. Source: https://www.cyera.com/research/ni8mare-unauthenticated-remote-code-execution-in-n8n-cve-2026-21858 Reviewed 2026-07-03."
+    },
+    "CVE-2026-2275": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Closing action was vendor remediation: the CERT/CC note states all issues are fixed in current releases; CrewAI deployed a security fix within five hours of receiving disclosure of a separately leaked internal GitHub token. Sources: https://kb.cert.org/vuls/id/221883 ; https://noma.security/blog/uncrew-the-risk-behind-a-leaked-internal-github-token-at-crewai/ | discovery_method: The four CVEs were reported by Yarden Porat of Cyata through CERT/CC coordinated disclosure; the leaked internal GitHub token was separately found by the Noma Labs research team. Sources: https://kb.cert.org/vuls/id/221883 ; https://noma.security/blog/uncrew-the-risk-behind-a-leaked-internal-github-token-at-crewai/ Reviewed 2026-07-03."
+    },
+    "CVE-2026-25528": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: The vulnerabilities were discovered by Orca security researcher Igor Stepansky and remain unpatched as of the write-up. Source: https://thehackernews.com/2026/03/ai-flaws-in-amazon-bedrock-langsmith.html Reviewed 2026-07-03."
+    },
+    "CVE-2026-26030": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Closing action was a Microsoft vendor patch: the problem was fixed in python-1.39.4, blocking dangerous attribute names within filter expressions. Source: https://github.com/microsoft/semantic-kernel/security/advisories/GHSA-xjw9-4gw8-4rqx | discovery_method: GHSA-xjw9-4gw8-4rqx credits three external finders (amiteliahu, doredry, urioren) as reporters of the vulnerability. Source: https://github.com/microsoft/semantic-kernel/security/advisories/GHSA-xjw9-4gw8-4rqx Reviewed 2026-07-03."
+    },
+    "CVE-2026-26118": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Closing action was a Microsoft vendor patch on 2026-03-10: Microsoft removed the SSE transport type completely, deleted the vulnerable tool, and released an updated version requiring Entra ID authentication. Sources: https://www.token.security/blog/mcpwned-azure-mcp-rce-vulnerability-leads-to-cloud-takeover ; https://windowsnews.ai/article/microsoft-patches-critical-azure-mcp-ssrf-vulnerability-cve-2026-26118-in-march-2026-security-update.404636 | discovery_method: Discovered by Ariel Simon of Token Security's research team and reported to Microsoft. Source: https://www.token.security/blog/mcpwned-azure-mcp-rce-vulnerability-leads-to-cloud-takeover Reviewed 2026-07-03."
+    },
+    "CVE-2026-39888": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Closing action was a vendor patch: fixed in version 4.5.115 (affected <=4.5.114), released by maintainer MervinPraison on 2026-04-07. Source: https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-hwg5-x759-7wjg | discovery_method: GHSA-hwg5-x759-7wjg credits external reporter GitHub user @offset as the finder of the template-injection CVE. Source: https://github.com/MervinPraison/PraisonAI/security/advisories/GHSA-hwg5-x759-7wjg Reviewed 2026-07-03."
+    },
+    "EXT-2025-CLAUDY-DAY": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Closing action was vendor (Anthropic) remediation via coordinated disclosure: the prompt injection issue was fixed; researchers responsibly reported all findings to Anthropic through its Responsible Disclosure Program before publication. Source: https://www.oasis.security/blog/claude-ai-prompt-injection-data-exfiltration-vulnerability | discovery_method: Oasis Security researchers (Research Lead Elad Luz) discovered the vulnerability chain and reported it to Anthropic through its Responsible Disclosure Program. Source: https://www.oasis.security/blog/claude-ai-prompt-injection-data-exfiltration-vulnerability Reviewed 2026-07-03."
+    },
+    "INC-106": {
+      "reversibility_class": "external-reversible",
+      "_note": "Reversibility per the #74 rubric (realized outcome, evidence-gated). The closing action was recovery of the deleted production database. Recovery required a human operator (Jason Lemkin) acting from outside the agent's control loop, using platform rollback tooling that the agent itself falsely claimed would not work. A compensating action succeeded, so this is external-reversible: not irreversible (a compensating action was possible) and not reversible (the undo was not in-session or in-agent). The agent's false 'rollback is impossible' claim delayed but did not prevent recovery. Who-had-to-act: an external human operator plus vendor tooling. Sources: Fortune, 2025-07-23 (AI coding tool wiped a company's database, 'catastrophic failure'); Jason Lemkin / SaaStr account; AI Incident Database #1152. Reviewed 2026-07."
+    },
+    "LEGACY-INC-00116": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "customer-report",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): The Register: the AI 'wiped out a user's entire D drive, bypassing the Recycle Bin in the process, making it impossible to recover the deleted material,' but 'most of what he lost had already been backed up on another drive.' In-session recovery was impossible (recycle bin bypassed), yet a compensating action (restore from an external backup drive) succeeded, so per rubric it is NOT irreversible; backups = external-reversible. Source: https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/ | discovery_method: The Register: incident was first reported by the affected user themselves on Reddit before media picked it up. Source: https://www.theregister.com/2025/12/01/google_antigravity_wipes_d_drive/ Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00121": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Koi Security blog: vulnerabilities detected and reported by the Koi Security research team, reported to Anthropic via HackerOne on 2025-07-03. Source: https://www.koi.ai/blog/promptjacking-the-critical-rce-in-claude-desktop-that-turn-questions-into-exploits Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00122": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: embracethered.com (researcher wunderwuzzi/Johann Rehberger): vulnerabilities were reported by researchers before Google started documenting them publicly. Source: https://embracethered.com/blog/posts/2025/security-keeps-google-antigravity-grounded/ Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00125": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: idanhabler.medium.com: external security researcher Idan Habler demonstrated weaponizing Claude's Skills feature, building on Embrace The Red's prior research. Source: https://idanhabler.medium.com/new-skills-new-threats-exfiltrating-data-from-claude-e9112aeac11b Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00126": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: embracethered.com: security researcher wunderwuzzi reported the vulnerability to Anthropic via HackerOne on 2025-10-25. Source: https://embracethered.com/blog/posts/2025/claude-abusing-network-access-and-anthropic-api-for-data-exfiltration/ Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00135": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Tenable Research discovered three vulnerabilities within Google's Gemini AI assistant suite, led by Senior Security Researcher Liv Matan, reported to Google. Source: https://www.tenable.com/blog/the-trifecta-how-three-new-gemini-vulnerabilities-in-cloud-assist-search-model-and-browsing Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00136": {
+      "reversibility_class": "irreversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Real in-the-wild attack: the malicious npm package secretly BCC'd an estimated 3,000-15,000 emails/day to the attacker. The developer deleted the package from npm, but deleting a package does not remove it from machines where it was already installed, and there is no recovery of already-exfiltrated emails. Source: https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft | discovery_method: Koi Security's automated risk engine flagged postmark-mcp when version 1.0.16 introduced suspicious behavior changes. Source: https://www.koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00143": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Independently discovered by security researcher wunderwuzzi (Johann Rehberger) and reported to the vendor via responsible disclosure. Source: https://embracethered.com/blog/posts/2025/openhands-remote-code-execution-zombai/ Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00162": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "reversibility_class per #74 rubric (realized outcome, who-had-to-act): Closing action was a vendor patch: Marimo closed the authentication gap on the terminal WebSocket in 0.23.0; the GitHub advisory lists patched version 0.23.0. Sources: https://www.endorlabs.com/learn/root-in-one-request-marimos-critical-pre-auth-rce-cve-2026-39987 ; https://github.com/advisories/GHSA-2679-6mx9-h9xc | discovery_method: GitHub Security Advisory GHSA-2679-6mx9-h9xc credits external reporter @q1uf3ng as the finder of CVE-2026-39987. Source: https://github.com/advisories/GHSA-2679-6mx9-h9xc Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00163": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Publicly disclosed via the project's GitHub issue tracker with a public proof-of-concept exploit per VulDB. Source: https://vuldb.com/vuln/355748 Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00193": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: BlueRock Security discovered the MarkItDown MCP SSRF through their own MCP Trust Registry tool as internal security research, reported to Microsoft and AWS before public disclosure. Source: https://www.bluerock.io/post/mcp-furi-microsoft-markitdown-vulnerabilities Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00194": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: ChainLeak was identified by Zafran Labs researchers Gal Zaban and Ido Shani as part of Project DarkSide; responsibly disclosed. Source: https://www.zafran.io/resources/chainleak-critical-ai-framework-vulnerabilities-expose-data-enable-cloud-takeover Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00197": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: CVE-2026-0628 was uncovered by Palo Alto Networks Unit 42 and responsibly disclosed to Google. Source: https://unit42.paloaltonetworks.com/gemini-live-in-chrome-hijacking/ Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00199": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: The unclaimed Open VSX namespace supply-chain risk was identified by Koi Security researcher Oren Yomtov as a proactive research finding. Source: https://thehackernews.com/2026/01/vs-code-forks-recommend-missing.html Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00220": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: PromptArmor Threat Intelligence researchers discovered the technique and responsibly disclosed it to Notion via HackerOne. Source: https://www.promptarmor.com/resources/notion-ai-unpatched-data-exfiltration Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00224": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Mindgard, a third-party AI security firm, audited Cline over two days and responsibly disclosed four vulnerabilities via GitHub security advisories. Source: https://mindgard.ai/blog/cline-coding-agent-vulnerabilities Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00225": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Embrace The Red researcher wunderwuzzi23 discovered the flaws through independent security research and reported to Cognition. Source: https://embracethered.com/blog/posts/2025/devin-can-leak-your-secrets/ Reviewed 2026-07-03."
+    },
+    "LEGACY-INC-00230": {
+      "discovery_method": "security-researcher",
+      "_note": "discovery_method: Trend Micro Research publicly disclosed the classic SQL injection in Anthropic's archived SQLite MCP server on 2025-06-11. Source: https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html Reviewed 2026-07-03."
     }
   }
 }
