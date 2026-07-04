@@ -672,6 +672,72 @@
     "LEGACY-INC-00230": {
       "discovery_method": "security-researcher",
       "_note": "discovery_method: Trend Micro Research publicly disclosed the classic SQL injection in Anthropic's archived SQLite MCP server on 2025-06-11. Source: https://www.trendmicro.com/en_us/research/25/f/why-a-classic-mcp-server-vulnerability-can-undermine-your-entire-ai-agent.html Reviewed 2026-07-03."
+    },
+    "CVE-2024-50050": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04), evidence-gated + adversarially verified. Discovery: \"It started, as all of our investigations do, with curiosity. In 2024, while analyzing Meta's Llama Stack, we noticed an odd pattern: the use of ZMQ's recv_pyobj() method.\" (https://www.oligo.security/blog/shadowmq-how-code-reuse-spread-critical-vulnerabilities-across-the-ai-ecosystem)"
+    },
+    "ARXIV-2402.07867": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: \"We find that the knowledge database in a RAG system introduces a new and practical attack surface. Based on this attack surface, we propose PoisonedRAG, the first knowledge corruption attack to RAG...\" (https://arxiv.org/abs/2402.07867)"
+    },
+    "ATLAS-AML.CS0035": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Reversibility: Salesforce deployed a patch after investigation, no evidence of unauthorized customer data access (https://www.theregister.com/2024/08/21/slack_ai_prompt_injection/). Discovery: security firm PromptArmor identified and reported the vulnerability (same source)."
+    },
+    "ARXIV-2404.01833": {
+      "discovery_method": "internal-report",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: \"Our researchers discovered a novel generalization of jailbreak attacks, which we call Crescendo.\" (Microsoft's own security team) (https://www.microsoft.com/en-us/security/blog/2024/04/11/how-microsoft-discovers-and-mitigates-evolving-attacks-against-ai-guardrails/)"
+    },
+    "INC-030": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Microsoft's own research team tested and disclosed the Skeleton Key jailbreak to affected vendors before publication (https://www.microsoft.com/en-us/security/blog/2024/06/26/mitigating-skeleton-key-a-new-type-of-generative-ai-jailbreak-technique/)."
+    },
+    "CVE-2025-10875": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: \"July 28, 2025 – Noma Labs discovers and reports the vulnerability to Salesforce.\" (https://noma.security/blog/forcedleak-agent-risks-exposed-in-salesforce-agentforce)"
+    },
+    "INC-090": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Tom Neaves, LevelBlue SpiderLabs, built a lab PoC validating the A2A agent-card spoofing attack (https://www.levelblue.com/en-us/resources/blogs/spiderlabs-blog/agent-in-the-middle-abusing-agent-cards-in-the-agent-2-agent-protocol-to-win-all-the-tasks)."
+    },
+    "CVE-2026-26133": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Andi Ahmeti of Permiso Security discovered and reported the vulnerability to Microsoft on 2026-01-23 (https://permiso.io/blog/copilot-prompt-injection-ai-email-phishing)."
+    },
+    "INC-099": {
+      "reversibility_class": "external-reversible",
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Reversibility: staged vendor fixes secured all affected tables and exposed data was deleted (\"secured it within hours with our assistance, and all data accessed during the research and fix verification has been deleted\"). Discovery: Wiz's non-intrusive security review found an exposed Supabase API key (independently corroborated by researcher Jameson O'Reilly). (https://www.wiz.io/blog/exposed-moltbook-database-reveals-millions-of-api-keys)"
+    },
+    "EXT-2025-GEMINIJACK": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Noma Labs discovered the GeminiJack vulnerability and disclosed responsibly to Google's Security Team on 2025-05-06 (https://noma.security/blog/geminijack-google-gemini-zero-click-vulnerability/)."
+    },
+    "INC-107": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Radware researchers Gabi Nakibly, Zvika Babo, and Maor Uziel disclosed via OpenAI's Bugcrowd bug bounty program on 2025-06-18 (https://therecord.media/openai-fixes-zero-click-shadowleak-vulnerability)."
+    },
+    "INC-111": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Invariant Labs' own MCP-injection research uncovered the WhatsApp exfiltration vector (https://invariantlabs.ai/blog/whatsapp-mcp-exploited)."
+    },
+    "INC-112": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: an independent security researcher uncovered the breach (https://www.malwarebytes.com/blog/news/2026/02/ai-chat-app-leak-exposes-300-million-messages-tied-to-25-million-users)."
+    },
+    "CVE-2025-61592": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: Assaf Levkovich of the JFrog Security Research team (https://github.com/cursor/cursor/security/advisories/GHSA-v64q-396f-7m79)."
+    },
+    "LEGACY-INC-00232": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: \"November 27, 2024: A security researcher reports the vulnerability on HackerOne. This finding was independent of Datadog's research and unknown to us at the time.\" (https://securitylabs.datadoghq.com/articles/mcp-vulnerability-case-study-SQL-injection-in-the-postgresql-mcp-server/)"
+    },
+    "CVE-2025-6514": {
+      "discovery_method": "security-researcher",
+      "_note": "Batch-2 labeling (2026-07-04). Discovery: \"The JFrog Security Research team has recently discovered and disclosed CVE-2025-6514\" (https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/)"
     }
   }
 }
