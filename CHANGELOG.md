@@ -5,6 +5,41 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [2.8.0] — 2026-07-13
+
+Data-quality release. Net composition 12,770 → 12,986 (+241 from the weekly
+source refresh, −25 from removing non-GenAI scope contamination); landmark
+1,858 → 1,865.
+
+### Removed (scope precision)
+- **25 non-GenAI CVE-bridge buckets excluded** per INCLUSION.md — entries where
+  a weak key (shared reference URL / templated title) had collapsed dozens to
+  hundreds of *unrelated, non-GenAI* CVE advisories into one incident:
+  `dexidp/dex` (708 CVEs, was landmark), Juju (93, was landmark), ~11 ×
+  Magento/Adobe Commerce, KaiOS, Google Chrome, four Jenkins plugins, Liferay,
+  Mattermost, MantisBT, jackson-dataformat-toml, Firefox. Decisions and
+  per-bucket rationale in `data/issue88_remediation.json`; each removal carries
+  an `out-of-scope` deprecation so citations still resolve. The excluded
+  buckets' source keys are suppressed **before** dedupe (enumerated statically),
+  so the removal is idempotent and cannot resurrect on rebuild. (#88, #95)
+
+### Added (labels)
+- **55 landmark-tier `reversibility_class` / `discovery_method` labels**
+  populated across two evidence-gated curation batches, each label citing
+  closing-action or discovery-channel evidence in `data/curation_overrides.json`.
+  (#91, #92)
+
+### Changed
+- **Weekly source refresh** — AIRI Navigator, AIAAIC, OECD AI Incidents Monitor
+  (+241 incidents net; routine dedupe deprecations recorded). (#93)
+
+### Tooling
+- **`scripts/audit_cve_bridge.py`** — reproducible precision audit of the
+  grandfathered disjoint-CVE weak-key merges (#36), classifying each multi-CVE
+  incident. It surfaced the scope-contamination removed above and characterises
+  the remaining GenAI over-merges (a ~542-advisory recovery) as the v3.0 one-way
+  split re-baseline tracked in #88. (#94)
+
 ## [2.7.0] — 2026-07-03
 
 Data-quality and interoperability release. Incident composition is unchanged
