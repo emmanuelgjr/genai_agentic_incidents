@@ -45,6 +45,38 @@ def is_out_of_scope_malware(entry: dict) -> bool:
     return not any(package_is_strongly_ai(p) for p in pkgs)
 
 
+# --- Issue #88 remediation --------------------------------------------------
+# data/issue88_remediation.json records maintainer decisions for the
+# high-confidence CVE-bridge over-merges surfaced by scripts/audit_cve_bridge.py.
+#   exclude  primary incident is NOT GenAI (scope contamination) -> drop the
+#            bucket via an out-of-scope removal. Always active; idempotent.
+# The manifest's `split` section records the 19 reviewed GenAI over-merge
+# decisions for the v3.0 one-way re-baseline #88 describes; the split is NOT
+# executed here (un-grandfathering it live is not byte-stable — it cascades into
+# unrelated merges — so it belongs in a dedicated re-baseline, not this build).
+# `exclude_suppress_source_ids` is the static, enumerated key list that makes
+# the exclusion idempotent. Empty manifest -> no-op -> byte-identical build.
+_ISSUE88_PATH = Path(__file__).resolve().parents[1] / "data" / "issue88_remediation.json"
+
+
+def _load_issue88() -> tuple[set[str], set[str]]:
+    try:
+        m = json.loads(_ISSUE88_PATH.read_text(encoding="utf-8"))
+        return (set(m.get("exclude") or {}),
+                set(m.get("exclude_suppress_source_ids") or []))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return set(), set()
+
+
+ISSUE88_EXCLUDE, ISSUE88_SUPPRESS = _load_issue88()
+
+
+def _is_out_of_scope(entry: dict) -> bool:
+    """Malware scope gate OR an issue-#88 exclude bucket (non-GenAI product's
+    CVEs bridged into one entry)."""
+    return is_out_of_scope_malware(entry) or entry.get("id") in ISSUE88_EXCLUDE
+
+
 _CWE_CAPEC_PATH = Path(__file__).resolve().parents[1] / "mappings" / "cwe_capec.json"
 
 # GHSA ecosystem token -> Package-URL (purl) type. Only ecosystems with an
@@ -1222,6 +1254,18 @@ def main():
     # 3+4) Dedupe; entries transitively absorbed during reindexing come back
     #      as tombstones so their old IDs can be recorded for citation
     #      resolution below.
+    #      Issue #88 exclude: drop out-of-scope source records (non-GenAI
+    #      buckets' enumerated keys) BEFORE dedupe, so those buckets never form
+    #      and cannot resurrect on rebuild once their merged entry is gone. The
+    #      key list is static (captured in the manifest), so this is idempotent.
+    if ISSUE88_SUPPRESS:
+        _before = len(all_entries)
+        all_entries = [e for e in all_entries
+                       if not ((set(e.get("source_ids") or []) | set(e.get("cve_ids") or []))
+                               & ISSUE88_SUPPRESS)]
+        print(f"[issue88-exclude] suppressed {_before - len(all_entries)} "
+              f"out-of-scope source record(s) across {len(ISSUE88_EXCLUDE)} bucket(s)")
+
     surviving, tombstones = dedupe_entries(all_entries, prev_id_by_key)
     today_str = str(utc_today())
 
@@ -1361,7 +1405,7 @@ def main():
     #     below (step 6f) purely from previously-published data vs the final
     #     output. Also bars retention (below) from resurrecting committed noise.
     purged_scope = 0
-    kept_surviving = [e for e in surviving if not is_out_of_scope_malware(e)]
+    kept_surviving = [e for e in surviving if not _is_out_of_scope(e)]
     purged_scope += len(surviving) - len(kept_surviving)
     surviving = kept_surviving
 
@@ -1375,7 +1419,7 @@ def main():
     for prior in eligible:
         pid = prior.get("id")
         # Never retain an entry the inclusion policy now excludes.
-        if is_out_of_scope_malware(prior):
+        if _is_out_of_scope(prior):
             purged_scope += 1
             continue
         keys = set(prior.get("cve_ids") or []) | set(prior.get("source_ids") or [])
@@ -1401,7 +1445,7 @@ def main():
     live_ids_final = {e["id"] for e in surviving}
     for prev in _load_prev_incidents():
         if (prev.get("id") not in live_ids_final
-                and is_out_of_scope_malware(prev)):
+                and _is_out_of_scope(prev)):
             deprecations_new.append({
                 "from": prev["id"], "into": None, "reason": "out-of-scope",
                 "date": str(utc_today()),
@@ -1473,6 +1517,22 @@ def main():
     seen_from = {d.get("from"): d for d in prev_deprec if d.get("from")}
     for d in deprecations_new:
         seen_from.setdefault(d["from"], d)
+    # Issue #88: an EXCLUDE bucket leaves the dataset, so any historical
+    # deprecation whose `into` was that bucket (or transitively resolves to it)
+    # now dangles. Redirect the chain to a terminal out-of-scope removal so
+    # every citation still resolves (`into: null`). Fixpoint for A->B-><removed>.
+    if ISSUE88_EXCLUDE:
+        removed_terminal = set(ISSUE88_EXCLUDE)
+        changed = True
+        while changed:
+            changed = False
+            for d in seen_from.values():
+                if d.get("into") in removed_terminal:
+                    d["into"] = None
+                    d["reason"] = "out-of-scope"
+                    if d.get("from") and d["from"] not in removed_terminal:
+                        removed_terminal.add(d["from"])
+                        changed = True
     deprecations_all = sorted(
         seen_from.values(),
         key=lambda x: (x.get("from") or "", x.get("date") or ""),

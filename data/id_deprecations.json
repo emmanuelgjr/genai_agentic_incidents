@@ -1,117 +1,123 @@
 {
   "deprecations": [
     {
+      "from": "INC-00004",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-00005",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00006",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00010",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-00011",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00014",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-00020",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00023",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00024",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-00025",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00026",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-00636",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00644",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-00685",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00686",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00687",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00688",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00689",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-00978",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01001",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -242,26 +248,26 @@
     },
     {
       "from": "INC-01132",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01133",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01134",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01135",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -278,38 +284,38 @@
     },
     {
       "from": "INC-01195",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01196",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01197",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01201",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01293",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01298",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -320,26 +326,26 @@
     },
     {
       "from": "INC-01338",
-      "into": "INC-01298",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01339",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01341",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01342",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -350,26 +356,32 @@
     },
     {
       "from": "INC-01458",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01459",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
+      "from": "INC-01551",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-01554",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-01559",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -404,92 +416,92 @@
     },
     {
       "from": "INC-01713",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01714",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01716",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01810",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01852",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01882",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-01891",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-02047",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02048",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02049",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02050",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02051",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02053",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-02055",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02056",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -506,44 +518,44 @@
     },
     {
       "from": "INC-02137",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02138",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02143",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02144",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02152",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02153",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02158",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -554,26 +566,26 @@
     },
     {
       "from": "INC-02168",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02169",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02170",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02171",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -584,26 +596,26 @@
     },
     {
       "from": "INC-02173",
-      "into": "INC-01559",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02174",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02176",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02177",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -614,8 +626,8 @@
     },
     {
       "from": "INC-02179",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -626,32 +638,32 @@
     },
     {
       "from": "INC-02313",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02361",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02363",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02365",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02366",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -659,6 +671,12 @@
       "into": "INC-02125",
       "reason": "merged",
       "date": "2026-06-10"
+    },
+    {
+      "from": "INC-02443",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-02523",
@@ -722,26 +740,26 @@
     },
     {
       "from": "INC-02600",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02611",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02653",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02654",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -776,20 +794,20 @@
     },
     {
       "from": "INC-02734",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02735",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02736",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -818,20 +836,20 @@
     },
     {
       "from": "INC-02915",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02916",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02920",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -848,26 +866,26 @@
     },
     {
       "from": "INC-02969",
-      "into": "INC-02443",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02970",
-      "into": "INC-02443",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02971",
-      "into": "INC-02443",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-02979",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -890,8 +908,8 @@
     },
     {
       "from": "INC-03015",
-      "into": "INC-01559",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -902,8 +920,8 @@
     },
     {
       "from": "INC-03142",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -926,86 +944,86 @@
     },
     {
       "from": "INC-03335",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03337",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03338",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03339",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03340",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03342",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03345",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03347",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03348",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03349",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03351",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03352",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03381",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03404",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1022,74 +1040,74 @@
     },
     {
       "from": "INC-03411",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03418",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03419",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03420",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03421",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03422",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03430",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03431",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03433",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03434",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03435",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03436",
-      "into": "INC-01559",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1112,14 +1130,14 @@
     },
     {
       "from": "INC-03565",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03566",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1130,8 +1148,8 @@
     },
     {
       "from": "INC-03606",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1142,14 +1160,14 @@
     },
     {
       "from": "INC-03761",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03764",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1160,98 +1178,98 @@
     },
     {
       "from": "INC-03833",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03834",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03835",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03836",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03837",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03839",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03840",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03841",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03842",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03843",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03844",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03845",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03846",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03847",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03848",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-03849",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1286,9 +1304,15 @@
     },
     {
       "from": "INC-03894",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
+    },
+    {
+      "from": "INC-03916",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-03934",
@@ -1364,92 +1388,92 @@
     },
     {
       "from": "INC-04011",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04012",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04013",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04014",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04015",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04016",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04017",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04018",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04057",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04058",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04059",
-      "into": "INC-01559",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04135",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04136",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04379",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04381",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1460,8 +1484,8 @@
     },
     {
       "from": "INC-04452",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1484,32 +1508,32 @@
     },
     {
       "from": "INC-04578",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04670",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04671",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04673",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04690",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1550,56 +1574,56 @@
     },
     {
       "from": "INC-04761",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04762",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04763",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04764",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04793",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04797",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04798",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04799",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-04831",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -1736,20 +1760,20 @@
     },
     {
       "from": "INC-04985",
-      "into": "INC-01559",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-05010",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-05138",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2186,14 +2210,14 @@
     },
     {
       "from": "INC-05477",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-05687",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2216,15 +2240,21 @@
     },
     {
       "from": "INC-06362",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-07554",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
+    },
+    {
+      "from": "INC-07630",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-07771",
@@ -2258,8 +2288,8 @@
     },
     {
       "from": "INC-08184",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2276,14 +2306,14 @@
     },
     {
       "from": "INC-08187",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-08206",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -2300,20 +2330,20 @@
     },
     {
       "from": "INC-08297",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-08298",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-08300",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -2324,14 +2354,14 @@
     },
     {
       "from": "INC-08304",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-08306",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -2339,6 +2369,18 @@
       "into": "INC-08421",
       "reason": "merged",
       "date": "2026-07-02"
+    },
+    {
+      "from": "INC-08555",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-09002",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-09030",
@@ -2372,14 +2414,14 @@
     },
     {
       "from": "INC-09088",
-      "into": "INC-02443",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
       "from": "INC-09341",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     },
     {
@@ -2407,6 +2449,12 @@
       "date": "2026-07-02"
     },
     {
+      "from": "INC-09555",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-09556",
       "into": "INC-01015",
       "reason": "merged",
@@ -2414,26 +2462,26 @@
     },
     {
       "from": "INC-09557",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09558",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09559",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09560",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2510,116 +2558,116 @@
     },
     {
       "from": "INC-09573",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09574",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09575",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09576",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09577",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09578",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09579",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09580",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09581",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09582",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09583",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09584",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09585",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09586",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09587",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09588",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09589",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09590",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09591",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2642,8 +2690,8 @@
     },
     {
       "from": "INC-09595",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2684,62 +2732,62 @@
     },
     {
       "from": "INC-09602",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09603",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09604",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09605",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09606",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09607",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09608",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09609",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09610",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09611",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2750,56 +2798,56 @@
     },
     {
       "from": "INC-09613",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09614",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09615",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09616",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09617",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09618",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09619",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09620",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09621",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2810,14 +2858,14 @@
     },
     {
       "from": "INC-09623",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09624",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2858,26 +2906,26 @@
     },
     {
       "from": "INC-09632",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09633",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09634",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09635",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -2954,116 +3002,116 @@
     },
     {
       "from": "INC-09648",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09649",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09650",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09651",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09652",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09653",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09654",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09655",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09656",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09657",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09658",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09659",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09660",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09661",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09662",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09663",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09664",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09665",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09666",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -3086,8 +3134,8 @@
     },
     {
       "from": "INC-09670",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -3128,62 +3176,62 @@
     },
     {
       "from": "INC-09677",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09678",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09679",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09680",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09681",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09682",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09683",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09684",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09685",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09686",
-      "into": "INC-01551",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -3194,56 +3242,56 @@
     },
     {
       "from": "INC-09688",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09689",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09690",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09691",
-      "into": "INC-00010",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09692",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09693",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09694",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09695",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09696",
-      "into": "INC-02971",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -3254,14 +3302,14 @@
     },
     {
       "from": "INC-09698",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
       "from": "INC-09699",
-      "into": "INC-01338",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-06-10"
     },
     {
@@ -4531,6 +4579,12 @@
       "date": "2026-06-11"
     },
     {
+      "from": "INC-10368",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-10383",
       "into": null,
       "reason": "out-of-scope",
@@ -4843,6 +4897,12 @@
       "date": "2026-06-11"
     },
     {
+      "from": "INC-10643",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-10660",
       "into": null,
       "reason": "out-of-scope",
@@ -4999,6 +5059,12 @@
       "date": "2026-06-11"
     },
     {
+      "from": "INC-10811",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-10831",
       "into": null,
       "reason": "out-of-scope",
@@ -5069,6 +5135,12 @@
       "into": null,
       "reason": "out-of-scope",
       "date": "2026-06-11"
+    },
+    {
+      "from": "INC-10909",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-10923",
@@ -5179,6 +5251,12 @@
       "date": "2026-06-11"
     },
     {
+      "from": "INC-11431",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-11436",
       "into": null,
       "reason": "out-of-scope",
@@ -5207,6 +5285,18 @@
       "into": null,
       "reason": "out-of-scope",
       "date": "2026-06-11"
+    },
+    {
+      "from": "INC-11530",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-11561",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-11577",
@@ -5257,6 +5347,12 @@
       "date": "2026-06-11"
     },
     {
+      "from": "INC-11744",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-11757",
       "into": null,
       "reason": "out-of-scope",
@@ -5273,6 +5369,12 @@
       "into": null,
       "reason": "out-of-scope",
       "date": "2026-06-11"
+    },
+    {
+      "from": "INC-11771",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
     },
     {
       "from": "INC-11786",
@@ -5713,6 +5815,54 @@
       "date": "2026-06-11"
     },
     {
+      "from": "INC-11968",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-11980",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-11988",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-12013",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-12041",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-12057",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-12087",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
+      "from": "INC-12088",
+      "into": null,
+      "reason": "out-of-scope",
+      "date": "2026-07-13"
+    },
+    {
       "from": "INC-12439",
       "into": null,
       "reason": "out-of-scope",
@@ -5720,8 +5870,8 @@
     },
     {
       "from": "INC-12564",
-      "into": "INC-00004",
-      "reason": "merged",
+      "into": null,
+      "reason": "out-of-scope",
       "date": "2026-07-02"
     }
   ]
