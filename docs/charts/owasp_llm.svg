@@ -2,33 +2,33 @@
 <rect x="0" y="0" width="100%" height="100%" fill="white"/>
 <text x="12" y="18" font-weight="600">OWASP LLM Top 10 (2025) — incident coverage</text>
 <text x="212" y="47" text-anchor="end" fill="#333">LLM01 · Prompt Injection</text>
-<rect x="220" y="36" width="32.9" height="14" fill="#0a58ca" rx="2"><title>Prompt Injection: 424</title></rect>
-<text x="258.9" y="47" fill="#666">424</text>
+<rect x="220" y="36" width="32.9" height="14" fill="#0a58ca" rx="2"><title>Prompt Injection: 423</title></rect>
+<text x="258.9" y="47" fill="#666">423</text>
 <text x="212" y="69" text-anchor="end" fill="#333">LLM02 · Sensitive Information Disclosure</text>
-<rect x="220" y="58" width="76.5" height="14" fill="#0a58ca" rx="2"><title>Sensitive Information Disclosure: 987</title></rect>
-<text x="302.5" y="69" fill="#666">987</text>
+<rect x="220" y="58" width="76.1" height="14" fill="#0a58ca" rx="2"><title>Sensitive Information Disclosure: 977</title></rect>
+<text x="302.1" y="69" fill="#666">977</text>
 <text x="212" y="91" text-anchor="end" fill="#333">LLM03 · Supply Chain</text>
-<rect x="220" y="80" width="480.0" height="14" fill="#0a58ca" rx="2"><title>Supply Chain: 6,190</title></rect>
-<text x="706.0" y="91" fill="#666">6,190</text>
+<rect x="220" y="80" width="480.0" height="14" fill="#0a58ca" rx="2"><title>Supply Chain: 6,165</title></rect>
+<text x="706.0" y="91" fill="#666">6,165</text>
 <text x="212" y="113" text-anchor="end" fill="#333">LLM04 · Data and Model Poisoning</text>
-<rect x="220" y="102" width="12.5" height="14" fill="#0a58ca" rx="2"><title>Data and Model Poisoning: 161</title></rect>
-<text x="238.5" y="113" fill="#666">161</text>
+<rect x="220" y="102" width="12.4" height="14" fill="#0a58ca" rx="2"><title>Data and Model Poisoning: 159</title></rect>
+<text x="238.4" y="113" fill="#666">159</text>
 <text x="212" y="135" text-anchor="end" fill="#333">LLM05 · Improper Output Handling</text>
-<rect x="220" y="124" width="446.9" height="14" fill="#0a58ca" rx="2"><title>Improper Output Handling: 5,763</title></rect>
-<text x="672.9" y="135" fill="#666">5,763</text>
+<rect x="220" y="124" width="446.8" height="14" fill="#0a58ca" rx="2"><title>Improper Output Handling: 5,739</title></rect>
+<text x="672.8" y="135" fill="#666">5,739</text>
 <text x="212" y="157" text-anchor="end" fill="#333">LLM06 · Excessive Agency</text>
-<rect x="220" y="146" width="59.1" height="14" fill="#0a58ca" rx="2"><title>Excessive Agency: 762</title></rect>
-<text x="285.1" y="157" fill="#666">762</text>
+<rect x="220" y="146" width="59.2" height="14" fill="#0a58ca" rx="2"><title>Excessive Agency: 760</title></rect>
+<text x="285.2" y="157" fill="#666">760</text>
 <text x="212" y="179" text-anchor="end" fill="#333">LLM07 · System Prompt Leakage</text>
-<rect x="220" y="168" width="56.4" height="14" fill="#0a58ca" rx="2"><title>System Prompt Leakage: 727</title></rect>
-<text x="282.4" y="179" fill="#666">727</text>
+<rect x="220" y="168" width="56.6" height="14" fill="#0a58ca" rx="2"><title>System Prompt Leakage: 727</title></rect>
+<text x="282.6" y="179" fill="#666">727</text>
 <text x="212" y="201" text-anchor="end" fill="#333">LLM08 · Vector and Embedding Weaknesses</text>
 <rect x="220" y="190" width="1.9" height="14" fill="#0a58ca" rx="2"><title>Vector and Embedding Weaknesses: 25</title></rect>
 <text x="227.9" y="201" fill="#666">25</text>
 <text x="212" y="223" text-anchor="end" fill="#333">LLM09 · Misinformation</text>
-<rect x="220" y="212" width="185.7" height="14" fill="#0a58ca" rx="2"><title>Misinformation: 2,395</title></rect>
-<text x="411.7" y="223" fill="#666">2,395</text>
+<rect x="220" y="212" width="186.4" height="14" fill="#0a58ca" rx="2"><title>Misinformation: 2,394</title></rect>
+<text x="412.4" y="223" fill="#666">2,394</text>
 <text x="212" y="245" text-anchor="end" fill="#333">LLM10 · Unbounded Consumption</text>
-<rect x="220" y="234" width="3.6" height="14" fill="#0a58ca" rx="2"><title>Unbounded Consumption: 46</title></rect>
-<text x="229.6" y="245" fill="#666">46</text>
+<rect x="220" y="234" width="3.4" height="14" fill="#0a58ca" rx="2"><title>Unbounded Consumption: 44</title></rect>
+<text x="229.4" y="245" fill="#666">44</text>
 </svg>
