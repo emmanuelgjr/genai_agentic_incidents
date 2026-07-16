@@ -3,10 +3,23 @@
 # The main session (Foreman Protocol) is the ONLY writer of this file.
 | Task | Status | Owner agent | Branch | Notes |
 |------|--------|-------------|--------|-------|
-| WS0-T1 | in-progress | license-auditor | ws0/t1-source-licenses | long pole — open first, work others in parallel with outreach waits · dispatched 2026-07-15 |
-| WS0-T2 | todo | license-auditor | | LICENSE-DATA wording depends on WS0-T1 outcome (plain CC-BY-4.0 vs per-source-terms variant) |
-| WS0-T5 | todo | license-auditor | | |
+| WS0-T1 | in-progress | license-auditor | ws0/t1-source-licenses | long pole — open first, work others in parallel with outreach waits · dispatched 2026-07-15 · specialist reported 24 upstream rights-holders (plan estimated ~20; fan-out: ingest_external→6, ingest_cve_nvd_expanded→3, ingest_redteam_benchmarks→10); doc committed 3c7c7493 · **BOUNCE #1 (red-reviewer, 2026-07-16)** — 13 of 14 sources verified clean; enumeration COMPLETE (reviewer independently read every script; ingest_utils.py exclusion honest); scope clean (git diff e6c98111..HEAD = PROGRESS.md + docs/SOURCE_LICENSES.md only); all 5 mechanical checks pass; self-declared gaps confessed in the doc body (lines 37/55/97/101), not hidden. Defects: (1) `docs/SOURCE_LICENSES.md:37` AIAAIC License cell factually false — reviewer found "AIAAIC content is available to use, copy, adapt, and redistribute under a CC BY-SA 4.0 licence." in the site-wide footer of aiaaic.org AND /aiaaic-repository (3 + 1 grep hits); only /about-aiaaic genuinely lacks it. Plan's CC BY-SA known-conflict CONFIRMED. (2) `:40-43`, `:294` dependent cells mis-routed — AIAAIC is action (b) share-alike not (d) unknown; relicense-compatible = definite NO not UNKNOWN; outreach premised on a false negative; UNKNOWN count 4→3. Redispatched 2026-07-16 with narrow scope. |
+| WS0-T2 | todo | license-auditor | | LICENSE-DATA wording depends on WS0-T1 outcome · **WS0-T1 input received:** needs TWO carve-out clauses beyond the plan's two-license framing — MITRE ATLAS case-study text (Apache-2.0, © 2021-2026 MITRE) and garak probe-docstring text (Apache-2.0, © 2023 Derczynski/NVIDIA) are reproduced verbatim today under Apache-2.0, not under our CC-BY relicense (reviewer confirmed both LICENSE files + `ingest_external.py:350-352` concatenates probe docstrings verbatim) |
+| WS0-T5 | todo | license-auditor | | **WS0-T1 input:** NVD API ToS requires the verbatim notice "This product uses the NVD API but is not endorsed or certified by the NVD." on a permanent visible surface — compliance gap today |
 | WS6-T2 | todo | distribution-engineer | | |
 | WS0-T6 | todo | license-auditor | | added to board 2026-07-15 — named in the plan's Phase-1 exit criteria but had no row at deploy time |
 | WS3-T5 | todo | schema-architect | | Phase-1 decision draft — human decides ID width |
 | WS5-T2a | todo | governance-scribe | | annotator recruitment — Phase-1, unblocks WS2-T2 |
+
+## Escalations pending human decision
+| # | Item | Raised | Status |
+|---|------|--------|--------|
+| E1 | **AIID ToS violation (live).** `scripts/scrape_aiid.py:213` runs `ThreadPoolExecutor(max_workers=12)` against per-incident pages. AIID ToS prohibits "'High-volume' means of accessing the Site, including but not limited to bots and spiders" — quote re-verified verbatim by red-reviewer at incidentdatabase.ai/terms-of-use/ (HTTP 200, in the site-conduct paragraph, not out of context). Violation is active on every refresh, independent of licensing. Official weekly snapshots exist as the sanctioned alternative. | WS0-T1, 2026-07-16 | **awaiting user** — data-drop/summarization decision reserved to human per CLAUDE.md step 8 |
+| E2 | **Verbatim text drops/summarization** for AIID (`reports.text` field explicitly excluded from AIID's CC-BY-SA grant), AIAAIC (share-alike — honor it or reduce to facts+link), OECD AIM (OECD "cannot and do not grant any rights to use" third-party narrative text). | WS0-T1, 2026-07-16 | **awaiting user** |
+| E3 | **Four outreach emails drafted** (AIAAIC, MIT AIRI Navigator, OECD AIM, CSET-AIID) — agents draft, human sends. AIAAIC draft to be revised/possibly dropped after BOUNCE #1 fix (its licensing question is resolved; a share-alike scope question may remain). | WS0-T1, 2026-07-16 | **awaiting user** |
+| E4 | WS3-T5 ID width decision (Phase-1 gate) | not yet drafted | pending WS3-T5 dispatch |
+| E5 | WS1-T4 scope decision (rename vs `ai_system_type` tagging; plan recommends tagging) | Phase-2 task, Phase-1 escalation | pending |
+
+## Proposed follow-up tasks (from review, not folded into open tasks)
+- AIID exclusions list has a third item the WS0-T1 doc omits: "Contents displayed within the database not contained within the database snapshots (e.g., the source of images and videos)" — relevant to the WS0-T4 snapshot swap. (red-reviewer, 2026-07-16)
+- `docs/SOURCE_LICENSES.md` §1.5 OECD terms can be upgraded from search-cache excerpt to direct quote: reviewer got HTTP 200 on oecd.org/en/about/terms-conditions.html and confirmed the excerpt verbatim, plus a stronger fact the doc misses — OECD written content published as of 2024-07-01 is CC BY 4.0. Not a defect (doc's disclosure was honest, conclusion conservative). (red-reviewer, 2026-07-16)
