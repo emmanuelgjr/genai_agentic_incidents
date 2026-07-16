@@ -1,0 +1,300 @@
+# Source Licenses & Terms-of-Service Audit
+
+**Task:** WS0-T1 · **Status:** every upstream source class enumerated from
+`scripts/ingest_*.py` / `scripts/scrape_*.py` carries a row below; none are
+blank. Ambiguous terms are marked **UNKNOWN** and are *not* resolved in the
+project's favor — the conservative reading (fewer rights, not more) is
+applied until outreach resolves them.
+
+**How to read this table:**
+- **scrape-permitted** — is bulk/automated fetching of this upstream allowed
+  per its robots.txt and/or its Terms of Service, independent of licensing?
+- **redistribute-verbatim** — may we keep and ship the source's own text
+  (titles, descriptions, narrative) unmodified in our corpus?
+- **relicense-compatible** — can content from this source be included under
+  this project's CC-BY-4.0 data relicense without a carve-out?
+- **action** — (a) compatible, document as-is · (b) share-alike (BY-SA):
+  split license for that corpus / reduce to facts+link · (c) prohibited:
+  drop verbatim text, keep `id + url + ≤2-sentence original summary` ·
+  (d) unknown: outreach sent/drafted, pending status recorded.
+
+Per invariant #10 (active the moment this file exists): any new source added
+after this file lands must get its row in the same PR.
+
+All terms below were fetched and read on **2026-07-15**. Terms change —
+re-check before relying on a stale "date-checked."
+
+---
+
+## 1. Real-world incident sources
+
+### 1.1 AIAAIC Repository
+*Ingested by:* `scripts/ingest_aiaaic_sheet.py` (reads the AIAAIC-maintained
+Google Sheet CSV export at `docs.google.com/spreadsheets/d/.../export?format=csv`).
+
+| Field | Value |
+|---|---|
+| License | **UNKNOWN.** No copyright/license notice was found on `aiaaic.org` (homepage, `/aiaaic-repository`, or `/about-aiaaic` — fetched 2026-07-15, all rendered no visible license text or CC badge in page content). Web search for `aiaaic.org "CC BY-SA"` / `"all rights reserved"` / `"licensed under"` returned no confirming hit. **The plan's "known conflict" hypothesis (CC BY-SA) is not verified from the live site as of this date — do not treat it as established.** |
+| Scrape-permitted | Partially checked. `aiaaic.org` itself returns 404 for `/robots.txt` (no file = no stated restriction). The actual fetch target is `docs.google.com`; its robots.txt (`https://docs.google.com/robots.txt`, fetched 2026-07-15) has `Allow: /spreadsheet` (prefix match, covers `/spreadsheets/d/.../export`) ahead of the blanket `Disallow: /`, so the CSV-export mechanism itself is not blocked by Google's robots.txt. No AIAAIC-specific ToS for the sheet was found. |
+| Redistribute-verbatim | **NO (pending).** `normalize_row()` in the ingest script currently copies AIAAIC's own cell text verbatim into our `description` field (headline, system, technology, purpose, ethical-issue labels, consequence, response) — this is direct reproduction of AIAAIC's spreadsheet content, not a paraphrase. |
+| Relicense-compatible | **UNKNOWN** — cannot be until license is confirmed. |
+| Action | **(d) UNKNOWN + interim (c).** Outreach drafted (see report). Until AIAAIC responds, treat as prohibited-until-confirmed: descriptions should be capped to short factual/taxonomy labels (sector, jurisdiction, technology tag) and drop composed narrative sentences that reproduce their prose; see the exact pipeline requirement in the report to the foreman. |
+| Outreach date | 2026-07-15 (drafted; **not yet sent** — human sends per protocol) |
+| Follow-up date | 2026-08-05 (21 days) |
+| Date-checked | 2026-07-15 |
+
+### 1.2 AI Incident Database (AIID) — direct scrape
+*Ingested by:* `scripts/scrape_aiid.py` (concurrently fetches
+`incidentdatabase.ai/cite/<id>/` HTML pages, 12 worker threads, and reads
+`og:title`/`og:description` meta tags).
+
+| Field | Value |
+|---|---|
+| License | **CONFIRMED CC BY-SA 4.0** for specific named collections only — `incidentdatabase.ai/terms-of-use/` (fetched 2026-07-15) states: *"The following database collections are licensed under the Creative Commons attribution share-alike license"* (incidents, quickadd, duplicates, taxa, classifications, entities, entity_relationships). It explicitly **excludes** the `text` field of the `reports` collection from that license. |
+| Scrape-permitted | **NO.** The same Terms of Use state, verbatim: *"High-volume means of accessing the Site, including but not limited to bots and spiders, are prohibited."* `scrape_aiid.py` runs a `ThreadPoolExecutor(max_workers=12)` against every `/cite/<id>/` URL harvested from sitemaps — this is exactly the high-volume/bot access the ToS prohibits, currently in production. |
+| Redistribute-verbatim | **NO** for the `text` field (explicitly carved out of the CC license, and AIID's own ownership over it is not established either — likely third-party news-article excerpt). The `og:description` scraped here may or may not correspond 1:1 to the excluded `text` field internally; that ambiguity does not matter because the *access method itself* is already prohibited regardless of which field is touched. |
+| Relicense-compatible | **NO** for the CC-BY-SA-licensed fields (share-alike ≠ plain CC-BY) — see §1.2 action. The `text` field is out of scope for any relicensing since it isn't AIID's to license in the first place. |
+| Action | **(b) + (c), and this is the most severe finding in this audit: the ingestion *method* is a live ToS violation, independent of the licensing question.** AIID publishes official weekly snapshots (JSON/MongoDB/CSV) at `incidentdatabase.ai/research/snapshots/` → `https://pub-72b2b2fc36ec423189843747af98f80e.r2.dev/`, going back to March 2021 — this is the sanctioned bulk-access channel the plan anticipated ("AIID has data dumps — use them instead of OG scraping," WS0-T4). See the exact pipeline-engineer requirement in the report: **retire `scrape_aiid.py`'s concurrent HTML fetch; replace with the official snapshot download.** Content from the CC-BY-SA fields must be split-licensed (CC-BY-SA, not blanket CC-BY) in any relicense manifest; the `text`/narrative field must never be reproduced verbatim. |
+| Date-checked | 2026-07-15 |
+
+### 1.3 AI Incident Database (AIID) — via AIID's own repo data file
+*Ingested by:* `scripts/ingest_external.py::ingest_aiid_oecd_bridge()` (reads
+`_external/aiid/site/gatsby-site/migrations/data/oecd_relationships_2025_09_09.json`,
+a file from AIID's own cloned GitHub repo) and `scripts/scrape_aiid.py`'s
+`load_aiid_urls()` (same file, used only to enumerate IDs) plus two
+`_external/sitemap-*.xml` files.
+
+| Field | Value |
+|---|---|
+| License | Same rights-holder as §1.2 (AIID / Responsible AI Collaborative). The `responsible-ai-collaborative/aiid` GitHub repo's own code-license field returns `"Other"`/`NOASSERTION` via the GitHub API (fetched 2026-07-15) — no plain LICENSE file at `main` (404 on the raw URL). This governs the *site's code*, not necessarily this specific data file, whose content (AIID-incident-ID ↔ OECD-URL pairs) is a factual mapping table, not creative expression. |
+| Scrape-permitted | N/A — local git clone of a public repo, not a live fetch. |
+| Redistribute-verbatim | The mapping itself (ID + URL pairs) is treated as facts, not copyrightable expression — low risk. The *synthesized description* the ingest writes (`"Cross-listed in the AI Incident Database (AIID) as incident #{id} and tracked by the OECD AI Incidents Monitor..."`) is original text, not copied. |
+| Relicense-compatible | Compatible for the ID/URL facts and the original description sentence. |
+| Action | (a) compatible, low risk. No change required beyond noting the repo's own unclear code license doesn't cover a bare facts file we already treat conservatively. |
+| Date-checked | 2026-07-15 |
+
+### 1.4 MIT FutureTech AIRI Navigator
+*Ingested by:* `scripts/ingest_airi_navigator.py` (downloads
+`airi-navigator.com/downloads/airi-data.zip`).
+
+| Field | Value |
+|---|---|
+| License | **UNKNOWN.** `airi-navigator.com` (fetched 2026-07-15) and `/about` (fetched 2026-07-15) show no CC BY 4.0 or other license statement in rendered content. The `/about` page instead states the tool is *"a research prototype"* with data that is *"preliminary and not yet validated,"* and instructs users to *"verify against the original AIRI datasets before citing or relying on any specific numbers"* — a data-quality caveat, not a license grant. A web search suggested CC BY 4.0 for "MIT AI Risk Initiative" data generally, but this could not be confirmed by direct fetch and is not treated as established. |
+| Scrape-permitted | The ZIP is served from an explicit `/downloads/` path apparently intended for download — lower conduct risk than HTML scraping, but this does not by itself confer redistribution rights. |
+| Redistribute-verbatim | **UNKNOWN.** |
+| Relicense-compatible | **UNKNOWN** — and even if AIRI grants permission, AIRI Navigator *wraps* AIID incident data (§1.2), so AIID's CC-BY-SA share-alike likely applies transitively to the AIID-derived fields regardless of what AIRI itself says. |
+| Action | **(d) UNKNOWN.** Outreach drafted (see report) to Spencer Michaels (contact given on the AIRI site) covering both AIRI's own license and the transitive AIID share-alike question. |
+| Outreach date | 2026-07-15 (drafted; not yet sent) |
+| Follow-up date | 2026-08-05 (21 days) |
+| Date-checked | 2026-07-15 |
+
+### 1.5 OECD AI Incidents and Hazards Monitor (AIM)
+*Ingested by:* `scripts/ingest_oecd_aim.py` (scrapes `oecd.ai/en/incidents/<id>`
+pages via their embedded Angular `ng-state` JSON).
+
+| Field | Value |
+|---|---|
+| License | Split. General OECD terms (`oecd.org/en/about/terms-conditions.html` — returned HTTP 403 to automated fetch on 2026-07-15, could not be read directly; a web-search-cached excerpt states OECD content may be extracted/copied/adapted/distributed "for any purpose, even for commercial use," with attribution) apply to OECD's *own* IP. But the AIM-specific methodology page (`oecd.ai/en/incidents-methodology`, fetched 2026-07-15) explicitly disclaims: *"Any of the copyrights, trademarks... included in the AIM are the property of their respective owners"* — meaning the incident narrative text (drawn from aggregated third-party news articles) is **not OECD's to relicense**, and by extension not ours. |
+| Scrape-permitted | `oecd.ai/robots.txt` (fetched 2026-07-15) disallows only French-language sections (`/fr/community/`, `/fr/catalogue/`, `/fr/wonk/`, `/fr/dashboards/`, `/fr/data`) — no rule blocks `/en/incidents/`. No explicit rate limit stated; the ingest script already caches and paces 10 concurrent workers, but should route through the WS0-T4 common rate-limiter like every other scraper. |
+| Redistribute-verbatim | **NO** for narrative/summary text derived from third-party news content (per AIM's own disclaimer above). The ingest currently writes `body.get("summary")` or article "evidences" text into our `description` field — this is exactly the third-party-sourced content the disclaimer flags. |
+| Relicense-compatible | Compatible for OECD's own structural data (incident IDs, dates, AIID cross-reference IDs, taxonomy tags) under OECD's general terms with attribution. **Not compatible** for the summary/evidence narrative text. |
+| Action | **(b)/(c) hybrid.** Reduce `description` to structural facts + link where the text is evidence-derived narrative; add "Source: OECD AI Incidents and Hazards Monitor" attribution per entry. Outreach also drafted to confirm the exact reuse boundary for AIM summaries specifically, since the general OECD terms page could not be read directly (403) to confirm it even covers AIM's aggregated content the same way. |
+| Outreach date | 2026-07-15 (drafted; not yet sent) |
+| Follow-up date | 2026-08-05 (21 days) |
+| Date-checked | 2026-07-15 |
+
+---
+
+## 2. Vulnerability / advisory sources
+
+### 2.1 CISA Known Exploited Vulnerabilities (KEV) catalog
+*Ingested by:* `scripts/ingest_cisa_kev.py` (fetches
+`cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json`).
+
+| Field | Value |
+|---|---|
+| License | **CC0 1.0** confirmed via the community/CISA-adjacent mirror `cisagov/kev-data` LICENSE file (fetched 2026-07-15): *"The KEV database is distributed under the Creative Commons 0 1.0 License. You may use this data in any legal manner..."* Independently, as a work of the U.S. federal government, KEV content is not subject to domestic copyright (17 U.S.C. §105) regardless. The catalog JSON itself (fetched 2026-07-15) carries no license field in its metadata, but this is consistent with public-domain status rather than a gap. |
+| Scrape-permitted | **YES** — the URL is CISA's own published machine-readable feed, designed for exactly this consumption. |
+| Redistribute-verbatim | **YES.** |
+| Relicense-compatible | **YES.** |
+| Action | **(a) compatible.** No change required. |
+| Date-checked | 2026-07-15 |
+
+### 2.2 National Vulnerability Database (NVD)
+*Ingested by:* `scripts/ingest_cve_nvd_expanded.py` (Phase 1 — NVD REST API
+2.0 keyword search).
+
+| Field | Value |
+|---|---|
+| License | CVE/NVD records are U.S. government work (public domain domestically), but the NVD API imposes contractual usage terms independent of copyright: `nvd.nist.gov/developers/terms-of-use` (fetched 2026-07-15) requires a displayed notice — *"This product uses the NVD API but is not endorsed or certified by the NVD"* — states *"If you modify the content accessed through the API, you may not attribute the source as the NVD,"* and restricts API keys to the original requestor ("Keys should not be used by, or shared with, individuals or organizations other than the original requestor"). |
+| Scrape-permitted | **YES, within stated rate limits** — 5 req/30s unauthenticated, 50 req/30s with an API key; the ingest script already paces requests accordingly (`NVD_SLEEP`). |
+| Redistribute-verbatim | **YES** for unmodified content (public domain). Modified/derived text must not be presented as if it were still NVD's own text. |
+| Relicense-compatible | **YES.** |
+| Action | **(a) compatible, with one compliance gap:** the required attribution notice above is not displayed anywhere in this repo's docs, README, or site. See the exact remediation requirement in the report. |
+| Date-checked | 2026-07-15 |
+
+### 2.3 GitHub Security Advisory Database (GHSA)
+*Ingested by:* `scripts/ingest_cve_nvd_expanded.py` (Phase 2 — `gh api graphql`
+against `securityAdvisories`, both `GENERAL` and `MALWARE` classifications).
+
+| Field | Value |
+|---|---|
+| License | **CC-BY 4.0**, confirmed via `github/advisory-database` repo (fetched 2026-07-15): *"This project is licensed under the terms of the CC-BY 4.0 open source license."* |
+| Scrape-permitted | **YES** — accessed via GitHub's official authenticated GraphQL API (`gh api graphql`), not scraping. |
+| Redistribute-verbatim | **YES**, with attribution. |
+| Relicense-compatible | **YES** — CC-BY 4.0 is directly compatible with this project's CC-BY relicense (no share-alike conflict). |
+| Action | **(a) compatible.** Confirm the render layer credits "GitHub Advisory Database" per entry (GHSA ID + link is already present in `references`). |
+| Date-checked | 2026-07-15 |
+
+### 2.4 OSV.dev
+*Ingested by:* `scripts/ingest_cve_nvd_expanded.py` (Phase 3 — `api.osv.dev/v1/query`
+against the `OSV_TARGETS` list of PyPI, npm, and Go-ecosystem packages).
+
+| Field | Value |
+|---|---|
+| License | OSV.dev is an **aggregator**; the *code* (`google/osv.dev` repo, fetched 2026-07-15) is Apache-2.0, but individual **records carry their originating database's license**, per `google.github.io/osv.dev/data/` (fetched 2026-07-15): PyPI Advisory Database = **CC-BY 4.0**, GitHub Advisory Database = **CC-BY 4.0**, Go Vulnerability Database = **CC-BY 4.0** (confirmed separately at `vuln.go.dev/copyright`, fetched 2026-07-15: *"licensed under the Creative Commons Attribution 4.0 License"*). Given `OSV_TARGETS` only queries PyPI/npm/Go ecosystems, every source database actually reachable by this script is CC-BY 4.0. |
+| Scrape-permitted | **YES** — official public API designed for this query pattern. |
+| Redistribute-verbatim | **YES**, with attribution to the specific originating advisory database (not just "OSV"). |
+| Relicense-compatible | **YES.** |
+| Action | **(a) compatible.** Ensure per-entry attribution names the originating DB (e.g. "PyPI Advisory Database via OSV.dev"), not just "OSV," since that's whose license actually applies. |
+| Date-checked | 2026-07-15 |
+
+---
+
+## 3. Attack-capability / taxonomy sources
+
+### 3.1 MITRE ATLAS
+*Ingested by:* `scripts/ingest_external.py::ingest_atlas()` (parses
+`_external/atlas-data/dist/v6/ATLAS-2026.06.yaml`, a git-cloned public repo).
+
+| Field | Value |
+|---|---|
+| License | **Apache License 2.0**, confirmed via `mitre-atlas/atlas-data` LICENSE file (fetched 2026-07-15): *"Copyright 2021-2026 MITRE. Licensed under the Apache License, Version 2.0."* |
+| Scrape-permitted | N/A — local clone of a public repo. |
+| Redistribute-verbatim | **YES** under Apache-2.0 terms (case-study titles/descriptions are reproduced from the dist YAML). |
+| Relicense-compatible | **YES, with a carve-out.** Apache-2.0 does not require share-alike, but it does require preserving the copyright/license notice on the covered material — MITRE's Apache-2.0 notice must stay attached to ATLAS-derived case-study text specifically; it cannot be silently folded into a blanket "CC-BY-4.0, all rights reserved by us" claim. |
+| Action | **(a) compatible**, but the repo's licensing docs (LICENSE-DATA / this file) must state the ATLAS-derived carve-out explicitly — this is a direct input to WS0-T2. |
+| Date-checked | 2026-07-15 |
+
+### 3.2 CSET-AIID Harm Taxonomy
+*Ingested by:* `scripts/ingest_external.py::ingest_cset()` (checks for the
+presence of `_external/CSET-AIID-harm-taxonomy` and, if present, writes
+**one** original reference entry describing the taxonomy — no data is
+extracted from the repo's own files).
+
+| Field | Value |
+|---|---|
+| License | **UNKNOWN / none granted.** GitHub API for `georgetown-cset/CSET-AIID-harm-taxonomy` (fetched 2026-07-15) returns `"license": null` — no LICENSE file, meaning default all-rights-reserved copyright applies. |
+| Scrape-permitted | N/A — local clone. |
+| Redistribute-verbatim | **NO** (no permission granted) — moot in practice, since the current code does not copy any of the repo's actual content; it writes one original, hand-authored description of what the taxonomy is, with a link. |
+| Relicense-compatible | **NO** for repo content generally; the single original description sentence we write ourselves is fine. |
+| Action | **(d) UNKNOWN, low current risk.** Outreach drafted to confirm reuse permission in case this ever grows beyond a single reference entry (see report). No code change required today since no verbatim content is taken. |
+| Outreach date | 2026-07-15 (drafted; not yet sent) |
+| Follow-up date | 2026-08-05 (21 days) |
+| Date-checked | 2026-07-15 |
+
+### 3.3 NVIDIA garak
+*Ingested by:* `scripts/ingest_external.py::ingest_garak()` (reads probe
+`.py` files under `_external/garak/garak/probes/` and extracts each probe's
+module docstring).
+
+| Field | Value |
+|---|---|
+| License | **Apache License 2.0**, confirmed via `NVIDIA/garak` LICENSE file (fetched 2026-07-15). Copyright held by Leon Derczynski (2023) and NVIDIA Corporation & Affiliates (2023). |
+| Scrape-permitted | N/A — local clone of a public repo. |
+| Redistribute-verbatim | **YES under Apache-2.0**, but note this is the one source in this file where verbatim reproduction is *actually happening*: `ingest_garak()` copies each probe's docstring text directly into our `description` field (`"NVIDIA garak LLM vulnerability scanner probe `{probe_name}`. " + desc`). Apache-2.0 permits this, conditioned on preserving the copyright/license notice for the reproduced material. |
+| Relicense-compatible | **YES, with the same carve-out as ATLAS (§3.1)** — garak-derived descriptions remain under Apache-2.0 attribution, not folded into a blanket CC-BY claim. |
+| Action | **(a) compatible**, but needs an explicit NOTICE/attribution carve-out in LICENSE-DATA (WS0-T2 input) naming garak-derived entries specifically. |
+| Date-checked | 2026-07-15 |
+
+### 3.4 promptfoo
+*Ingested by:* `scripts/ingest_external.py::ingest_promptfoo()` (extracts
+plugin/strategy ID strings from `_external/promptfoo/src/redteam/constants/*.ts`;
+writes original descriptions, not copied source text).
+
+| Field | Value |
+|---|---|
+| License | **MIT**, confirmed via `promptfoo/promptfoo` LICENSE file (fetched 2026-07-15). |
+| Scrape-permitted | N/A — local clone. |
+| Redistribute-verbatim | Not attempted — descriptions are original ("promptfoo red-team {kind} `{pid}`. Defines an automated test for this attack class..."), not copied from source. MIT would permit verbatim reuse anyway (with notice retained). |
+| Relicense-compatible | **YES.** |
+| Action | **(a) compatible.** No change required. |
+| Date-checked | 2026-07-15 |
+
+### 3.5 ModelOriented/CVE-AI (curated CVE list)
+*Ingested by:* `scripts/ingest_external.py::ingest_cve_ai_curated()` (reads
+CSV/JSON export files from `_external/CVE-AI`, copying `title`/`description`
+fields into our schema).
+
+| Field | Value |
+|---|---|
+| License | **MIT**, confirmed via `ModelOriented/CVE-AI` repo footer license badge (fetched 2026-07-15). |
+| Scrape-permitted | N/A — local clone. |
+| Redistribute-verbatim | **YES** under MIT, with attribution (already present via the reference link to the GitHub repo). |
+| Relicense-compatible | **YES.** |
+| Action | **(a) compatible.** No change required. |
+| Date-checked | 2026-07-15 |
+
+---
+
+## 4. Academic red-team benchmarks (hand-curated citations)
+
+*Ingested by:* `scripts/ingest_redteam_benchmarks.py` — the script's own
+docstring states this is *"a hand-curated, citation-backed list (no
+scraping)."* Each `BENCHMARKS` tuple is an **original, hand-written
+description** (benchmark size, harm categories, venue) with citation links;
+no paper abstract or benchmark prompt data is scraped or copied verbatim.
+That fact is the load-bearing compliance point for every row below: facts
+about a published benchmark (size, categories, venue) are not copyrightable
+expression, and none of these entries reproduce the papers' actual text.
+
+Two of the ten linked code repositories were independently checked; the
+other eight were **not** — flagged explicitly rather than guessed, since
+none of them currently matter for compliance (no verbatim/code reuse occurs).
+
+| Benchmark | Paper venue/license | Code repo license | Verified? |
+|---|---|---|---|
+| JailbreakBench | arXiv (2404.01318) | jailbreakbench.github.io | Not verified |
+| HarmBench | arXiv (2402.04249) | harmbench.org | Not verified |
+| AdvBench / llm-attacks | arXiv (2307.15043) | **MIT** (confirmed, `llm-attacks/llm-attacks` LICENSE, fetched 2026-07-15) | Code verified |
+| AgentHarm | arXiv (2410.09024) | (no repo cited in our ingest) | Not verified |
+| AgentDojo | arXiv (2406.13352) | **MIT** (confirmed, `ethz-spylab/agentdojo` LICENSE, fetched 2026-07-15) | Code verified |
+| InjecAgent | arXiv (2403.02691) | (no repo cited in our ingest) | Not verified |
+| OS-Harm | arXiv (2506.14866) | (no repo cited in our ingest) | Not verified |
+| HackAPrompt | arXiv (2311.16119) | (no repo cited in our ingest) | Not verified |
+| StrongREJECT | arXiv (2402.10260) | (no repo cited in our ingest) | Not verified |
+| SafetyPrompts.com | arXiv (2404.05399) | safetyprompts.com | Not verified |
+
+| Field | Value |
+|---|---|
+| License (papers) | All ten cite arXiv preprints. arXiv's non-exclusive distribution license (`info.arxiv.org/help/license/`, fetched 2026-07-15) is explicit that it is **"perpetual, non-exclusive"** to arXiv only and **"limits re-use of any type from other entities or individuals"** — i.e. arXiv's license does **not** grant us any reuse right over the papers' text. This is why the ingest script must never copy verbatim abstract/paper text — and, per the code read above, it currently doesn't. |
+| Scrape-permitted | N/A — no scraping occurs; this is a hand-authored, hardcoded Python list. |
+| Redistribute-verbatim | **NO, and not attempted.** Only original summary sentences + citation links are stored. |
+| Relicense-compatible | **YES** for our own original summary sentences (our copyrightable expression). **NOT established** for the underlying datasets (actual jailbreak/attack prompt sets) — those are untouched today and must stay that way absent a fresh per-benchmark check. |
+| Action | **(a) compatible as currently implemented**, with a hard guardrail for any future change: **never extend this ingest to copy verbatim abstract text or the underlying benchmark's raw prompt/behavior data without a fresh, per-benchmark license check.** See the exact requirement in the report. |
+| Date-checked | 2026-07-15 |
+
+---
+
+## 5. Not a source (helper module)
+
+`scripts/ingest_utils.py` provides `robust_fetch()` / `conditional_fetch()` —
+shared HTTP retry/caching helpers used by other ingest scripts. It pulls no
+upstream content of its own and gets no row. (Its `USER_AGENT` string and
+retry/backoff behavior are relevant to WS0-T4's conduct policy, not to this
+per-source license audit.)
+
+---
+
+## Summary of outcomes requiring escalation (not resolved in the project's favor)
+
+| # | Source | Outcome | Why it's an escalation |
+|---|---|---|---|
+| 1 | AIID direct scrape (`scrape_aiid.py`) | **(b)+(c), active ToS violation** | Bot/high-volume access is explicitly prohibited by AIID's own Terms of Use; an official weekly-snapshot alternative exists today. This is a data-acquisition-method fix, not a data-drop, but it blocks Phase-2 per the plan's gate ("Phase 2 structural work must not begin while WS0-T1 licensing outcomes for a source are unknown"). |
+| 2 | AIAAIC Repository | **(d) UNKNOWN**, interim reduction to facts+link | Verbatim spreadsheet-cell text currently reproduced with no confirmed license. |
+| 3 | MIT AIRI Navigator | **(d) UNKNOWN** | No license found; wraps AIID data (transitively CC-BY-SA). |
+| 4 | OECD AIM | **(b)/(c) hybrid** | Narrative summary text is explicitly disclaimed by OECD as third-party IP. |
+| 5 | CSET-AIID Harm Taxonomy | **(d) UNKNOWN**, low current risk | No license file exists upstream; only one original sentence currently reproduced. |
+
+All five are human escalations per the Foreman Protocol (§8): outreach
+emails are drafted in the report below, not sent — the human sends them.
