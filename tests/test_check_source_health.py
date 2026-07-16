@@ -4,9 +4,14 @@ The load-bearing assertion (test_source_fails_loudly_after_threshold_consecutive
 is the one the plan asks for explicitly: a source that has 404'd every week
 for N consecutive refreshes must no longer be able to pass a refresh as a
 mere ``::warning::`` — the check must return a failing exit status. This is
-exactly the AIRI Navigator situation (dead since 2026-06-07, 6 consecutive
-failures as of 2026-07-12) that a same-run ``continue-on-error`` +
-all-three-must-fail abort threshold could not catch.
+exactly the AIRI Navigator situation (dead since 2026-06-07, 7 consecutive
+failures as of 2026-07-12 — see ingest/_state/source_health.json) that a
+same-run ``continue-on-error`` + all-three-must-fail abort threshold could
+not catch.
+
+Also covers red-reviewer's bounce-#1 advisory (a): a pause must carry a
+non-empty reason AND an unexpired ``paused_until``, or it is not honored —
+"paused: true" alone, or a stale expiry, must not silence the gate.
 """
 
 from __future__ import annotations
@@ -23,13 +28,14 @@ import check_source_health as h  # noqa: E402
 
 
 def test_single_failure_is_only_degraded_not_stale():
-    state, stale, degraded = h.update_source_health(
+    state, stale, degraded, notices = h.update_source_health(
         {}, {"airi_navigator": "failure"}, today="2026-06-07", threshold=3
     )
     assert state["airi_navigator"]["consecutive_failures"] == 1
     assert state["airi_navigator"]["status"] == "degraded"
     assert stale == []
     assert degraded == ["airi_navigator"]
+    assert notices == {}
 
 
 def test_source_fails_loudly_after_threshold_consecutive_failures():
@@ -38,7 +44,7 @@ def test_source_fails_loudly_after_threshold_consecutive_failures():
     dates = ["2026-06-07", "2026-06-14", "2026-06-21"]
     stale: list[str] = []
     for d in dates:
-        state, stale, _degraded = h.update_source_health(
+        state, stale, _degraded, _notices = h.update_source_health(
             state, {"airi_navigator": "failure"}, today=d, threshold=3
         )
     assert state["airi_navigator"]["consecutive_failures"] == 3
@@ -50,7 +56,7 @@ def test_source_fails_loudly_after_threshold_consecutive_failures():
 
 
 def test_success_resets_consecutive_failures():
-    state, _, _ = h.update_source_health(
+    state, _, _, _ = h.update_source_health(
         {"airi_navigator": {"consecutive_failures": 5, "status": "stale"}},
         {"airi_navigator": "success"},
         today="2026-07-19",
@@ -61,27 +67,83 @@ def test_success_resets_consecutive_failures():
     assert state["airi_navigator"]["last_success"] == "2026-07-19"
 
 
-def test_paused_stale_source_does_not_report_as_newly_stale():
-    """A hand-edited, reasoned pause silences the loud gate without hiding status."""
+def test_active_pause_does_not_report_as_newly_stale():
+    """A reasoned, time-boxed pause silences the loud gate without hiding status."""
     prior = {
         "airi_navigator": {
             "consecutive_failures": 6,
             "status": "stale",
             "paused": True,
             "paused_reason": "WS4-T9 triage in progress, retire-or-replace decision pending",
+            "paused_until": "2026-08-01",
         }
     }
-    state, stale, degraded = h.update_source_health(
+    state, stale, degraded, notices = h.update_source_health(
         prior, {"airi_navigator": "failure"}, today="2026-07-19", threshold=3
     )
     assert state["airi_navigator"]["status"] == "stale"
     assert state["airi_navigator"]["consecutive_failures"] == 7
-    assert stale == [], "a paused source must not trip the loud-failure gate"
+    assert stale == [], "an active pause must not trip the loud-failure gate"
     assert degraded == []
+    assert notices == {"airi_navigator": "active"}
+
+
+@pytest.mark.parametrize(
+    "entry_extra",
+    [
+        {"paused": True},  # no reason, no expiry at all
+        {"paused": True, "paused_reason": "  "},  # blank reason
+        {"paused": True, "paused_reason": "investigating"},  # reason but no paused_until
+        {"paused": True, "paused_until": "2026-08-01"},  # expiry but no reason
+    ],
+)
+def test_invalid_pause_is_not_honored(entry_extra):
+    """paused: true alone (or with a blank/missing reason or expiry) must NOT silence
+    the gate — that is exactly the one-line bypass advisory (a) warned about."""
+    prior = {"airi_navigator": {"consecutive_failures": 6, "status": "stale", **entry_extra}}
+    state, stale, degraded, notices = h.update_source_health(
+        prior, {"airi_navigator": "failure"}, today="2026-07-19", threshold=3
+    )
+    assert stale == ["airi_navigator"], "an invalid pause must not stop the source from being loud"
+    assert notices == {"airi_navigator": "invalid"}
+
+
+def test_expired_pause_is_not_honored():
+    """A pause with a paused_until in the past must expire back to loud, not stay silenced."""
+    prior = {
+        "airi_navigator": {
+            "consecutive_failures": 6,
+            "status": "stale",
+            "paused": True,
+            "paused_reason": "WS4-T9 triage",
+            "paused_until": "2026-07-01",  # in the past relative to "today" below
+        }
+    }
+    state, stale, degraded, notices = h.update_source_health(
+        prior, {"airi_navigator": "failure"}, today="2026-07-19", threshold=3
+    )
+    assert stale == ["airi_navigator"], "an expired pause must not stop the source from being loud"
+    assert notices == {"airi_navigator": "expired"}
+
+
+def test_pause_status_helper_classifies_correctly():
+    today = "2026-07-19"
+    assert h.pause_status({}, today) == "none"
+    assert h.pause_status({"paused": False}, today) == "none"
+    assert h.pause_status({"paused": True}, today) == "invalid"
+    assert h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": "2026-07-01"}, today
+    ) == "expired"
+    assert h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": "2026-07-19"}, today
+    ) == "active", "paused_until == today should still count as active (inclusive)"
+    assert h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": "2026-12-31"}, today
+    ) == "active"
 
 
 def test_independent_sources_tracked_independently():
-    state, stale, degraded = h.update_source_health(
+    state, stale, degraded, notices = h.update_source_health(
         {}, {"airi_navigator": "failure", "aiaaic_sheet": "success", "oecd_aim": "failure"},
         today="2026-06-07", threshold=3,
     )
@@ -90,11 +152,12 @@ def test_independent_sources_tracked_independently():
     assert state["oecd_aim"]["status"] == "degraded"
     assert stale == []
     assert set(degraded) == {"airi_navigator", "oecd_aim"}
+    assert notices == {}
 
 
 def test_state_round_trips_through_disk(tmp_path):
     state_file = tmp_path / "source_health.json"
-    state, _, _ = h.update_source_health({}, {"kev": "failure"}, today="2026-06-07")
+    state, _, _, _ = h.update_source_health({}, {"kev": "failure"}, today="2026-06-07")
     h.save_state(state_file, state)
     reloaded = h.load_state(state_file)
     assert reloaded == state
@@ -143,9 +206,39 @@ def test_cli_exits_zero_and_warns_when_below_threshold(tmp_path):
     assert "::error::" not in result.stdout
 
 
+def test_cli_exits_nonzero_when_pause_has_expired(tmp_path):
+    """End-to-end: an expired pause must not keep a persistently-dead source quiet."""
+    state_file = tmp_path / "source_health.json"
+    h.save_state(
+        state_file,
+        {
+            "airi_navigator": {
+                "consecutive_failures": 6,
+                "status": "stale",
+                "paused": True,
+                "paused_reason": "WS4-T9 triage",
+                "paused_until": "2026-07-01",
+            }
+        },
+    )
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(Path(__file__).resolve().parents[1] / "scripts" / "check_source_health.py"),
+            "--outcomes-json", json.dumps({"airi_navigator": "failure"}),
+            "--state-file", str(state_file),
+            "--threshold", "3",
+            "--today", "2026-07-19",
+        ],
+        capture_output=True, text=True,
+    )
+    assert result.returncode == 1, result.stdout + result.stderr
+    assert "EXPIRED" in result.stdout
+
+
 @pytest.mark.parametrize("outcome", ["failure", "cancelled", "skipped"])
 def test_any_non_success_outcome_counts_as_a_failure(outcome):
-    state, _, degraded = h.update_source_health(
+    state, _, degraded, _ = h.update_source_health(
         {}, {"src": outcome}, today="2026-06-07", threshold=3
     )
     assert state["src"]["consecutive_failures"] == 1

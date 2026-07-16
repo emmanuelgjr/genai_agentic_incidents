@@ -92,11 +92,22 @@ jobs:
       # one other source succeeds, and the job keeps reporting overall
       # "success" — so nobody watching the repo is ever notified. This step
       # tracks CONSECUTIVE failures per source, persisted in
-      # ingest/_state/source_health.json (committed via the refresh PR below,
-      # so the count survives across runs on ephemeral runners). Past the
-      # threshold, the job itself fails at the very end of this run (see
-      # "Enforce source health" below) — a real red X and a workflow-failure
-      # notification, not a warning line in a log nobody reads.
+      # ingest/_state/source_health.json and committed via the refresh PR
+      # below, same as every other ingest output.
+      #
+      # KNOWN LIMITATION (WS4-T9 bounce #1, advisory (b) — flagged, not
+      # silently shipped): that PR is not always merged promptly (#2, #18,
+      # #25 in this repo's history sat open and were closed unmerged,
+      # superseded by the next week's run). If a brand-new source starts
+      # failing and its PRs keep getting closed unmerged, its counter can
+      # stall below threshold indefinitely — the loud-failure gate below
+      # would never fire for it, only for sources (like AIRI here) whose
+      # count already reached main before the stalling started. A fix would
+      # need the counter to persist independently of the data-review PR (e.g.
+      # a direct commit to `main` from this workflow, or a durable
+      # out-of-band store) — that is a real change to this repo's git/CI
+      # governance (unattended pushes to `main`) and is called out to the
+      # human for a decision rather than made unilaterally here.
       - name: Source health check (consecutive-failure tracking)
         id: health
         continue-on-error: true
@@ -163,8 +174,10 @@ jobs:
       # but the workflow RUN itself still ends red and GitHub's own
       # failed-scheduled-workflow notification fires. This is the "can no
       # longer pass a refresh as a warning" gate from WS4-T9: a source stays
-      # loud every single week until it recovers or someone deliberately
-      # pauses it (with a recorded reason) in ingest/_state/source_health.json.
+      # loud every single week until it recovers, or someone pauses it with a
+      # reason AND an expiry (`paused_until`) in
+      # ingest/_state/source_health.json — an expired or incomplete pause is
+      # not honored (see scripts/check_source_health.py).
       - name: Enforce source health
         if: steps.health.outcome == 'failure'
         run: |
