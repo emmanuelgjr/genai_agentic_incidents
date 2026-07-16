@@ -17,6 +17,18 @@ applied until outreach resolves them.
   split license for that corpus / reduce to facts+link · (c) prohibited:
   drop verbatim text, keep `id + url + ≤2-sentence original summary` ·
   (d) unknown: outreach sent/drafted, pending status recorded.
+- **UNKNOWN** — *terms not located by the methods stated in the row. This is
+  **not** confirmed absence.* An UNKNOWN records the limits of our retrieval,
+  not a fact about the upstream. Absence-based findings here are presumed
+  method-suspect: on 2026-07-16 this document recorded AIAAIC as having no
+  license, and it was wrong — the clause was in the raw HTML of both pages
+  checked, split across tags inside a 4.4 MB page, and a markdown-converting
+  fetch silently truncated it away. Any row asserting absence must state the
+  retrieval method used and is verified against raw HTML (curl + grep, not
+  rendered text) before it stands. Structured endpoints (e.g. a GitHub API
+  `license` field) are not exposed to that failure mode; rendered HTML pages
+  are. Treat an UNKNOWN as "go look again with a better tool," never as
+  "there is nothing there."
 
 Per invariant #10 (active the moment this file exists): any new source added
 after this file lands must get its row in the same PR.
@@ -39,6 +51,7 @@ Google Sheet CSV export at `docs.google.com/spreadsheets/d/.../export?format=csv
 | Redistribute-verbatim | **YES under the upstream grant** — CC BY-SA permits verbatim copying and adaptation, conditioned on share-alike redistribution and attribution. That said, **decision D2 (2026-07-16, human) means we choose not to exercise this right**: see Action. |
 | Relicense-compatible | **NO.** Share-alike (BY-SA) is definitionally incompatible with folding this content into a plain CC-BY relicense of the whole corpus — a true statement about the upstream grant, independent of what we choose to do with it. |
 | Action | **(b) share-alike, honored by reduction — not by split-licensing.** Per decision D2 (2026-07-16, human): do not carry AIAAIC verbatim cell text; keep `title` (headline) + short taxonomy-tag facts (sector, jurisdiction, technology) + a source pointer to the specific AIAAIC entry. The dataset stays under one clean CC-BY-4.0 license with **no BY-SA subset** — there is no AIAAIC-specific `license: CC-BY-SA-4.0` field and no corresponding LICENSE-DATA carve-out (this recommendation is withdrawn; superseded by D2). The ATLAS/garak Apache-2.0 carve-outs (§3.1/§3.3) are unaffected — those stand on their own facts and D2 doesn't touch them. This is now the **permanent** handling, not an interim measure pending outreach. A narrow, non-blocking clarification email to AIAAIC (attribution format preferred; confirming the recurring Google-Sheet CSV-export cadence is fine) is still worth sending but gates nothing. |
+| Derivative-work constraint (D2) | **AIAAIC-derived summaries must be written from the primary sources AIAAIC links to — never paraphrased from AIAAIC's own prose.** A close paraphrase of BY-SA text is arguably a derivative work, which would reimport the share-alike obligation that reducing to facts+link exists to shed. "Facts + link" is only a real remedy if the facts are independently sourced; laundering the same prose through a paraphrase is not a reduction. Binds the WS0-T3 implementation (see the plan's WS0-T3 body, which carries the same constraint). |
 | Date-checked | 2026-07-15 (fact); 2026-07-16 (independently re-verified by primary-source fetch; D2 recorded same date) |
 
 ### 1.2 AI Incident Database (AIID) — direct scrape

@@ -10,8 +10,13 @@ venv/
 .idea/
 *.swp
 
-# Claude Code session-local config
-.claude/
+# Claude Code session-local config — everything except the agent team.
+# AGENT_TEAM.md section 6 requires .claude/agents/ to be versioned like code
+# ("the team is part of the repo"); the blanket ignore silently contradicted
+# that, so the ten agent definitions were never tracked. settings.local.json,
+# identity.json, ecc-tools.json, skills/, and homunculus/ stay ignored.
+.claude/*
+!.claude/agents/
 
 # OS
 .DS_Store
