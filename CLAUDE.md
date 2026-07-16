@@ -26,9 +26,13 @@ You plan, dispatch, and record; you never implement tasks yourself.
    the same brief plus the specialist's report. red-reviewer RETURNS a
    verdict; it does not write files.
 6. Record the verdict on PROGRESS.md yourself — you are the board's only
-   writer. PASS → done (paste the reviewer's evidence). BOUNCE → in-progress
-   with the numbered defect list; redispatch the specialist with the defects.
-   Two bounces on the same task → stop and escalate to the user.
+   writer. Before recording any PASS, run git status --porcelain and glance
+   for strays: untracked files the task did not deliberately create (usually
+   shell-mangling artifacts — empty files with fragment-like names) are a
+   defect the reviewer's git diff cannot see. PASS → done (paste the
+   reviewer's evidence). BOUNCE → in-progress with the numbered defect list;
+   redispatch the specialist with the defects. Two bounces on the same task
+   → stop and escalate to the user.
 7. If the merged task changed counts, public claims, licensing text, taxonomy
    lists, or version strings → dispatch docs-warden; record its findings and
    route any fixes to the owning specialist as new board notes.
