@@ -11,14 +11,23 @@
 | WS3-T5 | todo | schema-architect | | Phase-1 decision draft — human decides ID width |
 | WS5-T2a | todo | governance-scribe | | annotator recruitment — Phase-1, unblocks WS2-T2 |
 
-## Escalations pending human decision
+## Escalations / human decisions
 | # | Item | Raised | Status |
 |---|------|--------|--------|
-| E1 | **AIID ToS violation (live).** `scripts/scrape_aiid.py:213` runs `ThreadPoolExecutor(max_workers=12)` against per-incident pages. AIID ToS prohibits "'High-volume' means of accessing the Site, including but not limited to bots and spiders" — quote re-verified verbatim by red-reviewer at incidentdatabase.ai/terms-of-use/ (HTTP 200, in the site-conduct paragraph, not out of context). Violation is active on every refresh, independent of licensing. Official weekly snapshots exist as the sanctioned alternative. | WS0-T1, 2026-07-16 | **awaiting user** — data-drop/summarization decision reserved to human per CLAUDE.md step 8 |
-| E2 | **Verbatim text drops/summarization** for AIID (`reports.text` field explicitly excluded from AIID's CC-BY-SA grant), AIAAIC (share-alike — honor it or reduce to facts+link), OECD AIM (OECD "cannot and do not grant any rights to use" third-party narrative text). | WS0-T1, 2026-07-16 | **awaiting user** |
-| E3 | **Four outreach emails drafted** (AIAAIC, MIT AIRI Navigator, OECD AIM, CSET-AIID) — agents draft, human sends. AIAAIC draft to be revised/possibly dropped after BOUNCE #1 fix (its licensing question is resolved; a share-alike scope question may remain). | WS0-T1, 2026-07-16 | **awaiting user** |
+| E1 | **AIID ToS violation.** `scripts/scrape_aiid.py:213` runs `ThreadPoolExecutor(max_workers=12)` against per-incident pages. AIID ToS prohibits "'High-volume' means of accessing the Site, including but not limited to bots and spiders" — quote re-verified verbatim by red-reviewer at incidentdatabase.ai/terms-of-use/ (HTTP 200, in the site-conduct paragraph, not out of context). Official weekly snapshots exist as the sanctioned alternative. | WS0-T1, 2026-07-16 | **DECIDED 2026-07-16 → D1** |
+| E2 | **Verbatim text drops/summarization** for AIID (`reports.text` field explicitly excluded from AIID's CC-BY-SA grant), AIAAIC (share-alike), OECD AIM (OECD "cannot and do not grant any rights to use" third-party narrative text). | WS0-T1, 2026-07-16 | **DECIDED 2026-07-16 → D2** (AIAAIC); AIID/OECD handling follows from D1/D2 + WS0-T3 |
+| E3 | **Outreach emails drafted** (AIAAIC, MIT AIRI Navigator, OECD AIM, CSET-AIID) — agents draft, human sends. AIAAIC draft to be revised or dropped after BOUNCE #1 (licensing question resolved; a share-alike *scope* question may remain). | WS0-T1, 2026-07-16 | **awaiting user send** — 3 UNKNOWN rows after fix |
 | E4 | WS3-T5 ID width decision (Phase-1 gate) | not yet drafted | pending WS3-T5 dispatch |
 | E5 | WS1-T4 scope decision (rename vs `ai_system_type` tagging; plan recommends tagging) | Phase-2 task, Phase-1 escalation | pending |
+
+## Decisions (binding on downstream tasks)
+| # | Decision | Date | Consequences |
+|---|----------|------|--------------|
+| D1 | **AIID: stop the scrape now; pull the WS0-T4 snapshot swap into Phase 1 as P0.** Disable `scrape_aiid.py` from the `make ingest-all` path; replace with AIID's official weekly snapshot channel. | 2026-07-16 (user) | Adds an unplanned P0 task to Phase 1 (plan places WS0-T3/T4 in no phase's exit criteria — a plan gap, noted). AIID-derived data may go stale until the swap lands. Implements license-auditor remediation #1. Owner: pipeline-engineer. |
+| D2 | **AIAAIC: reduce to facts + link.** Do not carry AIAAIC verbatim cell text; keep title + taxonomy-tag facts + source pointer. Dataset stays under one clean CC-BY license — no BY-SA subset, no split-license-by-corpus. | 2026-07-16 (user) | Implements license-auditor remediation #2 (drops the interim framing — this is now the permanent handling). Simplifies WS0-T2 LICENSE-DATA and the WS1 corpus split. Thinner AIAAIC entries. Owner: pipeline-engineer (WS0-T3). |
+
+## Foreman corrections (audit trail)
+- **2026-07-16 — urgency claim corrected.** license-auditor's report stated the AIID violation is "active on every refresh"; the foreman relayed that to the user. **Not true.** `.github/workflows/auto-refresh.yml` (cron `0 4 * * 0`) runs only `ingest_airi_navigator.py`, `ingest_aiaaic_sheet.py`, `ingest_oecd_aim.py`, `ingest_cisa_kev.py` — it never invokes `scrape_aiid.py`. The only invoker is `Makefile:72` (`make ingest-all`), which is manual. The other two `scrape_aiid` mentions in the tree (`ingest_airi_navigator.py:9`, `merge_and_dedupe.py:731`) are comments; `ingest_airi_navigator.py:119/151` only constructs an AIID URL as a stored reference link and never fetches it (its sole network call is `conditional_fetch(ZIP_URL)` at :76). The violation is real and one command away, but it is not firing on a schedule. Neither specialist nor reviewer claimed to have checked the invocation path — not their defect, but a reminder that "how bad is it right now" needs its own verification. D1 stands regardless.
 
 ## Proposed follow-up tasks (from review, not folded into open tasks)
 - AIID exclusions list has a third item the WS0-T1 doc omits: "Contents displayed within the database not contained within the database snapshots (e.g., the source of images and videos)" — relevant to the WS0-T4 snapshot swap. (red-reviewer, 2026-07-16)
