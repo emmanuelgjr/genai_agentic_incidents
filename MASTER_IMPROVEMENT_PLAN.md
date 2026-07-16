@@ -3,7 +3,7 @@
 **Version:** 1.1 · **Owner:** @emmanuelgjr · **Target:** v3.0.0
 **Changes from v1.0:** all defects from the July 2026 self-audit fixed — exact task count (49), calendar replaced with dependency-ordered phases, staged invariants, baseline-first acceptance criteria, rejects-log privacy fix, deterministic summarization, archiving criterion made rate-limit-realistic, and 4 previously-unowned items added (Zenodo redeposit, CONTRIBUTING rewrite, v3.0 migration guide, AI-assisted-change policy).
 
-**Scope:** every issue from the July 2026 external review (36 items) plus 4 audit additions, mapped to **8 workstreams (WS0–WS7) and exactly 49 tasks**. Each task has an ID (`WS<n>-T<n>`), a priority (P0 = existential/legal, P1 = credibility, P2 = quality, P3 = polish), an effort estimate (S < half day, M = 1–2 days, L = 3+ days), files touched, and acceptance criteria written so they can be verified mechanically.
+**Scope:** every issue from the July 2026 external review (36 items) plus 4 audit additions, mapped to **8 workstreams (WS0–WS7) and exactly 50 tasks** (49 as of v1.1; WS4-T9 added 2026-07-16 — see the task-count-check section). Each task has an ID (`WS<n>-T<n>`), a priority (P0 = existential/legal, P1 = credibility, P2 = quality, P3 = polish), an effort estimate (S < half day, M = 1–2 days, L = 3+ days), files touched, and acceptance criteria written so they can be verified mechanically.
 
 ---
 
@@ -25,7 +25,7 @@ Everything below is a symptom of one of these. Every PR should state which one i
 
 Phases replace the v1.0 week schedule, which was unrealistic for a solo maintainer and contained a hard dependency inversion (the Phase-3 annotation study required an annotator recruited by a task previously scheduled after it). Phases are gated by exit criteria, not dates. Honest solo-pace expectation: Phase 1 alone is likely 4–8 weeks of elapsed time because WS0-T1 involves reading ~20 sets of legal terms and waiting on outreach replies. Work other Phase-1 tasks in parallel with that wait.
 
-- **Phase 1 — "Honest" (→ release v2.7.0).** Docs sync'd, licensing chain documented, overclaims removed, quick wins shipped, **second annotator recruitment started (WS5-T2a)**. *Exit criteria:* WS0-T2/T5/T6, WS6-T2, WS3-T5 (decision made) done; WS0-T1 has zero blank rows — every row resolved or carrying pending-outreach status with dates; WS5-T2a outreach sent; **WS0-T3 reduction complete for sources already confirmed non-redistributable (AIAAIC now; others as their WS0-T1 rows resolve); remaining sources gated on their WS0-T1 outcomes.** *(Amended 2026-07-16: WS0-T3 was a P0 task with no phase assignment in v1.1 — the task that fixes what WS0-T1 documents was scheduled nowhere. The fold is deliberately scoped: an unscoped fold of the full ~20-source reduction would deadlock Phase 1 behind WS0-T1's outreach waits.)*
+- **Phase 1 — "Honest" (→ release v2.7.0).** Docs sync'd, licensing chain documented, overclaims removed, quick wins shipped, **second annotator recruitment started (WS5-T2a)**. *Exit criteria:* WS0-T2/T5/T6, WS6-T2, WS3-T5 (decision made) done; WS0-T1 has zero blank rows — every row resolved or carrying pending-outreach status with dates; WS5-T2a outreach sent; **WS0-T3 reduction complete for sources already confirmed non-redistributable (AIAAIC now; others as their WS0-T1 rows resolve); remaining sources gated on their WS0-T1 outcomes**; **WS4-T9 done (a silently-dead ingest means the dataset misrepresents its own freshness — that is this phase's subject, not a later phase's).** *(Amended 2026-07-16: WS0-T3 was a P0 task with no phase assignment in v1.1 — the task that fixes what WS0-T1 documents was scheduled nowhere. The fold is deliberately scoped: an unscoped fold of the full ~20-source reduction would deadlock Phase 1 behind WS0-T1's outreach waits.)*
 - **Phase 2 — "Restructured" (→ v3.0.0-beta).** Corpus split, schema v2 (dates + conflicts + confidence + sanitized variant), ID migration executed per the Phase-1 decision, **migration guide drafted (WS6-T8)**. *Exit criteria:* WS1-T1–T4, WS3-T1/T2/T6, WS2-T3, WS6-T8 done; determinism CI green on the new pipeline. *Gate:* Phase 2 structural work must not begin while WS0-T1 licensing outcomes for a source are unknown — licensing determines what data may even be kept.
 - **Phase 3 — "Validated" (→ v3.0.0).** Label audit with error rates, ATLAS benchmark in CI, dedupe error rate measured, ingest snapshots pinned, CVE allowlist live. *Exit criteria:* WS2-T1/T2/T4/T5, WS4-T1/T4/T5, WS1-T5/T6, WS7-T3, WS6-T7, WS5-T5 done. *Dependency note:* WS2-T2 requires the annotator recruited via WS5-T2a — started in Phase 1 precisely so it lands in time.
 - **Phase 4 — "Durable" (→ v3.1.0, ongoing).** Governance docs complete, PII redaction pass, signing, reconciliation, archiving backlog draining, graph relationships, distribution upgrades, co-maintainer or institutional home. *Exit criteria:* remaining tasks done; the project survives the maintainer taking a month off.
@@ -187,7 +187,7 @@ Raw verbatim kept where licensed (full JSON only); `description_safe` (HTML-esca
 
 ---
 
-## WS4 — Pipeline Integrity & Reproducibility (P1) — 8 tasks
+## WS4 — Pipeline Integrity & Reproducibility (P1) — 9 tasks
 
 ### WS4-T1 · Pin ingest snapshots (P1, M)
 `ingest/snapshots/<date>/` + `MANIFEST.json` (sha256 per file), committed or attached to releases; releases record the snapshot hash they were built from; `make build SNAPSHOT=<date>`.
@@ -222,6 +222,16 @@ Per-source frozen fixtures + assertions that `normalize_entry` extracts required
 ### WS4-T8 · Sign the releases (P2, S)
 SHA256SUMS + cosign (Sigstore keyless via GitHub OIDC) on release assets (incidents.json, STIX bundle, HF parquet). Verification instructions tested.
 - **Accept:** the documented `cosign verify-blob` procedure succeeds against the latest release.
+
+### WS4-T9 · Dead-ingest triage: AIRI Navigator + the silent-failure pattern (P0, M) — *new 2026-07-16*
+**Phase: 1** — a silently-dead ingest means the dataset misrepresents its own freshness, which is squarely Phase 1's "nothing the repo says about itself is false."
+
+Discovered during the WS0-T1 re-gate, not by any test — which is itself the finding. `scripts/ingest_airi_navigator.py:33` fetches `https://www.airi-navigator.com/downloads/airi-data.zip`, which returns **HTTP 404 / 0 bytes** on both hosts (verified with browser UA and Referer, by two independent parties). No cache exists to mask it: `ingest/_cache/` is absent. MIT deliberately withdrew the public download — the site's own JS gates the link behind a flag evaluating false (`"FALSE".toUpperCase()!=="FALSE" && <a href="/downloads/airi-data.zip" download>`). `auto-refresh.yml` runs this ingest under `continue-on-error: true`, and its result-summary step aborts only if **all three** sources fail, so a dead source degrades to a `::warning::` nobody reads.
+- **Establish:** is the AIRI ingest dead in the current build? How many corpus entries derive from it, and which fields would be lost or frozen? When did it last succeed (git history of the AIRI-derived data)?
+- **Decide (escalate to the human with evidence):** retire the source, or find a sanctioned replacement (MIT FutureTech publish the AI Risk Repository at `airisk.mit.edu` — data is CC BY 4.0 per their footer; establish whether a sanctioned export exists before proposing outreach).
+- **Fix the class, not just the instance:** `continue-on-error: true` plus an all-three-must-fail abort threshold is a silent-degradation pattern, not an AIRI bug. Any source that fails N consecutive refreshes must fail loudly or mark its data stale. Coordinate with WS4-T6, whose population-rate check is the mechanism that should have caught this.
+- **Invariant 3 applies:** existing AIRI-derived entries are never deleted — status + tombstone if the source is retired.
+- **Accept:** the ingest's live/dead status established with evidence; corpus dependency quantified; retire-or-replace decision recorded on the board; a dead or persistently-failing source can no longer pass a refresh as a warning — demonstrated by a test.
 
 ---
 
@@ -314,7 +324,9 @@ Opt-in "Used by" README section + issue template — social proof and an early-w
 
 ## Task count check (self-audit guard)
 
-WS0: 6 · WS1: 6 · WS2: 5 · WS3: 6 · WS4: 8 · WS5: 6 · WS6: 8 · WS7: 4 → **49 tasks**. If you add or remove a task, update this line and the header in the same commit — this plan does not get to drift about its own contents.
+WS0: 6 · WS1: 6 · WS2: 5 · WS3: 6 · WS4: **9** · WS5: 6 · WS6: 8 · WS7: 4 → **50 tasks**. If you add or remove a task, update this line and the header in the same commit — this plan does not get to drift about its own contents.
+
+*Change log for this line:* 49 (v1.1) → 50 on **2026-07-16**, adding **WS4-T9** (dead-ingest triage: AIRI Navigator + the silent-failure pattern), authorized by the maintainer. Header line updated in the same commit, per the rule above.
 
 ---
 
@@ -381,5 +393,6 @@ WS0: 6 · WS1: 6 · WS2: 5 · WS3: 6 · WS4: 8 · WS5: 6 · WS6: 8 · WS7: 4 →
 | v3.0 consumer migration guide unowned | WS6-T8 (new) |
 | No AI-assisted-change policy | WS5-T6 (new) |
 | WS0-T3 had no phase assignment | Phase 1 exit criteria amended (scoped fold) |
+| A live ingest's source 404s and fails silently every refresh; no test caught it | WS4-T9 (new, Phase 1) — count 49 → 50 |
 
 *Definition of done for the whole plan: nothing the repo says about itself is false; every label has a measured or declared error bar; every byte of data has a documented right to be there; and the project survives you taking a month off.*
