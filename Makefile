@@ -1,9 +1,9 @@
-.PHONY: build validate render merge install clean test stix taxii misp huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all
+.PHONY: build validate render merge install clean test stix taxii misp huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all render-docs-stats check-stats-drift
 
 install:
 	pip install -r requirements.txt
 
-build: merge render validate
+build: merge render render-docs-stats validate
 
 test:
 	pytest tests -q
@@ -14,6 +14,17 @@ merge:
 
 render:
 	python scripts/render_markdown.py
+
+# Template data/stats.json's counts into README/DATASHEET/site/CITATION.cff
+# (WS6-T2, invariant 6). Reads stats.json written by `render`; never
+# computes a count itself. Idempotent — safe to run every build.
+render-docs-stats:
+	python scripts/render_docs_stats.py
+
+# CI gate for invariant 6: fails if any doc surface has drifted from
+# data/stats.json, or carries a hardcoded total outside a stats:* marker.
+check-stats-drift:
+	python scripts/check_stats_drift.py
 
 validate:
 	python scripts/validate.py

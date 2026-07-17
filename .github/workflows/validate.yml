@@ -36,10 +36,11 @@ jobs:
       - name: Validate incidents.json against schema
         run: python scripts/validate.py
 
-      - name: Re-render INCIDENTS.md and ensure no drift
+      - name: Re-render INCIDENTS.md + doc stats and ensure no drift
         run: |
           python scripts/render_markdown.py
-          paths="INCIDENTS.md data/incidents.json data/incidents.min.json data/id_deprecations.json data/stats.json docs/incidents docs/data docs/charts src/genai_incidents/data src/genai_incidents/schema"
+          python scripts/render_docs_stats.py
+          paths="INCIDENTS.md data/incidents.json data/incidents.min.json data/id_deprecations.json data/stats.json docs/incidents docs/data docs/charts src/genai_incidents/data src/genai_incidents/schema README.md docs/DATASHEET.md docs/index.html docs/_config.yml CITATION.cff"
           if [ -n "$(git status --porcelain $paths)" ]; then
             echo "::error::Generated files are out of date. Run 'make build' locally and commit the result."
             git status --porcelain $paths
@@ -51,6 +52,9 @@ jobs:
             echo "::endgroup::"
             exit 1
           fi
+
+      - name: Check doc surfaces for hardcoded counts (invariant 6)
+        run: python scripts/check_stats_drift.py
 
       - name: Scan rendered shards for raw HTML (stored-XSS guard)
         run: |

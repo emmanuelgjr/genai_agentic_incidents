@@ -17,7 +17,8 @@ trackers (AIID, MIT AI Risk Repository, AVID, and others; see the
 Collection section below) as upstream sources rather than replacing them.
 
 ## Composition
-- **Instances:** consolidated incidents (12,770 as of v2.6.0 — live count in
+- **Instances:** consolidated incidents (<!-- stats:incident_count -->12,986<!-- /stats:incident_count -->
+  as of this build — authoritative live count in
   [`data/stats.json`](../data/stats.json)), each an alleged
   real-world harm, disclosed vulnerability, threat report, or research/red-team
   demonstration involving an AI system.
