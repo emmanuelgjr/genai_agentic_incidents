@@ -15,9 +15,12 @@
 `genai_incidents` is an open, continuously-maintained dataset of publicly
 disclosed security incidents and vulnerabilities involving generative-AI and
 agentic-AI systems. Each entry is consolidated from multiple upstream sources,
-deduplicated under stable identifiers, and **cross-mapped to five control
-frameworks in a single record** — OWASP LLM Top 10 (2025), OWASP Agentic (ASI)
-Top 10, NIST AI RMF, MITRE ATLAS, and (companion) MAESTRO. The dataset is built
+deduplicated under stable identifiers, and **cross-mapped to six taxonomies**
+— four core, stored on every applicable record (OWASP LLM Top 10 (2025),
+OWASP Agentic (ASI) Top 10, NIST AI RMF, MITRE ATLAS); a companion mapping
+stored where the source provides it (MAESTRO); and an experimental,
+export-only crosswalk computed at MISP-export time rather than stored per
+record (VERIS 1.4.1). The dataset is built
 by a deterministic, reproducible pipeline; governed by an explicit written
 inclusion policy; and published in interoperable formats (JSON, minified JSON,
 STIX 2.1, a Python package, and a Hugging Face dataset) under open licences with
@@ -100,7 +103,7 @@ deliberately not derived by chaining ATLAS→ATT&CK→VERIS (see
 ## 6. Schema and provenance
 
 Every entry carries identity (`id`, `source_ids`), classification (severity,
-category, `corpus`), the five framework mappings, optional CVE/CWE/CVSS and KEV
+category, `corpus`), the taxonomy mappings described in section 5, optional CVE/CWE/CVSS and KEV
 fields, and a **provenance block**: `quality_tier`, rule-derived `confidence`
 (high/medium/low), `source_count`, `source_status`, `first_seen`/`last_seen`,
 and `tier` (landmark vs feed). Landmark-tier entries may additionally carry two
@@ -139,8 +142,9 @@ treatment.
 ## 9. Availability and reproducibility
 
 Open data (CC-BY-4.0) and code (MIT). Distributed via GitHub, PyPI
-(`genai-incidents`), Hugging Face Datasets, a STIX 2.1 bundle, a static TAXII 2.1
-endpoint, a MISP feed, a browsable site, and a per-version DOI on Zenodo. The entire dataset is regenerable from the
+(`genai-incidents`), Hugging Face Datasets, a STIX 2.1 bundle, a static
+TAXII-compatible discovery document, a MISP feed, a browsable site, and a
+per-version DOI on Zenodo. The entire dataset is regenerable from the
 committed ingest artifacts with `make build`; CI re-runs this on every change
 and fails on drift, so any published release is reproducible from source.
 

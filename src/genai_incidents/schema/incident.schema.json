@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/emmanuelgjr/genai_incidents/schema/incident.schema.json",
   "title": "GenAI / Agentic AI Security Incident",
-  "description": "Schema for a single incident entry in the genai_incidents single-source-of-truth dataset. Every entry is mapped to OWASP LLM Top 10, OWASP Agentic (ASI) Top 10, NIST AI RMF, and MITRE ATLAS where applicable.",
+  "description": "Schema for a single incident entry in the genai_incidents dataset, a consolidated index of GenAI and agentic AI security incidents. Every entry is mapped to four core taxonomies (OWASP LLM Top 10, OWASP Agentic (ASI) Top 10, NIST AI RMF, MITRE ATLAS) where applicable, plus optional companion MAESTRO and experimental VERIS crosswalk fields.",
   "type": "object",
   "required": ["id", "title", "date", "year", "category", "description", "severity", "references"],
   "additionalProperties": false,

@@ -5,10 +5,16 @@ Following *Datasheets for Datasets* (Gebru et al.). For per-field definitions se
 [`schema/incident.schema.json`](../schema/incident.schema.json).
 
 ## Motivation
-A single, machine-readable source of truth for GenAI and agentic-AI security
-incidents, normalized and mapped to OWASP LLM/ASI, NIST AI RMF, and MITRE
-ATLAS — so developers, AppSec/threat-intel teams, and researchers can query,
-pivot, and cite incidents instead of re-scraping scattered trackers.
+A consolidated, machine-readable index of GenAI and agentic-AI security
+incidents, normalized and mapped to four core taxonomies (OWASP LLM Top 10,
+OWASP Agentic Top 10 (ASI), NIST AI RMF, MITRE ATLAS), plus a companion
+MAESTRO architectural-layer mapping and an experimental VERIS 1.4.1
+crosswalk — so developers, AppSec/threat-intel teams, and researchers can
+query, pivot, and cite incidents instead of re-scraping scattered trackers.
+See TAXONOMIES.md for the full picture, including which taxonomies are
+core, companion, or experimental. This dataset draws on other incident
+trackers (AIID, MIT AI Risk Repository, AVID, and others; see the
+Collection section below) as upstream sources rather than replacing them.
 
 ## Composition
 - **Instances:** consolidated incidents (12,770 as of v2.6.0 — live count in
@@ -67,7 +73,7 @@ deduplicated by CVE / canonical URL / fuzzy title.
 ## Distribution & licence
 - **Data:** CC-BY-4.0. **Code:** MIT. DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676).
 - Distributed via GitHub, PyPI (`genai-incidents`), Hugging Face Datasets, a
-  STIX 2.1 bundle, a static [TAXII 2.1 endpoint](https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json),
+  STIX 2.1 bundle, a static [TAXII-compatible discovery document](https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json),
   and a [MISP feed](https://emmanuelgjr.github.io/genai_incidents/misp/) whose events
   carry `genai-incidents:*`, `mitre-atlas:*`, and VERIS 1.4.1 `veris:*` machinetags.
 

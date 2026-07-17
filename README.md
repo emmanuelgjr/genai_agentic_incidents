@@ -22,15 +22,18 @@
 - 📄 **Methodology:** [`docs/paper/genai-incidents-methods.md`](docs/paper/genai-incidents-methods.md) — how the dataset is built, mapped, and governed
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
-A single source of truth of **[12,500+ GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
+A consolidated, machine-readable index of **[12,500+ GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
 
-- **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10`
-- **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10`
-- **NIST AI Risk Management Framework (AI 100-1)** — `GOVERN` / `MAP` / `MEASURE` / `MANAGE` subcategories
-- **MITRE ATLAS** — tactics (`AML.TA00xx`) and techniques (`AML.T00xx`)
-- _(Companion)_ **MAESTRO** architectural layers (`L1`–`L7`)
+- **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10` — _core_
+- **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10` — _core_
+- **NIST AI Risk Management Framework (AI 100-1)** — `GOVERN` / `MAP` / `MEASURE` / `MANAGE` subcategories — _core_
+- **MITRE ATLAS** — tactics (`AML.TA00xx`) and techniques (`AML.T00xx`) — _core_
+- **MAESTRO** architectural layers (`L1`–`L7`) — _companion_ (carried on entries whose upstream source already provides a MAESTRO mapping; not populated on every entry)
+- **VERIS 1.4.1 crosswalk** (`veris:*` tags in the MISP export) — _experimental_ (a hand-curated crosswalk from `attack_vector`, emitted at export time only — not a stored per-incident schema field)
 
 The dataset is published as both a machine-readable JSON (`data/incidents.json`) and a human-readable Markdown index (`INCIDENTS.md`).
+
+**How this differs from AIID / MIT AI Risk Repository / AVID:** those projects are themselves primary or aggregated incident trackers, and this dataset draws on several of them as upstream sources (see docs/SOURCE_LICENSES.md) rather than replacing them. What this project adds is normalization onto security-oriented taxonomies (OWASP LLM/ASI, NIST AI RMF, MITRE ATLAS) across sources that don't share a common schema. A full side-by-side positioning comparison is planned but not yet written.
 
 ---
 
@@ -39,7 +42,7 @@ The dataset is published as both a machine-readable JSON (`data/incidents.json`)
 ```
 .
 ├── data/
-│   ├── incidents.json          ← full single source of truth (use this)
+│   ├── incidents.json          ← the full, authoritative dataset (use this)
 │   ├── incidents.min.json      ← slim variant: id, title, taxonomy mappings, primary reference
 │   └── legacy_consolidated.json ← intermediate output from the legacy parser
 ├── schema/
@@ -239,7 +242,7 @@ If a source is missing or mis-attributed, open an issue or PR.
 PRs welcome. Please:
 
 - Add at least one verifiable URL per entry.
-- Map to all four taxonomies where applicable. If unsure, leave the field empty rather than guess.
+- Map to the four core taxonomies where applicable (MAESTRO and VERIS are not contributor-set — see CONTRIBUTING.md). If unsure, leave the field empty rather than guess.
 - Run `scripts/validate.py` and `scripts/render_markdown.py` before opening a PR.
 - For incidents you authored or first reported, that's totally fine — but please link the canonical writeup.
 
