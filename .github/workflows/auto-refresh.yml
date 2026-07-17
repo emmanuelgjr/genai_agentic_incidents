@@ -91,23 +91,36 @@ jobs:
       # dead since 2026-06-07) sails through it silently as long as at least
       # one other source succeeds, and the job keeps reporting overall
       # "success" — so nobody watching the repo is ever notified. This step
-      # tracks CONSECUTIVE failures per source, persisted in
-      # ingest/_state/source_health.json and committed via the refresh PR
-      # below, same as every other ingest output.
+      # tracks CONSECUTIVE failures per source in
+      # ingest/_state/source_health.json.
       #
-      # KNOWN LIMITATION (WS4-T9 bounce #1, advisory (b) — flagged, not
-      # silently shipped): that PR is not always merged promptly (#2, #18,
-      # #25 in this repo's history sat open and were closed unmerged,
-      # superseded by the next week's run). If a brand-new source starts
-      # failing and its PRs keep getting closed unmerged, its counter can
-      # stall below threshold indefinitely — the loud-failure gate below
-      # would never fire for it, only for sources (like AIRI here) whose
-      # count already reached main before the stalling started. A fix would
-      # need the counter to persist independently of the data-review PR (e.g.
-      # a direct commit to `main` from this workflow, or a durable
-      # out-of-band store) — that is a real change to this repo's git/CI
-      # governance (unattended pushes to `main`) and is called out to the
-      # human for a decision rather than made unilaterally here.
+      # D5: the counter this check reads/writes must be durable independent
+      # of the data-review PR below (see the KNOWN LIMITATION this fixed:
+      # PRs #2/#18/#25 in this repo's history were closed unmerged and
+      # superseded, silently eating the counter). So immediately before
+      # this step, restore the counter from the long-lived `refresh-state`
+      # branch — not from whatever's on `main` or sitting in an open PR —
+      # and immediately after, persist it back there (see the two steps
+      # below). `refresh-state` is machine-state-only: never merged into
+      # `main`, not human-reviewed, force-pushed every run, documented as
+      # unreviewed-by-design. This keeps "everything on main is reviewed"
+      # intact while making the counter durable without an unattended write
+      # to `main` itself (main has no branch protection — see WS4-T7).
+      - name: Restore source health counters from refresh-state branch
+        run: |
+          STATE_FILE="ingest/_state/source_health.json"
+          if git ls-remote --exit-code --heads origin refresh-state >/dev/null 2>&1; then
+            git fetch --quiet origin refresh-state
+            if git cat-file -e "origin/refresh-state:${STATE_FILE}" 2>/dev/null; then
+              git show "origin/refresh-state:${STATE_FILE}" > "$STATE_FILE"
+              echo "::notice::Restored $STATE_FILE from refresh-state branch."
+            else
+              echo "::notice::refresh-state branch exists but has no $STATE_FILE yet; using in-repo copy."
+            fi
+          else
+            echo "::notice::refresh-state branch does not exist yet; using in-repo copy (branch created on first push below)."
+          fi
+
       - name: Source health check (consecutive-failure tracking)
         id: health
         continue-on-error: true
@@ -120,6 +133,53 @@ jobs:
           python scripts/check_source_health.py \
             --outcomes-json "{\"airi_navigator\": \"$AIRI\", \"aiaaic_sheet\": \"$AIAAIC\", \"oecd_aim\": \"$OECD\", \"cisa_kev\": \"$KEV\"}" \
             --summary-file "$GITHUB_STEP_SUMMARY"
+
+      # D5, continued: push the just-updated counter to `refresh-state` via
+      # a throwaway clone (so this can never touch the working tree that's
+      # about to become the data-review PR below), then reset the working
+      # copy back to what's committed on `main` — no diff, nothing left for
+      # `create-pull-request` to pick up. `refresh-state` is now the single
+      # source of truth for the counter, so a data-review PR closed without
+      # merging can no longer strand it (see the tripwire workflow that
+      # comments on such PRs: .github/workflows/refresh-pr-closed-tripwire.yml).
+      - name: Persist source health counters to refresh-state branch
+        run: |
+          set -e
+          STATE_FILE="ingest/_state/source_health.json"
+          cp "$STATE_FILE" /tmp/source_health.json
+
+          rm -rf /tmp/refresh-state-clone
+          # --filter=blob:none --no-checkout: this repo's data/*.json blobs
+          # are tens of MB; a partial, uncheckout'd clone fetches only
+          # commit/tree metadata up front, and (via the two branches below)
+          # only the tiny refresh-state tree's blobs on demand — not main's.
+          git clone --quiet --depth 1 --filter=blob:none --no-checkout "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" /tmp/refresh-state-clone
+          cd /tmp/refresh-state-clone
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin refresh-state >/dev/null 2>&1; then
+            git fetch --quiet origin refresh-state
+            git checkout -q -B refresh-state origin/refresh-state
+          else
+            git checkout -q --orphan refresh-state
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p ingest/_state
+          cp /tmp/source_health.json ingest/_state/source_health.json
+          git add ingest/_state/source_health.json
+          if git diff --cached --quiet; then
+            echo "::notice::source_health.json unchanged this run; refresh-state left as-is."
+          else
+            git commit -q -m "chore(state): update source health counters [skip ci]"
+            git push --force origin HEAD:refresh-state
+          fi
+          cd "$GITHUB_WORKSPACE"
+          rm -rf /tmp/refresh-state-clone
+
+          # Exclude the counter from the data-review PR (refresh-state,
+          # above, is now the single source of truth): reset the
+          # working-tree copy back to whatever's committed on `main`.
+          git checkout -- "$STATE_FILE" 2>/dev/null || rm -f "$STATE_FILE"
 
       - name: Re-merge + render + validate
         run: |
@@ -169,15 +229,16 @@ jobs:
             suite both ran green in this workflow before the PR was opened.
 
       # Runs LAST (after the PR is already opened, carrying whatever sources
-      # did refresh, plus the updated ingest/_state/source_health.json) so a
-      # persistently-dead source never blocks the sources that ARE working —
-      # but the workflow RUN itself still ends red and GitHub's own
-      # failed-scheduled-workflow notification fires. This is the "can no
-      # longer pass a refresh as a warning" gate from WS4-T9: a source stays
-      # loud every single week until it recovers, or someone pauses it with a
-      # reason AND an expiry (`paused_until`) in
-      # ingest/_state/source_health.json — an expired or incomplete pause is
-      # not honored (see scripts/check_source_health.py).
+      # did refresh — the source-health counter itself lives on
+      # `refresh-state`, not this PR, per D5 above) so a persistently-dead
+      # source never blocks the sources that ARE working — but the workflow
+      # RUN itself still ends red and GitHub's own failed-scheduled-workflow
+      # notification fires. This is the "can no longer pass a refresh as a
+      # warning" gate from WS4-T9: a source stays loud every single week
+      # until it recovers, or someone pauses it with a reason AND an expiry
+      # (`paused_until`) in ingest/_state/source_health.json — an expired,
+      # malformed, or absurdly-far-future pause is not honored (see
+      # scripts/check_source_health.py).
       - name: Enforce source health
         if: steps.health.outcome == 'failure'
         run: |

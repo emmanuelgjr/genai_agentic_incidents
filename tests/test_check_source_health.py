@@ -95,6 +95,9 @@ def test_active_pause_does_not_report_as_newly_stale():
         {"paused": True, "paused_reason": "  "},  # blank reason
         {"paused": True, "paused_reason": "investigating"},  # reason but no paused_until
         {"paused": True, "paused_until": "2026-08-01"},  # expiry but no reason
+        # Dropped-zero typo of a PAST date — the fail-open regression: a raw
+        # string compare sorted this as > "2026-07-19" and returned "active".
+        {"paused": True, "paused_reason": "investigating", "paused_until": "2026-7-1"},
     ],
 )
 def test_invalid_pause_is_not_honored(entry_extra):
@@ -139,6 +142,42 @@ def test_pause_status_helper_classifies_correctly():
     ) == "active", "paused_until == today should still count as active (inclusive)"
     assert h.pause_status(
         {"paused": True, "paused_reason": "x", "paused_until": "2026-12-31"}, today
+    ) == "active"
+
+
+def test_pause_status_rejects_unpadded_date_typo():
+    """MANDATORY regression case (rider): "2026-7-1" is a realistic
+    dropped-zero typo of a PAST date. Under the old raw-string compare it
+    sorted as > "2026-07-19" and returned "active", silencing the loud-
+    failure gate forever. Parsing as a real, canonically-formatted date
+    closes that — this must be "invalid" (not "active")."""
+    today = "2026-07-19"
+    result = h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": "2026-7-1"}, today
+    )
+    assert result != "active", "the fail-open must be closed"
+    assert result == "invalid"
+
+
+@pytest.mark.parametrize("until", ["forever", "TBD", "not-a-date", "2026/07/19"])
+def test_pause_status_rejects_non_date_strings(until):
+    today = "2026-07-19"
+    assert h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": until}, today
+    ) == "invalid"
+
+
+def test_pause_status_caps_far_future_pause_as_invalid():
+    """A validly-formatted but absurdly-far-future paused_until (e.g.
+    "9999-12-31") is a permanent silence wearing a time-box costume — cap
+    it at MAX_PAUSE_HORIZON_DAYS so it must be periodically re-justified."""
+    today = "2026-07-19"
+    assert h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": "9999-12-31"}, today
+    ) == "invalid"
+    # Sanity: a pause comfortably inside the horizon is unaffected.
+    assert h.pause_status(
+        {"paused": True, "paused_reason": "x", "paused_until": "2026-10-01"}, today
     ) == "active"
 
 
@@ -234,6 +273,38 @@ def test_cli_exits_nonzero_when_pause_has_expired(tmp_path):
     )
     assert result.returncode == 1, result.stdout + result.stderr
     assert "EXPIRED" in result.stdout
+
+
+def test_cli_exits_nonzero_when_pause_is_an_unpadded_date_typo(tmp_path):
+    """End-to-end regression for the exact fail-open bug: an unpadded PAST
+    date typo (a realistic dropped-zero mistake) must not silently keep a
+    persistently-dead source's loud-failure gate quiet forever."""
+    state_file = tmp_path / "source_health.json"
+    h.save_state(
+        state_file,
+        {
+            "airi_navigator": {
+                "consecutive_failures": 6,
+                "status": "stale",
+                "paused": True,
+                "paused_reason": "WS4-T9 triage",
+                "paused_until": "2026-7-1",
+            }
+        },
+    )
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(Path(__file__).resolve().parents[1] / "scripts" / "check_source_health.py"),
+            "--outcomes-json", json.dumps({"airi_navigator": "failure"}),
+            "--state-file", str(state_file),
+            "--threshold", "3",
+            "--today", "2026-07-19",
+        ],
+        capture_output=True, text=True,
+    )
+    assert result.returncode == 1, result.stdout + result.stderr
+    assert "INVALID" in result.stdout
 
 
 @pytest.mark.parametrize("outcome", ["failure", "cancelled", "skipped"])

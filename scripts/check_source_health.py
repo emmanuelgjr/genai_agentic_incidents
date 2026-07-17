@@ -30,6 +30,18 @@ back to failing loudly, exactly like an un-paused one, until someone renews
 the pause with a fresh reason and date. A silence switch nobody has to
 re-justify is indistinguishable from the ``::warning::`` this task exists to
 abolish.
+
+``paused_until`` is parsed as a strict, zero-padded ``YYYY-MM-DD`` date, not
+compared as a raw string: a raw-string compare fails open, because a
+malformed value like the dropped-zero typo ``"2026-7-1"`` (or ``"forever"``,
+``"TBD"``, or any other non-date text) sorts as a STRING greater than a
+correctly-formatted "today" and was, before this fix, wrongly treated as an
+unexpired pause forever. Anything that doesn't parse as a canonical
+``YYYY-MM-DD`` date is ``"invalid"`` — not honored. A pause is also capped
+at ``MAX_PAUSE_HORIZON_DAYS`` days out from today (see that constant below):
+a validly-formatted but absurdly-far-future date (``"9999-12-31"``) is a
+permanent silence wearing a time-box costume, and is likewise rejected as
+``"invalid"`` so it must be periodically re-justified instead.
 """
 
 from __future__ import annotations
@@ -37,12 +49,14 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_STATE_PATH = ROOT / "ingest" / "_state" / "source_health.json"
 DEFAULT_THRESHOLD = 3  # consecutive failed refreshes before a source goes "stale"
+MAX_PAUSE_HORIZON_DAYS = 180  # ~6 months; a pause can't be dated further out
+# than this from "today" without renewal — see pause_status()'s docstring.
 
 
 def utc_today() -> str:
@@ -60,12 +74,41 @@ def save_state(path: Path, state: dict) -> None:
     path.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
 
+def _parse_strict_iso_date(value: str) -> date | None:
+    """Parse ``value`` as a canonical, zero-padded ``YYYY-MM-DD`` date, or
+    return ``None`` if it isn't one.
+
+    Deliberately stricter than bare ``datetime.strptime(..., "%Y-%m-%d")``:
+    that alone still accepts unpadded values like ``"2026-7-1"`` (Python's
+    strptime treats ``%m``/``%d`` as 1-or-2 digits), so a round-trip
+    re-format check is required to reject a dropped-zero typo instead of
+    silently parsing it to *some* date. This is the fix for the fail-open
+    where such a value sorted as a STRING greater than today's ISO date and
+    was wrongly treated as an unexpired pause.
+    """
+    try:
+        parsed = datetime.strptime(value, "%Y-%m-%d").date()
+    except ValueError:
+        return None
+    if parsed.strftime("%Y-%m-%d") != value:
+        return None
+    return parsed
+
+
 def pause_status(entry: dict, today: str) -> str:
     """Classify a source's pause request. Returns one of:
 
     ``"none"``      — not paused, nothing to honor.
-    ``"active"``     — paused, with a reason and an unexpired ``paused_until``.
-    ``"invalid"``    — ``paused: true`` but missing/empty reason or expiry.
+    ``"active"``     — paused, with a reason and an unexpired, sane
+                        ``paused_until``.
+    ``"invalid"``    — ``paused: true`` but missing/empty reason or expiry;
+                        or ``paused_until`` doesn't parse as a canonical
+                        ``YYYY-MM-DD`` date (dropped-zero typos like
+                        ``"2026-7-1"``, non-dates like ``"forever"`` /
+                        ``"TBD"``); or ``paused_until`` is more than
+                        ``MAX_PAUSE_HORIZON_DAYS`` days out from ``today``
+                        (a pause that far out is effectively permanent and
+                        must be re-justified periodically instead).
     ``"expired"``    — otherwise-valid pause whose ``paused_until`` has passed.
 
     Only ``"active"`` silences the loud-failure gate. ``"invalid"`` and
@@ -75,11 +118,18 @@ def pause_status(entry: dict, today: str) -> str:
     if not entry.get("paused"):
         return "none"
     reason = (entry.get("paused_reason") or "").strip()
-    until = (entry.get("paused_until") or "").strip()
-    if not reason or not until:
+    until_raw = (entry.get("paused_until") or "").strip()
+    if not reason or not until_raw:
         return "invalid"
-    if until < today:
+
+    until = _parse_strict_iso_date(until_raw)
+    today_d = _parse_strict_iso_date(today)
+    if until is None or today_d is None:
+        return "invalid"
+    if until < today_d:
         return "expired"
+    if (until - today_d).days > MAX_PAUSE_HORIZON_DAYS:
+        return "invalid"
     return "active"
 
 
@@ -197,8 +247,10 @@ def main(argv: list[str] | None = None) -> int:
                   f"({entry.get('paused_reason')}).")
         elif p == "invalid":
             print(f"::error::{s} is marked paused but the pause is INVALID (missing "
-                  f"paused_reason or paused_until in ingest/_state/source_health.json) — "
-                  "not honoring it. Add both, or this source keeps failing loudly.")
+                  f"paused_reason/paused_until, a paused_until that isn't a canonical "
+                  f"YYYY-MM-DD date, or one dated more than {MAX_PAUSE_HORIZON_DAYS} days out — "
+                  "in ingest/_state/source_health.json) — not honoring it. Fix the pause, "
+                  "or this source keeps failing loudly.")
         elif p == "expired":
             print(f"::error::{s}'s pause EXPIRED on {entry.get('paused_until')} — not honoring "
                   "it. Renew paused_until with a fresh reason, or resolve the source.")

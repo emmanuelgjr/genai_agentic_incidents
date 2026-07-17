@@ -1,0 +1,35 @@
+name: Data-refresh PR closed unmerged
+
+# The consecutive-source-failure counter used to live only on the weekly
+# data-refresh PR itself — a PR closed WITHOUT merging (PRs #2, #18, #25 in
+# this repo's history) silently threw it away, letting a newly-dying
+# source's counter stall below the loud-failure threshold indefinitely.
+# D5 moved the durable counter onto the `refresh-state` branch (see
+# auto-refresh.yml), so a closed-unmerged PR can no longer strand it — but
+# closing a data-refresh PR without merging is still worth a loud, visible
+# note for whoever's watching the repo. This is that tripwire: it fires on
+# every PR close, but only acts on the ones that are (a) not merged and
+# (b) the weekly data-refresh PR, identified by its branch or its label.
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  notify:
+    if: >
+      github.event.pull_request.merged == false &&
+      (github.event.pull_request.head.ref == 'auto-refresh/data' ||
+       contains(github.event.pull_request.labels.*.name, 'data-refresh'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment on the closed-unmerged PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --body "This weekly data-refresh PR was closed without merging. Since D5, the source-health consecutive-failure counter (\`ingest/_state/source_health.json\`) is persisted independently on the \`refresh-state\` branch — machine-state-only, force-pushed every run, never merged — so closing this PR unmerged does **not** reset or strand that counter. Everything else in this PR (the refreshed source data itself) was **not** applied to \`main\`; re-run the \"Weekly auto-refresh\" workflow (Actions → Weekly auto-refresh → Run workflow) if a fresh refresh is still needed."
