@@ -53,3 +53,13 @@ docs/og-image.png
 # committed to keep the repo lean).
 docs/taxii2/
 docs/misp/
+
+# Auto-generated local tool config (ecc-tools / claude-flow "homunculus"
+# repo-analysis output — never authored by us, and it was publishing local
+# assistant config in a public repo). The hand-authored .claude/agents/*.md
+# specialist definitions and .claude/settings*.json stay tracked; only the
+# generated artifacts are ignored.
+.claude/identity.json
+.claude/ecc-tools.json
+.claude/homunculus/
+.claude/skills/genai_incidents/
