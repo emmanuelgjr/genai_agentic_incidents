@@ -56,6 +56,19 @@ deduplicated by CVE / canonical URL / fuzzy title.
 - **Not** a complete census of all AI incidents, and not legal advice.
 
 ## Limitations & biases
+
+---
+**Warning — heuristic labels are not measured prevalence.** Most taxonomy and
+severity labels in this dataset are assigned by deterministic heuristics, not
+human review (`auto`-tier: unreviewed — see `quality_tier`). A mapping count
+such as "N incidents tagged OWASP LLM01" reflects what the heuristics matched
+across whichever sources happened to be aggregated. It is a labeling
+artifact, not a measured rate of how often that failure mode occurs in the
+real world. See `quality_tier` for which entries carry human/assisted
+review, and the Heuristic labels bullet below for known gaps.
+
+---
+
 - **Source & language bias:** English-language, Western-media-skewed; under-counts
   unreported or non-English incidents.
 - **Heuristic labels:** `auto`-tier mappings are unreviewed; `attack_vector`

@@ -253,4 +253,7 @@ PRs welcome. Please:
 - **Code** (`scripts/`, `schema/`): [MIT](LICENSE)
 - **Data and documentation** (`data/`, `INCIDENTS.md`, `mappings/`): [Creative Commons Attribution 4.0 International](LICENSE-DATA)
 
-If you use this dataset in research or tooling, please cite this repository.
+## How to cite
+
+- **Citing the dataset as a whole** (statistics, trend analysis, benchmark construction, or other aggregate use): cite this repository using the preferred citation in [`CITATION.cff`](CITATION.cff), or the DOI badge above.
+- **Citing an individual incident**: cite that incident's own primary source, not this repository. Every incident entry links to its underlying source(s) in its References section — use that link (or, for AIID-derived entries, the AIID citation URL already shown on the entry) as the citation. Citing genai_incidents alone for a single incident credits this aggregator instead of the reporter, researcher, or outlet who actually surfaced it.

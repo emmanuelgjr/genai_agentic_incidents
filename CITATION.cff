@@ -2,7 +2,10 @@ cff-version: 1.2.0
 title: "GenAI & Agentic AI Security Incidents"
 message: >-
   If you use this dataset in research, tooling, training, or policy work,
-  please cite it as below.
+  please cite it as below. Cite this repository (the preferred-citation
+  below) for aggregate or dataset-wide use. For an individual incident,
+  cite that incident's own primary source instead, not this repository —
+  every rendered incident links to it.
 type: dataset
 authors:
   - family-names: "Guilherme Junior"
