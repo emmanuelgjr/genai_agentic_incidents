@@ -19,9 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-NOTE: The MIT license above covers the **code** in this repository (notably the
-files under `scripts/` and `schema/`). The **dataset** (files under `data/`,
-the `INCIDENTS.md` rollup, and the `mappings/` reference tables) is licensed
-separately under Creative Commons Attribution 4.0 International — see
-`LICENSE-DATA`.

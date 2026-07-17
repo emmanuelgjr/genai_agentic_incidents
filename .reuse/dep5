@@ -1,0 +1,32 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: genai_incidents
+Source: https://github.com/emmanuelgjr/genai_incidents
+
+Files: scripts/* schema/* Makefile *.py
+Copyright: 2026 Emmanuel G. Jr.
+License: MIT
+
+Files: data/* INCIDENTS.md mappings/*
+Copyright: 2026 Emmanuel G. Jr. and contributors
+License: CC-BY-4.0
+Comment: This dataset aggregates entries from many upstream sources, each
+ carrying its own terms; see docs/SOURCE_LICENSES.md for the complete
+ per-source enumeration. Two verbatim text bodies embedded in data/incidents.json
+ by scripts/ingest_external.py are NOT covered by this CC-BY-4.0 grant and
+ remain Apache-2.0: MITRE ATLAS case-study text (Copyright 2021-2026 The
+ MITRE Corporation) and garak probe-docstring text (Copyright 2023 Leon
+ Derczynski and NVIDIA). AIAAIC-derived entries carry no BY-SA subset per
+ decision D2 (facts + link only, no verbatim AIAAIC text). See LICENSE-DATA
+ for the full framing and docs/SOURCE_LICENSES.md for per-source detail.
+
+Files: docs/*
+Copyright: 2026 Emmanuel G. Jr. and contributors
+License: CC-BY-4.0
+
+Files: LICENSE
+Copyright: 2026 Emmanuel G. Jr.
+License: MIT
+
+Files: LICENSE-DATA
+Copyright: 2026 Emmanuel G. Jr. and contributors
+License: CC-BY-4.0
