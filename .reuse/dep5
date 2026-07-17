@@ -16,7 +16,7 @@ Comment: This dataset aggregates entries from many upstream sources, each
  remain Apache-2.0: MITRE ATLAS case-study text (Copyright 2021-2026 The
  MITRE Corporation) and garak probe-docstring text (Copyright 2023 Leon
  Derczynski and NVIDIA). AIAAIC-derived entries carry no BY-SA subset per
- decision D2 (facts + link only, no verbatim AIAAIC text). See LICENSE-DATA
+ decision D2 (facts + link only, no verbatim AIAAIC text). See NOTICE-DATA
  for the full framing and docs/SOURCE_LICENSES.md for per-source detail.
 
 Files: docs/*
@@ -28,5 +28,13 @@ Copyright: 2026 Emmanuel G. Jr.
 License: MIT
 
 Files: LICENSE-DATA
+Copyright: 2026 Emmanuel G. Jr. and contributors
+License: CC-BY-4.0
+Comment: Pure, unmodified CC BY 4.0 legal code -- no framing or pointer text
+ is added here so that license detectors match it cleanly. See NOTICE-DATA
+ for the licensing framing (two-license split, Apache-2.0 carve-outs, the
+ D2 AIAAIC note) that used to live in this file.
+
+Files: NOTICE-DATA
 Copyright: 2026 Emmanuel G. Jr. and contributors
 License: CC-BY-4.0

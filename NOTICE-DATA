@@ -1,0 +1,50 @@
+NOTICE-DATA -- licensing framing for data/, docs/, INCIDENTS.md, and
+mappings/
+
+Copyright (c) 2026 Emmanuel G. Jr. and contributors.
+
+This file explains how the CC BY 4.0 grant in LICENSE-DATA applies to
+this repository's dataset and other non-code material, and records the
+specific exceptions to it. It is explanatory only: it grants no rights
+beyond, and takes nothing away from, LICENSE-DATA and
+docs/SOURCE_LICENSES.md, which remain the operative texts.
+
+This repository is dual-licensed. The dataset and other non-code
+material (files under data/, the INCIDENTS.md rollup, and the
+mappings/ reference tables) is Creative Commons Attribution 4.0
+International (CC BY 4.0), for original and aggregated genai_incidents
+content, per LICENSE-DATA. The code in this repository (notably
+scripts/ and schema/) is licensed separately under the MIT License --
+see LICENSE.
+
+Content sourced from upstream providers carries its own terms in
+addition to this grant. The complete, per-source enumeration of
+upstream license, scrape-permission, redistribution, and
+relicense-compatibility status is recorded in docs/SOURCE_LICENSES.md
+and governs wherever it is more restrictive than the CC BY 4.0 grant in
+LICENSE-DATA.
+
+Two verbatim text bodies embedded in this dataset are Apache License
+2.0, not the CC BY 4.0 grant in LICENSE-DATA, and are not relicensed by
+it:
+
+  - MITRE ATLAS case-study text, reproduced verbatim by
+    scripts/ingest_external.py, is Copyright 2021-2026 The MITRE
+    Corporation, licensed under Apache License 2.0. See
+    https://www.apache.org/licenses/LICENSE-2.0 and the ATLAS row of
+    docs/SOURCE_LICENSES.md.
+
+  - garak probe-docstring text, concatenated verbatim by
+    scripts/ingest_external.py, is Copyright 2023 Leon Derczynski and
+    NVIDIA, licensed under Apache License 2.0. See
+    https://www.apache.org/licenses/LICENSE-2.0 and the garak row of
+    docs/SOURCE_LICENSES.md.
+
+The AIAAIC Repository is a CC BY-SA 4.0 source (share-alike). Per
+project decision D2, AIAAIC content is never carried verbatim in this
+dataset -- AIAAIC-derived entries record only the incident title, short
+taxonomy-tag facts, and a source link -- so no share-alike obligation
+attaches and LICENSE-DATA carries no BY-SA carve-out.
+
+The full CC BY 4.0 Public License text is in LICENSE-DATA at the
+repository root.

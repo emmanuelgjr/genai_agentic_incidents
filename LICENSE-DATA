@@ -1,50 +1,3 @@
-LICENSE-DATA -- Creative Commons Attribution 4.0 International (CC BY 4.0),
-with source-specific exceptions
-
-Copyright (c) 2026 Emmanuel G. Jr. and contributors.
-
------------------------------------------------------------------------
-Two-license framing for this repository
------------------------------------------------------------------------
-
-This file covers the dataset and other non-code material in this
-repository (files under data/, the INCIDENTS.md rollup, and the
-mappings/ reference tables): Creative Commons Attribution 4.0
-International (CC BY 4.0) for original and aggregated genai_incidents
-content. The code in this repository (notably scripts/ and schema/) is
-licensed separately under the MIT License -- see LICENSE.
-
-Content sourced from upstream providers carries its own terms in
-addition to this grant. The complete, per-source enumeration of
-upstream license, scrape-permission, redistribution, and
-relicense-compatibility status is recorded in docs/SOURCE_LICENSES.md
-and governs wherever it is more restrictive than this file.
-
-Two verbatim text bodies embedded in this dataset are Apache License
-2.0, not this CC BY 4.0 grant, and are not relicensed by it:
-
-  - MITRE ATLAS case-study text, reproduced verbatim by
-    scripts/ingest_external.py, is Copyright 2021-2026 The MITRE
-    Corporation, licensed under Apache License 2.0. See
-    https://www.apache.org/licenses/LICENSE-2.0 and the ATLAS row of
-    docs/SOURCE_LICENSES.md.
-
-  - garak probe-docstring text, concatenated verbatim by
-    scripts/ingest_external.py, is Copyright 2023 Leon Derczynski and
-    NVIDIA, licensed under Apache License 2.0. See
-    https://www.apache.org/licenses/LICENSE-2.0 and the garak row of
-    docs/SOURCE_LICENSES.md.
-
-The AIAAIC Repository is a CC BY-SA 4.0 source (share-alike). Per
-project decision D2, AIAAIC content is never carried verbatim in this
-dataset -- AIAAIC-derived entries record only the incident title, short
-taxonomy-tag facts, and a source link -- so no share-alike obligation
-attaches and this file carries no BY-SA carve-out.
-
-Full text of the CC BY 4.0 Public License follows.
-
-=======================================================================
-
 Attribution 4.0 International
 
 =======================================================================
@@ -425,7 +378,7 @@ Section 8 -- Interpretation.
 Creative Commons is not a party to its public
 licenses. Notwithstanding, Creative Commons may elect to apply one of
 its public licenses to material it publishes and in those instances
-will be considered the "Licensor." The text of the Creative Commons
+will be considered the “Licensor.” The text of the Creative Commons
 public licenses is dedicated to the public domain under the CC0 Public
 Domain Dedication. Except for the limited purpose of indicating that
 material is shared under a Creative Commons public license or as
@@ -440,3 +393,4 @@ the avoidance of doubt, this paragraph does not form part of the
 public licenses.
 
 Creative Commons may be contacted at creativecommons.org.
+
