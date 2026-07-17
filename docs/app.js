@@ -288,7 +288,7 @@ function renderDetail(e) {
   const cves = (e.cve_ids || []).map(c => `<code>${escapeHtml(c)}</code>`).join(' ');
   const tags = (e.tags || []).map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('');
   const refLink = e.primary_reference
-    ? `<a href="${escapeHtml(safeUrl(e.primary_reference))}" rel="noopener" target="_blank">primary source ↗</a>`
+    ? `<a href="${escapeHtml(safeUrl(e.primary_reference))}" rel="noopener" target="_blank" title="Cite this incident from its primary source, not this site">cite this incident ↗</a>`
     : '';
   const shardLink = `<a href="incidents/${e.year}.html#${e.id.toLowerCase()}">full details ↗</a>`;
   return `<tr class="detail"><td colspan="7"><div class="detail-body">

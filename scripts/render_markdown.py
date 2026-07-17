@@ -415,6 +415,15 @@ def render_incident_block(e: dict) -> list[str]:
             suffix = f" _({md_safe_text(ref.get('type'))})_" if ref.get("type") else ""
             lines.append(f"- [{title}]({url}){suffix}")
         lines.append("")
+        primary = e["references"][0]
+        if e.get("aiid_id"):
+            cite_url = f"https://incidentdatabase.ai/cite/{e['aiid_id']}/"
+            cite_label = "AI Incident Database"
+        else:
+            cite_url = safe_url(primary["url"])
+            cite_label = md_safe_text(primary.get("title") or primary["url"])
+        lines.append(f"**Cite this incident:** [{cite_label}]({cite_url})")
+        lines.append("")
     if e.get("tags"):
         lines.append("**Tags:** " + ", ".join(f"`{t}`" for t in e["tags"]))
         lines.append("")

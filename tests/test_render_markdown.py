@@ -83,8 +83,46 @@ def test_render_incident_block_produces_card():
     assert "Test incident" in body
     assert "prompt-injection" in body
     assert "LLM01" in body
+    assert "**Cite this incident:**" in body
     rendered_urls = re.findall(r"https?://[^\s)\"']+", body)
-    assert rendered_urls.count("https://example.com") == 1
+    # WS0-T6: with a single, non-AIID reference, that URL legitimately appears
+    # twice — once in the References list, once in the "Cite this incident"
+    # line (which points readers at the primary source, not this site).
+    assert rendered_urls.count("https://example.com") == 2
+
+
+def test_render_incident_block_cite_line_uses_primary_reference_by_default():
+    """WS0-T6: no genai_incidents entry should ever be cited by pointing at
+    this site — the default target is references[0] (the established
+    'primary_reference' convention, merge_and_dedupe.py:1607)."""
+    entry = {
+        "id": "INC-00002", "title": "T", "date": "2025", "year": 2025,
+        "category": "real-world", "severity": "High", "description": "d",
+        "references": [
+            {"title": "First source", "url": "https://first.example/a", "type": "news"},
+            {"title": "Second source", "url": "https://second.example/b", "type": "news"},
+        ],
+    }
+    body = "\n".join(r.render_incident_block(entry))
+    assert "**Cite this incident:** [First source](https://first.example/a)" in body
+    assert "https://second.example/b" not in body.split("**Cite this incident:**")[1]
+
+
+def test_render_incident_block_cite_line_uses_aiid_cite_page_when_aiid_id_present():
+    """AIID-derived entries cite AIID's own /cite/<id>/ page — one hop closer
+    to the source than citing us, and AIID's page then links onward to the
+    actual primary source."""
+    entry = {
+        "id": "INC-00003", "title": "T", "date": "2025", "year": 2025,
+        "category": "real-world", "severity": "High", "description": "d",
+        "aiid_id": 123,
+        "references": [{"title": "Original news story", "url": "https://news.example/x", "type": "news"}],
+    }
+    body = "\n".join(r.render_incident_block(entry))
+    assert "**Cite this incident:** [AI Incident Database](https://incidentdatabase.ai/cite/123/)" in body
+    # The raw reference URL still appears once, in the References list — just
+    # not as the cite target.
+    assert body.count("https://news.example/x") == 1
 
 
 def test_render_incident_block_handles_minimal_entry():
