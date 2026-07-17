@@ -1,6 +1,6 @@
 # Taxonomies
 
-This dataset maps each incident to four (sometimes five) taxonomies. They don't compete — they describe **different facets** of the same incident.
+This dataset maps incidents to six taxonomies: four core (OWASP LLM Top 10 2025, OWASP Agentic ASI Top 10, NIST AI RMF, MITRE ATLAS), a companion MAESTRO architectural-layer mapping, and an experimental VERIS 1.4.1 crosswalk. They don't compete — they describe **different facets** of the same incident.
 
 ## Quick chooser
 

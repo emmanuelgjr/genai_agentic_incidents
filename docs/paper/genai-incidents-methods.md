@@ -33,8 +33,8 @@ AI-security knowledge is fragmented across news reports, academic papers, vendor
 advisories, and vulnerability databases, with no shared taxonomy linking an
 incident to the control frameworks it implicates. Practitioners doing red-team
 planning, threat modelling, GRC mapping, or trend research must re-aggregate the
-same scattered evidence repeatedly. `genai_incidents` exists to be a single,
-framework-mapped source of truth — and, explicitly, to be *trustworthy*:
+same scattered evidence repeatedly. `genai_incidents` exists to be a
+consolidated, framework-mapped index — and, explicitly, to be *trustworthy*:
 correctable, provenance-tracked, and scoped by a written policy rather than by
 keyword luck.
 
