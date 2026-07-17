@@ -1,9 +1,9 @@
 """
 Merge legacy consolidated entries with all ingest/*.json source feeds, dedupe
 by canonical reference URLs / CVE IDs / fuzzy title match, validate against the
-incident schema, and emit the unified single source of truth:
+incident schema, and emit the consolidated dataset:
 
-  data/incidents.json        (full structured SoT)
+  data/incidents.json        (full structured dataset)
   data/incidents.min.json    (slim version: id, title, date, taxonomy mappings)
 
 Run after the per-source aggregators have written into ingest/.
@@ -1554,9 +1554,12 @@ def main():
         "version": "2.8.0",
         "generated": generated,
         "description": (
-            "Single source of truth for GenAI and agentic AI security incidents. "
-            "Each entry is mapped to OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, "
-            "NIST AI RMF (AI 100-1), and MITRE ATLAS where applicable."
+            "A consolidated, machine-readable index of GenAI and agentic AI security "
+            "incidents. Every applicable entry is mapped to four core taxonomies: "
+            "OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), "
+            "and MITRE ATLAS. A companion MAESTRO architectural-layer mapping is carried "
+            "where the source provides it, and an experimental VERIS 1.4.1 crosswalk is "
+            "computed at export time (see docs/TAXONOMIES.md)."
         ),
         "schema": "schema/incident.schema.json",
         "incident_count": len(deduped),

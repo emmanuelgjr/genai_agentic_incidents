@@ -57,15 +57,20 @@ configs:
 
 **{count} real-world and research incidents** involving generative-AI and agentic-AI
 systems — prompt injection, jailbreaks, data exfiltration, deepfakes, model and
-supply-chain compromise, agent hijacking, and AI-enabled harms — each mapped to four
-industry frameworks. Dataset version `{version}`.
+supply-chain compromise, agent hijacking, and AI-enabled harms — cross-mapped to six
+taxonomies. Dataset version `{version}`.
 
-Every incident is tagged with:
+Every applicable incident is tagged with four core taxonomies:
 
 - **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10`
 - **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10`
 - **NIST AI RMF (AI 100-1)** — `GOVERN` / `MAP` / `MEASURE` / `MANAGE`
 - **MITRE ATLAS** — techniques (`AML.T00xx`) and tactics (`AML.TA00xx`)
+
+Plus, where available:
+
+- **MAESTRO** architectural layers (`L1`–`L7`) — companion, carried where the upstream source provides it
+- **VERIS 1.4.1** crosswalk (`veris:*` tags) — experimental, computed at export time from `attack_vector`, not a stored per-incident field
 
 ## Quickstart
 

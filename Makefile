@@ -22,7 +22,7 @@ validate:
 stix:
 	python scripts/export_stix.py
 
-# Static TAXII 2.1 endpoint under docs/taxii2/ (Pages artifact, not committed).
+# Static TAXII-compatible discovery document under docs/taxii2/ (Pages artifact, not committed).
 taxii:
 	python scripts/export_taxii.py
 

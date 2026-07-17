@@ -1,5 +1,5 @@
 """
-Export the dataset as a **static TAXII 2.1 endpoint** under ``docs/taxii2/``,
+Export the dataset as a **static TAXII-compatible discovery document** under ``docs/taxii2/``,
 served by GitHub Pages alongside the site.
 
 TAXII 2.1 is normally a live HTTP API. A static mirror cannot set the
@@ -126,7 +126,7 @@ def build(incidents: list[dict]) -> int:
 
 
 def _write_readme(api_root: str) -> None:
-    readme = f"""# Static TAXII 2.1 endpoint
+    readme = f"""# Static TAXII-compatible discovery document
 
 This directory is a **read-only, static** TAXII 2.1 mirror of the
 `genai_incidents` dataset, regenerated on every Pages deploy by
@@ -169,7 +169,7 @@ def main() -> None:
     raw = json.loads((DATA / "incidents.json").read_text(encoding="utf-8"))
     incidents = raw.get("incidents", [])
     n = build(incidents)
-    print(f"[taxii] wrote static TAXII 2.1 endpoint ({n} objects, 1 collection) "
+    print(f"[taxii] wrote static TAXII-compatible discovery document ({n} objects, 1 collection) "
           f"-> docs/taxii2/  [collection {COLLECTION_ID}]")
 
 

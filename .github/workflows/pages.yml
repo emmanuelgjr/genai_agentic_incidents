@@ -36,7 +36,7 @@ jobs:
           cp data/incidents.min.json docs/data/incidents.min.json
       - name: Generate STIX 2.1 bundle for download
         run: python scripts/export_stix.py
-      - name: Generate static TAXII 2.1 endpoint
+      - name: Generate static TAXII-compatible discovery document
         run: python scripts/export_taxii.py
       - name: Generate MISP feed
         run: python scripts/export_misp.py

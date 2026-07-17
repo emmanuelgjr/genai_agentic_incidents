@@ -537,11 +537,13 @@ def render():
     lines.append("# GenAI & Agentic AI Security Incidents")
     lines.append("")
     lines.append(
-        "Single source of truth for GenAI and agentic AI security incidents."
+        "A consolidated, machine-readable index of GenAI and agentic AI security incidents."
     )
     lines.append(
-        "Each entry is mapped to **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, "
-        "**NIST AI RMF**, and **MITRE ATLAS**."
+        "Every applicable entry is mapped to four core taxonomies — **OWASP LLM Top 10 (2025)**, "
+        "**OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS** — plus a companion "
+        "**MAESTRO** mapping where the source provides it and an experimental **VERIS 1.4.1** "
+        "crosswalk computed at export time. See docs/TAXONOMIES.md for the full picture."
     )
     lines.append("")
     lines.append(f"- **Version:** {raw.get('version','1.0.0')}")
