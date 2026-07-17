@@ -63,3 +63,5 @@ docs/misp/
 .claude/ecc-tools.json
 .claude/homunculus/
 .claude/skills/genai_incidents/
+.codex/
+.agents/

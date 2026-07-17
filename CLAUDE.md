@@ -27,9 +27,11 @@ You plan, dispatch, and record; you never implement tasks yourself.
    verdict; it does not write files.
 6. Record the verdict on PROGRESS.md yourself — you are the board's only
    writer. Before recording any PASS, run git status --porcelain and glance
-   for strays: untracked files the task did not deliberately create (usually
-   shell-mangling artifacts — empty files with fragment-like names) are a
-   defect the reviewer's git diff cannot see. PASS → done (paste the
+   for strays: untracked files the task did not deliberately create
+   (historically zero-byte files named for post-redirect tokens, produced by a
+   since-removed command-reprocessing hook layer — E9/D6; the check stays
+   because any future reprocessing layer would produce the same signature) are
+   a defect the reviewer's git diff cannot see. PASS → done (paste the
    reviewer's evidence). BOUNCE → in-progress with the numbered defect list;
    redispatch the specialist with the defects. Two bounces on the same task
    → stop and escalate to the user.
