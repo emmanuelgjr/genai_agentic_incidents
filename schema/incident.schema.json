@@ -80,6 +80,15 @@
       "enum": ["real-world", "research", "research-demonstrated", "red-team", "vulnerability-disclosure", "threat-report", "policy", "regulatory", "report"]
     },
     "description": { "type": "string", "minLength": 20, "description": "Free text aggregated verbatim from upstream advisories. UNTRUSTED: may contain raw HTML / exploit payloads (e.g. '<img onerror=...>') from the original write-ups. Consumers MUST escape/sanitize before rendering it as HTML or Markdown." },
+    "description_provenance": {
+      "type": "string",
+      "enum": ["verbatim", "summary", "original"],
+      "description": "Provenance of the current description field's content. verbatim = copied unmodified from an upstream source. summary = model-assisted paraphrase of upstream prose, pre-generated offline and committed under data/summaries/, never generated during make build. original = independently composed from facts/metadata, not a paraphrase of any single upstream source's prose. Absence means not yet assessed."
+    },
+    "description_source": {
+      "type": "string",
+      "description": "Short slug naming which upstream ingest contributed the CURRENT description field's content (e.g. aiaaic), meaningful only when description_provenance is set. Needed because description (and this field) are set once by whichever entry survives dedup as the merge target and are never overwritten by later merges, unlike source_ids and tags which merge/union across every absorbed duplicate."
+    },
     "attack_vector": {
       "type": "string",
       "description": "Primary attack mechanism — free-form but should match one of the controlled values where possible.",
