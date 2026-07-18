@@ -220,7 +220,7 @@ When a framework releases a new version, update the mapping JSON in `mappings/` 
 The current dataset draws from the following public sources. Each entry retains links back to the originating advisory, post, or paper:
 
 - **OWASP GenAI Security Project** — incident roundups + Top 10 references
-- **AI Incident Database (AIID)** ([incidentdatabase.ai](https://incidentdatabase.ai/), [github.com/responsible-ai-collaborative/aiid](https://github.com/responsible-ai-collaborative/aiid)) — security-relevant subset of the full corpus, scraped via OG metadata
+- **AI Incident Database (AIID)** ([incidentdatabase.ai](https://incidentdatabase.ai/), [github.com/responsible-ai-collaborative/aiid](https://github.com/responsible-ai-collaborative/aiid)) — ingested via AIID's official weekly snapshot archive (not per-page scraping); title + structured facts only, no verbatim narrative retained
 - **OECD AI Incidents Monitor (AIM)** ([oecd.ai/en/incidents](https://oecd.ai/en/incidents)) — cross-listed against AIID via the official AIID-OECD bridge file
 - **AIAAIC** ([aiaaic.org](https://www.aiaaic.org/aiaaic-repository)) — AI, Algorithmic, and Automation Incidents and Controversies
 - **MITRE ATLAS** ([atlas.mitre.org](https://atlas.mitre.org/), [github.com/mitre-atlas/atlas-data](https://github.com/mitre-atlas/atlas-data)) — all case studies parsed from the YAML corpus

@@ -46,5 +46,22 @@ dataset -- AIAAIC-derived entries record only the incident title, short
 taxonomy-tag facts, and a source link -- so no share-alike obligation
 attaches and LICENSE-DATA carries no BY-SA carve-out.
 
+The AI Incident Database (AIID) is a CC BY-SA 4.0 source (share-alike)
+for its incidents/quickadd/duplicates/taxa/classifications/entities/
+entity_relationships collections; the reports collection's text field
+is explicitly excluded from that grant. This dataset ingests AIID only
+via its official weekly snapshot archive (docs/SOURCE_LICENSES.md
+section 1.2a) and reads the licensed incidents.description field only as an
+ephemeral, in-memory classification signal that is never persisted --
+what is kept is the AIID-authored title (a short headline, not
+narrative) plus structured, non-narrative facts (id, date, url, entity
+slugs, taxonomy fields). As with AIAAIC, this reduction means
+LICENSE-DATA carries no BY-SA carve-out for AIID. Unlike AIAAIC's
+copyright share-alike question, which decision D2 disposes of, AIID's
+CC-BY-SA share-alike exposure and a parallel EU/UK sui generis
+database-right question remain OPEN and are NOT resolved by this
+handling -- flagged the same way as AIAAIC's E13 finding; see
+docs/SOURCE_LICENSES.md section 1.2a.
+
 The full CC BY 4.0 Public License text is in LICENSE-DATA at the
 repository root.

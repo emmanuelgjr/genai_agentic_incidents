@@ -16,8 +16,14 @@ Comment: This dataset aggregates entries from many upstream sources, each
  remain Apache-2.0: MITRE ATLAS case-study text (Copyright 2021-2026 The
  MITRE Corporation) and garak probe-docstring text (Copyright 2023 Leon
  Derczynski and NVIDIA). AIAAIC-derived entries carry no BY-SA subset per
- decision D2 (facts + link only, no verbatim AIAAIC text). See NOTICE-DATA
- for the full framing and docs/SOURCE_LICENSES.md for per-source detail.
+ decision D2 (facts + link only, no verbatim AIAAIC text). AIID-derived
+ entries (ingested via AIID's official snapshot, SOURCE_LICENSES.md
+ section 1.2a) likewise carry no BY-SA subset -- only the AIID-authored
+ title and structured facts are kept, never the licensed narrative --
+ but AIID's CC-BY-SA share-alike and a parallel database-right question
+ remain an open, unresolved item, same posture as AIAAIC's E13 finding.
+ See NOTICE-DATA for the full framing and docs/SOURCE_LICENSES.md for
+ per-source detail.
 
 Files: docs/*
 Copyright: 2026 Emmanuel G. Jr. and contributors
