@@ -54,3 +54,18 @@ pre-activation invariants as advisory in new work. Two are unconditionally
 active now: never delete entries (status+tombstone instead) for manual edits,
 and IDs/tombstones are append-only. Also always: never hand-edit data/*.json;
 never put model calls in the deterministic build path.
+
+# Working agreements (standing rules — added 2026-07-18)
+1. **Committed-artifact rule.** Any artifact the user is meant to review is
+   written to a file and committed BEFORE being shown to the user. Chat-only
+   deliverables have been lost three times to session restarts (the WS0-T3
+   validation sample, the outreach drafts, and nearly the cascade analysis).
+   Reports, specs, samples, drafts, delta tables — all land on disk first.
+2. **Field-level delta rule.** Any transformative data operation (a rebuild,
+   reduction, relabel, migration) publishes a full field-level before/after
+   delta across every affected field plus entry-count/ID-set. Unintended
+   deltas are DEFECTS, not noise; each intended delta is enumerated and
+   justified. red-reviewer gates on this delta — a "pure" operation that moves
+   fields it did not declare fails the gate. (Origin: the WS0-T3 field-cut
+   silently relabelled 372 AIAAIC entries through description→classifier
+   coupling — docs/audits/WS0-T3-cascade-2026-07-18.md.)
