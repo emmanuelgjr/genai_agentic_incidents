@@ -8,6 +8,18 @@ implied by this file directly — see §6 for requirements routed to other work.
 rule, any "not located" / "no statement found" claim below states the
 retrieval method used and is flagged, not treated as confirmed absence.
 
+**Amendment log (2026-07-18, same-day, user-directed):** three amendments
+were added after this file's original text was complete: (i) §4.1 — a
+missing predicate in the §4(b) analysis (database-right *qualification*,
+distinct from substantial investment); (ii) §6 item 5 — a fourth escalation
+option, scoping the AIAAIC extraction to security-relevant entries only;
+(iii) updates to the §4(b)/fork discussion, the §5 bottom line, and the
+§5.1 counsel-question list flowing from (i) and (ii). All three are marked
+inline as **AMENDMENT (2026-07-18)** blocks. Nothing in the original
+analysis below is deleted or reversed by these amendments — they add a
+conditional narrowing and a new mitigation option, both flagged as resting
+on a user-supplied factual premise (see §4.1).
+
 ## 0. Question presented
 
 Does reducing AIAAIC-derived entries to "facts + link" (**D2**) suffice to
@@ -333,6 +345,129 @@ correct posture, and adds a distinct, database-level question counsel
 should address (question 7, §5.1) alongside the row-level ones already
 listed there.
 
+### 4.1 AMENDMENT (2026-07-18): the missing predicate — does genai_incidents itself *qualify* for a sui generis database right at all?
+
+**This amendment identifies a gap in the §4(b) analysis above: that analysis
+developed only one of the two limbs a database right requires, and the
+second limb is a threshold gate, not a factor to weigh.** The sui generis
+database right subsists only where **both** hold:
+
+1. **Substantial investment** in obtaining/verifying/presenting the
+   contents (reg 13(1) / Art 7(1)) — the limb the §4(b) analysis above
+   discussed, reasoning by analogy to §1's AIAAIC investment analysis.
+2. **Qualification** (reg 18 / Art 11) — the maker must be a UK national or
+   UK habitual resident, or a body incorporated/formed in the UK meeting
+   the reg 18(2) UK-nexus conditions (central administration or principal
+   place of business in the UK, **or** registered office in the UK with
+   operations "linked on an ongoing basis with the economy of the United
+   Kingdom") — or, for the *EU*-law right, an EEA-national/EEA-formed
+   equivalent under Directive 96/9/EC Art 11. Reg 18(1)'s opening words are
+   a hard gate — *"Database right does not subsist in a database unless...
+   its maker... was"* one of the qualifying persons listed — **not** a
+   sliding-scale factor alongside investment. A database can reflect
+   enormous investment and still hold **no** database right if its maker
+   fails qualification.
+
+**Countries outside the UK/EEA generally have no equivalent sui generis
+database right.** Canada is one: Canadian law has no separate statutory
+database right analogous to reg 13/Art 7; a compilation of data is
+protected in Canada only through ordinary copyright, gated by the
+*originality* (skill-and-judgment) threshold the Supreme Court of Canada
+set in *CCH Canadian Ltd. v. Law Society of Upper Canada*, 2004 SCC 13 —
+and that is a copyright test (protecting the *selection/arrangement*, i.e.
+expression), not an investment-in-obtaining-facts test. This is the
+general, well-established position on Canadian law (confidence: high, on
+publicly available secondary-source confirmation of "no separate sui
+generis statutory database protection in Canada" plus the *CCH Canadian*
+citation for how compilations are instead treated; this audit did not do
+an exhaustive review of the Canadian Copyright Act's every provision, so
+treat the "no equivalent right" conclusion as the standard practitioner
+position rather than as independently verified against every possible
+Canadian statutory source).
+
+**Applying this to genai_incidents.** §4(b)'s second predicate (stated in
+the §4(b) analysis paragraph above: "the genai_incidents corpus... over
+which this project plausibly holds its own sui generis database right")
+depends on genai_incidents passing **both** limbs, not just the investment
+one. **Factual/jurisdictional premise supplied by the user, not
+independently verified by this audit (no shell, no incorporation-registry
+access): genai_incidents is understood to be made and maintained in
+Canada.** This conclusion is conditional on that premise — the user (or
+foreman) should confirm the actual nationality/habitual-residence/
+incorporation of whoever is properly "the maker" of this project (an
+individual maintainer, an unincorporated project, a GitHub-org entity,
+etc. — "maker" is itself a term with content under reg 14, not necessarily
+whichever person happens to run `make build`).
+
+**If the Canada premise holds — i.e., genai_incidents' maker is Canadian
+and not a UK/EEA national, resident, or incorporated/formed body — then:**
+
+- **genai_incidents does NOT hold a UK or EU sui generis database right**,
+  regardless of how much obtaining/verifying/presenting investment has
+  gone into assembling the corpus (dozens of ingest scripts, manual
+  curation, cross-referencing — investment alone cannot cure a
+  qualification failure; reg 18 is a gate, not a weight).
+- **§4(b) cannot fire.** §4(b)'s text requires including AIAAIC's contents
+  "in a database in which You have Sui Generis Database Rights." If
+  genai_incidents has no such right, there is no database for §4(b) to
+  operate on — the clause has no subject-matter to attach to, not merely a
+  weak case for attaching.
+- **The database-level ShareAlike route (§4(b) → §3(b), "the database...
+  is Adapted Material") falls away.** We fall back to **§4(c) → §3(a)**:
+  attribution + ShareAlike attaching only to the AIAAIC-derived *contents
+  extracted* (the row-level facts), not to genai_incidents' corpus as a
+  whole. That is a materially smaller unit of obligation — it constrains
+  how the extracted AIAAIC facts themselves must be licensed/attributed,
+  not the licensing posture of the entire redistributed dataset.
+
+**What this resolves, and what it plainly does not:**
+
+- It does **not** dispose of **AIAAIC's own** database right. AIAAIC's
+  right (if it subsists at all) turns on **AIAAIC's** maker qualifying —
+  assessed independently in §1 above, on the (unverified-to-primary-source)
+  assumption AIAAIC's maker is UK-domiciled. Our own qualification (or
+  lack of it) has no bearing on whether AIAAIC's right exists.
+- Our extraction can still **infringe** AIAAIC's right if AIAAIC's right
+  subsists and our extraction is substantial (§1–§2, unaffected by this
+  amendment).
+- **§4(c)'s row-level ShareAlike can still attach** to the extracted
+  AIAAIC-derived facts if the extraction is substantial (§2 already finds
+  this more-likely-than-not). This amendment removes the *database-level*
+  escalation only — it does not remove the underlying substantiality/
+  infringement exposure the rest of this file establishes, and it does not
+  touch §3's finding that facts+link does not itself avoid the right.
+
+**Nature of this question.** Unlike AIAAIC's own subsistence (§1) and the
+substantiality line (§2), which are fact-intensive legal judgment calls
+this audit's tools cannot close, **the qualification question is
+substantially a factual/jurisdictional one**: confirm where genai_incidents'
+maker is domiciled/incorporated, then apply the black-letter reg 18 / Art 11
+text quoted above. It may be answerable without engaging counsel, once the
+maker's domicile is confirmed — though if the "who is the maker" question
+turns out to be genuinely ambiguous (e.g., a multi-jurisdiction contributor
+base with no single incorporated entity), that residual question is a fair
+one to route to counsel alongside the others in §5.1.
+
+**Sources for this amendment:** SI 1997/3032 reg 18 (as amended by SI
+2019/605 reg 28), quoted operative text: "*Database right does not subsist
+in a database unless, at the material time, its maker... was — (a) an
+individual who was a national of the United Kingdom or habitually resident
+within the United Kingdom, (b) a body which was incorporated under the law
+of any part of the United Kingdom and which... satisfied one of the
+conditions in paragraph (2)... [or] (c) a partnership or other
+unincorporated body...*" — reg 18(2): "*(a) that the body has its central
+administration or principal place of business within the United Kingdom,
+or (b) that the body has its registered office within the United Kingdom
+and the body's operations are linked on an ongoing basis with the economy
+of the United Kingdom.*" (legislation.gov.uk/uksi/1997/3032/regulation/18,
+re-verified 2026-07-18). Directive 96/9/EC Art 11 (EEA-nationality
+requirement for the parallel EU-law right, already cited in §1/§7 above).
+*CCH Canadian Ltd. v. Law Society of Upper Canada*, 2004 SCC 13 (Canadian
+compilation protection runs through copyright originality, not a sui
+generis database right).
+
+---
+
 This creates the exact fork the E13 brief anticipated:
 
 - **If our extraction is insubstantial** (per §2), we don't need CC BY-SA
@@ -361,6 +496,25 @@ subset" goal is not currently achieved for the AIAAIC-derived fields**, even
 after the D9/WS0-T3 reduction, unless the extraction is independently
 shrunk enough to land in option (i). See §6 for what that would require.
 
+**AMENDMENT (2026-07-18) — how §4.1 changes the "substantial" branch
+above.** The "substantial" branch as originally written left open whether
+§4(c)'s ShareAlike attaches only to the extracted AIAAIC facts, or —
+per the §4(b) analysis paragraph earlier in this section — to
+genai_incidents' *entire corpus as a database*, via §4(b)'s "Adapted
+Material" mechanics. §4.1 narrows that: **the database-level escalation
+requires genai_incidents to hold its own sui generis database right, and
+per §4.1, conditional on the user-supplied premise that genai_incidents is
+made/maintained in Canada, it does not.** So, on that premise, the
+"substantial" branch resolves to **§4(c) row-level ShareAlike on the
+extracted facts only** — the narrower reading D2/D9 hoped for turns out to
+be *right for the database-right-escalation question specifically*, even
+though (per §3) it is *not* right for the "does facts+link avoid the right
+altogether" question, which §4.1 does not touch. This does **not** change
+which option is "more likely operative" between (i) and (ii) above — that
+turns on substantiality (§2), which §4.1 does not address — it only
+changes the *scope* of what option (ii)'s ShareAlike condition reaches if
+it is the operative path.
+
 ---
 
 ## 5. Bottom line
@@ -381,6 +535,23 @@ public, at-scale, durable redistribution decision warrants. The honest
 answer, at the diligence level this task calls for, is: the weight of the
 primary-source analysis above points toward **exposure remaining after the
 D2/D9 reduction**, not toward "resolved."
+
+**AMENDMENT (2026-07-18):** the qualification analysis at §4.1 **narrows**
+this bottom line without reversing it. Conditional on the user-supplied
+premise that genai_incidents' maker is Canadian (not UK/EEA), §4.1 finds
+genai_incidents does not itself hold a sui generis database right, so the
+§4(b) *database-level* ShareAlike escalation does not arise — one specific
+question (counsel question 7 below) is substantially resolved by
+jurisdictional fact-checking rather than by paid legal judgment. **This
+does not shrink the core exposure the rest of this file establishes**:
+AIAAIC's own right (§1), the substantiality of our extraction (§2), the
+inadequacy of facts+link as a complete mitigation (§3), and the §4(c)
+row-level ShareAlike attachment (§4) are all unaffected by §4.1 and remain
+"needs qualified counsel" questions. The practical effect of §4.1 is to
+confine the *worst-case unit of obligation* from "the entire redistributed
+corpus" down to "the extracted AIAAIC-derived facts" — a real, favorable
+narrowing, but not a resolution of whether that smaller obligation attaches
+at all.
 
 ### 5.1 Exact questions for counsel
 
@@ -428,6 +599,26 @@ D2/D9 reduction**, not toward "resolved."
    attaches, what would compliance require given the corpus's mixed-license,
    multi-source composition (Apache-2.0 ATLAS/garak carve-outs, CC-BY GHSA/
    OSV/NVD content, etc.)?
+
+   **AMENDMENT (2026-07-18) — narrowed, not fully mooted.** §4.1
+   substantially resolves the first half of this question — *does
+   genai_incidents hold its own sui generis right* — without counsel,
+   **conditional on the user confirming genai_incidents' maker is
+   domiciled/incorporated in Canada** (or any other non-UK/EEA
+   jurisdiction): if confirmed, the answer is "no" on qualification grounds
+   alone (reg 18 / Art 11), regardless of how the investment question would
+   otherwise come out, and the §4(b)-database-level/mixed-license-
+   compliance half of this question **does not arise**. What remains a
+   genuine open item for counsel, narrower than originally framed: (i) if
+   the maker's domicile turns out to be UK/EEA after all (premise not
+   confirmed), the full original question stands unresolved; (ii) even on
+   the Canada premise, whether genai_incidents might separately hold a
+   sui generis right under **some other country's law** if one exists
+   (this audit did not survey jurisdictions beyond UK/EU/Canada); and
+   (iii) confirming precisely who "the maker" is in reg 14's sense for a
+   multi-contributor open-source project, if that turns out to be
+   contested. Counsel spend on this question, if any, should be scoped to
+   those narrower residual points, not the whole original question.
 
 ---
 
@@ -479,8 +670,64 @@ by this file; they are exact requirements for the foreman to route.
    final, or (b) a materially more conservative AIAAIC ingest redesign
    than WS0-T3 currently specifies (see counsel question 5, §5.1), or
    (c) accepting residual risk knowingly, as a business decision, with
-   this file as the documented basis. Which of those three the project
-   takes is not mine to decide.
+   this file as the documented basis, **or (d) — AMENDMENT (2026-07-18) —
+   scope the extraction to security-relevant entries only.** Which of those
+   four the project takes is not mine to decide.
+
+   **(d) in detail.** §2's substantiality finding turns on the *proportion*
+   of AIAAIC's database taken: currently ~1,513 rows against AIAAIC's
+   ~1,995-row live repository, ≈76%. A large share of those 1,513 entries
+   are algorithmic-harm / bias / misinformation cases that fail
+   genai_incidents' own GenAI-security scope test — the same scope-drift
+   issue already pending as **WS1-T4 / E5** (Phase-1 escalation: rename to
+   "AI security incidents," or tag `ai_system_type: genai|agentic|
+   classical-ml|algorithmic` and default filters to genai+agentic; the
+   plan's stated recommendation is the tagging option).
+
+   - **Quantitative effect.** Narrowing to the security-relevant
+     (genai+agentic-security) subset of AIAAIC's coverage would shrink the
+     numerator without changing AIAAIC's ~1,995-row denominator, reducing
+     the extracted share — potentially far enough that the remaining
+     extraction lands on the "insubstantial" side of reg 16(1). If it does,
+     reg 19's unwaivable lawful-user entitlement applies and **no
+     ShareAlike attaches at all** — a stronger outcome than either §4.1's
+     database-level narrowing or a §4(c) row-level obligation, because no
+     license condition is triggered in the first place. This is not
+     guaranteed — it depends on how large the security-relevant subset
+     turns out to be against the 1,995 denominator, which is not yet
+     measured — but it is the only option on this list capable of reaching
+     the "no license needed" outcome rather than a "comply with ShareAlike"
+     outcome.
+   - **Qualitative caveat (BHB).** Substantiality is also qualitative:
+     under BHB, a smaller *share* can still be qualitatively substantial if
+     it captures the high-investment slice of the source database. The
+     genai_incidents-relevant slice of AIAAIC's coverage is very plausibly
+     AIAAIC's most-current, most-actively-maintained, highest-public-
+     interest content (§2's existing qualitative analysis) — narrowing to
+     that slice does not obviously *reduce* the qualitative exposure and
+     may simply *relocate* it: fewer rows, but concentrated in precisely
+     the content most likely to be found qualitatively significant. Option
+     (d) is a real, evidence-based lever on the quantitative axis; it is
+     not a clean answer on the qualitative axis, and should not be
+     represented as fully resolving §2's substantiality finding on its
+     own.
+   - **Cross-reference to WS1-T4/E5 — one lever, two purposes.** The scope
+     decision pending under WS1-T4/E5 (whether/how to confine
+     genai_incidents to genuinely GenAI-security-relevant incidents) and
+     this licensing-substantiality question are **the same decision** —
+     narrowing AIAAIC-derived intake to security-relevant entries would
+     simultaneously (i) reduce the extracted proportion of AIAAIC's
+     database for licensing purposes (this file) and (ii) fix the corpus
+     scope-drift issue WS1-T4/E5 already flags as a Phase-1 priority. The
+     user should see these as one lever serving both, not two independent
+     decisions to make separately.
+   - **Compatibility.** Option (d) is compatible with, and can be combined
+     with, option (b) (conservative ingest redesign) — scoping *what* gets
+     extracted and redesigning *how* it gets extracted address different
+     axes of the same exposure. Of the four options, (d) is potentially the
+     cheapest risk-reducer, since it may remove the need for a CC BY-SA
+     ShareAlike compliance path entirely rather than requiring the project
+     to build and maintain one.
 
 ---
 
@@ -527,6 +774,23 @@ by this file; they are exact requirements for the foreman to route.
 **License text (primary):**
 - Creative Commons Attribution-ShareAlike 4.0 International, Legal Code,
   §4 (Sui Generis Database Rights). creativecommons.org/licenses/by-sa/4.0/legalcode
+
+**Amendment sources (2026-07-18, added for §4.1 / §6(d)):**
+- SI 1997/3032 reg 18(1)–(2) (qualification for database right — UK-nexus
+  text as currently in force, re-verified against legislation.gov.uk
+  directly for this amendment). legislation.gov.uk/uksi/1997/3032/regulation/18
+- Directive 96/9/EC Art 11 (EEA-nationality requirement for the parallel
+  EU-law right) — already cited above, re-applied here to genai_incidents'
+  own (non-)qualification rather than AIAAIC's.
+- *CCH Canadian Ltd. v. Law Society of Upper Canada*, 2004 SCC 13 — cited
+  for the general, secondary-source-confirmed position that Canadian law
+  has no sui generis database right and protects compilations only through
+  copyright's originality (skill-and-judgment) threshold. Confidence: high
+  on the general position; this audit did not exhaustively review the
+  Canadian Copyright Act for every provision (see §4.1 confidence note).
+- `MASTER_IMPROVEMENT_PLAN.md` WS1-T4 / PROGRESS.md E5 row (GenAI-security
+  scope-drift issue cross-referenced in §6 option (d) as the same lever as
+  the substantiality-reduction question).
 
 **Project sources (context, not legal authority):**
 - `docs/specs/WS0-T3-rescoped-2026-07-18.md` (D2/D9/D10 scope and the
