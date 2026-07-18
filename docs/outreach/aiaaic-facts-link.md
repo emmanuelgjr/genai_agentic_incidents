@@ -1,51 +1,47 @@
-# Draft — AIAAIC facts+link handling / attribution
+# Draft — AIAAIC: database-right & ShareAlike question
 
-**STATUS:** ⛔ HELD (2026-07-18) — DO NOT SEND YET. The reduction is *restored, not
-implemented* (WS0-T3 re-scoped, awaiting review), so the body's "we have reduced
-AIAAIC-derived entries to facts plus a link" is **currently false**. AIAAIC prose
-still sits in `ingest/aiaaic_sheet_incidents.json` (D10). Release this hold and
-switch the phrasing to accomplished tense only after WS0-T3 lands and the prose
-audit reads 0. Then user verifies recipient and sends; log send date (E3/WS0-T4).
+**STATUS:** ✅ CLEARED TO SEND (rescoped 2026-07-18) — this is now a *question to
+the rights-holder*, not a claim about what we have done, so it carries no false
+"we have reduced" statement. The rights-holder's own position is the cheapest
+authoritative input available on the E13 database-right question. User verifies
+recipient and sends; log the send date on the board (E3 / WS0-T4).
 **To (UNCONFIRMED):** AIAAIC (Charlie Pownall / AIAAIC team)
-**Suggested subject:** genai_incidents — respecting AIAAIC's CC BY-SA terms (facts + link)
+**Suggested subject:** AIAAIC data reuse at scale — database-right & CC BY-SA ShareAlike question
 
 ---
 
 Hello AIAAIC team,
 
 I maintain **genai_incidents**, an open, machine-readable index of publicly
-reported GenAI and agentic-AI incidents. A number of entries draw on the AIAAIC
-Repository, and I want to be transparent about how we handle your content under
-its CC BY-SA 4.0 licence.
+reported GenAI and agentic-AI incidents. A significant number of our entries
+draw on the AIAAIC Repository, and I want to get the licensing right before we
+go further — so I'm coming to you directly rather than guessing.
 
-**How we use AIAAIC data.** To keep our dataset under a single clean permissive
-licence without importing a share-alike obligation onto the whole corpus, we
-have reduced AIAAIC-derived entries to **facts plus a link**:
+**What we do with AIAAIC data.** We extract roughly **1,513 entries'** worth of
+categorical facts (system, technology, sector, jurisdiction) plus a **link back
+to the AIAAIC record**. We do **not** redistribute AIAAIC's editorial narrative
+(the purpose / ethical-issues / consequences / response write-ups) — readers are
+sent to you for that.
 
-- We keep only categorical facts (system, technology, sector, jurisdiction) and
-  a **link back to the AIAAIC record**.
-- We **do not** carry AIAAIC's editorial prose (the purpose / ethical-issues /
-  consequences / response narrative) — that original expression stays on your
-  site, and readers are sent to you for it.
+**My question is about the *sui generis* database right**, which is separate
+from copyright. Reducing entries to bare facts avoids copyright concerns, but the
+database right can protect a database's *contents as such* against substantial
+extraction regardless of copyrightability, and CC BY-SA 4.0 §4 licenses those
+rights **with ShareAlike attached**. Specifically:
 
-Our reasoning is that categorical facts are not themselves copyrightable, while
-your editorial narrative is, so linking rather than reproducing respects the
-share-alike terms.
+1. **Do you consider an extraction at this scale (~1,513 entries, refreshed
+   periodically) to engage AIAAIC's database right** such that CC BY-SA 4.0's
+   ShareAlike condition would attach to our derived dataset as a whole?
 
-**Two questions:**
+2. **Would you be willing to grant a clarification or a waiver** permitting
+   facts-level reuse — the categorical fields above, with clear attribution and
+   a backlink to each AIAAIC record — **without** ShareAlike attaching to our
+   broader corpus? We're happy to display any attribution string or credit
+   format you prefer.
 
-1. **Attribution.** Is there a specific attribution string or credit format you
-   would like us to display on AIAAIC-derived entries?
-
-2. **Cadence / access.** Is our periodic use of the public AIAAIC sheet an
-   acceptable access pattern, or is there a preferred channel/cadence you would
-   rather we follow?
-
-We are also separately reviewing whether the EU/UK *sui generis* database right
-bears on extraction at our scale; if you have a view on that we would welcome it.
-
-Thank you for the work you do cataloguing these incidents — it is a real public
-service.
+We want to keep crediting AIAAIC prominently and to respect your terms; the
+simplest path for both of us is to know your own view. Thank you for the work
+you do cataloguing these incidents.
 
 Best regards,
 [Maintainer name]
