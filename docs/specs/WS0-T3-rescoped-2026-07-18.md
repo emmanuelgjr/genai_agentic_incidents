@@ -119,6 +119,33 @@ AIAAIC entries showing the actual content of all eight source cells**
 human can confirm the keep/drop line on real data. This is a file under
 `docs/audits/` or `docs/samples/`, **not** chat output.
 
+### (e) Database-right requirements (from E13, 2026-07-18)
+
+E13 (`docs/audits/WS0-E13-database-right-2026-07-18.md`) found that D2/D9 resolve
+the **copyright** question only; the EU/UK **sui generis database right** is a
+distinct regime this reduction does not, by itself, dispose of. Two requirements
+land in WS0-T3 (the rest are user/policy decisions — see the E13 escalation on
+the board):
+
+- **Ingest instrumentation.** Add committed logging (not just the existing
+  stdout `print(f"[aiaaic] {len(rows)} raw rows")` at `ingest_aiaaic_sheet.py:390`)
+  recording, per ingest run, AIAAIC's **live total Incidents-sheet row count**
+  alongside the count retained after GenAI filtering — a real denominator for
+  any future substantiality re-check.
+- **Database-right acceptance gate.** WS0-T3's acceptance must carry a
+  database-right item **distinct from** the copyright/prose-audit gate. The
+  "0 dropped-cell markers" / "categorical facts only" checks close the
+  *copyright / share-alike* sub-question **only**; they do not close AIAAIC
+  licensing risk generally. Until the E13 escalation is resolved by the user,
+  WS0-T3 must not represent AIAAIC licensing as "resolved."
+
+**⚠ Impl direction may change — do not dispatch WS0-T3 implementation yet.** If
+the user takes E13 option (b) (a more conservative redesign — e.g. pointer-only
+with facts re-derived from AIAAIC's own cited primary sources, or row/field
+ceilings), that reshapes this spec's ingest approach materially. Hold WS0-T3
+implementation until the user decides the E13 direction, to avoid building
+controlled-vocab-tag plumbing that a redesign would discard.
+
 ## 3. Retained mechanism notes (from D9 scoping)
 
 - `merge_into` (`merge_and_dedupe.py:1636-1691`) never touches `description`;
@@ -153,3 +180,5 @@ human can confirm the keep/drop line on real data. This is a file under
 - [ ] `make build` uses no network/model; determinism byte-identical; entry
       count 12,986 preserved.
 - [ ] `merge_into` did not gain the new/internal fields.
+- [ ] Committed AIAAIC live-total-row-count logging present (denominator for any substantiality re-check).
+- [ ] Database-right acceptance item present and distinct from the copyright/prose gate; AIAAIC licensing NOT represented as fully resolved pending the E13 user decision.
