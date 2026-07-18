@@ -78,6 +78,33 @@ exists, would strengthen the record for counsel. **Recommend:** red-reviewer
 run a raw-HTML `curl` + text search of `aiaaic.org/about-aiaaic` for
 methodology language before this is relied on as a negative finding.
 
+**Update (2026-07-18, red-reviewer raw-HTML verification, check
+`e13-rawhtml-check`, PROGRESS.md E13 row):** the recommendation above was
+carried out. `curl` against the raw HTML (bypassing the WebFetch
+markdown-conversion failure mode this file's method note flags) found:
+AIAAIC is a Google Site that embeds its prose directly in the initial HTML
+response — this explains, and closes off, why WebFetch saw nav-only content
+(a rendering/conversion gap, not a missing statement to begin with). Against
+that raw HTML, `/about-aiaaic` **still names no legal entity, no UK (or
+any other) domicile, and no founder** — the absence is now confirmed
+against raw HTML, not merely inferred from a lossy fetch, and **no
+investment/methodology self-statement exists on the page to quote either.**
+This means the reg 18 UK-nexus premise below remains an external inference
+(from the E13 dispatch brief and general public understanding of AIAAIC,
+not from AIAAIC's own site) and the maker-qualification hedge stands
+**checked and still open**, not merely "not yet checked." Separately, the
+same check found a dedicated `/terms` page exists at aiaaic.org but is
+**login-gated** — it returns an HTTP 302 redirect to a Google sign-in flow
+rather than page content. **This is a new, explicit evidence gap:** the
+public footer's CC BY-SA notice (confirmed still live on both the home page
+and the repository page, per `docs/SOURCE_LICENSES.md` §1.1) is not
+necessarily AIAAIC's complete terms — any additional database-right, reuse,
+or ShareAlike-scope instruction could live behind that gate, unverifiable by
+this audit's tools without credentials. This is an independent reason,
+beyond the database-right question itself, the AIAAIC clarification email
+already drafted in `docs/SOURCE_LICENSES.md` §1.1 is worth sending, and a
+fact counsel should be told rather than one this file resolves.
+
 **Qualification (who must the maker be).** Reg 18 (as amended by the
 Intellectual Property (Copyright and Related Rights) (Amendment) (EU Exit)
 Regulations 2019, SI 2019/605 reg 28, in force 31 Dec 2020) currently
@@ -124,23 +151,35 @@ extracted vs. total volume of the database) **and/or qualitative** (scale of
 the investment in obtaining/verifying/presenting *the part actually taken*,
 independent of its proportion to the whole).
 
-**Quantitative.** I could not obtain a precise, current total-row count for
-AIAAIC's live "Incidents" sheet this session (the `about`/`repository` pages
-returned nav-menu content only, per §1; a third-party summary found put the
-repository at "1009 incidents and 411 issues" as of **September 2024**, and
-a 2026 web search surfaced entry IDs as high as **AIAAIC2265**, indicating
-continued growth well past that count). Against that backdrop, our
-GenAI-scoped extraction of **1,513 rows** (`docs/audits/WS0-T3-cascade-2026-07-18.md:30`,
-confirmed against the rebuilt tree) is a large absolute number and — even
-restricting the comparison to AIAAIC's AI-incident-only tab rather than its
-full multi-topic repository — very plausibly a substantial fraction of it.
-**This is a gap, not a comfortable "clearly insubstantial" finding:**
-`scripts/ingest_aiaaic_sheet.py` prints `f"[aiaaic] {len(rows)} raw rows"`
-(`ingest_aiaaic_sheet.py:390`) at ingest time but that figure is not
-currently captured to a committed artifact, so no one has a documented,
-current denominator. Absent that number, I cannot respectably conclude
-"insubstantial," and the more defensible working assumption, given the
-visible scale, is that it is **not**.
+**Quantitative — updated 2026-07-18 with a verified denominator.** At
+original writing I could not obtain a precise, current total-row count for
+AIAAIC's live "Incidents" sheet (the `about`/`repository` pages returned
+nav-menu content only, per §1; the working figures were a stale third-party
+summary — "1009 incidents and 411 issues" as of **September 2024** — and an
+inferred upper bound from entry IDs as high as **AIAAIC2265**). **Both are
+now superseded.** red-reviewer's raw-HTML/gviz check (`e13-rawhtml-check`,
+2026-07-18, PROGRESS.md E13 row) queried the linked Incidents Google
+Sheet's own `gviz` row-count endpoint directly — not a page-scrape — and
+found a **live total of approximately 1,995 rows** (this file's own earlier
+stale fallback had settled on ~1,420; that number is also retired). Against
+this verified total, our GenAI-scoped extraction of **1,513 rows**
+(`docs/audits/WS0-T3-cascade-2026-07-18.md:30`, confirmed against the
+rebuilt tree) works out to **≈1,513 / ≈1,995 ≈ 76% of AIAAIC's entire
+repository** — the gviz count is of the whole linked Incidents sheet, not
+merely an AI/GenAI-scoped tab, so this is a same-denominator, apples-to-
+apples fraction. **This must be read as strongly substantial on the
+quantitative axis, not as "cutting toward insubstantiality."** A larger
+denominator only weakens a substantiality finding if the extracted *share*
+of it shrinks; here the share is roughly three-quarters of the entire
+database, squarely within what BHB's quantitative test treats as
+substantial. (Note for the record: an informal gloss on this same
+corrected-denominator fact, recorded on the E13 PROGRESS.md board row,
+read the bigger number as cutting toward insubstantiality — that reading is
+incorrect at this magnitude and is superseded by this paragraph; the
+relevant question is always the *share* taken, not the raw size of the
+denominator in isolation.) This closes the quantitative gap this paragraph
+originally flagged as unresolved — the number is now verified, not merely
+"the more defensible working assumption."
 
 **Qualitative.** AIAAIC's GenAI-related incidents are very plausibly the
 most actively curated, most recently verified, most publicly referenced
@@ -173,13 +212,17 @@ line of case law, not a mitigating one** — it is the paradigm case Art
 7(5)/reg 16(2) was written to stop "insubstantial-extraction-by-degrees"
 from evading.
 
-**Conclusion:** Substantiality is **more likely than not met**, on both
-quantitative (large absolute row count against a total that appears to be
-in a similar order of magnitude) and qualitative (GenAI subset = high-
-investment, high-currency slice) grounds, independently reinforced by the
-repeated/systematic-ingest aggregation rule. I could not fully close the
-quantitative question to a hard number (see the logging requirement in §6),
-but the direction of the evidence does not favor "insubstantial."
+**Conclusion:** Substantiality is **more likely than not met — and now
+better evidenced than at this file's original writing**, on both
+quantitative (a verified **≈76% share of AIAAIC's entire live repository**,
+per the corrected figure above, not an order-of-magnitude estimate) and
+qualitative (GenAI subset = high-investment, high-currency slice) grounds,
+independently reinforced by the repeated/systematic-ingest aggregation
+rule. The quantitative question is now closed to a real, verified number
+for this snapshot in time (the §6 recommendation for a *committed,
+per-run* logging artifact — rather than a one-time manual check — still
+stands, since the denominator will keep moving), and the direction of the
+evidence points toward "substantial," not away from it.
 
 ---
 
@@ -250,9 +293,45 @@ in the operative parts:
 - §4(a): where the licensor holds Sui Generis Database Rights in licensed
   material, §2(a)(1)'s reuse grant extends to "**extract, reuse, reproduce,
   and Share all or a substantial portion of the contents of the database**."
+- §4(b): "**if You include all or a substantial portion of the database
+  contents in a database in which You have Sui Generis Database Rights,
+  then the database in which You have Sui Generis Database Rights (but not
+  its individual contents) is Adapted Material, including for purposes of
+  Section 3(b); and**" (quoted verbatim from the CC BY-SA 4.0 legal code,
+  creativecommons.org/licenses/by-sa/4.0/legalcode, wording re-verified
+  2026-07-18 — previously omitted from this file's §4).
 - §4(c): "**You must comply with the conditions in Section 3(a)**" — i.e.
   attribution **and ShareAlike** — "**if You Share all or a substantial
   portion of the contents of the database.**"
+
+**§4(b) analysis — this sharpens, and does not merely supplement, the
+§4(c) conclusion below.** §4(c) alone could be (mis)read as scoping
+ShareAlike to "whatever portion of AIAAIC's contents we're sharing" — i.e.
+potentially confinable to an isolable AIAAIC-derived field subset, which is
+exactly the kind of carve-out D2/D9's "single clean CC-BY-4.0, no BY-SA
+subset" design implicitly hopes stays available. §4(b) forecloses that
+narrower reading in the specific fact pattern this project matches: taking
+a substantial portion of AIAAIC's BY-SA database contents (the categorical
+facts extracted per §3 above) and including them in *our own* database —
+the genai_incidents corpus — over which this project plausibly holds its
+own sui generis database right (the corpus is built through the same kind
+of "obtaining/verifying/presenting" investment, across dozens of ingest
+scripts and manual curation, that §1 above finds grounds AIAAIC's own
+right — not independently confirmed for our own project in this file, see
+counsel question 7 below). Where that condition is met, §4(b)'s operative
+effect is that it is **our whole database — not merely the extracted
+AIAAIC rows — that becomes "Adapted Material," expressly including for
+purposes of §3(b)** (the ShareAlike condition: same-license-or-BY-SA-
+Compatible Adapter's License, license notice retained, no additional
+restrictive terms). That is a materially broader unit of obligation than a
+§4(c)-only reading suggests: the ShareAlike condition would run against
+**the corpus as a database**, via §3(b)'s Adapter's-License mechanics, not
+against a quarantinable AIAAIC-derived subset. Combined with §2's
+substantiality finding, this reinforces rather than reverses this file's
+verdict — it strengthens the case that "needs qualified counsel" is the
+correct posture, and adds a distinct, database-level question counsel
+should address (question 7, §5.1) alongside the row-level ones already
+listed there.
 
 This creates the exact fork the E13 brief anticipated:
 
@@ -340,6 +419,15 @@ D2/D9 reduction**, not toward "resolved."
    implementation of Directive 96/9/EC (noting Art 11's EEA-nationality
    requirement and the post-Brexit UK/EU divergence), and if so, which
    regime should the project treat as controlling?
+7. Does genai_incidents itself plausibly hold its own UK/EU sui generis
+   database right in the assembled corpus (built through obtaining/
+   verifying/presenting investment analogous to §1's analysis of AIAAIC),
+   and if so, does CC BY-SA 4.0 §4(b) attach ShareAlike (via §3(b)) to the
+   redistribution of the corpus **as a database**, rather than only to the
+   extracted AIAAIC-derived fields — and if that database-level obligation
+   attaches, what would compliance require given the corpus's mixed-license,
+   multi-source composition (Apache-2.0 ATLAS/garak carve-outs, CC-BY GHSA/
+   OSV/NVD content, etc.)?
 
 ---
 
@@ -449,13 +537,26 @@ by this file; they are exact requirements for the foreman to route.
   AIAAIC-derived entry count in the rebuilt tree).
 - `scripts/ingest_aiaaic_sheet.py:390` (existing but non-persisted raw-row
   count logging).
-- `PROGRESS.md` (E2/D2 decision record; WS0-T1 close-out material).
+- `PROGRESS.md` (E2/D2 decision record; WS0-T1 close-out material; E13 row
+  carries the 2026-07-18 red-reviewer raw-HTML verification, check
+  `e13-rawhtml-check`, folded into §1/§2 above).
 
 **Not independently confirmed this session (flagged, not asserted):**
 AIAAIC's precise maker entity/legal domicile; AIAAIC's own stated
-methodology/investment scale; AIAAIC's current total live-sheet row count;
-the exact text of any pre-2021 EEA-era standstill provision for database
-material substantially made before UK exit day. `aiaaic.org/about-aiaaic`
-and `aiaaic.org/aiaaic-repository` were fetched via WebFetch and returned
-only navigation-menu content — treated as method-suspect per the standing
-rule, not as confirmed absence of a methodology statement.
+methodology/investment scale; the exact text of any pre-2021 EEA-era
+standstill provision for database material substantially made before UK
+exit day. `aiaaic.org/about-aiaaic` and `aiaaic.org/aiaaic-repository` were
+fetched via WebFetch and returned only navigation-menu content — treated as
+method-suspect per the standing rule, not as confirmed absence of a
+methodology statement.
+
+**Update (2026-07-18):** the maker entity/domicile and methodology/
+investment-scale gaps above were *not* closed by the follow-up raw-HTML
+check — see the §1 update — they remain genuinely absent even in raw HTML,
+which is a stronger (checked, still-negative) finding than the original
+method-suspect flag. AIAAIC's current total live-sheet row count **is** now
+confirmed: ≈1,995 rows via a direct `gviz` query against the linked
+Incidents sheet (red-reviewer, `e13-rawhtml-check`, 2026-07-18; see §2),
+removed from this "not confirmed" list accordingly. A dedicated `/terms`
+page was also found to exist but is login-gated, unverifiable without
+credentials — a new evidence gap, not a resolved one; see §1.
