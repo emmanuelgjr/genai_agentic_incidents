@@ -1,6 +1,11 @@
 # Draft — AIAAIC facts+link handling / attribution
 
-**STATUS:** DRAFT — user to verify recipient and send; log send date on the board (E3 / WS0-T4).
+**STATUS:** ⛔ HELD (2026-07-18) — DO NOT SEND YET. The reduction is *restored, not
+implemented* (WS0-T3 re-scoped, awaiting review), so the body's "we have reduced
+AIAAIC-derived entries to facts plus a link" is **currently false**. AIAAIC prose
+still sits in `ingest/aiaaic_sheet_incidents.json` (D10). Release this hold and
+switch the phrasing to accomplished tense only after WS0-T3 lands and the prose
+audit reads 0. Then user verifies recipient and sends; log send date (E3/WS0-T4).
 **To (UNCONFIRMED):** AIAAIC (Charlie Pownall / AIAAIC team)
 **Suggested subject:** genai_incidents — respecting AIAAIC's CC BY-SA terms (facts + link)
 

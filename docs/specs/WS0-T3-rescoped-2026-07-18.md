@@ -28,15 +28,23 @@ the coupling.
 
 ### (a) Decouple label derivation from the published description
 
-The mapping/corpus seed must be computed from AIAAIC's **structured ingest-row
-cells**, captured **before** description composition — never re-derived from the
+The mapping/corpus seed must be computed from AIAAIC's structured cells captured
+**at ingest, before description composition** — never re-derived from the
 published, prose-stripped `description`.
 
-- `ingest_aiaaic_sheet.py` **retains the `ethical` (and other classifier-
-  relevant) cells internally** on the ingest row; **only the published
-  `description` drops them.** The ingest row is the pre-cut source of truth for
-  classification; the published description is the post-cut, licensing-safe
-  output.
+**Correction (2026-07-18, D10 — the user caught this).** The earlier draft said
+the ingest row "retains the `ethical` cell internally." That is **wrong**:
+`ingest/aiaaic_sheet_incidents.json` is a tracked, committed, public file, so
+any retained AIAAIC prose is still redistributed. **No AIAAIC verbatim editorial
+prose may persist in ANY committed file** (see the prose audit below).
+
+- At ingest, `ingest_aiaaic_sheet.py` **extracts the `ethical` cell into a
+  controlled-vocabulary tag list** — normalized categorical values only, e.g.
+  `aiaaic_ethical_tags: ["misinformation", "safety"]`, mapped from AIAAIC's
+  ethical-issue labels through a fixed, committed vocabulary. A categorical fact
+  list, not expression. The mapping/corpus seed reads **this list** (plus the
+  categorical cells system/technology/sector/jurisdiction), never the published
+  `description` and never any retained raw prose.
 - The two coupled heuristics currently reading the published description
   (`scripts/merge_and_dedupe.py`):
   - `classify_attack_vector()` / the finalize-reclassify block (`:1282–1305`)
@@ -46,14 +54,24 @@ published, prose-stripped `description`.
     → landmark tier via `_derive_tier()` `:161`).
   must receive their classification text from the **structured ingest cells**
   for AIAAIC-origin entries, not from the published `description`.
-- Concretely: the AIAAIC ingest emits, alongside the reduced `description`, an
-  **internal classification-input field** (e.g. `_classify_text`, not published,
-  excluded from the schema and from `merge_into`) carrying the categorical +
-  ethical cell content the classifiers need. The classifiers prefer that field
-  when present and fall back to `title + description` only for non-AIAAIC
-  entries. (Exact field name/mechanism is an implementation choice for
-  schema-architect + pipeline-engineer; the invariant is: **published prose
-  removal must not move any label.**)
+- Both the published `description` in `data/incidents.json` **and** the
+  `description` in `ingest/aiaaic_sheet_incidents.json` are reduced to the
+  categorical form. The raw prose cells (purpose/ethical/consequence/response)
+  are consumed transiently during ingest and **written nowhere**. Any internal
+  field the classifiers read must be excluded from `merge_into` and must hold
+  only normalized tags — never prose. The invariant is: **published prose
+  removal must not move any label, and no committed file carries AIAAIC prose.**
+- **Prose audit — must reach 0 in every committed file.** Today
+  `ingest/aiaaic_sheet_incidents.json` carries prose in all four dropped cells:
+  **Purpose 1485, Ethical issues 1498, Reported consequences 421, Response 281**
+  (of 1500 records); `ingest/aiaaic_incidents.json` (95 records) is already
+  clean (0). Acceptance greps the cell markers (`AIAAIC report:` / `Purpose:` /
+  `Ethical issues:` / `Reported consequences:` / `Response:`) across all
+  committed `ingest/*.json` and `data/*.json` and requires **0**. Each of the
+  four dropped cells is audited the same way — any that carries prose in a
+  committed file is removed; only normalized categorical derivations
+  (`aiaaic_ethical_tags`, and the kept system/technology/sector/jurisdiction
+  facts) may remain.
 
 ### (b) Regression test — seed independence from published description
 
@@ -74,10 +92,21 @@ committed artifact, across at minimum:
 
 - **Zero unintended deltas.** Any non-zero delta must be **enumerated and
   justified** in the delta report as intended.
-- The **only** deltas the reduction is permitted to introduce are: the
-  `description` text itself, and the `description_provenance` /
-  `description_source` fields. Taxonomy, severity, corpus, tier, and
-  `landmark_count` must be **unchanged** vs the pre-reduction build.
+- **Baseline = `a2d7a26e`'s committed data.** The gate requires **ZERO taxonomy
+  deltas vs `a2d7a26e` — exact set equality per entry (identical mapping sets),
+  not merely similar distributions.** The only deltas permitted are: the
+  `description` text (in both `data/incidents.json` and
+  `ingest/aiaaic_sheet_incidents.json`), the new `aiaaic_ethical_tags`, and
+  `description_provenance` / `description_source`. `attack_vector`, `owasp_llm`,
+  `owasp_asi`, `mitre_atlas`, `mitre_atlas_tactics`, `nist_ai_rmf`,
+  `owasp_dsgai`, `severity`, `corpus`, `quality_tier`/`tier`, and
+  `landmark_count` must be **byte-for-byte unchanged** vs `a2d7a26e`.
+  - *Caveat the impl must handle:* `a2d7a26e`'s published labels were themselves
+    partly prose-derived (the cascade showed HEAD held `attack_vector` values
+    the current ingest code no longer emits). Reproducing them exactly may
+    require the re-scoped seed to replicate that mapping logic from
+    `aiaaic_ethical_tags`. Any residual divergence is either a defect to
+    reconcile or an intended delta to enumerate and justify — **never silent.**
 - red-reviewer gates on this delta (see the new standing rule on transformative
   data operations).
 
