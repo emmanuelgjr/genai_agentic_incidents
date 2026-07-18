@@ -22,7 +22,7 @@
 - 📄 **Methodology:** [`docs/paper/genai-incidents-methods.md`](docs/paper/genai-incidents-methods.md) — how the dataset is built, mapped, and governed
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
-A consolidated, machine-readable index of **[<!-- stats:incident_count -->12,986<!-- /stats:incident_count --> GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
+A consolidated, machine-readable index of **[<!-- stats:incident_count -->13,025<!-- /stats:incident_count --> GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
 
 - **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10` — _core_
 - **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10` — _core_
@@ -60,7 +60,8 @@ The dataset is published as both a machine-readable JSON (`data/incidents.json`)
 ├── scripts/
 │   ├── parse_existing.py             ← parse legacy/ → data/legacy_consolidated.json
 │   ├── ingest_external.py            ← parse cloned source repos under ../_external/ → ingest/*.json
-│   ├── scrape_aiid.py                ← fetch all AIID incident pages (OG metadata) → ingest/aiid_full.json
+│   ├── ingest_aiid_snapshot.py       ← AIID official weekly snapshot (sanctioned bulk channel) → ingest/aiid_full.json
+│   ├── scrape_aiid.py                ← RETIRED per-page scrape (kept only as a reused parsing-logic library; disabled in Makefile)
 │   ├── ingest_airi_navigator.py      ← MIT FutureTech AI Risk Navigator CSV → ingest/airi_navigator_incidents.json
 │   ├── ingest_aiaaic_sheet.py        ← AIAAIC Repository public Google Sheet → ingest/aiaaic_sheet_incidents.json
 │   ├── ingest_oecd_aim.py            ← OECD AI Incidents Monitor (10k pages) → ingest/oecd_aim_full_incidents.json

@@ -32,6 +32,7 @@ Each `*.json` file here is a per-source aggregator output — a top-level JSON a
 | File | Source | Notes |
 |---|---|---|
 | `aiid_incidents.json` | AI Incident Database security-relevant subset | Some entries also reference vendor/research writeups for verification |
+| `aiid_full.json` | AI Incident Database, via AIID's official weekly snapshot channel (`scripts/ingest_aiid_snapshot.py`, `make ingest-aiid`) | Facts + link only — title + structured facts (date/entities/MIT taxonomy); AIID's own narrative `description` is used only as an ephemeral classification signal, never persisted. See `docs/audits/WS0-T4-aiid-snapshot-swap-2026-07-18.md`. |
 | `atlas_incidents.json` | MITRE ATLAS case studies + adversarial-ML research cited in ATLAS | All entries map at least one ATLAS technique |
 | `avid_owasp_incidents.json` | AVID + OWASP GenAI Project incident roundups | AVID taxonomy codes (`S/E/P-####`) preserved in `avid_categories` |
 | `cve_incidents.json` | NVD-verified CVEs affecting AI/ML/LLM/agent stacks (2022-2026) | Every entry has a verified CVE ID and NVD URL |

@@ -1,4 +1,4 @@
-.PHONY: build validate render merge install clean test stix taxii misp huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim ingest-redteam ingest-all render-docs-stats check-stats-drift
+.PHONY: build validate render merge install clean test stix taxii misp huggingface ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-aiid ingest-oecd-aim ingest-redteam ingest-all render-docs-stats check-stats-drift
 
 install:
 	pip install -r requirements.txt
@@ -78,14 +78,27 @@ ingest-aiaaic:
 ingest-oecd-aim:
 	python scripts/ingest_oecd_aim.py
 
-# Refresh every external source. Heavy: NVD/GHSA, AIRI, AIAAIC, OECD AIM.
-ingest-all: ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim
+# Pull AIID data from AIID's own sanctioned bulk-access channel (the
+# official weekly snapshot at incidentdatabase.ai/research/snapshots/,
+# served from R2) instead of the prohibited high-volume per-page scrape.
+# Swap-half of WS0-T4 / decision D1 (2026-07-18). Never extracts
+# reports.csv/reports.bson (the `reports.text` field is excluded from
+# AIID's CC-BY-SA grant) and persists facts + link only -- see the
+# script's module docstring and docs/audits/WS0-T4-aiid-snapshot-swap-2026-07-18.md.
+# Output: ingest/aiid_full.json (+ ingest/aiid_full.provenance.json).
+ingest-aiid:
+	python scripts/ingest_aiid_snapshot.py
+
+# Refresh every external source. Heavy: NVD/GHSA, AIRI, AIAAIC, AIID, OECD AIM.
+ingest-all: ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-aiid ingest-oecd-aim
 # D1/E1/WS0-T4 (2026-07-16): AIID's Terms of Use prohibit high-volume/bot
 # access; scrape_aiid.py ran ThreadPoolExecutor(max_workers=12) against
 # per-incident pages, an active ToS violation. Disabled here (stop-half of
-# WS0-T4). Do NOT re-enable without the sanctioned official-snapshot swap
-# (WS0-T4's remaining half) replacing this call. scripts/scrape_aiid.py is
-# kept in the repo, unused, so the swap can reuse its parsing logic.
+# WS0-T4) and superseded by `ingest-aiid` above (swap-half, landed
+# 2026-07-18). scripts/scrape_aiid.py is kept in the repo, unused except
+# as a reused-function library for ingest_aiid_snapshot.py (TAXONOMY_RULES /
+# severity_for / is_security_relevant); its own network-fetching main()
+# must stay disabled here permanently.
 #	python scripts/scrape_aiid.py
 
 clean:

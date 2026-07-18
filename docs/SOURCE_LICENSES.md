@@ -54,19 +54,50 @@ Google Sheet CSV export at `docs.google.com/spreadsheets/d/.../export?format=csv
 | Derivative-work constraint (D2) | **AIAAIC-derived summaries must be written from the primary sources AIAAIC links to — never paraphrased from AIAAIC's own prose.** A close paraphrase of BY-SA text is arguably a derivative work, which would reimport the share-alike obligation that reducing to facts+link exists to shed. "Facts + link" is only a real remedy if the facts are independently sourced; laundering the same prose through a paraphrase is not a reduction. Binds the WS0-T3 implementation (see the plan's WS0-T3 body, which carries the same constraint). |
 | Date-checked | 2026-07-15 (fact); 2026-07-16 (independently re-verified by primary-source fetch; D2 recorded same date) |
 
-### 1.2 AI Incident Database (AIID) — direct scrape
-*Ingested by:* `scripts/scrape_aiid.py` (concurrently fetches
-`incidentdatabase.ai/cite/<id>/` HTML pages, 12 worker threads, and reads
+### 1.2 AI Incident Database (AIID) — direct scrape (RETIRED 2026-07-18)
+
+**STATUS UPDATE (2026-07-18): this ingestion method is retired.** The
+row below is preserved as the historical finding that motivated the
+retirement (decision D1, 2026-07-16 — swap-half). The active ingest is
+now §1.2a. `scripts/scrape_aiid.py`'s `main()` (the concurrent
+per-page-scrape entry point) is disabled in `Makefile` (`make ingest-all`
+never calls it) and MUST stay disabled; the module is kept only as a
+function library (`TAXONOMY_RULES`, `severity_for`, `is_security_relevant`,
+`map_taxonomy`) reused by §1.2a's ingest.
+
+*Was ingested by:* `scripts/scrape_aiid.py` (concurrently fetched
+`incidentdatabase.ai/cite/<id>/` HTML pages, 12 worker threads, and read
 `og:title`/`og:description` meta tags).
 
 | Field | Value |
 |---|---|
 | License | **CONFIRMED CC BY-SA 4.0** for specific named collections only — `incidentdatabase.ai/terms-of-use/` (fetched 2026-07-15) states: *"The following database collections are licensed under the Creative Commons attribution share-alike license"* (incidents, quickadd, duplicates, taxa, classifications, entities, entity_relationships). It explicitly **excludes** the `text` field of the `reports` collection from that license. |
-| Scrape-permitted | **NO.** The same Terms of Use state, verbatim: *"High-volume means of accessing the Site, including but not limited to bots and spiders, are prohibited."* `scrape_aiid.py` runs a `ThreadPoolExecutor(max_workers=12)` against every `/cite/<id>/` URL harvested from sitemaps — this is exactly the high-volume/bot access the ToS prohibits, currently in production. |
-| Redistribute-verbatim | **NO** for the `text` field (explicitly carved out of the CC license, and AIID's own ownership over it is not established either — likely third-party news-article excerpt). The `og:description` scraped here may or may not correspond 1:1 to the excluded `text` field internally; that ambiguity does not matter because the *access method itself* is already prohibited regardless of which field is touched. |
-| Relicense-compatible | **NO** for the CC-BY-SA-licensed fields (share-alike ≠ plain CC-BY) — see §1.2 action. The `text` field is out of scope for any relicensing since it isn't AIID's to license in the first place. |
-| Action | **(b) + (c), and this is the most severe finding in this audit: the ingestion *method* is a live ToS violation, independent of the licensing question.** AIID publishes official weekly snapshots (JSON/MongoDB/CSV) at `incidentdatabase.ai/research/snapshots/` → `https://pub-72b2b2fc36ec423189843747af98f80e.r2.dev/`, going back to March 2021 — this is the sanctioned bulk-access channel the plan anticipated ("AIID has data dumps — use them instead of OG scraping," WS0-T4). See the exact pipeline-engineer requirement in the report: **retire `scrape_aiid.py`'s concurrent HTML fetch; replace with the official snapshot download.** Content from the CC-BY-SA fields must be split-licensed (CC-BY-SA, not blanket CC-BY) in any relicense manifest; the `text`/narrative field must never be reproduced verbatim. |
-| Date-checked | 2026-07-15 |
+| Scrape-permitted | **NO.** The same Terms of Use state, verbatim: *"High-volume means of accessing the Site, including but not limited to bots and spiders, are prohibited."* `scrape_aiid.py` ran a `ThreadPoolExecutor(max_workers=12)` against every `/cite/<id>/` URL harvested from sitemaps — this is exactly the high-volume/bot access the ToS prohibits. This was live in production until the stop-half of WS0-T4 (2026-07-16) disabled it. |
+| Redistribute-verbatim | **NO** for the `text` field (explicitly carved out of the CC license, and AIID's own ownership over it is not established either — likely third-party news-article excerpt). The `og:description` scraped here may or may not have corresponded 1:1 to the excluded `text` field internally; that ambiguity did not matter because the *access method itself* was already prohibited regardless of which field was touched. |
+| Relicense-compatible | **NO** for the CC-BY-SA-licensed fields (share-alike ≠ plain CC-BY). The `text` field is out of scope for any relicensing since it isn't AIID's to license in the first place. |
+| Action taken | **Retired (2026-07-18).** Replaced end-to-end by §1.2a's sanctioned-snapshot ingest. See `docs/audits/WS0-T4-aiid-snapshot-swap-2026-07-18.md` and `docs/audits/WS0-T4-aiid-snapshot-swap-delta-2026-07-18.md` for the implementation and the full field-level before/after delta. |
+| Date-checked | 2026-07-15 (retired 2026-07-18) |
+
+### 1.2a AI Incident Database (AIID) — official sanctioned snapshot (ACTIVE, added 2026-07-18)
+
+*Ingested by:* `scripts/ingest_aiid_snapshot.py` (`make ingest-aiid`),
+downloading AIID's official weekly snapshot archive
+(`backup-<timestamp>.tar.bz2`) from `https://incidentdatabase.ai/research/snapshots/`
+(served from the R2 bucket `pub-72b2b2fc36ec423189843747af98f80e.r2.dev/`),
+verified live 2026-07-18 (weekly cadence confirmed, latest at
+verification: `backup-20260713110347.tar.bz2`). Output:
+`ingest/aiid_full.json` (same filename as the retired scrape's output — a
+deliberate drop-in replacement) + `ingest/aiid_full.provenance.json`
+(snapshot URL/filename/sha256/fetched-at, a pinned provenance record).
+
+| Field | Value |
+|---|---|
+| License | Same as §1.2 — CC BY-SA 4.0 for the `incidents`/`quickadd`/`duplicates`/`taxa`/`classifications`/`entities`/`entity_relationships` collections; the `reports` collection's `text` field is explicitly excluded. The snapshot archive itself ships a `license.txt` corroborating this: *"Report contents are subject to their own intellectual property rights. Unless otherwise noted, the database is shared under (CC BY-SA 4.0)."* |
+| Scrape-permitted | **YES for this specific channel.** This is AIID's own named bulk-download mechanism, not a scrape of per-page HTML; no ToS prohibition applies to fetching a published snapshot archive the way the per-page bot-access prohibition applied to §1.2's method. |
+| Redistribute-verbatim | **Deliberately NOT exercised for narrative text**, even though the `incidents.description` field (unlike `reports.text`) is technically within the CC-BY-SA grant. `ingest_aiid_snapshot.py` reads `incidents.description` only as an ephemeral, in-memory classification signal (security-relevance / attack_vector / severity heuristics) and never writes it to the output — the persisted `description` is always an original templated sentence built from structured facts (id, title, entities). Only the AIID-authored `title` (a short headline, not narrative) is kept verbatim, plus structured non-narrative facts (id, date, url, deployer/developer entity slugs, MIT AI Risk Repository categorical taxonomy fields). `reports.csv`/`reports.bson` are never even extracted from the archive. This keeps the ingest **more conservative than §1.2's retired method**, which persisted a truncated verbatim `og:description`. |
+| Relicense-compatible | **Not fully resolved — OPEN ITEM, same posture as AIAAIC's E13 database-right question.** The facts-plus-link reduction mitigates but does not eliminate AIID's CC-BY-SA share-alike exposure over the `incidents`/`classifications` collections (title + structured taxonomy facts are still drawn from a CC-BY-SA-licensed collection), and a separate sui-generis EU/UK database-right question (parallel to E13) has not been analyzed for AIID specifically. Pending the same kind of resolution AIAAIC's database-right question is pending: qualified counsel or a user decision among engage-counsel / redesign-more-conservatively / accept-residual-risk. **Not represented as resolved by this change** — this change only fixes the acquisition *method* (sanctioned snapshot vs. prohibited scrape) and keeps content at least as conservative as before; it does not adjudicate AIID's share-alike/database-right status. |
+| Action | **(a)/(b) hybrid — method now compliant; content-licensing question flagged open, not closed.** No LICENSE-DATA carve-out added for AIID (parallel to AIAAIC's D2 outcome: one clean CC-BY-4.0 license, no BY-SA subset, achieved by not carrying AIID's licensed narrative text at all — only headline + structured facts). Invariant 3 (never silently drop a previously-present entry) verified for this swap: 0 corpus IDs removed, see the delta report. |
+| Date-checked | 2026-07-18 |
 
 ### 1.3 AI Incident Database (AIID) — via AIID's own repo data file
 *Ingested by:* `scripts/ingest_external.py::ingest_aiid_oecd_bridge()` (reads
@@ -301,7 +332,7 @@ per-source license audit.)
 
 | # | Source | Outcome | Why it's an escalation |
 |---|---|---|---|
-| 1 | AIID direct scrape (`scrape_aiid.py`) | **(b)+(c), active ToS violation** | Bot/high-volume access is explicitly prohibited by AIID's own Terms of Use; an official weekly-snapshot alternative exists today. This is a data-acquisition-method fix, not a data-drop, but it blocks Phase-2 per the plan's gate ("Phase 2 structural work must not begin while WS0-T1 licensing outcomes for a source are unknown"). |
+| 1 | AIID (§1.2, retired 2026-07-18) → AIID official snapshot (§1.2a, active) | **Acquisition-method violation RESOLVED (2026-07-18); a distinct CC-BY-SA/database-right content question is OPEN** | Bot/high-volume access was prohibited by AIID's own Terms of Use; `scrape_aiid.py`'s scrape is retired and replaced by `scripts/ingest_aiid_snapshot.py` reading AIID's official weekly snapshot channel (WS0-T4 swap-half, decision D1). Content is kept at least as conservative as before (facts+link, no narrative persisted) but AIID's own CC-BY-SA share-alike / possible sui-generis database-right exposure over the `incidents`/`classifications` collections is **not** adjudicated by this change — flagged open, same posture as AIAAIC's E13 finding. See `docs/audits/WS0-T4-aiid-snapshot-swap-2026-07-18.md`. |
 | 2 | AIAAIC Repository | **(b) copyright share-alike resolved by decision D2** — license confirmed CC BY-SA 4.0; handled by reducing to facts+link, not by split-licensing. **The separate EU/UK sui generis database-right question is OPEN, pending qualified counsel / a user decision** (options: engage counsel / conservative ingest redesign / accept residual risk) — see `docs/audits/WS0-E13-database-right-2026-07-18.md` | Verbatim spreadsheet-cell text carried a real copyright share-alike obligation; per D2 (2026-07-16, human) the project honors it by not carrying verbatim text at all, keeping one clean CC-BY-4.0 license with no BY-SA subset. That decision disposes of the *copyright* question only. E13 (2026-07-18) finds AIAAIC's database right plausibly subsists and the ~1,513-row categorical-fields extraction plausibly meets the substantiality threshold even after the D2/D9 reduction — facts+link mitigates but does not eliminate exposure. Not a resolved decision on record; an open question routed to the user. |
 | 3 | OECD AIM | **(b)/(c) hybrid** | Narrative summary text is explicitly disclaimed by OECD as third-party IP. |
 | 4 | MIT AIRI Navigator | **(d) UNKNOWN, narrowed** — own license confirmed CC BY 4.0; only the transitive AIID share-alike question is open | AIRI Navigator's own license is established via a one-hop raw-HTML check: its Terms-of-Use modal names airisk.mit.edu as its data source, and that page's footer carries the CC BY 4.0 grant, re-verified 2026-07-16 and cross-checked independently by red-reviewer and the foreman. What remains genuinely unresolved is only whether AIID's CC-BY-SA share-alike (Section 1.2) applies transitively to the AIID-derived fields this tool wraps; see §1.4. |
@@ -319,3 +350,13 @@ OECD AIM carries a narrower, still-genuine open question (does AIM's own
 summary text count as OECD's reusable IP or third-party content?), also
 dated. Outreach emails are drafted in the report below, not sent — the
 human sends them.
+
+**AIID (§1.2/§1.2a, updated 2026-07-18):** the *acquisition-method*
+violation (prohibited high-volume scrape) is resolved — retired and
+replaced by the sanctioned-snapshot channel (WS0-T4 swap-half, D1). AIID
+now carries the **same class of open question as AIAAIC's E13 finding**:
+a CC-BY-SA share-alike / possible sui-generis database-right question over
+the `incidents`/`classifications` collections, not adjudicated by the
+method swap and not resolved in the project's favor by default. Flagged
+for the same qualified-counsel-or-user-decision track as AIAAIC's
+database-right question, not yet actioned.
