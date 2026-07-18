@@ -80,7 +80,13 @@ ingest-oecd-aim:
 
 # Refresh every external source. Heavy: NVD/GHSA, AIRI, AIAAIC, OECD AIM.
 ingest-all: ingest-cve ingest-kev ingest-airi ingest-aiaaic ingest-oecd-aim
-	python scripts/scrape_aiid.py
+# D1/E1/WS0-T4 (2026-07-16): AIID's Terms of Use prohibit high-volume/bot
+# access; scrape_aiid.py ran ThreadPoolExecutor(max_workers=12) against
+# per-incident pages, an active ToS violation. Disabled here (stop-half of
+# WS0-T4). Do NOT re-enable without the sanctioned official-snapshot swap
+# (WS0-T4's remaining half) replacing this call. scripts/scrape_aiid.py is
+# kept in the repo, unused, so the swap can reuse its parsing logic.
+#	python scripts/scrape_aiid.py
 
 clean:
 	rm -f data/incidents.json data/incidents.min.json data/legacy_consolidated.json INCIDENTS.md
