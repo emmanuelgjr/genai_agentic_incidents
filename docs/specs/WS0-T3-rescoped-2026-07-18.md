@@ -195,7 +195,14 @@ that the user review this specific amendment first is not.
       published description text.
 - [ ] Validation sample (15–20 entries, all eight cells) committed before batch.
 - [ ] `make build` uses no network/model; determinism byte-identical; entry
-      count 12,986 preserved.
+      count preserved exactly (measured against `data/stats.json`
+      `incident_count` at the rebuild's base commit; the WS0-T3 reduction
+      rewrites `description` content and adds the D11(b) marker — it must add
+      or remove **ZERO** entries). *(2026-07-27: this line previously
+      hardcoded "12,986 preserved" — that was the count on 2026-07-17; the
+      corpus has since moved via weekly refresh #97 and the WS0-T4 snapshot
+      swap. Rewritten to a relative, self-refreshing criterion so it can't go
+      stale again.)*
 - [ ] `merge_into` did not gain the new/internal fields.
 - [ ] Committed AIAAIC live-total-row-count logging present (denominator for any substantiality re-check).
 - [ ] Database-right acceptance item present and distinct from the copyright/prose gate; AIAAIC licensing NOT represented as fully resolved pending the E13 user decision.
