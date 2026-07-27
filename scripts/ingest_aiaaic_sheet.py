@@ -232,6 +232,45 @@ AIAAIC_ETHICAL_TAG_VOCAB: dict[str, str] = {
     "manipulation": "manipulation",
     "exploitation": "exploitation",
     "unclear": "unclear",
+    "appropriation": "appropriation",
+    "accessibility": "accessibility",
+    "authenticity/integrity": "authenticity integrity",
+    "autonomous weapons": "autonomous weapons",
+    "cheating/plagiarism": "cheating plagiarism",
+    "plagiarism": "plagiarism",
+    "competition/monopolisation": "competition monopolisation",
+    "competition/monopolization": "competition monopolisation",
+    "confidentiality": "confidentiality",
+    "copyright": "copyright",
+    "diversity/inclusivity": "diversity inclusivity",
+    "dual use": "dual use",
+    "dual/multi-use": "dual multi use",
+    "fairness": "fairness",
+    "freedom of expression": "freedom of expression",
+    "human rights/civil liberties": "human rights civil liberties",
+    "liability": "liability",
+    "oversight": "oversight",
+    "power inbalance": "power imbalance",
+    "power imbalance": "power imbalance",
+    "prioritisation": "prioritisation",
+    "prioritization": "prioritisation",
+    "privacy": "privacy",
+    "revisionism": "revisionism",
+    "robot rights": "robot rights",
+    "alignment": "alignment",
+    # Known upstream misspellings (AIAAIC's own sheet) -- mapped to the
+    # correctly-spelled canonical tag rather than left to the fallback
+    # slugifier, purely for classification fidelity; the fallback path below
+    # would handle any of these (or a future typo) safely regardless.
+    "accountabiilty": "accountability",
+    "accuracy/reliabiity": "accuracy reliability",
+    "accuracy/reliablity": "accuracy reliability",
+    "accuracy/relibaility": "accuracy reliability",
+    "appropropriation": "appropriation",
+    "compeititon/monopolisation": "competition monopolisation",
+    "privacy/surveillamce": "privacy surveillance",
+    "privacy/surveillance/surveillance": "privacy surveillance",
+    "transaprency": "transparency",
 }
 
 
@@ -247,10 +286,11 @@ def aiaaic_ethical_tags(ethical_cell: str) -> list[str]:
     """Extract AIAAIC's `ethical issue (taxonomy)` cell into a controlled,
     normalized tag list -- categorical facts only, consumed internally by the
     label seed (WS0-T3 spec Sec 2(a)); never the published description, and
-    never persisted as prose. Splits only on ';' -- the cell's own item
-    separator -- because '/' appears WITHIN compound category names (e.g.
-    "Employment/labour", "Privacy/surveillance"), not between items."""
-    items = [p.strip() for p in re.split(r";\s*", ethical_cell or "") if p.strip()]
+    never persisted as prose. Splits on ';' or ',' -- AIAAIC's sheet mixes
+    both as the item separator -- but NOT '/', because '/' appears WITHIN
+    compound category names (e.g. "Employment/labour", "Privacy/
+    surveillance"), not between items."""
+    items = [p.strip() for p in re.split(r"[;,]\s*", ethical_cell or "") if p.strip()]
     tags: list[str] = []
     for item in items:
         slug = AIAAIC_ETHICAL_TAG_VOCAB.get(item.lower())
