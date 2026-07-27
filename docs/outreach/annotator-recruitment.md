@@ -23,8 +23,8 @@ of publicly reported GenAI and agentic-AI security incidents, mapped to
 frameworks like OWASP LLM Top 10, OWASP Agentic Security Initiative, and MITRE
 ATLAS. [If sending to Mayur021: I noticed you forked the repo and opened a PR
 adding a `reversibility_class` label for the Replit incident (INC-03152)
-against the rubric in issue #74 — that's exactly the kind of judgment call I'm
-asking about below, so I'm reaching out directly.]
+against the rubric you proposed in #74 — that's exactly the kind of judgment
+call I'm asking about below, so I'm reaching out directly.]
 
 **The ask.** I'm running a small human-validation study on our heuristic
 labels and need a second, independent annotator — right now every label in
@@ -90,23 +90,24 @@ employer speculation. Ordered by engagement signal (strongest first).
 
 | Rank | Handle | Signal | Date(s) |
 |------|--------|--------|---------|
-| 1 | **Mayur021** | Forked the repo, then opened and had merged a PR adding `reversibility_class=external-reversible` for incident INC-03152 (Replit) against the rubric in issue #74 — direct, substantive engagement with the project's labeling conventions. Strongest and only candidate with hands-on labeling-adjacent contribution. | Forked 2026-07-02; PR merged 2026-07-02 |
+| 1 | **Mayur021** | Filed issue #74 proposing the `reversibility_class` rubric, then forked the repo and opened PR #85 implementing it — `reversibility_class=external-reversible` for incident INC-03152 (Replit), merged by the maintainer. Authorship of the rubric itself, not just an applied PR, is the strongest engagement signal in the scan — direct, substantive engagement with the project's labeling conventions. Strongest and only candidate with hands-on labeling-adjacent contribution. | Filed #74 2026-06-13; forked 2026-07-02; PR #85 opened 2026-07-02, merged 2026-07-03 |
 | 2 | praveenbommalibits | Forked the repo; no further public activity (no issues or PRs) observed. | Forked 2026-06-22 |
 | 3 | HyperPentestAI | Forked the repo; no further public activity observed. | Forked 2026-06-08 |
 | 4 | joel-correa | Forked the repo; no further public activity observed. | Forked 2026-06-04 |
 | 5 | ksmaheshkumar | Forked the repo; no further public activity observed. | Forked 2026-06-04 |
 | 6 | upenderadepu | Forked the repo; no further public activity observed. | Forked 2026-06-04 |
 
-**Notes on the fetch:** the issues endpoint returned 20 entries total (issues
-and PRs share GitHub's numbering); of those, 17 were opened by the
-maintainer (`emmanuelgjr`) and 3 by bot accounts (`ecc-tools[bot]`,
-`github-actions[bot]` ×2 — automated data-refresh/tooling PRs, excluded as
-candidates). Only one external issue/PR author appeared: Mayur021 (row 1
-above). No other forker has filed an issue or PR as of this fetch, so ranks
-2–6 rest on the fork signal alone, which is weaker — someone can fork a repo
-out of passing interest with no further engagement. If Mayur021 declines or
-doesn't respond, the fallback order above is a reasonable next-best guess,
-not a strong signal.
+**Notes on the fetch:** the issues endpoint returned **98 entries total**
+across all pages (issues and PRs share GitHub's numbering; page 2 came back
+empty, confirming completeness). Of those, **75** were opened by the
+maintainer (`emmanuelgjr`), **21** by bot accounts (13 `github-actions[bot]` +
+8 `ecc-tools[bot]` — automated data-refresh/tooling PRs, excluded as
+candidates), and **2** by Mayur021 (issue #74 and PR #85, row 1 above). No
+other forker has filed an issue or PR as of this fetch, so ranks 2–6 rest on
+the fork signal alone, which is weaker — someone can fork a repo out of
+passing interest with no further engagement. If Mayur021 declines or doesn't
+respond, the fallback order above is a reasonable next-best guess, not a
+strong signal.
 
 Because the study needs only **one** collaborator, send to Mayur021 first;
 only move to the next row if they decline or don't respond within a
