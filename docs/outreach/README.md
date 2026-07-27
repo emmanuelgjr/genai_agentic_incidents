@@ -15,6 +15,7 @@ committed (chat-only deliverables have now been lost three times — see the new
 | `aiid-goodwill.md` | AI Incident Database (Responsible AI Collaborative) | Goodwill + scraping-stopped notice + attribution confirmation | — |
 | `aiaaic-facts-link.md` | AIAAIC (Charlie Pownall / team) | Facts+link handling under CC BY-SA; attribution/cadence | — |
 | `mit-airi-courtesy.md` | Spencer Michaels / airi-navigator.com | Dead-download courtesy notice + transitive-AIID licensing question | — |
+| `annotator-recruitment.md` | Mayur021 (GitHub) — see file for ranked backups | WS2-T2 second-annotator recruitment: scoped ~200-entry labeling + adjudication ask | — |
 
 **Separate and NOT in this package:** the substantive `airisk@mit.edu` export
 request (AIRI Draft 4, E10/D8) — queue step 3, drafted separately.

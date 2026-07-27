@@ -1,12 +1,9 @@
 # Draft — AIID goodwill / attribution confirmation
 
-**STATUS:** ⛔ STILL HELD (updated 2026-07-18) — DO NOT SEND until WS0-T4's
-*swap-half* lands. Progress: the scraper **is now disabled** (WS0-T4 stop-half,
-`Makefile:83` commented, pushed to origin `f68554f9`). BUT the body still claims
-"now consume AIID only via your official weekly snapshot channel" — **still
-false**: the official-snapshot swap (WS0-T4 remaining half) is not yet built, so
-we are currently ingesting no AIID data from a sanctioned channel. Release this
-hold once the swap-half lands, then verify recipient and send; log send date.
+**STATUS:** ✅ CLEARED TO SEND (hold released 2026-07-27 — swap-half landed
+2026-07-18, commit `8e624ba7`; docs-warden verified the body's snapshot-channel
+claim is now true). User verifies recipient and sends; log send date on the
+board.
 **To (UNCONFIRMED):** AI Incident Database team — Responsible AI Collaborative
 **Suggested subject:** genai_incidents — attribution & respectful use of AIID data
 
