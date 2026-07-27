@@ -180,6 +180,110 @@ CONSEQUENCE_TO_SEVERITY = {
     "Defamation": "Medium",
 }
 
+# --- WS0-T3 (D9/D10/D11(b)) -------------------------------------------------
+# AIAAIC's per-row `description` is reduced to categorical facts only
+# (system/technology/sector/jurisdiction); the editorial-prose cells
+# (purpose/ethical/consequence/response -- CC BY-SA-protected expression) are
+# consumed transiently for classification below and written nowhere.
+#
+# The `ethical` cell is the one exception with a persisted trace: it is
+# extracted here into a controlled-vocabulary tag list (`aiaaic_ethical_tags`)
+# -- normalized categorical values drawn from AIAAIC's own closed "ethical
+# issue (taxonomy)" column, never free prose -- so the label seed
+# (merge_and_dedupe.py's attack_vector/corpus classifiers) can read AIAAIC's
+# categorical signal without ever touching the published description text.
+# See docs/audits/WS0-T3-cascade-2026-07-18.md for the failure mode this
+# exists to prevent (description-text classifiers silently relabelling the
+# corpus when the prose they read is cut).
+AIAAIC_ETHICAL_TAG_VOCAB: dict[str, str] = {
+    "security": "security",
+    "privacy/surveillance": "privacy surveillance",
+    "robustness": "robustness",
+    "safety": "safety",
+    "accountability": "accountability",
+    "human/civil rights": "human civil rights",
+    "child sexual abuse material": "child sexual abuse material",
+    "misinformation": "misinformation",
+    "disinformation": "disinformation",
+    "mis/disinformation": "mis disinformation",
+    "deepfake": "deepfake",
+    "bias/discrimination": "bias discrimination",
+    "discrimination": "discrimination",
+    "bias": "bias",
+    "consent": "consent",
+    "employment/labour": "employment labour",
+    "employment/labor": "employment labour",
+    "normalisation": "normalisation",
+    "normalization": "normalisation",
+    "proportionality": "proportionality",
+    "transparency": "transparency",
+    "representation": "representation",
+    "anthropomorphism": "anthropomorphism",
+    "accuracy/reliability": "accuracy reliability",
+    "autonomy/agency": "autonomy agency",
+    "automation bias": "automation bias",
+    "environment": "environment",
+    "environmental": "environment",
+    "sustainability": "sustainability",
+    "governance": "governance",
+    "legal": "legal",
+    "trust": "trust",
+    "wellbeing": "wellbeing",
+    "manipulation": "manipulation",
+    "exploitation": "exploitation",
+    "unclear": "unclear",
+}
+
+
+def normalize_ethical_tag(label: str) -> str:
+    """Fallback normalizer for an ethical-issue label not in the fixed
+    vocabulary above. Still a categorical slug derived only from AIAAIC's own
+    taxonomy label -- never prose -- so persisting it is safe; a warning is
+    printed so the vocabulary can be extended."""
+    return re.sub(r"[/_]+", " ", label.strip().lower())
+
+
+def aiaaic_ethical_tags(ethical_cell: str) -> list[str]:
+    """Extract AIAAIC's `ethical issue (taxonomy)` cell into a controlled,
+    normalized tag list -- categorical facts only, consumed internally by the
+    label seed (WS0-T3 spec Sec 2(a)); never the published description, and
+    never persisted as prose. Splits only on ';' -- the cell's own item
+    separator -- because '/' appears WITHIN compound category names (e.g.
+    "Employment/labour", "Privacy/surveillance"), not between items."""
+    items = [p.strip() for p in re.split(r";\s*", ethical_cell or "") if p.strip()]
+    tags: list[str] = []
+    for item in items:
+        slug = AIAAIC_ETHICAL_TAG_VOCAB.get(item.lower())
+        if slug is None:
+            slug = normalize_ethical_tag(item)
+            print(
+                f"  [aiaaic] WARNING: ethical tag '{item}' not in controlled "
+                f"vocabulary; using derived tag '{slug}'",
+                file=sys.stderr,
+            )
+        if slug not in tags:
+            tags.append(slug)
+    return tags
+
+
+def aiaaic_content_license() -> dict:
+    """D11(b) row-level attribution/ShareAlike marker (schema shape:
+    docs/specs/WS0-T3-marker-shape-2026-07-27.md). Attribution string and
+    license URL verified 2026-07-27 against the live aiaaic.org/aiaaic-repository
+    footer: "AIAAIC content is available to use, copy, adapt, and redistribute
+    under a CC BY-SA 4.0 licence.", linking to
+    creativecommons.org/licenses/by-sa/4.0/. The footer states only the
+    license grant, not a separate prescribed credit line; "AIAAIC Repository"
+    (the page's own title/H1) is used as the attribution name."""
+    return {
+        "source": "aiaaic",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "AIAAIC Repository",
+        "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+        "obligations": ["attribution", "share-alike"],
+    }
+
 
 def download_csv() -> tuple[str, bool]:
     """Fetch the sheet CSV with conditional fetch (ETag support)."""
@@ -350,15 +454,20 @@ def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
             "type": "report",
         })
 
+    # WS0-T3 (D9): categorical facts only -- system/technology/sector/
+    # jurisdiction. Drops AIAAIC's editorial-prose cells (purpose/ethical/
+    # consequence/response, the CC BY-SA-protected expression); those cells
+    # are consumed above (attack_vector/severity/OWASP detection,
+    # aiaaic_ethical_tags) and written nowhere in this returned dict.
     description = (
-        f"AIAAIC report: {row['headline']}. "
+        "AIAAIC-tracked incident. "
         + (f"System: {row['system']}. " if row["system"] else "")
         + (f"Technology: {row['technology']}. " if row["technology"] else "")
-        + (f"Purpose: {row['purpose']}. " if row["purpose"] else "")
-        + (f"Ethical issues: {row['ethical']}. " if row["ethical"] else "")
-        + (f"Reported consequences: {row['consequence']}. " if row["consequence"] else "")
-        + (f"Response: {row['response']}." if row["response"] else "")
+        + (f"Sector: {row['sector']}. " if row["sector"] else "")
+        + (f"Jurisdiction: {row['jurisdiction']}." if row["jurisdiction"] else "")
     ).strip()
+
+    ethical_tags = aiaaic_ethical_tags(row["ethical"])
 
     tags = ["aiaaic", "aiaaic-sheet"]
     if row["sector"]:
@@ -373,6 +482,10 @@ def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
         "year": year,
         "category": "real-world",
         "description": description[:1500],
+        "description_provenance": "original",
+        "description_source": "aiaaic",
+        "content_license": aiaaic_content_license(),
+        "aiaaic_ethical_tags": ethical_tags,
         "attack_vector": detect_attack_vector(row),
         "affected": affected[:200],
         "severity": detect_severity(row),
