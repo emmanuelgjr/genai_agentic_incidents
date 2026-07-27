@@ -67,6 +67,12 @@
       "date": "2026-07-02"
     },
     {
+      "from": "INC-00497",
+      "into": "INC-00311",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
       "from": "INC-00636",
       "into": null,
       "reason": "out-of-scope",
@@ -5873,6 +5879,78 @@
       "into": null,
       "reason": "out-of-scope",
       "date": "2026-07-02"
+    },
+    {
+      "from": "INC-14384",
+      "into": "INC-13042",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14484",
+      "into": "INC-12996",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14485",
+      "into": "INC-13080",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14488",
+      "into": "INC-00159",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14489",
+      "into": "INC-14317",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14490",
+      "into": "INC-14339",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14491",
+      "into": "INC-08072",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14492",
+      "into": "INC-14328",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14494",
+      "into": "INC-14302",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14495",
+      "into": "INC-00001",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14496",
+      "into": "INC-13042",
+      "reason": "merged",
+      "date": "2026-07-19"
+    },
+    {
+      "from": "INC-14497",
+      "into": "INC-13042",
+      "reason": "merged",
+      "date": "2026-07-19"
     }
   ]
 }
