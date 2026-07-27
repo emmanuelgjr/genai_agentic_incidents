@@ -20,6 +20,20 @@ analysis below is deleted or reversed by these amendments — they add a
 conditional narrowing and a new mitigation option, both flagged as resting
 on a user-supplied factual premise (see §4.1).
 
+**Amendment log (2026-07-27, user-directed):** the factual premise §4.1
+flagged as user-supplied and unconfirmed on 2026-07-18 (genai_incidents'
+maker's domicile) is now **confirmed** by the user, who is genai_incidents'
+maker: sole individual maker, habitually resident in Canada, no UK/EEA
+maker involved. This converts §4.1's conditional finding into an
+established one and is folded in as dated **"Update (2026-07-27)"** blocks
+in §4.1, §5, and item 7 of §5.1, plus a new **§6.1 Revised Direction Menu
+(2026-07-27)** that re-costs the four §6 options against the now-bounded
+worst case (row-level ShareAlike on AIAAIC-derived rows only — the
+database-level §4(b) escalation is closed). Nothing from the 2026-07-18
+text or amendments is deleted or reversed; §1–§3's AIAAIC-side findings
+(subsistence, substantiality, facts+link's incompleteness as a mitigation)
+are explicitly unaffected and remain this file's live, unresolved risk.
+
 ## 0. Question presented
 
 Does reducing AIAAIC-derived entries to "facts + link" (**D2**) suffice to
@@ -448,6 +462,62 @@ turns out to be genuinely ambiguous (e.g., a multi-jurisdiction contributor
 base with no single incorporated entity), that residual question is a fair
 one to route to counsel alongside the others in §5.1.
 
+### Update (2026-07-27): premise confirmed — conclusion now established, not conditional
+
+The domicile premise this section flagged above as user-supplied and
+unverified **is now confirmed**. The user — genai_incidents' human lead and
+the maker in question — attested, 2026-07-27: **genai_incidents has a sole
+maker; that maker is an individual, not an entity; the individual is
+habitually resident in Canada; no UK or EEA entity or individual is
+involved in making or maintaining the database.** This is first-party fact
+(the attesting party *is* the maker), not a third-party inference or a
+finding this audit's tools produced, so it is recorded here as established
+rather than as a working assumption pending confirmation.
+
+Applying reg 18(1)(a) (the individual-maker limb) directly: genai_incidents'
+maker is not "a national of the United Kingdom or habitually resident within
+the United Kingdom" — reg 18(1)(a) fails. The reg 18(1)(b)/(2)
+corporate-nexus limb does not apply at all, because there is no incorporated
+body — the maker is a sole individual. Directive 96/9/EC Art 11's parallel
+EEA-nationality test fails for the identical reason. **genai_incidents
+therefore does not qualify for either the UK or the EU sui generis database
+right**, on the maker-nexus limb alone, independent of how the
+investment-substantiality limb (limb 1 above) would otherwise resolve — reg
+18 is a threshold gate, not a factor to weigh alongside investment, exactly
+as this section stated before the premise was confirmed. Canada has no
+equivalent statutory sui generis right (*CCH Canadian*, 2004 SCC 13, already
+cited above), so there is no alternate UK/EU-equivalent right the maker's
+Canadian residence itself confers in its place.
+
+**This closes limb 2 of the §4.1 predicate to a definite NO, on established
+fact rather than a conditional premise.** The consequence stated in "If the
+Canada premise holds..." above no longer depends on an "if": genai_incidents
+does not hold a UK or EU sui generis database right; §4(b) cannot fire (there
+is no database right for it to attach to — not merely a weak case for
+attaching); the database-level ShareAlike escalation via §4(b) → §3(b) is
+**dead**, not merely conditionally narrowed. The fallback to §4(c) → §3(a)
+row-level ShareAlike on the AIAAIC-derived contents actually extracted
+stands as the operative worst case, entirely unaffected by this update — it
+turns on AIAAIC's own subsistence (§1) and our extraction's substantiality
+(§2), neither of which this update touches, because both are about AIAAIC's
+right, not ours.
+
+**Residual, narrower than before.** Of the three residual points the
+"Nature of this question" paragraph above and counsel question 7 (§5.1)
+previously left open: (i) "premise not confirmed" is now **moot** —
+confirmed; (iii) "who is the maker... for a multi-contributor project" is
+now **resolved** — the maker is a sole individual, so there is no
+multi-party ambiguity to adjudicate; (ii) "whether genai_incidents might
+separately hold a sui generis-equivalent right under some other country's
+law" (a jurisdiction beyond UK/EU/Canada) remains open in principle — this
+audit has not surveyed jurisdictions beyond those three — but it now matters
+*only* for the §4(b) database-level escalation specifically, and reg 18/Art
+11 qualification for the UK/EU right is firmly answered NO regardless of
+that residual. Given the maker is a single Canadian-resident individual, a
+"some other jurisdiction confers a substitute right" scenario would require
+a specific, additional statutory hook this audit has no present reason to
+suspect exists, and is not pursued further here absent a specific lead.
+
 **Sources for this amendment:** SI 1997/3032 reg 18 (as amended by SI
 2019/605 reg 28), quoted operative text: "*Database right does not subsist
 in a database unless, at the material time, its maker... was — (a) an
@@ -553,7 +623,59 @@ corpus" down to "the extracted AIAAIC-derived facts" — a real, favorable
 narrowing, but not a resolution of whether that smaller obligation attaches
 at all.
 
+**Update (2026-07-27) — the §4.1 premise is now established fact, not a
+condition.** The "conditional on the user-supplied premise" qualifier above
+is retired: the user, who is genai_incidents' maker, has confirmed the
+underlying fact directly (sole individual maker, habitually resident in
+Canada, no UK/EEA maker involved — see §4.1's 2026-07-27 update for the full
+predicate and its reg 18/Art 11 application). The bottom line now sorts as
+follows.
+
+**DEAD (no longer live exposure):**
+- The §4(b) database-level ShareAlike escalation against genai_incidents'
+  own corpus. genai_incidents does not hold a UK or EU sui generis database
+  right (maker-qualification fails reg 18(1)(a)/Art 11 on established
+  fact), so §4(b) has no database-right subject-matter of ours to attach
+  to.
+- Counsel question 7 (§5.1) — resolved on first-party fact for its main
+  branch (whether genai_incidents holds its own right); only a narrow
+  residual survives (see the updated item 7 below).
+
+**SURVIVED (still live, still needs the direction decision at §6.1):**
+- AIAAIC's own database-right subsistence (§1) — plausible, better than
+  50/50, resting entirely on AIAAIC's own maker/investment characteristics,
+  independent of ours.
+- The substantiality of our extraction against AIAAIC's database (§2) —
+  more likely than not met, ≈76% of AIAAIC's live repository, unaffected by
+  our own qualification finding.
+- Facts+link as an incomplete mitigation against the database right (§3) —
+  unaffected; this update resolves *whose* database right could attach at
+  the database level, not whether facts+link avoids extraction of AIAAIC's
+  contents in the first place.
+- §4(c) → §3(a) row-level ShareAlike attaching to the AIAAIC-derived facts
+  actually extracted, if AIAAIC's right subsists and the extraction is
+  substantial (§1–§2) — this is now the **sole** operative worst case, not
+  one of two possible worst cases, since the database-level route is
+  closed.
+
+**Net effect.** The worst-case unit of obligation is no longer "confined
+from the entire corpus down to the extracted facts, pending confirmation"
+(§4.1's original 2026-07-18 framing) — it is now **settled** at row-level
+ShareAlike on AIAAIC-derived content only, as an established conclusion.
+This is a real, favorable, and now-final narrowing of *what could be owed
+if the obligation attaches at all*; it is not a narrowing of *whether
+AIAAIC-side risk exists* — AIAAIC's subsistence, our extraction's
+substantiality, and the §4(c) attachment question remain exactly as this
+file's original analysis assessed them, and the direction decision at §6.1
+is the live open item.
+
 ### 5.1 Exact questions for counsel
+
+**Status as of 2026-07-27:** questions 1–6 below remain fully live — they
+all concern AIAAIC's own database right and our extraction from it, none
+of which turn on genai_incidents' own qualification, so the fact confirmed
+in §4.1 does not touch them. Question 7 is resolved on its main branch (see
+its updated entry below), with one narrow residual point remaining.
 
 1. On these facts — a UK-based repository maker (entity/domicile to be
    confirmed), maintaining a structured, multi-field incident database
@@ -619,6 +741,24 @@ at all.
    multi-contributor open-source project, if that turns out to be
    contested. Counsel spend on this question, if any, should be scoped to
    those narrower residual points, not the whole original question.
+
+   **Update (2026-07-27) — resolved, not merely narrowed.** The premise
+   this amendment left conditional ("conditional on the user confirming...")
+   is now confirmed as first-party fact (§4.1, 2026-07-27 update): sole
+   individual maker, habitually resident in Canada, no UK/EEA maker
+   involved. The first half of question 7 — does genai_incidents hold its
+   own sui generis database right — is answered **no**, on established fact,
+   and no counsel spend is warranted on that half. Of the three residual
+   points listed above: (i) is **moot** (confirmed Canada, not UK/EEA); (ii)
+   remains open in principle but only as a completeness point — this audit
+   has no specific reason to suspect a sole Canadian-resident individual
+   holds an equivalent right under some other, unsurveyed jurisdiction's
+   law, and is not pursuing it further absent a specific lead; (iii) is
+   **resolved** (sole individual maker, no multi-contributor ambiguity to
+   adjudicate). Net: question 7 no longer needs counsel time except, at
+   most, a brief note on residual (ii) if the project wants that
+   completeness check — a materially smaller ask than the original
+   question.
 
 ---
 
@@ -729,6 +869,105 @@ by this file; they are exact requirements for the foreman to route.
      ShareAlike compliance path entirely rather than requiring the project
      to build and maintain one.
 
+### 6.1 Revised direction menu (2026-07-27)
+
+The qualification fact confirmed in §4.1 changes what each of the four
+options below actually buys and costs, because it changes the **worst-case
+unit of obligation**: before 2026-07-27, the worst case was ambiguous
+between "row-level ShareAlike on the extracted AIAAIC facts" (§4(c)) and
+"database-level ShareAlike on genai_incidents' entire redistributed corpus"
+(§4(b), if genai_incidents itself held a sui generis right). That ambiguity
+is now resolved: **§4(b) is dead — the worst case is row-level ShareAlike on
+the ~1,513 AIAAIC-derived rows only.** Nothing about AIAAIC's own subsistence
+(§1) or the substantiality of our extraction (§2) has changed; what has
+changed is the ceiling on how bad it gets if that exposure materializes.
+Each option is re-costed below against that new ceiling.
+
+**(a) Engage counsel.**
+What it now buys is narrower, and correspondingly cheaper, than it would
+have been before 2026-07-27: counsel's brief no longer needs to cover
+"does our entire redistributed corpus need to carry a ShareAlike
+obligation" (that question is now closed to "no" on established fact) —
+only "does AIAAIC's database right subsist and is our extraction
+substantial (§1–§2), and if so, how do we design a compliant row-level
+attribution/ShareAlike mechanism for the AIAAIC-derived rows (§4(c))." That
+is a smaller, more bounded legal question than the file's original framing,
+and should cost less to have answered. It still requires genuine legal
+judgment this audit's tools cannot supply — §1/§2 remain fact-intensive,
+UK-database-law questions, not something first-party attestation can
+settle the way §4.1's qualification question was settled.
+
+**(b) Conservative ingest redesign** (row/field ceilings, or pointer-only
+with facts re-derived from AIAAIC's own cited primary sources).
+This option gets **more attractive**, not less, under the new ceiling. Its
+original justification had to guard against two different failure modes —
+a row-level obligation AND a whole-corpus contagion risk via §4(b) — which
+meant a genuinely conservative redesign might have needed to consider
+heavier interventions (e.g., a full pointer-only rebuild) to keep the
+*whole corpus* clean. With §4(b) dead, a much lighter design now suffices:
+isolating the AIAAIC-derived rows into a clearly attributed,
+ShareAlike-flagged subset (a metadata tag plus an attribution/license
+notice attached to those specific rows) fully contains the exposure,
+because there is no longer a mechanism by which that subset's obligation
+could spread to the rest of the corpus. **This is the option whose
+cost/benefit improves the most from the qualification finding.**
+
+**(c) Knowingly accept residual risk, with this file as documented basis.**
+This option is **now more defensible to take**, because the risk being
+accepted is precisely bounded rather than open-ended: at most, row-level
+ShareAlike/attribution exposure on the AIAAIC-derived subset of the corpus,
+not a dataset-wide relicensing threat. If AIAAIC ever asserted a claim, the
+practical remedy under this ceiling would be to retrofit attribution/
+ShareAlike notice onto the AIAAIC-derived rows specifically — a contained,
+bounded fix, not a full-corpus renegotiation. This does not mean the risk is
+zero or trivial (§1–§2's "more likely than not" findings on subsistence and
+substantiality are unaffected), only that its *ceiling* is now known and
+smaller than the file's original framing implied.
+
+**(d) Scope the extraction to security-relevant entries only** (synergy
+with WS1-T4/E5).
+This option's own mechanics are **unaffected** by the qualification
+finding — it works on the substantiality axis (§2) by shrinking the
+numerator against AIAAIC's ~1,995-row denominator, entirely independent of
+whether genai_incidents itself qualifies for a database right. What changes
+is the *context* it operates in: even if (d) does not succeed in pushing
+the extraction to reg 19 insubstantiality, the fallback is now known to be
+row-level only. (d) remains the only option on this list capable of
+reaching a "no ShareAlike condition triggered at all" outcome (via reg 19),
+and remains compatible with, and cheaper to combine with, (b).
+
+**Does the qualification finding change the recommendation ordering? Yes,
+in one specific way.** The original 2026-07-18 framing treated (b) and (d)
+as the two "real mitigation" options and (c) as a last-resort fallback
+mainly because the ceiling was unbounded. With the ceiling now fixed at
+row-level-only, (c) is no longer a last resort — it is a genuinely
+proportionate response *if* the project is comfortable carrying a bounded,
+row-level attribution/ShareAlike obligation on the AIAAIC-derived subset
+indefinitely. My recommendation ordering is: **(b) lightweight row-level
+tagging/attribution design, combined with (d) scope-narrowing where WS1-T4/
+E5 already justifies it on independent grounds, as the primary path; (c) as
+an explicitly acceptable interim or permanent posture given the now-bounded
+ceiling, if the project prefers not to build (b); (a) counsel engagement
+reserved for if the project wants a definitive answer on AIAAIC's own
+subsistence/substantiality (§1–§2) rather than continuing to operate on
+this file's "more likely than not" findings.** This is a change from the
+original framing, which could not rule out that (a) was effectively
+required given an unbounded worst case — that pressure is now off.
+
+**The cheapest input, regardless of which option the project takes,
+remains the pending AIAAIC outreach question** —
+`docs/outreach/aiaaic-facts-link.md`, cleared to send, asking AIAAIC
+directly whether it considers an extraction at this scale to engage its
+database right and trigger ShareAlike. That question addresses §1/§2
+directly (AIAAIC's own view of subsistence and substantiality) at zero
+legal cost, and its answer would sharpen every option above regardless of
+which is chosen — a "no, we don't consider this to engage database right"
+answer would support (c) as adequate as-is; a "yes" answer would strengthen
+the case for (a) or (b). Per CLAUDE.md, the user reviews and sends outreach
+personally; this file recommends sending it promptly, in parallel with
+whichever direction option is chosen, rather than waiting for it before
+proceeding.
+
 ---
 
 ## 7. Sources cited
@@ -791,6 +1030,16 @@ by this file; they are exact requirements for the foreman to route.
 - `MASTER_IMPROVEMENT_PLAN.md` WS1-T4 / PROGRESS.md E5 row (GenAI-security
   scope-drift issue cross-referenced in §6 option (d) as the same lever as
   the substantiality-reduction question).
+
+**Fact source (2026-07-27, first-party, added for the §4.1/§5/§5.1/§6.1
+updates):**
+- User attestation, 2026-07-27, supplied directly by genai_incidents' human
+  lead, who is the maker in question: sole individual maker, habitually
+  resident in Canada, no UK or EEA entity or individual involved in making
+  or maintaining the database. Treated as first-party fact (the attesting
+  party is the maker), not as an inference or a finding this audit's tools
+  produced; converts §4.1's 2026-07-18 conditional premise to an
+  established fact.
 
 **Project sources (context, not legal authority):**
 - `docs/specs/WS0-T3-rescoped-2026-07-18.md` (D2/D9/D10 scope and the
