@@ -8,6 +8,15 @@ decisions D9, D11, D12.
 STIX/MISP CI assertion belong to pipeline-engineer (§4 of the rescoped spec) —
 see §4 below for the exact handoff list.
 
+> **Escalation raised by this task — see §4.5.** The rescoped spec's §6.1(ii)
+> states it verified that the STIX exporter does not read `description`. It
+> does: `export_stix.py:116` emits the full `description` for every entry, with
+> no row filter. D12(b)'s "STIX/MISP carry no license-obligated row content"
+> premise is therefore true for MISP and **false for STIX**, and the CI
+> assertion D12(b) calls for would fail once the rebuild lands. Needs a
+> licensing call before pipeline-engineer implements it. The schema shape below
+> is unaffected either way.
+
 ---
 
 ## 1. The chosen shape
@@ -144,10 +153,22 @@ obligation set should say.
    `description_source == "aiaaic"` in `ingest_aiaaic_sheet.py` — one code path,
    so the two can never disagree. The schema conditional now fails the build if
    they do.
-2. **`merge_into` exclusion.** `content_license` must **not** be added to
-   `merge_into`'s union/absorb behaviour (`merge_and_dedupe.py:1636-1691`), for
-   the same reason `description_source` is excluded: stickiness to the dedup
-   target is what makes the marker truthful.
+2. **`merge_into` exclusion — the mechanism is omission, not an exclusion list.**
+   Verified 2026-07-27: `description_provenance` and `description_source` appear
+   **nowhere in `scripts/`** (`grep -rn "description_source\|description_provenance"
+   --include=*.py` returns nothing); they are schema-only fields today. So
+   "excluded from `merge_into`" does not name any deny-list — `merge_into`
+   (`merge_and_dedupe.py:1636-1692`) is a **allow-list** that touches only the
+   keys it explicitly names: the union list (`owasp_llm`, `owasp_asi`,
+   `owasp_dsgai`, `nist_ai_rmf`, `mitre_atlas`, `mitre_atlas_tactics`, `tags`,
+   `source_ids`, `cve_ids`, `cwe_ids`, `mitigations`), the fill-if-empty list
+   (`cvss_vector`, `aiid_id`, `disclosure_date`, `impact`), plus `references`,
+   `severity`, and `date`/`year`. It mutates `target` in place, so every
+   unnamed field — `description` included — keeps the merge target's own value
+   automatically.
+   **The requirement on pipeline-engineer is therefore purely negative: do not
+   add `content_license` to any of those lists.** Stickiness is the default and
+   needs no code; writing code is the only way to break it.
    Separately, and easy to conflate: `_CONTENT_FIELDS`
    (`merge_and_dedupe.py:1006`) is **not** the merge list — it is the snapshot
    that decides when `updated` bumps (invariant 4). Recommendation: **leave
@@ -169,9 +190,37 @@ obligation set should say.
 4. **HuggingFace export.** No code change needed — `export_huggingface.py:11-13`
    is a flat projection of the full record. The dataset-card prose is separate
    and is requirement §6.1(iii).
-5. **STIX/MISP (D12(b)).** No marker. Add the CI assertion that these exports
-   contain zero AIAAIC-derived rows, so the condition is checked rather than
-   assumed.
+5. **STIX/MISP (D12(b)) — the spec's premise for STIX is factually wrong; read
+   this before implementing.** D12(b) rules that STIX/MISP carry no marker,
+   resting on rescoped-spec §6.1(ii)'s claim that it "**verified neither
+   currently reads `description`, `description_source`, or
+   `description_provenance`**". That claim holds for MISP and **fails for
+   STIX**:
+
+   - **MISP — confirmed marker-free.** `_incident_attributes`
+     (`export_misp.py:111`) emits only CVE / reference-URL / title attributes.
+     No description reaches the feed. D12(b) is sound here.
+   - **STIX — already carries `description` verbatim.** `export_stix.py:116`
+     sets the incident SDO's `"description": i.get("description") or ""`, and
+     the exporter applies **no filter at all** (`incidents = raw.get("incidents", [])`,
+     `export_stix.py:161`) — every entry in the corpus becomes an SDO.
+
+   So §6.1(ii)'s stated trigger — "unless and until either export is changed to
+   carry `description` or equivalent AIAAIC-derived content" — is **already met
+   for STIX today**; it is not the future contingency the spec treats it as.
+   The consequence is that a CI assertion phrased as *"the STIX export contains
+   zero AIAAIC-derived rows"* will **fail** the moment the WS0-T3 rebuild lands,
+   because the AIAAIC rows are in the corpus and STIX exports the corpus
+   unfiltered, descriptions included.
+
+   This is flagged, not resolved: the shape owner does not own exporters, and
+   the choice among the live options — filter AIAAIC rows out of STIX, carry the
+   marker in STIX after all (e.g. as an `x_content_license` custom property,
+   which the SDO's existing `x_`-prefixed extension style accommodates), or
+   re-scope the assertion to something true — is a **licensing call for
+   license-auditor plus a D12(b) revision by the foreman**, not an
+   implementation detail. pipeline-engineer should not write the assertion until
+   that is settled.
 6. **Notice-surface prose** (`NOTICE-DATA`, `.reuse/dep5`, README, and the
    `.zenodo.json` check D12(c) routed to implementation) is pipeline-engineer's
    per spec §4 — not touched here.
@@ -189,7 +238,6 @@ Files changed: `schema/incident.schema.json` and its packaged copy
 packaged copy is regenerated from the canonical one by
 `render_markdown.py:767`, so the two stay in sync on the next build regardless.
 
-
 ```
 python -m pytest -q                 # full suite
 python scripts/validate.py          # schema + cross-entry integrity gates
@@ -202,12 +250,23 @@ change to the validator. Because the root schema sets
 merely descriptive**: without it, a marker written by the pipeline would fail
 validation outright.
 
-Both commands were green on this branch at the (dated, approximate) corpus size
-of roughly thirteen thousand entries as of 2026-07-27, with the conditional
-passing vacuously — no entry carries `description_source` yet, since the D9
-rebuild was reverted and only its schema fields were kept. The conditional
-becomes binding the moment pipeline-engineer's rebuild sets that field, which is
-the intent.
+**Measured on this branch, 2026-07-27** (exact, not approximate):
+
+| Check | Result |
+|---|---|
+| `python -m pytest -q` | **203 passed**, 0 failed |
+| `python scripts/validate.py` | **13115/13115 entries valid; 0 with errors**; integrity clean |
+| Meta-schema (`Draft202012Validator.check_schema`) | PASS |
+| Entries carrying `description_source` | **0 of 13115** |
+| Entries carrying `description_provenance` | **0 of 13115** |
+| Entries carrying `content_license` | **0 of 13115** |
+| `schema/` vs `src/genai_incidents/schema/` | byte-identical, 16163 bytes, LF, sha256 `9f0793715adfbf81…` |
+
+The conditional therefore passes **vacuously** today — no entry carries
+`description_source`, because the D9 rebuild was reverted and only its schema
+fields were kept. It becomes binding the moment pipeline-engineer's rebuild sets
+that field, which is the intent. That also means **the corpus run cannot
+demonstrate the conditional works**; it must be exercised directly.
 
 Direct check of the conditional, independent of the corpus:
 
@@ -225,3 +284,23 @@ PY
 ```
 
 Expected: `["'content_license' is a required property"]`.
+
+A 13-case matrix was run against the landed schema on 2026-07-27; all 13 gave
+the intended verdict. The cases that carry design weight:
+
+- an `aiaaic` row **without** the marker is **rejected** (the §6.2 acceptance
+  criterion is schema-enforced, not merely jq-checked);
+- an `aiaaic` row **with** a well-formed marker validates;
+- a plain entry and a non-`aiaaic` row without the marker both still validate —
+  **this is the no-regression case for all 13115 existing entries**;
+- a non-`aiaaic` row **with** the marker is schema-**legal**. The schema
+  deliberately does not enforce §6.2's second criterion (zero non-AIAAIC rows
+  carry the marker), because that criterion is explicitly re-scopable per source;
+  enforcing it here would have to be edited every time a source is added. **It
+  stays a jq assertion**, per §6.2 as written;
+- `obligations: ["attribution"]` alone validates — the §6.4 **waiver downgrade
+  is a value change on the existing shape**, which is the whole argument for the
+  obligations-enum in §2, now demonstrated rather than asserted;
+- rejected as intended: a bare-string `content_license`, an unknown subfield, a
+  missing required subfield, an empty `obligations` array, a non-enum obligation
+  (`"copyleft"`), and duplicate obligations.
