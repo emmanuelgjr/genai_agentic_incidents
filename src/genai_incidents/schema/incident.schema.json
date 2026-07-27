@@ -89,6 +89,43 @@
       "type": "string",
       "description": "Short slug naming which upstream ingest contributed the CURRENT description field's content (e.g. aiaaic), meaningful only when description_provenance is set. Needed because description (and this field) are set once by whichever entry survives dedup as the merge target and are never overwritten by later merges, unlike source_ids and tags which merge/union across every absorbed duplicate."
     },
+    "content_license": {
+      "type": "object",
+      "description": "Row-level license-obligation marker: this entry's CONTENT derives from an upstream source whose license imposes obligations (attribution, possibly share-alike) on the row itself, over and above the repository's own LICENSE-DATA. Source-generic by design — the source is named in the `source` VALUE, never in the field name, so any future source with row-level obligations reuses this mechanism unchanged. Set at ingest, in lockstep with description_source, by whichever entry survives dedup as the merge target; like description_source it is EXCLUDED from merge_into's union/absorb behaviour (that exclusion is what keeps it sticky and truthful) and is never overwritten by a later merge. Surfaces: data/incidents.json and the HuggingFace export carry it in full; data/incidents.min.json carries it on marked rows only, absent elsewhere; STIX/MISP carry no license-obligated row content and so carry no marker. Absence means no row-level obligation is known for this entry — NOT that the entry is unencumbered.",
+      "required": ["source", "license", "attribution", "obligations"],
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Slug of the upstream source imposing the obligation, drawn from the same vocabulary as description_source (e.g. aiaaic). The obligation is source-specific; the mechanism is not."
+        },
+        "license": {
+          "type": "string",
+          "description": "SPDX license identifier of the upstream content license, e.g. CC-BY-SA-4.0."
+        },
+        "license_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical URL of the license deed or legal code. Supply it wherever the license has a stable public URL: a consumer holding only incidents.min.json may see no other license surface."
+        },
+        "attribution": {
+          "type": "string",
+          "description": "Human-readable attribution target — the party to credit under the license's attribution clause, e.g. 'AIAAIC Repository'."
+        },
+        "attribution_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to credit alongside attribution. Optional: not every source publishes a stable one."
+        },
+        "obligations": {
+          "type": "array",
+          "description": "Which obligations actually attach to this row, stated explicitly rather than inferred from `license`, so that a later waiver or narrowing by the source downgrades a VALUE (drop 'share-alike') instead of changing the field's shape.",
+          "items": { "type": "string", "enum": ["attribution", "share-alike"] },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
     "attack_vector": {
       "type": "string",
       "description": "Primary attack mechanism — free-form but should match one of the controlled values where possible.",
@@ -261,5 +298,15 @@
       "format": "date",
       "description": "Last update date"
     }
-  }
+  },
+  "allOf": [
+    {
+      "$comment": "Row-level license obligations are per-source. Today only AIAAIC-origin descriptions carry one, so every entry whose description_source is aiaaic must also carry content_license. When another source acquires row-level obligations, extend this conditional per source — re-scope it, never drop it.",
+      "if": {
+        "required": ["description_source"],
+        "properties": { "description_source": { "const": "aiaaic" } }
+      },
+      "then": { "required": ["content_license"] }
+    }
+  ]
 }
