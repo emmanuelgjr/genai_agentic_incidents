@@ -278,17 +278,67 @@ Checked against every current published surface:
   which does not currently mention AIAAIC or any per-source ShareAlike
   status at all.
 - STIX (`scripts/export_stix.py`) / MISP (`scripts/export_misp.py`) —
-  **verified neither currently reads `description`, `description_source`, or
-  `description_provenance`** (grepped both files: no matches beyond the
-  fields each already maps — MISP's attribute set is
-  `title`/`tags`/`cve_ids`/`references` only, `export_misp.py:75-127`; STIX's
-  bundle construction shows the same absence). Neither export currently
-  surfaces AIAAIC-derived content in a form the marker would need to travel
-  with. **This spec does not require STIX/MISP to gain the marker** unless
-  and until either export is changed to carry `description` or equivalent
-  AIAAIC-derived content — a conditional requirement, not a present one;
-  pipeline-engineer should re-check this conclusion if either exporter's
-  field set changes.
+  **CORRECTED 2026-07-27 (E14 — see changelog note at the end of this
+  bullet).** The original text here (2026-07-18) claimed neither export
+  surfaces AIAAIC-derived content. That is true for MISP but was **false**
+  for STIX, and the false premise fed the also-false D12(b) framing
+  ("STIX/MISP carry zero AIAAIC-derived rows," a CI assertion PROGRESS.md
+  recorded and this section repeated). Corrected as follows:
+  - **MISP — true, unchanged.** MISP does not read `description`,
+    `description_source`, or `description_provenance`; its attribute set is
+    `title`/`tags`/`cve_ids`/`references` only (`export_misp.py:75-127`). No
+    AIAAIC-derived prose or facts surface in MISP output, so the marker does
+    not need to travel there.
+  - **STIX — false as originally written.** `export_stix.py:116` sets
+    `description` on every SDO from the entry's full `description` field, and
+    `main()` (`:161`) exports all incidents with **no row filter**. Every
+    AIAAIC-derived entry's description — today, the full editorial prose
+    this spec's §1/§2 have not yet reduced; after the rebuild, the reduced
+    categorical facts — is exported into the STIX bundle, unattributed, on
+    every Pages deploy (`pages.yml:38` rebuilds it; `README.md:15` advertises
+    the URL). STIX does surface AIAAIC-derived content in exactly the form
+    the marker needs to travel with.
+  - **D14 resolution (user, 2026-07-27; PROGRESS.md D14 row).** STIX gains a
+    row-level `x_content_license` custom property (STIX SDOs already support
+    `x_`-prefixed custom properties) whose shape **mirrors the schema's
+    `content_license` object 1:1 — identical keys** — so the project has one
+    marker format across every surface that carries it, not a STIX-specific
+    variant. Every SDO with `description_source == "aiaaic"` must carry a
+    populated `x_content_license`; MISP needs no equivalent property, since
+    it carries no AIAAIC-derived content to attribute.
+  - **Revised CI assertion — supersedes D12(b) in full.** D12(b)'s single
+    "STIX/MISP carry zero AIAAIC-derived rows" assertion is replaced with a
+    two-part check: (1) **MISP** — zero AIAAIC-derived rows carry a
+    `description` (this half of D12(b) was true and stays asserted,
+    MISP-only); (2) **STIX** — every SDO with `description_source ==
+    "aiaaic"` carries a populated `x_content_license` (replaces the STIX half
+    of D12(b), which is dropped because it was never true and would have
+    failed the first time anyone ran it).
+  - **Interim ship, decoupled from this spec's rebuild (user-directed
+    arrangement under D14).** Every Pages deploy re-publishes the
+    unattributed AIAAIC prose until this spec's §1/§2 rebuild lands, so
+    `export_stix.py` gains `x_content_license` **now**, on branch
+    `e14/discharge`, ahead of and independent of this spec's own batch: it
+    reads `content_license` from the entry when the field is already
+    populated (the post-rebuild path), and otherwise falls back to an
+    interim AIAAIC-source heuristic (`source_ids`/`tags`), marked inline as
+    interim-per-D14. **Phase-B retirement condition:** the heuristic is
+    retired once this spec's rebuild populates `content_license` on every
+    AIAAIC-derived entry, and retirement is conditioned on a Phase-B delta
+    showing the heuristic-derived and field-derived `x_content_license`
+    outputs are **identical** for every affected row — any divergence blocks
+    retirement as a defect, not a judgment call, per the standing
+    field-level-delta rule.
+
+  *(Changelog, 2026-07-27: this bullet originally stated STIX carries no
+  AIAAIC-derived content and that the D12(b) CI assertion could safely
+  require zero such rows in both STIX and MISP. Reviewer + foreman verified
+  in source that this was false for STIX (`export_stix.py:116/161` exports
+  every entry's description with no filter — 1,513 AIAAIC-derived
+  descriptions publish in the live STIX bundle today). The user resolved the
+  resulting E14 escalation as D14, option (ii): rewritten above to state the
+  true per-export behavior, D14's `x_content_license` resolution, the revised
+  two-part CI assertion, and the decoupled interim-ship arrangement.)*
 - `.zenodo.json` — carries only repository-level metadata (title, creators,
   license), not per-row content; no per-row marker applies. Whether it needs
   a brief mention as part of the corpus-level notice (iii) was not checked in
@@ -326,6 +376,17 @@ discharges.
 - [ ] The min.json inclusion/exclusion decision (§6.1(ii)) is **explicitly
       recorded** in the implementation report — not silently defaulted
       either way.
+- [ ] **STIX/MISP CI assertion (D14, supersedes D12(b) — see §6.1(ii) for the
+      full rationale, true-behavior correction, and interim-ship
+      arrangement):** a two-part check — MISP carries zero
+      `description`-bearing AIAAIC-derived rows (D12(b)'s MISP half,
+      unchanged); every STIX SDO with `description_source == "aiaaic"`
+      carries a populated `x_content_license` matching the schema's
+      `content_license` object key-for-key (replaces D12(b)'s STIX half,
+      which this spec no longer asserts). The interim-ship heuristic
+      (`e14/discharge`, ahead of this spec's own batch) is retired at Phase B
+      only once a delta shows heuristic- and field-derived
+      `x_content_license` outputs identical for every affected row.
 - [ ] The existing zero-unintended-delta gate (§2(c)) and the D10
       committed-ingest prose-strip acceptance (§2(a)/(d)) are **UNCHANGED
       and still bind** — D11(b) adds a new field/tag and new docs text; it
