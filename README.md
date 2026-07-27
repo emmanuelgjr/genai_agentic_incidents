@@ -22,7 +22,7 @@
 - 📄 **Methodology:** [`docs/paper/genai-incidents-methods.md`](docs/paper/genai-incidents-methods.md) — how the dataset is built, mapped, and governed
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
-A consolidated, machine-readable index of **[<!-- stats:incident_count -->13,025<!-- /stats:incident_count --> GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
+A consolidated, machine-readable index of **[<!-- stats:incident_count -->13,115<!-- /stats:incident_count --> GenAI and agentic AI security incidents](https://emmanuelgjr.github.io/genai_incidents/)** (see the live count in the badge above), each mapped to:
 
 - **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10` — _core_
 - **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10` — _core_
