@@ -2,8 +2,15 @@
 
 **Date:** 2026-07-18
 **Supersedes:** the implementation portion of the D9-approved spec.
-**Status:** DRAFT — awaiting user review. Nothing dispatches until the user
-approves this spec.
+**Status:** DRAFT — the §2(e) dispatch hold is **LIFTED (2026-07-27)** per
+D11 (`docs/audits/WS0-E13-database-right-2026-07-18.md` §6.1; PROGRESS.md D11
+row): the E13 direction is decided as options **(b)+(d)**. §6 below folds
+D11(b)'s row-level attribution/ShareAlike containment requirements into this
+spec. **Awaiting user review of this amendment specifically** before any
+dispatch; once approved, the implementation chain is schema-architect (field/
+tag shape, §6.1) → pipeline-engineer (impl) → red-reviewer (gate, per the
+standing transformative-data-operation rule). Nothing dispatches until the
+user approves this amended spec.
 **Correction basis:** D9 approved the field-cut as a pure licensing operation.
 It is not. The ungated rebuild silently relabelled **372 AIAAIC entries**
 because two deterministic-build heuristics read the *published* `description`
@@ -139,12 +146,18 @@ the board):
   licensing risk generally. Until the E13 escalation is resolved by the user,
   WS0-T3 must not represent AIAAIC licensing as "resolved."
 
-**⚠ Impl direction may change — do not dispatch WS0-T3 implementation yet.** If
-the user takes E13 option (b) (a more conservative redesign — e.g. pointer-only
-with facts re-derived from AIAAIC's own cited primary sources, or row/field
-ceilings), that reshapes this spec's ingest approach materially. Hold WS0-T3
-implementation until the user decides the E13 direction, to avoid building
-controlled-vocab-tag plumbing that a redesign would discard.
+**Hold lifted (2026-07-27) — D11 decided.** The user has decided the E13
+direction: **D11 = options (b)+(d)** (`docs/audits/WS0-E13-database-right-2026-07-18.md`
+§6.1; PROGRESS.md D11 row). D11(b) is a **lightweight row-level containment**
+— not the heavier pointer-only/row-ceiling redesign this paragraph originally
+warned might discard the controlled-vocab-tag plumbing above; that plumbing
+(§2(a)) stands unchanged, see §6.4. D11(d) (scope-narrowing toward
+security-relevant entries) is the standing Phase-2/WS1-T4 direction and
+starts nothing in this spec. See **§6** for the D11(b) implementation
+requirements. This spec (as amended by §6) is ready to move to
+schema-architect/pipeline-engineer once the user reviews and approves this
+amendment — the prior blanket hold on dispatch is lifted; the requirement
+that the user review this specific amendment first is not.
 
 ## 3. Retained mechanism notes (from D9 scoping)
 
@@ -160,13 +173,17 @@ controlled-vocab-tag plumbing that a redesign would discard.
 ## 4. Owners
 
 - **schema-architect** — any schema shape needed for the internal
-  classification field (sole writer of `schema/`).
+  classification field (sole writer of `schema/`); **also owns the field/tag
+  shape decision for the D11(b) per-row attribution/ShareAlike marker (§6.1)**,
+  including the explicit min.json inclusion/exclusion call (§6.1(ii)).
 - **pipeline-engineer** — `ingest_aiaaic_sheet.py` (retain cells internally,
   reduce published description), classifier plumbing in `merge_and_dedupe.py`,
   the regression test (b), the delta report (c), the validation sample (d),
-  and the rebuild.
+  the rebuild, **and the D11(b) marker propagation + corpus-level notice text
+  in `NOTICE-DATA`/`.reuse/dep5`/README (§6.1(iii), §6.3)**.
 - **red-reviewer** — gates on the zero-unintended-delta report; PASS merges per
-  D7.
+  D7. **Also gates §6.2's D11(b) acceptance additions** (marker coverage
+  greps, corpus-notice-text greps) as part of the same PASS/BOUNCE verdict.
 
 ## 5. Acceptance checklist
 
@@ -182,3 +199,185 @@ controlled-vocab-tag plumbing that a redesign would discard.
 - [ ] `merge_into` did not gain the new/internal fields.
 - [ ] Committed AIAAIC live-total-row-count logging present (denominator for any substantiality re-check).
 - [ ] Database-right acceptance item present and distinct from the copyright/prose gate; AIAAIC licensing NOT represented as fully resolved pending the E13 user decision.
+- [ ] **D11(b) row-level containment — see §6.2 for the full, greppable list.**
+      Every `description_source == "aiaaic"` entry carries the new marker;
+      zero non-AIAAIC entries carry it; `NOTICE-DATA`/`.reuse/dep5`/README
+      state the AIAAIC subset's open-database-right/row-level-ShareAlike
+      status on par with AIID's existing framing (§6.3); the min.json
+      inclusion/exclusion call is explicitly recorded, not defaulted.
+
+## 6. D11(b) row-level attribution/ShareAlike containment (2026-07-27)
+
+**Decision basis.** `docs/audits/WS0-E13-database-right-2026-07-18.md` §6.1,
+decided 2026-07-27 as **D11 = options (b)+(d)** (PROGRESS.md D11 row). E13's
+final state, after the 2026-07-27 domicile confirmation: genai_incidents
+holds no UK/EU sui generis database right (sole Canadian-resident individual
+maker), so CC BY-SA §4(b) database-level ShareAlike is **dead**; the
+worst-case exposure is §4(c)→§3(a) **row-level** ShareAlike/attribution on
+AIAAIC-derived rows only, conditional on AIAAIC's own right subsisting (§1
+there, plausible/more-likely-than-not) and our extraction being substantial
+(§2 there, ≈76% of AIAAIC's live repository). D11(b) contains that worst case
+at the row level. D11(d) (scope-narrowing toward security-relevant entries,
+WS1-T4/E5) is the standing Phase-2 direction and is cross-referenced here
+only (§6.4) — it starts nothing in this spec.
+
+### 6.1 Requirements
+
+These are acceptance-criteria-level requirements, not schema edits — the
+field/tag shape is **schema-architect's** call (sole writer of `schema/`);
+this spec records only what the shape must accomplish.
+
+**(i) Machine-readable per-row marker.** Every AIAAIC-origin row — detected
+via `description_source == "aiaaic"` (the existing merge-into-excluded
+detection mechanism, §1/§2(a) above) — must carry a machine-readable
+attribution/license marker distinct from `description_source` itself (which
+names provenance for the *description* field specifically and is not itself
+a license/ShareAlike declaration). schema-architect chooses the shape — a
+dedicated per-row field (e.g. `content_license` / `attribution_notice`), a
+tag in the existing `tags` list, or another mechanism; this spec does not
+prescribe which. Whatever the shape, it must be **source-generic in
+naming** (not `aiaaic_license` or similarly source-locked): a future source
+could need the identical mechanism, and AIID's own NOTICE-DATA/.reuse/dep5
+text already flags a parallel open question (§6.3).
+
+**(ii) Survives merge/dedupe; appears in every surface that carries the
+row.** The marker must have the same sticky semantics as `description_source`
+— set once by whichever entry survives dedup as the merge target, excluded
+from `merge_into`'s union/absorb behavior (§3 above), never silently dropped.
+Checked against every current published surface:
+
+- `data/incidents.json` (the full record) — carries it directly once the
+  field/tag exists; no additional plumbing needed beyond the field itself.
+- `data/incidents.min.json` — **verified it does not currently carry
+  `description_provenance` or `description_source` at all**
+  (`merge_and_dedupe.py:1590-1613`'s `slim` dict keeps only id/title/date/
+  year/severity/attack_vector/owasp_llm/owasp_asi/nist_ai_rmf/mitre_atlas/
+  cve_ids/primary_reference/description/affected/tags/quality_tier/corpus).
+  Adding the new marker here is a **new field addition to a deliberately
+  slim, taxonomy-focused projection**, not a passthrough of an existing
+  field. This spec does **not** resolve whether min.json should carry it —
+  arguments run both ways (min.json is widely redistributed and the
+  ShareAlike notice arguably needs to travel with it; against that, it is a
+  design change to a schema explicitly scoped to taxonomy facts, beyond this
+  reduction's stated scope). **Flagged as an open decision for
+  schema-architect/pipeline-engineer, to be resolved explicitly and recorded
+  in the implementation report — not defaulted either way.**
+- HF export (`scripts/export_huggingface.py`) — verified this is a **flat
+  projection of `data/incidents.json["incidents"]`** (`export_huggingface.py:11-13`),
+  so the marker propagates automatically once added to the full record; no
+  separate HF-export code change is needed for the machine marker itself.
+  The **corpus-level notice** (requirement (iii) below) is separate and
+  belongs in the HF dataset card's prose (the `CARD` template, same file),
+  which does not currently mention AIAAIC or any per-source ShareAlike
+  status at all.
+- STIX (`scripts/export_stix.py`) / MISP (`scripts/export_misp.py`) —
+  **verified neither currently reads `description`, `description_source`, or
+  `description_provenance`** (grepped both files: no matches beyond the
+  fields each already maps — MISP's attribute set is
+  `title`/`tags`/`cve_ids`/`references` only, `export_misp.py:75-127`; STIX's
+  bundle construction shows the same absence). Neither export currently
+  surfaces AIAAIC-derived content in a form the marker would need to travel
+  with. **This spec does not require STIX/MISP to gain the marker** unless
+  and until either export is changed to carry `description` or equivalent
+  AIAAIC-derived content — a conditional requirement, not a present one;
+  pipeline-engineer should re-check this conclusion if either exporter's
+  field set changes.
+- `.zenodo.json` — carries only repository-level metadata (title, creators,
+  license), not per-row content; no per-row marker applies. Whether it needs
+  a brief mention as part of the corpus-level notice (iii) was not checked in
+  this task (out of scope — this task touches only this spec file); flag for
+  whoever implements (iii) to verify.
+
+**(iii) Corpus-level notice.** `NOTICE-DATA` and the README source list must
+state the AIAAIC subset's status: CC BY-SA-derived facts, database-right
+question OPEN pending AIAAIC's reply (or qualified-counsel resolution),
+ShareAlike honored at the row level via the (i) marker. **This folds in and
+discharges the parked 2026-07-18 docs-warden follow-up** (board note: AIAAIC's
+open-question visibility asymmetry vs. AIID's, in `NOTICE-DATA`/`.reuse/dep5`/
+README) — see §6.3 for the exact asymmetry found and the file list this
+discharges.
+
+### 6.2 Acceptance additions
+
+- [ ] Every entry with `description_source == "aiaaic"` carries the new
+      marker — e.g. `jq '.incidents[] | select(.description_source=="aiaaic") | select(<marker-field-absent-or-empty>)'`
+      against `data/incidents.json` returns empty.
+- [ ] Zero non-AIAAIC entries carry the marker — same query inverted:
+      `jq '.incidents[] | select(.description_source!="aiaaic") | select(<marker-field-present>)'`
+      returns empty — **unless** a future source is deliberately given the
+      same marker, in which case this assertion is re-scoped per-source, not
+      dropped; the source-generic naming in (i) already anticipates this.
+- [ ] `NOTICE-DATA` states the AIAAIC subset's CC BY-SA/database-right/
+      row-level-ShareAlike status (greppable: the AIAAIC paragraph names
+      "database right"/"database-right" as "open"/"OPEN", matching the
+      AIID paragraph's existing pattern — §6.3).
+- [ ] README's source list / licensing text states the same status
+      consistently with NOTICE-DATA (identical substance, not necessarily
+      identical wording).
+- [ ] `.reuse/dep5`'s `data/*`-block comment states the same status
+      consistently (same test as above).
+- [ ] The min.json inclusion/exclusion decision (§6.1(ii)) is **explicitly
+      recorded** in the implementation report — not silently defaulted
+      either way.
+- [ ] The existing zero-unintended-delta gate (§2(c)) and the D10
+      committed-ingest prose-strip acceptance (§2(a)/(d)) are **UNCHANGED
+      and still bind** — D11(b) adds a new field/tag and new docs text; it
+      must not touch any taxonomy field, and the delta report must show the
+      new marker as the only additional intended delta beyond what §2(c)
+      already enumerates.
+
+### 6.3 The docs-warden asymmetry this discharges
+
+Verified directly in this task: `NOTICE-DATA` (repository root) and
+`.reuse/dep5` both currently state, for AIID: *"AIID's CC-BY-SA share-alike
+and a parallel database-right question remain an open, unresolved item, same
+posture as AIAAIC's E13 finding"* — but AIAAIC's own paragraph in the **same
+two files**, immediately preceding that sentence, states flatly (NOTICE-DATA):
+*"AIAAIC content is never carried verbatim in this dataset... so no
+share-alike obligation attaches and LICENSE-DATA carries no BY-SA
+carve-out"* / (`.reuse/dep5`): *"AIAAIC-derived entries carry no BY-SA subset
+per decision D2"* — with **no mention that the database-right question is
+open**, even though the AIID sentence immediately after it depends on the
+reader already knowing AIAAIC has an equivalent open finding. A reader of
+only the AIAAIC paragraph in either file would reasonably conclude AIAAIC is
+fully resolved; only the AIID paragraph's cross-reference reveals otherwise.
+This is exactly the visibility asymmetry the 2026-07-18 docs-warden sweep
+flagged and parked pending E13's outcome. **Files to fix, folded into this
+spec's file list so they land with the D11(b) implementation:**
+- `NOTICE-DATA` (currently lines ~43-47, the AIAAIC paragraph)
+- `.reuse/dep5` (currently lines ~18-19, the AIAAIC clause inside the
+  `data/*` block comment)
+- README's "Sources aggregated" AIAAIC bullet (`README.md:225`) — currently
+  a bare description with no licensing caveat at all, unlike the AIID bullet
+  two lines above it which already notes the snapshot-channel method. Lower
+  priority than the two licensing-framing files above (the README bullet
+  list was never a licensing-status surface for any other source either),
+  but should get the same one-line pointer to NOTICE-DATA/SOURCE_LICENSES.md
+  for consistency, per requirement (iii).
+
+### 6.4 What D11 does NOT change
+
+- The facts-only reduction (D9's field cut: keep `system`/`technology`/
+  `sector`/`jurisdiction` + link, drop `purpose`/`ethical`/`consequence`/
+  `response`) stands exactly as specced in §1 above.
+- The D10 committed-ingest prose strip (§2(a)/(d): no AIAAIC verbatim prose
+  in any committed file, including `ingest/aiaaic_sheet_incidents.json`)
+  stands exactly as specced.
+- The label-seed decoupling (§2(a)) and its regression test (§2(b)) stand
+  exactly as specced — `aiaaic_ethical_tags` remains the classifier input,
+  never the published description.
+- The committed validation sample (§2(d), 15–20 entries) stands exactly as
+  specced.
+- The per-run AIAAIC row-count/denominator logging (§2(e), first bullet)
+  stands exactly as specced.
+- D11(d) (scope-narrowing to security-relevant entries) is **Phase-2/
+  WS1-T4/E5** territory and appears in this spec only as a cross-reference
+  (§6's decision-basis paragraph); nothing in WS0-T3 implements it.
+- The AIAAIC outreach question (`docs/outreach/aiaaic-facts-link.md`)
+  remains in flight, unsent pending the user (per CLAUDE.md, the user sends
+  outreach personally). Its answer may later **simplify** this containment
+  — a waiver, or a "we don't consider this to engage database right" reply,
+  could turn the marker from a ShareAlike-implying notice into an
+  attribution-only one. **This spec should be re-checked against any AIAAIC
+  reply before final implementation sign-off**, not treated as permanently
+  fixed once written.
