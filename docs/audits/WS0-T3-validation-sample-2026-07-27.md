@@ -9,6 +9,7 @@ on an account spend limit — see `PROGRESS.md` "outage snapshot" `040dcb04`)
 reviews before any batch/rebuild runs. **No batch has run.** Every
 data/ingest file this preview touched was regenerated locally, measured, and
 then reverted — see §5.
+**Note:** four errors in this document's prose were identified after it was written and are corrected in §7 (Erratum). The affected passages are marked inline.
 
 ---
 
@@ -180,7 +181,7 @@ to stop redistributing), not a code defect.
 **`INC-04316` is a different story, and the honest version of it is stronger
 than "content was dropped."** Ablating the *old* classify text
 (`title + " " + description`, the old code's pre-decoupling shape) against
-`detect_attack_vector` in `scripts/merge_and_dedupe.py` gives:
+`detect_attack_vector` in `scripts/merge_and_dedupe.py` gives: [see §7 E1]
 
 | Input | Result |
 |---|---|
@@ -198,7 +199,7 @@ biased and opaque" supplies "biased" near its end; `description` opens with
 its own headline echo, "AIAAIC report: UK welfare fraud AI system criticised
 as biased and opaque. System: …", supplying a second "welfare"
 29 characters after "biased" once the two strings are concatenated
-(`title + " " + description`, the old classify-text shape). Neither `title`
+(`title + " " + description`, the old classify-text shape). [see §7 E2] Neither `title`
 alone nor `description` alone contains a same-direction "bias…welfare" match
 within 30 characters — `title` has them in the wrong order for the pattern,
 and `description`'s only "welfare" is the same headline-echo that supplied
@@ -251,7 +252,7 @@ cross-reference, etc.) and never surface their own description at all. See
 `["AIAAIC-wpp-ceo-deepfake", "AIAAIC1483"]` — the hand-curated slug entry
 wins the merge target and carries `description_source != "aiaaic"`, so the
 AIAAIC-sheet row `AIAAIC1483` is absorbed and its own description never
-surfaces). `INC-04660`, previously cited here, is the wrong example for this
+surfaces). [see §7 E3] `INC-04660`, previously cited here, is the wrong example for this
 purpose: by construction every entry in §4 has `description_source=="aiaaic"`
 (§4's own inclusion rule), so §4 cannot contain an example of the 77-entry
 *absorbed* gap — `INC-04660` illustrates the AIAAIC row **winning**, not
@@ -422,7 +423,7 @@ case. The old `algorithmic-bias` label was a spurious regex match spanning
 the `title`/`description` field boundary (`title` supplying "biased",
 `description`'s headline echo supplying "welfare" 29 characters later); no
 `purpose` prose or dropped content was ever involved, and nothing licensed
-was lost when this row's label changed. See §3.3 for the full ablation.
+was lost when this row's label changed. [see §7 E2] See §3.3 for the full ablation.
 
 | Cell | Raw value |
 |---|---|
@@ -984,7 +985,7 @@ fetched 2026-07-17 — see the correction in §1) and decode it directly — no
 cite `run_offline_aiaaic_ingest.py`; that file was never committed (it is a
 throwaway driver, not a build-path script) and this section's own
 `git checkout -- .` step at the end destroyed the working-tree copy, so it
-does not exist in the tree today. Its full body — small enough to inline —
+does not exist in the tree today. [see §7 E4] Its full body — small enough to inline —
 is reconstructed below from the monkeypatch shape already documented here
 plus `scripts/ingest_aiaaic_sheet.py`'s own entry point
 (`CACHE_FILE`/`main()`) and the same `sys.path` pattern
@@ -1119,13 +1120,15 @@ the pattern. This **strengthens** the document's finding that the old label
 was a spurious cross-boundary artifact rather than recoverable signal.
 
 **E3 — INC-04359 is not in §4 (§3.4, ~line 250).** The text directs the
-reader to "`INC-04359` in §4". INC-04359 does not appear in §4, or anywhere
-else in this document. §4's inclusion rule — every row has
+reader to "`INC-04359` in §4". INC-04359 does not appear in §4, and appears
+nowhere in this document other than the sentence being corrected and this
+erratum. §4's inclusion rule — every row has
 `description_source == "aiaaic"` — means §4 *cannot* contain an example of
 the absorbed case, exactly as the same paragraph goes on to explain.
 INC-04359 remains a correct illustration of the absorbed case
 (`source_ids ['AIAAIC-wpp-ceo-deepfake', 'AIAAIC1483']`), but it must be
-looked up in `data/incidents.json`; it is not in this document.
+looked up in `data/incidents.json`; there is no INC-04359 row or worked
+example here.
 
 **E4 — `git checkout -- .` cannot have deleted the driver (§5, ~lines
 985-987).** The text explains the absent offline driver script by asserting
