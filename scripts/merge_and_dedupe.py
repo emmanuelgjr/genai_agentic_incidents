@@ -536,20 +536,39 @@ def _aiaaic_seed_text(entry: dict) -> str | None:
     corpus classification), for AIAAIC-origin entries only.
 
     WS0-T3 spec Sec 2(a) label-seed decoupling: for `description_source ==
-    "aiaaic"` entries, reads the structured `aiaaic_ethical_tags` list
-    captured at ingest -- NEVER the published, facts-only `description` --
-    so a future edit cannot silently re-couple label derivation to AIAAIC's
-    editorial vocabulary via the description text. That coupling is exactly
+    "aiaaic"` entries, reads TWO structured fields captured at ingest, before
+    description composition -- `aiaaic_seed_facts` (system/technology/sector/
+    jurisdiction, the same kept categorical cells the reduced description is
+    built from) and `aiaaic_ethical_tags` (the normalized ethical-issue
+    vocabulary) -- NEVER the published `description` string itself, in either
+    its old prose form or its new facts-only form. That is deliberate even
+    though the new `description` is safe content: the seed must not depend on
+    the *composed* description in any form, so a future formatting change to
+    that string can never silently move a label. This coupling is exactly
     what silently relabelled 372 AIAAIC entries when the description was
-    first reduced (docs/audits/WS0-T3-cascade-2026-07-18.md): the
-    classifiers below used to read the published description, which used to
-    carry AIAAIC's Ethical issues/Purpose prose verbatim.
+    first reduced (docs/audits/WS0-T3-cascade-2026-07-18.md): the classifiers
+    below used to read the published description, which used to carry
+    AIAAIC's Ethical issues/Purpose prose verbatim.
+
+    `aiaaic_seed_facts` was added after an ethical-tags-only first cut of this
+    function (2026-07-27) caused a *second*, narrower regression, caught by
+    the WS0-T3 Phase-A dry-run delta preview before any batch ran: the old
+    merge-time reclassify picked up keyword signal from the System/Technology/
+    Sector/Jurisdiction facts sentences embedded in the old (pre-reduction)
+    description text -- e.g. "Technology: Deepfake" driving
+    attack_vector=deepfake -- which the ethical-tags-only seed dropped
+    entirely, silently downgrading attack_vector/OWASP/ATLAS/NIST/corpus for
+    103+ entries with no dropped-prose involved at all. See
+    docs/audits/WS0-T3-validation-sample-2026-07-27.md for the full
+    before/after evidence.
 
     Returns None for non-AIAAIC entries so callers fall back to their
     existing title+description behavior unchanged."""
     if entry.get("description_source") != "aiaaic":
         return None
-    return " ".join(entry.get("aiaaic_ethical_tags") or [])
+    facts = " ".join(entry.get("aiaaic_seed_facts") or [])
+    tags = " ".join(entry.get("aiaaic_ethical_tags") or [])
+    return (facts + " " + tags).strip()
 
 
 def _classify_corpus(entry: dict) -> str:
@@ -853,14 +872,16 @@ def normalize_entry(raw: dict) -> dict | None:
         entry["description_source"] = raw["description_source"]
     if raw.get("content_license"):
         entry["content_license"] = raw["content_license"]
-    # `aiaaic_ethical_tags` is an INTERNAL classification-seed field only — it
-    # has no schema entry and must never reach data/incidents.json (root
-    # schema is additionalProperties:false). It rides the entry through
-    # dedupe/merge with the same sticky-by-omission semantics as the fields
-    # above, and is stripped in main() right before the output is assembled
-    # (see the `deduped = surviving` stripping loop).
+    # `aiaaic_ethical_tags` / `aiaaic_seed_facts` are INTERNAL classification-
+    # seed fields only — neither has a schema entry and both must never reach
+    # data/incidents.json (root schema is additionalProperties:false). They
+    # ride the entry through dedupe/merge with the same sticky-by-omission
+    # semantics as the fields above, and are stripped in main() right before
+    # the output is assembled (see the `deduped = surviving` stripping loop).
     if raw.get("aiaaic_ethical_tags"):
         entry["aiaaic_ethical_tags"] = raw["aiaaic_ethical_tags"]
+    if raw.get("aiaaic_seed_facts"):
+        entry["aiaaic_seed_facts"] = raw["aiaaic_seed_facts"]
 
     fill_taxonomy(entry)
     maybe_rewrite_cve_title(entry)
@@ -1507,13 +1528,15 @@ def main():
         print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")
 
     deduped = surviving
-    # `aiaaic_ethical_tags` is a classification-seed field only (no schema
-    # entry; the root schema is additionalProperties:false) — strip it here,
-    # after every classifier that needs it (_classify_corpus, the attack_vector
-    # finalize block above) has already run, and before assembly into
-    # data/incidents.json / incidents.min.json below.
+    # `aiaaic_ethical_tags` / `aiaaic_seed_facts` are classification-seed
+    # fields only (no schema entry; the root schema is
+    # additionalProperties:false) — strip them here, after every classifier
+    # that needs them (_classify_corpus, the attack_vector finalize block
+    # above) has already run, and before assembly into data/incidents.json /
+    # incidents.min.json below.
     for e in deduped:
         e.pop("aiaaic_ethical_tags", None)
+        e.pop("aiaaic_seed_facts", None)
 
     # 6g) Provenance fields (INCLUSION.md trust layer). Pure, deterministic
     #     derivations of already-finalised fields — set AFTER history stamping

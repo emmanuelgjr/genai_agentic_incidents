@@ -873,6 +873,20 @@ def test_aiaaic_seed_text_reads_ethical_tags_not_description():
     assert m._aiaaic_seed_text(entry) == "misinformation safety"
 
 
+def test_aiaaic_seed_text_reads_seed_facts_plus_ethical_tags_not_description():
+    """aiaaic_seed_facts (system/technology/sector/jurisdiction, captured at
+    ingest before description composition) contributes alongside
+    aiaaic_ethical_tags; the published `description` string itself is never
+    read, even though today it holds the same facts in composed form."""
+    entry = {
+        "description_source": "aiaaic",
+        "aiaaic_seed_facts": ["Secret Desires", "Deepfake"],
+        "aiaaic_ethical_tags": ["safety"],
+        "description": "AIAAIC-tracked incident. System: DIFFERENT-IF-READ.",
+    }
+    assert m._aiaaic_seed_text(entry) == "Secret Desires Deepfake safety"
+
+
 def test_attack_vector_seed_independent_of_published_description():
     """The exact INC-01149 shape from the cascade audit: attack_vector must
     resolve to "misinformation" whether the description carries the OLD
@@ -903,6 +917,38 @@ def test_attack_vector_seed_independent_of_published_description():
     e_old = m.normalize_entry(old_prose)
     e_new = m.normalize_entry(new_facts)
     assert e_old["attack_vector"] == e_new["attack_vector"] == "misinformation"
+
+
+def test_attack_vector_seed_uses_kept_facts_not_just_ethical_tags():
+    """Regression test for a SECOND bug the WS0-T3 Phase-A dry-run delta
+    preview caught (docs/audits/WS0-T3-validation-sample-2026-07-27.md),
+    distinct from the cascade-audit bug above: the exact INC-01719/INC-03961
+    shape, where the OLD merge-time reclassify picked attack_vector="deepfake"
+    from the "Technology: Deepfake" facts sentence in the old description --
+    NOT from any ethical-issue prose (this row's ethical issues are
+    Accountability/Consent/Safety/Transparency; none mention deepfake). An
+    ethical-tags-only seed drops this signal entirely and silently downgrades
+    attack_vector to "other" even though the fact is still present, kept, and
+    safe (system/technology/sector/jurisdiction are never dropped by D9). The
+    seed must include aiaaic_seed_facts so this keeps resolving correctly."""
+    raw = {
+        "title": "Radnor High School hit by fake AI sexualised images of students",
+        "year": 2026,
+        "date": "2026",
+        "attack_vector": "other",
+        "description_source": "aiaaic",
+        "description_provenance": "original",
+        "aiaaic_seed_facts": ["Deepfake", "Generative AI", "Education", "Pennsylvania"],
+        "aiaaic_ethical_tags": ["accountability", "consent", "safety", "transparency"],
+        "content_license": dict(_AIAAIC_MARKER),
+        "description": (
+            "AIAAIC-tracked incident. Technology: Deepfake; Generative AI. "
+            "Sector: Education. Jurisdiction: Pennsylvania."
+        ),
+        "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/x"}],
+    }
+    entry = m.normalize_entry(raw)
+    assert entry["attack_vector"] == "deepfake"
 
 
 def test_corpus_seed_independent_of_published_description():
@@ -955,6 +1001,7 @@ def test_normalize_entry_carries_aiaaic_marker_fields():
         "description_source": "aiaaic",
         "content_license": dict(_AIAAIC_MARKER),
         "aiaaic_ethical_tags": ["safety"],
+        "aiaaic_seed_facts": ["X", "Y"],
         "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/x"}],
     }
     entry = m.normalize_entry(raw)
@@ -962,6 +1009,7 @@ def test_normalize_entry_carries_aiaaic_marker_fields():
     assert entry["description_source"] == "aiaaic"
     assert entry["content_license"] == _AIAAIC_MARKER
     assert entry["aiaaic_ethical_tags"] == ["safety"]
+    assert entry["aiaaic_seed_facts"] == ["X", "Y"]
 
 
 def test_normalize_entry_omits_marker_fields_for_non_aiaaic():
@@ -977,6 +1025,7 @@ def test_normalize_entry_omits_marker_fields_for_non_aiaaic():
     assert "description_source" not in entry
     assert "description_provenance" not in entry
     assert "aiaaic_ethical_tags" not in entry
+    assert "aiaaic_seed_facts" not in entry
 
 
 # ---------------------------------------------------------------------------
@@ -990,6 +1039,8 @@ def test_content_license_not_in_merge_into_key_lists():
     src = inspect.getsource(m.merge_into)
     assert '"content_license"' not in src
     assert "'content_license'" not in src
+    assert '"aiaaic_seed_facts"' not in src
+    assert "'aiaaic_seed_facts'" not in src
 
 
 def test_merge_into_leaves_target_content_license_untouched():
@@ -1023,6 +1074,7 @@ def test_content_license_excluded_from_content_fields():
     # memo Sec 4 item 2; WS0-T3 link-1 gate ruling (i)).
     assert "content_license" not in m._CONTENT_FIELDS
     assert "aiaaic_ethical_tags" not in m._CONTENT_FIELDS
+    assert "aiaaic_seed_facts" not in m._CONTENT_FIELDS
 
 
 def test_min_json_carries_content_license_only_when_present(tmp_path, monkeypatch):
@@ -1056,9 +1108,10 @@ def test_min_json_carries_content_license_only_when_present(tmp_path, monkeypatc
 
 
 def test_aiaaic_ethical_tags_never_reaches_published_output(tmp_path, monkeypatch):
-    """`aiaaic_ethical_tags` is an internal classification-seed field with no
-    schema entry (root schema is additionalProperties:false) — it must never
-    reach data/incidents.json or incidents.min.json."""
+    """`aiaaic_ethical_tags` / `aiaaic_seed_facts` are internal classification-
+    seed fields with no schema entry (root schema is additionalProperties:
+    false) — neither must ever reach data/incidents.json or
+    incidents.min.json."""
     data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
     aiaaic_row = {
         "source_id": "AIAAIC5678",
@@ -1070,6 +1123,7 @@ def test_aiaaic_ethical_tags_never_reaches_published_output(tmp_path, monkeypatc
         "description_source": "aiaaic",
         "content_license": dict(_AIAAIC_MARKER),
         "aiaaic_ethical_tags": ["bias discrimination"],
+        "aiaaic_seed_facts": ["X"],
         "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/y"}],
         "tags": ["aiaaic", "aiaaic-sheet"],
     }
@@ -1080,5 +1134,7 @@ def test_aiaaic_ethical_tags_never_reaches_published_output(tmp_path, monkeypatc
     slim = _json.loads((data / "incidents.min.json").read_text(encoding="utf-8"))
     for e in full["incidents"]:
         assert "aiaaic_ethical_tags" not in e
+        assert "aiaaic_seed_facts" not in e
     for e in slim["incidents"]:
         assert "aiaaic_ethical_tags" not in e
+        assert "aiaaic_seed_facts" not in e

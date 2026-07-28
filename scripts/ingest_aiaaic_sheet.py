@@ -509,6 +509,21 @@ def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
 
     ethical_tags = aiaaic_ethical_tags(row["ethical"])
 
+    # WS0-T3 label-seed decoupling (spec Sec 2(a)): the classifiers' seed text
+    # must come from "AIAAIC's structured cells captured at ingest, before
+    # description composition" -- not from the published description string,
+    # even in its new facts-only form. The kept categorical cells
+    # (system/technology/sector/jurisdiction) are the SAME facts the
+    # description is built from, captured here as their own internal
+    # classification-seed field so the seed never has to read `description`.
+    # Restores classification signal that used to reach the old merge-time
+    # reclassify via the full old description string (e.g. "Technology:
+    # Deepfake" driving attack_vector=deepfake) -- lost when the first cut of
+    # this decoupling used aiaaic_ethical_tags alone (see
+    # docs/audits/WS0-T3-cascade-2026-07-18.md and the dry-run delta that
+    # caught the regression, docs/audits/WS0-T3-validation-sample-2026-07-27.md).
+    seed_facts = [c for c in (row["system"], row["technology"], row["sector"], row["jurisdiction"]) if c]
+
     tags = ["aiaaic", "aiaaic-sheet"]
     if row["sector"]:
         tags.append("sector-" + re.sub(r"\s+", "-", row["sector"].lower()))
@@ -526,6 +541,7 @@ def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
         "description_source": "aiaaic",
         "content_license": aiaaic_content_license(),
         "aiaaic_ethical_tags": ethical_tags,
+        "aiaaic_seed_facts": seed_facts,
         "attack_vector": detect_attack_vector(row),
         "affected": affected[:200],
         "severity": detect_severity(row),
