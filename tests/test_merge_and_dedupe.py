@@ -841,3 +841,300 @@ def test_cwe_vector_map_targets_known_vectors_only():
     assert set(cmap.values()) <= vocab
     for generic in ("CWE-20", "CWE-74", "CWE-352", "CWE-611", "CWE-125", "CWE-787"):
         assert generic not in cmap
+
+
+# ---------------------------------------------------------------------------
+# WS0-T3 — label-seed decoupling from the published description
+# (docs/specs/WS0-T3-rescoped-2026-07-18.md Sec 2(a)/(b);
+#  docs/audits/WS0-T3-cascade-2026-07-18.md)
+# ---------------------------------------------------------------------------
+
+_AIAAIC_MARKER = {
+    "source": "aiaaic",
+    "license": "CC-BY-SA-4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution": "AIAAIC Repository",
+    "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+    "obligations": ["attribution", "share-alike"],
+}
+
+
+def test_aiaaic_seed_text_none_for_non_aiaaic_entries():
+    assert m._aiaaic_seed_text({"description": "anything"}) is None
+    assert m._aiaaic_seed_text({"description_source": "aiid"}) is None
+
+
+def test_aiaaic_seed_text_reads_ethical_tags_not_description():
+    entry = {
+        "description_source": "aiaaic",
+        "aiaaic_ethical_tags": ["misinformation", "safety"],
+        "description": "AIAAIC-tracked incident. System: X.",
+    }
+    assert m._aiaaic_seed_text(entry) == "misinformation safety"
+
+
+def test_aiaaic_seed_text_reads_seed_facts_plus_ethical_tags_not_description():
+    """aiaaic_seed_facts (system/technology/sector/jurisdiction, captured at
+    ingest before description composition) contributes alongside
+    aiaaic_ethical_tags; the published `description` string itself is never
+    read, even though today it holds the same facts in composed form."""
+    entry = {
+        "description_source": "aiaaic",
+        "aiaaic_seed_facts": ["Secret Desires", "Deepfake"],
+        "aiaaic_ethical_tags": ["safety"],
+        "description": "AIAAIC-tracked incident. System: DIFFERENT-IF-READ.",
+    }
+    assert m._aiaaic_seed_text(entry) == "Secret Desires Deepfake safety"
+
+
+def test_attack_vector_seed_independent_of_published_description():
+    """The exact INC-01149 shape from the cascade audit: attack_vector must
+    resolve to "misinformation" whether the description carries the OLD
+    verbatim AIAAIC ethical-issues prose or the NEW facts-only reduced form —
+    driven by aiaaic_ethical_tags either way, never by description text. A
+    future edit that re-couples classify_attack_vector to published prose
+    must fail this test."""
+    base_raw = {
+        "title": "Grok generates offensive posts about football disasters",
+        "year": 2026,
+        "date": "2026",
+        "attack_vector": "other",
+        "description_source": "aiaaic",
+        "description_provenance": "original",
+        "aiaaic_ethical_tags": ["mis disinformation", "safety"],
+        "content_license": dict(_AIAAIC_MARKER),
+        "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/x"}],
+    }
+    old_prose = dict(base_raw, description=(
+        "AIAAIC report: Grok generates offensive posts about football "
+        "disasters. System: Grok. Technology: Generative AI. Purpose: "
+        "Ridicule football clubs. Ethical issues: Mis/disinformation; Safety."
+    ))
+    new_facts = dict(base_raw, description=(
+        "AIAAIC-tracked incident. System: Grok. Technology: Generative AI. "
+        "Sector: Media/entertainment/sports/arts. Jurisdiction: UK."
+    ))
+    e_old = m.normalize_entry(old_prose)
+    e_new = m.normalize_entry(new_facts)
+    assert e_old["attack_vector"] == e_new["attack_vector"] == "misinformation"
+
+
+def test_attack_vector_seed_uses_kept_facts_not_just_ethical_tags():
+    """Regression test for a SECOND bug the WS0-T3 Phase-A dry-run delta
+    preview caught (docs/audits/WS0-T3-validation-sample-2026-07-27.md),
+    distinct from the cascade-audit bug above: the exact INC-01719/INC-03961
+    shape, where the OLD merge-time reclassify picked attack_vector="deepfake"
+    from the "Technology: Deepfake" facts sentence in the old description --
+    NOT from any ethical-issue prose (this row's ethical issues are
+    Accountability/Consent/Safety/Transparency; none mention deepfake). An
+    ethical-tags-only seed drops this signal entirely and silently downgrades
+    attack_vector to "other" even though the fact is still present, kept, and
+    safe (system/technology/sector/jurisdiction are never dropped by D9). The
+    seed must include aiaaic_seed_facts so this keeps resolving correctly."""
+    raw = {
+        "title": "Radnor High School hit by fake AI sexualised images of students",
+        "year": 2026,
+        "date": "2026",
+        "attack_vector": "other",
+        "description_source": "aiaaic",
+        "description_provenance": "original",
+        "aiaaic_seed_facts": ["Deepfake", "Generative AI", "Education", "Pennsylvania"],
+        "aiaaic_ethical_tags": ["accountability", "consent", "safety", "transparency"],
+        "content_license": dict(_AIAAIC_MARKER),
+        "description": (
+            "AIAAIC-tracked incident. Technology: Deepfake; Generative AI. "
+            "Sector: Education. Jurisdiction: Pennsylvania."
+        ),
+        "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/x"}],
+    }
+    entry = m.normalize_entry(raw)
+    assert entry["attack_vector"] == "deepfake"
+
+
+def test_corpus_seed_independent_of_published_description():
+    """The exact INC-00716 shape from the cascade audit (Path B): corpus must
+    resolve to "ai-harm" whether the description carries the OLD verbatim
+    ethical-issues prose or the NEW facts-only reduced form."""
+    base = {
+        "title": "British Museum AI-generated visitors spark fury",
+        "description_source": "aiaaic",
+        "aiaaic_ethical_tags": [
+            "accountability", "bias discrimination", "employment labour",
+            "normalisation", "representation", "transparency",
+        ],
+        "tags": ["aiaaic", "aiaaic-sheet"],
+    }
+    old_desc = dict(base, description=(
+        "AIAAIC report: British Museum AI-generated \"visitors\" spark fury. "
+        "Technology: Generative AI. Purpose: Create marketing images. "
+        "Ethical issues: Accountability; Bias/discrimination; Employment/labour; "
+        "Normalisation; Representation; Transparency. Response: Content takedown."
+    ))
+    new_desc = dict(base, description=(
+        "AIAAIC-tracked incident. Technology: Generative AI. "
+        "Sector: Media/entertainment/sports/arts. Jurisdiction: UK."
+    ))
+    assert m._classify_corpus(old_desc) == m._classify_corpus(new_desc) == "ai-harm"
+
+
+def test_classify_corpus_aiaaic_entry_ignores_planted_description_keyword():
+    """Even if a future edit accidentally left a harm keyword in an AIAAIC
+    entry's published description, _classify_corpus must not react to it —
+    only aiaaic_ethical_tags drives the AIAAIC-origin path."""
+    entry = {
+        "title": "Some AIAAIC incident",
+        "description_source": "aiaaic",
+        "aiaaic_ethical_tags": ["transparency"],
+        # A harm keyword planted in the description only -- must be ignored.
+        "description": "AIAAIC-tracked incident mentioning algorithmic bias.",
+    }
+    assert m._classify_corpus(entry) == "security"
+
+
+def test_normalize_entry_carries_aiaaic_marker_fields():
+    raw = {
+        "title": "AIAAIC test incident",
+        "description": "AIAAIC-tracked incident. System: X. Technology: Y.",
+        "year": 2026,
+        "source_id": "AIAAIC9999",
+        "description_provenance": "original",
+        "description_source": "aiaaic",
+        "content_license": dict(_AIAAIC_MARKER),
+        "aiaaic_ethical_tags": ["safety"],
+        "aiaaic_seed_facts": ["X", "Y"],
+        "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/x"}],
+    }
+    entry = m.normalize_entry(raw)
+    assert entry["description_provenance"] == "original"
+    assert entry["description_source"] == "aiaaic"
+    assert entry["content_license"] == _AIAAIC_MARKER
+    assert entry["aiaaic_ethical_tags"] == ["safety"]
+    assert entry["aiaaic_seed_facts"] == ["X", "Y"]
+
+
+def test_normalize_entry_omits_marker_fields_for_non_aiaaic():
+    raw = {
+        "title": "Non-AIAAIC incident",
+        "description": "A long enough description for the normaliser to accept.",
+        "year": 2026,
+        "source_id": "CVE-2026-1",
+        "references": [{"url": "https://nvd.nist.gov/vuln/detail/CVE-2026-1"}],
+    }
+    entry = m.normalize_entry(raw)
+    assert "content_license" not in entry
+    assert "description_source" not in entry
+    assert "description_provenance" not in entry
+    assert "aiaaic_ethical_tags" not in entry
+    assert "aiaaic_seed_facts" not in entry
+
+
+# ---------------------------------------------------------------------------
+# WS0-T3 / D11(b) — content_license stickiness, _CONTENT_FIELDS, min.json carry
+# ---------------------------------------------------------------------------
+
+def test_content_license_not_in_merge_into_key_lists():
+    """Stickiness is by omission (schema-architect memo Sec 4 item 2):
+    merge_into is an allow-list, so the requirement is purely negative."""
+    import inspect
+    src = inspect.getsource(m.merge_into)
+    assert '"content_license"' not in src
+    assert "'content_license'" not in src
+    assert '"aiaaic_seed_facts"' not in src
+    assert "'aiaaic_seed_facts'" not in src
+
+
+def test_merge_into_leaves_target_content_license_untouched():
+    target = {
+        "content_license": dict(_AIAAIC_MARKER),
+        "description_source": "aiaaic",
+        "description": "AIAAIC-tracked incident. System: X.",
+        "severity": "Medium",
+        "references": [],
+    }
+    src = {
+        "content_license": {"source": "other", "license": "MIT",
+                             "attribution": "Someone", "obligations": ["attribution"]},
+        "description_source": "other",
+        "description": "A different description entirely.",
+        "severity": "Medium",
+        "references": [],
+    }
+    m.merge_into(target, src)
+    # target's own marker (and description) survive untouched -- merge_into
+    # never names content_license/description/description_source in any of
+    # its three key lists.
+    assert target["content_license"] == _AIAAIC_MARKER
+    assert target["description_source"] == "aiaaic"
+    assert target["description"] == "AIAAIC-tracked incident. System: X."
+
+
+def test_content_license_excluded_from_content_fields():
+    # A licensing correction (e.g. an AIAAIC waiver downgrading `obligations`)
+    # must not present as a content change / bump `updated` (schema-architect
+    # memo Sec 4 item 2; WS0-T3 link-1 gate ruling (i)).
+    assert "content_license" not in m._CONTENT_FIELDS
+    assert "aiaaic_ethical_tags" not in m._CONTENT_FIELDS
+    assert "aiaaic_seed_facts" not in m._CONTENT_FIELDS
+
+
+def test_min_json_carries_content_license_only_when_present(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    aiaaic_row = {
+        "source_id": "AIAAIC1234",
+        "title": "AIAAIC test incident for min.json carry",
+        "description": "AIAAIC-tracked incident. System: X. Technology: Y.",
+        "year": 2026,
+        "date": "2026",
+        "attack_vector": "other",
+        "description_provenance": "original",
+        "description_source": "aiaaic",
+        "content_license": dict(_AIAAIC_MARKER),
+        "aiaaic_ethical_tags": ["safety"],
+        "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/x"}],
+        "tags": ["aiaaic", "aiaaic-sheet"],
+    }
+    other_row = _oecd_entry("OECD-AIM-Z", "A non-AIAAIC incident")
+    (ingest / "src.json").write_text(_json.dumps([aiaaic_row, other_row]), encoding="utf-8")
+    m.main()
+
+    slim = _json.loads((data / "incidents.min.json").read_text(encoding="utf-8"))
+    by_title = {e["title"]: e for e in slim["incidents"]}
+
+    marked = by_title["AIAAIC test incident for min.json carry"]
+    assert marked["content_license"] == _AIAAIC_MARKER
+
+    unmarked = by_title["A non-AIAAIC incident"]
+    assert "content_license" not in unmarked  # never emitted as null
+
+
+def test_aiaaic_ethical_tags_never_reaches_published_output(tmp_path, monkeypatch):
+    """`aiaaic_ethical_tags` / `aiaaic_seed_facts` are internal classification-
+    seed fields with no schema entry (root schema is additionalProperties:
+    false) — neither must ever reach data/incidents.json or
+    incidents.min.json."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    aiaaic_row = {
+        "source_id": "AIAAIC5678",
+        "title": "Another AIAAIC test incident",
+        "description": "AIAAIC-tracked incident. System: X.",
+        "year": 2026,
+        "date": "2026",
+        "description_provenance": "original",
+        "description_source": "aiaaic",
+        "content_license": dict(_AIAAIC_MARKER),
+        "aiaaic_ethical_tags": ["bias discrimination"],
+        "aiaaic_seed_facts": ["X"],
+        "references": [{"url": "https://www.aiaaic.org/aiaaic-repository/y"}],
+        "tags": ["aiaaic", "aiaaic-sheet"],
+    }
+    (ingest / "src.json").write_text(_json.dumps([aiaaic_row]), encoding="utf-8")
+    m.main()
+
+    full = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    slim = _json.loads((data / "incidents.min.json").read_text(encoding="utf-8"))
+    for e in full["incidents"]:
+        assert "aiaaic_ethical_tags" not in e
+        assert "aiaaic_seed_facts" not in e
+    for e in slim["incidents"]:
+        assert "aiaaic_ethical_tags" not in e
+        assert "aiaaic_seed_facts" not in e

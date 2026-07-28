@@ -531,15 +531,57 @@ _SECURITY_KEYWORDS_FOR_CORPUS = (
 )
 
 
+def _aiaaic_seed_text(entry: dict) -> str | None:
+    """Text used for keyword-based label derivation (attack_vector reclassify,
+    corpus classification), for AIAAIC-origin entries only.
+
+    WS0-T3 spec Sec 2(a) label-seed decoupling: for `description_source ==
+    "aiaaic"` entries, reads TWO structured fields captured at ingest, before
+    description composition -- `aiaaic_seed_facts` (system/technology/sector/
+    jurisdiction, the same kept categorical cells the reduced description is
+    built from) and `aiaaic_ethical_tags` (the normalized ethical-issue
+    vocabulary) -- NEVER the published `description` string itself, in either
+    its old prose form or its new facts-only form. That is deliberate even
+    though the new `description` is safe content: the seed must not depend on
+    the *composed* description in any form, so a future formatting change to
+    that string can never silently move a label. This coupling is exactly
+    what silently relabelled 372 AIAAIC entries when the description was
+    first reduced (docs/audits/WS0-T3-cascade-2026-07-18.md): the classifiers
+    below used to read the published description, which used to carry
+    AIAAIC's Ethical issues/Purpose prose verbatim.
+
+    `aiaaic_seed_facts` was added after an ethical-tags-only first cut of this
+    function (2026-07-27) caused a *second*, narrower regression, caught by
+    the WS0-T3 Phase-A dry-run delta preview before any batch ran: the old
+    merge-time reclassify picked up keyword signal from the System/Technology/
+    Sector/Jurisdiction facts sentences embedded in the old (pre-reduction)
+    description text -- e.g. "Technology: Deepfake" driving
+    attack_vector=deepfake -- which the ethical-tags-only seed dropped
+    entirely, silently downgrading attack_vector/OWASP/ATLAS/NIST/corpus for
+    103+ entries with no dropped-prose involved at all. See
+    docs/audits/WS0-T3-validation-sample-2026-07-27.md for the full
+    before/after evidence.
+
+    Returns None for non-AIAAIC entries so callers fall back to their
+    existing title+description behavior unchanged."""
+    if entry.get("description_source") != "aiaaic":
+        return None
+    facts = " ".join(entry.get("aiaaic_seed_facts") or [])
+    tags = " ".join(entry.get("aiaaic_ethical_tags") or [])
+    return (facts + " " + tags).strip()
+
+
 def _classify_corpus(entry: dict) -> str:
     """`security` or `ai-harm`. Security wins ties — a deepfake scam is
     a security incident even if it also has a fairness angle."""
     if entry.get("cve_ids"):
         return "security"
+    seed_text = _aiaaic_seed_text(entry)
+    desc_text = seed_text if seed_text is not None else (entry.get("description") or "")
     text = (
         (entry.get("title") or "")
         + " "
-        + (entry.get("description") or "")
+        + desc_text
         + " "
         + " ".join(entry.get("tags") or [])
     ).lower()
@@ -737,7 +779,12 @@ def normalize_entry(raw: dict) -> dict | None:
     raw_vec = (raw.get("attack_vector") or "").lower().strip()
     raw_vec = _ATTACK_VECTOR_NORMALIZE.get(raw_vec, raw_vec)
     if not raw_vec or raw_vec == "other":
-        classified = classify_attack_vector((title or "") + " " + (desc or ""))
+        # WS0-T3 label-seed decoupling (spec Sec 2(a)): AIAAIC-origin entries
+        # classify from the structured `aiaaic_ethical_tags` seed, never the
+        # published `description` -- see _aiaaic_seed_text.
+        seed_text = _aiaaic_seed_text(raw)
+        classify_text = (title or "") + " " + (seed_text if seed_text is not None else (desc or ""))
+        classified = classify_attack_vector(classify_text)
         if classified:
             raw_vec = classified
         else:
@@ -814,6 +861,27 @@ def normalize_entry(raw: dict) -> dict | None:
         entry["owasp_dsgai"] = raw["owasp_dsgai"]
     if raw.get("mitre_atlas_tactics"):
         entry["mitre_atlas_tactics"] = raw["mitre_atlas_tactics"]
+    # WS0-T3 (D9/D11(b)): description provenance/source + the row-level
+    # attribution/ShareAlike marker. All three are set at a single ingest
+    # code path (ingest_aiaaic_sheet.py) and excluded from merge_into's key
+    # lists by omission, so they stay sticky to whichever entry survives as
+    # the dedup target — same mechanism as description itself (spec Sec 3).
+    if raw.get("description_provenance"):
+        entry["description_provenance"] = raw["description_provenance"]
+    if raw.get("description_source"):
+        entry["description_source"] = raw["description_source"]
+    if raw.get("content_license"):
+        entry["content_license"] = raw["content_license"]
+    # `aiaaic_ethical_tags` / `aiaaic_seed_facts` are INTERNAL classification-
+    # seed fields only — neither has a schema entry and both must never reach
+    # data/incidents.json (root schema is additionalProperties:false). They
+    # ride the entry through dedupe/merge with the same sticky-by-omission
+    # semantics as the fields above, and are stripped in main() right before
+    # the output is assembled (see the `deduped = surviving` stripping loop).
+    if raw.get("aiaaic_ethical_tags"):
+        entry["aiaaic_ethical_tags"] = raw["aiaaic_ethical_tags"]
+    if raw.get("aiaaic_seed_facts"):
+        entry["aiaaic_seed_facts"] = raw["aiaaic_seed_facts"]
 
     fill_taxonomy(entry)
     maybe_rewrite_cve_title(entry)
@@ -1281,9 +1349,12 @@ def main():
         vec = (e.get("attack_vector") or "other").lower().strip()
         vec = _ATTACK_VECTOR_NORMALIZE.get(vec, vec)
         if not vec or vec == "other":
-            classified = classify_attack_vector(
-                (e.get("title") or "") + " " + (e.get("description") or "")
+            # WS0-T3 label-seed decoupling (spec Sec 2(a)) — see _aiaaic_seed_text.
+            seed_text = _aiaaic_seed_text(e)
+            classify_text = (e.get("title") or "") + " " + (
+                seed_text if seed_text is not None else (e.get("description") or "")
             )
+            classified = classify_attack_vector(classify_text)
             vec = classified or "other"
         if vec == "other":
             # Text gave nothing — fall back to unanimous CWE evidence
@@ -1457,6 +1528,15 @@ def main():
         print(f"[retention] WARNING: {no_keys} eligible prior(s) had no source_id/cve_id and could not be retained")
 
     deduped = surviving
+    # `aiaaic_ethical_tags` / `aiaaic_seed_facts` are classification-seed
+    # fields only (no schema entry; the root schema is
+    # additionalProperties:false) — strip them here, after every classifier
+    # that needs them (_classify_corpus, the attack_vector finalize block
+    # above) has already run, and before assembly into data/incidents.json /
+    # incidents.min.json below.
+    for e in deduped:
+        e.pop("aiaaic_ethical_tags", None)
+        e.pop("aiaaic_seed_facts", None)
 
     # 6g) Provenance fields (INCLUSION.md trust layer). Pure, deterministic
     #     derivations of already-finalised fields — set AFTER history stamping
@@ -1587,32 +1667,38 @@ def main():
             cut = cut[:sp]
         return cut.rstrip() + "…"
 
+    def _slim_entry(e: dict) -> dict:
+        item = {
+            "id": e["id"],
+            "title": e["title"],
+            "date": e.get("date"),
+            "year": e.get("year"),
+            "severity": e.get("severity"),
+            "attack_vector": e.get("attack_vector"),
+            "owasp_llm": e.get("owasp_llm", []),
+            "owasp_asi": e.get("owasp_asi", []),
+            "nist_ai_rmf": e.get("nist_ai_rmf", []),
+            "mitre_atlas": e.get("mitre_atlas", []),
+            "cve_ids": e.get("cve_ids", []),
+            "primary_reference": e["references"][0]["url"] if e.get("references") else None,
+            "description": _short(e.get("description")),
+            "affected": _short(e.get("affected"), limit=120),
+            "tags": (e.get("tags") or [])[:8],
+            "quality_tier": e.get("quality_tier"),
+            "corpus": e.get("corpus"),
+        }
+        # D12(a): min.json carries the D11(b) marker on affected rows ONLY —
+        # added conditionally (never as a null) so the slim shape stays slim
+        # on every unmarked row (schema-architect memo Sec 4 item 3).
+        if e.get("content_license"):
+            item["content_license"] = e["content_license"]
+        return item
+
     slim = {
         "version": out["version"],
         "generated": out["generated"],
         "incident_count": len(deduped),
-        "incidents": [
-            {
-                "id": e["id"],
-                "title": e["title"],
-                "date": e.get("date"),
-                "year": e.get("year"),
-                "severity": e.get("severity"),
-                "attack_vector": e.get("attack_vector"),
-                "owasp_llm": e.get("owasp_llm", []),
-                "owasp_asi": e.get("owasp_asi", []),
-                "nist_ai_rmf": e.get("nist_ai_rmf", []),
-                "mitre_atlas": e.get("mitre_atlas", []),
-                "cve_ids": e.get("cve_ids", []),
-                "primary_reference": e["references"][0]["url"] if e.get("references") else None,
-                "description": _short(e.get("description")),
-                "affected": _short(e.get("affected"), limit=120),
-                "tags": (e.get("tags") or [])[:8],
-                "quality_tier": e.get("quality_tier"),
-                "corpus": e.get("corpus"),
-            }
-            for e in deduped
-        ],
+        "incidents": [_slim_entry(e) for e in deduped],
     }
     (DATA / "incidents.min.json").write_text(
         json.dumps(slim, indent=2, ensure_ascii=False),
