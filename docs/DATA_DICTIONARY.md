@@ -22,6 +22,8 @@ Every incident in [`data/incidents.json`](../data/incidents.json) follows
 |---|---|---|
 | `title` **R** | string | ≥5 chars. |
 | `description` **R** | string | ≥20 chars. |
+| `description_provenance` | enum | `verbatim` \| `summary` \| `original` — how `description` was produced. `original` covers a mechanically composed, non-model, non-verbatim text (e.g. AIAAIC's facts-only categorical description). Set once by whichever entry survives dedup as the merge target; never overwritten by a later merge (excluded from `merge_into`'s union/absorb behaviour). |
+| `description_source` | string | Slug naming which upstream source contributed the *current* `description` (e.g. `aiaaic`), meaningful only when `description_provenance` is set. Needed because `description`/provenance are sticky to the dedup target while `tags`/`source_ids` union across every absorbed duplicate — provenance alone can't say *which* source. |
 | `date` **R** | string | `YYYY`, `YYYY-MM`, or `YYYY-MM-DD`. |
 | `year` **R** | integer | 1980–2030. |
 | `category` **R** | enum | `real-world`, `research`, `research-demonstrated`, `red-team`, `vulnerability-disclosure`, `threat-report`, `policy`, `regulatory`, `report`. |
@@ -61,6 +63,11 @@ Every incident in [`data/incidents.json`](../data/incidents.json) follows
 | `references` **R** | object[] | ≥1 `{title, url, type}`; `type` ∈ news/advisory/research/vendor/blog/cve/report/paper/regulatory/disclosure/legal/… |
 | `mitigations` | string[] | Defensive measures / remediation. |
 | `tags` | string[] | Free-form, incl. `sector-*` and `juris-*` facets and source tags (`aiaaic`, `atlas`, …). |
+
+## Licensing
+| Field | Type | Notes |
+|---|---|---|
+| `content_license` | object | Row-level license-obligation marker: this entry's content derives from an upstream source whose license imposes obligations (attribution, possibly share-alike) on the row itself, over and above the repository's own `LICENSE-DATA`. Present today only on `description_source == "aiaaic"` entries (D11(b) row-level containment; see `docs/specs/WS0-T3-marker-shape-2026-07-27.md`). Shape: `{source, license, license_url?, attribution, attribution_url?, obligations}` where `obligations` is a non-empty subset of `["attribution", "share-alike"]`. Source-generic by design — a future source with row-level obligations reuses the same field, keyed by its own `source` value. Set at the same ingest code path as `description_source` and excluded from `merge_into`'s key lists, so it is sticky to the dedup target and never overwritten by a later merge. Carried in full on `data/incidents.json` and the HuggingFace export; carried on `data/incidents.min.json` only on marked rows (never emitted as `null` on unmarked rows). **Absence means no row-level obligation is known for this entry — not that the entry is unencumbered.** |
 
 ## Access
 - **Python:** `pip install genai-incidents` → `load_incidents()`, `query(...)`, `by_id()`, `by_cve()`, `resolve_id()`.
