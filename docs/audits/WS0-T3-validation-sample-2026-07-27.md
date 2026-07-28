@@ -25,25 +25,34 @@ Per the rescoped spec's acceptance checklist:
   justified, never silent** (§3).
 
 Both are produced from an **offline dry run** — the real ingest/merge code
-path, run against the already-committed cached AIAAIC sheet CSV
-(`ingest/_cache/aiaaic_sheet.csv`, 958,849 bytes, fetched 2026-07-17), with
-**zero network calls** (verified: `download_csv()` was monkeypatched to read
-only that cache file; no other part of the dry run touches the network). All
-of it is reverted; see §5 for the exact commands and the resulting clean
-`git status`.
+path, run against a **local-only, gitignored** AIAAIC sheet CSV snapshot
+(`ingest/_cache/aiaaic_sheet.csv`, 958,849 bytes, fetched 2026-07-17;
+`ingest/_cache/` is excluded by `.gitignore:29` and this file has never been
+tracked on any ref — **it is not recoverable from the repo**, and is not
+committed by this document), with **zero network calls** (verified:
+`download_csv()` was monkeypatched to read only that cache file; no other
+part of the dry run touches the network). All of it is reverted; see §5 for
+the exact commands, the full driver, and the resulting clean `git status`.
 
 ## 2. A second regression found and fixed during this dry run
 
 Before the delta numbers below were "clean," the first full dry run (against
-the inherited Phase-A commits `b96de176`/`d626be60`, before this session's
+the inherited Phase-A commits `6ca1c296`/`06c0709b`, before this session's
 own commit) surfaced **148 unintended field deltas** — nowhere near the
 "zero unintended deltas" bar §2(c) requires. This section documents that
-finding, the root cause, and the fix (commit `40952475` on this branch,
+finding, the root cause, and the fix (commit `4be139a7` on this branch,
 code + tests only, no data/ingest change), because §2(c) requires any
 non-zero delta to be enumerated and justified, never silently absorbed into
 "the sample looked fine."
 
-**Root cause.** `_aiaaic_seed_text()`, as committed at `b96de176`, replaced
+*Note on commit hashes: a rebase onto `main` after this fix landed replaced
+every hash this Phase-A resume originally cited with a patch-id-identical
+successor. `40952475`→`4be139a7`, `b96de176`→`6ca1c296`, `d626be60`→`06c0709b`,
+`3576be3a`→`ab3e7cf4`. The four originals are unreachable from any ref
+(present only in this machine's local object store); the hashes used
+throughout this document are the live, post-rebase ones.*
+
+**Root cause.** `_aiaaic_seed_text()`, as committed at `6ca1c296`, replaced
 the classifiers' input for AIAAIC-origin entries with `aiaaic_ethical_tags`
 **alone**. That correctly stops the classifiers from reading dropped
 `purpose`/`ethical`/`consequence`/`response` **prose** (the cascade-audit
@@ -84,24 +93,45 @@ false`). Two new regression tests lock this in
 (`test_attack_vector_seed_uses_kept_facts_not_just_ethical_tags` reproduces
 the exact `INC-01719`/`INC-03961` shape; the sibling
 `test_aiaaic_seed_text_reads_seed_facts_plus_ethical_tags_not_description`
-proves the seed still never reads `description`). 223 tests pass (was 221
-at `d626be60`).
+proves the seed still never reads `description`). 227 tests pass (was 225
+at `06c0709b`; the shipped tree's +4 over this branch's original count is
+`tests/test_export_stix.py` growing from 4 to 8 tests via the later rebase
+onto `main`, unrelated to this fix).
 
-**Result:** 148 unintended-delta entries → **2**, both independently
-root-caused below (§3) to the genuinely-dropped `purpose` cell, not to any
-remaining code defect.
+**Result:** 148 field deltas (103 `attack_vector` plus 9+9+9+12+3+3 across
+the six cascaded fields named above — `owasp_llm`, `mitre_atlas`,
+`mitre_atlas_tactics`, `nist_ai_rmf`, `corpus`, `tier` — not 148 distinct
+entries, since one entry's `attack_vector` change can cascade into several
+dependent fields at once) → **2** residual `attack_vector` deltas. Of those
+two, one (`INC-02406`) is root-caused below (§3.3) to the genuinely-dropped
+`purpose` cell; the other (`INC-04316`) is root-caused to a spurious
+cross-field regex artifact in the *old* code, not to any dropped content —
+see §3.3 for both.
 
 ## 3. Corpus-wide dry-run delta preview
 
 Measured 2026-07-27, dry run against the a2d7a26e-descended baseline
 currently on `main`/this branch (before this session's fix,
 `data/incidents.json` as committed at the branch tip prior to this run).
-Methodology: offline-ingest the cached AIAAIC sheet CSV with the new code
-(→ `ingest/aiaaic_sheet_incidents.json`), then run the real
-`scripts/parse_existing.py` + `scripts/merge_and_dedupe.py` (`make merge`),
-then `scripts/validate.py`. No network or model call anywhere in this path
-(the only network-shaped step, `download_csv()`, was monkeypatched to read
-only the committed cache file — see §5 for the exact driver).
+Methodology: offline-ingest the local-only, gitignored AIAAIC sheet CSV
+snapshot with the new code (→ `ingest/aiaaic_sheet_incidents.json`), then run
+the real `scripts/parse_existing.py` + `scripts/merge_and_dedupe.py`
+(`make merge`), then `scripts/validate.py`. No network or model call anywhere
+in this path (the only network-shaped step, `download_csv()`, was
+monkeypatched to read only that local cache file — see §5 for the full
+driver).
+
+**Scope of this sweep.** This dry run's diff covered all 45 per-entry corpus
+fields, not just the subset itemized below. Outside the 7 that changed —
+`attack_vector` (§3.3) and `description`/`description_provenance`/
+`description_source`/`content_license`/`updated`/`last_seen` (§3.4) — the
+remaining 38 per-entry fields, including `title`, `tags`, `source_ids`,
+`references`, `id`, `added`, and `first_seen`, showed **zero** changes
+anywhere in the corpus. (`generated` is a separate, single top-level
+timestamp, not one of these 45 per-entry fields — its own change is recorded
+in §3.4 too.) What follows names only the fields with a non-zero or
+otherwise noteworthy result; the other 38 were measured, not merely assumed,
+unchanged.
 
 ### 3.1 Entry count / ID set (spec §2(c), §5 relative criterion)
 
@@ -133,32 +163,70 @@ set difference, not just a count match.
 
 ### 3.3 The two residual `attack_vector` deltas — enumerated and justified
 
-Both, independently root-caused by inspecting the raw sheet row: the
-divergence comes from the **`purpose`** cell — free-text editorial prose
-that D9/D10 correctly and deliberately drop (it is exactly the kind of
-AIAAIC-authored expression the licensing reduction exists to stop
-redistributing) — not from any code defect, and not recoverable without
-re-coupling to dropped prose.
+The two deltas have **different root causes**, and only one of them is a
+genuinely-dropped-content story. Each was root-caused by ablating the *old*
+merge-time reclassify text against the real classifier
+(`scripts/merge_and_dedupe.py`), not just by inspecting the raw sheet row.
 
-| ID | Old `attack_vector` | New `attack_vector` | `purpose` cell (dropped) | Why the old value doesn't survive |
-|---|---|---|---|---|
-| `INC-02406` | `unsafe-advice` | `other` | *"Provide methods to commit suicide"* | The old merge-time reclassify matched suicide/self-harm keywords in this **purpose** sentence — not in `ethical` (`Accountability; Anthropomorphism; Safety`) or in any kept fact. |
-| `INC-04316` | `algorithmic-bias` | `other` | *"Detect fraud"* + headline *"...criticised as **biased** and opaque"* | The old value came from the word "biased" in the **headline**, reinforced by prose framing — AIAAIC's own `ethical` taxonomy for this row is `Fairness; Diversity/inclusivity; Transparency`, which does **not** include their "Bias/discrimination" category (a categorization choice AIAAIC made, not something this pipeline can recover from facts alone). |
+| ID | Old `attack_vector` | New `attack_vector` | Root cause |
+|---|---|---|---|
+| `INC-02406` | `unsafe-advice` | `other` | Genuinely-dropped content. The old merge-time reclassify matched suicide/self-harm keywords in the **`purpose`** cell (*"Provide methods to commit suicide"*) — not in `ethical` (`Accountability; Anthropomorphism; Safety`) or in any kept fact. Ablation confirms: `title + seed(facts+tags)` (no `purpose`) → `None`; only re-adding the `purpose` prose restores `unsafe-advice`. Not recoverable without re-coupling to dropped prose, by design. |
+| `INC-04316` | `algorithmic-bias` | `other` | **Not** dropped content — a spurious cross-field regex artifact in the *old* code. See below. |
 
-Both downgrades land on **`other`** — the safe, generic fallback — never a
-*wrong* specific category. Neither entry's `owasp_llm`/`owasp_asi`/
-`mitre_atlas`/`mitre_atlas_tactics`/`nist_ai_rmf`/`corpus`/`tier` changed (see
-the full per-entry table in §4, rows 3–4): the OWASP codes for both rows were
-already set independently at ingest time from the `ethical` cell mapping, so
+**`INC-02406`** is the case spec §2(c) anticipates: a residual divergence
+rooted in genuinely-dropped, AIAAIC-authored prose (exactly what D9/D10 exist
+to stop redistributing), not a code defect.
+
+**`INC-04316` is a different story, and the honest version of it is stronger
+than "content was dropped."** Ablating the *old* classify text
+(`title + " " + description`, the old code's pre-decoupling shape) against
+`detect_attack_vector` in `scripts/merge_and_dedupe.py` gives:
+
+| Input | Result |
+|---|---|
+| Old full (`title` + old `description`) | `algorithmic-bias` |
+| Old full **minus the `purpose` cell/sentence** | `algorithmic-bias` — **identical span**, `purpose` is not involved |
+| Old full **minus the headline echo** (`"AIAAIC report: <headline>. "` prefix of `description`) | `None` |
+| `title` alone | `None` |
+| Old `description` alone (no `title`) | `None` |
+| `classify(title + seed(facts+tags) + "Discrimination")` (i.e. even with the seed deliberately extended) | `None` |
+
+The match is the `algorithmic-bias` rule at `merge_and_dedupe.py:458` —
+`\bbias(?:ed)?\b.{0,30}(?:…|welfare|…)` — firing **across the title/
+description seam**: `title` = "UK welfare fraud AI system criticised as
+biased and opaque" supplies "biased" near its end; `description` opens with
+its own headline echo, "AIAAIC report: UK welfare fraud AI system criticised
+as biased and opaque. System: …", supplying a second "welfare"
+29 characters after "biased" once the two strings are concatenated
+(`title + " " + description`, the old classify-text shape). Neither `title`
+alone nor `description` alone contains a same-direction "bias…welfare" match
+within 30 characters — `title` has them in the wrong order for the pattern,
+and `description`'s only "welfare" is the same headline-echo that supplied
+the match originally. AIAAIC's own `ethical` taxonomy for this row is
+`Fairness; Diversity/inclusivity; Transparency` — it does **not** include
+their "Bias/discrimination" category, and rightly so: **nothing licensed was
+lost for this row.** The old `algorithmic-bias` label was a spurious match
+across a field boundary that no longer exists in the new classify-text shape
+(`title + seed`, never `title + description`); `other` is the more accurate
+label, not a downgrade to be excused. This is not recoverable by extending
+the seed vocabulary — the ablation above already tried that
+(`title + seed + "Discrimination"` → `None`) — only re-creating the
+title/description adjacency, or changing the regex rule itself, would
+restore the old (spurious) label, and neither is something this document
+recommends.
+
+Neither entry's `owasp_llm`/`owasp_asi`/`mitre_atlas`/`mitre_atlas_tactics`/
+`nist_ai_rmf`/`corpus`/`tier` changed (see the full per-entry table in §4,
+rows 3–4): the OWASP codes for both rows were already set independently at
+ingest time from the `ethical` cell mapping, so
 `seed_frameworks_from_vector()`'s attack-vector-driven backfill had nothing
 to add or remove either way.
 
-**This is the "enumerate and justify" case spec §2(c) anticipates** for
-residual divergence rooted in genuinely-dropped content, as distinct from a
-defect to reconcile — and per §2(c)'s discipline, it is recorded here rather
-than silently passed. Two entries out of 1,418 re-described rows (0.14%).
+**Per §2(c)'s discipline, both are recorded here rather than silently
+passed** — one as a genuinely-dropped-content justification, the other as a
+root-caused non-issue. Two entries out of 1,418 re-described rows (0.14%).
 
-### 3.4 The intended deltas (per spec §2(c), the only ones expected)
+### 3.4 The intended deltas (per spec §2(c))
 
 | Field | Entries changed |
 |---|---|
@@ -166,6 +234,9 @@ than silently passed. Two entries out of 1,418 re-described rows (0.14%).
 | `description_provenance` | 1,418 |
 | `description_source` | 1,418 |
 | `content_license` | 1,418 |
+| `updated` | 1,418 |
+| `last_seen` | 1,418 (same 1,418-entry set) |
+| `generated` (single top-level value) | `2026-07-19` → this run's build date |
 
 1,418 is the count of AIAAIC-sheet rows that **win dedup as the merge
 target** — i.e. entries where `description_source == "aiaaic"` in the
@@ -176,7 +247,36 @@ are all sticky to whichever source became the dedup target (§3 of the
 rescoped spec): some AIAAIC sheet rows are absorbed into a different
 source's entry (a hand-curated `ingest/aiaaic_incidents.json` row, an OECD
 cross-reference, etc.) and never surface their own description at all. See
-`INC-04660` in §4 for a concrete absorbed-vs-target example.
+`INC-04359` in §4 for a concrete absorbed-vs-target example (`source_ids`
+`["AIAAIC-wpp-ceo-deepfake", "AIAAIC1483"]` — the hand-curated slug entry
+wins the merge target and carries `description_source != "aiaaic"`, so the
+AIAAIC-sheet row `AIAAIC1483` is absorbed and its own description never
+surfaces). `INC-04660`, previously cited here, is the wrong example for this
+purpose: by construction every entry in §4 has `description_source=="aiaaic"`
+(§4's own inclusion rule), so §4 cannot contain an example of the 77-entry
+*absorbed* gap — `INC-04660` illustrates the AIAAIC row **winning**, not
+being absorbed.
+
+**`updated`/`last_seen`/`generated` are a fourth delta this table previously
+omitted**, on the same 1,418-entry set as the four fields above (the entries
+whose `description` actually changed) — not a fifth population. Mechanism:
+`description` is one of the `_CONTENT_FIELDS` merge-and-dedupe snapshots to
+decide whether an entry's content changed
+(`scripts/merge_and_dedupe.py:1074-1082`); when the reduced description
+differs from the previously-published one, `_apply_history` (same file,
+:1104-1120) stamps `updated = today` instead of carrying the prior value
+forward; step 6 then sets `last_seen = updated` for every entry that has one
+(:1553-1555); and the top-level `generated` timestamp follows once any entry
+changed (:1575-1585), moving from `2026-07-19` to this run's build date.
+
+This is **invariant-4 *compliant*, not a violation of it**: the underlying
+content genuinely changed (a real description reduction, not cosmetic
+churn), so bumping `updated`/`last_seen`/`generated` is the correct behavior
+— suppressing the bump to keep this table shorter would itself be the
+integrity breach. This propagation is foreseen and pre-approved at
+`docs/specs/WS0-T3-marker-shape-2026-07-27.md:172-178` ("`description` is
+already in that tuple, so every marked row's `updated` bumps from the D9
+rewrite anyway"); it is not a surprise this dry run uncovered.
 
 ### 3.5 D11(b) marker coverage (spec §6.2)
 
@@ -215,11 +315,12 @@ shown once here rather than repeated 20 times:
 ```
 
 **Cell coverage across this sample** (every one of the eight cells is
-non-empty in at least one row): `system` (rows 1,2,5,6,7,8,10–20 — absent by
-design in rows 3,4,9,17,18,19 to show the sparse case), `technology` (all
-20), `sector` (all 20), `jurisdiction` (all 20), `purpose` (all 20),
-`ethical` (all 20), `consequence` (rows 1,5,10–16), `response` (rows
-2,7,9,10,12–16).
+non-empty in at least one row — lists recomputed directly from the per-row
+tables below, not from the original draft, which misstated all three):
+`system` (rows 2,3,4,5,6,8,12–18; absent in rows 1,7,9,10,11,19,20, which is
+how the sparse case is shown), `technology` (all 20), `sector` (all 20),
+`jurisdiction` (all 20), `purpose` (all 20), `ethical` (all 20),
+`consequence` (rows 1,3,5,6,7,12–16), `response` (rows 2,9–17).
 
 ---
 
@@ -315,9 +416,13 @@ design.
 ---
 
 ### 4. `INC-04316` — UK welfare fraud AI system criticised as biased and opaque
-**Why included:** the second justified residual divergence (§3.3) — the
-"biased" signal lived in the headline/purpose framing, not in AIAAIC's own
-`ethical` taxonomy choice for this row.
+**Why included:** the second residual divergence in §3.3 — but, corrected
+from an earlier draft of this row, it is **not** a genuinely-dropped-content
+case. The old `algorithmic-bias` label was a spurious regex match spanning
+the `title`/`description` field boundary (`title` supplying "biased",
+`description`'s headline echo supplying "welfare" 29 characters later); no
+`purpose` prose or dropped content was ever involved, and nothing licensed
+was lost when this row's label changed. See §3.3 for the full ablation.
 
 | Cell | Raw value |
 |---|---|
@@ -344,7 +449,7 @@ design.
 
 ---
 
-### 5. `INC-03259` — Tesla hides data about Autopilot crash that killed Florida couple
+### 5. `INC-03259` — Tesla with FSD activated hits and kills pedestrian in Arizona
 **Why included:** merge-target variety — this entry's `source_ids` are
 `["AIAAIC0218", "AIAAIC2009"]`; the description/labels are sticky to
 **`AIAAIC2009`** (the row whose raw cells actually match, confirmed by direct
@@ -362,15 +467,19 @@ populated (multi-value).
 | consequence | Regulatory investigation; Litigation |
 | response | *(empty)* |
 
-*Note: this entry's `title` ("Tesla hides data about Autopilot crash...")
-comes from `AIAAIC0218`'s current headline, while the description/labels are
-sticky to `AIAAIC2009` (a distinct, earlier-ingested Tesla FSD incident,
-"Tesla with FSD activated hits and kills pedestrian in Arizona") — first-hit-
-wins dedup, confirmed by matching AIAAIC2009's raw cells to the current
-published description byte-for-byte. This is expected merge behavior
-(§3 of the rescoped spec), not a WS0-T3 defect; it reflects AIAAIC's sheet
-carrying two distinct Tesla FSD incidents that this corpus's dedup logic
-(predating WS0-T3) already consolidated.*
+*Note (corrected): the committed entry's `title` field is "Tesla with FSD
+activated hits and kills pedestrian in Arizona" — the same headline as the
+published description, confirmed by direct lookup against
+`data/incidents.json`. There is no title/description split here: both
+`title` and `description` are sticky to the same winning row, `AIAAIC2009`.
+An earlier draft of this note asserted `title` came from `AIAAIC0218`'s
+headline ("...Florida couple") while only the description was `AIAAIC2009`'s
+— that assertion does not match the committed data and is withdrawn.
+`AIAAIC0218` and `AIAAIC2009` are still two distinct Tesla FSD incidents that
+this corpus's dedup logic (predating WS0-T3) consolidated into one entry
+under first-hit-wins dedup (§3 of the rescoped spec); it is `AIAAIC2009` that
+supplies every published field for this entry, title included. Not a
+WS0-T3 defect.*
 
 - **Current published description:** "AIAAIC report: Tesla with FSD activated hits and kills pedestrian in Arizona. System: Full self-driving. Technology: Self-driving system; Computer vision; Machine learning. Purpose: Automate steering, acceleration, braking. Ethical issues: Accountability; Accuracy/reliability; Safety; Transparency. Reported consequences: Regulatory investigation; Litigation."
 - **Proposed new description:** "AIAAIC-tracked incident. System: Full self-driving. Technology: Self-driving system; Computer vision; Machine learning. Sector: Automotive. Jurisdiction: USA."
@@ -417,12 +526,16 @@ winning merge target here, with a **non-AIAAIC** source folded in
 
 ---
 
-### 7. `INC-04741` — Beverly Hills students created and shared AI nude images of fellow students
+### 7. `INC-04741` — Miami boys arrested for creating and sharing nude images of students
 **Why included:** another absorbed-duplicate case — `source_ids` are
 `["AIAAIC1377", "AIAAIC1378"]`; description/labels are sticky to
 **`AIAAIC1378`** ("Miami boys arrested...", confirmed by direct raw-cell
-match), while the entry's `title` reflects `AIAAIC1377`'s ("Beverly Hills
-students..."). No `system` cell (sparse).
+match). No `system` cell (sparse). *(Corrected: the committed `title` field
+is also "Miami boys arrested for creating and sharing nude images of
+students" — the same as the description, both from `AIAAIC1378`. There is no
+title/description split; an earlier draft's claim that `title` reflected
+`AIAAIC1377`'s "Beverly Hills students..." headline does not match the
+committed data and is withdrawn.)*
 
 | Cell | Raw value (from the winning row, AIAAIC1378) |
 |---|---|
@@ -449,12 +562,16 @@ students..."). No `system` cell (sparse).
 
 ---
 
-### 8. `INC-07374` — Apple Face ID fails to distinguish brothers
+### 8. `INC-07374` — Apple Face ID fails to distinguish identical twins
 **Why included:** a third absorbed-duplicate case — `source_ids` are
 `["AIAAIC093", "AIAAIC099"]`; description/labels sticky to **`AIAAIC099`**
-("...identical twins", confirmed by raw-cell match), title reflects
-`AIAAIC093`'s ("...brothers") — two close-variant AIAAIC rows about the same
-underlying failure mode, deduped upstream of WS0-T3.
+("...identical twins", confirmed by raw-cell match) — two close-variant
+AIAAIC rows about the same underlying failure mode, deduped upstream of
+WS0-T3. *(Corrected: the committed `title` field is also "Apple Face ID
+fails to distinguish identical twins" — the same as the description, both
+from `AIAAIC099`. There is no title/description split; an earlier draft's
+claim that `title` reflected `AIAAIC093`'s "...brothers" headline does not
+match the committed data and is withdrawn.)*
 
 | Cell | Raw value (from the winning row, AIAAIC099) |
 |---|---|
@@ -515,8 +632,10 @@ underlying failure mode, deduped upstream of WS0-T3.
 `tests/test_merge_and_dedupe.py::test_corpus_seed_independent_of_published_description`
 (Path B, the corpus classifier) — included here for continuity between the
 unit-test fixture and a real corpus row. No `system`; `consequence` empty,
-`response` populated; this is also a **landmark**-tier, `ai-harm` entry (the
-only ai-harm/landmark row in this sample), which is why it appears in the
+`response` populated; this is also a **landmark**-tier, `ai-harm` entry
+(one of **four** in this sample — rows 10, 13, 16, and 18 — corrected from
+an earlier draft that miscounted them as "the only," "second of two," and
+"third of three" respectively), which is why it appears in the
 cascade-audit's own worked examples.
 
 | Cell | Raw value |
@@ -545,8 +664,10 @@ cascade-audit's own worked examples.
 ---
 
 ### 11. `INC-01106` — Google BAFTA automated news alert includes "N-word"
-**Why included:** third no-`system` sparse-cell example; `response`
-populated, `consequence` empty.
+**Why included:** fifth no-`system` sparse-cell example in this sample
+(corrected from "third" — the no-`system` rows, in order, are 1, 7, 9, 10,
+11, 19, 20, making this the fifth); `response` populated, `consequence`
+empty.
 
 | Cell | Raw value |
 |---|---|
@@ -604,7 +725,7 @@ review/update" / "Public apology").
 
 ### 13. `INC-00715` — British Bangladeshi man wrongfully arrested for theft after facial recognition error
 **Why included:** `consequence` + `response` populated; a **landmark**-tier,
-`ai-harm` entry (second of two in this sample).
+`ai-harm` entry (one of four in this sample — see row 10's note).
 
 | Cell | Raw value |
 |---|---|
@@ -691,7 +812,8 @@ non-specific).
 
 ### 16. `INC-02556` — Facebook job ad algorithm ruled sexist by French regulator
 **Why included:** `consequence` + `response` populated; non-Anglophone
-jurisdiction (France); landmark/ai-harm (third of three in this sample).
+jurisdiction (France); landmark/ai-harm (one of four in this sample — see
+row 10's note).
 
 | Cell | Raw value |
 |---|---|
@@ -719,8 +841,10 @@ jurisdiction (France); landmark/ai-harm (third of three in this sample).
 ---
 
 ### 17. `INC-02293` — Amazon AI coding bot causes AWS China outage
-**Why included:** jurisdiction diversity (China); no `consequence`/
-`response` — a "purpose + ethical only" shape.
+**Why included:** jurisdiction diversity (China); no `consequence`, but
+`response` populated ("Policy review/update" — corrected from an earlier
+draft that mistakenly claimed `response` was also empty; see the row's own
+table below, which was already correct).
 
 | Cell | Raw value |
 |---|---|
@@ -750,9 +874,17 @@ jurisdiction (France); landmark/ai-harm (third of three in this sample).
 ### 18. `INC-02391` — Chatbots demonstrate significant caste bias in India
 **Why included:** jurisdiction diversity (India); `sector`="Multiple";
 multi-value `system` (three systems in one cell); a stable
-`algorithmic-bias` case (contrast with the justified divergence in row 4 —
-here the ethical taxonomy for this row correctly captures "Fairness;
-Representation," so the classification is unaffected before/after).
+`algorithmic-bias` case — contrast with row 4's *residual divergence*
+(§3.3), which is corrected in this document to a different story than
+originally drafted. **Corrected from an earlier draft:** the stability here
+does **not** come from the `ethical` taxonomy ("Fairness; Representation"
+alone does not classify as `algorithmic-bias` — that cell is exactly the
+"Fairness; Representation"-only case that misses the pattern at
+`merge_and_dedupe.py:455-458`). It comes from the `title` itself, "Chatbots
+demonstrate significant **caste bias** in India," which directly matches the
+`algorithmic-bias` rule's `\b(?:...|caste|...) (?:bias|...)` alternative —
+independent of `ethical`/`purpose` and unaffected by the WS0-T3 reduction
+either way, which is what actually makes this row's classification stable.
 
 | Cell | Raw value |
 |---|---|
@@ -780,10 +912,11 @@ Representation," so the classification is unaffected before/after).
 ---
 
 ### 19. `INC-02777` — Japanese men charged with creating obscene AI anime character posters
-**Why included:** jurisdiction diversity (Japan); no `system` (fourth sparse
-example); `consequence`/`response` both empty (the sparsest row in the
-sample — only `technology`/`sector`/`jurisdiction`/`purpose`/`ethical`
-populated).
+**Why included:** jurisdiction diversity (Japan); no `system` (the sixth
+no-`system` example in this sample, corrected from "fourth" — see row 11's
+note for the full ordering); `consequence`/`response` both empty (the
+sparsest row in the sample — only `technology`/`sector`/`jurisdiction`/
+`purpose`/`ethical` populated).
 
 | Cell | Raw value |
 |---|---|
@@ -843,17 +976,44 @@ worked bug-fix examples (rows 1–2): here the "Deepfake" signal comes from
 
 ## 5. Methodology, no-network proof, and revert confirmation
 
-**Driver (offline, no network):** `download_csv()` in
-`scripts/ingest_aiaaic_sheet.py` was monkeypatched to read only
-`ingest/_cache/aiaaic_sheet.csv` (958,849 bytes, already committed/cached
-from 2026-07-17) and decode it directly — no `conditional_fetch`/HTTP call
-of any kind:
+**Driver (offline, no network).** `download_csv()` in
+`scripts/ingest_aiaaic_sheet.py` was monkeypatched to read only the
+local-only, gitignored `ingest/_cache/aiaaic_sheet.csv` (958,849 bytes,
+fetched 2026-07-17 — see the correction in §1) and decode it directly — no
+`conditional_fetch`/HTTP call of any kind. *Correction:* the commands below
+cite `run_offline_aiaaic_ingest.py`; that file was never committed (it is a
+throwaway driver, not a build-path script) and this section's own
+`git checkout -- .` step at the end destroyed the working-tree copy, so it
+does not exist in the tree today. Its full body — small enough to inline —
+is reconstructed below from the monkeypatch shape already documented here
+plus `scripts/ingest_aiaaic_sheet.py`'s own entry point
+(`CACHE_FILE`/`main()`) and the same `sys.path` pattern
+`tests/conftest.py` uses to make `scripts/` importable, so the run is fully
+reproducible without re-executing it as part of this remediation (this pass
+made no ingest/build calls; see the constraints at the top of this task):
 
 ```python
+# run_offline_aiaaic_ingest.py — not committed; save this block under that
+# name at the repo root to reproduce the dry run. Not part of the build
+# path: no Makefile target references it.
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import ingest_aiaaic_sheet as ias
+
+
 def _offline_download_csv():
     data = ias.CACHE_FILE.read_bytes()
     return data.decode("utf-8", errors="replace"), False
+
+
 ias.download_csv = _offline_download_csv
+
+if __name__ == "__main__":
+    ias.main()
 ```
 
 **Commands run, in order** (all against this branch, `ws0/t3-impl`):
@@ -866,8 +1026,27 @@ python scripts/validate.py              # 13115/13115 valid, 0 errors
 python scripts/render_markdown.py       # full-build sanity check (§3.6)
 python scripts/render_docs_stats.py
 python scripts/check_stats_drift.py     # clean
-python -m pytest -q                     # 223 passed
+python -m pytest -q                     # 227 passed
 ```
+
+**Note on `make ingest-aiaaic` (not run by this dry run, but relevant to
+Phase B).** `make ingest-aiaaic` invokes `scripts/ingest_aiaaic_sheet.py`
+directly — `download_csv()` un-monkeypatched, going through the real
+`conditional_fetch(CSV_URL, CACHE_FILE, min_cache_bytes=100_000)`.
+`conditional_fetch` only sends `If-None-Match`/`If-Modified-Since` when a
+`<cache_path>.etag` sidecar already exists; there is no
+`ingest/_cache/aiaaic_sheet.csv.etag` in the tree (confirmed: only the
+`.csv` itself and unrelated `ghsa/`, `nvd/`, `oecd_aim/`, `osv/` cache
+subdirectories are present), so the conditional headers are never sent, the
+304-Not-Modified branch is unreachable, and every real invocation **fully
+re-fetches and overwrites** the 2026-07-17 snapshot with whatever AIAAIC's
+sheet currently contains. Consequence: the Phase-B batch, whenever it runs
+`make ingest-aiaaic` for real, measures its 0-added/0-removed-IDs delta
+against a **freshly fetched** sheet, not this dry run's cached snapshot —
+that result is re-measured at batch time, not inherited from this document.
+(A provenance sidecar recording fetch date/hash is the durable fix for this
+class of surprise; per the team-lead's brief it is already routed to
+Phase B, not built here.)
 
 **Revert.** After every measurement in §3 and §4 was captured, all churn was
 discarded:
@@ -888,13 +1067,18 @@ $ git status --porcelain
 The only commits this Phase-A resume produced are code/tests/docs — no
 `data/*.json` or `ingest/*.json` change is committed by this branch:
 
-- `40952475` — the `aiaaic_seed_facts` fix (§2), code + tests only.
-- This file (`docs/audits/WS0-T3-validation-sample-2026-07-27.md`).
+- `4be139a7` — the `aiaaic_seed_facts` fix (§2), code + tests only.
+- `f2d2f75a` — this file (`docs/audits/WS0-T3-validation-sample-2026-07-27.md`).
+
+(These are the *current*, post-rebase hashes; see the note in §2 for why
+this document no longer cites the pre-rebase originals. A subsequent,
+doc-only commit on this same branch fixes the defects §3.3/§3.4/§4/§5 above
+were BOUNCEd on — no code, tests, or data/ingest files are touched by it.)
 
 `docs/DATA_DICTIONARY.md`'s `content_license`/`description_provenance`/
 `description_source` rows were verified complete against this dry run's
 actual output shape and the marker-shape memo — already fully written in
-the inherited WIP commit `3576be3a` (all three rows, plus a new "Licensing"
+the inherited WIP commit `ab3e7cf4` (all three rows, plus a new "Licensing"
 section); no further edit was needed, so no additional dictionary commit was
 made.
 
