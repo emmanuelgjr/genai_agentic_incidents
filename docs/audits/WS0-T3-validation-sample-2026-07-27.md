@@ -1137,8 +1137,7 @@ copy. That is mechanically false: `git checkout -- .` restores tracked paths
 from the index and never deletes untracked files. The driver was never
 committed and is not gitignored, so that command could not have removed it.
 Its absence is unexplained. The reproduction recipe in §5 should be treated
-as resting on the inlined script body given there, not on a file that ever
-existed in the tree.
+as resting on the inlined script body given there.
 
 **Provenance of this erratum.** All four corrections were verified directly
 against source: `grep` for the two function definitions; a recomputation of
