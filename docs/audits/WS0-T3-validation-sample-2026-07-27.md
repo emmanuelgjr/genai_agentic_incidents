@@ -1089,3 +1089,59 @@ runs or is committed by this document.** `data/incidents.json`,
 `data/incidents.min.json`, and `ingest/aiaaic_sheet_incidents.json` on this
 branch are byte-identical to the branch tip before this dry run. The user
 reviews this sample before any real rebuild is dispatched.
+
+## 7. Erratum (2026-07-28)
+
+Four factual errors were introduced into this document's prose by the
+bounce-#1 remediation commit and were identified at the re-gate. They are
+corrected here by erratum rather than by rewriting the body, so that no new
+prose is introduced into sections a reviewer has already checked. The
+substantive content of §3 and §4 — the raw cells, the current and proposed
+descriptions, the per-entry label values, and every delta count — is
+unaffected by all four and has been independently verified twice.
+
+**E1 — wrong function, wrong file (§3.3, ~line 183).** The ablation is
+attributed to `detect_attack_vector` in `scripts/merge_and_dedupe.py`. No
+such function exists in that file. The merge-time classifier is
+`classify_attack_vector` (`scripts/merge_and_dedupe.py:608`);
+`detect_attack_vector` is a different function, with a different signature,
+in `scripts/ingest_aiaaic_sheet.py:364`. The ablation *result* is unchanged.
+
+**E2 — the gap is 30 characters, not 29 (§3.3 ~line 200; §4 row 4 ~line
+423).** Both places state that the description's headline echo supplies
+"welfare" 29 characters after "biased". The correct figure is **30**:
+in `title + " " + description`, "biased" ends at offset 47 and the next
+"welfare" begins at offset 77, with the intervening text
+`" and opaque AIAAIC report: UK "`. Because the pattern is
+`\bbias(?:ed)?\b.{0,30}(?:…|welfare|…)`, 30 is the maximum the quantifier
+admits — the old `algorithmic-bias` label matched at the exact outer edge of
+the pattern. This **strengthens** the document's finding that the old label
+was a spurious cross-boundary artifact rather than recoverable signal.
+
+**E3 — INC-04359 is not in §4 (§3.4, ~line 250).** The text directs the
+reader to "`INC-04359` in §4". INC-04359 does not appear in §4, or anywhere
+else in this document. §4's inclusion rule — every row has
+`description_source == "aiaaic"` — means §4 *cannot* contain an example of
+the absorbed case, exactly as the same paragraph goes on to explain.
+INC-04359 remains a correct illustration of the absorbed case
+(`source_ids ['AIAAIC-wpp-ceo-deepfake', 'AIAAIC1483']`), but it must be
+looked up in `data/incidents.json`; it is not in this document.
+
+**E4 — `git checkout -- .` cannot have deleted the driver (§5, ~lines
+985-987).** The text explains the absent offline driver script by asserting
+that this section's own `git checkout -- .` step destroyed the working-tree
+copy. That is mechanically false: `git checkout -- .` restores tracked paths
+from the index and never deletes untracked files. The driver was never
+committed and is not gitignored, so that command could not have removed it.
+Its absence is unexplained. The reproduction recipe in §5 should be treated
+as resting on the inlined script body given there, not on a file that ever
+existed in the tree.
+
+**Provenance of this erratum.** All four corrections were verified directly
+against source: `grep` for the two function definitions; a recomputation of
+the character offsets from committed `data/incidents.json`; `grep` for
+INC-04359 across this file; and the documented behaviour of
+`git checkout -- .`. The re-gate's independent adversarial-verification pass
+did not complete (its agents exhausted a session limit), so these four were
+confirmed by the foreman rather than by that pass — they are mechanically
+checkable, and each was checked.
