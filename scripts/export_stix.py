@@ -36,6 +36,59 @@ ATLAS_URL = "https://atlas.mitre.org/techniques/"
 OWASP_LLM_URL = "https://genai.owasp.org/llmrisk/"
 
 
+def _aiaaic_interim_license() -> dict:
+    """Interim `content_license` object for AIAAIC-derived rows, per D14/E14
+    (`docs/specs/WS0-T3-rescoped-2026-07-18.md` S:6.1(ii); PROGRESS.md D14).
+    Mirrors the schema's `content_license` shape key-for-key
+    (`docs/specs/WS0-T3-marker-shape-2026-07-27.md` S:1/S:3) so the project
+    has one marker format across every surface, not a STIX-specific variant.
+    """
+    return {
+        "source": "aiaaic",
+        "license": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "AIAAIC Repository",
+        "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+        "obligations": ["attribution", "share-alike"],
+    }
+
+
+def _is_aiaaic_derived(i: dict) -> bool:
+    """Interim AIAAIC-origin heuristic, used only while `content_license` is
+    not yet populated by the WS0-T3 Phase B rebuild (D14). Union of two
+    signals, measured against the live corpus 2026-07-27: `source_ids`
+    entries starting "aiaaic" (case-insensitive, 1,513 of 13,115) and `tags`
+    containing "aiaaic" (1,495 of 13,115, a strict subset of the source_ids
+    set -- 0 tag-only rows in this corpus). The union equals exactly 1,513,
+    matching the known AIAAIC-origin scale. Interim per D14/E14; retired at
+    WS0-T3 Phase B once `content_license` is populated on every AIAAIC-
+    derived entry and a delta shows this heuristic's output identical to the
+    field-derived output on every affected row.
+    """
+    for sid in i.get("source_ids") or []:
+        if str(sid).lower().startswith("aiaaic"):
+            return True
+    for tag in i.get("tags") or []:
+        if "aiaaic" in str(tag).lower():
+            return True
+    return False
+
+
+def _content_license(i: dict) -> dict | None:
+    """Row-level license-obligation marker for `x_content_license` (D14).
+    Primary path: emit the entry's own `content_license` object verbatim
+    once WS0-T3 Phase B populates it. Interim path (per D14/E14): when the
+    field is absent, fall back to the AIAAIC heuristic above. Returns None
+    when neither applies -- the row carries no known obligation.
+    """
+    cl = i.get("content_license")
+    if cl:
+        return cl
+    if _is_aiaaic_derived(i):
+        return _aiaaic_interim_license()
+    return None
+
+
 def _sid(prefix: str, *parts: str) -> str:
     return f"{prefix}--{uuid.uuid5(NS, prefix + '|' + '|'.join(parts))}"
 
@@ -135,6 +188,12 @@ def build_bundle(incidents: list[dict]) -> dict:
         for opt in ("reversibility_class", "discovery_method"):
             if i.get(opt):
                 sdo[f"x_{opt}"] = i[opt]
+        # Row-level license-obligation marker (D14) -- present only when the
+        # row is license-obligated (field-populated post-rebuild, or the
+        # interim AIAAIC heuristic pre-rebuild); absent otherwise.
+        cl = _content_license(i)
+        if cl:
+            sdo["x_content_license"] = cl
         objects.append(sdo)
         for t in i.get("mitre_atlas") or []:
             rid = _sid("relationship", iid, "uses", t)

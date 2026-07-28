@@ -221,6 +221,30 @@ obligation set should say.
    license-auditor plus a D12(b) revision by the foreman**, not an
    implementation detail. pipeline-engineer should not write the assertion until
    that is settled.
+
+   **Update, 2026-07-27 (D14 discharge, interim exporter path landed).** The
+   user resolved this as D14, option (ii): carry the marker in STIX as
+   `x_content_license`, decoupled from and ahead of the WS0-T3 Phase B
+   rebuild (every Pages deploy re-publishes unattributed AIAAIC prose until
+   Phase B lands). distribution-engineer landed the interim exporter on
+   `e14/stix-interim`: `_content_license()` in `scripts/export_stix.py`
+   reads the entry's own `content_license` field verbatim when present (the
+   post-Phase-B path) and otherwise falls back to `_is_aiaaic_derived()`, an
+   interim heuristic over `source_ids` (prefix `aiaaic`, case-insensitive)
+   unioned with `tags` (substring `aiaaic`). Measured against the live
+   corpus (13,115 entries, 0 with `content_license` populated pre-Phase-B):
+   `source_ids` alone hits 1,513; `tags` alone hits 1,495, a strict subset
+   (0 tag-only rows); the union is exactly 1,513, matching the corpus's
+   known AIAAIC-origin scale. The live rebuilt bundle carries
+   `x_content_license` on exactly 1,513 of 13,115 `x-genai-incident` SDOs
+   (e.g. `INC-04359`, the WPP deepfake case cited in the E14 escalation) and
+   on zero others; the interim object mirrors this memo's §1/§3 shape
+   key-for-key. Exporter stays network-free and byte-deterministic (two-run
+   SHA-256 identical, `data/incidents.stix.json` and its `docs/data/`
+   mirror). Per D14's retirement condition, this heuristic path is dropped
+   at Phase B once `content_license` is populated on every AIAAIC-derived
+   entry and a delta shows the heuristic- and field-derived outputs
+   identical on every affected row — not before.
 6. **Notice-surface prose** (`NOTICE-DATA`, `.reuse/dep5`, README, and the
    `.zenodo.json` check D12(c) routed to implementation) is pipeline-engineer's
    per spec §4 — not touched here.
