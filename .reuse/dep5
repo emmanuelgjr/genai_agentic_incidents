@@ -16,16 +16,18 @@ Comment: This dataset aggregates entries from many upstream sources, each
  remain Apache-2.0: MITRE ATLAS case-study text (Copyright 2021-2026 The
  MITRE Corporation) and garak probe-docstring text (Copyright 2023 Leon
  Derczynski and NVIDIA). AIAAIC-derived entries carry no BY-SA subset in
- this CC-BY-4.0 grant per decision D2 (facts + link only, no verbatim
- AIAAIC prose) -- but AIAAIC's own CC BY-SA 4.0 grant and a parallel
- EU/UK sui generis database-right question remain an OPEN, unresolved
- item, pending AIAAIC's reply (outreach sent 2026-07-27) or a
- qualified-counsel resolution. genai_incidents itself holds no UK/EU
- database right (sole Canada-resident individual maker), so the worst
- case is row-level attribution/share-alike on AIAAIC-derived rows,
- never dataset-wide -- honored per-row via the content_license marker
- on every description_source == "aiaaic" entry. See NOTICE-DATA and
- docs/SOURCE_LICENSES.md section 1.1 for the full framing. AIID-derived
+ this CC-BY-4.0 grant per decision D2 (title/headline + short taxonomy
+ facts + link kept, no verbatim AIAAIC narrative prose) -- but AIAAIC's
+ own CC BY-SA 4.0 grant and a parallel EU/UK sui generis database-right
+ question remain an OPEN, unresolved item, pending AIAAIC's reply
+ (outreach sent 2026-07-27) or a qualified-counsel resolution.
+ genai_incidents itself holds no UK/EU database right (sole
+ Canada-resident individual maker), so the worst case is row-level
+ attribution/share-alike on AIAAIC-derived rows, never dataset-wide --
+ honored per-row via the content_license marker on every
+ description_source == "aiaaic" entry, which also covers the retained
+ headline itself. See NOTICE-DATA and docs/SOURCE_LICENSES.md section
+ 1.1 for the full framing. AIID-derived
  entries (ingested via AIID's official snapshot, SOURCE_LICENSES.md
  section 1.2a) likewise carry no BY-SA subset -- only the AIID-authored
  title and structured facts are kept, never the licensed narrative --

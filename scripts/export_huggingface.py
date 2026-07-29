@@ -133,7 +133,7 @@ row-level marker.
 - **Provenance, scope & limitations:** [`docs/DATASHEET.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATASHEET.md)
 - **Citation:** [`CITATION.cff`](https://github.com/emmanuelgjr/genai_incidents/blob/main/CITATION.cff) · DOI [10.5281/zenodo.20248675](https://doi.org/10.5281/zenodo.20248675) (Zenodo concept DOI, always resolves to the latest release)
 
-**Licence:** data **CC-BY-4.0**, code MIT.
+**Licence:** data **CC-BY-4.0** (see Licensing above for row-level AIAAIC obligations), code MIT.
 """
 
 
