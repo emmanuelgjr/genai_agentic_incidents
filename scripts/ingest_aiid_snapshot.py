@@ -98,8 +98,9 @@ INGEST = ROOT / "ingest"
 DATA = ROOT / "data"
 CACHE = INGEST / "_cache" / "aiid_snapshot"
 
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ingest_utils import robust_fetch  # noqa: E402
+from ingest.common import robust_fetch  # noqa: E402
 from scrape_aiid import (  # noqa: E402  (deliberately reused per Makefile's D1/E1 note)
     TAXONOMY_RULES,
     is_security_relevant,

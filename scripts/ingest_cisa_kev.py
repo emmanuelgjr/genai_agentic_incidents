@@ -23,10 +23,13 @@ Refreshed by the weekly auto-refresh and CVE enrichment workflows.
 from __future__ import annotations
 
 import json
-import urllib.request
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from ingest.common import fetch_once  # noqa: E402
+
 INGEST = ROOT / "ingest"
 OUT_FILE = INGEST / "cisa_kev.json"
 
@@ -39,7 +42,8 @@ KEV_URL = (
 def main() -> None:
     INGEST.mkdir(parents=True, exist_ok=True)
     print(f"[kev] downloading {KEV_URL}", flush=True)
-    raw = json.loads(urllib.request.urlopen(KEV_URL, timeout=60).read().decode("utf-8"))
+    body, _ = fetch_once(KEV_URL, timeout=60)
+    raw = json.loads(body.decode("utf-8"))
 
     vulns = {}
     for v in raw.get("vulnerabilities", []):

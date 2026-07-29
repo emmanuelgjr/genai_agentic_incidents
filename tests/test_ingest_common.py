@@ -1,0 +1,388 @@
+"""Tests for ingest/common.py -- the repo's single network chokepoint
+(WS0-T4 / invariant 5). Covers the original retry/conditional-fetch
+mechanics (carried over from the pre-promotion scripts/ingest_utils.py) plus
+the new conduct behaviour this module adds: identifying User-Agent, robots.txt
+allow/deny (fail-closed), and per-host rate limiting.
+"""
+
+from __future__ import annotations
+
+import urllib.error
+from unittest.mock import patch, MagicMock
+
+import pytest
+
+import ingest.common as u
+
+
+# ----------------------------------------------------------------------------
+# robust_fetch / conditional_fetch retry mechanics (carried over as-is; the
+# autouse fixture in conftest.py stubs robots_allowed() to True so these
+# don't also need to model a robots.txt sub-fetch through the same mock).
+# ----------------------------------------------------------------------------
+def test_robust_fetch_returns_cached_content(tmp_path):
+    cache = tmp_path / "data.bin"
+    cache.write_bytes(b"x" * 2000)
+    result = u.robust_fetch("https://example.com/data", cache, min_cache_bytes=1000)
+    assert result == b"x" * 2000
+
+
+def test_robust_fetch_skips_small_cache(tmp_path):
+    cache = tmp_path / "data.bin"
+    cache.write_bytes(b"tiny")
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_resp = MagicMock()
+        mock_resp.read.return_value = b"fresh data"
+        mock_resp.__enter__ = lambda s: s
+        mock_resp.__exit__ = MagicMock(return_value=False)
+        mock_open.return_value = mock_resp
+        result = u.robust_fetch("https://example.com/d", cache, min_cache_bytes=1000)
+    assert result == b"fresh data"
+    assert cache.read_bytes() == b"fresh data"
+
+
+def test_robust_fetch_retries_on_failure(tmp_path):
+    cache = tmp_path / "data.bin"
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = urllib.error.URLError("connection refused")
+        try:
+            u.robust_fetch("https://example.com/x", cache, max_retries=3)
+            assert False, "Should have raised"
+        except RuntimeError as e:
+            assert "connection refused" in str(e)
+        assert mock_open.call_count == 3
+
+
+def test_robust_fetch_succeeds_on_second_try(tmp_path):
+    cache = tmp_path / "data.bin"
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"ok"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = [urllib.error.URLError("timeout"), mock_resp]
+        result = u.robust_fetch("https://example.com/x", cache, max_retries=3)
+    assert result == b"ok"
+    assert mock_open.call_count == 2
+
+
+def test_conditional_fetch_cold_cache(tmp_path):
+    cache = tmp_path / "data.bin"
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"payload"
+    mock_resp.headers.get.side_effect = lambda h, d=None: {
+        "ETag": '"abc123"', "Last-Modified": "Sun, 25 May 2026 00:00:00 GMT"
+    }.get(h, d)
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_open.return_value = mock_resp
+        content, changed = u.conditional_fetch("https://example.com/d", cache)
+    assert content == b"payload"
+    assert changed is True
+    etag_file = tmp_path / "data.bin.etag"
+    assert etag_file.exists()
+    assert '"abc123"' in etag_file.read_text(encoding="utf-8")
+
+
+def test_conditional_fetch_304_not_modified(tmp_path):
+    cache = tmp_path / "data.bin"
+    cache.write_bytes(b"cached payload")
+    etag_file = tmp_path / "data.bin.etag"
+    etag_file.write_text('etag: "abc123"\n', encoding="utf-8")
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_open.side_effect = urllib.error.HTTPError(
+            "https://example.com/d", 304, "Not Modified", {}, None
+        )
+        content, changed = u.conditional_fetch("https://example.com/d", cache)
+    assert content == b"cached payload"
+    assert changed is False
+
+
+def test_conditional_fetch_200_with_new_etag(tmp_path):
+    cache = tmp_path / "data.bin"
+    cache.write_bytes(b"old")
+    etag_file = tmp_path / "data.bin.etag"
+    etag_file.write_text('etag: "old"\n', encoding="utf-8")
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"new data"
+    mock_resp.headers.get.side_effect = lambda h, d=None: {
+        "ETag": '"new456"'
+    }.get(h, d)
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_open.return_value = mock_resp
+        content, changed = u.conditional_fetch("https://example.com/d", cache)
+    assert content == b"new data"
+    assert changed is True
+    assert '"new456"' in etag_file.read_text(encoding="utf-8")
+
+
+# ----------------------------------------------------------------------------
+# Identifying User-Agent (docs/INGESTION_CONDUCT.md)
+# ----------------------------------------------------------------------------
+def test_user_agent_names_project_and_contact():
+    assert "genai_incidents" in u.USER_AGENT
+    assert "emmanuelgjr@gmail.com" in u.USER_AGENT
+
+
+def test_fetch_once_sends_identifying_user_agent():
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"body"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_open.return_value = mock_resp
+        u.fetch_once("https://example.com/x", min_interval=0)
+    sent_req = mock_open.call_args[0][0]
+    assert sent_req.get_header("User-agent") == u.USER_AGENT
+
+
+def test_fetch_once_strips_caller_supplied_user_agent():
+    """A caller passing its own User-Agent header must NOT reach the wire --
+    conduct identification is not optional per source (this is the exact
+    bypass ingest_cve_nvd_expanded.py had before WS0-T4: a hardcoded
+    'ai-incidents-ingest/1.0' string)."""
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"body"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_open.return_value = mock_resp
+        u.fetch_once(
+            "https://example.com/x",
+            headers={"User-Agent": "some-other-agent/9.0"},
+            min_interval=0,
+        )
+    sent_req = mock_open.call_args[0][0]
+    assert sent_req.get_header("User-agent") == u.USER_AGENT
+
+
+# ----------------------------------------------------------------------------
+# robots.txt: fail-closed. These opt out of the autouse allow-everything
+# stub to exercise the real robots_allowed()/_get_robots_parser() logic.
+# ----------------------------------------------------------------------------
+@pytest.mark.real_robots
+def test_robots_allowed_true_on_permissive_rules():
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"User-agent: *\nAllow: /\n"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
+        assert u.robots_allowed("https://example.com/anything") is True
+
+
+@pytest.mark.real_robots
+def test_robots_allowed_false_on_disallow_rule():
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"User-agent: *\nDisallow: /private/\n"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
+        assert u.robots_allowed("https://example.com/private/data") is False
+        assert u.robots_allowed("https://example.com/public/data") is True
+
+
+@pytest.mark.real_robots
+def test_robots_allowed_true_on_404_no_file_published():
+    with patch("ingest.common.urllib.request.urlopen") as mock_open:
+        mock_open.side_effect = urllib.error.HTTPError(
+            "https://example.com/robots.txt", 404, "Not Found", {}, None
+        )
+        assert u.robots_allowed("https://example.com/anything") is True
+
+
+@pytest.mark.real_robots
+def test_robots_allowed_false_when_unreachable_fail_closed():
+    """A robots.txt that can't be verified at all (not 200, not 404) refuses
+    the fetch -- fail CLOSED, not fail open."""
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = urllib.error.URLError("connection refused")
+        assert u.robots_allowed("https://example.com/anything") is False
+
+
+@pytest.mark.real_robots
+def test_robots_denial_is_not_cached_so_a_later_check_can_recover():
+    """A transient robots.txt failure must not poison the cache -- the very
+    next check should get a fresh attempt, not a stale refusal."""
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"User-agent: *\nAllow: /\n"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = urllib.error.URLError("connection refused")
+        assert u.robots_allowed("https://example.com/x") is False
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
+        assert u.robots_allowed("https://example.com/x") is True
+
+
+@pytest.mark.real_robots
+def test_fetch_once_raises_permission_error_when_robots_unverifiable():
+    """A robots.txt fetch that itself fails (e.g. a 403 on /robots.txt) is
+    the COULD-NOT-VERIFY / fail-closed path, not a genuine Disallow -- see
+    test_fetch_once_raises_permission_error_when_robots_disallows below for
+    that. _get_robots_parser() retries once on a transient-looking failure
+    (module docstring), so this exercises exactly 2 urlopen calls -- both
+    against robots.txt, never the content URL itself."""
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = urllib.error.HTTPError(
+            "https://example.com/robots.txt", 403, "Forbidden", {}, None
+        )
+        with pytest.raises(PermissionError):
+            u.fetch_once("https://example.com/x", min_interval=0)
+    # Both calls were the robots.txt retry pair -- the disallowed content
+    # fetch itself must never have been attempted.
+    assert mock_open.call_count == 2
+    for call in mock_open.call_args_list:
+        assert call[0][0].full_url == "https://example.com/robots.txt"
+
+
+@pytest.mark.real_robots
+def test_fetch_once_raises_permission_error_when_robots_disallows():
+    """The genuine-disallow path, distinct from the unverifiable path above:
+    robots.txt is fetched successfully (one call, no retry needed) and its
+    rules explicitly forbid the URL."""
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"User-agent: *\nDisallow: /x\n"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp) as mock_open:
+        with pytest.raises(PermissionError):
+            u.fetch_once("https://example.com/x", min_interval=0)
+    # Only the robots.txt check ran -- the disallowed content fetch itself
+    # must never have been attempted.
+    assert mock_open.call_count == 1
+    assert mock_open.call_args[0][0].full_url == "https://example.com/robots.txt"
+
+
+# ----------------------------------------------------------------------------
+# ROBOTS_UNVERIFIABLE_ALLOWLIST: the ONLY way the fail-closed refusal above
+# can be waived (finding 2/3, WS0-T4 conduct-half report). No caller-side
+# parameter exists -- see fetch_once()'s signature/docstring -- so these
+# tests exercise the allowlist dict directly rather than a call-site flag.
+# ----------------------------------------------------------------------------
+@pytest.mark.real_robots
+def test_robots_allowed_true_for_allowlisted_unverifiable_host(monkeypatch):
+    """A host on the allowlist whose robots.txt cannot be fetched at all is
+    treated as allowed -- the CISA case this allowlist exists for."""
+    monkeypatch.setitem(
+        u.ROBOTS_UNVERIFIABLE_ALLOWLIST, "example.com",
+        {"reason": "test", "evidence_date": "2026-07-29", "evidence": "test",
+         "still_enforced": "rate limit and UA"},
+    )
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = urllib.error.HTTPError(
+            "https://example.com/robots.txt", 403, "Forbidden", {}, None
+        )
+        assert u.robots_allowed("https://example.com/anything") is True
+
+
+@pytest.mark.real_robots
+def test_robots_allowed_false_for_non_allowlisted_unverifiable_host():
+    """The allowlist is per-host, not a global fail-open switch -- a host NOT
+    on it still refuses when unverifiable, exactly as before this dict
+    existed."""
+    assert "not-on-the-allowlist.example.com" not in u.ROBOTS_UNVERIFIABLE_ALLOWLIST
+    with patch("ingest.common.urllib.request.urlopen") as mock_open, \
+         patch("ingest.common.time.sleep"):
+        mock_open.side_effect = urllib.error.HTTPError(
+            "https://not-on-the-allowlist.example.com/robots.txt", 403, "Forbidden", {}, None
+        )
+        assert u.robots_allowed("https://not-on-the-allowlist.example.com/x") is False
+
+
+@pytest.mark.real_robots
+def test_robots_allowlist_does_not_override_an_explicit_disallow(monkeypatch):
+    """The allowlist waives only the UNVERIFIABLE outcome, never a genuine
+    Disallow rule -- an allowlisted host whose robots.txt actually loads and
+    says no is still refused."""
+    monkeypatch.setitem(
+        u.ROBOTS_UNVERIFIABLE_ALLOWLIST, "example.com",
+        {"reason": "test", "evidence_date": "2026-07-29", "evidence": "test",
+         "still_enforced": "rate limit and UA"},
+    )
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"User-agent: *\nDisallow: /private/\n"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
+        assert u.robots_allowed("https://example.com/private/data") is False
+        assert u.robots_allowed("https://example.com/public/data") is True
+
+
+@pytest.mark.real_robots
+def test_fetch_once_succeeds_for_allowlisted_unverifiable_host(monkeypatch):
+    """End-to-end: fetch_once() itself (not just robots_allowed()) proceeds
+    for an allowlisted host whose robots.txt is unverifiable, and rate
+    limiting / the identifying User-Agent still apply to the content fetch
+    that follows."""
+    monkeypatch.setitem(
+        u.ROBOTS_UNVERIFIABLE_ALLOWLIST, "example.com",
+        {"reason": "test", "evidence_date": "2026-07-29", "evidence": "test",
+         "still_enforced": "rate limit and UA"},
+    )
+    content_resp = MagicMock()
+    content_resp.read.return_value = b"payload"
+    content_resp.__enter__ = lambda s: s
+    content_resp.__exit__ = MagicMock(return_value=False)
+
+    def fake_urlopen(req, timeout=None):
+        if "robots.txt" in req.full_url:
+            raise urllib.error.HTTPError(req.full_url, 403, "Forbidden", {}, None)
+        assert req.get_header("User-agent") == u.USER_AGENT
+        return content_resp
+
+    with patch("ingest.common.urllib.request.urlopen", side_effect=fake_urlopen), \
+         patch("ingest.common.time.sleep"):
+        body, _ = u.fetch_once("https://example.com/x", min_interval=0)
+    assert body == b"payload"
+
+
+def test_fetch_once_has_no_check_robots_bypass_parameter():
+    """The robots check must not be a caller-settable opt-out (finding 3) --
+    the only waiver mechanism is the reviewed, evidenced
+    ROBOTS_UNVERIFIABLE_ALLOWLIST dict above."""
+    import inspect
+    params = inspect.signature(u.fetch_once).parameters
+    assert "check_robots" not in params
+
+
+# ----------------------------------------------------------------------------
+# Per-host rate limiting
+# ----------------------------------------------------------------------------
+def test_rate_limit_waits_for_minimum_interval(monkeypatch):
+    times = iter([100.0, 100.2])
+    monkeypatch.setattr(u.time, "monotonic", lambda: next(times))
+    sleeps: list[float] = []
+    monkeypatch.setattr(u.time, "sleep", lambda s: sleeps.append(s))
+
+    u._rate_limit("example.com", min_interval=1.0)
+    u._rate_limit("example.com", min_interval=1.0)
+
+    assert sleeps == pytest.approx([0.8])
+
+
+def test_rate_limit_does_not_block_a_different_host(monkeypatch):
+    monkeypatch.setattr(u.time, "monotonic", lambda: 100.0)
+    sleeps: list[float] = []
+    monkeypatch.setattr(u.time, "sleep", lambda s: sleeps.append(s))
+
+    u._rate_limit("a.example.com", min_interval=5.0)
+    u._rate_limit("b.example.com", min_interval=5.0)
+
+    assert sleeps == []
+
+
+def test_rate_limit_zero_interval_is_a_no_op(monkeypatch):
+    sleeps: list[float] = []
+    monkeypatch.setattr(u.time, "sleep", lambda s: sleeps.append(s))
+    u._rate_limit("example.com", min_interval=0)
+    u._rate_limit("example.com", min_interval=0)
+    assert sleeps == []

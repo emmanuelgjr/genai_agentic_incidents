@@ -27,11 +27,14 @@ import re
 import subprocess
 import sys
 import time
+import urllib.error
 import urllib.parse
-import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from ingest.common import DEFAULT_MIN_INTERVAL, fetch_once  # noqa: E402
+
 INGEST = ROOT / "ingest"
 CACHE_NVD = INGEST / "_cache" / "nvd"
 CACHE_GHSA = INGEST / "_cache" / "ghsa"
@@ -309,16 +312,22 @@ def slugify(s: str) -> str:
 
 
 # ----------------------------------------------------------------------------
-# HTTP helpers
+# HTTP helpers -- both route through ingest.common.fetch_once (WS0-T4): it
+# supplies the identifying User-Agent (a caller-supplied one is stripped, so
+# the "ai-incidents-ingest/1.0" string this file used to hardcode no longer
+# reaches the wire), the robots.txt check, and the per-host rate limiter.
+# min_interval lets a caller reuse ITS OWN documented cadence (NVD's, below)
+# instead of ingest.common's generic default.
 # ----------------------------------------------------------------------------
-def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base: float = 6.0):
+def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base: float = 6.0,
+             min_interval: float = DEFAULT_MIN_INTERVAL):
     last_err = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(url, headers=headers or {"User-Agent": "ai-incidents-ingest/1.0"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return json.load(r)
-        except Exception as e:  # noqa: BLE001
+            body, _ = fetch_once(url, headers=headers, timeout=60, min_interval=min_interval)
+            return json.loads(body)
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+                ConnectionError, OSError, json.JSONDecodeError) as e:
             last_err = e
             wait = sleep_base * (attempt + 1)
             print(f"  [warn] GET {url[:120]}... failed ({e}); retry in {wait:.0f}s", flush=True)
@@ -326,19 +335,20 @@ def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base
     raise RuntimeError(f"GET {url} failed after {retries} attempts: {last_err}")
 
 
-def http_post_json(url: str, payload: dict, headers: dict | None = None, retries: int = 3):
+def http_post_json(url: str, payload: dict, headers: dict | None = None, retries: int = 3,
+                    min_interval: float = DEFAULT_MIN_INTERVAL):
     data = json.dumps(payload).encode("utf-8")
     last_err = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(
-                url, data=data,
-                headers={"Content-Type": "application/json",
-                         "User-Agent": "ai-incidents-ingest/1.0", **(headers or {})},
+            body, _ = fetch_once(
+                url, method="POST", data=data,
+                headers={"Content-Type": "application/json", **(headers or {})},
+                timeout=60, min_interval=min_interval,
             )
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return json.load(r)
-        except Exception as e:  # noqa: BLE001
+            return json.loads(body)
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+                ConnectionError, OSError, json.JSONDecodeError) as e:
             last_err = e
             time.sleep(4 * (attempt + 1))
     raise RuntimeError(f"POST {url} failed: {last_err}")
@@ -368,7 +378,7 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
             pass
 
     print(f"  [nvd]   {keyword}: querying...", flush=True)
-    headers = {"User-Agent": "ai-incidents-ingest/1.0"}
+    headers = {}
     if NVD_API_KEY:
         headers["apiKey"] = NVD_API_KEY
     all_items: list[dict] = []
@@ -381,7 +391,16 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
         }
         url = f"{NVD_URL}?{urllib.parse.urlencode(params)}"
         try:
-            data = http_get(url, headers=headers)
+            # min_interval=NVD_SLEEP: NVD's own documented rate-limit contract
+            # (docs/SOURCE_LICENSES.md Section 2.2) is more precise than
+            # ingest.common's generic default, so it's passed through
+            # explicitly and enforced by the shared per-host rate limiter.
+            # This replaces the old ad hoc time.sleep(NVD_SLEEP) calls (both
+            # the inter-page one and the inter-keyword one below, both now
+            # removed) with a single enforcement point that covers both
+            # uniformly -- same effective pacing, one fewer place it's
+            # implemented.
+            data = http_get(url, headers=headers, min_interval=NVD_SLEEP)
         except RuntimeError as e:
             print(f"  [warn] giving up on {keyword}: {e}", flush=True)
             break
@@ -391,11 +410,7 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
         start += NVD_PAGE
         if start >= total or not vulns:
             break
-        time.sleep(NVD_SLEEP)
 
-    # Pace between keyword queries too — the limit is a rolling 30s window
-    # across all requests, not per keyword.
-    time.sleep(NVD_SLEEP)
     cache_file.write_text(json.dumps(all_items), encoding="utf-8")
     print(f"  [nvd]   {keyword}: {len(all_items)} CVEs cached", flush=True)
     return all_items
@@ -921,7 +936,11 @@ def fetch_osv() -> list[dict]:
             seen.add(vid)
             v["_pkg"] = {"name": name, "ecosystem": eco}
             all_vulns.append(v)
-        time.sleep(0.3)
+        # No explicit sleep here (removed a hardcoded time.sleep(0.3)):
+        # api.osv.dev has no documented rate-limit contract of its own
+        # (docs/SOURCE_LICENSES.md Section 2.4), so http_post_json's calls
+        # above are already paced by ingest.common's generic
+        # DEFAULT_MIN_INTERVAL -- a single enforcement point instead of two.
 
     cache_file.write_text(json.dumps(all_vulns), encoding="utf-8")
     print(f"  [osv]   {len(all_vulns)} unique vulns", flush=True)

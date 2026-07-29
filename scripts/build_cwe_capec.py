@@ -16,18 +16,21 @@ import csv
 import io
 import json
 import re
-import urllib.request
+import sys
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from ingest.common import fetch_once  # noqa: E402
+
 OUT = ROOT / "mappings" / "cwe_capec.json"
 CAPEC_CSV_ZIP = "https://capec.mitre.org/data/csv/2000.csv.zip"  # "Mechanisms of Attack" view (all)
 
 
 def main() -> None:
     print(f"[capec] fetching {CAPEC_CSV_ZIP}", flush=True)
-    raw = urllib.request.urlopen(CAPEC_CSV_ZIP, timeout=90).read()
+    raw, _ = fetch_once(CAPEC_CSV_ZIP, timeout=90)
     z = zipfile.ZipFile(io.BytesIO(raw))
     txt = z.read(z.namelist()[0]).decode("utf-8", "replace")
     rdr = csv.DictReader(io.StringIO(txt))

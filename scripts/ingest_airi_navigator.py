@@ -19,11 +19,12 @@ import csv
 import io
 import json
 import re
-import urllib.request
+import sys
 import zipfile
 from pathlib import Path
 
-from ingest_utils import conditional_fetch
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from ingest.common import conditional_fetch  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 INGEST = ROOT / "ingest"
