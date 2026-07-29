@@ -359,7 +359,12 @@ deliverable (a). `docs/data/incidents.min.json` and
 `src/genai_incidents/data/incidents.min.json` are verified identical to
 `data/incidents.min.json` (same SHA-256, `13d4fe7f...`) — mirrors in sync.
 
-## 6. Schema tension — NOT fixed here, exact wording for schema-architect
+## 6. Schema tension — NOT fixed by this task; proposed wording below,
+**landed verbatim by schema-architect in `01653d77` on this same branch**
+(confirmed: `git show 01653d77` matches both proposed replacements below
+word-for-word; `validate.py` still 13,119/13,119 with the `if`/`then`
+conditional unchanged and enforced). Left as originally written below —
+this is the historical proposal, not a live TODO.
 
 `schema/incident.schema.json:94` (the `content_license` property description)
 currently reads, in full:
@@ -421,7 +426,8 @@ after this change with that conditional in force):
 > acquires row-level obligations, extend the conditional per source — re-scope
 > it, never drop it."
 
-I did not edit `schema/` — this is schema-architect's file per the brief.
+I did not edit `schema/` myself — that was schema-architect's file per the
+brief, and it has since landed (see the note at the top of this section).
 
 ## 7. What I found and did NOT act on
 
