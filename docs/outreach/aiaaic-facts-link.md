@@ -1,6 +1,18 @@
 # Draft — AIAAIC: database-right & ShareAlike question
 
-**STATUS:** ✅ CLEARED TO SEND (rescoped 2026-07-18; tense-corrected 2026-07-18) —
+**STATUS:** 📤 **SENT 2026-07-27.** This is the record of what went out; do not
+edit the message body below — the sent version is what AIAAIC has, and editing
+it here would make this file misdescribe what they were told.
+**⚠ SUPERSEDED IN PART:** the "What we do with AIAAIC data" paragraph
+(`:24-30`) understates what we retain — it gives a closed list of four
+categorical facts and so excludes the verbatim AIAAIC headline carried as our
+`title` and `affected` carried verbatim from the Developer/Deployer cells; the
+"roughly 1,513" count is also wrong (true citing count 1,517). Logged as
+**E17**. The correction is drafted at `docs/outreach/aiaaic-correction.md` and
+is with the user to send. AIAAIC reply clock: 2026-08-26.
+
+Prior header, kept for the record — cleared to send (rescoped 2026-07-18;
+tense-corrected 2026-07-18) —
 this is now a *question to the rights-holder*, not a claim about what we have
 done. The "what we do with AIAAIC data" paragraph is phrased in the accurate
 present/in-progress tense: the facts-reduction is **restored, not yet built**

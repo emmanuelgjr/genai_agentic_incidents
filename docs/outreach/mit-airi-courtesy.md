@@ -5,6 +5,9 @@ HTTP 404 / 0 bytes as of 2026-07-18; the gated-link point is hedged ("appears")
 and board-established (E6); the transitive-AIID point is a question, not a claim.
 User verifies recipient (Spencer Michaels / airi-navigator.com) and sends; log
 send date on the board (E3 / WS0-T4).
+**Send status:** no send recorded on the board as of 2026-07-29. A
+"CLEARED TO SEND" header with no send record is how the AIAAIC draft's header
+went stale (E17) — log the date here when it goes out.
 **To (UNCONFIRMED):** Spencer Michaels — airi-navigator.com
 **Suggested subject:** AIRI Navigator — public data download appears withdrawn + a licensing question
 
