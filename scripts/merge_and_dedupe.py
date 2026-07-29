@@ -905,6 +905,7 @@ DEPRECATIONS_PATH = DATA / "id_deprecations.json"
 CURATION_OVERRIDES_PATH = DATA / "curation_overrides.json"
 CISA_KEV_PATH = INGEST / "cisa_kev.json"
 CWE_VECTOR_PATH = MAPPINGS / "cwe_attack_vector.json"
+SOURCE_FRESHNESS_PATH = DATA / "source_freshness.json"
 
 
 def load_cwe_vector_map() -> dict[str, str]:
@@ -960,6 +961,29 @@ def _load_curation_overrides() -> dict[str, dict]:
     except (json.JSONDecodeError, OSError):
         return {}
     return raw.get("overrides", {}) if isinstance(raw, dict) else {}
+
+
+def _load_source_freshness_registry() -> dict[str, dict]:
+    """Load the published source-freshness registry (data/source_freshness.json),
+    keyed by source slug -> its record (``status``, ``last_success``,
+    ``row_marker``, ...). Same class of input as ``_load_curation_overrides()``:
+    curated, hand-authored, reviewed, read by the build, written by nothing
+    (D8; see docs/specs/D8-source-freshness-2026-07-29.md).
+
+    Deliberately never reads ``ingest/_state/source_health.json`` instead:
+    on a `main` checkout that counter is stale by design (D5), so deriving
+    freshness from it here would republish a deliberately-stale artifact as
+    current on every build — the exact failure class this registry exists
+    to close. Returns ``{}`` if the registry is absent or malformed, which
+    degrades to "mark nothing" rather than failing the build.
+    """
+    if not SOURCE_FRESHNESS_PATH.exists():
+        return {}
+    try:
+        raw = json.loads(SOURCE_FRESHNESS_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    return raw.get("sources", {}) if isinstance(raw, dict) else {}
 
 
 def _load_prev_incidents() -> list[dict]:
@@ -1543,7 +1567,8 @@ def main():
     #     and kept OUT of the content snapshot, so they never perturb the
     #     `updated`/drift logic. See DATA_DICTIONARY.md for the confidence rule.
     cwe_capec = _load_cwe_capec()
-    n_capec = n_purl = 0
+    freshness_sources = _load_source_freshness_registry()
+    n_capec = n_purl = n_freshness = 0
     for e in deduped:
         e["tier"] = _derive_tier(e)
         e["source_count"] = len(e.get("source_ids") or [])
@@ -1565,7 +1590,35 @@ def main():
         if purl:
             e["purl"] = purl
             n_purl += 1
+        # D8: source-freshness marker, inherited by reference from the
+        # published registry (data/source_freshness.json), never authored
+        # per row. `pop` first, then re-derive from scratch: retained priors
+        # (step 6e) are carried VERBATIM from the previous data/incidents.json
+        # and bypass dedupe, so a retained row can arrive already carrying a
+        # marker from an earlier build. Re-deriving (not `setdefault`) is what
+        # lets a recovered source shed its rows' markers on the next build,
+        # exactly as a newly-stale source picks up markers on ITS next build
+        # with no schema change. Kept OUT of _CONTENT_FIELDS (see that
+        # allowlist above) so this never bumps `updated`/`last_seen` — no
+        # content changed; this describes content that hasn't changed since
+        # the source's last success.
+        e.pop("source_freshness", None)
+        entry_tags = set(e.get("tags") or [])
+        stale = sorted(
+            key for key, src in freshness_sources.items()
+            if src.get("status") == "stale"
+            and src.get("row_marker") is not None
+            and src["row_marker"].get("value") in entry_tags
+        )
+        if stale:
+            e["source_freshness"] = {
+                "status": "stale",
+                "as_of": min(freshness_sources[k]["last_success"] for k in stale),
+                "sources": stale,
+            }
+            n_freshness += 1
     print(f"[linkage] capec_ids on {n_capec} entr(ies); purl on {n_purl} entr(ies)")
+    print(f"[freshness] source_freshness marker on {n_freshness} entr(ies)")
 
     print(f"\n[total]  {len(all_entries)} input -> {len(deduped)} unique")
 
@@ -1692,6 +1745,12 @@ def main():
         # on every unmarked row (schema-architect memo Sec 4 item 3).
         if e.get("content_license"):
             item["content_license"] = e["content_license"]
+        # D8: same conditional-carry treatment for source_freshness. The slim
+        # shape truncates `tags` to 8 (above), so a min.json consumer may not
+        # see the row's `airi-navigator` tag at all — the marker is the only
+        # freshness signal that reliably reaches them (D8 application spec §4).
+        if e.get("source_freshness"):
+            item["source_freshness"] = e["source_freshness"]
         return item
 
     slim = {
