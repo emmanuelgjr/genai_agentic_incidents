@@ -41,12 +41,19 @@ it:
     docs/SOURCE_LICENSES.md.
 
 The AIAAIC Repository is a CC BY-SA 4.0 source (share-alike). Per
-project decision D2, AIAAIC's own editorial prose is never carried in
-this dataset -- AIAAIC-derived entries record only categorical facts
-(system, technology, sector, jurisdiction) plus a source link -- which
-disposes of the *copyright* share-alike question and keeps this
-repository's own LICENSE-DATA grant a single, clean CC BY 4.0 with no
-dataset-wide BY-SA carve-out.
+project decision D2, AIAAIC's own narrative/descriptive cell text is
+never carried in this dataset -- what is kept is the AIAAIC-authored
+title (a short headline, not narrative) plus short taxonomy-tag facts
+(system, technology, sector, jurisdiction, affected) plus a source
+pointer to the specific AIAAIC entry -- which disposes of the
+*copyright* share-alike question (the separate database-right
+question is addressed below; see E13) and keeps this repository's
+own LICENSE-DATA grant a single, clean CC BY 4.0 with no
+dataset-wide BY-SA carve-out. The retained headline is itself
+AIAAIC-authored text, not a bare fact; it is covered, on every entry
+whose description derives from AIAAIC (recorded via
+description_source == "aiaaic"), by the same row-level CC BY-SA 4.0
+attribution/share-alike marker described below.
 
 That does not fully resolve AIAAIC's licensing status. A separate
 EU/UK *sui generis* database-right question over the scale of this
