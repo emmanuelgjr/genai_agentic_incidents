@@ -86,6 +86,17 @@ review, and the Heuristic labels bullet below for known gaps.
 
 ## Distribution & licence
 - **Data:** CC-BY-4.0. **Code:** MIT. DOI [10.5281/zenodo.20248675](https://doi.org/10.5281/zenodo.20248675).
+- **AIAAIC-derived rows carry an additional obligation.** Every row whose
+  `content_license` field names the AIAAIC Repository (CC BY-SA 4.0,
+  share-alike) carries that field as a row-level attribution/share-alike
+  obligation marker — this does not apply to the dataset as a whole. A
+  separate, open question about whether an EU/UK *sui generis* database
+  right also applies to this extraction is pending AIAAIC's reply to
+  outreach (sent 2026-07-27) or a qualified-counsel resolution; the
+  current worst-case exposure is bounded to those same rows, never
+  dataset-wide. Full framing, and the current audited count of
+  AIAAIC-citing rows: `NOTICE-DATA` and
+  [`docs/SOURCE_LICENSES.md`](SOURCE_LICENSES.md) §1.1.
 - Distributed via GitHub, PyPI (`genai-incidents`), Hugging Face Datasets, a
   STIX 2.1 bundle, a static [TAXII-compatible discovery document](https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json),
   and a [MISP feed](https://emmanuelgjr.github.io/genai_incidents/misp/) whose events
