@@ -100,7 +100,7 @@ comparison is skipped rather than failed — that copy is not readable offline,
 and a registry updated from a fresher reading must not be blocked by the in-repo
 one. Passing therefore means *the registry matches the copy it says it read*; it
 does **not** mean the registry is current, because that copy is stale by design.
-Currency is the separate weekly reconciliation described below.
+Currency is the separate weekly reconciliation described below, which is **planned, not yet implemented**.
 
 | Registry field | Notes |
 |---|---|

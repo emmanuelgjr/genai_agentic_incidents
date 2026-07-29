@@ -1,6 +1,6 @@
 # D8 source-freshness marking — application spec
 
-**Status:** shape landed (schema + docs + validator); application pending.
+**Status:** shape and application both landed 2026-07-29 (schema + docs + validator + pipeline; marker applied to 1,380 rows). §6b's weekly registry/counter reconciliation is **specified but NOT built** — see §6b.
 **Owner of this document:** schema-architect (WS3). **Implements:** decision D8,
 marking half only, as unblocked by D20(c).
 **Applying task:** pipeline-engineer (WS4). **Date:** 2026-07-29.
@@ -18,7 +18,7 @@ The retire-or-replace half of D8 stays parked until MIT replies or
 | `data/source_freshness.json` | New. The registry itself, all four tracked sources, AIRI marked `stale`. |
 | `schema/incident.schema.json` | `source_freshness` property added; `source_status` description corrected. Packaged mirror `src/genai_incidents/schema/incident.schema.json` regenerated and in sync. |
 | `docs/DATA_DICTIONARY.md` | `source_freshness` row, corrected `source_status` row, `tags` row note, new **Source freshness** section. |
-| `scripts/validate.py` | Validates the registry against its schema; `check_registry_provenance()` holds it to its own `observed_from` claim; `check_source_freshness()` cross-checks any markers present. Currently reports `0 entr(ies) carry a source_freshness marker` and exits clean. |
+| `scripts/validate.py` | Validates the registry against its schema; `check_registry_provenance()` holds it to its own `observed_from` claim; `check_source_freshness()` cross-checks any markers present. Reports `1380 entr(ies) carry a source_freshness marker` and exits clean (was 0 before the application landed). |
 
 **The registry is not generated and must not become so.** It is a curated input
 in the sense `data/curation_overrides.json` is one — hand-authored in a gated
@@ -31,8 +31,10 @@ needs network, which the build path forbids — so a generator could only read
 `main`'s copy, the one D5 leaves stale by design, and would stamp it into a
 published artifact every build. Instead the machine-derivable half is *checked*
 offline (`check_registry_provenance`, bounded — it proves the registry matches
-the copy it claims to have read, not that it is current) and *reconciled* weekly
-against the authoritative counter (§6b, required).
+the copy it claims to have read, not that it is current) and is *to be
+reconciled* weekly against the authoritative counter (§6b — **specified, not yet
+implemented**; until it lands, an out-of-date registry is caught only when a
+human notices).
 
 `python scripts/validate.py` → `13119/13119 entries valid; 0 with errors.`
 `python -m pytest tests -q` → 226 passed.
