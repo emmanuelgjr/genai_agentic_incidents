@@ -112,3 +112,73 @@ def test_integrity_scope_gate_flags_out_of_scope_malware():
                 "affected": "npm/@langchain/core",
                 "references": [{"url": "https://x.com/a"}]})
     assert not any("out-of-scope" in p for p in v.check_integrity(ok, []))
+
+
+# --- D8: source-freshness completeness gate ----------------------------
+# check_source_freshness() (schema-architect) checks markers PRESENT are
+# consistent with the registry; check_freshness_completeness() (this task)
+# checks markers that SHOULD be present ARE — the gate that makes the
+# marking non-optional once it lands. See the D8 application spec §6a.
+
+_STALE_REGISTRY = {
+    "sources": {
+        "airi_navigator": {
+            "status": "stale",
+            "last_success": "2026-05-31",
+            "row_marker": {"kind": "tag", "value": "airi-navigator"},
+        },
+        "cisa_kev": {
+            "status": "stale",
+            "last_success": "2026-05-01",
+            "row_marker": None,
+            "row_marker_note": "enrichment-only, deliberately non-propagating",
+        },
+        "oecd_aim": {
+            "status": "ok",
+            "last_success": "2026-07-12",
+            "row_marker": {"kind": "tag", "value": "oecd-aim"},
+        },
+    }
+}
+
+
+def test_freshness_completeness_flags_unmarked_tagged_row():
+    data = _data({"id": "INC-1", "tags": ["airi-navigator"]})
+    problems = v.check_freshness_completeness(data, _STALE_REGISTRY)
+    assert any("INC-1" in p and "airi_navigator" in p for p in problems)
+
+
+def test_freshness_completeness_passes_when_marker_present():
+    data = _data({
+        "id": "INC-1", "tags": ["airi-navigator"],
+        "source_freshness": {"status": "stale", "as_of": "2026-05-31",
+                              "sources": ["airi_navigator"]},
+    })
+    assert v.check_freshness_completeness(data, _STALE_REGISTRY) == []
+
+
+def test_freshness_completeness_ignores_ok_status_source():
+    # oecd_aim is `ok` in the registry — a row carrying its tag needs no
+    # marker even though the source has a non-null row_marker.
+    data = _data({"id": "INC-1", "tags": ["oecd-aim"]})
+    assert v.check_freshness_completeness(data, _STALE_REGISTRY) == []
+
+
+def test_freshness_completeness_ignores_null_row_marker_source():
+    # cisa_kev is stale but row_marker is null (enrichment-only) — no row is
+    # ever required to carry a marker naming it, because nothing selects
+    # "the rows it touched" the way a tag does.
+    data = _data({"id": "INC-1", "tags": ["some-other-tag"]})
+    assert v.check_freshness_completeness(data, _STALE_REGISTRY) == []
+
+
+def test_freshness_completeness_partial_marker_still_flagged():
+    # Entry carries BOTH a stale-tag and an ok-tag but its marker (correctly)
+    # lists only the stale source — completeness must still pass here, since
+    # oecd_aim's ok status doesn't require listing.
+    data = _data({
+        "id": "INC-1", "tags": ["airi-navigator", "oecd-aim"],
+        "source_freshness": {"status": "stale", "as_of": "2026-05-31",
+                              "sources": ["airi_navigator"]},
+    })
+    assert v.check_freshness_completeness(data, _STALE_REGISTRY) == []

@@ -419,6 +419,7 @@ def _setup_tmp_repo(tmp_path, monkeypatch):
     monkeypatch.setattr(m, "INGEST", ingest)
     monkeypatch.setattr(m, "DEPRECATIONS_PATH", data / "id_deprecations.json")
     monkeypatch.setattr(m, "CURATION_OVERRIDES_PATH", data / "curation_overrides.json")
+    monkeypatch.setattr(m, "SOURCE_FRESHNESS_PATH", data / "source_freshness.json")
     return data, ingest
 
 
@@ -1105,6 +1106,166 @@ def test_min_json_carries_content_license_only_when_present(tmp_path, monkeypatc
 
     unmarked = by_title["A non-AIAAIC incident"]
     assert "content_license" not in unmarked  # never emitted as null
+
+
+# ---------------------------------------------------------------------------
+# D8 -- source_freshness marker, derived by reference from
+# data/source_freshness.json onto rows carrying a stale source's row_marker
+# tag (docs/specs/D8-source-freshness-2026-07-29.md).
+# ---------------------------------------------------------------------------
+
+def _write_freshness_registry(data_dir, sources):
+    (data_dir / "source_freshness.json").write_text(
+        _json.dumps({"sources": sources}), encoding="utf-8"
+    )
+
+
+_STALE_AIRI_REGISTRY = {
+    "airi_navigator": {
+        "status": "stale",
+        "last_success": "2026-05-31",
+        "row_marker": {"kind": "tag", "value": "airi-navigator"},
+    },
+}
+
+
+def test_source_freshness_marks_only_tagged_rows(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _write_freshness_registry(data, _STALE_AIRI_REGISTRY)
+    airi_row = _oecd_entry("AIRI-1", "AIRI-derived incident")
+    airi_row["tags"] = ["airi-navigator"]
+    other_row = _oecd_entry("OECD-1", "Non-AIRI incident")  # tags: ["oecd-aim"]
+    (ingest / "src.json").write_text(_json.dumps([airi_row, other_row]), encoding="utf-8")
+    m.main()
+
+    out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    by_title = {e["title"]: e for e in out["incidents"]}
+    marked = by_title["AIRI-derived incident"]
+    assert marked["source_freshness"] == {
+        "status": "stale", "as_of": "2026-05-31", "sources": ["airi_navigator"],
+    }
+    assert "source_freshness" not in by_title["Non-AIRI incident"]
+
+
+def test_source_freshness_stale_source_with_null_row_marker_never_propagates(tmp_path, monkeypatch):
+    # The CISA KEV shape: a stale, enrichment-only source with row_marker:
+    # null must never mark a row, however the row is tagged.
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _write_freshness_registry(data, {
+        "cisa_kev": {"status": "stale", "last_success": "2026-05-01", "row_marker": None},
+    })
+    row = _oecd_entry("OECD-2", "Row untouched by any propagating source")
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+    out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert "source_freshness" not in out["incidents"][0]
+
+
+def test_source_freshness_only_earliest_of_multiple_stale_sources(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _write_freshness_registry(data, {
+        "airi_navigator": {"status": "stale", "last_success": "2026-05-31",
+                            "row_marker": {"kind": "tag", "value": "airi-navigator"}},
+        "aiaaic_sheet": {"status": "stale", "last_success": "2026-04-15",
+                          "row_marker": {"kind": "tag", "value": "aiaaic-sheet"}},
+    })
+    row = _oecd_entry("MULTI-1", "Row touched by two stale sources")
+    row["tags"] = ["airi-navigator", "aiaaic-sheet"]
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+    out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    marker = out["incidents"][0]["source_freshness"]
+    assert marker["as_of"] == "2026-04-15"  # earliest of the two last_success dates
+    assert marker["sources"] == ["aiaaic_sheet", "airi_navigator"]  # sorted
+
+
+def test_source_freshness_recovers_when_source_no_longer_stale(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _write_freshness_registry(data, _STALE_AIRI_REGISTRY)
+    row = _oecd_entry("AIRI-2", "AIRI incident that later recovers")
+    row["tags"] = ["airi-navigator"]
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+    first = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert first["incidents"][0].get("source_freshness")
+
+    # Source recovers: registry flips to `ok`. Rebuild with the identical row.
+    _write_freshness_registry(data, {
+        "airi_navigator": {"status": "ok", "last_success": "2026-07-20",
+                            "row_marker": {"kind": "tag", "value": "airi-navigator"}},
+    })
+    m.main()
+    second = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert "source_freshness" not in second["incidents"][0]
+
+
+def test_source_freshness_dropped_on_retained_row_when_source_recovers(tmp_path, monkeypatch):
+    # The carry-forward hazard source_status already has on retained rows
+    # (D8 spec §3): a retained prior is carried VERBATIM from the previous
+    # data/incidents.json and bypasses dedupe, so it can arrive at step 6g
+    # already holding a marker from an earlier build. Re-deriving (pop, not
+    # setdefault) must still clear it once the source recovers, even though
+    # this row no longer appears in any fresh ingest input.
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _write_freshness_registry(data, _STALE_AIRI_REGISTRY)
+    row = _oecd_entry("AIRI-3", "AIRI incident later retained")
+    row["tags"] = ["airi-navigator"]
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+    first = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert first["incidents"][0].get("source_freshness")
+
+    # Build 2: the row disappears from every ingest input (retained) AND the
+    # registry recovers in the same build.
+    (ingest / "src.json").write_text(_json.dumps([]), encoding="utf-8")
+    _write_freshness_registry(data, {
+        "airi_navigator": {"status": "ok", "last_success": "2026-07-20",
+                            "row_marker": {"kind": "tag", "value": "airi-navigator"}},
+    })
+    m.main()
+    second = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    retained = second["incidents"][0]
+    assert retained["source_status"] == "retained"
+    assert "source_freshness" not in retained
+
+
+def test_source_freshness_missing_registry_marks_nothing(tmp_path, monkeypatch):
+    # No data/source_freshness.json at all -- must degrade to "mark nothing",
+    # never crash the build.
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    row = _oecd_entry("OECD-3", "Incident with no registry present")
+    row["tags"] = ["airi-navigator"]  # would match if a registry existed
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+    out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    assert "source_freshness" not in out["incidents"][0]
+
+
+def test_source_freshness_excluded_from_content_fields():
+    # Must stay out of the content snapshot: a source going stale/recovering
+    # describes content that hasn't changed, so it must never bump `updated`
+    # (mirrors the content_license precedent — D8 spec §3).
+    assert "source_freshness" not in m._CONTENT_FIELDS
+
+
+def test_min_json_carries_source_freshness_only_when_present(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _write_freshness_registry(data, _STALE_AIRI_REGISTRY)
+    airi_row = _oecd_entry("AIRI-4", "AIRI incident for min.json carry")
+    airi_row["tags"] = ["airi-navigator"]
+    other_row = _oecd_entry("OECD-4", "Non-AIRI incident for min.json carry")
+    (ingest / "src.json").write_text(_json.dumps([airi_row, other_row]), encoding="utf-8")
+    m.main()
+
+    slim = _json.loads((data / "incidents.min.json").read_text(encoding="utf-8"))
+    by_title = {e["title"]: e for e in slim["incidents"]}
+
+    marked = by_title["AIRI incident for min.json carry"]
+    assert marked["source_freshness"] == {
+        "status": "stale", "as_of": "2026-05-31", "sources": ["airi_navigator"],
+    }
+    unmarked = by_title["Non-AIRI incident for min.json carry"]
+    assert "source_freshness" not in unmarked  # never emitted as null
 
 
 def test_aiaaic_ethical_tags_never_reaches_published_output(tmp_path, monkeypatch):

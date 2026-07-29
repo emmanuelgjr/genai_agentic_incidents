@@ -130,10 +130,16 @@ counter (high-churn, unreviewed by design, per decision D5).
 off `main`. `data/source_freshness.json` is the reviewed publication. **The
 build reads the registry and must never read the counter**: a build reading a
 `main` checkout's counter would republish a deliberately-stale file as current,
-which is a fresh instance of the very failure this registry closes. The counter
-is what keeps the registry honest — the weekly refresh reconciles the two while
-the authoritative copy is in the tree and fails loudly on divergence — but it is
-never the thing that ships.
+which is a fresh instance of the very failure this registry closes. **The
+counter is meant to keep the registry honest via a weekly reconciliation check
+— comparing source keys, `status`, and `last_success` at the one point in
+`auto-refresh.yml` where the authoritative counter is in the tree, and failing
+loudly on divergence — but that check is not implemented yet** (D8 application
+spec §6b, tracked as a follow-up; `check_registry_provenance()`, run at build
+time, is the weaker offline-only check that exists today — see below). Until
+the reconciliation check lands, an out-of-date registry is caught only when a
+human notices, not automatically. The counter itself is never the thing that
+ships.
 
 ## Access
 - **Python:** `pip install genai-incidents` → `load_incidents()`, `query(...)`, `by_id()`, `by_cve()`, `resolve_id()`.

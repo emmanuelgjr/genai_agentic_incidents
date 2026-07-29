@@ -199,11 +199,12 @@ def check_source_freshness(data: dict, registry: dict) -> list[str]:
        sources — the conservative choice, and the only deterministic one.
     7. `sources` must be sorted, so the field is byte-stable across builds.
 
-    NOT checked here, and deliberately: COMPLETENESS — that every entry
-    carrying a stale source's `row_marker` tag actually has the marker. That
-    gate belongs with the pipeline change that applies the marking; adding it
-    before the data carries the markers would fail the build on the very
-    state this task exists to describe. See the D8 application spec.
+    COMPLETENESS — that every entry carrying a stale source's `row_marker`
+    tag actually has the marker — is checked separately, by
+    :func:`check_freshness_completeness`, landed in the same PR as the
+    marking data (D8 application spec §6a). It was deliberately absent
+    before that PR: adding it before the data carried the markers would
+    have failed the build on the very state this task exists to fix.
     """
     problems: list[str] = []
     sources = registry.get("sources") or {}
@@ -260,6 +261,42 @@ def check_source_freshness(data: dict, registry: dict) -> list[str]:
     return problems
 
 
+def check_freshness_completeness(data: dict, registry: dict) -> list[str]:
+    """Completeness gate (D8 application, landed with the marking data —
+    see the application spec's §6a).
+
+    :func:`check_source_freshness` only checks that markers PRESENT are
+    consistent with the registry. It does not check that markers that
+    SHOULD be present ARE — that gate is this function, and it is what
+    makes the marking non-optional from here on: for every registry source
+    that is `stale` and propagates to rows (`row_marker` is not null),
+    every entry carrying that source's `row_marker` tag must list that
+    source in its `source_freshness.sources`. A future build that silently
+    stopped deriving the marker would fail this loudly, instead of quietly
+    reverting to the pre-D8 state where 1,380 AIRI-derived rows read as
+    current with nothing in the data being individually false.
+    """
+    problems: list[str] = []
+    sources = registry.get("sources") or {}
+    for key, src in sources.items():
+        if src.get("status") != "stale":
+            continue
+        row_marker = src.get("row_marker")
+        if row_marker is None:
+            continue
+        tag = row_marker.get("value")
+        for e in data["incidents"]:
+            if tag not in (e.get("tags") or []):
+                continue
+            listed = (e.get("source_freshness") or {}).get("sources") or []
+            if key not in listed:
+                problems.append(
+                    f"{e['id']}: carries tag {tag!r} of stale source {key!r} but its "
+                    f"source_freshness marker does not list it (marker: {e.get('source_freshness')!r})"
+                )
+    return problems
+
+
 def main():
     schema = json.loads((ROOT / "schema" / "incident.schema.json").read_text(encoding="utf-8"))
     data = json.loads((ROOT / "data" / "incidents.json").read_text(encoding="utf-8"))
@@ -305,6 +342,7 @@ def main():
                 registry, ROOT / "ingest" / "_state" / "source_health.json"
             ))
             problems.extend(check_source_freshness(data, registry))
+            problems.extend(check_freshness_completeness(data, registry))
             marked = sum(1 for e in data["incidents"] if e.get("source_freshness"))
             stale = sorted(
                 k for k, v in (registry.get("sources") or {}).items()
