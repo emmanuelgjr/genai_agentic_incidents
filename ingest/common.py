@@ -73,20 +73,27 @@ from urllib.parse import urlparse
 # docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md). If you bump
 # pyproject.toml's version, bump this string too.
 #
-# `Mozilla/5.0` prefix: inherited from the pre-WS0-T4 OECD-only UA rather
-# than invented here. Kept deliberately -- a judgement call, not an
-# oversight: robotparser.can_fetch() substring-matches the agent string
-# against each rule's own `User-agent:` token, and real-world robots.txt
-# files target either `*` or a specific named bot (Googlebot, Bingbot, ...),
-# essentially never the literal substring "mozilla" -- so a host rule
-# incidentally catching us via that prefix is a low-probability, low-severity
-# risk (it would also catch nearly every browser and most bots), and dropping
-# the prefix buys no meaningful conduct improvement while risking WAF-level
-# rejections some hosts apply to non-browser-shaped UA strings regardless of
-# robots.txt (unrelated to this project: see the CISA case below, where even
-# a bare non-Mozilla token was blocked identically to every other UA tried).
+# Project-token-LED, not `Mozilla/5.0`-prefixed (WS0-T4 bounce #1, D3 --
+# changed from an earlier `Mozilla/5.0 (genai_incidents/2.8.0; ...)` form).
+# `urllib.robotparser.Entry.applies_to()` reduces a UA string to
+# `useragent.split("/")[0].lower()` before comparing it against a rule's own
+# `User-agent:` token -- so a `Mozilla/5.0`-led string reduces to the single
+# token "mozilla", identical to every browser and most bots, meaning an
+# operator who reads this UA and writes `User-agent: genai_incidents` would
+# have been silently ignored: an identity that cannot be addressed by the
+# host reading it is not the "identifying User-Agent" the conduct policy
+# promises. Leading with the project token instead makes
+# `useragent.split("/")[0].lower()` resolve to "genai_incidents", addressable
+# by name, and removes the incidental `mozilla` over-match risk in the same
+# move (verified: docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md
+# §13 -- a `robotparser` check confirms both directions, and a live probe
+# across all 18 real ingest-target URLs found ZERO difference in robots
+# verdict or fetch outcome between the two UA shapes, including on CISA,
+# the one host with any evidence of UA-sensitive behavior at all -- so the
+# earlier WAF-rejection concern that justified keeping `Mozilla/5.0` had no
+# supporting measurement and does not hold up against one).
 USER_AGENT = (
-    "Mozilla/5.0 (genai_incidents/2.8.0; +https://github.com/emmanuelgjr; "
+    "genai_incidents/2.8.0 (+https://github.com/emmanuelgjr; "
     "contact: emmanuelgjr@gmail.com)"
 )
 
@@ -197,7 +204,9 @@ def _rate_limit(host: str, min_interval: float) -> None:
         time.sleep(wait)
 
 
-def _get_robots_parser(url: str) -> urllib.robotparser.RobotFileParser | None:
+def _get_robots_parser(
+    url: str, min_interval: float = DEFAULT_MIN_INTERVAL
+) -> urllib.robotparser.RobotFileParser | None:
     """Return a cached RobotFileParser for *url*'s host, fetching and parsing
     it if not already cached. Returns None if the fetch could not be
     completed after a single transient retry (see module note above on why
@@ -208,6 +217,18 @@ def _get_robots_parser(url: str) -> urllib.robotparser.RobotFileParser | None:
     one spurious 403 from a host (nvd.nist.gov) whose robots.txt was
     confirmed a clean 404 on the very next try seconds later -- a real,
     observed transient-failure mode, not a hypothetical one.
+
+    *min_interval* paces the robots.txt fetch itself through the SAME
+    per-host rate limiter every content fetch uses (WS0-T4 bounce #1, R3):
+    this used to call ``urllib.request.urlopen()`` directly, unpaced, so a
+    host whose robots.txt was never cached (e.g. one on
+    ``ROBOTS_UNVERIFIABLE_ALLOWLIST``, which -- by definition -- never gets a
+    definitive answer to cache) would take up to 2 unpaced requests plus a
+    1s retry sleep on EVERY call, contradicting a doc claim that the limiter
+    applies "for every host, unconditionally." Passing the caller's own
+    ``min_interval`` through (``robots_allowed()`` forwards whatever
+    ``fetch_once()`` was given) keeps the robots probe and the content fetch
+    under one consistent pacing budget for that host, rather than two.
     """
     parsed = urlparse(url)
     host = parsed.netloc
@@ -223,6 +244,7 @@ def _get_robots_parser(url: str) -> urllib.robotparser.RobotFileParser | None:
     last_err: Exception | None = None
     for attempt in range(2):
         try:
+            _rate_limit(host, min_interval)
             req = urllib.request.Request(robots_url, headers={"User-Agent": USER_AGENT})
             with urllib.request.urlopen(req, timeout=15) as resp:
                 body = resp.read().decode("utf-8", errors="replace")
@@ -254,7 +276,7 @@ def _get_robots_parser(url: str) -> urllib.robotparser.RobotFileParser | None:
     return None  # deliberately NOT cached -- see module note above
 
 
-def robots_allowed(url: str) -> bool:
+def robots_allowed(url: str, min_interval: float = DEFAULT_MIN_INTERVAL) -> bool:
     """True iff *url* may be fetched by USER_AGENT per its host's robots.txt.
 
     FAILS CLOSED: if robots.txt itself could not be verified (anything other
@@ -279,8 +301,13 @@ def robots_allowed(url: str) -> bool:
     and what stays enforced regardless. A host that DOES serve a robots.txt
     with an explicit Disallow rule is refused exactly as normal, allowlisted
     or not; the allowlist has no effect on that branch below.
+
+    *min_interval* is forwarded to ``_get_robots_parser()`` to pace the
+    robots.txt fetch itself under the same per-host budget as the content
+    fetch that follows (WS0-T4 bounce #1, R3) -- see that function's
+    docstring.
     """
-    rp = _get_robots_parser(url)
+    rp = _get_robots_parser(url, min_interval)
     if rp is None:
         return urlparse(url).netloc in ROBOTS_UNVERIFIABLE_ALLOWLIST
     return rp.can_fetch(USER_AGENT, url)
@@ -325,7 +352,7 @@ def fetch_once(
     ``urlopen()`` response would provide (a plain ``dict(resp.headers)``
     would silently lose that case-insensitivity).
     """
-    if not robots_allowed(url):
+    if not robots_allowed(url, min_interval):
         raise PermissionError(
             f"refusing to fetch {url}: robots.txt disallows it for "
             f"User-Agent {USER_AGENT!r}, or robots.txt itself could not be "
@@ -360,12 +387,18 @@ def robust_fetch(
     """Fetch URL content with retry logic and disk caching.
 
     Returns cached content if the cache file exists and is at least
-    *min_cache_bytes* large. Otherwise fetches from *url* with up to
+    *min_cache_bytes* large -- this warm-cache path reads local disk only
+    and does NOT call ``robots_allowed()`` at all (there is no network
+    request to check permission for; the content already sits on disk from
+    a prior conduct-checked fetch). Otherwise fetches from *url* with up to
     *max_retries* attempts using exponential backoff (2 s, 4 s, 8 s, ...),
     routed through ``fetch_once()`` (robots/rate-limit/UA enforced on every
     attempt). A robots.txt refusal (``PermissionError``) is NOT retried --
-    it propagates immediately, since retrying a confirmed policy block
-    wastes backoff time for no chance of success.
+    it propagates immediately and unwrapped, since retrying a confirmed
+    policy block wastes backoff time for no chance of success, and since
+    ``PermissionError`` is (surprisingly) an ``OSError`` subclass, this
+    requires its own ``except`` clause ahead of the broad one below, not
+    just careful wording here -- see that clause's comment.
     """
     if cache_path.exists() and cache_path.stat().st_size >= min_cache_bytes:
         return cache_path.read_bytes()
@@ -377,6 +410,18 @@ def robust_fetch(
             cache_path.parent.mkdir(parents=True, exist_ok=True)
             cache_path.write_bytes(data)
             return data
+        except PermissionError:
+            # A robots.txt refusal is a confirmed policy block, not a
+            # transient failure. PermissionError is (surprisingly) an
+            # OSError subclass, so WITHOUT this clause ahead of the broad
+            # OSError catch below, it would be retried with backoff and
+            # then re-raised as a generic RuntimeError -- burning up to
+            # 2+4=6s against a host that already told us no, AND masking
+            # "refusing to fetch: robots.txt disallows it" behind
+            # "Failed to fetch after N attempts", making a deliberate
+            # policy block indistinguishable from a flaky host. Propagate
+            # immediately and unwrapped instead (WS0-T4 bounce #1, D1).
+            raise
         except (urllib.error.URLError, urllib.error.HTTPError,
                 TimeoutError, ConnectionError, OSError) as e:
             last_err = e
@@ -454,6 +499,14 @@ def conditional_fetch(
             cache_path.write_bytes(data)
             _write_etag_sidecar(etag_path, etag, last_mod)
             return data, True
+        except PermissionError:
+            # See the identical clause in robust_fetch() above for why this
+            # must precede the OSError-inclusive catch below (WS0-T4 bounce
+            # #1, D1): PermissionError IS an OSError, so without this it
+            # would be retried with backoff and re-raised as an
+            # indistinguishable generic RuntimeError instead of propagating
+            # as the specific policy-block signal it is.
+            raise
         except urllib.error.HTTPError as e:
             if e.code == 304:
                 return cache_path.read_bytes(), False

@@ -326,6 +326,19 @@ def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base
         try:
             body, _ = fetch_once(url, headers=headers, timeout=60, min_interval=min_interval)
             return json.loads(body)
+        except PermissionError:
+            # A robots.txt refusal (WS0-T4 bounce #1, D1). PermissionError
+            # is an OSError subclass, so without this clause ahead of the
+            # broad except below it would be retried with backoff and
+            # re-raised as a generic RuntimeError -- masking a deliberate
+            # policy block as ordinary flakiness, and (for the caller in
+            # fetch_nvd_keyword()) letting the retry loop exit "normally"
+            # into cache_file.write_text(all_items) with an empty result,
+            # permanently caching a false "0 CVEs for this keyword" that a
+            # later run would trust. Propagate immediately and unwrapped
+            # instead, so it is NOT caught by fetch_nvd_keyword()'s
+            # `except RuntimeError` and the cache write is skipped entirely.
+            raise
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
                 ConnectionError, OSError, json.JSONDecodeError) as e:
             last_err = e
@@ -347,6 +360,9 @@ def http_post_json(url: str, payload: dict, headers: dict | None = None, retries
                 timeout=60, min_interval=min_interval,
             )
             return json.loads(body)
+        except PermissionError:
+            # See http_get()'s identical clause above (WS0-T4 bounce #1, D1).
+            raise
         except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
                 ConnectionError, OSError, json.JSONDecodeError) as e:
             last_err = e
@@ -1051,6 +1067,20 @@ def main():
     for kw in NVD_KEYWORDS:
         try:
             items = fetch_nvd_keyword(kw)
+        except PermissionError as e:
+            # A robots.txt refusal against services.nvd.nist.gov applies to
+            # every remaining keyword too -- they all hit the same host.
+            # Unlike a per-keyword network hiccup, silently `continue`-ing
+            # here would just repeat the identical refusal N more times and
+            # let this phase finish "successfully" with 0 results, burying
+            # the real cause in N near-identical print lines (WS0-T4 bounce
+            # #1, R4: disclosed in docs/INGESTION_CONDUCT.md -- this script
+            # does NOT exit non-zero for this case, so it is loud in the
+            # console but not in `cve-enrich.yml`'s step outcome). Abort the
+            # whole NVD phase with one clear message instead; GHSA/OSV
+            # (different hosts, unaffected) still run below.
+            print(f"  [error] NVD phase aborted -- {e}", flush=True)
+            break
         except Exception as e:  # noqa: BLE001
             print(f"  [error] {kw}: {e}", flush=True)
             continue

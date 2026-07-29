@@ -38,6 +38,9 @@ def _ingest_common_test_safety(request, monkeypatch):
 
     common._reset_state_for_tests()
     if not request.node.get_closest_marker("real_robots"):
-        monkeypatch.setattr(common, "robots_allowed", lambda url: True)
+        monkeypatch.setattr(
+            common, "robots_allowed",
+            lambda url, min_interval=common.DEFAULT_MIN_INTERVAL: True,
+        )
     yield
     common._reset_state_for_tests()

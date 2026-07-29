@@ -208,7 +208,17 @@ def test_robots_allowed_false_when_unreachable_fail_closed():
 @pytest.mark.real_robots
 def test_robots_denial_is_not_cached_so_a_later_check_can_recover():
     """A transient robots.txt failure must not poison the cache -- the very
-    next check should get a fresh attempt, not a stale refusal."""
+    next check should get a fresh attempt, not a stale refusal.
+
+    Both calls target the same host and pass min_interval=0 (WS0-T4 bounce
+    #1, R3 follow-up): now that the robots.txt fetch itself is paced through
+    the same per-host rate limiter as content fetches, two real
+    robots_allowed() calls this close together for the SAME host would
+    otherwise burn a real ~1s DEFAULT_MIN_INTERVAL sleep in the second call
+    -- this test is about cache-poisoning, not pacing, so it opts out of
+    pacing explicitly rather than re-introduce the accidental-real-sleep
+    problem this task's D1 pass already removed elsewhere.
+    """
     mock_resp = MagicMock()
     mock_resp.read.return_value = b"User-agent: *\nAllow: /\n"
     mock_resp.__enter__ = lambda s: s
@@ -216,9 +226,9 @@ def test_robots_denial_is_not_cached_so_a_later_check_can_recover():
     with patch("ingest.common.urllib.request.urlopen") as mock_open, \
          patch("ingest.common.time.sleep"):
         mock_open.side_effect = urllib.error.URLError("connection refused")
-        assert u.robots_allowed("https://example.com/x") is False
+        assert u.robots_allowed("https://example.com/x", min_interval=0) is False
     with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
-        assert u.robots_allowed("https://example.com/x") is True
+        assert u.robots_allowed("https://example.com/x", min_interval=0) is True
 
 
 @pytest.mark.real_robots
@@ -317,6 +327,40 @@ def test_robots_allowlist_does_not_override_an_explicit_disallow(monkeypatch):
         assert u.robots_allowed("https://example.com/public/data") is True
 
 
+def test_robots_unverifiable_allowlist_is_pinned_and_fully_evidenced():
+    """WS0-T4 bounce #1, R1: ROBOTS_UNVERIFIABLE_ALLOWLIST waives a real
+    conduct safeguard (fail-closed robots checking) for a named host, but
+    nothing at runtime reads its 'reason'/'evidence_date'/'evidence'/
+    'still_enforced' fields -- robots_allowed() only checks dict
+    MEMBERSHIP. A one-line edit
+    (``ROBOTS_UNVERIFIABLE_ALLOWLIST["evil.example.com"] = {}``) waives
+    fail-closed for a new host with zero evidence and passes the rest of
+    this suite -- the exact anti-pattern (an opt-out reachable by a one-line
+    edit) the check_robots parameter was removed for. This test is the
+    enforcement those fields don't otherwise get: it pins the exact host set
+    (mirroring test_literal_accept_criterion_grep_is_documented_not_silently_clean's
+    pinned-set pattern in test_network_chokepoint.py -- a new entry requires
+    a deliberate update here, not a silent pass) and requires every entry to
+    carry all four fields as non-empty strings."""
+    assert set(u.ROBOTS_UNVERIFIABLE_ALLOWLIST.keys()) == {"www.cisa.gov"}, (
+        "ROBOTS_UNVERIFIABLE_ALLOWLIST's host set changed. This test doesn't "
+        "block a deliberate, evidenced addition -- but nothing else in the "
+        "codebase checks that a new entry's evidence meets the same bar as "
+        "www.cisa.gov's (dated, reproducible, multi-UA verification; see "
+        "docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md), so "
+        "update this assertion only after confirming that by hand."
+    )
+    required_fields = {"reason", "evidence_date", "evidence", "still_enforced"}
+    for host, entry in u.ROBOTS_UNVERIFIABLE_ALLOWLIST.items():
+        missing = required_fields - entry.keys()
+        assert not missing, f"{host}: missing required allowlist field(s) {missing}"
+        for field in required_fields:
+            value = entry[field]
+            assert isinstance(value, str) and value.strip(), (
+                f"{host}: field {field!r} must be a non-empty string, got {value!r}"
+            )
+
+
 @pytest.mark.real_robots
 def test_fetch_once_succeeds_for_allowlisted_unverifiable_host(monkeypatch):
     """End-to-end: fetch_once() itself (not just robots_allowed()) proceeds
@@ -352,6 +396,56 @@ def test_fetch_once_has_no_check_robots_bypass_parameter():
     import inspect
     params = inspect.signature(u.fetch_once).parameters
     assert "check_robots" not in params
+
+
+# ----------------------------------------------------------------------------
+# WS0-T4 bounce #1, R3: the robots.txt fetch itself must share the SAME
+# per-host rate limiter as the content fetch, not bypass it via a direct
+# unpaced urlopen() call.
+# ----------------------------------------------------------------------------
+@pytest.mark.real_robots
+def test_get_robots_parser_routes_through_the_shared_rate_limiter(monkeypatch):
+    """_get_robots_parser() must call the SAME _rate_limit() function
+    content fetches use, with the host and the min_interval it was given --
+    not an unpaced urlopen() call. Verified by interaction (mocking
+    _rate_limit itself) rather than by timing, so the test stays fast and
+    deterministic."""
+    calls: list[tuple[str, float]] = []
+
+    def fake_rate_limit(host: str, min_interval: float) -> None:
+        calls.append((host, min_interval))
+
+    monkeypatch.setattr(u, "_rate_limit", fake_rate_limit)
+
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"User-agent: *\nAllow: /\n"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
+        assert u.robots_allowed("https://example.com/x", min_interval=2.5) is True
+    assert calls == [("example.com", 2.5)]
+
+
+def test_fetch_once_forwards_its_min_interval_to_the_robots_check(monkeypatch):
+    """The robots probe and the content fetch must share ONE pacing budget
+    for a host, not two independent ones -- fetch_once() must forward the
+    min_interval a caller gave it into robots_allowed(), rather than always
+    using the module default regardless of what the caller asked for (e.g.
+    NVD's tighter documented cadence)."""
+    seen: dict[str, float] = {}
+
+    def fake_robots_allowed(url: str, min_interval: float = u.DEFAULT_MIN_INTERVAL) -> bool:
+        seen["min_interval"] = min_interval
+        return True
+
+    monkeypatch.setattr(u, "robots_allowed", fake_robots_allowed)
+    mock_resp = MagicMock()
+    mock_resp.read.return_value = b"body"
+    mock_resp.__enter__ = lambda s: s
+    mock_resp.__exit__ = MagicMock(return_value=False)
+    with patch("ingest.common.urllib.request.urlopen", return_value=mock_resp):
+        u.fetch_once("https://example.com/x", min_interval=3.3)
+    assert seen["min_interval"] == 3.3
 
 
 # ----------------------------------------------------------------------------
