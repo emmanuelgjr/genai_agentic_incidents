@@ -4,9 +4,10 @@
 2026-07-18, commit `8e624ba7`; docs-warden verified the body's snapshot-channel
 claim is now true). User verifies recipient and sends; log send date on the
 board.
-**Send status:** no send recorded on the board as of 2026-07-29. A
-"CLEARED TO SEND" header with no send record is how the AIAAIC draft's header
-went stale (E17) — log the date here when it goes out.
+**Send status:** 📤 **SENT 2026-07-27** (user-confirmed from sent folder,
+logged 2026-07-29). Do not edit the message body below — the sent version is
+what AIID has, and editing it here would make this file misdescribe what they
+were told.
 **To (UNCONFIRMED):** AI Incident Database team — Responsible AI Collaborative
 **Suggested subject:** genai_incidents — attribution & respectful use of AIID data
 
