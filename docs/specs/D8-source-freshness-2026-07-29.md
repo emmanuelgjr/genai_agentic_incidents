@@ -37,7 +37,7 @@ implemented**; until it lands, an out-of-date registry is caught only when a
 human notices).
 
 `python scripts/validate.py` → `13119/13119 entries valid; 0 with errors.`
-`python -m pytest tests -q` → 226 passed.
+`python -m pytest tests -q` → 239 passed (226 before the application landed, +13 for the marking and its validators).
 
 ## 2. The rule to implement
 
