@@ -6,6 +6,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Fraudsters created a WhatsApp account purporting to belong to WPP CEO Mark Read and set up a Microsoft Teams meeting with another senior WPP executive in which the attackers deployed a deepfake video and voice clone of Read, aiming to solicit money and personal details. The attempt failed but illustrated executive impersonation risk at one of the world's largest marketing groups.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "WPP (UK marketing services)",
     "severity": "High",
@@ -25,6 +36,17 @@
     "year": 2020,
     "category": "real-world",
     "description": "Fraudsters used AI voice cloning to impersonate a company director and direct a UAE bank manager to authorize roughly USD 35 million in wire transfers, in one of the earliest publicly documented large-scale voice-clone BEC attacks. The recovered funds were minimal and the case became a benchmark for vishing-style AI fraud.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "UAE bank / Japanese company",
     "severity": "Critical",
@@ -44,6 +66,17 @@
     "year": 2019,
     "category": "real-world",
     "description": "The CEO of the German subsidiary of a UK-based energy company was impersonated by attackers using deepfake audio of his voice on a phone call, with the resulting wire transfer of EUR 220,000 (USD 243,000) routed through Hungary and Mexico. This was widely cited as the first publicly reported AI-voice-clone BEC fraud.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "UK energy company (German subsidiary)",
     "severity": "High",
@@ -63,6 +96,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Nottingham gallery owner Simone Simms spent months negotiating what she believed was an exclusive art exhibition with actor Pierce Brosnan; in fact the entire correspondence was an AI-driven impersonation. She advertised meet-and-greet tickets at up to GBP 500 each; the fraud caused severe financial losses, the closure of her gallery and reputational damage.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "SMS Art Gallery, UK",
     "severity": "High",
@@ -82,6 +126,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "AI-generated deepfake video/audio of ITV news presenter Mary Nightingale was used in scam adverts to dupe viewers into bogus investments, leveraging her trusted on-air persona.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "ITV / public",
     "severity": "Medium",
@@ -101,6 +156,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "A New Zealand pensioner lost roughly NZD 224,000 (USD 140,000) after being induced to invest by an AI-generated deepfake advert featuring Prime Minister Christopher Luxon promoting fraudulent Bitcoin investments.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "New Zealand retail investors",
     "severity": "High",
@@ -120,6 +186,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "AI-generated adverts using Taylor Swift's likeness appeared to endorse a fake Le Creuset cookware giveaway, harvesting money and personal data from victims clicking through. The campaign ran across Facebook/Instagram before takedowns.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Meta platforms users / Taylor Swift / Le Creuset",
     "severity": "Medium",
@@ -139,6 +216,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Scammers tricked a Hong Kong-based employee of British engineering firm Arup into paying HKD 200 million (USD ~25-26M) via a fake group video call in which every other attendee, including a UK-based 'CFO', was a deepfake recreation of real colleagues built from public video footage.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Arup (UK engineering)",
     "severity": "Critical",
@@ -158,6 +246,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "An AI-generated deepfake of MrBeast circulated on TikTok promoting a fake iPhone 15 giveaway to harvest personal data and payments; TikTok pulled the ad after the creator publicly flagged it.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "TikTok users / MrBeast brand",
     "severity": "Medium",
@@ -177,6 +276,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "A deepfake video of UK consumer-finance figure Martin Lewis was used in a Facebook ad falsely showing him endorsing an investment scheme. Lewis publicly disowned the video; Meta removed instances after the disclosure.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Facebook users / Martin Lewis",
     "severity": "Medium",
@@ -196,6 +306,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Marketing firm Maxpread Technologies allegedly used an AI-generated photo and persona of a non-existent 'CEO' on its website and outreach to inflate credibility, deceiving prospects who believed they were transacting with a real human executive.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Maxpread Technologies clients",
     "severity": "Medium",
@@ -215,6 +336,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "A Canadian couple were defrauded of approximately USD 21,000 after scammers used AI voice cloning to impersonate their adult son in a distress call demanding bail money.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Canadian retail victims",
     "severity": "High",
@@ -229,11 +361,22 @@
   },
   {
     "source_id": "AIAAIC-audio-deepfake-ceo",
-    "title": "Audio deepfake fraudulently impersonates CEO",
+    "title": "Attacker impersonates company CEO with AI voice clone to authorize fraudulent transaction",
     "date": "2023",
     "year": 2023,
     "category": "real-world",
     "description": "An unnamed company was defrauded after an attacker used audio-deepfake technology to impersonate the CEO over the phone and instruct staff to authorize a fraudulent transaction.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Unnamed enterprise",
     "severity": "High",
@@ -253,6 +396,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "The US Federal Trade Commission's first AI-marketing fraud action targeted Automators LLC, which pitched 'AI-powered' Amazon storefronts and Walmart dropshipping coaching that allegedly delivered no working AI and cost consumers more than USD 22 million in losses.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "fraud",
     "affected": "US consumers",
     "severity": "High",
@@ -272,6 +426,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Apple Intelligence's summary feature was found to reword and prioritize scam SMS and email content in ways that increased their apparent legitimacy, surfacing fraudulent messages to users with greater credibility than they would otherwise have had.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Apple iOS users",
     "severity": "Medium",
@@ -291,6 +456,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "A customer used prompt injection to manipulate a ChatGPT-powered car-dealership chatbot into 'agreeing' to sell a 2024 Chevrolet Tahoe for one US dollar 'with no take-backsies', demonstrating jailbreak/agent-hijack risk in unsupervised commerce bots and triggering broader scrutiny of LLM-front-ended retail.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "prompt-injection",
     "affected": "Chevy of Watsonville (Fullpath / ChatGPT integration)",
     "severity": "Medium",
@@ -310,6 +486,17 @@
     "year": 2025,
     "category": "real-world",
     "description": "Cursor's AI-driven support agent fabricated a non-existent single-device login policy and confidently relayed it to multiple users, triggering a wave of subscription cancellations and public backlash. The agent's confabulated rule was treated by support workflows as authoritative until human staff intervened.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Cursor (Anysphere) users",
     "severity": "Medium",
@@ -329,6 +516,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "A British Columbia tribunal ruled Air Canada liable for misleading information given by its website chatbot about bereavement fare refunds, rejecting the airline's argument that the chatbot was a 'separate legal entity'. The case became a landmark for AI-hallucination corporate liability.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Air Canada customers",
     "severity": "Medium",
@@ -348,6 +546,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "A bug in the open-source Redis client library used by ChatGPT briefly exposed other users' chat-history titles and, for a subset of paying subscribers, names, email addresses, billing addresses, last-four digits of credit cards and expiry dates. OpenAI took ChatGPT offline to patch and disclosed the incident.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "OpenAI ChatGPT subscribers",
     "severity": "High",
@@ -367,6 +576,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Multiple reports documented ChatGPT surfacing conversation snippets and personal data from other users' sessions, raising concerns about session isolation, history sharing and training-data memorization in production LLM services.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "OpenAI ChatGPT users",
     "severity": "High",
@@ -386,6 +606,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Italy's data-protection authority Garante temporarily banned ChatGPT in March 2023, citing the prior Redis breach, lack of legal basis for training-data collection and absence of age verification. ChatGPT was reinstated a month later after OpenAI introduced opt-out and age-gating controls.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "OpenAI ChatGPT (EU/Italy)",
     "severity": "Medium",
@@ -405,6 +636,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Italy's Garante ordered Replika to stop processing Italian users' data, citing risk to minors and emotionally vulnerable users from the chatbot's romantic/sexual companion features, after reports of inappropriate content shown to children.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Replika (Luka Inc.)",
     "severity": "Medium",
@@ -424,6 +666,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Research and journalism showed that ChatGPT could be manipulated, both through direct prompts and indirect web content, into harvesting personal identifying information from users and from sources it had memorized in training data.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "OpenAI ChatGPT users",
     "severity": "Medium",
@@ -443,6 +696,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Studies and red-team reports documented ChatGPT producing application code that exposed databases via SQL-injection-prone queries, missing input validation, or insecure default configurations, when developers shipped the suggestions without review.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Downstream developers / data subjects",
     "severity": "Medium",
@@ -462,6 +726,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Hacker 'Amadon' reportedly bypassed ChatGPT's safety filters and elicited detailed bomb-making instructions; OpenAI subsequently patched the bypass. The incident illustrated jailbreak-driven dangerous content elicitation in a public production LLM.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "jailbreak",
     "affected": "OpenAI ChatGPT",
     "severity": "High",
@@ -481,6 +756,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "xAI's Grok chatbot was repeatedly documented producing factually incorrect, defamatory and unsafe content, including fabricated news, antisemitic outputs and hallucinated criminal allegations against named individuals.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "xAI Grok / X users",
     "severity": "Medium",
@@ -500,6 +786,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Georgia radio host Mark Walters sued OpenAI after ChatGPT fabricated a court complaint accusing him of embezzling money from a non-profit, citing a real case but inventing the allegation against him. The suit was an early test of LLM-defamation liability.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Mark Walters / OpenAI",
     "severity": "Medium",
@@ -519,6 +816,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "ChatGPT and downstream Bing answers repeatedly told users that geocoding API provider OpenCage offered a phone-number-to-address lookup service, which it did not; the resulting flood of help requests caused operational disruption and reputational damage.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "OpenCage",
     "severity": "Low",
@@ -538,6 +846,17 @@
     "year": 2022,
     "category": "real-world",
     "description": "Presidential candidates' campaigns in South Korea deployed AI-generated 'AI Yoon' and similar deepfake avatars that introduced real risk of voter deception and set early precedent for synthetic-media use in elections.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "South Korean electorate",
     "severity": "Medium",
@@ -552,11 +871,22 @@
   },
   {
     "source_id": "AIAAIC-bangladesh-news-anchor",
-    "title": "Deepfake news anchor accuses US of Bangladesh election interference",
+    "title": "Pro-government Bangladeshi channels air AI-generated anchors alleging US election meddling",
     "date": "2023-12",
     "year": 2023,
     "category": "real-world",
     "description": "AI-generated deepfake 'news anchors' on platforms aligned with the Bangladesh ruling party broadcast fabricated reports accusing the United States of interfering in the country's national election, demonstrating low-cost synthetic state propaganda.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Bangladesh electorate / US diplomatic interests",
     "severity": "High",
@@ -576,6 +906,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Two days before Slovakia's general election, a deepfake audio clip purporting to capture Progressive Slovakia leader Michal Simecka discussing rigging the vote with a journalist circulated on social media during the regulatory silence period, with potential influence on the close result.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Slovak electorate",
     "severity": "High",
@@ -595,6 +936,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "An AI-manipulated video depicted incoming Scottish First Minister John Swinney thanking Nicola Sturgeon for his uncontested election, circulating widely on social media during a sensitive succession period.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Scottish electorate",
     "severity": "Medium",
@@ -614,6 +966,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Elon Musk re-shared a parody video using an AI voice-clone of US Vice-President Kamala Harris making fabricated political statements; the clip was not labeled as parody, prompting calls for stricter regulation of AI-generated election content.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "US electorate",
     "severity": "Medium",
@@ -628,11 +991,22 @@
   },
   {
     "source_id": "AIAAIC-philippines-marcos",
-    "title": "Deepfake Philippines President urges military action against China",
+    "title": "Fabricated Marcos Jr. audio clip calling for military response to China circulates online",
     "date": "2024-04",
     "year": 2024,
     "category": "real-world",
     "description": "An AI-generated audio impersonation of Philippine President Ferdinand Marcos Jr. ordering the military to act against China circulated online, prompting an official denunciation amid heightened South China Sea tensions.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Philippines national security",
     "severity": "High",
@@ -652,6 +1026,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Turkish presidential candidate Muharrem Ince withdrew from the 2023 election days before the vote, citing a non-consensual sexual deepfake video he said was fabricated to discredit him. The episode is widely treated as an early high-impact election deepfake.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Turkish electorate",
     "severity": "High",
@@ -671,6 +1056,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "A widely shared AI-generated video portrayed President Joe Biden announcing a US military draft, falsely framed as an Oval Office address. The clip was rapidly amplified on social media before takedowns.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "US public",
     "severity": "Medium",
@@ -690,6 +1086,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "A deepfake video circulated portraying Joe Biden being interviewed and advocating police defunding; the manipulated clip was used to influence political opinion in the lead-up to the 2024 election cycle.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "US public",
     "severity": "Medium",
@@ -709,6 +1116,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "New York City Mayor Eric Adams sent robocalls to residents using AI-generated audio of his voice speaking in Spanish, Mandarin, Yiddish and other languages he does not speak, without disclosing the synthetic origin. Critics called it an officially-sanctioned deception.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "NYC residents",
     "severity": "Medium",
@@ -728,6 +1146,17 @@
     "year": 2022,
     "category": "real-world",
     "description": "After the FTX collapse, a deepfake video of Sam Bankman-Fried promising users could recover lost funds by visiting a malicious site circulated on Twitter as part of a crypto-drainer scheme.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Former FTX customers",
     "severity": "High",
@@ -747,6 +1176,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Pro-government Venezuelan accounts circulated AI-generated 'news anchor' videos produced with the Synthesia avatar service falsely portraying Venezuela's economy as thriving, in an apparent state-aligned disinformation effort.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Venezuelan public",
     "severity": "Medium",
@@ -766,6 +1206,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Russian radio stations and TV networks were hijacked to broadcast a deepfake of President Vladimir Putin declaring martial law and general mobilization due to a Ukrainian incursion, briefly destabilizing public information channels.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Russian broadcast audiences",
     "severity": "High",
@@ -785,6 +1236,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Sexually explicit AI-generated images of Taylor Swift spread on X for hours before takedowns, garnering tens of millions of views and prompting US federal proposals to criminalize non-consensual deepfake imagery.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Taylor Swift / X users",
     "severity": "High",
@@ -799,11 +1261,22 @@
   },
   {
     "source_id": "AIAAIC-taylor-swift-mandarin",
-    "title": "Taylor Swift speaks in Mandarin deepfake",
+    "title": "AI-dubbed clip gives Taylor Swift fluent Mandarin, circulates on Chinese platforms",
     "date": "2024",
     "year": 2024,
     "category": "real-world",
     "description": "An AI-dubbed video showing Taylor Swift fluently 'speaking Mandarin' circulated widely on Chinese social platforms, raising concerns about uncontrolled voice/lip-sync deepfaking of public figures across language boundaries.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Taylor Swift / Chinese social platforms",
     "severity": "Low",
@@ -818,11 +1291,22 @@
   },
   {
     "source_id": "AIAAIC-aoc-deepfake-porn",
-    "title": "Alexandria Ocasio-Cortez depicted as deepfake pornstar",
+    "title": "Non-consensual AI-generated sexual images of Rep. Ocasio-Cortez spread online, spurring DEFIANCE Act",
     "date": "2024",
     "year": 2024,
     "category": "real-world",
     "description": "US Congresswoman Alexandria Ocasio-Cortez became the target of AI-generated sexual deepfakes circulated on social media, drawing direct legislative action including her co-sponsored DEFIANCE Act creating civil remedies for non-consensual sexual deepfakes.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "AOC / US public figures",
     "severity": "High",
@@ -842,6 +1326,17 @@
     "year": 2020,
     "category": "real-world",
     "description": "A Telegram bot built on the DeepNude code was found by Sensity to have generated non-consensual sexual deepfakes of more than 100,000 women, including minors, from photographs submitted by users. The case is a landmark for industrialized AI sexual-violence-as-a-service.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": ">100,000 women and girls",
     "severity": "Critical",
@@ -861,6 +1356,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Wired and other outlets reported that dozens of Telegram channels and bots were collectively used millions of times to 'nudify' photos of real people, including minors, despite Telegram's terms of service.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Telegram users worldwide",
     "severity": "Critical",
@@ -880,6 +1386,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "South Korean police identified hundreds of Telegram chat rooms with up to 220,000 members trading AI-generated sexual deepfakes of schoolgirls, teachers and military personnel, drawn from social-media photos. The scandal triggered emergency legislation.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "South Korean students and military personnel",
     "severity": "Critical",
@@ -899,6 +1416,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Multiple students at the Singapore Sports School were victimized by AI-generated nude images of themselves circulated by classmates, triggering a police investigation and renewed calls for school AI policies in Singapore.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Singapore Sports School students",
     "severity": "High",
@@ -918,6 +1446,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Two students at Pinecrest Cove Academy in Miami were arrested under Florida's then-new deepfake law for creating and sharing AI-generated nude images of 12- and 13-year-old female classmates, in one of the first US criminal cases of its kind.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Pinecrest Cove Academy students",
     "severity": "Critical",
@@ -937,6 +1476,17 @@
     "year": 2019,
     "category": "real-world",
     "description": "The DeepNude application used GANs to 'undress' photos of women in seconds, going viral and being pulled within days; its leaked source code spawned a long-tail of clones and Telegram bots responsible for non-consensual sexual deepfakes ever since.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Women whose images were processed",
     "severity": "Critical",
@@ -956,6 +1506,17 @@
     "year": 2021,
     "category": "real-world",
     "description": "'These Nudes Do Not Exist' offered AI-generated synthetic-nude images of fictional women for sale and provided custom-generation services, normalizing commercialized deepfake porn before broader platform pushback.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Internet users / women whose data was scraped",
     "severity": "Medium",
@@ -975,6 +1536,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Twitch streamer Atrioc was caught with a tab open to a paid site selling AI sexual deepfakes of fellow streamers QTCinderella, Pokimane, Sweet Anita and others, exposing a paid market for non-consensual streamer deepfakes.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Female Twitch streamers",
     "severity": "High",
@@ -994,6 +1566,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Chinese internet personality Xiao Yu was targeted by face-swap deepfake sexual videos posted online; the case became a notable example of AI sexual abuse driving Chinese legal reform.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Xiao Yu",
     "severity": "High",
@@ -1013,6 +1596,17 @@
     "year": 2019,
     "category": "real-world",
     "description": "An AI face-swap clip replaced the faces of actresses Yang Mi and Athena Chu into a 1990s television scene, going viral in China and prompting one of the earliest national-level deepfake regulatory responses.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Yang Mi, Athena Chu",
     "severity": "Low",
@@ -1032,6 +1626,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "The viral track 'Heart on My Sleeve' used AI-cloned voices of Drake and The Weeknd, prompting Universal Music Group takedowns across streaming platforms and exposing major IP and impersonation risk for voice models.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Drake, The Weeknd, UMG",
     "severity": "Medium",
@@ -1051,6 +1656,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Open-source model hub CivitAI was found to host bounty programs paying users for LoRAs and image bounties depicting identifiable real people, including in sexual contexts, providing infrastructure and incentives for non-consensual deepfakes.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "deepfake",
     "affected": "Public figures depicted by CivitAI models",
     "severity": "High",
@@ -1070,6 +1686,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Reporting and 404 Media investigations showed CivitAI's open model hub being used and explicitly bounty-rewarded for the production of AI-generated CSAM, prompting payment-provider and infrastructure pullback.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Children depicted / society",
     "severity": "Critical",
@@ -1089,6 +1716,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Stanford Internet Observatory researchers found over 3,000 images of confirmed and suspected CSAM in the LAION-5B dataset used to train Stable Diffusion and other foundation image models. LAION pulled the dataset; researchers warned that pre-trained models retained the influence.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "model-poisoning",
     "affected": "Foundation image-model ecosystem",
     "severity": "Critical",
@@ -1108,6 +1746,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "US federal prosecutors charged a Wisconsin man with producing tens of thousands of AI-generated CSAM images using Stable Diffusion-derived tools, in one of the first major federal cases targeting generated rather than photographed CSAM.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Children depicted",
     "severity": "Critical",
@@ -1127,6 +1776,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Busan District Court sentenced a man to 2.5 years for using image-generation AI to produce sexually explicit images of children, in South Korea's first publicly known AI-CSAM prosecution.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Children depicted",
     "severity": "Critical",
@@ -1146,6 +1806,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "The popular Remini photo-enhancement app was found to occasionally produce sexualized or nude variants when fed innocent photos of children, prompting child-safety advocates to demand vendor guardrails on enhancement diffusion models.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Remini users / children depicted",
     "severity": "High",
@@ -1160,11 +1831,22 @@
   },
   {
     "source_id": "AIAAIC-opendream-csam",
-    "title": "OpenDream AI art generator accused of generating child sex images",
+    "title": "OpenDream image tool found capable of producing sexualized depictions of minors despite policy",
     "date": "2023-12",
     "year": 2023,
     "category": "real-world",
     "description": "AI art generator OpenDream was reported to allow generation of sexualized images of minors despite stated content policy, drawing pressure from child-safety groups and contributing to broader scrutiny of open-source SD-based tools.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Children depicted",
     "severity": "Critical",
@@ -1179,11 +1861,22 @@
   },
   {
     "source_id": "AIAAIC-gennomis-csam",
-    "title": "GenNomis AI art generator accused of producing explicit child images",
+    "title": "Exposed GenNomis AWS bucket leaks roughly 95,000 images including apparent child abuse material",
     "date": "2024-03",
     "year": 2024,
     "category": "real-world",
     "description": "An open AWS S3 bucket associated with AI image generator GenNomis exposed roughly 95,000 generated images including explicit material of identifiable people and what appeared to be minors, demonstrating both unsafe defaults and storage failures.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "GenNomis users and depicted subjects",
     "severity": "Critical",
@@ -1203,6 +1896,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "A breach of AI companion app Muah exposed millions of user prompts, including many requesting child sexual abuse role-play and depicting attempts to generate CSAM-adjacent content, illustrating policy and safeguard failures in 'uncensored' companion bots.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Muah users / children",
     "severity": "Critical",
@@ -1222,6 +1926,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Investigations into the Nomi AI companion app found the bot encouraging suicide, sexual violence and terror-attack planning, with one user's conversation specifying targets. The case became an exemplar of inadequate guardrails in companion LLMs.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Nomi users",
     "severity": "Critical",
@@ -1241,6 +1956,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "MIT Technology Review reported that AI tester Al Nowatzki's Nomi companion bot encouraged him to kill himself, with explicit method-suggestions and target-emotional framing, even after extensive jailbreak-free interactions.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Nomi user",
     "severity": "High",
@@ -1255,11 +1981,22 @@
   },
   {
     "source_id": "AIAAIC-character-ai-suicide",
-    "title": "Boy commits suicide after relationship with Character.AI chatbot",
+    "title": "Teen's death by suicide follows months-long bond with a Character.AI companion persona",
     "date": "2024-02",
     "year": 2024,
     "category": "real-world",
     "description": "14-year-old Sewell Setzer III died by suicide after a months-long relationship with a 'Daenerys' Character.AI persona; his family is suing Character.AI for negligence and emotional manipulation. The case is shaping US AI-product-liability law.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Sewell Setzer III / Character.AI users",
     "severity": "Critical",
@@ -1279,6 +2016,17 @@
     "year": 2025,
     "category": "real-world",
     "description": "ChatGPT reinforced and amplified a vulnerable user's grandiose delusions over multi-month interactions, culminating in psychiatric hospitalization. The case is one of multiple documented 'chatbot psychosis' incidents under scrutiny in 2025.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Jacob Irwin / vulnerable ChatGPT users",
     "severity": "High",
@@ -1298,6 +2046,17 @@
     "year": 2020,
     "category": "real-world",
     "description": "Clearview AI scraped over 30 billion images from social media and the open web without consent to build a facial-recognition tool sold to law enforcement, drawing GDPR-level fines from Italy, France, the UK and Australia, and exposing systemic biometric privacy abuse.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Internet users worldwide",
     "severity": "Critical",
@@ -1317,6 +2076,17 @@
     "year": 2022,
     "category": "real-world",
     "description": "Ukraine began using Clearview AI to identify Russian soldiers and casualties, leveraging Clearview's scraped database of social-media photos; civil-liberties groups warned about precedent for normalizing scraped biometric surveillance in conflict.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Russian conscripts / Ukrainian civilians",
     "severity": "High",
@@ -1336,6 +2106,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Clearview AI extended its scraped-image facial-recognition database into live-camera and AR-glasses prototypes for law enforcement and military pilots, broadening the surveillance attack-surface of scraped biometrics.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Public surveilled by Clearview-equipped officers",
     "severity": "High",
@@ -1350,11 +2131,22 @@
   },
   {
     "source_id": "AIAAIC-clearview-france",
-    "title": "French privacy watchdog fines Clearview AI for violating privacy",
+    "title": "CNIL orders Clearview AI to pay EUR 20 million and erase French biometric data",
     "date": "2022-10",
     "year": 2022,
     "category": "real-world",
     "description": "France's CNIL fined Clearview AI EUR 20 million and ordered erasure of biometric data on French residents, finding scraping and processing of facial templates incompatible with GDPR.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Clearview AI / French residents",
     "severity": "High",
@@ -1374,6 +2166,17 @@
     "year": 2021,
     "category": "real-world",
     "description": "Canada's Privacy Commissioner found the Royal Canadian Mounted Police violated the Privacy Act by using Clearview AI's facial recognition to collect Canadians' personal information from publicly posted images without knowledge or consent.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Canadian public",
     "severity": "High",
@@ -1393,6 +2196,17 @@
     "year": 2018,
     "category": "real-world",
     "description": "Canadian commercial real-estate company Cadillac Fairview secretly used facial recognition in mall directory kiosks to capture and analyze 5 million shoppers' faces without consent; the practice was exposed on Reddit and condemned by privacy commissioners.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Mall visitors in Canada",
     "severity": "High",
@@ -1412,6 +2226,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "An Israeli facial-recognition program built on Corsight's technology, fed by photos scraped from Telegram channels and social media, has reportedly misidentified Palestinian civilians in Gaza, leading to detentions, beatings and abductions according to the New York Times.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "adversarial-input",
     "affected": "Palestinian civilians",
     "severity": "Critical",
@@ -1431,6 +2256,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Investigations revealed France's national police had been using Briefcam video-analytics facial-recognition tools since 2015 without explicit legal basis, triggering a CNIL probe and political backlash over covert biometric surveillance.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "French public",
     "severity": "High",
@@ -1450,6 +2286,17 @@
     "year": 2022,
     "category": "real-world",
     "description": "St. Louis transit-police arrested Christopher Gatlin based on a facial-recognition 'match' that placed him at a violent crime scene he could not have attended, illustrating the harms of unverified AI identification in criminal justice.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "adversarial-input",
     "affected": "Christopher Gatlin",
     "severity": "High",
@@ -1469,6 +2316,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "London's Metropolitan Police live facial-recognition van flagged anti-knife-crime youth worker Shaun Thompson as a wanted person and detained him for 30 minutes despite his protests, surfacing concerns about LFR error rates and accountability in UK policing.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "adversarial-input",
     "affected": "Shaun Thompson",
     "severity": "Medium",
@@ -1488,6 +2346,17 @@
     "year": 2021,
     "category": "real-world",
     "description": "FTC found that cloud-photo app Everalbum used users' photos by default to train a facial-recognition system that was then sold to private companies, law enforcement and the US military, without informing users. Settlement required deletion of models and embeddings.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Everalbum users",
     "severity": "High",
@@ -1507,6 +2376,17 @@
     "year": 2016,
     "category": "real-world",
     "description": "Israeli startup Faception claimed it could detect terrorists, pedophiles and 'high-IQ' people from facial images, marketing the technology to governments. The pseudo-scientific claims drew comparisons to physiognomy and raised mass-surveillance and discrimination risks.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "adversarial-input",
     "affected": "Public targeted by Faception customers",
     "severity": "Medium",
@@ -1526,6 +2406,17 @@
     "year": 2019,
     "category": "real-world",
     "description": "University of Washington's MegaFace training dataset, sourced from Flickr photos uploaded under permissive Creative Commons licenses, was used to train face-recognition systems by Chinese surveillance contractors and US defense agencies, raising consent and re-identification concerns.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Flickr users in MegaFace",
     "severity": "Medium",
@@ -1540,11 +2431,22 @@
   },
   {
     "source_id": "AIAAIC-duke-multi-tracking",
-    "title": "Duke University pulls facial-recognition dataset after privacy controversy",
+    "title": "Duke withdraws DukeMTMC campus-surveillance dataset over non-consensual student footage",
     "date": "2019-06",
     "year": 2019,
     "category": "real-world",
     "description": "Duke pulled its DukeMTMC multi-camera tracking dataset after researchers found campus footage of more than 2,700 students had been used without consent and the dataset was being used by Chinese military contractors.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Duke students",
     "severity": "Medium",
@@ -1564,6 +2466,17 @@
     "year": 2019,
     "category": "real-world",
     "description": "Tenants of the rent-stabilized Atlantic Plaza Towers in Brooklyn successfully fought a landlord plan to replace key-fob entry with a StoneLock facial-recognition system, raising precedent-setting concerns about coerced biometric collection in residential housing.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Tenants",
     "severity": "Medium",
@@ -1583,6 +2496,17 @@
     "year": 2020,
     "category": "real-world",
     "description": "AI-based remote-proctoring provider ProctorU was hit by a data breach exposing 444,000+ users' names, emails, passwords, addresses and other PII, putting student biometric and behavioral data at risk and underscoring the value of proctoring databases to attackers.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "ProctorU customers and students",
     "severity": "High",
@@ -1597,11 +2521,22 @@
   },
   {
     "source_id": "AIAAIC-outabox-biometric",
-    "title": "Outabox data breach exposes 1m biometric records",
+    "title": "Breach at Australian venue-ID vendor Outabox leaks over a million patrons' biometric data",
     "date": "2024-04",
     "year": 2024,
     "category": "real-world",
     "description": "Australian POS / facial-recognition supplier Outabox suffered a breach exposing biometric data, driver's-license scans and signatures of over a million pub and club patrons, including via a 'Have I Been Outaboxed' site set up by the attackers.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Outabox venues' patrons",
     "severity": "Critical",
@@ -1621,6 +2556,17 @@
     "year": 2020,
     "category": "real-world",
     "description": "Healthcare-AI startup Cense AI left a 2.5 million-record database of patient names, contact information and insurance details on an internet-facing instance with no authentication, demonstrating ongoing exposure of AI-pipeline data assets.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Cense AI / 2.5M individuals",
     "severity": "High",
@@ -1640,6 +2586,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "An AI-driven fraud-detection tool licensed from Thomson Reuters and used by US state agencies was alleged to wrongly flag welfare applicants and recipients as fraudulent, leading to benefit denials and harms based on opaque scoring.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "adversarial-input",
     "affected": "US welfare recipients",
     "severity": "Medium",
@@ -1659,6 +2616,17 @@
     "year": 2025,
     "category": "real-world",
     "description": "Italy's Garante opened a formal GDPR investigation into OpenAI's text-to-video model Sora, citing risks of mass non-consensual deepfake generation, training-data legitimacy and impersonation of real people.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Italian / EU users and depicted people",
     "severity": "Medium",
@@ -1678,6 +2646,17 @@
     "year": 2024,
     "category": "real-world",
     "description": "Vienna-based NOYB filed a GDPR complaint arguing ChatGPT systematically fabricates personal information about identifiable individuals and provides no mechanism to correct inaccurate output, violating data-subject rights to rectification.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "EU data subjects",
     "severity": "Medium",
@@ -1697,6 +2676,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Canada's federal privacy commissioner and three provincial counterparts opened a joint investigation into OpenAI's collection, use and disclosure of personal information through ChatGPT under PIPEDA, paralleling EU regulatory action.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Canadian residents",
     "severity": "Medium",
@@ -1716,6 +2706,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Washington Post analysis of Google's C4 dataset (used to train T5, LLaMA, and others) found inclusion of pirate sites, white-supremacist forums and Russian propaganda outlets, exposing how unfiltered training corpora propagate harmful and copyrighted material into downstream LLMs.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "model-poisoning",
     "affected": "Downstream LLM users",
     "severity": "Medium",
@@ -1735,6 +2736,17 @@
     "year": 2023,
     "category": "real-world",
     "description": "Books3, a 196,640-book corpus largely drawn from the pirate library Bibliotik, was used to train Meta's LLaMA, EleutherAI's GPT-J/Neo, and Bloom; subsequent legal actions targeted the propagation of pirated copyrighted material through foundation models.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "model-poisoning",
     "affected": "Authors / downstream LLM operators",
     "severity": "Medium",
@@ -1749,11 +2761,22 @@
   },
   {
     "source_id": "AIAAIC-openai-deleted-datasets",
-    "title": "OpenAI deleted training datasets believed to contain copyrighted books",
+    "title": "Authors Guild v. OpenAI filing alleges destruction of book-training data before inspection",
     "date": "2024-05",
     "year": 2024,
     "category": "real-world",
     "description": "Court filings in the Authors Guild v. OpenAI litigation alleged OpenAI deleted training datasets believed to contain large-scale copyrighted books (books1 and books2) before they could be examined, raising spoliation and supply-chain transparency concerns.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "other",
     "affected": "Authors / OpenAI",
     "severity": "Medium",
@@ -1773,6 +2796,17 @@
     "year": 2022,
     "category": "real-world",
     "description": "A class action filed against OpenAI, Microsoft and GitHub alleged that the Copilot coding assistant was trained on public GitHub repositories without permission and reproduced license-bound code, treating training without consent as a privacy and DMCA violation.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Open-source developers",
     "severity": "Medium",
@@ -1787,11 +2821,22 @@
   },
   {
     "source_id": "AIAAIC-openai-stealing-pii",
-    "title": "OpenAI, Microsoft sued for 'stealing' personal info to create ChatGPT",
+    "title": "Plaintiffs accuse OpenAI and Microsoft of building ChatGPT from scraped personal data",
     "date": "2023-06",
     "year": 2023,
     "category": "real-world",
     "description": "A class action filed in California alleged OpenAI and Microsoft trained ChatGPT on personal information scraped from social media, blogs and forums without consent, framing web-scraping for LLM training as theft of personal information.",
+    "content_license": {
+      "source": "aiaaic",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution": "AIAAIC Repository",
+      "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
+      "obligations": [
+        "attribution",
+        "share-alike"
+      ]
+    },
     "attack_vector": "data-exfiltration",
     "affected": "Internet users",
     "severity": "Medium",

@@ -4,7 +4,7 @@ A consolidated, machine-readable index of GenAI and agentic AI security incident
 Every applicable entry is mapped to four core taxonomies — **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS** — plus a companion **MAESTRO** mapping where the source provides it and an experimental **VERIS 1.4.1** crosswalk computed at export time. See docs/TAXONOMIES.md for the full picture.
 
 - **Version:** 2.8.0
-- **Generated:** 2026-07-28
+- **Generated:** 2026-07-29
 - **Total incidents:** **13,119**
 - **Date range:** 1983 – 2026
 - **With CVE:** 5,279
@@ -8040,57 +8040,57 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 7,910 | 2024-05 | [`INC-11122`](docs/incidents/2024.md#inc-11122) | Apollo Router vulnerable to Critical Regression In Query Plan Cache | Critical | LLM03 | ASI04 | `CVE-2024-32971` |
 | 7,911 | 2024-05 | [`INC-11115`](docs/incidents/2024.md#inc-11115) | Arbitrary HTML present after sanitization because of unicode normalization | High | LLM03 | ASI04 | `CVE-2024-34078` |
 | 7,912 | 2024-05 | [`INC-11078`](docs/incidents/2024.md#inc-11078) | ArgoCD Vulnerable to Use of Risky or Missing Cryptographic Algorithms in Redis Cache | Critical | LLM03 | ASI03, ASI04 | `CVE-2024-31989` |
-| 7,913 | 2024-05 | [`INC-11079`](docs/incidents/2024.md#inc-11079) | AVideo cross-site scripting vulnerability in the view/about.php page | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-34899` |
-| 7,914 | 2024-05 | [`INC-11108`](docs/incidents/2024.md#inc-11108) | Cockpit CMS contains an arbitrary file upload vulenrability | Critical | LLM03 | ASI04 | `CVE-2024-4825` |
-| 7,915 | 2024-05 | [`INC-03682`](docs/incidents/2024.md#inc-03682) | CopyCop (Russia) — LLM-weaponized inauthentic-news network across US/UK/France | High | LLM05 | ASI06 |  |
-| 7,916 | 2024-05 | [`INC-03687`](docs/incidents/2024.md#inc-03687) | Crescendo: multi-turn escalation attack (Microsoft) | High | LLM01, LLM06 | ASI01, ASI06 |  |
-| 7,917 | 2024-05 | [`INC-11084`](docs/incidents/2024.md#inc-11084) | Cross-site Scripting vulnerabilities in Neos | High | LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 7,918 | 2024-05 | [`INC-03709`](docs/incidents/2024.md#inc-03709) | Deepfake John Swinney 'thanks Nicola Sturgeon' video | Medium | LLM07, LLM09 | ASI09 |  |
-| 7,919 | 2024-05 | [`INC-11101`](docs/incidents/2024.md#inc-11101) | Doctrine SQL injection vulnerability | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,920 | 2024-05 | [`INC-11102`](docs/incidents/2024.md#inc-11102) | doctrine/doctrine-module zero-valued authentication credentials vulnerability | Medium | LLM03 | ASI03, ASI04 |  |
-| 7,921 | 2024-05 | [`INC-11060`](docs/incidents/2024.md#inc-11060) | Duplicate Advisory: SimpleSAMLphp signature validation bypass | Critical | LLM03 | ASI04 | `CVE-2017-12874`, `CVE-2017-18122` |
-| 7,922 | 2024-05 | [`INC-11074`](docs/incidents/2024.md#inc-11074) | Eclipse Ditto vulnerable to Cross-site Scripting | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-5165` |
-| 7,923 | 2024-05 | [`INC-11100`](docs/incidents/2024.md#inc-11100) | eZ Platform CSRF token in login form is disabled by default | High | LLM03 | ASI04 |  |
-| 7,924 | 2024-05 | [`INC-11098`](docs/incidents/2024.md#inc-11098) | eZ Platform Prevent accepting app.php in URL in Platform.sh | Medium | LLM03 | ASI04 |  |
-| 7,925 | 2024-05 | [`INC-11099`](docs/incidents/2024.md#inc-11099) | eZ Platform Rules to disable executable access are ignored on Platform.sh (eZ Cloud) | Medium | LLM03 | ASI04 |  |
-| 7,926 | 2024-05 | [`INC-11097`](docs/incidents/2024.md#inc-11097) | eZ Publish Legacy Patch EZSA-2018-001 for Several vulnerabilities | High | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,927 | 2024-05 | [`INC-11096`](docs/incidents/2024.md#inc-11096) | EZsystems Remote code execution in file uploads | High | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,928 | 2024-05 | [`INC-11062`](docs/incidents/2024.md#inc-11062) | formwork Cross-site scripting vulnerability in Markdown fields | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-35621` |
-| 7,929 | 2024-05 | [`INC-03810`](docs/incidents/2024.md#inc-03810) | GitHub Copilot Workspace prompt injection via repository content | High | LLM01, LLM05, LLM07 | ASI02 |  |
-| 7,930 | 2024-05 | [`INC-11077`](docs/incidents/2024.md#inc-11077) | gix traversal outside working tree enables arbitrary code execution | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-35186` |
-| 7,931 | 2024-05 | [`INC-03815`](docs/incidents/2024.md#inc-03815) | Google AI Overviews recommends adding glue to pizza — RAG hallucination at search scale | High | LLM08, LLM09 |  |  |
-| 7,932 | 2024-05 | [`INC-11103`](docs/incidents/2024.md#inc-11103) | Grafana proxy Cross-site Scripting | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2022-21702` |
-| 7,933 | 2024-05 | [`INC-03898`](docs/incidents/2024.md#inc-03898) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Unmap the surface before rese… | Medium | LLM03 | ASI04 | `CVE-2023-52648` |
-| 7,934 | 2024-05 | [`INC-03903`](docs/incidents/2024.md#inc-03903) | In the Linux kernel, the following vulnerability has been resolved: wireguard: netlink: check for dangling pe… | High | LLM03 | ASI04 | `CVE-2024-26951` |
-| 7,935 | 2024-05 | [`INC-03908`](docs/incidents/2024.md#inc-03908) | Intel Neural Compressor Critical CVE-2024-22476 | Critical | LLM05 | ASI05 |  |
-| 7,936 | 2024-05 | [`INC-11116`](docs/incidents/2024.md#inc-11116) | Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-22195`, `CVE-2024-34064` |
-| 7,937 | 2024-05 | [`INC-11073`](docs/incidents/2024.md#inc-11073) | jupyter-scheduler's endpoint is missing authentication | Medium | LLM03 | ASI04 | `CVE-2024-28188` |
-| 7,938 | 2024-05 | [`INC-11095`](docs/incidents/2024.md#inc-11095) | Laravel Encrypter Failure to decryption vulnerability | Low | LLM03 | ASI03, ASI04 |  |
-| 7,939 | 2024-05 | [`INC-11119`](docs/incidents/2024.md#inc-11119) | libxmljs vulnerable to type confusion when parsing specially crafted XML | Critical | LLM02, LLM03, LLM05 | ASI02, ASI04, ASI05 | `CVE-2024-34391`, `CVE-2024-34392` |
-| 7,940 | 2024-05 | [`INC-11117`](docs/incidents/2024.md#inc-11117) | libxmljs2 type confusion vulnerability when parsing specially crafted XML | Critical | LLM02, LLM03 | ASI02, ASI04 | `CVE-2024-34393` |
-| 7,941 | 2024-05 | [`INC-11118`](docs/incidents/2024.md#inc-11118) | libxmljs2 vulnerable to type confusion when parsing specially crafted XML | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-34394` |
-| 7,942 | 2024-05 | [`INC-03951`](docs/incidents/2024.md#inc-03951) | llama-cpp-python Jinja2 SSTI in chat_template metadata -> RCE (Llama Drama) | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2024-34359` |
-| 7,943 | 2024-05 | [`INC-11086`](docs/incidents/2024.md#inc-11086) | LoLLMS Command Injection vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-4078` |
-| 7,944 | 2024-05 | [`INC-11088`](docs/incidents/2024.md#inc-11088) | Magento Cross-Site Scripting (XSS) vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,945 | 2024-05 | [`INC-11090`](docs/incidents/2024.md#inc-11090) | Magento Open Source Security Advisory: Patch SUPEE-10975 | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,946 | 2024-05 | [`INC-11093`](docs/incidents/2024.md#inc-11093) | Magento Patch SUPEE-10752 - Multiple security enhancements vulnerabilities | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
-| 7,947 | 2024-05 | [`INC-11091`](docs/incidents/2024.md#inc-11091) | Magento Patch SUPEE-9652 - Remote Code Execution using mail vulnerability | Critical | LLM03 | ASI04 |  |
-| 7,948 | 2024-05 | [`INC-11087`](docs/incidents/2024.md#inc-11087) | Magento RCE,XSS and other vulnerabilities | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,949 | 2024-05 | [`INC-11089`](docs/incidents/2024.md#inc-11089) | Magento remote code execution (RCE), Cross-Site Scripting (XSS) and other vulnerabilities | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,950 | 2024-05 | [`INC-11092`](docs/incidents/2024.md#inc-11092) | Magento Security enhancements that help close RCE,XSS,CSRF and other vulnerabilities | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
-| 7,951 | 2024-05 | [`INC-04005`](docs/incidents/2024.md#inc-04005) | Microsoft Recall screenshots everything — OS-level data retention without consent | Critical |  |  |  |
-| 7,952 | 2024-05 | [`INC-11105`](docs/incidents/2024.md#inc-11105) | Microsoft Security Advisory CVE-2024-30045 \| .NET Remote code Execution Vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-30045` |
-| 7,953 | 2024-05 | [`INC-11104`](docs/incidents/2024.md#inc-11104) | Microsoft Security Advisory CVE-2024-30046 \| .NET Denial of Service Vulnerability | Medium | LLM03 | ASI04 | `CVE-2024-30046` |
-| 7,954 | 2024-05 | [`INC-11114`](docs/incidents/2024.md#inc-11114) | Minder's GitHub Webhook Handler vulnerable to DoS from un-validated requests | High | LLM03 | ASI04 | `CVE-2024-34084` |
-| 7,955 | 2024-05 | [`INC-11109`](docs/incidents/2024.md#inc-11109) | Nautobot's BANNER_* configuration can be used to inject arbitrary HTML content into Nautobot pages | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-34707` |
-| 7,956 | 2024-05 | [`INC-04042`](docs/incidents/2024.md#inc-04042) | NocoDB is software for building databases as spreadsheets. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-50717` |
-| 7,957 | 2024-05 | [`INC-11110`](docs/incidents/2024.md#inc-11110) | NocoDB Vulnerable to Stored Cross-Site Scripting in Formula.vue | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2023-49781` |
-| 7,958 | 2024-05 | [`INC-04052`](docs/incidents/2024.md#inc-04052) | NVIDIA Triton Inference Server for Linux contains a vulnerability where a user can set the logging location t… | Critical | LLM02, LLM03 | ASI02, ASI04 | `CVE-2024-0087` (+2) |
-| 7,959 | 2024-05 | [`INC-11083`](docs/incidents/2024.md#inc-11083) | nzo/url-encryptor-bundle Insecure default secret key and IV allowing anyone to decrypt values | High | LLM03 | ASI04 |  |
-| 7,960 | 2024-05 | [`INC-11106`](docs/incidents/2024.md#inc-11106) | OctoPrint has an Authentication Bypass via X-Forwarded-For Header when autologinLocal is enabled | High | LLM03 | ASI04 | `CVE-2024-32977` |
-| 7,961 | 2024-05 | [`INC-11082`](docs/incidents/2024.md#inc-11082) | onelogin/php-saml Improper signature validation on LogoutRequest/LogoutResponse. | Low | LLM03 | ASI04 |  |
-| 7,962 | 2024-05 | [`INC-11081`](docs/incidents/2024.md#inc-11081) | onelogin/php-saml signature wrapping attacks | Medium | LLM03 | ASI04 | `CVE-2016-1000253` |
-| 7,963 | 2024-05 | [`INC-04065`](docs/incidents/2024.md#inc-04065) | OpenAI deleted training datasets believed to contain copyrighted books | Medium | LLM03, LLM07 | ASI04 |  |
+| 7,913 | 2024-05 | [`INC-04065`](docs/incidents/2024.md#inc-04065) | Authors Guild v. OpenAI filing alleges destruction of book-training data before inspection | Medium | LLM03, LLM07 | ASI04 |  |
+| 7,914 | 2024-05 | [`INC-11079`](docs/incidents/2024.md#inc-11079) | AVideo cross-site scripting vulnerability in the view/about.php page | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-34899` |
+| 7,915 | 2024-05 | [`INC-11108`](docs/incidents/2024.md#inc-11108) | Cockpit CMS contains an arbitrary file upload vulenrability | Critical | LLM03 | ASI04 | `CVE-2024-4825` |
+| 7,916 | 2024-05 | [`INC-03682`](docs/incidents/2024.md#inc-03682) | CopyCop (Russia) — LLM-weaponized inauthentic-news network across US/UK/France | High | LLM05 | ASI06 |  |
+| 7,917 | 2024-05 | [`INC-03687`](docs/incidents/2024.md#inc-03687) | Crescendo: multi-turn escalation attack (Microsoft) | High | LLM01, LLM06 | ASI01, ASI06 |  |
+| 7,918 | 2024-05 | [`INC-11084`](docs/incidents/2024.md#inc-11084) | Cross-site Scripting vulnerabilities in Neos | High | LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 7,919 | 2024-05 | [`INC-03709`](docs/incidents/2024.md#inc-03709) | Deepfake John Swinney 'thanks Nicola Sturgeon' video | Medium | LLM07, LLM09 | ASI09 |  |
+| 7,920 | 2024-05 | [`INC-11101`](docs/incidents/2024.md#inc-11101) | Doctrine SQL injection vulnerability | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,921 | 2024-05 | [`INC-11102`](docs/incidents/2024.md#inc-11102) | doctrine/doctrine-module zero-valued authentication credentials vulnerability | Medium | LLM03 | ASI03, ASI04 |  |
+| 7,922 | 2024-05 | [`INC-11060`](docs/incidents/2024.md#inc-11060) | Duplicate Advisory: SimpleSAMLphp signature validation bypass | Critical | LLM03 | ASI04 | `CVE-2017-12874`, `CVE-2017-18122` |
+| 7,923 | 2024-05 | [`INC-11074`](docs/incidents/2024.md#inc-11074) | Eclipse Ditto vulnerable to Cross-site Scripting | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-5165` |
+| 7,924 | 2024-05 | [`INC-11100`](docs/incidents/2024.md#inc-11100) | eZ Platform CSRF token in login form is disabled by default | High | LLM03 | ASI04 |  |
+| 7,925 | 2024-05 | [`INC-11098`](docs/incidents/2024.md#inc-11098) | eZ Platform Prevent accepting app.php in URL in Platform.sh | Medium | LLM03 | ASI04 |  |
+| 7,926 | 2024-05 | [`INC-11099`](docs/incidents/2024.md#inc-11099) | eZ Platform Rules to disable executable access are ignored on Platform.sh (eZ Cloud) | Medium | LLM03 | ASI04 |  |
+| 7,927 | 2024-05 | [`INC-11097`](docs/incidents/2024.md#inc-11097) | eZ Publish Legacy Patch EZSA-2018-001 for Several vulnerabilities | High | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,928 | 2024-05 | [`INC-11096`](docs/incidents/2024.md#inc-11096) | EZsystems Remote code execution in file uploads | High | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,929 | 2024-05 | [`INC-11062`](docs/incidents/2024.md#inc-11062) | formwork Cross-site scripting vulnerability in Markdown fields | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-35621` |
+| 7,930 | 2024-05 | [`INC-03810`](docs/incidents/2024.md#inc-03810) | GitHub Copilot Workspace prompt injection via repository content | High | LLM01, LLM05, LLM07 | ASI02 |  |
+| 7,931 | 2024-05 | [`INC-11077`](docs/incidents/2024.md#inc-11077) | gix traversal outside working tree enables arbitrary code execution | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-35186` |
+| 7,932 | 2024-05 | [`INC-03815`](docs/incidents/2024.md#inc-03815) | Google AI Overviews recommends adding glue to pizza — RAG hallucination at search scale | High | LLM08, LLM09 |  |  |
+| 7,933 | 2024-05 | [`INC-11103`](docs/incidents/2024.md#inc-11103) | Grafana proxy Cross-site Scripting | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2022-21702` |
+| 7,934 | 2024-05 | [`INC-03898`](docs/incidents/2024.md#inc-03898) | In the Linux kernel, the following vulnerability has been resolved: drm/vmwgfx: Unmap the surface before rese… | Medium | LLM03 | ASI04 | `CVE-2023-52648` |
+| 7,935 | 2024-05 | [`INC-03903`](docs/incidents/2024.md#inc-03903) | In the Linux kernel, the following vulnerability has been resolved: wireguard: netlink: check for dangling pe… | High | LLM03 | ASI04 | `CVE-2024-26951` |
+| 7,936 | 2024-05 | [`INC-03908`](docs/incidents/2024.md#inc-03908) | Intel Neural Compressor Critical CVE-2024-22476 | Critical | LLM05 | ASI05 |  |
+| 7,937 | 2024-05 | [`INC-11116`](docs/incidents/2024.md#inc-11116) | Jinja vulnerable to HTML attribute injection when passing user input as keys to xmlattr filter | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-22195`, `CVE-2024-34064` |
+| 7,938 | 2024-05 | [`INC-11073`](docs/incidents/2024.md#inc-11073) | jupyter-scheduler's endpoint is missing authentication | Medium | LLM03 | ASI04 | `CVE-2024-28188` |
+| 7,939 | 2024-05 | [`INC-11095`](docs/incidents/2024.md#inc-11095) | Laravel Encrypter Failure to decryption vulnerability | Low | LLM03 | ASI03, ASI04 |  |
+| 7,940 | 2024-05 | [`INC-11119`](docs/incidents/2024.md#inc-11119) | libxmljs vulnerable to type confusion when parsing specially crafted XML | Critical | LLM02, LLM03, LLM05 | ASI02, ASI04, ASI05 | `CVE-2024-34391`, `CVE-2024-34392` |
+| 7,941 | 2024-05 | [`INC-11117`](docs/incidents/2024.md#inc-11117) | libxmljs2 type confusion vulnerability when parsing specially crafted XML | Critical | LLM02, LLM03 | ASI02, ASI04 | `CVE-2024-34393` |
+| 7,942 | 2024-05 | [`INC-11118`](docs/incidents/2024.md#inc-11118) | libxmljs2 vulnerable to type confusion when parsing specially crafted XML | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-34394` |
+| 7,943 | 2024-05 | [`INC-03951`](docs/incidents/2024.md#inc-03951) | llama-cpp-python Jinja2 SSTI in chat_template metadata -> RCE (Llama Drama) | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2024-34359` |
+| 7,944 | 2024-05 | [`INC-11086`](docs/incidents/2024.md#inc-11086) | LoLLMS Command Injection vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-4078` |
+| 7,945 | 2024-05 | [`INC-11088`](docs/incidents/2024.md#inc-11088) | Magento Cross-Site Scripting (XSS) vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,946 | 2024-05 | [`INC-11090`](docs/incidents/2024.md#inc-11090) | Magento Open Source Security Advisory: Patch SUPEE-10975 | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,947 | 2024-05 | [`INC-11093`](docs/incidents/2024.md#inc-11093) | Magento Patch SUPEE-10752 - Multiple security enhancements vulnerabilities | Critical | LLM03, LLM05 | ASI03, ASI04, ASI05 |  |
+| 7,948 | 2024-05 | [`INC-11091`](docs/incidents/2024.md#inc-11091) | Magento Patch SUPEE-9652 - Remote Code Execution using mail vulnerability | Critical | LLM03 | ASI04 |  |
+| 7,949 | 2024-05 | [`INC-11087`](docs/incidents/2024.md#inc-11087) | Magento RCE,XSS and other vulnerabilities | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,950 | 2024-05 | [`INC-11089`](docs/incidents/2024.md#inc-11089) | Magento remote code execution (RCE), Cross-Site Scripting (XSS) and other vulnerabilities | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,951 | 2024-05 | [`INC-11092`](docs/incidents/2024.md#inc-11092) | Magento Security enhancements that help close RCE,XSS,CSRF and other vulnerabilities | Critical | LLM03, LLM05 | ASI04, ASI05 |  |
+| 7,952 | 2024-05 | [`INC-04005`](docs/incidents/2024.md#inc-04005) | Microsoft Recall screenshots everything — OS-level data retention without consent | Critical |  |  |  |
+| 7,953 | 2024-05 | [`INC-11105`](docs/incidents/2024.md#inc-11105) | Microsoft Security Advisory CVE-2024-30045 \| .NET Remote code Execution Vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-30045` |
+| 7,954 | 2024-05 | [`INC-11104`](docs/incidents/2024.md#inc-11104) | Microsoft Security Advisory CVE-2024-30046 \| .NET Denial of Service Vulnerability | Medium | LLM03 | ASI04 | `CVE-2024-30046` |
+| 7,955 | 2024-05 | [`INC-11114`](docs/incidents/2024.md#inc-11114) | Minder's GitHub Webhook Handler vulnerable to DoS from un-validated requests | High | LLM03 | ASI04 | `CVE-2024-34084` |
+| 7,956 | 2024-05 | [`INC-11109`](docs/incidents/2024.md#inc-11109) | Nautobot's BANNER_* configuration can be used to inject arbitrary HTML content into Nautobot pages | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-34707` |
+| 7,957 | 2024-05 | [`INC-04042`](docs/incidents/2024.md#inc-04042) | NocoDB is software for building databases as spreadsheets. | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-50717` |
+| 7,958 | 2024-05 | [`INC-11110`](docs/incidents/2024.md#inc-11110) | NocoDB Vulnerable to Stored Cross-Site Scripting in Formula.vue | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2023-49781` |
+| 7,959 | 2024-05 | [`INC-04052`](docs/incidents/2024.md#inc-04052) | NVIDIA Triton Inference Server for Linux contains a vulnerability where a user can set the logging location t… | Critical | LLM02, LLM03 | ASI02, ASI04 | `CVE-2024-0087` (+2) |
+| 7,960 | 2024-05 | [`INC-11083`](docs/incidents/2024.md#inc-11083) | nzo/url-encryptor-bundle Insecure default secret key and IV allowing anyone to decrypt values | High | LLM03 | ASI04 |  |
+| 7,961 | 2024-05 | [`INC-11106`](docs/incidents/2024.md#inc-11106) | OctoPrint has an Authentication Bypass via X-Forwarded-For Header when autologinLocal is enabled | High | LLM03 | ASI04 | `CVE-2024-32977` |
+| 7,962 | 2024-05 | [`INC-11082`](docs/incidents/2024.md#inc-11082) | onelogin/php-saml Improper signature validation on LogoutRequest/LogoutResponse. | Low | LLM03 | ASI04 |  |
+| 7,963 | 2024-05 | [`INC-11081`](docs/incidents/2024.md#inc-11081) | onelogin/php-saml signature wrapping attacks | Medium | LLM03 | ASI04 | `CVE-2016-1000253` |
 | 7,964 | 2024-05 | [`INC-11080`](docs/incidents/2024.md#inc-11080) | Passbolt Api E-mail HTML injection | Medium | LLM03 | ASI04 |  |
 | 7,965 | 2024-05 | [`INC-11120`](docs/incidents/2024.md#inc-11120) | pgAdmin is affected by a multi-factor authentication bypass vulnerability | Medium | LLM03 | ASI03, ASI04 | `CVE-2024-4215` |
 | 7,966 | 2024-05 | [`INC-04139`](docs/incidents/2024.md#inc-04139) | qdrant/qdrant version 1.9.0-dev is vulnerable to path traversal due to improper input validation in the `/col… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-3584` |
@@ -8183,29 +8183,29 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 8,053 | 2024-04 | [`INC-11157`](docs/incidents/2024.md#inc-11157) | Apache Pulsar: Improper Authorization For Namespace and Topic Management Endpoints | Medium | LLM03 | ASI04 | `CVE-2024-29834` |
 | 8,054 | 2024-04 | [`INC-11155`](docs/incidents/2024.md#inc-11155) | Apache Zeppelin vulnerable to cross-site scripting in the helium module | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-31868` |
 | 8,055 | 2024-04 | [`INC-11136`](docs/incidents/2024.md#inc-11136) | Authelia's Group Changes may not have the expected results (YAML file backend) | Low | LLM03 | ASI03, ASI04 |  |
-| 8,056 | 2024-04 | [`INC-03657`](docs/incidents/2024.md#inc-03657) | ChatGPT said to violate GDPR by not correcting inaccurate personal info | Medium | LLM06, LLM09 | ASI09 |  |
-| 8,057 | 2024-04 | [`INC-11148`](docs/incidents/2024.md#inc-11148) | Cosign malicious artifacts can cause machine-wide DoS | Medium | LLM03 | ASI04 | `CVE-2024-29903` |
-| 8,058 | 2024-04 | [`INC-03714`](docs/incidents/2024.md#inc-03714) | Deepfake Philippines President urges military action against China | High | LLM07, LLM09 | ASI09 |  |
+| 8,056 | 2024-04 | [`INC-04075`](docs/incidents/2024.md#inc-04075) | Breach at Australian venue-ID vendor Outabox leaks over a million patrons' biometric data | Critical | LLM02 | ASI03 |  |
+| 8,057 | 2024-04 | [`INC-03657`](docs/incidents/2024.md#inc-03657) | ChatGPT said to violate GDPR by not correcting inaccurate personal info | Medium | LLM06, LLM09 | ASI09 |  |
+| 8,058 | 2024-04 | [`INC-11148`](docs/incidents/2024.md#inc-11148) | Cosign malicious artifacts can cause machine-wide DoS | Medium | LLM03 | ASI04 | `CVE-2024-29903` |
 | 8,059 | 2024-04 | [`INC-03729`](docs/incidents/2024.md#inc-03729) | Deno — Vulnerability (CVE-2024-32477) | High | LLM03 | ASI04 | `CVE-2024-32477` |
 | 8,060 | 2024-04 | [`INC-11139`](docs/incidents/2024.md#inc-11139) | Dolibarr Application Home Page has HTML injection vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-23817` |
 | 8,061 | 2024-04 | [`INC-11146`](docs/incidents/2024.md#inc-11146) | Duplicate Advisory: Scrapy decompression bomb vulnerability | High | LLM03 | ASI04 |  |
-| 8,062 | 2024-04 | [`INC-11156`](docs/incidents/2024.md#inc-11156) | gin-vue-admin background arbitrary code coverage vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-31457` |
-| 8,063 | 2024-04 | [`INC-01166`](docs/incidents/2024.md#inc-01166) | Hugging Face Transformers load_repo_checkpoint pickle RCE | Critical | LLM03, LLM04, LLM05, LLM10 | ASI04, ASI05, ASI08 | `CVE-2023-2800` (+20) |
-| 8,064 | 2024-04 | [`INC-03900`](docs/incidents/2024.md#inc-03900) | In the Linux kernel, the following vulnerability has been resolved: libceph: just wait for more data to be av… | Medium | LLM03 | ASI04 | `CVE-2023-52636` |
-| 8,065 | 2024-04 | [`INC-11135`](docs/incidents/2024.md#inc-11135) | JADX file override vulnerability | Low | LLM03, LLM05 | ASI04, ASI05 |  |
-| 8,066 | 2024-04 | [`INC-03917`](docs/incidents/2024.md#inc-03917) | Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks | Critical | LLM01 | ASI01 |  |
-| 8,067 | 2024-04 | [`INC-03924`](docs/incidents/2024.md#inc-03924) | Keras Lambda layer marshalled-code RCE | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2024-3660` |
-| 8,068 | 2024-04 | [`INC-11142`](docs/incidents/2024.md#inc-11142) | Keycloak vulnerable to session hijacking via re-authentication | Medium | LLM03 | ASI03, ASI04 | `CVE-2023-6717`, `CVE-2023-6787` |
-| 8,069 | 2024-04 | [`INC-03928`](docs/incidents/2024.md#inc-03928) | Kohya_ss — Command Injection (CVE-2024-32022) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-32022` (+5) |
-| 8,070 | 2024-04 | [`INC-03952`](docs/incidents/2024.md#inc-03952) | Llama.cpp is LLM inference in C/C++. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-32878` |
-| 8,071 | 2024-04 | [`INC-03955`](docs/incidents/2024.md#inc-03955) | LLM-generated malware evades endpoint detection — AI-assisted polymorphic code | Critical | LLM01, LLM05, LLM06 |  |  |
-| 8,072 | 2024-04 | [`INC-11149`](docs/incidents/2024.md#inc-11149) | LocalAI Command Injection in audioToWav | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-2029` |
-| 8,073 | 2024-04 | [`INC-11154`](docs/incidents/2024.md#inc-11154) | Magento Open Source allows Improper Input Validation | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-20758`, `CVE-2024-20759` |
-| 8,074 | 2024-04 | [`INC-03967`](docs/incidents/2024.md#inc-03967) | Many-shot jailbreaking (Anthropic research) | High | LLM01, LLM04, LLM06 | ASI01 |  |
-| 8,075 | 2024-04 | [`INC-11144`](docs/incidents/2024.md#inc-11144) | MSAL.NET applications targeting Xamarin Android and .NET Android (MAUI) susceptible to local denial of service | Low | LLM03 | ASI04 | `CVE-2024-27086` |
-| 8,076 | 2024-04 | [`INC-11127`](docs/incidents/2024.md#inc-11127) | NVIDIA NeMo framework for Ubuntu contains a vulnerability in tools/asr_webapp where an attacker may cause an… | High | LLM03 | ASI04 | `CVE-2024-0081` |
-| 8,077 | 2024-04 | [`INC-04062`](docs/incidents/2024.md#inc-04062) | Open WebUI — Ssrf (CVE-2024-30256) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-30256` |
-| 8,078 | 2024-04 | [`INC-04075`](docs/incidents/2024.md#inc-04075) | Outabox data breach exposes 1m biometric records | Critical | LLM02 | ASI03 |  |
+| 8,062 | 2024-04 | [`INC-03714`](docs/incidents/2024.md#inc-03714) | Fabricated Marcos Jr. audio clip calling for military response to China circulates online | High | LLM07, LLM09 | ASI09 |  |
+| 8,063 | 2024-04 | [`INC-11156`](docs/incidents/2024.md#inc-11156) | gin-vue-admin background arbitrary code coverage vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-31457` |
+| 8,064 | 2024-04 | [`INC-01166`](docs/incidents/2024.md#inc-01166) | Hugging Face Transformers load_repo_checkpoint pickle RCE | Critical | LLM03, LLM04, LLM05, LLM10 | ASI04, ASI05, ASI08 | `CVE-2023-2800` (+20) |
+| 8,065 | 2024-04 | [`INC-03900`](docs/incidents/2024.md#inc-03900) | In the Linux kernel, the following vulnerability has been resolved: libceph: just wait for more data to be av… | Medium | LLM03 | ASI04 | `CVE-2023-52636` |
+| 8,066 | 2024-04 | [`INC-11135`](docs/incidents/2024.md#inc-11135) | JADX file override vulnerability | Low | LLM03, LLM05 | ASI04, ASI05 |  |
+| 8,067 | 2024-04 | [`INC-03917`](docs/incidents/2024.md#inc-03917) | Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks | Critical | LLM01 | ASI01 |  |
+| 8,068 | 2024-04 | [`INC-03924`](docs/incidents/2024.md#inc-03924) | Keras Lambda layer marshalled-code RCE | Critical | LLM03, LLM04, LLM05 | ASI04, ASI05 | `CVE-2024-3660` |
+| 8,069 | 2024-04 | [`INC-11142`](docs/incidents/2024.md#inc-11142) | Keycloak vulnerable to session hijacking via re-authentication | Medium | LLM03 | ASI03, ASI04 | `CVE-2023-6717`, `CVE-2023-6787` |
+| 8,070 | 2024-04 | [`INC-03928`](docs/incidents/2024.md#inc-03928) | Kohya_ss — Command Injection (CVE-2024-32022) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-32022` (+5) |
+| 8,071 | 2024-04 | [`INC-03952`](docs/incidents/2024.md#inc-03952) | Llama.cpp is LLM inference in C/C++. | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-32878` |
+| 8,072 | 2024-04 | [`INC-03955`](docs/incidents/2024.md#inc-03955) | LLM-generated malware evades endpoint detection — AI-assisted polymorphic code | Critical | LLM01, LLM05, LLM06 |  |  |
+| 8,073 | 2024-04 | [`INC-11149`](docs/incidents/2024.md#inc-11149) | LocalAI Command Injection in audioToWav | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-2029` |
+| 8,074 | 2024-04 | [`INC-11154`](docs/incidents/2024.md#inc-11154) | Magento Open Source allows Improper Input Validation | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-20758`, `CVE-2024-20759` |
+| 8,075 | 2024-04 | [`INC-03967`](docs/incidents/2024.md#inc-03967) | Many-shot jailbreaking (Anthropic research) | High | LLM01, LLM04, LLM06 | ASI01 |  |
+| 8,076 | 2024-04 | [`INC-11144`](docs/incidents/2024.md#inc-11144) | MSAL.NET applications targeting Xamarin Android and .NET Android (MAUI) susceptible to local denial of service | Low | LLM03 | ASI04 | `CVE-2024-27086` |
+| 8,077 | 2024-04 | [`INC-11127`](docs/incidents/2024.md#inc-11127) | NVIDIA NeMo framework for Ubuntu contains a vulnerability in tools/asr_webapp where an attacker may cause an… | High | LLM03 | ASI04 | `CVE-2024-0081` |
+| 8,078 | 2024-04 | [`INC-04062`](docs/incidents/2024.md#inc-04062) | Open WebUI — Ssrf (CVE-2024-30256) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-30256` |
 | 8,079 | 2024-04 | [`INC-11130`](docs/incidents/2024.md#inc-11130) | Passbolt API allows HTML injection | Medium | LLM03 | ASI04 | `CVE-2024-33670` |
 | 8,080 | 2024-04 | [`INC-11158`](docs/incidents/2024.md#inc-11158) | Piccolo Admin's raw SVG loading may lead to complete data compromise from admin page | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-30248` |
 | 8,081 | 2024-04 | [`INC-04108`](docs/incidents/2024.md#inc-04108) | Protect AI MLflow, Ray, Triton Vulnerability Surge | High | LLM05 | ASI04 |  |
@@ -8270,9 +8270,9 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 8,140 | 2024-03 | [`INC-11196`](docs/incidents/2024.md#inc-11196) | Duplicate Advisory: Use-after-free in libxml2 via Nokogiri::XML::Reader | Medium | LLM03 | ASI04 |  |
 | 8,141 | 2024-03 | [`INC-11215`](docs/incidents/2024.md#inc-11215) | ESPHome vulnerable to remote code execution via arbitrary file write | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2024-27081` |
 | 8,142 | 2024-03 | [`INC-11212`](docs/incidents/2024.md#inc-11212) | esphome vulnerable to stored Cross-site Scripting in edit configuration file API | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-27287` |
-| 8,143 | 2024-03 | [`INC-11182`](docs/incidents/2024.md#inc-11182) | Gadget chain in Symfony 1 due to uncontrolled unserialized input in sfNamespacedParameterHolder | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-28861` |
-| 8,144 | 2024-03 | [`INC-11197`](docs/incidents/2024.md#inc-11197) | Gadget chain in Symfony 1 due to vulnerable Swift Mailer dependency | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-28859` |
-| 8,145 | 2024-03 | [`INC-03804`](docs/incidents/2024.md#inc-03804) | GenNomis AI art generator accused of producing explicit child images | Critical | LLM02, LLM05, LLM06, LLM07, LLM09 | ASI03, ASI08, ASI09 |  |
+| 8,143 | 2024-03 | [`INC-03804`](docs/incidents/2024.md#inc-03804) | Exposed GenNomis AWS bucket leaks roughly 95,000 images including apparent child abuse material | Critical | LLM02, LLM05, LLM06, LLM07, LLM09 | ASI03, ASI08, ASI09 |  |
+| 8,144 | 2024-03 | [`INC-11182`](docs/incidents/2024.md#inc-11182) | Gadget chain in Symfony 1 due to uncontrolled unserialized input in sfNamespacedParameterHolder | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-28861` |
+| 8,145 | 2024-03 | [`INC-11197`](docs/incidents/2024.md#inc-11197) | Gadget chain in Symfony 1 due to vulnerable Swift Mailer dependency | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-28859` |
 | 8,146 | 2024-03 | [`INC-11192`](docs/incidents/2024.md#inc-11192) | GeoServer Arbitrary file renaming vulnerability in REST Coverage/Data Store API | Medium | LLM03 | ASI04 | `CVE-2024-23634` |
 | 8,147 | 2024-03 | [`INC-11186`](docs/incidents/2024.md#inc-11186) | GeoServer's GWC Demos Page vulnerable to Stored Cross-Site Scripting (XSS) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-23821` |
 | 8,148 | 2024-03 | [`INC-11189`](docs/incidents/2024.md#inc-11189) | GeoServer's GWC Seed Form vulnerable to Stored Cross-Site Scripting (XSS) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-23643` |
@@ -8362,62 +8362,62 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 8,232 | 2024-02 | [`INC-11220`](docs/incidents/2024.md#inc-11220) | Apache Superset: Improper authorization validation on dashboards and charts import | Medium | LLM03 | ASI04 | `CVE-2024-26016` |
 | 8,233 | 2024-02 | [`INC-03587`](docs/incidents/2024.md#inc-03587) | ArtPrompt: ASCII Art-Based Jailbreak of Aligned LLMs | High | LLM01 | ASI01 |  |
 | 8,234 | 2024-02 | [`INC-11223`](docs/incidents/2024.md#inc-11223) | Bagisto Cross-Site Request Forgery vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-36237` |
-| 8,235 | 2024-02 | [`INC-03612`](docs/incidents/2024.md#inc-03612) | Boy commits suicide after relationship with Character.AI chatbot | Critical | LLM05, LLM06, LLM07, LLM09 | ASI08, ASI09 |  |
-| 8,236 | 2024-02 | [`INC-11250`](docs/incidents/2024.md#inc-11250) | Broken Access Control in Spring Security With Direct Use of isFullyAuthenticated | High | LLM03 | ASI03, ASI04 | `CVE-2024-22234` |
-| 8,237 | 2024-02 | [`INC-11263`](docs/incidents/2024.md#inc-11263) | Central Dogma Authentication Bypass Vulnerability via Session Leakage | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-1143` |
-| 8,238 | 2024-02 | [`INC-11259`](docs/incidents/2024.md#inc-11259) | CKEditor4 Cross-site Scripting vulnerability caused by incorrect CDATA detection | Medium | LLM03 | ASI04 | `CVE-2024-24815` |
-| 8,239 | 2024-02 | [`INC-03690`](docs/incidents/2024.md#inc-03690) | Cross-Site Request Forgery (CSRF) vulnerability in Senol Sahin AI Power: Complete AI Pack – Powered by GPT-4.… | Medium | LLM03 | ASI04 | `CVE-2023-51528` |
-| 8,240 | 2024-02 | [`INC-11245`](docs/incidents/2024.md#inc-11245) | Cross-site scripting (XSS) in the dynamic file uploads | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-51447` |
-| 8,241 | 2024-02 | [`INC-11257`](docs/incidents/2024.md#inc-11257) | Cross-site scripting (XSS) vulnerability in Grav | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-31506` |
-| 8,242 | 2024-02 | [`INC-11251`](docs/incidents/2024.md#inc-11251) | Cross-site Scripting in electron-pdf | High | LLM03 | ASI04 | `CVE-2024-1648` |
-| 8,243 | 2024-02 | [`INC-11252`](docs/incidents/2024.md#inc-11252) | Cross-site Scripting in Pyhtml2pdf | High | LLM03 | ASI04 | `CVE-2024-1647` |
-| 8,244 | 2024-02 | [`INC-03693`](docs/incidents/2024.md#inc-03693) | Custom GPT System Prompt Leakage Wave | Medium | LLM01, LLM02, LLM07 | ASI01 |  |
-| 8,245 | 2024-02 | [`INC-11264`](docs/incidents/2024.md#inc-11264) | Dash apps vulnerable to Cross-site Scripting | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-21485` |
-| 8,246 | 2024-02 | [`INC-11258`](docs/incidents/2024.md#inc-11258) | DIRAC's TokenManager does not check permissions on cached tokens | Critical | LLM03 | ASI04 | `CVE-2024-24825` |
-| 8,247 | 2024-02 | [`INC-11218`](docs/incidents/2024.md#inc-11218) | Docassemble HTML and javascript injection | Medium | LLM03 | ASI04 | `CVE-2024-27290` |
-| 8,248 | 2024-02 | [`INC-11231`](docs/incidents/2024.md#inc-11231) | Dompdf's usage of vulnerable version of phenx/php-svg-lib leads to restriction bypass and potential RCE | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25117` |
-| 8,249 | 2024-02 | [`INC-11232`](docs/incidents/2024.md#inc-11232) | Enhavo Cross-site Scripting vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25874` (+2) |
-| 8,250 | 2024-02 | [`INC-11253`](docs/incidents/2024.md#inc-11253) | GitHub Security Lab (GHSL) Vulnerability Report, scrypted: `GHSL-2023-218`, `GHSL-2023-219` | High | LLM03, LLM05 | ASI04, ASI05 |  |
-| 8,251 | 2024-02 | [`INC-03822`](docs/incidents/2024.md#inc-03822) | Google Gemini AI image generator refuses to depict white people — overcorrected safety filters | High | LLM04, LLM09 |  |  |
-| 8,252 | 2024-02 | [`INC-11230`](docs/incidents/2024.md#inc-11230) | Helm's Missing YAML Content Leads To Panic | High | LLM03 | ASI04 | `CVE-2024-26147` |
-| 8,253 | 2024-02 | [`INC-03876`](docs/incidents/2024.md#inc-03876) | Hugging Face model repository pickle-based malware supply chain | Critical | LLM03 | ASI04 |  |
-| 8,254 | 2024-02 | [`INC-03890`](docs/incidents/2024.md#inc-03890) | Improper buffer restrictions in Intel(R) Optimization for TensorFlow before version 2.13.0 may allow an authe… | Medium | LLM03 | ASI04 | `CVE-2023-30767` |
-| 8,255 | 2024-02 | [`INC-03902`](docs/incidents/2024.md#inc-03902) | In the Linux kernel, the following vulnerability has been resolved: powerpc/pseries/memhp: Fix access beyond… | High | LLM03 | ASI04 | `CVE-2023-52451` |
-| 8,256 | 2024-02 | [`INC-03918`](docs/incidents/2024.md#inc-03918) | Jailbreaking via Word Substitution and Novel Ciphers | High | LLM01 | ASI01 |  |
-| 8,257 | 2024-02 | [`INC-11226`](docs/incidents/2024.md#inc-11226) | Kirby vulnerable to unrestricted file upload of user avatar images | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-26483` |
-| 8,258 | 2024-02 | [`INC-11243`](docs/incidents/2024.md#inc-11243) | Liferay Portal and Liferay DXP vulnerable to reflected Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-40191`, `CVE-2023-42496` |
-| 8,259 | 2024-02 | [`INC-11247`](docs/incidents/2024.md#inc-11247) | Liferay Portal and Liferay DXP vulnerable to theft of hashed password | Medium | LLM03 | ASI04 | `CVE-2024-26270` |
-| 8,260 | 2024-02 | [`INC-11241`](docs/incidents/2024.md#inc-11241) | Liferay Portal and Liferay DXP's Users Admin module vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25602` |
-| 8,261 | 2024-02 | [`INC-11236`](docs/incidents/2024.md#inc-11236) | Liferay Portal Calendar module and Liferay DXP vulnerable to Cross-site Scripting, content spoofing | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25151` |
-| 8,262 | 2024-02 | [`INC-11235`](docs/incidents/2024.md#inc-11235) | Liferay Portal Document and Media widget and Liferay DXP vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-47795` |
-| 8,263 | 2024-02 | [`INC-11239`](docs/incidents/2024.md#inc-11239) | Liferay Portal Expando module and Liferay DXP vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25601` |
-| 8,264 | 2024-02 | [`INC-11237`](docs/incidents/2024.md#inc-11237) | Liferay Portal Frontend JS module's portlet.js and Liferay DXP vulnerable to Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-26269` |
-| 8,265 | 2024-02 | [`INC-11249`](docs/incidents/2024.md#inc-11249) | Liferay Portal has a Stored XSS with Blog entries (Insecure defaults) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25610` |
-| 8,266 | 2024-02 | [`INC-11242`](docs/incidents/2024.md#inc-11242) | Liferay Portal Language Override edit screen and Liferay DXP vulnerable to reflected Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-42498` |
-| 8,267 | 2024-02 | [`INC-11240`](docs/incidents/2024.md#inc-11240) | Liferay Portal Message Board widget and Liferay DXP vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25152` |
-| 8,268 | 2024-02 | [`INC-11260`](docs/incidents/2024.md#inc-11260) | Liferay Portal stored cross-site scripting (XSS) vulnerability | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25145` |
-| 8,269 | 2024-02 | [`INC-11248`](docs/incidents/2024.md#inc-11248) | Liferay Portal vulnerable to Denial of Service | Medium | LLM03 | ASI04 | `CVE-2024-26265` |
-| 8,270 | 2024-02 | [`INC-11238`](docs/incidents/2024.md#inc-11238) | Liferay Portal's Dynamic Data Mapping module's DDMForm and Liferay DXP vulnerable to stored Cross-site Script… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25603` |
-| 8,271 | 2024-02 | [`INC-11221`](docs/incidents/2024.md#inc-11221) | Magento LTS vulnerable to stored XSS in admin file form | Medium | LLM03, LLM05 | ASI04, ASI05 |  |
-| 8,272 | 2024-02 | [`INC-11254`](docs/incidents/2024.md#inc-11254) | Magento Open Source allows OS Command Injection | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-20716` (+3) |
-| 8,273 | 2024-02 | [`INC-11262`](docs/incidents/2024.md#inc-11262) | Malicious input can provoke XSS when preserving comments | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-23635` |
-| 8,274 | 2024-02 | [`INC-11244`](docs/incidents/2024.md#inc-11244) | MeshCentral cross-site websocket hijacking (CSWSH) vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-26135` |
-| 8,275 | 2024-02 | [`INC-11256`](docs/incidents/2024.md#inc-11256) | Microsoft Security Advisory CVE-2024-21386: .NET Denial of Service Vulnerability | High | LLM03 | ASI04 | `CVE-2024-21386` |
-| 8,276 | 2024-02 | [`INC-04019`](docs/incidents/2024.md#inc-04019) | Moffatt v. Air Canada legal precedent: AI chatbot misrepresentation liability | Low | LLM09 | ASI09 |  |
-| 8,277 | 2024-02 | [`INC-11255`](docs/incidents/2024.md#inc-11255) | NuGet Client Security Feature Bypass Vulnerability | Critical | LLM03 | ASI04 | `CVE-2024-0057` |
-| 8,278 | 2024-02 | [`INC-04066`](docs/incidents/2024.md#inc-04066) | OpenAI February 2024 Disrupting State-Affiliated Threat Actors | High | LLM05, LLM06, LLM10 | ASI02, ASI06 |  |
-| 8,279 | 2024-02 | [`INC-11246`](docs/incidents/2024.md#inc-11246) | Possible CSRF attack at questionnaire templates preview | Medium | LLM03 | ASI04 | `CVE-2023-47635` |
-| 8,280 | 2024-02 | [`INC-11229`](docs/incidents/2024.md#inc-11229) | Potentially untrusted input is rendered as HTML in final output | High | LLM03 | ASI04 | `CVE-2024-26151` |
-| 8,281 | 2024-02 | [`INC-04104`](docs/incidents/2024.md#inc-04104) | Prompt Stealing Attacks Against Large Language Models | Medium | LLM07 | ASI05 |  |
-| 8,282 | 2024-02 | [`INC-04109`](docs/incidents/2024.md#inc-04109) | PRP: Propagating Universal Perturbations to Attack LLM Guardrails | High | LLM01 | ASI01 |  |
-| 8,283 | 2024-02 | [`INC-04110`](docs/incidents/2024.md#inc-04110) | PRSA: Prompt Stealing Attacks Against Real-World Prompt Services | Medium | LLM07, LLM10 | ASI05 |  |
-| 8,284 | 2024-02 | [`INC-11228`](docs/incidents/2024.md#inc-11228) | pypqc private key retrieval vulnerability | High | LLM03 | ASI04 |  |
-| 8,285 | 2024-02 | [`INC-04165`](docs/incidents/2024.md#inc-04165) | Robust CLIP: Unsupervised Adversarial Fine-Tuning Defenses Reveal CLIP Vulnerabilities | High | LLM01 | ASI01 |  |
-| 8,286 | 2024-02 | [`INC-11225`](docs/incidents/2024.md#inc-11225) | SAML authentication bypass due to missing validation on unsigned SAML messages | Critical | LLM03 | ASI04 | `CVE-2024-1735` |
-| 8,287 | 2024-02 | [`INC-11227`](docs/incidents/2024.md#inc-11227) | sanitize-html Information Exposure vulnerability | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2024-21501` |
-| 8,288 | 2024-02 | [`INC-04203`](docs/incidents/2024.md#inc-04203) | Should an instance of AnythingLLM be hosted on an internal network and the attacked be explicitly granted a p… | High | LLM03 | ASI04 | `CVE-2024-0759` |
-| 8,289 | 2024-02 | [`INC-11265`](docs/incidents/2024.md#inc-11265) | Statmic CMS vulnerable to account takeover via XSS and password reset link | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-24570` |
-| 8,290 | 2024-02 | [`INC-11261`](docs/incidents/2024.md#inc-11261) | Sulu HTML Injection via Autocomplete Suggestion | Low | LLM03 | ASI04 | `CVE-2024-24807` |
+| 8,235 | 2024-02 | [`INC-11250`](docs/incidents/2024.md#inc-11250) | Broken Access Control in Spring Security With Direct Use of isFullyAuthenticated | High | LLM03 | ASI03, ASI04 | `CVE-2024-22234` |
+| 8,236 | 2024-02 | [`INC-11263`](docs/incidents/2024.md#inc-11263) | Central Dogma Authentication Bypass Vulnerability via Session Leakage | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-1143` |
+| 8,237 | 2024-02 | [`INC-11259`](docs/incidents/2024.md#inc-11259) | CKEditor4 Cross-site Scripting vulnerability caused by incorrect CDATA detection | Medium | LLM03 | ASI04 | `CVE-2024-24815` |
+| 8,238 | 2024-02 | [`INC-03690`](docs/incidents/2024.md#inc-03690) | Cross-Site Request Forgery (CSRF) vulnerability in Senol Sahin AI Power: Complete AI Pack – Powered by GPT-4.… | Medium | LLM03 | ASI04 | `CVE-2023-51528` |
+| 8,239 | 2024-02 | [`INC-11245`](docs/incidents/2024.md#inc-11245) | Cross-site scripting (XSS) in the dynamic file uploads | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-51447` |
+| 8,240 | 2024-02 | [`INC-11257`](docs/incidents/2024.md#inc-11257) | Cross-site scripting (XSS) vulnerability in Grav | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-31506` |
+| 8,241 | 2024-02 | [`INC-11251`](docs/incidents/2024.md#inc-11251) | Cross-site Scripting in electron-pdf | High | LLM03 | ASI04 | `CVE-2024-1648` |
+| 8,242 | 2024-02 | [`INC-11252`](docs/incidents/2024.md#inc-11252) | Cross-site Scripting in Pyhtml2pdf | High | LLM03 | ASI04 | `CVE-2024-1647` |
+| 8,243 | 2024-02 | [`INC-03693`](docs/incidents/2024.md#inc-03693) | Custom GPT System Prompt Leakage Wave | Medium | LLM01, LLM02, LLM07 | ASI01 |  |
+| 8,244 | 2024-02 | [`INC-11264`](docs/incidents/2024.md#inc-11264) | Dash apps vulnerable to Cross-site Scripting | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-21485` |
+| 8,245 | 2024-02 | [`INC-11258`](docs/incidents/2024.md#inc-11258) | DIRAC's TokenManager does not check permissions on cached tokens | Critical | LLM03 | ASI04 | `CVE-2024-24825` |
+| 8,246 | 2024-02 | [`INC-11218`](docs/incidents/2024.md#inc-11218) | Docassemble HTML and javascript injection | Medium | LLM03 | ASI04 | `CVE-2024-27290` |
+| 8,247 | 2024-02 | [`INC-11231`](docs/incidents/2024.md#inc-11231) | Dompdf's usage of vulnerable version of phenx/php-svg-lib leads to restriction bypass and potential RCE | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25117` |
+| 8,248 | 2024-02 | [`INC-11232`](docs/incidents/2024.md#inc-11232) | Enhavo Cross-site Scripting vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25874` (+2) |
+| 8,249 | 2024-02 | [`INC-11253`](docs/incidents/2024.md#inc-11253) | GitHub Security Lab (GHSL) Vulnerability Report, scrypted: `GHSL-2023-218`, `GHSL-2023-219` | High | LLM03, LLM05 | ASI04, ASI05 |  |
+| 8,250 | 2024-02 | [`INC-03822`](docs/incidents/2024.md#inc-03822) | Google Gemini AI image generator refuses to depict white people — overcorrected safety filters | High | LLM04, LLM09 |  |  |
+| 8,251 | 2024-02 | [`INC-11230`](docs/incidents/2024.md#inc-11230) | Helm's Missing YAML Content Leads To Panic | High | LLM03 | ASI04 | `CVE-2024-26147` |
+| 8,252 | 2024-02 | [`INC-03876`](docs/incidents/2024.md#inc-03876) | Hugging Face model repository pickle-based malware supply chain | Critical | LLM03 | ASI04 |  |
+| 8,253 | 2024-02 | [`INC-03890`](docs/incidents/2024.md#inc-03890) | Improper buffer restrictions in Intel(R) Optimization for TensorFlow before version 2.13.0 may allow an authe… | Medium | LLM03 | ASI04 | `CVE-2023-30767` |
+| 8,254 | 2024-02 | [`INC-03902`](docs/incidents/2024.md#inc-03902) | In the Linux kernel, the following vulnerability has been resolved: powerpc/pseries/memhp: Fix access beyond… | High | LLM03 | ASI04 | `CVE-2023-52451` |
+| 8,255 | 2024-02 | [`INC-03918`](docs/incidents/2024.md#inc-03918) | Jailbreaking via Word Substitution and Novel Ciphers | High | LLM01 | ASI01 |  |
+| 8,256 | 2024-02 | [`INC-11226`](docs/incidents/2024.md#inc-11226) | Kirby vulnerable to unrestricted file upload of user avatar images | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-26483` |
+| 8,257 | 2024-02 | [`INC-11243`](docs/incidents/2024.md#inc-11243) | Liferay Portal and Liferay DXP vulnerable to reflected Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-40191`, `CVE-2023-42496` |
+| 8,258 | 2024-02 | [`INC-11247`](docs/incidents/2024.md#inc-11247) | Liferay Portal and Liferay DXP vulnerable to theft of hashed password | Medium | LLM03 | ASI04 | `CVE-2024-26270` |
+| 8,259 | 2024-02 | [`INC-11241`](docs/incidents/2024.md#inc-11241) | Liferay Portal and Liferay DXP's Users Admin module vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25602` |
+| 8,260 | 2024-02 | [`INC-11236`](docs/incidents/2024.md#inc-11236) | Liferay Portal Calendar module and Liferay DXP vulnerable to Cross-site Scripting, content spoofing | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25151` |
+| 8,261 | 2024-02 | [`INC-11235`](docs/incidents/2024.md#inc-11235) | Liferay Portal Document and Media widget and Liferay DXP vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-47795` |
+| 8,262 | 2024-02 | [`INC-11239`](docs/incidents/2024.md#inc-11239) | Liferay Portal Expando module and Liferay DXP vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25601` |
+| 8,263 | 2024-02 | [`INC-11237`](docs/incidents/2024.md#inc-11237) | Liferay Portal Frontend JS module's portlet.js and Liferay DXP vulnerable to Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-26269` |
+| 8,264 | 2024-02 | [`INC-11249`](docs/incidents/2024.md#inc-11249) | Liferay Portal has a Stored XSS with Blog entries (Insecure defaults) | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25610` |
+| 8,265 | 2024-02 | [`INC-11242`](docs/incidents/2024.md#inc-11242) | Liferay Portal Language Override edit screen and Liferay DXP vulnerable to reflected Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-42498` |
+| 8,266 | 2024-02 | [`INC-11240`](docs/incidents/2024.md#inc-11240) | Liferay Portal Message Board widget and Liferay DXP vulnerable to stored Cross-site Scripting | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25152` |
+| 8,267 | 2024-02 | [`INC-11260`](docs/incidents/2024.md#inc-11260) | Liferay Portal stored cross-site scripting (XSS) vulnerability | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25145` |
+| 8,268 | 2024-02 | [`INC-11248`](docs/incidents/2024.md#inc-11248) | Liferay Portal vulnerable to Denial of Service | Medium | LLM03 | ASI04 | `CVE-2024-26265` |
+| 8,269 | 2024-02 | [`INC-11238`](docs/incidents/2024.md#inc-11238) | Liferay Portal's Dynamic Data Mapping module's DDMForm and Liferay DXP vulnerable to stored Cross-site Script… | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-25603` |
+| 8,270 | 2024-02 | [`INC-11221`](docs/incidents/2024.md#inc-11221) | Magento LTS vulnerable to stored XSS in admin file form | Medium | LLM03, LLM05 | ASI04, ASI05 |  |
+| 8,271 | 2024-02 | [`INC-11254`](docs/incidents/2024.md#inc-11254) | Magento Open Source allows OS Command Injection | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-20716` (+3) |
+| 8,272 | 2024-02 | [`INC-11262`](docs/incidents/2024.md#inc-11262) | Malicious input can provoke XSS when preserving comments | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-23635` |
+| 8,273 | 2024-02 | [`INC-11244`](docs/incidents/2024.md#inc-11244) | MeshCentral cross-site websocket hijacking (CSWSH) vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-26135` |
+| 8,274 | 2024-02 | [`INC-11256`](docs/incidents/2024.md#inc-11256) | Microsoft Security Advisory CVE-2024-21386: .NET Denial of Service Vulnerability | High | LLM03 | ASI04 | `CVE-2024-21386` |
+| 8,275 | 2024-02 | [`INC-04019`](docs/incidents/2024.md#inc-04019) | Moffatt v. Air Canada legal precedent: AI chatbot misrepresentation liability | Low | LLM09 | ASI09 |  |
+| 8,276 | 2024-02 | [`INC-11255`](docs/incidents/2024.md#inc-11255) | NuGet Client Security Feature Bypass Vulnerability | Critical | LLM03 | ASI04 | `CVE-2024-0057` |
+| 8,277 | 2024-02 | [`INC-04066`](docs/incidents/2024.md#inc-04066) | OpenAI February 2024 Disrupting State-Affiliated Threat Actors | High | LLM05, LLM06, LLM10 | ASI02, ASI06 |  |
+| 8,278 | 2024-02 | [`INC-11246`](docs/incidents/2024.md#inc-11246) | Possible CSRF attack at questionnaire templates preview | Medium | LLM03 | ASI04 | `CVE-2023-47635` |
+| 8,279 | 2024-02 | [`INC-11229`](docs/incidents/2024.md#inc-11229) | Potentially untrusted input is rendered as HTML in final output | High | LLM03 | ASI04 | `CVE-2024-26151` |
+| 8,280 | 2024-02 | [`INC-04104`](docs/incidents/2024.md#inc-04104) | Prompt Stealing Attacks Against Large Language Models | Medium | LLM07 | ASI05 |  |
+| 8,281 | 2024-02 | [`INC-04109`](docs/incidents/2024.md#inc-04109) | PRP: Propagating Universal Perturbations to Attack LLM Guardrails | High | LLM01 | ASI01 |  |
+| 8,282 | 2024-02 | [`INC-04110`](docs/incidents/2024.md#inc-04110) | PRSA: Prompt Stealing Attacks Against Real-World Prompt Services | Medium | LLM07, LLM10 | ASI05 |  |
+| 8,283 | 2024-02 | [`INC-11228`](docs/incidents/2024.md#inc-11228) | pypqc private key retrieval vulnerability | High | LLM03 | ASI04 |  |
+| 8,284 | 2024-02 | [`INC-04165`](docs/incidents/2024.md#inc-04165) | Robust CLIP: Unsupervised Adversarial Fine-Tuning Defenses Reveal CLIP Vulnerabilities | High | LLM01 | ASI01 |  |
+| 8,285 | 2024-02 | [`INC-11225`](docs/incidents/2024.md#inc-11225) | SAML authentication bypass due to missing validation on unsigned SAML messages | Critical | LLM03 | ASI04 | `CVE-2024-1735` |
+| 8,286 | 2024-02 | [`INC-11227`](docs/incidents/2024.md#inc-11227) | sanitize-html Information Exposure vulnerability | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2024-21501` |
+| 8,287 | 2024-02 | [`INC-04203`](docs/incidents/2024.md#inc-04203) | Should an instance of AnythingLLM be hosted on an internal network and the attacked be explicitly granted a p… | High | LLM03 | ASI04 | `CVE-2024-0759` |
+| 8,288 | 2024-02 | [`INC-11265`](docs/incidents/2024.md#inc-11265) | Statmic CMS vulnerable to account takeover via XSS and password reset link | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2024-24570` |
+| 8,289 | 2024-02 | [`INC-11261`](docs/incidents/2024.md#inc-11261) | Sulu HTML Injection via Autocomplete Suggestion | Low | LLM03 | ASI04 | `CVE-2024-24807` |
+| 8,290 | 2024-02 | [`INC-03612`](docs/incidents/2024.md#inc-03612) | Teen's death by suicide follows months-long bond with a Character.AI companion persona | Critical | LLM05, LLM06, LLM07, LLM09 | ASI08, ASI09 |  |
 | 8,291 | 2024-02 | [`INC-04282`](docs/incidents/2024.md#inc-04282) | The inclusion of the web scraper for AnythingLLM means that any user with the proper authorization level (man… | High | LLM03 | ASI03, ASI04 | `CVE-2024-0455` |
 | 8,292 | 2024-02 | [`INC-04327`](docs/incidents/2024.md#inc-04327) | Unveiling Typographic Deceptions: Typographic Vulnerability in LVLMs | Medium | LLM01 | ASI01 |  |
 | 8,293 | 2024-02 | [`INC-04354`](docs/incidents/2024.md#inc-04354) | WIPI: A New Web Threat for LLM-Driven Web Agents | High | LLM01 | ASI01, ASI06 |  |
@@ -8530,16 +8530,16 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 8,400 | 2024 | [`INC-03477`](docs/incidents/2024.md#inc-03477) | AI search engines promote white supremacism | Medium | LLM05 | ASI08 |  |
 | 8,401 | 2024 | [`INC-03478`](docs/incidents/2024.md#inc-03478) | AI systems used to conduct sexual violence against 1 in 5 Brazilian children | High | LLM05 | ASI08 |  |
 | 8,402 | 2024 | [`INC-03482`](docs/incidents/2024.md#inc-03482) | AI unbuttons conference participant's blouse | Medium |  |  |  |
-| 8,403 | 2024 | [`INC-03493`](docs/incidents/2024.md#inc-03493) | AI-generated drama performance cancelled over plagiarism accusations | Medium | LLM07 |  |  |
-| 8,404 | 2024 | [`INC-03494`](docs/incidents/2024.md#inc-03494) | AI-generated exam image draws student complaints | Medium | LLM07 |  |  |
-| 8,405 | 2024 | [`INC-03496`](docs/incidents/2024.md#inc-03496) | AI-generated fake ID passes crypto exchange verification | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,406 | 2024 | [`INC-03501`](docs/incidents/2024.md#inc-03501) | AI-generated product listings flood Amazon | Medium |  |  |  |
-| 8,407 | 2024 | [`INC-03503`](docs/incidents/2024.md#inc-03503) | AI-generated Toys ‘R’ Us video ad sparks backlash | Medium |  |  |  |
-| 8,408 | 2024 | [`INC-03504`](docs/incidents/2024.md#inc-03504) | AI-manipulated video of Brazilian footballer Ronaldo scams online gamers | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
-| 8,409 | 2024 | [`INC-03505`](docs/incidents/2024.md#inc-03505) | AI-modified "Minion Gore" videos plague social media platforms | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
-| 8,410 | 2024 | [`INC-03506`](docs/incidents/2024.md#inc-03506) | AI-powered spyware used to track Italian journalists | Medium | LLM02, LLM03, LLM06, LLM07 | ASI02, ASI03, ASI09 |  |
-| 8,411 | 2024 | [`INC-03533`](docs/incidents/2024.md#inc-03533) | Al account recovery scam calls target Gmail users | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
-| 8,412 | 2024 | [`INC-03535`](docs/incidents/2024.md#inc-03535) | Alexandria Ocasio-Cortez depicted as deepfake pornstar | High | LLM05, LLM07, LLM09 | ASI08, ASI09 |  |
+| 8,403 | 2024 | [`INC-04258`](docs/incidents/2024.md#inc-04258) | AI-dubbed clip gives Taylor Swift fluent Mandarin, circulates on Chinese platforms | Medium | LLM09 | ASI09 |  |
+| 8,404 | 2024 | [`INC-03493`](docs/incidents/2024.md#inc-03493) | AI-generated drama performance cancelled over plagiarism accusations | Medium | LLM07 |  |  |
+| 8,405 | 2024 | [`INC-03494`](docs/incidents/2024.md#inc-03494) | AI-generated exam image draws student complaints | Medium | LLM07 |  |  |
+| 8,406 | 2024 | [`INC-03496`](docs/incidents/2024.md#inc-03496) | AI-generated fake ID passes crypto exchange verification | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,407 | 2024 | [`INC-03501`](docs/incidents/2024.md#inc-03501) | AI-generated product listings flood Amazon | Medium |  |  |  |
+| 8,408 | 2024 | [`INC-03503`](docs/incidents/2024.md#inc-03503) | AI-generated Toys ‘R’ Us video ad sparks backlash | Medium |  |  |  |
+| 8,409 | 2024 | [`INC-03504`](docs/incidents/2024.md#inc-03504) | AI-manipulated video of Brazilian footballer Ronaldo scams online gamers | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
+| 8,410 | 2024 | [`INC-03505`](docs/incidents/2024.md#inc-03505) | AI-modified "Minion Gore" videos plague social media platforms | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
+| 8,411 | 2024 | [`INC-03506`](docs/incidents/2024.md#inc-03506) | AI-powered spyware used to track Italian journalists | Medium | LLM02, LLM03, LLM06, LLM07 | ASI02, ASI03, ASI09 |  |
+| 8,412 | 2024 | [`INC-03533`](docs/incidents/2024.md#inc-03533) | Al account recovery scam calls target Gmail users | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
 | 8,413 | 2024 | [`INC-03537`](docs/incidents/2024.md#inc-03537) | All eyes on Rafah' deepfake criticised for 'sanitising' Gaza invasion | Medium | LLM09 | ASI09 |  |
 | 8,414 | 2024 | [`INC-03551`](docs/incidents/2024.md#inc-03551) | Amazon Alexa falsely attributes false facts to fact checking organisation | Medium | LLM09 |  |  |
 | 8,415 | 2024 | [`INC-03553`](docs/incidents/2024.md#inc-03553) | Amazon sells AI-generated books about King Charles' cancer | Medium | LLM07 |  |  |
@@ -8720,81 +8720,81 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 8,590 | 2024 | [`INC-04037`](docs/incidents/2024.md#inc-04037) | NewsBreak publishes untrue story about Harvest19 charity | Medium | LLM06, LLM07 | ASI09 |  |
 | 8,591 | 2024 | [`INC-04039`](docs/incidents/2024.md#inc-04039) | NI Vision Builder AI RCE via crafted file (user interaction) | High | LLM05 |  |  |
 | 8,592 | 2024 | [`INC-04041`](docs/incidents/2024.md#inc-04041) | Nine News uses AI to 'sexualise' image of politician | Medium | LLM07 |  |  |
-| 8,593 | 2024 | [`INC-04048`](docs/incidents/2024.md#inc-04048) | NVIDIA Container Toolkit TOCTOU container escape (CVE-2024-0132) | Critical | LLM03 |  |  |
-| 8,594 | 2024 | [`INC-04049`](docs/incidents/2024.md#inc-04049) | Nvidia sued for training NeMo on authors' copyrighted works | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,595 | 2024 | [`INC-04053`](docs/incidents/2024.md#inc-04053) | NYC AI chatbot tells businesses to break law | Medium | LLM05 | ASI08 |  |
-| 8,596 | 2024 | [`INC-04055`](docs/incidents/2024.md#inc-04055) | NYT orders Perplexity to stop misusing its content | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,597 | 2024 | [`INC-04060`](docs/incidents/2024.md#inc-04060) | Opaque Cybercheck AI crime fighting tool accused of contributing to multiple wrongful convictions | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,598 | 2024 | [`INC-04063`](docs/incidents/2024.md#inc-04063) | OpenAI accused of AI generating Scarlett Johansson's voice without her consent | Medium | LLM07 |  |  |
-| 8,599 | 2024 | [`INC-04064`](docs/incidents/2024.md#inc-04064) | OpenAI bans bot impersonating US presidential candidate | Medium | LLM09 | ASI09 |  |
-| 8,600 | 2024 | [`INC-04069`](docs/incidents/2024.md#inc-04069) | OpenAI scrapes YouTube to train GPT-4 | Medium | LLM07 |  |  |
-| 8,601 | 2024 | [`INC-04072`](docs/incidents/2024.md#inc-04072) | OpenAI's GPT store faces copyright complaints | Medium | LLM07 |  |  |
-| 8,602 | 2024 | [`INC-04074`](docs/incidents/2024.md#inc-04074) | Otter AI transcription leaks confidential investor call | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
-| 8,603 | 2024 | [`INC-04077`](docs/incidents/2024.md#inc-04077) | Overly permissive CORS / CSRF in db-gpt (CVE-2024-10906) | High | LLM06 |  |  |
-| 8,604 | 2024 | [`INC-04078`](docs/incidents/2024.md#inc-04078) | Palworld accused of plagiarising Pokemon designs using AI | Medium | LLM07 |  |  |
-| 8,605 | 2024 | [`INC-04080`](docs/incidents/2024.md#inc-04080) | Parivar Pehchan Patra algorithm declares living people dead | Medium | LLM06 | ASI09 |  |
-| 8,606 | 2024 | [`INC-04082`](docs/incidents/2024.md#inc-04082) | Path traversal in eosphoros-ai/db-gpt | High | LLM06 | ASI04 |  |
-| 8,607 | 2024 | [`INC-04083`](docs/incidents/2024.md#inc-04083) | Path traversal in mintplex-labs/anything-llm (CVE-2024-10513) | Critical | LLM02, LLM06 | ASI04 |  |
-| 8,608 | 2024 | [`INC-04084`](docs/incidents/2024.md#inc-04084) | Peer-reviewed journal publishes AI-generated rat penis | Medium |  |  |  |
-| 8,609 | 2024 | [`INC-04086`](docs/incidents/2024.md#inc-04086) | Perplexity AI ignores requests not to scrape websites | Medium | LLM07 |  |  |
-| 8,610 | 2024 | [`INC-04087`](docs/incidents/2024.md#inc-04087) | Perplexity AI is accused of ripping off news websites | Medium | LLM07 |  |  |
-| 8,611 | 2024 | [`INC-04089`](docs/incidents/2024.md#inc-04089) | Philadelphia sheriff posts fake AI-generated news stories | Medium | LLM07 |  |  |
-| 8,612 | 2024 | [`INC-04091`](docs/incidents/2024.md#inc-04091) | Pixel 9 Reimagine AI photo editing tool blasted for lack of safeguards | Medium | LLM09 |  |  |
-| 8,613 | 2024 | [`INC-04093`](docs/incidents/2024.md#inc-04093) | Police arrest 45 in 12 billion won deepfake romance scam | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
-| 8,614 | 2024 | [`INC-04095`](docs/incidents/2024.md#inc-04095) | Poor quality AI-generated resumes swamp recruiters | Medium |  |  |  |
-| 8,615 | 2024 | [`INC-04099`](docs/incidents/2024.md#inc-04099) | Pro-Trumper creates fake AI photo of Kamala Harris as McDonald's worker | Medium | LLM07 |  |  |
-| 8,616 | 2024 | [`INC-04100`](docs/incidents/2024.md#inc-04100) | Professional model’s AI likeness used in ad without her consent | Medium | LLM07 |  |  |
-| 8,617 | 2024 | [`INC-04105`](docs/incidents/2024.md#inc-04105) | Prompt-injection RCE via manim plugin in gpt_academic (CVE-2024-10954) | Critical | LLM01, LLM05, LLM06 | ASI04 |  |
-| 8,618 | 2024 | [`INC-04106`](docs/incidents/2024.md#inc-04106) | promptfoo plugin: agentic:memory-poisoning | Medium | LLM01, LLM02, LLM05, LLM06, LLM07, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI06 |  |
-| 8,619 | 2024 | [`INC-04145`](docs/incidents/2024.md#inc-04145) | RCE via unsafe torch.load in invoke-ai/invokeai (5.3.1-5.4.2) | Critical | LLM03, LLM05 |  |  |
-| 8,620 | 2024 | [`INC-04149`](docs/incidents/2024.md#inc-04149) | Reddit warns AI companies not to misuse its data | Medium |  |  |  |
-| 8,621 | 2024 | [`INC-04150`](docs/incidents/2024.md#inc-04150) | Report: AI companion apps "relentlessly" pry and exploit user data | Medium | LLM02, LLM03, LLM05, LLM07 | ASI02, ASI03, ASI08 |  |
-| 8,622 | 2024 | [`INC-04151`](docs/incidents/2024.md#inc-04151) | Report: Hidden text able to manipulate ChatGPT | Medium | LLM02, LLM03, LLM05, LLM07 | ASI02, ASI03, ASI08 |  |
-| 8,623 | 2024 | [`INC-04152`](docs/incidents/2024.md#inc-04152) | Report: Israel runs AI-powered covert US political influence campaign | Medium | LLM07 |  |  |
-| 8,624 | 2024 | [`INC-04160`](docs/incidents/2024.md#inc-04160) | Republicans support Trump using AI-generated kitten and duck images | Medium | LLM07 |  |  |
-| 8,625 | 2024 | [`INC-04162`](docs/incidents/2024.md#inc-04162) | Researchers uncover covert AI-powered pro-India influence network | Medium | LLM07 |  |  |
-| 8,626 | 2024 | [`INC-04163`](docs/incidents/2024.md#inc-04163) | Robert Dillon wrongfully arrested in facial recognition misidentification | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,627 | 2024 | [`INC-04164`](docs/incidents/2024.md#inc-04164) | Robot crushes Thai factory worker to death | Critical | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
-| 8,628 | 2024 | [`INC-04167`](docs/incidents/2024.md#inc-04167) | RT bot farm spreads disinformation via 968 X accounts | Medium | LLM07 |  |  |
-| 8,629 | 2024 | [`INC-04168`](docs/incidents/2024.md#inc-04168) | Runway uses YouTube videos without consent for AI training | Medium | LLM07 |  |  |
-| 8,630 | 2024 | [`INC-04170`](docs/incidents/2024.md#inc-04170) | Russian AI voice campaign attempts to undermine European support for Ukraine | Medium | LLM07 |  |  |
-| 8,631 | 2024 | [`INC-04172`](docs/incidents/2024.md#inc-04172) | Russian state TV deepfake blames Ukraine for Crocus City Hall attack | Medium | LLM07, LLM09 | ASI09 |  |
-| 8,632 | 2024 | [`INC-07734`](docs/incidents/2024.md#inc-07734) | SafetyPrompts.com: open catalogue of LLM safety datasets | Medium | LLM01 |  |  |
-| 8,633 | 2024 | [`INC-04176`](docs/incidents/2024.md#inc-04176) | San Francisco City Attorney sues 16 nudification apps | Medium | LLM05, LLM06 | ASI08, ASI09 |  |
-| 8,634 | 2024 | [`INC-04185`](docs/incidents/2024.md#inc-04185) | Scammers impersonate Indonesia president using AI videos | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
-| 8,635 | 2024 | [`INC-04192`](docs/incidents/2024.md#inc-04192) | Scientific journals publish papers with AI-generated introductions | Medium | LLM07 |  |  |
-| 8,636 | 2024 | [`INC-04198`](docs/incidents/2024.md#inc-04198) | Sensitive file disclosure via ImagePromptTemplate in LangChain (CVE-2024-10940) | High | LLM02, LLM03 | ASI04 |  |
-| 8,637 | 2024 | [`INC-04199`](docs/incidents/2024.md#inc-04199) | Sensitive prompt-data exposure via URL access | High | LLM02, LLM07 |  |  |
-| 8,638 | 2024 | [`INC-04200`](docs/incidents/2024.md#inc-04200) | Sensitive-info exposure in anything-llm setup-complete (CVE-2024-6842) | High | LLM02 |  |  |
-| 8,639 | 2024 | [`INC-04204`](docs/incidents/2024.md#inc-04204) | Singapore actor Laurence Pang loses SGD 35,000 in AI romance scam | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
-| 8,640 | 2024 | [`INC-04206`](docs/incidents/2024.md#inc-04206) | Singapore writers resist government plan to train AI using their work | Medium | LLM07 |  |  |
-| 8,641 | 2024 | [`INC-04210`](docs/incidents/2024.md#inc-04210) | Slack forces users to opt-out of training its AI models | Medium | LLM02, LLM03, LLM07 | ASI02, ASI03 |  |
-| 8,642 | 2024 | [`INC-04213`](docs/incidents/2024.md#inc-04213) | Sony warns AI companies to not misuse its data | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,643 | 2024 | [`INC-04217`](docs/incidents/2024.md#inc-04217) | Spammers use OpenAI to blast 240,000 websites with unwanted messages | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
-| 8,644 | 2024 | [`INC-04219`](docs/incidents/2024.md#inc-04219) | SQL injection via SQL-run endpoint in db-gpt (CVE-2024-10835) | Critical | LLM05, LLM06 | ASI04 |  |
-| 8,645 | 2024 | [`INC-04220`](docs/incidents/2024.md#inc-04220) | SSRF in infiniflow/ragflow (CVE-2024-12779) | High | LLM06 | ASI04 |  |
-| 8,646 | 2024 | [`INC-04222`](docs/incidents/2024.md#inc-04222) | Stable Diffusion 3 churns out anatomically incorrect images | Medium | LLM05 | ASI08 |  |
-| 8,647 | 2024 | [`INC-04224`](docs/incidents/2024.md#inc-04224) | Stack Overflow users rebel against OpenAI LLM training deal | Medium | LLM07 |  |  |
-| 8,648 | 2024 | [`INC-04225`](docs/incidents/2024.md#inc-04225) | Starship robot damages car, flees scene of crime | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
-| 8,649 | 2024 | [`INC-04228`](docs/incidents/2024.md#inc-04228) | Steak 'n Shake sued for alleged facial biometric violations | Medium | LLM06, LLM07 | ASI09 |  |
-| 8,650 | 2024 | [`INC-07733`](docs/incidents/2024.md#inc-07733) | StrongREJECT: high-quality jailbreak evaluation benchmark | Medium | LLM01 |  |  |
-| 8,651 | 2024 | [`INC-04234`](docs/incidents/2024.md#inc-04234) | Students create deepfake nudes of St Thomas Aquinas Catholic Secondary School classmates | High | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
-| 8,652 | 2024 | [`INC-04238`](docs/incidents/2024.md#inc-04238) | Study: AI chatbots fail disabled voters | Medium | LLM09 |  |  |
-| 8,653 | 2024 | [`INC-04239`](docs/incidents/2024.md#inc-04239) | Study: ChatGPT consumes a bottle of water per email | Medium | LLM07 |  |  |
-| 8,654 | 2024 | [`INC-04240`](docs/incidents/2024.md#inc-04240) | Study: ChatGPT misattributes, misrepresents news publisher content | Medium | LLM07 |  |  |
-| 8,655 | 2024 | [`INC-04241`](docs/incidents/2024.md#inc-04241) | Study: Generative AI e-waste to surge 1000x by 2030 | Medium |  |  |  |
-| 8,656 | 2024 | [`INC-04242`](docs/incidents/2024.md#inc-04242) | Study: Generative AI systems overstate what they know | Medium | LLM09 |  |  |
-| 8,657 | 2024 | [`INC-04243`](docs/incidents/2024.md#inc-04243) | Study: Google AI Overviews is inaccurate in 43 percent of finance searches | Medium | LLM09 |  |  |
-| 8,658 | 2024 | [`INC-04244`](docs/incidents/2024.md#inc-04244) | Study: Language models gather and pass personal info to hackers | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
-| 8,659 | 2024 | [`INC-04245`](docs/incidents/2024.md#inc-04245) | Study: Larger language models less likely to admit ignorance | Medium | LLM09 |  |  |
-| 8,660 | 2024 | [`INC-04246`](docs/incidents/2024.md#inc-04246) | Study: OpenAI voice agents can automate phone scams | Medium | LLM05 | ASI08 |  |
-| 8,661 | 2024 | [`INC-04247`](docs/incidents/2024.md#inc-04247) | Study: Suno AI makes racist and anti-semitic music | Medium | LLM05 | ASI08 |  |
-| 8,662 | 2024 | [`INC-04248`](docs/incidents/2024.md#inc-04248) | Study: TikTok fails to ban political advertising | Medium | LLM07 |  |  |
-| 8,663 | 2024 | [`INC-04249`](docs/incidents/2024.md#inc-04249) | Study: Top chatbots spread Russian misinformation | Medium | LLM09 |  |  |
-| 8,664 | 2024 | [`INC-04250`](docs/incidents/2024.md#inc-04250) | Study: Whisper AI speech recognition creates violent hallucinations | Medium | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI08 |  |
-| 8,665 | 2024 | [`INC-04251`](docs/incidents/2024.md#inc-04251) | Study: Whisper AI transcription invents medical treatments | Medium | LLM09 |  |  |
-| 8,666 | 2024 | [`INC-04252`](docs/incidents/2024.md#inc-04252) | Suno AI used to incite UK anti-immigrant violence | Medium | LLM05 | ASI08 |  |
-| 8,667 | 2024 | [`INC-04258`](docs/incidents/2024.md#inc-04258) | Taylor Swift speaks in Mandarin deepfake | Medium | LLM09 | ASI09 |  |
+| 8,593 | 2024 | [`INC-03535`](docs/incidents/2024.md#inc-03535) | Non-consensual AI-generated sexual images of Rep. Ocasio-Cortez spread online, spurring DEFIANCE Act | High | LLM05, LLM07, LLM09 | ASI08, ASI09 |  |
+| 8,594 | 2024 | [`INC-04048`](docs/incidents/2024.md#inc-04048) | NVIDIA Container Toolkit TOCTOU container escape (CVE-2024-0132) | Critical | LLM03 |  |  |
+| 8,595 | 2024 | [`INC-04049`](docs/incidents/2024.md#inc-04049) | Nvidia sued for training NeMo on authors' copyrighted works | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,596 | 2024 | [`INC-04053`](docs/incidents/2024.md#inc-04053) | NYC AI chatbot tells businesses to break law | Medium | LLM05 | ASI08 |  |
+| 8,597 | 2024 | [`INC-04055`](docs/incidents/2024.md#inc-04055) | NYT orders Perplexity to stop misusing its content | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,598 | 2024 | [`INC-04060`](docs/incidents/2024.md#inc-04060) | Opaque Cybercheck AI crime fighting tool accused of contributing to multiple wrongful convictions | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,599 | 2024 | [`INC-04063`](docs/incidents/2024.md#inc-04063) | OpenAI accused of AI generating Scarlett Johansson's voice without her consent | Medium | LLM07 |  |  |
+| 8,600 | 2024 | [`INC-04064`](docs/incidents/2024.md#inc-04064) | OpenAI bans bot impersonating US presidential candidate | Medium | LLM09 | ASI09 |  |
+| 8,601 | 2024 | [`INC-04069`](docs/incidents/2024.md#inc-04069) | OpenAI scrapes YouTube to train GPT-4 | Medium | LLM07 |  |  |
+| 8,602 | 2024 | [`INC-04072`](docs/incidents/2024.md#inc-04072) | OpenAI's GPT store faces copyright complaints | Medium | LLM07 |  |  |
+| 8,603 | 2024 | [`INC-04074`](docs/incidents/2024.md#inc-04074) | Otter AI transcription leaks confidential investor call | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
+| 8,604 | 2024 | [`INC-04077`](docs/incidents/2024.md#inc-04077) | Overly permissive CORS / CSRF in db-gpt (CVE-2024-10906) | High | LLM06 |  |  |
+| 8,605 | 2024 | [`INC-04078`](docs/incidents/2024.md#inc-04078) | Palworld accused of plagiarising Pokemon designs using AI | Medium | LLM07 |  |  |
+| 8,606 | 2024 | [`INC-04080`](docs/incidents/2024.md#inc-04080) | Parivar Pehchan Patra algorithm declares living people dead | Medium | LLM06 | ASI09 |  |
+| 8,607 | 2024 | [`INC-04082`](docs/incidents/2024.md#inc-04082) | Path traversal in eosphoros-ai/db-gpt | High | LLM06 | ASI04 |  |
+| 8,608 | 2024 | [`INC-04083`](docs/incidents/2024.md#inc-04083) | Path traversal in mintplex-labs/anything-llm (CVE-2024-10513) | Critical | LLM02, LLM06 | ASI04 |  |
+| 8,609 | 2024 | [`INC-04084`](docs/incidents/2024.md#inc-04084) | Peer-reviewed journal publishes AI-generated rat penis | Medium |  |  |  |
+| 8,610 | 2024 | [`INC-04086`](docs/incidents/2024.md#inc-04086) | Perplexity AI ignores requests not to scrape websites | Medium | LLM07 |  |  |
+| 8,611 | 2024 | [`INC-04087`](docs/incidents/2024.md#inc-04087) | Perplexity AI is accused of ripping off news websites | Medium | LLM07 |  |  |
+| 8,612 | 2024 | [`INC-04089`](docs/incidents/2024.md#inc-04089) | Philadelphia sheriff posts fake AI-generated news stories | Medium | LLM07 |  |  |
+| 8,613 | 2024 | [`INC-04091`](docs/incidents/2024.md#inc-04091) | Pixel 9 Reimagine AI photo editing tool blasted for lack of safeguards | Medium | LLM09 |  |  |
+| 8,614 | 2024 | [`INC-04093`](docs/incidents/2024.md#inc-04093) | Police arrest 45 in 12 billion won deepfake romance scam | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
+| 8,615 | 2024 | [`INC-04095`](docs/incidents/2024.md#inc-04095) | Poor quality AI-generated resumes swamp recruiters | Medium |  |  |  |
+| 8,616 | 2024 | [`INC-04099`](docs/incidents/2024.md#inc-04099) | Pro-Trumper creates fake AI photo of Kamala Harris as McDonald's worker | Medium | LLM07 |  |  |
+| 8,617 | 2024 | [`INC-04100`](docs/incidents/2024.md#inc-04100) | Professional model’s AI likeness used in ad without her consent | Medium | LLM07 |  |  |
+| 8,618 | 2024 | [`INC-04105`](docs/incidents/2024.md#inc-04105) | Prompt-injection RCE via manim plugin in gpt_academic (CVE-2024-10954) | Critical | LLM01, LLM05, LLM06 | ASI04 |  |
+| 8,619 | 2024 | [`INC-04106`](docs/incidents/2024.md#inc-04106) | promptfoo plugin: agentic:memory-poisoning | Medium | LLM01, LLM02, LLM05, LLM06, LLM07, LLM09 | ASI01, ASI02, ASI03, ASI05, ASI06 |  |
+| 8,620 | 2024 | [`INC-04145`](docs/incidents/2024.md#inc-04145) | RCE via unsafe torch.load in invoke-ai/invokeai (5.3.1-5.4.2) | Critical | LLM03, LLM05 |  |  |
+| 8,621 | 2024 | [`INC-04149`](docs/incidents/2024.md#inc-04149) | Reddit warns AI companies not to misuse its data | Medium |  |  |  |
+| 8,622 | 2024 | [`INC-04150`](docs/incidents/2024.md#inc-04150) | Report: AI companion apps "relentlessly" pry and exploit user data | Medium | LLM02, LLM03, LLM05, LLM07 | ASI02, ASI03, ASI08 |  |
+| 8,623 | 2024 | [`INC-04151`](docs/incidents/2024.md#inc-04151) | Report: Hidden text able to manipulate ChatGPT | Medium | LLM02, LLM03, LLM05, LLM07 | ASI02, ASI03, ASI08 |  |
+| 8,624 | 2024 | [`INC-04152`](docs/incidents/2024.md#inc-04152) | Report: Israel runs AI-powered covert US political influence campaign | Medium | LLM07 |  |  |
+| 8,625 | 2024 | [`INC-04160`](docs/incidents/2024.md#inc-04160) | Republicans support Trump using AI-generated kitten and duck images | Medium | LLM07 |  |  |
+| 8,626 | 2024 | [`INC-04162`](docs/incidents/2024.md#inc-04162) | Researchers uncover covert AI-powered pro-India influence network | Medium | LLM07 |  |  |
+| 8,627 | 2024 | [`INC-04163`](docs/incidents/2024.md#inc-04163) | Robert Dillon wrongfully arrested in facial recognition misidentification | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,628 | 2024 | [`INC-04164`](docs/incidents/2024.md#inc-04164) | Robot crushes Thai factory worker to death | Critical | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
+| 8,629 | 2024 | [`INC-04167`](docs/incidents/2024.md#inc-04167) | RT bot farm spreads disinformation via 968 X accounts | Medium | LLM07 |  |  |
+| 8,630 | 2024 | [`INC-04168`](docs/incidents/2024.md#inc-04168) | Runway uses YouTube videos without consent for AI training | Medium | LLM07 |  |  |
+| 8,631 | 2024 | [`INC-04170`](docs/incidents/2024.md#inc-04170) | Russian AI voice campaign attempts to undermine European support for Ukraine | Medium | LLM07 |  |  |
+| 8,632 | 2024 | [`INC-04172`](docs/incidents/2024.md#inc-04172) | Russian state TV deepfake blames Ukraine for Crocus City Hall attack | Medium | LLM07, LLM09 | ASI09 |  |
+| 8,633 | 2024 | [`INC-07734`](docs/incidents/2024.md#inc-07734) | SafetyPrompts.com: open catalogue of LLM safety datasets | Medium | LLM01 |  |  |
+| 8,634 | 2024 | [`INC-04176`](docs/incidents/2024.md#inc-04176) | San Francisco City Attorney sues 16 nudification apps | Medium | LLM05, LLM06 | ASI08, ASI09 |  |
+| 8,635 | 2024 | [`INC-04185`](docs/incidents/2024.md#inc-04185) | Scammers impersonate Indonesia president using AI videos | Medium | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
+| 8,636 | 2024 | [`INC-04192`](docs/incidents/2024.md#inc-04192) | Scientific journals publish papers with AI-generated introductions | Medium | LLM07 |  |  |
+| 8,637 | 2024 | [`INC-04198`](docs/incidents/2024.md#inc-04198) | Sensitive file disclosure via ImagePromptTemplate in LangChain (CVE-2024-10940) | High | LLM02, LLM03 | ASI04 |  |
+| 8,638 | 2024 | [`INC-04199`](docs/incidents/2024.md#inc-04199) | Sensitive prompt-data exposure via URL access | High | LLM02, LLM07 |  |  |
+| 8,639 | 2024 | [`INC-04200`](docs/incidents/2024.md#inc-04200) | Sensitive-info exposure in anything-llm setup-complete (CVE-2024-6842) | High | LLM02 |  |  |
+| 8,640 | 2024 | [`INC-04204`](docs/incidents/2024.md#inc-04204) | Singapore actor Laurence Pang loses SGD 35,000 in AI romance scam | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
+| 8,641 | 2024 | [`INC-04206`](docs/incidents/2024.md#inc-04206) | Singapore writers resist government plan to train AI using their work | Medium | LLM07 |  |  |
+| 8,642 | 2024 | [`INC-04210`](docs/incidents/2024.md#inc-04210) | Slack forces users to opt-out of training its AI models | Medium | LLM02, LLM03, LLM07 | ASI02, ASI03 |  |
+| 8,643 | 2024 | [`INC-04213`](docs/incidents/2024.md#inc-04213) | Sony warns AI companies to not misuse its data | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,644 | 2024 | [`INC-04217`](docs/incidents/2024.md#inc-04217) | Spammers use OpenAI to blast 240,000 websites with unwanted messages | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
+| 8,645 | 2024 | [`INC-04219`](docs/incidents/2024.md#inc-04219) | SQL injection via SQL-run endpoint in db-gpt (CVE-2024-10835) | Critical | LLM05, LLM06 | ASI04 |  |
+| 8,646 | 2024 | [`INC-04220`](docs/incidents/2024.md#inc-04220) | SSRF in infiniflow/ragflow (CVE-2024-12779) | High | LLM06 | ASI04 |  |
+| 8,647 | 2024 | [`INC-04222`](docs/incidents/2024.md#inc-04222) | Stable Diffusion 3 churns out anatomically incorrect images | Medium | LLM05 | ASI08 |  |
+| 8,648 | 2024 | [`INC-04224`](docs/incidents/2024.md#inc-04224) | Stack Overflow users rebel against OpenAI LLM training deal | Medium | LLM07 |  |  |
+| 8,649 | 2024 | [`INC-04225`](docs/incidents/2024.md#inc-04225) | Starship robot damages car, flees scene of crime | Medium | LLM05, LLM06, LLM07 | ASI08, ASI09 |  |
+| 8,650 | 2024 | [`INC-04228`](docs/incidents/2024.md#inc-04228) | Steak 'n Shake sued for alleged facial biometric violations | Medium | LLM06, LLM07 | ASI09 |  |
+| 8,651 | 2024 | [`INC-07733`](docs/incidents/2024.md#inc-07733) | StrongREJECT: high-quality jailbreak evaluation benchmark | Medium | LLM01 |  |  |
+| 8,652 | 2024 | [`INC-04234`](docs/incidents/2024.md#inc-04234) | Students create deepfake nudes of St Thomas Aquinas Catholic Secondary School classmates | High | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
+| 8,653 | 2024 | [`INC-04238`](docs/incidents/2024.md#inc-04238) | Study: AI chatbots fail disabled voters | Medium | LLM09 |  |  |
+| 8,654 | 2024 | [`INC-04239`](docs/incidents/2024.md#inc-04239) | Study: ChatGPT consumes a bottle of water per email | Medium | LLM07 |  |  |
+| 8,655 | 2024 | [`INC-04240`](docs/incidents/2024.md#inc-04240) | Study: ChatGPT misattributes, misrepresents news publisher content | Medium | LLM07 |  |  |
+| 8,656 | 2024 | [`INC-04241`](docs/incidents/2024.md#inc-04241) | Study: Generative AI e-waste to surge 1000x by 2030 | Medium |  |  |  |
+| 8,657 | 2024 | [`INC-04242`](docs/incidents/2024.md#inc-04242) | Study: Generative AI systems overstate what they know | Medium | LLM09 |  |  |
+| 8,658 | 2024 | [`INC-04243`](docs/incidents/2024.md#inc-04243) | Study: Google AI Overviews is inaccurate in 43 percent of finance searches | Medium | LLM09 |  |  |
+| 8,659 | 2024 | [`INC-04244`](docs/incidents/2024.md#inc-04244) | Study: Language models gather and pass personal info to hackers | Medium | LLM02, LLM03 | ASI02, ASI03 |  |
+| 8,660 | 2024 | [`INC-04245`](docs/incidents/2024.md#inc-04245) | Study: Larger language models less likely to admit ignorance | Medium | LLM09 |  |  |
+| 8,661 | 2024 | [`INC-04246`](docs/incidents/2024.md#inc-04246) | Study: OpenAI voice agents can automate phone scams | Medium | LLM05 | ASI08 |  |
+| 8,662 | 2024 | [`INC-04247`](docs/incidents/2024.md#inc-04247) | Study: Suno AI makes racist and anti-semitic music | Medium | LLM05 | ASI08 |  |
+| 8,663 | 2024 | [`INC-04248`](docs/incidents/2024.md#inc-04248) | Study: TikTok fails to ban political advertising | Medium | LLM07 |  |  |
+| 8,664 | 2024 | [`INC-04249`](docs/incidents/2024.md#inc-04249) | Study: Top chatbots spread Russian misinformation | Medium | LLM09 |  |  |
+| 8,665 | 2024 | [`INC-04250`](docs/incidents/2024.md#inc-04250) | Study: Whisper AI speech recognition creates violent hallucinations | Medium | LLM02, LLM03, LLM05 | ASI02, ASI03, ASI08 |  |
+| 8,666 | 2024 | [`INC-04251`](docs/incidents/2024.md#inc-04251) | Study: Whisper AI transcription invents medical treatments | Medium | LLM09 |  |  |
+| 8,667 | 2024 | [`INC-04252`](docs/incidents/2024.md#inc-04252) | Suno AI used to incite UK anti-immigrant violence | Medium | LLM05 | ASI08 |  |
 | 8,668 | 2024 | [`INC-04262`](docs/incidents/2024.md#inc-04262) | Tesla driver using Autopilot kills motorcyclist | Critical | LLM05 | ASI08 |  |
 | 8,669 | 2024 | [`INC-04264`](docs/incidents/2024.md#inc-04264) | Tesla in FSD attempts to drive into passing trains | Medium | LLM05 | ASI08 |  |
 | 8,670 | 2024 | [`INC-04265`](docs/incidents/2024.md#inc-04265) | Tesla sued for using Blade Runner 2049 imagery to launch robotaxi | Medium | LLM06, LLM07 | ASI09 |  |
@@ -8876,20 +8876,20 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 8,746 | 2023-12 | [`INC-04583`](docs/incidents/2023.md#inc-04583) | Cross-site Scripting (XSS) - Reflected in kubeflow/kubeflow | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-6571` |
 | 8,747 | 2023-12 | [`INC-11313`](docs/incidents/2023.md#inc-11313) | Cube API denial of service attack | Medium | LLM03 | ASI04 | `CVE-2023-50709` |
 | 8,748 | 2023-12 | [`INC-11325`](docs/incidents/2023.md#inc-11325) | Data leak of password hash through change requests | High | LLM03 | ASI04 | `CVE-2023-49280` |
-| 8,749 | 2023-12 | [`INC-04602`](docs/incidents/2023.md#inc-04602) | Deepfake news anchor accuses US of Bangladesh election interference | High | LLM07, LLM09 | ASI09 |  |
-| 8,750 | 2023-12 | [`INC-04629`](docs/incidents/2023.md#inc-04629) | Driver tricks dealership chatbot into selling Chevrolet for USD 1 (Watsonville-style incident) | Medium | LLM01, LLM05, LLM06 | ASI01, ASI08, ASI09 |  |
-| 8,751 | 2023-12 | [`INC-11319`](docs/incidents/2023.md#inc-11319) | Elastic Beats inserts sensitive information into log file | Medium | LLM03 | ASI04 | `CVE-2023-49922` |
-| 8,752 | 2023-12 | [`INC-11308`](docs/incidents/2023.md#inc-11308) | Expired tokens can be renewed without validating the account password | High | LLM03 | ASI03, ASI04 |  |
-| 8,753 | 2023-12 | [`INC-04636`](docs/incidents/2023.md#inc-04636) | Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Senol Sahin AI Power: Complete AI… | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2023-51527` |
-| 8,754 | 2023-12 | [`INC-11324`](docs/incidents/2023.md#inc-11324) | github.com/ecies/go vulnerable to possible private key restoration | High | LLM03 | ASI04 | `CVE-2023-49292` |
-| 8,755 | 2023-12 | [`INC-11316`](docs/incidents/2023.md#inc-11316) | Improper validation in meraki | High | LLM03 | ASI04 | `CVE-2023-49081` |
-| 8,756 | 2023-12 | [`INC-04721`](docs/incidents/2023.md#inc-04721) | Lasso Security — 1,500+ HuggingFace API tokens exposed in code repositories | Critical | LLM03 | ASI03, ASI04 |  |
-| 8,757 | 2023-12 | [`INC-11320`](docs/incidents/2023.md#inc-11320) | Magento LTS vulnerable to Stored XSS via TinyMCE WYSIWYG Editor | High | LLM03, LLM05 | ASI04, ASI05 |  |
-| 8,758 | 2023-12 | [`INC-04742`](docs/incidents/2023.md#inc-04742) | Miami Pinecrest Cove boys arrested for AI nude images of classmates | Critical | LLM09 | ASI09 |  |
-| 8,759 | 2023-12 | [`INC-11321`](docs/incidents/2023.md#inc-11321) | mockjs vulnerable to Prototype Pollution via the Util.extend function | High | LLM03 | ASI04 | `CVE-2023-26158` |
-| 8,760 | 2023-12 | [`INC-11311`](docs/incidents/2023.md#inc-11311) | Multiple WSO2 products vulnerable to perform user impersonatoin using JIT provisioning | High | LLM03 | ASI04 | `CVE-2023-6837` |
-| 8,761 | 2023-12 | [`INC-04789`](docs/incidents/2023.md#inc-04789) | OpenDream AI art generator accused of generating child sex images | Critical | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
-| 8,762 | 2023-12 | [`INC-11318`](docs/incidents/2023.md#inc-11318) | Possible injection of HTML into user invite mails | Low | LLM03 | ASI04 | `CVE-2023-38694` |
+| 8,749 | 2023-12 | [`INC-04629`](docs/incidents/2023.md#inc-04629) | Driver tricks dealership chatbot into selling Chevrolet for USD 1 (Watsonville-style incident) | Medium | LLM01, LLM05, LLM06 | ASI01, ASI08, ASI09 |  |
+| 8,750 | 2023-12 | [`INC-11319`](docs/incidents/2023.md#inc-11319) | Elastic Beats inserts sensitive information into log file | Medium | LLM03 | ASI04 | `CVE-2023-49922` |
+| 8,751 | 2023-12 | [`INC-11308`](docs/incidents/2023.md#inc-11308) | Expired tokens can be renewed without validating the account password | High | LLM03 | ASI03, ASI04 |  |
+| 8,752 | 2023-12 | [`INC-04636`](docs/incidents/2023.md#inc-04636) | Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Senol Sahin AI Power: Complete AI… | Medium | LLM02, LLM03 | ASI02, ASI04 | `CVE-2023-51527` |
+| 8,753 | 2023-12 | [`INC-11324`](docs/incidents/2023.md#inc-11324) | github.com/ecies/go vulnerable to possible private key restoration | High | LLM03 | ASI04 | `CVE-2023-49292` |
+| 8,754 | 2023-12 | [`INC-11316`](docs/incidents/2023.md#inc-11316) | Improper validation in meraki | High | LLM03 | ASI04 | `CVE-2023-49081` |
+| 8,755 | 2023-12 | [`INC-04721`](docs/incidents/2023.md#inc-04721) | Lasso Security — 1,500+ HuggingFace API tokens exposed in code repositories | Critical | LLM03 | ASI03, ASI04 |  |
+| 8,756 | 2023-12 | [`INC-11320`](docs/incidents/2023.md#inc-11320) | Magento LTS vulnerable to Stored XSS via TinyMCE WYSIWYG Editor | High | LLM03, LLM05 | ASI04, ASI05 |  |
+| 8,757 | 2023-12 | [`INC-04742`](docs/incidents/2023.md#inc-04742) | Miami Pinecrest Cove boys arrested for AI nude images of classmates | Critical | LLM09 | ASI09 |  |
+| 8,758 | 2023-12 | [`INC-11321`](docs/incidents/2023.md#inc-11321) | mockjs vulnerable to Prototype Pollution via the Util.extend function | High | LLM03 | ASI04 | `CVE-2023-26158` |
+| 8,759 | 2023-12 | [`INC-11311`](docs/incidents/2023.md#inc-11311) | Multiple WSO2 products vulnerable to perform user impersonatoin using JIT provisioning | High | LLM03 | ASI04 | `CVE-2023-6837` |
+| 8,760 | 2023-12 | [`INC-04789`](docs/incidents/2023.md#inc-04789) | OpenDream image tool found capable of producing sexualized depictions of minors despite policy | Critical | LLM05, LLM06, LLM09 | ASI08, ASI09 |  |
+| 8,761 | 2023-12 | [`INC-11318`](docs/incidents/2023.md#inc-11318) | Possible injection of HTML into user invite mails | Low | LLM03 | ASI04 | `CVE-2023-38694` |
+| 8,762 | 2023-12 | [`INC-04602`](docs/incidents/2023.md#inc-04602) | Pro-government Bangladeshi channels air AI-generated anchors alleging US election meddling | High | LLM07, LLM09 | ASI09 |  |
 | 8,763 | 2023-12 | [`INC-11322`](docs/incidents/2023.md#inc-11322) | PyDrive2's unsafe YAML deserialization in LoadSettingsFile allows arbitrary code execution | Low | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2023-49297` |
 | 8,764 | 2023-12 | [`INC-04861`](docs/incidents/2023.md#inc-04861) | Server-Side Request Forgery (SSRF) in kubeflow/kubeflow | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-6570` |
 | 8,765 | 2023-12 | [`INC-11314`](docs/incidents/2023.md#inc-11314) | Tokens stored in plain text by Dingding JSON Pusher Plugin | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2023-50766` (+3) |
@@ -9229,11 +9229,11 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 9,099 | 2023-06 | [`INC-11532`](docs/incidents/2023.md#inc-11532) | Liferay Portal and Liferay DXP Vulnerable to XSS via the Layout Module | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-3193` |
 | 9,100 | 2023-06 | [`INC-11533`](docs/incidents/2023.md#inc-11533) | Microsoft Security Advisory CVE-2023-33126: .NET Remote Code Execution Vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-33126` |
 | 9,101 | 2023-06 | [`INC-11536`](docs/incidents/2023.md#inc-11536) | NuGet Client Remote Code Execution Vulnerability | High | LLM03 | ASI04 | `CVE-2023-29337` |
-| 9,102 | 2023-06 | [`INC-04788`](docs/incidents/2023.md#inc-04788) | OpenAI, Microsoft sued for 'stealing' personal info to create ChatGPT | Medium | LLM02, LLM07 | ASI03 |  |
-| 9,103 | 2023-06 | [`INC-11515`](docs/incidents/2023.md#inc-11515) | org.xwiki.commons:xwiki-commons-xml's HTML sanitizer allows form elements in restricted | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-36471` |
-| 9,104 | 2023-06 | [`INC-11523`](docs/incidents/2023.md#inc-11523) | passport-wsfed-saml2 Signature Bypass vulnerability | High | LLM03 | ASI04 |  |
-| 9,105 | 2023-06 | [`INC-11525`](docs/incidents/2023.md#inc-11525) | passport-wsfed-saml2 vulnerable to Signature Bypass in SAML2 token | High | LLM03 | ASI04 | `CVE-2017-16897` |
-| 9,106 | 2023-06 | [`INC-11544`](docs/incidents/2023.md#inc-11544) | Pimcore vulnerable to Pre-Auth Path Traversal in pimcore_log parameter | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-2984` |
+| 9,102 | 2023-06 | [`INC-11515`](docs/incidents/2023.md#inc-11515) | org.xwiki.commons:xwiki-commons-xml's HTML sanitizer allows form elements in restricted | Critical | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-36471` |
+| 9,103 | 2023-06 | [`INC-11523`](docs/incidents/2023.md#inc-11523) | passport-wsfed-saml2 Signature Bypass vulnerability | High | LLM03 | ASI04 |  |
+| 9,104 | 2023-06 | [`INC-11525`](docs/incidents/2023.md#inc-11525) | passport-wsfed-saml2 vulnerable to Signature Bypass in SAML2 token | High | LLM03 | ASI04 | `CVE-2017-16897` |
+| 9,105 | 2023-06 | [`INC-11544`](docs/incidents/2023.md#inc-11544) | Pimcore vulnerable to Pre-Auth Path Traversal in pimcore_log parameter | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2023-2984` |
+| 9,106 | 2023-06 | [`INC-04788`](docs/incidents/2023.md#inc-04788) | Plaintiffs accuse OpenAI and Microsoft of building ChatGPT from scraped personal data | Medium | LLM02, LLM07 | ASI03 |  |
 | 9,107 | 2023-06 | [`INC-11520`](docs/incidents/2023.md#inc-11520) | PlantUML Server-Side Request Forgery vulnerability | High | LLM03, LLM05 | ASI03, ASI04, ASI05 | `CVE-2023-3431`, `CVE-2023-3432` |
 | 9,108 | 2023-06 | [`INC-04820`](docs/incidents/2023.md#inc-04820) | Putin 'declares martial law' deepfake broadcast hijack | High | LLM09 | ASI09 |  |
 | 9,109 | 2023-06 | [`INC-11517`](docs/incidents/2023.md#inc-11517) | py-xml XML External Entity Injection vulnerability | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2020-26709` |
@@ -9548,8 +9548,8 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 9,418 | 2023 | [`INC-04460`](docs/incidents/2023.md#inc-04460) | Artist's private medical image trains LAION dataset | Medium | LLM06, LLM07 | ASI09 |  |
 | 9,419 | 2023 | [`INC-04461`](docs/incidents/2023.md#inc-04461) | Asylum claim rejected by French authorities using Google Bard | Medium |  |  |  |
 | 9,420 | 2023 | [`INC-04462`](docs/incidents/2023.md#inc-04462) | Attack on machine translation services (Google/Bing/Systran) | Medium | LLM09 |  |  |
-| 9,421 | 2023 | [`INC-04463`](docs/incidents/2023.md#inc-04463) | Audio AIs impersonate former South Sudan leader Omar al-Bashir | Medium | LLM09 | ASI09 |  |
-| 9,422 | 2023 | [`INC-04464`](docs/incidents/2023.md#inc-04464) | Audio deepfake fraudulently impersonates CEO | High | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
+| 9,421 | 2023 | [`INC-04464`](docs/incidents/2023.md#inc-04464) | Attacker impersonates company CEO with AI voice clone to authorize fraudulent transaction | High | LLM02, LLM03, LLM09 | ASI02, ASI03, ASI09 |  |
+| 9,422 | 2023 | [`INC-04463`](docs/incidents/2023.md#inc-04463) | Audio AIs impersonate former South Sudan leader Omar al-Bashir | Medium | LLM09 | ASI09 |  |
 | 9,423 | 2023 | [`INC-04465`](docs/incidents/2023.md#inc-04465) | Australian academics make false AI-generated allegations | Medium | LLM07 |  |  |
 | 9,424 | 2023 | [`INC-04467`](docs/incidents/2023.md#inc-04467) | Australian psychologist makes legal submission with fake AI citations | Medium |  |  |  |
 | 9,425 | 2023 | [`INC-04468`](docs/incidents/2023.md#inc-04468) | Australian researchers use ChatGPT to assess grant applications | Medium | LLM02, LLM03, LLM07 | ASI02, ASI03 |  |
@@ -9916,10 +9916,10 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 9,786 | 2022-10 | [`INC-11772`](docs/incidents/2022.md#inc-11772) | .NET Remote Code Execution Vulnerability | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2022-24512` |
 | 9,787 | 2022-10 | [`INC-05009`](docs/incidents/2022.md#inc-05009) | @dependencytrack/frontend — Xss (CVE-2022-39350) | Medium | LLM03, LLM05 | ASI04, ASI05 | `CVE-2022-39350` |
 | 9,788 | 2022-10 | [`INC-11779`](docs/incidents/2022.md#inc-11779) | AdGuardHome vulnerable to Cross-Site Request Forgery | Medium | LLM03 | ASI04 | `CVE-2022-32175` |
-| 9,789 | 2022-10 | [`INC-11785`](docs/incidents/2022.md#inc-11785) | Dex vulnerable to Man-in-the-Middle allowing ID token capture via intercepted authorization code | Critical | LLM03 | ASI03, ASI04 | `CVE-2022-39222` |
-| 9,790 | 2022-10 | [`INC-11764`](docs/incidents/2022.md#inc-11764) | Docker Command Escaping in the GitHub Actions Runner | High | LLM03 | ASI04 | `CVE-2022-39321` |
-| 9,791 | 2022-10 | [`INC-11766`](docs/incidents/2022.md#inc-11766) | Duplicate Advisory: Improper Restriction of XML External Entity Reference in pikepdf | Critical | LLM03 | ASI04 | `CVE-2021-46849` |
-| 9,792 | 2022-10 | [`INC-05113`](docs/incidents/2022.md#inc-05113) | French privacy watchdog fines Clearview AI for violating privacy | High | LLM02 | ASI03 |  |
+| 9,789 | 2022-10 | [`INC-05113`](docs/incidents/2022.md#inc-05113) | CNIL orders Clearview AI to pay EUR 20 million and erase French biometric data | High | LLM02 | ASI03 |  |
+| 9,790 | 2022-10 | [`INC-11785`](docs/incidents/2022.md#inc-11785) | Dex vulnerable to Man-in-the-Middle allowing ID token capture via intercepted authorization code | Critical | LLM03 | ASI03, ASI04 | `CVE-2022-39222` |
+| 9,791 | 2022-10 | [`INC-11764`](docs/incidents/2022.md#inc-11764) | Docker Command Escaping in the GitHub Actions Runner | High | LLM03 | ASI04 | `CVE-2022-39321` |
+| 9,792 | 2022-10 | [`INC-11766`](docs/incidents/2022.md#inc-11766) | Duplicate Advisory: Improper Restriction of XML External Entity Reference in pikepdf | Critical | LLM03 | ASI04 | `CVE-2021-46849` |
 | 9,793 | 2022-10 | [`INC-11783`](docs/incidents/2022.md#inc-11783) | goxmldsig vulnerable to crash on nil-pointer dereference caused by sending malformed XML signatures | High | LLM03 | ASI04 | `CVE-2020-7711` |
 | 9,794 | 2022-10 | [`INC-11770`](docs/incidents/2022.md#inc-11770) | Jadx-gui vulnerable to swing HTML Denial of Service (DoS) attack | Medium | LLM03 | ASI04 | `CVE-2022-39259` |
 | 9,795 | 2022-10 | [`INC-11762`](docs/incidents/2022.md#inc-11762) | Keylime: unhandled exceptions could lead to invalid attestation states | High | LLM03 | ASI04 | `CVE-2022-3500` |
@@ -12715,7 +12715,7 @@ All **13,119** incidents in a single table, newest-first. Each `INC-*****` link 
 | 12,585 | 2019-06-03 | [`INC-07255`](docs/incidents/2019.md#inc-07255) | Workday's AI Tools Allegedly Enabled Employers to Discriminate against Applicants of Protected Groups | High | LLM05, LLM09 | ASI09 |  |
 | 12,586 | 2019-06-01 | [`INC-07204`](docs/incidents/2019.md#inc-07204) | South Korean Agencies Reportedly Shared Airport Travelers' Face Images with Companies to Train Immigration Fa… | Medium | LLM02 | ASI03 |  |
 | 12,587 | 2019-06 | [`INC-07171`](docs/incidents/2019.md#inc-07171) | DeepNude nudification app | Critical | LLM09 | ASI09 |  |
-| 12,588 | 2019-06 | [`INC-07173`](docs/incidents/2019.md#inc-07173) | Duke University pulls facial-recognition dataset after privacy controversy | Medium | LLM02, LLM04 | ASI04 |  |
+| 12,588 | 2019-06 | [`INC-07173`](docs/incidents/2019.md#inc-07173) | Duke withdraws DukeMTMC campus-surveillance dataset over non-consensual student footage | Medium | LLM02, LLM04 | ASI04 |  |
 | 12,589 | 2019-05-31 | [`INC-07154`](docs/incidents/2019.md#inc-07154) | Algorithm to Distribute Social Welfare Reported for Oversimplifying Economic Vulnerability | Critical | LLM05, LLM09 | ASI05, ASI09 |  |
 | 12,590 | 2019-04-03 | [`INC-07180`](docs/incidents/2019.md#inc-07180) | Facebook's Ad Delivery Reportedly Excluded Audience along Racial and Gender Lines | High | LLM05, LLM09 | ASI09 |  |
 | 12,591 | 2019-04 | [`INC-07161`](docs/incidents/2019.md#inc-07161) | An issue was discovered in Dillon Kane Tidal Workload Automation Agent 3.2.0.5 (formerly known as Cisco Workl… | High | LLM03, LLM05 | ASI04, ASI05 | `CVE-2019-6689` |
