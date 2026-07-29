@@ -1,8 +1,13 @@
 # Draft — second annotator recruitment (WS2-T2 label-quality study)
 
-**STATUS:** DRAFT — ready for user review; user picks recipient(s) and sends;
-log send date on the board.
-**To (UNCONFIRMED):** Mayur021 (GitHub handle) — top candidate, contact via a
+**STATUS:** 📤 **SENT to Mayur021 2026-07-27** (board: WS5-T2a row; header
+corrected 2026-07-29 — it had still read "DRAFT — ready for user review" two
+days after the send). Reply awaited; follow-up option ~2026-08-03. Do not edit
+the message body below — the sent version is what the recipient has.
+**Satisfies the Phase-1 exit criterion "WS5-T2a outreach sent"**
+(`MASTER_IMPROVEMENT_PLAN.md:28`). Note WS2-T2's blocked-by lifts only on a
+COMMITTED annotator, not on the send.
+**To:** Mayur021 (GitHub handle) — top candidate, contacted via a
 GitHub comment/mention (no email address is used here — see PII note below).
 Ranked backups in the Candidates section if Mayur021 is unreachable or
 declines.
