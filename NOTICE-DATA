@@ -41,10 +41,35 @@ it:
     docs/SOURCE_LICENSES.md.
 
 The AIAAIC Repository is a CC BY-SA 4.0 source (share-alike). Per
-project decision D2, AIAAIC content is never carried verbatim in this
-dataset -- AIAAIC-derived entries record only the incident title, short
-taxonomy-tag facts, and a source link -- so no share-alike obligation
-attaches and LICENSE-DATA carries no BY-SA carve-out.
+project decision D2, AIAAIC's own editorial prose is never carried in
+this dataset -- AIAAIC-derived entries record only categorical facts
+(system, technology, sector, jurisdiction) plus a source link -- which
+disposes of the *copyright* share-alike question and keeps this
+repository's own LICENSE-DATA grant a single, clean CC BY 4.0 with no
+dataset-wide BY-SA carve-out.
+
+That does not fully resolve AIAAIC's licensing status. A separate
+EU/UK *sui generis* database-right question over the scale of this
+project's AIAAIC extraction remains OPEN, pending AIAAIC's reply to
+outreach sent 2026-07-27 (or a qualified-counsel resolution) -- see
+docs/audits/WS0-E13-database-right-2026-07-18.md (E13). Per decision
+D11, genai_incidents itself holds no UK/EU sui generis database right
+(its sole maker is an individual habitually resident in Canada, so the
+regulation-18/Article-11 maker-nexus test fails) -- so even if
+AIAAIC's own database right subsists and this project's extraction is
+judged substantial, the worst case is row-level CC BY-SA 4.0
+attribution/share-alike on the specific AIAAIC-derived rows, never a
+dataset-wide obligation on LICENSE-DATA as a whole. That row-level
+worst case is honored proactively, not merely accepted: every entry
+whose description derives from AIAAIC (recorded via
+description_source == "aiaaic") carries a machine-readable
+content_license marker -- source, license, attribution, obligations --
+naming AIAAIC Repository as the attribution target and share-alike as
+an honored obligation on that row. The marker travels with the row
+wherever it is published: data/incidents.json,
+data/incidents.min.json, the HuggingFace export, and the STIX bundle
+(as x_content_license). See docs/SOURCE_LICENSES.md section 1.1 for
+full detail.
 
 The AI Incident Database (AIID) is a CC BY-SA 4.0 source (share-alike)
 for its incidents/quickadd/duplicates/taxa/classifications/entities/

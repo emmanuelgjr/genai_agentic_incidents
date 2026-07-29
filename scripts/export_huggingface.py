@@ -111,12 +111,27 @@ English-language, publicly-reported events, and `auto`-tier rows are bulk-ingest
 without individual review — filter on `quality_tier` for higher-confidence subsets. See
 the datasheet for full scope, collection method, and limitations.
 
+## Licensing
+
+Data is released under **CC BY 4.0** overall (`license: cc-by-4.0` above; see
+`LICENSE-DATA` and `NOTICE-DATA` in the source repository). A subset of entries whose
+description derives from the **AIAAIC Repository** (`description_source ==
+"aiaaic"`) carries an *additional*, row-level **CC BY-SA 4.0** attribution/share-alike
+obligation — this does not apply project-wide, only to those specific rows. Each such
+row carries a machine-readable `content_license` field (`source`, `license`,
+`attribution`, `obligations`) naming AIAAIC as the attribution target; redistributing
+or adapting one of those rows' content should honor that row's attribution and
+share-alike obligation. A separate, open question about an EU/UK *sui generis*
+database right over the AIAAIC extraction is tracked in the source repository's
+`NOTICE-DATA` and `docs/SOURCE_LICENSES.md` (§1.1) and is **not** resolved by this
+row-level marker.
+
 ## Links
 
 - **Code & issues:** <https://github.com/emmanuelgjr/genai_incidents>
 - **Field reference:** [`docs/DATA_DICTIONARY.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATA_DICTIONARY.md)
 - **Provenance, scope & limitations:** [`docs/DATASHEET.md`](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATASHEET.md)
-- **Citation:** [`CITATION.cff`](https://github.com/emmanuelgjr/genai_incidents/blob/main/CITATION.cff) · DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676)
+- **Citation:** [`CITATION.cff`](https://github.com/emmanuelgjr/genai_incidents/blob/main/CITATION.cff) · DOI [10.5281/zenodo.20248675](https://doi.org/10.5281/zenodo.20248675) (Zenodo concept DOI, always resolves to the latest release)
 
 **Licence:** data **CC-BY-4.0**, code MIT.
 """

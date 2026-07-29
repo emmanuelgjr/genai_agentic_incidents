@@ -5,7 +5,9 @@ message: >-
   please cite it as below. Cite this repository (the preferred-citation
   below) for aggregate or dataset-wide use. For an individual incident,
   cite that incident's own primary source instead, not this repository —
-  every rendered incident links to it.
+  every rendered incident links to it. The DOI below is Zenodo's concept
+  DOI, which always resolves to the latest release; cite a release's own
+  version DOI only when deliberately pinning to that specific version.
 type: dataset
 authors:
   - family-names: "Guilherme Junior"
@@ -13,10 +15,10 @@ authors:
     alias: "emmanuelgjr"
 url: "https://github.com/emmanuelgjr/genai_incidents"
 repository-code: "https://github.com/emmanuelgjr/genai_incidents"
-doi: 10.5281/zenodo.20248676
+doi: 10.5281/zenodo.20248675
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.20248676
+    value: 10.5281/zenodo.20248675
     description: "Zenodo concept DOI (always resolves to the latest release)"
 license: CC-BY-4.0
 keywords:
@@ -50,5 +52,5 @@ preferred-citation:
       alias: "emmanuelgjr"
   year: 2026
   version: "2.8.0"
-  doi: 10.5281/zenodo.20248676
-  url: "https://doi.org/10.5281/zenodo.20248676"
+  doi: 10.5281/zenodo.20248675
+  url: "https://doi.org/10.5281/zenodo.20248675"
