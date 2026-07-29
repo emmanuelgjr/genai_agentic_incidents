@@ -218,12 +218,18 @@ exception types / URL encoding, never for fetching) or inside
 A repo-wide grep for the actual dangerous surface (`requests\.(get|post|...)|httpx\.|urllib\.request\.urlopen`,
 i.e. excluding the non-fetching `urllib.parse`/`urllib.error` false-positive
 sources above) confirms the same conclusion from the opposite direction —
-exactly four files match: `ingest/common.py` (the chokepoint itself, 3
-occurrences: the robots-fetch and the live-content fetch),
-`scrape_aiid.py` (the named inert exception), and
-`tests/test_ingest_common.py` / `tests/conftest.py` (both only reference
-the dotted name as a **string** argument to `unittest.mock.patch(...)`,
-which never executes a call).
+exactly four files match: `ingest/common.py` (the chokepoint itself — two
+real calls, the robots-fetch at `_get_robots_parser()` and the live-content
+fetch at `fetch_once()`, plus several docstring/comment mentions of the
+`urllib.request.urlopen` name that aren't calls at all), `scrape_aiid.py`
+(the named inert exception), and `tests/test_ingest_common.py` /
+`tests/conftest.py` (both only reference the dotted name as a **string**
+argument to `unittest.mock.patch(...)`, which never executes a call).
+(WS0-T4 bounce #1, R6: this section previously hardcoded a specific
+docstring-mention count that drifted the next time this module's prose was
+edited — the exact number isn't the property that matters and this
+paragraph no longer asserts one; `tests/test_network_chokepoint.py::test_chokepoint_file_itself_still_contains_the_fetch_surface`
+is the actual enforcement that the two real calls exist, not this doc.)
 
 `tests/test_network_chokepoint.py` enforces this going forward via AST
 parsing (resolving call targets through each file's own import bindings,
@@ -368,19 +374,25 @@ package with cached bytecode after every test run.
   task introduced); introducing one is a repo-wide decision out of this
   task's scope, flagged here as a follow-up rather than attempted
   unilaterally.
-- **`Mozilla/5.0` prefix**: kept, as a documented judgement call (comment at
-  `ingest/common.py:76-87`). `robotparser.can_fetch()` substring-matches the
-  agent string per rule, and real-world `robots.txt` files target either
-  `*` or a specific named bot, essentially never the literal token
-  "mozilla" — so the over-match risk is low-probability and, if it ever
-  happened, would also catch nearly every browser and most bots (making it
-  an unlikely *and* low-severity risk). Dropping the prefix risks WAF-level
-  rejections some hosts apply to non-browser-shaped UA strings regardless of
-  robots.txt content — an unrelated but concrete example of that class of
-  behavior is on record in this very document (§2: CISA blocked a bare
-  non-Mozilla token identically to every other UA tried, on an unrelated
-  endpoint, illustrating that non-Mozilla-shaped UAs do sometimes fare
-  differently against real infrastructure).
+- **`Mozilla/5.0` prefix — REVERSED in bounce #1 (D3), see §13.** This
+  section originally kept the `Mozilla/5.0` prefix, reasoning only about the
+  over-match risk (a host rule targeting the literal token "mozilla" would
+  also catch us). red-reviewer correctly identified that this reasoning
+  never examined the opposite, worse direction: **under-matching**. An
+  operator who reads our identifying UA and writes a rule naming
+  `genai_incidents` specifically would have been silently ignored, because
+  `robotparser.Entry.applies_to()` reduces a `Mozilla/5.0`-led UA string to
+  the bare token `"mozilla"` — an identity that cannot be addressed by name
+  is not the "identifying User-Agent" the conduct policy promises. The WAF-
+  rejection risk that justified keeping the prefix also turned out to have
+  no supporting measurement: a live probe (§13) found zero difference in
+  robots verdict or fetch outcome across all 18 real target checks between
+  a `Mozilla/5.0`-led and a project-token-led UA, including on CISA — the
+  one host with any on-record evidence of UA-sensitive behavior at all.
+  **Decision reversed: `USER_AGENT` now leads with the project token**
+  (`genai_incidents/2.8.0 (+https://github.com/emmanuelgjr; contact:
+  emmanuelgjr@gmail.com)`), addressable by name, with the `mozilla`
+  over-match risk removed as a side effect of the same change.
 
 ## 12. Zero-data-delta proof (working agreement 2)
 
@@ -416,3 +428,351 @@ during `make build` (consistent with `ingest/common.py`'s own module
 docstring claim, `WS4-T1`'s `make build` contract, and this task's own scope
 bound against touching `data/*.json`) and produced byte-identical
 committed/tracked build output.
+
+---
+
+# Bounce #1 (2026-07-29): D1–D3, R1–R6
+
+red-reviewer BOUNCE #1, foreman-reproduced. Three defects (D1–D3) and six
+advisories the foreman elevated to required (R1–R6). This section documents
+each fix, its verification, and — for D1 and D3 — evidence beyond what the
+bounce report asked for, surfaced by following each fix downstream rather
+than stopping at the line the report named.
+
+## 13. D3: UA identification probe (Mozilla/5.0-led vs. project-token-led)
+
+`urllib.robotparser.Entry.applies_to()` reduces a UA string to
+`useragent.split("/")[0].lower()` before matching it against a rule's own
+`User-agent:` token. Confirmed directly:
+
+```
+"genai_incidents/2.8.0 (+https://github.com/emmanuelgjr; contact: ...)".split("/")[0].lower() -> "genai_incidents"
+"Mozilla/5.0 (genai_incidents/2.8.0; +https://github.com/emmanuelgjr; ...)".split("/")[0].lower() -> "mozilla"
+```
+
+A `robotparser` check against both synthetic rule sets confirms the
+practical consequence:
+
+| Rule | Mozilla/5.0-led UA | project-token-led UA |
+|---|---|---|
+| `User-agent: genai_incidents` / `Disallow: /` | **NOT blocked** (rule never matches — silently ignored) | Blocked (correctly addressed) |
+| `User-agent: mozilla` / `Disallow: /` | Blocked (incidental over-match) | Not blocked |
+
+Then, per the bounce report's instruction, re-ran the robots-verdict and a
+live content-fetch probe across every real ingest target with BOTH UA
+shapes, to check for a regression before switching:
+
+| Target | Mozilla-led | project-token-led | Match |
+|---|---|---|---|
+| `docs.google.com/robots.txt` | 200 / 582 B | 200 / 582 B | same |
+| AIAAIC sheet CSV export | 200 / 961,119 B | 200 / 961,119 B | same |
+| `aiaaic.org/robots.txt` | 404 | 404 | same |
+| `aiaaic.org/aiaaic-repository` | 200 / ~4.51 MB | 200 / ~4.51 MB | same (see note below) |
+| `airi-navigator.com/robots.txt` | 200 / 169 B | 200 / 169 B | same |
+| AIRI ZIP download | 404 | 404 | same (pre-existing withdrawal, unrelated to UA) |
+| `oecd.ai/robots.txt` | 200 / 128 B | 200 / 128 B | same |
+| `oecd.ai` incident-monitor sitemap | 200 / 1,820,305 B | 200 / 1,820,305 B | same |
+| `services.nvd.nist.gov/robots.txt` | 404 | 404 | same |
+| NVD API (1-result query) | 200 / 2,517 B | 200 / 2,517 B | same |
+| `capec.mitre.org/robots.txt` | 200 / 274 B | 200 / 274 B | same |
+| `incidentdatabase.ai/robots.txt` | 404 | 404 | same |
+| AIID snapshots index | 200 / 369,429 B | 200 / 369,429 B | same |
+| R2 bucket `/robots.txt` | 404 | 404 | same |
+| `api.osv.dev/robots.txt` | 404 | 404 | same |
+| `api.github.com/robots.txt` | 404 | 404 | same |
+| `www.cisa.gov/robots.txt` | 403 | 403 | same |
+| CISA KEV feed | 200 / 1,567,768 B | 200 / 1,567,768 B | same |
+
+**Zero regressions across all 18 checks, including CISA — the one host
+with any on-record evidence of UA-sensitive behavior at all.** The single
+apparent difference (the AIAAIC repository page: 4,511,105 B vs. 4,511,157
+B, a 52-byte gap) is **not UA-driven** — re-fetched the identical URL with
+the identical UA three times in a row and got three different byte counts
+(4,511,045 / 4,511,104 / 4,511,156), proving the page itself is dynamic
+(embeds some per-request-varying content — a timestamp, token, or similar)
+and the earlier apparent UA-linked difference was coincidental page churn
+between two nearly-simultaneous requests, not a UA effect. (This page is
+also not part of this pipeline's actual fetch surface — AIAAIC ingestion
+reads `docs.google.com`'s CSV export, not this HTML page directly; it was
+probed anyway for completeness since earlier documents referenced it.)
+
+**Conclusion: the WAF-rejection concern that justified keeping
+`Mozilla/5.0` had no supporting measurement, and does not hold up against
+one.** `USER_AGENT` now leads with the project token:
+`genai_incidents/2.8.0 (+https://github.com/emmanuelgjr; contact:
+emmanuelgjr@gmail.com)` — see `ingest/common.py`'s updated comment
+(immediately above the `USER_AGENT` constant) for the full reasoning, and
+§11 above (updated in place) for the corrected decision record.
+
+## 14. D1: `PermissionError` retry-masking, fixed, followed downstream
+
+**The bug**: `PermissionError` is an `OSError` subclass
+(`issubclass(PermissionError, OSError) == True`, confirmed). `robust_fetch()`
+and `conditional_fetch()` (`ingest/common.py`) both caught the broad
+`OSError` family, so a robots.txt refusal — which should propagate
+immediately per the docstring's own stated intent — was instead retried
+with exponential backoff (up to 2+4=6s wasted) and then re-raised as a
+generic `RuntimeError("Failed to fetch ... after N attempts: ...")`,
+indistinguishable from ordinary network flakiness. `ingest_cve_nvd_expanded.py`'s
+`http_get()`/`http_post_json()` had the identical bug.
+
+**Fix**: added `except PermissionError: raise` ahead of the broad
+`OSError`-inclusive clause in all four functions (`robust_fetch`,
+`conditional_fetch` in `ingest/common.py`; `http_get`, `http_post_json` in
+`ingest_cve_nvd_expanded.py`). A robots refusal now propagates immediately
+and unwrapped, retaining its specific, clear message.
+
+**Followed downstream, empirically, not just reasoned about** — ran three
+scripted probes (mocking `fetch_once`/`urlopen` to raise `PermissionError`
+and observing what actually happens through the real call chains):
+
+1. `robust_fetch()` now propagates `PermissionError` (not `RuntimeError`) —
+   confirmed.
+2. `http_get()` now propagates `PermissionError` — confirmed. This closes a
+   SECOND bug the bounce report flagged as a disclosure item, as an
+   automatic consequence of the D1 fix: `fetch_nvd_keyword()`'s
+   `except RuntimeError as e: break` no longer catches the exception (it's
+   not a `RuntimeError`), so it propagates OUT of `fetch_nvd_keyword()`
+   entirely, **skipping** the unconditional `cache_file.write_text(all_items)`
+   line that used to run right after the old `break`. Confirmed empirically:
+   a mocked robots-refusal run left `cache_file.exists() == False` — no
+   poisoned empty-result cache gets written for a robots-blocked keyword
+   anymore. (This risk remains open for OTHER persistent failures that
+   still get wrapped as `RuntimeError` — e.g. a host down for all 4
+   retries — a separate, pre-existing issue out of this bounce's scope.)
+3. `fetch_page()` (`ingest_oecd_aim.py`) now propagates `PermissionError`
+   past its own `except RuntimeError as e:` swallow — confirmed. Inside
+   `main()`'s `ThreadPoolExecutor`, `fut.result()` has no surrounding
+   `try`/`except`, so this crashes `ingest_oecd_aim.py`'s whole process
+   (non-zero exit) rather than silently skipping one page and continuing —
+   see §18 (R4) for what this means operationally, verified against the
+   actual GitHub Actions workflow rather than assumed.
+
+**A further, genuinely new finding, beyond what either D1 or R4 named**:
+`ingest_cve_nvd_expanded.py`'s `main()` wraps its per-keyword call to
+`fetch_nvd_keyword()` in `except Exception as e: print(...); continue` — a
+broader catch than `fetch_nvd_keyword()`'s own inner `except RuntimeError`.
+This DOES catch the now-propagating `PermissionError`, one level up, and
+the loop would otherwise continue silently trying every remaining NVD
+keyword against the same now-provably-blocked host, each failing
+identically, ending with the script exiting 0 and 0 NVD-phase results —
+correctly distinguishable in the log (each line now says "refusing to
+fetch... robots.txt disallows" instead of "GET ... failed after 4
+attempts"), but not surfaced as a script- or workflow-level failure signal
+at all. **Fixed**: added a specific `except PermissionError` branch in that
+loop that prints one clear "NVD phase aborted" message and `break`s out of
+the per-keyword loop entirely (instead of wastefully repeating an
+already-confirmed refusal N more times), while leaving the GHSA/OSV phases
+below — different hosts, unaffected — to run normally. This does NOT make
+the script exit non-zero for this case; see §18 for why that's disclosed
+as a known, accepted limitation rather than also fixed here.
+
+## 15. D2: the vacuous Makefile tripwire, fixed and self-tested
+
+**The bug**: `tests/test_network_chokepoint.py`'s
+`test_the_inert_allowlist_entry_is_still_actually_inert` asserted
+`"python scripts/scrape_aiid.py" not in makefile.splitlines()` — an exact
+whole-line string match. Make recipe lines are tab-prefixed
+(`"\tpython scripts/scrape_aiid.py"`), and `str.splitlines()` does not
+strip that tab, so `"\tpython scripts/scrape_aiid.py" !=
+"python scripts/scrape_aiid.py"` as plain strings — the assertion could
+**never** fire against the exact regression it existed to catch (a real
+recipe re-enablement), regardless of whether the line was actually
+commented out. Foreman-reproduced by editing a copy of the Makefile to
+re-enable the recipe as a genuine tab-indented line and confirming the old
+assertion still passed.
+
+**Fix**: replaced the check with `_makefile_live_scrape_aiid_lines()`,
+which implements the actual Make semantic that matters — a line is a
+comment (safely ignorable) if and only if its first character is literally
+`#` (this is how Make itself recognizes comments, before it looks for a
+leading-tab recipe line); anything else mentioning `scrape_aiid.py` is
+live. Added `test_makefile_scrape_aiid_tripwire_actually_fires`, a
+non-vacuity proof exercising the checker against the real commented line
+plus three realistic re-enablement shapes (bare tab-indented recipe,
+`$(PYTHON)`-substituted recipe, and a whitespace-varied recipe) — the first
+is silent, all three of the others are caught. Both tests pass against the
+real Makefile today; the self-test proves the checker isn't just
+coincidentally passing the way its predecessor was.
+
+## 16. R2: AST scanner coverage, expanded
+
+`tests/test_network_chokepoint.py`'s `NETWORK_CALL_TARGETS` covered
+`urlopen`/`requests.*`/`httpx.*` only. Added `urllib.request.urlretrieve`
+(the realistic accidental regression — a one-line convenience call nobody
+would think to route through `fetch_once()`), `urllib.request.build_opener`,
+`http.client.HTTPConnection`/`HTTPSConnection`, and
+`socket.create_connection` (the lowest-level stdlib primitive everything
+above eventually calls). `_production_py_files()` switched from
+`.glob("*.py")` to `.rglob("*.py")` under both `scripts/` and `ingest/`, so
+a future subdirectory is scanned rather than silently skipped (neither
+directory has one today; `scripts/__pycache__` and `ingest/{_cache,_state,
+__pycache__}` hold no `.py` files, confirmed). red-reviewer's original
+aliasing coverage claim (`import urllib.request as ur`,
+`from urllib.request import urlopen as f`) was independently confirmed true
+and is unaffected by this addition — this was purely an enumeration gap in
+the target set, not a design flaw in the resolution logic.
+
+## 17. R3: the robots.txt fetch itself is now rate-limited
+
+**The gap**: `_get_robots_parser()` called `urllib.request.urlopen()`
+directly, never through `_rate_limit()` — so a host whose robots.txt is
+never cacheable (any host on `ROBOTS_UNVERIFIABLE_ALLOWLIST`, by
+definition, since an unverifiable outcome is deliberately never cached —
+see the module's own comment on `_robots_cache`) took up to 2 unpaced
+requests plus a 1s retry sleep on **every single call**, contradicting
+`docs/INGESTION_CONDUCT.md`'s claim that the limiter applies "for every
+host, unconditionally."
+
+**Fix**: `_get_robots_parser()` and `robots_allowed()` both gained an
+optional `min_interval` parameter (defaulting to `DEFAULT_MIN_INTERVAL`,
+so no caller is forced to change); `_get_robots_parser()` now calls
+`_rate_limit(host, min_interval)` before each `urlopen()` attempt.
+`fetch_once()` forwards its OWN `min_interval` argument into
+`robots_allowed(url, min_interval)`, so the robots probe and the content
+fetch that follows share one consistent per-host pacing budget — e.g. NVD's
+tighter documented cadence (`NVD_SLEEP`) now governs its own robots-probe
+pacing too, not just its content fetches.
+
+**Verified two ways**: an interaction test
+(`test_get_robots_parser_routes_through_the_shared_rate_limiter`) confirms
+`_get_robots_parser()` calls the real `_rate_limit()` function with the
+expected `(host, min_interval)` pair; a forwarding test
+(`test_fetch_once_forwards_its_min_interval_to_the_robots_check`) confirms
+`fetch_once()` passes its own `min_interval` through rather than always
+using the module default. Both are interaction/mock-based, not
+timing-based, so they stay fast and deterministic (a timing-based version
+of this test would have reintroduced exactly the accidental-real-sleep
+problem D1's own test fixes removed — see the note on
+`test_robots_denial_is_not_cached_so_a_later_check_can_recover`, which
+needed `min_interval=0` added to both its calls once robots.txt fetches
+started sharing state with content-fetch pacing, or it would burn a real
+~1s sleep in its second, previously-unpaced `with` block).
+
+## 18. R4: two disclosures, verified against the actual CI mechanics rather than assumed
+
+**(a) Per-path robots refusals and the pre-existing swallow patterns.**
+Traced precisely (not just asserted) how a robots refusal now behaves for
+each script that has one, post-D1-fix:
+
+- **CISA** (`ingest_cisa_kev.py`): no swallow at all — a top-level, bare
+  `fetch_once()` call with no surrounding `try`/`except`. A refusal crashes
+  the script (non-zero exit) directly.
+- **OECD** (`ingest_oecd_aim.py`): `fetch_page()`'s `except RuntimeError`
+  no longer catches `PermissionError` (§14), so it propagates through
+  `ThreadPoolExecutor.Future.result()` in `main()` (no surrounding
+  `try`/`except` there either) and crashes the whole script, same as CISA.
+- **NVD** (`ingest_cve_nvd_expanded.py`): `main()`'s per-keyword
+  `except Exception` DOES catch it (§14) — the script does NOT crash;
+  §14's added fix aborts the NVD phase specifically with one clear message,
+  but the process still exits 0, and GHSA/OSV/KEV phases (unaffected,
+  different hosts) still run to completion.
+
+**What this means operationally, verified against the actual workflow YAML
+rather than assumed:**
+- `.github/workflows/auto-refresh.yml` runs AIRI/AIAAIC/**OECD**/**KEV**
+  each as its own step with `continue-on-error: true` (lines 37-57) — so a
+  CISA- or OECD-triggered process crash does NOT fail the whole workflow
+  run on a single occurrence. It DOES mark that step's `outcome` as
+  `failure`, which feeds two places: the "Ingest result summary" step
+  (aborts the run only if ALL of AIRI+AIAAIC+OECD fail, `auto-refresh.yml:81-84`
+  — note this specific check does not count KEV) and
+  `scripts/check_source_health.py`'s per-source CONSECUTIVE-failure
+  counter (`ingest/_state/source_health.json`, persisted durably via the
+  `refresh-state` branch) — only after **3+ consecutive weekly failures**
+  for a given source does "Enforce source health" (`auto-refresh.yml:242-246`)
+  fail the workflow run outright. This is a graceful, tracked degradation:
+  visible immediately per-run, durable across runs, hard-gating only on
+  persistence — not "a single robots refusal breaks everything" and not
+  "silently reports success either."
+- `.github/workflows/cve-enrich.yml` (NVD's workflow) has **no**
+  `continue-on-error` on its "Re-pull AI/ML CVEs" step, and no
+  consecutive-failure tracking at all — but since NVD's `main()` absorbs
+  the robots refusal internally (per §14's added fix, it now aborts the
+  NVD phase cleanly rather than looping through it) and still exits 0, this
+  distinction doesn't come into play: **an NVD robots refusal is loud in
+  the console log and silent in every other respect** — no step failure,
+  no health-counter entry, no workflow-level signal. This is a real,
+  disclosed limitation, weaker than CISA's and OECD's degradation paths,
+  and out of this bounce's scope to close further (would mean deciding
+  whether a partial CVE-enrichment run should block the whole PR, a design
+  question beyond "fix the retry-wrapper masking").
+- The empty-cache-poisoning risk for NVD (§14, point 2) is now closed for
+  robots-refusal-specifically; nothing else changes about `fetch_nvd_keyword()`'s
+  behavior for other failure modes.
+
+**(b) Fail-closed's operational blast radius.** `docs/INGESTION_CONDUCT.md`
+argued fail-closed's ethics (refuse loudly rather than risk scraping past
+an operator's stated wishes) without stating its exposure: this pipeline
+currently touches **12 distinct hosts, once a day, over one network path**
+(the AIRI/AIAAIC/OECD/KEV weekly run plus the NVD/GHSA/OSV on-demand run).
+A host that 403s its robots.txt intermittently, or serves it differently
+by geography/CDN edge, now breaks an ingest that used to work under the
+pre-WS0-T4 no-robots-check code — a real behavior change worth stating
+plainly, not just defending in the abstract. Both (a) and (b) are now
+stated explicitly in `docs/INGESTION_CONDUCT.md`'s conduct-policy sections,
+not left implicit.
+
+## 19. R5, summarized (three items, three different resolutions)
+
+1. `robust_fetch()`'s warm-cache short-circuit (`cache_path.exists() and
+   ...`) returns bytes with **no robots check at all** — correct behavior
+   (it's a local-disk read, not a network request; there is nothing to
+   check permission for), but was undocumented. **Disclosed**: added to
+   `robust_fetch()`'s own docstring (`ingest/common.py`).
+2. The robots-probe's rate-limiter exemption. **Fixed** — see §17 (R3).
+3. The allowlist's evidence standard being process (a human writing
+   careful prose) rather than code (something that actually checks the
+   prose is there and non-empty). **Fixed** — see R1 below.
+
+## 20. R1: the allowlist can no longer be silently widened
+
+**The gap**: `ROBOTS_UNVERIFIABLE_ALLOWLIST["evil.example.com"] = {}` waives
+fail-closed for a brand-new host with zero evidence and passes the entire
+suite unmodified — nothing at runtime reads `reason`/`evidence_date`/
+`evidence`/`still_enforced`; `robots_allowed()` only checks dict
+membership. red-reviewer correctly named this the same anti-pattern the
+`check_robots` parameter was removed for: an opt-out reachable by a
+one-line edit isn't a check.
+
+**Fix**: `test_robots_unverifiable_allowlist_is_pinned_and_fully_evidenced`
+(`tests/test_ingest_common.py`) pins the exact host set (mirroring
+`test_literal_accept_criterion_grep_is_documented_not_silently_clean`'s
+pinned-set pattern in `tests/test_network_chokepoint.py` — the asymmetry
+red-reviewer flagged, that one set was pinned and this one wasn't, no
+longer exists) and asserts every entry carries all four required fields as
+non-empty strings. A new entry with an empty or placeholder value now fails
+CI; a new entry at all requires deliberately updating the pinned set,
+which is the natural point to also confirm its evidence meets the same bar
+as `www.cisa.gov`'s.
+
+## 21. R6: cosmetic count fixed at the root, not just corrected for today
+
+§6 above previously asserted a specific `urllib.request.urlopen` occurrence
+count for `ingest/common.py` that was already wrong when written (3 vs. the
+actual 4) and, being a hardcoded number describing prose that keeps
+changing, would have gone stale again the next time this module's comments
+were edited — which is exactly what happened between the original
+submission and this bounce (now 5, after this bounce's own new comments).
+Fixed at the root: the paragraph no longer asserts a specific count at all,
+describing the two real calls qualitatively instead and pointing to
+`test_chokepoint_file_itself_still_contains_the_fetch_surface` as the
+actual enforcement that they exist — a test, not a hand-counted number in
+prose, is the thing that should never go stale here.
+
+## 22. Test count and zero-data-delta re-confirmation (bounce #1)
+
+`python -m pytest -q`: **265 passed** (was 261 before this bounce; +2 R3
+interaction tests, +1 R1 allowlist-pinning test, +1 D2 non-vacuity test —
+net +4 from the additions above, since D2's fix replaced one test with two
+without a net change beyond that +1).
+
+Zero-data-delta re-confirmed by the same method as §12, re-run after all
+bounce-#1 changes: `git status --porcelain --untracked-files=all` shows
+only the same code/test/doc files this bounce touched
+(`ingest/common.py`, `scripts/ingest_cve_nvd_expanded.py`,
+`tests/conftest.py`, `tests/test_ingest_common.py`,
+`tests/test_network_chokepoint.py`, this document) — zero `data/*.json` or
+generated-doc changes; explicit SHA-256 hashes of all `data/*.json` files
+and `INCIDENTS.md`, taken immediately before and after a full manual
+`make build` sequence re-run, are identical.
