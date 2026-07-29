@@ -246,7 +246,7 @@ independent rendering of AIAAIC's headline, always literally prefixed
 - I spot-checked this pattern **outside the 47** too: it holds on 3 sampled
   EXACT-band rows, on 7 sampled 0.6–0.8-band rows, on 4 sampled <0.6-band
   rows, and on all 3 UNJOINED rows. It looks structural to the whole 95-row
-  hand-curated set (an artefact of `ingest_aiaaic_incidents.json`'s reference
+  hand-curated set (an artefact of `ingest/aiaaic_incidents.json`'s reference
   construction always rendering `"AIAAIC - " + <the source's own title
   text>`), not particular to the 47.
 
