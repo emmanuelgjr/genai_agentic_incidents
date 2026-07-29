@@ -318,11 +318,25 @@ per-build-day artifact, not a content signal.
 required).** Grepped every ingest/merge script for `title` reads that feed a
 classification decision. Two hits that matter:
 - `merge_and_dedupe.py:1354` (`classify_attack_vector` fallback text) reads
-  `title` **only when `attack_vector` is missing or `"other"`**. All 95
-  hand-curated AIAAIC rows arrive with an explicit non-`"other"` `attack_vector`
-  (e.g. `deepfake`), so this path never executes for them — confirmed
-  empirically: `attack_vector` is identical on every one of the 13 retitled
-  rows, before and after.
+  `title` when the entry's `attack_vector` is missing or `"other"`.
+  **Correction (bounce #1, red-review): this doc's first commit wrongly
+  claimed the path never executes for the 95** — re-derived directly against
+  `ingest/aiaaic_incidents.json`, not assumed: **20 of the 95** arrive with an
+  explicit `attack_vector: "other"`, so the fallback **does** execute on
+  those 20 — including **3 of the 13 retitled rows**
+  (`AIAAIC-opendream-csam`, `AIAAIC-character-ai-suicide`,
+  `AIAAIC-openai-deleted-datasets`). For all 95, `_aiaaic_seed_text()` returns
+  `None` (none of them carry `description_source`, per D10), so the fallback
+  text is `title + " " + description` for every one. Checked per-row with the
+  actual code, not inferred from the final column matching: for each of the 3,
+  `classify_attack_vector(old_title + description)` and
+  `classify_attack_vector(new_title + description)` return the **identical**
+  value (`None` -> stays `"other"`; `unsafe-advice`; `supply-chain`,
+  respectively). The other 17 of the 20 have no title change at all, so the
+  fallback trivially returns the same value on them. **Corrected claim: the
+  fallback executes on 20 of the 95 (3 of the 13 retitled) and returns an
+  identical vector before and after, verified per row** — the "never
+  executes" claim was false; the zero-cascade conclusion holds.
 - `_classify_corpus()` (`merge_and_dedupe.py:574`) reads
   `title` **unconditionally**, every build, concatenated with description/tags,
   to assign `security` vs. `ai-harm`. This one **does** run on every retitled
@@ -358,6 +372,22 @@ surface (grepped, no match), so none of that churn is attributable to
 deliverable (a). `docs/data/incidents.min.json` and
 `src/genai_incidents/data/incidents.min.json` are verified identical to
 `data/incidents.min.json` (same SHA-256, `13d4fe7f...`) — mirrors in sync.
+
+**Schema mirror — added at bounce #1; this check was missing from the first
+commit.** `render_markdown.py:767` also copies `schema/incident.schema.json`
+into `src/genai_incidents/schema/incident.schema.json` as a build step. This
+doc's first commit verified the three `incidents.min.json` mirrors (above)
+but never checked the schema mirror, which is how the branch shipped one
+build behind schema-architect's `01653d77` for two commits — the packaged
+mirror still carried the pre-E16 `$comment` asserting the now-superseded
+wording ("Today only AIAAIC-origin descriptions carry one, so every entry
+whose description_source is aiaaic must also carry content_license" — true
+in the enforced direction but wrongly implying the converse). Fixed by
+re-running the build; both schema files are now confirmed byte-identical
+(`python -c "import json; a=json.load(open('schema/incident.schema.json'));
+b=json.load(open('src/genai_incidents/schema/incident.schema.json'));
+print(a==b)"` -> `True`). Added to the §9 recipe's `git diff --stat` file
+list below so a future re-run of this recipe checks it too.
 
 ## 6. Schema tension — NOT fixed by this task; proposed wording below,
 **landed verbatim by schema-architect in `01653d77` on this same branch**
@@ -521,7 +551,7 @@ intended (a citation) rather than as a failed retitle.
 git diff --stat ingest/aiaaic_incidents.json data/incidents.json data/incidents.min.json \
     data/stats.json INCIDENTS.md docs/incidents/2019.md docs/incidents/2022.md \
     docs/incidents/2023.md docs/incidents/2024.md docs/data/incidents.min.json \
-    src/genai_incidents/data/incidents.min.json
+    src/genai_incidents/data/incidents.min.json src/genai_incidents/schema/incident.schema.json
 python scripts/parse_existing.py
 python scripts/merge_and_dedupe.py
 python scripts/render_markdown.py
