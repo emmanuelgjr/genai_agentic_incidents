@@ -59,12 +59,14 @@ both runs:
 
 | File | SHA-256 |
 |---|---|
-| `data/incidents.json` | `b5fa3ae1257c6ac7db4816925a98dda72179d77531843302108e20298de028b` |
-| `data/incidents.min.json` | `e4c126627aa56055efdaba26f281fbac51c60c7f939ed7bf0fe3cfec347e504` |
-| `INCIDENTS.md` | `c74dff2c8f554124efdcd1cdcaec09aa195151ea4163eb3f9e28d17b89547bb` |
-| `data/stats.json` | `fdac9162dd4265d5f3cda78f2b525b4ab76152abe68c439aa087a4e0d748a96` |
-| `data/id_deprecations.json` | `975d94c7922b41b3dadf7a2be776e516f4571eac417487ba04d87b15f04c502` |
-| `ingest/aiaaic_sheet_incidents.json` | `0f878558f6784fdce78dd9f555db475b64cb1bb272f140fdc828d6b204bc374` |
+| `data/incidents.json` | `b5fa3ae1257c6ac7db4816925a98dda72179d77531843302108e20298de028bb` |
+| `data/incidents.min.json` | `e4c126627aa56055efdaba26f281fbac51c60c7f939ed7bf0fe3cfec347e5047` |
+| `INCIDENTS.md` | `c74dff2c8f554124efdcd1cdcaec09aa195151ea4163eb3f9e28d17b89547bb7` |
+| `data/stats.json` | `fdac9162dd4265d5f3cda78f2b525b4ab76152abe68c439aa087a4e0d748a96d` |
+| `data/id_deprecations.json` | `975d94c7922b41b3dadf7a2be776e516f4571eac417487ba04d87b15f04c5027` |
+| `ingest/aiaaic_sheet_incidents.json` | `8a154b00b872b441909f31d4e32ed6f270df5730bc42e06f7b0fd5a7d5ec449f` |
+
+These are the SHA-256 digests of the **committed blobs** (`git show <ref>:<path> | sha256sum`). Note that `ingest/aiaaic_sheet_incidents.json` is EOL-normalised to LF on commit, so hashing the local working copy on a CRLF platform yields a different value; use the committed blob when reproducing.
 
 (Second-run `render_docs_stats.py` reported "all doc surfaces already match
 `data/stats.json` (no-op)" — confirming the first run's template pass was
@@ -297,11 +299,16 @@ Raw `grep -rl` file-level hit count:
 they resolve to, are all false positives unrelated to AIAAIC** — a naive
 substring grep across a 13,119-entry, 20-source corpus will always collide
 with generic English words. Verified directly: every one of the 8 hits is a
-CVE/vulnerability write-up (Kimai, pyload, dagu, PraisonAI, LXD, Cadwyn,
+CVE/vulnerability write-up (Kimai, pyload, dagu, Lobe Chat, LXD, Cadwyn,
 Directus/Refit — `INC-08651`, `INC-08666`, `INC-09388`, `INC-09531`,
 `INC-10187`, `INC-10356`, `INC-10725`, `INC-10774`) whose proof-of-concept
 prose contains "Response:" as an HTTP-response label, e.g. `"Response: HTTP 200
-— returns full timesheet record..."`. None has `description_source == "aiaaic"`
+— returns full timesheet record..."`. (An ingest-level grep against
+`cve_nvd_expanded.json` returns 9 record hits, one entry more than this
+data-level count of 8 — that ninth is a PraisonAI CVE whose curated
+description drops the marker before it reaches the corpus, so it never
+surfaces at the data layer; the 8 above are the data-level hits actually
+enumerated here.) None has `description_source == "aiaaic"`
 or any AIAAIC `source_ids`. A precise, per-entry check —
 scanning only `description` fields where `description_source == "aiaaic"`,
 and separately the two committed AIAAIC ingest files
