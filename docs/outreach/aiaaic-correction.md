@@ -1,8 +1,13 @@
 # Draft — AIAAIC: correction to our retention description (E17)
 
-**STATUS:** ⚠ DRAFT — awaiting user send. Foreman-written 2026-07-29.
-**Send status:** NOT SENT as of 2026-07-29. Log the send date here and on the
-board when it goes out.
+**STATUS:** 📤 **SENT 2026-07-29** (user-confirmed). Foreman-written 2026-07-29.
+Do not edit the message body below — the sent version is what AIAAIC has, and
+editing it here would make this file misdescribe what they were told.
+**Send status:** SENT **2026-07-29**, the same day it was drafted and after the
+E16 merge landed — so **the main marker paragraph was accurate as written and
+the alternate paragraph below was NOT used.** The send-order condition in this
+file resolved to "send as written"; it is retained as the record of the
+decision, not as a live instruction.
 
 **What this corrects.** `docs/outreach/aiaaic-facts-link.md`, sent to AIAAIC
 **2026-07-27**, described what we retain as "categorical facts only (system,

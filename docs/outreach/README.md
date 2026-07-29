@@ -16,7 +16,8 @@ committed (chat-only deliverables have now been lost three times — see the new
 | `aiaaic-facts-link.md` | AIAAIC (Charlie Pownall / team) | Facts+link handling under CC BY-SA; attribution/cadence | **2026-07-27** — superseded in part, see `aiaaic-correction.md` (E17) |
 | `mit-airi-courtesy.md` | Spencer Michaels / airi-navigator.com | Dead-download courtesy notice + transitive-AIID licensing question | **2026-07-27** |
 | `annotator-recruitment.md` | Mayur021 (GitHub) — see file for ranked backups | WS2-T2 second-annotator recruitment: scoped ~200-entry labeling + adjudication ask | **2026-07-27** — satisfies the Phase-1 exit criterion; reply awaited, follow-up ~2026-08-03 |
-| `aiaaic-correction.md` | AIAAIC (same thread as `aiaaic-facts-link.md`) | E17 correction: the sent retention description understated which fields carry AIAAIC content | **NOT SENT** — ready; accurate as written now E16 has merged |
+| `aiaaic-correction.md` | AIAAIC (same thread as `aiaaic-facts-link.md`) | E17 correction: the sent retention description understated which fields carry AIAAIC content | **2026-07-29** — sent as written (post-E16-merge, alternate paragraph not used) |
+| `airi-draft4-export-request.md` | MIT AI Risk Initiative — `airisk@mit.edu` | E18 redraft: substantive sanctioned-export/API request + transitive-AIID provenance question. **D8's 30-day clock starts on this send** | **NOT SENT** — at red-reviewer gate |
 
 **Separate and NOT in this package:** the substantive `airisk@mit.edu` export
 request (AIRI Draft 4, E10/D8) — queue step 3, drafted separately.
