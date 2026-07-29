@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/emmanuelgjr/genai_incidents/schema/source_freshness.schema.json",
+  "title": "Source freshness registry",
+  "description": "Schema for data/source_freshness.json — the PUBLISHED, reviewed statement of how current each tracked upstream source is. Freshness is a property of the SOURCE, not of a row: a row inherits it by reference, through the per-entry `source_freshness` marker in incident.schema.json, whose `sources` entries are keys into this file's `sources` object. This registry is the single place a newly-dead source is declared — flip its `status` to `stale` and set `last_success`/`stale_since`, and every row the source contributed to is marked on the next build with no schema change. Deliberately NOT the same artifact as ingest/_state/source_health.json: that file is the machine counter (high-churn, unreviewed by design, authoritative on the `refresh-state` branch per decision D5, and stale by design on `main`). This registry is a reviewed publication derived from it. The build MUST read this file and MUST NOT read the counter — reading the counter from a `main` checkout would ship D5's deliberately-stale copy as if it were current, which is a new instance of the exact class this registry exists to close.",
+  "type": "object",
+  "required": ["observed_at", "observed_from", "coverage", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "_note": {
+      "type": "string",
+      "description": "Free-text preamble for human readers of the raw file. Carries no machine meaning."
+    },
+    "observed_at": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Date of the source-health state snapshot this registry was last reconciled against — NOT the build date and NOT today. Deriving a freshness claim and stamping it with the build date is how a stale input becomes a falsely-current artifact; dating the artifact by its INPUT means an out-of-date registry reads as visibly old rather than as wrong."
+    },
+    "observed_from": {
+      "type": "string",
+      "description": "Which copy of ingest/_state/source_health.json the values below were reconciled against, named precisely enough to judge their strength — e.g. `main:ingest/_state/source_health.json` (stale by design per D5; the weaker provenance) vs `refresh-state:ingest/_state/source_health.json` (authoritative). Stated because the two can legitimately disagree and a reader must be able to tell which one they are holding."
+    },
+    "coverage": {
+      "type": "object",
+      "description": "What this registry does and does not speak for. Required, because a registry that lists four sources silently implies the corpus has four sources; naming the untracked ingests is what keeps that implication from being false.",
+      "required": ["tracked", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "tracked": {
+          "type": "array",
+          "description": "Source keys this registry speaks for — the sources refreshed by .github/workflows/auto-refresh.yml and counted in ingest/_state/source_health.json. Must be exactly the key set of `sources`.",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "note": {
+          "type": "string",
+          "description": "Plain statement of what is NOT covered, so absence from this registry is never read as a freshness claim."
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "description": "Registry keyed by source slug. The keys are the vocabulary the per-row `source_freshness.sources` array draws from, and are the same slugs ingest/_state/source_health.json uses, so the two can be reconciled key-for-key.",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" },
+      "additionalProperties": { "$ref": "#/$defs/source" }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["label", "status", "last_success", "row_marker"],
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string",
+          "description": "Human-readable name of the upstream source."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["ok", "degraded", "stale"],
+          "description": "Refresh health, same three values scripts/check_source_health.py assigns: `ok` = last refresh succeeded; `degraded` = failed below the consecutive-failure threshold (a transient blip); `stale` = at or past the threshold, i.e. a source that has stopped working rather than hiccupped. Only `stale` propagates to rows — see `row_marker`. Retirement is NOT a status here: retiring a source is a corpus action (status + tombstone per Invariant 3), not a freshness value, which is why this enum does not need a fourth member for it.",
+          "$comment": "This enum mirrors check_source_health.py's vocabulary on purpose. If that script's vocabulary ever changes, this enum and the reconciliation check change with it, in the same PR."
+        },
+        "last_success": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Date of the last refresh that succeeded. This is the AS-OF date for everything this source contributed: content it supplied is current through this date and no further."
+        },
+        "stale_since": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "Date of the FIRST failed refresh after `last_success` — when the source actually broke, as distinct from when it crossed the failure threshold or when anyone noticed. Not derivable from the counter (which keeps only a tally and the latest attempt), so it is set from the run-log audit that established it and left alone. Omit rather than guess."
+        },
+        "paused": {
+          "type": "boolean",
+          "description": "True when CI alerting for this source is paused via ingest/_state/source_health.json's time-boxed override. Recorded here for the reader's benefit only: a pause silences the ALERT, never the freshness claim. A paused source that is stale still reads `status: stale` and still marks its rows, because the corpus must not describe itself differently depending on whether someone muted a notification."
+        },
+        "hold": {
+          "type": "object",
+          "description": "An open decision about this source's future, with the date it must be resolved by. Present when the structural question (retire / replace / restore) is deliberately deferred rather than unexamined. The dated form matters: the Phase-1 exit criterion for dead sources is satisfied by a remediation OR a hold WITH a decision date, so an undated hold must not be expressible as one.",
+          "required": ["decision", "until", "note"],
+          "additionalProperties": false,
+          "properties": {
+            "decision": {
+              "type": "string",
+              "description": "Board decision id that opened the hold, e.g. D8."
+            },
+            "until": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+              "description": "Date the deferred decision becomes live, whatever else happens."
+            },
+            "note": {
+              "type": "string",
+              "description": "What is deferred and what would resolve it earlier."
+            }
+          }
+        },
+        "row_marker": {
+          "description": "How rows this source contributed to are identified, so freshness can be inherited by reference instead of copied per row. Either a selector or an explicit null. `{\"kind\": \"tag\", \"value\": \"<tag>\"}` selects every entry carrying that tag — the tag each ingest script stamps on the rows it emits. `null` means this source deliberately does NOT propagate to rows, and `row_marker_note` must then say why (enrichment-only sources are the case: they add fields to rows other sources created, so marking the rows that happen to carry their data would point at the wrong set — the risk from their staleness is on the rows that DON'T).",
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "required": ["kind", "value"],
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": ["tag"],
+                  "description": "Selector kind. `tag` is the only kind, because every row-creating ingest stamps a source tag; a second kind should be added only when a row-creating source appears that does not, and never to paper over an enrichment source (use null for those)."
+                },
+                "value": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "The tag itself, exactly as the ingest script stamps it. Prefer the most specific tag the ingest emits (e.g. `aiaaic-sheet`, not the broader `aiaaic` that hand-curated rows also carry)."
+                }
+              }
+            }
+          ]
+        },
+        "row_marker_note": {
+          "type": "string",
+          "description": "Why this source does not propagate to rows. Required when `row_marker` is null."
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical URL of the source."
+        },
+        "note": {
+          "type": "string",
+          "description": "Anything a consumer needs to interpret this source's freshness correctly — e.g. that a committed ingest snapshot keeps re-emitting the source's rows every build, which is why the corpus does not shrink when the source dies."
+        }
+      },
+      "allOf": [
+        {
+          "$comment": "A null row_marker is a design decision, not an omission — it must say why.",
+          "if": { "properties": { "row_marker": { "type": "null" } } },
+          "then": { "required": ["row_marker_note"] }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_note": "Published source-freshness registry. Curated INPUT, in the same sense as data/curation_overrides.json — reviewed, hand-authored, and read by the build; NOT a generated corpus artifact. Shape: schema/source_freshness.schema.json. Field reference: docs/DATA_DICTIONARY.md. THREE COPIES EXIST AND ONLY ONE IS THIS ONE: (1) refresh-state:ingest/_state/source_health.json is the authoritative machine counter, unreviewed by design (D5); (2) main:ingest/_state/source_health.json is a bootstrap fallback that goes stale BY DESIGN (D5, accepted advisory); (3) this file is the reviewed publication. The build reads THIS file. A build that read (2) would republish a deliberately-stale artifact as current — the exact failure class this registry exists to close.",
+  "observed_at": "2026-07-12",
+  "observed_from": "main:ingest/_state/source_health.json",
+  "coverage": {
+    "tracked": ["aiaaic_sheet", "airi_navigator", "cisa_kev", "oecd_aim"],
+    "note": "Covers only the four sources refreshed weekly by .github/workflows/auto-refresh.yml and counted in ingest/_state/source_health.json. Every other input is a static or manually-refreshed snapshot with no health tracking and is NOT represented here: the AIID snapshot (ingest/aiid_full.json), the NVD/GHSA/OSV enrichment caches, the ATLAS / AVID / garak / promptfoo / red-team imports, and data/legacy_consolidated.json. Absence from this registry is NOT a freshness claim about a source — it means nothing is measured, which is a gap, not a clean bill of health."
+  },
+  "sources": {
+    "aiaaic_sheet": {
+      "label": "AIAAIC Repository (public incidents sheet)",
+      "status": "ok",
+      "last_success": "2026-07-12",
+      "row_marker": { "kind": "tag", "value": "aiaaic-sheet" },
+      "note": "The sheet-ingested rows only. Hand-curated AIAAIC-derived rows carry the broader `aiaaic` tag without `aiaaic-sheet` and are not emitted by this ingest, so they are correctly outside this selector."
+    },
+    "airi_navigator": {
+      "label": "MIT AI Risk Initiative — AI Incident Tracker (AIRI Navigator)",
+      "url": "https://airi-navigator.com/",
+      "status": "stale",
+      "last_success": "2026-05-31",
+      "stale_since": "2026-06-07",
+      "row_marker": { "kind": "tag", "value": "airi-navigator" },
+      "hold": {
+        "decision": "D8",
+        "until": "2026-08-28",
+        "note": "Retire-or-replace is deliberately deferred. Resolved earlier if MIT replies to the sanctioned-export request sent 2026-07-29; otherwise the decision becomes live on this date. The MARKING (this registry entry and the row markers it drives) never depended on that reply and is not part of the hold."
+      },
+      "note": "The public bulk download was withdrawn; refreshes have 404'd since 2026-06-07. The corpus did not shrink and will not, because ingest/airi_navigator_incidents.json is a COMMITTED SNAPSHOT that re-feeds the same rows on every build — frozen, not broken. That is precisely why these rows read as current without anything in the data being false, and why freshness had to become its own published axis rather than a value of `source_status`. The EU AI Act risk-tier tags (`eu-ai-act-*`) on these rows are AIRI-derived and are current as of `last_success`, not as of the build date; they are deliberately kept, not stripped (D8)."
+    },
+    "cisa_kev": {
+      "label": "CISA Known Exploited Vulnerabilities catalog",
+      "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "status": "ok",
+      "last_success": "2026-07-12",
+      "row_marker": null,
+      "row_marker_note": "Enrichment-only, and deliberately non-propagating. KEV creates no entries and stamps no tag; it sets `exploited_in_wild` / `kev_date_added` on entries other sources created. If KEV went stale the consequence would be MISSING exploitation flags on rows we cannot enumerate, so marking the handful of rows that DO carry KEV data would point the reader at exactly the wrong set. Its freshness is therefore reported here, at source level, and nowhere else."
+    },
+    "oecd_aim": {
+      "label": "OECD AI Incidents Monitor (AIM)",
+      "url": "https://oecd.ai/en/incidents",
+      "status": "ok",
+      "last_success": "2026-07-12",
+      "row_marker": { "kind": "tag", "value": "oecd-aim" }
+    }
+  }
+}

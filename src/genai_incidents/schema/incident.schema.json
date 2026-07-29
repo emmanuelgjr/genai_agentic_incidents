@@ -189,8 +189,33 @@
     },
     "source_status": {
       "type": "string",
-      "description": "Whether the entry is still emitted by at least one source on the latest build (`active`) or was retained from a prior build after all its sources dropped it (`retained`).",
+      "description": "EMISSION status, not liveness status. Whether the entry is still emitted by at least one source on the latest build (`active`) or was retained from a prior build after all its sources dropped it (`retained`). Read the sentence a consumer will actually form, and reject it: `active` does NOT mean the upstream source is still alive or still being refreshed successfully. It means only that the entry appeared in this build's inputs — and an ingest snapshot committed to the repository re-emits its rows on every build whether or not the source that produced it still exists. That misreading is what let 1,380 AIRI-derived rows read as current for the seven weeks after that source's last successful refresh on 2026-05-31, without any field in the data being false. Source FRESHNESS is a separate, independent axis: published per source in data/source_freshness.json and surfaced per row as `source_freshness`. The two combine freely — an entry can be active-and-fresh, active-and-stale, retained-and-fresh, or retained-and-stale — which is why freshness is not, and must not become, a third value of this enum.",
       "enum": ["active", "retained"]
+    },
+    "source_freshness": {
+      "type": "object",
+      "description": "Derived per-row projection of data/source_freshness.json: at least one source that contributed to this entry has stopped refreshing successfully, so part of this entry's content is current only up to `as_of`. Inherited BY REFERENCE, never authored per row — every value here is reconstructable from the registry plus the entry's source tags, and each `sources` element is a key into the registry's `sources` object where the full source-level record (label, stale_since, hold, notes) lives. Emitted ONLY on entries with at least one `stale` contributing source; its ABSENCE means no contributing source is currently registered stale — NOT that the entry is verified current, and NOT that its sources are tracked at all (data/source_freshness.json `coverage` names the ingests nothing measures). Independent of `source_status`, which is an emission status; see that field. Deliberately self-sufficient — status, date and source keys are all inline — so a consumer holding only incidents.min.json or the HuggingFace projection can read it without joining to the registry.",
+      "required": ["status", "as_of", "sources"],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["stale"],
+          "description": "Single-valued today, and that is a decision rather than an oversight: the registry's `degraded` state (a source that failed below the consecutive-failure threshold) deliberately does NOT propagate here, because a transient blip would otherwise add and remove this field across thousands of rows on a flaky week and make the field's own churn unreadable. The threshold already exists to separate a hiccup from a death; this reuses it. Extending the enum to `degraded` is a value change, not a shape change."
+        },
+        "as_of": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "description": "The date through which this entry's content from the listed sources is current — the EARLIEST `last_success` among them, so a row fed by two stale sources reports the more conservative date. Says nothing about content the entry received from sources that are still fresh."
+        },
+        "sources": {
+          "type": "array",
+          "description": "Sorted, unique keys into data/source_freshness.json `sources` — exactly the contributing sources that are stale, never the entry's full source set. A cross-listed entry whose other sources are healthy lists only the stale one, because that is the true claim: part of this row is old, not all of it.",
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
     },
     "first_seen": {
       "type": "string",

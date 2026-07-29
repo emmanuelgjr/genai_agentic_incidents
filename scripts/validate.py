@@ -1,4 +1,5 @@
-"""Validate data/incidents.json against schema/incident.schema.json."""
+"""Validate data/incidents.json against schema/incident.schema.json, and
+data/source_freshness.json against schema/source_freshness.schema.json."""
 
 from __future__ import annotations
 
@@ -120,6 +121,91 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
     return problems
 
 
+def check_source_freshness(data: dict, registry: dict) -> list[str]:
+    """Cross-check every entry's `source_freshness` marker against the
+    published registry (data/source_freshness.json). Returns violation
+    messages (empty == clean).
+
+    The marker is DERIVED — inherited by reference from the registry, never
+    authored per row — so every part of it must be reconstructable from the
+    registry plus the entry's tags. These checks are what make that true
+    rather than merely documented:
+
+    1. Registry self-consistency: `coverage.tracked` must be exactly the key
+       set of `sources`, so the stated coverage can't drift from the actual.
+    2. Every key a row lists must exist in the registry.
+    3. Every listed source must be `stale`. `degraded` deliberately does not
+       propagate to rows (see the schema), and a source that is `ok` marking
+       rows would be a straightforward falsehood.
+    4. Every listed source must actually propagate — a row may not claim
+       freshness from a source whose `row_marker` is null (enrichment-only).
+    5. The row must carry each listed source's `row_marker` tag: a marker on
+       an entry the source never touched is a fabricated provenance claim.
+    6. `as_of` must equal the EARLIEST `last_success` among the listed
+       sources — the conservative choice, and the only deterministic one.
+    7. `sources` must be sorted, so the field is byte-stable across builds.
+
+    NOT checked here, and deliberately: COMPLETENESS — that every entry
+    carrying a stale source's `row_marker` tag actually has the marker. That
+    gate belongs with the pipeline change that applies the marking; adding it
+    before the data carries the markers would fail the build on the very
+    state this task exists to describe. See the D8 application spec.
+    """
+    problems: list[str] = []
+    sources = registry.get("sources") or {}
+
+    tracked = registry.get("coverage", {}).get("tracked") or []
+    if sorted(tracked) != sorted(sources):
+        problems.append(
+            "source_freshness registry: coverage.tracked "
+            f"{sorted(tracked)} != sources keys {sorted(sources)}"
+        )
+
+    for e in data["incidents"]:
+        marker = e.get("source_freshness")
+        if not marker:
+            continue
+        listed = list(marker.get("sources") or [])
+        if listed != sorted(listed):
+            problems.append(f"{e['id']}: source_freshness.sources is not sorted")
+        tags = set(e.get("tags") or [])
+        last_successes = []
+        for key in listed:
+            src = sources.get(key)
+            if src is None:
+                problems.append(
+                    f"{e['id']}: source_freshness names {key!r}, which is not in "
+                    "data/source_freshness.json"
+                )
+                continue
+            if src.get("status") != "stale":
+                problems.append(
+                    f"{e['id']}: source_freshness names {key!r}, whose registry "
+                    f"status is {src.get('status')!r}, not 'stale'"
+                )
+            row_marker = src.get("row_marker")
+            if row_marker is None:
+                problems.append(
+                    f"{e['id']}: source_freshness names {key!r}, which does not "
+                    "propagate to rows (row_marker is null)"
+                )
+            elif row_marker.get("value") not in tags:
+                problems.append(
+                    f"{e['id']}: source_freshness names {key!r} but the entry does "
+                    f"not carry its row_marker tag {row_marker.get('value')!r}"
+                )
+            if src.get("last_success"):
+                last_successes.append(src["last_success"])
+        if last_successes:
+            expected = min(last_successes)
+            if marker.get("as_of") != expected:
+                problems.append(
+                    f"{e['id']}: source_freshness.as_of is {marker.get('as_of')!r}; "
+                    f"earliest last_success of its sources is {expected!r}"
+                )
+    return problems
+
+
 def main():
     schema = json.loads((ROOT / "schema" / "incident.schema.json").read_text(encoding="utf-8"))
     data = json.loads((ROOT / "data" / "incidents.json").read_text(encoding="utf-8"))
@@ -145,6 +231,39 @@ def main():
             "deprecations", []
         )
     problems = check_integrity(data, deprecations)
+
+    # Source-freshness registry: shape, then the row markers that inherit
+    # from it. Freshness is a property of the SOURCE; the per-row marker is
+    # a derived projection, so both halves are validated together.
+    fresh_schema_path = ROOT / "schema" / "source_freshness.schema.json"
+    fresh_path = ROOT / "data" / "source_freshness.json"
+    if fresh_schema_path.exists() and fresh_path.exists():
+        fresh_schema = json.loads(fresh_schema_path.read_text(encoding="utf-8"))
+        registry = json.loads(fresh_path.read_text(encoding="utf-8"))
+        shape_errs = list(
+            jsonschema.Draft202012Validator(fresh_schema).iter_errors(registry)
+        )
+        for err in shape_errs:
+            path = ".".join(str(p) for p in err.path)
+            problems.append(f"source_freshness registry: {path}: {err.message}")
+        if not shape_errs:
+            problems.extend(check_source_freshness(data, registry))
+            marked = sum(1 for e in data["incidents"] if e.get("source_freshness"))
+            stale = sorted(
+                k for k, v in (registry.get("sources") or {}).items()
+                if v.get("status") == "stale"
+            )
+            print(
+                f"source freshness: registry valid ({len(registry.get('sources') or {})} "
+                f"source(s), observed_at {registry.get('observed_at')}); "
+                f"{len(stale)} stale ({', '.join(stale) or 'none'}); "
+                f"{marked} entr(ies) carry a source_freshness marker."
+            )
+    else:
+        problems.append(
+            "source_freshness: data/source_freshness.json or its schema is missing"
+        )
+
     if problems:
         print(f"\n{len(problems)} integrity violation(s):")
         for p in problems[:20]:
