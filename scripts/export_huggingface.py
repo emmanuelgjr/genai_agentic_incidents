@@ -114,17 +114,18 @@ the datasheet for full scope, collection method, and limitations.
 ## Licensing
 
 Data is released under **CC BY 4.0** overall (`license: cc-by-4.0` above; see
-`LICENSE-DATA` and `NOTICE-DATA` in the source repository). A subset of entries whose
-description derives from the **AIAAIC Repository** (`description_source ==
-"aiaaic"`) carries an *additional*, row-level **CC BY-SA 4.0** attribution/share-alike
-obligation — this does not apply project-wide, only to those specific rows. Each such
-row carries a machine-readable `content_license` field (`source`, `license`,
-`attribution`, `obligations`) naming AIAAIC as the attribution target; redistributing
-or adapting one of those rows' content should honor that row's attribution and
-share-alike obligation. A separate, open question about an EU/UK *sui generis*
-database right over the AIAAIC extraction is tracked in the source repository's
-`NOTICE-DATA` and `docs/SOURCE_LICENSES.md` (§1.1) and is **not** resolved by this
-row-level marker.
+`LICENSE-DATA` and `NOTICE-DATA` in the source repository). A subset of entries that
+cite the **AIAAIC Repository** — 1,517 rows: those whose description derives from
+AIAAIC's sheet (`description_source == "aiaaic"`) plus a smaller set of hand-curated
+rows whose title and categorical facts derive from AIAAIC directly — carries an
+*additional*, row-level **CC BY-SA 4.0** attribution/share-alike obligation — this
+does not apply project-wide, only to those specific rows. Each such row carries a
+machine-readable `content_license` field (`source`, `license`, `attribution`,
+`obligations`) naming AIAAIC as the attribution target; redistributing or adapting
+one of those rows' content should honor that row's attribution and share-alike
+obligation. A separate, open question about an EU/UK *sui generis* database right
+over the AIAAIC extraction is tracked in the source repository's `NOTICE-DATA` and
+`docs/SOURCE_LICENSES.md` (§1.1) and is **not** resolved by this row-level marker.
 
 ## Links
 

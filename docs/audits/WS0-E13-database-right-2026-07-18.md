@@ -34,6 +34,29 @@ text or amendments is deleted or reversed; §1–§3's AIAAIC-side findings
 (subsistence, substantiality, facts+link's incompleteness as a mitigation)
 are explicitly unaffected and remain this file's live, unresolved risk.
 
+**Amendment log (2026-07-29, user-directed, folding E15/D17):** a new
+**item 8** is added to §5.1 — a distinct *copyright* question (does
+AIAAIC's retained headline itself defeat D2's "disposes of the copyright
+share-alike question" conclusion, given the headline is an editorial
+characterisation rather than a bare fact, and UK/EU law — unlike US
+Circular 33 — does not categorically exclude short phrases from
+protection?), raised by license-auditor as escalation E15 during the
+2026-07-29 disclosure fix and folded into this file's counsel-question set
+per the user's decision (**D17**: option (a), fold into the E13 counsel ask
+as a joint question, rather than resolved unilaterally in-house). This is
+additive only — nothing in §1–§7's original analysis of the *database*
+right is touched, narrowed, or reversed by item 8, which concerns a
+separate legal theory (copyright over a specific piece of AIAAIC's own
+prose) analysed nowhere else in this file. Item 8 also folds in two facts
+that post-date its 2026-07-29 board framing: the row-level marker's reach
+(now 1,517 rows, not 1,422) and the 13-row retitle (E16/D18) that removed
+the verbatim headline from `title` on those rows specifically while leaving
+it live elsewhere (`references[0].title`, 49 of 92 hand-curated rows). This
+amendment also resolves the dangling signpost noted on the board (item D,
+2026-07-29): `NOTICE-DATA`'s "disposes of the *copyright* share-alike
+question ... see E13" sentence pointed here for a tension this file did not
+yet address; item 8 is that content.
+
 ## 0. Question presented
 
 Does reducing AIAAIC-derived entries to "facts + link" (**D2**) suffice to
@@ -759,6 +782,129 @@ its updated entry below), with one narrow residual point remaining.
    most, a brief note on residual (ii) if the project wants that
    completeness check — a materially smaller ask than the original
    question.
+
+8. **AMENDMENT (2026-07-29, folding E15/D17) — does the retained AIAAIC
+   headline itself defeat D2's *copyright* disposal, independent of the
+   *database*-right questions items 1–7 address?** Raised by license-auditor
+   during the 2026-07-29 disclosure fix (board escalation **E15**), decided
+   by the user as **D17: fold into this counsel ask as a joint question**
+   rather than resolved unilaterally in-house.
+
+   **The question, stated precisely.** D2 (2026-07-16) and this file's own
+   §0 both proceed from the premise that "facts are not copyrightable
+   expression, so a bare fact + link carries no copyright exposure" — true
+   for genuinely bare facts (a date, a jurisdiction code, a sector label).
+   But every AIAAIC-derived row also carries AIAAIC's own **headline**
+   verbatim as `title` (1,417 of the 1,422 sheet-derived rows, per the
+   2026-07-29 empirical enumeration closure recorded on the board; all 13
+   EXACT-band hand-curated rows carried it too, before their 2026-07-29
+   retitle — see the post-dating note below). A headline is an editorial
+   characterisation — a choice of words, verb, and framing — not a bare
+   fact, and whether *that specific piece* of AIAAIC's content is itself
+   copyrightable expression is a question §1–§4 above never asked, because
+   §1–§4 analyze the *database right* over AIAAIC's categorical/taxonomy
+   cells, not *copyright* over its headline prose. D2's "disposes of the
+   copyright share-alike question" conclusion was written about the
+   narrative prose cells that reduction actually drops — it was never
+   tested against the one piece of AIAAIC's own wording the reduction
+   deliberately keeps.
+
+   **Why the answer is not a US-law default.** US Copyright Office Circular
+   33 categorically excludes "titles, names, short phrases, and slogans"
+   from copyright protection, which would make this an easy no if US law
+   governed. **It does not.** AIAAIC is UK-situated, and this file already
+   treats UK/EU law as the governing regime for the *database*-right
+   question (§1's UK-nexus analysis; §5.1 items 1–6); the same choice of
+   governing law applies to the *copyright* question, since it concerns the
+   same UK-situated rights-holder's same content. UK/EU copyright law does
+   **not** categorically exclude short phrases. Two governing authorities,
+   already cited on the board at E15/D17 and repeated here for the counsel
+   record:
+   - ***Infopaq International A/S v Danske Dagblades Forening***, CJEU
+     C-5/08 (2009): an 11-word newspaper extract can be protected where it
+     reflects "the author's own intellectual creation" through the choice,
+     sequence, and combination of words used — length alone does not settle
+     the question.
+   - ***Newspaper Licensing Agency Ltd v Meltwater Holding BV***, [2010]
+     EWHC 3099 (Ch), aff'd [2011] EWCA Civ 890: holds that newspaper
+     headlines **specifically** can stand as independent copyright works,
+     assessed case by case — no blanket exemption for headlines as a
+     category, contrary to what Circular 33's US carve-out might suggest by
+     analogy.
+
+   Sampled retained AIAAIC headlines embed AIAAIC's own scare-quoted
+   editorial colour (e.g. `'incorrectly'`, `'child pornography'`) and
+   distinctive verb/clause choices (`cripples`, `extol`, `recommends [X]
+   kills himself`) — exactly the kind of "choice and combination of words"
+   *Infopaq*/*Meltwater* treat as pushing toward protection, not the
+   fact-constrained wording that would push toward the unprotected side of
+   the idea/expression line. (Cross-reference:
+   `docs/audits/E16-title-similarity-review-2026-07-29.md` independently
+   used the identical *Infopaq*/*Meltwater* standard to rule 42 of 47
+   near-match hand-curated titles "not defensible" on the same reasoning —
+   convergent evidence for how this question is likely to resolve, not a
+   substitute for counsel's answer.)
+
+   **Question for counsel:** on these facts, does AIAAIC's retained headline
+   text constitute the rights-holder's own copyrightable expression under UK
+   (and, secondarily, EU) law, such that D2's "the copyright share-alike
+   question is disposed of by reducing to facts+link" conclusion needs to be
+   qualified to exclude the headline specifically?
+
+   **The remedy question, which matters practically more than the label:**
+   if the headline **is** encumbered, is the existing row-level
+   `content_license` marker (attribution + share-alike, already attached to
+   every AIAAIC-citing row as of E16/D18, 2026-07-29 — see the post-dating
+   note below) sufficient compliance, or does honoring a copyright (as
+   opposed to database-right) ShareAlike obligation over a headline require
+   something the current marker design does not yet do?
+
+   **What does NOT change either way, stated so counsel's brief is scoped
+   correctly:** **no new engineering is implicated by either answer.** The
+   row-level `content_license` marker was built to hedge the §1–§4
+   database-right exposure and already runs on every AIAAIC-citing row,
+   headline-carrying or not. If this question resolves against de minimis,
+   the fix is prose-only — softening "disposes of the copyright share-alike
+   question" to something like "disposes of the copyright question for
+   AIAAIC's narrative prose (never carried); the retained headline is
+   treated as BY-SA-encumbered and honored via the same row-level marker" in
+   `docs/SOURCE_LICENSES.md` §1.1, `NOTICE-DATA`, and `.reuse/dep5`
+   **together** (per D17's own framing: master doc and consumer surfaces
+   diverging is precisely how the 2026-07-29 disclosure regression
+   happened) — not a pipeline or schema change.
+
+   **Two facts postdating this question's original 2026-07-29 board
+   framing, reflected here so counsel's brief is current:**
+   (i) the row-level marker's reach is **1,517** rows, not 1,422 — as of
+   E16/D18 (2026-07-29) it covers every row that cites an AIAAIC entry, not
+   only the 1,422 whose *description* derives from AIAAIC's sheet (see
+   `docs/SOURCE_LICENSES.md` §1.1 and `NOTICE-DATA` for the corrected
+   scope statement).
+   (ii) 13 of the 95 hand-curated rows that carried the AIAAIC headline
+   verbatim as `title` have since been **retitled** with project-authored
+   text (E16/D18) — the verbatim-headline-as-`title` exposure is gone on
+   those 13 specifically. **It is not gone from the corpus.** It persists,
+   by deliberate user ruling (2026-07-29): on **49 of the 92 joinable
+   hand-curated rows**, `references[0].title` independently carries
+   AIAAIC's own headline verbatim behind a literal `"AIAAIC - "` prefix —
+   read as citation of the cited work by its own title, not an assertion of
+   AIAAIC's editorial voice as ours, and retained rather than stripped for
+   that reason (see `docs/SOURCE_LICENSES.md` §1.1). Separately,
+   license-auditor's per-row review of the 47 rows sitting at >=0.8
+   normalised title similarity to their cited AIAAIC headline
+   (`docs/audits/E16-title-similarity-review-2026-07-29.md`) ruled **42 of
+   47 not defensible** — AIAAIC's own sentence, lightly edited, rather than
+   independent convergent description — with remedy **user-deferred to a
+   separate future gated task**, not resolved by this file. Counsel's answer
+   to this question is correspondingly more consequential than the original
+   2026-07-29 framing suggested: the exposure surface is broader (more rows,
+   a second field) than "13 exact-match titles," not narrower.
+
+   **Status as of 2026-07-29:** live, per D17. Folded into this counsel ask
+   per the user's decision rather than resolved by this file unilaterally —
+   the analytical case for UK/EU protection above is license-auditor's own
+   reading, offered for counsel's use, not a finding this audit certifies as
+   settled.
 
 ---
 

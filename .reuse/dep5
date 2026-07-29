@@ -24,10 +24,11 @@ Comment: This dataset aggregates entries from many upstream sources, each
  genai_incidents itself holds no UK/EU database right (sole
  Canada-resident individual maker), so the worst case is row-level
  attribution/share-alike on AIAAIC-derived rows, never dataset-wide --
- honored per-row via the content_license marker on every
- description_source == "aiaaic" entry, which also covers the retained
- headline itself. See NOTICE-DATA and docs/SOURCE_LICENSES.md section
- 1.1 for the full framing. AIID-derived
+ honored per-row via the content_license marker on every AIAAIC-citing
+ entry (1,517: the 1,422 description_source == "aiaaic" rows plus 95
+ hand-curated rows marked via title/categorical-facts descent), which
+ also covers the retained headline itself. See NOTICE-DATA and
+ docs/SOURCE_LICENSES.md section 1.1 for the full framing. AIID-derived
  entries (ingested via AIID's official snapshot, SOURCE_LICENSES.md
  section 1.2a) likewise carry no BY-SA subset -- only the AIID-authored
  title and structured facts are kept, never the licensed narrative --
