@@ -65,42 +65,7 @@ def test_relationship_refs_resolve():
         assert rel["source_ref"] in ids and rel["target_ref"] in ids
 
 
-# --- D14 interim x_content_license -----------------------------------------
-
-_EXPECTED_INTERIM_AIAAIC_LICENSE = {
-    "source": "aiaaic",
-    "license": "CC-BY-SA-4.0",
-    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-    "attribution": "AIAAIC Repository",
-    "attribution_url": "https://www.aiaaic.org/aiaaic-repository",
-    "obligations": ["attribution", "share-alike"],
-}
-
-
-def test_aiaaic_derived_sdo_carries_interim_marker_via_source_ids():
-    incidents = _INCIDENTS + [{
-        "id": "INC-00003", "title": "AIAAIC-origin row", "description": "x",
-        "date": "2026-02-01", "year": 2026, "severity": "Low",
-        "source_ids": ["AIAAIC-1234"], "tags": [],
-        "added": "2026-02-01", "updated": "2026-02-01",
-    }]
-    b = s.build_bundle(incidents)
-    inc = next(o for o in b["objects"]
-               if o["type"] == "x-genai-incident" and o["x_incident_id"] == "INC-00003")
-    assert inc["x_content_license"] == _EXPECTED_INTERIM_AIAAIC_LICENSE
-
-
-def test_aiaaic_derived_sdo_carries_interim_marker_via_tags():
-    incidents = _INCIDENTS + [{
-        "id": "INC-00004", "title": "AIAAIC-tagged row", "description": "x",
-        "date": "2026-02-01", "year": 2026, "severity": "Low",
-        "source_ids": [], "tags": ["aiaaic"],
-        "added": "2026-02-01", "updated": "2026-02-01",
-    }]
-    b = s.build_bundle(incidents)
-    inc = next(o for o in b["objects"]
-               if o["type"] == "x-genai-incident" and o["x_incident_id"] == "INC-00004")
-    assert inc["x_content_license"] == _EXPECTED_INTERIM_AIAAIC_LICENSE
+# --- x_content_license (D14; interim heuristic retired at D15) -------------
 
 
 def test_non_obligated_sdo_carries_no_content_license():
@@ -109,10 +74,9 @@ def test_non_obligated_sdo_carries_no_content_license():
         assert "x_content_license" not in inc
 
 
-def test_field_present_beats_heuristic():
-    """A populated `content_license` (the post-Phase-B path) is emitted
-    verbatim and is NOT overridden or altered by the interim heuristic, even
-    when the row also matches the AIAAIC heuristic signals."""
+def test_content_license_field_emitted_verbatim():
+    """A populated `content_license` field is emitted on `x_content_license`
+    verbatim, unmodified in any way."""
     real_marker = {
         "source": "aiaaic",
         "license": "CC-BY-SA-4.0",
@@ -124,7 +88,6 @@ def test_field_present_beats_heuristic():
     incidents = _INCIDENTS + [{
         "id": "INC-00005", "title": "Post-rebuild AIAAIC row", "description": "x",
         "date": "2026-02-01", "year": 2026, "severity": "Low",
-        "source_ids": ["AIAAIC-9999"], "tags": ["aiaaic"],
         "content_license": real_marker,
         "added": "2026-02-01", "updated": "2026-02-01",
     }]
@@ -132,4 +95,21 @@ def test_field_present_beats_heuristic():
     inc = next(o for o in b["objects"]
                if o["type"] == "x-genai-incident" and o["x_incident_id"] == "INC-00005")
     assert inc["x_content_license"] == real_marker
-    assert inc["x_content_license"] != _EXPECTED_INTERIM_AIAAIC_LICENSE
+
+
+def test_source_ids_or_tags_alone_no_longer_trigger_marker():
+    """D15: the interim `source_ids`/`tags` AIAAIC-origin heuristic is
+    retired. A row that matches those old signals but has no `content_license`
+    field must carry no `x_content_license` at all -- proving the field is
+    now the sole and authoritative source, with no silent heuristic
+    fallback re-adding a marker behind it."""
+    incidents = _INCIDENTS + [{
+        "id": "INC-00006", "title": "Old heuristic signals, no field", "description": "x",
+        "date": "2026-02-01", "year": 2026, "severity": "Low",
+        "source_ids": ["AIAAIC-1234"], "tags": ["aiaaic"],
+        "added": "2026-02-01", "updated": "2026-02-01",
+    }]
+    b = s.build_bundle(incidents)
+    inc = next(o for o in b["objects"]
+               if o["type"] == "x-genai-incident" and o["x_incident_id"] == "INC-00006")
+    assert "x_content_license" not in inc

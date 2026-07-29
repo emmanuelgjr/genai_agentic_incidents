@@ -322,13 +322,22 @@ Checked against every current published surface:
     reads `content_license` from the entry when the field is already
     populated (the post-rebuild path), and otherwise falls back to an
     interim AIAAIC-source heuristic (`source_ids`/`tags`), marked inline as
-    interim-per-D14. **Phase-B retirement condition:** the heuristic is
-    retired once this spec's rebuild populates `content_license` on every
-    AIAAIC-derived entry, and retirement is conditioned on a Phase-B delta
-    showing the heuristic-derived and field-derived `x_content_license`
-    outputs are **identical** for every affected row — any divergence blocks
-    retirement as a defect, not a judgment call, per the standing
-    field-level-delta rule.
+    interim-per-D14. **Phase-B retirement condition, as amended by D15:**
+    the heuristic is retired once this spec's rebuild populates
+    `content_license` on every AIAAIC-derived entry, and retirement is
+    conditioned on a Phase-B delta showing **zero under-attribution** — no
+    row the heuristic would have marked is left unmarked by the field.
+    Over-attribution (a row the heuristic marks that the field does not) is
+    the safe direction and does not block retirement: a surplus flag at
+    worst adds caution and can never strip an obligation, whereas an
+    under-attributed row silently loses one. This is directional, not the
+    "any divergence blocks retirement" rule originally written here — that
+    rule predated knowing which divergence direction is unsafe and was
+    unsatisfiable by design (see D15, PROGRESS.md, for the full reasoning).
+    **Discharged 2026-07-29:** measured field-derived and heuristic-derived
+    sets were exactly equal (1,517 rows each, zero divergence either way);
+    the heuristic is retired in `scripts/export_stix.py`, with no fallback
+    kept.
 
   *(Changelog, 2026-07-27: this bullet originally stated STIX carries no
   AIAAIC-derived content and that the D12(b) CI assertion could safely
@@ -339,6 +348,17 @@ Checked against every current published surface:
   resulting E14 escalation as D14, option (ii): rewritten above to state the
   true per-export behavior, D14's `x_content_license` resolution, the revised
   two-part CI assertion, and the decoupled interim-ship arrangement.)*
+
+  *(Changelog, 2026-07-29: the retirement condition originally read "any
+  divergence blocks retirement as a defect, not a judgment call" — a rule
+  that could never be satisfied, since it did not distinguish which
+  divergence direction is actually unsafe. The user resolved this as D15:
+  the criterion is directional (zero under-attribution required;
+  over-attribution is safe and does not block retirement). Rewritten above
+  to state the directional criterion and record that it was discharged the
+  same day — field- and heuristic-derived sets measured exactly equal, so
+  the heuristic retires as a provable no-op under either the old or the new
+  wording.)*
 - `.zenodo.json` — carries only repository-level metadata (title, creators,
   license), not per-row content; no per-row marker applies. Whether it needs
   a brief mention as part of the corpus-level notice (iii) was not checked in
@@ -359,11 +379,30 @@ discharges.
 - [ ] Every entry with `description_source == "aiaaic"` carries the new
       marker — e.g. `jq '.incidents[] | select(.description_source=="aiaaic") | select(<marker-field-absent-or-empty>)'`
       against `data/incidents.json` returns empty.
-- [ ] Zero non-AIAAIC entries carry the marker — same query inverted:
-      `jq '.incidents[] | select(.description_source!="aiaaic") | select(<marker-field-present>)'`
-      returns empty — **unless** a future source is deliberately given the
-      same marker, in which case this assertion is re-scoped per-source, not
-      dropped; the source-generic naming in (i) already anticipates this.
+- [ ] Zero non-AIAAIC entries carry the marker — keyed on the marker's own
+      declared `source`, not on `description_source`:
+      `jq '.incidents[] | select(.content_license) | select(.content_license.source != "aiaaic")'`
+      against `data/incidents.json` returns empty — **unless** a future
+      source is deliberately given the same marker, in which case this
+      assertion is re-scoped per-source, not dropped; the source-generic
+      naming in (i) already anticipates this.
+
+      **Re-scoped 2026-07-29 (D15).** The original query proxied "AIAAIC
+      derivation" via `description_source == "aiaaic"`, which was correct
+      only while `content_license` and `description_source` were set by the
+      same code path. E16/D18 gave `content_license` a second, independent
+      path — the 95 hand-curated rows, AIAAIC-derived via title and
+      categorical facts rather than `description` — so those rows carry the
+      marker with no `description_source` at all, and the original query
+      (inverted) counted them as a false violation: 95 hits against an
+      assertion of zero. `content_license` and `description_source` are two
+      independent per-field provenance markers that merely coincided on
+      sheet-derived rows, not one joint marker (see the field's own schema
+      description); the query above keys on the marker's own `source`
+      subfield instead, which is what "AIAAIC-derived" actually means for
+      this purpose regardless of which code path set the marker. Measured
+      against the live corpus: the original query (inverted) returns 95; the
+      re-scoped query returns 0.
 - [ ] `NOTICE-DATA` states the AIAAIC subset's CC BY-SA/database-right/
       row-level-ShareAlike status (greppable: the AIAAIC paragraph names
       "database right"/"database-right" as "open"/"OPEN", matching the

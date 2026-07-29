@@ -241,10 +241,28 @@ obligation set should say.
    on zero others; the interim object mirrors this memo's §1/§3 shape
    key-for-key. Exporter stays network-free and byte-deterministic (two-run
    SHA-256 identical, `data/incidents.stix.json` and its `docs/data/`
-   mirror). Per D14's retirement condition, this heuristic path is dropped
-   at Phase B once `content_license` is populated on every AIAAIC-derived
-   entry and a delta shows the heuristic- and field-derived outputs
-   identical on every affected row — not before.
+   mirror). **Retirement condition, as amended by D15:** the heuristic is
+   retired iff a Phase-B delta shows **zero under-attribution** — no row the
+   heuristic would have marked is left unmarked by the field (over-
+   attribution, a row the heuristic marks that the field does not, is the
+   safe direction and does not block retirement; it was never observed
+   anyway). Directional, not "identical on every affected row" as originally
+   written here — the original non-directional wording predated knowing
+   which divergence direction is unsafe and was unsatisfiable by design.
+
+   **Update, 2026-07-29 (D15, heuristic retired).** Measured on the
+   post-Phase-B corpus (13,119 entries): the field-derived set and the
+   heuristic-derived set are both exactly 1,517 rows and **set-equal** —
+   zero divergence in either direction, so retirement passes under the
+   amended directional criterion *and* under the original non-directional
+   one it superseded. `_is_aiaaic_derived()` and `_aiaaic_interim_license()`
+   are removed from `scripts/export_stix.py`; `_content_license()` now
+   returns the entry's own `content_license` field with no fallback.
+   Verified byte-for-byte: the STIX bundle generated before and after the
+   change is SHA-256-identical, and `x_content_license` coverage is 1,517
+   both before and after. No fallback is kept going forward (see D15 for the
+   reasoning: a fallback would silently mask, rather than surface, any
+   future gap between this field and the rows it should cover).
 6. **Notice-surface prose** (`NOTICE-DATA`, `.reuse/dep5`, README, and the
    `.zenodo.json` check D12(c) routed to implementation) is pipeline-engineer's
    per spec §4 — not touched here.
