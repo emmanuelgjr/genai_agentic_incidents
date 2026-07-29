@@ -84,7 +84,23 @@ its content quietly ages.
 registry of that second fact — one record per tracked source, validated against
 [`schema/source_freshness.schema.json`](../schema/source_freshness.schema.json).
 It is a **curated input**, like `data/curation_overrides.json`: hand-authored,
-reviewed, and read by the build — not a generated artifact.
+reviewed, and read by the build — not a generated artifact. It has to be, because
+it carries facts no counter holds: `stale_since` comes from run-log evidence, a
+`hold` records a human decision and its deadline, `row_marker` declares how rows
+are selected, and `coverage` states what nothing measures. Nothing in the build
+writes it.
+
+**Its machine-derivable half is checked, not trusted.** `scripts/validate.py`
+holds the registry to the provenance claim in `observed_from`: when that names
+the in-repo copy of `ingest/_state/source_health.json`, every `status` and
+`last_success` must match that file and the tracked source keys must agree, so
+a forged status, a back-dated `last_success`, or a newly tracked source left
+unregistered fails validation. When `observed_from` names another copy the
+comparison is skipped rather than failed — that copy is not readable offline,
+and a registry updated from a fresher reading must not be blocked by the in-repo
+one. Passing therefore means *the registry matches the copy it says it read*; it
+does **not** mean the registry is current, because that copy is stale by design.
+Currency is the separate weekly reconciliation described below.
 
 | Registry field | Notes |
 |---|---|

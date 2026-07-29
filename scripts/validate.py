@@ -121,6 +121,60 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
     return problems
 
 
+def check_registry_provenance(registry: dict, state_path: Path) -> list[str]:
+    """Hold the registry to the provenance claim it makes about ITSELF.
+
+    data/source_freshness.json is a reviewed publication, not a build output:
+    it carries curatorial facts no counter holds (`stale_since` from run-log
+    evidence, a dated `hold`, the `row_marker` selectors, the `coverage`
+    statement). It is therefore hand-authored in a gated task — and that is
+    exactly why its machine-derivable half must not be taken on trust.
+
+    `observed_from` names which copy of ingest/_state/source_health.json the
+    values were reconciled against. When it names the in-repo copy, every
+    `status`/`last_success` here MUST match that file, and the source key sets
+    must agree — so a registry claiming a provenance it does not have, or a
+    fifth tracked source appearing in the workflow without being registered,
+    fails loudly instead of drifting.
+
+    When `observed_from` names anything else (the authoritative
+    `refresh-state` copy, say), the comparison is SKIPPED rather than failed:
+    that copy is not readable offline, and a registry legitimately updated
+    from a fresher reading must not be blocked by the in-repo copy that D5
+    leaves stale by design. The check enforces the claim, not a fixed source.
+
+    Bounded on purpose: passing means the registry matches the copy it says it
+    read. Because that copy is stale by design, it does NOT mean the registry
+    is current. Currency is the weekly reconciliation against the authoritative
+    counter (see the D8 application spec); this is the offline half.
+    """
+    problems: list[str] = []
+    claimed = (registry.get("observed_from") or "").strip()
+    in_repo = f"main:{state_path.relative_to(ROOT).as_posix()}"
+    if claimed != in_repo:
+        return problems
+    if not state_path.exists():
+        return [f"source_freshness registry: observed_from claims {claimed!r} "
+                "but that file does not exist"]
+
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    sources = registry.get("sources") or {}
+    if sorted(state) != sorted(sources):
+        problems.append(
+            f"source_freshness registry: observed_from claims {claimed!r}, whose "
+            f"source keys are {sorted(state)}, but the registry tracks {sorted(sources)}"
+        )
+    for key in sorted(set(state) & set(sources)):
+        for field in ("status", "last_success"):
+            claimed_val, actual = sources[key].get(field), state[key].get(field)
+            if claimed_val != actual:
+                problems.append(
+                    f"source_freshness registry: {key}.{field} is {claimed_val!r} but "
+                    f"{claimed} says {actual!r}"
+                )
+    return problems
+
+
 def check_source_freshness(data: dict, registry: dict) -> list[str]:
     """Cross-check every entry's `source_freshness` marker against the
     published registry (data/source_freshness.json). Returns violation
@@ -247,6 +301,9 @@ def main():
             path = ".".join(str(p) for p in err.path)
             problems.append(f"source_freshness registry: {path}: {err.message}")
         if not shape_errs:
+            problems.extend(check_registry_provenance(
+                registry, ROOT / "ingest" / "_state" / "source_health.json"
+            ))
             problems.extend(check_source_freshness(data, registry))
             marked = sum(1 for e in data["incidents"] if e.get("source_freshness"))
             stale = sorted(

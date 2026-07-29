@@ -18,7 +18,21 @@ The retire-or-replace half of D8 stays parked until MIT replies or
 | `data/source_freshness.json` | New. The registry itself, all four tracked sources, AIRI marked `stale`. |
 | `schema/incident.schema.json` | `source_freshness` property added; `source_status` description corrected. Packaged mirror `src/genai_incidents/schema/incident.schema.json` regenerated and in sync. |
 | `docs/DATA_DICTIONARY.md` | `source_freshness` row, corrected `source_status` row, `tags` row note, new **Source freshness** section. |
-| `scripts/validate.py` | Validates the registry against its schema; `check_source_freshness()` cross-checks any markers present. Currently reports `0 entr(ies) carry a source_freshness marker` and exits clean. |
+| `scripts/validate.py` | Validates the registry against its schema; `check_registry_provenance()` holds it to its own `observed_from` claim; `check_source_freshness()` cross-checks any markers present. Currently reports `0 entr(ies) carry a source_freshness marker` and exits clean. |
+
+**The registry is not generated and must not become so.** It is a curated input
+in the sense `data/curation_overrides.json` is one — hand-authored in a gated
+task, reviewed, read by the build, written by nothing. It has to be: `stale_since`
+comes from the WS4-T9 run-log audit, `hold` records a human decision and its
+deadline, `row_marker` declares row selection, `coverage` states what nothing
+measures. **A build-time generator would be the trap, not the escape**: on `main`
+the authoritative counter lives on the `refresh-state` branch and reading it
+needs network, which the build path forbids — so a generator could only read
+`main`'s copy, the one D5 leaves stale by design, and would stamp it into a
+published artifact every build. Instead the machine-derivable half is *checked*
+offline (`check_registry_provenance`, bounded — it proves the registry matches
+the copy it claims to have read, not that it is current) and *reconciled* weekly
+against the authoritative counter (§6b, required).
 
 `python scripts/validate.py` → `13119/13119 entries valid; 0 with errors.`
 `python -m pytest tests -q` → 226 passed.
