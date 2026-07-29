@@ -25,7 +25,7 @@ in `ingest/aiaaic_incidents.json`** (option i), not derive it in the build path
 
 Reasoning:
 - The schema's own field description (`schema/incident.schema.json:94`, quoted
-  in full in §5 below) says the marker is "**Set at ingest**... by whichever
+  in full in §6 below) says the marker is "**Set at ingest**... by whichever
   entry survives dedup as the merge target" — i.e. the schema's stated model is
   that this is an ingest-time fact about the record, not a build-time inference.
   Writing it into the hand-curated source file matches that model; synthesizing
@@ -52,7 +52,7 @@ Reasoning:
   (`description_provenance` would be `original`, not `aiaaic`); setting
   `description_source: "aiaaic"` would misrepresent the description's actual
   provenance and is out of E16's scope. This is exactly what produces the
-  schema tension in §5.
+  schema tension in §6.
 
 Marker shape (identical across all 95, matches `aiaaic_content_license()` in
 `scripts/ingest_aiaaic_sheet.py:309` key-for-key):
@@ -96,6 +96,34 @@ single space and stripped, compared with `difflib.SequenceMatcher.ratio()`.
 
 **Result: 92/95 joined, 3 unjoined; 13 EXACT / 47 >=0.8 / 19 in 0.6-0.8 / 13
 <0.6.** This matches the foreman's figures exactly.
+
+**Join-key justification (user-directed requirement: the join key's choice
+must be justified in this file, and the retitle set follows from it).** The
+join key used above is the last path segment of the **actual URL** the sheet
+records for each entry (extracted from the `summary` column, which is where
+AIAAIC's own cross-reference link lives) — not a guess at what that URL
+"ought to" look like. To test whether that choice matters, I built the naive
+alternative explicitly named in the brief — slugify the sheet's `headline`
+text itself (lowercase, non-alphanumerics -> hyphens) and join that against
+our reference URL's real slug — and re-ran it against the same cache:
+
+| Join key | Rows joined (of 95) |
+|---|---|
+| Real URL slug (sheet `summary` column URL <-> our `references[].url`), case-insensitive | **92** |
+| Sheet `headline` naively slugified <-> our `references[].url`'s real slug | **46** |
+
+The real-URL-slug join recovers roughly double the naive headline-slugify
+join. This is expected and diagnostic, not incidental: AIAAIC's URL slugs are
+assigned once (at page creation) and are stable, while headlines get edited
+afterward (the trailing-space and hyphen/space drifts documented below are
+both small live edits to headline text) — so a slug freshly derived from the
+*current* headline frequently no longer matches the *original* URL slug the
+page was given, while the URL itself does not move. **The real-URL-slug join
+is therefore the structurally correct key, and `AIAAIC0462` belonging to the
+92-joined, 13-exact set follows from that choice** (verified independently
+above by pulling the sheet's actual URL for that row and confirming it points
+at the 95's reference target), not from an independent judgement call on my
+part.
 
 One join-methodology finding along the way: a **case-sensitive** slug join
 (matching the foreman's stated method literally) gives **91/95 joined, 4
@@ -176,9 +204,19 @@ standing licensing/attribution relevance — and a committed-doc mapping doesn't
 schema-architect call under WS3-T2, not one I should make by inventing a field
 here.
 
-The `>=0.8` band (47 rows) is untouched — its disposition is
-`docs/audits/E16-title-similarity-review-2026-07-29.md`'s per-row ruling, a
-separate decision (D18 part not in this deliverable).
+The `>=0.8` band (47 rows) is untouched by this deliverable. Its per-row
+ruling is documented separately at
+`docs/audits/E16-title-similarity-review-2026-07-29.md` (license-auditor: 42
+not defensible, 2 borderline, 3 defensible; that review also found the 0.8
+similarity threshold itself runs too high, since rows just below it show the
+same expression-retention pattern). **User-directed: no remedial action on
+that band — including any retitle — happens as a consequence of this task or
+that ruling.** It is deferred to a separate, future gated task that first
+re-derives the exposure set using the auditor's expression-retention test
+rather than the similarity ratio (since retitling exactly today's 42 would
+bake in a number the threshold finding says is partly an artifact of the
+ratio, not the underlying hazard). D18's scope for *this* task remains
+exactly the reconciled EXACT/verbatim set in §3 — 13 rows, nothing more.
 
 ## 4. Build
 
@@ -393,13 +431,85 @@ I did not edit `schema/` — this is schema-architect's file per the brief.
   board decision/task, not this deliverable.
 - **`conflicts` schema field.** Opinion given in §3; not implemented — a
   schema-architect/WS3-T2 call.
-- **The `>=0.8` band (47 rows).** Left alone per the brief; that's
-  `docs/audits/E16-title-similarity-review-2026-07-29.md`'s scope.
+- **The `>=0.8` band (47 rows).** Left alone per the brief. Its per-row
+  ruling is `docs/audits/E16-title-similarity-review-2026-07-29.md`'s scope;
+  any remedial action on it (retitle or otherwise) is **user-deferred to a
+  separate future gated task** (§3) — not something this task, or that
+  ruling by itself, triggers.
 - Did not add `description_provenance`/`description_source` to the 95
   hand-curated rows — out of scope for E16 and would misstate provenance (see
   §1).
+- **`references[0].title`** — see §8. Independently carries AIAAIC's headline
+  verbatim on 49 of the 92 joined rows (including all 13 I retitled); I did
+  not touch it. That field's disposition is a citation/attribution question
+  for the user, not mine to decide.
 
-## 8. Reviewer verification recipe
+## 8. `references[0].title` — addendum, prompted by the parallel license-auditor
+review and the foreman's follow-up (2026-07-29, after this doc's first commit)
+
+**Finding (independently reproduced here, not just copied):** all 95
+hand-curated rows' `references[0].title` is prefixed literally `"AIAAIC - "`
+followed by AIAAIC's own headline text — **a field independent of `title`**
+that this task's scope (D18 parts a/b) never asked me to touch, and did not
+touch. Reproduced against the pre-task committed state
+(`git show main:ingest/aiaaic_incidents.json`, joined the same way as §2):
+
+| | |
+|---|---|
+| Rows with an `"AIAAIC - "`-prefixed `references[0].title` | 95 / 95 |
+| Of those, joined to a sheet headline (same join as §2) | 92 |
+| Of the 92 joined, `references[0].title` (prefix stripped) matches the sheet headline **verbatim** (normalized-equal) | **49** |
+| ...by title-similarity band (§2's bands) | EXACT 13/13, `>=0.8` 29/47, `0.6-0.8` 5/19, `<0.6` 2/13 |
+
+**All 13 of the `title` field's EXACT-band rows also carry the headline
+verbatim in `references[0].title`** — the two fields are not correlated by
+this task, they are simply both AIAAIC-derived on the same rows.
+
+**What this task did and did not do to that field, stated precisely (so this
+delta is not read as claiming more than it does):** the retitle in §3 removes
+AIAAIC's verbatim headline from **`title`** on 13 rows. It does **not**
+remove it from `references[0].title`, on those 13 rows or any other — that
+field is a citation naming the cited AIAAIC entry by its own title, which is
+attribution, not the same act as asserting a headline as our own `title`;
+stripping it would make the citation worse, not better. **I did not change
+`references[].title` and was not asked to; its disposition (if any) is a
+user/policy decision, not one for this task.** Measured directly, not
+inferred: `references[0].title` is **byte-identical, before and after, on
+all 95 rows** (0 changes) — already implied by §5's full top-level `references`
+field showing zero diff across the whole 13,119-row corpus, confirmed here
+by an explicit row-by-row string comparison on the 95 specifically, called
+out on its own because it is the field of licensing interest to the parallel
+review.
+
+**Contrast, so this is not generalised to the rest of the corpus:** the other
+1,422 AIAAIC-sourced rows (from `scripts/ingest_aiaaic_sheet.py`) are **not**
+affected by this pattern at all. `ingest_aiaaic_sheet.py:482` sets
+`ref_title = "AIAAIC entry"` — a fixed literal, never the headline — whenever
+the URL is AIAAIC-hosted. Verbatim-headline carriage in a reference title is
+therefore specific to the 95 hand-curated rows, which the earlier empirical
+enumeration closure did not sweep for this field.
+
+**Is `content_license` meant to disclose this too? Yes — stated explicitly,
+not left implicit.** The schema's own field description
+(`schema/incident.schema.json:94`) opens: *"**Row-level** license-obligation
+marker: this entry's CONTENT derives from an upstream source..."* — "row-level"
+by its own text, not scoped to `title` or `description` specifically. The 95
+rows now all carry `content_license` (§1), so the marker already discloses,
+at the whole-row level, that AIAAIC-derived content — including whatever
+sits in `references[0].title` — may be present. Nothing further needed from
+this task to make that true. What I did NOT find anywhere: a place that
+**enumerates** which fields the marker covers (`title`, `description`,
+`references[].title`, ...) by name. `schema/incident.schema.json`'s own text
+doesn't enumerate fields (it just says "this entry's CONTENT," which reads as
+row-scoped already), and I don't own `docs/SOURCE_LICENSES.md` or
+`schema/incident.schema.json`. **Recommendation, not an action I took:**
+whichever doc/comment ends up naming covered fields explicitly (§6's schema
+wording, or `docs/SOURCE_LICENSES.md`) should name `references[].title`
+alongside `title`/`description`, so a future editor who retitles a row and
+sees the old headline still sitting in `references[0].title` reads that as
+intended (a citation) rather than as a failed retitle.
+
+## 9. Reviewer verification recipe
 
 ```
 git diff --stat ingest/aiaaic_incidents.json data/incidents.json data/incidents.min.json \
@@ -416,7 +526,15 @@ python -m pytest tests -q
 python -c "import json; d=json.load(open('data/incidents.json',encoding='utf-8'))['incidents']; \
 print('content_license:', sum(1 for e in d if e.get('content_license'))); \
 print('entries:', len(d))"
+python -c "
+import json, subprocess
+before = json.loads(subprocess.run(['git','show','main:data/incidents.json'], capture_output=True).stdout)['incidents']
+after = json.load(open('data/incidents.json', encoding='utf-8'))['incidents']
+bmap = {e['id']: e for e in before}
+n = sum(1 for e in after if e['id'] in bmap and (e.get('references') or [{}])[0].get('title') != (bmap[e['id']].get('references') or [{}])[0].get('title'))
+print('references[0].title changed rows:', n)
+"
 ```
 Expect: no further diff after re-running the build (determinism); `13119/13119
 entries valid; 0 with errors`; stats-drift clean; `227 passed`; `content_license:
-1517`; `entries: 13119`.
+1517`; `entries: 13119`; `references[0].title changed rows: 0`.
