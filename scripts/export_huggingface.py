@@ -115,10 +115,11 @@ the datasheet for full scope, collection method, and limitations.
 
 Data is released under **CC BY 4.0** overall (`license: cc-by-4.0` above; see
 `LICENSE-DATA` and `NOTICE-DATA` in the source repository). A subset of entries that
-cite the **AIAAIC Repository** — 1,517 rows: those whose description derives from
+cite the **AIAAIC Repository** — those whose description derives from
 AIAAIC's sheet (`description_source == "aiaaic"`) plus a smaller set of hand-curated
-rows whose title and categorical facts derive from AIAAIC directly — carries an
-*additional*, row-level **CC BY-SA 4.0** attribution/share-alike obligation — this
+rows whose title and categorical facts derive from AIAAIC directly (current count
+audited in `docs/SOURCE_LICENSES.md` §1.1, not restated here to avoid drift) —
+carries an *additional*, row-level **CC BY-SA 4.0** attribution/share-alike obligation — this
 does not apply project-wide, only to those specific rows. Each such row carries a
 machine-readable `content_license` field (`source`, `license`, `attribution`,
 `obligations`) naming AIAAIC as the attribution target; redistributing or adapting

@@ -51,14 +51,16 @@ question is addressed below; see E13) and keeps this repository's
 own LICENSE-DATA grant a single, clean CC BY 4.0 with no
 dataset-wide BY-SA carve-out. The retained headline is itself
 AIAAIC-authored text, not a bare fact; it is covered, on every entry
-that cites an AIAAIC source -- 1,517 entries in total: the 1,422 rows
-whose description derives from AIAAIC's sheet (recorded via
-description_source == "aiaaic") plus 95 hand-curated rows whose title
-and categorical facts derive from AIAAIC directly, not via that field --
-by the same row-level CC BY-SA 4.0 attribution/share-alike marker
-described below. (A related, open question -- whether the headline's
-own wording, being an editorial characterisation rather than a bare
-fact, defeats the "disposes of the copyright share-alike question"
+that cites an AIAAIC source -- both the rows whose description derives
+from AIAAIC's sheet (recorded via description_source == "aiaaic") and
+the smaller hand-curated set whose title and categorical facts derive
+from AIAAIC directly, not via that field -- by the same row-level CC
+BY-SA 4.0 attribution/share-alike marker described below. The current
+count of AIAAIC-citing rows is audited, not restated here to avoid
+drift, in docs/SOURCE_LICENSES.md section 1.1. (A related, open
+question -- whether the headline's own wording, being an editorial
+characterisation rather than a bare fact, defeats the "disposes of
+the copyright share-alike question"
 conclusion above under UK/EU law -- is tracked as escalation E15/D17;
 see docs/SOURCE_LICENSES.md section 1.1 and
 docs/audits/WS0-E13-database-right-2026-07-18.md section 5.1 item 8.)
@@ -76,11 +78,10 @@ judged substantial, the worst case is row-level CC BY-SA 4.0
 attribution/share-alike on the specific AIAAIC-derived rows, never a
 dataset-wide obligation on LICENSE-DATA as a whole. That row-level
 worst case is honored proactively, not merely accepted: every entry
-that cites an AIAAIC source -- 1,517 entries: the 1,422 rows whose
-description derives from AIAAIC's sheet (recorded via
-description_source == "aiaaic") plus 95 hand-curated rows whose title
-and categorical facts derive from AIAAIC directly -- carries a
-machine-readable content_license marker -- source, license, attribution,
+that cites an AIAAIC source -- the rows whose description derives from
+AIAAIC's sheet (recorded via description_source == "aiaaic") plus the
+hand-curated rows whose title and categorical facts derive from
+AIAAIC directly -- carries a machine-readable content_license marker -- source, license, attribution,
 obligations -- naming AIAAIC Repository as the attribution target and
 share-alike as an honored obligation on that row. The marker travels with the row
 wherever it is published: data/incidents.json,
