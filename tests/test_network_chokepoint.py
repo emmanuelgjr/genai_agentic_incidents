@@ -54,14 +54,25 @@ INERT_ALLOWLIST = {ROOT / "scripts" / "scrape_aiid.py"}
 # Dotted call targets that constitute an actual network fetch. Anything
 # resolving to one of these, outside CHOKEPOINT_FILE or INERT_ALLOWLIST, is a
 # bypass of the chokepoint and fails this test.
+#
+# WS0-T4 bounce #1 (R2): the original list covered urlopen()/requests.*/
+# httpx.* only. Added urlretrieve/build_opener (other urllib.request entry
+# points -- urlretrieve() is the realistic accidental regression: a
+# convenience one-liner nobody would think to route through fetch_once()),
+# http.client's raw connection classes, and socket.create_connection() (the
+# lowest-level stdlib fetch primitive everything above eventually calls).
 NETWORK_CALL_TARGETS = {
     "urllib.request.urlopen",
+    "urllib.request.urlretrieve",
+    "urllib.request.build_opener",
     "requests.get", "requests.post", "requests.put", "requests.delete",
     "requests.patch", "requests.head", "requests.options", "requests.request",
     "requests.Session",
     "httpx.get", "httpx.post", "httpx.put", "httpx.delete", "httpx.patch",
     "httpx.head", "httpx.options", "httpx.request",
     "httpx.Client", "httpx.AsyncClient",
+    "http.client.HTTPConnection", "http.client.HTTPSConnection",
+    "socket.create_connection",
 }
 
 
@@ -127,7 +138,12 @@ def _find_network_calls(py_file: Path) -> list[tuple[int, str]]:
 
 
 def _production_py_files() -> list[Path]:
-    files = sorted((ROOT / "scripts").glob("*.py")) + sorted((ROOT / "ingest").glob("*.py"))
+    # rglob, not glob (WS0-T4 bounce #1, R2): glob("*.py") only sees files
+    # directly in scripts/ or ingest/ and would silently miss a future
+    # subdirectory (or a script reorganized into one). Neither directory has
+    # subdirectories with .py files today, but this shouldn't depend on that
+    # staying true to keep working.
+    files = sorted((ROOT / "scripts").rglob("*.py")) + sorted((ROOT / "ingest").rglob("*.py"))
     assert files, "expected to find .py files under scripts/ and ingest/ -- scan setup is broken"
     return files
 
@@ -149,22 +165,80 @@ def test_no_network_fetch_calls_outside_the_chokepoint():
     )
 
 
+MAKEFILE = ROOT / "Makefile"
+
+
+def _makefile_live_scrape_aiid_lines(makefile_text: str) -> list[str]:
+    """Return every line in *makefile_text* that mentions scrape_aiid.py
+    OUTSIDE a genuine Make comment.
+
+    A Make comment is a line whose very FIRST character is ``#`` -- Make
+    recognizes comments before it looks for a leading-tab recipe line, so a
+    fully-commented line like ``#\\tpython scripts/scrape_aiid.py`` (this
+    repo's actual Makefile:102) is inert regardless of the tab sitting
+    inside it. A line that does NOT start with ``#`` -- a real recipe line
+    (leading tab), a ``$(PYTHON)``-substituted recipe, or anything else --
+    is live if it mentions ``scrape_aiid.py`` at all.
+
+    WS0-T4 bounce #1, D2: this replaces an exact-line-match check
+    (``"python scripts/scrape_aiid.py" not in makefile.splitlines()``) that
+    could NEVER fire against the regression it existed to catch: a real
+    Makefile recipe line is tab-prefixed, and ``str.splitlines()`` does not
+    strip that tab, so ``"\\tpython scripts/scrape_aiid.py" !=
+    "python scripts/scrape_aiid.py"`` as plain strings -- the assertion
+    passed whether or not the line was actually commented out. See
+    ``test_makefile_scrape_aiid_tripwire_actually_fires`` below for proof
+    this replacement does not share that failure mode.
+    """
+    return [
+        line for line in makefile_text.splitlines()
+        if not line.startswith("#") and "scrape_aiid.py" in line
+    ]
+
+
 def test_the_inert_allowlist_entry_is_still_actually_inert():
-    """A cheap tripwire against the allowlist silently going stale: if
-    scrape_aiid.py's main() (or the ingest-aiid Makefile target) is ever
-    re-enabled, this should fail loudly rather than have the allowlist
-    quietly cover a live bypass."""
-    makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
-    assert "python scripts/scrape_aiid.py" not in makefile.splitlines(), (
-        "scripts/scrape_aiid.py appears to be invoked from the Makefile again -- "
-        "if scrape_aiid.py's main() is back in the live ingest path, it must "
-        "route through ingest.common instead of remaining on "
-        "INERT_ALLOWLIST in this test."
+    """A tripwire against INERT_ALLOWLIST silently going stale: if
+    scrape_aiid.py's main() is ever re-enabled as a live Makefile recipe,
+    this must fail loudly rather than have the allowlist quietly cover a
+    live bypass."""
+    makefile_text = MAKEFILE.read_text(encoding="utf-8")
+    live_lines = _makefile_live_scrape_aiid_lines(makefile_text)
+    assert not live_lines, (
+        "scripts/scrape_aiid.py appears to be invoked from the Makefile "
+        "outside a comment -- if scrape_aiid.py's main() is back in the "
+        "live ingest path, it must route through ingest.common instead of "
+        "remaining on INERT_ALLOWLIST in this test:\n  "
+        + "\n  ".join(repr(line) for line in live_lines)
     )
-    # The commented-out reference documenting the disabled target should
-    # still be present -- if it disappears, someone removed the historical
-    # note this allowlist entry depends on for its own justification.
-    assert "scrape_aiid.py" in makefile
+    # The commented-out historical reference should still be present -- if
+    # it disappears, someone removed the note this allowlist entry's
+    # justification depends on.
+    assert "scrape_aiid.py" in makefile_text
+
+
+def test_makefile_scrape_aiid_tripwire_actually_fires():
+    """Non-vacuity proof for the checker above (WS0-T4 bounce #1, D2): run
+    it against synthetic Makefile text simulating the real commented-out
+    line plus three realistic re-enablement shapes, and confirm the
+    commented one is silent while all three live ones are caught -- exactly
+    the distinction the previous exact-line-match version got backwards."""
+    still_commented = "#\tpython scripts/scrape_aiid.py\n"
+    assert _makefile_live_scrape_aiid_lines(still_commented) == []
+
+    tab_indented_recipe = "ingest-aiid-old:\n\tpython scripts/scrape_aiid.py\n"
+    assert _makefile_live_scrape_aiid_lines(tab_indented_recipe) == [
+        "\tpython scripts/scrape_aiid.py"
+    ]
+
+    python_var_substituted = "ingest-aiid-old:\n\t$(PYTHON) scripts/scrape_aiid.py\n"
+    assert _makefile_live_scrape_aiid_lines(python_var_substituted) == [
+        "\t$(PYTHON) scripts/scrape_aiid.py"
+    ]
+
+    whitespace_varied_recipe = "ingest-aiid-old:\n \tpython scripts/scrape_aiid.py\n"
+    assert _makefile_live_scrape_aiid_lines(whitespace_varied_recipe) == [
+        " \tpython scripts/scrape_aiid.py"
+    ]
 
 
 def test_chokepoint_file_itself_still_contains_the_fetch_surface():
