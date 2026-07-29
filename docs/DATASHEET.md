@@ -85,7 +85,7 @@ review, and the Heuristic labels bullet below for known gaps.
   text.
 
 ## Distribution & licence
-- **Data:** CC-BY-4.0. **Code:** MIT. DOI [10.5281/zenodo.20248676](https://doi.org/10.5281/zenodo.20248676).
+- **Data:** CC-BY-4.0. **Code:** MIT. DOI [10.5281/zenodo.20248675](https://doi.org/10.5281/zenodo.20248675).
 - Distributed via GitHub, PyPI (`genai-incidents`), Hugging Face Datasets, a
   STIX 2.1 bundle, a static [TAXII-compatible discovery document](https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json),
   and a [MISP feed](https://emmanuelgjr.github.io/genai_incidents/misp/) whose events

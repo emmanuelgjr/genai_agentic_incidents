@@ -5,7 +5,7 @@
 [![PyPI version](https://img.shields.io/pypi/v/genai-incidents?logo=pypi&logoColor=white&label=pypi)](https://pypi.org/project/genai-incidents/)
 [![Python versions](https://img.shields.io/pypi/pyversions/genai-incidents?logo=python&logoColor=white)](https://pypi.org/project/genai-incidents/)
 [![Hugging Face dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-dataset-yellow)](https://huggingface.co/datasets/emmanuelgjr/genai-incidents)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20248676.svg)](https://doi.org/10.5281/zenodo.20248676)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20248675.svg)](https://doi.org/10.5281/zenodo.20248675)
 [![License: MIT (code)](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![License: CC-BY-4.0 (data)](https://img.shields.io/badge/data-CC--BY--4.0-lightgrey.svg)](LICENSE-DATA)
 
@@ -18,7 +18,7 @@
 - 📖 **Field reference:** [`docs/DATA_DICTIONARY.md`](docs/DATA_DICTIONARY.md) · **Provenance & limitations:** [`docs/DATASHEET.md`](docs/DATASHEET.md)
 - 🎯 **Scope — what's in/out:** [`INCLUSION.md`](INCLUSION.md) (the inclusion policy every entry must satisfy)
 - 🛠️ **Spot an error?** Open a [data correction](https://github.com/emmanuelgjr/genai_incidents/issues/new?template=data_correction.yml) or [scope dispute](https://github.com/emmanuelgjr/genai_incidents/issues/new?template=scope_dispute.yml) — accepted changes are logged in [`CORRECTIONS.md`](CORRECTIONS.md)
-- 🪪 **DOI:** [`10.5281/zenodo.20248676`](https://doi.org/10.5281/zenodo.20248676) — see [`CITATION.cff`](CITATION.cff)
+- 🪪 **DOI:** [`10.5281/zenodo.20248675`](https://doi.org/10.5281/zenodo.20248675) — see [`CITATION.cff`](CITATION.cff)
 - 📄 **Methodology:** [`docs/paper/genai-incidents-methods.md`](docs/paper/genai-incidents-methods.md) — how the dataset is built, mapped, and governed
 - 📜 **Changelog:** [`CHANGELOG.md`](CHANGELOG.md)
 
@@ -222,7 +222,7 @@ The current dataset draws from the following public sources. Each entry retains 
 - **OWASP GenAI Security Project** — incident roundups + Top 10 references
 - **AI Incident Database (AIID)** ([incidentdatabase.ai](https://incidentdatabase.ai/), [github.com/responsible-ai-collaborative/aiid](https://github.com/responsible-ai-collaborative/aiid)) — ingested via AIID's official weekly snapshot archive (not per-page scraping); title + structured facts only, no verbatim narrative retained
 - **OECD AI Incidents Monitor (AIM)** ([oecd.ai/en/incidents](https://oecd.ai/en/incidents)) — cross-listed against AIID via the official AIID-OECD bridge file
-- **AIAAIC** ([aiaaic.org](https://www.aiaaic.org/aiaaic-repository)) — AI, Algorithmic, and Automation Incidents and Controversies
+- **AIAAIC** ([aiaaic.org](https://www.aiaaic.org/aiaaic-repository)) — AI, Algorithmic, and Automation Incidents and Controversies; a CC BY-SA 4.0 source reduced to categorical facts + link (decision D2), with row-level attribution/share-alike honored via a per-entry marker and an open database-right question — see [`NOTICE-DATA`](NOTICE-DATA) and `docs/SOURCE_LICENSES.md` §1.1
 - **MITRE ATLAS** ([atlas.mitre.org](https://atlas.mitre.org/), [github.com/mitre-atlas/atlas-data](https://github.com/mitre-atlas/atlas-data)) — all case studies parsed from the YAML corpus
 - **AVID** — AI Vulnerability Database ([avidml.org](https://avidml.org/))
 - **CSET-AIID Harm Taxonomy** ([github.com/georgetown-cset/CSET-AIID-harm-taxonomy](https://github.com/georgetown-cset/CSET-AIID-harm-taxonomy)) — controlled vocabulary reference
@@ -258,3 +258,4 @@ PRs welcome. Please:
 
 - **Citing the dataset as a whole** (statistics, trend analysis, benchmark construction, or other aggregate use): cite this repository using the preferred citation in [`CITATION.cff`](CITATION.cff), or the DOI badge above.
 - **Citing an individual incident**: cite that incident's own primary source, not this repository. Every incident entry links to its underlying source(s) in its References section — use that link (or, for AIID-derived entries, the AIID citation URL already shown on the entry) as the citation. Citing genai_incidents alone for a single incident credits this aggregator instead of the reporter, researcher, or outlet who actually surfaced it.
+- **Concept DOI vs. version DOI**: the DOI badge and `CITATION.cff` (`10.5281/zenodo.20248675`) are Zenodo's **concept DOI** — it always resolves to the latest release, and is the one to cite for general or ongoing use. Cite a release's own **version-specific DOI** only when deliberately pinning to that exact version (e.g. reproducing a result against a specific snapshot); see that release's own Zenodo record for its version DOI.
