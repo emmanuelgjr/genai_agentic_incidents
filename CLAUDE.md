@@ -90,3 +90,21 @@ never put model calls in the deterministic build path.
    the instance and dispatch a FRESH specialist with a self-sufficient brief:
    a clean context executing a clear brief beats a saturated one being
    reminded. Re-prompt at most once, then replace.
+4. **The artifact is evidence; the verdict is testimony (added 2026-07-30).**
+   A gate's PASS/BOUNCE **verdict text lands in the board commit**, not only
+   in the session transcript. Record the verdict, its defects/advisories, and
+   the evidence the reviewer says it measured — the foreman is the board's
+   only writer, so this is the foreman's job at protocol step 6, not the
+   reviewer's. **Why:** a deliverable's artifacts are re-derivable from the
+   repo forever, but a verdict that exists only in a transcript cannot be
+   checked by anyone later — including by the next session, which is exactly
+   when it is relied on. A future reader must be able to tell "this was
+   independently gated, here is what the gate measured" from "the board says
+   it passed." **Consequence for phase-exit checklists:** evidence cells are
+   marked **[R] re-derived** (measured now, command shown) or **[A] attested**
+   (artifacts present, verdict is testimony), and **no criterion asserting a
+   measurable property of the repo may be marked met on [A] alone.** Origin:
+   a gate stated this limit about itself, unprompted, during the D8 re-verify
+   — see PROGRESS.md's exit-checklist format entry. As agreement 4 takes hold,
+   [A] rows should become rare; **if a checklist still needs [A] for a gate
+   verdict, this agreement is not being followed.**
