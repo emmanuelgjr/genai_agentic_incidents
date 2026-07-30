@@ -99,12 +99,38 @@ ephemeral, in-memory classification signal that is never persisted --
 what is kept is the AIID-authored title (a short headline, not
 narrative) plus structured, non-narrative facts (id, date, url, entity
 slugs, taxonomy fields). As with AIAAIC, this reduction means
-LICENSE-DATA carries no BY-SA carve-out for AIID. Unlike AIAAIC's
-copyright share-alike question, which decision D2 disposes of, AIID's
-CC-BY-SA share-alike exposure and a parallel EU/UK sui generis
-database-right question remain OPEN and are NOT resolved by this
-handling -- flagged the same way as AIAAIC's E13 finding; see
-docs/SOURCE_LICENSES.md section 1.2a.
+LICENSE-DATA carries no BY-SA carve-out for AIID. AIID's
+content-licensing exposure is RESOLVED, not open, for the population
+that ships -- the opposite posture from AIAAIC's, not the same one.
+docs/audits/E23-aiid-marking-ruling-2026-07-30.md finds AIID's maker
+(Responsible AI Collaborative, Inc.) is U.S.-situated -- principal
+place of business, venue, and tax-exempt status all in the United
+States -- and that situs closes both routes CC BY-SA offers to
+share-alike: U.S. Copyright Office Circular 33 categorically excludes
+titles and short phrases from copyright, so the retained AIID title
+carries no protectable expression; and a U.S.-situated maker fails
+both the UK and EU sui generis database-right qualification tests, so
+no such right subsists in AIID's collections to begin with. This is
+the opposite of AIAAIC's still-open UK-situated question, where UK/EU
+law has no equivalent categorical carve-out -- AIID and AIAAIC are not
+two postures toward the same question; they are two legal systems
+answering it differently. Empirically, no row in the shipped corpus
+carries a content_license marker for AIID under any measurable
+definition of "an AIID row": 0 of 1,466, counting the union of the
+AIID tag, the aiid_id field, the AIID-<n> source-ID, and the
+incidentdatabase.ai reference-URL signals -- not merely the narrowest
+tags-only count. This resolution covers only the ~1,463-row population
+that ships via the sanctioned-snapshot path (section 1.2a); it does
+not extend to the 63 hand-curated rows in ingest/aiid_incidents.json
+or the 1,457 AIRI Navigator rows sharing AIID's source-ID convention,
+which carry unreviewed, uncleared risk and are kept out of the shipped
+corpus only by current merge-order mechanics, not by compliance
+design -- if a future pipeline or merge-order change ever causes that
+population's own text to reach data/incidents.json, this resolution
+does not carry over, and that population reopens for its own review
+before it ships. See docs/SOURCE_LICENSES.md section 1.2a and
+docs/audits/E23-aiid-marking-ruling-2026-07-30.md for the full
+reasoning.
 
 The full CC BY 4.0 Public License text is in LICENSE-DATA at the
 repository root.

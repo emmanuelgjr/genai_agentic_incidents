@@ -35,11 +35,21 @@ Comment: This dataset aggregates entries from many upstream sources, each
  docs/SOURCE_LICENSES.md section 1.1 for the full framing. AIID-derived
  entries (ingested via AIID's official snapshot, SOURCE_LICENSES.md
  section 1.2a) likewise carry no BY-SA subset -- only the AIID-authored
- title and structured facts are kept, never the licensed narrative --
- but AIID's CC-BY-SA share-alike and a parallel database-right question
- remain an open, unresolved item, same posture as AIAAIC's E13 finding.
- See NOTICE-DATA for the full framing and docs/SOURCE_LICENSES.md for
- per-source detail.
+ title and structured facts are kept, never the licensed narrative.
+ AIID's content-licensing question is RESOLVED, not open, for the
+ ~1,463-row population that ships (0 of 1,466 rows carry a
+ content_license marker under every measurable definition -- tag,
+ aiid_id field, AIID-<n> source-ID, or reference URL). AIID's maker is
+ US-situated, so U.S. Circular 33 excludes the retained title from
+ copyright and no UK/EU sui generis database right qualifies for it --
+ the opposite posture from AIAAIC's still-open UK-situated question,
+ not the same one. This does not cover the 63 hand-curated rows in
+ ingest/aiid_incidents.json or the 1,457 AIRI Navigator rows sharing
+ AIID's source-ID convention, which stay out of the shipped corpus
+ only by merge-order mechanics and reopen for review if that changes.
+ See NOTICE-DATA and docs/SOURCE_LICENSES.md section 1.2a for the full
+ framing, and docs/audits/E23-aiid-marking-ruling-2026-07-30.md for
+ the full reasoning.
 
 Files: docs/*
 Copyright: 2026 Emmanuel G. Jr. and contributors
