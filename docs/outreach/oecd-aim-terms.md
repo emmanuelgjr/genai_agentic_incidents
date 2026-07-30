@@ -1,7 +1,7 @@
 # Draft — OECD AI Incidents and Hazards Monitor (AIM): reuse terms + bulk-channel question
 
-**STATUS:** 📝 **DRAFTED (2026-07-30) — not yet sent, not yet reviewed by
-red-reviewer.** Per the committed-artifact working agreement (`CLAUDE.md`),
+**STATUS:** 📝 **DRAFTED (2026-07-30) — gated PASS (red-reviewer, recorded in
+`879bc044`); not yet sent.** Per the committed-artifact working agreement (`CLAUDE.md`),
 this file is written to disk and committed before being shown to the user or
 to a review gate. This is a genuinely new draft: no OECD outreach file
 existed anywhere in this repo's git history before this one —
