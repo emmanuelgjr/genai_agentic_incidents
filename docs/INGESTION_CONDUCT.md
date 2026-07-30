@@ -388,12 +388,12 @@ independently of anything in this file.
 The plan's Accept criterion for this task requires outreach emails to AIID,
 AIAAIC, and OECD AIM, "drafted, sent (human sends), and logged with dates."
 Per `CLAUDE.md`, outreach is drafted by agents and sent by the user; this
-project's escalation rule keeps that division intentionally, and this
-pipeline-engineer report does not draft the missing OECD item below (see
-note).
+project's escalation rule keeps that division intentionally, and the OECD item
+below — absent when this file was first written — was drafted separately rather
+than by this pipeline-engineer report.
 
 All drafts live under `docs/outreach/`; `docs/outreach/README.md` is the
-authoritative index. Status as of 2026-07-29:
+authoritative index. Status as of 2026-07-30:
 
 | Recipient | Draft(s) | Sent | Notes |
 |---|---|---|---|
@@ -402,13 +402,22 @@ authoritative index. Status as of 2026-07-29:
 | AIAAIC (correction) | `docs/outreach/aiaaic-correction.md` | **2026-07-29** | E17: corrected an earlier under-description of what fields are retained from AIAAIC records. |
 | MIT AIRI Navigator | `docs/outreach/mit-airi-courtesy.md` | **2026-07-27** | Courtesy notice (dead ZIP download) + informal transitive-AIID licensing question. |
 | MIT AI Risk Initiative | `docs/outreach/airi-draft4-export-request.md` | **2026-07-29** | Substantive sanctioned-export/API request + the same transitive-AIID question, more precisely stated. Starts the D8 30-day AIRI-hold clock. |
-| **OECD AI Incidents and Hazards Monitor (AIM)** | **none** | — | **Gap, not satisfied.** No draft exists anywhere under `docs/outreach/` (confirmed against `docs/outreach/README.md`'s own index and `git log --all --diff-filter=A` for any `*oecd*` outreach file — none). `docs/SOURCE_LICENSES.md` §1.5 records an "Outreach date 2026-07-15 (drafted; not yet sent)," which this task's audit could not corroborate against any actual file; that line appears stale. **This gap is being escalated to the user by the foreman separately** (per this task's brief); drafting the OECD outreach email is license-auditor/user territory, not this task's, and is not attempted here. |
+| **OECD AI Incidents and Hazards Monitor (AIM)** | `docs/outreach/oecd-aim-terms.md` | **Not sent** — drafted **2026-07-30** | Reuse-terms question for AIM's own structured data (our own terms fetch 403s) plus a sanctioned-bulk-channel question. Recipient `ai@oecd.org`, found one hop from the site's own nav at `oecd.ai/en/contact` and independently verified. Gated PASS; **awaiting the user's send**, who logs the date on `docs/outreach/README.md` and in `docs/SOURCE_LICENSES.md` §1.5. This draft is genuinely the first: no OECD outreach file existed on any branch before it (`git log --all --diff-filter=A -- 'docs/outreach/*'`), which is why §1.5's earlier "Outreach date 2026-07-15 (drafted; not yet sent)" was false and has been corrected there (E20). |
 
-**Conclusion on the Accept criterion's outreach clause:** two of three named
-recipients (AIID, AIAAIC) have drafted-and-sent outreach with logged dates;
-AIID and AIAAIC are additionally corroborated by follow-up/correction
-sends. **OECD AIM has no outreach at all.** The outreach clause of the
-Accept criterion is therefore **not fully satisfied** — see
-`docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md` for the
-full Accept-criterion verdict, which covers both the outreach clause and the
-grep clause together.
+**Conclusion on the Accept criterion's outreach clause.** Per **D21** the
+criterion is split, and the two halves track separately:
+
+- **Clause 1 (the code property — all HTTP(S) fetching through
+  `ingest/common.py`): DONE and merged** (`8b1e8888`); Invariant 5 is ACTIVE.
+- **Clause 2 (outreach): OPEN, on OECD's send alone.** All three recipients the
+  criterion names now have a drafted email. Two are **sent** with logged dates
+  — AIID `2026-07-27`, AIAAIC `2026-07-27` plus the `2026-07-29` correction —
+  and OECD AIM is **drafted 2026-07-30, not yet sent**, so the clause is **not
+  yet satisfied**. It closes when that one send happens and its date is logged;
+  nothing else is outstanding on it. (MIT AIRI, not named by the criterion, is
+  additionally covered: courtesy notice sent `2026-07-27`, export request
+  `2026-07-29`.)
+
+See `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md` for the
+full Accept-criterion verdict as assessed on that date, which covers both the
+outreach clause and the grep clause together.

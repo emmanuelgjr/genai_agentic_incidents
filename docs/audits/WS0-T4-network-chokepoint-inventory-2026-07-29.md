@@ -298,6 +298,16 @@ of any kind** — not merely unsent, entirely absent from
 `docs/outreach/`. This is a real gap against the criterion's plain text,
 not a documentation omission on this task's part.
 
+> **Update (2026-07-30) — the OECD half of this verdict has since changed; the
+> rest of the report stands.** A genuine OECD draft now exists:
+> `docs/outreach/oecd-aim-terms.md`, written 2026-07-30 (E20), gated PASS,
+> recipient `ai@oecd.org` — **not sent**, the user sends and logs the date.
+> Clause 2 is therefore no longer "entirely absent" for OECD, but it is **still
+> open**, now on that single send. The assessment above is deliberately left as
+> written, because it records what was true when it was written; the **current**
+> status lives in `docs/INGESTION_CONDUCT.md`'s outreach log, which is where a
+> reader should look for it.
+
 **Overall, in the user's own terms (Phase-1 exit checklist: "flag any
 criterion satisfied on a TECHNICALITY"): this criterion is satisfied on a
 documented reading for clause 1 and NOT satisfied for clause 2.** Flagging
@@ -315,7 +325,9 @@ both explicitly rather than rounding either up:
 - Clause 2 is an outright gap, escalated to the user by the foreman
   separately from this report (per this task's brief); this task does not
   draft the missing OECD email (outreach is license-auditor/user territory)
-  and does not claim clause 2 is satisfied.
+  and does not claim clause 2 is satisfied. **(See the 2026-07-30 update
+  above: that escalation produced a draft, so the gap has since narrowed to
+  the send — clause 2 remains open, but not empty.)**
 
 ## 8. Test suite fix (finding 1)
 
