@@ -280,6 +280,71 @@ facts leave in Layer 3.
 
 ## 5. Scope and effort for the reduction
 
+**Revision note (BOUNCE #1, this section only — §§1–4 and the (A)/(B)
+verdict are unchanged).** The gate's re-verification confirmed §§1–4 in full,
+including that the o3-mini quote (§2.4) is not a paraphrase artifact
+(byte-identical raw HTML, `curl`, apostrophe-style the only divergence). What
+follows are five additions to *this section*: a real 77–150-row
+corpus-relabelling defect in the plan as originally written, two evidentiary
+additions that strengthen (not reopen) §3, a corrected re-ingest sizing, a
+better backfill mechanism, and one owed-but-out-of-scope sub-item.
+
+### 5.0 Two evidentiary additions to §3's Layer-3 argument (§4's verdict unchanged)
+
+**The express non-grant clause — quoted here for the first time in this
+project.** On the same raw-HTML page as fact #5 (§1, `oecd.ai/en/incidents-methodology`),
+immediately adjacent to the disclaimer already quoted, the page continues:
+
+> *"The OECD is not endorsed by, does not endorse, and is not affiliated with
+> any of the holders of such rights, and as such, the OECD cannot and do not
+> grant any rights to use or otherwise exploit these protected materials
+> included herein."*
+
+This does not by itself resolve Layer 3 — whether an LLM-generated summary
+*is* "these protected materials" is still the open question — but it is a
+materially stronger fact than an ownership footnote: it is OECD **expressly
+declining to grant** rights over material it identifies as third-party-protected
+and "included herein." §3's Reading-for-(B) bullet should be read as
+reinforced by this clause, not merely by inference from the shorter
+disclaimer sentence alone.
+
+**The strongest form of the pro-(A) argument, developed fully, then answered.**
+§3 as written states the pro-(A) case as an aggregator's-own-processed-product
+argument but does not develop its strongest form, which is a copyrightability
+argument, not an ownership one: **if the raw LLM output carries no copyright
+at all** — a live position in at least the US Copyright Office's own guidance
+on works lacking sufficient human authorship, and unsettled more broadly —
+**then there is nothing for OECD to grant and, more importantly, nothing for
+genai_incidents to infringe by copying the string itself**, however OECD's
+own terms characterize it. Taken to its logical end, this argument would
+moot Layer 3 entirely: no one's copyright, no one's claim.
+
+**Why (B) still wins even against this strongest form:** the argument proves
+too little, because it answers the wrong question. "No new copyright vests in
+the LLM's output" does not mean "the output carries no one's protected
+expression." An LLM summarizing three copyrighted news articles can still
+reproduce those articles' *protected expression* — their distinctive
+phrasing, framing, or the selection/arrangement of facts that constitutes the
+articles' own expressive content — inside its output, in which case the
+*articles'* copyright (which unquestionably exists and is held by the
+originating news outlets, not OECD, not us) governs the output regardless of
+whether the output itself is independently copyrightable by anyone. Whether
+a *given* summary crosses that line is a substantial-similarity question this
+project cannot answer at the corpus level without inspecting individual
+summaries against their source articles — exactly the kind of fact-intensive
+question this document's own header says is presumed method-suspect until
+checked, not resolved in the project's favor by default. And the express
+non-grant clause quoted above reads as OECD's own acknowledgment of
+precisely this risk — it is a clean fit for "we may be redistributing
+material derived from protected third-party expression and are not
+purporting to clear it for you," and a poor fit for "we hold no rights here
+because there's nothing to hold." **The strongest pro-(A) argument defeats a
+narrower risk (OECD's own claim to the output) than the one that actually
+governs redistribution (the source articles' claim, mediated through the
+output) — so it does not change the outcome.** (B) stands.
+
+### 5.1 Rows and fields
+
 **Rows:** the **3,667** rows already measured shipping verbatim OECD-derived
 `description` text in `data/incidents.json`
 (`docs/audits/PHASE1-EXIT-2026-07-30.md` BLOCKER A). I did not re-count this
@@ -315,9 +380,72 @@ before treating it as current for a backfill plan.
   which includes `summary`/`evidences`) is used only as an ephemeral,
   in-memory classification signal and is never itself persisted — the exact
   pattern `ingest_aiid_snapshot.py` (§1.2a) already uses for AIID's
-  CC-BY-SA-excluded `reports.text`. No change needed to this part.
+  CC-BY-SA-excluded `reports.text`. No change needed to this part. **Gate-verified,
+  0 changes across all three candidate templates tried** — these four are
+  genuinely safe, and the field this bullet-set originally omitted is the
+  next one.
+- **`corpus` — MISSED IN THE ORIGINAL DRAFT OF THIS FILE; IN SCOPE, gating.**
+  `merge_and_dedupe.py::_classify_corpus()` (`:574-594`) computes `corpus`
+  from `entry.get("description")` for any entry that isn't AIAAIC-origin
+  (`_aiaaic_seed_text()`, `:534-571`, returns `None` for
+  `description_source != "aiaaic"`, so OECD rows fall through to
+  `desc_text = entry.get("description") or ""` at `:580` — the composed,
+  about-to-be-reduced string). OECD rows carry no pre-set `corpus` today (0
+  of 4,160), and `merge_and_dedupe.py:1442`'s `if not e.get("corpus"):
+  e["corpus"] = _classify_corpus(e)` guard recomputes it from scratch on
+  every build. **This is exactly the coupling the WS0-T3 cascade docstring
+  (`:547-551`) names as having already "silently relabelled 372 AIAAIC
+  entries" once** — it is live for OECD today, not theoretical, and the gate
+  measured it directly: substituting three candidate reduced-description
+  templates into the 3,829 OECD-tagged rows and re-running `_classify_corpus`
+  moves **150 rows** (template mentioning "Incidents and Hazards Monitor",
+  all `ai-harm`→`security`) or **81 rows** (77/4 split, either of two
+  neutral/bare-facts templates). Because final template wording is
+  delegated to pipeline-engineer (§5.2 below), **the exact count is not
+  fixable by naming one number here — the requirement has to bind the
+  mechanism, not a template choice.**
 
-**Reduced form — exact code-level requirement for pipeline-engineer:**
+  **Recommendation: structural decoupling, not a one-time accepted delta.**
+  A one-time delta is a legitimate *fallback* (see below) but leaves the
+  defect class open — any later change to the description template (a typo
+  fix, a tone edit) could silently move `corpus` again, for the same reason
+  it did the first time. Two mechanisms achieve decoupling; either is
+  acceptable, pipeline-engineer's call which:
+  1. **Compute and persist `corpus` at ingest time**, in
+     `ingest_oecd_aim.py::normalize_body()`, from the full `full_text` signal
+     (`:143-156`) — the same signal `attack_vector`/`severity` already use —
+     using the identical keyword classification `merge_and_dedupe.py`
+     applies (`_SECURITY_KEYWORDS_FOR_CORPUS`/`_AI_HARM_KEYWORDS`, shared or
+     duplicated). `merge_and_dedupe.py:1442`'s existing "respect an explicit
+     value if the source already declares one" guard then takes effect
+     unmodified — no `merge_and_dedupe.py` code change needed at all. This
+     is the same mechanism `quality_tier` already relies on for sources that
+     set it themselves.
+  2. **Add an OECD branch to the `_aiaaic_seed_text()` decoupling pattern**
+     (`:534-571`), gated on the OECD equivalent of `description_source`.
+     **Critical difference from the AIAAIC precedent, stated explicitly so
+     it isn't missed:** AIAAIC's seed fields (`aiaaic_seed_facts`,
+     `aiaaic_ethical_tags`) are safe to persist because they are categorical
+     labels, not prose. **For OECD, the text that currently drives
+     classification *is* the LLM-generated narrative this reduction exists
+     to stop shipping.** A seed field that persists that same text under a
+     new key (e.g. a hidden `oecd_seed_text`) would defeat the reduction —
+     it would still be redistributing the narrative, just unlabeled. If this
+     mechanism is chosen, the persisted seed must be the **derived signal
+     only** (e.g. the specific `_SECURITY_KEYWORDS_FOR_CORPUS`/`_AI_HARM_KEYWORDS`
+     terms actually matched, or a plain `security`/`ai-harm` boolean/enum),
+     never the narrative text that was matched against.
+
+  **Fallback, if decoupling is deferred:** a one-time, enumerated,
+  justified `corpus` delta — reported per the Field-level delta rule
+  (`CLAUDE.md`) with the actual row count and both-direction breakdown
+  (this section's 150 or 81/4 figures are the gate's dry-run estimates
+  against candidate templates, not the number the shipped template will
+  produce) — **and a note in the PR that any future OECD description-wording
+  change must re-run this delta check**, since the defect class stays open
+  under this fallback.
+
+### 5.2 Reduced form — exact code-level requirement for pipeline-engineer
 
 In `scripts/ingest_oecd_aim.py::normalize_body()` (currently `:199-210`),
 replace
@@ -349,66 +477,131 @@ continue to feed `is_security_relevant()`/`map_taxonomy()`/the severity
 heuristic exactly as today (untouched), just never written to output. Final
 sentence wording is pipeline-engineer's call, not mine.
 
-**Attribution — a separate requirement, owed regardless of how Layer 3
-resolves for the narrative fields:** whatever structural facts continue to
-ship (id, date, taxonomy tags, `affected`, AIID cross-reference ids) sit
-squarely under OECD's general Data-reuse clause (Layer 2, §3), which is
-conditioned on attribution in OECD's own specified format: *"OECD (year),
-(dataset name), (data source) DOI or URL (accessed on (date))."* §1.5's
-Action cell has called for a "Source: OECD AI Incidents and Hazards Monitor"
-line since 2026-07-15/30 and it is still not implemented. Requirement: add
-one attribution reference entry per OECD-sourced row (parallel to how
-§2.3/§2.4's GHSA/OSV rows are handled — "Confirm the render layer credits...
-per entry"), e.g. `{"title": "OECD (<year>), AI Incidents and Hazards
-Monitor, <page-url> (accessed on <ingest-date>)", "url": "<page-url>",
-"type": "citation"}`, or wherever this repo's render layer already
-surfaces such citations for other sources.
+### 5.3 Attribution — a separate requirement, owed regardless of how Layer 3 resolves for the narrative fields
 
-**Backfill vs. forward-fix:** per D10's precedent (fix-forward, no history
-rewrite — explicitly named in my brief), no past release/tag is altered.
-But `union_with_existing()` (`:268-284`) merges by `source_id` with "fresh
-wins on conflict" — meaning the 3,667+ rows already shipping verbatim text
-in the *current working tree* will only get fixed as their sitemap entries
-are naturally re-fetched. Given `DEFAULT_LIMIT = 3000` (newest-first) and a
-weekly cadence, older rows could take a very long time to organically
-refresh. **Recommendation (not a decision — the user/pipeline-engineer's
-call): run a one-time `OECD_AIM_LIMIT=0` full re-ingest immediately after
-the code fix lands**, to force every existing row's `description` to be
-rebuilt before the next release cut, rather than leaving 3,667 verbatim rows
-in the shipped corpus to fade out over many weekly cycles. Whether the
-on-disk cache (`ingest/_cache/oecd_aim/`) is warm enough to make this a pure
-reprocessing pass (no new network fetches) or requires materially new
-fetching (subject to the board's own already-flagged A2 pacing/timeout
-concern for a full-corpus OECD run) is a runtime question for
-pipeline-engineer to size — I don't have that number.
+Whatever structural facts continue to ship (id, date, taxonomy tags,
+`affected`, AIID cross-reference ids) sit squarely under OECD's general
+Data-reuse clause (Layer 2, §3), which is conditioned on attribution in
+OECD's own specified format: *"OECD (year), (dataset name), (data source)
+DOI or URL (accessed on (date))."* §1.5's Action cell has called for a
+"Source: OECD AI Incidents and Hazards Monitor" line since 2026-07-15/30 and
+it is still not implemented. Requirement: add one attribution reference
+entry per OECD-sourced row (parallel to how §2.3/§2.4's GHSA/OSV rows are
+handled — "Confirm the render layer credits... per entry"), e.g. `{"title":
+"OECD (<year>), AI Incidents and Hazards Monitor, <page-url> (accessed on
+<ingest-date>)", "url": "<page-url>", "type": "citation"}`, or wherever this
+repo's render layer already surfaces such citations for other sources.
 
-**Verification requirement (Field-level delta rule, `CLAUDE.md`):** the
-rollout must publish a full before/after delta on `description` (and
-`title` only if a future decision brings it into scope) across all affected
-rows, plus entry-count/ID-set unchanged (invariant 3) and confirmation that
-`attack_vector`/`owasp_llm`/`owasp_asi`/`severity` outputs are byte-identical
-before/after (the classification signal computation is untouched — only
-what gets persisted as `description` changes).
+### 5.4 Backfill vs. forward-fix — revised, with corrected sizing and a better mechanism
+
+**Sizing correction (foreman code-verified, treated as established per
+protocol).** My original draft assumed `DEFAULT_LIMIT = 3000` was close to
+the full corpus and that `OECD_AIM_LIMIT=0` was mainly a cache question. Both
+were wrong in ways that matter for feasibility, not just degree:
+- The live sitemap has **10,000** matching incident URLs (`curl -L` →
+  10,001 `<loc>` entries, 10,000 passing the ingest's own `/en/incidents/<id>`
+  filter), not ~3,000.
+- `ingest/_cache/oecd_aim/` is **empty and gitignored** — a full re-ingest is
+  a cold, fully-networked pass, not a cache replay.
+- At `ingest/common.py:106`'s `DEFAULT_MIN_INTERVAL = 1.0` (confirmed present
+  in this codebase), shared across the 10-worker pool, a 10,000-page pass has
+  a **~167-minute floor** — against `auto-refresh.yml`'s 60-minute timeout.
+  **`OECD_AIM_LIMIT=0` as a CI job (including via `workflow_dispatch`) is
+  infeasible; it is feasible only as a one-off run outside CI.**
+- Under the current `DEFAULT_LIMIT = 3000`, newest-first: rows ranked
+  **3,001–10,000 are not merely slow to refresh, they are never refreshed at
+  all** under the ingest's normal weekly operation — my original "could take
+  a very long time" undersold this; it is an indefinite exclusion, not a
+  delay.
+- **40 rows are frozen regardless of any code change or `OECD_AIM_LIMIT`
+  setting.** `ingest/oecd_aim_full_incidents.json` carries 4,160 OECD URLs;
+  today's sitemap carries 4,120 matching URLs for the same window — **40
+  have aged out of the sitemap entirely** and are preserved only by
+  `union_with_existing()`'s existing-entry-survives behavior (`:268-284`).
+  They can never re-enter `normalize_body()` through the normal fetch path
+  again, at any limit setting, because they no longer appear in the source
+  the ingest reads URLs from.
+
+**Better mechanism, superseding the `OECD_AIM_LIMIT=0` recommendation in the
+original draft of this section: a one-off local transform, not a re-ingest.**
+Every field the new `description` template needs (§5.2 — `source_id`,
+`date`, `affected`, `attack_vector`, `url`) is **already present on every
+row currently in `ingest/oecd_aim_full_incidents.json`**, including the 40
+aged-out ones — the reduction doesn't need new content, only a rewrite of
+one already-populated field using other already-populated fields on the same
+row. A standalone migration script that reads the existing committed file,
+and for each row:
+1. captures the corpus-classification seed from the row's **current**
+   `description` value (still the pre-reduction summary text at the moment
+   the script runs) using `merge_and_dedupe.py`'s own keyword lists, and
+   persists it per §5.1's decoupling requirement, **then**
+2. overwrites `description` with the new structural template,
+
+reaches **100% of currently-shipping OECD rows, including all 40 aged-out
+ones, at zero network cost and no CI-timeout exposure** — strictly better
+than `OECD_AIM_LIMIT=0` on every axis (completeness, cost, feasibility). The
+normal ingest-time code fix (§5.2) still lands, for rows added in future
+runs, which do need to compute the seed fresh from a real fetch since they
+have no prior committed `description` to read it from. **`OECD_AIM_LIMIT=0`
+is not needed for the licensing backfill at all** under this mechanism; if
+pipeline-engineer separately wants to force-refresh AIM content for
+freshness reasons unrelated to this reduction, that's a distinct
+maintenance decision, now correctly sized (~167 min, one-off, outside CI)
+rather than assumed cheap.
+
+### 5.5 Owed, but explicitly out of scope for this reduction
+
+All **3,829** OECD-tagged rows carry `description_source: None`,
+`description_provenance: None`, and **`content_license: None`** — the third
+parallel to the D11/E16 AIAAIC row-level marker mechanism. **This is owed
+independent of the (A)/(B) verdict — it stands under (A) as much as under
+(B)** — and is named here only because §5 already extends past pure
+licensing into an attribution requirement (§5.3), so a short pointer belongs
+here too. **Not scoped or designed here** — marking mechanism, field values,
+and rollout are a separate task, not decided by this bounce.
+
+### 5.6 Verification requirement (Field-level delta rule, `CLAUDE.md`)
+
+The rollout must publish a full before/after delta on `description`,
+**`corpus`** (target: 0 unintended moves, given §5.1's decoupling
+requirement — if the fallback path is used instead, the actual delta must be
+enumerated and justified, not asserted as 0), and `title` only if a future
+decision brings it into scope — across all affected rows, plus
+entry-count/ID-set unchanged (invariant 3) and confirmation that
+`attack_vector`/`owasp_llm`/`owasp_asi`/`severity` outputs remain
+byte-identical before/after (unaffected by this change; the classification
+signal computation itself is untouched).
 
 **Exact checks for red-reviewer, all shell-based, named per my role:**
 1. `curl` `https://oecd.ai/en/incidents-methodology` and `grep` for the
    exact string `This metadata is LLM-generated (OpenAI's o3-mini) from the
    top three articles of each event, selected from different news outlets.`
    — confirms §2.4, the single most load-bearing fact here, is not a
-   WebFetch paraphrase.
+   WebFetch paraphrase. **(Already independently re-derived by the gate for
+   BOUNCE #1 — byte-identical, apostrophe-style the only divergence — this
+   check can be treated as closed unless the page changes.)**
 2. Same page, `grep` for `Your use of the OECD AI incidents and hazards
-   monitor` and `termsandconditions` — confirms §2.3.
+   monitor`, `termsandconditions`, and — new this bounce — `the OECD cannot
+   and do not grant any rights to use or otherwise exploit these protected
+   materials included herein` — confirms §2.3 and the §5.0 non-grant quote.
 3. `curl` (no-UA and browser-UA) against
    `https://www.oecd.org/en/about/terms-conditions.html`,
    `https://www.oecd.org/termsandconditions/`, and
    `https://www.oecd.org/en/about/oecd-open-by-default-policy.html` —
-   confirm all three still 403, so fact 4's "not primary-source quotable"
-   status is current before this file is next relied on.
-4. After pipeline-engineer's fix lands: confirm 0 rows in
+   confirm all three still 403. **(Already re-confirmed by the gate for
+   BOUNCE #1.)**
+4. `curl -L https://oecd.ai/sitemaps/incident-monitor-sitemap.xml` and count
+   `<loc>` entries matching `/en/incidents/<id>` — confirm the 10,000/4,120
+   figures in §5.4 before sizing any re-ingest or the aged-out-row count.
+5. After pipeline-engineer's fix lands: confirm 0 rows in
    `data/incidents.json` with a source-id matching `OECD-AIM-*` whose
    `description` text is a verbatim substring of (or identical to) the
-   corresponding `summary` value in `ingest/oecd_aim_full_incidents.json` —
-   this is the acceptance check for the reduction actually landing.
+   corresponding pre-fix `summary`/`description` value — the acceptance
+   check for the reduction actually landing.
+6. Same post-fix pass: confirm `corpus` is unchanged for all OECD-tagged
+   rows relative to a pre-fix snapshot (0 moves if decoupling per §5.1 was
+   implemented; otherwise, confirm the delta matches whatever was enumerated
+   and justified under the §5.1 fallback).
 
 ---
 
