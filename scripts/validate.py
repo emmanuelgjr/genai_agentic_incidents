@@ -7,6 +7,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from typing import NamedTuple
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -121,7 +122,77 @@ def check_integrity(data: dict, deprecations: list[dict] | None = None) -> list[
     return problems
 
 
-def check_registry_provenance(registry: dict, state_path: Path) -> list[str]:
+# --- Source-freshness provenance: the enumerated contexts ------------------
+#
+# `observed_from` in data/source_freshness.json is a claim about WHICH copy of
+# the source-health counter the registry's machine-derivable values were
+# reconciled against. Every claim that is legitimate is enumerated below,
+# together with what it means and what the checker does about it. Anything not
+# enumerated FAILS.
+#
+# Why an allowlist and not "compare when the named copy is readable, skip when
+# it isn't": readability is not authorisation. Under the readability rule any
+# string that failed to name the in-repo copy made the whole comparison vanish
+# and returned zero problems, so a one-line edit to a hand-authored JSON file
+# deleted the check, and "checked and matched" was indistinguishable from "not
+# checked at all" in the build output. A skip is now something only a named,
+# reasoned context can buy — and an unrecognised claim is the failure case, not
+# the free-pass case.
+#
+# Adding a context is a deliberate act: add it here AND to `observed_from`'s
+# enum in schema/source_freshness.schema.json (kept in lockstep by
+# tests/test_validate.py) AND to the Source freshness section of
+# docs/DATA_DICTIONARY.md, in one PR.
+
+IN_REPO_STATE_REL = "ingest/_state/source_health.json"
+PROVENANCE_IN_REPO = f"main:{IN_REPO_STATE_REL}"
+PROVENANCE_AUTHORITATIVE = f"refresh-state:{IN_REPO_STATE_REL}"
+
+PROVENANCE_CONTEXTS: dict[str, dict[str, str]] = {
+    PROVENANCE_IN_REPO: {
+        "mode": "compare",
+        # `means` is interpolated into printed output: ASCII only, because this
+        # script runs in the build path on consoles that are not always UTF-8.
+        "means": "the bootstrap copy committed on main: present in every "
+                 "checkout, and stale by design per D5",
+        "checker": "full comparison: the named copy must exist, its source key "
+                   "set must equal the registry's, and every `status` and "
+                   "`last_success` must match. Missing file or mismatch fails.",
+    },
+    PROVENANCE_AUTHORITATIVE: {
+        "mode": "not-comparable",
+        "means": "the authoritative machine counter, which exists only on the "
+                 "refresh-state branch (D5)",
+        "checker": "no comparison is possible in this context and none is "
+                   "attempted: that copy is not in a main checkout, and "
+                   "reaching it needs network, which the build path forbids. "
+                   "Reported as NOT COMPARABLE, never as verified. The "
+                   "comparison for this claim is the weekly reconciliation "
+                   "inside auto-refresh.yml, at the one point where the "
+                   "authoritative counter is in the tree (D8 application spec "
+                   "§6b — specified, not yet implemented).",
+    },
+}
+
+# Outcome tokens. `verified` and `not-comparable` are deliberately distinct:
+# one is a comparison that ran and passed, the other a comparison that could
+# not run here and says so. Conflating them is the defect this replaced.
+PROV_VERIFIED = "verified"
+PROV_NOT_COMPARABLE = "not-comparable"
+PROV_FAILED = "failed"
+
+
+class ProvenanceResult(NamedTuple):
+    """Outcome of the provenance check, kept separate from `problems` so the
+    build output can distinguish "checked and matched" from "not checkable in
+    this context" — and so neither can be read off an empty problem list."""
+
+    outcome: str          # PROV_VERIFIED | PROV_NOT_COMPARABLE | PROV_FAILED
+    summary: str          # one line for build output, states which happened
+    problems: list[str]   # non-empty iff outcome is PROV_FAILED
+
+
+def check_registry_provenance(registry: dict, state_path: Path) -> ProvenanceResult:
     """Hold the registry to the provenance claim it makes about ITSELF.
 
     data/source_freshness.json is a reviewed publication, not a build output:
@@ -130,33 +201,69 @@ def check_registry_provenance(registry: dict, state_path: Path) -> list[str]:
     statement). It is therefore hand-authored in a gated task — and that is
     exactly why its machine-derivable half must not be taken on trust.
 
-    `observed_from` names which copy of ingest/_state/source_health.json the
-    values were reconciled against. When it names the in-repo copy, every
-    `status`/`last_success` here MUST match that file, and the source key sets
-    must agree — so a registry claiming a provenance it does not have, or a
-    fifth tracked source appearing in the workflow without being registered,
-    fails loudly instead of drifting.
+    `observed_from` must be one of the contexts enumerated in
+    :data:`PROVENANCE_CONTEXTS`, and the outcome is that context's:
 
-    When `observed_from` names anything else (the authoritative
-    `refresh-state` copy, say), the comparison is SKIPPED rather than failed:
-    that copy is not readable offline, and a registry legitimately updated
-    from a fresher reading must not be blocked by the in-repo copy that D5
-    leaves stale by design. The check enforces the claim, not a fixed source.
+    * `main:ingest/_state/source_health.json` — the copy every checkout has.
+      Compared in full: source key sets must agree and every `status` /
+      `last_success` must match, so a forged status, a back-dated
+      `last_success`, a fifth tracked source left unregistered, or a named
+      copy that isn't there fails loudly instead of drifting.
+    * `refresh-state:ingest/_state/source_health.json` — the authoritative
+      counter, which is not in a main checkout and cannot be fetched from the
+      build path. Reported NOT COMPARABLE HERE: a registry legitimately
+      reconciled against the fresher copy must not be failed by the one D5
+      leaves stale, but that outcome is a named context with a stated reason,
+      not something inferred from a string failing to match.
+    * anything else — FAILS. Unrecognised, misspelt, empty: a provenance claim
+      nothing can check is not a weaker check, it is no check.
 
-    Bounded on purpose: passing means the registry matches the copy it says it
-    read. Because that copy is stale by design, it does NOT mean the registry
-    is current. Currency is the weekly reconciliation against the authoritative
-    counter (see the D8 application spec); this is the offline half.
+    Bounded on purpose, and the summary says so: VERIFIED means the registry
+    matches the copy it says it read. Because that copy is stale by design it
+    does NOT mean the registry is current. Currency is the weekly
+    reconciliation against the authoritative counter (D8 application spec §6b);
+    this is the offline half.
     """
-    problems: list[str] = []
     claimed = (registry.get("observed_from") or "").strip()
-    in_repo = f"main:{state_path.relative_to(ROOT).as_posix()}"
-    if claimed != in_repo:
-        return problems
-    if not state_path.exists():
-        return [f"source_freshness registry: observed_from claims {claimed!r} "
-                "but that file does not exist"]
+    context = PROVENANCE_CONTEXTS.get(claimed)
+    if context is None:
+        allowed = ", ".join(repr(k) for k in PROVENANCE_CONTEXTS)
+        return ProvenanceResult(
+            PROV_FAILED,
+            f"FAILED: observed_from {claimed!r} is not a recognised provenance "
+            "context, so nothing about this registry's values was checked",
+            [f"source_freshness registry: observed_from is {claimed!r}, which is "
+             f"not one of the enumerated provenance contexts ({allowed}). An "
+             "unrecognised provenance claim FAILS: a claim nothing can check is "
+             "not a weaker check, it is no check. If a new context is "
+             "legitimate, enumerate it in PROVENANCE_CONTEXTS in "
+             "scripts/validate.py (with what it means and what the checker does "
+             "for it), in observed_from's enum in "
+             "schema/source_freshness.schema.json, and in "
+             "docs/DATA_DICTIONARY.md - otherwise correct the claim."],
+        )
 
+    if context["mode"] == "not-comparable":
+        return ProvenanceResult(
+            PROV_NOT_COMPARABLE,
+            f"NOT COMPARABLE HERE: the registry names {claimed} ({context['means']}); "
+            "its shape was validated and its values were NOT compared against that "
+            "copy in this context. A recognised offline context, not a pass",
+            [],
+        )
+
+    # mode == "compare": the named copy must be here, and must agree.
+    if not state_path.exists():
+        return ProvenanceResult(
+            PROV_FAILED,
+            f"FAILED: the registry names {claimed}, which is not readable in this "
+            "context; a compare-mode claim whose copy is missing fails rather than "
+            "skipping",
+            [f"source_freshness registry: observed_from claims {claimed!r} "
+             f"but that file does not exist (looked in {state_path})"],
+        )
+
+    problems: list[str] = []
     state = json.loads(state_path.read_text(encoding="utf-8"))
     sources = registry.get("sources") or {}
     if sorted(state) != sorted(sources):
@@ -172,7 +279,22 @@ def check_registry_provenance(registry: dict, state_path: Path) -> list[str]:
                     f"source_freshness registry: {key}.{field} is {claimed_val!r} but "
                     f"{claimed} says {actual!r}"
                 )
-    return problems
+    if problems:
+        return ProvenanceResult(
+            PROV_FAILED,
+            f"FAILED: the registry claims {claimed} but disagrees with it in "
+            f"{len(problems)} place(s) (listed below)",
+            problems,
+        )
+    return ProvenanceResult(
+        PROV_VERIFIED,
+        f"VERIFIED: the registry matches {claimed}, the copy it names "
+        f"({len(sources)} source key(s), status + last_success each). Bound: it "
+        "matches the copy it read; that is NOT a claim the registry is current, "
+        "because that copy is stale by design (D5). Currency is the weekly "
+        "reconciliation",
+        [],
+    )
 
 
 def check_source_freshness(data: dict, registry: dict) -> list[str]:
@@ -338,9 +460,8 @@ def main():
             path = ".".join(str(p) for p in err.path)
             problems.append(f"source_freshness registry: {path}: {err.message}")
         if not shape_errs:
-            problems.extend(check_registry_provenance(
-                registry, ROOT / "ingest" / "_state" / "source_health.json"
-            ))
+            prov = check_registry_provenance(registry, ROOT / IN_REPO_STATE_REL)
+            problems.extend(prov.problems)
             problems.extend(check_source_freshness(data, registry))
             problems.extend(check_freshness_completeness(data, registry))
             marked = sum(1 for e in data["incidents"] if e.get("source_freshness"))
@@ -353,6 +474,17 @@ def main():
                 f"source(s), observed_at {registry.get('observed_at')}); "
                 f"{len(stale)} stale ({', '.join(stale) or 'none'}); "
                 f"{marked} entr(ies) carry a source_freshness marker."
+            )
+            # Separate line, and never silent: a reader of build output must be
+            # able to tell a provenance comparison that RAN and passed from one
+            # this context could not run. Kept off the line above so the D8
+            # delta audit's verbatim quote of it stays accurate.
+            print(f"source freshness provenance: {prov.summary}.")
+        else:
+            print(
+                "source freshness provenance: NOT CHECKED: the registry failed "
+                "shape validation (see the violations below); provenance is checked "
+                "only against a well-formed registry."
             )
     else:
         problems.append(

@@ -91,21 +91,33 @@ are selected, and `coverage` states what nothing measures. Nothing in the build
 writes it.
 
 **Its machine-derivable half is checked, not trusted.** `scripts/validate.py`
-holds the registry to the provenance claim in `observed_from`: when that names
-the in-repo copy of `ingest/_state/source_health.json`, every `status` and
-`last_success` must match that file and the tracked source keys must agree, so
-a forged status, a back-dated `last_success`, or a newly tracked source left
-unregistered fails validation. When `observed_from` names another copy the
-comparison is skipped rather than failed — that copy is not readable offline,
-and a registry updated from a fresher reading must not be blocked by the in-repo
-one. Passing therefore means *the registry matches the copy it says it read*; it
-does **not** mean the registry is current, because that copy is stale by design.
-Currency is the separate weekly reconciliation described below, which is **planned, not yet implemented**.
+holds the registry to the provenance claim in `observed_from`, whose vocabulary
+is **closed**: exactly two values are legitimate, each enumerated in
+`PROVENANCE_CONTEXTS` in `scripts/validate.py` with what it means and what the
+checker does for it, and mirrored as an `enum` in the schema (a test fails if
+the two drift). The check reports one of three outcomes, on its own
+`source freshness provenance:` line of the build output:
+
+| `observed_from` | Outcome | What the build did |
+|---|---|---|
+| `main:ingest/_state/source_health.json` | **VERIFIED** | Compared in full against that file: source key sets must agree and every `status` and `last_success` must match, so a forged status, a back-dated `last_success`, or a newly tracked source left unregistered fails. A named copy that isn't there also fails — "unreadable here" is not a licence to skip. |
+| `refresh-state:ingest/_state/source_health.json` | **NOT COMPARABLE HERE** | Shape validated, values **not** compared: the authoritative counter is not in a `main` checkout and reaching it needs network, which the build path forbids. A *recognised offline context with a stated reason* — not a pass, and reported differently from one. |
+| anything else | **FAILED** | An unrecognised, misspelt, or empty claim fails. A provenance claim nothing can check is not a weaker check, it is no check. Adding a legitimate context is a deliberate three-place edit (schema enum, `PROVENANCE_CONTEXTS`, this table) in one PR. |
+
+The distinction is deliberate and it is *why* the vocabulary is closed. When
+`observed_from` was free text, any value that failed to name the in-repo copy
+made the whole comparison vanish and reported nothing, so a one-line edit to a
+hand-authored JSON file silently deleted the check and "checked and matched" was
+indistinguishable from "not checked at all".
+
+VERIFIED means *the registry matches the copy it says it read*. It does **not**
+mean the registry is current, because that copy is stale by design. Currency is
+the separate weekly reconciliation described below, which is **planned, not yet implemented**.
 
 | Registry field | Notes |
 |---|---|
 | `observed_at` | Date of the source-health snapshot the registry was last reconciled against — **not** the build date and not today. An artifact dated by its input reads as visibly old when it is old, instead of reading as current and being wrong. |
-| `observed_from` | Which copy of `ingest/_state/source_health.json` those values came from, named precisely enough to judge their strength (see the three-copies note below). |
+| `observed_from` | Which copy of `ingest/_state/source_health.json` those values came from, named precisely enough to judge their strength (see the three-copies note below). One of the two enumerated values in the outcome table above — **not** free text, and anything else fails validation. |
 | `coverage` | What the registry speaks for, and — the part that matters — what it does not. Only the four weekly-refreshed sources are tracked; the AIID snapshot, the CVE/GHSA/OSV enrichment caches, the ATLAS/AVID/garak imports and `legacy_consolidated.json` are static or manual, with no health tracking. **Absence from the registry means nothing is measured, not that a source is healthy.** |
 | `sources.<key>.status` | `ok` \| `degraded` \| `stale`, the same vocabulary `scripts/check_source_health.py` assigns. Only `stale` propagates to rows: `degraded` is a below-threshold blip, and letting it mark rows would churn a field across thousands of entries on a flaky week. Retiring a source is a corpus action (status + tombstone, Invariant 3), not a freshness value — which is why the enum needs no fourth member for it. |
 | `sources.<key>.last_success` | The as-of date for everything that source contributed. |
@@ -136,7 +148,8 @@ counter is meant to keep the registry honest via a weekly reconciliation check
 `auto-refresh.yml` where the authoritative counter is in the tree, and failing
 loudly on divergence — but that check is not implemented yet** (D8 application
 spec §6b, tracked as a follow-up; `check_registry_provenance()`, run at build
-time, is the weaker offline-only check that exists today — see below). Until
+time, is the weaker offline-only check that exists today — see the outcome
+table above). Until
 the reconciliation check lands, an out-of-date registry is caught only when a
 human notices, not automatically. The counter itself is never the thing that
 ships.

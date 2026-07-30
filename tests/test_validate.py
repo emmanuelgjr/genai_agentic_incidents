@@ -2,7 +2,14 @@
 
 from __future__ import annotations
 
+import json
+from pathlib import Path
+
+import pytest
+
 import validate as v
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def _data(*incidents):
@@ -182,3 +189,169 @@ def test_freshness_completeness_partial_marker_still_flagged():
                               "sources": ["airi_navigator"]},
     })
     assert v.check_freshness_completeness(data, _STALE_REGISTRY) == []
+
+
+# --- check_registry_provenance(): the enumerated-context allowlist ---------
+# The registry is CURATED, not derived (PROGRESS.md precedent 1), so the one
+# machine-checkable thing about it is that it matches the copy its
+# `observed_from` names. Before the allowlist, ANY value that failed to name
+# the in-repo copy returned zero problems: a typo, an empty string or a
+# sentence deleted the comparison, and "checked and matched" was
+# indistinguishable from "not checked" in the build output. These tests pin
+# the three outcomes and, above all, that an unrecognised claim FAILS.
+
+def _state(tmp_path, **overrides):
+    """A minimal source-health counter file, plus the registry that honestly
+    matches it. Returns (path, registry)."""
+    state = {
+        "airi_navigator": {"status": "stale", "last_success": "2026-05-31"},
+        "oecd_aim": {"status": "ok", "last_success": "2026-07-12"},
+    }
+    path = tmp_path / "source_health.json"
+    path.write_text(json.dumps(state), encoding="utf-8")
+    registry = {
+        "observed_at": "2026-07-12",
+        "observed_from": v.PROVENANCE_IN_REPO,
+        "sources": {
+            k: dict(vals, label=k, row_marker=None,
+                    row_marker_note="not exercised here")
+            for k, vals in state.items()
+        },
+    }
+    registry.update(overrides)
+    return path, registry
+
+
+def test_provenance_verified_when_registry_matches_named_copy(tmp_path):
+    path, registry = _state(tmp_path)
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_VERIFIED
+    assert res.problems == []
+    assert "VERIFIED" in res.summary
+    # The bound is stated, not implied: passing is not a currency claim.
+    assert "NOT a claim the registry is current" in res.summary
+
+
+@pytest.mark.parametrize("claimed", [
+    "refresh-state:ingest/_state/source_healh.json",  # one-character typo
+    "main:ingest/_state/source_health.jsonn",
+    "refresh-state",
+    "",
+    "trust me",
+])
+def test_provenance_unrecognised_observed_from_fails(tmp_path, claimed):
+    # THE regression this suite exists for: every one of these used to return
+    # [] — a silent pass reachable by a one-line edit to a hand-authored file.
+    path, registry = _state(tmp_path, observed_from=claimed)
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_FAILED
+    assert len(res.problems) == 1
+    assert "not one of the enumerated provenance contexts" in res.problems[0]
+    assert repr(claimed) in res.problems[0]
+
+
+def test_provenance_missing_observed_from_fails(tmp_path):
+    # Absent, not merely wrong — the schema requires the key, but the checker
+    # must not treat "no claim at all" as an excuse to skip either.
+    path, registry = _state(tmp_path)
+    del registry["observed_from"]
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_FAILED
+
+
+def test_provenance_authoritative_copy_is_not_comparable_never_verified(tmp_path):
+    # The one legitimate skip, and it is a NAMED context with a reason — not
+    # a value inferred from failing to match something else.
+    path, registry = _state(tmp_path, observed_from=v.PROVENANCE_AUTHORITATIVE)
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_NOT_COMPARABLE
+    assert res.problems == []
+    assert "NOT COMPARABLE" in res.summary
+    assert "VERIFIED" not in res.summary
+
+
+def test_provenance_verified_and_not_comparable_are_distinguishable(tmp_path):
+    # Both are clean (empty problems), so the build output MUST NOT be the
+    # only place they differ by accident: the outcome token and the summary
+    # each distinguish them.
+    path, registry = _state(tmp_path)
+    verified = v.check_registry_provenance(registry, path)
+    offline = v.check_registry_provenance(
+        dict(registry, observed_from=v.PROVENANCE_AUTHORITATIVE), path)
+    assert verified.problems == offline.problems == []
+    assert verified.outcome != offline.outcome
+    assert verified.summary != offline.summary
+
+
+def test_provenance_compare_mode_fails_when_named_copy_unreadable(tmp_path):
+    # "Unreadable here" is a FAILURE for a compare-mode claim, not a licence
+    # to skip; an offline context has to be claimed, not inferred.
+    path, registry = _state(tmp_path)
+    res = v.check_registry_provenance(registry, tmp_path / "gone.json")
+    assert res.outcome == v.PROV_FAILED
+    assert "does not exist" in res.problems[0]
+
+
+def test_provenance_compare_mode_flags_forged_status(tmp_path):
+    path, registry = _state(tmp_path)
+    registry["sources"]["airi_navigator"]["status"] = "ok"
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_FAILED
+    assert any("airi_navigator.status is 'ok'" in p for p in res.problems)
+
+
+def test_provenance_compare_mode_flags_backdated_last_success(tmp_path):
+    path, registry = _state(tmp_path)
+    registry["sources"]["oecd_aim"]["last_success"] = "2026-07-26"
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_FAILED
+    assert any("oecd_aim.last_success" in p for p in res.problems)
+
+
+def test_provenance_compare_mode_flags_unregistered_source(tmp_path):
+    # A fifth source appearing in the workflow without being registered.
+    path, registry = _state(tmp_path)
+    state = json.loads(path.read_text(encoding="utf-8"))
+    state["new_feed"] = {"status": "ok", "last_success": "2026-07-12"}
+    path.write_text(json.dumps(state), encoding="utf-8")
+    res = v.check_registry_provenance(registry, path)
+    assert res.outcome == v.PROV_FAILED
+    assert any("source keys" in p and "new_feed" in p for p in res.problems)
+
+
+def test_provenance_contexts_match_the_schema_enum():
+    # The allowlist is enforced in two places; this is what stops them
+    # drifting. Widening one without the other is the failure mode.
+    schema = json.loads(
+        (ROOT / "schema" / "source_freshness.schema.json").read_text(encoding="utf-8")
+    )
+    enum = schema["properties"]["observed_from"]["enum"]
+    assert sorted(enum) == sorted(v.PROVENANCE_CONTEXTS)
+
+
+def test_provenance_every_context_declares_what_it_means_and_does():
+    # An enumerated escape hatch is only better than a free-text one if each
+    # entry carries its reason. Empty prose here would re-create the defect.
+    for claim, ctx in v.PROVENANCE_CONTEXTS.items():
+        assert ctx["mode"] in ("compare", "not-comparable"), claim
+        assert ctx["means"].strip() and ctx["checker"].strip(), claim
+
+
+def test_provenance_shipped_registry_is_verified_against_the_copy_it_names():
+    # The registry as it actually ships: not merely well-formed, but verified.
+    registry = json.loads(
+        (ROOT / "data" / "source_freshness.json").read_text(encoding="utf-8")
+    )
+    res = v.check_registry_provenance(registry, ROOT / v.IN_REPO_STATE_REL)
+    assert res.outcome == v.PROV_VERIFIED, res.problems
+
+
+def test_provenance_printed_summaries_are_ascii(tmp_path):
+    # validate.py runs in the build path, and `make build` output lands on
+    # consoles that are not always UTF-8. Every summary must survive them.
+    path, registry = _state(tmp_path)
+    for claimed in [v.PROVENANCE_IN_REPO, v.PROVENANCE_AUTHORITATIVE, "nonsense"]:
+        res = v.check_registry_provenance(dict(registry, observed_from=claimed), path)
+        res.summary.encode("ascii")
+        for p in res.problems:
+            p.encode("ascii")

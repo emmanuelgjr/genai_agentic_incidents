@@ -18,7 +18,12 @@
     },
     "observed_from": {
       "type": "string",
-      "description": "Which copy of ingest/_state/source_health.json the values below were reconciled against, named precisely enough to judge their strength — e.g. `main:ingest/_state/source_health.json` (stale by design per D5; the weaker provenance) vs `refresh-state:ingest/_state/source_health.json` (authoritative). Stated because the two can legitimately disagree and a reader must be able to tell which one they are holding."
+      "enum": [
+        "main:ingest/_state/source_health.json",
+        "refresh-state:ingest/_state/source_health.json"
+      ],
+      "description": "Which copy of ingest/_state/source_health.json the values below were reconciled against, named precisely enough to judge their strength: `main:ingest/_state/source_health.json` (stale by design per D5; the weaker provenance, and the only copy a build can read — so it is compared in full) vs `refresh-state:ingest/_state/source_health.json` (authoritative, and absent from a main checkout — so its values are reported NOT COMPARABLE here, never verified). Stated because the two can legitimately disagree and a reader must be able to tell which one they are holding. CLOSED VOCABULARY, on purpose: this is not free text. The enum mirrors `PROVENANCE_CONTEXTS` in scripts/validate.py, where each value's checking behaviour is enumerated with its reason, and tests/test_validate.py fails if the two drift. Free text made the escape hatch a one-line edit — any unrecognised value silently deleted the comparison and returned zero problems, so `checked and matched` and `not checked at all` were indistinguishable. An unrecognised value now fails twice: here on shape, and in the checker.",
+      "$comment": "Adding a legitimate context means editing three places in one PR: this enum, PROVENANCE_CONTEXTS in scripts/validate.py (with what the context means and what the checker does for it), and the Source freshness section of docs/DATA_DICTIONARY.md. Never widen this to a pattern or back to a bare string — the closed set IS the check."
     },
     "coverage": {
       "type": "object",
