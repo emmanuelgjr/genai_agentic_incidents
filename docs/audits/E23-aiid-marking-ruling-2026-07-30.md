@@ -46,16 +46,38 @@ outcome sound; what follows is the corrected text.
 asymmetry with AIAAIC is JUSTIFIED — but stated with a (3)-style tripwire
 for a second, currently-dormant population that does not ship today.**
 
-This is not a coin toss resolved cautiously in the project's favor. Two
-independent legal reasons — one turning on U.S. copyright law's categorical
-short-phrase exclusion, one turning on the exact UK/EU database-right
-maker-qualification gate E13 §4.1 already built for this project's own
-qualification — both point the same way, for the same underlying fact:
-**AIID's maker is a U.S.-situated entity, not a UK/EU one.** That single
-fact is why AIID and AIAAIC are not "the same posture,"
-despite AIID's license being the confirmed one and AIAAIC's being open.
-`NOTICE-DATA` and `.reuse/dep5` are wrong to describe them as parallel, and
-must stop (see "What NOTICE-DATA / .reuse/dep5 owe," below).
+This is not a coin toss resolved cautiously in the project's favor — and
+the two layers below are **not** two redundant restatements of the same
+conclusion. They close two structurally separate routes CC BY-SA offers to
+ShareAlike, and **both must hold** for this outcome to stand.
+
+- **Layer 2 (database right) forecloses only the database-right route.**
+  §4(a)/(b)/(c) operate, by §4's own opening words, only *"where the
+  Licensor holds Sui Generis Database Rights in Licensed Material."*
+- **Layer 1 (copyright) forecloses the other, independent route, and this
+  outcome does not survive without it.** §2(a)(1) grants Copyright and
+  Similar Rights, with §3(a) attribution and §3(b) ShareAlike attaching to
+  the exercise of that grant — a route that **never passes through §4 at
+  all**. If Layer 1 fell, reproducing AIID's titles verbatim on the
+  ~1,463-row shipped population would be an exercise of Licensed Rights
+  under §2(a)(1), §3(b) ShareAlike would become live over those rows, and
+  the marker question **reopens as (1) or (3), not (2)** — Layer 2 alone
+  cannot substitute. Neither can attribution (§4 below): §3(a) and §3(b)
+  are separate, independently-triggered conditions, and satisfying one
+  never discharges the other, the same distinction E21 §5 drew for OECD.
+
+Both layers turn on the same underlying fact: **AIID's maker is a
+U.S.-situated entity, not a UK/EU one.** That single fact is why AIID and
+AIAAIC are not "the same posture," despite AIID's license being the
+confirmed one and AIAAIC's being open. **Empirically, this holds under
+every measurable definition of "an AIID row," not just the narrowest one:**
+E23 §4 measures the marker's presence against the union of four
+independent AIID-identifying signals (tag, `aiid_id` field, `AIID-<n>`
+source-ID, and `incidentdatabase.ai` reference URL) — **0 of 1,466 rows**
+carry it under the union, not merely 0 of the 1,464 rows the narrowest
+(tags-only) signal alone would count. `NOTICE-DATA` and `.reuse/dep5` are
+wrong to describe AIID and AIAAIC as parallel, and must stop (see "What
+NOTICE-DATA / .reuse/dep5 owe," below).
 
 A second population — 63 hand-curated rows in `ingest/aiid_incidents.json`
 plus 1,457 AIRI-Navigator rows sharing AIID's `AIID-<n>` source-ID
@@ -221,6 +243,27 @@ not need to be, that AIID's content is less editorial than AIAAIC's; on the
 measurement above it plausibly is not. The two retained-headline situations
 are treated differently for a real, stated jurisdictional reason, not an
 unexplained split, and that reason holds on the situs finding by itself.
+
+**A residual worth stating rather than leaving for a reader to discover.**
+Layer 1's strength is only as strong as the situs method it rests on — and
+E13 itself declined to certify that method: *"the analytical case for UK/EU
+protection above is license-auditor's own reading, offered for counsel's
+use, not a finding this audit certifies as settled"* (E13, §5.1 item 8's
+closing note). **The same uncertified method, applied to AIAAIC, produced
+"go to counsel"; applied to AIID here, it produces "resolved in-house, no
+marker."** That asymmetry is defensible, not opportunistic — but only
+because of a fact about the two *destination* regimes the method points at,
+not because the method was applied more or less rigorously in one
+direction. Applied to AIAAIC, the method selects UK/EU law, a regime with
+**no categorical short-phrase exclusion** — leaving a genuinely
+fact-intensive, case-by-case judgment that is correctly routed to counsel.
+Applied to AIID, the same method selects U.S. law, a regime with a
+**bright-line categorical rule** (Circular 33) — leaving nothing
+case-by-case to judge. A categorical exclusion disposes of a question a
+case-by-case test cannot, and that difference in the *destination law*, not
+a difference in how the method was pointed, is why the two dispositions
+differ. Stated here so a reader who checks E13 finds the explanation before
+the apparent inconsistency, not after.
 
 ---
 
@@ -428,7 +471,12 @@ Both currently state (verified by direct read, 2026-07-30):
 
 **Both sentences are now false and must be replaced, not merely softened.**
 They are owed a statement that: (1) AIID's content-licensing question is
-**resolved**, not open, for the population that ships; (2) the reason it
+**resolved**, not open, for the population that ships — empirically, the
+marker is absent under every measurable definition of "an AIID row," not
+just the narrowest one: **0 of 1,466** rows carry it, counting the union of
+tag, `aiid_id` field, `AIID-<n>` source-ID, and `incidentdatabase.ai`
+reference-URL signals (E23 §4), not merely 0 of the 1,464-row tags-only
+count; (2) the reason it
 resolves favorably is AIID's maker being U.S.-situated (Circular 33's
 categorical short-phrase exclusion; no UK/EU database-right qualification)
 — the *opposite* posture from AIAAIC's still-open UK-situated question, not
@@ -468,11 +516,26 @@ unaffected by this ruling — I have not touched that).
   more decisive than the "confirmed vs. open license" asymmetry the brief
   centered on. The brief's framing ("why is the direction odd — the
   confirmed license carries no marker, the open one carries 1,517")
-  dissolves once the domicile fact is in hand: a clearly-worded CC-BY-SA
-  grant over content that carries no underlying copyright or database right
-  in the first place confers nothing to worry about, however clear the
-  grant's wording is. The two sources were never in the same posture; nobody
-  had checked the fact that would have shown that before now.
+  dissolves once the domicile fact is in hand — but the reason is more
+  specific than "a clear grant over unprotected content confers nothing to
+  worry about": CC BY-SA offers **two separate routes** to ShareAlike (the
+  Outcome section above), and it is the domicile fact routed through
+  **both** — Layer 1 (copyright, via situs) and Layer 2 (database right,
+  via maker-qualification) — that closes them, not one finding doing double
+  duty. The two sources were never in the same posture; nobody had checked
+  the fact that would have shown that before now.
+- **CC BY-SA's two routes to ShareAlike are structurally independent, and
+  this document originally under-stated that** — see the Outcome section's
+  correction. Database-right analysis (Layer 2) and copyright analysis
+  (Layer 1) are not two ways of reaching the same safety margin; they are
+  two separate gates that both happen to be closed here. A reader auditing
+  this ruling should not assume either layer alone would have been enough.
+- **The situs method itself is E13's own uncertified reading, applied here
+  to a second source with an opposite result — flagged explicitly in §2
+  rather than left for a reader to notice on their own.** The same method
+  that sends AIAAIC's headline question to counsel resolves AIID's
+  in-house, and the reason is a fact about which regime the method points
+  at (a categorical rule vs. a case-by-case one), not inconsistent rigor.
 - **The ruling for the shipped population and the ruling for the two
   non-shipped populations are not the same ruling, and I have been
   deliberate about not letting the first quietly cover the second** — see
