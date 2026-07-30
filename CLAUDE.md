@@ -100,7 +100,24 @@ never put model calls in the deterministic build path.
    the instance and dispatch a FRESH specialist with a self-sufficient brief:
    a clean context executing a clear brief beats a saturated one being
    reminded. Re-prompt at most once, then replace.
-4. **The artifact is evidence; the verdict is testimony (added 2026-07-30).**
+4. **Specs and audits are RECORDS first, sources never — supersede, don't
+   rewrite (added 2026-07-30).** When a dated artifact (a spec, an audit, a
+   ruling, an exit checklist) is overtaken by later work, **preserve the
+   original text, add a dated update naming exactly which half changed, and
+   mark it do-not-regenerate.** Never edit the original claim to make it
+   current: the paragraph is the record of what was true when written *and* of
+   the finding that produced the correction, and rewriting it destroys that
+   record to fix a tense. **The do-not-regenerate marker is the load-bearing
+   part** — a dated spec is exactly the kind of artifact a future pass mistakes
+   for a source, which is how retired text gets reintroduced. Contrast with
+   *live* surfaces (`README`, `NOTICE-DATA`, `.reuse/dep5`, `SOURCE_LICENSES`
+   cells, a release notice): those state current state and **are corrected in
+   place**, because a notice that hedges its own currency is not a notice. The
+   test is what the artifact is *for*: describing a moment, or describing now.
+   Origin: schema-architect used this on the WS0-T4 audit when its OECD half
+   was overtaken; applied again 2026-07-30 to `docs/specs/WS0-T3-rescoped-2026-07-18.md`
+   after E23 retired a sentence it quoted as current.
+5. **The artifact is evidence; the verdict is testimony (added 2026-07-30).**
    A gate's PASS/BOUNCE **verdict text lands in the board commit**, not only
    in the session transcript. Record the verdict, its defects/advisories, and
    the evidence the reviewer says it measured — the foreman is the board's
