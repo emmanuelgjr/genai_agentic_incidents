@@ -20,3 +20,33 @@ def test_build_emits_jsonl_and_card(tmp_path):
     assert card.startswith("---")
     assert "license: cc-by-4.0" in card
     assert "configs:" in card and "incidents.jsonl" in card
+
+
+def test_card_defines_source_freshness_because_the_jsonl_ships_it(tmp_path):
+    """Defined where it is shipped. The JSONL is a verbatim projection of
+    data/incidents.json, so a `source_freshness` marker reaches every HF
+    consumer; a card silent about a field it ships hands them a freshness
+    signal with no definition. Keyed to the DATA — if no row carries the
+    marker there is nothing to define, and this test says so rather than
+    demanding boilerplate.
+    """
+    n, jsonl = hf.build(tmp_path)
+    # split("\n"), not splitlines(): the JSONL contract is newline-delimited,
+    # and ensure_ascii=False leaves raw U+0085 (NEL) in a handful of
+    # `references[].title` values, which splitlines() would treat as line
+    # breaks and shred those records.
+    lines = [l for l in jsonl.read_text(encoding="utf-8").split("\n") if l]
+    marked = [r for r in map(json.loads, lines) if "source_freshness" in r]
+    card = (tmp_path / "README.md").read_text(encoding="utf-8")
+    if not marked:
+        assert True  # nothing shipped, nothing to document
+        return
+    assert "`source_freshness`" in card
+    # The three things the definition must contain, per the user's ruling:
+    # what the field means, that `active` is emitted-not-live, and where the
+    # as-of date comes from.
+    assert "stopped refreshing" in card
+    assert "emitted on the latest build" in card
+    assert "`as_of`" in card and "data/source_freshness.json" in card
+    # Cited, not duplicated: the dictionary section stays authoritative.
+    assert "DATA_DICTIONARY.md#source-freshness" in card

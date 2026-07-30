@@ -96,6 +96,27 @@ Key fields per record (full reference in the data dictionary):
 - `references` — source URLs · `source_ids` — upstream provenance
 - `quality_tier` — `curated` / `reviewed` / `auto` (filter by vetting level)
 - `corpus` — `security` or `ai-harm`
+- `source_freshness` — present only on rows whose upstream source has stopped refreshing (see below)
+
+### Source freshness
+
+Some rows carry a `source_freshness` object (`{{status, as_of, sources}}`). It says that
+the **upstream source that supplied the row has stopped refreshing** — not that the row
+was withdrawn, superseded, or is wrong. The two are independent facts, and the field
+exists because conflating them is how a dataset comes to mislead without any single
+value being false: this corpus is rebuilt from committed ingest snapshots, so a row keeps
+being emitted long after its upstream download disappears. In particular
+**`source_status: "active"` means *emitted on the latest build*, never *re-checked
+against a live source*.** `sources` names the stale sources by their key in the
+repository's published freshness registry (`data/source_freshness.json`), and `as_of` is
+the earliest `last_success` date recorded there for those sources — a date taken from the
+registry, **not** the build date. Everything that source contributed to the row,
+including any taxonomy or risk-tier tags it supplied, is current through `as_of` and no
+further. Absence of the field means no *tracked* source feeding the row is known to be
+stale — not that the row has been verified current. Full definition, the registry's own
+fields, and what the registry does and does not cover:
+[`docs/DATA_DICTIONARY.md` → Source freshness](https://github.com/emmanuelgjr/genai_incidents/blob/main/docs/DATA_DICTIONARY.md#source-freshness),
+which is authoritative; this is a summary of it.
 
 ## Sources & provenance
 
