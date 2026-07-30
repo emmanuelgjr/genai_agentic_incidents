@@ -27,11 +27,14 @@ import re
 import subprocess
 import sys
 import time
+import urllib.error
 import urllib.parse
-import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from ingest.common import DEFAULT_MIN_INTERVAL, fetch_once  # noqa: E402
+
 INGEST = ROOT / "ingest"
 CACHE_NVD = INGEST / "_cache" / "nvd"
 CACHE_GHSA = INGEST / "_cache" / "ghsa"
@@ -309,16 +312,35 @@ def slugify(s: str) -> str:
 
 
 # ----------------------------------------------------------------------------
-# HTTP helpers
+# HTTP helpers -- both route through ingest.common.fetch_once (WS0-T4): it
+# supplies the identifying User-Agent (a caller-supplied one is stripped, so
+# the "ai-incidents-ingest/1.0" string this file used to hardcode no longer
+# reaches the wire), the robots.txt check, and the per-host rate limiter.
+# min_interval lets a caller reuse ITS OWN documented cadence (NVD's, below)
+# instead of ingest.common's generic default.
 # ----------------------------------------------------------------------------
-def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base: float = 6.0):
+def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base: float = 6.0,
+             min_interval: float = DEFAULT_MIN_INTERVAL):
     last_err = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(url, headers=headers or {"User-Agent": "ai-incidents-ingest/1.0"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return json.load(r)
-        except Exception as e:  # noqa: BLE001
+            body, _ = fetch_once(url, headers=headers, timeout=60, min_interval=min_interval)
+            return json.loads(body)
+        except PermissionError:
+            # A robots.txt refusal (WS0-T4 bounce #1, D1). PermissionError
+            # is an OSError subclass, so without this clause ahead of the
+            # broad except below it would be retried with backoff and
+            # re-raised as a generic RuntimeError -- masking a deliberate
+            # policy block as ordinary flakiness, and (for the caller in
+            # fetch_nvd_keyword()) letting the retry loop exit "normally"
+            # into cache_file.write_text(all_items) with an empty result,
+            # permanently caching a false "0 CVEs for this keyword" that a
+            # later run would trust. Propagate immediately and unwrapped
+            # instead, so it is NOT caught by fetch_nvd_keyword()'s
+            # `except RuntimeError` and the cache write is skipped entirely.
+            raise
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+                ConnectionError, OSError, json.JSONDecodeError) as e:
             last_err = e
             wait = sleep_base * (attempt + 1)
             print(f"  [warn] GET {url[:120]}... failed ({e}); retry in {wait:.0f}s", flush=True)
@@ -326,19 +348,23 @@ def http_get(url: str, headers: dict | None = None, retries: int = 4, sleep_base
     raise RuntimeError(f"GET {url} failed after {retries} attempts: {last_err}")
 
 
-def http_post_json(url: str, payload: dict, headers: dict | None = None, retries: int = 3):
+def http_post_json(url: str, payload: dict, headers: dict | None = None, retries: int = 3,
+                    min_interval: float = DEFAULT_MIN_INTERVAL):
     data = json.dumps(payload).encode("utf-8")
     last_err = None
     for attempt in range(retries):
         try:
-            req = urllib.request.Request(
-                url, data=data,
-                headers={"Content-Type": "application/json",
-                         "User-Agent": "ai-incidents-ingest/1.0", **(headers or {})},
+            body, _ = fetch_once(
+                url, method="POST", data=data,
+                headers={"Content-Type": "application/json", **(headers or {})},
+                timeout=60, min_interval=min_interval,
             )
-            with urllib.request.urlopen(req, timeout=60) as r:
-                return json.load(r)
-        except Exception as e:  # noqa: BLE001
+            return json.loads(body)
+        except PermissionError:
+            # See http_get()'s identical clause above (WS0-T4 bounce #1, D1).
+            raise
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError,
+                ConnectionError, OSError, json.JSONDecodeError) as e:
             last_err = e
             time.sleep(4 * (attempt + 1))
     raise RuntimeError(f"POST {url} failed: {last_err}")
@@ -368,7 +394,7 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
             pass
 
     print(f"  [nvd]   {keyword}: querying...", flush=True)
-    headers = {"User-Agent": "ai-incidents-ingest/1.0"}
+    headers = {}
     if NVD_API_KEY:
         headers["apiKey"] = NVD_API_KEY
     all_items: list[dict] = []
@@ -381,7 +407,16 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
         }
         url = f"{NVD_URL}?{urllib.parse.urlencode(params)}"
         try:
-            data = http_get(url, headers=headers)
+            # min_interval=NVD_SLEEP: NVD's own documented rate-limit contract
+            # (docs/SOURCE_LICENSES.md Section 2.2) is more precise than
+            # ingest.common's generic default, so it's passed through
+            # explicitly and enforced by the shared per-host rate limiter.
+            # This replaces the old ad hoc time.sleep(NVD_SLEEP) calls (both
+            # the inter-page one and the inter-keyword one below, both now
+            # removed) with a single enforcement point that covers both
+            # uniformly -- same effective pacing, one fewer place it's
+            # implemented.
+            data = http_get(url, headers=headers, min_interval=NVD_SLEEP)
         except RuntimeError as e:
             print(f"  [warn] giving up on {keyword}: {e}", flush=True)
             break
@@ -391,11 +426,7 @@ def fetch_nvd_keyword(keyword: str) -> list[dict]:
         start += NVD_PAGE
         if start >= total or not vulns:
             break
-        time.sleep(NVD_SLEEP)
 
-    # Pace between keyword queries too — the limit is a rolling 30s window
-    # across all requests, not per keyword.
-    time.sleep(NVD_SLEEP)
     cache_file.write_text(json.dumps(all_items), encoding="utf-8")
     print(f"  [nvd]   {keyword}: {len(all_items)} CVEs cached", flush=True)
     return all_items
@@ -910,6 +941,21 @@ def fetch_osv() -> list[dict]:
         payload = {"package": {"name": name, "ecosystem": eco}}
         try:
             data = http_post_json("https://api.osv.dev/v1/query", payload)
+        except PermissionError:
+            # A robots.txt refusal against api.osv.dev applies to every
+            # remaining target too -- they all hit the same host, same as
+            # the NVD per-keyword case this mirrors (WS0-T4 re-gate, A1).
+            # Propagate immediately and unwrapped rather than swallow-and-
+            # continue through the other ~50 targets: the caller (main())
+            # catches this to abort just the OSV phase. Choosing to
+            # re-raise here (rather than `break` + let the write below
+            # run) is deliberate: it skips cache_file.write_text() below
+            # entirely, so a block mid-loop can never write a
+            # partial-but-treated-as-complete result to the ONE shared
+            # cache file every future run reads -- the same
+            # trust-cache/swallow/write-unconditionally shape that
+            # poisoned fetch_nvd_keyword()'s cache, one function away.
+            raise
         except Exception as e:  # noqa: BLE001
             print(f"  [warn] osv {eco}/{name}: {e}", flush=True)
             continue
@@ -921,7 +967,11 @@ def fetch_osv() -> list[dict]:
             seen.add(vid)
             v["_pkg"] = {"name": name, "ecosystem": eco}
             all_vulns.append(v)
-        time.sleep(0.3)
+        # No explicit sleep here (removed a hardcoded time.sleep(0.3)):
+        # api.osv.dev has no documented rate-limit contract of its own
+        # (docs/SOURCE_LICENSES.md Section 2.4), so http_post_json's calls
+        # above are already paced by ingest.common's generic
+        # DEFAULT_MIN_INTERVAL -- a single enforcement point instead of two.
 
     cache_file.write_text(json.dumps(all_vulns), encoding="utf-8")
     print(f"  [osv]   {len(all_vulns)} unique vulns", flush=True)
@@ -1032,6 +1082,20 @@ def main():
     for kw in NVD_KEYWORDS:
         try:
             items = fetch_nvd_keyword(kw)
+        except PermissionError as e:
+            # A robots.txt refusal against services.nvd.nist.gov applies to
+            # every remaining keyword too -- they all hit the same host.
+            # Unlike a per-keyword network hiccup, silently `continue`-ing
+            # here would just repeat the identical refusal N more times and
+            # let this phase finish "successfully" with 0 results, burying
+            # the real cause in N near-identical print lines (WS0-T4 bounce
+            # #1, R4: disclosed in docs/INGESTION_CONDUCT.md -- this script
+            # does NOT exit non-zero for this case, so it is loud in the
+            # console but not in `cve-enrich.yml`'s step outcome). Abort the
+            # whole NVD phase with one clear message instead; GHSA/OSV
+            # (different hosts, unaffected) still run below.
+            print(f"  [error] NVD phase aborted -- {e}", flush=True)
+            break
         except Exception as e:  # noqa: BLE001
             print(f"  [error] {kw}: {e}", flush=True)
             continue
@@ -1078,7 +1142,16 @@ def main():
         print(f"  -> {kept_ghsa} new GHSA/{classification} entries added", flush=True)
 
     print("=== Phase 3: OSV ecosystem scan ===", flush=True)
-    osv_vulns = fetch_osv()
+    try:
+        osv_vulns = fetch_osv()
+    except PermissionError as e:
+        # Mirrors the NVD-phase abort above (same rationale: a robots
+        # refusal against api.osv.dev blocks every OSV_TARGETS entry
+        # identically, so this phase's results for this run are simply
+        # unavailable, not "zero" -- the earlier Phase 1/2 records above
+        # are kept as-is). WS0-T4 re-gate, A1.
+        print(f"  [error] OSV phase aborted -- {e}", flush=True)
+        osv_vulns = []
     kept_osv = 0
     for v in osv_vulns:
         rec = osv_to_record(v)
@@ -1101,8 +1174,22 @@ def main():
     out = sorted(records.values(),
                  key=lambda r: (r.get("year") or 0, r.get("date") or ""),
                  reverse=True)
-    OUT_FILE.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"\nWrote {len(out)} entries -> {OUT_FILE}", flush=True)
+    if not out:
+        # Refuse to overwrite the committed, ~22.6 MB OUT_FILE with an
+        # empty result (WS0-T4 re-gate, A6). A fully-blocked run (e.g. all
+        # three phases hit a robots refusal or otherwise yield nothing)
+        # would otherwise truncate a committed artifact -- the same file
+        # a probe accident briefly clobbered during this task's own
+        # development (docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md
+        # §14b), reached here by a different route: fail-closed blocking
+        # every phase instead of a stray script write.
+        print(
+            f"\n[error] 0 entries collected across all phases -- refusing to "
+            f"overwrite {OUT_FILE} with an empty result", flush=True,
+        )
+    else:
+        OUT_FILE.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"\nWrote {len(out)} entries -> {OUT_FILE}", flush=True)
 
     # Report
     year_counts: dict[int, int] = {}

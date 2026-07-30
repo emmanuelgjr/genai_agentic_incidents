@@ -69,3 +69,24 @@ never put model calls in the deterministic build path.
    fields it did not declare fails the gate. (Origin: the WS0-T3 field-cut
    silently relabelled 372 AIAAIC entries through description→classifier
    coupling — docs/audits/WS0-T3-cascade-2026-07-18.md.)
+3. **Idle is not done (added 2026-07-29).** An agent's completion claim is
+   verified by READING THE TREE — specifically, the presence of the
+   deliverable's distinguishing content (grep for vocabulary the task would
+   have introduced), not the absence of errors and not the agent's own
+   summary. **Idle summaries describing PRIOR deliverables are a known
+   failure shape** and read as completion if you don't check. Gates go idle
+   without sending the verdict; specialists go idle with the work unstarted
+   and the tree clean, which looks identical to "nothing broke." A verdict or
+   a deliverable that was never sent does not exist. Four occurrences across
+   three agents in a single session (2026-07-29: the conduct-half specialist
+   died with everything uncommitted and the suite red; the gate went idle
+   twice without its verdict and delivered only when asked directly; the
+   specialist then went idle mid-task with the D22 register unstarted) — that
+   is a rate, not a coincidence. **Corollary, the replace-vs-re-prompt
+   heuristic: repeated idle-without-progress LATE IN A LONG CONTEXT is a
+   REPLACE signal, not a re-prompt signal.** Late-context agents degrade
+   exactly this way — going idle mid-task and summarizing past work instead
+   of doing new work. When remaining scope is small and well-defined, kill
+   the instance and dispatch a FRESH specialist with a self-sufficient brief:
+   a clean context executing a clear brief beats a saturated one being
+   reminded. Re-prompt at most once, then replace.

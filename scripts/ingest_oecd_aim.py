@@ -24,20 +24,18 @@ import os
 import re
 import sys
 import time
-import urllib.error
-import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from ingest_utils import robust_fetch
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from ingest.common import fetch_once, robust_fetch  # noqa: E402
+
 INGEST = ROOT / "ingest"
 CACHE = INGEST / "_cache" / "oecd_aim"
 CACHE.mkdir(parents=True, exist_ok=True)
 
 SITEMAP_URL = "https://oecd.ai/sitemaps/incident-monitor-sitemap.xml"
-USER_AGENT = "Mozilla/5.0 (genai_incidents/1.0; +https://github.com/emmanuelgjr)"
 
 # Default page cap. Override with OECD_AIM_LIMIT=N (0 = unlimited).
 DEFAULT_LIMIT = 3000
@@ -102,10 +100,8 @@ KEYWORD_TO_OWASP: list[tuple[str, list[str], list[str], str]] = [
 
 def load_sitemap() -> list[str]:
     print(f"[aim] fetching sitemap {SITEMAP_URL}")
-    req = urllib.request.Request(SITEMAP_URL, headers={"User-Agent": USER_AGENT})
-    text = urllib.request.urlopen(req, timeout=30).read().decode(
-        "utf-8", errors="replace"
-    )
+    body, _ = fetch_once(SITEMAP_URL, timeout=30)
+    text = body.decode("utf-8", errors="replace")
     urls = re.findall(r"<loc>([^<]+)</loc>", text)
     # Only /en/incidents/<id> pages, not the landing /en/incidents
     urls = [u for u in urls if re.match(r"https://oecd\.ai/en/incidents/[^/]+$", u)]

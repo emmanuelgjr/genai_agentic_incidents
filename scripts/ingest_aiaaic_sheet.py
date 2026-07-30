@@ -22,11 +22,11 @@ import io
 import json
 import re
 import sys
-import urllib.request
 from pathlib import Path
 from urllib.parse import urlparse
 
-from ingest_utils import conditional_fetch
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from ingest.common import conditional_fetch  # noqa: E402
 
 
 def _is_aiaaic_host(url: str) -> bool:
