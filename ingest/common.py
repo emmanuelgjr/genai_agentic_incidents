@@ -1,6 +1,7 @@
-"""ingest/common.py -- the sole network chokepoint for this repo's ingest
-pipeline (invariant 5, MASTER_IMPROVEMENT_PLAN.md: "All network fetching
-goes through ingest/common.py", active as of WS0-T4).
+"""ingest/common.py -- the sole HTTP(S) chokepoint for this repo's ingest
+pipeline (invariant 5, MASTER_IMPROVEMENT_PLAN.md: "All HTTP(S) fetching
+goes through ingest/common.py", active as of WS0-T4; D22-amended from "all
+network fetching" -- non-HTTP egress is registered separately, not here).
 
 Every live HTTP(S) fetch any ``scripts/ingest_*.py`` / ``scrape_*.py``
 script performs must route through a function in this module. For every

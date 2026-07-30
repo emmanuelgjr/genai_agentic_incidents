@@ -1,21 +1,30 @@
-"""Enforces invariant 5 (MASTER_IMPROVEMENT_PLAN.md: "All network fetching
-goes through ingest/common.py", active as of WS0-T4) and the WS0-T4 Accept
-criterion ("grep shows no requests./urllib/httpx usage outside
-ingest/common.py").
+"""Enforces invariant 5 (MASTER_IMPROVEMENT_PLAN.md:45: "All HTTP(S)
+fetching goes through ingest/common.py" -- amended by D22, 2026-07-29, to
+this HTTP(S)-scoped wording; non-HTTP egress is tracked separately in
+docs/INGESTION_CONDUCT.md's register, not by this test) and the WS0-T4
+Accept criterion's clause 1 (MASTER_IMPROVEMENT_PLAN.md:83, retargeted by
+D22: "The fetch surface -- urlopen, requests.*, httpx.* and the
+equivalents enumerated in the enforcer -- appears nowhere outside
+ingest/common.py, with scripts/scrape_aiid.py as the single allowlisted
+inert exception... Enforcer of record: tests/test_network_chokepoint.py").
 
-The plan's Accept criterion, run as a literal substring grep, also matches
-non-network stdlib usage that legitimately lives outside ingest/common.py --
-``urllib.parse.urlencode()``, ``urllib.error.HTTPError`` in an ``except``
-clause, and so on (see the classified inventory in
+The plan's Accept criterion originally read "grep shows no requests./
+urllib/httpx usage outside ingest/common.py" -- run as a literal substring
+grep, that also matches non-network stdlib usage that legitimately lives
+outside ingest/common.py -- ``urllib.parse.urlencode()``,
+``urllib.error.HTTPError`` in an ``except`` clause, and so on (see the
+classified inventory in
 docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md for the full,
-exhaustive list this project's own re-run of that grep produces today). What
-the invariant actually cares about is narrower and more precise: the FETCH
+exhaustive list this project's own re-run of that grep produces today). That
+wording is superseded, kept only for this historical context; what the
+invariant actually cares about is narrower and more precise: the FETCH
 SURFACE -- the specific calls that put a byte on the wire
 (``urlopen()``, ``requests.get/post/put/delete/patch/head/options/request()``,
 ``requests.Session()``, the ``httpx`` equivalents) -- must have exactly one
 home. This test enforces THAT property directly, by parsing each production
 ingest script's AST and resolving call targets through their own import
-bindings, rather than re-running the literal (and noisier) grep.
+bindings, rather than re-running the literal (and noisier) grep -- which is
+why the retargeted clause 1 names this test as its enforcer of record.
 
 Scope: ``scripts/*.py`` and ``ingest/*.py`` -- the plan's own named file list
 for this task (MASTER_IMPROVEMENT_PLAN.md WS0-T4 "Files:" line) plus the
