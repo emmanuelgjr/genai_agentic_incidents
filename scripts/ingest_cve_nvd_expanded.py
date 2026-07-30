@@ -941,6 +941,21 @@ def fetch_osv() -> list[dict]:
         payload = {"package": {"name": name, "ecosystem": eco}}
         try:
             data = http_post_json("https://api.osv.dev/v1/query", payload)
+        except PermissionError:
+            # A robots.txt refusal against api.osv.dev applies to every
+            # remaining target too -- they all hit the same host, same as
+            # the NVD per-keyword case this mirrors (WS0-T4 re-gate, A1).
+            # Propagate immediately and unwrapped rather than swallow-and-
+            # continue through the other ~50 targets: the caller (main())
+            # catches this to abort just the OSV phase. Choosing to
+            # re-raise here (rather than `break` + let the write below
+            # run) is deliberate: it skips cache_file.write_text() below
+            # entirely, so a block mid-loop can never write a
+            # partial-but-treated-as-complete result to the ONE shared
+            # cache file every future run reads -- the same
+            # trust-cache/swallow/write-unconditionally shape that
+            # poisoned fetch_nvd_keyword()'s cache, one function away.
+            raise
         except Exception as e:  # noqa: BLE001
             print(f"  [warn] osv {eco}/{name}: {e}", flush=True)
             continue
@@ -1127,7 +1142,16 @@ def main():
         print(f"  -> {kept_ghsa} new GHSA/{classification} entries added", flush=True)
 
     print("=== Phase 3: OSV ecosystem scan ===", flush=True)
-    osv_vulns = fetch_osv()
+    try:
+        osv_vulns = fetch_osv()
+    except PermissionError as e:
+        # Mirrors the NVD-phase abort above (same rationale: a robots
+        # refusal against api.osv.dev blocks every OSV_TARGETS entry
+        # identically, so this phase's results for this run are simply
+        # unavailable, not "zero" -- the earlier Phase 1/2 records above
+        # are kept as-is). WS0-T4 re-gate, A1.
+        print(f"  [error] OSV phase aborted -- {e}", flush=True)
+        osv_vulns = []
     kept_osv = 0
     for v in osv_vulns:
         rec = osv_to_record(v)
@@ -1150,8 +1174,22 @@ def main():
     out = sorted(records.values(),
                  key=lambda r: (r.get("year") or 0, r.get("date") or ""),
                  reverse=True)
-    OUT_FILE.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"\nWrote {len(out)} entries -> {OUT_FILE}", flush=True)
+    if not out:
+        # Refuse to overwrite the committed, ~22.6 MB OUT_FILE with an
+        # empty result (WS0-T4 re-gate, A6). A fully-blocked run (e.g. all
+        # three phases hit a robots refusal or otherwise yield nothing)
+        # would otherwise truncate a committed artifact -- the same file
+        # a probe accident briefly clobbered during this task's own
+        # development (docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md
+        # §14b), reached here by a different route: fail-closed blocking
+        # every phase instead of a stray script write.
+        print(
+            f"\n[error] 0 entries collected across all phases -- refusing to "
+            f"overwrite {OUT_FILE} with an empty result", flush=True,
+        )
+    else:
+        OUT_FILE.write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+        print(f"\nWrote {len(out)} entries -> {OUT_FILE}", flush=True)
 
     # Report
     year_counts: dict[int, int] = {}
