@@ -151,10 +151,7 @@ retry/backoff behavior, none of which this project's `ingest.common` could
 meaningfully improve on by wrapping it. There is no robots.txt-equivalent
 concept for an authenticated GraphQL API call made through its own vendor's
 tool — robots.txt governs unauthenticated crawling of publicly served
-pages, which this is not. `ingest_external.py`'s MITRE ATLAS ingestion
-(local `git clone`, per `docs/SOURCE_LICENSES.md` §3.1: "Scrape-permitted:
-N/A — local clone of a public repo") already establishes the same kind of
-precedent for a different non-HTTP-fetch access method.
+pages, which this is not.
 
 **Recommendation, not implemented here (scope bound):** if this project
 later wants `ingest.common` to also govern non-HTTP CLI-mediated network
@@ -164,6 +161,28 @@ addition to this one. Flagging it here so the foreman/user can decide
 whether the invariant's wording should be narrowed to say "HTTP(S)
 fetching" explicitly, closing this ambiguity rather than leaving it
 implicit.
+
+**CORRECTION (D22 re-gate, 2026-07-29):** the paragraph above originally
+also cited "`ingest_external.py`'s MITRE ATLAS ingestion (local `git
+clone`, per `docs/SOURCE_LICENSES.md` §3.1)" as an existing in-repo
+precedent for this same non-HTTP-fetch pattern. **On direct inspection for
+the non-HTTP egress register (`docs/INGESTION_CONDUCT.md`), this was
+wrong**: `ingest_external.py` imports only `csv`, `json`, `re`,
+`pathlib.Path`, `datetime.date` — no `subprocess`, no git-library import,
+nothing network-capable. A repo-wide grep for
+`subprocess\.|os\.system|os\.popen` across `scripts/*.py` returns exactly
+one hit (`ingest_cve_nvd_expanded.py:670`, this section's own subject); a
+grep for `git clone|git submodule|pygit2|dulwich|GitPython` across
+`scripts/*.py` and `.github/workflows/*.yml` returns zero hits anywhere.
+There is no script, `Makefile` target, or CI workflow step in this
+repository that clones the six repos `ingest_external.py` reads from
+`_external/` — populating that directory is an undocumented, manual,
+out-of-band maintainer step, not code. `docs/SOURCE_LICENSES.md` §3.1's
+"N/A — local clone of a public repo" line describes that same informal
+practice, not a script either. See `docs/INGESTION_CONDUCT.md`'s
+non-HTTP egress register, entry 2, for the full write-up — including why
+it's registered as a named gap rather than silently corrected here and
+left unlisted.
 
 ## 5. `robots_allowed()` live verdict transcript (2026-07-29)
 
@@ -522,24 +541,15 @@ indistinguishable from ordinary network flakiness. `ingest_cve_nvd_expanded.py`'
 `ingest_cve_nvd_expanded.py`). A robots refusal now propagates immediately
 and unwrapped, retaining its specific, clear message.
 
-**Followed downstream, empirically, not just reasoned about** — ran three
-scripted probes (mocking `fetch_once`/`urlopen` to raise `PermissionError`
-and observing what actually happens through the real call chains):
+**Followed downstream, empirically, not just reasoned about** — ran four
+scripted probes (mocking `fetch_once`/`urlopen`/`fetch_nvd_keyword` to raise
+`PermissionError` and observing what actually happens through the real,
+unmodified call chains, with all file output redirected to temp paths so
+no probe could touch a committed file):
 
 1. `robust_fetch()` now propagates `PermissionError` (not `RuntimeError`) —
    confirmed.
-2. `http_get()` now propagates `PermissionError` — confirmed. This closes a
-   SECOND bug the bounce report flagged as a disclosure item, as an
-   automatic consequence of the D1 fix: `fetch_nvd_keyword()`'s
-   `except RuntimeError as e: break` no longer catches the exception (it's
-   not a `RuntimeError`), so it propagates OUT of `fetch_nvd_keyword()`
-   entirely, **skipping** the unconditional `cache_file.write_text(all_items)`
-   line that used to run right after the old `break`. Confirmed empirically:
-   a mocked robots-refusal run left `cache_file.exists() == False` — no
-   poisoned empty-result cache gets written for a robots-blocked keyword
-   anymore. (This risk remains open for OTHER persistent failures that
-   still get wrapped as `RuntimeError` — e.g. a host down for all 4
-   retries — a separate, pre-existing issue out of this bounce's scope.)
+2. `http_get()` now propagates `PermissionError` — confirmed.
 3. `fetch_page()` (`ingest_oecd_aim.py`) now propagates `PermissionError`
    past its own `except RuntimeError as e:` swallow — confirmed. Inside
    `main()`'s `ThreadPoolExecutor`, `fut.result()` has no surrounding
@@ -547,25 +557,113 @@ and observing what actually happens through the real call chains):
    (non-zero exit) rather than silently skipping one page and continuing —
    see §18 (R4) for what this means operationally, verified against the
    actual GitHub Actions workflow rather than assumed.
+4. The NVD empty-cache-poisoning bug (below) and the `main()`-loop
+   absorption fix (below) — both re-derived at the same evidentiary depth
+   as D1-D3, per the user's direction that volunteered fixes touching data
+   integrity get the same standard as named defects, not a lighter pass.
 
-**A further, genuinely new finding, beyond what either D1 or R4 named**:
+### 14a. The NVD empty-cache-poisoning bug — before/after transcript
+
+This closes a SECOND bug the bounce report flagged as a disclosure item,
+as an automatic consequence of the D1 fix — but "automatic consequence"
+was asserted, not shown, in the original bounce report. Reproduced both
+sides directly:
+
+**BEFORE** — a minimal, faithful recreation of `http_get()`'s pre-D1
+except-clause shape (`except (OSError, ...)`, which catches
+`PermissionError` too) feeding `fetch_nvd_keyword()`'s original
+`except RuntimeError as e: break` / unconditional `cache_file.write_text()`
+structure — NOT the current (already-fixed) module re-run under a
+different name, an independent recreation of the OLD code shape:
+
+```
+  [warn] giving up: GET failed after retries: refusing to fetch: robots.txt disallows it
+OLD behavior: cache_file.exists() = True
+OLD behavior: cache_file contents = '[]'
+OLD behavior: a LATER run would now read this cache as '0 CVEs, already fetched' and never retry -- POISONED.
+```
+
+**AFTER** — the real, current, fixed `ingest_cve_nvd_expanded.fetch_nvd_keyword()`,
+with `fetch_once` mocked to raise `PermissionError` and `CACHE_NVD`
+redirected to a temp directory:
+
+```
+  [nvd]   new_test_keyword: querying...
+NEW behavior: exception raised = PermissionError('refusing to fetch: robots.txt disallows it')
+NEW behavior: cache_file.exists() = False
+NEW behavior: no poisoned cache written; a later run gets a fresh attempt.
+```
+
+**This risk remains open for OTHER persistent failures that still get
+wrapped as `RuntimeError`** — e.g. a host down for all 4 retries — a
+separate, pre-existing issue out of this bounce's scope; only the
+robots-refusal case is closed by this fix.
+
+### 14b. `main()`'s per-keyword swallow, one level above `fetch_nvd_keyword()` — before/after transcript
+
+A further, genuinely new finding beyond what either D1 or R4 named:
 `ingest_cve_nvd_expanded.py`'s `main()` wraps its per-keyword call to
 `fetch_nvd_keyword()` in `except Exception as e: print(...); continue` — a
 broader catch than `fetch_nvd_keyword()`'s own inner `except RuntimeError`.
-This DOES catch the now-propagating `PermissionError`, one level up, and
-the loop would otherwise continue silently trying every remaining NVD
-keyword against the same now-provably-blocked host, each failing
-identically, ending with the script exiting 0 and 0 NVD-phase results —
-correctly distinguishable in the log (each line now says "refusing to
-fetch... robots.txt disallows" instead of "GET ... failed after 4
-attempts"), but not surfaced as a script- or workflow-level failure signal
-at all. **Fixed**: added a specific `except PermissionError` branch in that
-loop that prints one clear "NVD phase aborted" message and `break`s out of
-the per-keyword loop entirely (instead of wastefully repeating an
-already-confirmed refusal N more times), while leaving the GHSA/OSV phases
-below — different hosts, unaffected — to run normally. This does NOT make
-the script exit non-zero for this case; see §18 for why that's disclosed
+This DOES catch the now-propagating `PermissionError` one level up.
+Reproduced both sides against a 5-keyword list, all raising
+`PermissionError` (simulating every keyword hitting the same
+robots-blocked host):
+
+**BEFORE** — the pre-fix loop shape (bare `except Exception: continue`,
+no `PermissionError`-specific branch), run against all 5 keywords:
+
+```
+-- OLD shape --
+  [error] LLM: refusing to fetch NVD for 'LLM': robots.txt disallows it
+  [error] large language model: refusing to fetch NVD for 'large language model': robots.txt disallows it
+  [error] AI agent: refusing to fetch NVD for 'AI agent': robots.txt disallows it
+  [error] prompt injection: refusing to fetch NVD for 'prompt injection': robots.txt disallows it
+  [error] MCP server: refusing to fetch NVD for 'MCP server': robots.txt disallows it
+OLD: attempted 5/5 keywords (all of them -- every one repeats the identical, already-known refusal)
+```
+
+**AFTER** — the real, current, fixed `main()`, run end-to-end (not a
+recreation) with `fetch_nvd_keyword`/`fetch_ghsa`/`fetch_osv` mocked and
+`OUT_FILE` redirected to a temp path so the real `ingest/cve_nvd_expanded.json`
+is never touched:
+
+```
+=== Phase 1: NVD keyword scans ===
+  [nvd]   no NVD_API_KEY: 5 req/30s public rate, 6.5s pacing (set NVD_API_KEY to speed this up ~10x)
+  [error] NVD phase aborted -- refusing to fetch NVD for 'LLM': robots.txt disallows it
+  -> 0 unique NVD CVEs across all keywords
+  -> 0 NVD CVEs passed AI-context filter
+=== Phase 2: GHSA scan ===
+  -> 0 new GHSA/GENERAL entries added
+  -> 0 new GHSA/MALWARE entries added
+=== Phase 3: OSV ecosystem scan ===
+  -> 0 new OSV-only entries added
+
+Wrote 0 entries -> <temp path>
+
+output written to temp path: True, real ingest/ untouched: True
+NEW: attempted 1/5 keywords before aborting the NVD phase
+```
+
+**1/5 keywords attempted, not 5/5** — the fix aborts on the first
+confirmed refusal instead of wastefully repeating it four more times
+against a host already proven blocked, while GHSA/OSV (different hosts)
+still ran to completion in the same `main()` call, exactly as designed.
+
+**This does NOT make the script exit non-zero for this case** — `main()`
+still returns normally after the abort — see §18 for why that's disclosed
 as a known, accepted limitation rather than also fixed here.
+
+**Note on probe safety**: an earlier draft of the transcript above did not
+redirect `OUT_FILE`, and the probe run wrote an empty result to the real,
+committed `ingest/cve_nvd_expanded.json` — caught immediately via
+`git status --porcelain`, restored with `git checkout --
+ingest/cve_nvd_expanded.json` before anything else touched it, confirmed
+clean, and the probe rewritten to redirect all file output before being
+re-run for the transcript actually captured above. Recorded here rather
+than silently fixed, per this project's own standard for disclosing a
+near-miss.
 
 ## 15. D2: the vacuous Makefile tripwire, fixed and self-tested
 
@@ -776,3 +874,116 @@ only the same code/test/doc files this bounce touched
 generated-doc changes; explicit SHA-256 hashes of all `data/*.json` files
 and `INCIDENTS.md`, taken immediately before and after a full manual
 `make build` sequence re-run, are identical.
+
+---
+
+# D22 re-gate (2026-07-29): the non-HTTP egress register
+
+Invariant 5 amended (commit `7bbc20bd`, landed by the foreman): scope
+narrowed to **HTTP(S)** fetching through `ingest/common.py`; non-HTTP
+egress is out of the invariant's mechanism but inside its accounting,
+tracked in a register in `docs/INGESTION_CONDUCT.md`. This section is the
+evidence base for that register — same relationship this document already
+has to `docs/INGESTION_CONDUCT.md`'s other sections.
+
+## 23. Completeness check: does `ingest_external.py` (or anything else) perform non-HTTP egress?
+
+**What was searched, precisely** (so this is reproducible, not just
+asserted):
+
+1. Read `ingest_external.py` in full. Its imports:
+   `from __future__ import annotations`, `csv`, `json`, `re`,
+   `pathlib.Path`, `datetime.date`. No `subprocess`, no `os.system`/
+   `os.popen`, no git-library import (`pygit2`, `dulwich`, `GitPython`), no
+   `urllib`/`requests`/`httpx`. It reads six pre-existing local paths under
+   `_external/` (`atlas-data`, the `aiid` site repo's OECD-bridge JSON +
+   two sitemap XML files, `CSET-AIID-harm-taxonomy`, `garak`, `promptfoo`,
+   `CVE-AI`) and writes six `ingest/*.json` outputs. Zero network-capable
+   code anywhere in the file.
+2. `grep -rn 'subprocess\.|os\.system|os\.popen' scripts/` → **one hit**:
+   `ingest_cve_nvd_expanded.py:670` (entry 1 in the register — already
+   accounted for). No other script uses a subprocess or shell-out
+   mechanism of any kind.
+3. `grep -rln 'git clone|git submodule|pygit2|dulwich|GitPython' scripts/
+   .github/workflows/` → **zero hits**, anywhere.
+4. Checked `Makefile` for any target that populates `_external/` — none
+   exists (`ingest-all`'s dependency list is `ingest-cve ingest-kev
+   ingest-airi ingest-aiaaic ingest-aiid ingest-oecd-aim`; no
+   `ingest-external` target, no `setup`/`bootstrap`/`clone` target at all).
+5. Checked every `.github/workflows/*.yml` file for `_external`,
+   `atlas-data`, `CVE-AI`, `CSET-AIID` — no hits. Confirmed `_external/`
+   does not exist in this working tree (`ls ../_external` → "No such file
+   or directory") and is not a git submodule (`.gitmodules` does not
+   exist in this repo).
+6. Checked `README.md:62` for how `_external/` is documented to be
+   populated: *"parse cloned source repos under `../_external/`"* — states
+   WHAT is expected there, not HOW it gets there. No setup instructions
+   found anywhere in `README.md`, `CONTRIBUTING`-equivalent docs, or
+   script comments.
+
+**What was found**: `ingest_external.py` performs **zero** network egress,
+HTTP or otherwise — it is a pure local-file reader/transformer, same
+category as `scripts/parse_existing.py`. The only in-repo, executed,
+network-reaching subprocess call anywhere in `scripts/` is `gh api graphql`
+(register entry 1). The `_external/` repos are populated by an
+undocumented, out-of-band, manual process outside any tracked automation —
+there is no code to register as "non-HTTP egress" for this source, only a
+gap to disclose (register entry 2). This corrects §4 above, whose original
+version cited `ingest_external.py`'s "local `git clone`" as an existing
+precedent without having verified the file actually contains one — it does
+not; §4 now carries a correction note pointing here.
+
+## 24. Register content summary
+
+`docs/INGESTION_CONDUCT.md`'s "Non-HTTP egress register" now has:
+
+- **Entry 1 — `gh api graphql`** (active, registered): what it touches
+  (GitHub Security Advisory Database, both classifications), pacing
+  (explicit `time.sleep(1.5)` between pages, `ingest_cve_nvd_expanded.py:693`,
+  plus GitHub's own token-scoped GraphQL rate-limit budget that `gh`
+  itself respects), identification (`GH_TOKEN` — the workflow's own
+  `${{ github.token }}` or a maintainer's local `gh auth login` session;
+  `gh` sends its own client identification, not `ingest.common.USER_AGENT`),
+  and why it sits outside the chokepoint's mechanism (authenticated
+  first-party-CLI API access has no robots.txt equivalent).
+- **Entry 2 — `_external/` repo population** (disclosed gap, not a
+  registered code instance): names all six repos, states plainly that no
+  script/CI/Makefile target populates them, and that this leaves that
+  network access entirely outside this project's rate-limiting,
+  identification, and fail-closed conduct policy today. No conduct
+  properties are asserted for it, because none are enforced — that
+  absence IS the entry.
+- **A scoping note** excluding `auto-refresh.yml`'s own `git clone`/`git
+  push` operations against the `refresh-state` branch (CI/CD management of
+  this repo's own git history, GitHub talking to GitHub via
+  `${{ github.token }}` — not ingestion of third-party corpus data, which
+  is what this invariant and register are about).
+- **The same-PR rule**, stated as a standing obligation at the top of the
+  register section, mirroring invariant 10's `SOURCE_LICENSES.md`
+  convention explicitly.
+
+`docs/INGESTION_CONDUCT.md`'s opening invariant-5 statement was also
+rewritten for the D22 amendment (HTTP(S)-scoped, register-referencing,
+with a note that `tests/test_network_chokepoint.py`'s enumerated targets
+are all HTTP(S) primitives and are not meant to catch non-HTTP egress —
+that's the register's job, deliberately not a code-enforcement mechanism).
+Searched the rest of the document for the superseded "all network
+fetching" wording — the one other instance (the document's own opening
+paragraph) was the one just rewritten; no other section made that claim.
+
+## 25. Test count and zero-data-delta re-confirmation (D22 re-gate)
+
+This pass is documentation-only (`docs/INGESTION_CONDUCT.md` and this
+file) — no code changed, so the test count is unchanged from §22:
+**265 passed**. `git status --porcelain --untracked-files=all` clean of
+strays.
+
+**Note on a near-miss during this pass's own verification** (disclosed,
+not silently corrected — see §14b's identical disclosure for the same
+near-miss on the same day): an early version of a `main()` reproduction
+probe for §14b did not redirect `OUT_FILE` and wrote an empty result to
+the real, committed `ingest/cve_nvd_expanded.json`. Caught immediately via
+`git status --porcelain`, restored with `git checkout --
+ingest/cve_nvd_expanded.json`, confirmed clean before proceeding. No
+committed artifact from this pass reflects that write; it never reached a
+commit.

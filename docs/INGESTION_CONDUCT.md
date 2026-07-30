@@ -9,13 +9,26 @@ disagree, the code is right and this doc is stale — file that as a defect
 against this doc, not against the code.
 
 Invariant 5 (`MASTER_IMPROVEMENT_PLAN.md`, staged-invariants table, Active
-from "WS0-T4 done"): **all network fetching for this repo's ingest pipeline
-goes through `ingest/common.py`.** See
-`docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md` for the
+from "WS0-T4 done"; **amended by D22, 2026-07-29**): **all HTTP(S) fetching
+for this repo's ingest pipeline goes through `ingest/common.py`.**
+Non-HTTP egress — a vendor CLI such as `gh api`, `git clone`, or any other
+subprocess that reaches the network — is **not exempt by default**: it sits
+outside this invariant's *mechanism* (it cannot literally route through
+`ingest/common.py`, which only ever speaks HTTP(S)) but inside its
+*accounting* — every instance is registered below, with its conduct
+properties, and **new non-HTTP egress requires its register entry in the
+same PR** that introduces it (the same convention invariant 10 already
+uses for new-source rows in `docs/SOURCE_LICENSES.md`). See the
+[Non-HTTP egress register](#non-http-egress-register) below.
+
+See `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md` for the
 completeness proof (every ingest script, its fetch targets, and confirmation
-nothing else in the repo performs a live fetch) and
+nothing else in the repo performs a live HTTP(S) fetch) and
 `tests/test_network_chokepoint.py` for the CI enforcement of that property
-going forward.
+going forward — its enumerated `NETWORK_CALL_TARGETS` are all HTTP(S)
+primitives (`urlopen`/`requests.*`/`httpx.*`/etc.); it does not, and is not
+meant to, catch non-HTTP egress, which is why the register exists as a
+separate, deliberately non-code enforcement mechanism.
 
 ## What every request through `ingest/common.py` gets
 
@@ -244,22 +257,116 @@ tabulated in
 `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md` — this
 section is the policy statement; that document is the per-source evidence.
 
-## What is out of scope for this module
+## Non-HTTP egress register
 
-- **`gh api graphql`** (`ingest_cve_nvd_expanded.py`'s GHSA phase) is a
-  `subprocess` call to GitHub's official CLI, not a Python-level HTTP fetch
-  — it does not go through `ingest/common.py`, and this document does not
-  claim it does. `gh` carries its own authentication, rate-limiting, and
-  retry behavior; there is no robots.txt-equivalent for an authenticated
-  API called through its vendor's own tool. See the inventory doc for the
-  full reasoning on why this is treated as out of this invariant's scope
-  rather than silently omitted.
-- **`make build`** never imports this module. Ingest scripts are not in the
-  deterministic build path (`Makefile`'s `build` target is
-  `merge render render-docs-stats validate`, none of which touch the
-  network) — `ingest/common.py`'s own module docstring states this, and
-  `WS4-T1`'s `make build` contract (no network, no model calls) enforces it
-  independently of anything in this file.
+Per invariant 5's D22 amendment (2026-07-29): this section is **not** "out
+of scope" — non-HTTP egress is explicitly inside the invariant's
+*accounting*, only outside its *mechanism* (it cannot route through
+`ingest/common.py`, which is an HTTP(S)-only module). Every known instance
+is listed below with its conduct properties. **New non-HTTP egress requires
+its register entry in the same PR that introduces it** — the same
+convention invariant 10 already uses for `docs/SOURCE_LICENSES.md` rows on
+a new source. An incomplete register is treated as worse than none, because
+future PRs are checked against what's listed here, not against what
+actually exists.
+
+### 1. `gh api graphql` — GHSA advisory data (registered, active)
+
+- **What:** `ingest_cve_nvd_expanded.py`'s GHSA phase (`fetch_ghsa()`)
+  shells out to GitHub's official CLI: `subprocess.run(["gh", "api",
+  "graphql", "-f", f"query={query}", ...])`
+  (`scripts/ingest_cve_nvd_expanded.py:665,670`) — a real, executed,
+  in-repo network call, not a Python-level HTTP fetch.
+- **What it touches:** GitHub's GraphQL API, `securityAdvisories` (both
+  `GENERAL` and `MALWARE` classifications) — the GitHub Security Advisory
+  Database.
+- **Pacing:** an explicit `time.sleep(1.5)` between pages
+  (`scripts/ingest_cve_nvd_expanded.py:693`), on top of whatever GitHub's
+  own GraphQL API rate-limit budget (tied to the authenticated token) `gh`
+  itself respects — this is the vendor tool's own conduct property, stated
+  concretely rather than asserted on trust: `gh` is GitHub's first-party
+  CLI, calling GitHub's own API, under GitHub's own documented rate-limit
+  contract for authenticated requests.
+- **Identification:** authenticated via `GH_TOKEN`
+  (`.github/workflows/cve-enrich.yml:39`: `GH_TOKEN: ${{ github.token }}`
+  — the workflow's own GitHub Actions token; a maintainer running this
+  locally uses their own `gh auth login` session). This is a properly
+  authenticated, per-identity API call, not anonymous scraping — `gh`
+  itself sends its own standard client identification on every request; it
+  does not, and could not, use `ingest.common.USER_AGENT` (a different
+  HTTP client entirely, owned by GitHub's own tool).
+- **Why outside the chokepoint's mechanism:** there is no robots.txt
+  equivalent for an authenticated GraphQL API accessed through its own
+  vendor's official CLI — robots.txt governs unauthenticated crawling of
+  publicly served pages, which this is not.
+
+### 2. `_external/` repo population (source data for `ingest_external.py`) — DISCLOSED GAP, not a registered instance
+
+`ingest_external.py`'s own docstring and `README.md:62` describe it as
+parsing "cloned source repos under `../_external/`" (six repos: MITRE
+ATLAS `atlas-data`, NVIDIA `garak`, `promptfoo/promptfoo`,
+`ModelOriented/CVE-AI`, `georgetown-cset/CSET-AIID-harm-taxonomy`, and the
+`responsible-ai-collaborative/aiid` site repo — the last is also
+`scripts/scrape_aiid.py`'s and `ingest_aiid_oecd_bridge()`'s source for
+`_external/aiid/site/gatsby-site/migrations/data/oecd_relationships_2025_09_09.json`
+and the two `_external/sitemap-*.xml` files).
+
+**Completeness check performed** (per this bounce's instruction — searched,
+not assumed): `ingest_external.py`'s own imports are `csv`, `json`, `re`,
+`pathlib.Path`, `datetime.date` only — **no `subprocess`, no `os.system`,
+no git-library import, nothing network-capable at all.** Grepped
+`scripts/*.py` for `subprocess\.|os\.system|os\.popen` — the only hit
+anywhere in the directory is `ingest_cve_nvd_expanded.py:670` (Entry 1
+above). Grepped `scripts/*.py` and `.github/workflows/*.yml` for `git
+clone|git submodule|pygit2|dulwich|GitPython` — **zero hits anywhere.**
+There is no `Makefile` target, script, or CI workflow step anywhere in this
+repository that clones, updates, or otherwise populates `_external/`.
+
+**Conclusion, stated plainly rather than assumed from the docstring's
+wording: populating `_external/` is an undocumented, manual, out-of-band
+maintainer step, not code that runs as part of any tracked pipeline.**
+There is no non-HTTP-egress *instance* to register in the sense the D22
+amendment means (a subprocess that reaches the network) — there is no
+subprocess. This corrects an assumption in this document's own prior
+draft, and in `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md`
+§4, that treated `ingest_external.py`'s `git clone` as an existing,
+in-repo precedent for the `gh api graphql` scoping call — on inspection,
+no such clone exists in code anywhere; only `docs/SOURCE_LICENSES.md`
+§3.1's "N/A — local clone of a public repo" line describes the same
+informal, out-of-band practice, not a script.
+
+This is registered here anyway, as a **named gap**, because "an
+incomplete register is worse than none" cuts both ways: a register that
+silently omits the six repos `ingest_external.py` depends on would look
+complete while leaving the actual, un-conduct-instrumented network access
+(a maintainer's own `git clone` commands, run by hand, with none of this
+project's rate-limiting, identification, or fail-closed robots checking)
+entirely invisible to a future reader of this document. **No conduct
+properties are stated for it because none are enforced for it today** —
+that absence is the finding. Whether to script this population step (e.g.
+a `make setup-external` target using `git clone --depth 1` under the same
+kind of pacing/identification discipline as `ingest/common.py`) is a
+design decision for a future task, flagged here, not decided or
+implemented in this one.
+
+### Scoping note: excluded from this register
+
+`.github/workflows/auto-refresh.yml`'s own `git clone`/`git push` steps
+(persisting `ingest/_state/source_health.json` to the `refresh-state`
+branch, and `peter-evans/create-pull-request`'s git operations opening the
+weekly refresh PR) are **not** registered here. These are CI/CD operations
+on this repository's *own* git history — GitHub talking to GitHub via
+`${{ github.token }}` — not ingestion of external corpus data from a
+third-party source, which is what this invariant and this register are
+about. Named here so the exclusion is a stated scoping decision, not a
+silent omission.
+
+`make build` never imports `ingest/common.py` at all. Ingest scripts are
+not in the deterministic build path (`Makefile`'s `build` target is
+`merge render render-docs-stats validate`, none of which touch the
+network) — `ingest/common.py`'s own module docstring states this, and
+`WS4-T1`'s `make build` contract (no network, no model calls) enforces it
+independently of anything in this file.
 
 ## Outreach log
 
