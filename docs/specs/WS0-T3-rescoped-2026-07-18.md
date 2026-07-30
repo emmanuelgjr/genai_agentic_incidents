@@ -435,6 +435,17 @@ discharges.
 
 ### 6.3 The docs-warden asymmetry this discharges
 
+> **⚠ SUPERSEDED 2026-07-30 — the sentence quoted below no longer exists on
+> either surface.** This paragraph is preserved as the record of what was true
+> when this spec was written (2026-07-18) and of the finding that led to the
+> correction. **E23's ruling** (merged `cfad2c4d`, gated PASS) resolved AIID's
+> question — it is **not** "the same posture" as AIAAIC's, because AIID's maker
+> is US-situated and US law categorically excludes the only AIID text that
+> ships. Both surfaces were **corrected `7c4b4394`** (gated PASS). **Do not
+> regenerate any surface from the quotation below** — it is retired text, not
+> current state. See `docs/audits/E23-aiid-marking-ruling-2026-07-30.md` and
+> `docs/SOURCE_LICENSES.md` §1.2a.
+
 Verified directly in this task: `NOTICE-DATA` (repository root) and
 `.reuse/dep5` both currently state, for AIID: *"AIID's CC-BY-SA share-alike
 and a parallel database-right question remain an open, unresolved item, same
