@@ -872,6 +872,21 @@ def normalize_entry(raw: dict) -> dict | None:
         entry["description_source"] = raw["description_source"]
     if raw.get("content_license"):
         entry["content_license"] = raw["content_license"]
+    # E21/WS4 OECD-reduction corpus decoupling (2026-07-30): `corpus` IS a
+    # real schema field (unlike aiaaic_ethical_tags/aiaaic_seed_facts below),
+    # so unlike those two this needs no strip-before-output step -- only this
+    # pass-through. Without it, a source-set `corpus` was silently discarded
+    # here (the whitelist above has no `corpus` key) and step 5's `if not
+    # e.get("corpus")` guard (~:1442) recomputed it from `description` on
+    # every build -- exactly the coupling that already relabelled 372 AIAAIC
+    # entries once (WS0-T3-cascade-2026-07-18.md) and was live for OECD
+    # (ingest_oecd_aim.py::classify_corpus_signal() now sets it from a
+    # derived security/ai-harm signal, never the narrative text itself; see
+    # docs/audits/E21-oecd-narrative-licence-2026-07-30.md §5.1). Validated
+    # against the schema enum here so a malformed value fails loudly at
+    # validate() rather than reaching the same guard's else-branch silently.
+    if raw.get("corpus") in ("security", "ai-harm"):
+        entry["corpus"] = raw["corpus"]
     # `aiaaic_ethical_tags` / `aiaaic_seed_facts` are INTERNAL classification-
     # seed fields only — neither has a schema entry and both must never reach
     # data/incidents.json (root schema is additionalProperties:false). They
