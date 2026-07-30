@@ -18,6 +18,7 @@ committed (chat-only deliverables have now been lost three times — see the new
 | `annotator-recruitment.md` | Mayur021 (GitHub) — see file for ranked backups | WS2-T2 second-annotator recruitment: scoped ~200-entry labeling + adjudication ask | **2026-07-27** — satisfies the Phase-1 exit criterion; reply awaited, follow-up ~2026-08-03 |
 | `aiaaic-correction.md` | AIAAIC (same thread as `aiaaic-facts-link.md`) | E17 correction: the sent retention description understated which fields carry AIAAIC content | **2026-07-29** — sent as written (post-E16-merge, alternate paragraph not used) |
 | `airi-draft4-export-request.md` | MIT AI Risk Initiative — `airisk@mit.edu` | E18 redraft: substantive sanctioned-export/API request + transitive-AIID provenance question. **D8's 30-day clock starts on this send** | **2026-07-29** — D8's 30-day clock started; decision point 2026-08-28 or MIT's reply |
+| `oecd-aim-terms.md` | OECD.AI / AI Incidents and Hazards Monitor team (contact UNCONFIRMED — see file) | Reuse-terms question for AIM's own structured data (our own terms-retrieval hit a 403) + a sanctioned-bulk-channel question | **Not sent** — drafted 2026-07-30 (E20: no OECD draft existed before this one; corrects a false "drafted 2026-07-15" record in `docs/SOURCE_LICENSES.md` §1.5) |
 
 **Separate and NOT in this package:** the substantive `airisk@mit.edu` export
 request (AIRI Draft 4, E10/D8) — queue step 3, drafted separately.

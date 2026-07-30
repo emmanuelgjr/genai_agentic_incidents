@@ -126,8 +126,8 @@ a file from AIID's own cloned GitHub repo) and `scripts/scrape_aiid.py`'s
 | Redistribute-verbatim | Compatible for AIRI Navigator's own data under the confirmed CC BY 4.0 grant, with attribution. Remains **UNKNOWN** specifically for the AIID-derived fields the tool wraps — see Relicense-compatible. |
 | Relicense-compatible | Compatible for AIRI's own CC BY 4.0 data with attribution. **UNKNOWN** only for whether AIID's CC-BY-SA share-alike (Section 1.2) applies transitively to the AIID-derived fields AIRI Navigator wraps — a wrapper's own license cannot grant away an upstream share-alike obligation it doesn't itself hold. |
 | Action | **(d) UNKNOWN, narrowed.** AIRI Navigator's own license is now established as CC BY 4.0 (see License above). What remains open is only the transitive-AIID-share-alike question. Outreach is redrafted accordingly: it now asks the AIRI Navigator maintainer (Spencer Michaels, contact given on the AIRI site) only about the AIID-derived-fields question, not about AIRI's own license, which the footer at airisk.mit.edu already answers. Separately, and independent of licensing: the ZIP download this ingest relies on (airi-navigator.com/downloads/airi-data.zip, the ZIP_URL constant in scripts/ingest_airi_navigator.py) now returns HTTP 404 with zero bytes, checked on both hosts with a browser user agent and referer header on 2026-07-16. The site's own source ties the download link's rendering to a feature-flag comparison that currently evaluates false, so the withdrawal looks deliberate on MIT FutureTech's part rather than an accidental move of the file. Cross-reference WS4-T9 / E6, which independently found this ingest currently non-functional. This source produces no data until that separate, non-licensing problem is fixed. |
-| Outreach date | 2026-07-16 (redrafted; not yet sent) |
-| Follow-up date | 2026-08-06 (21 days) |
+| Outreach date | **Sent — two distinct messages, not one.** `docs/outreach/mit-airi-courtesy.md` (dead-ZIP courtesy notice + informal transitive-AIID question, to Spencer Michaels via airi-navigator.com) sent **2026-07-27**. `docs/outreach/airi-draft4-export-request.md` (substantive sanctioned-export/API request + the same transitive-AIID question stated more precisely, to `airisk@mit.edu`) sent **2026-07-29**. docs-warden finding N7 adjudicated these as distinct sends, not a resend of the same message — see that file's "Relationship to `docs/outreach/mit-airi-courtesy.md`" note. The "2026-07-16 (redrafted; not yet sent)" this row previously carried is stale, superseded by both sends above. |
+| Follow-up date | **D8's 30-day AIRI-hold clock keys to the 2026-07-29 `airi-draft4-export-request.md` send, not the 2026-07-27 courtesy send.** Decision point: MIT's reply, or **2026-08-28**, whichever comes first — at that point D8's deferred retire-or-replace decision for AIRI becomes live. |
 | Date-checked | 2026-07-16 |
 
 ### 1.5 OECD AI Incidents and Hazards Monitor (AIM)
@@ -137,13 +137,13 @@ pages via their embedded Angular `ng-state` JSON).
 | Field | Value |
 |---|---|
 | License | Split. General OECD terms (`oecd.org/en/about/terms-conditions.html`) apply to OECD's *own* IP: *"Except where additional restrictions apply as stated above, you can extract from, download, copy, adapt, print, distribute, share and embed Data for any purpose, even for commercial use,"* conditioned on attribution (cite per the source's own citation format, or `OECD (year), (dataset name), (data source) DOI or URL (accessed on (date))`), with the same acknowledgment requirement passed through to any sub-licensees. Separately, **OECD written content published from 1 July 2024 onward defaults to CC BY 4.0** (the copyright/front-page of a given piece states whether a CC license applies and which one). **Re-fetch caveat:** this page still returned HTTP 403 to my direct automated fetch on 2026-07-15 (tried twice, both `https://` and `http://`) — both quotes above are corroborated across two independent web searches rather than a direct 200 read, which is a step up in confidence from the earlier single-cached-excerpt version of this row but still short of a primary-source fetch. The AIM-specific methodology page (`oecd.ai/en/incidents-methodology`, fetched 2026-07-15, direct 200) explicitly disclaims: *"Any of the copyrights, trademarks... included in the AIM are the property of their respective owners"* — meaning the incident narrative text (drawn from aggregated third-party news articles) is **not OECD's to relicense**, and by extension not ours, regardless of which general-terms regime applies to OECD's own content. |
-| Scrape-permitted | `oecd.ai/robots.txt` (fetched 2026-07-15) disallows only French-language sections (`/fr/community/`, `/fr/catalogue/`, `/fr/wonk/`, `/fr/dashboards/`, `/fr/data`) — no rule blocks `/en/incidents/`. No explicit rate limit stated; the ingest script already caches and paces 10 concurrent workers, but should route through the WS0-T4 common rate-limiter like every other scraper. |
+| Scrape-permitted | `oecd.ai/robots.txt` (fetched 2026-07-15, re-confirmed unchanged 2026-07-30 — same five rules) disallows only French-language sections (`/fr/community/`, `/fr/catalogue/`, `/fr/wonk/`, `/fr/dashboards/`, `/fr/data`) — no rule blocks `/en/incidents/`. No explicit rate limit stated by OECD. **Correction (2026-07-30):** the ingest now does route through the WS0-T4 common rate-limiter — `scripts/ingest_oecd_aim.py` imports `fetch_once`/`robust_fetch` from `ingest/common.py` (verified by direct code read) and its 10-worker pool queues through that module's shared per-host limiter (see §5, below); the "should route through... but [doesn't yet]" wording this row previously carried is stale, superseded by the WS0-T4 network-chokepoint migration (`8b1e8888`). **New, unresolved flag (2026-07-30):** the sitemap URL `oecd.ai/sitemaps/incident-monitor-sitemap.xml` — the exact URL `SITEMAP_URL` fetches — 302-redirects to a different host, `incidents-server.oecdai.org` (confirmed live via WebFetch). `robots_allowed()`/`_rate_limit()` in `ingest/common.py` key off the *original* URL's host (`oecd.ai`), and `urllib`'s automatic redirect-following means the bytes actually served come from a host whose own robots.txt is never checked. Whether individual `/en/incidents/<id>` pages redirect the same way is a shell-level question WebFetch could not resolve reliably; see the exact check named in the report for red-reviewer. |
 | Redistribute-verbatim | **NO** for narrative/summary text derived from third-party news content (per AIM's own disclaimer above). The ingest currently writes `body.get("summary")` or article "evidences" text into our `description` field — this is exactly the third-party-sourced content the disclaimer flags. |
 | Relicense-compatible | Compatible for OECD's own structural data (incident IDs, dates, AIID cross-reference IDs, taxonomy tags) under OECD's general terms with attribution. **Not compatible** for the summary/evidence narrative text. |
-| Action | **(b)/(c) hybrid.** Reduce `description` to structural facts + link where the text is evidence-derived narrative; add "Source: OECD AI Incidents and Hazards Monitor" attribution per entry. Outreach still drafted, because the open question isn't OECD's general terms (now reasonably well corroborated above) but whether AIM's own summary/evidence text counts as OECD's IP under those general terms or as the third-party content AIM's own disclaimer flags — that specific boundary is what remains genuinely unresolved. |
-| Outreach date | 2026-07-15 (drafted; not yet sent) |
-| Follow-up date | 2026-08-05 (21 days) |
-| Date-checked | 2026-07-15 |
+| Action | **(b)/(c) hybrid.** Reduce `description` to structural facts + link where the text is evidence-derived narrative; add "Source: OECD AI Incidents and Hazards Monitor" attribution per entry. Outreach still drafted, because the open question isn't OECD's general terms (now reasonably well corroborated above) but whether AIM's own summary/evidence text counts as OECD's IP under those general terms or as the third-party content AIM's own disclaimer flags — that specific boundary is what remains genuinely unresolved. **Implementation-status finding, added 2026-07-30, not previously recorded here:** the `description`-reduction this row calls for is **not yet implemented**. Direct read of `scripts/ingest_oecd_aim.py::normalize_body()` shows `description = (summary or title).strip()`, built from `body.get("summary")` or article `evidences` text — exactly the content this row already flags as non-compatible. The code has not changed since this Action was first decided (2026-07-15); this is a live pipeline gap, not merely a stale doc — see the exact requirement in the report, routed to pipeline-engineer. |
+| Outreach date | **No draft existed until 2026-07-30 — the "2026-07-15 (drafted; not yet sent)" this row previously carried was false.** Verified 2026-07-30: `git log --all --diff-filter=A -- 'docs/outreach/*'` returns the complete set of outreach files ever committed to this repo (`aiaaic-correction.md`, `aiaaic-facts-link.md`, `aiid-goodwill.md`, `airi-draft4-export-request.md`, `annotator-recruitment.md`, `mit-airi-courtesy.md`, `README.md`) — no OECD file among them, confirming no such artifact ever existed on any branch (E20, 2026-07-29 — one of now seven confirmed instances of the E18 chat-only-deliverable pattern). A genuine draft, `docs/outreach/oecd-aim-terms.md`, was written to disk 2026-07-30 and is drafted, awaiting red-reviewer and the user's send — not sent as of this writing. |
+| Follow-up date | **Not yet applicable — starts on send, not on this drafted date.** The user sends `docs/outreach/oecd-aim-terms.md` and logs the send date on `docs/outreach/README.md` and here; the follow-up window (21 days, matching this file's other outreach items) begins from that logged date once it exists. |
+| Date-checked | 2026-07-15 (fact — general OECD terms + AIM methodology-page substance); 2026-07-30 (OECD terms page re-fetched — still HTTP 403 to automated retrieval, same outcome as 2026-07-15; AIM methodology page re-fetched — 200, third-party-content disclaimer substance corroborated, though today's re-check used a markdown-converting/summarizing fetch tool and could not confirm the exact 2026-07-15 quoted string verbatim at the raw-HTML level — flagged for red-reviewer, see `docs/outreach/oecd-aim-terms.md`'s verification notes; the sitemap-redirect finding above is new as of 2026-07-30) |
 
 ---
 
@@ -230,10 +230,9 @@ extracted from the repo's own files).
 | Scrape-permitted | N/A — local clone. |
 | Redistribute-verbatim | **NO** (no permission granted) — moot in practice, since the current code does not copy any of the repo's actual content; it writes one original, hand-authored description of what the taxonomy is, with a link. |
 | Relicense-compatible | **NO** for repo content generally; the single original description sentence we write ourselves is fine. |
-| Action | **(d) UNKNOWN, low current risk.** Outreach drafted to confirm reuse permission in case this ever grows beyond a single reference entry (see report). No code change required today since no verbatim content is taken. |
-| Outreach date | 2026-07-15 (drafted; not yet sent) |
-| Follow-up date | 2026-08-05 (21 days) |
-| Date-checked | 2026-07-15 |
+| Action | **RESOLVED (2026-07-30, E20) — reduces to (a) compatible for current scope; no outreach owed.** No code change required: the ingest takes no verbatim content from the CSET-AIID repo — `ingest_external.py::ingest_cset()` writes exactly one original, hand-authored reference-entry description plus a link (see Redistribute-verbatim, above), which is unaffected by the repo's own unclear/no-license status. **Condition, not a permanent closure:** if CSET-derived entries in this corpus ever grow beyond that single hand-authored reference (any code change that extracts more than a link + original description from `_external/CSET-AIID-harm-taxonomy`), this row **REOPENS as (d) UNKNOWN** and outreach must be drafted and sent *before* that ingest expansion ships, not after. Per the user's ruling (E20, 2026-07-29): drafting an email to ask permission the project does not currently need would satisfy this cell rather than answer a real question; this tripwire is the deliberate substitute. |
+| Outreach date | **No draft ever existed; none is owed under current scope.** Verified 2026-07-30: `git log --all --diff-filter=A -- 'docs/outreach/*'` returns the complete set of outreach files ever committed to this repo — no CSET file among them. The "2026-07-15 (drafted; not yet sent)" this row previously carried described an artifact that never existed on any branch (E20, 2026-07-29 — one of now seven confirmed instances of the E18 chat-only-deliverable pattern). Outreach is deferred to the tripwire condition in Action, above, not owed today. |
+| Date-checked | 2026-07-15 (License fact, GitHub API); 2026-07-30 (this row's outreach-status correction, E20) |
 
 ### 3.3 NVIDIA garak
 *Ingested by:* `scripts/ingest_external.py::ingest_garak()` (reads probe
@@ -320,11 +319,18 @@ none of them currently matter for compliance (no verbatim/code reuse occurs).
 
 ## 5. Not a source (helper module)
 
-`scripts/ingest_utils.py` provides `robust_fetch()` / `conditional_fetch()` —
-shared HTTP retry/caching helpers used by other ingest scripts. It pulls no
-upstream content of its own and gets no row. (Its `USER_AGENT` string and
-retry/backoff behavior are relevant to WS0-T4's conduct policy, not to this
-per-source license audit.)
+`ingest/common.py` (formerly `scripts/ingest_utils.py` — promoted and
+relocated during WS0-T4) provides `fetch_once()`, `robust_fetch()`, and
+`conditional_fetch()`. It pulls no upstream content of its own and gets no
+row here. It is no longer just a shared HTTP retry/caching helper: as of
+`8b1e8888` it is this repo's **sole HTTP(S) network chokepoint** and the
+subject of now-**ACTIVE invariant 5** (`MASTER_IMPROVEMENT_PLAN.md`) — every
+live `ingest_*.py`/`scrape_*.py` fetch is required to route through it. What
+it enforces per request — an identifying User-Agent, a fail-closed
+robots.txt check, per-host rate limiting, and retry/backoff — is a conduct
+question, not a per-source license question, so it is described and
+evidenced in `docs/INGESTION_CONDUCT.md`, the authoritative doc for that
+policy, rather than restated here.
 
 ---
 
@@ -335,8 +341,8 @@ per-source license audit.)
 | 1 | AIID (§1.2, retired 2026-07-18) → AIID official snapshot (§1.2a, active) | **Acquisition-method violation RESOLVED (2026-07-18); a distinct CC-BY-SA/database-right content question is OPEN** | Bot/high-volume access was prohibited by AIID's own Terms of Use; `scrape_aiid.py`'s scrape is retired and replaced by `scripts/ingest_aiid_snapshot.py` reading AIID's official weekly snapshot channel (WS0-T4 swap-half, decision D1). Content is kept at least as conservative as before (facts+link, no narrative persisted) but AIID's own CC-BY-SA share-alike / possible sui-generis database-right exposure over the `incidents`/`classifications` collections is **not** adjudicated by this change — flagged open, same posture as AIAAIC's E13 finding. See `docs/audits/WS0-T4-aiid-snapshot-swap-2026-07-18.md`. |
 | 2 | AIAAIC Repository | **(b) copyright share-alike resolved by decision D2** — license confirmed CC BY-SA 4.0; handled by reducing to facts+link, not by split-licensing (a second, narrower copyright question over the retained headline itself — E15/D17 — is folded into the counsel ask below, not resolved separately here). **The separate EU/UK sui generis database-right question is OPEN, but its direction is DECIDED AND IMPLEMENTED (D11, 2026-07-27)**: row-level ShareAlike/attribution containment via the `content_license` marker (now reaching all 1,517 AIAAIC-citing rows, E16/D18) plus scope-narrowing queued for Phase 2 — see `docs/audits/WS0-E13-database-right-2026-07-18.md` (amended 2026-07-27). Whether to additionally engage qualified counsel on AIAAIC's own subsistence/substantiality (E13 §1–§2) remains open. | Verbatim spreadsheet-cell text carried a real copyright share-alike obligation; per D2 (2026-07-16, human) the project honors it by not carrying verbatim text at all, keeping one clean CC-BY-4.0 license with no BY-SA subset. That decision disposes of the *copyright* question for AIAAIC's narrative prose only — the retained headline is a separate, still-open copyright question (E15/D17). E13 (2026-07-18, amended 2026-07-27) finds AIAAIC's database right plausibly subsists and the extraction (1,422 field-marked rows / 1,517 citing rows total, not the stale ~1,513 this row previously carried) plausibly meets the substantiality threshold even after the D2/D9 reduction — facts+link mitigates but does not eliminate exposure. genai_incidents itself does not hold a UK/EU database right (sole Canada-resident individual maker, established 2026-07-27), so the worst case is bounded to row-level ShareAlike on AIAAIC-derived rows, never dataset-wide. A resolved direction is on record (D11); AIAAIC's own subsistence/substantiality and the headline-copyright question remain open, routed to the same counsel ask. |
 | 3 | OECD AIM | **(b)/(c) hybrid** | Narrative summary text is explicitly disclaimed by OECD as third-party IP. |
-| 4 | MIT AIRI Navigator | **(d) UNKNOWN, narrowed** — own license confirmed CC BY 4.0; only the transitive AIID share-alike question is open | AIRI Navigator's own license is established via a one-hop raw-HTML check: its Terms-of-Use modal names airisk.mit.edu as its data source, and that page's footer carries the CC BY 4.0 grant, re-verified 2026-07-16 and cross-checked independently by red-reviewer and the foreman. What remains genuinely unresolved is only whether AIID's CC-BY-SA share-alike (Section 1.2) applies transitively to the AIID-derived fields this tool wraps; see §1.4. |
-| 5 | CSET-AIID Harm Taxonomy | **(d) UNKNOWN**, low current risk | No license file exists upstream, confirmed via the GitHub API's structured `license` field (not a large-page fetch, so not subject to the AIAAIC failure mode) — only one original sentence currently reproduced. |
+| 4 | MIT AIRI Navigator | **(d) UNKNOWN, narrowed** — own license confirmed CC BY 4.0; only the transitive AIID share-alike question is open | AIRI Navigator's own license is established via a one-hop raw-HTML check: its Terms-of-Use modal names airisk.mit.edu as its data source, and that page's footer carries the CC BY 4.0 grant, re-verified 2026-07-16 and cross-checked independently by red-reviewer and the foreman. What remains genuinely unresolved is only whether AIID's CC-BY-SA share-alike (Section 1.2) applies transitively to the AIID-derived fields this tool wraps; see §1.4. Outreach on this question is now sent (both `docs/outreach/mit-airi-courtesy.md`, 2026-07-27, and `docs/outreach/airi-draft4-export-request.md`, 2026-07-29); the question itself remains open pending MIT's reply. |
+| 5 | CSET-AIID Harm Taxonomy | **RESOLVED (2026-07-30, E20)** — closed under current scope with a reopen-on-scope-growth tripwire; no outreach sent or owed | No license file exists upstream, confirmed via the GitHub API's structured `license` field (not a large-page fetch, so not subject to the AIAAIC failure mode). Only one original, hand-authored sentence is currently reproduced, so the upstream's unclear license is moot for what the code does today; see §3.2's Action cell for the exact reopen condition. The "2026-07-15 (drafted; not yet sent)" outreach this row's Action previously implied never existed as an actual file — corrected per E20. |
 
 Three of the five (AIAAIC, MIT AIRI Navigator, CSET-AIID) originally carried
 outreach-pending status. AIAAIC's *copyright* share-alike question over its
@@ -357,13 +363,29 @@ now bounded to row-level obligations on AIAAIC-derived rows, never a
 dataset-wide one (E13 §4.1, established 2026-07-27: genai_incidents' sole
 maker is a Canada-resident individual, so genai_incidents holds no UK/EU
 database right of its own and the §4(b) database-level ShareAlike escalation
-is dead). **MIT AIRI Navigator and CSET-AIID Harm Taxonomy** remain open
-with dated pending-status records; OECD AIM carries a narrower, still-genuine
-open question (does AIM's own summary text count as OECD's reusable IP or
-third-party content?), also dated. A clarifying AIAAIC outreach was sent
-2026-07-27 (`docs/outreach/aiaaic-facts-link.md`; reply clock 2026-08-26);
-the remaining drafted-not-sent outreach emails (MIT AIRI Navigator,
-CSET-AIID) are in the report below — the human sends them.
+is dead). **MIT AIRI Navigator** remains open — outreach is now sent (two
+distinct messages: `docs/outreach/mit-airi-courtesy.md`, 2026-07-27, and
+`docs/outreach/airi-draft4-export-request.md`, 2026-07-29; D8's 30-day
+AIRI-hold clock keys to the latter, decision point 2026-08-28) — but the
+underlying transitive-AIID-share-alike question is still unresolved pending
+MIT's reply; see §1.4. **CSET-AIID Harm Taxonomy is now RESOLVED (E20,
+2026-07-30)**: closed under the current single-reference-entry scope, with a
+reopen-on-scope-growth tripwire recorded in §3.2's Action cell — no outreach
+was ever drafted, and per the user's ruling none is owed while that scope
+holds. **OECD AIM** carries a narrower, still-genuine open question (does
+AIM's own summary text count as OECD's reusable IP or third-party content?),
+and — corrected as of 2026-07-30, per E20 — now has an actual drafted
+outreach email, `docs/outreach/oecd-aim-terms.md`, awaiting red-reviewer and
+the user's send; the "2026-07-15 (drafted; not yet sent)" this section
+previously recorded for OECD described an artifact that never existed on any
+branch. A clarifying AIAAIC outreach was sent 2026-07-27
+(`docs/outreach/aiaaic-facts-link.md`; reply clock 2026-08-26). **The
+pending/unresolved count as of 2026-07-30 is two — MIT AIRI Navigator and
+OECD AIM — down from three (AIAAIC, MIT AIRI Navigator, CSET-AIID
+originally)**: CSET-AIID no longer counts, having resolved with a tripwire
+rather than an outreach email. The one outreach draft still awaiting the
+user's send is `docs/outreach/oecd-aim-terms.md`; MIT AIRI Navigator's
+outreach is sent and awaiting reply.
 
 **AIID (§1.2/§1.2a, updated 2026-07-18):** the *acquisition-method*
 violation (prohibited high-volume scrape) is resolved — retired and
