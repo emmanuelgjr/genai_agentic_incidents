@@ -34,7 +34,7 @@ separate, deliberately non-code enforcement mechanism.
 
 ### 1. An identifying User-Agent + contact address
 
-`USER_AGENT` (`ingest/common.py:95-98`) is a single module-level constant:
+`USER_AGENT` (`ingest/common.py:96-99`) is a single module-level constant:
 
 ```
 genai_incidents/2.8.0 (+https://github.com/emmanuelgjr; contact: emmanuelgjr@gmail.com)
@@ -44,8 +44,8 @@ It names the project, links to the repo, and gives a contact address
 (`emmanuelgjr@gmail.com`) — the same address already published as this
 project's security/abuse contact in `SECURITY.md`, reused rather than
 invented for this purpose. `fetch_once()` sends this on every request
-(`ingest/common.py:366`) and **strips and replaces** any caller-supplied
-`User-Agent` header rather than merging it (`ingest/common.py:367-368`), so
+(`ingest/common.py:367`) and **strips and replaces** any caller-supplied
+`User-Agent` header rather than merging it (`ingest/common.py:368-369`), so
 no calling script can accidentally (or deliberately) send an unidentified or
 differently-identified request — enforced, not just the default; see
 `tests/test_ingest_common.py::test_fetch_once_strips_caller_supplied_user_agent`
@@ -73,31 +73,31 @@ evidence: `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md`
 §13.
 
 Version number (`2.8.0`) and the full reasoning above are in the comment
-immediately above the constant (`ingest/common.py:61-94`).
+immediately above the constant (`ingest/common.py:62-95`).
 
 ### 2. A robots.txt check before every fetch, fail-closed
 
-`robots_allowed(url, min_interval)` (`ingest/common.py:279-313`) is checked
-by `fetch_once()` before every request (`ingest/common.py:355-361`); a
+`robots_allowed(url, min_interval)` (`ingest/common.py:280-314`) is checked
+by `fetch_once()` before every request (`ingest/common.py:356-362`); a
 disallowed or unverifiable URL raises `PermissionError` and the request is
 never sent.
 
 **Fail-closed, deliberately:** if robots.txt itself cannot be verified —
 anything other than a 200 with parseable rules, or a confirmed 404 meaning
 "no file published" — the fetch is refused, not assumed permitted
-(`ingest/common.py:282-290`, `_get_robots_parser()` at
-`ingest/common.py:207-276`). `_get_robots_parser()` retries once (with a 1 s
+(`ingest/common.py:283-291`, `_get_robots_parser()` at
+`ingest/common.py:208-277`). `_get_robots_parser()` retries once (with a 1 s
 pause) before giving up, because a fast burst of parallel probe requests
 during this module's own development drew one spurious 403 from a host whose
 robots.txt was a confirmed clean 404 seconds later — a real, observed
-transient-failure mode (`ingest/common.py:215-219`).
+transient-failure mode (`ingest/common.py:216-220`).
 
 A confirmed 404 (no robots.txt at all) is read as "no stated restriction,"
 not as an unreachable check — consistent with `docs/SOURCE_LICENSES.md`'s
-existing reading of aiaaic.org's own 404 (`ingest/common.py:256-263`).
+existing reading of aiaaic.org's own 404 (`ingest/common.py:257-264`).
 
 **There is no caller-side way to skip this check.** `fetch_once()` has no
-`check_robots`-style parameter (`ingest/common.py:316-324`) — this was a
+`check_robots`-style parameter (`ingest/common.py:317-325`) — this was a
 deliberate removal: a boolean flag on a shared function is an opt-out
 reachable by a one-line edit at any call site, which defeats the point of a
 single enforced chokepoint. The only way to waive the robots check for a
@@ -105,7 +105,7 @@ specific host is the enumerated allowlist below, which requires editing this
 module in a reviewed commit.
 
 **The robots.txt fetch itself is rate-limited too**, not just the content
-fetch that follows it (`ingest/common.py:247`, inside
+fetch that follows it (`ingest/common.py:248`, inside
 `_get_robots_parser()`'s retry loop) — this was a real gap until WS0-T4
 bounce #1 (R3): the probe used to call `urlopen()` directly, unpaced, so a
 host whose robots.txt could never be cached (any host on
@@ -125,12 +125,18 @@ AIRI/AIAAIC/OECD/KEV run plus the on-demand NVD/GHSA/OSV run). A host that
 geography or CDN edge, now breaks an ingest that worked fine under the
 pre-WS0-T4 code, which never checked robots.txt at all. That is the direct,
 accepted cost of fail-closed over fail-open — see the ethical case above —
-stated here as an exposure, not only defended as a policy.
+stated here as an exposure, not only defended as a policy. **A refused
+fetch is not only a missing update: depending on where in a script it
+lands, it may truncate a committed artifact or permanently poison a cache
+that later runs trust as complete** (D22 re-gate, A1/A6 — two real
+instances found and fixed in `ingest_cve_nvd_expanded.py`'s NVD and OSV
+phases; see `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md`
+§26-27 for the before/after evidence), not merely "no new data this run."
 
 #### Exception: `ROBOTS_UNVERIFIABLE_ALLOWLIST`
 
 One host is currently on this allowlist: **`www.cisa.gov`**
-(`ingest/common.py:129-161`). `www.cisa.gov` and `cisa.gov` both return HTTP
+(`ingest/common.py:130-162`). `www.cisa.gov` and `cisa.gov` both return HTTP
 403 on `/robots.txt` for **every** User-Agent tested — this project's own,
 a plain browser UA, a bare non-Mozilla token, and urllib's unmodified
 default — while the KEV feed itself
@@ -163,11 +169,11 @@ and pass the rest of this suite unmodified.
 **What the waiver does NOT cover:**
 - It applies only when robots.txt could not be fetched **at all**. A host
   that serves a robots.txt with an explicit `Disallow` rule is refused
-  exactly as normal, allowlisted or not (`ingest/common.py:310-313`,
+  exactly as normal, allowlisted or not (`ingest/common.py:311-314`,
   `robots_allowed()`'s closing block — the allowlist membership check on
-  line 312 is reached only when `_get_robots_parser()` returns `None` on
-  line 311; a successful parse instead falls through to `rp.can_fetch()` on
-  line 313, bypassing the allowlist entirely).
+  line 313 is reached only when `_get_robots_parser()` returns `None` on
+  line 312; a successful parse instead falls through to `rp.can_fetch()` on
+  line 314, bypassing the allowlist entirely).
 - The per-host rate limit and the identifying User-Agent still apply in
   full to every request to `www.cisa.gov` — nothing about this entry
   changes pacing or identification, only the robots-verification refusal.
@@ -180,11 +186,11 @@ will fail on the host-set change until deliberately updated).
 
 ### 3. A minimum interval between requests to the same host
 
-`_rate_limit(host, min_interval)` (`ingest/common.py:184-204`) is called by
-`fetch_once()` before every request (`ingest/common.py:364`), for every host,
+`_rate_limit(host, min_interval)` (`ingest/common.py:185-205`) is called by
+`fetch_once()` before every request (`ingest/common.py:365`), for every host,
 unconditionally — and, as of bounce #1 (R3, §2 above), by the robots.txt
 probe itself too, not just the content fetch. The default spacing is
-`DEFAULT_MIN_INTERVAL = 1.0` second (`ingest/common.py:105`); callers may
+`DEFAULT_MIN_INTERVAL = 1.0` second (`ingest/common.py:106`); callers may
 pass a tighter or looser `min_interval=` for a source with its own
 documented cadence (NVD's stated rate-limit contract is the example this
 module was built against — see the per-source table below).
@@ -194,18 +200,18 @@ allowed slot is reserved under a lock before the actual sleep happens, so
 concurrent requests to the *same* host from multiple threads (e.g.
 `ingest_oecd_aim.py`'s 10-worker pool) still queue up to the single
 per-host cadence, while requests to *other* hosts are never blocked by it
-(`ingest/common.py:184-204`, docstring explains the two guarantees
+(`ingest/common.py:185-205`, docstring explains the two guarantees
 explicitly).
 
 ### 4. Retry with backoff, on transient failures
 
-`robust_fetch()` (`ingest/common.py:377-436`) and `conditional_fetch()`
-(`ingest/common.py:461-523`) both route every attempt through
+`robust_fetch()` (`ingest/common.py:378-437`) and `conditional_fetch()`
+(`ingest/common.py:462-524`) both route every attempt through
 `fetch_once()` — so robots/rate-limit/UA are enforced on *every* retry, not
 just the first attempt — and use exponential backoff (2 s, 4 s, 8 s, ...)
 between attempts. A robots.txt refusal (`PermissionError`) is **not**
 retried in either function; it propagates immediately and unwrapped
-(`ingest/common.py:413-424`, `:502-509`), since retrying a confirmed policy
+(`ingest/common.py:414-425`, `:503-510`), since retrying a confirmed policy
 block wastes backoff time for no chance of success.
 
 **This required its own `except PermissionError: raise` clause ahead of
@@ -239,6 +245,15 @@ precisely rather than assumed, in
   log only, with no step-, health-counter-, or workflow-level signal at
   all. This is a real, disclosed, and currently accepted limitation, not
   something bounce #1 closed.
+- **OSV** (added at the D22 re-gate, A1): `main()`'s `try`/`except
+  PermissionError` around `fetch_osv()` aborts the OSV phase the same way,
+  with the same "loud in the console, silent everywhere else" limitation
+  as NVD. `fetch_osv()` itself originally had the identical
+  trust-cache/swallow/write-unconditionally bug `fetch_nvd_keyword()` had
+  before D1 — found one function away by the re-gate, not by a systematic
+  search; fixed identically (re-raise before the unconditional cache
+  write is ever reached). A systematic sweep for a third instance of this
+  shape, across every fetcher, is a named follow-up, not done here.
 
 Scripts with their own retry cadence (NVD, OSV — both inside
 `ingest_cve_nvd_expanded.py`) call `fetch_once()` directly, once per
@@ -247,7 +262,7 @@ attempt, inside their own loop, rather than using `robust_fetch()`.
 **`robust_fetch()`'s warm-cache path performs no robots check at all** —
 returning bytes already on disk is a local-disk read, not a network
 request, so there is nothing to check permission for
-(`ingest/common.py:389-393`). This was previously true but undocumented;
+(`ingest/common.py:390-394`). This was previously true but undocumented;
 disclosed here per bounce #1 (R5).
 
 ## Per-source pacing

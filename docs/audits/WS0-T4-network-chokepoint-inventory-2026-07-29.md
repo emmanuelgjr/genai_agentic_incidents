@@ -1,8 +1,11 @@
 # WS0-T4 conduct-half: network chokepoint inventory (2026-07-29)
 
-Completeness proof for invariant 5 (`MASTER_IMPROVEMENT_PLAN.md`: "All
-network fetching goes through `ingest/common.py`") going active on this
-task's merge, and the evidence base for `docs/INGESTION_CONDUCT.md`. This
+Completeness proof for invariant 5 (`MASTER_IMPROVEMENT_PLAN.md:45`: "All
+**HTTP(S)** fetching goes through `ingest/common.py`" — amended by D22,
+2026-07-29, from the original unscoped "all network fetching" wording;
+see §23-25 for the non-HTTP-egress register the amendment also requires)
+going active on this task's merge, and the evidence base for
+`docs/INGESTION_CONDUCT.md`. This
 document inherits and completes a prior specialist session's uncommitted
 work on branch `ws0/t4-conduct-half` (`scripts/ingest_utils.py` promoted to
 `ingest/common.py`); the findings below are re-derived independently, not
@@ -765,6 +768,16 @@ each script that has one, post-D1-fix:
   §14's added fix aborts the NVD phase specifically with one clear message,
   but the process still exits 0, and GHSA/OSV/KEV phases (unaffected,
   different hosts) still run to completion.
+- **OSV** (`ingest_cve_nvd_expanded.py`, added at the D22 re-gate, A1 —
+  `fetch_osv()` originally had the identical shape to the pre-D1
+  `fetch_nvd_keyword()` bug, found by adjacency rather than by method; see
+  §26): `main()`'s `try`/`except PermissionError` around the `fetch_osv()`
+  call catches it and prints one "OSV phase aborted" message, same pattern
+  as NVD's abort. Does not crash; process still exits 0 for this phase
+  alone. If NVD, GHSA, *and* OSV are all blocked in the same run (all three
+  hit different hosts, so this requires three independent robots
+  refusals, not one shared host going down), §27 (A6) prevents that
+  all-empty result from truncating the committed `OUT_FILE`.
 
 **What this means operationally, verified against the actual workflow YAML
 rather than assumed:**
@@ -795,9 +808,15 @@ rather than assumed:**
   and out of this bounce's scope to close further (would mean deciding
   whether a partial CVE-enrichment run should block the whole PR, a design
   question beyond "fix the retry-wrapper masking").
-- The empty-cache-poisoning risk for NVD (§14, point 2) is now closed for
-  robots-refusal-specifically; nothing else changes about `fetch_nvd_keyword()`'s
-  behavior for other failure modes.
+- The empty-cache-poisoning risk for NVD (§14, point 2) and for OSV (§26,
+  found at the D22 re-gate) is now closed for robots-refusal-specifically
+  in both cases; nothing else changes about either function's behavior for
+  other failure modes. **This was the second instance of the same
+  trust-cache/swallow-`PermissionError`/write-unconditionally shape,
+  found by adjacency (one function away from the first) rather than by a
+  systematic search — see §26's closing note for why a third instance
+  found the same way, rather than by search, is exactly the risk this
+  disclosure exists to flag.**
 
 **(b) Fail-closed's operational blast radius.** `docs/INGESTION_CONDUCT.md`
 argued fail-closed's ethics (refuse loudly rather than risk scraping past
@@ -987,3 +1006,264 @@ the real, committed `ingest/cve_nvd_expanded.json`. Caught immediately via
 ingest/cve_nvd_expanded.json`, confirmed clean before proceeding. No
 committed artifact from this pass reflects that write; it never reached a
 commit.
+
+---
+
+# Re-gate (2026-07-29): A1, A6, A3
+
+Reviewer-found (A1, A6) and reviewer/foreman-found (A3), all
+foreman-verified before dispatch. The two data-integrity fixes (A1, A6)
+are re-derived here at the same depth as D1-D3, per the user's direction
+that a volunteered-find standard applies to reviewer-found data-integrity
+issues too, not only to the specialist's own volunteered finds.
+
+## 26. A1: `fetch_osv()` had the identical trust-cache/swallow/write-unconditionally shape as the pre-D1 NVD bug — before/after transcript
+
+**The bug**, structurally identical to the NVD bug §14a already fixed,
+one function away: `fetch_osv()` (`scripts/ingest_cve_nvd_expanded.py`)
+trusted an existing cache file unconditionally (`:929`), caught
+`PermissionError` inside its broad per-target `except Exception: continue`
+(`:944`, now-correctly-typed after the D1 fix to `http_post_json()` — but
+that fix alone does not help here, because THIS function's own except
+clause still swallowed it), and wrote the accumulated (possibly empty)
+result unconditionally after the loop (`:961`, pre-fix line numbers). A
+robots refusal against `api.osv.dev` — reachable now that fail-closed
+robots checking exists — would repeat identically across all ~50
+`OSV_TARGETS` entries (all hitting the same host), then cache an empty
+list as if it were a complete, successful "0 vulns" result, trusted
+forever by every later run.
+
+**The choice** (per the re-gate's explicit ask: "decide deliberately
+whether re-raising alone is sufficient or the write also needs a guard,
+and say which you chose and why"): **re-raising alone, matching the NVD
+fix's structure exactly.** Added `except PermissionError: raise` ahead of
+the broad `except Exception` in `fetch_osv()`'s per-target loop
+(`scripts/ingest_cve_nvd_expanded.py:944-958`) — this propagates the
+exception OUT of `fetch_osv()` immediately, skipping the unconditional
+`cache_file.write_text()` line entirely, exactly as the D1 fix does for
+`fetch_nvd_keyword()`. No separate write-guard was added inside
+`fetch_osv()` because none is needed: an exception that exits the
+function before reaching the write statement makes a guard on that
+statement redundant. `main()`'s Phase 3 call site
+(`scripts/ingest_cve_nvd_expanded.py:1144-1154`) gained a matching
+`try`/`except PermissionError` — printing one "OSV phase aborted" message
+and setting `osv_vulns = []` — mirroring the NVD-phase-abort pattern so
+this phase's failure doesn't crash the whole script and Phase 1/2 results
+already collected are kept.
+
+**Why discard this run's partial progress rather than cache it**: OSV's
+single shared cache file covers ALL targets, unlike NVD's one-file-per-
+keyword scheme. A partial result (some targets succeeded before the block)
+written to that one shared file would still be silently trusted as "the"
+complete OSV dataset by every later run — a less-empty but equally
+incorrect poisoning, not a smaller version of a safe outcome. Discarding
+the whole run's OSV progress on a robots block, so the NEXT run starts
+fresh rather than silently freezing an incomplete cache, was judged the
+safer failure mode.
+
+**Before/after transcript**, reproduced directly (not described):
+
+**BEFORE** — `fetch_osv()`'s original per-target except clause
+(`except Exception as e: continue`, no `PermissionError`-specific branch)
+against a target list that always raises `PermissionError`:
+
+```
+exception raised = None
+cache_file.exists() = True
+cache_file contents = '[]'
+-> OSV CACHE POISONED by a robots refusal: a later run reads this as
+   '0 vulns, already fetched' and never retries.
+```
+
+**AFTER** — the real, current, fixed `fetch_osv()`, `http_post_json`
+mocked to raise `PermissionError`, `CACHE_OSV` redirected to a temp
+directory:
+
+```
+exception raised = PermissionError('refusing to fetch: robots.txt disallows it')
+cache_file.exists() = False
+-> no poisoned cache written; a later run gets a fresh attempt.
+```
+
+**End-to-end confirmation via the real, unmodified `main()`** (not a
+recreation), `fetch_nvd_keyword`/`fetch_ghsa` mocked to succeed with one
+NVD record, `http_post_json` mocked to raise `PermissionError`, `OUT_FILE`
+redirected to a temp path:
+
+```
+=== Phase 1: NVD keyword scans ===
+  -> 1 unique NVD CVEs across all keywords
+  -> 1 NVD CVEs passed AI-context filter
+=== Phase 2: GHSA scan ===
+  -> 0 new GHSA/GENERAL entries added
+  -> 0 new GHSA/MALWARE entries added
+=== Phase 3: OSV ecosystem scan ===
+  [error] OSV phase aborted -- refusing to fetch: robots.txt disallows it
+  -> 0 new OSV-only entries added
+
+Wrote 1 entries -> <temp path>
+```
+
+**1 entry written, not 0** — Phase 1's successfully-fetched NVD record
+survives Phase 3's abort; the OSV phase failing does not discard unrelated,
+already-collected work.
+
+**Extends §18(a)'s enumeration** (the per-script robots-refusal behavior
+list) to include OSV — done above, in place, rather than only here.
+
+**Closing note, per the user's direction that this class of bug is now
+tracked, not just patched twice:** this is the SECOND instance of the same
+three-part shape (trust cache → swallow `PermissionError` → write
+unconditionally), found by adjacency — the reviewer noticed `fetch_osv()`
+sits one function away from the already-fixed `fetch_nvd_keyword()` and
+checked it, not because a systematic sweep found it. **A third instance
+existing somewhere else in the fetcher inventory, found only when someone
+next happens to look nearby, is exactly the risk a named WS4 follow-up
+(routed by the user, not implemented here) exists to close** — a
+systematic audit of every fetcher's cache-write path against this
+three-part signature, using `tests/test_network_chokepoint.py`'s AST
+scanner file list as the inventory so the search is exhaustive rather than
+adjacency-driven. Not done in this pass; flagged so it isn't lost.
+
+## 27. A6: an all-phases-empty run no longer truncates the committed `OUT_FILE` — before/after transcript
+
+**The bug**: `main()` (`scripts/ingest_cve_nvd_expanded.py:1150-1153` in
+the pre-fix, last-committed version — verified against `git show
+HEAD:scripts/ingest_cve_nvd_expanded.py`, matching the re-gate's own
+citation of `:1153` for the write line exactly) wrote `OUT_FILE`
+unconditionally, including when
+every phase (NVD, GHSA, OSV) yielded zero records — a fully-blocked run
+(robots refusals across all three, or any other cause of universal zero
+yield) would truncate the committed, ~22.6 MB
+`ingest/cve_nvd_expanded.json` to `[]`. This is the SAME file a probe
+accident (§14b, §25) briefly clobbered during this task's own development
+— reached here by a different route (fail-closed blocking every phase,
+not a stray script write), which is precisely why the user wants the
+class closed now: a patched instance and an unpatched route to the same
+outcome are not the same as the class being closed.
+
+**Fix**: a one-line guard (`scripts/ingest_cve_nvd_expanded.py:1177`,
+`if not out:`) skips the write and prints a clear refusal message instead,
+when the combined `out` list across all three phases is empty. When `out`
+is non-empty (even from just one surviving phase), the write proceeds
+exactly as before — this guard only fires on the fully-degenerate case,
+not on any partial result.
+
+**Before/after transcript**, reproduced directly against a simulated
+pre-existing 2-entry committed file (standing in for the real, much
+larger `OUT_FILE`, so the test doesn't touch it):
+
+```
+before: [{"source_id": "CVE-EXISTING-1"}, {"source_id": "CVE-EXISTING-2"}]
+```
+
+Ran the real, current, fixed `main()` end-to-end with `fetch_nvd_keyword`
+and `http_post_json` both mocked to raise `PermissionError` on every call
+(simulating a fully-blocked run: NVD and OSV both refused; GHSA mocked to
+return no advisories), `OUT_FILE` pointed at the file above:
+
+```
+=== Phase 1: NVD keyword scans ===
+  [error] NVD phase aborted -- refusing to fetch: robots.txt disallows it
+  -> 0 unique NVD CVEs across all keywords
+=== Phase 2: GHSA scan ===
+  -> 0 new GHSA/GENERAL entries added
+  -> 0 new GHSA/MALWARE entries added
+=== Phase 3: OSV ecosystem scan ===
+  [error] OSV phase aborted -- refusing to fetch: robots.txt disallows it
+  -> 0 new OSV-only entries added
+
+[error] 0 entries collected across all phases -- refusing to overwrite
+<temp path>\cve_nvd_expanded.json with an empty result
+```
+
+```
+after:  [{"source_id": "CVE-EXISTING-1"}, {"source_id": "CVE-EXISTING-2"}]
+file unchanged (not truncated): True
+```
+
+**The file is byte-identical before and after** — confirmed by direct
+string comparison, not by inference from the log message.
+
+`docs/INGESTION_CONDUCT.md`'s fail-closed exposure paragraph (previously:
+fail-closed "breaks an ingest that used to work") now adds the concrete
+consequence this fix guards against — that an ingest breaking may also
+mean truncating a committed artifact or permanently poisoning a cache,
+not merely "no new data this run."
+
+## 28. A3: invariant-5 misquotation, fixed in all three named files
+
+`MASTER_IMPROVEMENT_PLAN.md:45` reads *"All **HTTP(S)** fetching…"*
+(amended by D22). Three files quoted the superseded unscoped "all network
+fetching" wording as if verbatim:
+
+- `ingest/common.py:2-4` (module docstring opening) — fixed; now quotes
+  the HTTP(S)-scoped text and notes the D22 amendment plus the register.
+- `tests/test_network_chokepoint.py:1-4` (module docstring opening) —
+  fixed; **also** fixed the second issue the re-gate named: the docstring
+  named the superseded grep wording ("grep shows no requests./urllib/httpx
+  usage...") as what this test enforces, when Accept clause 1 was
+  retargeted by D22 to name the fetch surface with this test as **enforcer
+  of record** (`MASTER_IMPROVEMENT_PLAN.md:83`). The old grep wording is
+  now presented explicitly as superseded historical context, not as the
+  live criterion.
+- `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md:3-4` (this
+  file's own opening paragraph) — fixed; this was the only instance in
+  this file (re-checked: `§6`/`§7`'s discussion of the superseded grep
+  criterion is a deliberate historical/documented-reading analysis, not a
+  misquotation, and is out of A3's scope per the re-gate's own
+  instruction not to chase this into that section).
+
+**Swept each of the three files individually for any OTHER instance of
+the same misquotation** ("all network fetching", case-sensitive and
+case-insensitive both checked) — none found beyond the one instance
+already fixed in each file.
+
+**A consequence of fixing `ingest/common.py`'s docstring, disclosed
+rather than left implicit**: the docstring edit added one line (3 lines
+→ 4), shifting every subsequent line number in the file by exactly +1.
+Every `ingest/common.py:N`-style citation in `docs/INGESTION_CONDUCT.md`
+(22 bracketed citations plus one bare shorthand continuation,
+`` `:502-509` `` → `` `:503-510` ``) was re-derived and updated
+mechanically (a targeted regex increment), then every unique resulting
+span was individually re-verified against the current file content —
+all resolve exactly. Three hand-typed inline line numbers in prose
+("line 312/311/313", describing `robots_allowed()`'s closing block) were
+NOT caught by that mechanical pass (they don't match the
+`ingest/common.py:N` citation pattern) and were found and fixed by a
+separate manual sweep (`grep -n "line [0-9]"`). **The pre-existing, stale
+`ingest/common.py:N` citations in THIS audit document's own §1-3
+(`§1`'s per-script table row for `ingest_oecd_aim.py`: `:177-197`; §2:
+`:122-154`, `:336-347`; §3: `:177-197`; §14a's intro citing `:206-210`)
+were checked against the pre-A3 committed file and found to already be
+stale — by 5-7 lines, predating A3 entirely (they were written before
+bounce #1's edits to `_get_robots_parser()` and never revisited).** These
+are NOT touched here: they are a different defect class (general citation
+drift from an earlier, unrelated edit) than A3's invariant-quote
+misquotation, and fixing them was out of this re-gate's stated scope
+("same class, same files... do not chase it into other files"; this is
+the same file, but not the same class). Flagged here rather than silently
+left for a future reader to trip over, and reported to the foreman
+directly.
+
+## 29. Test count and zero-data-delta re-confirmation (A1/A6/A3 re-gate)
+
+`python -m pytest -q`: **265 passed** — unchanged. No new pytest tests
+were added for A1/A6; verification is the reproducible probe transcripts
+in §26-27 above, matching the precedent already set for the equivalent
+NVD-path fixes in §14a-14b (also probe-verified, not pytest-committed,
+since `tests/test_ingest_cve.py`'s existing scope is record-extraction/
+classification logic, not network-conduct behavior — that layer is
+covered structurally by `tests/test_ingest_common.py`'s `PermissionError`
+propagation tests against `ingest.common.fetch_once()`, which both
+`http_get()` and `http_post_json()` call through unchanged). Stated
+explicitly as a deliberate choice, not an oversight.
+
+`git status --porcelain --untracked-files=all`: clean of strays,
+re-confirmed after all A1/A6/A3 edits.
+
+Zero-data-delta re-confirmed by the same method as §12/§22: full manual
+`make build` sequence re-run; `git status --porcelain` and SHA-256 of
+every tracked `data/*.json` + `INCIDENTS.md` identical before/after (only
+the gitignored, date-stamped `legacy_consolidated.json` differs, expected/
+documented churn, consistent with every prior re-check in this document).
