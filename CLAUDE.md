@@ -61,6 +61,16 @@ never put model calls in the deterministic build path.
    deliverables have been lost three times to session restarts (the WS0-T3
    validation sample, the outreach drafts, and nearly the cascade analysis).
    Reports, specs, samples, drafts, delta tables — all land on disk first.
+   **1a. The missing half — PUSH, don't just commit (added 2026-07-30).**
+   Board records and gate verdicts **push to origin at the end of every foreman
+   run, whether or not their branch has merged.** Committed-but-local on an
+   unmerged branch is the E18 failure with extra steps: the artifact exists,
+   nobody else can see it, and a crash erases it exactly like a chat-only
+   deliverable. Found in practice — this session's entire E21/E23 release-gate
+   audit trail (two gate verdicts, a measurement record, and a correction to a
+   published figure) sat local-only on an unmerged branch until a durability
+   check caught it. **The check is one command:** `git ls-remote --heads origin
+   <branch>` — empty means the record does not exist anywhere but this machine.
 2. **Field-level delta rule.** Any transformative data operation (a rebuild,
    reduction, relabel, migration) publishes a full field-level before/after
    delta across every affected field plus entry-count/ID-set. Unintended

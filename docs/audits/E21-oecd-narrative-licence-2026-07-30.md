@@ -278,6 +278,52 @@ decisively, the LLM-generation mechanism (§2.4) — plus this project's
 existing conservative-resolution rule applied to the genuine ambiguity those
 facts leave in Layer 3.
 
+## ⛔ §5 IS NOT ACCEPTED — RE-SCOPED TO WS4 PIPELINE-ENGINEER (user ruling, 2026-07-30)
+
+**Do not implement from §5. It failed its gate twice and is retained only as
+input to the task that replaces it.** §§1–4 — the licensing analysis and the
+(A)/(B) verdict — are **accepted and merged**; red-reviewer confirmed them twice
+(*"The analysis is right and I have now confirmed it twice"*). §5 is the
+implementation spec, and it is superseded.
+
+**Two gating defects stand unfixed in the text below:**
+
+1. **§5.1 mechanism 1 is a no-op.** It claims *"no `merge_and_dedupe.py` code
+   change needed at all"* and cites `quality_tier` as precedent. Both false: the
+   entry reaching the classifiers is rebuilt from an explicit whitelist at
+   `merge_and_dedupe.py:793-813` that contains **no `corpus` key**, so a `corpus`
+   value set at ingest is **discarded**, `if not e.get("corpus")` is always true,
+   and the relabel ships. `quality_tier` is absent from the same whitelist; its
+   `:1440` guard exists for the **overrides file**, not ingest sources. A seed
+   field costs **three** touchpoints (whitelist, use, strip — see `:1555-1560`,
+   `additionalProperties:false`), not zero. **This is the dangerous kind of
+   wrong: an implementer would choose mechanism 1 precisely because it is
+   advertised as free.**
+2. **The scope misses a second OECD ingest file.** `merge_and_dedupe.py:1336`
+   globs **every** `ingest/*.json`. `ingest/oecd_aim_incidents.json` holds **86
+   rows whose `source_id`s are entirely disjoint** from the 4,160 (0 shared),
+   **all 86 reach `data/incidents.json`**, and **59 carry a verbatim
+   `description`**. Nothing reads or writes it — orphaned since `edaefc92`
+   (2026-05-13). **The reduction population is 3,726, not 3,667.** Both the
+   specialist's and red-reviewer's earlier counts joined against the full file
+   only and inherited the same blind spot.
+
+**Why this was re-scoped rather than bounced a third time (user ruling):** *"the
+licensing conclusion and its implementation are different claims verified by
+different competencies."* Both bounces were facts about `merge_and_dedupe.py`'s
+internals, specified by a WS0 docs specialist with no shell to execute or test
+them. That is a **role mismatch, not a defect in the ruling** — the same lesson
+as license-auditor delegating shell checks to red-reviewer, now applied at task
+level.
+
+**What survives §5 as binding input to the replacement task:** the `corpus`
+cascade itself (77–150 rows, measured); the constraint that any persisted seed
+must carry the **derived signal only, never the narrative** (a literal
+`_aiaaic_seed_facts` mirror would defeat the reduction under a new field name —
+the specialist caught this against both the foreman's and the gate's
+instruction); the **local-transform** backfill mechanism, which needs no re-fetch
+and reaches 100% of rows; and §5.5's owed disclosure fields.
+
 ## 5. Scope and effort for the reduction
 
 **Revision note (BOUNCE #1, this section only — §§1–4 and the (A)/(B)
