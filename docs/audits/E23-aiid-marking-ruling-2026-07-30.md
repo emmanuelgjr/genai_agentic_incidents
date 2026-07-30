@@ -12,6 +12,34 @@ AIAAIC headline-copyright precedent).
 
 ---
 
+**Revision log (2026-07-30, BOUNCE #1 — six prose defects; outcome
+CONFIRMED unchanged by the gate):** this document originally characterized
+AIID's maker as "a California nonprofit corporation" and grounded Layer 1's
+copyright reasoning in AIID's Terms-of-Use choice-of-law clause; neither
+survives review and both are corrected below. The corrected finding is
+narrower but no weaker: AIID's maker is **US-situated** (a specific state
+of incorporation is not established in AIID's own materials and, per §3,
+is not material to the outcome), and Layer 1's connecting factor is that
+**situs**, matching E13's own method exactly rather than a variant of it —
+a ToS choice-of-law clause governs contract disputes, not copyright
+subsistence, and in any case cannot itself supply a copyright rule (US
+copyright is exclusively federal). Two supporting citations are corrected
+to the right source page (the EIN is on `/about/`, not `/terms-of-use/`,
+where this document originally cited it) and one is re-characterized (the
+Sacramento address is a DMCA agent address under 17 U.S.C. 512, not a
+stated registered office). A reinforcing qualitative claim that AIID's
+titles read as "plain factual labels" is retracted — full-corpus
+measurement contradicts it (median 13 words, above *Infopaq*'s 11-word
+bar; 925/1,548 titles carry a hedging qualifier) — and Layer 1 now rests on
+the situs finding alone. The Attribution finding (§4) is corrected from an
+n=2 sample ("every row") to the measured population (1,463–1,464 of 1,465,
+with the two exceptions named and explained rather than smoothed over).
+**None of these corrections changes the outcome.** The gate independently
+reproduced the empirical claims this ruling depends on and found the
+outcome sound; what follows is the corrected text.
+
+---
+
 ## Outcome
 
 **(2) — MARKING NOT REQUIRED for the population that ships, and the
@@ -23,8 +51,8 @@ independent legal reasons — one turning on U.S. copyright law's categorical
 short-phrase exclusion, one turning on the exact UK/EU database-right
 maker-qualification gate E13 §4.1 already built for this project's own
 qualification — both point the same way, for the same underlying fact:
-**AIID's maker is a U.S. (California) nonprofit corporation, not a UK/EU
-one.** That single fact is why AIID and AIAAIC are not "the same posture,"
+**AIID's maker is a U.S.-situated entity, not a UK/EU one.** That single
+fact is why AIID and AIAAIC are not "the same posture,"
 despite AIID's license being the confirmed one and AIAAIC's being open.
 `NOTICE-DATA` and `.reuse/dep5` are wrong to describe them as parallel, and
 must stop (see "What NOTICE-DATA / .reuse/dep5 owe," below).
@@ -47,49 +75,67 @@ Neither the brief nor E23 asked where AIID's own maker is domiciled — E13's
 UK/EU database-right analysis for AIAAIC turned heavily on AIAAIC being
 UK-situated, and the brief's framing implicitly carried that assumption
 over to AIID by calling the two exposures "the same class." I checked AIID's
-own Terms of Use directly (`https://incidentdatabase.ai/terms-of-use/`, the
-same page `docs/SOURCE_LICENSES.md` §1.2 already quotes for the CC-BY-SA
-grant itself) rather than assume the parallel holds.
+own Terms of Use and About page directly (`https://incidentdatabase.ai/terms-of-use/`,
+the same page `docs/SOURCE_LICENSES.md` §1.2 already quotes for the CC-BY-SA
+grant itself, and `https://incidentdatabase.ai/about/`) rather than assume
+the parallel holds.
 
-**Method note, per this file's own standing rule:** this was a WebFetch
-read, not a raw `curl`+`grep` of the HTML — the same tool this project's own
-standing rule flags as having produced false paraphrases twice before.
-Unlike an *absence* finding, this is a *presence* finding of specific,
-distinctive strings (an EIN, a street address, a named venue), which is a
-lower-risk shape for a summarizing tool to fabricate wholesale than a
-negative claim — and it is corroborated by an independent `WebSearch` (not
-the same tool or fetch) returning consistent facts from two unrelated
-sources (LinkedIn: Los Angeles HQ; a nonprofit-directory site: Sacramento,
-CA; both plus a stated "IRS ruling in 2023," i.e., U.S. tax-exempt status).
-Still, this is the single most load-bearing fact in this ruling, so it
-should not be treated as fully closed until raw-HTML-confirmed. **Exact
-check for red-reviewer:** `curl -sL https://incidentdatabase.ai/terms-of-use/
-| grep -i -E "Sacramento|Responsible AI Collaborative, Inc\.|governing
-law|Los Angeles County|88-1046583"` — if any of these fail to appear in the
-raw HTML, this ruling's Layer 1 and Layer 2 conclusions below must be
-revisited before being relied on further.
+**Method note, per this file's own standing rule — and a correction on this
+pass.** This was a WebFetch read, not a raw `curl`+`grep` of the HTML — the
+same tool this project's own standing rule flags as having produced false
+paraphrases twice before. On red-reviewer's raw-HTML re-check: the
+governing-law clause held exactly as originally quoted (verbatim, under a
+"Jurisdiction" heading). Two other citations did not survive unchanged —
+the EIN (88-1046583) is stated on **`/about/`**, not `/terms-of-use/`,
+where this document originally cited it (my probe checked the wrong page);
+and the Sacramento address on `/terms-of-use/` is the site's **designated
+DMCA Copyright Agent address under 17 U.S.C. 512** — *"RAIC's designated
+Copyright Agent … is: DMCA Agent, Responsible AI Collaborative, Inc., 2108
+N St N, Sacramento, CA 95816"* — not a stated corporate registered office,
+which this document originally implied by calling it "registered at."
+**No page on either domain states a state of incorporation**, and there is
+no basis in AIID's own materials for the "California corporation"
+characterization this document originally used — retracted below. **Exact
+check for red-reviewer, corrected to the right page for each fact:**
+`curl -sL https://incidentdatabase.ai/about/ | grep -i -E "88-1046583|Form
+990"` for the EIN/tax-exempt fact; `curl -sL
+https://incidentdatabase.ai/terms-of-use/ | grep -i -E "governed by the
+laws of the state of California|Los Angeles County|DMCA Agent"` for the
+governing-law/venue/agent-address facts.
 
-**What the Terms of Use state (WebFetch, 2026-07-30, not yet raw-HTML
-confirmed):**
-- The operating entity is **"Responsible AI Collaborative, Inc.,"**
-  registered at **"2108 N St N, Sacramento, CA 95816"** — a California
-  corporation, not a UK or EEA one.
-- **Governing law:** *"the Agreement and any access to or use of our Site
-  will be governed by the laws of the state of California, U.S.A.,
-  excluding its conflict of law provisions."*
-- **Venue:** the state and federal courts of **Los Angeles County,
-  California**; arbitration also sited in Los Angeles.
-- An EIN (**88-1046583**) is stated, consistent with U.S. tax-exempt
-  nonprofit status (corroborated by `WebSearch`'s independent "IRS ruling in
-  2023" finding).
+**What AIID's own pages state, now correctly attributed:**
+- **Entity name:** "Responsible AI Collaborative, Inc." (both pages).
+- **US tax-exempt status:** an EIN (**88-1046583**) and a reference to a
+  Form 990 filing, stated on **`/about/`** — corroborated by `WebSearch`'s
+  independent "IRS ruling in 2023" finding.
+- **Governing law** (`/terms-of-use/`, "Jurisdiction" heading, confirmed
+  verbatim on raw-HTML re-check): *"the Agreement and any access to or use
+  of our Site will be governed by the laws of the state of California,
+  U.S.A., excluding its conflict of law provisions."*
+- **Venue** (`/terms-of-use/`): the state and federal courts of **Los
+  Angeles County, California**; arbitration also sited in Los Angeles.
+- **DMCA agent address** (`/terms-of-use/`): the Sacramento address quoted
+  above — a notice address under 17 U.S.C. 512, not a registered office.
+- **Not stated anywhere on either page: a state of incorporation.**
+
+**What this does and does not establish.** It establishes AIID's maker is
+**US-situated** — principal place of business, venue, and arbitration all
+in Los Angeles, California; US federal tax-exempt status; a
+California/U.S.-law-selecting Terms of Use — and not UK- or EEA-situated by
+any measure available. It does **not** establish a specific state of
+incorporation, and — per §3 below — **that gap is not material**: reg
+18(2)'s UK-nexus test and Art 11's EEA-nexus test fail identically for a
+body whose principal place of business, venue, and tax domicile are all in
+the United States, regardless of which particular US state issued its
+certificate of incorporation.
 
 This is a materially stronger primary-source basis than E13 had for
 AIAAIC's own domicile — E13 §1 explicitly could not determine AIAAIC's
 "precise legal entity/registration" and worked from an unconfirmed
 assumption ("the E13 brief states 'AIAAIC is UK-based' and I have not found
-anything contradicting that"). Here, AIID's own Terms of Use name the exact
-entity, its registered address, and its **self-selected governing law** —
-California, not the UK, not any EEA state.
+anything contradicting that"). Here, AIID's own pages name the exact
+entity, its US tax-exempt status, and its principal place of business/venue
+— a firmer footing than AIAAIC's even without a stated incorporation state.
 
 ---
 
@@ -105,55 +151,76 @@ generic citation label, not AIID's own wording (unlike AIAAIC's
 headline on ≥31/47 sampled rows — AIID has no equivalent hidden-verbatim
 field, confirmed by full-file scan, not sampling).
 
-**Governing law, per the fact established in §1 above:** AIID's own Terms
-of Use select California/U.S. law. Applying the identical method E13 §5.1
-item 8 already used for AIAAIC ("this file already treats [the rights-
-holder's home] law as the governing regime... the same choice of governing
-law applies to the copyright question, since it concerns the same
-[rights-holder]'s same content") to AIID's California situs rather than
-AIAAIC's UK one: **U.S. copyright law governs whether AIID's retained
-`title` field is protectable expression.**
+**The connecting factor is situs, not a contract clause — corrected on this
+pass.** This document originally grounded the choice of governing law in
+AIID's Terms-of-Use choice-of-law clause itself. That does not hold, for
+two independent reasons: **(a)** a ToS choice-of-law clause governs
+disputes over site use, not copyright subsistence — under Berne Art 5(2),
+copyright subsistence is governed by the law of the country where
+protection is claimed, a different question the clause was never written
+to answer; and **(b)** the clause as quoted selects *"the laws of the state
+of California"* specifically, and state law cannot supply a copyright rule
+at all — US copyright is exclusively federal, and 17 U.S.C. 301 preempts
+equivalent state-law rights. A state choice-of-law clause cannot be the
+thing that imports Circular 33.
 
-U.S. Copyright Office Circular 33 ("Works Not Protected by Copyright")
-categorically excludes **"titles, names, short phrases, and slogans"** from
-copyright protection — a bright-line rule, not a case-by-case
-"author's-own-intellectual-creation" test. This is the exact rule AIAAIC's
-headline question (E15/D17) could **not** invoke, because AIAAIC is
-UK-situated and UK/EU law (*Infopaq*, *Meltwater*) has no equivalent
-categorical carve-out — which is precisely why AIAAIC's headline question
-had to go to counsel rather than resolve in-house. For AIID, the categorical
-U.S. rule applies directly and disposes of the question: **a bare AIID
-`title` field carries no protectable expression under the law AIID itself
-selected to govern use of its content.**
+**The correct connecting factor, applying E13 §5.1 item 8's own method
+rather than a contract clause:** E13's method for AIAAIC was never "AIAAIC's
+contract selects UK law" — it was *"AIAAIC is UK-situated... this file
+already treats UK/EU law as the governing regime... the same choice of
+governing law applies to the copyright question, since it concerns the same
+UK-situated rights-holder's same content."* **The operative fact is the
+rights-holder's own situs, not a clause in its terms of service.** Applying
+that to AIID: per §1 above, AIID's maker is US-situated (principal place of
+business, venue, and arbitration in Los Angeles, California; US federal
+tax-exempt status). That situs is what puts U.S. copyright law in play for
+the same content-ownership question — the Terms of Use's own California
+choice-of-law clause is retained only as **corroborating evidence of that
+situs**, not as the operative choice-of-law rule.
 
-**A reinforcing, non-load-bearing observation, already recorded by E23
-§2b for a related population and worth noting here too:** even setting the
-jurisdictional question aside, AIID's own titles read qualitatively
-differently from AIAAIC's. E23 sampled AIID's titles directly (against
-`aiid_full.json`, ground truth) and found them to be "plain
-subject-verb-object incident labels" — E23's own examples include *"Tesla
-on Autopilot TACC Crashed into Van on European Highway"* and *"A Collection
-of Tesla Autopilot-Involved Crashes"* — not AIAAIC's colorful editorializing
-(scare-quoted phrases, distinctive verbs like "cripples"/"extol"/"swamp"
-that E16 §1 identified as the markers pushing toward protection under
-*Infopaq*). Even if a UK/EU court somehow applied UK/EU law to AIID content
-(a scenario this ruling does not need to reach, given AIID's own
-self-selected governing law), the *content itself* looks less likely to
-clear *Infopaq*'s bar than AIAAIC's headlines did — and E16 found 42 of 47
-of *those* not defensible. This is not the basis for the ruling; it is
-noted because it points the same direction as the governing-law finding
-rather than cutting against it, which is worth knowing.
+U.S. Copyright Office Circular 33 ("Works Not Protected by Copyright") /
+37 C.F.R. 202.1(a) categorically excludes **"titles, names, short phrases,
+and slogans"** from copyright protection — a bright-line rule, not a
+case-by-case "author's-own-intellectual-creation" test. This is the exact
+rule AIAAIC's headline question (E15/D17) could **not** invoke, because
+AIAAIC is UK-situated and UK/EU law (*Infopaq*, *Meltwater*) has no
+equivalent categorical carve-out — which is precisely why AIAAIC's headline
+question had to go to counsel rather than resolve in-house. For AIID, the
+categorical U.S. rule applies directly and disposes of the question: **a
+bare AIID `title` field carries no protectable expression under the law of
+AIID's own situs.**
+
+**A reinforcing qualitative claim this document originally made does not
+survive full-corpus measurement, and is retracted rather than kept as a
+soft addition.** The original text claimed AIID's titles read as "plain
+subject-verb-object incident labels," citing two of E23's own examples.
+Measured across all 1,548 titles in `aiid_full.json` (red-reviewer,
+2026-07-30): mean length is **95 characters / 12.9 words**, median **13
+words** — above the 11-word extract *Infopaq* itself held capable of
+protection — **925 of 1,548** contain a hedging qualifier
+(Allegedly/Reportedly/Purported/Apparently) and **340** contain a quoted
+phrase. The corpus contains titles like *"Google Gemini Reportedly
+Reinforced Delusions, Allegedly Contributing to Florida User's Near-Harm
+Episode and Suicide"* — edited, hedged, and structured, not a bare label.
+The two examples originally cited here (9 and 6 words respectively) are
+real but unrepresentative of the population. **On content alone, AIID's
+titles are not demonstrably less editorial than AIAAIC's**, and this
+document no longer claims otherwise. **Layer 1's conclusion rests on the
+situs finding alone, not on any claim about the qualitative character of
+AIID's titles.**
 
 **Consistency with the AIAAIC precedent (D2/D17), as the brief asked me to
-weigh:** this is not a departure from how the project treats retained
-titles — it is the same standard, applied to different facts, yielding a
-different result for a principled reason. AIAAIC's headline question stayed
-open specifically *because* (a) UK/EU law has no categorical short-phrase
-exclusion, and (b) the retained content itself showed AIAAIC's own editorial
-choices. Both of those conditions are absent for AIID: (a) is absent
-because AIID's own governing law does have that exclusion, and (b) is
-absent because AIID's titles read as plain factual labels. The ruling
-tracks the precedent's own logic rather than overriding it.
+weigh — and this survives the retraction above.** This is not a departure
+from how the project treats retained titles — it is the same standard,
+applied to different facts, yielding a different result for a principled,
+stated reason: **situs**. AIAAIC's headline question stayed open because
+UK/EU law — the law of AIAAIC's own situs — has no categorical
+short-phrase exclusion. AIID's headline question resolves because U.S.
+law — the law of AIID's own situs — does. The distinction is not, and does
+not need to be, that AIID's content is less editorial than AIAAIC's; on the
+measurement above it plausibly is not. The two retained-headline situations
+are treated differently for a real, stated jurisdictional reason, not an
+unexplained split, and that reason holds on the situs finding by itself.
 
 ---
 
@@ -179,11 +246,20 @@ this is the other side of the same gate:**
 - Reg 18(1)(b)/(2) (corporate limb): requires incorporation under UK law
   **and** either UK central administration/principal place of business, or
   a UK registered office linked to the UK economy. Responsible AI
-  Collaborative, Inc. is a **California** corporation, registered at a
-  Sacramento address, with Los Angeles as its stated venue — none of reg
-  18(2)'s UK-nexus conditions are met.
+  Collaborative, Inc. is **US-situated** — principal place of business,
+  venue, and arbitration all in Los Angeles, California, per its own Terms
+  of Use, with US federal tax-exempt status (EIN 88-1046583, `/about/`) —
+  with no stated UK central administration, principal place of business, or
+  registered office. None of reg 18(2)'s UK-nexus conditions are met.
 - Directive 96/9/EC Art 11 (parallel EU-law test): requires EEA
-  nationality/incorporation — also not met by a California corporation.
+  nationality/incorporation — also not met by a US-situated entity.
+
+**A specific state of incorporation is not established in AIID's own
+materials (§1), and this analysis does not need one:** reg 18(2)'s UK-nexus
+test and Art 11's EEA-nexus test fail identically for a body whose
+principal place of business, venue, and tax domicile are all in the United
+States, regardless of which particular US state issued its certificate of
+incorporation. Nothing below turns on that unestablished fact.
 
 **Result: AIID's maker fails the UK and EU maker-qualification gates,
 exactly as genai_incidents' own maker did in E13 §4.1 — except here it is
@@ -246,20 +322,35 @@ practical question:**
   those fields specifically.
 - **Practically, and this is what actually matters for a reader:**
   attribution is present anyway, and is arguably more thorough per-row than
-  AIAAIC's was before its marker existed. Verified directly in
-  `data/incidents.json` (two sampled rows, `aiid_id` 1 and 2): every
-  templated `description` states, in full sentences, **"AI Incident
-  Database (AIID) entry #{id}: {title}. ... See the linked AIID entry for
-  full narrative, sourcing, and classification"** — a per-row,
-  human-readable attribution baked into the shipped text itself, not just a
-  separate metadata field — and `references[0]` carries a working link
-  (`title: "AIID incident #{id}"`, `url:
-  https://incidentdatabase.ai/cite/{id}/`) on every one of these rows.
+  AIAAIC's was before its marker existed. **Originally verified on two
+  sampled rows only and overstated as "every row" — corrected here to the
+  measured population** (red-reviewer, all 1,465 `aiid_id`-bearing rows):
+  **1,463 of 1,465** name AIID in a full-sentence `description` (**"AI
+  Incident Database (AIID) entry #{id}: {title}. ... See the linked AIID
+  entry for full narrative, sourcing, and classification"**); **1,464 of
+  1,465** carry a working citation link somewhere in `references`; **1,463
+  of 1,465** carry it at `references[0]` specifically.
+  **The two exceptions are not gaps, and are worth naming individually
+  because they clarify the actual rule rather than just excusing it:**
+  `INC-00437` (`aiid_id` 1574) carries no AIID attribution anywhere because
+  it is **absent from `aiid_full.json` entirely** — its shipped content is
+  OECD-AIM-derived, not AIID's (the same row E23 §4 already names as one of
+  the two exceptions to the 1,463-row template match). `INC-08183`
+  (`aiid_id` 898) carries its citation link at `references[3]`, not `[0]`,
+  because its AIID title was superseded by another source's content.
+  **Neither row ships any AIID-authored text, so neither owes AIID
+  attribution** — a stronger, more precise statement than "every row," not
+  a weaker one.
+  **The general rule, made explicit rather than left implicit:**
+  attribution is owed, and present, on every row that ships AIID's own
+  text; rows carrying only an `aiid_id`/AIID source-ID as a bare
+  cross-reference, with no AIID text actually shipping, are a different
+  category and are not measured against this obligation at all.
   `README.md:223` additionally names "AI Incident Database (AIID)" with
   links to both `incidentdatabase.ai` and the GitHub repo at the
   collection level. `NOTICE-DATA:92-107` and `.reuse/dep5:35-42` already
-  name AIID's CC BY-SA licensing at the document level. Nothing here needs
-  fixing — the finding is a clean "already adequate," not a gap to route.
+  name AIID's CC BY-SA licensing at the document level. The finding stands
+  as "already adequate" on the corrected numbers — not a gap to route.
 
 ---
 
@@ -313,8 +404,8 @@ is answered, not open.** The notice is owed a replacement statement to this
 effect: AIID-derived rows were separately reviewed (E23 measurement +
 this ruling) and found not to require a row-level marker for the content
 that actually ships, because (a) the only AIID-authored text retained is a
-bare title, not protectable expression under the law AIID's own terms
-select to govern it, and (b) AIID's maker does not qualify for a UK or EU
+bare title, not protectable expression under U.S. copyright law — the law
+of AIID's own situs — and (b) AIID's maker does not qualify for a UK or EU
 sui generis database right in the first place. This is a *more* reassuring
 statement than the current hedge, not a less reassuring one, and should be
 stated plainly rather than left as a caveat — while still naming the
@@ -389,12 +480,23 @@ unaffected by this ruling — I have not touched that).
   to check" for AIID (mirroring E16's `references[0].title` discovery for
   AIAAIC); this ruling preserves that distinction rather than collapsing it
   for a tidier one-line answer.
-- **The WebFetch-verification caveat in §1 is a real, not pro forma, open
-  point.** Everything in §§2–3 is downstream of AIID's Terms of Use naming
-  a California entity and California governing law. I corroborated it with
-  an independent `WebSearch`, but neither is a raw-HTML confirmation. The
-  exact check is named in §1; until it is run, treat this ruling as
-  well-supported but not fully closed, the same posture this document's own
-  standing rule would apply to any of my own absence findings, applied here
-  to a presence finding instead because the tool's known failure mode is
-  the same regardless of which direction the claim runs.
+- **The WebFetch-verification caveat in §1 was a real, not pro forma, open
+  point, and it caught real errors on the first gate pass.** Everything in
+  §§2–3 is downstream of AIID's own pages establishing its US situs
+  (principal place of business, venue, tax-exempt status) and its Terms of
+  Use's own California choice-of-law clause (retained as corroborating
+  evidence of that situs, not as the operative connecting factor — see §2's
+  correction). Red-reviewer's raw-HTML re-check confirmed the governing-law
+  clause verbatim but found the EIN mis-cited to the wrong page and the
+  Sacramento address mis-characterized as a registered office rather than a
+  DMCA agent address — both corrected above. This is the exact failure mode
+  the standing rule warns about, caught by doing the check rather than
+  skipping it, and it is worth carrying forward as a live example rather
+  than an abstract warning.
+- **Two items the gate found are explicitly the foreman's to route, not
+  mine to fix:** `docs/audits/PHASE1-EXIT-2026-07-30.md:228` points readers
+  at the retired §1.2 rather than the active §1.2a; and `INC-00437`
+  (`aiid_id` 1574) carries an AIID source-ID while its narrative is
+  OECD-derived with `description_provenance: null` — placing it in E21's
+  population while still tagged to AIID. Both are noted here only so they
+  aren't lost between the gate's report and the foreman's board.
