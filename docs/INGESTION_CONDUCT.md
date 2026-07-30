@@ -351,11 +351,11 @@ implemented in this one.
 
 ### Scoping note: excluded from this register
 
-`.github/workflows/auto-refresh.yml`'s own `git clone`/`git push` steps
-(persisting `ingest/_state/source_health.json` to the `refresh-state`
-branch, and `peter-evans/create-pull-request`'s git operations opening the
-weekly refresh PR) are **not** registered here. These are CI/CD operations
-on this repository's *own* git history — GitHub talking to GitHub via
+`.github/workflows/auto-refresh.yml:156`'s own `git clone` (persisting
+`ingest/_state/source_health.json` to the `refresh-state` branch) and
+`peter-evans/create-pull-request`'s git operations opening the weekly
+refresh PR are **not** registered here. These are CI/CD operations on
+this repository's *own* git history — GitHub talking to GitHub via
 `${{ github.token }}` — not ingestion of external corpus data from a
 third-party source, which is what this invariant and this register are
 about. Named here so the exclusion is a stated scoping decision, not a
