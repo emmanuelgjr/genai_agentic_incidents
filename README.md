@@ -102,7 +102,7 @@ That's six taxonomies total, not four — see [`docs/TAXONOMIES.md`](docs/TAXONO
 │   ├── scrape_aiid.py                ← RETIRED per-page scrape (kept only as a reused parsing-logic library; disabled in Makefile)
 │   ├── ingest_airi_navigator.py      ← MIT FutureTech AI Risk Navigator CSV → ingest/airi_navigator_incidents.json
 │   ├── ingest_aiaaic_sheet.py        ← AIAAIC Repository public Google Sheet → ingest/aiaaic_sheet_incidents.json
-│   ├── ingest_oecd_aim.py            ← OECD AI Incidents Monitor (10k pages) → ingest/oecd_aim_full_incidents.json
+│   ├── ingest_oecd_aim.py            ← OECD AI Incidents Monitor (large page crawl) → ingest/oecd_aim_full_incidents.json
 │   ├── ingest_cve_nvd_expanded.py    ← pull AI-relevant CVEs from NVD/GHSA/OSV → ingest/cve_nvd_expanded.json
 │   ├── ingest_cisa_kev.py            ← CISA Known Exploited Vulnerabilities catalog (enrichment only)
 │   ├── merge_and_dedupe.py           ← merge legacy + ingest/* → data/incidents.json
@@ -191,7 +191,7 @@ print(by_cve("CVE-2026-21520"))   # all incidents that list this CVE
 print(resolve_id("INC-00139"))    # follow merge history to the current canonical INC
 ```
 
-**Staleness:** the PyPI package bundles a snapshot of the slim dataset (`incidents.min.json` + `id_deprecations.json`) taken at that release's build time and only publishes on a tagged GitHub release — `pip install` gives you the corpus as of the version you installed, not a live feed. The package's own release version and the dataset's content-vintage are not yet decoupled (that split — `data_version` distinct from code `__version__`, with a `fetch_latest()` to pull current data on demand — is planned but not shipped); today they're the same string. If you need current data, don't assume a `pip install` a week ago is still current — re-pull, or use one of the channels below.
+**Staleness:** the PyPI package bundles a snapshot of the slim dataset (`incidents.min.json` + `id_deprecations.json`) taken at that release's build time and publishes on a tagged GitHub release (or a maintainer-triggered manual run) — `pip install` gives you the corpus as of the version you installed, not a live feed. The package's own release version and the dataset's content-vintage are not yet decoupled (that split — `data_version` distinct from code `__version__`, with a `fetch_latest()` to pull current data on demand — is planned but not shipped); today they're the same string. If you need current data, don't assume a `pip install` a week ago is still current — re-pull, or use one of the channels below.
 
 ### As a Hugging Face dataset
 
@@ -240,7 +240,7 @@ python scripts/check_stats_drift.py  # CI gate: fails on drift or an unmarked ha
 python scripts/validate.py           # schema check
 ```
 
-Dedupe keys (first hit wins): (a) matching `cve_ids`, (b) matching `source_ids` (with `AIID-N-OECD` canonicalised to `AIID-N`), (c) matching normalized reference URL, (d) fuzzy title match within ±1 year. After each merge the indices are reindexed so transitive dupes (entry A absorbs CVE-3, then entry B with CVE-3 already exists → B is merged into A as well) all collapse. Merges union taxonomy mappings, references, tags, CVE/CWE IDs, and source IDs; take the highest severity; prefer the more-specific date (YYYY-MM-DD beats year-only) and reject future-year dates.
+Dedupe keys (first hit wins): (a) matching `cve_ids`, (b) matching `source_ids` (with `AIID-N-OECD` canonicalised to `AIID-N`), (c) matching normalized reference URL, (d) fuzzy title match within ±1 year — (c) and (d) are weak keys and refuse to fire across two entries with disjoint CVE sets, so a shared URL or a fuzzy title match can never bridge distinct CVEs. After each merge the indices are reindexed so transitive dupes (entry A absorbs CVE-3, then entry B with CVE-3 already exists → B is merged into A as well) all collapse. Merges union taxonomy mappings, references, tags, CVE/CWE IDs, and source IDs; take the highest severity; prefer the more-specific date (YYYY-MM-DD beats year-only) and reject future-year dates.
 
 `added` and `updated` are preserved from the previous output; `updated` only bumps when an entry's content actually changes. That keeps `make build` deterministic for CI drift checks.
 
@@ -283,7 +283,7 @@ The current dataset draws from the following public sources. Each entry retains 
 - **MITRE ATLAS** ([atlas.mitre.org](https://atlas.mitre.org/), [github.com/mitre-atlas/atlas-data](https://github.com/mitre-atlas/atlas-data)) — all case studies parsed from the YAML corpus
 - **AVID** — AI Vulnerability Database ([avidml.org](https://avidml.org/))
 - **CSET-AIID Harm Taxonomy** ([github.com/georgetown-cset/CSET-AIID-harm-taxonomy](https://github.com/georgetown-cset/CSET-AIID-harm-taxonomy)) — controlled vocabulary reference
-- **NVD / CVE.org / GitHub Security Advisories / OSV.dev / CISA KEV** — AI/ML/LLM/agent CVEs pulled via REST API across 56 keywords
+- **NVD / CVE.org / GitHub Security Advisories / OSV.dev / CISA KEV** — AI/ML/LLM/agent CVEs pulled via REST API across a broad, actively-maintained keyword list
 - **NVIDIA garak** ([github.com/NVIDIA/garak](https://github.com/NVIDIA/garak)) — one entry per LLM vulnerability scanner probe (canonical attack classes)
 - **promptfoo** ([github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo)) — one entry per red-team plugin/strategy
 - **ModelOriented/CVE-AI** ([github.com/ModelOriented/CVE-AI](https://github.com/ModelOriented/CVE-AI)) — XAI-based AI model validation findings
@@ -291,7 +291,7 @@ The current dataset draws from the following public sources. Each entry retains 
 - **Vendor threat reports** — Anthropic, OpenAI, Google Threat Intelligence (GTIG/TAG/Mandiant), Microsoft Threat Intelligence (MTAC/MSRC), AWS Security Bulletins, CrowdStrike, Recorded Future.
 - **Academic papers** — selected USENIX Security / NDSS / S&P / CCS / arXiv entries with concrete adversarial PoCs.
 
-If a source is missing or mis-attributed, open an issue or PR. **One tracked source is currently stale** (MIT AIRI Navigator's public bulk download was withdrawn; the corpus keeps re-emitting its last-fetched snapshot, unshrunk, under a dated hold) — see [`data/source_freshness.json`](data/source_freshness.json) for the live status of every source this project actively monitors.
+If a source is missing or mis-attributed, open an issue or PR. **One tracked source is currently stale** (MIT AIRI Navigator's public bulk download was withdrawn; the corpus keeps re-emitting its last-fetched snapshot, unshrunk, under a dated hold) — see [`data/source_freshness.json`](data/source_freshness.json) for the reviewed, published status of every source this project actively monitors.
 
 ---
 
