@@ -95,6 +95,34 @@ part of the hold.
 | Invariant 6 — docs pull counts from `stats.json` | **exit 0**, "clean: 5 doc surfaces match" | `python scripts/check_stats_drift.py` |
 | Test suite | **314 passed** | `python -m pytest -q` |
 
+## Criteria 2 and 6 — re-derived 2026-07-31 (added after the first pass)
+
+**Criterion 2 — WS0-T5's overclaim rule.** Repo-wide search for "single source
+of truth" across live surfaces (`*.md`, `*.html`, `NOTICE-DATA`, `*.cff`,
+excluding `docs/audits/`, `PROGRESS.md`, the plan, `CLAUDE.md` and `.claude/`,
+all of which define or quote the rule): **one hit, and it is not a project
+claim** — `docs/incidents/2026.md:99270`, inside a generated incident page,
+quoting an upstream advisory's own description of an API. **Zero project-voice
+occurrences.** Criterion 2 holds.
+
+**Criterion 6 — WS0-T1, no blank rows.** Parsed every table row in
+`docs/SOURCE_LICENSES.md`: **135 rows scanned, 0 containing an empty cell.**
+`(d) UNKNOWN` appears **3** times, resolving to **one** genuine
+still-unknown source (MIT AIRI Navigator, recorded as "UNKNOWN, narrowed" —
+its own licence is established CC BY 4.0 and only the transit question
+remains); the third occurrence is a row recording a **resolution**, not an
+open unknown. Criterion 6 holds — subject to FLAG 2, which is a statement
+about *when* it began holding, not about whether it holds now.
+
+> **Method note, recorded because it nearly produced a false pass.** The first
+> attempt at criterion 6 used a parser requiring six or more `|` characters
+> per row — `docs/SOURCE_LICENSES.md` uses **two-column** tables, so it
+> **scanned 0 rows and would have reported "0 blank cells" from an empty
+> set.** A check that examines nothing reports clean. This is the same defect
+> shape as the `git rev-parse HEAD` trap recorded on the board: **a
+> verification whose output is indistinguishable between the passing case and
+> the case where it did not run.** The corrected parser scans 135 rows.
+
 ## The five technicality flags — current state
 
 | Flag | 2026-07-30 state | State now |
