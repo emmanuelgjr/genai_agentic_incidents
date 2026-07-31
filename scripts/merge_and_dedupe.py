@@ -1140,6 +1140,81 @@ def _content_snapshot(entry: dict) -> dict:
     return snap
 
 
+# OECD AIM (oecd.ai/en/incidents/<slug>) attribution -- E21 §5.3
+# (docs/audits/E21-oecd-narrative-licence-2026-07-30.md, "owed regardless of
+# how the narrative question resolves"). OECD's own general Data-reuse
+# clause conditions reuse of its structural facts on a citation in the
+# format `OECD (year), (dataset name), (data source) DOI or URL (accessed
+# on (date))` -- see docs/SOURCE_LICENSES.md §1.5. Two separate regexes,
+# deliberately: `_OECD_PAGE_URL_RE` alone decides whether a reference IS an
+# OECD AIM page (broad -- any oecd.ai/en/incidents/ URL, robust to a future
+# slug-format change on OECD's end); `_OECD_PAGE_URL_DATE_RE` only refines
+# the citation's `year` when today's YYYY-MM-DD-prefixed slug is present,
+# falling back to the entry's own `year` field otherwise -- a row is never
+# silently skipped just because its slug doesn't parse. The per-slug date is
+# preferred over the entry's own `year` when available because a single
+# surviving entry can carry more than one oecd.ai page reference (67
+# measured in the committed corpus, e.g. INC-07482 absorbing three distinct
+# OECD-AIM source rows via a shared AIID cross-reference) and each page's
+# own date is the more accurate one to cite for THAT link, not whichever
+# date the merge picked for the entry as a whole.
+_OECD_PAGE_URL_RE = re.compile(r"^https://oecd\.ai/en/incidents/")
+_OECD_PAGE_URL_DATE_RE = re.compile(r"^https://oecd\.ai/en/incidents/(\d{4})-\d{2}-\d{2}-")
+
+
+def _oecd_citation_title(url: str, fallback_year, accessed_on: str) -> str:
+    m = _OECD_PAGE_URL_DATE_RE.match(url)
+    year = int(m.group(1)) if m else fallback_year
+    return f"OECD ({year}), AI Incidents and Hazards Monitor, {url} (accessed on {accessed_on})"
+
+
+def _apply_oecd_attribution(entry: dict) -> None:
+    """Retitle every oecd.ai AIM page reference already on this entry, in
+    place, to OECD's specified citation string -- never append a NEW
+    reference pointing at the same URL. Two reasons, not one:
+
+    1. `merge_into()`'s own reference union (below) dedupes by URL (a dict
+       keyed on `normalize_url`, last write wins) -- a second reference
+       entry citing the identical oecd.ai URL is not guaranteed to survive
+       a future cross-entry merge, silently collapsing back to whichever of
+       the two titles happened to iterate last. Retitling the ONE reference
+       that already carries that URL sidesteps the collision structurally,
+       not by observation of today's merge order.
+    2. `render_markdown.py`'s "Cite this incident" line reads
+       `references[0]` -- but the OECD page reference is NOT always at
+       index 0 (measured: 3,667/3,829 OECD-AIM-sourced entries; the other
+       162 were merged into an AIID entry whose own citation link claimed
+       slot 0 first -- see the E23 AIID-attribution measurement this must
+       not perturb). Matching by URL, not position, finds the right
+       reference either way and never reorders the list.
+
+    Deliberately gated on URL pattern alone, not on `OECD-AIM-` appearing in
+    `source_ids`: `ingest_external.py::ingest_aiid_oecd_bridge()` also
+    places an oecd.ai page URL directly onto AIID entries it cross-links
+    (source_id `AIID-<id>-OECD`, canonicalised to `AIID-<id>` and merged
+    into the AIID entry proper) without ever adding an `OECD-AIM-` source
+    id -- gating on `source_ids` would silently miss those. `entry["added"]`
+    (this project's own first-ingest date, already committed for every
+    existing row and stamped once, immutably, for a brand-new one -- never
+    "today" as a per-run recomputation) is the `(accessed on (date))` value:
+    the one committed, deterministic fact this pipeline holds for when it
+    actually pulled the page, satisfying the "must come from committed
+    data, never invented at build/migrate time" constraint. Called from
+    `_apply_history()`, immediately after `entry["added"]` is set and before
+    `_content_snapshot()` is taken, so the retitled reference is exactly
+    what gets compared against the previous build's snapshot -- one
+    deliberate `updated` bump per row the first time this runs, then stable
+    forever after (the same `added` value regenerates the same title on
+    every subsequent rebuild)."""
+    accessed_on = entry.get("added")
+    if not accessed_on:
+        return
+    for r in entry.get("references") or []:
+        if isinstance(r, dict) and _OECD_PAGE_URL_RE.match(r.get("url") or ""):
+            r["title"] = _oecd_citation_title(r["url"], entry.get("year"), accessed_on)
+            r["type"] = "reference"
+
+
 def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> None:
     """Look up the entry's previous timestamps by any matching CVE/source ID
     and apply them. Bump `updated` only when content actually changed."""
@@ -1150,9 +1225,11 @@ def _apply_history(entry: dict, prev_ts: dict[str, tuple[str, str, dict]]) -> No
         # Brand-new row — stamp it with today's date.
         entry["added"] = entry.get("added") or today
         entry["updated"] = today
+        _apply_oecd_attribution(entry)
         return
     prev_added, prev_updated, prev_snap = prev
     entry["added"] = prev_added
+    _apply_oecd_attribution(entry)
     if _content_snapshot(entry) == prev_snap:
         entry["updated"] = prev_updated
     else:

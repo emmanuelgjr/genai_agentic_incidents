@@ -1362,3 +1362,232 @@ def test_corpus_pass_through_survives_full_build(tmp_path, monkeypatch):
         e for e in full["incidents"] if "OECD-AIM-2026-02-02-cccc" in (e.get("source_ids") or [])
     )
     assert entry["corpus"] == "ai-harm"
+
+
+# ---------------------------------------------------------------------------
+# E21 §5.3 -- OECD AIM attribution
+# (docs/audits/E21-oecd-narrative-licence-2026-07-30.md §5.3;
+#  docs/audits/E21-5.3-oecd-attribution-2026-07-30.md)
+# ---------------------------------------------------------------------------
+
+def test_oecd_citation_title_uses_slug_date_over_entry_year():
+    # A merged entry's own `year` can differ from an individual OECD page's
+    # own date (67 real multi-source-merge rows do exactly this) -- the
+    # per-URL slug date must win.
+    title = m._oecd_citation_title(
+        "https://oecd.ai/en/incidents/2020-06-30-b9fe", 2022, "2026-05-16",
+    )
+    assert title == (
+        "OECD (2020), AI Incidents and Hazards Monitor, "
+        "https://oecd.ai/en/incidents/2020-06-30-b9fe (accessed on 2026-05-16)"
+    )
+
+
+def test_oecd_citation_title_falls_back_to_entry_year_without_dated_slug():
+    # A URL that doesn't carry a YYYY-MM-DD-prefixed slug (a future OECD
+    # format change, or any non-standard oecd.ai page URL) must still
+    # produce a citation, using the entry's own `year` rather than being
+    # skipped -- see _OECD_PAGE_URL_RE vs _OECD_PAGE_URL_DATE_RE split.
+    title = m._oecd_citation_title(
+        "https://oecd.ai/en/incidents/some-non-standard-slug", 2019, "2026-05-16",
+    )
+    assert title.startswith("OECD (2019), AI Incidents and Hazards Monitor, ")
+
+
+def test_apply_oecd_attribution_retitles_in_place_without_adding_a_reference():
+    entry = {
+        "year": 2020,
+        "added": "2026-05-16",
+        "references": [
+            {"title": "Original incident title", "url": "https://oecd.ai/en/incidents/2020-01-01-39b5", "type": "report"},
+            {"title": "A news article", "url": "https://example.com/news", "type": "news"},
+        ],
+    }
+    m._apply_oecd_attribution(entry)
+    assert len(entry["references"]) == 2, "must retitle, never append a duplicate-URL reference"
+    oecd_ref = entry["references"][0]
+    assert oecd_ref["url"] == "https://oecd.ai/en/incidents/2020-01-01-39b5"  # unmoved
+    assert oecd_ref["title"] == (
+        "OECD (2020), AI Incidents and Hazards Monitor, "
+        "https://oecd.ai/en/incidents/2020-01-01-39b5 (accessed on 2026-05-16)"
+    )
+    assert oecd_ref["type"] == "reference"  # schema enum value, not the audit's unschema'd "citation"
+    assert entry["references"][1]["title"] == "A news article"  # untouched
+
+
+def test_apply_oecd_attribution_preserves_position_when_not_first():
+    # E23's AIID-attribution measurement reads references[0] -- an OECD page
+    # reference sitting later in the list must stay exactly where it is,
+    # never get moved to the front.
+    entry = {
+        "year": 2021,
+        "added": "2026-05-16",
+        "references": [
+            {"title": "AIID #37", "url": "https://incidentdatabase.ai/cite/37/", "type": "report"},
+            {"title": "Old title", "url": "https://oecd.ai/en/incidents/2021-02-09-12d2", "type": "report"},
+        ],
+    }
+    m._apply_oecd_attribution(entry)
+    assert entry["references"][0]["url"] == "https://incidentdatabase.ai/cite/37/"
+    assert entry["references"][0]["title"] == "AIID #37"  # AIID's own citation, untouched
+    assert entry["references"][1]["title"].startswith("OECD (2021), ")
+
+
+def test_apply_oecd_attribution_retitles_every_oecd_url_with_its_own_date():
+    # The INC-07482 shape: three OECD-AIM source rows absorbed into one
+    # entry, three oecd.ai page references, each keeping its own slug date.
+    entry = {
+        "year": 2020,
+        "added": "2026-05-16",
+        "references": [
+            {"title": "A", "url": "https://oecd.ai/en/incidents/2020-06-30-b9fe", "type": "report"},
+            {"title": "B", "url": "https://oecd.ai/en/incidents/2020-08-26-0da4", "type": "report"},
+            {"title": "C", "url": "https://oecd.ai/en/incidents/2020-08-26-758a", "type": "report"},
+        ],
+    }
+    m._apply_oecd_attribution(entry)
+    assert [r["title"].split(",")[0] for r in entry["references"]] == ["OECD (2020)"] * 3
+    assert len(entry["references"]) == 3
+
+
+def test_apply_oecd_attribution_ignores_non_oecd_references():
+    entry = {
+        "year": 2026,
+        "added": "2026-05-16",
+        "references": [{"title": "Vendor writeup", "url": "https://example.com/x", "type": "vendor"}],
+    }
+    m._apply_oecd_attribution(entry)
+    assert entry["references"][0]["title"] == "Vendor writeup"
+    assert entry["references"][0]["type"] == "vendor"
+
+
+def test_apply_oecd_attribution_no_op_without_added():
+    # `added` is the one committed, deterministic fact this pipeline holds
+    # for "when we accessed the page" -- if it's missing, do nothing rather
+    # than invent a date (the brief's own constraint: never "today" as a
+    # per-run recomputation, never fabricated).
+    entry = {
+        "year": 2026,
+        "references": [{"title": "Original", "url": "https://oecd.ai/en/incidents/2026-01-01-aaaa", "type": "report"}],
+    }
+    m._apply_oecd_attribution(entry)
+    assert entry["references"][0]["title"] == "Original"
+
+
+def test_apply_oecd_attribution_fires_on_bridge_derived_reference_without_oecd_source_id():
+    # ingest_external.py::ingest_aiid_oecd_bridge() places an oecd.ai page
+    # URL onto AIID entries via a source_id that canonicalises to plain
+    # `AIID-<id>` (never `OECD-AIM-...`). Gating on the URL alone (not
+    # source_ids) must still catch these.
+    entry = {
+        "year": 2022,
+        "added": "2026-05-16",
+        "source_ids": ["AIID-42"],
+        "references": [
+            {"title": "AIID #42", "url": "https://incidentdatabase.ai/cite/42/", "type": "report"},
+            {"title": "OECD AI Incidents Monitor entry", "url": "https://oecd.ai/en/incidents/2022-03-04-cafe", "type": "report"},
+        ],
+    }
+    m._apply_oecd_attribution(entry)
+    assert entry["references"][1]["title"].startswith("OECD (2022), ")
+
+
+def test_oecd_attribution_type_is_a_valid_schema_enum_value():
+    # The E21 §5.3 example itself specifies `"type": "citation"` -- not a
+    # member of schema/incident.schema.json's references[].type enum. This
+    # pins the deliberate divergence: reusing "reference" (the schema's own
+    # generic-link value, and export_stix.py's existing default fallback for
+    # an untyped reference) rather than requiring a schema change.
+    schema = _json.loads(
+        (m.ROOT / "schema" / "incident.schema.json").read_text(encoding="utf-8")
+    )
+    allowed_types = set(
+        schema["properties"]["references"]["items"]["properties"]["type"]["enum"]
+    )
+    assert "reference" in allowed_types
+    assert "citation" not in allowed_types  # confirms the divergence is real, not stale
+
+
+def _freeze_utc_today(monkeypatch, d: datetime.date) -> None:
+    """`_FrozenDate`/`m.date` (used by the pre-existing
+    test_build_is_deterministic_across_days et al.) patches the unused
+    `date` import -- `utc_today()` actually calls
+    `datetime.now(timezone.utc).date()`, so that pattern only happens to
+    pass because those tests compare two builds to EACH OTHER, never to a
+    literal date string. These tests assert a literal accessed-on date, so
+    they patch `utc_today` itself directly instead."""
+    monkeypatch.setattr(m, "utc_today", lambda: d)
+
+
+def test_oecd_attribution_lands_via_full_build_new_row(tmp_path, monkeypatch):
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    _freeze_utc_today(monkeypatch, datetime.date(2099, 6, 1))
+    row = _oecd_entry("OECD-AIM-2098-01-01-feed", "Fresh OECD incident")
+    row["references"] = [{"url": "https://oecd.ai/en/incidents/2098-01-01-feed"}]
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+
+    out = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    entry = out["incidents"][0]
+    assert entry["added"] == "2099-06-01"  # brand-new row: added == the build's own "today"
+    ref = entry["references"][0]
+    assert ref["title"] == (
+        "OECD (2098), AI Incidents and Hazards Monitor, "
+        "https://oecd.ai/en/incidents/2098-01-01-feed (accessed on 2099-06-01)"
+    )
+    assert ref["type"] == "reference"
+
+
+def test_oecd_attribution_bumps_updated_once_then_is_stable(tmp_path, monkeypatch):
+    """Retroactive path: an already-committed row from BEFORE this fix (plain
+    "report"-titled reference, no citation) must get exactly one `updated`
+    bump the first time this code runs, then stay byte-stable on every
+    rebuild after -- proving the if-and-only-if correspondence between
+    reference-content-change and `updated`/`last_seen` the E21-reduction
+    gate required stays intact for this change too."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+
+    fresh_row = _oecd_entry("OECD-AIM-2020-03-03-old1", "Pre-fix incident")
+    # Realistic production shape: the page URL carries only the date-hash
+    # slug, never the `OECD-AIM-` source_id prefix (_oecd_entry's own
+    # shorthand URL doesn't matter for this test, so pin it explicitly).
+    fresh_row["references"] = [
+        {"url": "https://oecd.ai/en/incidents/2020-03-03-old1", "type": "report"}
+    ]
+    pre_fix_row = m.normalize_entry(fresh_row)
+    pre_fix_row["references"] = [
+        {"title": "Pre-fix incident", "url": "https://oecd.ai/en/incidents/2020-03-03-old1", "type": "report"}
+    ]
+    pre_fix_row.update(id="INC-00001", added="2026-01-01", updated="2026-01-01")
+    (data / "incidents.json").write_text(
+        _json.dumps({"incidents": [pre_fix_row]}), encoding="utf-8"
+    )
+    (ingest / "src.json").write_text(_json.dumps([fresh_row]), encoding="utf-8")
+
+    _freeze_utc_today(monkeypatch, datetime.date(2099, 6, 1))
+    m.main()
+    first = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    e1 = first["incidents"][0]
+    assert e1["added"] == "2026-01-01"  # immutable -- invariant 4
+    assert e1["updated"] == "2099-06-01"  # bumped: the citation retitle IS a content change
+    assert e1["references"][0]["title"].startswith("OECD (2020), ")
+
+    # Rebuild again, later UTC day, identical inputs -> byte-identical, no
+    # second bump (the retitled reference regenerates the same title every
+    # time, since `added` -- what it's keyed on -- never changes).
+    _freeze_utc_today(monkeypatch, datetime.date(2099, 6, 2))
+    m.main()
+    second = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    e2 = second["incidents"][0]
+    assert e2["updated"] == "2099-06-01"  # NOT re-bumped to day 2
+    assert first == second, "pure rebuild with no new data must be byte-identical"
+
+
+def test_oecd_attribution_removed_would_fail_the_stability_test(tmp_path, monkeypatch):
+    """Mutation-guard: confirms the previous test is non-vacuous by directly
+    checking the helper is actually wired into _apply_history -- if
+    `_apply_oecd_attribution` were ever removed from that call site, this
+    fails loudly instead of the suite just going quiet on the citation
+    requirement."""
+    import inspect
+    assert "_apply_oecd_attribution" in inspect.getsource(m._apply_history)
