@@ -180,8 +180,8 @@ an AIID entry during merge but which still carry an oecd.ai page
 reference via the AIID-OECD bridge path.
 
 The title field is NOT resolved by this reduction, and this is not
-silent: it still ships the same LLM-generated text verbatim on 3,666
-of 3,829 OECD-AIM-sourced rows -- the other 163 were merged into an
+silent: it still ships the same LLM-generated text verbatim on 3,667
+of 3,829 OECD-AIM-sourced rows -- the other 162 were merged into an
 entry whose own title, from a different upstream source, took
 precedence instead. This is tracked as a separate, open question at
 the same posture as AIAAIC's retained-headline question above

@@ -68,7 +68,7 @@ That's six taxonomies total, not four — see [`docs/TAXONOMIES.md`](docs/TAXONO
 
 ## In progress
 
-`main` currently carries a licensing-remediation pass ahead of the last published `<!-- stats:version -->2.8.0<!-- /stats:version -->` release: the OECD AI Incidents Monitor's `description` field is reduced to structural facts and a link (mirroring the treatment already applied to AIAAIC), and an orphaned, unmaintained ingest file is retired. See [`CHANGELOG.md`](CHANGELOG.md)'s `[Unreleased]` section for the full field-level delta. **No version has been bumped or tagged for this yet**, and dedicated release notes don't exist yet either — this pointer will move to a dated release-notes file once one is cut, rather than being pre-linked to a path that doesn't resolve.
+`main` currently carries a licensing and provenance pass ahead of the last published `<!-- stats:version -->2.8.0<!-- /stats:version -->` release: row-level content-licence marking, per-entry OECD AIM attribution, an AIID content-licensing ruling, source-freshness disclosure, and an orphaned, unmaintained ingest file retired. **No version has been bumped or tagged for this yet.** Draft release notes — the full field-level delta, every figure re-derived from the data rather than carried over from a prior draft, and a consumer-impact section listing every affected ID — are at [`docs/releases/v2.9.0.md`](docs/releases/v2.9.0.md); it is a draft of notes for a release that has not been cut, not a record of one that has. [`CHANGELOG.md`](CHANGELOG.md)'s `[Unreleased]` section tracks the same work and points at the same file.
 
 ---
 

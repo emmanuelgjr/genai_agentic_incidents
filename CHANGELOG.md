@@ -7,12 +7,37 @@ ingest expansions, patch bumps for routine refreshes and bug fixes.
 
 ## [Unreleased]
 
-Licensing-remediation release (WS4/E21 OECD AIM narrative-text reduction).
-Net composition 13,119 → 13,060 (−59, all tombstoned via
-`data/id_deprecations.json`, reason `orphaned-ingest-source-retired` —
-never silently deleted). Version/date/final entry count to be confirmed by
-whoever cuts the release; recorded here now per the field-level delta rule
-so the change is disclosed before it is lost.
+Licensing and provenance release (Phase 1, "Honest"). Draft release notes
+with the full field-level delta, a consumer-impact section listing every
+tombstoned ID, and the re-derivation recipe for every figure below:
+[`docs/releases/v2.9.0.md`](docs/releases/v2.9.0.md). **Not cut** — version,
+date, and final entry count are the maintainer's call; this section is kept
+current in the meantime per the field-level delta rule, so the change is
+disclosed before it is lost. Composition since the last cut release
+(`v2.8.0`, 12,986 entries): **12,986 → 13,060 (+74 net** — 135 added by
+routine refresh, 61 removed: 59 tombstoned by the orphaned-ingest-file
+retirement below, `into: null`; 2 by ordinary cross-entity merge, `into:` a
+surviving ID. Never silently deleted — `data/id_deprecations.json`).
+
+### Added (licensing — row-level marking and attribution)
+- **`content_license` row-level marker**, CC BY-SA 4.0, now carried by all
+  **1,517** AIAAIC-derived rows (100% of AIAAIC-sourced rows in the
+  corpus), mirrored into the STIX export as `x_content_license`
+  (`docs/audits/WS0-E13-database-right-2026-07-18.md`, D11).
+- **Per-entry OECD AIM attribution reference**, landed on **all 3,829 of
+  3,829** OECD-AIM-sourced rows (plus 368 further rows that absorbed OECD
+  content into a merged AIID entry) — `OECD (<year>), AI Incidents and
+  Hazards Monitor, <page-url> (accessed on <first-ingest date>)`
+  (`scripts/merge_and_dedupe.py::_apply_oecd_attribution`,
+  `docs/audits/E21-5.3-oecd-attribution-2026-07-30.md`). Lands at
+  `references[0]` — and so becomes the "Cite this incident" line — on
+  3,667 of those rows; the one exception (`INC-00437`) correctly renders
+  its AIID citation instead per existing render precedence.
+- **`source_freshness` row-level marker** on **1,380** rows derived from a
+  source whose feed went stale on 2026-05-31 (`status`, `as_of`,
+  `sources`), plus a published, reconciled-against-a-named-copy
+  `data/source_freshness.json` registry that `validate.py` holds to its
+  own claim (D8).
 
 ### Changed (licensing — E21 outcome (B))
 - **OECD AI Incidents and Hazards Monitor (AIM) `description` field
@@ -27,7 +52,34 @@ so the change is disclosed before it is lost.
   Applied retroactively to all 4,160 already-committed rows in
   `ingest/oecd_aim_full_incidents.json` via a one-off local transform
   (`scripts/migrate_oecd_description_reduction.py`, no network/model calls,
-  no re-fetch) — 3,667 shipped rows' `description` changed as a result.
+  no re-fetch) — 3,667 shipped rows' `description` changed as a result. The
+  other 162 OECD-AIM-sourced rows ship a different upstream source's
+  `description`, having lost the entity-merge — disclosed, not a miss.
+  **`title` is explicitly out of scope for this reduction and still ships
+  the same LLM-generated text verbatim on 3,667 of the 3,829 rows** — same
+  posture as AIAAIC's retained-headline question below, not resolved here.
+- **AIAAIC-derived rows carry facts and a source pointer, not narrative
+  prose** — system/technology/sector/jurisdiction/affected plus a link to
+  the specific AIAAIC entry, disposing of the copyright share-alike
+  question over AIAAIC's cell text (D2). The retained AIAAIC headline is a
+  separate, still-open question (E15/D17), same posture as OECD `title`
+  above.
+- **AIID ingestion moved to AIID's own official weekly snapshot channel**,
+  replacing the retired high-volume scraper
+  (`scripts/ingest_aiid_snapshot.py`, D1,
+  `docs/audits/WS0-T4-aiid-snapshot-swap-2026-07-18.md`). AIID's
+  license-excluded `reports.text` is never opened.
+- **AIID content-licensing question resolved: no row-level marker is
+  required for the population that ships (0 of 1,466 AIID-identified
+  rows carry one) — a decision, not a gap.** AIID's US-situated maker
+  categorically excludes the only AIID text this dataset ships (`title`)
+  from copyright, and fails both the UK and EEA database-right
+  qualification tests (`docs/audits/E23-aiid-marking-ruling-2026-07-30.md`).
+  A separate, **dormant, non-shipping** population (hand-curated AIID rows
+  plus AIRI Navigator's own AIID-derived rows) is **not** cleared by this
+  ruling and is kept out only by current merge order — now enforced by a
+  regression test, `tests/test_e23_aiid_dead_letter_tripwire.py`, rather
+  than relying on that order holding by convention.
 - **`corpus` (security/ai-harm) now persisted at OECD ingest time** from a
   derived signal only (never the narrative text itself), closing a
   merge-time reclassification coupling that would otherwise have silently
@@ -45,7 +97,17 @@ so the change is disclosed before it is lost.
   remaining 27 were already cross-covered by AIID/OECD-AIM and simply lost
   the orphan file's contributed `source_ids`/`tags`/framework mappings on
   rebuild (disclosed, justified — not part of the narrative reduction
-  itself).
+  itself). One row's classification changed as a direct, verified
+  consequence (`INC-08170`: `security` → `ai-harm`, a correction, not a
+  regression — `docs/audits/E21-reduction-delta-2026-07-30.md` §6).
+
+### Conduct
+- **All HTTP(S) ingest fetches route through a single module**
+  (`ingest/common.py`): identifying User-Agent, fail-closed robots.txt
+  check, per-host rate limiting, with one enumerated, evidenced host
+  exception (`ROBOTS_UNVERIFIABLE_ALLOWLIST`). Non-HTTP egress (`gh api
+  graphql`, vendor CLIs) is registered with its conduct properties, not
+  exempted from disclosure (`docs/INGESTION_CONDUCT.md`).
 
 ## [2.8.0] — 2026-07-13
 
