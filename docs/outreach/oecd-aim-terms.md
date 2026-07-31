@@ -16,9 +16,17 @@ artifact which never existed on any branch — corrected alongside this draft
 sent — the sent version is what OECD has, and editing it here would make
 this file misdescribe what they were told.
 
-**Send status:** Not sent. The user verifies the recipient and sends; log
-the actual send date on `docs/outreach/README.md` and in
-`docs/SOURCE_LICENSES.md` §1.5 afterward.
+**Send status:** 📤 **SENT 2026-07-31** to `ai@oecd.org` (user-confirmed,
+logged 2026-07-31). **Follow-up window: 2026-08-21** — 21 days from send,
+matching this file's other outreach items. **Do not edit the message body
+below** — the sent version is what OECD has.
+
+This closes **criterion 9 clause 2** (WS0-T4's outreach obligation, split by
+D21): **4 of 4 outreach recipients sent and logged** — AIAAIC 2026-07-27 (+
+correction 2026-07-29), AIID 2026-07-27, MIT AIRI 2026-07-27 (+ export request
+2026-07-29), OECD 2026-07-31. It also retires **FLAG 3** of the Phase-1 exit
+checklist, which reported the criterion open at 3-of-4 and said it "closes when
+the user sends and logs the date."
 
 **To (UNCONFIRMED):** `ai@oecd.org`. Not found by this draft's own first-pass
 check — `/en/about` and `/en/incidents-methodology` genuinely have zero
