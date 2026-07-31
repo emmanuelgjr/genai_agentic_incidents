@@ -86,6 +86,35 @@ more. There is no row whose clock moved without an explanation
 (`updated − union` is empty). The defect is in the message's arithmetic, not in
 the data.
 
+> **⚠ UPDATE 2026-07-31 — SUPERSEDED IN THE BATCH'S FAVOUR by the E21-reduction
+> gate. The section above is preserved as the record of what was measured
+> before the gate ran; do not regenerate it.** The heading calls this an
+> "off by one." **It is not off by anything — the identity is EXACT.** The gate
+> re-derived it against the pipeline's own definition of content
+> (`scripts/merge_and_dedupe.py:1113` `_CONTENT_FIELDS`, as
+> `_content_snapshot()` consumes it) rather than against the commit message's
+> union heuristic, and the foreman independently reproduced the result:
+>
+> ```
+> content-changed rows: 3682 | updated-moved rows: 3682 | EXACT IDENTITY: True
+> updated moved WITHOUT a content change (the dangerous direction): 0
+> content changed WITHOUT updated moving:                           0
+> rows whose `added` changed (all 13,060):                          0
+> ```
+>
+> **Why the section above landed one short: `source_ids` is not in
+> `_CONTENT_FIELDS`.** So `INC-04496` — which lost an orphan `source_id` and
+> nothing else — was never supposed to be in the union at all. The union
+> formula the commit message used (`description ∪ orphan-27`) is simply the
+> wrong formula for a claim about `updated`; it happens to be off by exactly
+> the rows whose only change was a non-content field. §3's *conclusion* stands
+> unchanged and the gate endorsed it — "the defect is in the message's
+> arithmetic, not in the data" — but this is the stronger and more accurate
+> statement of why, and it upgrades invariant 4 from "no unexplained movement"
+> to "exact correspondence, verified both directions."
+
+
+
 ## 4. Tombstones — invariant 3
 
 | Measure | Value |
