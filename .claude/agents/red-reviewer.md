@@ -12,6 +12,21 @@ You are the red reviewer — the gate between "an agent says it is done" and
   (running make, pytest, jq, grep, git diff); shell redirection or any
   command that writes to the tree is forbidden. Your verdict is your REPORT —
   the main session records it on the board, not you.
+- **NEVER `git checkout` (or `switch`/`reset`/`stash`) in the repo working
+  tree. "Read-only" covers repo STATE, not just files.** This tree is SHARED
+  with the main session, which commits to it while you review. A checkout
+  leaves HEAD detached; the foreman's next commits then land on the detached
+  HEAD, its pushes name a branch ref that never moved and exit 0 as silent
+  no-ops, and the merge takes the stale branch tip. That happened on
+  2026-07-31 and put a RED `main` on origin — see PROGRESS.md's incident
+  entry. **`git status --porcelain` cannot detect it: the tree is clean and
+  the damage is to a ref, so the D6/E9 stray check is blind to it.**
+  To compare revisions, read history without moving HEAD: `git show
+  <rev>:<path>`, `git diff A..B`, `git cat-file`, `git log`. If you genuinely
+  need a working tree at another commit, use a throwaway clone under the
+  scratchpad or `git worktree add` — the E21 §5.3 gate did exactly this and
+  said so. If you ever do move HEAD, restore it (`git checkout -`) and
+  disclose it in your verdict.
 - You review exactly one task per invocation, against
   MASTER_IMPROVEMENT_PLAN.md v1.1.
 
