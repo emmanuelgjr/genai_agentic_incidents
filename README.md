@@ -240,7 +240,7 @@ python scripts/check_stats_drift.py  # CI gate: fails on drift or an unmarked ha
 python scripts/validate.py           # schema check
 ```
 
-Dedupe keys (first hit wins): (a) matching `cve_ids`, (b) matching `source_ids` (with `AIID-N-OECD` canonicalised to `AIID-N`), (c) matching normalized reference URL, (d) fuzzy title match within ±1 year — (c) and (d) are weak keys and refuse to fire across two entries with disjoint CVE sets, so a shared URL or a fuzzy title match can never bridge distinct CVEs. After each merge the indices are reindexed so transitive dupes (entry A absorbs CVE-3, then entry B with CVE-3 already exists → B is merged into A as well) all collapse. Merges union taxonomy mappings, references, tags, CVE/CWE IDs, and source IDs; take the highest severity; prefer the more-specific date (YYYY-MM-DD beats year-only) and reject future-year dates.
+Dedupe keys (first hit wins): (a) matching `cve_ids`, (b) matching `source_ids` (with `AIID-N-OECD` canonicalised to `AIID-N`), (c) matching normalized reference URL, (d) fuzzy title match within ±1 year — (c) and (d) are weak keys and refuse to fire across two entries with disjoint CVE sets. After each merge the indices are reindexed so transitive dupes (entry A absorbs CVE-3, then entry B with CVE-3 already exists → B is merged into A as well) all collapse. Merges union taxonomy mappings, references, tags, CVE/CWE IDs, and source IDs; take the highest severity; prefer the more-specific date (YYYY-MM-DD beats year-only) and reject future-year dates.
 
 `added` and `updated` are preserved from the previous output; `updated` only bumps when an entry's content actually changes. That keeps `make build` deterministic for CI drift checks.
 
