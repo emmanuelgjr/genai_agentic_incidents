@@ -66,9 +66,9 @@ That's six taxonomies total, not four — see [`docs/TAXONOMIES.md`](docs/TAXONO
 
 `docs/audits/` is unusual for a dataset repo, and deliberately so: rather than folding a licensing ruling or a data-migration rationale into a doc that then has to be kept perpetually current, each is a dated, standalone record of what was true and why a decision was made — worth a look if you want the reasoning behind a change, not just its result.
 
-## In progress
+## Latest release
 
-`main` currently carries a licensing and provenance pass ahead of the last published `<!-- stats:version -->2.8.0<!-- /stats:version -->` release: row-level content-licence marking, per-entry OECD AIM attribution, an AIID content-licensing ruling, source-freshness disclosure, and an orphaned, unmaintained ingest file retired. **No version has been bumped or tagged for this yet.** Draft release notes — the full field-level delta, every figure re-derived from the data rather than carried over from a prior draft, and a consumer-impact section listing every affected ID — are at [`docs/releases/v2.9.0.md`](docs/releases/v2.9.0.md); it is a draft of notes for a release that has not been cut, not a record of one that has. [`CHANGELOG.md`](CHANGELOG.md)'s `[Unreleased]` section tracks the same work and points at the same file.
+**<!-- stats:version -->2.9.0<!-- /stats:version --> — released 2026-07-31.** A licensing and provenance release (Phase 1, "Honest"): row-level content-licence marking, per-entry OECD AIM attribution, an AIID content-licensing ruling, source-freshness disclosure, and an orphaned, unmaintained ingest file retired with its rows tombstoned rather than deleted. Full release notes — the field-level delta, a consumer-impact section listing every affected ID, and the re-derivation recipe for every figure — are at [`docs/releases/v2.9.0.md`](docs/releases/v2.9.0.md); [`CHANGELOG.md`](CHANGELOG.md) carries the same entry.
 
 ---
 

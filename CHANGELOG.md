@@ -5,15 +5,13 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
-## [Unreleased]
+## [2.9.0] — 2026-07-31
 
 Licensing and provenance release (Phase 1, "Honest"). Draft release notes
 with the full field-level delta, a consumer-impact section listing every
 tombstoned ID, and the re-derivation recipe for every figure below:
-[`docs/releases/v2.9.0.md`](docs/releases/v2.9.0.md). **Not cut** — version,
-date, and final entry count are the maintainer's call; this section is kept
-current in the meantime per the field-level delta rule, so the change is
-disclosed before it is lost. Composition since the last cut release
+[`docs/releases/v2.9.0.md`](docs/releases/v2.9.0.md). **Cut 2026-07-31** as `v2.9.0`; the maintainer sent the final outreach
+thread the same day, closing WS0-T4's outreach obligation at 4 of 4. Composition since the last cut release
 (`v2.8.0`, 12,986 entries): **12,986 → 13,060 (+74 net** — 135 added by
 routine refresh, 61 removed: 59 tombstoned by the orphaned-ingest-file
 retirement below, `into: null`; 2 by ordinary cross-entity merge, `into:` a
