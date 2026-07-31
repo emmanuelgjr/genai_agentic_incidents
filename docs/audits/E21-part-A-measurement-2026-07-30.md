@@ -99,13 +99,62 @@ narrative-reduction population of 3,726 — 3,667 rows in
 `ingest/oecd_aim_full_incidents.json` plus 59 in the retired
 `ingest/oecd_aim_incidents.json` — matching "E21's defect-2 correction."
 
-**On "defect-2":** nothing recoverable in this session names what internal
-defect-numbering scheme `3c1e3e9e`'s message refers to (the session that
-produced it died before any board record survived — see
-`docs/audits/E21-reduction-delta-2026-07-30.md`'s own account of the crash).
-This file does not attempt to reconstruct that label; it re-derives the two
-population numbers on their own terms and confirms they sum to the same
-3,726 the message claims, independent of what "defect-2" originally named.
+**Correction (2026-07-30, post-gate-prep, before red-reviewer):** this
+section originally stated that nothing recoverable named the "defect-2"
+scheme and that the session that produced `3c1e3e9e` died before any board
+record survived. **Both halves were false — the foreman located and verified
+two surviving records, and this section is corrected in place rather than
+left to stand as published.** What is true is narrower and different: the
+E21 *batch* (`3c1e3e9e` itself) was never recorded on the board — that is
+`docs/audits/E21-reduction-delta-2026-07-30.md`'s own finding (`grep
+ws4/oecd-narrative-reduction PROGRESS.md` returns zero hits) and is
+unaffected by this correction. What survived is the **E21 *gate's* defect
+list**, which predates the batch (it is the reviewer verdict the batch was
+written to satisfy) and was never lost. The two are different records; this
+section originally blurred them into one "nothing survived" claim.
+
+**"Defect-2" is `PROGRESS.md`'s `| E21 (release gate) |` row, BOUNCE #2
+verdict text, verbatim:**
+
+> **DEFECT 2 — the reduction scope misses a second, orphaned OECD ingest
+> file.** `merge_and_dedupe.py:1336` globs **every** `ingest/*.json`.
+> **Foreman-verified: `ingest/oecd_aim_incidents.json` holds 86 rows whose
+> `source_id`s are ENTIRELY DISJOINT from the 4,160 (0 shared), all 86 reach
+> `data/incidents.json`, and 59 carry a byte-identical verbatim
+> `description`.** Nothing maintains it — `ingest_oecd_aim.py` writes only
+> the full file and **no script in `scripts/` references it at all**; last
+> touched `edaefc92` (2026-05-13) vs `fe732a14` (2026-07-27) for the full
+> file. Under the plan as written those 59 rows ship OECD LLM narrative
+> **permanently**... **Corrects the headline: the reduction population is
+> 3,726, not 3,667** — and the gate notes its own earlier 3,667 re-derivation
+> inherited the same blind spot, so the error survived two independent
+> measurements.
+
+**`docs/audits/PHASE1-EXIT-2026-07-30.md:66`** carries the same correction
+in its own words:
+
+> **⚠ CORRECTION 2026-07-30 — the figure below is 3,667 and the correct
+> figure is 3,726.** The E21 §5 re-gate found a **second, orphaned OECD
+> ingest file**: `ingest/oecd_aim_incidents.json`, 86 rows, **source_ids
+> entirely disjoint** from the 4,160 in the full file (0 shared), **all 86
+> reaching `data/incidents.json`**, of which **59 ship a verbatim
+> `description`**.
+
+**So "E21's defect-2 correction" names exactly the 59-row orphan-file
+finding this section's §2b already re-derives independently — and the two
+now cross-confirm rather than one merely citing the other.** DEFECT 2's 59
+is the gate's own foreman-verified count, reached by reading
+`ingest/oecd_aim_incidents.json` directly and checking for a verbatim
+`description`; §2b's 59 above is reached independently, by joining
+`804cb6ee`'s corpus (which rows were removed) back to the same file (whose
+source_ids they belong to) and checking every removed row's source_ids is a
+singleton subset of the orphan file's IDs. Different method, same file,
+same number: **59, confirmed twice, by two different measurements taken at
+two different times.** This is a stronger claim than "the numbers happen to
+sum to the total the commit message claimed" — it is that the commit
+message's "defect-2" citation itself resolves to a real, quoted, on-the-record
+defect whose own headline figure this file's independent re-derivation
+reproduces exactly.
 
 **Method — two separate joins, not one, because the two ingest files were
 retired differently** (the main file was reduced in place; the orphan file
@@ -321,7 +370,7 @@ metadata and never touches `description` text itself.
 | # | Claim (from `3c1e3e9e`'s commit message) | Re-derived value | Match? |
 |---|---|---|---|
 | 1 | `description_provenance` null/absent on 11,697/13,119, AIAAIC-only mechanism | 11,697/13,119; 1,422 present, 100% `aiaaic` | ✅ exact |
-| 2 | Reduction population 3,726 = 3,667 (main file) + 59 (orphan file) | 3,667 (real join, 0 unjoined) + 59 (real join, all singleton-orphan-sourced) = 3,726 | ✅ exact |
+| 2 | Reduction population 3,726 = 3,667 (main file) + 59 (orphan file), matching "E21's defect-2 correction" | 3,667 (real join, 0 unjoined) + 59 (real join, all singleton-orphan-sourced) = 3,726; **the defect-2 citation itself now recovered and quoted (§2), its own foreman-verified 59 cross-confirming this section's independently-derived 59** | ✅ exact |
 | 3 | INC-00437 is the ONLY row whose AIID signal disagrees with OECD-derived content | 1 row (`aiid_id` 1574) via real-pipeline repro; naive raw join over-counts to 4, explained | ✅ exact |
 | 4 | Still exactly 2 AIID-template exceptions today (898, 1574) | 2/1,465 (898, 1574); only 1574 carries an OECD source | ✅ exact |
 
