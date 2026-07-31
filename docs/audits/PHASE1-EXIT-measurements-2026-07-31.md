@@ -47,7 +47,24 @@ downstream text describing this release as a pure text change is wrong.
 
 The **162** OECD-sourced rows without the reduced description ship *another
 source's* description, having lost the merge — so no OECD narrative reaches
-`description` on any row. The **0** marker count is E23's ruling, not a gap:
+`description` on any row.
+
+> **⚠ UPDATE 2026-07-31 — SUPERSEDING NOTE. Do not regenerate this section; the
+> text above stands as the record of what was measured before the error was
+> found.** This file did not state a `title` figure, but the board and
+> `NOTICE-DATA` did, and it was **wrong: the correct figures are `title`
+> verbatim on 3,667 of 3,829 rows, residue 162** — **identical to the
+> `description` partition above, not one row apart.**
+> **The flaw:** the earlier measurement joined each row to **the first of its
+> `OECD-AIM-` source_ids**. **58 rows carry more than one**; `INC-00311` carries
+> twelve and its title matches its fourth, so it scored as non-OECD.
+> Re-measured against *all* of each row's OECD sources, `title_any == desc_set`
+> exactly. **The mechanistic reason, which should have made the split
+> suspicious on sight: `merge_into()` never touches `title` or `description`,
+> so both survive iff OECD won the merge — they are necessarily the same
+> partition.** Found by the release-notes drafter, which cross-validated three
+> independent ways rather than re-running the method that produced the figure.
+> `NOTICE-DATA` and `.reuse/dep5` are routed for correction to 3,667/162. The **0** marker count is E23's ruling, not a gap:
 AIID's and OECD's postures differ from AIAAIC's for reasons specific to each
 maker's legal situs.
 
