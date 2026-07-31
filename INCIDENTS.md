@@ -4,7 +4,7 @@ A consolidated, machine-readable index of GenAI and agentic AI security incident
 Every applicable entry is mapped to four core taxonomies — **OWASP LLM Top 10 (2025)**, **OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS** — plus a companion **MAESTRO** mapping where the source provides it and an experimental **VERIS 1.4.1** crosswalk computed at export time. See docs/TAXONOMIES.md for the full picture.
 
 - **Version:** 2.8.0
-- **Generated:** 2026-07-30
+- **Generated:** 2026-07-31
 - **Total incidents:** **13,060**
 - **Date range:** 1983 – 2026
 - **With CVE:** 5,279
