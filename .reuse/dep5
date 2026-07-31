@@ -67,8 +67,10 @@ Comment: This dataset aggregates entries from many upstream sources, each
  (accessed on date)) is applied to every OECD-sourced row; both are
  implemented and merged. The title field remains OPEN, not resolved
  and not silent: it still ships the same LLM-generated text verbatim
- on every OECD-AIM-sourced row, tracked at the same posture as
- AIAAIC's retained-headline question above. See NOTICE-DATA and
+ on 3,666 of 3,829 OECD-AIM-sourced rows -- the other 163 were merged
+ into an entry whose own title, from a different upstream source,
+ took precedence instead -- tracked at the same posture as AIAAIC's
+ retained-headline question above. See NOTICE-DATA and
  docs/SOURCE_LICENSES.md section 1.5 for the full framing.
 
 Files: docs/*
