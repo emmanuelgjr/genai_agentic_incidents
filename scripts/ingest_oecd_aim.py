@@ -31,6 +31,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from ingest.common import fetch_once, robust_fetch  # noqa: E402
 
+# Corpus-classification keyword lists live in merge_and_dedupe.py
+# (_SECURITY_KEYWORDS_FOR_CORPUS / _AI_HARM_KEYWORDS) -- imported, not
+# duplicated, so this ingest-time classifier and the merge-time one it
+# replaces can never drift apart. See classify_corpus_signal() below and
+# docs/audits/E21-oecd-narrative-licence-2026-07-30.md §5.1.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from merge_and_dedupe import (  # noqa: E402
+    _AI_HARM_KEYWORDS as CORPUS_AI_HARM_KEYWORDS,
+    _SECURITY_KEYWORDS_FOR_CORPUS as CORPUS_SECURITY_KEYWORDS,
+    classify_attack_vector,
+)
+
 INGEST = ROOT / "ingest"
 CACHE = INGEST / "_cache" / "oecd_aim"
 CACHE.mkdir(parents=True, exist_ok=True)
@@ -173,6 +185,80 @@ def map_taxonomy(text: str) -> tuple[list[str], list[str], str]:
     return sorted(llm), sorted(asi), attack_vector
 
 
+def classify_corpus_signal(title: str, narrative_text: str, tags: list[str]) -> str:
+    """`security` or `ai-harm`, computed from a title+narrative+tags signal
+    using the identical keyword lists `merge_and_dedupe.py::_classify_corpus()`
+    applies to a corpus entry -- so a persisted OECD `corpus` value is exactly
+    what the merge-time classifier would have produced anyway, byte for byte.
+
+    `narrative_text` is deliberately the OLD-style summary/evidences text
+    this ingest used to persist wholesale as `description` -- the exact
+    signal `_classify_corpus()` reads today (`entry.get("description")`,
+    since OECD rows never set `corpus` and fall through the AIAAIC-only
+    `_aiaaic_seed_text()` decoupling) -- NOT the broader `full_text` used for
+    attack_vector/severity. Matching the narrower, already-shipping signal
+    exactly is what makes this a pure decoupling (0 unintended `corpus`
+    moves) rather than a reclassification under a new mechanism; see
+    docs/audits/E21-oecd-narrative-licence-2026-07-30.md §5.1/§5.6 and
+    normalize_body()'s own call site below."""
+    text = (title + " " + narrative_text + " " + " ".join(tags)).lower()
+    if any(kw in text for kw in CORPUS_SECURITY_KEYWORDS):
+        return "security"
+    if any(kw in text for kw in CORPUS_AI_HARM_KEYWORDS):
+        return "ai-harm"
+    return "security"
+
+
+def reclassify_attack_vector_from_narrative(attack_vector: str, title: str, narrative_text: str) -> str:
+    """If `attack_vector` is (still) "other", try one more time against a
+    title+narrative signal, using the SAME classifier
+    (`merge_and_dedupe.classify_attack_vector` / `_ATTACK_VECTOR_RULES`)
+    merge_and_dedupe.py's own normalize_entry()/step-4b finalize apply to
+    `title + " " + description` when a raw attack_vector is missing/"other".
+    That richer, regex-based rule set is a different, second classifier from
+    map_taxonomy()'s KEYWORD_TO_OWASP above -- one this ingest never used to
+    invoke itself, relying instead on merge time to do it FROM THE
+    PRE-REDUCTION NARRATIVE DESCRIPTION. Reducing that description would
+    silently regress every row this fallback used to rescue back to "other"
+    (measured: 178/4160 in dry run) -- the identical cascade shape as the
+    `corpus` decoupling, on a different merge-time reclassifier. Calling this
+    at ingest/migration time instead, on the narrative signal, and persisting
+    the result closes it the same way: merge_and_dedupe's own guards
+    (`if not vec or vec == "other"`) never fire because there is no longer
+    an "other" left to re-derive. Returns `attack_vector` unchanged if it
+    isn't "other", or if the narrative yields no match either."""
+    if attack_vector != "other":
+        return attack_vector
+    reclassified = classify_attack_vector((title or "") + " " + (narrative_text or ""))
+    return reclassified or attack_vector
+
+
+def build_description(source_id: str, date: str, url: str, affected: str, attack_vector: str) -> str:
+    """An originally-templated sentence built ONLY from structural facts
+    already captured on the row (the AIM source id, the incident date, the
+    named entities, the classified attack vector, the AIM page link) --
+    NEVER from `summary`/`evidences`, which are OECD AIM's own LLM-generated
+    (o3-mini) synthesis of third-party news text of uncertain, unresolved
+    copyright status (see docs/audits/E21-oecd-narrative-licence-2026-07-30.md
+    §2.4/§3, outcome (B): the project's conservative-default rule treats that
+    text as not safely redistributable). Mirrors the pattern this codebase
+    already uses for exactly this situation, one function away:
+    `ingest_external.py::ingest_aiid_oecd_bridge()` builds its description
+    from ids/dates/urls alone, never from any source's own narrative prose.
+    `summary`/`evidences` continue to feed `is_security_relevant()` /
+    `map_taxonomy()` / the severity heuristic / `classify_corpus_signal()`
+    above exactly as before -- ephemeral, in-memory signals, never persisted
+    themselves."""
+    sentence = f"Tracked by the OECD AI Incidents and Hazards Monitor (AIM) as {source_id}"
+    sentence += f", dated {date}." if date else "."
+    if affected:
+        sentence += f" Entities named in the record: {affected}."
+    if attack_vector and attack_vector != "other":
+        sentence += f" Classified attack vector: {attack_vector}."
+    sentence += f" See the AIM incident page ({url}) and its cited news sources for full narrative detail."
+    return sentence[:1500]
+
+
 def normalize_body(body: dict, url: str) -> dict | None:
     full_text = collect_text(body)
     if not is_security_relevant(full_text):
@@ -196,20 +282,23 @@ def normalize_body(body: dict, url: str) -> dict | None:
     if not year or year < 1980 or year > 2030:
         return None
 
-    summary = body.get("summary") or ""
-    if not summary:
-        # Use first article's evidences as a description.
+    # Ephemeral corpus-classification seed ONLY -- the exact summary/evidences
+    # text this ingest used to persist wholesale as `description` before the
+    # E21 reduction. Fed to classify_corpus_signal() below and then
+    # discarded; never itself written to output. See build_description()'s
+    # docstring for the replacement description and why summary/evidences
+    # never reach it.
+    narrative_seed = body.get("summary") or ""
+    if not narrative_seed:
         for art in body.get("articles") or []:
             ev = art.get("evidences") or []
             if isinstance(ev, list) and ev:
-                summary = " ".join(e for e in ev if isinstance(e, str))[:1000]
-                if summary:
+                narrative_seed = " ".join(e for e in ev if isinstance(e, str))[:1000]
+                if narrative_seed:
                     break
-    description = (summary or title).strip()
-    if len(description) < 20:
-        description = (title + ". " + description).strip()
 
     llm, asi, attack_vector = map_taxonomy(full_text)
+    attack_vector = reclassify_attack_vector_from_narrative(attack_vector, title, narrative_seed)
 
     # Severity heuristic
     sev = "Medium"
@@ -246,14 +335,26 @@ def normalize_body(body: dict, url: str) -> dict | None:
             except (TypeError, ValueError):
                 pass
 
+    # Persist the DERIVED SIGNAL only (a plain security/ai-harm enum) from
+    # the pre-reduction narrative seed -- never the seed text itself. This is
+    # the decoupling: merge_and_dedupe.py:1442's existing "respect an
+    # explicit value" guard then takes effect unmodified, so no future
+    # description-wording edit can ever silently move `corpus` again (the
+    # WS0-T3 cascade this mirrors and closes for OECD; see
+    # docs/audits/WS0-T3-cascade-2026-07-18.md and E21 §5.1).
+    corpus = classify_corpus_signal(title, narrative_seed, tags)
+    final_date = date or str(year)
+    description = build_description(source_ids[0], final_date, url, affected, attack_vector)
+
     return {
         "source_id": source_ids[0],
         "_extra_source_ids": source_ids[1:],
         "title": title[:300],
-        "date": date or str(year),
+        "date": final_date,
         "year": year,
         "category": "real-world",
-        "description": description[:1500],
+        "description": description,
+        "corpus": corpus,
         "attack_vector": attack_vector,
         "affected": affected,
         "severity": sev,

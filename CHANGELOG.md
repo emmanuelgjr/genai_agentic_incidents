@@ -5,6 +5,48 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [Unreleased]
+
+Licensing-remediation release (WS4/E21 OECD AIM narrative-text reduction).
+Net composition 13,119 → 13,060 (−59, all tombstoned via
+`data/id_deprecations.json`, reason `orphaned-ingest-source-retired` —
+never silently deleted). Version/date/final entry count to be confirmed by
+whoever cuts the release; recorded here now per the field-level delta rule
+so the change is disclosed before it is lost.
+
+### Changed (licensing — E21 outcome (B))
+- **OECD AI Incidents and Hazards Monitor (AIM) `description` field
+  reduced from LLM-synthesized narrative to an originally-templated,
+  structural-facts-only sentence** (`scripts/ingest_oecd_aim.py::normalize_body()`
+  / `build_description()`). AIM's `summary`/`title` fields are LLM-generated
+  (OpenAI o3-mini) from third-party news article text of uncertain,
+  unresolved copyright status (docs/audits/E21-oecd-narrative-licence-2026-07-30.md
+  §2.4/§3) — `summary`/`evidences` continue to feed taxonomy/severity/corpus
+  classification as ephemeral, never-persisted signals, exactly as
+  `ingest_aiid_snapshot.py` already does for AIID's excluded `reports.text`.
+  Applied retroactively to all 4,160 already-committed rows in
+  `ingest/oecd_aim_full_incidents.json` via a one-off local transform
+  (`scripts/migrate_oecd_description_reduction.py`, no network/model calls,
+  no re-fetch) — 3,667 shipped rows' `description` changed as a result.
+- **`corpus` (security/ai-harm) now persisted at OECD ingest time** from a
+  derived signal only (never the narrative text itself), closing a
+  merge-time reclassification coupling that would otherwise have silently
+  moved 77–150 rows `ai-harm`→`security` once the narrative was removed —
+  the same defect class WS0-T3 already fixed once for AIAAIC (2026-07-18).
+  Verified: 0 unintended `corpus` moves from the reduction itself.
+
+### Removed (dead ingest source)
+- **`ingest/oecd_aim_incidents.json` retired** — an 86-row hand-curated OECD
+  file with no producing script and no code reference anywhere in the repo,
+  orphaned since `edaefc92` (2026-05-13) yet still silently shipping rows
+  into every build via `merge_and_dedupe.py`'s generic `ingest/*.json` glob.
+  59 of its 86 rows were the corpus's *only* source for that incident and
+  are now tombstoned (`data/id_deprecations.json`, `into: null`); the
+  remaining 27 were already cross-covered by AIID/OECD-AIM and simply lost
+  the orphan file's contributed `source_ids`/`tags`/framework mappings on
+  rebuild (disclosed, justified — not part of the narrative reduction
+  itself).
+
 ## [2.8.0] — 2026-07-13
 
 Data-quality release. Net composition 12,770 → 12,986 (+241 from the weekly

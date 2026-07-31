@@ -1299,3 +1299,66 @@ def test_aiaaic_ethical_tags_never_reaches_published_output(tmp_path, monkeypatc
     for e in slim["incidents"]:
         assert "aiaaic_ethical_tags" not in e
         assert "aiaaic_seed_facts" not in e
+
+
+def test_normalize_entry_carries_explicit_corpus():
+    """E21/WS4 OECD-reduction decoupling: unlike quality_tier (whose guard at
+    step 5 exists only for the curation-overrides file), an explicit
+    source-set `corpus` must survive normalize_entry()'s whitelist -- this is
+    exactly the pass-through that was missing (E21 Sec 5's bounced §5.1
+    claimed "no merge_and_dedupe.py code change needed at all"; false, this
+    test pins the fix)."""
+    raw = {
+        "source_id": "OECD-AIM-2026-01-01-aaaa",
+        "title": "OECD test incident",
+        "description": "Tracked by the OECD AI Incidents and Hazards Monitor (AIM).",
+        "year": 2026,
+        "date": "2026-01-01",
+        "corpus": "ai-harm",
+        "references": [{"url": "https://oecd.ai/en/incidents/2026-01-01-aaaa"}],
+        "tags": ["oecd-aim"],
+    }
+    entry = m.normalize_entry(raw)
+    assert entry["corpus"] == "ai-harm"
+
+
+def test_normalize_entry_rejects_invalid_corpus_value():
+    """A malformed `corpus` (not "security"/"ai-harm") must NOT survive the
+    pass-through -- step 5's `if not e.get("corpus")` guard should still see
+    an absent value and fall back to _classify_corpus(), rather than
+    smuggling an invalid enum value into data/incidents.json (schema is
+    enum: ["security", "ai-harm"])."""
+    raw = {
+        "source_id": "OECD-AIM-2026-01-02-bbbb",
+        "title": "OECD test incident with bad corpus",
+        "description": "Tracked by the OECD AI Incidents and Hazards Monitor (AIM).",
+        "year": 2026,
+        "date": "2026-01-02",
+        "corpus": "not-a-real-value",
+        "references": [{"url": "https://oecd.ai/en/incidents/2026-01-02-bbbb"}],
+        "tags": ["oecd-aim"],
+    }
+    entry = m.normalize_entry(raw)
+    assert "corpus" not in entry
+
+
+def test_corpus_pass_through_survives_full_build(tmp_path, monkeypatch):
+    """End-to-end: a source-set `corpus` reaches data/incidents.json without
+    being overwritten by step 5's _classify_corpus() guard, even when the
+    row's title/description alone would classify differently (a bare
+    structural OECD description carries no _AI_HARM_KEYWORDS/
+    _SECURITY_KEYWORDS_FOR_CORPUS hit either way, so this also proves the
+    guard is not silently re-deriving the value from scratch)."""
+    data, ingest = _setup_tmp_repo(tmp_path, monkeypatch)
+    row = dict(
+        _oecd_entry("OECD-AIM-2026-02-02-cccc", "OECD corpus pass-through test"),
+        corpus="ai-harm",
+    )
+    (ingest / "src.json").write_text(_json.dumps([row]), encoding="utf-8")
+    m.main()
+
+    full = _json.loads((data / "incidents.json").read_text(encoding="utf-8"))
+    entry = next(
+        e for e in full["incidents"] if "OECD-AIM-2026-02-02-cccc" in (e.get("source_ids") or [])
+    )
+    assert entry["corpus"] == "ai-harm"

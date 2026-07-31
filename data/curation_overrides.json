@@ -738,6 +738,11 @@
     "CVE-2025-6514": {
       "discovery_method": "security-researcher",
       "_note": "Batch-2 labeling (2026-07-04). Discovery: \"The JFrog Security Research team has recently discovered and disclosed CVE-2025-6514\" (https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/)"
+    },
+    "OECD-AIM-2026-04-03-c16a": {
+      "description_provenance": "original",
+      "description_source": "oecd-aim",
+      "_note": "E21 followup (2026-07-30): this row (INC-00437, aiid_id 1574) carries a legitimate AIID-1574 source-ID cross-reference -- OECD AIM's own record names AIID incident #1574 as a counterpart, and that cross-reference stays, per E23's ruling that attribution/provenance concerns attach to shipped TEXT, not to a bare source-ID cross-reference. But per docs/audits/E23-aiid-scope-measurement-2026-07-30.md Sec4 item 1 and Sec3(i), INC-00437 is absent from ingest/aiid_full.json (the sanctioned AIID snapshot) and ships no AIID text at all -- its description is OECD AIM's own build_description() template (scripts/ingest_oecd_aim.py), not AIID's. Left unlabeled, this was the one row in the corpus whose AIID cross-reference signal (aiid_id/AIID-<n> source_id) disagreed with what the description field actually ships. This override sets description_provenance/description_source to say so explicitly, matching the value every other OECD-AIM-templated description would carry if the ingest set the field generally (it does not yet -- see docs/audits/E21-part-A-measurement-2026-07-30.md for why this is scoped to this one row and not a general OECD ingest change). See docs/audits/E21-part-A-measurement-2026-07-30.md for the measurement establishing this is the only such row."
     }
   }
 }
