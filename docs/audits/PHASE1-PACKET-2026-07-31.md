@@ -3,12 +3,10 @@
 **Do not regenerate.** Dated record, assembled by the foreman 2026-07-31.
 Written for the maintainer to read before cutting v2.9.0 and declaring Phase 1.
 
-> **Status of the final gate:** the exit checklist
-> (`docs/audits/PHASE1-EXIT-2026-07-31.md`) is at `344a7abe` awaiting a
-> single-command re-verify of one paragraph. **Every other component of this
-> packet is merged to `main` and gated.** This line is updated when the verdict
-> lands; if it still reads "awaiting", the verdict had not arrived when you
-> opened this.
+> **Status of the final gate: ✅ PASS.** The exit checklist
+> (`docs/audits/PHASE1-EXIT-2026-07-31.md`) passed at `344a7abe` after three
+> bounces — *"Merge, and send the packet with clause 2 open."* **Every
+> component of this packet is now merged to `main` and gated.**
 
 ## 1. What you are being asked to decide
 
