@@ -41,15 +41,35 @@ Comment: This dataset aggregates entries from many upstream sources, each
  content_license marker under every measurable definition -- tag,
  aiid_id field, AIID-<n> source-ID, or reference URL). AIID's maker is
  US-situated, so U.S. Circular 33 excludes the retained title from
- copyright and no UK/EU sui generis database right qualifies for it --
- the opposite posture from AIAAIC's still-open UK-situated question,
- not the same one. This does not cover the 63 hand-curated rows in
+ copyright, and that same US situs means AIID's maker fails both the
+ UK and EU sui generis database-right qualification tests, so no such
+ right subsists in AIID's collections -- the opposite posture from
+ AIAAIC's still-open UK-situated question, not the same one. This
+ does not cover the 63 hand-curated rows in
  ingest/aiid_incidents.json or the 1,457 AIRI Navigator rows sharing
  AIID's source-ID convention, which stay out of the shipped corpus
  only by merge-order mechanics and reopen for review if that changes.
  See NOTICE-DATA and docs/SOURCE_LICENSES.md section 1.2a for the full
  framing, and docs/audits/E23-aiid-marking-ruling-2026-07-30.md for
  the full reasoning.
+ The OECD AI Incidents and Hazards Monitor (AIM) is a third upstream
+ source carrying an active content obligation, alongside AIAAIC and
+ AIID above. AIM's title/summary fields are LLM-generated (OpenAI
+ o3-mini) from third-party news articles of unresolved copyright
+ status; AIM's own methodology page disclaims any grant over such
+ third-party-protected material, and OECD's general Data-reuse terms
+ permit extraction and redistribution of OECD's own IP with
+ attribution but do not cover that narrative text -- OECD's terms are
+ not presented here as a grant over it. Per decision E21 (2026-07-30),
+ the description field is reduced to structural facts and a source
+ link only -- never summary/evidences -- and per-entry OECD
+ attribution (OECD (year), AI Incidents and Hazards Monitor, url
+ (accessed on date)) is applied to every OECD-sourced row; both are
+ implemented and merged. The title field remains OPEN, not resolved
+ and not silent: it still ships the same LLM-generated text verbatim
+ on every OECD-AIM-sourced row, tracked at the same posture as
+ AIAAIC's retained-headline question above. See NOTICE-DATA and
+ docs/SOURCE_LICENSES.md section 1.5 for the full framing.
 
 Files: docs/*
 Copyright: 2026 Emmanuel G. Jr. and contributors

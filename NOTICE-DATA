@@ -24,6 +24,15 @@ relicense-compatibility status is recorded in docs/SOURCE_LICENSES.md
 and governs wherever it is more restrictive than the CC BY 4.0 grant in
 LICENSE-DATA.
 
+As of this writing, three upstream sources carry a content obligation
+detailed in full below: the AIAAIC Repository, the AI Incident
+Database (AIID), and the OECD AI Incidents and Hazards Monitor (AIM).
+This list is maintained by hand and is added to as new sources
+resolve; if a source you are looking for is not named here,
+docs/SOURCE_LICENSES.md's own summary-of-outcomes table is the
+authoritative, always-current enumeration and takes precedence over
+this file falling behind it.
+
 Two verbatim text bodies embedded in this dataset are Apache License
 2.0, not the CC BY 4.0 grant in LICENSE-DATA, and are not relicensed by
 it:
@@ -131,6 +140,56 @@ does not carry over, and that population reopens for its own review
 before it ships. See docs/SOURCE_LICENSES.md section 1.2a and
 docs/audits/E23-aiid-marking-ruling-2026-07-30.md for the full
 reasoning.
+
+The OECD AI Incidents and Hazards Monitor (AIM) is a third upstream
+source carrying an active content obligation, alongside AIAAIC and
+AIID above. AIM's own terms self-incorporate OECD's general
+Data-reuse conditions -- "Your use of the OECD AI incidents and
+hazards monitor (previously AI Incidents Monitor) ("AIM") is subject
+to the terms and conditions found at www.oecd.org/termsandconditions"
+-- which permit OECD content to be "extract[ed] from, download[ed],
+cop[ied], adapt[ed], print[ed], distribute[d], share[d] and embed[ded]
+... for any purpose, even for commercial use," conditioned on
+attribution in the format OECD (year), (dataset name), (data source)
+DOI or URL (accessed on (date)). That grant does not reach the
+incident narrative: AIM's own methodology page states that any
+copyrights, trademarks, or other intellectual property rights
+included in AIM are the property of their respective owners, and that
+"the OECD cannot and do not grant any rights to use or otherwise
+exploit these protected materials included herein." This project does
+not present OECD's general terms as covering that narrative text.
+
+Per docs/audits/E21-oecd-narrative-licence-2026-07-30.md (E21,
+2026-07-30), what AIM actually supplies for its title/summary/
+harm_type/severity/affected-stakeholder/country metadata is not OECD
+staff prose and not quoted news text: it is LLM-generated (OpenAI's
+o3-mini) from the top three source articles of each event, selected
+from different news outlets -- machine output derived from
+copyrighted third-party news of unresolved ownership. Per that
+finding, this project's ingest builds its description field from
+structural facts and a source link only (the AIM source id, the
+incident date, named entities, the classified attack vector, and the
+AIM page link) -- never from summary or evidences -- mirroring the
+pattern scripts/ingest_external.py::ingest_aiid_oecd_bridge() already
+uses for AIID/OECD cross-listed entries. This reduction is
+implemented and merged. Per-entry OECD attribution -- OECD (year), AI
+Incidents and Hazards Monitor, url (accessed on date) -- is likewise
+implemented and merged, reaching every OECD-AIM-sourced row plus a
+further set of entries whose only OECD-AIM content was absorbed into
+an AIID entry during merge but which still carry an oecd.ai page
+reference via the AIID-OECD bridge path.
+
+The title field is NOT resolved by this reduction, and this is not
+silent: it still ships the same LLM-generated text verbatim on every
+OECD-AIM-sourced row. This is tracked as a separate, open question at
+the same posture as AIAAIC's retained-headline question above
+(E15/D17) -- a shorter label, not a multi-sentence digest, but not
+dispositive of the underlying copyright question. Unlike AIAAIC, no
+row-level content_license marker is emitted for OECD-derived rows
+today; whether one is warranted is a separate, not-yet-scoped
+question. See docs/SOURCE_LICENSES.md section 1.5 for the full
+framing and docs/audits/E21-oecd-narrative-licence-2026-07-30.md for
+the full reasoning.
 
 The full CC BY 4.0 Public License text is in LICENSE-DATA at the
 repository root.

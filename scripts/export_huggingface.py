@@ -149,6 +149,17 @@ obligation. A separate, open question about an EU/UK *sui generis* database righ
 over the AIAAIC extraction is tracked in the source repository's `NOTICE-DATA` and
 `docs/SOURCE_LICENSES.md` (§1.1) and is **not** resolved by this row-level marker.
 
+Rows sourced from the **OECD AI Incidents and Hazards Monitor (AIM)** carry a
+narrower, separate obligation: `description` on those rows is reduced to
+structural facts and a source link only (never AIM's LLM-generated
+`summary`/`evidences`, machine output derived from copyrighted third-party
+news of unresolved ownership), and carries a per-entry citation (`OECD
+(year), AI Incidents and Hazards Monitor, url (accessed on date)`). The
+`title` field is not covered by that reduction and remains an open
+question, tracked at the same posture as the AIAAIC headline question
+above. Full framing: `NOTICE-DATA` and `docs/SOURCE_LICENSES.md` §1.5 in
+the source repository.
+
 ## Links
 
 - **Code & issues:** <https://github.com/emmanuelgjr/genai_incidents>

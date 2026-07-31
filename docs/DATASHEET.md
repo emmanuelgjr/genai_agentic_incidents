@@ -97,6 +97,15 @@ review, and the Heuristic labels bullet below for known gaps.
   dataset-wide. Full framing, and the current audited count of
   AIAAIC-citing rows: `NOTICE-DATA` and
   [`docs/SOURCE_LICENSES.md`](SOURCE_LICENSES.md) §1.1.
+- **OECD-derived rows carry a narrower, separate obligation.** `description`
+  on OECD AI Incidents and Hazards Monitor (AIM)-sourced rows is reduced to
+  structural facts and a source link only — never AIM's LLM-generated
+  `summary`/`evidences`, machine output derived from copyrighted
+  third-party news — and carries a per-entry citation (`OECD (year), AI
+  Incidents and Hazards Monitor, url (accessed on date)`). The `title`
+  field is not covered by that reduction and remains an open question,
+  tracked at the same posture as the AIAAIC headline question above. Full
+  framing: `NOTICE-DATA` and [`docs/SOURCE_LICENSES.md`](SOURCE_LICENSES.md) §1.5.
 - Distributed via GitHub, PyPI (`genai-incidents`), Hugging Face Datasets, a
   STIX 2.1 bundle, a static [TAXII-compatible discovery document](https://emmanuelgjr.github.io/genai_incidents/taxii2/discovery.json),
   and a [MISP feed](https://emmanuelgjr.github.io/genai_incidents/misp/) whose events
