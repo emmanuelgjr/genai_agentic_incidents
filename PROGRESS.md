@@ -101,6 +101,41 @@ that deliberately chose a method nobody had used.
 committed at `docs/audits/E5-corpus-composition-2026-07-31.md`. **To be taken
 fresh, in a new session.**
 
+**ADDENDUM 2026-07-31 — GitHub Release published** (`2026-08-01T00:49:59Z` UTC,
+so GitHub displays it as Aug 1): the **gap was the cut procedure covering
+tag + deposit + notes but not the Release object** — the tag had been on origin
+since `2026-07-31T23:32:51Z` while the releases page still showed v2.8.0 as
+Latest, i.e. the one surface most visitors check said the shipped version did
+not exist. **Added to the WS6-T1/cut-procedure checklist as a named step**
+(`MASTER_IMPROVEMENT_PLAN.md` §WS6-T1, scope + accept). Published with
+`gh release create v2.9.0 --verify-tag --title "v2.9.0" --notes-file
+docs/releases/v2.9.0.md` — `--verify-tag` so it could only ever bind to the
+existing tag, never mint one. **[R] re-derived, not attested:** release body is
+**byte-identical** to `docs/releases/v2.9.0.md` (sha256
+`5db3047c38a059f0d5065002c6ef0599b8d559583979991aecd2efd4cef4848b`, both sides,
+18,682 chars / 338 lines — no rewriting, no new prose); annotated tag
+`a16d927a` dereferences to **`118a0141`**, matching the cut commit this block
+records; `draft:false`, `prerelease:false`, `make_latest` → **v2.9.0 is now
+Latest**; page fetch HTTP 200, H1/table/6 highlighted code blocks/tombstoned-ID
+list/DOIs all render.
+
+**⚠ Two link defects in the published body — DISCLOSED, NOT FIXED, and the fix
+is the user's call, not the foreman's.** Both are artifacts of publishing a
+repo-relative document verbatim as a release body, and fixing either means
+editing the body away from the gated text: (1) `../../README.md#how-to-cite`
+renders as `/emmanuelgjr/genai_incidents/README.md#how-to-cite` → **HTTP 404**
+(measured; `/blob/main/README.md` → 200 is the form that works from a release
+page); (2) the in-body `#verification` and
+`#consumer-impact-the-59-tombstoned-ids` anchors are **dead links** — GitHub
+emits **zero** `user-content-*` heading ids in release bodies (measured: 0), so
+release-body anchor links have no targets, unlike the same file rendered under
+`docs/`. **Neither defect touches a figure, a claim, or a corpus row** — the
+notes' content is intact and byte-verified above; only intra-document
+navigation is affected. **This is a general property of the new checklist step,
+not a v2.9.0 quirk:** any future notes file written to live under `docs/` will
+break the same two ways when reused verbatim as a release body, so the
+VERSIONING.md step should say which link forms survive the move.
+
 ## ⛔ SUPERSEDED — the pending-exit block below is the record of the state before the declaration above (2026-07-31)
 
 PHASE-1 EXIT — PROJECT-SIDE COMPLETE, AWAITING ONE USER ACTION (2026-07-31)

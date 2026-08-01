@@ -272,7 +272,9 @@ This repo's own drift partly originated in AI-assisted building sessions — for
 
 ### WS6-T1 · Decouple data version from code version (P1, M)
 Package exposes `__version__` (code semver) + `data_version` + `data_date`; `fetch_latest()` downloads current data from Pages with SHA-256 verification (hashes from WS6-T5/WS4-T8) and caches; `docs/VERSIONING.md` defines what bumps what (schema field add = data minor; entry corrections = data patch; API break = code major); bundled-snapshot staleness documented prominently.
-- **Accept:** clean-venv install → `data_version` accessible → `fetch_latest()` round-trips with hash check; VERSIONING.md answers all three "what bumps what" questions.
+
+`docs/VERSIONING.md` also carries the **cut procedure as an explicit ordered checklist**, because the v2.9.0 cut demonstrated the failure it prevents: the procedure covered tag + Zenodo deposit + gated notes but never named the **GitHub Release object**, so the releases page — the surface most visitors check — showed v2.8.0 as latest for an already-shipped version until it was published by hand on 2026-07-31. **"Publish the GitHub Release against the existing tag, body = the gated notes file verbatim" is a named step** in that checklist, alongside WS6-T7's redeposit step. A named step is the deliverable here: the cut was not under-executed, it was under-specified, and every artifact it *did* name landed correctly.
+- **Accept:** clean-venv install → `data_version` accessible → `fetch_latest()` round-trips with hash check; VERSIONING.md answers all three "what bumps what" questions; VERSIONING.md's cut checklist names the GitHub Release object as its own step, and `gh release view <tag>` for every tag from v2.9.0 forward returns a published, non-draft release.
 
 ### WS6-T2 · Single-source all published counts (P0, S — Phase 1)
 `data/stats.json` is the only source of counts; `scripts/render_docs_stats.py` templates them into README/datasheet/site/HF card; CI greps docs for hardcoded totals and fails on mismatch.
