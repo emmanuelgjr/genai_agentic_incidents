@@ -72,7 +72,7 @@ justified the `Mozilla/5.0` prefix had no supporting measurement. Full
 evidence: `docs/audits/WS0-T4-network-chokepoint-inventory-2026-07-29.md`
 §13.
 
-Version number (`2.8.0`) and the full reasoning above are in the comment
+Version number (`2.9.0`) and the full reasoning above are in the comment
 immediately above the constant (`ingest/common.py:62-95`).
 
 ### 2. A robots.txt check before every fetch, fail-closed
