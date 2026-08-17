@@ -148,16 +148,16 @@ SECURITY_HEADLINE_KEYWORDS = (
 
 # Map AIAAIC ethical issue → OWASP LLM / ASI codes.
 ETHICAL_TO_OWASP_LLM = {
-    "Security": ["LLM02", "LLM03"],
+    "Security": ["LLM02", "LLM04"],
     "Privacy/surveillance": ["LLM02"],
-    "Accuracy/reliability": ["LLM05", "LLM09"],
-    "Anthropomorphism": ["LLM09"],
-    "Safety": ["LLM05"],
-    "Robustness": ["LLM04", "LLM05"],
-    "Transparency": ["LLM07"],
-    "Accountability": ["LLM06"],
-    "Misinformation": ["LLM09"],
-    "Disinformation": ["LLM09"],
+    "Accuracy/reliability": ["LLM10", "LLM07"],
+    "Anthropomorphism": ["LLM07"],
+    "Safety": ["LLM10"],
+    "Robustness": ["LLM05", "LLM10"],
+    "Transparency": ["LLM08"],
+    "Accountability": ["LLM03"],
+    "Misinformation": ["LLM07"],
+    "Disinformation": ["LLM07"],
 }
 ETHICAL_TO_OWASP_ASI = {
     "Security": ["ASI02", "ASI03"],
@@ -458,7 +458,7 @@ def normalize_row(raw_row: list[str], col: dict[str, int]) -> dict | None:
     # Headline pattern fallbacks
     h = row["headline"].lower()
     if "deepfake" in h or "voice clone" in h or "imperson" in h:
-        owasp_llm.add("LLM09")
+        owasp_llm.add("LLM07")
         owasp_asi.add("ASI09")
     if "prompt inject" in h or "jailbreak" in h:
         owasp_llm.add("LLM01")

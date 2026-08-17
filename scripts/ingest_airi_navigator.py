@@ -37,35 +37,35 @@ ZIP_URL = "https://www.airi-navigator.com/downloads/airi-data.zip"
 # AIRI risk taxonomy and OWASP mappings.
 SUBDOMAIN_MAP: dict[str, tuple[list[str], list[str], str]] = {
     # 1. Discrimination & Toxicity
-    "1.1": (["LLM05", "LLM09"], ["ASI09"], "other"),
-    "1.2": (["LLM05", "LLM09"], ["ASI09"], "other"),
-    "1.3": (["LLM05", "LLM09"], ["ASI09"], "other"),
+    "1.1": (["LLM10", "LLM07"], ["ASI09"], "other"),
+    "1.2": (["LLM10", "LLM07"], ["ASI09"], "other"),
+    "1.3": (["LLM10", "LLM07"], ["ASI09"], "other"),
     # 2. Privacy & Security
     "2.1": (["LLM02"], ["ASI03"], "data-exfiltration"),
     "2.2": (["LLM02"], ["ASI03"], "data-exfiltration"),
-    "2.3": (["LLM03", "LLM05"], ["ASI04", "ASI05"], "rce"),
-    "2.4": (["LLM02", "LLM03"], ["ASI03", "ASI04"], "data-exfiltration"),
+    "2.3": (["LLM04", "LLM10"], ["ASI04", "ASI05"], "rce"),
+    "2.4": (["LLM02", "LLM04"], ["ASI03", "ASI04"], "data-exfiltration"),
     # 3. Misinformation
-    "3.1": (["LLM09"], ["ASI09"], "other"),
-    "3.2": (["LLM09"], ["ASI09"], "other"),
+    "3.1": (["LLM07"], ["ASI09"], "other"),
+    "3.2": (["LLM07"], ["ASI09"], "other"),
     # 4. Malicious Actors & Misuse
-    "4.1": (["LLM09"], ["ASI09"], "other"),
-    "4.2": (["LLM05", "LLM06"], ["ASI02", "ASI10"], "tool-abuse"),
-    "4.3": (["LLM09"], ["ASI09"], "other"),
+    "4.1": (["LLM07"], ["ASI09"], "other"),
+    "4.2": (["LLM10", "LLM03"], ["ASI02", "ASI10"], "tool-abuse"),
+    "4.3": (["LLM07"], ["ASI09"], "other"),
     # 5. Human-Computer Interaction
-    "5.1": (["LLM09"], ["ASI09"], "other"),
-    "5.2": (["LLM06"], ["ASI09"], "other"),
+    "5.1": (["LLM07"], ["ASI09"], "other"),
+    "5.2": (["LLM03"], ["ASI09"], "other"),
     # 6. Socioeconomic & Environmental
     "6.1": ([], [], "other"),
     "6.2": ([], [], "other"),
     "6.3": ([], [], "other"),
-    "6.4": (["LLM10"], [], "other"),
+    "6.4": (["LLM06"], [], "other"),
     "6.5": ([], [], "other"),
     # 7. AI System Safety, Failures & Limitations
-    "7.1": (["LLM05"], ["ASI08"], "other"),
-    "7.2": (["LLM06"], ["ASI01", "ASI10"], "agent-hijack"),
-    "7.3": (["LLM05"], ["ASI08"], "other"),
-    "7.4": (["LLM06"], ["ASI01", "ASI10"], "agent-hijack"),
+    "7.1": (["LLM10"], ["ASI08"], "other"),
+    "7.2": (["LLM03"], ["ASI01", "ASI10"], "agent-hijack"),
+    "7.3": (["LLM10"], ["ASI08"], "other"),
+    "7.4": (["LLM03"], ["ASI01", "ASI10"], "agent-hijack"),
 }
 
 # Map AIRI's `severity_highest` (0-3) to our severity label.

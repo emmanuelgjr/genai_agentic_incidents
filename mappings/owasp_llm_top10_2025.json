@@ -2,6 +2,9 @@
   "framework": "OWASP Top 10 for LLM Applications",
   "version": "2025",
   "url": "https://genai.owasp.org/llm-top-10/",
+  "$comment": "SUPERSEDED by the 2026 edition (mappings/owasp_llm_top10_2026.json) on 2026-08-17. Retained deliberately and DO NOT REGENERATE: dataset releases up to and including v2.9.0 (and their Zenodo DOIs) carry owasp_llm codes under THESE 2025 semantics, and cannot be read correctly without this table. The 2026 renumbering reuses the same code space LLM01-LLM10 with different meanings - see mappings/owasp_llm_2025_to_2026.json for the crosswalk.",
+  "superseded_by": "mappings/owasp_llm_top10_2026.json",
+  "superseded_on": "2026-08-17",
   "entries": {
     "LLM01": {
       "name": "Prompt Injection",

@@ -234,7 +234,7 @@
     },
     "owasp_llm": {
       "type": "array",
-      "description": "OWASP Top 10 for LLM Applications (2025) codes",
+      "description": "OWASP Top 10 for LLM Applications (2026) codes",
       "items": {
         "type": "string",
         "enum": ["LLM01", "LLM02", "LLM03", "LLM04", "LLM05", "LLM06", "LLM07", "LLM08", "LLM09", "LLM10"]

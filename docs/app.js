@@ -12,12 +12,14 @@ const SEV_VARS = {
   Low: "var(--low)",
   Info: "var(--info)",
 };
+// OWASP Top 10 for LLM Applications 2026. Rank order matters: charts and
+// filter dropdowns render in insertion order.
 const LLM_NAMES = {
   LLM01: "Prompt Injection", LLM02: "Sensitive Info Disclosure",
-  LLM03: "Supply Chain", LLM04: "Data & Model Poisoning",
-  LLM05: "Improper Output Handling", LLM06: "Excessive Agency",
-  LLM07: "System Prompt Leakage", LLM08: "Vector & Embedding",
-  LLM09: "Misinformation", LLM10: "Unbounded Consumption",
+  LLM03: "Excessive Agency", LLM04: "Supply Chain",
+  LLM05: "Data & Model Poisoning", LLM06: "Unbounded Consumption",
+  LLM07: "Misinformation", LLM08: "Hidden Context Exposure",
+  LLM09: "Vector & Embedding", LLM10: "Improper Output Handling",
 };
 const ASI_NAMES = {
   ASI01: "Agent Goal Hijack", ASI02: "Tool Misuse & Exploit",

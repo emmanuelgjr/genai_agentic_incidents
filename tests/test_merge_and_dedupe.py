@@ -75,7 +75,7 @@ def test_classify_attack_vector_harm_precision():
 def test_seed_frameworks_from_vector_security():
     e = {"attack_vector": "rce"}
     m.seed_frameworks_from_vector(e)
-    assert e["owasp_llm"] == ["LLM05"]
+    assert e["owasp_llm"] == ["LLM10"]
 
 
 def test_seed_frameworks_from_vector_harm_nist():

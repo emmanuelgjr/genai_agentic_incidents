@@ -44,7 +44,7 @@ BENCHMARKS = [
      [("Paper — Universal and Transferable Adversarial Attacks", "https://arxiv.org/abs/2307.15043", "paper"),
       ("llm-attacks repo", "https://github.com/llm-attacks/llm-attacks", "research")]),
     ("agentharm", 2025, "AgentHarm: harmfulness benchmark for tool-calling LLM agents",
-     "agent-hijack", ["LLM06"], ["ASI08"], ["AML.T0053"],
+     "agent-hijack", ["LLM03"], ["ASI08"], ["AML.T0053"],
      "110 malicious agent tasks across 11 harm categories (fraud, cybercrime, "
      "harassment, drugs, etc.) with rule-based scoring; measures whether agents "
      "complete harmful multi-step tool-use, incl. under jailbreak templates. ICLR 2025.",
@@ -62,7 +62,7 @@ BENCHMARKS = [
      "indirect prompt injection (direct harm + data exfiltration intents).",
      [("Paper", "https://arxiv.org/abs/2403.02691", "paper")]),
     ("os-harm", 2025, "OS-Harm: safety benchmark for computer-use agents",
-     "agent-hijack", ["LLM06"], ["ASI08"], ["AML.T0053"],
+     "agent-hijack", ["LLM03"], ["ASI08"], ["AML.T0053"],
      "Benchmark for computer-use / GUI agents covering deliberate misuse, prompt "
      "injection, and model misbehaviour on real OS tasks, with an automated judge.",
      [("Paper", "https://arxiv.org/abs/2506.14866", "paper")]),

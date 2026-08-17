@@ -40,14 +40,14 @@ DATA.mkdir(parents=True, exist_ok=True)
 LLM_TO_ATLAS = {
     "LLM01": ["AML.T0051", "AML.T0051.000", "AML.T0051.001"],
     "LLM02": ["AML.T0057", "AML.T0024"],
-    "LLM03": ["AML.T0010", "AML.T0010.001", "AML.T0010.003"],
-    "LLM04": ["AML.T0018", "AML.T0019", "AML.T0020", "AML.T0059"],
-    "LLM05": ["AML.T0050", "AML.T0060"],
-    "LLM06": ["AML.T0053", "AML.T0048"],
-    "LLM07": ["AML.T0056", "AML.T0067"],
-    "LLM08": ["AML.T0066", "AML.T0070"],
-    "LLM09": ["AML.T0058", "AML.T0048.001"],
-    "LLM10": ["AML.T0029", "AML.T0034", "AML.T0046"],
+    "LLM03": ["AML.T0053", "AML.T0048"],
+    "LLM04": ["AML.T0010", "AML.T0010.001", "AML.T0010.003"],
+    "LLM05": ["AML.T0018", "AML.T0019", "AML.T0020", "AML.T0059"],
+    "LLM06": ["AML.T0029", "AML.T0034", "AML.T0046"],
+    "LLM07": ["AML.T0058", "AML.T0048.001"],
+    "LLM08": ["AML.T0056", "AML.T0067"],
+    "LLM09": ["AML.T0066", "AML.T0070"],
+    "LLM10": ["AML.T0050", "AML.T0060"],
 }
 
 ASI_TO_ATLAS = {
@@ -66,14 +66,14 @@ ASI_TO_ATLAS = {
 LLM_TO_NIST = {
     "LLM01": ["MEASURE-2.7", "MAP-2.1", "MANAGE-2.3"],
     "LLM02": ["MEASURE-2.10", "MEASURE-2.7", "GOVERN-1.1"],
-    "LLM03": ["GOVERN-6.1", "GOVERN-6.2", "MAP-4.1"],
-    "LLM04": ["MEASURE-2.7", "MAP-4.2", "MANAGE-3.2"],
-    "LLM05": ["MEASURE-2.7", "MEASURE-2.5"],
-    "LLM06": ["MAP-3.5", "GOVERN-3.2", "MANAGE-2.4"],
-    "LLM07": ["MEASURE-2.7", "MEASURE-2.10"],
-    "LLM08": ["MEASURE-2.7"],
-    "LLM09": ["MEASURE-2.5", "MEASURE-2.8", "MANAGE-4.3"],
-    "LLM10": ["MEASURE-2.4", "MANAGE-2.2"],
+    "LLM04": ["GOVERN-6.1", "GOVERN-6.2", "MAP-4.1"],
+    "LLM05": ["MEASURE-2.7", "MAP-4.2", "MANAGE-3.2"],
+    "LLM10": ["MEASURE-2.7", "MEASURE-2.5"],
+    "LLM03": ["MAP-3.5", "GOVERN-3.2", "MANAGE-2.4"],
+    "LLM08": ["MEASURE-2.7", "MEASURE-2.10"],
+    "LLM09": ["MEASURE-2.7"],
+    "LLM07": ["MEASURE-2.5", "MEASURE-2.8", "MANAGE-4.3"],
+    "LLM06": ["MEASURE-2.4", "MANAGE-2.2"],
 }
 
 ASI_TO_NIST = {
@@ -115,7 +115,7 @@ def normalize_owasp(codes: list[str]) -> tuple[list[str], list[str], list[str]]:
     for c in codes or []:
         c = c.strip().upper()
         if c.startswith("LLM"):
-            llm.append(c[:5])  # LLM01..LLM10
+            llm.append(c[:5])  # LLM01..LLM06
         elif c.startswith("ASI"):
             asi.append(c[:5])
         elif c.startswith("DSGAI"):
@@ -290,19 +290,19 @@ def parse_md_table(path: Path, start_id: int) -> tuple[list[dict], int]:
         if "data exfiltrat" in impact_lower or "leak" in impact_lower or "exposed" in impact_lower:
             llm_codes.add("LLM02")
         if "supply chain" in impact_lower or "ASI04" in mapping_cell:
-            llm_codes.add("LLM03")
-        if "poison" in impact_lower or "memory" in impact_lower or "ASI06" in mapping_cell:
             llm_codes.add("LLM04")
-        if "rce" in impact_lower or "code execution" in impact_lower or "ASI05" in mapping_cell:
+        if "poison" in impact_lower or "memory" in impact_lower or "ASI06" in mapping_cell:
             llm_codes.add("LLM05")
+        if "rce" in impact_lower or "code execution" in impact_lower or "ASI05" in mapping_cell:
+            llm_codes.add("LLM10")
         if "agency" in impact_lower or "autonom" in impact_lower or "without approval" in impact_lower or "without consent" in impact_lower:
-            llm_codes.add("LLM06")
+            llm_codes.add("LLM03")
         if "system prompt" in impact_lower:
-            llm_codes.add("LLM07")
-        if "rag" in impact_lower or "embedding" in impact_lower or "vector" in impact_lower:
             llm_codes.add("LLM08")
-        if "hallucinat" in impact_lower or "misinformation" in impact_lower or "false" in impact_lower:
+        if "rag" in impact_lower or "embedding" in impact_lower or "vector" in impact_lower:
             llm_codes.add("LLM09")
+        if "hallucinat" in impact_lower or "misinformation" in impact_lower or "false" in impact_lower:
+            llm_codes.add("LLM07")
         llm_codes = sorted(llm_codes)
 
         # Attack vector

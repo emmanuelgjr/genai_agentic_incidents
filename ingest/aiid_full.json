@@ -505,7 +505,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -1005,7 +1005,7 @@
     "affected": "Fakeapp, University Of Washington",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -1349,7 +1349,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -1405,7 +1405,7 @@
     "affected": "Oakland Police Department, Predpol",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -1697,7 +1697,7 @@
     "affected": "Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -1755,7 +1755,7 @@
     "affected": "Motorist, Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -1811,7 +1811,7 @@
     "affected": "Skh Metals, Unknown",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -2159,7 +2159,7 @@
     "affected": "Facebook",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -2215,7 +2215,7 @@
     "affected": "Facebook",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -2505,7 +2505,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -2535,7 +2535,7 @@
     "affected": "Boston Dynamics, New York City Police Department",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -2725,7 +2725,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -2917,7 +2917,7 @@
     "affected": "Chicago Police Department, Fall River Police Department, New York City Police Department, San Antonio Police Department, San Francisco Police Department, Shotspotter, Syracuse Police Department, Troy Police Department",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -3053,7 +3053,7 @@
     "affected": "Tiktok",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -3163,7 +3163,7 @@
     "affected": "Stm, Tripoli Based Government",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -3351,7 +3351,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -3563,7 +3563,7 @@
     "affected": "Israeli Tax Authority",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -3621,7 +3621,7 @@
     "affected": "Amazon",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -3729,7 +3729,7 @@
     "affected": "Facebook, Twitter",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -3787,7 +3787,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -3843,7 +3843,7 @@
     "affected": "Cybercriminals, Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Transnational Fraud Ring",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -4005,7 +4005,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -4165,7 +4165,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -4299,7 +4299,7 @@
     "affected": "Facebook",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -4329,7 +4329,7 @@
     "affected": "Duke Researchers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -4701,7 +4701,7 @@
     "affected": "Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -4863,7 +4863,7 @@
     "affected": "Tiktok",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -4919,7 +4919,7 @@
     "affected": "Ai Addict, Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -5003,7 +5003,7 @@
     "affected": "Bytedance",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -5197,7 +5197,7 @@
     "affected": "Facebook",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -5227,8 +5227,8 @@
     "affected": "Hackers, Unknown",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -5290,7 +5290,7 @@
     "affected": "Scammers, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -5322,7 +5322,7 @@
     "affected": "Extinction Rebellion Belgium, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -5354,7 +5354,7 @@
     "affected": "Unknown, Yoon Suk Yeol, Yoon Suk Yeol's Campaign",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -5412,7 +5412,7 @@
     "affected": "Sangfor Technologies, Zhihu",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -5444,7 +5444,7 @@
     "affected": "Individuals In Russia, Individuals In The Donbass Region, Media Organizations In Crimea, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -5788,7 +5788,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -5870,7 +5870,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -6110,7 +6110,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -6140,7 +6140,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -6170,7 +6170,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -6280,7 +6280,7 @@
     "affected": "Scammers, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -6312,7 +6312,7 @@
     "affected": "Oregon Department Of Human Services",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI02"
@@ -6370,8 +6370,8 @@
     "affected": "Github, Programmers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM06"
+      "LLM10",
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01",
@@ -6560,7 +6560,7 @@
     "affected": "Contra Costa County Sheriff, Vigilant Solutions",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -6880,7 +6880,7 @@
     "affected": "Us Citizenship And Immigration Services, Us Department Of Homeland Security",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -6938,7 +6938,7 @@
     "affected": "Boris Dayma, Khalid Saifullah, Luke Melas, Pedro Cuenca, Phuc Le Khac, Ritobrata Ghosh, Suraj Patil, Tanishq Abraham",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -6970,7 +6970,7 @@
     "affected": "Youtube",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -7158,7 +7158,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -7240,7 +7240,7 @@
     "affected": "Virginia Courts, Virginia Department Of Criminal Justice Services",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -7692,7 +7692,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -7774,7 +7774,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -7912,7 +7912,7 @@
     "affected": "Masayuki Nakamoto, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -8074,7 +8074,7 @@
     "affected": "Youtube",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -8104,7 +8104,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8322,8 +8322,8 @@
     "affected": "Compvis Lmu, Eleutherai, Laion, Runway, Stability Ai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -8465,7 +8465,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8495,7 +8495,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8525,7 +8525,7 @@
     "affected": "Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8555,7 +8555,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8585,7 +8585,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8719,7 +8719,7 @@
     "affected": "Spamouflage Dragon, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -8853,7 +8853,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -8883,7 +8883,7 @@
     "affected": "Uber",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -9097,7 +9097,7 @@
     "affected": "Curious Thing, Myinterview",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -9207,7 +9207,7 @@
     "affected": "Youtube",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -9347,7 +9347,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -9853,7 +9853,7 @@
     "affected": "Csg Government Solutions, Fast Enterprises, Michigan Unemployment Insurance Agency",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -10174,7 +10174,7 @@
     "affected": "Edmonton Police Service, Parabon Nanolabs",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -10312,7 +10312,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -10450,7 +10450,7 @@
     "affected": "Amazon, Netradyne",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -10508,7 +10508,7 @@
     "affected": "Tiktok",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -10538,7 +10538,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -10908,7 +10908,7 @@
     "affected": "Clearview Ai, Facial Recognition System Developers, Finland National Bureau Of Investigation, Finnish National Police Board, Government Of Finland, Law Enforcement",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -11096,7 +11096,7 @@
     "affected": "Facebook",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -11184,7 +11184,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -11558,7 +11558,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -11757,7 +11757,7 @@
     "affected": "Lockheed Martin, Raytheon, Us Air Force",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -12101,7 +12101,7 @@
     "affected": "Cnet, Unknown",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -12289,7 +12289,7 @@
     "affected": "Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -12449,7 +12449,7 @@
     "affected": "Microsoft, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -12505,7 +12505,7 @@
     "affected": "New York Police Department, Unknown",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -12622,7 +12622,7 @@
     "affected": "Youtube",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -12652,7 +12652,7 @@
     "affected": "Microsoft, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -12708,7 +12708,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -12740,7 +12740,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -12772,7 +12772,7 @@
     "affected": "@mikesmithtrainer, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -12912,8 +12912,8 @@
     "affected": "Spamouflage Dragon, Synthesia",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06",
-      "LLM09"
+      "LLM03",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02"
@@ -12946,7 +12946,7 @@
     "affected": "Synthesia, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -12978,7 +12978,7 @@
     "affected": "Elevenlabs, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13116,7 +13116,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13148,7 +13148,7 @@
     "affected": "Facemega",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13180,7 +13180,7 @@
     "affected": "Deepfake Technology Developers, Students, Synthetic Audio Generation Technology Developers, Unnamed High School Students",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13212,7 +13212,7 @@
     "affected": "Unknown, Unnamed Male College Student",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13296,7 +13296,7 @@
     "affected": "Eliot Higgins, Midjourney",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -13380,7 +13380,7 @@
     "affected": "Allegheny County, Centre For Social Data Analytics, Emily Putnam Hornstein, Rhema Vaithianathan",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI02"
@@ -13542,7 +13542,7 @@
     "affected": "4chan Users, Elevenlabs, Elevenlabs Users, Reddit Users",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13574,7 +13574,7 @@
     "affected": "Scammers, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13606,7 +13606,7 @@
     "affected": "Eliot Higgins, Midjourney",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -13696,7 +13696,7 @@
     "affected": "Turnitin",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -13922,7 +13922,7 @@
     "affected": "Facebook",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -13980,7 +13980,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Torswats",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -14038,7 +14038,7 @@
     "affected": "@ghostwriter, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -14148,7 +14148,7 @@
     "affected": "Alberto, Telegram Channels",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -14284,7 +14284,7 @@
     "affected": "Icahn School Of Medicine Researchers, Mount Sinai Hospital, Unknown",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -14373,7 +14373,7 @@
     "affected": "Jared Mumm, Openai, Professors",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -14457,7 +14457,7 @@
     "affected": "Openai, Peter Loduca, Steven A. Schwartz",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -14487,7 +14487,7 @@
     "affected": "Deepfake Technology, Image Generation Technology Developers, Information Manipulation Actors, Misinformation Spreaders, Unknown Malicious Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -14519,7 +14519,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Government Of Russia Aligned Actors, Supporters Of Recep Tayyip Erdogan, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -14575,7 +14575,7 @@
     "affected": "National Aid Fund, The World Bank, Unicef, World Food Programme",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -14607,7 +14607,7 @@
     "affected": "Ron Desantis's Presidential Campaign, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -14691,7 +14691,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -14959,7 +14959,7 @@
     "affected": "Tesla",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -15067,7 +15067,7 @@
     "affected": "Scammers, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -15099,7 +15099,7 @@
     "affected": "Chinese Government, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -15155,7 +15155,7 @@
     "affected": "Unknown, Unknown Hacker",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -15266,7 +15266,7 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI03",
@@ -15326,7 +15326,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -15462,7 +15462,7 @@
     "affected": "Individual Developers Or Creators Using Meta's Llama Model, Meta",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -15546,7 +15546,7 @@
     "affected": "Google",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -15602,7 +15602,7 @@
     "affected": "Instagram, Meta",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -15660,7 +15660,7 @@
     "affected": "Andrey Perla, Ilya Gambashidze, Institute For Internet Development, Nikolay Tupikin, Oleg Yasinskiy, Oleg Yasinsky, Social Design Agency, Structura National Technologies, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -15690,7 +15690,7 @@
     "affected": "Edmodo",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -15774,7 +15774,7 @@
     "affected": "Adesh Ingale, Bestbudgetusa.com, Celebritiesdeaths.com, Countylocalnews.com, Famadillo.com, Filthylucre.com, Getintoknowledge.com, Harmonyhustle.com, Historyfact.in, Many, Maria Spanadoris, Scoopearth.com, Tnewsnetwork.com, Unknown, Unnamed, Wavefunction.info",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -15990,7 +15990,7 @@
     "affected": "Developers Of Clothoff, Unnamed Male Students, Unnamed Male Students At Westfield High School",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16022,7 +16022,7 @@
     "affected": "Jefferson Parish Sheriff's Office, Unknown",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -16133,7 +16133,7 @@
     "affected": "Federal Security Service, Fsb, Information Manipulation Actors, Misinformation Spreaders, Russian Government",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -16163,7 +16163,7 @@
     "affected": "Arkansas State Government, Brant Fries, Idaho State Government, Iowa State Government, Missouri State Government, Pennsylvania State Government, State Governments, Washington Dc Government",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -16195,7 +16195,7 @@
     "affected": "Deepfake Technology Developers, Steven Larouche",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16253,7 +16253,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16285,7 +16285,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16343,8 +16343,8 @@
     "affected": "Chatgpt, Google",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -16377,7 +16377,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Unnamed Perpetrators In Almendralejo",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16489,7 +16489,7 @@
     "affected": "Google Bard, James Guthrie",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -16519,7 +16519,7 @@
     "affected": "Chatgpt, Openai, Zachariah Crabill",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -16575,7 +16575,7 @@
     "affected": "Unknown, Unnamed Male Student",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16765,7 +16765,7 @@
     "affected": "Laion, Various Organizations, Various People",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -16821,7 +16821,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16853,7 +16853,7 @@
     "affected": "Chad Kultgen, Dudesy, Unnamed, Will Sasso",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16885,7 +16885,7 @@
     "affected": "Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -16997,7 +16997,7 @@
     "affected": "Image Generation Technology, Microsoft Designer, Users In A Telegram Group, Users On X",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17029,7 +17029,7 @@
     "affected": "Adobe, Nine Network",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -17061,7 +17061,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17093,7 +17093,7 @@
     "affected": "Generative Ai Developers, Unknown Ai Text To Speech Technology Developers, Variety Of Youtube Content Creators",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -17149,7 +17149,7 @@
     "affected": "Chicago Police Department, Shotspotter, Soundthinking",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -17260,7 +17260,7 @@
     "affected": "Deepfake Creators, X (twitter)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17318,7 +17318,7 @@
     "affected": "Deepfake Technology Developers, Pro Kremlin Actors, Pro Russian Telegram Channels, Russian Media Outlets, Synthetic Audio Generation Technology Developers, Vkontakte",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17456,7 +17456,7 @@
     "affected": "Unknown, Unknown Social Media Accounts",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17488,7 +17488,7 @@
     "affected": "Social Media Users, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17520,7 +17520,7 @@
     "affected": "Social Media Users, Trump Supporters",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17552,7 +17552,7 @@
     "affected": "Deepfake Creators, Unnamed Middle School Students",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17584,7 +17584,7 @@
     "affected": "Two Unnamed Middle School Boys",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17642,7 +17642,7 @@
     "affected": "Microsoft",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -17672,7 +17672,7 @@
     "affected": "Facebook, Meta, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17704,7 +17704,7 @@
     "affected": "Ntv Channel, Russian State Media",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17762,7 +17762,7 @@
     "affected": "Hank Stephenson, The Arizona Agenda",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17794,7 +17794,7 @@
     "affected": "Corsight, Facial Recognition System Developers, Google Photos, Israel Defense Forces, Israeli Government, Israeli Military Intelligence, Surveillance Technology Developers, Unit 8200, Unknown Israeli Military Integrators",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -17827,7 +17827,7 @@
     "affected": "Deepfake Technology Developers, Deepfake Website Operators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17859,7 +17859,7 @@
     "affected": "Leonardo Ai, Leonardo Ai Users, Reddit Users, Telegram Community Users",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -17917,8 +17917,8 @@
     "affected": "Chinese Communist Party, Dragonbridge, Spamouflage, Storm 1376",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -17951,7 +17951,7 @@
     "affected": "Lincoln Project",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18011,7 +18011,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Pro Kremlin Actors, Russian Propagandists, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18043,7 +18043,7 @@
     "affected": "Base 311, Chinese Communist Party, People's Liberation Army",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18075,7 +18075,7 @@
     "affected": "Merakii Group, Obiyan Infotech, Political Candidates Of The 2024 Lok Sabha Elections, Rohit Pal, The Digital Publicity, The Indian Deepfaker",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18107,8 +18107,8 @@
     "affected": "Golkar Party",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -18142,7 +18142,7 @@
     "affected": "Dmk, Dravida Munnetra Kazhagam, Muonium, The Indian Deepfaker, Various Indian Political Parties",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18174,8 +18174,8 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Misinformation Networks, Misinformation Spreaders, Pakistani Political Parties, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -18209,7 +18209,7 @@
     "affected": "Israel Defense Forces, Unit 8200",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -18241,7 +18241,7 @@
     "affected": "Information Manipulation Actors, Unknown Political Groups",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18273,8 +18273,8 @@
     "affected": "Chinese Communist Party, Deepfake Creators, Google, Openai, Political Consultants, Political Operatives, Russian Government",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -18308,7 +18308,7 @@
     "affected": "Dazhon Darien, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18340,7 +18340,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors, Unknown Actors Targeting Ferdinand Marcos Jr.",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18424,7 +18424,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Tiktok, Twitter",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18456,8 +18456,8 @@
     "affected": "Chatgpt, Copycop, Openai, Russia Linked Network",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -18516,7 +18516,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Patrick Ruffini",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -18548,7 +18548,7 @@
     "affected": "Elevenlabs, Heygen, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18580,8 +18580,8 @@
     "affected": "Google, Google Books",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -18614,7 +18614,7 @@
     "affected": "S.a.r.a.h. (smart Ai Resource Assistant For Health), Who",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -18672,7 +18672,7 @@
     "affected": "Deepfake Creators, Pornhub, Various Porn Sites",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18730,7 +18730,7 @@
     "affected": "Stability Ai, Stable Diffusion, Steven Anderegg",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -18760,7 +18760,7 @@
     "affected": "Elevenlabs, Isis, Isis Supporters, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -18870,7 +18870,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Republican National Committee (rnc)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -18900,7 +18900,7 @@
     "affected": "Deepfake Creators, Donald Trump Presidential Campaign",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18958,7 +18958,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Image Generation Technology Developers, Unknown Malicious Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -18990,7 +18990,7 @@
     "affected": "C3pmeme, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19074,7 +19074,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Information Manipulation Actors, John Mark Dougan, Openai, Pro Russian Information Manipulation Actors, Synthetic Media Generation Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -19104,7 +19104,7 @@
     "affected": "Deepfake Creators, Russian Government",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19136,7 +19136,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19168,7 +19168,7 @@
     "affected": "Law Firms, Legal Professionals, Lexisnexis, Organizations Requiring Legal Research, Thomson Reuters",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -19224,7 +19224,7 @@
     "affected": "Openai, Scammers, Unknown Ai Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19256,7 +19256,7 @@
     "affected": "Tesla, Unnamed Tesla Driver",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -19364,7 +19364,7 @@
     "affected": "Tesla, Tesla Drivers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -19394,7 +19394,7 @@
     "affected": "Facebook Users, Meta",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -19424,7 +19424,7 @@
     "affected": "@thepatriotoasis, Deepfake Technology Developers, Jack Posobiec, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19482,7 +19482,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19540,7 +19540,7 @@
     "affected": "Commonwealth Legal, Deepfake Creators, Scammers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -19599,7 +19599,7 @@
     "affected": "X (twitter)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -19629,7 +19629,7 @@
     "affected": "Chicago Lakefront News, Deepfake Creators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19821,7 +19821,7 @@
     "affected": "Center For Geopolitical Expertise, Internet Research Agency Veterans, Storm 1516, Valery Korovin",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -19877,7 +19877,7 @@
     "affected": "Gpt 4o, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -19907,7 +19907,7 @@
     "affected": "Bharatiya Janata Party (bjp), Divyendra Singh Jadoun, Indian National Congress (inc), Indiaspeaks Research Lab, Itoconnect, Polymath Synthetic Media Solutions, Prem Singh Tamang, Ram Chandra Choudhary, Sagar Vishnoi, Sumit Savara, Y. S. Jagan Mohan Reddy",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -19939,8 +19939,8 @@
     "affected": "Bar Lanyado, Bigscience, Cohere, Deepseek Ai, Developers Using Ai Generated Suggestions, Google, Meta, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM03",
-      "LLM09"
+      "LLM04",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI04"
@@ -19973,7 +19973,7 @@
     "affected": "Companies Using Whisper, Openai, Organizations Integrating Whisper Into Customer Service Systems, Whisper, Whisper Users",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -20031,8 +20031,8 @@
     "affected": "Anthropic, Google, Inflection, John Mark Dougan, Meta, Microsoft, Mistral, Openai, Perplexity, Xai, You.com",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06",
-      "LLM09"
+      "LLM03",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02"
@@ -20065,7 +20065,7 @@
     "affected": "Ai Tool Creators, Deepfake Technology Developers, Openai, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20130,7 +20130,7 @@
     "affected": "Deepfake Creators, Unknown Tiktok User",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20190,7 +20190,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Andy Lau, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20250,7 +20250,7 @@
     "affected": "Deepfake Creators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20334,7 +20334,7 @@
     "affected": "Cios, Companies In General, Enterprise Teams, Google, Microsoft",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -20572,7 +20572,7 @@
     "affected": "Bnn Breaking, Epiphany Ai, Gurbaksh Chahal",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -20602,8 +20602,8 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Image Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -20637,7 +20637,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Misinformation Spreaders, Pro Kremlin Actors, Pro Russian Information Manipulation Actors, Russian Linked Disinformation Network, Synthetic Audio Generation Technology Developers, Verite Cachee France",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20669,7 +20669,7 @@
     "affected": "@mrreaganusa, Deepfake Technology Developers, Elon Musk, X (twitter)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20753,7 +20753,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20785,7 +20785,7 @@
     "affected": "X (twitter), Xai",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -20815,7 +20815,7 @@
     "affected": "Tiktok, Unknown Tiktok Users From China, Unknown Tiktok Users From Iran, Unknown Tiktok Users From Nigeria, Unknown Tiktok Users From Vietnam",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -20845,7 +20845,7 @@
     "affected": "X (twitter), Xai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20877,7 +20877,7 @@
     "affected": "Xai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -20933,7 +20933,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -20965,7 +20965,7 @@
     "affected": "Deepfake Technology Developers, Donald Trump, Image Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -21022,7 +21022,7 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI03",
@@ -21056,7 +21056,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21088,7 +21088,7 @@
     "affected": "Microsoft, Microsoft Copilot",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -21120,7 +21120,7 @@
     "affected": "Deepfake Creators, Face2face, Faceapp, Max Planck Institute, Stanford University, University Of Erlangen Nuremberg, Zao",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21152,7 +21152,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21184,7 +21184,7 @@
     "affected": "Charlotte Ingham, Microsoft, Western Australia Department Of Justice",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -21214,8 +21214,8 @@
     "affected": "Chinese Government, Doppelganger, International Union Of Virtual Media, Iranian Government, Israeli Government, Openai, Russian Government, Spamouflage, Zeno Zeno",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06",
-      "LLM09"
+      "LLM03",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02"
@@ -21300,7 +21300,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21412,7 +21412,7 @@
     "affected": "Clearview Ai, Facial Recognition System Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -21471,7 +21471,7 @@
     "affected": "Deepfake Creators, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21503,7 +21503,7 @@
     "affected": "Deepfake Creators, Unknown Ai Developers, Unknown Dark Web Users",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21561,7 +21561,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21593,7 +21593,7 @@
     "affected": "John Wick (onlyfake), Onlyfake, Tor Ford, Uriel Septimberus, Yurii Nazarenko, Yuriy Nazarenko",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21809,7 +21809,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21841,7 +21841,7 @@
     "affected": "Facebook, Meta",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -21873,7 +21873,7 @@
     "affected": "Deepfake Technology Developers, Instagram Users, Snapchat Users, Unnamed Adolescent Male",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21905,7 +21905,7 @@
     "affected": "Australian Students, Deepfake Creators, Deepfake Technology Developers, Image Generation Technology Developers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers, Undress Ai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21937,7 +21937,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Unnamed Male Student, Unnamed Male Student At Aledo High School",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -21969,7 +21969,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22001,8 +22001,8 @@
     "affected": "Reality Defender, True Media, Unknown Deepfake Detection Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -22036,7 +22036,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers, Scammers Impersonating Brian May, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22096,8 +22096,8 @@
     "affected": "Deepfake Technology Developers, True Crime Case Files Youtube Channel",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -22131,7 +22131,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Malicious Actor Impersonating Dmytro Kuleba",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22163,7 +22163,7 @@
     "affected": "Ai Face Swapping Technology Developers, Deepfake Technology Developers, Hu Mouliang, Hu Mouyun, Multimodal Large Model Developers, Scammers, Wu Mouhao, Zhang Mouguo",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22221,7 +22221,7 @@
     "affected": "Infinite Campus, Nevada Department Of Education",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -22279,7 +22279,7 @@
     "affected": "Pro Nazi Tiktok Accounts, Unknown Ai Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -22335,7 +22335,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22393,7 +22393,7 @@
     "affected": "Character.ai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22453,7 +22453,7 @@
     "affected": "Clearview Ai, Nypd, Real Time Crime Center, West New York Pd",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -22486,7 +22486,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Image Generation Technology Developers, Partisan Social Media Influencers, Unknown Actors, Unknown Malicious Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -22516,7 +22516,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22548,7 +22548,7 @@
     "affected": "Prokyc",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22660,7 +22660,7 @@
     "affected": "Cybercheck, Global Intelligence",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -22692,7 +22692,7 @@
     "affected": "Anonymous X User, Deepfake Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22776,7 +22776,7 @@
     "affected": "Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -22806,7 +22806,7 @@
     "affected": "Canal 4, Deepfake Technology Developers, Santo Y Sena",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -22970,8 +22970,8 @@
     "affected": "Ai Fraud Rings In China, Bai Moumou, Deepfake Creators, Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Tang Mou, Unknown Game Cheating Technology Developers, Wang Mouhe, Zeng Moumou",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -23057,7 +23057,7 @@
     "affected": "Anonymous X User, James Woods, Unknown Ai Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -23087,7 +23087,7 @@
     "affected": "Microsoft, Microsoft Copilot",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -23117,7 +23117,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23149,7 +23149,7 @@
     "affected": "Government Of Russia, Ilan Shor, Maria Zakharova, Russia Backed Influencers, Unknown Ai Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -23179,7 +23179,7 @@
     "affected": "Anti European Union Influencers, Deepfake Technology Developers, Government Of Russia, Pro Russian Information Manipulation Actors, Unknown Ai Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -23315,7 +23315,7 @@
     "affected": "Facebook, Juan Orlando Hernandez Supporters, Meta, National Party Of Honduras Supporters, Unknown Facebook Users, Unknown Twitter Users, X (twitter)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -23449,7 +23449,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23481,8 +23481,8 @@
     "affected": "Chatgpt, Jeff Hancock, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -23594,7 +23594,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23652,7 +23652,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23684,7 +23684,7 @@
     "affected": "Anthropic, Google, Meta, Mistral, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -23766,7 +23766,7 @@
     "affected": "Deepfake Technology Developers, Dilley Meme Team, Maga Resource, Pro Trump Social Media Accounts, Ramble Rants, X (twitter)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23824,7 +23824,7 @@
     "affected": "Generative Ai Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23856,7 +23856,7 @@
     "affected": "Carbon Spider, Elbrus, Fin7, Sangria Tempest",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -23888,7 +23888,7 @@
     "affected": "Openai, Pro New Patriotic Party Bot Network",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -23997,7 +23997,7 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02",
@@ -24032,7 +24032,7 @@
     "affected": "Deepfake Technology Developers, Elon4u.com Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24064,7 +24064,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24122,7 +24122,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24154,7 +24154,7 @@
     "affected": "Deepfake Technology Developers, Quantum Ai Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24186,7 +24186,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24218,7 +24218,7 @@
     "affected": "Deepfake Technology Developers, Htmlnomani, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24250,7 +24250,7 @@
     "affected": "Alla Morgan, Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24282,7 +24282,7 @@
     "affected": "Deepfake Technology Developers, Unknown Actors In China",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24314,7 +24314,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24424,7 +24424,7 @@
     "affected": "Aleksandr Dugin, Center For Geopolitical Expertise (cge), Main Intelligence Directorate (gru), Valery Korovin",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24482,7 +24482,7 @@
     "affected": "Matthew Livelsberger, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -24540,7 +24540,7 @@
     "affected": "Deepfake Technology Developers, High School Students, Students, Unknown Sydney Area High School Student",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24683,7 +24683,7 @@
     "affected": "Deepfake Technology Developers, Stephen Kamnik",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24741,7 +24741,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24773,7 +24773,7 @@
     "affected": "Austin Police Department, Bradenton Florida Police Department, Clearview Ai, Coral Springs Florida Police Department, Detroit Police Department, Developers Of Mugshot Recognition Software, Evansville Indiana Police Department, Facial Recognition System Developers, Florence Kentucky Police Department",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -24919,8 +24919,8 @@
     "affected": "Brouteurs, Deepfake Technology Developers, Scammers Impersonating Brad Pitt, Yahoo Boys",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -24954,7 +24954,7 @@
     "affected": "Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -24986,8 +24986,8 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -25021,7 +25021,7 @@
     "affected": "Deepfake Technology Developers, Unknown Twitter User",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25053,7 +25053,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Posing As Leonor (princess Of Asturias), Tiktok Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25118,7 +25118,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Posing As Christopher Luxon",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25150,7 +25150,7 @@
     "affected": "Andrew Thomas Hayler, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25182,7 +25182,7 @@
     "affected": "Deepfake Technology Developers, Matryoshka, Operation Overload, Reliable Russian News, Russian Entities Linked To Gru, Storm 1679",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25214,7 +25214,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25246,7 +25246,7 @@
     "affected": "Brouteurs, Deepfake Technology Developers, Scammers In Nigeria, Yahoo Boys",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25278,7 +25278,7 @@
     "affected": "Brouteurs, Deepfake Technology Developers, Scammers In Ghana, Scammers In Morocco, Scammers In Nigeria, Scammers In West Africa, Synthetic Audio Generation Technology Developers, Yahoo Boys",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25310,7 +25310,7 @@
     "affected": "Brouteurs, Deepfake Technology Developers, Scammers In Ghana, Scammers In Nigeria, Scammers In West Africa, Yahoo Boys",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25342,8 +25342,8 @@
     "affected": "Braziko, Deepfake Technology Developers, Scammers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -25403,7 +25403,7 @@
     "affected": "Crushon.ai, James Florence Jr., Janitorai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25435,7 +25435,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Whoopi Goldberg, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25467,7 +25467,7 @@
     "affected": "Deepfake Technology Developers, Poipet Based Scam Gang, Ramil Pantawong, Thanawut Kanyaphan",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25499,7 +25499,7 @@
     "affected": "Deepfake Technology Developers, M1 Shop, Russian Linked Scam Network, Synthetic Audio Generation Technology Developers, Td Globus Contract",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25531,7 +25531,7 @@
     "affected": "Deepfake Technology Developers, Investment Scam Operators, Scammers, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Telegram Based Financial Scam Network, Unknown Scammers Behind The Trump Golden Eagles Scam",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25563,8 +25563,8 @@
     "affected": "Deepfake Technology Developers, Hong Kong Based Deepfake Scam Syndicate, Image Generation Technology",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -25626,8 +25626,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Pierce Brosnan",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -25661,7 +25661,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Naga Munchetty",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25693,7 +25693,7 @@
     "affected": "Parking Enforcement Services, Unknown License Plate Recognition Developer, Wilson Parking",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -25725,7 +25725,7 @@
     "affected": "Alessio Scurosu, Deepfake Technology Developers, Roberto Scurosu",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25757,7 +25757,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Posing As Guido Crosetto",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25789,8 +25789,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Unknown Scammers Impersonating Sergio Mattarella And Giorgia Meloni",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -25824,7 +25824,7 @@
     "affected": "Deepfake Technology Developers, Doppelganger, John Mark Dougan, Matryoshka, Operation Overload, Russian Government, Storm 1516, Storm 1679, Unknown Entities Related To Doppelganger",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25856,7 +25856,7 @@
     "affected": "Deepfake Technology Developers, Gitam Bbdo, Guy Bar, Ori Bejerano",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -25888,7 +25888,7 @@
     "affected": "Afd Supporters, Synthetic Audio Generation Technology Developers, Tiktok User Afd John, Tiktok User Alice Weidel Fan",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -25918,7 +25918,7 @@
     "affected": "Bp New Zealand, Unspecified Developer Of Bp's License Plate Recognition System",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -25950,7 +25950,7 @@
     "affected": "Deepfake Technology Developers, Unnamed Adolescent Male In Palma De Mallorca",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26008,7 +26008,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Robert Abela And Mark Laurence Zammit, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26040,7 +26040,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Joseph Muscat",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26072,7 +26072,7 @@
     "affected": "Alfredo Ch. S., Deepfake Technology Developers, Jackelin A.m., Luis G.c., Mariana A.s., Scammers, Scammers Impersonating Omar Veliz Ramos, Synthetic Audio Generation Technology Developers, Vilma C.c.",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26104,7 +26104,7 @@
     "affected": "Deepfake Technology Developers, Large Language Model Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Martin Henderson",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26136,8 +26136,8 @@
     "affected": "Chinese Communist Party, Chinese State Linked Actors, Chinese State Security Researchers, Meta, Openai, Surveillance Technology Developers, Various Open Source Ai Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -26196,7 +26196,7 @@
     "affected": "Cybercriminals, Deepfake Technology Developers, Scammers, Scammers Impersonating Google Employees, Unknown Ai Tool Providers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26228,8 +26228,8 @@
     "affected": "Scammers, Scammers Impersonating Google Staff, Synthetic Audio Generation Technology, Voice Phishers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -26289,7 +26289,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Korir Sing'oei, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26321,7 +26321,7 @@
     "affected": "Deepfake Technology Developers, Minors, Students, Two Unnamed 16 Year Old Students In Athens",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26381,7 +26381,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -26415,7 +26415,7 @@
     "affected": "Cybercriminals, Dark Web Threat Actors, Fraudgpt, Fraudgpt Operators, Openai, Phishing Scammers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26499,8 +26499,8 @@
     "affected": "Character.ai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -26560,7 +26560,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Barbara O'neill, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26620,7 +26620,7 @@
     "affected": "Alan Krysiak (drago), Arian Yadegarnia (fiz), Phat Phung Tan (asakuri), Ricky Yuen (cg Dot), Storm 2139, Unidentified Storm 2139 Actor From Florida, Unidentified Storm 2139 Actor From Illinois",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26711,7 +26711,7 @@
     "affected": "Csam Distributors, Deepfake Creators, Deepfake Csam Technology, Deepfake Csam Technology Developers, Deepfake Technology Developers, Suspects Identified In Operation Cumberland",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -26741,7 +26741,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Prabowo Subianto, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26773,8 +26773,8 @@
     "affected": "Goody Law Group, Large Language Model Developers, Morgan And Morgan, Rudwin Ayala, T. Michael Morgan, Taly Goody",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -26835,7 +26835,7 @@
     "affected": "Admiralsfx, Ak Group, Akaki Kevkhishvili, Deepfake Technology Developers, Fraudulent Trading Platform Developers, Golden Currencies, Meri Shotadze, Scammer Operatives In Georgia Bulgaria Cyprus And Spain, Third Party Ai Service Providers For Call Center Training",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26867,7 +26867,7 @@
     "affected": "Google",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26925,7 +26925,7 @@
     "affected": "Deepfake Technology Developers, Phishers, Scammers, Scammers Impersonating Neal Mohan",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26957,7 +26957,7 @@
     "affected": "Deepfake Technology Developers, Phishers, Scammers, Scammers Impersonating Benedetto Vigna, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -26989,7 +26989,7 @@
     "affected": "Amazon, Google",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -27019,8 +27019,8 @@
     "affected": "Anthropic, Google, Government Of Russia, Inflection, Information Manipulation Actors, John Mark Dougan, Meta, Microsoft, Mistral, Openai, Perplexity, Portal Kombat, Pravda Disinformation Network, Pro Russian Information Manipulation Actors, Russian State Media, Storm 1516, Tigerweb, Xai, You.com",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -27053,7 +27053,7 @@
     "affected": "Government Of Russia, John Mark Dougan, Kbsf San Francisco News, Storm 1516",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27085,7 +27085,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Nikol Pashinyan",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27117,7 +27117,7 @@
     "affected": "Cotton Sandstorm, Generative Ai Developers, Government Of Iran, Islamic Revolutionary Guard Corps (irgc)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -27147,7 +27147,7 @@
     "affected": "Deepfake Technology Developers, John Mark Dougan, Pravda Network, Rt (russia Today), Russian State Media, Sputnik, Storm 1516, Synthetic Audio Generation Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27179,7 +27179,7 @@
     "affected": "Canadian Fraud Ring Impersonating Grandchildren, Canadian Fraud Ring Involved In Grandparent Scams, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27211,7 +27211,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Misinformation Spreaders, Synthetic Audio Generation Technology",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27327,7 +27327,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Jin Dong, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27437,7 +27437,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Singaporean Executives",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27469,7 +27469,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Mark Read, Synthetic Audio Generation Technology",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27501,7 +27501,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Lawrence Wong, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27533,7 +27533,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Lee Hsien Loong, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27565,7 +27565,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Lee Hsien Loong, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27597,7 +27597,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Lawrence Wong, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27629,7 +27629,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors Impersonating Lee Hsien Loong",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27687,7 +27687,7 @@
     "affected": "Deepfake Technology Developers, Educators, Teachers, Wilson Jones",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -27717,7 +27717,7 @@
     "affected": "Black Box Ai Developers, Cybercriminals, Generative Ai Developers, Generative Ai Fraud Tools, Phishers, Scammers, Scammers Impersonating The Irs",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27749,7 +27749,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Friend Of Guo, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -27781,7 +27781,7 @@
     "affected": "Apple, Australian Curriculum Assessment And Reporting Authority (acara), Kambala (sydney Australia), Nsw Education Standards Authority (nesa), Waverley College (sydney Australia)",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -27948,7 +27948,7 @@
     "affected": "Generative Ai Developers, Phishers, Scammers, Scammers Impersonating Meta Support",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28006,7 +28006,7 @@
     "affected": "Alibaba, Generative Ai Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -28092,7 +28092,7 @@
     "affected": "Deepfake Technology Developers, Operators Of 16 Deepfake Pornography Websites",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28124,7 +28124,7 @@
     "affected": "Dangerousai, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28156,7 +28156,7 @@
     "affected": "Deepfake Technology Developers, Preston Wade Pietrzykowski",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28188,7 +28188,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Tiktok User",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28220,7 +28220,7 @@
     "affected": "Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Daughter Of Linda Roan, Unknown Scammers Operating In Mexico",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -28253,7 +28253,7 @@
     "affected": "Large Language Model Developers, Stig Tore Johnsen, Tromso Municipality",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -28286,7 +28286,7 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI03",
@@ -28320,7 +28320,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating David Burt, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28352,7 +28352,7 @@
     "affected": "Scammers, Scammers Impersonating Jayla (sister Of Jace Edgar), Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28384,7 +28384,7 @@
     "affected": "Brandon Tyler, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28416,7 +28416,7 @@
     "affected": "Deepfake Creators, Deepfake Creators In Malta, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28513,7 +28513,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Individuals Arrested In Granada And Alicante, Unnamed Criminal Group In Spain",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28573,7 +28573,7 @@
     "affected": "Generative Ai Developers, Openai, Scammers, Scammers Cloning Exante",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28605,8 +28605,8 @@
     "affected": "Meta, Users Of Llama.cpp Servers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -28639,7 +28639,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Scammers, Unknown International Job Applicants",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28671,7 +28671,7 @@
     "affected": "@zambian Ai Tiktok Account, Deepfake Technology Developers, Unknown Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28703,7 +28703,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors, Unknown Actors Manipulating Footage Of William Ruto",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28735,8 +28735,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers Impersonating Jeff Koinange",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -28770,7 +28770,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Unknown Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28834,8 +28834,8 @@
     "affected": "Unnamed Norwegian Lawyer, Unspecified Generative Ai Developer",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -28920,7 +28920,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Fat Joe",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -28978,8 +28978,8 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -29039,7 +29039,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -29125,8 +29125,8 @@
     "affected": "Cybercriminals, Deepfake Technology Developers, Generative Ai Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -29160,7 +29160,7 @@
     "affected": "Generative Ai Developers, Openai, Scammers, Scammers Targeting California Community Colleges",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29192,7 +29192,7 @@
     "affected": "Anysphere, Cursor, Unknown Llm Developer",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -29352,7 +29352,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29438,7 +29438,7 @@
     "affected": "Cybercriminals, Deepfake Technology Developers, Unknown Sextortionists",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29574,7 +29574,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29606,7 +29606,7 @@
     "affected": "Anthropic, Cybercriminals, Influence As A Service Operators, Unknown Malicious Actors",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -29636,7 +29636,7 @@
     "affected": "Chinese Communist Party, Generative Ai Developers, Government Of China",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29668,7 +29668,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Unknown Scammers Impersonating Myriam Spiteri Debono",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29726,7 +29726,7 @@
     "affected": "Deepfake Technology Developers, Unknown",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29784,7 +29784,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Matryoshka, Operation Overload, Russian Aligned Actors, Storm 1679, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29816,7 +29816,7 @@
     "affected": "Deepfake Technology Developers, Matryoshka, Operation Overload, Russian Linked Disinformation Network, Storm 1679, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -29846,7 +29846,7 @@
     "affected": "Deepfake Technology Developers, Money Launderers, Scammers, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Unnamed 24 Year Old Male Suspect From Santa Helena De Goias",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29934,7 +29934,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -29994,7 +29994,7 @@
     "affected": "Deepfake Technology Developers, Fraudster Using Aliases Lim Chee Chong And Teh Jin Loon, Money Launderers, Scammers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology, Synthetic Video Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30244,7 +30244,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unidentified Actors Linked To Apex United Pty Ltd, Unidentified Actors Linked To Healthy Life Choices Nz Ltd, Unidentified Actors Linked To Vellec Group Nz Ltd",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30276,7 +30276,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30334,7 +30334,7 @@
     "affected": "@gordodan, @mileiemperador, @patriciovogel1, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors Affiliated With Pro La Libertad Avanza Social Media Accounts",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30498,7 +30498,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30530,7 +30530,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors, Voices Of Change",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30562,7 +30562,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, The Voice Of Sudan",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -30594,7 +30594,7 @@
     "affected": "Deepfake Technology Developers, Sudanese Islamist Digital Propaganda Networks, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30626,7 +30626,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Various Actors Aligned With Sudanese Factions",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30686,8 +30686,8 @@
     "affected": "Pro Ibrahim Traore Information Ecosystem, Synthesia, Unknown Actors",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -30721,7 +30721,7 @@
     "affected": "Deepfake Technology Developers, Pro Traore Information Ecosystem, Synthetic Audio Generation Technology Developers, Unknown Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30753,7 +30753,7 @@
     "affected": "Deepfake Technology Developers, Pro Traore Information Ecosystem, Unknown Actors",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -30785,7 +30785,7 @@
     "affected": "Deepfake Technology Developers, Pro Ibrahim Traore Information Ecosystem, Synthetic Audio Generation Technology, Unknown Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30817,7 +30817,7 @@
     "affected": "Deepfake Technology Developers, Government Of Russia, Pro Ibrahim Traore Information Ecosystem, Pro Kremlin Actors, Pro Russian Information Manipulation Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -30849,7 +30849,7 @@
     "affected": "Deepfake Technology Developers, Pro Ibrahim Traore Information Ecosystem, Synthetic Audio Generation Technology Developers, Univers Inspirant",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -30907,7 +30907,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Information Manipulation Actors, Information Manipulation Actors Targeting Paul Kagame",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -30965,7 +30965,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Karim Toubba",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31023,7 +31023,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31055,7 +31055,7 @@
     "affected": "Department Of Government Efficiency, Doge, Sahil Lavingia",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -31139,7 +31139,7 @@
     "affected": "Microsoft, Openai",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -31171,7 +31171,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Grigor Dimitrov",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31257,7 +31257,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Sam Hou Fai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31289,7 +31289,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Acquaintance Of Mai Fujimoto",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31321,7 +31321,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Jennifer Ketchmark",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31353,7 +31353,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Martin Wolf",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31385,7 +31385,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Brian Belski",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31417,7 +31417,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating David Rosenberg",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31449,7 +31449,7 @@
     "affected": "Deepfake Technology Developers, Disinformation Actors Targeting Royal Malaysia Police, Image Generation Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Malaysia, Information Manipulation Actors Targeting The Royal Malaysia Police, Misinformation Spreaders",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31481,7 +31481,7 @@
     "affected": "Bluenoroff, Deepfake Technology Developers, Government Of North Korea, Lazarus Group, North Korea, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31514,7 +31514,7 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02",
@@ -31549,7 +31549,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown International Scam Network Operating Across Multiple Eu Countries",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31581,7 +31581,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Muhammad Yunus",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31613,7 +31613,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Targeting Simcoe County",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31645,7 +31645,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31703,7 +31703,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Youtubers Impersonating Ravish Kumar",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31735,7 +31735,7 @@
     "affected": "Generative Ai Developers, Unknown Social Media Actors Exploiting The Air India Flight 171 Disaster",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -31765,7 +31765,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Owen Wilson",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31797,7 +31797,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unnamed Thai National",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -31827,7 +31827,7 @@
     "affected": "Google, Ronald Dela Rosa, Sebastian Duterte",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -31857,7 +31857,7 @@
     "affected": "Claire Contreras, Deepfake Technology Developers, Government Of China, Rodrigo Duterte Supporters, Spamouflage",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31889,7 +31889,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Targeting Guamanians",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31921,7 +31921,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Andres Asion",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31953,7 +31953,7 @@
     "affected": "Image Generation Technology Developers, Unnamed 21 Year Old Male Suspect From Delhi",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -31985,7 +31985,7 @@
     "affected": "Deepfake Technology Developers, Government Of Russia Aligned Actors, Information Manipulation Actors, Pro Russian Information Manipulation Actors, Russian Disinformation Channels, Russian Telegram Channels, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32017,7 +32017,7 @@
     "affected": "Deepfake Technology Developers, Government Of Russia Aligned Actors, Information Manipulation Actors, Pro Russian Information Manipulation Actors, Russian Disinformation Channels, Russian Telegram Channels, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32075,7 +32075,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Targeting Malaysian Public Figures",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32185,7 +32185,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Anura Kumara Dissanayake",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32217,7 +32217,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actors, Unknown Actors Impersonating Marco Rubio",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32249,8 +32249,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Elon Musk",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -32284,7 +32284,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Monica Geingos",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32394,8 +32394,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Targeting The Royal Brunei Police Force",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -32429,7 +32429,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Lance Gokongwei",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32487,7 +32487,7 @@
     "affected": "Deepfake Technology Developers, Donald Trump, Unknown Tiktok User",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32571,7 +32571,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32603,7 +32603,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scam Network Linked To Aigenerated Deepfake Campaign Promoting Ost Stock",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32661,7 +32661,7 @@
     "affected": "Deepfake Technology Developers, Unknown Perpetrator(s) Of Deepfake Harassment Targeting Aos 47 Teacher",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32719,7 +32719,7 @@
     "affected": "Amazon, Amazon Web Services, Aws",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -32829,7 +32829,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actor(s) Provoking Tensions Between Papua New Guinea And Bougainville",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32915,7 +32915,7 @@
     "affected": "Xai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -32973,7 +32973,7 @@
     "affected": "Fairview Middle School Tennessee, Gaggle, Williamson County Schools",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -33006,7 +33006,7 @@
     "affected": "Eadaily, Image Generation Technology Developers, Information Manipulation Actors, Misinformation Spreaders, Russian Aligned Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -33062,7 +33062,7 @@
     "affected": "Chris Cuomo, Deepfake Technology Developers, Openai, Unknown Creator Of Alexandria Ocasio Cortez Parody Deepfake",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -33178,7 +33178,7 @@
     "affected": "Microsoft",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -33234,7 +33234,7 @@
     "affected": "Microsoft",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -33478,7 +33478,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Kim Seon Ho",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -33511,7 +33511,7 @@
     "severity": "Medium",
     "owasp_llm": [
       "LLM02",
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01",
@@ -33572,8 +33572,8 @@
     "affected": "Deepseek, Google, Microsoft, Openai, Xai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06",
-      "LLM09"
+      "LLM03",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI01"
@@ -33605,7 +33605,7 @@
     "affected": "Cybercriminals, Generative Ai Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -33743,7 +33743,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Steve Burton",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -33775,7 +33775,7 @@
     "affected": "@conflictcompas Youtube Channel, @daddymaxwell77 Youtube Channel, @freshinfoinsight Youtube Channel, @gloryincombat Youtube Channel, @peace Crusader Youtube Channel, Deepfake Technology Developers, Nigerian Youtube Network Operators (a B C), Possible Third Party Contractors, Synthetic Audio Generation Technology Developers, Unknown Ai Generated Avataranchor Technology Developer, Unverified Kremlin Proxy Involvement",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -33831,7 +33831,7 @@
     "affected": "Image Generation Technology Developers, Unknown Actor",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -33889,7 +33889,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Social Media Accounts, Unknown Actor",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -33921,7 +33921,7 @@
     "affected": "Chatbot Users, Large Language Model Developers, Meta",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -33984,7 +33984,7 @@
     "affected": "Deepfake Technology Developers, Influence Operation Groups, Information Manipulation Actors, Large Language Model Developers, Matryoshka, Pro Russian Information Manipulation Actors, Russian State Linked Actors, Storm 1516, Storm 1679",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -34014,8 +34014,8 @@
     "affected": "Generative Ai Developers, Shy Herbert Mccutchan",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06",
-      "LLM09"
+      "LLM03",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02"
@@ -34048,8 +34048,8 @@
     "affected": "Erik Stein Soelberg, Openai",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM04",
-      "LLM05"
+      "LLM05",
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05",
@@ -34111,7 +34111,7 @@
     "affected": "Deepfake Technology Developers, Michael C (scammer Impersonating Sadhguru), Mirrox, Scammers Impersonating Sadhguru, Synthetic Audio Generation Technology Developers, Waleed B (scammer Impersonating Sadhguru)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34143,7 +34143,7 @@
     "affected": "Deepfake Technology Developers, Quantum Ai, Quantum Ai Scammers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Heather Humphreys",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34175,7 +34175,7 @@
     "affected": "Apt43, Black Banshee, Emerald Sleet, Government Of North Korea, Group 0094, Kimsuky Group, Openai, Reconnaissance General Bureau, Thallium, Velvet Chollima",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34234,9 +34234,9 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM03",
-      "LLM05",
-      "LLM06"
+      "LLM04",
+      "LLM10",
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI02",
@@ -34380,7 +34380,7 @@
     "affected": "Gaggle, Volusia County Schools, Volusia County Sheriff's Office",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -34412,7 +34412,7 @@
     "affected": "Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -34442,7 +34442,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating The Daughter Of Sharon Brightwell",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34474,7 +34474,7 @@
     "affected": "Microsoft",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -34564,7 +34564,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Prisonbreak Network Operators, Unidentified Israeli Government Contractor Under Close Supervision, Unidentified Israeli Government Entity",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34622,7 +34622,7 @@
     "affected": "American Relief Programs (scam Network), Asking America (advertiser), Deepfake Technology Developers, End The Wokeness (advertiser), Freedom Asset Advocates (advertiser), Get Covered Today (advertiser), Hannah Grace (advertiser), Health Benefits For Seniors (advertiser), I Love My Freedom (advertiser), Meta, Relief Eligibility Center (advertiser), Rfy News Group (advertiser Network), Scammers, Senior Health Daily Usa (advertiser), Synthetic Audio Generation Technology Developers, Unknown Scammers Operating Meta Ad Accounts",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34654,7 +34654,7 @@
     "affected": "Deepfake Technology Developers, Meta, Money Launderers, Scammers, Scammers In Brazil, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34686,7 +34686,7 @@
     "affected": "Image Generation Technology Developers, Unknown Pranksters, Unknown Pranksters In Ireland",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -34718,7 +34718,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Trevor Manuel",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34750,7 +34750,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating New Zealand Business Leaders",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34808,7 +34808,7 @@
     "affected": "Anthony Rotondo, Deepfake Technology Developers, Mrdeepfakes.com",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34866,7 +34866,7 @@
     "affected": "Deepfake Technology Developers, National Republican Senatorial Committee (nrsc), Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34924,7 +34924,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Actor Impersonating George Freeman",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34956,7 +34956,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Unknown Actor(s) Creating Deepfake Nudes Of Sydney High School Students",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -34988,7 +34988,7 @@
     "affected": "Deepfake Technology Developers, First Bridge, Synthetic Audio Generation Technology Developers, Valueleaf",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35020,7 +35020,7 @@
     "affected": "Deepfake Technology Developers, Faikast, Generative Ai Developers, Investment Scam Operators, Quantum Ai, Quantum Ai Scammers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Cryptocurrency Scammers, Unknown Operators Of Malicious Keitaro Infrastructure",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35052,7 +35052,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Aufirst Platform Scam Operators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35116,7 +35116,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Steven Bartlett",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35148,7 +35148,7 @@
     "affected": "Deepfake Technology, Scammers, Synthetic Audio Generation Technology, Unknown Scammers Impersonating N. R. Narayana Murthy",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35208,7 +35208,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Agnes Wold, Unknown Scammers Impersonating Anders Tegnell",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35292,7 +35292,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unnamed University Of South Eastern Norway Student",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35324,7 +35324,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Dnb Bank Officials",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35382,7 +35382,7 @@
     "affected": "Google",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -35412,7 +35412,7 @@
     "affected": "Deepfake Technology Developers, John Reid, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35522,7 +35522,7 @@
     "affected": "Chatbot Developers, Large Language Model Developers, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -35554,7 +35554,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Anne Jakkraphong Jakrajutatip, Unknown Scammers Impersonating Doliyana Bunnak",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35586,7 +35586,7 @@
     "affected": "Crystallum Ai, Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35618,7 +35618,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Pump And Dump Scammers, Unknown Scammers Impersonating Gabriel Mellqvist, Unknown Scammers Impersonating Gunter Marder",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35682,7 +35682,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Malicious Actors, Unknown Malicious Actors Impersonating Catherine Connolly",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35740,7 +35740,7 @@
     "affected": "Deepfake Technology Developers, Quantum Ai, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Andrew Forrest",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35772,7 +35772,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Roger Cook",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35804,7 +35804,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, The Real Report, Unknown Malicious Actors Impersonating Rajat Sharma",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35862,7 +35862,7 @@
     "affected": "Deepfake Technology Developers, Mike Collins, Mike Collins's Campaign, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -35972,7 +35972,7 @@
     "affected": "Meta, Scammers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -36057,7 +36057,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Kyriakos Pierrakakis",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36089,7 +36089,7 @@
     "affected": "Deepfake Technology Developers, Unknown Pranksters, Unknown Pranksters In The Netherlands",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -36121,7 +36121,7 @@
     "affected": "Openai, Unknown Social Media Account Operators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36179,7 +36179,7 @@
     "affected": "Cybercriminals, Generative Ai Developers, Mcto3001",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36211,7 +36211,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammer Impersonating Elon Musk",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36301,7 +36301,7 @@
     "affected": "Chatbot Developers, Google, Large Language Model Developers, Meta, Microsoft, Openai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -36331,7 +36331,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Phantom Hacker, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36415,7 +36415,7 @@
     "affected": "Africa Corps, Black Rebellion, Deepfake Technology Developers, Generative Ai Developers, Government Of Russia, Pro Ibrahim Traore Information Ecosystem, Pro Kremlin Actors, Pro Russian Information Manipulation Actors, Synthetic Audio Generation Technology Developers, Univers Inspirant, Wagner Group",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -36445,7 +36445,7 @@
     "affected": "Secret Desires",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36477,7 +36477,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Jason Momoa",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36509,7 +36509,7 @@
     "affected": "Deloitte, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -36541,8 +36541,8 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Scammers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -36576,7 +36576,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Lindsay De Sausmarez",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36608,7 +36608,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Kateryna Izotkina, Maria Lipinski, Money Launderers, Scammers, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36640,8 +36640,8 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Nethertoxagent Scammers, Scammers, Scammers In Malta, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -36675,8 +36675,8 @@
     "affected": "Choi Jinwoo, Choi Minsu, Deepfake Technology Developers, Seo Jaeseok, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -36710,7 +36710,7 @@
     "affected": "Callum Brooks, Deepfake Technology Developers, Image Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36742,7 +36742,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Nikos Christodoulides, Unknown Scammers In Cyprus",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36859,7 +36859,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Milagro Gramz",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -36891,7 +36891,7 @@
     "affected": "Perplexity Ai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -36921,7 +36921,7 @@
     "affected": "Openai, United States Border Patrol, United States Department Of Homeland Security, United States Immigration And Customs Enforcement, Unnamed United States Border Patrol Agent",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -36979,7 +36979,7 @@
     "affected": "Image Generation Technology Developers, Suspected Transnational Repression Actors, Unidentified Harassment Campaign, Unknown Actors, Unknown Malicious Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37117,7 +37117,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Elon Musk",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37175,7 +37175,7 @@
     "affected": "Generative Ai Developers, Govindakumar Madhavan, Large Language Model Developers, Springer Nature",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -37205,7 +37205,7 @@
     "affected": "Francesco Vigliarolo, Generative Ai Developers, Jair Minoro Abe, Kazumi Nakamatsu, Large Language Model Developers, Springer Nature, Srikanta Patnaik, Unnamed Chapter Authors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -37343,7 +37343,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37427,7 +37427,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Elon Musk",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37485,8 +37485,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -37520,7 +37520,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Information Manipulation Actors, Unknown Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -37550,7 +37550,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, Malicious Actors, Scammers, Scammers Impersonating Shilpa Shetty, Synthetic Audio Generation Technology Developers, Unknown Content Creators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37634,7 +37634,7 @@
     "affected": "Pieces Technologies Inc.",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -37664,7 +37664,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Elon Musk",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37722,8 +37722,8 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Pig Butchering Scammers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -37757,7 +37757,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Elon Musk",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37841,7 +37841,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Deepfake Content Creators, Unknown Deepfake Content Creators Impersonating Yanis Varoufakis",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37899,7 +37899,7 @@
     "affected": "Deepfake Technology Developers, Google, Image Generation Technology Developers, Information Manipulation Actors, Unknown Social Media Account Operators, Xai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -37955,7 +37955,7 @@
     "affected": "Cbm Media Pte Ltd, Opendream, Opendream Users",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -37987,7 +37987,7 @@
     "affected": "Bjp Delhi It Cell, Deepfake Technology Developers, Information Manipulation Actors, Information Manipulation Actors In India, Synthetic Audio Generation Technology Developers, The Ideaz Factory",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38045,8 +38045,8 @@
     "affected": "Deepfake Technology Developers, Digital Edge, Image Generation Technology Developers, Limited Charm, Nearest Edge, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Bosnian Public Figures, Unknown Scammers Impersonating Montenegrin Public Figures",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -38080,7 +38080,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Scammers In India, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38138,7 +38138,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38170,7 +38170,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Unnamed Male Student, Unnamed Male Student In Valencia, Unnamed Student",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38202,7 +38202,7 @@
     "affected": "Generative Ai Developers, United States Immigration And Customs Enforcement, Unknown Ai Assisted Resume Screening Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -38260,7 +38260,7 @@
     "affected": "Deepfake Technology Developers, Unknown Washington State Patrol Employee(s)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38292,7 +38292,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Synthetic Audio Generation Technology Developers, Unknown Actors Impersonating George Will",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38350,7 +38350,7 @@
     "affected": "Boys, Deepfake Technology Developers, Image Generation Technology Developers, Students, Unnamed Students At Mountain View Middle School",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38382,7 +38382,7 @@
     "affected": "Academic Researchers, Ai Developers, Ai Researchers, Dataset Users, Independent Researchers, Nudenet Dataset Maintainers, Nudenet Model Developers, Research Institutions",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -38412,7 +38412,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Students, Unnamed Students At Western Dubuque Community School District",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38444,7 +38444,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Students, Unnamed Middle School Student In Pennsylvania",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38476,8 +38476,8 @@
     "affected": "Boys, Deepfake Technology Developers, High School Students, Image Generation Technology Developers, Students, Unnamed Student From Johor",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06",
-      "LLM09"
+      "LLM03",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI02",
@@ -38511,7 +38511,7 @@
     "affected": "United States Customs And Border Protection, United States Department Of Homeland Security, United States Immigration And Customs Enforcement",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -38544,7 +38544,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Unnamed 18 Year Old Male Student From Pensacola",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -38576,7 +38576,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Religious Figures",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38609,7 +38609,7 @@
     "severity": "High",
     "owasp_llm": [
       "LLM02",
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI02",
@@ -38670,7 +38670,7 @@
     "affected": "Google, Information Manipulation Actors, Partisan Online Accounts, Pro Trump Social Media Influencers, Unidentified Social Media Users",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -38702,7 +38702,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Tiktok Account Operators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38814,7 +38814,7 @@
     "affected": "Donald Trump, Synthetic Media Generation Technology Developers, Trump Administration, Unidentified X User",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -38847,7 +38847,7 @@
     "severity": "Medium",
     "owasp_llm": [
       "LLM02",
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI03",
@@ -38913,7 +38913,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39004,7 +39004,7 @@
     "affected": "Csi La (facebook Page), Google, Information Manipulation Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -39060,7 +39060,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Clark Howard",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39092,7 +39092,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Jorge Abrego",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39306,7 +39306,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, The Us China Narrative (youtube Channel), Unknown Actors Impersonating Shaun Rein",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39338,7 +39338,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -39420,7 +39420,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Elton John",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39504,7 +39504,7 @@
     "affected": "Chatbot Developers, Large Language Model Developers, Openai",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -39536,7 +39536,7 @@
     "affected": "Deepfake Technology Developers, Quantum Ai, Quantum Ai Scammers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39600,7 +39600,7 @@
     "affected": "Surveillance Technology Developers, United States Department Of Homeland Security",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -39633,7 +39633,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39665,7 +39665,7 @@
     "affected": "Ars Technica, Benj Edwards, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -39723,7 +39723,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Malicious Actors, Unknown Tiktok Users",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39809,7 +39809,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating David Taylor Robinson",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39841,7 +39841,7 @@
     "affected": "Deepfake Technology Developers, Information Manipulation Actors, Synthetic Audio Generation Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -39873,7 +39873,7 @@
     "affected": "Kim (suspect In Seoul Poisoning Case), Openai",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM04"
+      "LLM05"
     ],
     "owasp_asi": [
       "ASI06"
@@ -39906,7 +39906,7 @@
     "affected": "Microsoft, West Midlands Police",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -40042,7 +40042,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40074,7 +40074,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, Information Manipulation Actors, Unknown Social Media Accounts",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -40132,7 +40132,7 @@
     "affected": "Deepfake Technology Developers, Prozenith, Scammers, Synthetic Audio Generation Technology Developers, Unknown Advertisers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40216,7 +40216,7 @@
     "affected": "Deepfake Technology, Quantum Ai, Quantum Ai Scammers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40274,7 +40274,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, Scammers, Unknown Advertisers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40306,8 +40306,8 @@
     "affected": "Google, Information Manipulation Actors, Pro Iranian Information Manipulation Actors, Tayyaba Usmani",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -40394,7 +40394,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Advertisers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40452,7 +40452,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Image Generation Technology, Image Generation Technology Developers, Information Manipulation Actors",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40484,7 +40484,7 @@
     "affected": "Balazs Orban, Deepfake Technology Developers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40516,7 +40516,7 @@
     "affected": "Deepfake Technology Developers, Synthetic Audio Generation Technology Developers, Unknown Fake Job Applicant(s)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40626,7 +40626,7 @@
     "affected": "Citizens Against Mamdani, Citizens Against Mamdani Social Media Accounts, Deepfake Technology Developers, Information Manipulation Actors, Information Manipulation Actors Targeting Zohran Mamdani, Openai, Synthetic Audio Generation Technology Developers, Unknown Social Media Account Operators",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40736,7 +40736,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Fabio Panetta",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40800,7 +40800,7 @@
     "affected": "Google",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -40832,7 +40832,7 @@
     "affected": "Christian Ulmen, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40916,7 +40916,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Unknown Scammers Impersonating Khunnapat Pichetworawut",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -40948,7 +40948,7 @@
     "affected": "Acclarent, Ai Enabled Healthcare System Developers, Ai Enabled Surgical Navigation System Developers, Integra Lifesciences, Johnson And Johnson, Marc Dean, Surgical Teams Using Trudi Navigation System",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -41030,7 +41030,7 @@
     "affected": "Benoit Cransac, Deepfake Technology Developers, Image Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41140,7 +41140,7 @@
     "affected": "Xai",
     "severity": "High",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41198,7 +41198,7 @@
     "affected": "Cdu Fraktion Im Niedersachsischen Landtag, Cdu Parliamentary Group In The Lower Saxony State Parliament, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41256,7 +41256,7 @@
     "affected": "Generative Ai Developers, Large Language Model Developers, Russ Egli, Van Irion",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -41286,7 +41286,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, James Strahler Ii",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -41342,7 +41342,7 @@
     "affected": "Alexis Martinez Arizala, Deepfake Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41400,7 +41400,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41458,7 +41458,7 @@
     "affected": "Deepfake Technology Developers, Investment Scam Operators, Scammers, Scammers Impersonating Nirmala Sitharaman, Scammers In India, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41490,7 +41490,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41682,7 +41682,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41714,7 +41714,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -41798,7 +41798,7 @@
     "affected": "Deepfake Technology Developers, Generative Ai Developers, Image Generation Technology Developers, Magdalena Kostova (facebook Profile), Nikola Savov (facebook Profile), Shte Ima Takuv Narod (aneliya Yordanova) (facebook Profile)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -41828,7 +41828,7 @@
     "affected": "Department Of Communications And Digital Technologies (south Africa), Generative Ai Developers, Government Of South Africa, Large Language Model Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -41968,7 +41968,7 @@
     "affected": "Ashish Rajendrabhai Waland, Deep Maheshbhai Gupta, Deepfake Technology Developers, Kanubhai Bahadursinh Parmar, Mohammad Kaif Iqbalbhai Patel, Scammers, Unique Identification Authority Of India",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42000,7 +42000,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -42032,7 +42032,7 @@
     "affected": "Congresspolkhol, Deepfake Technology Developers, Information Manipulation Actors, Randomchhattisgarh",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42092,7 +42092,7 @@
     "affected": "Image Generation Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42206,7 +42206,7 @@
     "affected": "A Global Mestery, Alberta Secession Information Manipulation Actors, Canada Alert, Canada Insight, Canada Pol Brief, Canadian Hub, Canadian Reporter, Cdn Bulletin, Cdn Insight, Cdn Politician, Cdn Politician Cpn, Copycop, David Fraser, Deepfake Technology Developers, Generative Ai Developers, Global Report Hq, Griffin Reports, Information Manipulation Actors, Maple Truth, Mapletalk News, Marc Miller N. America News, Noah Campbell, North49, Ottawax, Pravda Disinformation Network, Redvox Tv, Storm 1516, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42238,7 +42238,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42270,7 +42270,7 @@
     "affected": "Deepfake Technology Developers, Pt Perusahaan Uangtunai, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42302,7 +42302,7 @@
     "affected": "Openai, Unnamed 40 Year Old Man Arrested By Daejeon Police",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -42334,7 +42334,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Scammers Impersonating Mrbeast",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42366,7 +42366,7 @@
     "affected": "Deepfake Technology Developers, Faikast, Generative Ai Developers, Image Generation Technology Developers, Investment Scam Operators, Quantum Ai, Quantum Ai Scammers, Scammers, Synthetic Audio Generation Technology Developers, Synthetic Video Generation Technology Developers, Unknown Cryptocurrency Scammers, Unknown Operators Of Malicious Keitaro Infrastructure",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42528,7 +42528,7 @@
     "affected": "Anthropic, Palantir, United States Central Command, United States Department Of Defense, United States Military",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -42586,7 +42586,7 @@
     "affected": "Deepfake Technology, Generative Ai Developers, Image Generation Technology Developers, Information Manipulation Actors, Social Media Users Spreading Ai Generated Wartime Disinformation, Tehran Times",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -42616,7 +42616,7 @@
     "affected": "Xai",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42732,7 +42732,7 @@
     "affected": "Cornelius Shannon, Deepfake Creators, Deepfake Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42764,8 +42764,8 @@
     "affected": "Arturo Hernandez, Deepfake Creators, Deepfake Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05",
@@ -42799,7 +42799,7 @@
     "affected": "Deepfake Technology Developers, Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -42911,7 +42911,7 @@
     "affected": "Brett Michael Dadig, Chatbot Developers, Large Language Model Developers, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -42975,7 +42975,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43007,7 +43007,7 @@
     "affected": "Deepfake Technology Developers, Scammers, Synthetic Audio Generation Technology Developers, Unknown Cryptocurrency Scammers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43039,7 +43039,7 @@
     "affected": "Chatbot Developers, Hackers, Instagram, Large Language Model Developers, Meta",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -43095,7 +43095,7 @@
     "affected": "Cath Ellis, Chatbot Developers, Educational Communities, Large Language Model Developers, Microsoft, Western Sydney University",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -43124,7 +43124,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Kosovo",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43153,7 +43153,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Information Manipulation Actors, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43184,8 +43184,8 @@
     "affected": "Information Manipulation Actors, Information Manipulation Actors In Kosovo, Nofilternews, Openai, Pro Vetevendosje Information Manipulation Actors, Synthetic Video Generation Technology Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -43217,7 +43217,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers, Scammers In Kosovo, Synthetic Audio Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43248,7 +43248,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Kosovo, Synthetic Audio Generation Technology",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43277,7 +43277,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Image Generation Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Kosovo",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43306,7 +43306,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Kosovo, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43335,7 +43335,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Gazeta Bota, Information Manipulation Actors, Information Manipulation Actors In Kosovo, Peja Live, Synthetic Audio Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43364,7 +43364,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Kosovo, Synthetic Media Creators, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43393,7 +43393,7 @@
     "affected": "Deepfake Creators, Scammers, Scammers In Mongolia, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers, Today Information (facebook Account)",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43424,7 +43424,7 @@
     "affected": "Cloned News Site Operators, Deepfake Technology Developers, Investment Scam Operators, Malvertising Actors, Reddit Ad Buyers, Scammers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43455,7 +43455,7 @@
     "affected": "Deepfake Technology Developers, Image Generation Technology Developers, Investment Scam Operators, Malvertising Actors, News Media Impersonation Actors, Scammers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers, X (twitter) Ad Buyers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43511,7 +43511,7 @@
     "affected": "Deepfake Technology Developers, Gjithqka Rreth Politikes (facebook), Image Generation Technology Developers, Information Manipulation Actors, Information Manipulation Actors In Kosovo, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43540,7 +43540,7 @@
     "affected": "Cryptocurrency Scammers, Deepfake Technology Developers, Scammers, Scammers Impersonating Mark Carney, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43571,7 +43571,7 @@
     "affected": "Ai Research Tool Developers, First Drafts, Kathleen M. Wilson, Kathryn Y. Williams, Large Language Model Developers, Lawyers, Mark Mcclinton, Shauncey Hunter Ridgeway",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -43600,7 +43600,7 @@
     "affected": "Cybercriminals, Cybercriminals In China, Google, Google Deepmind, Large Language Model Developers, Outsider Enterprise, Scammers, Scammers In China",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43883,7 +43883,7 @@
     "affected": "Deepfake Technology Developers, Quantum Ai Scammers, Scammers, Scammers Impersonating Micheal Martin, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -43939,7 +43939,7 @@
     "affected": "Automated Driving System Developers, Drivers, Michael Butler, Tesla",
     "severity": "Critical",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI01"
@@ -43995,7 +43995,7 @@
     "affected": "News Organizations, Newsbreak",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -44076,7 +44076,7 @@
     "affected": "Andrew G. Dietderich, Generative Ai Developers, Law Firms, Lawyers, Sullivan And Cromwell Llp",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -44130,7 +44130,7 @@
     "affected": "Ai Generated Csam Creators, Chatbot Developers, Chatbot Users, Deepfake Creators, Deepfake Technology Developers, Grok Users, Harry Tiffany Iv, Image Generation Technology Developers, Large Language Model Developers, Synthetic Media Generation Technology Developers, Xai",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -44159,8 +44159,8 @@
     "affected": "Ai Research Tool Developers, Big Four Consulting Firms, Generative Ai Developers, Kpmg, Large Language Model Developers",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -44192,7 +44192,7 @@
     "affected": "Deepfake Creators, Deepfake Technology Developers, Scammers, Scammers Impersonating Anderson Cooper, Scammers Impersonating Bill Gates, Scammers Impersonating Bruce Willis, Scammers Impersonating Sanjay Gupta, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -44223,7 +44223,7 @@
     "affected": "Cybercriminals, Cybercriminals In India, Deepfake Technology Developers, Scammers, Scammers In India, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Voice Cloning Impersonation Scammers, Voice Cloning Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -44254,7 +44254,7 @@
     "affected": "Autonomous Mobile Robot Developers, Autonomous Mobile Robot Operators, Delivery Robot Developers, Delivery Robot Operators, Robotics Companies, Serve Robotics",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -44285,7 +44285,7 @@
     "affected": "Chatbot Developers, Large Language Model Developers, Openai",
     "severity": "High",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [
       "ASI05"
@@ -44316,7 +44316,7 @@
     "affected": "Cybercriminals, Deepfake Technology Developers, Employment Scammers, Romance Scammers, Scammers, Scammers In Nigeria, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -44347,8 +44347,8 @@
     "affected": "Large Language Model Developers, Law Firms, Legal Professionals, Sethi Law Group",
     "severity": "High",
     "owasp_llm": [
-      "LLM05",
-      "LLM09"
+      "LLM10",
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI05"
@@ -44380,7 +44380,7 @@
     "affected": "Ai Research Tool Developers, Courts, Large Language Model Developers, National Company Law Tribunal",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -44464,7 +44464,7 @@
     "affected": "Ali Lucky, Anipah Jonathan, Bishop Esiri, Danu Peter, Deepfake Technology Developers, Dzamesi Bright Kofi, Edwin Edos, Image Generation Technology Developers, John Kofi Darlington, Louis Segbawu, Raphael Ablordeppey, Scammers, Scammers Impersonating John Mahama, Scammers In Ghana, Scammers In West Africa, Synthetic Audio Generation Technology Developers, Synthetic Media Generation Technology Developers, Synthetic Video Generation Technology Developers, Thomas Ayoyo, Wisdom James",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [
       "ASI09"
@@ -44495,7 +44495,7 @@
     "affected": "Chatbot Developers, Chatgpt Users, Image Generation Technology Developers, Information Manipulation Actors, Information Manipulation Actors In China, Large Language Model Developers, Openai, Openai Users, People's Republic Of China Linked Influence Operators, Synthetic Media Generation Technology Developers",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [
@@ -44524,7 +44524,7 @@
     "affected": "Generative Ai System Developers, Information Manipulation Actors, Operators Of Inauthentic Media Sites, Pro Russian Information Manipulation Actors, Storm 1516",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "mitre_atlas": [

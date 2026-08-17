@@ -36,7 +36,7 @@ Beyond the obvious title/description/severity fields, a few worth knowing about 
 
 ### Taxonomies mapped
 
-- **OWASP Top 10 for LLM Applications (2025)** — `LLM01`–`LLM10` — _core_
+- **OWASP Top 10 for LLM Applications (2026)** — `LLM01`–`LLM10` — _core_
 - **OWASP Agentic Top 10 (ASI)** — `ASI01`–`ASI10` — _core_
 - **NIST AI Risk Management Framework (AI 100-1)** — `GOVERN` / `MAP` / `MEASURE` / `MANAGE` subcategories — _core_
 - **MITRE ATLAS** — tactics (`AML.TA00xx`) and techniques (`AML.T00xx`) — _core_
@@ -261,7 +261,7 @@ Always run `scripts/validate.py` before committing.
 
 The mapping files in `mappings/` document the controlled vocabulary used in this dataset. They are derived from the original sources:
 
-- OWASP LLM Top 10 (2025): <https://genai.owasp.org/llm-top-10/>
+- OWASP LLM Top 10 (2026): <https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/>
 - OWASP Agentic Top 10 (ASI / "Agentic AI – Threats and Mitigations"): <https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/>
 - NIST AI Risk Management Framework (AI 100-1): <https://www.nist.gov/itl/ai-risk-management-framework>
 - NIST AI 600-1 Generative AI Profile: <https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf>

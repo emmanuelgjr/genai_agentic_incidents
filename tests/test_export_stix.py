@@ -11,7 +11,7 @@ _INCIDENTS = [
         "date": "2026-01-02", "year": 2026, "severity": "High",
         "attack_vector": "rce", "category": "vulnerability-disclosure",
         "quality_tier": "reviewed", "corpus": "security",
-        "owasp_llm": ["LLM05"], "owasp_asi": [], "nist_ai_rmf": ["MEASURE-2.7"],
+        "owasp_llm": ["LLM10"], "owasp_asi": [], "nist_ai_rmf": ["MEASURE-2.7"],
         "mitre_atlas": ["AML.T0050"], "cve_ids": ["CVE-2026-0001"],
         "references": [{"title": "Advisory", "url": "https://example.com/a", "type": "advisory"}],
         "tags": ["x"], "added": "2026-01-03", "updated": "2026-01-04",

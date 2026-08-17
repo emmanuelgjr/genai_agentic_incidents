@@ -264,40 +264,40 @@ def infer_attack_vector(description: str) -> str:
 def map_owasp_and_atlas(description: str, attack_vector: str):
     """Return (owasp_llm[], owasp_asi[], mitre_atlas[])."""
     d = (description or "").lower()
-    llm = ["LLM03"]   # default: AI supply chain
+    llm = ["LLM04"]   # default: AI supply chain
     asi = ["ASI04"]
     atlas: list[str] = []
 
     if attack_vector == "rce":
-        llm.append("LLM05"); asi.append("ASI05"); atlas.append("AML.T0050")
+        llm.append("LLM10"); asi.append("ASI05"); atlas.append("AML.T0050")
     if attack_vector == "deserialization":
-        llm.append("LLM05"); asi.append("ASI05"); atlas += ["AML.T0010.001", "AML.T0050"]
+        llm.append("LLM10"); asi.append("ASI05"); atlas += ["AML.T0010.001", "AML.T0050"]
     if attack_vector == "prompt-injection":
-        llm = ["LLM01", "LLM05"]; asi = ["ASI01", "ASI05"]; atlas.append("AML.T0051")
+        llm = ["LLM01", "LLM10"]; asi = ["ASI01", "ASI05"]; atlas.append("AML.T0051")
     if attack_vector in ("ssrf", "path-traversal"):
-        llm.append("LLM05"); asi.append("ASI05")
+        llm.append("LLM10"); asi.append("ASI05")
         if attack_vector == "ssrf":
             atlas.append("AML.T0049")
     if attack_vector == "command-injection":
-        llm.append("LLM05"); asi.append("ASI05"); atlas.append("AML.T0050")
+        llm.append("LLM10"); asi.append("ASI05"); atlas.append("AML.T0050")
     if attack_vector == "auth-bypass":
         asi.append("ASI03")
     if attack_vector == "info-disclosure":
         llm.append("LLM02"); asi.append("ASI02")
         atlas.append("AML.T0024")
     if attack_vector == "sandbox-escape":
-        llm.append("LLM05"); asi.append("ASI05"); atlas.append("AML.T0050")
+        llm.append("LLM10"); asi.append("ASI05"); atlas.append("AML.T0050")
     if attack_vector == "xss":
-        llm.append("LLM05"); asi.append("ASI05")
+        llm.append("LLM10"); asi.append("ASI05")
     if attack_vector == "sql-injection":
-        llm.append("LLM05"); asi.append("ASI05")
+        llm.append("LLM10"); asi.append("ASI05")
 
     if "credential" in d or "api key" in d or "secret" in d or "token leak" in d:
         if "ASI03" not in asi:
             asi.append("ASI03")
     if "training data" in d or "data poisoning" in d or "dataset" in d:
-        if "LLM04" not in llm:
-            llm.append("LLM04")
+        if "LLM05" not in llm:
+            llm.append("LLM05")
         if "ASI04" not in asi:
             asi.append("ASI04")
         atlas.append("AML.T0020")

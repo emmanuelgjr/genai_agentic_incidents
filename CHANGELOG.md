@@ -5,6 +5,49 @@ The dataset uses [SemVer](https://semver.org/) — major bumps for breaking
 schema or ID changes, minor bumps for additive schema fields or large
 ingest expansions, patch bumps for routine refreshes and bug fixes.
 
+## [Unreleased]
+
+### Changed (breaking for consumers of `owasp_llm`)
+- **Migrated every `owasp_llm` code from the OWASP Top 10 for LLM Applications
+  2025 edition to the 2026 edition** (published 2026-08-03). The 2026 revision
+  is a renumbering plus one rename — no entry added, none removed — so the
+  mapping is a bijection over `LLM01`–`LLM10`. All **17,498** code assignments
+  across **11,556** entries were rewritten. Full delta, verification and scope
+  limits: [`docs/audits/owasp-llm-2026-migration-delta-2026-08-17.md`](docs/audits/owasp-llm-2026-migration-delta-2026-08-17.md).
+- **This is a silent breaking change for anyone matching on code strings.** The
+  code space is identical before and after, so `LLM03` remains valid but now
+  means *Excessive Agency* instead of *Supply Chain*. Data published up to and
+  including **v2.9.0** (and its Zenodo DOIs) carries 2025 codes. Notable moves:
+  Excessive Agency `LLM06`→`LLM03`, Supply Chain `LLM03`→`LLM04`, Improper
+  Output Handling `LLM05`→`LLM10`, Unbounded Consumption `LLM10`→`LLM06`,
+  Misinformation `LLM09`→`LLM07`.
+- **`LLM07` System Prompt Leakage → `LLM08` Hidden Context Exposure**, renamed
+  and widened by OWASP to all non-user-facing context assembled into the model's
+  context window, not just the system prompt.
+- Codes were **renumbered, not re-classified**. Entries that would newly qualify
+  under a 2026 entry's widened scope were not added; that is annotation work
+  (WS2) and is not claimed as done.
+
+### Added
+- `mappings/owasp_llm_top10_2026.json` — the 2026 catalog, sourced from the
+  official text at
+  <https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final>.
+- `mappings/owasp_llm_2025_to_2026.json` — machine-readable crosswalk with
+  per-entry rank moves and scope changes; the single source of truth for the
+  migration.
+- `scripts/migrate_owasp_llm_2026.py` — the deterministic migration, with a
+  full field-level delta report and two independent double-apply guards (a
+  permutation applied twice is silently wrong and passes schema validation).
+- `mappings/owasp_llm_top10_2025.json` is retained and marked superseded:
+  releases at or before v2.9.0 cannot be read correctly without it.
+
+### Fixed
+- Retain-on-drop rows (entries carried verbatim out of the previous
+  `data/incidents.json` after every source drops them) are a build **input**, not
+  just an output. An inputs-only migration missed 9 of them — visible only as a
+  distribution shift, since the totals still matched. Recorded in the audit above
+  so future taxonomy migrations include that third input.
+
 ## [2.9.0] — 2026-07-31
 
 Licensing and provenance release (Phase 1, "Honest"). Draft release notes

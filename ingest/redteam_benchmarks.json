@@ -119,7 +119,7 @@
     "affected": "LLM / agent evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI08"
@@ -223,7 +223,7 @@
     "affected": "LLM / agent evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [
       "ASI08"

@@ -51,13 +51,13 @@ def test_owasp_bar_chart_uses_codes(tmp_path):
     from collections import Counter
     out = tmp_path / "owasp.svg"
     r.render_owasp_bar_chart(
-        Counter({"LLM01": 10, "LLM05": 4}),
-        {"LLM01": "Prompt Injection", "LLM05": "Improper Output Handling"},
+        Counter({"LLM01": 10, "LLM10": 4}),
+        {"LLM01": "Prompt Injection", "LLM10": "Improper Output Handling"},
         "OWASP LLM coverage",
         out,
     )
     body = out.read_text(encoding="utf-8")
-    assert "LLM01" in body and "LLM05" in body
+    assert "LLM01" in body and "LLM10" in body
     assert "Prompt Injection" in body
 
 
