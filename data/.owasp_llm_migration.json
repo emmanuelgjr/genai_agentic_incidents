@@ -92,5 +92,20 @@
         "sha256_after": "78a985b13bb7e0f76b2deb37536f8652e7c34d41138f09b766b7a6c405fd120e"
       }
     }
+  },
+  "expected_built_census": {
+    "incidents.json": {
+      "LLM01": 407,
+      "LLM02": 984,
+      "LLM03": 783,
+      "LLM04": 6162,
+      "LLM05": 157,
+      "LLM06": 44,
+      "LLM07": 2416,
+      "LLM08": 730,
+      "LLM09": 24,
+      "LLM10": 5791
+    },
+    "$comment": "Crosswalk image of the pre-migration built corpus (commit dc14f425). `--verify data/incidents.json` must reproduce this after any rebuild. Re-derive: git show dc14f425:data/incidents.json | apply mappings/owasp_llm_2025_to_2026.json"
   }
 }

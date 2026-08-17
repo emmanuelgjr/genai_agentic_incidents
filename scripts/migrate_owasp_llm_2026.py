@@ -252,6 +252,7 @@ def main() -> int:
     grand_after = Counter()
     all_problems: list[str] = []
     planned: list[tuple[Path, str, str]] = []  # path, new_text, sha_before
+    built_expected: Counter = Counter()  # post-census of the retention source
 
     for path in targets():
         # newline="" preserves whatever endings the file already uses, so the
@@ -294,6 +295,8 @@ def main() -> int:
             print(f"FATAL: {rel}: transform produced invalid JSON: {exc}", file=sys.stderr)
             return 1
         post = census(obj)
+        if path == RETENTION_SOURCE:
+            built_expected = post
 
         changed, problems = field_delta(before, obj)
         ids_before, ids_after = id_set(before), id_set(obj)
@@ -408,6 +411,16 @@ def main() -> int:
         return 0
 
     stamp.setdefault("migrations", {}).setdefault(MIGRATION_ID, {})
+    # The built corpus census cannot be predicted from the input censuses --
+    # dedupe collapses rows that appear in several feeds. But the retention
+    # source IS the previous built corpus, so its post-transform census is
+    # exactly what the next `make build` must reproduce. Record it so
+    # --verify is a real check on the rebuild rather than a printout.
+    for path, _text, _sha in planned:
+        if path == RETENTION_SOURCE:
+            stamp.setdefault("expected_built_census", {})[path.name] = dict(
+                sorted(built_expected.items())
+            )
     for path, text, sha_before in planned:
         # newline="" so the LF endings in `text` are written verbatim. Plain
         # write_text() on Windows translates \n -> \r\n, which rewrites every
