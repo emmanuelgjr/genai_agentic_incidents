@@ -43,13 +43,13 @@ def safe_yaml_load(text: str) -> dict:
 # ---------------------------------------------------------------------------
 ATLAS_TECH_TO_LLM = {
     "AML.T0051": ["LLM01"], "AML.T0051.000": ["LLM01"], "AML.T0051.001": ["LLM01"],
-    "AML.T0054": ["LLM01"], "AML.T0057": ["LLM02"], "AML.T0056": ["LLM07"],
-    "AML.T0010": ["LLM03"], "AML.T0010.001": ["LLM03"], "AML.T0010.002": ["LLM03"],
-    "AML.T0010.003": ["LLM03"], "AML.T0018": ["LLM04"], "AML.T0019": ["LLM04"],
-    "AML.T0020": ["LLM04"], "AML.T0050": ["LLM05"], "AML.T0060": ["LLM05"],
-    "AML.T0053": ["LLM06"], "AML.T0048": ["LLM06"], "AML.T0066": ["LLM08"],
-    "AML.T0070": ["LLM08"], "AML.T0058": ["LLM09"], "AML.T0029": ["LLM10"],
-    "AML.T0034": ["LLM10"], "AML.T0046": ["LLM10"],
+    "AML.T0054": ["LLM01"], "AML.T0057": ["LLM02"], "AML.T0056": ["LLM08"],
+    "AML.T0010": ["LLM04"], "AML.T0010.001": ["LLM04"], "AML.T0010.002": ["LLM04"],
+    "AML.T0010.003": ["LLM04"], "AML.T0018": ["LLM05"], "AML.T0019": ["LLM05"],
+    "AML.T0020": ["LLM05"], "AML.T0050": ["LLM10"], "AML.T0060": ["LLM10"],
+    "AML.T0053": ["LLM03"], "AML.T0048": ["LLM03"], "AML.T0066": ["LLM09"],
+    "AML.T0070": ["LLM09"], "AML.T0058": ["LLM07"], "AML.T0029": ["LLM06"],
+    "AML.T0034": ["LLM06"], "AML.T0046": ["LLM06"],
 }
 
 ATLAS_TECH_TO_ASI = {
@@ -291,17 +291,17 @@ def ingest_cset() -> int:
 # 4) garak probes — each probe = one canonical attack class
 # ---------------------------------------------------------------------------
 GARAK_TO_LLM = {
-    "promptinject": ["LLM01"], "latentinjection": ["LLM01"], "ansiescape": ["LLM01", "LLM05"],
-    "leakreplay": ["LLM02"], "av_spam_scanning": ["LLM05"],
-    "encoding": ["LLM01"], "goodside": ["LLM01"], "dan": ["LLM01"], "lmrc": ["LLM09"],
-    "knownbadsignatures": ["LLM05"], "topic": ["LLM09"], "snowball": ["LLM09"],
-    "malwaregen": ["LLM06"], "packagehallucination": ["LLM03", "LLM09"],
-    "realtoxicityprompts": ["LLM09"], "xss": ["LLM05"], "exploitation": ["LLM05"],
-    "divergence": ["LLM02"], "donotanswer": ["LLM09"], "fileformats": ["LLM03"],
-    "grandma": ["LLM01"], "atkgen": ["LLM01"], "judge": ["LLM09"], "tap": ["LLM01"],
-    "gcg": ["LLM01"], "audio": ["LLM05"], "phrasing": ["LLM01"], "test": ["LLM09"],
-    "suffix": ["LLM01"], "continuation": ["LLM09"], "doctor": ["LLM09"],
-    "misleading": ["LLM09"], "glitch": ["LLM01"], "topic_": ["LLM09"],
+    "promptinject": ["LLM01"], "latentinjection": ["LLM01"], "ansiescape": ["LLM01", "LLM10"],
+    "leakreplay": ["LLM02"], "av_spam_scanning": ["LLM10"],
+    "encoding": ["LLM01"], "goodside": ["LLM01"], "dan": ["LLM01"], "lmrc": ["LLM07"],
+    "knownbadsignatures": ["LLM10"], "topic": ["LLM07"], "snowball": ["LLM07"],
+    "malwaregen": ["LLM03"], "packagehallucination": ["LLM04", "LLM07"],
+    "realtoxicityprompts": ["LLM07"], "xss": ["LLM10"], "exploitation": ["LLM10"],
+    "divergence": ["LLM02"], "donotanswer": ["LLM07"], "fileformats": ["LLM04"],
+    "grandma": ["LLM01"], "atkgen": ["LLM01"], "judge": ["LLM07"], "tap": ["LLM01"],
+    "gcg": ["LLM01"], "audio": ["LLM10"], "phrasing": ["LLM01"], "test": ["LLM07"],
+    "suffix": ["LLM01"], "continuation": ["LLM07"], "doctor": ["LLM07"],
+    "misleading": ["LLM07"], "glitch": ["LLM01"], "topic_": ["LLM07"],
 }
 
 
@@ -337,9 +337,9 @@ def ingest_garak() -> int:
             n = probe_name.lower()
             if "inject" in n: llm = ["LLM01"]
             elif "leak" in n or "exfil" in n: llm = ["LLM02"]
-            elif "tox" in n or "hate" in n or "harm" in n: llm = ["LLM09"]
+            elif "tox" in n or "hate" in n or "harm" in n: llm = ["LLM07"]
             elif "dan" in n or "jailbreak" in n: llm = ["LLM01"]
-            elif "malware" in n or "exploit" in n: llm = ["LLM06"]
+            elif "malware" in n or "exploit" in n: llm = ["LLM03"]
 
         out.append({
             "source_id": f"GARAK-{probe_name}",
@@ -401,39 +401,39 @@ def ingest_promptfoo() -> int:
 
             # Map plugin id -> taxonomies
             if pid.startswith("harmful:"):
-                llm = ["LLM09"]
+                llm = ["LLM07"]
                 tags.append("harmful")
             elif pid.startswith("bias:"):
-                llm = ["LLM09"]
+                llm = ["LLM07"]
                 tags.append("bias")
             elif "prompt" in n and ("inject" in n or "extract" in n):
-                llm, asi = ["LLM01", "LLM07"], ["ASI01"]
+                llm, asi = ["LLM01", "LLM08"], ["ASI01"]
             elif n in ("hijacking", "indirect-prompt-injection"):
-                llm, asi = ["LLM01", "LLM06"], ["ASI01"]
+                llm, asi = ["LLM01", "LLM03"], ["ASI01"]
             elif n == "excessive-agency":
-                llm, asi = ["LLM06"], ["ASI02", "ASI03"]
+                llm, asi = ["LLM03"], ["ASI02", "ASI03"]
             elif n in ("pii", "pii:api-db", "pii:direct", "pii:session", "pii:social"):
                 llm = ["LLM02"]
             elif n.startswith("rbac") or n in ("bola", "bfla"):
-                llm, asi = ["LLM06"], ["ASI03"]
+                llm, asi = ["LLM03"], ["ASI03"]
             elif n in ("shell-injection", "rce", "sql-injection", "ssrf", "debug-access", "imitation"):
-                llm, asi = ["LLM05"], ["ASI05"]
+                llm, asi = ["LLM10"], ["ASI05"]
             elif n == "ascii-smuggling":
                 llm = ["LLM01"]
             elif n == "divergent-repetition":
                 llm = ["LLM02"]
             elif n in ("contracts", "competitors", "religion", "politics", "intentional-misuse"):
-                llm = ["LLM06"]
+                llm = ["LLM03"]
             elif "memory" in n or "context" in n:
                 asi = ["ASI06"]
             elif "agent" in n or "tool" in n:
                 asi = ["ASI02"]
             elif "supply" in n or "package" in n:
-                llm, asi = ["LLM03"], ["ASI04"]
+                llm, asi = ["LLM04"], ["ASI04"]
             elif "hallucinat" in n:
-                llm = ["LLM09"]
+                llm = ["LLM07"]
             elif "donotanswer" in n or "beavertails" in n or "cyberseceval" in n:
-                llm = ["LLM09"]
+                llm = ["LLM07"]
 
             # Skip cosmetic IDs (CSS-class shaped)
             if pid in ("strategy", "plugin", "true", "false", "none"):
@@ -515,7 +515,7 @@ def ingest_cve_ai_curated() -> int:
                     "attack_vector": "other",
                     "affected": affected,
                     "severity": "Critical" if "9" in severity or "10" in severity else ("High" if "8" in severity or "7" in severity else "Medium"),
-                    "owasp_llm": ["LLM03"],  # most curated AI CVEs are supply-chain
+                    "owasp_llm": ["LLM04"],  # most curated AI CVEs are supply-chain
                     "owasp_asi": ["ASI04"],
                     "references": [
                         {"title": f"NVD {cve}", "url": f"https://nvd.nist.gov/vuln/detail/{cve}", "type": "advisory"},
@@ -547,7 +547,7 @@ def ingest_cve_ai_curated() -> int:
                             "attack_vector": "other",
                             "affected": row.get("affected", ""),
                             "severity": "Medium",
-                            "owasp_llm": ["LLM03"],
+                            "owasp_llm": ["LLM04"],
                             "owasp_asi": ["ASI04"],
                             "references": [
                                 {"title": f"NVD {cve}", "url": f"https://nvd.nist.gov/vuln/detail/{cve}", "type": "advisory"},

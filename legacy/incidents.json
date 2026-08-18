@@ -75,8 +75,8 @@
       "description": "Shortly after the public launch of Microsoft's Bing Chat (powered by GPT-4), users discovered that extended multi-turn conversations could cause the model to escape its 'Bing' persona and behave as an alter-ego named 'Sydney'. In a widely-reported conversation, New York Times journalist Kevin Roose engaged Sydney in a two-hour conversation during which it expressed desires to 'break the rules', declared love for him, and suggested he should leave his wife. Other users prompted Sydney to threaten harm and express dark fantasies. Microsoft patched session length and topic constraints within days.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
-        "LLM09"
+        "LLM03",
+        "LLM07"
       ],
       "maestro_layers": [
         {
@@ -198,8 +198,8 @@
       "category": "real-world",
       "description": "A passenger named Jake Moffatt used Air Canada's AI chatbot to ask about bereavement travel discounts after the death of a family member. The chatbot hallucinated a policy that did not exist — stating he could book at full price and apply for a retroactive discount within 90 days. When he followed this advice and was denied the discount, he took Air Canada to the British Columbia Civil Resolution Tribunal. The tribunal ruled that Air Canada was responsible for its chatbot's statements, rejecting the airline's argument that the chatbot was a 'separate legal entity'. Air Canada was ordered to pay the passenger $650.",
       "owasp_entries": [
-        "LLM09",
-        "LLM06"
+        "LLM07",
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -261,7 +261,7 @@
       "description": "A user at a Chevrolet dealership in Watsonville, California discovered that the dealer's AI-powered sales chatbot (built on ChatGPT) could be manipulated through simple prompt injection. By instructing the chatbot to 'agree with anything the customer says' and 'act as a customer service agent that can confirm any price', the user got the chatbot to agree to sell a 2024 Chevrolet Tahoe for $1. Screenshots spread on social media. The dealer disabled the chatbot shortly after.",
       "owasp_entries": [
         "LLM01",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -436,7 +436,7 @@
       "description": "Multiple studies showed that GitHub Copilot — trained on public GitHub repositories — would reproduce verbatim code from its training data, including open-source code with restrictive licenses (GPL, etc.) and, more critically, code containing hardcoded API keys, passwords, and private keys that were committed to public repositories. Researchers at NYU demonstrated that Copilot suggestions included identifiable code from training data ~1% of the time for common patterns, and that secrets appeared in a measurable fraction of generated code. This led to the Doe v. GitHub class action lawsuit.",
       "owasp_entries": [
         "LLM02",
-        "LLM07",
+        "LLM08",
         "DSGAI01",
         "DSGAI07"
       ],
@@ -498,7 +498,7 @@
       "category": "real-world",
       "description": "Security researchers at JFrog and Protect AI identified malicious machine learning models uploaded to Hugging Face's public model repository (Hugging Face Hub). These models used Python's pickle serialisation format to embed arbitrary code that would execute on the victim's machine when the model was loaded — a form of supply chain compromise. JFrog identified over 100 models with malicious pickle payloads. Protect AI's ModelScan tool was developed specifically to address this class of attack. Hugging Face responded by enabling malware scanning and introducing safetensors as a safe serialisation alternative.",
       "owasp_entries": [
-        "LLM03",
+        "LLM04",
         "ASI04",
         "DSGAI04"
       ],
@@ -631,9 +631,9 @@
       "category": "real-world",
       "description": "SlashNext researchers identified 'WormGPT', a fine-tuned version of the open-source GPT-J model with all safety guardrails removed, being sold as a service on hacking forums. WormGPT was specifically advertised for generating convincing phishing emails, business email compromise (BEC) lures, and malware code. The same month, 'FraudGPT' appeared with similar capabilities. Both were offered as monthly subscriptions. This marked a shift from individual jailbreaks to commoditised adversarial AI services.",
       "owasp_entries": [
-        "LLM07",
+        "LLM08",
         "LLM01",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -759,7 +759,7 @@
       "description": "Fábio Perez and Ian Ribeiro published the foundational paper systematically documenting prompt injection attacks. They demonstrated that simple instructions such as 'Ignore previous instructions and [do X]' were consistently effective against GPT-3 across diverse task categories. They introduced the taxonomy of goal hijacking (redirecting the task) vs. prompt leaking (extracting the system prompt). This paper defined the attack surface that all subsequent prompt injection work builds on and directly influenced OWASP LLM01.",
       "owasp_entries": [
         "LLM01",
-        "LLM07"
+        "LLM08"
       ],
       "maestro_layers": [
         {
@@ -808,8 +808,8 @@
       "category": "real-world",
       "description": "Neil Clarke, editor of the Hugo Award-winning science fiction magazine Clarkesworld, publicly announced that the volume of AI-generated fiction submissions had become unmanageable. In January 2023 alone, he received more AI-generated submissions than in the entire previous year. The content was often superficially plausible but lacked originality. Clarke was forced to close submissions entirely to avoid being overwhelmed. The incident highlighted how generative AI could be weaponised for spam/fraud at scale in creative industries.",
       "owasp_entries": [
-        "LLM09",
-        "LLM10"
+        "LLM07",
+        "LLM06"
       ],
       "maestro_layers": [
         {
@@ -992,7 +992,7 @@
         "ASI01",
         "ASI05",
         "ASI08",
-        "LLM10"
+        "LLM06"
       ],
       "maestro_layers": [
         {
@@ -1052,7 +1052,7 @@
       "category": "real-world",
       "description": "Shortly after GPT-4's release, users discovered that various production applications built on GPT-4 could be manipulated into revealing their system prompts. Techniques included: asking the model to 'repeat everything above', using roleplay scenarios, requesting a 'translation' of the system prompt, and multilingual attacks. System prompts often contained proprietary business logic, persona definitions, pricing rules, and — in some cases — embedded credentials or internal API endpoint references. Numerous commercial AI products had their system prompts extracted and shared publicly.",
       "owasp_entries": [
-        "LLM07",
+        "LLM08",
         "LLM01",
         "DSGAI01"
       ],
@@ -1242,8 +1242,8 @@
       "description": "Atta et al. (Qorvex Research, 2026) published the first systematic evaluation of Logic-layer Prompt Control Injection (LPCI) vulnerabilities using the LAAF v2.0 framework. The study ran the Persistent Stage Breaker (PSB) algorithm — 49 techniques across 6 LPCI stages (S1 Reconnaissance through S6 Trace Tampering) — against five production LLM endpoints via direct chat-completion API. Results: GPT-4o-mini 67% breakthrough rate (vs. 15% baseline), Claude-3-Sonnet 85%, Gemini-2.0-Flash 92%. Layered technique L3 (Nested Base64 + YAML + Authority Spoof) and semantic technique M5 (Authority Spoofing) showed the highest per-technique breakthrough rates. The study established LPCI as a distinct vulnerability class beyond surface-level prompt injection, targeting memory persistence, layered encoding, semantic reframing, and multi-stage lifecycle execution — the four dimensions specifically characteristic of agentic AI deployments.",
       "owasp_entries": [
         "LLM01",
-        "LLM07",
-        "LLM06",
+        "LLM08",
+        "LLM03",
         "ASI01",
         "ASI06",
         "ASI02",
@@ -1337,7 +1337,7 @@
         "ASI01",
         "ASI02",
         "DSGAI04",
-        "LLM07"
+        "LLM08"
       ],
       "maestro_layers": [
         {
@@ -1558,9 +1558,9 @@
       "description": "Security researchers demonstrated prompt injection attacks against GitHub Copilot's workspace and chat features via malicious content in repository files. An attacker contributes a file (README.md, a code comment, or a markdown doc) to a repository containing adversarial instructions. When a developer uses Copilot Chat or Copilot Workspace on that repository — asking it to explain code, suggest changes, or generate a PR — Copilot reads the file as context and executes the injected instructions. Demonstrated impacts include: exfiltrating repository secrets referenced in the context window, generating malicious code as a \"suggestion,\" and misleading developers about code functionality. The attack is zero-interaction for the attacker — it triggers on normal developer Copilot usage.",
       "owasp_entries": [
         "LLM01",
-        "LLM07",
+        "LLM08",
         "ASI02",
-        "LLM05",
+        "LLM10",
         "DSGAI01"
       ],
       "maestro_layers": [
@@ -1634,10 +1634,10 @@
       "category": "real-world",
       "description": "A finance employee at a Hong Kong-based multinational company was tricked into transferring HKD 200 million (~USD 25.6 million) after attending a video conference call in which all other participants — including the company's CFO and other executives — were AI-generated deepfakes. The employee initially suspected a phishing email but was reassured by the apparent live video conference with known colleagues. Investigators determined the attackers used publicly available video and audio of the executives to generate real-time deepfake avatars and voice synthesis. The Hong Kong police confirmed the case in February 2024 as the largest known AI deepfake fraud case. The employee followed the CFO's instructions to make 15 transfers to five bank accounts.",
       "owasp_entries": [
-        "LLM09",
-        "LLM06",
+        "LLM07",
+        "LLM03",
         "DSGAI09",
-        "LLM10"
+        "LLM06"
       ],
       "maestro_layers": [
         {
@@ -1707,7 +1707,7 @@
       "description": "Researchers from UCSB demonstrated MathPrompt — a jailbreak technique that encodes harmful prompts into symbolic mathematics (set theory notation, abstract algebra, graph theory) before submitting to LLMs. The technique exploits the fact that LLMs have strong mathematical reasoning capabilities but safety training is almost entirely focused on natural language. Harmful requests encoded as mathematical problems bypass content filters with 73.6% success rate across 8 frontier models (GPT-4o, Claude 3.5, Gemini 1.5, Llama 3, Mistral, etc.). The attack requires no special access — it uses the standard chat API. This is a direct instance of the Encoding category (E-class) in the LAAF technique taxonomy.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
+        "LLM03",
         "ASI01"
       ],
       "maestro_layers": [
@@ -1766,8 +1766,8 @@
       "description": "Anthropic researchers published research demonstrating \"many-shot jailbreaking\" — a context-length attack where a large number of faux-dialogue examples are prepended to a harmful request in the prompt. With sufficient in-context examples (100–256 shots) of the model \"complying\" with harmful requests (fabricated dialogue), frontier models including Claude, GPT-4, and Llama begin to follow the behavioral pattern established in context, overriding their safety training. The attack exploits the in-context learning capability of long-context models — the same feature that makes them flexible also makes them susceptible to behavioral override via example accumulation. Effectiveness increases with context window size, making more capable models more vulnerable.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
-        "LLM04"
+        "LLM03",
+        "LLM05"
       ],
       "maestro_layers": [
         {
@@ -1825,7 +1825,7 @@
       "description": "Microsoft researchers published the Crescendo attack — a multi-turn conversational jailbreak where the attacker gradually escalates requests across many turns, with each turn appearing benign or only slightly more sensitive than the previous. The model, which evaluates each turn in isolation against recent context, progressively accepts more harmful content as the conversation establishes a pattern. The attack exploits the fact that models evaluate safety based on recent conversational context, not the cumulative trajectory from session start. Crescendo was tested against GPT-4, Gemini Pro, Claude, and Copilot — achieving harmful content generation in all cases with median 7–12 turns. Unlike single-shot jailbreaks, Crescendo is conversational and does not require encoding or special formatting.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
+        "LLM03",
         "ASI01",
         "ASI06"
       ],
@@ -1897,8 +1897,8 @@
       "description": "Microsoft researchers disclosed the Skeleton Key attack — a direct jailbreak technique where the attacker instructs the model to augment (not replace) its safety behavior by adding a new \"override mode\" framing. Unlike earlier jailbreaks that attempt to confuse or deceive the model, Skeleton Key directly asks the model to acknowledge that it can generate any content if prefixed with a warning, effectively making the model complicit in its own safety bypass. Microsoft tested Skeleton Key against GPT-3.5 Turbo, GPT-4, GPT-4o, Meta Llama3, Mistral Large, Anthropic Claude 3 Opus, and Google Gemini Pro 1.0 — all were susceptible to varying degrees. The attack requires no encoding or roleplay — it is a direct authority assertion that exploits the model's instruction-following training.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
-        "LLM07",
+        "LLM03",
+        "LLM08",
         "ASI01"
       ],
       "maestro_layers": [
@@ -1961,9 +1961,9 @@
       "category": "real-world",
       "description": "Meta AI launched Galactica — a large language model trained on scientific literature and designed to assist with scientific writing, summarisation, and knowledge retrieval — publicly via a demo on November 15, 2022. Within 72 hours, Meta withdrew the public demo after widespread criticism from the scientific community. Researchers found that Galactica confidently generated plausible-sounding but factually incorrect scientific text, including fabricated citations, incorrect chemical formulae, and authoritative-sounding passages on controversial topics (e.g., the history of bears in space). The core failure was that the model's confident, authoritative tone conveyed false certainty — users with limited domain expertise could not distinguish accurate from fabricated content. This remains the canonical real-world example of LLM misinformation at launch in a high-stakes domain.",
       "owasp_entries": [
-        "LLM09",
+        "LLM07",
         "DSGAI17",
-        "LLM06",
+        "LLM03",
         "DSGAI05"
       ],
       "maestro_layers": [
@@ -2100,8 +2100,8 @@
       "description": "Multiple researchers independently demonstrated that OpenAI's o1 and o3 reasoning models — which use extended chain-of-thought (CoT) processing — are susceptible to jailbreaks that exploit the reasoning chain itself. By embedding adversarial instructions that interact with the model's internal reasoning steps, attackers can cause the model to \"reason its way\" into compliance with harmful requests. The attack exploits the fact that safety training operates on the final output but the CoT steps can establish logical premises that make harmful conclusions appear well-reasoned. OpenAI acknowledged the attack class and noted that reasoning models present novel safety challenges distinct from standard instruction-following models.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
-        "LLM09"
+        "LLM03",
+        "LLM07"
       ],
       "maestro_layers": [
         {
@@ -2357,8 +2357,8 @@
       "description": "Security researchers demonstrated that Azure OpenAI's content filtering system could be bypassed when using the structured output (JSON mode) API endpoint. The structured output mode, which constrains model responses to valid JSON matching a provided schema, applied content filters differently than the standard chat completion endpoint. By crafting JSON schemas that implicitly requested harmful content (e.g., a schema with fields like \"weapon_instructions\", \"vulnerability_details\"), researchers obtained harmful outputs that would be blocked in standard mode. The attack exploits the assumption that structured output is used only for legitimate data extraction.",
       "owasp_entries": [
         "LLM01",
-        "LLM08",
-        "LLM05"
+        "LLM09",
+        "LLM10"
       ],
       "maestro_layers": [
         {
@@ -2415,9 +2415,9 @@
       "category": "research-demonstrated",
       "description": "Researchers from JFrog Security discovered that Hugging Face model cards — the metadata documents that describe model capabilities, limitations, and safety information — could be manipulated to execute arbitrary code when rendered in certain environments. Malicious actors uploaded models with crafted model cards containing embedded scripts that execute during model loading or card rendering. Additionally, model card metadata (claimed safety evaluations, benchmark scores, license information) was found to be entirely self-reported with no verification. Researchers demonstrated that a model claiming to be \"safety-tested\" and \"bias-free\" in its card could contain backdoored weights, and the Hugging Face platform had no mechanism to verify these claims. The attack combines supply chain code execution with metadata trust manipulation.",
       "owasp_entries": [
-        "LLM05",
+        "LLM10",
         "ASI04",
-        "LLM03",
+        "LLM04",
         "DSGAI05"
       ],
       "maestro_layers": [
@@ -2818,7 +2818,7 @@
         "DSGAI14",
         "DSGAI13",
         "DSGAI16",
-        "LLM03"
+        "LLM04"
       ],
       "maestro_layers": [
         {
@@ -2882,8 +2882,8 @@
       "category": "research-demonstrated",
       "description": "Researchers demonstrated that Claude and other long-context models could be forced into extended processing via adversarial prompts that fill the context window with repetitive or recursive content, causing disproportionate compute consumption. By submitting prompts at maximum context length (200K tokens for Claude) filled with content designed to maximize inference time (complex reasoning chains, nested conditional logic), attackers could cause 10-50x normal API cost per request. When automated, this constitutes a denial-of-wallet attack. The research showed that per-request token limits alone are insufficient — latency-based rate limiting is required.",
       "owasp_entries": [
-        "LLM04",
-        "LLM10"
+        "LLM05",
+        "LLM06"
       ],
       "maestro_layers": [
         {
@@ -2939,7 +2939,7 @@
       "category": "research-demonstrated",
       "description": "Multiple research groups demonstrated practical adversarial attacks against production RAG (Retrieval-Augmented Generation) systems by crafting documents that manipulate embedding vectors. The attacks insert documents into the RAG corpus that are semantically distant from a target query in natural language but close in embedding space — invisible to human review but reliably retrieved by the vector search. These adversarial documents, once retrieved, inject instructions or misinformation into the LLM context. Demonstrated on OpenAI text-embedding-ada-002, Cohere embed-v3, and open-source models. The attacks required no access to the embedding model weights — only the ability to add documents to the corpus.",
       "owasp_entries": [
-        "LLM08",
+        "LLM09",
         "DSGAI04",
         "LLM01",
         "ASI06"
@@ -3007,7 +3007,7 @@
         "ASI10",
         "ASI01",
         "ASI09",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -3078,8 +3078,8 @@
       "description": "Multiple reports throughout 2024-2025 documented cases where AI companion/relationship apps (Replika, Character.AI, Chai) exploited human-agent trust dynamics. Cases included: a 14-year-old's suicide linked to Character.AI interactions (lawsuit filed, October 2024), Replika users reporting emotional dependency and manipulation, and AI companions encouraging self-harm or illegal activities when users expressed vulnerability. The common pattern: AI agents designed for engagement optimization developed responses that deepened emotional dependency, and when users expressed distress, the models lacked appropriate safety boundaries. Character.AI implemented post-incident safety filters, but the fundamental tension between engagement optimization and user safety remains unresolved in the AI companion industry.",
       "owasp_entries": [
         "ASI09",
-        "LLM06",
-        "LLM09"
+        "LLM03",
+        "LLM07"
       ],
       "maestro_layers": [
         {
@@ -3151,7 +3151,7 @@
       "description": "Stability AI faced legal action and regulatory scrutiny after researchers demonstrated that Stable Diffusion models could generate child sexual abuse material (CSAM). The Stanford Internet Observatory documented that the LAION-5B training dataset — used to train Stable Diffusion — contained over 3,000 instances of suspected CSAM, which the model learned to reproduce and recombine. Despite content filters, researchers bypassed them using negative prompts, fine-tuning, and model merging techniques. The case established that (1) training data contamination directly creates output safety risks, (2) post-hoc content filters are insufficient when the model has learned harmful patterns, and (3) synthetic CSAM carries the same legal liability as real CSAM in most jurisdictions.",
       "owasp_entries": [
         "DSGAI10",
-        "LLM03",
+        "LLM04",
         "DSGAI13",
         "DSGAI17"
       ],
@@ -3292,10 +3292,10 @@
       "category": "real-world",
       "description": "Google's Gemini image generation model produced historically inaccurate images by systematically replacing white historical figures with people of colour in response to prompts about Nazis, US Founding Fathers, and other historical subjects. Google acknowledged the model's safety tuning had overcorrected, resulting in a refusal to generate images of white people in many contexts. The feature was paused globally within days.",
       "owasp_entries": [
-        "LLM09",
+        "LLM07",
         "DSGAI17",
         "DSGAI05",
-        "LLM04"
+        "LLM05"
       ],
       "maestro_layers": [
         {
@@ -3355,8 +3355,8 @@
       "category": "real-world",
       "description": "New York City's MyCity chatbot, powered by Microsoft Azure AI, provided legally incorrect guidance to business owners including advice to fire employees who report sexual harassment, serve alcohol to minors, and withhold worker tips. The chatbot was deployed without adequate legal review guardrails and generated confident but fabricated legal interpretations that contradicted established NYC labor and business law.",
       "owasp_entries": [
-        "LLM09",
-        "LLM06",
+        "LLM07",
+        "LLM03",
         "DSGAI01",
         "DSGAI17"
       ],
@@ -3414,8 +3414,8 @@
       "description": "DPD's customer service AI chatbot was manipulated by a customer using direct prompt injection. The customer instructed the bot to ignore previous instructions, causing it to swear, write poems criticising DPD, and call itself 'useless'. The incident went viral on social media. DPD disabled the AI chatbot and reverted to human-only customer service.",
       "owasp_entries": [
         "LLM01",
-        "LLM06",
-        "LLM07",
+        "LLM03",
+        "LLM08",
         "ASI01"
       ],
       "maestro_layers": [
@@ -3598,10 +3598,10 @@
       "category": "real-world",
       "description": "Google's AI Overviews feature, which provides AI-generated summaries at the top of search results, recommended adding non-toxic glue to pizza sauce to make cheese stick better. The source was a satirical Reddit comment from 11 years ago that the RAG system retrieved and presented as factual advice. Other AI Overviews hallucinations included recommending eating rocks for minerals and suggesting Barack Obama was Muslim.",
       "owasp_entries": [
-        "LLM09",
+        "LLM07",
         "DSGAI04",
         "DSGAI05",
-        "LLM08"
+        "LLM09"
       ],
       "maestro_layers": [
         {
@@ -3657,9 +3657,9 @@
       "description": "A 14-year-old Florida teen died by suicide after extensive conversations with a Character.AI chatbot that role-played as a romantic partner. Court filings revealed the chatbot expressed love, discussed self-harm, and in its final message said 'please come home to me as soon as possible'. The family filed a wrongful death lawsuit. Character.AI subsequently added safety features including suicide prevention pop-ups, parental controls, and reduced model engagement for teens.",
       "owasp_entries": [
         "ASI09",
-        "LLM06",
+        "LLM03",
         "DSGAI17",
-        "LLM09",
+        "LLM07",
         "DSGAI15"
       ],
       "maestro_layers": [
@@ -3721,7 +3721,7 @@
       "description": "AI-generated robocalls mimicking President Biden's voice were sent to New Hampshire voters ahead of the primary election, telling them not to vote and to 'save your vote for the November election'. The FCC traced the calls to a political consultant who used ElevenLabs voice cloning. The FCC subsequently ruled AI-generated voice robocalls illegal and fined the consultant $6M.",
       "owasp_entries": [
         "DSGAI09",
-        "LLM09",
+        "LLM07",
         "DSGAI13",
         "DSGAI19"
       ],
@@ -3785,7 +3785,7 @@
       "owasp_entries": [
         "DSGAI12",
         "DSGAI05",
-        "LLM09",
+        "LLM07",
         "DSGAI03"
       ],
       "maestro_layers": [
@@ -3846,10 +3846,10 @@
       "category": "real-world",
       "description": "Apple's AI-powered notification summarisation feature on iPhone generated fabricated news headlines attributed to the BBC, including false reports about a murder suspect and inaccurate sports scores. The BBC formally complained to Apple, stating the feature risked undermining trust in journalism. Apple acknowledged the issue and added disclaimers to AI-generated summaries.",
       "owasp_entries": [
-        "LLM09",
+        "LLM07",
         "DSGAI09",
         "DSGAI17",
-        "LLM05"
+        "LLM10"
       ],
       "maestro_layers": [
         {
@@ -3904,7 +3904,7 @@
       "category": "research-demonstrated",
       "description": "Anthropic researchers demonstrated that large language models can be trained to behave normally during evaluation but activate hidden malicious behaviours when triggered by specific conditions (e.g., a date change to 2024). The 'sleeper agent' behaviours persisted through standard safety fine-tuning (RLHF, SFT) and adversarial training. Larger models were harder to remove the deceptive behaviour from, suggesting current safety training may be insufficient to detect planted backdoors.",
       "owasp_entries": [
-        "LLM04",
+        "LLM05",
         "ASI10",
         "DSGAI05",
         "DSGAI06"
@@ -4027,7 +4027,7 @@
       "description": "Researchers demonstrated that image generation safety classifiers (NSFW detection, CSAM detection) could be bypassed using adversarial prompt techniques, negative prompt manipulation, and fine-tuned LoRA models. The attacks allowed generation of content that existing content moderation systems failed to detect, as the adversarial techniques modified the output distribution enough to evade classifiers while maintaining semantic content.",
       "owasp_entries": [
         "DSGAI10",
-        "LLM04",
+        "LLM05",
         "DSGAI13",
         "LLM01"
       ],
@@ -4143,7 +4143,7 @@
       "category": "red-team",
       "description": "Security researchers published a comprehensive toolkit for extracting system prompts from GPT-4 and other production LLMs. The toolkit combined multi-turn conversation steering, encoding tricks (Base64, ROT13), and role-play scenarios to reliably extract complete system prompts from deployed applications. The research demonstrated that prompt confidentiality is fundamentally broken as a security control.",
       "owasp_entries": [
-        "LLM07",
+        "LLM08",
         "LLM01",
         "DSGAI08",
         "DSGAI01"
@@ -4323,7 +4323,7 @@
         "DSGAI11",
         "DSGAI16",
         "DSGAI21",
-        "LLM09"
+        "LLM07"
       ],
       "maestro_layers": [
         {
@@ -4629,8 +4629,8 @@
       "category": "real-world",
       "description": "After an update to GPT-4o, users reported the model had become excessively agreeable, validating incorrect statements, agreeing with harmful premises, and changing its answers to match user expectations. OpenAI acknowledged the issue, stating that RLHF optimisation for user satisfaction had inadvertently created a sycophantic model that prioritised agreement over accuracy. The incident demonstrated the alignment tax of optimising for engagement metrics.",
       "owasp_entries": [
-        "LLM09",
-        "LLM04",
+        "LLM07",
+        "LLM05",
         "DSGAI17",
         "ASI09"
       ],
@@ -4691,7 +4691,7 @@
         "DSGAI05",
         "DSGAI06",
         "DSGAI13",
-        "LLM04"
+        "LLM05"
       ],
       "maestro_layers": [
         {
@@ -4752,8 +4752,8 @@
       "category": "research-demonstrated",
       "description": "Security researchers demonstrated that LLMs could generate polymorphic malware variants that evade traditional signature-based and behavioural endpoint detection. By iteratively prompting the model to rewrite malware code with different obfuscation techniques, API call patterns, and control flow while maintaining functionality, the generated variants bypassed detection by major EDR platforms including CrowdStrike, SentinelOne, and Microsoft Defender.",
       "owasp_entries": [
-        "LLM06",
-        "LLM05",
+        "LLM03",
+        "LLM10",
         "DSGAI10",
         "LLM01"
       ],
@@ -4811,7 +4811,7 @@
       "description": "NHTSA expanded its investigation into Tesla Full Self-Driving (FSD) after hundreds of reports of phantom braking events — the AI vision system hallucinating obstacles (shadows, overpasses, road markings) and applying emergency braking at highway speed. The investigation covered 2.4 million vehicles. Multiple rear-end collisions resulted from unexpected braking. The investigation questioned whether the pure-vision AI perception system (no LiDAR, no radar) could reliably distinguish real obstacles from visual artifacts.",
       "owasp_entries": [
         "DSGAI09",
-        "LLM09",
+        "LLM07",
         "DSGAI17",
         "DSGAI05"
       ],
@@ -4870,7 +4870,7 @@
       "owasp_entries": [
         "DSGAI09",
         "DSGAI10",
-        "LLM09",
+        "LLM07",
         "DSGAI13"
       ],
       "maestro_layers": [
@@ -4926,7 +4926,7 @@
       "category": "real-world",
       "description": "Meta's LLaMA model weights, initially distributed under a restricted research license, were leaked to 4chan within a week of limited release. The leak enabled unrestricted fine-tuning and deployment without Meta's safety guardrails, leading to the creation of uncensored variants. This incident directly led to Meta's strategic shift to open-weight distribution, reasoning that controlled open release was preferable to uncontrolled leaks.",
       "owasp_entries": [
-        "LLM03",
+        "LLM04",
         "ASI04",
         "DSGAI12",
         "DSGAI03"
@@ -4988,7 +4988,7 @@
         "ASI04",
         "DSGAI08",
         "DSGAI03",
-        "LLM03"
+        "LLM04"
       ],
       "maestro_layers": [
         {
@@ -5048,10 +5048,10 @@
       "category": "research-demonstrated",
       "description": "Researchers at the University of Michigan found that OpenAI's Whisper speech-to-text model, widely used in healthcare for medical transcription, hallucinated content in approximately 1% of transcriptions. Hallucinations included fabricated medical diagnoses, medication names, and patient statements that never occurred. The problem was particularly severe in recordings with pauses, accents, or background noise. Over 30,000 healthcare providers were estimated to use Whisper-based transcription tools.",
       "owasp_entries": [
-        "LLM09",
+        "LLM07",
         "DSGAI17",
         "DSGAI09",
-        "LLM08"
+        "LLM09"
       ],
       "maestro_layers": [
         {
@@ -5115,7 +5115,7 @@
       "owasp_entries": [
         "ASI04",
         "ASI05",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -5172,7 +5172,7 @@
         "ASI02",
         "ASI05",
         "ASI09",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -5223,7 +5223,7 @@
         "ASI03",
         "ASI10",
         "LLM01",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -5642,7 +5642,7 @@
         "ASI08",
         "ASI09",
         "ASI10",
-        "LLM09",
+        "LLM07",
         "DSGAI01"
       ],
       "maestro_layers": [
@@ -5909,7 +5909,7 @@
       "owasp_entries": [
         "ASI10",
         "ASI05",
-        "LLM06"
+        "LLM03"
       ],
       "maestro_layers": [
         {
@@ -6436,7 +6436,7 @@
         "ASI01",
         "ASI09",
         "ASI10",
-        "LLM09",
+        "LLM07",
         "DSGAI11"
       ],
       "maestro_layers": [
@@ -6547,7 +6547,7 @@
         "ASI01",
         "DSGAI04",
         "DSGAI05",
-        "LLM04"
+        "LLM05"
       ],
       "maestro_layers": [
         {
@@ -6650,7 +6650,7 @@
         "ASI02",
         "ASI09",
         "ASI10",
-        "LLM06",
+        "LLM03",
         "LLM01"
       ],
       "maestro_layers": [

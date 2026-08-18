@@ -1,0 +1,95 @@
+{
+  "$comment": "Authoritative crosswalk from OWASP Top 10 for LLM Applications 2025 codes to the 2026 edition. The 2026 revision is a RENUMBERING plus one rename/re-scope: no entry was added and none removed, so the mapping is a bijection over LLM01-LLM10. This file is the single source of truth for the migration; scripts/migrate_owasp_llm_2026.py reads it rather than hardcoding the permutation.",
+  "from_version": "2025",
+  "to_version": "2026",
+  "source": "https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final",
+  "source_pdf": "https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/",
+  "published": "2026-08-03",
+  "bijective": true,
+  "crosswalk": {
+    "LLM01": {
+      "to": "LLM01",
+      "name_2025": "Prompt Injection",
+      "name_2026": "Prompt Injection",
+      "rank_change": 0,
+      "renamed": false,
+      "scope_change": "Expanded to cover cross-modal attacks that hide instructions in image or audio content, plus tool output, intermediate reasoning, and persistent memory as delivery surfaces."
+    },
+    "LLM02": {
+      "to": "LLM02",
+      "name_2025": "Sensitive Information Disclosure",
+      "name_2026": "Sensitive Information Disclosure",
+      "rank_change": 0,
+      "renamed": false,
+      "scope_change": "Explicitly enumerates reasoning traces, tool-call arguments, embeddings, and observable inference properties as disclosure surfaces."
+    },
+    "LLM03": {
+      "to": "LLM04",
+      "name_2025": "Supply Chain",
+      "name_2026": "Supply Chain",
+      "rank_change": -1,
+      "renamed": false,
+      "scope_change": "Now accounts for the trust failure when a promoted model artifact is not what it claims to be; model provenance and conversion/merge workflows are first-class attack surfaces."
+    },
+    "LLM04": {
+      "to": "LLM05",
+      "name_2025": "Data and Model Poisoning",
+      "name_2026": "Data and Model Poisoning",
+      "rank_change": -1,
+      "renamed": false,
+      "scope_change": "Absorbs fine-tuning subversion."
+    },
+    "LLM05": {
+      "to": "LLM10",
+      "name_2025": "Improper Output Handling",
+      "name_2026": "Improper Output Handling",
+      "rank_change": -5,
+      "renamed": false,
+      "scope_change": "Now spans insecure code that assistants generate at scale. Largest single drop in the 2026 edition."
+    },
+    "LLM06": {
+      "to": "LLM03",
+      "name_2025": "Excessive Agency",
+      "name_2026": "Excessive Agency",
+      "rank_change": 3,
+      "renamed": false,
+      "scope_change": "Largest promotion in the 2026 edition; the project leads call it the most consequential move on the list."
+    },
+    "LLM07": {
+      "to": "LLM08",
+      "name_2025": "System Prompt Leakage",
+      "name_2026": "Hidden Context Exposure",
+      "rank_change": -1,
+      "renamed": true,
+      "scope_change": "Renamed and re-scoped from the system prompt specifically to ALL non-user-facing content assembled into the model's context: developer instructions, retrieved policy text, tool and function schemas."
+    },
+    "LLM08": {
+      "to": "LLM09",
+      "name_2025": "Vector and Embedding Weaknesses",
+      "name_2026": "Vector and Embedding Weaknesses",
+      "rank_change": -1,
+      "renamed": false,
+      "scope_change": "Extended beyond RAG to vector-backed agent memory, semantic caches, and deduplication pipelines."
+    },
+    "LLM09": {
+      "to": "LLM07",
+      "name_2025": "Misinformation",
+      "name_2026": "Misinformation",
+      "rank_change": 2,
+      "renamed": false,
+      "scope_change": "Reframed as a system-level failure: incorrect output consumed by downstream components and agents, not only by humans."
+    },
+    "LLM10": {
+      "to": "LLM06",
+      "name_2025": "Unbounded Consumption",
+      "name_2026": "Unbounded Consumption",
+      "rank_change": 4,
+      "renamed": false,
+      "scope_change": "Emphasis on cost asymmetry, extended-thinking/reasoning output budgets, and MCP-style tool amplification."
+    }
+  },
+  "migration_scope": {
+    "applied": "Code renumbering only. Each entry's owasp_llm array is rewritten through the bijection above, preserving the risk concept assigned to that entry.",
+    "not_applied": "No re-classification. Several 2026 entries widened their scope (see scope_change above); incidents that would newly qualify under a widened entry were NOT added, because that requires re-running classifiers over incident descriptions. Re-classification is deliberately out of scope for this migration - see docs/audits/WS0-T3-cascade-2026-07-18.md for why description-coupled reclassification is treated as a hazard here. Adding those mappings is annotation work, not a migration."
+  }
+}

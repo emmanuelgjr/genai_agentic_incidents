@@ -12,7 +12,7 @@ _INCIDENTS = [
         "id": "INC-00001", "title": "Example RCE", "description": "A flaw.",
         "date": "2026-01-02", "year": 2026, "severity": "High",
         "attack_vector": "rce", "corpus": "security", "tier": "feed",
-        "owasp_llm": ["LLM05"], "owasp_asi": [], "mitre_atlas": ["AML.T0050"],
+        "owasp_llm": ["LLM10"], "owasp_asi": [], "mitre_atlas": ["AML.T0050"],
         "cve_ids": ["CVE-2026-0001"],
         "references": [{"title": "Advisory", "url": "https://example.com/a", "type": "advisory"}],
     },
@@ -55,7 +55,7 @@ def test_incident_tags_and_attribute_types(tmp_path, monkeypatch):
                  if a["type"] == "text" and a["comment"].startswith("INC-00001"))
     tagnames = {tg["name"] for tg in title["Tag"]}
     assert 'genai-incidents:incident-id="INC-00001"' in tagnames
-    assert 'genai-incidents:owasp-llm="LLM05"' in tagnames
+    assert 'genai-incidents:owasp-llm="LLM10"' in tagnames
     assert 'mitre-atlas:technique="AML.T0050"' in tagnames
 
 

@@ -1,0 +1,111 @@
+{
+  "migrations": {
+    "owasp_llm_2025_to_2026": {
+      "legacy/incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "ad882ed94808a9e915f0d8bb3af9f1a46887002f1b3af688811dbebea4ea675e",
+        "sha256_after": "2539a640a9aa23180019a0ca3170bd621c3d696adfbc4403a8ef838fff1b5d78"
+      },
+      "ingest/aiaaic_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "93657833efde343145ad5a817faffa00948f0a902e7bf00851aeeedb06a5772d",
+        "sha256_after": "2b966c23a47a5265378285eb822573f66ac0b2aae99706a1445a7549c318e686"
+      },
+      "ingest/aiaaic_sheet_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "8a154b00b872b441909f31d4e32ed6f270df5730bc42e06f7b0fd5a7d5ec449f",
+        "sha256_after": "df24a849e1ecf37eb7fa0cfd4754c7587e87bfaeec6178512ab269fb7e8098df"
+      },
+      "ingest/aiid_full.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "381468ee77e65806100ff5b15a6923426f52bd6396db9edf3e4fd9b82e11d3cc",
+        "sha256_after": "f91c2973ef68ec268a2e0fae83fe29fb6d9cd385998a2d4870f2f4fd7276b9bc"
+      },
+      "ingest/aiid_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "82f35483ae1ab342c1964cf186edd5e5f34852e75c3eb1c14a0bc0f4eec09e9b",
+        "sha256_after": "39299fb88f68d807aa78067a5df1bbf8b0aae07c32a2e2d3c36d35023eca3e62"
+      },
+      "ingest/airi_navigator_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "101b7a3524cd9f914bfd99d0e9834161e7f93645eba8d43059e4e3f89bbec572",
+        "sha256_after": "0fe3cffe71c217ed54a63f30100227b24653f132be128bdffe9e5e3785176f1e"
+      },
+      "ingest/arxiv_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "002d33a27437bae791ea6718b31628b5938e6b72cb810eae650be97aed9f3e38",
+        "sha256_after": "3a4bea17da1c284c872bb6bb83b142b9419f26dd6aa7842fce4010d52dbf4e37"
+      },
+      "ingest/atlas_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "4175f167e026448f13b62b9983ff6a198727e34e2cc4598021dec918d5ab3dea",
+        "sha256_after": "fd57281e87a94360cb6b35d85e0e45b77b023eca08d76e654212e70593a6582b"
+      },
+      "ingest/avid_owasp_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "8aad3d86e0bec64d1def4ec18eb96fff959def1e52a3a49ea4b6af4f709eb176",
+        "sha256_after": "16738483c9215d5555e0614ca5943f85bf203745c36d605f3714551f2f65323c"
+      },
+      "ingest/cve_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "5c07432766b6f98e1080a1ce3593f5bf37cf9d659dc67d40e52209ebdb2594c3",
+        "sha256_after": "85e7bc9aa5244572b981d3a3ba4d7b14977da7c8af982b4a30a194c3485dad1b"
+      },
+      "ingest/cve_nvd_expanded.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "110879b71259b8afa2175b36ba56638376076e7d31751038589813d444370082",
+        "sha256_after": "6fef32292fa876d11f98b288aac65935cd809a7ecb2c2a3c9a8e1e2ea4a142a4"
+      },
+      "ingest/garak_probes.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "06dc547659ea9347c62dd2cc023a1ae3227816f70a2c7b000a2f40cc07aceb3a",
+        "sha256_after": "266b80c4148b5b927fa8e4d182b0a2566c48522c552ea80bcebe5655082ea1d0"
+      },
+      "ingest/oecd_aim_full_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "238f02c3759a779df1936d22fb85b0d6dc5343e17ad550229014b4c349118057",
+        "sha256_after": "835600e07ee38b659f263993fa0e5b47962148512353a928368938c7ae8fc715"
+      },
+      "ingest/promptfoo_plugins.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "02a84223b2131167ca98922da3b5c8fb484aeec668ed7da3a00632645dee4a72",
+        "sha256_after": "74b207b2936a2de2ead7ff3524438d092e47d40f5f2705eae2f454f951d318cd"
+      },
+      "ingest/redteam_benchmarks.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "ca1fd3da8794affaa805a0fad6b0c0ce363b635179355879ed43df95a6864ab7",
+        "sha256_after": "938a5d28b4850068a5a57e1396d07ffbe563703b04ea53ce01d98444e1d9deb2"
+      },
+      "ingest/research_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "aa7c46c24bc869d63ab23b7dcb5cd67b1e51c7f69a29e72e705ab4d8cf55a1e9",
+        "sha256_after": "afb4dfde5259b8a7d95cbbfdde8a84545aa91d6b2919e173ebd6d2db47f4584d"
+      },
+      "ingest/threat_reports_incidents.json": {
+        "applied": "2026-08-17T10:05:44+00:00",
+        "sha256_before": "9fdd0b596af46ae21e0f0ddd8eb6ea6a38614faa67aa452dfba0962a4a009047",
+        "sha256_after": "3c61aa6bcb4c1ea72053a265081d78dda6fe871a749ea29c5ba526ee9a5a1cae"
+      },
+      "data/incidents.json": {
+        "applied": "2026-08-17T10:13:42+00:00",
+        "sha256_before": "2e1df54dc5bc38a8b0d82bf8bf6c9fd5f5736b234726f43c60d1ec03deb30e58",
+        "sha256_after": "78a985b13bb7e0f76b2deb37536f8652e7c34d41138f09b766b7a6c405fd120e"
+      }
+    }
+  },
+  "expected_built_census": {
+    "incidents.json": {
+      "LLM01": 407,
+      "LLM02": 984,
+      "LLM03": 783,
+      "LLM04": 6162,
+      "LLM05": 157,
+      "LLM06": 44,
+      "LLM07": 2416,
+      "LLM08": 730,
+      "LLM09": 24,
+      "LLM10": 5791
+    },
+    "$comment": "Crosswalk image of the pre-migration built corpus (commit dc14f425). `--verify data/incidents.json` must reproduce this after any rebuild. Re-derive: git show dc14f425:data/incidents.json | apply mappings/owasp_llm_2025_to_2026.json"
+  }
+}

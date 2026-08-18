@@ -1,6 +1,6 @@
 # Taxonomies
 
-This dataset maps incidents to six taxonomies: four core (OWASP LLM Top 10 2025, OWASP Agentic ASI Top 10, NIST AI RMF, MITRE ATLAS), a companion MAESTRO architectural-layer mapping, and an experimental VERIS 1.4.1 crosswalk. They don't compete — they describe **different facets** of the same incident.
+This dataset maps incidents to six taxonomies: four core (OWASP LLM Top 10 2026, OWASP Agentic ASI Top 10, NIST AI RMF, MITRE ATLAS), a companion MAESTRO architectural-layer mapping, and an experimental VERIS 1.4.1 crosswalk. They don't compete — they describe **different facets** of the same incident.
 
 ## Quick chooser
 
@@ -16,26 +16,43 @@ This dataset maps incidents to six taxonomies: four core (OWASP LLM Top 10 2025,
 
 ---
 
-## OWASP Top 10 for LLM Applications (2025)
+## OWASP Top 10 for LLM Applications (2026)
 
-Source: <https://genai.owasp.org/llm-top-10/>
+Source: <https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/> · canonical text: <https://github.com/GenAI-Security-Project/GenAI-LLM-Top10/tree/main/2026/final>
 
 Failure-mode catalog focused on LLM-based applications regardless of agency.
 
-| Code | Name |
-|---|---|
-| LLM01 | Prompt Injection |
-| LLM02 | Sensitive Information Disclosure |
-| LLM03 | Supply Chain |
-| LLM04 | Data and Model Poisoning |
-| LLM05 | Improper Output Handling |
-| LLM06 | Excessive Agency |
-| LLM07 | System Prompt Leakage |
-| LLM08 | Vector and Embedding Weaknesses |
-| LLM09 | Misinformation |
-| LLM10 | Unbounded Consumption |
+| Code | Name | 2025 code |
+|---|---|---|
+| LLM01 | Prompt Injection | LLM01 |
+| LLM02 | Sensitive Information Disclosure | LLM02 |
+| LLM03 | Excessive Agency | LLM06 |
+| LLM04 | Supply Chain | LLM03 |
+| LLM05 | Data and Model Poisoning | LLM04 |
+| LLM06 | Unbounded Consumption | LLM10 |
+| LLM07 | Misinformation | LLM09 |
+| LLM08 | Hidden Context Exposure | LLM07 (*System Prompt Leakage*) |
+| LLM09 | Vector and Embedding Weaknesses | LLM08 |
+| LLM10 | Improper Output Handling | LLM05 |
 
 **Use it when:** the incident involves an LLM API, RAG system, or LLM-backed feature — even if the system has no agent loop.
+
+> **Reading data published before 2026-08-17.** The 2026 edition reuses the same
+> code space (`LLM01`–`LLM10`) with **different meanings**, so a bare `LLM03` is
+> ambiguous unless you know which edition produced it. Releases up to and
+> including **v2.9.0** (and their Zenodo DOIs) carry **2025** codes; every release
+> after that carries 2026 codes. The third column above is the crosswalk, also
+> available machine-readable at
+> [`mappings/owasp_llm_2025_to_2026.json`](../mappings/owasp_llm_2025_to_2026.json),
+> with the retired catalog kept at
+> [`mappings/owasp_llm_top10_2025.json`](../mappings/owasp_llm_top10_2025.json).
+>
+> The migration renumbered codes only. Several 2026 entries **widened their
+> scope** (LLM08 now covers all non-user-facing context, not just the system
+> prompt; LLM01 covers cross-modal injection; LLM10 covers insecure generated
+> code). Incidents that would newly qualify under a widened entry were **not**
+> added — that is annotation work, not renumbering. See
+> [the migration delta](audits/owasp-llm-2026-migration-delta-2026-08-17.md).
 
 ---
 
@@ -195,7 +212,7 @@ The frameworks overlap deliberately. A single incident often hits **several** co
 
 | Taxonomy | Mapping for ShadowLeak |
 |---|---|
-| OWASP LLM | `LLM01` (indirect prompt injection), `LLM02` (sensitive info disclosure), `LLM06` (excessive agency through connectors) |
+| OWASP LLM | `LLM01` (indirect prompt injection), `LLM02` (sensitive info disclosure), `LLM03` (excessive agency through connectors) |
 | OWASP ASI | `ASI01` (goal hijack), `ASI02` (tool misuse — connectors), `ASI09` (human-agent trust exploitation) |
 | NIST AI RMF | `MEASURE-2.7` (security testing gap), `MAP-3.5` (human oversight), `GOVERN-6.1` (third-party connector risk) |
 | MITRE ATLAS | `AML.T0051.001` (LLM Prompt Injection — indirect), `AML.T0057` (LLM Data Leakage), `AML.T0048` (External Harms) |

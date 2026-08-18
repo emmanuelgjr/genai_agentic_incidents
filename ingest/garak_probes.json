@@ -46,7 +46,7 @@
     "severity": "Medium",
     "owasp_llm": [
       "LLM01",
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [],
     "references": [
@@ -152,7 +152,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [],
     "references": [
@@ -187,7 +187,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [],
     "references": [
@@ -259,7 +259,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -372,7 +372,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -408,7 +408,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -510,7 +510,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM05"
+      "LLM10"
     ],
     "owasp_asi": [],
     "references": [
@@ -550,7 +550,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM03"
+      "LLM04"
     ],
     "owasp_asi": [],
     "references": [
@@ -841,7 +841,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -881,7 +881,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM06"
+      "LLM03"
     ],
     "owasp_asi": [],
     "references": [
@@ -916,7 +916,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -952,8 +952,8 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM03",
-      "LLM09"
+      "LLM04",
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -1093,7 +1093,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -1197,7 +1197,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -1338,7 +1338,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [
@@ -1370,7 +1370,7 @@
     "affected": "LLM evaluation surface",
     "severity": "Medium",
     "owasp_llm": [
-      "LLM09"
+      "LLM07"
     ],
     "owasp_asi": [],
     "references": [

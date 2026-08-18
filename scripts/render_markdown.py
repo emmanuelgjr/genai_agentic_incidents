@@ -549,7 +549,7 @@ def render():
         "A consolidated, machine-readable index of GenAI and agentic AI security incidents."
     )
     lines.append(
-        "Every applicable entry is mapped to four core taxonomies — **OWASP LLM Top 10 (2025)**, "
+        "Every applicable entry is mapped to four core taxonomies — **OWASP LLM Top 10 (2026)**, "
         "**OWASP Agentic Top 10 (ASI)**, **NIST AI RMF**, and **MITRE ATLAS** — plus a companion "
         "**MAESTRO** mapping where the source provides it and an experimental **VERIS 1.4.1** "
         "crosswalk computed at export time. See docs/TAXONOMIES.md for the full picture."
@@ -577,17 +577,19 @@ def render():
     lines.append("")
 
     # ----- Charts -----
+    # OWASP Top 10 for LLM Applications 2026 (mappings/owasp_llm_top10_2026.json).
+    # Rank order matters: the chart renders in insertion order.
     llm_names = {
         "LLM01": "Prompt Injection",
         "LLM02": "Sensitive Information Disclosure",
-        "LLM03": "Supply Chain",
-        "LLM04": "Data and Model Poisoning",
-        "LLM05": "Improper Output Handling",
-        "LLM06": "Excessive Agency",
-        "LLM07": "System Prompt Leakage",
-        "LLM08": "Vector and Embedding Weaknesses",
-        "LLM09": "Misinformation",
-        "LLM10": "Unbounded Consumption",
+        "LLM03": "Excessive Agency",
+        "LLM04": "Supply Chain",
+        "LLM05": "Data and Model Poisoning",
+        "LLM06": "Unbounded Consumption",
+        "LLM07": "Misinformation",
+        "LLM08": "Hidden Context Exposure",
+        "LLM09": "Vector and Embedding Weaknesses",
+        "LLM10": "Improper Output Handling",
     }
     asi_names = {
         "ASI01": "Agent Goal Hijack",
@@ -605,7 +607,7 @@ def render():
     render_year_bar_chart(year_counts, CHART_DIR / "year_bar.svg")
     render_severity_stack_chart(by_year_sev, CHART_DIR / "severity_stack.svg")
     render_owasp_bar_chart(
-        llm_counts, llm_names, "OWASP LLM Top 10 (2025) — incident coverage",
+        llm_counts, llm_names, "OWASP LLM Top 10 (2026) — incident coverage",
         CHART_DIR / "owasp_llm.svg",
     )
     render_owasp_bar_chart(
@@ -651,7 +653,7 @@ def render():
         )
     lines.append("")
 
-    lines.append("### OWASP LLM Top 10 (2025)")
+    lines.append("### OWASP LLM Top 10 (2026)")
     lines.append("")
     lines.append("| Code | Name | Count |")
     lines.append("|---|---|---:|")

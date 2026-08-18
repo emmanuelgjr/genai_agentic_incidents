@@ -227,10 +227,10 @@ CANONICAL_HOSTS = {
 
 # Heuristic mapping for completing taxonomy mappings on incoming entries
 LLM_TO_ATLAS = {
-    "LLM01": ["AML.T0051"], "LLM02": ["AML.T0057"], "LLM03": ["AML.T0010"],
-    "LLM04": ["AML.T0020"], "LLM05": ["AML.T0050"], "LLM06": ["AML.T0053"],
-    "LLM07": ["AML.T0056"], "LLM08": ["AML.T0066"], "LLM09": ["AML.T0058"],
-    "LLM10": ["AML.T0029"],
+    "LLM01": ["AML.T0051"], "LLM02": ["AML.T0057"], "LLM03": ["AML.T0053"],
+    "LLM04": ["AML.T0010"], "LLM05": ["AML.T0020"], "LLM06": ["AML.T0029"],
+    "LLM07": ["AML.T0058"], "LLM08": ["AML.T0056"], "LLM09": ["AML.T0066"],
+    "LLM10": ["AML.T0050"],
 }
 ASI_TO_ATLAS = {
     "ASI01": ["AML.T0051"], "ASI02": ["AML.T0053"], "ASI03": ["AML.T0012"],
@@ -239,10 +239,10 @@ ASI_TO_ATLAS = {
     "ASI10": ["AML.T0048"],
 }
 LLM_TO_NIST = {
-    "LLM01": ["MEASURE-2.7"], "LLM02": ["MEASURE-2.10"], "LLM03": ["GOVERN-6.1"],
-    "LLM04": ["MAP-4.2"], "LLM05": ["MEASURE-2.7"], "LLM06": ["MAP-3.5"],
-    "LLM07": ["MEASURE-2.7"], "LLM08": ["MEASURE-2.7"], "LLM09": ["MEASURE-2.8"],
-    "LLM10": ["MEASURE-2.4"],
+    "LLM01": ["MEASURE-2.7"], "LLM02": ["MEASURE-2.10"], "LLM03": ["MAP-3.5"],
+    "LLM04": ["GOVERN-6.1"], "LLM05": ["MAP-4.2"], "LLM06": ["MEASURE-2.4"],
+    "LLM07": ["MEASURE-2.8"], "LLM08": ["MEASURE-2.7"], "LLM09": ["MEASURE-2.7"],
+    "LLM10": ["MEASURE-2.7"],
 }
 ASI_TO_NIST = {
     "ASI01": ["MEASURE-2.7"], "ASI02": ["MAP-3.5"], "ASI03": ["GOVERN-1.4"],
@@ -253,7 +253,7 @@ ASI_TO_NIST = {
 
 # Seed a framework mapping from the attack_vector for entries that arrive
 # with no OWASP/NIST/ATLAS at all. Security exploits (and OWASP's own
-# LLM09 "Misinformation" category) map to OWASP LLM codes, which then
+# LLM07 "Misinformation" category) map to OWASP LLM codes, which then
 # cascade through fill_taxonomy() to ATLAS + NIST. Societal-harm vectors
 # (privacy, bias, CSAM, self-harm) have no clean OWASP fit, so they seed
 # the appropriate NIST AI RMF control directly.
@@ -261,14 +261,14 @@ _VECTOR_TO_OWASP_LLM = {
     "prompt-injection": ["LLM01"], "indirect-prompt-injection": ["LLM01"], "jailbreak": ["LLM01"],
     "data-exfiltration": ["LLM02"], "info-disclosure": ["LLM02"],
     "membership-inference": ["LLM02"], "model-inversion": ["LLM02"],
-    "supply-chain": ["LLM03"],
-    "model-poisoning": ["LLM04"], "memory-poisoning": ["LLM04"], "backdoor": ["LLM04"],
-    "rce": ["LLM05"], "xss": ["LLM05"], "sql-injection": ["LLM05"],
-    "command-injection": ["LLM05"], "ssrf": ["LLM05"], "path-traversal": ["LLM05"],
-    "deserialization": ["LLM05"],
-    "agent-hijack": ["LLM06"], "tool-abuse": ["LLM06"],
-    "misinformation": ["LLM09"], "hallucination": ["LLM09"], "deepfake": ["LLM09"],
-    "dos": ["LLM10"], "model-extraction": ["LLM10"], "model-theft": ["LLM10"],
+    "supply-chain": ["LLM04"],
+    "model-poisoning": ["LLM05"], "memory-poisoning": ["LLM05"], "backdoor": ["LLM05"],
+    "rce": ["LLM10"], "xss": ["LLM10"], "sql-injection": ["LLM10"],
+    "command-injection": ["LLM10"], "ssrf": ["LLM10"], "path-traversal": ["LLM10"],
+    "deserialization": ["LLM10"],
+    "agent-hijack": ["LLM03"], "tool-abuse": ["LLM03"],
+    "misinformation": ["LLM07"], "hallucination": ["LLM07"], "deepfake": ["LLM07"],
+    "dos": ["LLM06"], "model-extraction": ["LLM06"], "model-theft": ["LLM06"],
 }
 _VECTOR_TO_NIST_SEED = {
     "privacy-violation": ["MAP-4.1", "MEASURE-2.10"],
@@ -1781,7 +1781,7 @@ def main():
         "description": (
             "A consolidated, machine-readable index of GenAI and agentic AI security "
             "incidents. Every applicable entry is mapped to four core taxonomies: "
-            "OWASP LLM Top 10 (2025), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), "
+            "OWASP LLM Top 10 (2026), OWASP Agentic ASI Top 10, NIST AI RMF (AI 100-1), "
             "and MITRE ATLAS. A companion MAESTRO architectural-layer mapping is carried "
             "where the source provides it, and an experimental VERIS 1.4.1 crosswalk is "
             "computed at export time (see docs/TAXONOMIES.md)."
