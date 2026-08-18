@@ -135,3 +135,35 @@ never put model calls in the deterministic build path.
    — see PROGRESS.md's exit-checklist format entry. As agreement 4 takes hold,
    [A] rows should become rare; **if a checklist still needs [A] for a gate
    verdict, this agreement is not being followed.**
+6. **Checks that cannot fail are the house failure mode — the counterweight is
+   a DIFFERENT ROUTE, not a more careful one (added 2026-08-18).** Before
+   trusting any check, **name the input that would make it fail.** If you
+   cannot name one, it is not a check, however much work it did. Four forms
+   seen here, all of which passed while the thing they guarded was wrong:
+   **(a)** a check whose output is identical whether or not it ran; **(b)** a
+   second party "confirming" a figure by re-running the first party's method;
+   **(c)** a claim rewritten qualitatively until nothing could check it —
+   *removing a figure does not remove the claim, it removes the ability to
+   check it*; **(d)** an aggregate that is invariant under the error — a total
+   that still balances while the distribution inside it is wrong.
+   **Why:** this is not a hypothetical failure class, it is *the* one this
+   project keeps producing. Phase 1 recorded **seven instances across four
+   agents and six unrelated tools** and named it the phase's dominant failure
+   mode; the OWASP 2026 migration produced form (d) **three weeks later in a
+   completely unrelated tool** — 9 retained rows kept stale codes while the
+   total stayed exactly 17,498 and schema validation, the drift check and 314
+   tests all passed on the wrong corpus. That is a rate, not a coincidence,
+   and it does not respect tool boundaries.
+   **How to apply.** Verify through an **independent derivation path** — a
+   different method, a different party, or a control built from the
+   pre-change state — never a more careful rerun of the path that produced
+   the artifact. Prefer per-entity comparison over aggregates, because
+   aggregates are exactly what form (d) hides behind. When you build the
+   check, **prove it fires**: corrupt the input deliberately, watch it fail,
+   restore. A gate nobody has seen fail is a gate nobody should cite.
+   **Origin:** Phase 1's "what this phase actually taught" entry, promoted
+   after PRECEDENT 4 (PROGRESS.md) showed the pattern recurring post-phase.
+   Both times the counterweight was someone taking a different route — a
+   drafter that refused to write the board's number and cross-validated three
+   ways, a gate that deliberately chose a method nobody had used, and a
+   control build made from the pre-migration tree.
